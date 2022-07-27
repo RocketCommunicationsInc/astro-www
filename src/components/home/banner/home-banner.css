@@ -1,0 +1,50 @@
+.p-banner {
+	display: flex;
+
+	/* layout */
+	align-items: center;
+	flex-flow: column;
+	inline-size: min(100% - 4 * var(--step), 154 * var(--step));
+	padding-block: max(7 * var(--step));
+
+	& .x-heading-group {
+		display: flex;
+
+		/* layout */
+		align-items: center;
+		flex-flow: column;
+	}
+
+	& .x-heading-image {
+		/* layout */
+		block-size: auto;
+		inline-size: min(100%, 72.5 * var(--step));
+	}
+
+	& .x-subheading {
+		/* layout */
+		margin-block-start: max(4 * var(--step));
+
+		/* typography */
+		font-size: max(20 * var(--rpx));
+		font-weight: 700;
+		line-height: max(22 / 20);
+	}
+
+	& .x-content {
+		/* layout */
+		margin-block-start: max(6.5 * var(--step));
+
+		/* typography */
+		font-size: max(18 * var(--rpx));
+		line-height: max(24 / 18);
+
+		/* decoration */
+		text-shadow: var(--text-shadow-color) 0 max(1 * var(--text-shadow-spread)) var(--text-shadow-blur), var(--text-shadow-color) 0 max(-1 * var(--text-shadow-spread)) var(--text-shadow-blur), var(--text-shadow-color) max(1 * var(--text-shadow-spread)) 0 var(--text-shadow-blur), var(--text-shadow-color) max(-1 * var(--text-shadow-spread)) 0 var(--text-shadow-blur);
+
+		/* reference */
+		--text-shadow-spread: 4px;
+		--text-shadow-blur: 6px;
+		--text-shadow-color: hsl(0 0% 0% / max(100% / 3));
+	}
+}

@@ -1,0 +1,187 @@
+.p-content {
+	/* layout */
+	min-block-size: 100%;
+	padding-block: max(22 * var(--step));
+	padding-inline: max(8 * var(--step), 50% - 88 * var(--step));
+
+	/* typography */
+	font-size: max(16 * var(--rpx));
+	line-height: max(24 / 16);
+
+	/* decoration */
+	background: radial-gradient(ellipse at top, hsl(209deg 39% 12%), hsl(209deg 39% 0% / 50%)) no-repeat 50% 0% / 100% auto;
+
+	@media (width >= 1680px) {
+		/* layout */
+		padding-inline: max(8 * var(--step), 30% - 88 * var(--step)) max(8 * var(--step), 70% - 88 * var(--step));
+	}
+
+	& :where(h1) {
+		/* layout */
+		padding-block-end: max(2 * var(--step));
+
+		/* typography */
+		font-size: max(48 * var(--rpx));
+		font-weight: 700;
+		line-height: max(52 / 48);
+
+		/* decoration */
+		box-shadow: var(--Gray800Color) 0 -1px 0 0 inset;
+	}
+
+	& :where(:is(h2, h3)) {
+		/* layout */
+		margin-block-start: max(8 * var(--step));
+
+		/* typography */
+		font-size: max(24 * var(--rpx));
+		font-weight: 700;
+		line-height: max(28 / 24);
+	}
+
+	& :where(h4:not(x > *)) {
+		font-size: max(18 * var(--rpx));
+		line-height: max(24 / 18);
+	}
+
+	& :where(figure, p, pre, ul, table) {
+		margin-block-start: max(4 * var(--step));
+	}
+
+	& :where(li) {
+		font-size: max(16 * var(--rpx));
+		line-height: max(28 / 16);
+
+		&::before {
+			content: "•";
+			display: inline-block;
+			margin-inline-end: max(1 * var(--step));
+			width: max(2 * var(--step));
+		}
+	}
+
+	& :where(li + li) {
+		margin-block-start: max(3 * var(--step));
+	}
+
+	& :where(a:not(.h)) {
+		color: var(--Orange700Color);
+		text-decoration: underline;
+	}
+
+	& :where(a.h) {
+		display: inline;
+
+		&:where(:focus-visible) {
+			outline: none;
+
+			box-shadow: var(--PrimaryColor) 0 0 0 4px inset;
+
+			& :where(h1, h2, h3) {
+				box-shadow: var(--Orange700Color) 0 max(-1 * var(--step)) 0 0 inset;
+			}
+		}
+	}
+
+	& :where(figcaption) {
+		font-size: max(14 * var(--rpx));
+		font-style: italic;
+		line-height: max(20 / 14);
+		padding-block: max(2 * var(--step));
+		padding-inline: max(4 * var(--step));
+	}
+
+	& :where(figure:is(.example-do, .example-dont) > figcaption) {
+		margin-block-start: max(2 * var(--step));
+		box-shadow: var(--border-color) 0 max(1 * var(--step)) 0 0 inset;
+
+		--border-color: currentColor;
+	}
+
+	& :where(figure.example-do > figcaption) {
+		--border-color: #2fb312;
+	}
+
+	& :where(figure.example-dont > figcaption) {
+		--border-color: #fe3701;
+	}
+
+	& :where(table) {
+		margin-block-start: max(4 * var(--step));
+	}
+
+	& :where(td, th) {
+		padding: max(2 * var(--step));
+	}
+
+	& :where(img) {
+		height: auto;
+		max-width: 100%;
+	}
+
+	& :where(.note p) {
+		/* layout */
+		padding: max(4 * var(--step));
+
+		/* decoration */
+		background: var(--BaseHoverColor);
+		border-radius: max(3 * var(--rpx));
+	}
+
+	& :where(.caution p) {
+		/* layout */
+		padding: max(4 * var(--step));
+
+		/* decoration */
+		background: var(--Red800Color);
+		border-radius: max(3 * var(--rpx));
+	}
+
+	& :where(:is(div, p) > :is(code, pre)) {
+		/* typography */
+		font-family: var(--SystemMonoType);
+		font-size: max(14 * var(--rpx));
+		line-height: max(20 / 14);
+	}
+
+	& :where(.code-block) {
+		/* layout */
+		padding: max(4 * var(--step));
+
+		/* typography */
+		font-family: var(--SystemMonoType);
+		font-size: max(14 * var(--rpx));
+		line-height: max(20 / 14);
+
+		/* decoration */
+		background: var(--BrightBlue850);
+		border-radius: max(3 * var(--rpx));
+
+		/* reference */
+		--BrightBlue850: hsl(208 49% 21%);
+	}
+
+	& :where(.two-col, .three-col) {
+		display: grid;
+		gap: max(4 * var(--step));
+	}
+
+	& :where(.two-col) {
+		grid-template-columns: repeat(2, [col-start] 1fr);
+	}
+
+	& :where(.storybook-demo) {
+		display: flex;
+
+		/* layout */
+		flex-flow: column;
+	}
+
+	& :where(.storybook-demo > iframe) {
+		flex-basis: 100%;
+	}
+
+	& :where(.storybook-demo > nav) {
+		align-self: end;
+	}
+}

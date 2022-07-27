@@ -1,0 +1,124 @@
+:where(.p-explainer) {
+	display: flex;
+
+	/* layout */
+	inline-size: 100%;
+
+	/* decoration */
+	background-color: var(--SurfaceHeaderColor);
+	border-radius: max(6 * var(--rpx));
+	color: var(--PrimaryColor);
+}
+
+@media (width < 1200px) {
+	:where(.p-explainer) {
+		/* layout */
+		flex-flow: column;
+		gap: max(5 * var(--step));
+	}
+}
+
+@media (width >= 1200px) {
+	:where(.p-explainer) {
+		/* layout */
+		gap: max(8 * var(--step));
+	}
+}
+
+@media (width < 1520px) {
+	:where(.p-explainer) {
+		/* layout */
+		padding-block: max(5 * var(--step));
+		padding-inline: max(5 * var(--step));
+		margin-block-start: max(16 * var(--step));
+	}
+}
+
+@media (width >= 1520px) {
+	:where(.p-explainer) {
+		/* layout */
+		gap: max(10 * var(--step));
+		padding-block: max(9 * var(--step));
+		padding-inline: max(10 * var(--step));
+		margin-block-start: max(16 * var(--step));
+	}
+}
+
+:where(.p-explainer article) {
+	display: flex;
+
+	/* reference */
+	--padding-block: max(5 * var(--step));
+	--padding-inline: max(10 * var(--step));
+
+	/* layout */
+	flex-flow: column;
+	padding-block: var(--padding-block);
+	padding-inline: var(--padding-inline);
+
+	/* decoration */
+	background-color: var(--SurfaceSelectedColor);
+	border-radius: max(3 * var(--rpx));
+}
+
+@media (width < 800px) {
+	:where(.p-explainer article) {
+		/* reference */
+		--padding-block: max(6 * var(--step));
+		--padding-inline: max(5 * var(--step));
+	}
+}
+
+:where(.p-explainer article svg) {
+	display: block;
+
+	/* parent layout */
+	align-self: center;
+
+	/* layout */
+	max-inline-size: 100%;
+	block-size: min(100%, 24 * var(--step));
+	inline-size: auto;
+
+	/* decoration */
+	object-fit: contain;
+}
+
+:where(.p-explainer article h3) {
+	font-size: max(24 * var(--rpx));
+	font-weight: 600;
+	line-height: max(28 / 24);
+}
+
+:where(.p-explainer article > svg + h3) {
+	margin-block-start: max(6 * var(--step));
+}
+
+:where(.p-explainer article p) {
+	/* layout */
+	flex-grow: 1;
+	margin-block-start: max(5 * var(--step));
+}
+
+:where(.p-explainer article a) {
+	/* layout */
+	align-self: center;
+	margin-block-start: max(5 * var(--step));
+	padding-inline: max(4 * var(--step));
+	padding-block: max(2 * var(--step));
+
+	/* typography */
+	font-size: max(16 * var(--rpx));
+	line-height: max(20 / 16);
+
+	/* decoration */
+	background-color: var(--InteractiveColor);
+	border-radius: max(3 * var(--rpx));
+	box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
+	color: var(--InverseColor);
+	cursor: pointer;
+}
+
+:where(.p-explainer article a:is(:hover, :focus-visible)) {
+	background-color: var(--InteractiveHoverColor);
+}

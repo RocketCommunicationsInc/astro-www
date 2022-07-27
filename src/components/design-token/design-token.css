@@ -1,0 +1,65 @@
+.p-design-token {
+	display: flex;
+
+	/* layout */
+	padding: max(5 * var(--step));
+
+	& + & {
+		/* layout */
+		margin-block-start: max(4 * var(--step));
+	}
+
+	& .--preview {
+		display: flex;
+
+		/* layout */
+		align-items: center;
+		block-size: max(16 * var(--step));
+		inline-size: max(16 * var(--step));
+		justify-content: center;
+		margin-inline-end: max(5 * var(--step));
+
+		/* decoration */
+		background-color: #1b2d3e;
+		color: #4dacff;
+	}
+
+	&:where(.--type-text) .--preview {
+		&::before {
+			content: "Aa";
+			font-size: max(20 * var(--rpx));
+			line-height: max(28 / 20);
+		}
+	}
+
+	&:where(.--type-background) .--preview {
+		background-color: var(--value);
+	}
+
+	&:where(.--type-radius) .--preview {
+		box-shadow: var(--PrimaryColor) 0 0 0 max(1 * var(--rpx)) inset;
+		border-radius: var(--value);
+	}
+
+	&:where(.--type-shadow) .--preview {
+		box-shadow: var(--PrimaryColor) 0 0 0 max(1 * var(--rpx)) inset, var(--value);
+	}
+
+	& .--name {
+		/* typography */
+		font-weight: 700;
+	}
+
+	& .--value {
+		font-family: var(--SystemMonoType);
+	}
+
+	& .--alias {
+		/* decoration */
+		color: var(--SecondaryColor);
+	}
+
+	& dd:not(:first-of-type) {
+		margin-block-start: max(2 * var(--step));
+	}
+}

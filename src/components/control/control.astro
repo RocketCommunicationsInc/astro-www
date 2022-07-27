@@ -1,0 +1,30 @@
+---
+import type { ControlProps } from 'project:utils/control-types'
+export interface Props extends ControlProps {}
+
+import { createExactMatcher, createLooseMatcher } from 'project:utils/utils'
+
+const exactMatchesControlField = createExactMatcher('type', 'autocomplete', 'disabled', 'maxlength', 'minlength', 'name', 'pattern', 'placeholder', 'readonly', 'required', 'size')
+const loosematchesControlField = createLooseMatcher(/^field[a-z]/)
+
+const propsForControl = {} as Record<string, any>
+const propsForControlField = {} as Record<string, any>
+
+for (let [ name, data ] of Object.entries(Astro.props)) {
+	switch (true) {
+		case name === 'defaultvalue':
+			propsForControlField.value = data
+			continue
+		case exactMatchesControlField(name):
+		case loosematchesControlField(name):
+			propsForControlField[name] = data
+			continue
+		default:
+			propsForControl[name] = data
+	}
+}
+---
+<div {...propsForControl}>
+	<label><span><slot /></span></label>
+	<input {...propsForControlField} />
+</div>

@@ -1,0 +1,97 @@
+---
+import type { OpenGraphType } from 'project:utils/opengraph-types'
+
+export interface Props {
+	/** Page title used by embeds. */
+	title?: string
+
+	/** Page title used in tab experiences. */
+	tabtitle?: string
+
+	/** Page type used by embeds. */
+	type?: OpenGraphType
+
+	/** Page description used by embeds. */
+	description?: string
+
+	/** Page URL used by embeds. */
+	url?: string
+
+	/** Page image URL used by embeds. */
+	imageurl?: string
+
+	/** Page image description used by embeds. */
+	imagealt?: string
+
+	/** Site title used by embeds. */
+	sitetitle?: string
+
+	/** Page icon used in tab experiences. */
+	favicon?: string
+
+	/** Page icon used in app experiences. */
+	touchicon?: string
+
+	/** Page IETF language identifier. */
+	lang?: string
+}
+
+import './style/sanitize.css'
+import './style/variables.css'
+import './style/utilities.css'
+import './style/customelements.css'
+import './style/root.css'
+
+import SiteSkipTo from 'project:components/site-skipto/site-skipto.astro'
+
+const defaultProps = {
+	title: 'Astro',
+	tabtitle: 'Astro UXDS',
+
+	type: 'website',
+	description: 'The Astro Space UX Design System enables developers & designers to build rich space app experiences with established interaction patterns & best practices.',
+
+	imageurl: new URL('/images/astro-card.jpg', Astro.site!).href,
+	imagealt: 'Astro Space UX Design System 7.0 beta',
+
+	favicon: new URL('/favicon.svg', Astro.site!.href).href,
+	touchicon: new URL('/apple-touch-icon.png', Astro.site!.href).href,
+
+	url: Astro.url.href,
+
+	lang: 'en-US',
+} as Props
+
+const meta = {
+	...defaultProps,
+	...Astro.props,
+} as Props
+---
+<html class="p-root" lang={meta.lang}>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="robots" content="noindex,nofollow" />
+
+		<title>{meta.tabtitle}</title>
+		<meta name="description" content={meta.description} />
+		<meta name="twitter:card" content="summary_large_image" />
+
+		<meta property="og:title" content={meta.title} />
+		<meta property="og:image" content={meta.imageurl} />
+		<meta property="og:image:alt" content={meta.imagealt} />
+		<meta property="og:site_name" content={meta.sitetitle} />
+		<meta property="og:type" content={meta.type} />
+		<meta property="og:url" content={meta.url} />
+
+		<link rel="icon" type="image/svg+xml" href={meta.favicon} />
+		<link rel="apple-touch-icon" sizes="180x180" href={meta.touchicon} />
+		<slot name="head" />
+	</head>
+
+	<body class="p-body">
+		<SiteSkipTo />
+
+		<slot />
+	</body>
+</html>

@@ -1,0 +1,483 @@
+---
+// tags: resources
+// path: /design-tokens/component
+// date: Last Modified
+// layout: interior.template.njk
+// title: Light Theme Component Tokens
+// dark: true
+
+import * as tokens from 'project:utils/tokens'
+import { For } from '@astropub/flow'
+import DocsLayout from 'project:layouts/docs/docs-layout.astro'
+import DesignToken from 'project:components/design-token/design-token'
+
+---
+<style is:global>
+sl-tab-group {
+	--indicator-color: var(--secondary-color);
+}
+sl-tab[active]::part(base) {
+	color: var(--secondary-color);
+}
+sl-tab:hover::part(base) {
+	color: var(--secondary-color);
+}
+</style>
+
+<DocsLayout content={{ title: 'Component Tokens' }}>
+	<h1>Component Tokens</h1>
+
+	<section>
+		<h2>Dark Theme</h2>
+
+		<div data-name="dark">
+			<h2>Classification Banner</h2>
+
+			<For of={tokens.components('dark', 'classification-banner')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Link</h2>
+
+			<For of={tokens.components('dark', 'link')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Notification Banner</h2>
+
+			<For of={tokens.components('dark', 'notification-banner')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Status Symbol</h2>
+
+			<For of={tokens.components('dark', 'status-symbol')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Slider</h2>
+
+			<For of={tokens.components('dark', 'slider')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Global Status Bar</h2>
+
+			<For of={tokens.components('dark', 'gsb')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Switch</h2>
+
+			<For of={tokens.components('dark', 'switch')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Radio</h2>
+
+			<For of={tokens.components('dark', 'radio')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Checkbox</h2>
+
+			<For of={tokens.components('dark', 'checkbox')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Tag</h2>
+
+			<For of={tokens.components('dark', 'tag')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Scrollbar</h2>
+
+			<For of={tokens.components('dark', 'scrollbar')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Progress</h2>
+
+			<For of={tokens.components('dark', 'progress')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Indeterminate Progress</h2>
+
+			<For of={tokens.components('dark', 'indeterminate-progress')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Dialog</h2>
+
+			<For of={tokens.components('dark', 'dialog')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Card</h2>
+
+			<For of={tokens.components('dark', 'card')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Container</h2>
+
+			<For of={tokens.components('dark', 'container')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+		</div>
+	</section>
+
+	<section>
+		<h2>Light Theme</h2>
+		<div data-name="light">
+			<h2>Classification Banner</h2>
+
+			<For of={tokens.components('light', 'classification-banner')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+			<h2>Link</h2>
+
+			<For of={tokens.components('light', 'link')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Notification Banner</h2>
+
+			<For of={tokens.components('light', 'notification-banner')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Status Symbol</h2>
+
+			<For of={tokens.components('light', 'status-symbol')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Slider</h2>
+
+			<For of={tokens.components('light', 'slider')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Global Status Bar</h2>
+
+			<For of={tokens.components('light', 'gsb')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Switch</h2>
+
+			<For of={tokens.components('light', 'switch')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Radio</h2>
+
+			<For of={tokens.components('light', 'radio')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Checkbox</h2>
+
+			<For of={tokens.components('light', 'checkbox')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Tag</h2>
+
+			<For of={tokens.components('light', 'tag')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Scrollbar</h2>
+
+			<For of={tokens.components('light', 'scrollbar')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Progress</h2>
+
+			<For of={tokens.components('light', 'progress')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Indeterminate Progress</h2>
+
+			<For of={tokens.components('light', 'indeterminate-progress')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Dialog</h2>
+
+			<For of={tokens.components('light', 'dialog')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Card</h2>
+
+			<For of={tokens.components('light', 'card')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+
+			<hr />
+
+			<h2>Container</h2>
+
+			<For of={tokens.components('light', 'container')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type={tokens.lookupProperty(token.category, token.property)}
+				/>
+			)}</For>
+		</div>
+	</section>
+</DocsLayout>

@@ -1,0 +1,36 @@
+{
+	"private": true,
+	"name": "astro-www",
+	"version": "0.1.0",
+	"type": "module",
+	"scripts": {
+		"start": "astro dev",
+		"build": "astro build",
+		"serve": "astro preview"
+	},
+	"devDependencies": {
+		"@astrojs/markdown-remark": "0.13.0",
+		"@astrojs/node": "0.2.0",
+		"@astropub/flow": "0.2.0",
+		"astro": "1.0.0-rc.1",
+		"parse-yaml": "0.1.0",
+		"postcss-preset-env": "7.7.2",
+		"remark-directive": "2.0.1",
+		"types-object": "0.1.1"
+	},
+	"postcss": {
+		"plugins": {
+			"postcss-preset-env": {
+				"browsers": "last 2 chrome version, last 2 firefox version, last 1 safari version",
+				"stage": 3,
+				"features": {
+					"nesting-rules": true
+				}
+			}
+		}
+	},
+	"prettier": {
+		"singleQuote": true,
+		"useTabs": true
+	}
+}

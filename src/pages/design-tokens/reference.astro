@@ -1,0 +1,121 @@
+---
+import * as tokens from 'project:utils/tokens'
+import { For } from '@astropub/flow'
+import DocsLayout from 'project:layouts/docs/docs-layout.astro'
+import DesignToken from 'project:components/design-token/design-token'
+---
+
+<DocsLayout content={{ title: 'Reference Tokens' }}>
+	<h1>Reference Tokens</h1>
+
+	<h2>Colors</h2>
+
+	<For of={tokens.references('dark', 'color')}>{token => (
+		<DesignToken
+			name={token.name}
+			value={token.value}
+			alias={token.referenceToken}
+			type="background"
+		/>
+	)}</For>
+
+	<hr/>
+
+	<h2>
+		Font Size
+	</h2>
+
+	<For of={tokens.references('dark', 'fontSizes')}>{token => (
+		<DesignToken
+			name={token.name}
+			value={token.value}
+			alias={token.referenceToken}
+			description={token.description}
+			type="font-size"
+		/>
+	)}</For>
+
+	<hr/>
+
+	<h2>Font Weight</h2>
+
+	<For of={tokens.references('dark', 'fontWeight')}>{token => (
+		<DesignToken
+			name={token.name}
+			value={token.value}
+			alias={token.referenceToken}
+			description={token.description}
+			type="font-weight"
+		/>
+	)}</For>
+
+	<hr/>
+
+	<h2>Radii</h2>
+
+	<For of={tokens.references('dark', 'borderRadius')}>{token => (
+		<DesignToken
+			name={token.name}
+			value={token.value}
+			alias={token.referenceToken}
+			description={token.description}
+			type="radius"
+		/>
+	)}</For>
+
+	<hr/>
+
+	<h2>Opacity</h2>
+
+	<For of={tokens.references('dark', 'opacity')}>{token => (
+		<DesignToken
+			name={token.name}
+			value={token.value}
+			alias={token.referenceToken}
+			description={token.description}
+			type="opacity"
+		/>
+	)}</For>
+
+	<hr/>
+
+	<h2>Border Width</h2>
+
+	<For of={tokens.references('dark', 'borderWidth')}>{token => (
+		<DesignToken
+			name={token.name}
+			value={token.value}
+			alias={token.referenceToken}
+			description={token.description}
+			type="border-width"
+		/>
+	)}</For>
+
+	<hr/>
+
+	<h2>Spacing</h2>
+
+	<For of={tokens.references('dark', 'spacing')}>{token => (
+		<DesignToken
+			name={token.name}
+			value={token.value}
+			alias={token.referenceToken}
+			description={token.description}
+			type="spacing"
+		/>
+	)}</For>
+
+	<hr/>
+
+	<h2>Line Height</h2>
+
+	<For of={tokens.references('dark', 'lineHeights')}>{token => (
+		<DesignToken
+			name={token.name}
+			value={token.value}
+			alias={token.referenceToken}
+			description={token.description}
+			type="line-height"
+		/>
+	)}</For>
+</DocsLayout>

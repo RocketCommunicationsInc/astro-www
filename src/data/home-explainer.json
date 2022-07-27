@@ -1,0 +1,81 @@
+{
+	"$schema": "./schema.json",
+	"type": "objects",
+	"data": [
+		{
+			"heading": {
+				"type": "text",
+				"data": "What is Astro?"
+			},
+			"content": {
+				"type": "text",
+				"data": "Learn what Astro is and what a design systems can do for you and your applications."
+			},
+			"image": {
+				"type": "link",
+				"data": {
+					"url": "/images/astro-icon.svg#content",
+					"width": 192,
+					"height": 96
+				}
+			},
+			"action": {
+				"type": "link",
+				"data": {
+					"url": "/getting-started/",
+					"description": "Learn more"
+				}
+			}
+		},
+		{
+			"heading": {
+				"type": "text",
+				"data": "Getting started as a Designer"
+			},
+			"content": {
+				"type": "text",
+				"data": "Jumping into icons, layouts, components, and Figma files to get you started designing with Astro."
+			},
+			"image": {
+				"type": "link",
+				"data": {
+					"url": "/images/getting-started-for-designers.svg#content",
+					"width": 192,
+					"height": 96
+				}
+			},
+			"action": {
+				"type": "link",
+				"data": {
+					"url": "/getting-started/designers/",
+					"description": "Learn more"
+				}
+			}
+		},
+		{
+			"heading": {
+				"type": "text",
+				"data": "Getting started as a Developer"
+			},
+			"content": {
+				"type": "text",
+				"data": "Find out how to implement Astro design system into code using design tokens and our code base."
+			},
+			"image": {
+				"type": "link",
+				"data": {
+					"url": "/images/getting-started-for-developers.svg#content",
+					"width": 192,
+					"height": 96
+				}
+			},
+			"action": {
+				"type": "link",
+				"data": {
+					"url": "/getting-started/developers/",
+					"description": "Learn more"
+				}
+			}
+		}
+	]
+}

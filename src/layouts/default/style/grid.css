@@ -1,0 +1,27 @@
+@media (width >= 800px) {
+	.p-grid {
+		display: grid;
+		grid-template-columns: max(79 * var(--step)) 1fr;
+		grid-template-rows: 1fr min-content;
+	}
+
+	.p-grid-side {
+		grid-column: 1 / 2;
+		grid-row: 1;
+
+		/* decoration */
+		background-color: var(--SurfaceColor);
+		color: var(--PrimaryColor);
+	}
+
+	.p-grid-main {
+		grid-column: 2 / 3;
+		grid-row: 1;
+		overflow: hidden;
+	}
+
+	.p-grid-foot {
+		grid-column: 1 / 3;
+		grid-row: 2;
+	}
+}

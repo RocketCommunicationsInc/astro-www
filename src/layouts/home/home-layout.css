@@ -1,0 +1,31 @@
+:where(.p-content) {
+	display: flex;
+
+	/* layout */
+	align-items: center;
+	flex-flow: column;
+	padding-block-end: max(18 * var(--step));
+	padding-inline: max(4 * var(--step), 50% - 175 * var(--step));
+
+	/* decoration */
+	background:
+		url("/images/header-bg-gradient.svg") no-repeat 50% 0% / 100% auto,
+		url("/images/header-bg-noise.svg") no-repeat 50% 0% / 100% auto,
+		url("/images/header-bg.webp") no-repeat 50% 0% / 100% auto,
+		url("/images/footer-bg-gradient.svg") no-repeat 50% 100% / 100% auto,
+		url("/images/footer-bg-noise.svg") no-repeat 50% 100% / 100% auto,
+		url("/images/footer-bg.webp") no-repeat 50% 100% / 100% auto
+	;
+}
+
+:where(* + .p-community) {
+	margin-block-start: max(10 * var(--step));
+}
+
+:where(* + .p-articles) {
+	margin-block-start: max(10 * var(--step));
+}
+
+:where(* + .p-signup) {
+	margin-block-start: max(18 * var(--step));
+}

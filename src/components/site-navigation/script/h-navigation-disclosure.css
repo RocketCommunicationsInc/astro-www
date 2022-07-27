@@ -1,0 +1,67 @@
+/* Unset button styles */
+button {
+	appearance: none;
+	background-color: transparent;
+	border-width: 0;
+	color: inherit;
+	cursor: inherit;
+	font: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	text-align: inherit;
+}
+
+/* Unset SVG styles */
+svg {
+	fill: currentColor;
+}
+
+.control {
+	display: flex;
+
+	/* layout */
+	align-items: center;
+	inline-size: max(100%);
+	padding-block: max(4 * var(--step));
+	padding-inline: max(11 * var(--step));
+
+	/* decoration */
+	cursor: pointer;
+
+	/* animation */
+	transition: 400ms color;
+}
+
+.control:is(:hover, :focus-visible) {
+	color: var(--Orange700Color);
+}
+
+.control svg {
+	/* layout */
+	block-size: 14px;
+	inline-size: 7px;
+	margin-inline-start: max(-7px - 2 * var(--step));
+	margin-inline-end: max(2 * var(--step));
+
+	/* animation */
+	transition: transform 200ms;
+}
+
+::slotted(:is(a, span)) {
+	display: contents !important;
+}
+
+.content:not(.open) {
+	height: 0;
+	overflow: hidden;
+	transition: 400ms height;
+}
+
+.content:is(.open) {
+	height: auto;
+}
+
+.control:is(.open) svg {
+	transform: rotate3d(0, 0, 1, 90deg);
+}

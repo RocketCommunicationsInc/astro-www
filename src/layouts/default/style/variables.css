@@ -1,0 +1,36 @@
+:root {
+	--step: .25rem;
+	--rpx: .0625rem;
+}
+
+:root {
+	/* Reference Colors */
+	--Orange700Color: hsl(33 100% 50%);
+	--Red800Color: hsl(9 96% 28%);
+	--Gray800Color: hsl(220 5% 25%);
+
+	/* System Colors */
+	--InverseColor: hsl(213 36% 5%);
+	--PlaceholderColor: hsl(217 11% 68%);
+	--PrimaryColor: hsl(0 0% 100%);
+	--SecondaryColor: hsl(213 12% 85%);
+
+	--BaseColor: hsl(212 37% 10%);
+	--BaseHeaderColor: hsl(210 39% 15%);
+	--BaseHoverColor: hsl(211 45% 14%);
+	--BaseSelectedColor: hsl(208 54% 24%);
+
+	--InteractiveColor: hsl(208 100% 65%);
+	--InteractiveHoverColor: hsl(209 100% 79%);
+	--InteractiveMutedColor: hsl(209 57% 39%);
+
+	--SurfaceColor: hsl(209 39% 17%);
+	--SurfaceColorTransparent: hsl(209 39% 17% / 0%);
+	--SurfaceHeaderColor: hsl(210 39% 15%);
+	--SurfaceHoverColor: hsl(208 49% 21%);
+	--SurfaceSelectedColor: hsl(208 54% 24%);
+
+	/* System Typography */
+	--SystemType: system-ui;
+	--SystemMonoType: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+}

@@ -1,0 +1,21 @@
+---
+import type { ControlProps } from 'project:utils/control-types'
+export interface Props extends ControlProps {}
+
+import Control from "project:components/control/control.astro"
+
+const classesForControl = [ 'p-signup-form-control' ]
+
+if (typeof Astro.props.class) {
+	classesForControl.push(Astro.props?.class?.trim().split(/\s+/))
+}
+
+if (Astro.props.required) {
+	classesForControl.push('-required')
+}
+
+const classForControl = [ ...new Set(classesForControl) ].join(' ')
+
+const props = Astro.props as Attributes
+---
+<Control {...props} class={classForControl}><slot /></Control>

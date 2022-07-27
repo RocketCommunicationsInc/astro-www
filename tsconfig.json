@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"allowSyntheticDefaultImports": true,
+		"isolatedModules": true,
+		"types": ["astro/client", "types-object"],
+		"strictNullChecks": true,
+		"exactOptionalPropertyTypes": true,
+		"baseUrl": ".",
+		"paths": {
+			"project:*": ["src/*"]
+		}
+	}
+}

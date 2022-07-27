@@ -1,0 +1,146 @@
+- label: Getting Started
+  items:
+    - label: Getting Started
+      url: /getting-started/
+    - label: Designers
+      url: /getting-started/designers/
+    - label: Developers
+      url: /getting-started/developers/
+- label: Design Process
+  items:
+    - label: Research
+      url: /design-process/research/
+    - label: UI Design
+      url: /design-process/ui-design/
+    - label: Visual Design
+      url: /design-process/visual-design/
+    - label: Resources
+      url: /design-process/resources/
+- label: Design Guidelines
+  items:
+    - label: Color
+      url: /design-guidelines/color/
+    - label: Typography
+      url: /design-guidelines/typography/
+    - label: Theme
+      url: /design-guidelines/theme/
+    - label: Grid
+      url: /design-guidelines/grid/
+    - label: Glossary
+      url: /design-guidelines/glossary/
+    - label: Compliance
+      url: /design-guidelines/compliance/
+- label: Patterns
+  items:
+    - label: Navigation
+      url: /patterns/navigation/
+    - label: Status System
+      url: /patterns/status-system/
+    - label: Notifications
+      url: /patterns/notifications/
+    - label: Data Visualization
+      url: /patterns/data-visualization/
+    - label: Modeless panes
+      url: /patterns/modeless-panes/
+    - label: Sample App
+      url: /patterns/sample-app/
+    - label: Table
+      url: /patterns/table/
+    - label: Forms and Validation
+      url: /patterns/forms-and-validation/
+    - label: Sign In
+      url: /patterns/sign-in/
+- label: Components
+  items:
+    - label: Getting Started
+      url: /components/
+    - label: Accordion
+      url: /components/accordion/
+    - label: Pop up
+      url: /components/pop-up/
+    - label: Application state
+      url: /components/application-state/
+    - label: Progress
+      url: /components/progress/
+    - label: Button
+      url: /components/button/
+    - label: Push button
+      url: /components/push-button/
+    - label: Checkbox
+      url: /components/checkbox/
+    - label: Radio button
+      url: /components/radio-button/
+    - label: Classification markings
+      url: /components/classification-markings/
+    - label: Search
+      url: /components/search/
+    - label: Clock
+      url: /components/clock/
+    - label: Segmented button
+      url: /components/segmented-button/
+    - label: Select
+      url: /components/select/
+    - label: Dialog
+      url: /components/dialog/
+    - label: Sign in
+      url: /components/sign-in/
+    - label: Global Status Bar
+      url: /components/global-status-bar/
+    - label: Slider
+      url: /components/slider/
+    - label: Icons and Symbols
+      url: /components/icons-and-symbols/
+    - label: Spectrum Analyzer
+      url: /components/spectrum-analyzer/
+    - label: Status Symbol
+      url: /components/status-symbol/
+    - label: Input Field
+      url: /components/input-field/
+    - label: Switch
+      url: /components/switch/
+    - label: Link
+      url: /components/link/
+    - label: Tabs
+      url: /components/tabs/
+    - label: Log
+      url: /components/log/
+    - label: Timeline
+      url: /components/timeline/
+    - label: Notification Banner
+      url: /components/notification-banner/
+    - label: Tree
+      url: /components/tree/
+    - label: Pagination
+      url: /components/pagination/
+- label: EGS Service Design
+  items:
+  - label: Service Specific UX Design
+    url: /service-specific-ux-design/
+  - label: GRM Specific UX Design
+    url: /grm-service-ux-design/about-the-grm-designs/
+  - label: TC&C Service UX Design
+    url: /ttc-service-ux-design/about-the-ttc-designs/
+  - label: FD Service UX Design
+    url: /fd-service-ux-design/about-the-fd-designs/
+- label: Design Tokens
+  items:
+    - label: Getting Started
+      url: /design-tokens/
+    - label: Reference
+      url: /design-tokens/reference/
+    - label: System
+      url: /design-tokens/system/
+    - label: Component
+      url: /design-tokens/component/
+- label: Community
+  items:
+    - label: Propose a Change
+      url: /community/propose-a-change/
+    - label: Content Policy
+      url: /community/content-policy/
+- label: Releases
+  url: /releases/
+- label: Downloads
+  url: /downloads/
+- label: Support
+  url: /support/
