@@ -1,0 +1,20 @@
+---
+import type signup from 'project:data/home-signup.json'
+import './home-signup.css'
+
+import Control from './home-signup-control.astro'
+import Submit from './home-signup-submit.astro'
+import { For } from '@astropub/flow'
+
+const { data } = Astro.props as typeof signup
+---
+<section class="p-signup">
+	<h3 class="p-signup-heading">{data.heading.data}</h3>
+	<p class="p-signup-content">{data.summary.data}</p>
+	<form class="p-signup-form">
+		<For of={data.content.data}>{(item) => (
+			<Control type={item.type.data} required={item.required.data} placeholder={item.placeholder.data} autocomplete={item.autocomplete.data}>{item.label.data}</Control>
+		)}</For>
+		<Submit>Submit</Submit>
+	</form>
+</section>

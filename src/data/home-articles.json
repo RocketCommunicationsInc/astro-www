@@ -1,0 +1,119 @@
+{
+	"$schema": "./schema.json",
+	"type": "object",
+	"data": {
+		"heading": {
+			"type": "text",
+			"data": "Articles"
+		},
+		"content": {
+			"type": "objects",
+			"data": [
+				{
+					"heading": {
+						"type": "text",
+						"data": "Design Tokens"
+					},
+					"image": {
+						"type": "link",
+						"data": {
+							"url": "/images/article-design-tokens.webp",
+							"description": "",
+							"width": 300,
+							"height": 230
+						}
+					},
+					"content": {
+						"type": "text",
+						"data": "Design token is a hot cake topic for designers and frontend dev. We will have a clear understanding of design tokens and how to build one for your next project."
+					},
+					"action": {
+						"type": "link",
+						"data": {
+							"url": "#",
+							"description": "Start reading"
+						}
+					}
+				},
+				{
+					"heading": {
+						"type": "text",
+						"data": "Visual regression testing"
+					},
+					"image": {
+						"type": "link",
+						"data": {
+							"url": "/images/article-visual-regression-testing.webp",
+							"description": "",
+							"width": 300,
+							"height": 230
+						}
+					},
+					"content": {
+						"type": "text",
+						"data": "How to confidently chane your Design System. – Full disclosure: This article mentions a plugin that I wrote myself. How can we actually manage design systems at scale?"
+					},
+					"action": {
+						"type": "link",
+						"data": {
+							"url": "#",
+							"description": "Start reading"
+						}
+					}
+				},
+				{
+					"heading": {
+						"type": "text",
+						"data": "Design Token Thinking"
+					},
+					"image": {
+						"type": "link",
+						"data": {
+							"url": "/images/article-design-token-thinking.webp",
+							"description": "",
+							"width": 300,
+							"height": 230
+						}
+					},
+					"content": {
+						"type": "text",
+						"data": "Everybody’s talking about design tokens — how to name them, how to organize them, how to use them, but design tokens aren’t just something that you can easily retrofit..."
+					},
+					"action": {
+						"type": "link",
+						"data": {
+							"url": "#",
+							"description": "Start reading"
+						}
+					}
+				},
+				{
+					"heading": {
+						"type": "text",
+						"data": "UX Maturity"
+					},
+					"image": {
+						"type": "link",
+						"data": {
+							"url": "/images/article-ux-maturity.webp",
+							"description": "",
+							"width": 300,
+							"height": 230
+						}
+					},
+					"content": {
+						"type": "text",
+						"data": "How good is your Organization practicing UX? There are tons of companies who practive UX design. In this artivle we will shed some light on the stages..."
+					},
+					"action": {
+						"type": "link",
+						"data": {
+							"url": "#",
+							"description": "Start reading"
+						}
+					}
+				}
+			]
+		}
+	}
+}

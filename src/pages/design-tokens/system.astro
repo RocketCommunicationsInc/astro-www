@@ -1,0 +1,166 @@
+---
+import * as tokens from 'project:utils/tokens'
+import { For } from '@astropub/flow'
+import DocsLayout from 'project:layouts/docs/docs-layout.astro'
+import DesignToken from 'project:components/design-token/design-token'
+---
+<style is:global>
+sl-tab-group {
+	--indicator-color: var(--secondary-color);
+}
+sl-tab[active]::part(base) {
+	color: var(--secondary-color);
+}
+sl-tab:hover::part(base) {
+	color: var(--secondary-color);
+}
+</style>
+
+<DocsLayout content={{ title: 'System Tokens' }}>
+	<h1>System Tokens</h1>
+
+		<section data-name="dark">
+			<h2>Dark Theme</h2>
+
+			<h2>Background Colors</h2>
+
+			<For of={tokens.system('dark', 'color', 'background')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type="background"
+				></DesignToken>
+			)}</For>
+
+			<hr/>
+
+			<h2>Text Colors</h2>
+
+			<For of={tokens.system('dark', 'color', 'text')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type="text"
+				></DesignToken>
+			)}</For>
+
+			<hr/>
+
+			<h2>Border Colors</h2>
+
+			<For of={tokens.system('dark', 'color', 'border')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type="border"
+				></DesignToken>
+			)}</For>
+
+			<hr/>
+
+			<h2>Status Colors</h2>
+
+			<For of={tokens.system('dark', 'color', 'status')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type="background"
+				></DesignToken>
+			)}</For>
+
+			<hr/>
+
+			<h2>Classification Colors</h2>
+
+			<For of={tokens.system('dark', 'color', 'classification')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type="background"
+				></DesignToken>
+			)}</For>
+
+		</section>
+
+		<section data-name="light">
+			<h2>Light Theme</h2>
+			<h2>Background Colors</h2>
+
+			<For of={tokens.system('light', 'color', 'background')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type="background"
+				></DesignToken>
+			)}</For>
+
+			<hr/>
+
+			<h2>Text Colors</h2>
+
+			<For of={tokens.system('light', 'color', 'text')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type="text"
+				></DesignToken>
+			)}</For>
+
+			<hr/>
+
+			<h2>Border Colors</h2>
+
+			<For of={tokens.system('light', 'color', 'border')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type="border"
+				></DesignToken>
+			)}</For>
+
+			<hr/>
+
+			<h2>Status Colors</h2>
+
+			<For of={tokens.system('light', 'color', 'status')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type="background"
+				></DesignToken>
+			)}</For>
+
+			<hr/>
+
+			<h2>Classification Colors</h2>
+
+			<For of={tokens.system('light', 'color', 'classification')}>{token => (
+				<DesignToken
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type="background"
+				></DesignToken>
+			)}</For>
+
+		</section>
+</DocsLayout>

@@ -1,0 +1,204 @@
+{
+	"$schema": "./schema.json",
+	"type": "object",
+	"data": {
+		"heading": {
+			"type": "text",
+			"data": "Astro Community"
+		},
+		"events": {
+			"type": "object",
+			"data": {
+				"heading": {
+					"type": "text",
+					"data": "Upcoming Events"
+				},
+				"content": {
+					"type": "objects",
+					"data": [
+						{
+							"heading": {
+								"type": "text",
+								"data": "Release of Astro Wireframe 6.0"
+							},
+							"date": {
+								"type": "text",
+								"data": "05/23/2022"
+							},
+							"action": {
+								"type": "link",
+								"data": {
+									"url": "#",
+									"description": "Release notes"
+								}
+							}
+						},
+						{
+							"heading": {
+								"type": "text",
+								"data": "Astro Working Group"
+							},
+							"subheading": {
+								"type": "text",
+								"data": "www.astrouxds.com/working-group"
+							},
+							"date": {
+								"type": "text",
+								"data": "05/23/2022"
+							},
+							"time": {
+								"type": "text",
+								"data": "11:00 AM PST"
+							},
+							"action": {
+								"type": "link",
+								"data": {
+									"url": "#",
+									"description": "Add to Calendar"
+								}
+							}
+						},
+						{
+							"heading": {
+								"type": "text",
+								"data": "Astro Working Group"
+							},
+							"date": {
+								"type": "text",
+								"data": "07/25/2022"
+							},
+							"action": {
+								"type": "link",
+								"data": {
+									"url": "#",
+									"description": "Read More"
+								}
+							}
+						},
+						{
+							"heading": {
+								"type": "text",
+								"data": "Astro Launch Party"
+							},
+							"subheading": {
+								"type": "text",
+								"data": "www.astrouxds.com/launchparty/7.0"
+							},
+							"date": {
+								"type": "text",
+								"data": "07/25/2022"
+							},
+							"time": {
+								"type": "text",
+								"data": "1:00 PM PST"
+							},
+							"action": {
+								"type": "link",
+								"data": {
+									"url": "#",
+									"description": "Add to Calendar"
+								}
+							}
+						},
+						{
+							"heading": {
+								"type": "text",
+								"data": "Astro Working Group"
+							},
+							"subheading": {
+								"type": "text",
+								"data": "www.astrouxds.com/working-group"
+							},
+							"date": {
+								"type": "text",
+								"data": "08/01/2022"
+							},
+							"time": {
+								"type": "text",
+								"data": "11:00 AM PST"
+							},
+							"action": {
+								"type": "link",
+								"data": {
+									"url": "#",
+									"description": "Add to Calendar"
+								}
+							}
+						}
+					]
+				}
+			}
+		},
+		"links": {
+			"type": "object",
+			"data": {
+				"heading": {
+					"type": "text",
+					"data": "Community Links"
+				},
+				"content": {
+					"type": "objects",
+					"data": [
+						{
+							"heading": {
+								"type": "text",
+								"data": "GitHub"
+							},
+							"image": {
+								"type": "link",
+								"data": {
+									"url": "/images/github-icon.svg",
+									"description": "",
+									"width": 80,
+									"height": 80
+								}
+							},
+							"content": {
+								"type": "text",
+								"data": "They’ve shut down the main reactor. We’ll be destroyed for sure. This is madness! We’re doomed! There’ll be no escape for the Princess this time."
+							}
+						},
+						{
+							"heading": {
+								"type": "text",
+								"data": "Figma Community"
+							},
+							"image": {
+								"type": "link",
+								"data": {
+									"url": "/images/figma-icon.svg",
+									"description": "",
+									"width": 80,
+									"height": 80
+								}
+							},
+							"content": {
+								"type": "text",
+								"data": "They’ve shut down the main reactor. We’ll be destroyed for sure. This is madness! We’re doomed! There’ll be no escape for the Princess this time."
+							}
+						},
+						{
+							"heading": {
+								"type": "text",
+								"data": "Astro Slack Channel"
+							},
+							"image": {
+								"type": "link",
+								"data": {
+									"url": "/images/slack-icon.svg",
+									"description": "",
+									"width": 80,
+									"height": 80
+								}
+							},
+							"content": {
+								"type": "text",
+								"data": "They’ve shut down the main reactor. We’ll be destroyed for sure. This is madness! We’re doomed! There’ll be no escape for the Princess this time."
+							}
+						}
+					]
+				}
+			}
+		}
+	}
+}

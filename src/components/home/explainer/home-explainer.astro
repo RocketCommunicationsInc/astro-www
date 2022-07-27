@@ -1,0 +1,19 @@
+---
+import type explainer from 'project:data/home-explainer.json'
+import { For } from '@astropub/flow'
+import Image from 'project:components/image/image'
+import './home-explainer.css'
+
+const { data } = Astro.props as typeof explainer
+---
+
+<section class="p-explainer">
+	<For of={data}>{(item) => (
+		<article>
+			<Image {...item.image.data} />
+			<h3>{item.heading.data}</h3>
+			<p>{item.content.data}</p>
+			<a href={item.action.data.url}>{item.action.data.description}</a>
+		</article>
+	)}</For>
+</section>

@@ -1,0 +1,14 @@
+@keyframes ElementDisplay {
+	from, to {
+		visibility: hidden;
+	}
+}
+
+:where(:not(:defined)) {
+	animation: 3s ElementDisplay;
+	display: contents;
+}
+
+:where(:defined) {
+	animation-name: none;
+}

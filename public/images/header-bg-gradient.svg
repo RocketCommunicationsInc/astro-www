@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="1600 1248" width="1600" height="1248">
+	<defs>
+		<filter id='noiseFilter'>
+			<feTurbulence 
+			type='fractalNoise' 
+			baseFrequency='1.75' 
+			numOctaves='3' 
+			stitchTiles='stitch'/>
+		</filter>
+		<linearGradient id="opacity" x2="0%" y2="100%">
+			<stop offset="40%" stop-color="hsl(212 37% 10% / 0%)" />
+			<stop offset="55%" stop-color="hsl(212 37% 10% / 30%)" />
+			<stop offset="95%" stop-color="hsl(212 37% 10% / 100%)" />
+		</linearGradient>
+	</defs>
+	<rect width="1600" height="1248" fill="url(#opacity)" />
+</svg>

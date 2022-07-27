@@ -1,0 +1,10 @@
+---
+import type { Props } from './image.d'
+
+const { url, src, description, alt, ...props } = Astro.props as Props & {
+	alt: string
+	description: string
+	src: string
+}
+---
+<svg role="none" aria-label={description || alt} {...props}><use href={url || src} /></svg>

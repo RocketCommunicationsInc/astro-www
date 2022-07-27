@@ -1,0 +1,20 @@
+---
+import { anyprimitive } from "project:utils/types";
+
+export interface Props {
+	url?: string
+
+	[name: string]: anyprimitive
+}
+
+import "./site-skipto.css"
+
+const {
+	url,
+	...attributes
+} = {
+	url: '#content',
+	...Astro.props
+}
+---
+<a class="p-skip" {...attributes} href={url}><slot>Skip to main content</slot></a>

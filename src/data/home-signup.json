@@ -1,0 +1,175 @@
+{
+	"$schema": "./schema.json",
+	"type": "object",
+	"data": {
+		"heading": {
+			"type": "text",
+			"data": "Sign Up"
+		},
+		"summary": {
+			"type": "text",
+			"data": "Sign up to learn more about what Astro has to offer and to stay up to date on events, releases, and news."
+		},
+		"content": {
+			"type": "objects",
+			"data": [
+				{
+					"type": {
+						"type": "text",
+						"data": "text"
+					},
+					"name": {
+						"type": "text",
+						"data": "given-name"
+					},
+					"label": {
+						"type": "text",
+						"data": "First Name"
+					},
+					"autocomplete": {
+						"type": "text",
+						"data": "given-name"
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "Enter first name"
+					},
+					"required": {
+						"type": "switch",
+						"data": true
+					}
+				},
+				{
+					"type": {
+						"type": "text",
+						"data": "text"
+					},
+					"name": {
+						"type": "text",
+						"data": "family-name"
+					},
+					"label": {
+						"type": "text",
+						"data": "Last Name"
+					},
+					"autocomplete": {
+						"type": "text",
+						"data": "family-name"
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "Enter last name"
+					},
+					"required": {
+						"type": "switch",
+						"data": true
+					}
+				},
+				{
+					"type": {
+						"type": "text",
+						"data": "email"
+					},
+					"name": {
+						"type": "text",
+						"data": "email"
+					},
+					"label": {
+						"type": "text",
+						"data": "Email"
+					},
+					"autocomplete": {
+						"type": "text",
+						"data": "email"
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "Enter email"
+					},
+					"required": {
+						"type": "switch",
+						"data": true
+					}
+				},
+				{
+					"type": {
+						"type": "text",
+						"data": "tel"
+					},
+					"name": {
+						"type": "text",
+						"data": "phone-number"
+					},
+					"label": {
+						"type": "text",
+						"data": "Phone Number"
+					},
+					"autocomplete": {
+						"type": "text",
+						"data": "tel"
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "Enter phone number"
+					},
+					"required": {
+						"type": "switch",
+						"data": true
+					}
+				},
+				{
+					"type": {
+						"type": "text",
+						"data": "text"
+					},
+					"name": {
+						"type": "text",
+						"data": "organization"
+					},
+					"label": {
+						"type": "text",
+						"data": "Company Name"
+					},
+					"autocomplete": {
+						"type": "text",
+						"data": "organization"
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "Enter company name"
+					},
+					"required": {
+						"type": "switch",
+						"data": false
+					}
+				},
+				{
+					"type": {
+						"type": "text",
+						"data": "text"
+					},
+					"name": {
+						"type": "text",
+						"data": "organization-title"
+					},
+					"label": {
+						"type": "text",
+						"data": "Title / Position"
+					},
+					"autocomplete": {
+						"type": "text",
+						"data": "organization-title"
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "Enter title / position"
+					},
+					"required": {
+						"type": "switch",
+						"data": false
+					}
+				}
+			]
+		}
+	}
+}

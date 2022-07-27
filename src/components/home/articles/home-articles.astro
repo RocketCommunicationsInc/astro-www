@@ -1,0 +1,22 @@
+---
+import type articles from 'project:data/home-articles.json'
+import './home-articles.css'
+import { For } from '@astropub/flow'
+
+const { data } = Astro.props as typeof articles
+---
+
+<section class="p-articles">
+	<h3>{data.heading.data}</h3>
+	<div class="content">
+		<For of={data.content.data}>{(item) => (
+			<article>
+				<img src={item.image.data.url} alt={item.image.data.description} width={item.image.data.width} height={item.image.data.height} aria-hidden="true" />
+				<h4>{item.heading.data}</h4>
+				<p>{item.content.data}</p>
+				<a href={item.action.data.url}>{item.action.data.description}</a>
+			</article>
+		)}</For>
+	</div>
+</section>
+<script>import './client/home-articles'</script>

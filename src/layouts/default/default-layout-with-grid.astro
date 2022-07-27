@@ -1,0 +1,23 @@
+---
+import type { Props as DefaultProps } from './default-layout.astro'
+
+export interface Props extends DefaultProps {}
+
+import DefaultLayout from './default-layout.astro'
+import './style/grid.css'
+---
+<DefaultLayout {...Astro.props}>
+	<slot slot="head" name="head" />
+
+	<div class="p-grid">
+		<div class="p-grid-side">
+			<slot name="side" />
+		</div>
+		<div class="p-grid-main">
+			<slot />
+		</div>
+		<div class="p-grid-foot">
+			<slot name="foot" />
+		</div>
+	</div>
+</DefaultLayout>

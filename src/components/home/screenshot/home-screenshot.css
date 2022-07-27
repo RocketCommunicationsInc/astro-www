@@ -1,0 +1,9 @@
+:where(.p-screenshot) {
+	/* layout */
+	aspect-ratio: 242 / 136;
+	block-size: auto;
+	inline-size: 100%;
+
+	/* decoration */
+	box-shadow: hsl(0 0% 0% / 25%) 0 4px 5px 3px;
+}

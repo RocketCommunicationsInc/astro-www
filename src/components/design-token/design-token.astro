@@ -1,0 +1,24 @@
+---
+import './design-token.css'
+
+const {
+	name,
+	value,
+	alias,
+	description,
+	type
+} = Astro.props
+
+const className = `p-design-token --type-${type}`
+const stylesCSS = `--value: ${value}`
+---
+
+<div class={className} style={stylesCSS}>
+	<div class="--preview"></div>
+	<dl class="--content">
+		<dt class="--name">{name}</dt>
+		<dd class="--value">{value}</dd>
+		<dd class="--alias">{alias}</dd>
+		<dd class="--description">{description}</dd>
+	</dl>
+</div>

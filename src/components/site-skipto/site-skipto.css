@@ -1,0 +1,30 @@
+:where(.p-skip) {
+	display: flex;
+	position: fixed;
+
+	/* layout */
+	align-items: center;
+	block-size: calc(20 * var(--step));
+	inline-size: 100vw;
+	inset: 0;
+	justify-content: center;
+	z-index: 1;
+
+	/* typography */
+	font-size: calc(18 * var(--rpx));
+	font-weight: 700;
+	line-height: calc(20 / 18);
+	text-decoration: underline;
+	text-transform: uppercase;
+
+	/* decoration */
+	background-color: var(--SurfaceColor);
+	box-shadow: currentColor 0 -1px 0 0 inset;
+	color: var(--PrimaryColor);
+}
+
+:where(.p-skip:not(:focus-visible)) {
+	/* decoration */
+	clip-path: inset(50%);
+	pointer-events: none;
+}

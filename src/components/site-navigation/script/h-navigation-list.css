@@ -1,0 +1,58 @@
+/* Unset button styles */
+button {
+	appearance: none;
+	background-color: transparent;
+	border-width: 0;
+	color: inherit;
+	cursor: inherit;
+	font: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	text-align: inherit;
+}
+
+/* Unset SVG styles */
+svg {
+	fill: currentColor;
+}
+
+.control {
+	/* layout */
+	grid-area: disclosure;
+
+	/* decoration */
+	color: var(--PrimaryColor);
+	cursor: pointer;
+}
+
+.icon {
+	display: block;
+}
+
+.control.open .icon.-enter,
+.control:not(.open) .icon.-leave {
+	display: none;
+}
+
+.content {
+	/* layout */
+	grid-area: navigation;
+	margin-inline: max(-8 * var(--step));
+}
+
+@media (width < 800px) {
+	.content:not(.open) {
+		display: none;
+	}
+}
+
+@media (width >= 800px) {
+	.control {
+		display: none;
+	}
+
+	.content {
+		display: contents;
+	}
+}

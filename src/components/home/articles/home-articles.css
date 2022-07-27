@@ -1,0 +1,202 @@
+:where(.p-articles) {
+	--articles-size: max(1 * var(--article-size) + 0 * var(--article-gap));
+	--article-size: max(75 * var(--step));
+	--article-gap: max(5 * var(--step));
+
+	display: grid;
+	grid-template-rows: auto auto;
+
+	/* layout */
+	flex-flow: column;
+	max-inline-size: 100%;
+
+	@media (width >= 760px) {
+		--articles-size: max(2 * var(--article-size) + 1 * var(--article-gap));
+
+		align-self: start;
+	}
+
+	@media (width >= 800px) {
+		--articles-size: max(1 * var(--article-size) + 0 * var(--article-gap));
+	}
+
+	@media (width >= 1200px) {
+		--articles-size: max(2 * var(--article-size) + 1 * var(--article-gap));
+	}
+
+	@media (width >= 1440px) {
+		--articles-size: max(3 * var(--article-size) + 2 * var(--article-gap));
+	}
+
+	@media (width >= 1760px) {
+		--articles-size: max(4 * var(--article-size) + 3 * var(--article-gap));
+	}
+
+	/* Articles: Heading */
+	& > h3 {
+		/* typography */
+		font-size: max(34 * var(--rpx));
+		font-weight: 700;
+		line-height: max(40 / 34);
+	}
+
+	/* Articles: Content */
+	& > .content {
+		display: flex;
+
+		/* parent layout */
+		grid-column: 1 / 2;
+		grid-row: 2;
+
+		/* layout */
+		gap: var(--article-gap);
+		margin-block-start: max(4 * var(--step));
+
+		/* decoration */
+		-webkit-overflow-scrolling: touch;
+		overscroll-behavior-x: contain;
+		overflow-x: auto;
+		overflow-x: overlay;
+		scroll-snap-type: x mandatory;
+
+		/* reference */
+		--mask-size: max(100% + 38 * var(--step));
+		--lead-mask: linear-gradient(90deg, hsl(0 0% 0% / 0%), hsl(0 0% 0% / 100%) max(38 * var(--step)));
+		--tail-mask: linear-gradient(90deg, hsl(0 0% 0% / 100%) max(100% - 38 * var(--step)), hsl(0 0% 0% / 0%));
+		--lead-posi: right;
+		--tail-posi: left;
+	}
+
+	& > .icon {
+		/* parent layout */
+		align-self: center;
+		cursor: pointer;
+		grid-row: 2;
+
+		/* layout */
+		inline-size: 20px;
+		block-size: 450px;
+		padding-inline: 5px;
+		transition: 400ms opacity;
+
+		/* decoration */
+		color: var(--InteractiveColor);
+
+		&:not(:hover) {
+			opacity: 0.75;
+		}
+
+		&.icon-carrot-prev {
+			grid-column: 1;
+			transform: scale(-1, 1);
+		}
+
+		&.icon-carrot-next {
+			grid-column: 2;
+		}
+	}
+
+	&:not(.obscured-lead) .icon-carrot-prev {
+		block-size: 0;
+
+		/* decoration */
+		color: var(--InteractiveHoverColor);
+		opacity: 0;
+	}
+
+	&:not(.obscured-tail) .icon-carrot-next {
+		block-size: 0;
+		opacity: 0;
+	}
+
+	&:is(.obscured-lead, .obscured-tail) .content {
+		mask-composite: intersect;
+		mask-image: var(--lead-mask), var(--tail-mask);
+		mask-size: var(--mask-size) 100%, var(--mask-size) 100%;
+		mask-position: var(--lead-posi), var(--tail-posi);
+	}
+
+	&:is(.obscured-lead, .obscured-tail).animate .content {
+		transition: mask-position 900ms;
+	}
+
+	&.obscured-lead .content {
+		--lead-posi: left;
+	}
+
+	&.obscured-tail .content {
+		--tail-posi: right;
+	}
+
+	& article {
+		display: flex;
+
+		/* layout */
+		flex-flow: column;
+		flex-shrink: 0;
+		inline-size: var(--article-size);
+		padding-block: max(5 * var(--step));
+		padding-inline: max(5 * var(--step));
+		scroll-snap-align: start;
+
+		/* decoration */
+		background-color: var(--BaseHeaderColor);
+		transition: 600ms opacity;
+
+		&.obscured {
+			opacity: 0.5;
+		}
+
+		& img {
+			/* layout */
+			aspect-ratio: 300 / 230;
+			block-size: auto;
+			inline-size: 100%;
+
+			/* decoration */
+			object-fit: contain;
+		}
+
+		& h4 {
+			/* layout */
+			margin-block-start: max(5 * var(--step));
+
+			/* typography */
+			font-size: max(20 * var(--rpx));
+			font-weight: 500;
+			line-height: max(24 / 20);
+		}
+
+		& p {
+			/* layout */
+			margin-block-start: max(4 * var(--step));
+
+			/* typography */
+			font-size: max(14 * var(--rpx));
+			line-height: max(20 / 14);
+		}
+
+		& a {
+			/* layout */
+			align-self: center;
+			margin-block-start: max(4 * var(--step));
+			padding-inline: max(4 * var(--step));
+			padding-block: max(2 * var(--step));
+
+			/* typography */
+			font-size: max(16 * var(--rpx));
+			line-height: max(20 / 16);
+
+			/* decoration */
+			background-color: var(--InteractiveColor);
+			border-radius: max(3 * var(--rpx));
+			box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
+			color: var(--InverseColor);
+			cursor: pointer;
+
+			&:is(:hover, :focus-visible) {
+				background-color: var(--InteractiveHoverColor);
+			}
+		}
+	}
+}

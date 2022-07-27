@@ -1,0 +1,10 @@
+{
+	"$schema": "./schema.json",
+	"type": "link",
+	"data": {
+		"url": "/images/sample-astro-app-1x.webp, /images/sample-astro-app-2x.webp 2x",
+		"description": "Sample Astro Application",
+		"width": 968,
+		"height": 544
+	}
+}

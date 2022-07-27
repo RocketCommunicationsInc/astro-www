@@ -1,0 +1,30 @@
+---
+import type community from 'project:data/home-community.json'
+import { For } from '@astropub/flow'
+
+const { data } = Astro.props as typeof community['data']['events']
+---
+<section class="p-community-events">
+	<h4>{data.heading.data}</h4>
+	<div class="p-community-events-content">
+		<For of={data.content.data}>{(item) => (
+			<article class="p-community-event">
+				<small class="p-community-event-date">
+					<span>{item.date.data}</span>
+					{item.time && (
+						<span>{item.time.data}</span>
+					)}
+				</small>
+				<hgroup class="p-community-event-heading">
+					<h5>{item.heading.data}</h5>
+					{item.subheading && (
+						<small class="p-community-event-subheading">{item.subheading.data}</small>
+					)}
+				</hgroup>
+				<small class="p-community-event-actions">
+					<a href={item.action.data.url}>{item.action.data.description}</a>
+				</small>
+			</article>
+		)}</For>
+	</div>
+</section>

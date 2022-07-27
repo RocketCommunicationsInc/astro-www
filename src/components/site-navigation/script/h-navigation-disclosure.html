@@ -1,0 +1,7 @@
+<button class="control" id="control" type="button" aria-controls="content" aria-haspopup="true">
+	<svg class="enter-icon" width="7" height="14" aria-hidden="true"><use href="/images/caret-icon.svg#content"></use></svg>
+	<slot name="control"></slot>
+</button>
+<span class="content" id="content" aria-labelledby="control" hidden>
+	<slot name="content"></slot>
+</span>

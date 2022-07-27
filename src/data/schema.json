@@ -1,0 +1,268 @@
+{
+	"$schema": "https://json-schema.org/draft-07/schema",
+	"$defs": {
+		"switch": {
+			"type": "object",
+			"properties": {
+				"type": {
+					"const": "switch"
+				},
+				"data": {
+					"description": "Used to reference a boolean on/off state.",
+					"type": "boolean"
+				}
+			},
+			"required": [ "type", "data" ]
+		},
+		"text": {
+			"type": "object",
+			"properties": {
+				"type": {
+					"const": "text"
+				},
+				"data": {
+					"description": "Used to reference unformatted text.",
+					"type": "string"
+				}
+			},
+			"required": [ "type", "data" ]
+		},
+		"link": {
+			"type": "object",
+			"properties": {
+				"type": {
+					"const": "link"
+				},
+				"data": {
+					"description": "Used to reference a link or asset.",
+					"type": "object",
+					"properties": {
+						"url": {
+							"type": "string"
+						},
+						"description": {
+							"type": "string"
+						}
+					},
+					"additionalProperties": true,
+					"required": [ "url" ]
+				}
+			},
+			"required": [ "type", "data" ]
+		},
+		"object": {
+			"type": "object",
+			"properties": {
+				"type": {
+					"const": "object"
+				},
+				"data": {
+					"description": "Used to reference named data properties.",
+					"type": "object",
+					"patternProperties": {
+						"^.*$": {
+							"oneOf": [
+								{
+									"$ref": "#/$defs/text"
+								},
+								{
+									"$ref": "#/$defs/link"
+								},
+								{
+									"$ref": "#/$defs/object"
+								},
+								{
+									"$ref": "#/$defs/objects"
+								},
+								{
+									"$ref": "#/$defs/array"
+								},
+								{
+									"$ref": "#/$defs/switch"
+								}
+							]
+						}
+					}
+				}
+			},
+			"additionalProperties": false,
+			"required": [ "type", "data" ]
+		},
+		"objects": {
+			"type": "object",
+			"properties": {
+				"type": {
+					"const": "objects"
+				},
+				"data": {
+					"description": "Used to reference a set of named data properties.",
+					"type": "array",
+					"items": {
+						"type": "object",
+						"patternProperties": {
+							"^.*$": {
+								"oneOf": [
+									{
+										"$ref": "#/$defs/text"
+									},
+									{
+										"$ref": "#/$defs/link"
+									},
+									{
+										"$ref": "#/$defs/object"
+									},
+									{
+										"$ref": "#/$defs/objects"
+									},
+									{
+										"$ref": "#/$defs/array"
+									},
+									{
+										"$ref": "#/$defs/switch"
+									}
+								]
+							}
+						}
+					}
+				}
+			},
+			"additionalProperties": false,
+			"required": [ "type", "data" ]
+		},
+		"array": {
+			"type": "object",
+			"properties": {
+				"type": {
+					"const": "array"
+				},
+				"data": {
+					"description": "Used to reference a set of data properties.",
+					"type": "array",
+					"items": {
+						"oneOf": [
+							{
+								"$ref": "#/$defs/text"
+							},
+							{
+								"$ref": "#/$defs/link"
+							},
+							{
+								"$ref": "#/$defs/object"
+							}
+						]
+					}
+				}
+			},
+			"additionalProperties": false,
+			"required": [ "type", "data" ]
+		}
+	},
+	"type": "object",
+	"allOf": [
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "text"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"$schema": true,
+					"type": {
+						"$ref": "#/$defs/text/properties/type"
+					},
+					"data": {
+						"$ref": "#/$defs/text/properties/data"
+					}
+				},
+				"additionalProperties": false
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "link"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"$schema": true,
+					"type": {
+						"$ref": "#/$defs/link/properties/type"
+					},
+					"data": {
+						"$ref": "#/$defs/link/properties/data"
+					}
+				},
+				"additionalProperties": false
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "object"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"$schema": true,
+					"type": {
+						"$ref": "#/$defs/object/properties/type"
+					},
+					"data": {
+						"$ref": "#/$defs/object/properties/data"
+					}
+				},
+				"additionalProperties": false
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "objects"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"$schema": true,
+					"type": {
+						"$ref": "#/$defs/objects/properties/type"
+					},
+					"data": {
+						"$ref": "#/$defs/objects/properties/data"
+					}
+				},
+				"additionalProperties": false
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "array"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"$schema": true,
+					"type": {
+						"$ref": "#/$defs/array/properties/type"
+					},
+					"data": {
+						"$ref": "#/$defs/array/properties/data"
+					}
+				},
+				"additionalProperties": false
+			}
+		}
+	]
+}

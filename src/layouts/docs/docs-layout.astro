@@ -1,0 +1,33 @@
+---
+import Layout from '../default/default-layout-with-grid.astro'
+import SiteNavigation from '../../components/site-navigation/site-navigation.astro'
+import SiteFooter from '../../components/site-footer/site-footer.astro'
+
+import './docs-layout.css'
+
+const {
+	git,
+	height,
+	storybook,
+	title,
+} = Object(Astro.props.content)
+
+const demoCSS = height ? `.storybook-demo{${[
+	`block-size:max(var(--block-size) + 6 * var(--step))`,
+	`--block-size:${height}`,
+	`--storybook-id:${storybook}`,
+	`--github-id:${git}`,
+].join(';')}}` + `.storybook-demo iframe{block-size:var(--block-size)}` : ''
+---
+
+<Layout {title} tabtitle={title}>
+	<SiteNavigation slot="side" />
+	{demoCSS && <style set:html={demoCSS} />}
+
+	<main class="p-content" id="content">
+		<slot />
+	</main>
+
+	<SiteFooter slot="foot" />
+</Layout>
+<script>import './docs-layout.client.js'</script>

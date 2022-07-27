@@ -1,0 +1,16 @@
+---
+import type community from 'project:data/home-community.json'
+import './home-community.css'
+
+import HomeCommunityEvents from './home-community-events.astro'
+import HomeCommunityLinks from './home-community-links.astro'
+
+const { data } = Astro.props as typeof community
+---
+<section class="p-community">
+	<h3 class="p-community-heading">{data.heading.data}</h3>
+	<div class="p-community-content">
+		<HomeCommunityEvents data={data.events.data} />
+		<HomeCommunityLinks data={data.links.data} />
+	</div>
+</section>
