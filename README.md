@@ -31,7 +31,7 @@ npm start
 
 That’s it!
 
-Navigate to http://localhost:8889/. You should see the website, which is now running in your local environment.
+Navigate to http://localhost:3000/. You should see the website, which is now running in your local environment.
 
 The `npm start` command launches the website in development mode. Any saved changes are reflected instantly in the local website.
 
@@ -91,9 +91,9 @@ All commands are run from the root of the project, from a terminal:
 | Command         | Action                                          |
 |:----------------|:------------------------------------------------|
 | `npm install`   | Installs dependencies                           |
-| `npm run start` | Starts local dev server at `localhost:8889`     |
+| `npm run start` | Starts local dev server at `localhost:3000`     |
 | `npm run build` | Build the production site to `./dist/`          |
-| `npm run serve` | Serves the production build at `localhost:8889` |
+| `npm run serve` | Serves the production build at `localhost:3000` |
 
 
 

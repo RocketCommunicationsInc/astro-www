@@ -10,9 +10,10 @@
 	},
 	"devDependencies": {
 		"@astrojs/markdown-remark": "0.13.0",
-		"@astrojs/node": "0.2.0",
-		"@astropub/flow": "0.2.0",
-		"astro": "1.0.0-rc.1",
+		"@astrojs/node": "0.2.1",
+		"@astropub/doc": "0.1.2",
+		"@astropub/flow": "0.2.1",
+		"astro": "1.0.0-rc.2",
 		"parse-yaml": "0.1.0",
 		"postcss-preset-env": "7.7.2",
 		"remark-directive": "2.0.1",
