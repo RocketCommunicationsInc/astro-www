@@ -1,14 +1,11 @@
 ---
-import type { Props as DefaultProps } from './default-layout.astro'
-
-export interface Props extends DefaultProps {}
+export type { Props } from '@astropub/doc'
 
 import DefaultLayout from './default-layout.astro'
 import './style/grid.css'
 ---
 <DefaultLayout {...Astro.props}>
 	<slot slot="head" name="head" />
-
 	<div class="p-grid">
 		<div class="p-grid-side">
 			<slot name="side" />

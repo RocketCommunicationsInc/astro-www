@@ -10,7 +10,7 @@ export default defineConfig({
 	},
 	server: {
 		host: true,
-		port: 8889,
+		port: 3000,
 	},
 	vite: {
 		plugins: vitePlugins(),

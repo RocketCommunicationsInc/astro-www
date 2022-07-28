@@ -29,7 +29,7 @@
 		box-shadow: var(--Gray800Color) 0 -1px 0 0 inset;
 	}
 
-	& :where(:is(h2, h3)) {
+	& :where(h2, h3) {
 		/* layout */
 		margin-block-start: max(8 * var(--step));
 
@@ -44,7 +44,7 @@
 		line-height: max(24 / 18);
 	}
 
-	& :where(figure, p, pre, ul, table) {
+	& :where(figure, ol, p, pre, ul, table) {
 		margin-block-start: max(4 * var(--step));
 	}
 
@@ -61,7 +61,7 @@
 	}
 
 	& :where(li + li) {
-		margin-block-start: max(3 * var(--step));
+		margin-block-start: max(1 * var(--step));
 	}
 
 	& :where(a:not(.h)) {

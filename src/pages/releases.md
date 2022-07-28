@@ -1,8 +1,6 @@
 ---
 title: Releases
 layout: project:layouts/docs/docs-layout.astro
-setup: |
-  import meta from '../utils/meta.ts'
 ---
 
 # Releases
