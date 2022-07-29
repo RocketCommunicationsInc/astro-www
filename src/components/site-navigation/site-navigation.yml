@@ -54,6 +54,12 @@
   items:
     - label: Getting Started
       url: /components/
+    - label: Component Sandbox
+      url: /components/component-sandbox/
+    - label: Container
+      url: /components/container/
+    - label: Card
+      url: /components/card/
     - label: Accordion
       url: /components/accordion/
     - label: Pop up
@@ -96,6 +102,8 @@
       url: /components/status-symbol/
     - label: Input Field
       url: /components/input-field/
+    - label: Textarea
+      url: /components/textarea/
     - label: Switch
       url: /components/switch/
     - label: Link
@@ -114,14 +122,14 @@
       url: /components/pagination/
 - label: EGS Service Design
   items:
-  - label: Service Specific UX Design
-    url: /service-specific-ux-design/
-  - label: GRM Specific UX Design
-    url: /grm-service-ux-design/about-the-grm-designs/
-  - label: TC&C Service UX Design
-    url: /ttc-service-ux-design/about-the-ttc-designs/
-  - label: FD Service UX Design
-    url: /fd-service-ux-design/about-the-fd-designs/
+    - label: Service Specific UX Design
+      url: /service-specific-ux-design/
+    - label: GRM Specific UX Design
+      url: /grm-service-ux-design/about-the-grm-designs/
+    - label: TC&C Service UX Design
+      url: /ttc-service-ux-design/about-the-ttc-designs/
+    - label: FD Service UX Design
+      url: /fd-service-ux-design/about-the-fd-designs/
 - label: Design Tokens
   items:
     - label: Getting Started
