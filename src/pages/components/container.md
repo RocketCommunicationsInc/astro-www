@@ -29,6 +29,6 @@ The **Child Container** consists of a header, left slot, right slot, and body se
 
 ![Do: use Containers to build lists, tables, slide outs, and the like with proper component usage and placement.](/img/components/container-do-1.png 'Do: use Containers to build lists, tables, slide outs, and the like with proper component usage and placement.')
 
-![Don't: use Containers to add or stack components in an improper or confusing manner.](/img/components/container-dont-1.png "Don't: use Containers to add or stack components in an improper or confusing manner.")
+![Don’t: use Containers to add or stack components in an improper or confusing manner.](/img/components/container-dont-1.png 'Don’t: use Containers to add or stack components in an improper or confusing manner.')
 
 :::
