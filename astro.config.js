@@ -1,5 +1,6 @@
 import remarkPlugins from './.vscode/remark-plugins.js'
 import vitePlugins from './.vscode/vite-plugins.js'
+import sitemap from '@astrojs/sitemap'
 import { defineConfig } from 'astro/config'
 
 export default defineConfig({
@@ -14,5 +15,8 @@ export default defineConfig({
 	},
 	vite: {
 		plugins: vitePlugins(),
-	}
+	},
+	integrations: [
+		sitemap(),
+	],
 })
