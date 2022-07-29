@@ -3,7 +3,7 @@ import vitePlugins from './.vscode/vite-plugins.js'
 import { defineConfig } from 'astro/config'
 
 export default defineConfig({
-	site: 'https://astrouxds.jsxtools.com/',
+	site: 'https://astro-astro-www.netlify.app/',
 	trailingSlash: 'always',
 	markdown: {
 		remarkPlugins: remarkPlugins()
