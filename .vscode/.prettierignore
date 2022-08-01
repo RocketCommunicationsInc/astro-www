@@ -1,0 +1,4 @@
+# Ignore all JS/TS files:
+*.astro
+*.js
+*.ts
