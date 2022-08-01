@@ -5,7 +5,9 @@ import SiteSearch from 'project:components/site-search/site-search.astro'
 // @ts-ignore
 import items from './site-navigation.yml'
 
-const currentPath = Astro.url.pathname
+/** @todo: Remove the `replace` after the pathname (due to an Astro Build Bug). */
+
+const currentPath = Astro.url.pathname.replace(/\/?$/, '/')
 
 for (let item of items) {
 	item.current = 'url' in item && item.url === currentPath
