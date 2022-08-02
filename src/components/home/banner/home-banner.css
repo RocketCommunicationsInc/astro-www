@@ -4,8 +4,8 @@
 	/* layout */
 	align-items: center;
 	flex-flow: column;
-	inline-size: min(100% - 4 * var(--step), 154 * var(--step));
-	padding-block: max(7 * var(--step));
+	inline-size: min(100% - 4--step, 154--step);
+	padding-block: 7--step;
 
 	& .x-heading-group {
 		display: flex;
@@ -18,25 +18,25 @@
 	& .x-heading-image {
 		/* layout */
 		block-size: auto;
-		inline-size: min(100%, 72.5 * var(--step));
+		inline-size: min(100%, 72.5--step);
 	}
 
 	& .x-subheading {
 		/* layout */
-		margin-block-start: max(4 * var(--step));
+		margin-block-start: 4--step;
 
 		/* typography */
-		font-size: max(20 * var(--rpx));
+		font-size: 20--rpx;
 		font-weight: 700;
 		line-height: max(22 / 20);
 	}
 
 	& .x-content {
 		/* layout */
-		margin-block-start: max(6.5 * var(--step));
+		margin-block-start: 6.5--step;
 
 		/* typography */
-		font-size: max(18 * var(--rpx));
+		font-size: 18--rpx;
 		line-height: max(24 / 18);
 
 		/* decoration */

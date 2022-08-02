@@ -2,11 +2,11 @@
 	display: flex;
 
 	/* layout */
-	padding: max(5 * var(--step));
+	padding: 5--step;
 
 	& + & {
 		/* layout */
-		margin-block-start: max(4 * var(--step));
+		margin-block-start: 4--step;
 	}
 
 	& .--preview {
@@ -14,10 +14,10 @@
 
 		/* layout */
 		align-items: center;
-		block-size: max(16 * var(--step));
-		inline-size: max(16 * var(--step));
+		block-size: 16--step;
+		inline-size: 16--step;
 		justify-content: center;
-		margin-inline-end: max(5 * var(--step));
+		margin-inline-end: 5--step;
 
 		/* decoration */
 		background-color: #1b2d3e;
@@ -27,7 +27,7 @@
 	&:where(.--type-text) .--preview {
 		&::before {
 			content: "Aa";
-			font-size: max(20 * var(--rpx));
+			font-size: 20--rpx;
 			line-height: max(28 / 20);
 		}
 	}
@@ -37,12 +37,12 @@
 	}
 
 	&:where(.--type-radius) .--preview {
-		box-shadow: var(--PrimaryColor) 0 0 0 max(1 * var(--rpx)) inset;
+		box-shadow: var(--PrimaryColor) 0 0 0 1--rpx inset;
 		border-radius: var(--value);
 	}
 
 	&:where(.--type-shadow) .--preview {
-		box-shadow: var(--PrimaryColor) 0 0 0 max(1 * var(--rpx)) inset, var(--value);
+		box-shadow: var(--PrimaryColor) 0 0 0 1--rpx inset, var(--value);
 	}
 
 	& .--name {
@@ -60,6 +60,6 @@
 	}
 
 	& dd:not(:first-of-type) {
-		margin-block-start: max(2 * var(--step));
+		margin-block-start: 2--step;
 	}
 }

@@ -1,7 +1,7 @@
 @media (width >= 800px) {
 	.p-grid {
 		display: grid;
-		grid-template-columns: max(79 * var(--step)) 1fr;
+		grid-template-columns: 79--step 1fr;
 		grid-template-rows: 1fr min-content;
 	}
 

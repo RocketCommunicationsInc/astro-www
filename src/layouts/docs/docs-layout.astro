@@ -13,7 +13,7 @@ const {
 } = Object(Astro.props.content)
 
 const demoCSS = height ? `.storybook-demo{${[
-	`block-size:max(var(--block-size) + 6 * var(--step))`,
+	`block-size:max(var(--block-size) + 6--step)`,
 	`--block-size:${height}`,
 	`--storybook-id:${storybook}`,
 	`--github-id:${git}`,

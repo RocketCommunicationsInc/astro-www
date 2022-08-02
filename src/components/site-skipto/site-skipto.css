@@ -4,14 +4,14 @@
 
 	/* layout */
 	align-items: center;
-	block-size: calc(20 * var(--step));
+	block-size: 20--step;
 	inline-size: 100vw;
 	inset: 0;
 	justify-content: center;
 	z-index: 1;
 
 	/* typography */
-	font-size: calc(18 * var(--rpx));
+	font-size: 18--rpx;
 	font-weight: 700;
 	line-height: calc(20 / 18);
 	text-decoration: underline;
