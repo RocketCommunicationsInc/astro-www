@@ -38,7 +38,7 @@ svg {
 .content {
 	/* layout */
 	grid-area: navigation;
-	margin-inline: max(-8 * var(--step));
+	margin-inline: -8--step;
 }
 
 @media (width < 800px) {

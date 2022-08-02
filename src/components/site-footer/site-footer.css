@@ -1,8 +1,8 @@
 :where(.p-footer) {
-	padding-block: max(7.5 * var(--step));
-	padding-inline: max(11 * var(--step));
+	padding-block: 7.5--step;
+	padding-inline: 11--step;
 
-	font-size: max(14 * var(--rpx));
+	font-size: 14--rpx;
 	line-height: max(20 / 14);
 
 	background-color: var(--color-background-base-default);
@@ -14,7 +14,7 @@
 		display: flex;
 
 		flex-flow: column;
-		gap: max(8 * var(--step));
+		gap: 8--step;
 	}
 }
 
@@ -22,14 +22,14 @@
 	:where(.p-footer) {
 		display: grid;
 
-		grid-template-columns: max(68 * var(--step)) 1fr min(25%, 79 * var(--step));
-		gap: max(4 * var(--step));
+		grid-template-columns: 68--step 1fr min(25%, 79--step);
+		gap: 4--step;
 	}
 }
 
 @media (width >= 1520px) {
 	:where(.p-footer) {
-		grid-template-columns: max(68 * var(--step)) 1fr max(30%, 80 * var(--step));
+		grid-template-columns: 68--step 1fr max(30%, 80--step);
 	}
 }
 
@@ -41,11 +41,11 @@
 	/* layout */
 	align-items: center;
 	align-self: center;
-	gap: max(5 * var(--step));
+	gap: 5--step;
 	grid-template-columns: min-content 1fr;
 
 	/* typography */
-	font-size: max(14 * var(--rpx));
+	font-size: 14--rpx;
 	line-height: max(16 / 14);
 }
 
@@ -53,8 +53,8 @@
 	display: block;
 
 	/* layout */
-	block-size: max(10 * var(--step));
-	inline-size: max(9 * var(--step));
+	block-size: 10--step;
+	inline-size: 9--step;
 }
 
 /* footer navigation */
@@ -70,8 +70,8 @@
 		grid-template-columns: 1fr 1fr;
 		grid-auto-flow: row;
 
-		gap: max(2 * var(--step));
-		inline-size: min(100%, 234 * var(--step));
+		gap: 2--step;
+		inline-size: min(100%, 234--step);
 	}
 }
 
@@ -81,9 +81,9 @@
 
 		/* layout */
 		grid-template-columns: 1fr 1fr;
-		row-gap: max(2 * var(--step));
-		column-gap: max(4 * var(--step));
-		inline-size: min(100%, 234 * var(--step));
+		row-gap: 2--step;
+		column-gap: 4--step;
+		inline-size: min(100%, 234--step);
 	}
 }
 
@@ -99,7 +99,7 @@
 :where(.p-footer-social) {
 	display: flex;
 	flex-flow: column;
-	gap: max(7 * var(--step));
+	gap: 7--step;
 	text-align: right;
 }
 
@@ -113,8 +113,8 @@
 	/* layout */
 	flex-flow: row wrap;
 	justify-content: flex-end;
-	column-gap: max(8 * var(--step));
-	row-gap: max(6 * var(--step));
+	column-gap: 8--step;
+	row-gap: 6--step;
 }
 
 @media (width < 400px) {
@@ -127,13 +127,13 @@
 
 @media (width < 800px) {
 	:where(.p-footer-navigation, .p-footer-social) {
-		margin-block-start: max(5 * var(--step));
+		margin-block-start: 5--step;
 	}
 }
 
 @media (width < 400px) {
 	:where(.p-footer-navigation, .p-footer-social) {
-		margin-block-start: max(8 * var(--step));
+		margin-block-start: 8--step;
 	}
 }
 

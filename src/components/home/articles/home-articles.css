@@ -1,7 +1,7 @@
 :where(.p-articles) {
 	--articles-size: max(1 * var(--article-size) + 0 * var(--article-gap));
-	--article-size: max(75 * var(--step));
-	--article-gap: max(5 * var(--step));
+	--article-size: 75--step;
+	--article-gap: 5--step;
 
 	display: grid;
 	grid-template-rows: auto auto;
@@ -35,7 +35,7 @@
 	/* Articles: Heading */
 	& > h3 {
 		/* typography */
-		font-size: max(34 * var(--rpx));
+		font-size: 34--rpx;
 		font-weight: 700;
 		line-height: max(40 / 34);
 	}
@@ -50,7 +50,7 @@
 
 		/* layout */
 		gap: var(--article-gap);
-		margin-block-start: max(4 * var(--step));
+		margin-block-start: 4--step;
 
 		/* decoration */
 		-webkit-overflow-scrolling: touch;
@@ -60,9 +60,9 @@
 		scroll-snap-type: x mandatory;
 
 		/* reference */
-		--mask-size: max(100% + 38 * var(--step));
-		--lead-mask: linear-gradient(90deg, hsl(0 0% 0% / 0%), hsl(0 0% 0% / 100%) max(38 * var(--step)));
-		--tail-mask: linear-gradient(90deg, hsl(0 0% 0% / 100%) max(100% - 38 * var(--step)), hsl(0 0% 0% / 0%));
+		--mask-size: max(100% + 38--step);
+		--lead-mask: linear-gradient(90deg, hsl(0 0% 0% / 0%), hsl(0 0% 0% / 100%) 38--step);
+		--tail-mask: linear-gradient(90deg, hsl(0 0% 0% / 100%) max(100% - 38--step), hsl(0 0% 0% / 0%));
 		--lead-posi: right;
 		--tail-posi: left;
 	}
@@ -135,8 +135,8 @@
 		flex-flow: column;
 		flex-shrink: 0;
 		inline-size: var(--article-size);
-		padding-block: max(5 * var(--step));
-		padding-inline: max(5 * var(--step));
+		padding-block: 5--step;
+		padding-inline: 5--step;
 		scroll-snap-align: start;
 
 		/* decoration */
@@ -159,37 +159,37 @@
 
 		& h4 {
 			/* layout */
-			margin-block-start: max(5 * var(--step));
+			margin-block-start: 5--step;
 
 			/* typography */
-			font-size: max(20 * var(--rpx));
+			font-size: 20--rpx;
 			font-weight: 500;
 			line-height: max(24 / 20);
 		}
 
 		& p {
 			/* layout */
-			margin-block-start: max(4 * var(--step));
+			margin-block-start: 4--step;
 
 			/* typography */
-			font-size: max(14 * var(--rpx));
+			font-size: 14--rpx;
 			line-height: max(20 / 14);
 		}
 
 		& a {
 			/* layout */
 			align-self: center;
-			margin-block-start: max(4 * var(--step));
-			padding-inline: max(4 * var(--step));
-			padding-block: max(2 * var(--step));
+			margin-block-start: 4--step;
+			padding-inline: 4--step;
+			padding-block: 2--step;
 
 			/* typography */
-			font-size: max(16 * var(--rpx));
+			font-size: 16--rpx;
 			line-height: max(20 / 16);
 
 			/* decoration */
 			background-color: var(--InteractiveColor);
-			border-radius: max(3 * var(--rpx));
+			border-radius: 3--rpx;
 			box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
 			color: var(--InverseColor);
 			cursor: pointer;
