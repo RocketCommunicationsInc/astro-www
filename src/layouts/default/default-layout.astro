@@ -1,13 +1,14 @@
 ---
+export type { Props } from '@astropub/doc'
+
 import { Document, Props } from '@astropub/doc'
+import SiteSkipTo from 'project:components/site-skipto/site-skipto.astro'
 
 import './style/sanitize.css'
 import './style/variables.css'
 import './style/utilities.css'
 import './style/customelements.css'
 import './style/root.css'
-
-import SiteSkipTo from 'project:components/site-skipto/site-skipto.astro'
 
 const props = {
 	title: 'Astro',
@@ -19,7 +20,7 @@ const props = {
 	imageurl: '/images/astro-card.jpg',
 	imagealt: 'Astro Space UX Design System 7.0 beta',
 
-	favicon: '/favicon.svg',
+	icon: '/favicon.svg',
 	touchicon: '/apple-touch-icon.png',
 
 	url: Astro.url.href,

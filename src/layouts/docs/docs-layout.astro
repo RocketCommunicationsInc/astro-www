@@ -1,30 +1,32 @@
 ---
-import Layout from '../default/default-layout-with-grid.astro'
-import SiteNavigation from '../../components/site-navigation/site-navigation.astro'
-import ContributionFooter from '../../components/contribution-footer/contribution-footer.astro'
-import SiteFooter from '../../components/site-footer/site-footer.astro'
+import Layout from 'project:layouts/default/default-layout-with-grid.astro'
+import SiteNavigation from 'project:components/site-navigation/site-navigation.astro'
+import ContributionFooter from 'project:components/contribution-footer/contribution-footer.astro'
+import SiteFooter from 'project:components/site-footer/site-footer.astro'
 
 import './docs-layout.css'
 
 const {
-	git,
-	height,
-	storybook,
+	git: GitHubId,
+	height: StorybookPreviewHeight,
+	storybook: StorybookId,
 	title,
 } = Object(Astro.props.content)
-
-const demoCSS = height ? `.storybook-demo{${[
-	`block-size:max(var(--block-size) + 6--step)`,
-	`--block-size:${height}`,
-	`--storybook-id:${storybook}`,
-	`--github-id:${git}`,
-].join(';')}}` + `.storybook-demo iframe{block-size:var(--block-size)}` : ''
 ---
-
+<script>import './docs-layout.client.js'</script>
 <Layout {title} tabtitle={title}>
 	<SiteNavigation slot="side" />
-	{demoCSS && <style set:html={demoCSS} />}
+	<style is:global define:vars={{ GitHubId, StorybookId, StorybookPreviewHeight }}>
+	.storybook-demo {
+		--BlockSize: max(1--StorybookPreviewHeight + 6--step);
 
+		block-size: max(1--BlockSize + 6--step);
+
+		& iframe {
+			block-size: var(--BlockSize);
+		}
+	}
+	</style>
 	<main class="p-content" id="content">
 		<slot />
 		<ContributionFooter />
@@ -32,4 +34,3 @@ const demoCSS = height ? `.storybook-demo{${[
 
 	<SiteFooter slot="foot" />
 </Layout>
-<script>import './docs-layout.client.js'</script>
