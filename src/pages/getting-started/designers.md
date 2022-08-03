@@ -12,6 +12,7 @@ Before reading any further, we recommend you take a look at a live [Astro Sample
 ## Design Guidance
 
 [Color](/design-guidelines/color/)
+</br>
 [Typography](/design-guidelines/typography/)
 [Theme](/design-guidelines/theme/)
 [Grid](/design-guidelines/grid/)
