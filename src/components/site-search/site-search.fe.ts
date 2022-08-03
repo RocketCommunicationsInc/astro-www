@@ -35,7 +35,7 @@ requestAnimationFrame(() => {
 
 		let search = utils.createSearch({
 			appId: 'EQEH1X5N4X',
-			indexName: 'astrouxds',
+			indexName: 'astrouxds-next',
 			apiKey: 'a402f3cc6d8965606af2d7235ba75700',
 		})
 
