@@ -56,70 +56,70 @@
       url: /components/
     - label: Component Sandbox
       url: /components/component-sandbox/
-    - label: Container
-      url: /components/container/
-    - label: Card
-      url: /components/card/
     - label: Accordion
       url: /components/accordion/
-    - label: Pop up
-      url: /components/pop-up/
-    - label: Application state
+    - label: Application State
       url: /components/application-state/
-    - label: Progress
-      url: /components/progress/
     - label: Button
       url: /components/button/
-    - label: Push button
-      url: /components/push-button/
+    - label: Card
+      url: /components/card/
     - label: Checkbox
       url: /components/checkbox/
-    - label: Radio button
-      url: /components/radio-button/
-    - label: Classification markings
+    - label: Classification Markings
       url: /components/classification-markings/
-    - label: Search
-      url: /components/search/
     - label: Clock
       url: /components/clock/
+    - label: Container
+      url: /components/container/
+    - label: Dialog
+      url: /components/dialog/
+    - label: Global Status Bar
+      url: /components/global-status-bar/
+    - label: Icons and Symbols
+      url: /components/icons-and-symbols/
+    - label: Input Field
+      url: /components/input-field/
+    - label: Link
+      url: /components/link/
+    - label: Log
+      url: /components/log/
+    - label: Notification Banner
+      url: /components/notification-banner/
+    - label: Pagination
+      url: /components/pagination/
+    - label: Pop Up
+      url: /components/pop-up/
+    - label: Progress
+      url: /components/progress/
+    - label: Push Button
+      url: /components/push-button/
+    - label: Radio button
+      url: /components/radio-button/
+    - label: Search
+      url: /components/search/
     - label: Segmented button
       url: /components/segmented-button/
     - label: Select
       url: /components/select/
-    - label: Dialog
-      url: /components/dialog/
     - label: Sign in
       url: /components/sign-in/
-    - label: Global Status Bar
-      url: /components/global-status-bar/
     - label: Slider
       url: /components/slider/
-    - label: Icons and Symbols
-      url: /components/icons-and-symbols/
     - label: Spectrum Analyzer
       url: /components/spectrum-analyzer/
     - label: Status Symbol
       url: /components/status-symbol/
-    - label: Input Field
-      url: /components/input-field/
-    - label: Textarea
-      url: /components/textarea/
     - label: Switch
       url: /components/switch/
-    - label: Link
-      url: /components/link/
     - label: Tabs
       url: /components/tabs/
-    - label: Log
-      url: /components/log/
+    - label: Textarea
+      url: /components/textarea/
     - label: Timeline
       url: /components/timeline/
-    - label: Notification Banner
-      url: /components/notification-banner/
     - label: Tree
       url: /components/tree/
-    - label: Pagination
-      url: /components/pagination/
 - label: EGS Service Design
   items:
     - label: Service Specific UX Design
