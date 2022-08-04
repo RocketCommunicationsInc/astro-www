@@ -1,0 +1,13 @@
+---
+import "./contribution-footer.css"
+---
+
+<footer id="contribution-footer">
+  <h3>Help improve this page</h3>
+  <p>You can help improve this page, with updated information, guidance or fixes for typos and errors.</p>
+  <ul>
+    <!-- TODO - Resolve dynamic linking to edit on github repo -->
+    <li><a href="{{ meta.repo if meta.repo else 'https://github.com/RocketCommunicationsInc/astro' }}/edit/{{ meta.branch if meta.branch else 'main' }}/packages/astro-uxds/_content{{ page.filePathStem }}.md">Propose a change or fix to this page</a></li>
+    <li><a href="/community/propose-a-change/">How to propose a change</a></li>
+  </ul>
+</footer>

@@ -1,6 +1,7 @@
 ---
 import Layout from '../default/default-layout-with-grid.astro'
 import SiteNavigation from '../../components/site-navigation/site-navigation.astro'
+import ContributionFooter from '../../components/contribution-footer/contribution-footer.astro'
 import SiteFooter from '../../components/site-footer/site-footer.astro'
 
 import './docs-layout.css'
@@ -26,6 +27,7 @@ const demoCSS = height ? `.storybook-demo{${[
 
 	<main class="p-content" id="content">
 		<slot />
+		<ContributionFooter />
 	</main>
 
 	<SiteFooter slot="foot" />
