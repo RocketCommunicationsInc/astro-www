@@ -2,7 +2,7 @@
 	/* layout */
 	min-block-size: 100%;
 	padding-block: 22--step;
-	padding-inline: calc(8--step, 50% - 88--step);
+	padding-inline: max(8--step, 50% - 88--step);
 
 	/* typography */
 	font-size: 16--rpx;
@@ -13,7 +13,7 @@
 
 	@media (width >= 1680px) {
 		/* layout */
-		padding-inline: calc(8--step, 30% - 88--step) calc(8--step, 70% - 88--step);
+		padding-inline: max(8--step, 30% - 88--step) max(8--step, 70% - 88--step);
 	}
 
 	& :where(h1) {
