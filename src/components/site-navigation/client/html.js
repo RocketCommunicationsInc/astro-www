@@ -1,18 +1,8 @@
-let nativeFetch = globalThis.fetch
-
-export let setAttributes = (node, attributes) => {
-	for (let name in attributes) {
-		node.setAttribute(name, attributes[name])
-	}
-}
-
 export let createFragment = (
 	range => range.selectNodeContents(
 		document.createElement('template')
 	) || range.createContextualFragment.bind(range)
 )(new Range)
-
-export let fetchFragment = (url) => nativeFetch(url).then(response => response.text()).then(createFragment)
 
 export class Element extends HTMLElement {
 	constructor() {

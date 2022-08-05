@@ -1,30 +1,14 @@
 ---
-import './site-navigation.css'
+import { For, When } from '@astropub/flow'
 import SiteSearch from 'project:components/site-search/site-search.astro'
+import * as navigation from './server/createCurrentPage'
+import './site-navigation.css'
 
-// @ts-ignore
-import items from './site-navigation.yml'
-
-/** @todo: Remove the `replace` after the pathname (due to an Astro Build Bug). */
-
-const currentPath = Astro.url.pathname.replace(/\/?$/, '/')
-
-for (let item of items) {
-	item.current = 'url' in item && item.url === currentPath
-
-	if (item.items) for (let subitem of item.items) {
-		subitem.current = subitem.url === currentPath
-
-		if (subitem.current) {
-			subitem.current = true
-			item.current = true
-		}
-	}
-}
+const current = navigation.intialize(Astro.url.pathname.replace(/\/?$/, '/'))
 ---
 <script>
-import "./script/h-navigation-disclosure.js";
-import "./script/h-navigation-list.js";
+import './client/h-navigation-disclosure.js'
+import './client/h-navigation-list.js'
 </script>
 <nav class="p-navigation" aria-label="site map">
 	<a class="p-navigation-heading" href="/">
@@ -35,26 +19,30 @@ import "./script/h-navigation-list.js";
 	<h-navigation-list>
 		<SiteSearch />
 		<ul class="p-navigation-list">
-			{items.map(item => (
-				<li class={item.current ? 'current' : null}>
-					{item.url ? (
+			<For of={navigation.items}>{item => (
+				<li class={current.has(item) ? 'current' : null}>
+					<When {item.url}>
 						<a href={item.url}>{item.label}</a>
-					) : (
-						<h-navigation-disclosure>
-							<span>{item.label}</span>
-							<ul>
-								{item.items.map(subitem => subitem.label === 'separator' ? (
-									<hr />
-								) : (
-									<li class={subitem.current ? 'current' : null}>
-										<a href={subitem.url} aria-current={subitem.current}>{subitem.label}</a>
-									</li>
-								))}
-							</ul>
-						</h-navigation-disclosure>
-					)}
+
+						<Fragment slot="else">
+							<h-navigation-disclosure>
+								<span>{item.label}</span>
+								<ul>
+									<For of={item.items!}>{subitem => (
+										<When {subitem.label === 'separator'}>
+											<hr />
+
+											<li slot="else" class={current.has(subitem) ? 'current' : null}>
+												<a href={subitem.url} aria-current={current.has(item)}>{subitem.label}</a>
+											</li>
+										</When>
+									)}</For>
+								</ul>
+							</h-navigation-disclosure>
+						</Fragment>
+					</When>
 				</li>
-			))}
+			)}</For>
 		</ul>
 	</h-navigation-list>
 </nav>
