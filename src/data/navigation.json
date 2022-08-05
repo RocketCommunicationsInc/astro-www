@@ -1,0 +1,322 @@
+[
+	{
+		"label": "Getting Started",
+		"items": [
+			{
+				"label": "Getting Started",
+				"url": "/getting-started/"
+			},
+			{
+				"label": "Designers",
+				"url": "/getting-started/designers/"
+			},
+			{
+				"label": "Developers",
+				"url": "/getting-started/developers/"
+			}
+		]
+	},
+	{
+		"label": "Design Process",
+		"items": [
+			{
+				"label": "Research",
+				"url": "/design-process/research/"
+			},
+			{
+				"label": "UI Design",
+				"url": "/design-process/ui-design/"
+			},
+			{
+				"label": "Visual Design",
+				"url": "/design-process/visual-design/"
+			},
+			{
+				"label": "Resources",
+				"url": "/design-process/resources/"
+			}
+		]
+	},
+	{
+		"label": "Design Guidelines",
+		"items": [
+			{
+				"label": "Color",
+				"url": "/design-guidelines/color/"
+			},
+			{
+				"label": "Typography",
+				"url": "/design-guidelines/typography/"
+			},
+			{
+				"label": "Theme",
+				"url": "/design-guidelines/theme/"
+			},
+			{
+				"label": "Grid",
+				"url": "/design-guidelines/grid/"
+			},
+			{
+				"label": "Glossary",
+				"url": "/design-guidelines/glossary/"
+			},
+			{
+				"label": "Compliance",
+				"url": "/design-guidelines/compliance/"
+			}
+		]
+	},
+	{
+		"label": "Patterns",
+		"items": [
+			{
+				"label": "Navigation",
+				"url": "/patterns/navigation/"
+			},
+			{
+				"label": "Status System",
+				"url": "/patterns/status-system/"
+			},
+			{
+				"label": "Notifications",
+				"url": "/patterns/notifications/"
+			},
+			{
+				"label": "Data Visualization",
+				"url": "/patterns/data-visualization/"
+			},
+			{
+				"label": "Modeless panes",
+				"url": "/patterns/modeless-panes/"
+			},
+			{
+				"label": "Sample App",
+				"url": "/patterns/sample-app/"
+			},
+			{
+				"label": "Table",
+				"url": "/patterns/table/"
+			},
+			{
+				"label": "Forms and Validation",
+				"url": "/patterns/forms-and-validation/"
+			},
+			{
+				"label": "Sign In",
+				"url": "/patterns/sign-in/"
+			}
+		]
+	},
+	{
+		"label": "Components",
+		"items": [
+			{
+				"label": "Getting Started",
+				"url": "/components/"
+			},
+			{
+				"label": "Component Sandbox",
+				"url": "/components/component-sandbox/"
+			},
+			{
+				"label": "Application State",
+				"url": "/components/application-state/"
+			},
+			{
+				"label": "separator",
+				"url": "/separator"
+			},
+			{
+				"label": "Accordion",
+				"url": "/components/accordion/"
+			},
+			{
+				"label": "Button",
+				"url": "/components/button/"
+			},
+			{
+				"label": "Card",
+				"url": "/components/card/"
+			},
+			{
+				"label": "Checkbox",
+				"url": "/components/checkbox/"
+			},
+			{
+				"label": "Classification Markings",
+				"url": "/components/classification-markings/"
+			},
+			{
+				"label": "Clock",
+				"url": "/components/clock/"
+			},
+			{
+				"label": "Container",
+				"url": "/components/container/"
+			},
+			{
+				"label": "Dialog",
+				"url": "/components/dialog/"
+			},
+			{
+				"label": "Global Status Bar",
+				"url": "/components/global-status-bar/"
+			},
+			{
+				"label": "Icons and Symbols",
+				"url": "/components/icons-and-symbols/"
+			},
+			{
+				"label": "Input Field",
+				"url": "/components/input-field/"
+			},
+			{
+				"label": "Link",
+				"url": "/components/link/"
+			},
+			{
+				"label": "Log",
+				"url": "/components/log/"
+			},
+			{
+				"label": "Notification Banner",
+				"url": "/components/notification-banner/"
+			},
+			{
+				"label": "Pagination",
+				"url": "/components/pagination/"
+			},
+			{
+				"label": "Pop Up",
+				"url": "/components/pop-up/"
+			},
+			{
+				"label": "Progress",
+				"url": "/components/progress/"
+			},
+			{
+				"label": "Push Button",
+				"url": "/components/push-button/"
+			},
+			{
+				"label": "Radio button",
+				"url": "/components/radio-button/"
+			},
+			{
+				"label": "Search",
+				"url": "/components/search/"
+			},
+			{
+				"label": "Segmented button",
+				"url": "/components/segmented-button/"
+			},
+			{
+				"label": "Select",
+				"url": "/components/select/"
+			},
+			{
+				"label": "Sign in",
+				"url": "/components/sign-in/"
+			},
+			{
+				"label": "Slider",
+				"url": "/components/slider/"
+			},
+			{
+				"label": "Spectrum Analyzer",
+				"url": "/components/spectrum-analyzer/"
+			},
+			{
+				"label": "Status Symbol",
+				"url": "/components/status-symbol/"
+			},
+			{
+				"label": "Switch",
+				"url": "/components/switch/"
+			},
+			{
+				"label": "Tabs",
+				"url": "/components/tabs/"
+			},
+			{
+				"label": "Textarea",
+				"url": "/components/textarea/"
+			},
+			{
+				"label": "Timeline",
+				"url": "/components/timeline/"
+			},
+			{
+				"label": "Tree",
+				"url": "/components/tree/"
+			}
+		]
+	},
+	{
+		"label": "EGS Service Design",
+		"items": [
+			{
+				"label": "Service Specific UX Design",
+				"url": "/service-specific-ux-design/"
+			},
+			{
+				"label": "GRM Specific UX Design",
+				"url": "/grm-service-ux-design/about-the-grm-designs/"
+			},
+			{
+				"label": "TC&C Service UX Design",
+				"url": "/ttc-service-ux-design/about-the-ttc-designs/"
+			},
+			{
+				"label": "FD Service UX Design",
+				"url": "/fd-service-ux-design/about-the-fd-designs/"
+			}
+		]
+	},
+	{
+		"label": "Design Tokens",
+		"items": [
+			{
+				"label": "Getting Started",
+				"url": "/design-tokens/"
+			},
+			{
+				"label": "Reference",
+				"url": "/design-tokens/reference/"
+			},
+			{
+				"label": "System",
+				"url": "/design-tokens/system/"
+			},
+			{
+				"label": "Component",
+				"url": "/design-tokens/component/"
+			}
+		]
+	},
+	{
+		"label": "Community",
+		"items": [
+			{
+				"label": "Propose a Change",
+				"url": "/community/propose-a-change/"
+			},
+			{
+				"label": "Content Policy",
+				"url": "/community/content-policy/"
+			}
+		]
+	},
+	{
+		"label": "Releases",
+		"url": "/releases/"
+	},
+	{
+		"label": "Downloads",
+		"url": "/downloads/"
+	},
+	{
+		"label": "Support",
+		"url": "/support/"
+	}
+]
