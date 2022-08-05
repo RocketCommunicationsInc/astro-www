@@ -14,6 +14,7 @@ for (let item of items) {
 
 	if (item.items) for (let subitem of item.items) {
 		subitem.current = subitem.url === currentPath
+
 		if (subitem.current) {
 			subitem.current = true
 			item.current = true
@@ -42,7 +43,9 @@ import "./script/h-navigation-list.js";
 						<h-navigation-disclosure>
 							<span>{item.label}</span>
 							<ul>
-								{item.items.map(subitem => (
+								{item.items.map(subitem => subitem.label === 'separator' ? (
+									<hr />
+								) : (
 									<li class={subitem.current ? 'current' : null}>
 										<a href={subitem.url} aria-current={subitem.current}>{subitem.label}</a>
 									</li>

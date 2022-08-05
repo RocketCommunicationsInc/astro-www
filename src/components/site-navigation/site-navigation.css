@@ -130,6 +130,13 @@ h-navigation-list {
 	color: var(--SecondaryColor);
 }
 
+:where(.p-navigation li hr) {
+	box-shadow: #9992 1px 1px 0 0;
+	height: 1px;
+	margin-block: calc(1 * var(--step));
+	margin-inline: calc(11 * var(--step));
+}
+
 :where(.p-navigation .current) {
 	color: var(--Orange700Color);
 }

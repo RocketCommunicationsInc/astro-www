@@ -56,10 +56,12 @@
       url: /components/
     - label: Component Sandbox
       url: /components/component-sandbox/
-    - label: Accordion
-      url: /components/accordion/
     - label: Application State
       url: /components/application-state/
+    - label: separator
+      url: /separator
+    - label: Accordion
+      url: /components/accordion/
     - label: Button
       url: /components/button/
     - label: Card
