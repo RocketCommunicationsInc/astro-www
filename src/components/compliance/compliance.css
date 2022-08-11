@@ -1,0 +1,43 @@
+section.p-compliance {
+	/* reference */
+	--BrightBlue600Color: hsl(209 61% 52%);
+	--Pink600Color: hsl(290 100% 30%);
+	--Teal600Color: hsl(181 100% 32%);
+
+	& dl {
+		display: flex;
+
+		/* layout */
+		align-items: flex-start;
+		gap: 4--step;
+	}
+
+	& .tier {
+		/* layout */
+		padding: .125rem .75rem;
+
+		/* typography */
+		font-weight: 700;
+		font-size: 3--step;
+		line-height: calc(16 / 12);
+		text-align: center;
+		white-space: nowrap;
+
+		/* decoration */
+		background-color: var(--color);
+		border-radius: 3--rpx;
+		color: var(--PrimaryColor);
+
+		&.t1 {
+			--color: var(--Teal600Color);
+		}
+
+		&.t2 {
+			--color: var(--BrightBlue600Color);
+		}
+
+		&.t3 {
+			--color: var(--Pink600Color);
+		}
+	}
+}

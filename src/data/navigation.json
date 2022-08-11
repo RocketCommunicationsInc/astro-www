@@ -308,6 +308,10 @@
 		]
 	},
 	{
+		"label": "Compliance",
+		"url": "/compliance/"
+	},
+	{
 		"label": "Releases",
 		"url": "/releases/"
 	},

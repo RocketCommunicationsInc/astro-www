@@ -1,0 +1,52 @@
+---
+import { For, When } from '@astropub/flow'
+
+import './compliance.css'
+
+export interface Props {
+	title: string,
+	compliance: typeof import('project:data/compliance.json')
+}
+
+const { isArray } = Array
+const toNumeral = (content: any, ruleset: any, rule: any) => [ content.numeral, ruleset.numeral, rule.numeral].join('.')
+const toTier = (rule: any) => new String(`Tier ${rule.tier}`)
+const toTierClass = (rule: any) => `tier 	t${rule.tier}`
+const toStatus = (rule: any) => rule.status !== 'current' ? new String(`<dd class="rule-status">${rule.status}</dd>`) : null
+
+const props = Astro.props as Props
+---
+<hgroup>
+	<h1>{props.title}</h1>
+	<p>{props.compliance.version}</p>
+</hgroup>
+<For of={props.compliance.contents}>{content => (
+	<section class="p-compliance">
+		<h2>{content.name}</h2>
+		<When {isArray(content.rules)}>
+			<For of={content.rules!}>{rule => (
+				<p>{rule.rule}</p>
+			)}</For>
+		</When>
+		<When {isArray(content.rulesets)}>
+			<For of={content.rulesets!}>{ruleset => (
+				<section class="ruleset">
+					<header>
+						<h3>{ruleset.name}</h3>
+						<a href={ruleset.link}>View {ruleset.name} Page</a>
+					</header>
+					<When {isArray(ruleset.rules)}>
+						<For of={ruleset.rules!}>{rule => (
+							<dl class="rule">
+								<dd class="numeral">{toNumeral(content, ruleset, rule)}</dd>
+								<dd class={toTierClass(rule)}>{toTier(rule)}</dd>
+								<dt class="rule">{rule.rule}</dt>
+								{toStatus(rule)}
+							</dl>
+						)}</For>
+					</When>
+				</section>
+			)}</For>
+		</When>
+	</section>
+)}</For>
