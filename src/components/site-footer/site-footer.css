@@ -91,7 +91,7 @@
 	:where(.p-footer-navigation ul) {
 		/* layout */
 		grid-auto-flow: column;
-		grid-template-rows: 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
 		grid-template-columns: 1fr 1fr 1fr;
 	}
 }
@@ -148,3 +148,4 @@
 :where(.p-footer-social-navigation svg) {
 	block-size: 36px;
 }
+
