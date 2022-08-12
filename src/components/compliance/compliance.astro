@@ -10,9 +10,7 @@ export interface Props {
 
 const { isArray } = Array
 const toNumeral = (content: any, ruleset: any, rule: any) => [ content.numeral, ruleset.numeral, rule.numeral].join('.')
-const toTier = (rule: any) => new String(`Tier ${rule.tier}`)
-const toTierClass = (rule: any) => `tier 	t${rule.tier}`
-const toStatus = (rule: any) => rule.status !== 'current' ? new String(`<dd class="rule-status">${rule.status}</dd>`) : null
+const toTierClass = (rule: any) => `tier t${rule.tier}`
 
 const props = Astro.props as Props
 ---
@@ -39,9 +37,11 @@ const props = Astro.props as Props
 						<For of={ruleset.rules!}>{rule => (
 							<dl class="rule">
 								<dd class="numeral">{toNumeral(content, ruleset, rule)}</dd>
-								<dd class={toTierClass(rule)}>{toTier(rule)}</dd>
+								<dd class={toTierClass(rule)}>Tier {rule.tier}</dd>
 								<dt class="rule">{rule.rule}</dt>
-								{toStatus(rule)}
+								<When {rule.status !== 'current'}>
+									<dd class="rule-status">{rule.status}</dd>
+								</When>
 							</dl>
 						)}</For>
 					</When>
