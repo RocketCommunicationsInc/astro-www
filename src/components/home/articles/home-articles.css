@@ -1,7 +1,7 @@
 :where(.p-articles) {
 	--articles-size: max(1 * var(--article-size) + 0 * var(--article-gap));
 	--article-size: 75--step;
-	--article-gap: 5--step;
+	--article-gap: 15--step;
 
 	display: grid;
 	grid-template-rows: auto auto;
@@ -9,6 +9,7 @@
 	/* layout */
 	flex-flow: column;
 	max-inline-size: 100%;
+	
 
 	@media (width >= 760px) {
 		--articles-size: max(2 * var(--article-size) + 1 * var(--article-gap));
@@ -138,6 +139,8 @@
 		padding-block: 5--step;
 		padding-inline: 5--step;
 		scroll-snap-align: start;
+		padding: 0;
+	
 
 		/* decoration */
 		background-color: var(--BaseHeaderColor);
@@ -165,6 +168,8 @@
 			font-size: 20--rpx;
 			font-weight: 500;
 			line-height: max(24 / 20);
+			padding-left: 22px;
+			padding-right: 26.5px;
 		}
 
 		& p {
@@ -173,7 +178,9 @@
 
 			/* typography */
 			font-size: 14--rpx;
-			line-height: max(20 / 14);
+			line-height: 16.41px;
+			padding-left: 22px;
+			padding-right: 22px;
 		}
 
 		& a {
@@ -193,6 +200,9 @@
 			box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
 			color: var(--InverseColor);
 			cursor: pointer;
+			margin-bottom: 16.5px;
+			margin-left: 76.5px;
+			margin-right: 83.5px;
 
 			&:is(:hover, :focus-visible) {
 				background-color: var(--InteractiveHoverColor);
