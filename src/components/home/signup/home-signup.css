@@ -12,6 +12,10 @@
 	background: var(--SurfaceColor);
 	border-radius: 3--rpx;
 	color: var(--PrimaryColor);
+	font-weight: 400;
+	font-size: 16px;
+    line-height: 18.75px;
+	letter-spacing: 0.5%;
 }
 
 @media (width >= 400px) {
@@ -87,12 +91,19 @@
 	/* sizing */
 	padding-inline: 2--step;
 	padding-block: 1--step;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 14.01px;
 
 	/* decoration */
 	background: var(--BaseColor);
 	border-radius: 3--rpx;
-	box-shadow: var(--border-color) 0 0 0 1px inset;
+	box-shadow: var(--bBaseColor) 0 0 0 1px inset;
 	color: var(--PrimaryColor);
+	width: 420.37px;
+	height: 36px;
+	left: 906px;
+	top: 2943px;
 }
 
 :where(.p-signup-form input:is(:hover, :focus-visible)) {
@@ -116,6 +127,10 @@
 	background-color: var(--InteractiveColor);
 	border-radius: 3--rpx;
 	box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
+	padding-left: 44.5px;
+	padding-right: 44.5px;
+	padding-top: 8.5px;
+	padding-bottom: 8.5px;
 	color: var(--InverseColor);
 	cursor: pointer;
 }
