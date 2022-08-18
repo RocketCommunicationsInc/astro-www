@@ -11,8 +11,11 @@ import DocsLayout from 'project:layouts/docs/docs-layout.astro'
 	color: #4DACFF;
 }
 
-.text-blue-800 {
-	color: rgb(30, 64, 175);
+.text-teal-600 {
+	color: rgb(0, 159, 163)
+	/* Second Option? */
+	/* color: rgb(120, 109, 211) */
+	
 }
 
 .text-green-500 {
@@ -73,30 +76,30 @@ import DocsLayout from 'project:layouts/docs/docs-layout.astro'
 		<tbody>
 			<tr>
 				<td> The <span class="font-bold text-brightblue-500">text</span>
-					<span class="font-bold text-blue-800">color</span> of a <span class="font-bold text-green-500">button</span> is #fffff. </td>
+					<span class="font-bold text-teal-600">color</span> of a <span class="font-bold text-green-500">button</span> is #fffff. </td>
 				<td>
-					<span class="font-bold text-green-500">button</span>-<span class="font-bold text-blue-800">color</span>-<span class="font-bold text-brightblue-500">text</span></td>
+					<span class="font-bold text-green-500">button</span>-<span class="font-bold text-teal-600">color</span>-<span class="font-bold text-brightblue-500">text</span></td>
 			</tr>
 			<tr>
 				<td>
 						The <span class="font-bold text-brightblue-500">background</span>
-					<span class="font-bold text-blue-800">color</span> for all <span class="font-bold text-blue-400">surface elements</span> is #fff.
+					<span class="font-bold text-teal-600">color</span> for all <span class="font-bold text-blue-400">surface elements</span> is #fff.
 					</td>
 				<td>
-					<span class="font-bold text-blue-800">color</span>-<span class="font-bold text-brightblue-500">background</span>-<span class="font-bold text-blue-400">surface</span>
+					<span class="font-bold text-teal-600">color</span>-<span class="font-bold text-brightblue-500">background</span>-<span class="font-bold text-blue-400">surface</span>
 				</td>
 			</tr>
 			<tr>
 				<td>Our <span class="font-bold text-blue-400">base</span>
-					<span class="font-bold text-blue-800">border radii</span> is 3px. </td>
+					<span class="font-bold text-teal-600">border radii</span> is 3px. </td>
 				<td>
-					<span class="font-bold text-blue-800">radius</span>-<span class="font-bold text-blue-400">base</span></td>
+					<span class="font-bold text-teal-600">radius</span>-<span class="font-bold text-blue-400">base</span></td>
 			</tr>
 			<tr>
 				<td>The <span class="font-bold text-brightblue-500">border</span>
-					<span class="font-bold text-blue-800">color</span> for a <span class="font-bold text-green-500">text input </span>when it is <span class="font-bold text-red-400">invalid</span> is #fff.</td>
+					<span class="font-bold text-teal-600">color</span> for a <span class="font-bold text-green-500">text input </span>when it is <span class="font-bold text-red-400">invalid</span> is #fff.</td>
 				<td>
-					<span class="font-bold text-green-500">input</span>-<span class="font-bold text-blue-800">color</span>-<span class="font-bold text-brightblue-500">border</span>-<span class="font-bold text-red-400">invalid</span>
+					<span class="font-bold text-green-500">input</span>-<span class="font-bold text-teal-600">color</span>-<span class="font-bold text-brightblue-500">border</span>-<span class="font-bold text-red-400">invalid</span>
 				</td>
 			</tr>
 		</tbody>
@@ -139,6 +142,7 @@ import DocsLayout from 'project:layouts/docs/docs-layout.astro'
 
 	<h3>
 		I'm a designer creating a new component or piece of UI
+		<br>
 		<span class="token token__system">System (Preferred)</span>
 		<span class="token token__reference">Reference</span>
 	</h3>
@@ -149,6 +153,7 @@ import DocsLayout from 'project:layouts/docs/docs-layout.astro'
 
 	<h3>
 		I'm a designer working in something that isn't Figma
+		<br>
 		<span class="token token__component">Component</span>
 	</h3>
 
@@ -156,6 +161,7 @@ import DocsLayout from 'project:layouts/docs/docs-layout.astro'
 
 	<h3>
 		I'm a single developer working on some new UI
+		<br>
 		<span class="token token__system">System (Preferred)</span>
 		<span class="token token__reference">Reference</span>
 	</h3>
@@ -169,6 +175,7 @@ import DocsLayout from 'project:layouts/docs/docs-layout.astro'
 
 	<h3>
 		I'm a developer who can't use Astro Web Components
+		<br>
 		<span class="token token__component">Component</span>
 	</h3>
 
