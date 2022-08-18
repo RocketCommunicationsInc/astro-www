@@ -4,7 +4,7 @@ title: Icons and Symbols
 demo: components-monitoring-icon--all-variants
 storybook: components-monitoring-icon--all-variants
 git: rux-monitoring-icon
-height: 130
+height: 100
 theme: true
 ---
 

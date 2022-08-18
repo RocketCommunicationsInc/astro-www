@@ -4,7 +4,7 @@ title: Status Symbol
 demo: components-status--all-variants
 storybook: components-status--all-variants
 git: rux-status
-height: 80px
+height: 100px
 theme: true
 class: color
 ---

@@ -4,7 +4,7 @@ title: Sign In
 demo: astro-uxds-patterns-sign-in--page
 storybook: astro-uxds-patterns-sign-in--page
 git: rux-sign-in
-height: 400px
+height: 900px
 theme: true
 scrolling: yes
 ---

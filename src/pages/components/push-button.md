@@ -4,7 +4,7 @@ title: Push Button
 demo: components-push-button--all-variants
 storybook: components-push-button--all-variants
 git: rux-push-button
-height: 350px
+height: 660px
 theme: true
 ---
 
