@@ -7,7 +7,7 @@ layout: project:layouts/docs/docs-layout.astro
 
 Astro UX design assets include files for creating Astro application wireframes and mockups in Sketch and Adobe XD.
 
-Before reading any further, we recommend you take a look at a live [Astro Sample Application](https://sample-app.astrouxds.com/) and review available Astro components on the [Astro Storybook](https://astro-components.netlify.app/?path=/story/astro-uxds-welcome--start-here) site. Examples of Astro in-use can be seen within the Astro Service [Specific Design](/service-specific-ux-design/) pages.
+Before reading any further, we recommend you take a look at a live [Astro Sample Application](https://sample-app.astrouxds.com/) and review available Astro components on the [Astro Storybook](https://astro-components.netlify.app/?path=/story/astro-uxds-welcome-start-here--page) site. Examples of Astro in-use can be seen within the Astro Service [Specific Design](/service-specific-ux-design/) pages.
 
 ## Design Guidance
 
