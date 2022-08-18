@@ -5,7 +5,7 @@
 }
 
 :where(:not(:defined)) {
-	animation: 3s ElementDisplay;
+	animation: .2s ElementDisplay;
 	display: contents;
 }
 
