@@ -13,8 +13,7 @@
 	border-radius: 3--rpx;
 	color: var(--PrimaryColor);
 	font-weight: 400;
-	font-size: 4--step;
-    line-height: 4.69--step;
+	font-size: 4--step;   
 	letter-spacing: 0.5%;
 }
 
@@ -89,8 +88,8 @@
 	--border-color: var(--InteractiveMutedColor);
 
 	/* sizing */
-	padding-block: 2.5--step;
-	padding-left: 3.5--step;
+	padding-block: 3--step;
+	padding-left: 4--step;
 
 	/* decoration */
 	background: var(--BaseColor);
@@ -121,8 +120,8 @@
 	background-color: var(--InteractiveColor);
 	border-radius: 3--rpx;
 	box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
-	padding-inline: 11.125--step;
-	padding-block: 2.125--step;
+	padding-inline: 11--step;
+	padding-block: 2--step;
 	color: var(--InverseColor);
 	cursor: pointer;
 }

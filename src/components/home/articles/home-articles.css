@@ -76,8 +76,8 @@
 
 		/* layout */
 		inline-size: 5--step;
-		block-size: 112.5--step;
-		padding-inline: 1.25--step;
+		block-size: 112--step;
+		padding-inline: 1--step;
 		transition: 400ms opacity;
 
 		/* decoration */
@@ -175,7 +175,7 @@
 
 			/* typography */
 			font-size: 14--rpx;
-			line-height: 4.25--step;
+			line-height: 4--step;
 			padding-inline: 5--step;
 		}
 
@@ -196,7 +196,7 @@
 			box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
 			color: var(--InverseColor);
 			cursor: pointer;
-			margin-bottom: 4.125--step;
+			margin-bottom: 4--step;
 			margin-inline: 20--step;
 
 			&:is(:hover, :focus-visible) {
