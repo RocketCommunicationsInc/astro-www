@@ -40,7 +40,7 @@
       url: /patterns/notifications/
     - label: Data Visualization
       url: /patterns/data-visualization/
-    - label: Modeless panes
+    - label: Modeless Panes
       url: /patterns/modeless-panes/
     - label: Sample App
       url: /patterns/sample-app/
@@ -96,11 +96,11 @@
       url: /components/progress/
     - label: Push Button
       url: /components/push-button/
-    - label: Radio button
+    - label: Radio Button
       url: /components/radio-button/
     - label: Search
       url: /components/search/
-    - label: Segmented button
+    - label: Segmented Button
       url: /components/segmented-button/
     - label: Select
       url: /components/select/
