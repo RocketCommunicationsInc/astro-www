@@ -1,4 +1,5 @@
 {
+	"editor.useTabStops": true,
 	"files.exclude": {
 		"**/.vscode": true,
 		"**/*.lock": true,
