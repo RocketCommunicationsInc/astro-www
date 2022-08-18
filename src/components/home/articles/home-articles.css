@@ -75,9 +75,9 @@
 		grid-row: 2;
 
 		/* layout */
-		inline-size: 20px;
-		block-size: 450px;
-		padding-inline: 5px;
+		inline-size: 5--step;
+		block-size: 112.5--step;
+		padding-inline: 1.25--step;
 		transition: 400ms opacity;
 
 		/* decoration */
@@ -136,8 +136,6 @@
 		flex-flow: column;
 		flex-shrink: 0;
 		inline-size: var(--article-size);
-		padding-block: 5--step;
-		padding-inline: 5--step;
 		scroll-snap-align: start;
 		padding: 0;
 	
@@ -168,8 +166,7 @@
 			font-size: 20--rpx;
 			font-weight: 500;
 			line-height: max(24 / 20);
-			padding-left: 22px;
-			padding-right: 26.5px;
+			padding-left: 5--step;
 		}
 
 		& p {
@@ -178,9 +175,8 @@
 
 			/* typography */
 			font-size: 14--rpx;
-			line-height: 16.41px;
-			padding-left: 22px;
-			padding-right: 22px;
+			line-height: 4.25--step;
+			padding-inline: 5--step;
 		}
 
 		& a {
@@ -200,9 +196,8 @@
 			box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
 			color: var(--InverseColor);
 			cursor: pointer;
-			margin-bottom: 16.5px;
-			margin-left: 76.5px;
-			margin-right: 83.5px;
+			margin-bottom: 4.125--step;
+			margin-inline: 20--step;
 
 			&:is(:hover, :focus-visible) {
 				background-color: var(--InteractiveHoverColor);
