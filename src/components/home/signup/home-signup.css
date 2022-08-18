@@ -8,13 +8,15 @@
 	padding-inline: 6--step;
 	padding-block: 5--step 10--step;
 
+	/* typography */
+	font-size: 4--step;
+	font-weight: 400;
+	letter-spacing: 0.5%;
+
 	/* decoration */
 	background: var(--SurfaceColor);
 	border-radius: 3--rpx;
 	color: var(--PrimaryColor);
-	font-weight: 400;
-	font-size: 4--step;   
-	letter-spacing: 0.5%;
 }
 
 @media (width >= 400px) {
@@ -96,7 +98,6 @@
 	border-radius: 3--rpx;
 	box-shadow: var(--bBaseColor) 0 0 0 1px inset;
 	color: var(--PrimaryColor);
-	height: 9--step;
 }
 
 :where(.p-signup-form input:is(:hover, :focus-visible)) {
