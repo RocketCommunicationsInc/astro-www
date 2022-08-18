@@ -87,8 +87,6 @@
 /* Signup: Form: Control: Input Text */
 
 :where(.p-signup-form input) {
-	--border-color: var(--InteractiveMutedColor);
-
 	/* sizing */
 	padding-block: 3--step;
 	padding-left: 4--step;
@@ -96,7 +94,6 @@
 	/* decoration */
 	background: var(--BaseColor);
 	border-radius: 3--rpx;
-	box-shadow: var(--bBaseColor) 0 0 0 1px inset;
 	color: var(--PrimaryColor);
 }
 

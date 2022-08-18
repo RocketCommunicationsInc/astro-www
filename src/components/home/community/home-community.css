@@ -257,7 +257,7 @@
 :where(.p-community-link-heading) {
 	/* typography */
 	font-size: 20--rpx;
-	line-height: 24--rpx;
+	line-height: max(24 / 20);
 }
 
 @media (width >= 800px) and (width < 1200px) {
@@ -273,5 +273,5 @@
 
 	/* typography */
 	font-size: 14--rpx;
-	line-height: 20--rpx;
+	line-height: max(20 / 14);
 }
