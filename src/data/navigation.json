@@ -86,7 +86,7 @@
 				"url": "/patterns/data-visualization/"
 			},
 			{
-				"label": "Modeless panes",
+				"label": "Modeless Panes",
 				"url": "/patterns/modeless-panes/"
 			},
 			{
@@ -199,7 +199,7 @@
 				"url": "/components/push-button/"
 			},
 			{
-				"label": "Radio button",
+				"label": "Radio Button",
 				"url": "/components/radio-button/"
 			},
 			{
@@ -207,7 +207,7 @@
 				"url": "/components/search/"
 			},
 			{
-				"label": "Segmented button",
+				"label": "Segmented Button",
 				"url": "/components/segmented-button/"
 			},
 			{
@@ -215,7 +215,7 @@
 				"url": "/components/select/"
 			},
 			{
-				"label": "Sign in",
+				"label": "Sign In",
 				"url": "/components/sign-in/"
 			},
 			{
