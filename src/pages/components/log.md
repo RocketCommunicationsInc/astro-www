@@ -4,7 +4,7 @@ title: Log
 demo: components-log--log
 storybook: components-log--log
 git: rux-log
-height: 420px
+height: 510px
 theme: true
 ---
 
