@@ -11,6 +11,7 @@ height: 150px
 
 ::storybook-demo
 
+<hr style="height:45px; visibility:hidden;" />
 The Global Status Bar is a full width view across the top of an application — an area commonly reserved for global status, global command and top-level navigation. The Global Status Bar often includes: Application Name, Monitoring Icons, Top Level Navigation and an Emergency Button.
 
 ## Rules of Thumb

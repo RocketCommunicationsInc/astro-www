@@ -12,6 +12,7 @@ theme: true
 
 ::storybook-demo
 
+<hr style="height:30px; visibility:hidden;" />
 Tabs in Astro applications are used to divide major areas of content and to indicate work process.
 
 ## Rules of Thumb

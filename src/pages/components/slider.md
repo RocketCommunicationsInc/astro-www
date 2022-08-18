@@ -12,6 +12,7 @@ theme: true
 
 ::storybook-demo
 
+<hr style="height:65px; visibility:hidden;" />
 A Slider allows users to choose from a range of continuous and discrete values arranged from minimum to maximum.
 
 :::note

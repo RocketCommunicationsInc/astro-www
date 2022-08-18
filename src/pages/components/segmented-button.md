@@ -12,6 +12,7 @@ theme: true
 
 ::storybook-demo
 
+<hr style="height:70px; visibility:hidden;" />
 Segmented Buttons allow users to select one item at a time from two to four options. Selecting one option automatically turns off the last selection made. Segmented Buttons are mutually exclusive.
 
 ## Rules of Thumb

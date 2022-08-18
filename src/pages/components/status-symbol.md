@@ -13,6 +13,7 @@ class: color
 
 ::storybook-demo
 
+<hr style="height:65px; visibility:hidden;" />
 The Status Symbol combines color and shape to create a standard and consistent way to indicate the status of a device or feature.
 
 ![Astro Status Symbols in context of a modem list layout.](/img/components/icons-symbols-modems.png "Astro Status Symbols in context of a modem list layout.")

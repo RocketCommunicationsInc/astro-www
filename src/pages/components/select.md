@@ -13,6 +13,7 @@ theme: true
 
 ::storybook-demo
 
+<hr style="height:65px; visibility:hidden;" />
 When activated, Select Menus allow users to select a value from a list. Once a value is selected, the Select Menu displays the selected value.
 
 ## Rules of Thumb
