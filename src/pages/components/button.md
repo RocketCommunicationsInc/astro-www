@@ -4,7 +4,7 @@ title: Button
 demo: components-button--all-variants
 storybook: components-button--default-story
 git: rux-button
-height: 260px
+height: 178px
 scrolling: yes
 theme: true
 ---

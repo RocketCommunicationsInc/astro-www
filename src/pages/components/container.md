@@ -5,7 +5,7 @@ demo: components-container--default-story
 storybook: components-container--default-story
 git: rux-container
 scrolling: yes
-height: 560px
+height: 140px
 theme: true
 ---
 

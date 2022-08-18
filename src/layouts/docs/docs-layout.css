@@ -194,11 +194,6 @@
 		flex-flow: column;
 	}
 
-	& :where(.storybook-demo > iframe) {
-		/* layout */
-		flex-basis: 100%;
-	}
-
 	& :where(.storybook-demo > nav) {
 		/* layout */
 		align-self: end;
