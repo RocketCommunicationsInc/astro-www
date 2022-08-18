@@ -4,7 +4,7 @@ title: Segmented Button
 demo: components-segmented-button--default-story
 storybook: components-segmented-button--default-story
 git: rux-segmented-button
-height: 50px
+height: 80px
 theme: true
 ---
 

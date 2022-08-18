@@ -18,12 +18,11 @@ const {
 	<SiteNavigation slot="side" />
 	<style is:global define:vars={{ GitHubId, StorybookId, StorybookPreviewHeight }}>
 	.storybook-demo {
-		--BlockSize: max(1--StorybookPreviewHeight + 6--step);
-
-		block-size: max(1--BlockSize + 6--step);
+		/* preview frame (1--StorybookPreviewHeight) + navigation links (20--step) */
+		min-block-size: calc(1--StorybookPreviewHeight + 20--step);
 
 		& iframe {
-			block-size: var(--BlockSize);
+			block-size: 1--StorybookPreviewHeight;
 		}
 	}
 	</style>
