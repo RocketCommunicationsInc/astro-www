@@ -19,7 +19,7 @@
 		"parse-yaml": "0.1.0",
 		"postcss-preset-env": "7.8.0",
 		"remark-directive": "2.0.1",
-		"types-object": "0.2.0"
+		"types-object": "0.3.0"
 	},
 	"postcss": {
 		"plugins": {
