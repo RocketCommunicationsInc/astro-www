@@ -2,6 +2,7 @@
 import compliance from 'project:data/compliance.json'
 import DocsLayout from "project:layouts/docs/docs-layout.astro"
 import { Case, For, Switch } from "@astropub/flow";
+import "../design-guidelines/compliance.css"
 ---
 <DocsLayout content={{ title: 'EGS Design Compliance' }}>
 	<hgroup>
@@ -10,18 +11,90 @@ import { Case, For, Switch } from "@astropub/flow";
 		</h1>
 		<p>{compliance.version}</p>
 	</hgroup>
-	<For of={compliance.contents}>{rule => (
-		<section>
-			<h2>{rule.name}</h2>
+		<section class="compliance">
+    <h2>Design Compliance</h2>
+    <p>Applications adopted by EGS are required to meet the Design Compliance set forth by Astro UXDS. Design Compliance improves operator efficiency, engagement and reduces training time. When applications across the Enterprise have a common and consistent user interface Guardians can focus learning the mission unique needs rather than learning new interface paradigms.</p>
+
+<article class="compliancy-headline">
+    <h2>Tiered Compliance</h2>
+    <p>
+     Astro can be adopted incrementally though the tiered compliance system outlined below. Projects can achieve progressively higher levels of compliance with each iterative release. It is important to note that adherence to the EGS Design Compliance is only one factor in accomplishing a successful user interface. Be sure to employ a user centered design practice like <a href="https://www.astrouxds.com/design-process/research/"> Traditional UX </a> or <a href="https://www.scaledagileframework.com/lean-ux/">Lean UX </a>. For assistance please contact <a href = "mailto:support@astrouxds.com?">support@astrouxds.com.</a>
+    </p>
+    <p>
+    The EGS Design Compliance rules are a living document and version with the principles of <a href="https://semver.org/"> Semantic Versioning</a>. Contribution back to Astro and the Tiered Compliance model to address issues, propose new rules or contribute additional research or guidance can be made through <a href="https://github.com/RocketCommunicationsInc/astro/discussions"> Astro’s GitHub page</a>.
+    </p>
+
+    <ul class="compliancy-list">
+      <li>
+      <span class="tier tier--1">Tier 1</span>
+        <div>
+        Basic status icons, status colors, really important things for operators to quickly become familiar with the application
+        </div>
+      </li>
+      <li>
+      <span class="tier tier--2">Tier 2</span>
+        <div>
+        Tier 1 + Astro colors to make it look like an Astro application (visual)
+        </div>
+      </li>
+      <li>
+      <span class="tier tier--3">Tier 3</span>
+        <div>
+        Tier 2 + interaction patterns (behavioral) 
+        </div>
+        </li>
+      </ul>
+  </article>
+<hr>
+</section>
+
+<For of={compliance.contents}>{rule => (
+		<h2>{rule.numeral}.0 {rule.name}</h2>
+		
 			<Switch of={Array.isArray(rule.rules)}>
+				
 				<Case of={true}>
 					<For of={rule.rules!}>{subrule => (
-						<section>
-							<p>{subrule.rule}</p>
-						</section>
+						
+						<span>
+							<p>{rule.numeral}.{subrule.numeral} {subrule.rule}</p>
+							
+						<For of={compliance.contents}>{ruleset => (
+							<Switch of={Array.isArray(ruleset.rulesets!)}>
+								<Case of={true}>
+									<For of={ruleset.rulesets!}>{subname => (
+										<ul class="unordered">
+											
+											<h4 class="subname">{rule.numeral}.{subname.numeral} {subname.name}</h4>
+											
+											<br/>
+								
+											<Switch of={Array.isArray(compliance.contents)}>
+                                <Case of={true}>
+                                    <For of={ruleset.rulesets!}>{subrule => (
+                                        
+                                            
+                                            <li class="tier">Tier: {subrule.rules[0].tier}</li>
+
+                                            <li>{ruleset.numeral}.{subrule.numeral}.{subrule.rules[0].numeral} {subrule.rules[0].rule} </li>
+
+                                            <li class="rule-status">Status: {subrule.rules[0].status}</li>
+                                            <br/>
+                                        
+                                    )}</For>
+                                </Case>
+                            </Switch>
+
+										</ul>
+									)}</For>
+								</Case>
+							</Switch>
+                           
+						)}</For>
+
+						</span>
 					)}</For>
 				</Case>
 			</Switch>
-		</section>
 	)}</For>
 </DocsLayout>
