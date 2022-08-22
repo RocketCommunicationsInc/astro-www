@@ -59,10 +59,6 @@
 			{
 				"label": "Glossary",
 				"url": "/design-guidelines/glossary/"
-			},
-			{
-				"label": "Compliance",
-				"url": "/design-guidelines/compliance/"
 			}
 		]
 	},
@@ -306,6 +302,10 @@
 				"url": "/community/content-policy/"
 			}
 		]
+	},
+	{
+		"label": "Compliance",
+		"url": "/design-guidelines/compliance/"
 	},
 	{
 		"label": "Releases",
