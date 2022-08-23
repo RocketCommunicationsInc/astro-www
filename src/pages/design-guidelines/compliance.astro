@@ -1,8 +1,16 @@
 ---
 import compliance from 'project:data/compliance.json'
 import DocsLayout from "project:layouts/docs/docs-layout.astro"
-import { Case, For, Switch } from "@astropub/flow";
+import { For, When} from "@astropub/flow";
 import "../design-guidelines/compliance.css"
+// export interface Props {
+// 	title: string,
+// 	compliance: typeof import('project:data/compliance.json')
+// }
+const { isArray } = Array
+const toNumeral = (content: any, ruleset: any, rule: any) => [ content.numeral, ruleset.numeral, rule.numeral].join('.')
+const toTierClass = (rule: any) => `tier t${rule.tier}`
+// const props = Astro.props as Props
 ---
 <DocsLayout content={{ title: 'EGS Design Compliance' }}>
 	<hgroup>
@@ -48,53 +56,36 @@ import "../design-guidelines/compliance.css"
 <hr>
 </section>
 
-<For of={compliance.contents}>{rule => (
-		<h2>{rule.numeral}.0 {rule.name}</h2>
-		
-			<Switch of={Array.isArray(rule.rules)}>
-				
-				<Case of={true}>
-					<For of={rule.rules!}>{subrule => (
-						
-						<span>
-							<p>{rule.numeral}.{subrule.numeral} {subrule.rule}</p>
-							
-						<For of={compliance.contents}>{ruleset => (
-							<Switch of={Array.isArray(ruleset.rulesets!)}>
-								<Case of={true}>
-									<For of={ruleset.rulesets!}>{subname => (
-										<ul class="unordered">
-											
-											<h4 class="subname">{rule.numeral}.{subname.numeral} {subname.name}</h4>
-											
-											<br/>
-								
-											<Switch of={Array.isArray(compliance.contents)}>
-                                <Case of={true}>
-                                    <For of={ruleset.rulesets!}>{subrule => (
-                                        
-                                            
-                                            <li class="tier">Tier: {subrule.rules[0].tier}</li>
-
-                                            <li>{ruleset.numeral}.{subrule.numeral}.{subrule.rules[0].numeral} {subrule.rules[0].rule} </li>
-
-                                            <li class="rule-status">Status: {subrule.rules[0].status}</li>
-                                            <br/>
-                                        
-                                    )}</For>
-                                </Case>
-                            </Switch>
-
-										</ul>
-									)}</For>
-								</Case>
-							</Switch>
-                           
+<For of={compliance.contents}>{content => (
+	<section class="p-compliance">
+		<h1 class="section"> <span class="numeral"> {content.numeral}.0  </span> &nbsp;&nbsp;&nbsp;&nbsp; <span class="ruleset-name"> {content.name}</span> </h1>
+		<When {isArray(content.rules)}>
+			<For of={content.rules!}>{rule => (
+				<p>{rule.rule}</p>
+			)}</For>
+		</When>
+		<When {isArray(content.rulesets)}>
+			<For of={content.rulesets!}>{ruleset => (
+				<section class="rulesets">
+					<header>
+						<h3 class="subname"> <span class="numeral"> {content.numeral}.{ruleset.numeral}.0</span>&nbsp;&nbsp;&nbsp; {ruleset.name}</h3>
+						<a href={ruleset.link}> View {ruleset.name} Page</a>
+					</header>
+					<When {isArray(ruleset.rules)}>
+						<For of={ruleset.rules!}>{rule => (
+							<dl class="rule">
+								<dd class="numeral">{toNumeral(content, ruleset, rule)}</dd>
+								<dd> <span class="tier tier--{rule.tier}"> Tier {rule.tier} </span> </dd>
+								<div class="rule-text" data-status="{rule.status}">{rule.rule}</div>
+								<When {rule.status !== 'current'}>
+									<dd class="rule-status">{rule.status}</dd>
+								</When>
+							</dl>
 						)}</For>
-
-						</span>
-					)}</For>
-				</Case>
-			</Switch>
-	)}</For>
+					</When>
+				</section>
+			)}</For>
+		</When>
+	</section>
+)}</For>
 </DocsLayout>
