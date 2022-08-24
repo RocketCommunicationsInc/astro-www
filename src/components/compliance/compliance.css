@@ -42,6 +42,33 @@ section.p-compliance {
     }
 }
 
+.status {
+
+  white-space: nowrap;
+  height: 100%;
+  border-radius: 3px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: .75em;
+  letter-spacing: .005em;
+  line-height: 16px;
+  color: #fff;
+  margin-right: 1rem;
+  text-transform: uppercase;
+
+  &.-deprecated {
+    color: #A4ABB6;
+  }
+
+  &.-under-review {
+    color: #c8102e;
+  }
+
+  &.-updated {
+    color: #786dd3;
+  }
+}
+
 p {
   line-height: 1.5;
   padding-top: 0.4rem;
@@ -59,8 +86,6 @@ p {
 .compliancy-list li {
     display: flex;
     align-items: flex-start;
-    list-style-type: none !important;
-    list-style: none;
     margin-top: 1.5rem;
   }
 
@@ -93,7 +118,7 @@ p {
 }
 
 ol, ul {
-    list-style: none !important;
+    list-style: none;
 }
 
   .tier {
@@ -109,20 +134,6 @@ ol, ul {
     color: #fff;
     margin-right: 1rem;
   }
-
-.rule-status {
-    white-space: nowrap;
-    height: 100%;
-    border-radius: 3px;
-    font-style: normal;
-    font-weight: 700;
-    font-size: .75em;
-    letter-spacing: .005em;
-    line-height: 16px;
-    color: #fff;
-    margin-right: 1rem;
-    text-transform: uppercase;
-}
 
 .rule-text[data-status="under-review"] .rule-status {
     color: #c8102e;
@@ -144,8 +155,8 @@ ol, ul {
     margin-top: 0;
   }
   
-.rules {
-    margin: 0;
+.rule-text {
+    width: 800px;
   }
 
 .rule {
@@ -179,7 +190,17 @@ ol, ul {
     display: flex;
     font-size: 20px;
     margin-bottom: 20px;
+    margin-top: 40px;
 }  
 .ruleset-name {
-    margin-left: 1rem !important;
+    margin-left: 1rem;
   }
+
+  .ruleset-general {
+        display: block;
+        margin-top: 1.5rem;
+  }
+
+.p-content :where(li)::before {
+    content: "";
+}
