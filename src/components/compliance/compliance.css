@@ -57,15 +57,15 @@ section.p-compliance {
   text-transform: uppercase;
 
   &.-deprecated {
-    color: #A4ABB6;
+    color: #A4ABB6
   }
 
   &.-under-review {
-    color: #c8102e;
+    color: #FF3838
   }
 
   &.-updated {
-    color: #786dd3;
+    color: #AEA8E5
   }
 }
 
