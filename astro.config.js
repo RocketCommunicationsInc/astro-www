@@ -1,7 +1,9 @@
+import { defineConfig } from 'astro/config'
+
 import remarkPlugins from './.vscode/remark-plugins.js'
 import vitePlugins from './.vscode/vite-plugins.js'
-import sitemap from '@astrojs/sitemap'
-import { defineConfig } from 'astro/config'
+// import contentfulIntegration from '@astropub/contentful'
+import sitemapIntegration from '@astrojs/sitemap'
 
 export default defineConfig({
 	site: 'https://astro-astro-www.netlify.app/',
@@ -17,6 +19,7 @@ export default defineConfig({
 		plugins: vitePlugins(),
 	},
 	integrations: [
-		sitemap(),
+		// contentfulIntegration(),
+		sitemapIntegration(),
 	],
 })
