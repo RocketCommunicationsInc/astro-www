@@ -30,7 +30,7 @@
 }
 
 .search-form input[type="search"]::-webkit-search-cancel-button {
-  display: none;
+	display: none;
 }
 
 .search-form .search-field-decorated {
