@@ -1,25 +1,24 @@
 ---
-import compliance from 'project:data/compliance.json'
-import DocsLayout from "project:layouts/docs/docs-layout.astro"
-import { For, When} from "@astropub/flow";
-import "../design-guidelines/compliance.css"
-// export interface Props {
-// 	title: string,
-// 	compliance: typeof import('project:data/compliance.json')
-// }
+import { For, When } from '@astropub/flow'
+
+import './compliance.css'
+
+export interface Props {
+    title: string,
+    compliance: typeof import('project:data/compliance.json')
+}
+
 const { isArray } = Array
 const toNumeral = (content: any, ruleset: any, rule: any) => [ content.numeral, ruleset.numeral, rule.numeral].join('.')
 const toTierClass = (rule: any) => `tier t${rule.tier}`
-// const props = Astro.props as Props
+
+const props = Astro.props as Props
 ---
-<DocsLayout content={{ title: 'EGS Design Compliance' }}>
-	<hgroup>
-		<h1>
-			EGS Design Compliance
-		</h1>
-		<p>{compliance.version}</p>
-	</hgroup>
-		<section class="compliance">
+<hgroup>
+    <h1>{props.title}</h1>
+    <p>{props.compliance.version}</p>
+</hgroup>
+<section class="compliance">
     <h2>Design Compliance</h2>
     <p>Applications adopted by EGS are required to meet the Design Compliance set forth by Astro UXDS. Design Compliance improves operator efficiency, engagement and reduces training time. When applications across the Enterprise have a common and consistent user interface Guardians can focus learning the mission unique needs rather than learning new interface paradigms.</p>
 
@@ -55,37 +54,36 @@ const toTierClass = (rule: any) => `tier t${rule.tier}`
   </article>
 <hr>
 </section>
-
-<For of={compliance.contents}>{content => (
-	<section class="p-compliance">
-		<h1 class="section"> <span class="numeral"> {content.numeral}.0  </span> &nbsp;&nbsp;&nbsp;&nbsp; <span class="ruleset-name"> {content.name}</span> </h1>
-		<When {isArray(content.rules)}>
-			<For of={content.rules!}>{rule => (
-				<p>{rule.rule}</p>
-			)}</For>
-		</When>
-		<When {isArray(content.rulesets)}>
-			<For of={content.rulesets!}>{ruleset => (
-				<section class="rulesets">
-					<header>
-						<h3 class="subname"> <span class="numeral"> {content.numeral}.{ruleset.numeral}.0</span>&nbsp;&nbsp;&nbsp; {ruleset.name}</h3>
-						<a href={ruleset.link}> View {ruleset.name} Page</a>
-					</header>
-					<When {isArray(ruleset.rules)}>
-						<For of={ruleset.rules!}>{rule => (
-							<dl class="rule">
-								<dd class="numeral">{toNumeral(content, ruleset, rule)}</dd>
-								<dd> <span class="tier tier--{rule.tier}"> Tier {rule.tier} </span> </dd>
-								<div class="rule-text" data-status="{rule.status}">{rule.rule}</div>
-								<When {rule.status !== 'current'}>
-									<dd class="rule-status">{rule.status}</dd>
-								</When>
-							</dl>
-						)}</For>
-					</When>
-				</section>
-			)}</For>
-		</When>
-	</section>
+<For of={props.compliance.contents}>{content => (
+    <section class="p-compliance">
+        <h2><span class="numeral">{content.numeral}.0 </span>{content.name}</h2>
+        <When {isArray(content.rules)}>
+            <For of={content.rules!}>{rule => (
+                <p><span class="numeral"> {content.numeral}.1 </span> <span class="ruleset-name">{rule.rule}</span></p>
+            )}</For>
+        </When>
+        <When {isArray(content.rulesets)}>
+            <For of={content.rulesets!}>{ruleset => (
+                <section class="ruleset">
+                    <header>
+                        <h3 class="rules-name"> <span class="numeral"> {content.numeral}.{ruleset.numeral}.0</span> <span class="ruleset-name">{ruleset.name}</span> <a class="ruleset-link" href={ruleset.link}>View {ruleset.name} Page</a></h3>
+                    </header>
+                    <When {isArray(ruleset.rules)}>
+                        <For of={ruleset.rules!}>{rule => (
+                            <dl class="rule">
+                                <dd class="numeral">{toNumeral(content, ruleset, rule)}</dd>
+                                <dd class={toTierClass(rule)}>Tier {rule.tier}</dd>
+                                <div class="rule-text">
+                                <dt class="rule">{rule.rule}</dt> 
+                                <When {rule.status !== 'current'}>
+                                    <dd class="rule-status">{rule.status}</dd>
+                                </When>
+                                </div>
+                            </dl>
+                        )}</For>
+                    </When>
+                </section>
+            )}</For>
+        </When>
+    </section>
 )}</For>
-</DocsLayout>

@@ -1,0 +1,9 @@
+---
+import compliance from 'project:data/compliance.json'
+import DocsLayout from 'project:layouts/docs/docs-layout.astro'
+import Compliance from 'project:components/compliance/compliance.astro'
+const title = 'EGS Design Compliance'
+---
+<DocsLayout content={title}>
+	<Compliance {title} {compliance} />
+</DocsLayout>
