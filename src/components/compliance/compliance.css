@@ -61,6 +61,7 @@ p {
     align-items: flex-start;
     list-style-type: none !important;
     list-style: none;
+    margin-top: 1.5rem;
   }
 
   .compliance .tier.tier--1 {
@@ -74,6 +75,26 @@ p {
   .compliance .tier.tier--3 {
     background: #81009a;
   }
+
+  .beginning-headline {
+    margin-bottom: 4.5rem;
+  }
+  .ending-headline {
+    margin-bottom: 3.5rem;
+  }
+
+.compliancy-headline ol {
+    margin-inline: 2.5rem;
+}
+
+.compliance ol {
+    display: table;
+    list-style-type: none;
+}
+
+ol, ul {
+    list-style: none !important;
+}
 
   .tier {
     white-space: nowrap;
@@ -95,13 +116,13 @@ p {
     border-radius: 3px;
     font-style: normal;
     font-weight: 700;
-    font-size: 0.75em;
-    letter-spacing: 0.005em;
+    font-size: .75em;
+    letter-spacing: .005em;
     line-height: 16px;
-    color: #ffffff;
+    color: #fff;
     margin-right: 1rem;
     text-transform: uppercase;
-  }
+}
 
 .rule-text[data-status="under-review"] .rule-status {
     color: #c8102e;
