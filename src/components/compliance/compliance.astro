@@ -1,7 +1,7 @@
 ---
 import { For, When } from '@astropub/flow'
+import { markdown } from '@astropub/md'
 import './compliance.css'
-
 export interface Props {
 	title: string,
 	compliance: typeof import('project:data/compliance.json')
@@ -18,7 +18,7 @@ const props = Astro.props as Props
 	<h1>{props.title}</h1>
 	<p>Version {props.compliance.version}</p>
 </hgroup>
-<section class="compliance">
+<section class="p-compliance">
 	<h2>Design Compliance</h2>
 	<p class="beginning-headline">Applications adopted by EGS are required to meet the Design Compliance set forth by
 		Astro UXDS. Design Compliance improves operator efficiency, engagement and reduces training time. When
@@ -81,14 +81,15 @@ const props = Astro.props as Props
 								href={ruleset.link}>View {ruleset.name} Page</a></h3>
 					</header>
 					<When {isArray(ruleset.rules)}>
-						<For of={ruleset.rules!}>{rule => (
+						<For of={ruleset.rules!}> {async rule => (
 							<dl class="rule">
 								<dd class="numeral">{toNumeral(content, ruleset, rule)}</dd>
 								<dd class={toTierClass(rule)}>Tier {rule.tier}</dd>
 								<div class="rule-text">
-									<dt class="rule"> {rule.rule} </dt>
+									<dt class="rule"> 
+										{await markdown(rule.rule)} </dt>
 									<When {rule.status !=='current' }>
-										<dd class={toStatusClass(rule)}>{rule.status}</dd>
+										<dd class={toStatusClass(rule)}>{rule.status} </dd>
 									</When>
 								</div>
 							</dl>

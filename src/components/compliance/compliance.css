@@ -41,6 +41,12 @@ section.p-compliance {
 		}
 	}
 
+	& .p {
+        line-height: 1.5;
+        padding-top: 0.4rem;
+        margin-bottom: 0.8rem;
+        width: 200--step;
+      }
 
 	& .status {
 		white-space: nowrap;
@@ -68,11 +74,12 @@ section.p-compliance {
 		}
 	}
 
-	& p {
-		line-height: 1.5;
-		padding-top: 0.4rem;
-		margin-bottom: 0.8rem;
-	}
+    & .p {
+        line-height: 1.5;
+        padding-top: 0.4rem;
+        margin-bottom: 0.8rem;
+        width: 200--step;
+      }
 
 	& .compliance hr {
 		margin-top: 4rem;
@@ -131,6 +138,11 @@ section.p-compliance {
 		color: #51555b;
 	}
 
+	& .rule-text {
+        position: relative;
+        bottom: 5--step;
+    }
+
 	& .rule {
 		display: flex;
 		margin-bottom: 1.25rem;
@@ -169,5 +181,17 @@ section.p-compliance {
 
 	& :where(li)::before {
 		content: '';
+	}
+
+	& .tier--1 {
+		--color: var(--Teal600Color);
+	}
+
+	& .tier--2 {
+		--color: var(--BrightBlue600Color);
+	}
+
+	& .tier--3 {
+		--color: var(--Pink600Color);
 	}
 }
