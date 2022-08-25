@@ -20,6 +20,8 @@
 		"parse-yaml": "0.1.0",
 		"postcss-preset-env": "7.8.0",
 		"remark-directive": "2.0.1",
+		"stylelint": "14.11.0",
+		"stylelint-use-logical": "2.0.0",
 		"types-object": "0.3.0"
 	},
 	"postcss": {
@@ -46,5 +48,18 @@
 				}
 			}
 		]
+	},
+	"stylelint": {
+		"plugins": [
+			"stylelint-use-logical"
+		],
+		"rules": {
+			"csstools/use-logical": [
+				"always",
+				{
+					"direction": "ltr"
+				}
+			]
+		}
 	}
 }
