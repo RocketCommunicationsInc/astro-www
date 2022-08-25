@@ -51,7 +51,7 @@ section.p-compliance {
   font-weight: 700;
   font-size: .75em;
   letter-spacing: .005em;
-  line-height: 16px;
+  line-height: 4--step;
   color: #fff;
   margin-right: 1rem;
   text-transform: uppercase;
@@ -73,14 +73,14 @@ p {
   line-height: 1.5;
   padding-top: 0.4rem;
   margin-bottom: 0.8rem;
-  width: 800px;
+  width: 200--step;
 }
 
 .compliance hr {
   margin-top: 4rem;
   margin-bottom: 4rem;
   border-bottom: solid white 1px;
-  width: 800px;
+  width: 200--step;
 }
 
 .compliancy-list li {
@@ -107,20 +107,7 @@ p {
   .ending-headline {
     margin-bottom: 3.5rem;
   }
-
-.compliancy-headline ol {
-    margin-inline: 2.5rem;
-}
-
-.compliance ol {
-    display: table;
-    list-style-type: none;
-}
-
-ol, ul {
-    list-style: none;
-}
-
+  
   .tier {
     white-space: nowrap;
     height: 100%;
@@ -130,7 +117,7 @@ ol, ul {
     font-weight: 700;
     font-size: 0.75em;
     letter-spacing: 0.005em;
-    line-height: 16px;
+    line-height: 4--step;
     color: #fff;
     margin-right: 1rem;
   }
@@ -147,31 +134,16 @@ ol, ul {
     color: #51555b;
   }
 
-.rulesets .ruleset {
-    font-size: 1.125rem;
-  }
-  
-.rulesets .ruleset:first-child {
-    margin-top: 0;
-  }
-  
 .rule-text {
-    width: 800px;
+    width: 200--step;
   }
 
 .rule {
     display: flex;
     margin-bottom: 1.25rem;
   }
-  
-.rule .numeral {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1rem;
-    gap: 4--step;
-  }
 
-  .ruleset-link {
+.ruleset-link {
     display: inline-flex;
     align-items: center;
     font-weight: 400;
@@ -180,26 +152,26 @@ ol, ul {
     margin-left: 1rem;
 }
 
-  .subname {
-    font-size: 20px;
+.subname {
+    font-size: 5--step;
     font-weight: bold;
   }
 
 .rules-name {
     font-weight: 700;
     display: flex;
-    font-size: 20px;
-    margin-bottom: 20px;
-    margin-top: 40px;
+    font-size: 5--step;
+    margin-bottom: 5--step;
+    margin-top: 10--step;
 }  
 .ruleset-name {
     margin-left: 1rem;
   }
 
-  .ruleset-general {
-        display: block;
-        margin-top: 1.5rem;
-  }
+.ruleset-general {
+    display: block;
+    margin-top: 1.5rem;
+}
 
 .p-content :where(li)::before {
     content: "";
