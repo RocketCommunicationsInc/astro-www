@@ -1,6 +1,6 @@
 ---
 import { For, When } from '@astropub/flow'
-
+// import { markdown } from '@astropub/md'
 import './compliance.css'
 
 export interface Props {
@@ -17,71 +17,63 @@ const props = Astro.props as Props
 ---
 <hgroup>
     <h1>{props.title}</h1>
-    <p>Version {props.compliance.version}</p>
+         <p>Version {props.compliance.version}</p>
 </hgroup>
-<section class="compliance">
-    <h2>Design Compliance</h2>
-    <p class="beginning-headline">Applications adopted by EGS are required to meet the Design Compliance set forth by Astro UXDS. Design Compliance improves operator efficiency, engagement and reduces training time. When applications across the Enterprise have a common and consistent user interface Guardians can focus learning the mission unique needs rather than learning new interface paradigms.</p>
-
+    <section class="compliance">
+     <h2>Design Compliance</h2>
+         <p class="beginning-headline">Applications adopted by EGS are required to meet the Design Compliance set forth by Astro UXDS. Design Compliance improves operator efficiency, engagement and reduces training time. When applications across the Enterprise have a common and consistent user interface Guardians can focus learning the mission unique needs rather than learning new interface paradigms.</p>
 <article class="compliancy-headline">
     <h2>Tiered Compliance</h2>
-    <p>
+         <p>
      Astro can be adopted incrementally though the tiered compliance system outlined below. Projects can achieve progressively higher levels of compliance with each iterative release. It is important to note that adherence to the EGS Design Compliance is only one factor in accomplishing a successful user interface. Be sure to employ a user centered design practice like <a href="https://www.astrouxds.com/design-process/research/"> Traditional UX </a> or <a href="https://www.scaledagileframework.com/lean-ux/">Lean UX </a>. For assistance please contact <a href = "mailto:support@astrouxds.com?">support@astrouxds.com.</a>
-    </p>
-    <p class="ending-headline">
+        </p>
+         <p class="ending-headline">
     The EGS Design Compliance rules are a living document and version with the principles of <a href="https://semver.org/"> Semantic Versioning</a>. Contribution back to Astro and the Tiered Compliance model to address issues, propose new rules or contribute additional research or guidance can be made through <a href="https://github.com/RocketCommunicationsInc/astro/discussions"> Astro’s GitHub page</a>.
-    </p>
-
+         </p>
     <ul class="compliancy-list">
-      <li id="no-bullets">
-      <span class="tier tier--1">Tier 1</span>
-        <div>
+      <li>
+        <span class="tier tier--1">Tier 1</span>
         Basic status icons, status colors, really important things for operators to quickly become familiar with the application
-        </div>
       </li>
-      <li id="no-bullets">
-      <span class="tier tier--2">Tier 2</span>
-        <div>
+      <li>
+         <span class="tier tier--2">Tier 2</span>
         Tier 1 + Astro colors to make it look like an Astro application (visual)
-        </div>
       </li>
-      <li id="no-bullets">
-      <span class="tier tier--3">Tier 3</span>
-        <div>
+      <li>
+         <span class="tier tier--3">Tier 3</span>
         Tier 2 + interaction patterns (behavioral) 
-        </div>
         </li>
       </ul>
   </article>
 <hr>
 </section>
-<For of={props.compliance.contents}>{content => (
-    <section class="p-compliance">
-        <h2><span class="numeral">{content.numeral}.0 </span>{content.name}</h2>
-        <When {isArray(content.rules)}>
-            <For of={content.rules!}>{rule => (
+    <For of={props.compliance.contents}>{content => (
+        <section class="p-compliance">
+         <h2><span class="numeral">{content.numeral}.0 </span>{content.name}</h2>
+             <When {isArray(content.rules)}>
+                 <For of={content.rules!}>{rule => (
                 <dl>
                     <dd class="ruleset-general">{content.numeral}.1</dd>
                     <dd class="ruleset-general">{rule.rule}</dd>
                 </dl>
-            )}</For>
-        </When>
+                )}</For>
+             </When>
         <When {isArray(content.rulesets)}>
             <For of={content.rulesets!}>{ruleset => (
                 <section class="ruleset">
                     <header>
                         <h3 class="rules-name"> <span class="numeral"> {content.numeral}.{ruleset.numeral}.0</span> <span class="ruleset-name">{ruleset.name}</span> <a class="ruleset-link" href={ruleset.link}>View {ruleset.name} Page</a></h3>
                     </header>
-                    <When {isArray(ruleset.rules)}>
-                        <For of={ruleset.rules!}>{rule => (
-                            <dl class="rule">
-                                <dd class="numeral">{toNumeral(content, ruleset, rule)}</dd>
-                                <dd class={toTierClass(rule)}>Tier {rule.tier}</dd>
+                 <When {isArray(ruleset.rules)}>
+                    <For of={ruleset.rules!}>{rule => (
+                        <dl class="rule">
+                             <dd class="numeral">{toNumeral(content, ruleset, rule)}</dd>
+                             <dd class={toTierClass(rule)}>Tier {rule.tier}</dd>
                                 <div class="rule-text">
-                                <dt class="rule">{rule.rule}</dt> 
-                                <When {rule.status !== 'current'}>
-                                    <dd class={toStatusClass(rule)} >{rule.status}</dd>
-                                </When>
+                                  <dt class="rule"> {rule.rule} </dt>  
+                                     <When {rule.status !== 'current'}>
+                                     <dd class={toStatusClass(rule)} >{rule.status}</dd>
+                                     </When>
                                 </div>
                             </dl>
                         )}</For>
