@@ -74,14 +74,7 @@ section.p-compliance {
 		}
 	}
 
-    & .p {
-        line-height: 1.5;
-        padding-top: 0.4rem;
-        margin-bottom: 0.8rem;
-        width: 200--step;
-      }
-
-	& .compliance hr {
+	& hr {
 		margin-top: 4rem;
 		margin-bottom: 4rem;
 		border-bottom: solid white 1px;
@@ -91,18 +84,6 @@ section.p-compliance {
 		display: flex;
 		align-items: flex-start;
 		margin-top: 1.5rem;
-	}
-
-	& .compliance .tier.tier--1 {
-		background: #009fa3;
-	}
-
-	& .compliance .tier.tier--2 {
-		background: #3a87cf;
-	}
-
-	& .compliance .tier.tier--3 {
-		background: #81009a;
 	}
 
 	& .beginning-headline {
