@@ -27,21 +27,26 @@
 	&:where(.--type-text) .--preview {
 		&::before {
 			content: "Aa";
+
+			/* typography */
 			font-size: 20--rpx;
 			line-height: max(28 / 20);
 		}
 	}
 
 	&:where(.--type-background) .--preview {
+		/* decoration */
 		background-color: var(--value);
 	}
 
 	&:where(.--type-radius) .--preview {
-		box-shadow: var(--PrimaryColor) 0 0 0 1--rpx inset;
+		/* decoration */
 		border-radius: var(--value);
+		box-shadow: var(--PrimaryColor) 0 0 0 1--rpx inset;
 	}
 
 	&:where(.--type-shadow) .--preview {
+		/* decoration */
 		box-shadow: var(--PrimaryColor) 0 0 0 1--rpx inset, var(--value);
 	}
 
@@ -51,6 +56,7 @@
 	}
 
 	& .--value {
+		/* typography */
 		font-family: var(--SystemMonoType);
 	}
 
@@ -60,6 +66,7 @@
 	}
 
 	& dd:not(:first-of-type) {
+		/* layout */
 		margin-block-start: 2--step;
 	}
 }

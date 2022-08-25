@@ -1,11 +1,14 @@
 @media (width >= 800px) {
 	.p-grid {
 		display: grid;
+
+		/* layout */
 		grid-template-columns: 79--step 1fr;
 		grid-template-rows: 1fr min-content;
 	}
 
 	.p-grid-side {
+		/* layout */
 		grid-column: 1 / 2;
 		grid-row: 1;
 
@@ -15,12 +18,14 @@
 	}
 
 	.p-grid-main {
+		/* layout */
 		grid-column: 2 / 3;
 		grid-row: 1;
 		overflow: hidden;
 	}
 
 	.p-grid-foot {
+		/* layout */
 		grid-column: 1 / 3;
 		grid-row: 2;
 	}

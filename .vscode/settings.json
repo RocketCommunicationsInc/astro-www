@@ -1,4 +1,7 @@
 {
+	"editor.codeActionsOnSave": {
+		"source.fixAll": true
+	},
 	"editor.useTabStops": true,
 	"files.exclude": {
 		"**/.vscode": true,
