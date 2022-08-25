@@ -79,12 +79,12 @@
 }
 
 :where(.p-signup-form-control.-required label span)::after {
-	/* Generated Content */
+	/* Generated */
 	content: "*";
 }
 
 :where(.p-signup-form-control.-optional label span)::after {
-	/* Generated Content */
+	/* Generated */
 	content: " (Optional)";
 }
 

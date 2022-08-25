@@ -30,7 +30,7 @@
 			font-size: 20--rpx;
 			line-height: max(28 / 20);
 
-			/* Generated Content */
+			/* Generated */
 			content: "Aa";
 		}
 	}
@@ -41,9 +41,8 @@
 	}
 
 	&:where(.--type-radius) .--preview {
-		border-radius: var(--value);
-
 		/* Appearance */
+		border-radius: var(--value);
 		box-shadow: var(--PrimaryColor) 0 0 0 1--rpx inset;
 	}
 
