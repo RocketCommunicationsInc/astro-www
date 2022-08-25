@@ -77,6 +77,14 @@ const order = [
 		'groupName': 'Layout',
 		'emptyLineBefore': 'always',
 		'properties': [
+			'border-block',
+			'border-block-start',
+			'border-block-end',
+			'border-block-width',
+			'border-inline',
+			'border-inline-start',
+			'border-inline-end',
+			'border-inline-width',
 			'aspect-ratio',
 			'block-size',
 			'inline-size',
@@ -287,7 +295,7 @@ const order = [
 		].sort()
 	},
 	{
-		'groupName': 'Generated Content',
+		'groupName': 'Generated',
 		'emptyLineBefore': 'always',
 		'properties': [
 			'content',
