@@ -1,0 +1,28 @@
+---
+import compliance from 'project:data/compliance.json'
+import DocsLayout from 'project:layouts/docs/docs-layout.astro'
+
+import { Case, For, Switch } from '@astropub/flow'
+---
+<DocsLayout content={{ title: 'EGS Design Compliance' }}>
+	<hgroup>
+		<h1>
+			EGS Design Compliance
+		</h1>
+		<p>{compliance.version}</p>
+	</hgroup>
+	<For of={compliance.contents}>{rule => (
+		<section>
+			<h2>{rule.name}</h2>
+			<Switch of={Array.isArray(rule.rules)}>
+				<Case of={true}>
+					<For of={rule.rules!}>{subrule => (
+						<section>
+							<p>{subrule.rule}</p>
+						</section>
+					)}</For>
+				</Case>
+			</Switch>
+		</section>
+	)}</For>
+</DocsLayout>

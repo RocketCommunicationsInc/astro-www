@@ -5,7 +5,7 @@ import rawSML from './h-navigation-list.css?raw'
 let content = HTML.createFragment(rawHML + '<style>' + rawSML)
 
 class NavigationListElement extends HTML.Element {
-	static content = content;
+	static content = content
 
 	constructor() {
 		let host = super()

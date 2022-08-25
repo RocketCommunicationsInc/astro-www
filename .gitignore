@@ -1,7 +1,7 @@
 # build output
 dist/
 package-lock.json
-yarn.lock
+*.lock
 
 # dependencies
 node_modules/
@@ -10,8 +10,7 @@ node_modules/
 *.log*
 
 # environment variables
-.env
-.env.production
+*.env*
 
 # macOS-specific files
 .DS_Store
