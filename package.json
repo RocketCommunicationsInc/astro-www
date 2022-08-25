@@ -21,6 +21,7 @@
 		"postcss-preset-env": "7.8.0",
 		"remark-directive": "2.0.1",
 		"stylelint": "14.11.0",
+		"stylelint-order": "5.0.0",
 		"stylelint-use-logical": "2.0.0",
 		"types-object": "0.3.0"
 	},
@@ -60,6 +61,9 @@
 					"direction": "ltr"
 				}
 			]
-		}
+		},
+		"ignoreFiles": [
+			"**/sanitize.css"
+		]
 	}
 }
