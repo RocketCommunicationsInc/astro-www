@@ -1,7 +1,7 @@
 .p-search {
 	display: flex;
 
-	/* layout */
+	/* Layout */
 	flex-flow: column;
 }
 
@@ -10,55 +10,56 @@
 }
 
 .p-search .field-decorator > * {
+	/* Layout */
 	grid-area: 1 / 1;
 }
 
 .p-search .field-decorator-icon {
-	/* layout */
+	/* Layout */
 	align-self: center;
 	margin-inline-start: 2--step;
 	order: 1;
 
-	/* decoration */
+	/* Appearance */
 	color: var(--PrimaryColor);
+
+	/* Behavior */
 	pointer-events: none;
 }
 
 .p-search .field {
-	/* layout */
+	/* Layout */
 	inline-size: max(100%);
 	padding-block: 2--step;
 	padding-inline: 10--step;
 
-	/* typography */
+	/* Text */
 	font-size: 16--rpx;
 	line-height: max(20 / 16);
 
-	/* decoration */
+	/* Appearance */
 	background: var(--BaseColor);
 	border-radius: 3--rpx;
 	box-shadow: var(--border-color) 0 0 0 1px inset;
 	color: var(--PrimaryColor);
 
-	/* reference */
 	--border-color: var(--InteractiveMutedColor);
 }
 
 .p-search .field:is(:hover, :focus-visible) {
-	/* reference */
 	--border-color: var(--InteractiveHoverColor);
 }
 
 .p-search .field::placeholder {
-	/* decoration */
+	/* Appearance */
 	color: var(--PlaceholderColor);
 }
 
 .p-search .footer {
-	/* layout */
+	/* Layout */
 	padding-block-start: 3--step;
 
-	/* typography */
+	/* Text */
 	font-size: 14--rpx;
 	font-style: italic;
 	line-height: max(20 / 14);
@@ -72,33 +73,34 @@
 /* Generated DHTML */
 
 .p-search .heading {
-	/* layout */
+	/* Layout */
 	margin-block-start: 2--step;
 
-	/* typography */
+	/* Text */
 	font-size: 14--rpx;
 	line-height: max(20 / 14);
 
-	/* decoration */
+	/* Appearance */
 	color: var(--PrimaryColor);
 }
 
 .p-search .results {
 	display: flex;
 
-	/* layout */
+	/* Layout */
 	flex-flow: column;
 	gap: 1--step;
 }
 
 .p-search:is(.-has-results) .results {
+	/* Layout */
 	margin-block-start: 2--step;
 }
 
 .p-search .listitem {
 	display: grid;
 
-	/* layout */
+	/* Layout */
 	align-items: center;
 	column-gap: 3--step;
 	grid-template-columns: min-content 1fr;
@@ -106,66 +108,66 @@
 	padding-block: 4--step;
 	padding-inline: 4--step;
 
-	/* decoration */
+	/* Appearance */
 	background-color: var(--BaseColor);
 	border-radius: 3--rpx;
 	color: var(--SecondaryColor);
 }
 
 .p-search .listitem:is(:hover, :focus-within) {
-	/* decoration */
+	/* Appearance */
 	background-color: var(--InteractiveColor);
 	color: var(--InverseColor);
 	cursor: pointer;
 }
 
 .p-search .search-result-icon {
-	/* layout */
+	/* Layout */
 	grid-column: 1 / 2;
 	grid-row: 1 / 3;
 }
 
 .p-search .link {
-	/* layout */
+	/* Layout */
 	grid-column: 2 / 3;
 	grid-row: 1 / 2;
 	overflow: hidden;
-	white-space: nowrap;
 
-	/* typography */
+	/* Text */
 	font-size: 16--rpx;
 	line-height: max(20 / 16);
 	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 .p-search .link-description {
-	/* layout */
+	/* Layout */
 	grid-column: 2 / 3;
 	grid-row: 2 / 3;
 	margin-block-start: 1--step;
 
-	/* typography */
+	/* Text */
 	font-size: 14--rpx;
 	line-height: max(20 / 14);
 }
 
 .p-search mark {
-	/* decoration */
+	/* Appearance */
 	background-color: transparent;
 	color: var(--InteractiveColor);
 }
 
 .p-search .listitem:is(:hover, :focus-within) mark {
-	/* decoration */
+	/* Appearance */
 	color: currentColor;
 }
 
 .p-search .listitem:is(:hover, :focus-within) a {
-	/* decoration */
+	/* Appearance */
 	outline: none;
 }
 
 .p-search .listitem:not(:hover, :focus-within) svg {
-	/* decoration */
+	/* Appearance */
 	color: var(--PlaceholderColor);
 }

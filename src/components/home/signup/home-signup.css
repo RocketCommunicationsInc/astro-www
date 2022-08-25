@@ -3,17 +3,17 @@
 :where(.p-signup) {
 	display: flex;
 
-	/* layout */
+	/* Layout */
 	flex-flow: column;
-	padding-inline: 6--step;
 	padding-block: 5--step 10--step;
+	padding-inline: 6--step;
 
-	/* typography */
+	/* Text */
 	font-size: 4--step;
 	font-weight: 400;
-	letter-spacing: 0.5%;
+	letter-spacing: .5%;
 
-	/* decoration */
+	/* Appearance */
 	background: var(--SurfaceColor);
 	border-radius: 3--rpx;
 	color: var(--PrimaryColor);
@@ -21,6 +21,7 @@
 
 @media (width >= 400px) {
 	:where(.p-signup) {
+		/* Layout */
 		inline-size: min(100% - 4--step, 134--step);
 		padding-inline: 8--step;
 	}
@@ -28,6 +29,7 @@
 
 @media (width >= 800px) {
 	:where(.p-signup) {
+		/* Layout */
 		padding-inline: 14--step;
 	}
 }
@@ -35,7 +37,7 @@
 /* Signup: Heading */
 
 :where(.p-signup-heading) {
-	/* typography */
+	/* Text */
 	font-size: 34--rpx;
 	font-weight: 700;
 	line-height: max(40 / 34);
@@ -43,7 +45,7 @@
 }
 
 :where(.p-signup-content) {
-	/* layout */
+	/* Layout */
 	margin-block-start: 5--step;
 }
 
@@ -52,7 +54,7 @@
 :where(.p-signup-form) {
 	display: flex;
 
-	/* layout */
+	/* Layout */
 	flex-flow: column;
 	gap: 4--step;
 	margin-block-start: 8--step;
@@ -63,7 +65,7 @@
 :where(.p-signup-form-control) {
 	display: flex;
 
-	/* sizing */
+	/* Layout */
 	flex-flow: column;
 	gap: 1--step;
 }
@@ -71,29 +73,33 @@
 /* Signup: Form: Control: Label */
 
 :where(.p-signup-form-control label) {
-	/* typography */
+	/* Text */
 	font-size: 14--rpx;
 	line-height: max(20 / 14);
 }
 
 :where(.p-signup-form-control.-required label span)::after {
+	/* Generated Content */
 	content: "*";
 }
 
 :where(.p-signup-form-control.-optional label span)::after {
+	/* Generated Content */
 	content: " (Optional)";
 }
 
 /* Signup: Form: Control: Input Text */
 
 :where(.p-signup-form input) {
-	/* sizing */
+	/* Layout */
 	padding-block: 3--step;
-	padding-left: 4--step;
+	padding-inline-start: 4--step;
 
-	/* decoration */
+	/* Appearance */
 	background: var(--BaseColor);
 	border-radius: 3--rpx;
+
+	/* Appearance */
 	color: var(--PrimaryColor);
 }
 
@@ -104,26 +110,25 @@
 /* Signup: Form: Control: Button Submit */
 
 :where(.p-signup-form button[type="submit"]) {
-	/* layout */
+	/* Layout */
 	align-self: center;
 	margin-block-start: 4--step;
-	padding-inline: 4--step;
 	padding-block: 2--step;
+	padding-inline: 11--step;
 
-	/* typography */
+	/* Text */
 	font-size: 16--rpx;
 	line-height: max(20 / 16);
 
-	/* decoration */
+	/* Appearance */
 	background-color: var(--InteractiveColor);
 	border-radius: 3--rpx;
 	box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
-	padding-inline: 11--step;
-	padding-block: 2--step;
 	color: var(--InverseColor);
 	cursor: pointer;
 }
 
 :where(.p-signup button[type="submit"]:is(:hover, :focus-visible)) {
+	/* Appearance */
 	background-color: var(--InteractiveHoverColor);
 }

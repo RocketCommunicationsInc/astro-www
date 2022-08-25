@@ -1,30 +1,32 @@
 :where(.p-skip) {
 	display: flex;
-	position: fixed;
 
-	/* layout */
+	/* Layout */
 	align-items: center;
 	block-size: 20--step;
 	inline-size: 100vw;
 	inset: 0;
 	justify-content: center;
+	position: fixed;
 	z-index: 1;
 
-	/* typography */
+	/* Text */
 	font-size: 18--rpx;
 	font-weight: 700;
 	line-height: calc(20 / 18);
 	text-decoration: underline;
 	text-transform: uppercase;
 
-	/* decoration */
+	/* Appearance */
 	background-color: var(--SurfaceColor);
 	box-shadow: currentColor 0 -1px 0 0 inset;
 	color: var(--PrimaryColor);
 }
 
 :where(.p-skip:not(:focus-visible)) {
-	/* decoration */
+	/* Layout */
 	clip-path: inset(50%);
+
+	/* Appearance */
 	pointer-events: none;
 }
