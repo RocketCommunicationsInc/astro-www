@@ -1,31 +1,33 @@
 :where(.p-content) {
 	display: flex;
 
-	/* layout */
+	/* Layout */
 	align-items: center;
 	flex-flow: column;
 	padding-block-end: 18--step;
 	padding-inline: max(4--step, 50% - 175--step);
 
-	/* decoration */
+	/* Appearance */
 	background:
 		url("/images/header-bg-gradient.svg") no-repeat 50% 0% / 100% auto,
 		url("/images/header-bg-noise.svg") no-repeat 50% 0% / 100% auto,
 		url("/images/header-bg.webp") no-repeat 50% 0% / 100% auto,
 		url("/images/footer-bg-gradient.svg") no-repeat 50% 100% / 100% auto,
 		url("/images/footer-bg-noise.svg") no-repeat 50% 100% / 100% auto,
-		url("/images/footer-bg.webp") no-repeat 50% 100% / 100% auto
-	;
+		url("/images/footer-bg.webp") no-repeat 50% 100% / 100% auto;
 }
 
 :where(* + .p-community) {
+	/* Layout */
 	margin-block-start: 10--step;
 }
 
 :where(* + .p-articles) {
+	/* Layout */
 	margin-block-start: 10--step;
 }
 
 :where(* + .p-signup) {
+	/* Layout */
 	margin-block-start: 18--step;
 }

@@ -1,14 +1,18 @@
 @keyframes ElementDisplay {
 	from, to {
+		/* Layout */
 		visibility: hidden;
 	}
 }
 
 :where(:not(:defined)) {
-	animation: .2s ElementDisplay;
 	display: contents;
+
+	/* Animation */
+	animation: .2s ElementDisplay;
 }
 
 :where(:defined) {
+	/* Animation */
 	animation-name: none;
 }

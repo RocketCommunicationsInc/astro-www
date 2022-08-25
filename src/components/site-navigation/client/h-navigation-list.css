@@ -1,27 +1,34 @@
 /* Unset button styles */
+
 button {
-	appearance: none;
-	background-color: transparent;
-	border-width: 0;
-	color: inherit;
-	cursor: inherit;
-	font: inherit;
-	line-height: inherit;
+	/* Layout */
 	margin: 0;
 	padding: 0;
+
+	/* Text */
+	font: inherit;
+	line-height: inherit;
 	text-align: inherit;
+
+	/* Appearance */
+	appearance: none;
+	background-color: transparent;
+	color: inherit;
+	cursor: inherit;
+	border-width: 0;
 }
 
 /* Unset SVG styles */
+
 svg {
 	fill: currentColor;
 }
 
 .control {
-	/* layout */
+	/* Layout */
 	grid-area: disclosure;
 
-	/* decoration */
+	/* Appearance */
 	color: var(--PrimaryColor);
 	cursor: pointer;
 }
@@ -36,8 +43,10 @@ svg {
 }
 
 .content {
-	/* layout */
+	/* Layout */
 	grid-area: navigation;
+
+	/* Layout */
 	margin-inline: -8--step;
 }
 

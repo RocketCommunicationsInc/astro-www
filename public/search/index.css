@@ -1,30 +1,38 @@
 .p-body {
 	display: flex;
+
+	/* Layout */
 	align-items: start;
 	justify-content: center;
+
+	/* Appearance */
 	background-color: var(--InverseColor);
 }
 
 .visually-hidden {
 	all: unset !important;
 	clip-path: inset(50%) !important;
+
+	/* Layout */
 	height: 1px !important;
 	margin: -1px !important;
 	position: fixed !important;
 	pointer-events: none !important;
+
+	/* Layout */
 	width: 1px !important;
 }
 
 .search-form {
 	display: flex;
 
-	/* layout */
+	/* Layout */
 	flex-flow: column;
 	inline-size: min(100%, 149--step);
-	padding-inline: 5--step;
 	padding-block: 5--step 10--step;
+	padding-inline: 5--step;
 
-	/* decoration */
+	/* Appearance */
 	background: var(--SurfaceColor);
 	border-radius: 3--rpx;
 }
@@ -42,33 +50,36 @@
 }
 
 .search-form .search-field-icon {
-	/* layout */
+	/* Layout */
+
 	align-self: center;
 	margin-inline-start: 2--step;
 	order: 1;
 
-	/* decoration */
+	/* Appearance */
 	color: var(--PrimaryColor);
 	pointer-events: none;
 }
 
 .search-form .search-field {
-	/* layout */
+	/* Layout */
+
 	inline-size: max(100%);
 	padding-block: 2--step;
 	padding-inline: 10--step;
 
-	/* typography */
+	/* Text */
 	font-size: 16--rpx;
 	line-height: max(20 / 16);
 
-	/* decoration */
+	/* Appearance */
 	background: var(--BaseColor);
 	border-radius: 3--rpx;
+
+	/* Appearance */
 	box-shadow: var(--border-color) 0 0 0 1px inset;
 	color: var(--PrimaryColor);
 
-	/* reference */
 	--border-color: var(--InteractiveMutedColor);
 }
 
@@ -77,25 +88,28 @@
 }
 
 .search-form .search-field::placeholder {
+	/* Appearance */
+
 	color: var(--PlaceholderColor);
 }
 
 .search-form .heading {
-	/* layout */
+	/* Layout */
+
 	margin-block-start: 2--step;
 
-	/* typography */
+	/* Text */
 	font-size: 14--rpx;
 	line-height: max(20 / 14);
 
-	/* decoration */
+	/* Appearance */
 	color: var(--PrimaryColor);
 }
 
 .search-form .results {
 	display: flex;
 
-	/* layout */
+	/* Layout */
 	flex-flow: column;
 	gap: 1--step;
 	margin-block-start: 2--step;
@@ -104,84 +118,103 @@
 .search-form .listitem {
 	display: grid;
 
-	/* layout */
+	/* Layout */
 	align-items: center;
 	column-gap: 3--step;
+
+	/* Layout */
 	grid-template-columns: min-content 1fr;
 	grid-template-rows: min-content 1fr;
 	padding-block: 4--step;
 	padding-inline: 4--step;
 
-	/* decoration */
+	/* Appearance */
 	background-color: var(--BaseColor);
 	border-radius: 3--rpx;
+
+	/* Appearance */
 	color: var(--SecondaryColor);
 }
 
 .search-form .listitem:is(:hover, :focus-within) {
+	/* Appearance */
+
 	background-color: var(--InteractiveColor);
 	color: var(--InverseColor);
 }
 
 .search-form .search-result-icon {
+	/* Layout */
+
 	grid-column: 1 / 2;
 	grid-row: 1 / 3;
 }
 
 .search-form .link {
-	/* layout */
+	/* Layout */
+
 	grid-column: 2 / 3;
 	grid-row: 1 / 2;
 	overflow: hidden;
-	white-space: nowrap;
 
-	/* typography */
+	/* Text */
 	font-size: 16--rpx;
 	line-height: max(20 / 16);
 	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 .search-form .link-description {
-	/* layout */
+	/* Layout */
+
 	grid-column: 2 / 3;
 	grid-row: 2 / 3;
 	margin-block-start: 1--step;
 
-	/* typography */
+	/* Text */
 	font-size: 14--rpx;
 	line-height: max(20 / 14);
 }
 
 .search-form mark {
+	/* Appearance */
+
 	background-color: transparent;
 	color: var(--InteractiveColor);
 }
 
 .search-form .listitem:is(:hover, :focus-within) mark {
+	/* Appearance */
+
 	color: currentColor;
 }
 
 .search-form .listitem:is(:hover, :focus-within) a {
+	/* Appearance */
+
 	outline: none;
 }
 
 .search-form .listitem:not(:hover, :focus-within) svg {
+	/* Appearance */
+
 	color: var(--PlaceholderColor);
 }
 
 .search-form .search-footer {
-	/* layout */
-	margin-inline: -5--step;
-	margin-block: 5--step -10--step;
-	padding-inline: 5--step;
-	padding-block: 3--step;
+	/* Layout */
 
-	/* typography */
+	margin-block: 5--step -10--step;
+	margin-inline: -5--step;
+	padding-block: 3--step;
+	padding-inline: 5--step;
+
+	/* Text */
 	font-size: 14--rpx;
 	line-height: max(20 / 14);
 	text-align: end;
 
-	/* decoration */
+	/* Appearance */
 	background-color: var(--BaseColor);
 	color: var(--PlaceholderColor);
 }

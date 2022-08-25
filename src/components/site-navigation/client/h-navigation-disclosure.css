@@ -1,18 +1,25 @@
 /* Unset button styles */
+
 button {
-	appearance: none;
-	background-color: transparent;
-	border-width: 0;
-	color: inherit;
-	cursor: inherit;
-	font: inherit;
-	line-height: inherit;
+	/* Layout */
 	margin: 0;
 	padding: 0;
+
+	/* Text */
+	font: inherit;
+	line-height: inherit;
 	text-align: inherit;
+
+	/* Appearance */
+	appearance: none;
+	background-color: transparent;
+	color: inherit;
+	cursor: inherit;
+	border-width: 0;
 }
 
 /* Unset SVG styles */
+
 svg {
 	fill: currentColor;
 }
@@ -20,45 +27,51 @@ svg {
 .control {
 	display: flex;
 
-	/* layout */
+	/* Layout */
 	align-items: center;
 	inline-size: max(100%);
 	padding-block: 4--step;
 	padding-inline: 11--step;
 
-	/* decoration */
+	/* Appearance */
 	cursor: pointer;
 
-	/* animation */
+	/* Animation */
 	transition: 400ms color;
 }
 
 .control:is(:hover, :focus-visible) {
+	/* Appearance */
 	color: var(--Orange700Color);
 }
 
 .control svg {
-	/* layout */
+	/* Layout */
 	block-size: 14px;
 	inline-size: 7px;
-	margin-inline-start: max(-7px - 2--step);
 	margin-inline-end: 2--step;
+	margin-inline-start: max(-7px - 2--step);
 
-	/* animation */
+	/* Animation */
 	transition: transform 200ms;
 }
 
 ::slotted(:is(a, span)) {
+	/* stylelint-disable-next-line declaration-no-important */
 	display: contents !important;
 }
 
 .content:not(.open) {
+	/* Layout */
 	height: 0;
 	overflow: hidden;
+
+	/* Animation */
 	transition: 400ms height;
 }
 
 .content:is(.open) {
+	/* Layout */
 	height: auto;
 }
 

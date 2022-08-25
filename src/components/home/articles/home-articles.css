@@ -4,16 +4,16 @@
 	--article-gap: 15--step;
 
 	display: grid;
-	grid-template-rows: auto auto;
 
-	/* layout */
+	/* Layout */
 	flex-flow: column;
+	grid-template-rows: auto auto;
 	max-inline-size: 100%;
-
 
 	@media (width >= 760px) {
 		--articles-size: max(2 * var(--article-size) + 1 * var(--article-gap));
 
+		/* Layout */
 		align-self: start;
 	}
 
@@ -34,33 +34,34 @@
 	}
 
 	/* Articles: Heading */
+
 	& > h3 {
-		/* typography */
+		/* Text */
 		font-size: 34--rpx;
 		font-weight: 700;
 		line-height: max(40 / 34);
 	}
 
 	/* Articles: Content */
+
 	& > .content {
 		display: flex;
 
-		/* parent layout */
+		/* Layout */
+		gap: var(--article-gap);
 		grid-column: 1 / 2;
 		grid-row: 2;
-
-		/* layout */
-		gap: var(--article-gap);
 		margin-block-start: 4--step;
 
-		/* decoration */
-		-webkit-overflow-scrolling: touch;
-		overscroll-behavior-x: contain;
+		/* Layout */
 		overflow-x: auto;
 		overflow-x: overlay;
-		scroll-snap-type: x mandatory;
 
-		/* reference */
+		/* Behavior */
+		overscroll-behavior-x: contain;
+		scroll-snap-type: x mandatory;
+		-webkit-overflow-scrolling: touch;
+
 		--mask-size: max(100% + 38--step);
 		--lead-mask: linear-gradient(90deg, hsl(0 0% 0% / 0%), hsl(0 0% 0% / 100%) 38--step);
 		--tail-mask: linear-gradient(90deg, hsl(0 0% 0% / 100%) max(100% - 38--step), hsl(0 0% 0% / 0%));
@@ -71,53 +72,64 @@
 	& > .icon {
 		/* parent layout */
 		align-self: center;
-		cursor: pointer;
+		block-size: 112--step;
 		grid-row: 2;
 
-		/* layout */
+		/* Layout */
 		inline-size: 5--step;
-		block-size: 112--step;
 		padding-inline: 1--step;
+
+		/* Appearance */
+		color: var(--InteractiveColor);
+		cursor: pointer;
+
+		/* Animation */
 		transition: 400ms opacity;
 
-		/* decoration */
-		color: var(--InteractiveColor);
-
 		&:not(:hover) {
-			opacity: 0.75;
+			/* Appearance */
+			opacity: .75;
 		}
 
 		&.icon-carrot-prev {
+			/* Layout */
 			grid-column: 1;
 			transform: scale(-1, 1);
 		}
 
 		&.icon-carrot-next {
+			/* Layout */
 			grid-column: 2;
 		}
 	}
 
 	&:not(.obscured-lead) .icon-carrot-prev {
+		/* Layout */
 		block-size: 0;
 
-		/* decoration */
+		/* Appearance */
 		color: var(--InteractiveHoverColor);
 		opacity: 0;
 	}
 
 	&:not(.obscured-tail) .icon-carrot-next {
+		/* Layout */
 		block-size: 0;
+
+		/* Appearance */
 		opacity: 0;
 	}
 
 	&:is(.obscured-lead, .obscured-tail) .content {
+		/* Masking */
 		mask-composite: intersect;
 		mask-image: var(--lead-mask), var(--tail-mask);
-		mask-size: var(--mask-size) 100%, var(--mask-size) 100%;
 		mask-position: var(--lead-posi), var(--tail-posi);
+		mask-size: var(--mask-size) 100%, var(--mask-size) 100%;
 	}
 
 	&:is(.obscured-lead, .obscured-tail).animate .content {
+		/* Animation */
 		transition: mask-position 900ms;
 	}
 
@@ -132,64 +144,65 @@
 	& article {
 		display: flex;
 
-		/* layout */
+		/* Layout */
 		flex-flow: column;
 		flex-shrink: 0;
 		inline-size: var(--article-size);
 		scroll-snap-align: start;
 
-		/* decoration */
+		/* Appearance */
 		background-color: var(--BaseHeaderColor);
+
+		/* Animation */
 		transition: 600ms opacity;
 
 		&.obscured {
-			opacity: 0.5;
+			/* Appearance */
+			opacity: .5;
 		}
 
 		& img {
-			/* layout */
+			/* Layout */
 			aspect-ratio: 300 / 230;
 			block-size: auto;
 			inline-size: 100%;
-
-			/* decoration */
 			object-fit: contain;
 		}
 
 		& h4 {
-			/* layout */
+			/* Layout */
 			margin-block-start: 5--step;
 			padding-inline-start: 5--step;
 
-			/* typography */
+			/* Text */
 			font-size: 20--rpx;
 			font-weight: 500;
 			line-height: max(24 / 20);
 		}
 
 		& p {
-			/* layout */
+			/* Layout */
 			margin-block-start: 4--step;
 			padding-inline: 5--step;
 
-			/* typography */
+			/* Text */
 			font-size: 14--rpx;
 			line-height: 4--step;
 		}
 
 		& a {
-			/* layout */
+			/* Layout */
 			align-self: center;
 			margin-block: 4--step;
 			margin-inline: 20--step;
 			padding-block: 2--step;
 			padding-inline: 4--step;
 
-			/* typography */
+			/* Text */
 			font-size: 16--rpx;
 			line-height: max(20 / 16);
 
-			/* decoration */
+			/* Appearance */
 			background-color: var(--InteractiveColor);
 			border-radius: 3--rpx;
 			box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
@@ -197,6 +210,7 @@
 			cursor: pointer;
 
 			&:is(:hover, :focus-visible) {
+				/* Appearance */
 				background-color: var(--InteractiveHoverColor);
 			}
 		}
