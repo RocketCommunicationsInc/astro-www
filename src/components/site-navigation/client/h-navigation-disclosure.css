@@ -38,22 +38,26 @@ svg {
 
 	/* Animation */
 	transition: 400ms color;
-}
 
-.control:is(:hover, :focus-visible) {
-	/* Appearance */
-	color: var(--Orange700Color);
-}
+	&:hover, &:focus-visible {
+		/* Appearance */
+		color: var(--Orange700Color);
+	}
 
-.control svg {
-	/* Layout */
-	block-size: 14px;
-	inline-size: 7px;
-	margin-inline-end: 2--step;
-	margin-inline-start: max(-7px - 2--step);
+	& svg {
+		/* Layout */
+		block-size: 14px;
+		inline-size: 7px;
+		margin-inline-end: 2--step;
+		margin-inline-start: max(-7px - 2--step);
 
-	/* Animation */
-	transition: transform 200ms;
+		/* Animation */
+		transition: transform 200ms;
+	}
+
+	&.open svg {
+		transform: rotate3d(0, 0, 1, 90deg);
+	}
 }
 
 ::slotted(:is(a, span)) {
@@ -61,20 +65,18 @@ svg {
 	display: contents !important;
 }
 
-.content:not(.open) {
-	/* Layout */
-	height: 0;
-	overflow: hidden;
+.content {
+	&.open {
+		/* Layout */
+		height: auto;
+	}
 
-	/* Animation */
-	transition: 400ms height;
-}
+	&:not(.open) {
+		/* Layout */
+		height: 0;
+		overflow: hidden;
 
-.content:is(.open) {
-	/* Layout */
-	height: auto;
-}
-
-.control:is(.open) svg {
-	transform: rotate3d(0, 0, 1, 90deg);
+		/* Animation */
+		transition: 400ms height;
+	}
 }
