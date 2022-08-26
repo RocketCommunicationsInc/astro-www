@@ -1,5 +1,5 @@
-import darkTokens from 'project:data/tokens-of-dark.json'
-import liteTokens from 'project:data/tokens-of-lite.json'
+import darkTokens from '@astrouxds/design-tokens/dist/json/docs.json'
+import liteTokens from '@astrouxds/design-tokens/dist/json/docs-light.json'
 
 export const components = (theme: string, componentName: string) => {
 	let themeTokens = theme === 'dark' ? darkTokens : liteTokens

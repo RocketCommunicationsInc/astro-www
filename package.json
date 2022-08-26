@@ -16,6 +16,7 @@
 		"@astropub/doc": "0.1.3",
 		"@astropub/flow": "0.3.1",
 		"@astropub/md": "0.1.1",
+		"@astrouxds/design-tokens": "2.0.0-beta.12",
 		"@csstools/custom-units": "0.1.1",
 		"astro": "1.0.9",
 		"parse-yaml": "0.1.0",
