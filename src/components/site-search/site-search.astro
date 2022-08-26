@@ -10,7 +10,6 @@ const meta = {
 	'footer-url': 'https://www.algolia.com/ref/docsearch/?utm_source=astrouxds.org&utm_medium=referral&utm_content=powered_by&utm_campaign=docsearch',
 } as const
 ---
-<script>import './site-search.fe'</script>
 <form class="p-search" id="search">
 	<span class="content" role="search" aria-label={meta.title}>
 		<span class="field-decorator">
@@ -25,3 +24,4 @@ const meta = {
 	</span>
 	<p class="footer"><slot name="footer"><a href={meta['footer-url']} target="_blank" rel="noopener">Search by Algolia</a></slot></p>
 </form>
+<script>import './site-search.client.ts'</script>
