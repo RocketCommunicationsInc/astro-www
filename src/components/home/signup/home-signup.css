@@ -1,6 +1,4 @@
-/* Signup */
-
-:where(.p-signup) {
+.p-signup {
 	display: flex;
 
 	/* Layout */
@@ -17,26 +15,27 @@
 	background: var(--SurfaceColor);
 	border-radius: 3--rpx;
 	color: var(--PrimaryColor);
-}
 
-@media (width >= 400px) {
-	:where(.p-signup) {
+	@media (width >= 400px) {
 		/* Layout */
 		inline-size: min(100% - 4--step, 134--step);
 		padding-inline: 8--step;
 	}
-}
 
-@media (width >= 800px) {
-	:where(.p-signup) {
+	@media (width >= 800px) {
 		/* Layout */
 		padding-inline: 14--step;
+	}
+
+	& button[type="submit"]:is(:hover, :focus-visible) {
+		/* Appearance */
+		background-color: var(--InteractiveHoverColor);
 	}
 }
 
 /* Signup: Heading */
 
-:where(.p-signup-heading) {
+.p-signup-heading {
 	/* Text */
 	font-size: 34--rpx;
 	font-weight: 700;
@@ -44,14 +43,14 @@
 	text-align: center;
 }
 
-:where(.p-signup-content) {
+.p-signup-content {
 	/* Layout */
 	margin-block-start: 5--step;
 }
 
 /* Signup: Form */
 
-:where(.p-signup-form) {
+.p-signup-form {
 	display: flex;
 
 	/* Layout */
@@ -62,54 +61,48 @@
 
 /* Signup: Form: Control */
 
-:where(.p-signup-form-control) {
+.p-signup-form-control {
 	display: flex;
 
 	/* Layout */
 	flex-flow: column;
 	gap: 1--step;
+
+	& label {
+		/* Text */
+		font-size: 14--rpx;
+		line-height: max(20 / 14);
+	}
+
+	&.-required label span::after {
+		/* Generated */
+		content: "*";
+	}
+
+	&.-optional label span::after {
+		/* Generated */
+		content: " (Optional)";
+	}
+
+	& input {
+		/* Layout */
+		padding-block: 3--step;
+		padding-inline-start: 4--step;
+
+		/* Appearance */
+		background: var(--BaseColor);
+		border-radius: 3--rpx;
+
+		/* Appearance */
+		color: var(--PrimaryColor);
+
+		&:is(:hover, :focus-visible) {
+			--border-color: var(--InteractiveHoverColor);
+		}
+	}
 }
 
-/* Signup: Form: Control: Label */
-
-:where(.p-signup-form-control label) {
-	/* Text */
-	font-size: 14--rpx;
-	line-height: max(20 / 14);
-}
-
-:where(.p-signup-form-control.-required label span)::after {
-	/* Generated */
-	content: "*";
-}
-
-:where(.p-signup-form-control.-optional label span)::after {
-	/* Generated */
-	content: " (Optional)";
-}
-
-/* Signup: Form: Control: Input Text */
-
-:where(.p-signup-form input) {
-	/* Layout */
-	padding-block: 3--step;
-	padding-inline-start: 4--step;
-
-	/* Appearance */
-	background: var(--BaseColor);
-	border-radius: 3--rpx;
-
-	/* Appearance */
-	color: var(--PrimaryColor);
-}
-
-:where(.p-signup-form input:is(:hover, :focus-visible)) {
-	--border-color: var(--InteractiveHoverColor);
-}
-
-/* Signup: Form: Control: Button Submit */
-
-:where(.p-signup-form button[type="submit"]) {
+.p-signup-form-submit {
 	/* Layout */
 	align-self: center;
 	margin-block-start: 4--step;
@@ -126,9 +119,4 @@
 	box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
 	color: var(--InverseColor);
 	cursor: pointer;
-}
-
-:where(.p-signup button[type="submit"]:is(:hover, :focus-visible)) {
-	/* Appearance */
-	background-color: var(--InteractiveHoverColor);
 }

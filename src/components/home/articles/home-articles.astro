@@ -5,11 +5,10 @@ import './home-articles.css'
 
 const { data } = Astro.props as typeof articles
 ---
-
 <section class="p-articles">
 	<h3>{data.heading.data}</h3>
 	<div class="content">
-		<For of={data.content.data}>{(item) => (
+		<For of={data.content.data}>{item => (
 			<article>
 				<img src={item.image.data.url} alt={item.image.data.description} width={item.image.data.width} height={item.image.data.height} aria-hidden="true" />
 				<h4>{item.heading.data}</h4>
@@ -19,4 +18,4 @@ const { data } = Astro.props as typeof articles
 		)}</For>
 	</div>
 </section>
-<script>import './client/home-articles'</script>
+<script>import './home-articles.client.ts'</script>

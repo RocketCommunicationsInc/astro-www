@@ -17,6 +17,6 @@ if (Astro.props.required) {
 
 const classForControl = [ ...new Set(classesForControl) ].join(' ')
 
-const props = Astro.props as Attributes
+const props = Astro.props as Props
 ---
 <Control {...props} class={classForControl}><slot /></Control>
