@@ -1,4 +1,4 @@
-:where(.p-screenshot) {
+.p-screenshot {
 	aspect-ratio: 242 / 136;
 
 	/* Layout */

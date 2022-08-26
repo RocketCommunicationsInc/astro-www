@@ -6,7 +6,6 @@ import './home-explainer.css'
 
 const { data } = Astro.props as typeof explainer
 ---
-
 <section class="p-explainer">
 	<For of={data}>{(item) => (
 		<article>
