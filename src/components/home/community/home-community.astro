@@ -7,7 +7,7 @@ import HomeCommunityLinks from './home-community-links.astro'
 
 const { data } = Astro.props as typeof community
 ---
-<section class="p-community">
+<section id="community" class="p-community">
 	<h3 class="p-community-heading">{data.heading.data}</h3>
 	<div class="p-community-content">
 		<HomeCommunityEvents data={data.events.data} />
