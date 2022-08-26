@@ -76,6 +76,14 @@
 		color: var(--Orange700Color);
 	}
 
+	& :where(a:not(.h):focus-visible) {
+		/* Appearance */
+		background-color: var(--InverseColor);
+		outline: max(1px, .125em) solid var(--Orange700Color);
+		outline-offset: .125em;
+		text-decoration-thickness: max(1px, .125em);
+	}
+
 	& :where(a.h) {
 		display: inline;
 
