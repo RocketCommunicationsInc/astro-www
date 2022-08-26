@@ -1,4 +1,4 @@
-:where(.p-footer) {
+.p-footer {
 	/* Layout */
 	padding-block: 7.5--step;
 	padding-inline: 11--step;
@@ -10,20 +10,16 @@
 	/* Appearance */
 	background-color: var(--color-background-base-default);
 	box-shadow: var(--color-wireframe-primary) 0 1px0 0 inset;
-}
 
-@media (width < 800x) {
-	:where(.p-footer) {
+	@media (width < 800x) {
 		display: flex;
 
 		/* Layout */
 		flex-flow: column;
 		gap: 8--step;
 	}
-}
 
-@media (width >= 800px) {
-	:where(.p-footer) {
+	@media (width >= 800px) {
 		display: grid;
 
 		/* Layout */
@@ -32,10 +28,8 @@
 		/* Layout */
 		grid-template-columns: 68--step 1fr min(25%, 79--step);
 	}
-}
 
-@media (width >= 1520px) {
-	:where(.p-footer) {
+	@media (width >= 1520px) {
 		/* Layout */
 		grid-template-columns: 68--step 1fr max(30%, 80--step);
 	}
@@ -43,7 +37,7 @@
 
 /* footer author */
 
-:where(.p-footer-author) {
+.p-footer-author {
 	display: grid;
 
 	/* Layout */
@@ -55,57 +49,73 @@
 	/* Text */
 	font-size: 14--rpx;
 	line-height: max(16 / 14);
-}
 
-:where(.p-footer-author svg) {
-	display: block;
-
-	/* Layout */
-	block-size: 10--step;
-	inline-size: 9--step;
-}
-
-/* footer navigation */
-
-:where(.p-footer-navigation h3):where(h3) {
-	/* Layout */
-	margin-block: 0;
-}
-
-@media (width < 800px) {
-	:where(.p-footer-navigation ul) {
-		display: grid;
+	& :where(svg) {
+		display: block;
 
 		/* Layout */
-		gap: 2--step;
-		grid-auto-flow: row;
-		grid-template-columns: 1fr 1fr;
-		inline-size: min(100%, 234--step);
+		block-size: 10--step;
+		inline-size: 9--step;
 	}
 }
 
-@media (width >= 800px) {
-	:where(.p-footer-navigation ul) {
-		display: grid;
-
+.p-footer-navigation, .p-footer-social {
+	@media (width < 800px) {
 		/* Layout */
-		column-gap: 4--step;
-		grid-template-columns: 1fr 1fr;
-		inline-size: min(100%, 234--step);
-		row-gap: 2--step;
+		margin-block-start: 5--step;
+	}
+
+	@media (width < 400px) {
+		/* Layout */
+		margin-block-start: 8--step;
 	}
 }
 
-@media (width >= 1200px) {
-	:where(.p-footer-navigation ul) {
+.p-footer-navigation {
+	& :where(h3) {
 		/* Layout */
-		grid-auto-flow: column;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: 1fr 1fr;
+		margin-block: 0;
+	}
+
+	& :where(ul) {
+		@media (width < 800px) {
+			display: grid;
+
+			/* Layout */
+			gap: 2--step;
+			grid-auto-flow: row;
+			grid-template-columns: 1fr 1fr;
+			inline-size: min(100%, 234--step);
+		}
+
+		@media (width >= 800px) {
+			display: grid;
+
+			/* Layout */
+			gap: 2--step 4--step;
+			grid-template-columns: 1fr 1fr;
+			inline-size: min(100%, 234--step);
+		}
+
+		@media (width >= 1200px) {
+			/* Layout */
+			grid-auto-flow: column;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
+		}
+	}
+
+	& :where(a) {
+		display: block;
+
+		&:is(:hover, :focus-visible) {
+			/* Text */
+			text-decoration: underline;
+		}
 	}
 }
 
-:where(.p-footer-social) {
+.p-footer-social {
 	display: flex;
 
 	/* Layout */
@@ -114,53 +124,29 @@
 
 	/* Text */
 	text-align: end;
-}
 
-:where(.p-footer-social span) {
-	display: inline-block;
-}
-
-:where(.p-footer-social-navigation ul) {
-	display: flex;
-
-	/* Layout */
-	column-gap: 8--step;
-	flex-flow: row wrap;
-	justify-content: flex-end;
-	row-gap: 6--step;
-}
-
-@media (width < 400px) {
-	:where(.p-footer-social-navigation ul) {
-		/* Layout */
-		justify-content: center;
+	& :where(span) {
+		display: inline-block;
 	}
 }
 
-@media (width < 800px) {
-	:where(.p-footer-navigation, .p-footer-social) {
+.p-footer-social-navigation {
+	& :where(ul) {
+		display: flex;
+
 		/* Layout */
-		margin-block-start: 5--step;
-	}
-}
+		gap: 6--step 8--step;
+		flex-flow: row wrap;
+		justify-content: flex-end;
 
-@media (width < 400px) {
-	:where(.p-footer-navigation, .p-footer-social) {
+		@media (width < 400px) {
+			/* Layout */
+			justify-content: center;
+		}
+	}
+
+	& :where(svg) {
 		/* Layout */
-		margin-block-start: 8--step;
+		block-size: 36px;
 	}
-}
-
-:where(.p-footer-navigation a) {
-	display: block;
-}
-
-:where(.p-footer-navigation a:is(:hover, :focus-visible)) {
-	/* Text */
-	text-decoration: underline;
-}
-
-:where(.p-footer-social-navigation svg) {
-	/* Layout */
-	block-size: 36px;
 }
