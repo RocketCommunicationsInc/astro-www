@@ -3,9 +3,9 @@ import Layout from 'project:layouts/default/default-layout-with-grid.astro'
 import SiteNavigation from 'project:components/site-navigation/site-navigation.astro'
 import ContributionFooter from 'project:components/contribution-footer/contribution-footer.astro'
 import SiteFooter from 'project:components/site-footer/site-footer.astro'
-/** @TODO  link for reference to add a compliance aside */
-
 import './docs-layout.css'
+import compliance from 'project:data/compliance.json'
+import ComplianceAside from 'project:components/compliance/compliance-aside.astro'
 
 const {
 	git: GitHubId,
@@ -13,6 +13,11 @@ const {
 	storybook: StorybookId,
 	title,
 } = Object(Astro.props.content)
+
+const componentRulesets = compliance.contents.find(content => content.name === 'Components')?.rulesets 
+const currentPathname = Astro.url.pathname
+const componentPath = componentRulesets?.find(component => component.link === currentPathname)
+console.log(componentPath)
 ---
 <script>import './docs-layout.client.js'</script>
 <Layout {title} tabtitle={title}>
