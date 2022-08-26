@@ -52,7 +52,7 @@
 		/* Layout */
 		block-size: min(100%, 100vh);
 		inline-size: 79--step;
-		inset-inline-start: 0;
+		inset-block-start: 0;
 		overflow-x: hidden;
 		overflow-y: auto;
 		overflow-y: overlay;
