@@ -1,11 +1,10 @@
 ---
 import type banner from 'project:data/home-banner.json'
-import './home-banner.css'
 import Image from 'project:components/image/image'
+import './home-banner.css'
 
 const { data } = Astro.props as typeof banner
 ---
-
 <header class="p-banner" role="banner">
 	<hgroup class="x-heading-group" role="group" aria-roledescription="Heading group">
 		<h2 class="x-heading">

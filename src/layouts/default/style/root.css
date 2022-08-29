@@ -1,80 +1,105 @@
 :where(.p-root) {
-	/* layout */
+	/* Layout */
 	height: 100%;
-
-	/* typography */
-	font-family: var(--SystemType);
-
-	/* decoration */
-	background-color: var(--BaseColor);
-	color: var(--PrimaryColor);
 	overflow-x: hidden;
 	overflow-y: auto;
 	overflow-y: overlay;
+
+	/* Text */
+	font-family: var(--SystemType);
+
+	/* Appearance */
+	background-color: var(--BaseColor);
+	color: var(--PrimaryColor);
+
+	/* Behavior */
 	scroll-behavior: smooth;
 	scrollbar-gutter: stable;
 	touch-action: manipulation;
 }
 
 :where(.p-root body) {
+	/* Layout */
 	min-height: 100%;
 }
 
 /* Unset several default user agent styles */
 
 :where(.p-root a) {
-	color: inherit;
+	/* Text */
 	text-decoration: none;
+
+	/* Appearance */
+	color: inherit;
 }
 
 :where(.p-root blockquote) {
+	/* Layout */
 	margin: 0;
 }
 
 :where(.p-root body) {
+	/* Layout */
 	margin: 0;
 }
 
 :where(.p-root button) {
-	appearance: none;
-	background-color: transparent;
-	border-width: 0;
-	color: inherit;
-	font: inherit;
-	line-height: inherit;
+	/* Layout */
 	margin: 0;
 	padding: 0;
+
+	/* Text */
+	font: inherit;
+	line-height: inherit;
 	text-align: inherit;
+
+	/* Appearance */
+	appearance: none;
+	background-color: transparent;
+	color: inherit;
+	border-width: 0;
 }
 
 :where(.p-root :is(dl, ol, ul)) {
 	list-style-type: none;
+
+	/* Layout */
 	margin-block: 0;
 	padding-inline: 0;
 }
 
 :where(.p-root dd) {
+	/* Layout */
 	margin-inline-start: 0;
 }
 
 :where(.p-root fieldset) {
-	border: 0 solid;
+	/* Layout */
 	margin: 0;
 	padding: 0;
+
+	/* Appearance */
+	border: 0 solid;
 }
 
 :where(.p-root figure) {
+	/* Layout */
 	margin: 0;
 }
 
 :where(.p-root :is(h1, h2, h3, h4, h5, h6)) {
+	/* Layout */
+	margin-block: 0;
+
+	/* Text */
 	font-size: inherit;
 	font-weight: inherit;
-	margin-block: 0;
 }
 
 :where(.p-root hr) {
 	border-style: none;
+
+	/* Layout */
 	margin-block: 0;
 }
 
@@ -83,32 +108,43 @@
 }
 
 :where(.p-root input) {
-	appearance: none;
-	background-color: transparent;
-	border-width: 0;
-	color: inherit;
-	font: inherit;
+	/* Layout */
 	margin: 0;
 	padding: 0;
-}
 
-:where(.p-root input)::-webkit-search-cancel-button {
-	display: none;
+	/* Text */
+	font: inherit;
+
+	/* Appearance */
+	appearance: none;
+	background-color: transparent;
+	color: inherit;
+	border-width: 0;
+
+	&::-webkit-search-cancel-button {
+		display: none;
+	}
 }
 
 :where(.p-root legend) {
+	/* Layout */
 	padding-inline: 0;
 }
 
 :where(.p-root p) {
+	/* Layout */
 	margin-block: 0;
 }
 
 :where(.p-root :is(code, pre)) {
+	/* Text */
 	font-family: inherit;
 }
 
 :where(.p-root pre) {
-	font-family: inherit;
+	/* Layout */
 	margin-block: 0;
+
+	/* Text */
+	font-family: inherit;
 }

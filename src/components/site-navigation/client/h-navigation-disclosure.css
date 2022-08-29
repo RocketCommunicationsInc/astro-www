@@ -1,18 +1,25 @@
 /* Unset button styles */
+
 button {
-	appearance: none;
-	background-color: transparent;
-	border-width: 0;
-	color: inherit;
-	cursor: inherit;
-	font: inherit;
-	line-height: inherit;
+	/* Layout */
 	margin: 0;
 	padding: 0;
+
+	/* Text */
+	font: inherit;
+	line-height: inherit;
 	text-align: inherit;
+
+	/* Appearance */
+	appearance: none;
+	background-color: transparent;
+	color: inherit;
+	cursor: inherit;
+	border-width: 0;
 }
 
 /* Unset SVG styles */
+
 svg {
 	fill: currentColor;
 }
@@ -20,48 +27,56 @@ svg {
 .control {
 	display: flex;
 
-	/* layout */
+	/* Layout */
 	align-items: center;
 	inline-size: max(100%);
 	padding-block: 4--step;
 	padding-inline: 11--step;
 
-	/* decoration */
+	/* Appearance */
 	cursor: pointer;
 
-	/* animation */
+	/* Animation */
 	transition: 400ms color;
-}
 
-.control:is(:hover, :focus-visible) {
-	color: var(--Orange700Color);
-}
+	&:hover, &:focus-visible {
+		/* Appearance */
+		color: var(--Orange700Color);
+	}
 
-.control svg {
-	/* layout */
-	block-size: 14px;
-	inline-size: 7px;
-	margin-inline-start: max(-7px - 2--step);
-	margin-inline-end: 2--step;
+	& svg {
+		/* Layout */
+		block-size: 14px;
+		inline-size: 7px;
+		margin-inline-end: 2--step;
+		margin-inline-start: max(-7px - 2--step);
 
-	/* animation */
-	transition: transform 200ms;
+		/* Animation */
+		transition: transform 200ms;
+	}
+
+	&.open svg {
+		transform: rotate3d(0, 0, 1, 90deg);
+	}
 }
 
 ::slotted(:is(a, span)) {
+	/* stylelint-disable-next-line declaration-no-important */
 	display: contents !important;
 }
 
-.content:not(.open) {
-	height: 0;
-	overflow: hidden;
-	transition: 400ms height;
-}
+.content {
+	&.open {
+		/* Layout */
+		height: auto;
+	}
 
-.content:is(.open) {
-	height: auto;
-}
+	&:not(.open) {
+		/* Layout */
+		height: 0;
+		overflow: hidden;
 
-.control:is(.open) svg {
-	transform: rotate3d(0, 0, 1, 90deg);
+		/* Animation */
+		transition: 400ms height;
+	}
 }

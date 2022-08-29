@@ -1,0 +1,34 @@
+@font-face {
+	font-family: ui-monospace;
+	src:
+		/* MacOS (El Capitan +) */
+		local(Menlo-Regular),
+		/* Windows (11 +) */
+		local(CascadiaCode-Regular),
+		/* Windows (Vista +) */
+		local(Consolas),
+		/* Android */
+		local(RobotoMono-Regular),
+		/* Gnome */
+		local(Cantarell-Regular),
+		/* Ubuntu */
+		local(UbuntuMono-Regular),
+		/* KDE */
+		local(OxygenMono-Regular),
+		/* Fallback */
+		local(Courier);
+}
+
+@font-face {
+	font-family: ui-monospace;
+	font-weight: 700;
+	src:
+		local(Menlo-Bold),
+		local(CascadiaCode-Bold),
+		local(Consolas),
+		local(RobotoMono-Bold),
+		local(Cantarell-Bold),
+		local(UbuntuMono-Bold),
+		local(OxygenMono-Bold),
+		local(CourierBold);
+}

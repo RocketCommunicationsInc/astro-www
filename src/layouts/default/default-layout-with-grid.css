@@ -2,30 +2,30 @@
 	.p-grid {
 		display: grid;
 
-		/* layout */
+		/* Layout */
 		grid-template-columns: 79--step 1fr;
 		grid-template-rows: 1fr min-content;
 	}
 
 	.p-grid-side {
-		/* layout */
+		/* Layout */
 		grid-column: 1 / 2;
 		grid-row: 1;
 
-		/* decoration */
+		/* Appearance */
 		background-color: var(--SurfaceColor);
 		color: var(--PrimaryColor);
 	}
 
 	.p-grid-main {
-		/* layout */
+		/* Layout */
 		grid-column: 2 / 3;
 		grid-row: 1;
 		overflow: hidden;
 	}
 
 	.p-grid-foot {
-		/* layout */
+		/* Layout */
 		grid-column: 1 / 3;
 		grid-row: 2;
 	}

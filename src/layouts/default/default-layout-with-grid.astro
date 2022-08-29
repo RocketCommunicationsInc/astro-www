@@ -1,8 +1,8 @@
 ---
-export type { Props } from '@astropub/doc'
-
 import DefaultLayout from './default-layout.astro'
-import './style/grid.css'
+import './default-layout-with-grid.css'
+
+export type { Props } from '@astropub/doc'
 ---
 <DefaultLayout {...Astro.props}>
 	<slot slot="head" name="head" />

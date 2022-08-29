@@ -1,72 +1,73 @@
 .p-design-token {
 	display: flex;
 
-	/* layout */
+	/* Layout */
 	padding: 5--step;
 
 	& + & {
-		/* layout */
+		/* Layout */
 		margin-block-start: 4--step;
 	}
 
 	& .--preview {
 		display: flex;
 
-		/* layout */
+		/* Layout */
 		align-items: center;
 		block-size: 16--step;
 		inline-size: 16--step;
 		justify-content: center;
 		margin-inline-end: 5--step;
 
-		/* decoration */
+		/* Appearance */
 		background-color: #1b2d3e;
 		color: #4dacff;
 	}
 
 	&:where(.--type-text) .--preview {
 		&::before {
-			content: "Aa";
-
-			/* typography */
+			/* Text */
 			font-size: 20--rpx;
 			line-height: max(28 / 20);
+
+			/* Generated */
+			content: "Aa";
 		}
 	}
 
 	&:where(.--type-background) .--preview {
-		/* decoration */
+		/* Appearance */
 		background-color: var(--value);
 	}
 
 	&:where(.--type-radius) .--preview {
-		/* decoration */
+		/* Appearance */
 		border-radius: var(--value);
 		box-shadow: var(--PrimaryColor) 0 0 0 1--rpx inset;
 	}
 
 	&:where(.--type-shadow) .--preview {
-		/* decoration */
+		/* Appearance */
 		box-shadow: var(--PrimaryColor) 0 0 0 1--rpx inset, var(--value);
 	}
 
 	& .--name {
-		/* typography */
+		/* Text */
 		font-weight: 700;
 	}
 
 	& .--value {
-		/* typography */
+		/* Text */
 		font-family: var(--SystemMonoType);
 	}
 
 	& .--alias {
-		/* decoration */
+		/* Appearance */
 		color: var(--SecondaryColor);
 	}
 
 	& dd:not(:first-of-type) {
-		/* layout */
+		/* Layout */
 		margin-block-start: 2--step;
 	}
 }

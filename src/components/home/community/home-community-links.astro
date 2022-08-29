@@ -7,7 +7,7 @@ const { data } = Astro.props as typeof community['data']['links']
 <section class="p-community-links">
 	<h4 class="p-community-links-heading">{data.heading.data}</h4>
 	<div class="p-community-links-content">
-		<For of={data.content.data}>{(item) => (
+		<For of={data.content.data}>{item => (
 			<article class="p-community-link">
 				<img class="p-community-link-image" src={item.image.data.url} alt={item.image.data.description} width={item.image.data.width} height={item.image.data.height} />
 				<div class="p-community-link-heading">{item.heading.data}</div>

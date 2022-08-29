@@ -1,49 +1,64 @@
 .visually-hidden {
+	/* stylelint-disable-next-line */
 	all: unset !important;
+	/* stylelint-disable-next-line */
 	clip-path: inset(50%) !important;
+	/* stylelint-disable-next-line */
 	height: 1px !important;
+	/* stylelint-disable-next-line */
 	margin: -1px !important;
+	/* stylelint-disable-next-line */
 	position: fixed !important;
+	/* stylelint-disable-next-line */
 	pointer-events: none !important;
+	/* stylelint-disable-next-line */
 	width: 1px !important;
 }
 
 .type-display-1 {
+	/* Text */
 	font: 300 60--rpx/max(70 / 60) var(--SystemType);
-	letter-spacing: -0.005em;
+	letter-spacing: -.005em;
 }
 
 .type-display-2 {
+	/* Text */
 	font: 400 48--rpx/max(56 / 48) var(--SystemType);
-	letter-spacing: +0.000em;
+	letter-spacing: 0;
 }
 
 .type-heading-1 {
+	/* Text */
 	font: 400 34--rpx/max(40 / 34) var(--SystemType);
-	letter-spacing: +0.025em;
+	letter-spacing: +.025em;
 }
 
 .type-heading-2 {
+	/* Text */
 	font: 400 24--rpx/max(28 / 24) var(--SystemType);
-	letter-spacing: +0.000em;
+	letter-spacing: 0;
 }
 
 .type-heading-3 {
+	/* Text */
 	font: 500 20--rpx/max(24 / 20) var(--SystemType);
-	letter-spacing: +0.015em;
+	letter-spacing: +.015em;
 }
 
 .type-heading-4 {
+	/* Text */
 	font: 300 20--rpx/max(24 / 20) var(--SystemType);
-	letter-spacing: +0.025em;
+	letter-spacing: +.025em;
 }
 
 .type-heading-5 {
+	/* Text */
 	font: 400 18--rpx/max(24 / 18) var(--SystemType);
-	letter-spacing: +0.000em;
+	letter-spacing: 0;
 }
 
 .type-heading-6 {
+	/* Text */
 	font: 300 18--rpx/max(24 / 18) var(--SystemType);
-	letter-spacing: +0.000em;
+	letter-spacing: 0;
 }

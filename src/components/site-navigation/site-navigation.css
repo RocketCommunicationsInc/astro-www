@@ -3,38 +3,42 @@
 :where(.p-navigation) {
 	display: flex;
 
-	/* layout */
+	/* Layout */
 	align-items: center;
 	flex-flow: column;
 	padding-block: 6--step;
 
-	/* decoration */
+	/* Appearance */
 	background: var(--SurfaceColor);
+
+	/* Animation */
 	transition: inline-size 200ms;
 
 	&.-has-results {
+		/* Layout */
 		inline-size: min(50vw, 140--step);
 	}
-}
 
-@media (width < 800px) {
-	:where(.p-navigation) {
+	@media (width < 800px) {
 		display: grid;
 
-		/* layout */
+		/* Layout */
 		grid-template-columns: min-content 1fr;
 		grid-template-rows: min-content 1fr;
+		/* stylelint-disable-next-line */
 		grid-template-areas: "disclosure heading" "navigation navigation";
 		padding-block: 2--step;
 		padding-inline: 9--step;
 	}
+}
 
+@media (width < 800px) {
 	:where(.p-navigation-heading) {
 		display: flex;
 
-		/* layout */
-		grid-area: heading;
+		/* Layout */
 		flex-grow: 1;
+		grid-area: heading;
 		justify-content: center;
 		order: 2;
 	}
@@ -48,46 +52,46 @@
 	:where(.p-navigation) {
 		--mask: linear-gradient(0deg, hsl(0 0% 0% / 0%), hsl(0 0% 0% / 100%) 10--step);
 
-		position: sticky;
-
-		/* layout */
+		/* Layout */
 		block-size: min(100%, 100vh);
 		inline-size: 79--step;
+		inset-block-start: 0;
 		overflow-x: hidden;
 		overflow-y: auto;
 		overflow-y: overlay;
+		position: sticky;
+
+		/* Masking */
+		mask-image: var(--mask);
+		mask-position: bottom;
+		mask-size: 100% 100%;
+
+		/* Behavior */
 		scroll-behavior: smooth;
 		scrollbar-gutter: stable;
-		top: 0;
-
-		/* decoration */
-		scroll-behavior: smooth;
-
-		/* masking */
-		mask-image: var(--mask);
-		mas-size: 100% 100%;
-		mask-position: bottom;
 	}
 }
 
 /* Navigation: Heading */
 
 :where(.p-navigation-heading) {
+	/* Animation */
 	transition: filter 200ms;
 
 	&:where(:hover, :focus) {
+		/* Appearance */
 		filter: drop-shadow(0 2--rpx 0 var(--InverseColor)) drop-shadow(0 2--rpx 0 var(--InverseColor)) drop-shadow(0 0 8--step var(--PrimaryColor));
 		outline: none;
 	}
 }
 
 :where(.p-navigation-heading-image) {
+	/* Layout */
 	aspect-ratio: 291 / 123;
 	block-size: 14--step;
-}
 
-@media (width < 800px) {
-	:where(.p-navigation-heading-image) {
+	@media (width < 800px) {
+		/* Layout */
 		block-size: 11--step;
 	}
 }
@@ -95,14 +99,12 @@
 /* Navigation: Search */
 
 :where(.p-search) {
+	/* Layout */
 	inline-size: 100%;
-
 	margin-block-start: 7--step;
 	padding-inline: 11--step;
-}
 
-@media (width < 800px) {
-	:where(.p-search) {
+	@media (width < 800px) {
 		display: none;
 	}
 }
@@ -114,53 +116,59 @@ h-navigation-list {
 }
 
 :where(.p-navigation ul) {
-	/* typography */
+	/* Text */
 	font-size: 18--rpx;
 	line-height: max(20 / 18);
 }
 
 :where(.p-navigation li) {
-	/* decoration */
+	/* Appearance */
 	color: var(--PrimaryColor);
 	cursor: pointer;
 }
 
 :where(.p-navigation li li) {
-	/* decoration */
+	/* Appearance */
 	color: var(--SecondaryColor);
 }
 
 :where(.p-navigation li hr) {
-	box-shadow: #9992 1px 1px 0 0;
-	height: 1px;
+	/* Layout */
+	block-size: 1px;
 	margin-block: calc(1 * var(--step));
 	margin-inline: calc(11 * var(--step));
+
+	/* Appearance */
+	box-shadow: #99999922 1px 1px 0 0;
 }
 
 :where(.p-navigation .current) {
+	/* Appearance */
 	color: var(--Orange700Color);
 }
 
 :where(.p-navigation .current .current) {
+	/* Text */
 	font-weight: 700;
 
+	/* Appearance */
 	color: var(--PrimaryColor);
 }
 
 :where(.p-navigation ul ul) {
-	/* typography */
+	/* Text */
 	font-size: 14--rpx;
 	line-height: max(16 / 14);
 }
 
 :where(.p-navigation > h-navigation-list > ul) {
-	/* layout */
+	/* Layout */
 	inline-size: 100%;
 	margin-block-start: 5--step;
 }
 
 :where(.p-navigation > h-navigation-list > ul ul) {
-	/* layout */
+	/* Layout */
 	margin-block-start: -2--step;
 	margin-inline-start: 5--step;
 }
@@ -168,6 +176,7 @@ h-navigation-list {
 :where(.p-navigation ul :is(a, span)) {
 	display: block;
 
+	/* Layout */
 	padding-block: 4--step;
 	padding-inline: 11--step;
 }
@@ -175,19 +184,23 @@ h-navigation-list {
 :where(.p-navigation ul ul :is(a, span)) {
 	display: block;
 
+	/* Layout */
 	padding-block: 2--step;
 	padding-inline: 11--step;
 }
 
 :where(.p-navigation h-navigation-list > :is(a, span)) {
+	/* Appearance */
 	color: var(--parent-color);
 }
 
 :where(.p-navigation ul :is(a, span):is(:hover, :focus-visible)) {
+	/* Appearance */
 	color: var(--Orange700Color);
 }
 
 :where(.p-navigation ul ul :is(a, span):is(:hover, :focus-visible)) {
+	/* Appearance */
 	color: var(--PrimaryColor);
 }
 

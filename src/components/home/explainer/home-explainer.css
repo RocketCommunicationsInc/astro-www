@@ -1,124 +1,115 @@
-:where(.p-explainer) {
+.p-explainer {
 	display: flex;
 
-	/* layout */
+	/* Layout */
 	inline-size: 100%;
 
-	/* decoration */
+	/* Appearance */
 	background-color: var(--SurfaceHeaderColor);
 	border-radius: 6--rpx;
 	color: var(--PrimaryColor);
-}
 
-@media (width < 1200px) {
-	:where(.p-explainer) {
-		/* layout */
+	@media (width < 1200px) {
+		/* Layout */
 		flex-flow: column;
 		gap: 5--step;
 	}
-}
 
-@media (width >= 1200px) {
-	:where(.p-explainer) {
-		/* layout */
+	@media (width >= 1200px) {
+		/* Layout */
 		gap: 8--step;
 	}
-}
 
-@media (width < 1520px) {
-	:where(.p-explainer) {
-		/* layout */
+	@media (width < 1520px) {
+		/* Layout */
+		margin-block-start: 16--step;
 		padding-block: 5--step;
 		padding-inline: 5--step;
-		margin-block-start: 16--step;
 	}
-}
 
-@media (width >= 1520px) {
-	:where(.p-explainer) {
-		/* layout */
+	@media (width >= 1520px) {
+		/* Layout */
 		gap: 10--step;
+		margin-block-start: 16--step;
 		padding-block: 9--step;
 		padding-inline: 10--step;
-		margin-block-start: 16--step;
 	}
-}
 
-:where(.p-explainer article) {
-	display: flex;
+	& article {
+		display: flex;
 
-	/* reference */
-	--padding-block: 5--step;
-	--padding-inline: 10--step;
+		--padding-block: 5--step;
+		--padding-inline: 10--step;
 
-	/* layout */
-	flex-flow: column;
-	padding-block: var(--padding-block);
-	padding-inline: var(--padding-inline);
+		/* Layout */
+		flex-flow: column;
+		padding-block: var(--padding-block);
+		padding-inline: var(--padding-inline);
 
-	/* decoration */
-	background-color: var(--SurfaceSelectedColor);
-	border-radius: 3--rpx;
-}
-
-@media (width < 800px) {
-	:where(.p-explainer article) {
-		/* reference */
-		--padding-block: 6--step;
-		--padding-inline: 5--step;
+		/* Appearance */
+		background-color: var(--SurfaceSelectedColor);
+		border-radius: 3--rpx;
 	}
-}
 
-:where(.p-explainer article svg) {
-	display: block;
+	& article {
+		@media (width < 800px) {
+			--padding-block: 6--step;
+			--padding-inline: 5--step;
+		}
 
-	/* parent layout */
-	align-self: center;
+		& svg {
+			display: block;
 
-	/* layout */
-	max-inline-size: 100%;
-	block-size: min(100%, 24--step);
-	inline-size: auto;
+			/* parent layout */
+			align-self: center;
+			block-size: min(100%, 24--step);
+			inline-size: auto;
 
-	/* decoration */
-	object-fit: contain;
-}
+			/* Layout */
+			max-inline-size: 100%;
+			object-fit: contain;
+		}
 
-:where(.p-explainer article h3) {
-	font-size: 24--rpx;
-	font-weight: 600;
-	line-height: max(28 / 24);
-}
+		& h3 {
+			/* Text */
+			font-size: 24--rpx;
+			font-weight: 600;
+			line-height: max(28 / 24);
+		}
 
-:where(.p-explainer article > svg + h3) {
-	margin-block-start: 6--step;
-}
+		& > svg + h3 {
+			/* Layout */
+			margin-block-start: 6--step;
+		}
 
-:where(.p-explainer article p) {
-	/* layout */
-	flex-grow: 1;
-	margin-block-start: 5--step;
-}
+		& p {
+			/* Layout */
+			flex-grow: 1;
+			margin-block-start: 5--step;
+		}
 
-:where(.p-explainer article a) {
-	/* layout */
-	align-self: center;
-	margin-block-start: 5--step;
-	padding-inline: 4--step;
-	padding-block: 2--step;
+		& a {
+			/* Layout */
+			align-self: center;
+			margin-block-start: 5--step;
+			padding-block: 2--step;
+			padding-inline: 4--step;
 
-	/* typography */
-	font-size: 16--rpx;
-	line-height: max(20 / 16);
+			/* Text */
+			font-size: 16--rpx;
+			line-height: max(20 / 16);
 
-	/* decoration */
-	background-color: var(--InteractiveColor);
-	border-radius: 3--rpx;
-	box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
-	color: var(--InverseColor);
-	cursor: pointer;
-}
+			/* Appearance */
+			background-color: var(--InteractiveColor);
+			border-radius: 3--rpx;
+			box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
+			color: var(--InverseColor);
+			cursor: pointer;
 
-:where(.p-explainer article a:is(:hover, :focus-visible)) {
-	background-color: var(--InteractiveHoverColor);
+			&:is(:hover, :focus-visible) {
+				/* Appearance */
+				background-color: var(--InteractiveHoverColor);
+			}
+		}
+	}
 }

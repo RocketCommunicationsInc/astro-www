@@ -2,7 +2,6 @@ import { defineConfig } from 'astro/config'
 
 import remarkPlugins from './.vscode/remark-plugins.js'
 import vitePlugins from './.vscode/vite-plugins.js'
-// import contentfulIntegration from '@astropub/contentful'
 import sitemapIntegration from '@astrojs/sitemap'
 
 export default defineConfig({
@@ -19,7 +18,6 @@ export default defineConfig({
 		plugins: vitePlugins(),
 	},
 	integrations: [
-		// contentfulIntegration(),
 		sitemapIntegration(),
 	],
 })

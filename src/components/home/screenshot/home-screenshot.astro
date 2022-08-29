@@ -4,5 +4,4 @@ import './home-screenshot.css'
 
 const { data } = Astro.props as typeof screenshot
 ---
-
 <img class="p-screenshot" srcset={data.url} alt={data.description} width={data.width} height={data.height} />

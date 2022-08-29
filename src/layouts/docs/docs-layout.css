@@ -1,201 +1,211 @@
 .p-content {
-	/* layout */
+	/* Layout */
 	min-block-size: 100%;
 	padding-block: 22--step;
 	padding-inline: max(8--step, 50% - 88--step);
 
-	/* typography */
+	/* Text */
 	font-size: 16--rpx;
 	line-height: calc(24 / 16);
 
-	/* decoration */
+	/* Appearance */
 	background: radial-gradient(ellipse at top, hsl(209deg 39% 12%), hsl(209deg 39% 0% / 50%)) no-repeat 50% 0% / 100% auto;
 
 	@media (width >= 1680px) {
-		/* layout */
+		/* Layout */
 		padding-inline: max(8--step, 30% - 88--step) max(8--step, 70% - 88--step);
 	}
 
 	& :where(h1) {
-		/* layout */
+		/* Layout */
 		padding-block-end: 2--step;
 
-		/* typography */
+		/* Text */
 		font-size: 48--rpx;
 		font-weight: 700;
 		line-height: calc(52 / 48);
 
-		/* decoration */
+		/* Appearance */
 		box-shadow: var(--Gray800Color) 0 -1px 0 0 inset;
 	}
 
 	& :where(h2, h3) {
-		/* layout */
+		/* Layout */
 		margin-block-start: 8--step;
 
-		/* typography */
+		/* Text */
 		font-size: 24--rpx;
 		font-weight: 700;
 		line-height: calc(28 / 24);
 	}
 
 	& :where(figure, ol, p, pre, ul, table) {
-		/* layout */
+		/* Layout */
 		margin-block-start: 4--step;
 	}
 
 	& :where(li) {
-		/* typography */
+		/* Text */
 		font-size: 16--rpx;
 		line-height: calc(28 / 16);
 
 		&::before {
-			content: "•";
 			display: inline-block;
 
-			/* layout */
-			margin-inline-end: 1--step;
+			/* Layout */
 			inline-size: 2--step;
+
+			/* Layout */
+			margin-inline-end: 1--step;
+
+			/* Generated */
+			content: "•";
 		}
 	}
 
 	& :where(li + li) {
-		/* layout */
+		/* Layout */
 		margin-block-start: 1--step;
 	}
 
 	& :where(a:not(.h)) {
-		/* decoration */
-		color: var(--Orange700Color);
+		/* Text */
 		text-decoration: underline;
+
+		/* Appearance */
+		color: var(--Orange700Color);
+	}
+
+	& :where(a:not(.h):focus-visible) {
+		/* Appearance */
+		background-color: var(--InverseColor);
+		outline: max(1px, .125em) solid var(--Orange700Color);
+		outline-offset: .125em;
+		text-decoration-thickness: max(1px, .125em);
 	}
 
 	& :where(a.h) {
 		display: inline;
 
 		&:where(:focus-visible) {
-			/* decoration */
+			/* Appearance */
 			box-shadow: var(--PrimaryColor) 0 0 0 4px inset;
 			outline: none;
 
 			& :where(h1, h2, h3) {
-				/* decoration */
+				/* Appearance */
 				box-shadow: var(--Orange700Color) 0 -1--step 0 0 inset;
 			}
 		}
 	}
 
 	& :where(figcaption) {
-		/* layout */
+		/* Layout */
 		padding-block: 2--step;
 		padding-inline: 4--step;
 
-		/* typograph */
+		/* Text */
 		font-size: 14--rpx;
 		font-style: italic;
 		line-height: calc(20 / 14);
 	}
 
 	& :where(figure:is(.example-do, .example-dont) > figcaption) {
-		/* layout */
+		/* Layout */
 		margin-block-start: 2--step;
 
-		/* decoration */
+		/* Appearance */
 		box-shadow: var(--border-color) 0 1--step 0 0 inset;
 
-		/* reference */
 		--border-color: currentColor;
 	}
 
 	& :where(figure.example-do > figcaption) {
-		/* reference */
 		--border-color: #2fb312;
 	}
 
 	& :where(figure.example-dont > figcaption) {
-		/* reference */
 		--border-color: #fe3701;
 	}
 
 	& :where(table) {
-		/* layout */
+		/* Layout */
 		margin-block-start: 4--step;
 	}
 
 	& :where(td, th) {
-		/* layout */
+		/* Layout */
 		padding: 2--step;
 	}
 
 	& :where(img) {
-		/* layout */
+		/* Layout */
 		block-size: auto;
 		max-inline-size: 100%;
 	}
 
 	& :where(.note p) {
-		/* layout */
+		/* Layout */
 		padding: 4--step;
 
-		/* decoration */
+		/* Appearance */
 		background: var(--BaseHoverColor);
 		border-radius: 3--rpx;
 	}
 
 	& :where(.caution p) {
-		/* layout */
+		/* Layout */
 		padding: 4--step;
 
-		/* decoration */
+		/* Appearance */
 		background: var(--Red800Color);
 		border-radius: 3--rpx;
 	}
 
 	& :where(:is(div, p) > :is(code, pre)) {
-		/* typography */
+		/* Text */
 		font-family: var(--SystemMonoType);
 		font-size: 14--rpx;
 		line-height: calc(20 / 14);
 	}
 
 	& :where(.code-block) {
-		/* layout */
+		/* Layout */
 		padding: 4--step;
 
-		/* typography */
+		/* Text */
 		font-family: var(--SystemMonoType);
 		font-size: 14--rpx;
 		line-height: calc(20 / 14);
 
-		/* decoration */
+		/* Appearance */
 		background: var(--BrightBlue850);
 		border-radius: 3--rpx;
 
-		/* reference */
 		--BrightBlue850: hsl(208 49% 21%);
 	}
 
 	& :where(.two-col, .three-col) {
 		display: grid;
 
-		/* layout */
+		/* Layout */
 		gap: 4--step;
 	}
 
 	& :where(.two-col) {
-		/* layout */
+		/* Layout */
 		grid-template-columns: repeat(2, [col-start] 1fr);
 	}
 
 	& :where(.storybook-demo) {
 		display: flex;
 
-		/* layout */
+		/* Layout */
 		flex-flow: column;
 	}
 
 	& :where(.storybook-demo > nav) {
-		/* layout */
+		/* Layout */
 		align-self: end;
 	}
 }
