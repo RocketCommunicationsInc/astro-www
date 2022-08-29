@@ -7,9 +7,9 @@ import './docs-layout.css'
 import compliance from 'project:data/compliance.json'
 import ComplianceAside from 'project:components/compliance/compliance-aside.astro'
 
-// export interface Props {
-// 	compliance: typeof import('project:data/compliance.json')
-// }
+export interface Props {
+	compliance: typeof import('project:data/compliance.json')
+}
 
 const {
 	git: GitHubId,
@@ -47,10 +47,10 @@ const {
 	<main class="p-content" id="content">
 
        <slot />
-		< ComplianceAside  />
+		< ComplianceAside {compliance} />
 		
 		<slot />
-		<ContributionFooter {compliance}/>
+		<ContributionFooter />
 	</main>
 
 	<SiteFooter slot="foot" />
