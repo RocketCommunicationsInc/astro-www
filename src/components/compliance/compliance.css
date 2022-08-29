@@ -44,7 +44,7 @@ section.p-compliance {
     & .p {
         line-height: 1.5;
         padding-top: 2--step;
-        margin-bottom: 0.8rem;
+        padding-top: 3--step;
       }
 
     & .status {
