@@ -3,9 +3,9 @@ import Layout from 'project:layouts/default/default-layout-with-grid.astro'
 import SiteNavigation from 'project:components/site-navigation/site-navigation.astro'
 import ContributionFooter from 'project:components/contribution-footer/contribution-footer.astro'
 import SiteFooter from 'project:components/site-footer/site-footer.astro'
-/** @TODO  link for reference to add a compliance aside */
-
 import './docs-layout.css'
+import compliance from 'project:data/compliance.json'
+import ComplianceAside from 'project:components/compliance/compliance-aside.astro'
 
 const {
 	git: GitHubId,
@@ -28,9 +28,11 @@ const {
 	}
 	</style>
 	<main class="p-content" id="content">
-		<slot />
-		<ContributionFooter />
-	</main>
 
+		<slot />
+		<ComplianceAside {compliance} />
+		<ContributionFooter />
+		
+	</main>
 	<SiteFooter slot="foot" />
 </Layout>
