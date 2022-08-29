@@ -14,7 +14,7 @@ section.p-compliance {
 
     & .tier {
         /* layout */
-        padding: 0.125rem 0.75rem;
+        padding: 0.5--step 3--step;
 
         /* typography */
         font-weight: 700;
