@@ -7,6 +7,10 @@ import './docs-layout.css'
 import compliance from 'project:data/compliance.json'
 import ComplianceAside from 'project:components/compliance/compliance-aside.astro'
 
+// export interface Props {
+// 	compliance: typeof import('project:data/compliance.json')
+// }
+
 const {
 	git: GitHubId,
 	height: StorybookPreviewHeight,
@@ -14,10 +18,18 @@ const {
 	title,
 } = Object(Astro.props.content)
 
-const componentRulesets = compliance.contents.find(content => content.name === 'Components')?.rulesets 
-const currentPathname = Astro.url.pathname
-const componentPath = componentRulesets?.find(component => component.link === currentPathname)
-console.log(componentPath)
+// const componentRulesets = compliance.contents.find(content => content.name === 'Components')?.rulesets 
+// const currentPathname = Astro.url.pathname
+// const componentPath = componentRulesets?.find(component => component.link === currentPathname)
+
+// const {
+// 	componentRulesets: componentRulesets = compliance.contents.find(content => content.name === 'Components')?.rulesets,
+// 	currentPathname: currentPathname = Astro.url.pathname,
+// 	componentPath: componentPath = componentRulesets?.find(component => component.link === currentPathname)
+// } = Object(Astro.props.content)
+// console.log(componentPath)
+
+
 ---
 <script>import './docs-layout.client.js'</script>
 <Layout {title} tabtitle={title}>
@@ -33,8 +45,12 @@ console.log(componentPath)
 	}
 	</style>
 	<main class="p-content" id="content">
+
+       <slot />
+		< ComplianceAside  />
+		
 		<slot />
-		<ContributionFooter />
+		<ContributionFooter {compliance}/>
 	</main>
 
 	<SiteFooter slot="foot" />

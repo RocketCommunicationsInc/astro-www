@@ -48,5 +48,3 @@ Outline Buttons are an alternative Button style to be used in situations where a
 ![Do: Use standardized Button colors only.](/img/components/button-do-3.png "Do: Use standardized Button colors only.")
 
 :::
-
-::compliance-aside

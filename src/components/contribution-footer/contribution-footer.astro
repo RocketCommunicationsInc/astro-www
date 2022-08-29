@@ -1,16 +1,76 @@
 ---
-import './contribution-footer.css'
+import { For, When } from '@astropub/flow'
+import { markdown } from '@astropub/md'
+export interface Props {
+	compliance: typeof import('project:data/compliance.json')
+}
+
+const { isArray } = Array
+const toNumeral = (content: any, ruleset: any, rule: any) => [ content.numeral, ruleset.numeral, rule.numeral].join('.')
+const toStatusClass = (rule: any) => `status -${rule.status}`
+
+const props = Astro.props as Props
+
+const componentRulesets = props.compliance.contents.find(content => content.name === 'Components')?.rulesets 
+const currentPathname = Astro.url.pathname
+const componentPath = componentRulesets?.find(component => component.link === currentPathname)
+
+console.log(componentRulesets)
+// let currentComonentRules: string = '';
+// if (Astro.slots.has({componentPath}))
+
+// function currentComonentRules (currentPathname, componentPath) {
+// 	if (currentPathname === componentPath) {
+// 		return 
+// 	}
+// }
+
+// <When {isArray(content.rulesets(currentPathname: true === componentPath))}>
+
+// const {
+// 	componentRulesets: componentRulesets = props.compliance.contents.find(content => content.name === 'Components')?.rulesets,
+// 	currentPathname: currentPathname = Astro.url.pathname,
+// 	componentPath: componentPath = componentRulesets?.find(component => component.link === currentPathname)
+// } = Object(Astro.props.content)
+// console.log(currentPathname)
 ---
-<footer id="contribution-footer">
-	<h3>Help improve this page</h3>
-	<p>You can help improve this page, with updated information, guidance or fixes for typos and errors.</p>
-	<ul>
-		<!-- TODO - Resolve dynamic linking to edit on github repo -->
-		<li>
-			<a href="https://github.com/RocketCommunicationsInc/astro/edit/main/packages/astro-uxds/_content/components/accordion.md">Propose a change or fix to this page</a>
-		</li>
-		<li>
-			<a href="/community/propose-a-change/">How to propose a change</a>
-		</li>
-	</ul>
-</footer>
+
+<aside class="compliance">
+<header><span class="compliance-header">Compliance Requirements</span> <span class="compliance-version">(v{ props.compliance.version })</span></header>
+    <For of={props.compliance.contents}>{content => (
+        <section class="p-compliance">
+            <When {isArray(content.rulesets(currentPathname === componentPath))}>
+                <For of={content.rulesets!}>{ruleset => (
+                    <section class="ruleset">
+					
+                        <When {isArray(ruleset.rules)}>
+							
+                            <For of={ruleset.rules!}> {async rule => (
+								
+                                <dl class="rule">
+                                    <dd class="numeral">{toNumeral(content, ruleset, rule)}</dd>
+                                    <div class="rule-text">
+                                        <dt class="rule"> 
+                                            {await markdown(rule.rule)} </dt>
+                                        <When {rule.status !=='current'} and {rule.status !=='updated'} and {rule.status !=='under-review'}>
+                                            <dd class={toStatusClass(rule)}>{rule.status} </dd>
+											</When>
+                                     
+                                    </div>
+									
+                                </dl>
+                                )}
+                            </For>
+                        </When>
+					
+                    </section>
+                    )}
+                </For>
+            </When>
+        </section>
+        )}
+    </For>
+    <footer>
+        <a href="/design-guidelines/compliance/">See all EGS Compliance Requirements</a>
+      </footer>
+  </aside>

@@ -2,9 +2,7 @@
 import { For, When } from '@astropub/flow'
 import { markdown } from '@astropub/md'
 import './compliance-aside.css'
-import compliance from 'project:data/compliance.json'
 export interface Props {
-	title: string,
 	compliance: typeof import('project:data/compliance.json')
 }
 
@@ -13,6 +11,17 @@ const toNumeral = (content: any, ruleset: any, rule: any) => [ content.numeral, 
 const toStatusClass = (rule: any) => `status -${rule.status}`
 
 const props = Astro.props as Props
+
+// const componentRulesets = props.compliance.contents.find(content => content.name === 'Components')?.rulesets 
+// const currentPathname = Astro.url.pathname
+// const componentPath = componentRulesets?.find(component => component.link === currentPathname)
+
+const {
+	componentRulesets: componentRulesets = props.compliance.contents.find(content => content.name === 'Components')?.rulesets,
+	currentPathname: currentPathname = Astro.url.pathname,
+	componentPath: componentPath = componentRulesets?.find(component => component.link === currentPathname)
+} = Object(Astro.props.content)
+console.log(componentPath)
 ---
 
 <aside class="compliance">
