@@ -55,7 +55,7 @@ section.p-compliance {
         font-weight: 700;
         font-size: 0.75em;
         line-height: 4--step;
-        color: #fff;
+        color: var(--PrimaryColor);
         margin-right: 1rem;
         text-transform: uppercase;
 
