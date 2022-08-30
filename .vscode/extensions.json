@@ -3,6 +3,7 @@
 		"astro-build.astro-vscode",
 		"csstools.postcss",
 		"dbaeumer.vscode-eslint",
-		"stylelint.vscode-stylelint"
+		"stylelint.vscode-stylelint",
+		"vunguyentuan.vscode-postcss"
 	]
 }

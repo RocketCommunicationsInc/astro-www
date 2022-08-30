@@ -23,10 +23,9 @@
 		display: grid;
 
 		/* Layout */
-		grid-template-columns: min-content 1fr;
-		grid-template-rows: min-content 1fr;
-		/* stylelint-disable-next-line */
 		grid-template-areas: "disclosure heading" "navigation navigation";
+		grid-template-columns: min-content 1fr;
+		grid-template-rows: min-content 1fr; /* stylelint-disable-line */
 		padding-block: 2--step;
 		padding-inline: 9--step;
 	}

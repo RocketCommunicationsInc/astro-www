@@ -88,14 +88,15 @@ The `astro.config.js` file is used by Astro to configure how the website is proj
 
 All commands are run from the root of the project, from a terminal:
 
-| Command         | Action                                          |
-|:----------------|:------------------------------------------------|
-| `npm install`   | Installs dependencies                           |
-| `npm run start` | Starts local dev server at `localhost:3000`     |
-| `npm run build` | Build the production site to `./dist/`          |
-| `npm run serve` | Serves the production build at `localhost:3000` |
-
-
+| Command             | Action                                          |
+|:--------------------|:------------------------------------------------|
+| `npm install`       | Installs dependencies                           |
+| `npm run start`     | Starts local dev server at `localhost:3000`     |
+| `npm run build`     | Build the production site to `./dist/`          |
+| `npm run serve`     | Serves the production build at `localhost:3000` |
+| `npm run check`     | Checks all `.astro` files in the project        |
+| `npm run check:css` | Checks all `.css` files in the project          |
+| `npm run check:js`  | Checks all `.js` and `.ts` files in the project |
 
 [open-img]: https://developer.stackblitz.com/img/open_in_stackblitz.svg
 [open-url]: https://stackblitz.com/github/RocketCommunicationsInc/astro-www

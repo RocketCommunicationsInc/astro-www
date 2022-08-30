@@ -135,8 +135,8 @@
 		display: flex;
 
 		/* Layout */
-		gap: 6--step 8--step;
 		flex-flow: row wrap;
+		gap: 6--step 8--step;
 		justify-content: flex-end;
 
 		@media (width < 400px) {
