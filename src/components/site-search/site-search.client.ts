@@ -82,7 +82,7 @@ requestAnimationFrame(() => {
 						if (link.href.startsWith('https://www.astrouxds.com/')) {
 							link.setAttribute(
 								'href',
-								link.href.replace(/^https\:\/\/www\.astrouxds\.com/, '').replace(/\/readme\//, '/')
+								link.href.replace(/^https:\/\/www\.astrouxds\.com/, '').replace(/\/readme\//, '/')
 							)
 						}
 

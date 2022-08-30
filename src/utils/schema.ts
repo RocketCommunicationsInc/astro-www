@@ -1,11 +1,11 @@
 export namespace Data {
 	export interface Text {
-		type: "text"
+		type: 'text'
 		data: string
 	}
 
 	export interface Link {
-		type: "link"
+		type: 'link'
 		data: {
 			url: string
 			description?: string
@@ -15,21 +15,21 @@ export namespace Data {
 	}
 
 	export interface Object<T = Any> {
-		type: "object"
+		type: 'object'
 		data: {
 			[name: string]: T
 		}
 	}
 
 	export interface Objects<T = Any> {
-		type: "objects"
+		type: 'objects'
 		data: {
 			[name: string]: T
 		}[]
 	}
 
 	export interface Array<T = Any> {
-		type: "objects"
+		type: 'objects'
 		data: T[]
 	}
 
