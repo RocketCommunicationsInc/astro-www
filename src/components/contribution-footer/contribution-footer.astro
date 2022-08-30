@@ -1,5 +1,12 @@
 ---
+function removeTrailingSlash(str) {
+  return str.endsWith('/') ? str.slice(0, -1) : str;
+}
+
 import './contribution-footer.css'
+const pathname = Astro.url.pathname
+
+const updatedPathname = removeTrailingSlash(pathname)
 ---
 <footer id="contribution-footer">
     <h3>Help improve this page</h3>
@@ -7,7 +14,7 @@ import './contribution-footer.css'
     <ul>
         <!-- TODO - Resolve dynamic linking to edit on github repo -->
         <li>
-            <a href="https://github.com/RocketCommunicationsInc/astro/edit/main/packages/astro-uxds/_content/components/accordion.md.md">Propose a change or fix to this page</a>
+            <a href={`https://github.com/RocketCommunicationsInc/astro/edit/main/packages/astro-uxds/_content${updatedPathname}.md`}>Propose a change or fix to this page</a>
         </li>
         <li>
             <a href="/community/propose-a-change/">How to propose a change</a>
