@@ -16,7 +16,7 @@
 		"@astropub/md": "0.1.1",
 		"@astrouxds/design-tokens": "2.0.0-beta.12",
 		"@csstools/custom-units": "0.1.1",
-		"astro": "1.1.0",
+		"astro": "1.1.1",
 		"parse-yaml": "0.1.0",
 		"postcss-preset-env": "7.8.0",
 		"remark-directive": "2.0.1",
