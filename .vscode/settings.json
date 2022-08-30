@@ -10,6 +10,7 @@
 		"**/node_modules": true,
 		"**/package-lock.json": true,
 	},
+	"postcss.validate": false,
 	"prettier.useEditorConfig": true,
 	"prettier.ignorePath": "/.vscode/.prettierignore",
 }

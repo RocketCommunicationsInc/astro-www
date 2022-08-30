@@ -10,10 +10,12 @@ export function intialize(currentPath: string) {
 			current.add(item)
 		}
 
-		if (item.items) for (let subitem of item.items) {
-			if (subitem.url === currentPath) {
-				current.add(item)
-				current.add(subitem)
+		if (item.items) {
+			for (let subitem of item.items) {
+				if (subitem.url === currentPath) {
+					current.add(item)
+					current.add(subitem)
+				}
 			}
 		}
 	}

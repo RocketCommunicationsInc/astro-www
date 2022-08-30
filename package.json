@@ -4,6 +4,9 @@
 	"version": "0.1.0",
 	"type": "module",
 	"scripts": {
+		"check": "astro check",
+		"check:css": "stylelint 'src/**/*.css'",
+		"check:js": "npx eslint 'src/**/*{.js,.ts}'",
 		"start": "astro dev",
 		"build": "astro build",
 		"serve": "astro preview"
@@ -16,7 +19,11 @@
 		"@astropub/md": "0.1.1",
 		"@astrouxds/design-tokens": "2.0.0-beta.12",
 		"@csstools/custom-units": "0.1.1",
-		"astro": "1.1.0",
+		"@typescript-eslint/eslint-plugin": "5.36.1",
+		"@typescript-eslint/parser": "5.36.1",
+		"astro": "1.1.1",
+		"eslint": "8.23.0",
+		"eslint-config-dev": "3.1.0",
 		"parse-yaml": "0.1.0",
 		"postcss-preset-env": "7.8.0",
 		"remark-directive": "2.0.1",
@@ -25,7 +32,15 @@
 		"stylelint-order": "5.0.0",
 		"stylelint-use-logical": "2.0.0",
 		"stylelint-use-nesting": "4.0.0",
-		"types-object": "0.3.0"
+		"types-object": "0.3.0",
+		"typescript": "4.8.2"
+	},
+	"eslintConfig": {
+		"extends": "dev",
+		"parser": "@typescript-eslint/parser",
+		"ignorePatterns": [
+			"src/components/site-search/site-search-engine.js"
+		]
 	},
 	"postcss": {
 		"plugins": {
@@ -80,7 +95,9 @@
 			"function-url-no-scheme-relative": true,
 			"function-url-quotes": null,
 			"function-url-scheme-allowed-list": [
-				"/^(f|ht)tps?:/"
+				"data",
+				"http",
+				"https"
 			],
 			"function-url-scheme-disallowed-list": null,
 			"function-allowed-list": null,

@@ -1,5 +1,5 @@
-export default function Component<T>(props: Props<T>): any
+export default function Component(props: Props): any
 
-export interface Props<T> {
+export interface Props {
 	[key: string]: any
 }

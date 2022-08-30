@@ -11,10 +11,10 @@ export const references = (theme: string, category: string) => {
 	let themeTokens = theme === 'dark' ? darkTokens : liteTokens
 
 	themeTokens = themeTokens.filter(
-		(token) => token.tokenLevel === "reference" && token.category === category
+		(token) => token.tokenLevel === 'reference' && token.category === category
 	)
 
-	if (category === "spacing") {
+	if (category === 'spacing') {
 		themeTokens = themeTokens.sort(
 			(a, b) => parseFloat(a.value as string) - parseFloat(b.value as string)
 		)
@@ -28,7 +28,7 @@ export const system = (theme: string, category: string, property: string) => {
 
 	return themeTokens.filter((token) => {
 		return (
-			token.tokenLevel === "system" &&
+			token.tokenLevel === 'system' &&
 			token.category === category &&
 			token.property === property
 		)
