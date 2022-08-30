@@ -195,7 +195,7 @@ aside.compliance::before {
 aside.compliance {
     position: relative;
     margin: 1rem 0;
-    border: 2px solid #373c41;
+    box-shadow: #373c41 0 0 0 1px inset;
     padding: 1rem 1rem 1rem 4.5rem;
     border-radius: 5px;
     z-index: 0;
