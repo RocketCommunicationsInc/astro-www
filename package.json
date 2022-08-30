@@ -4,6 +4,7 @@
 	"version": "0.1.0",
 	"type": "module",
 	"scripts": {
+		"check": "astro check",
 		"start": "astro dev",
 		"build": "astro build",
 		"serve": "astro preview"
