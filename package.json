@@ -5,8 +5,8 @@
 	"type": "module",
 	"scripts": {
 		"check": "astro check",
-		"check:style": "stylelint 'src/**/*.css'",
-		"check:script": "npx eslint 'src/**/*{.js,.ts}'",
+		"check:css": "stylelint 'src/**/*.css'",
+		"check:js": "npx eslint 'src/**/*{.js,.ts}'",
 		"start": "astro dev",
 		"build": "astro build",
 		"serve": "astro preview"
