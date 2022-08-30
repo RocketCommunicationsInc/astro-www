@@ -11,10 +11,7 @@ const toNumeral = (content: any, ruleset: any, rule: any) => [ content.numeral, 
 const toStatusClass = (rule: any) => `status -${rule.status}`
 
 const props = Astro.props as Props
-
-// const componentRulesets = props.compliance.contents.find(content => content.name === 'Components')?.rulesets
 const currentPathname: any = Astro.url.pathname
-// const componentPath = componentRulesets?.find(component => component.link === currentPathname)
 ---
 
 <aside class="compliance">
