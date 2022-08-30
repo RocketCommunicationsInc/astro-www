@@ -2,7 +2,7 @@ export let createFragment = (
 	range => range.selectNodeContents(
 		document.createElement('template')
 	) || range.createContextualFragment.bind(range)
-)(new Range)
+)(new Range())
 
 export class Element extends HTMLElement {
 	constructor() {

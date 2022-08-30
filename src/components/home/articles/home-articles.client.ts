@@ -33,8 +33,6 @@ requestAnimationFrame(() => {
 		if (event.deltaX > 0) {
 			if (content.offsetWidth + content.scrollLeft >= content.scrollWidth) {
 				event.preventDefault()
-
-				content.scrollLeft + event.deltaX
 			}
 		}
 	})
