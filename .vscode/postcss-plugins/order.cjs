@@ -37,6 +37,8 @@ module.exports = createPlugin(
 
 				if (previous?.type === 'comment') return
 
+				if (decl.parent?.name === 'font-face') return
+
 				let group = order.find(
 					group => group.properties.includes(decl.prop.toLowerCase())
 				)
@@ -147,6 +149,7 @@ const order = [
 			'grid-column',
 			'grid-row',
 			'grid-template',
+			"grid-template-areas",
 			'grid-template-columns',
 			'grid-template-rows',
 			'justify-content',
@@ -219,6 +222,7 @@ const order = [
 			'background-color',
 			'background-image',
 			'background-position',
+			'background-repeat',
 			'background-size',
 			'border-radius',
 			'box-shadow',
