@@ -6,6 +6,7 @@ import SiteFooter from 'project:components/site-footer/site-footer.astro'
 import './docs-layout.css'
 import compliance from 'project:data/compliance.json'
 import ComplianceAside from 'project:components/compliance/compliance-aside.astro'
+import SignupSupport from 'project:components/home/signup/support-signup.astro'
 
 const {
 	git: GitHubId,
@@ -31,6 +32,8 @@ const {
 
 		<slot />
 		<ComplianceAside compliance={compliance} />
+
+		<SignupSupport/>
 		<ContributionFooter />
 		
 	</main>
