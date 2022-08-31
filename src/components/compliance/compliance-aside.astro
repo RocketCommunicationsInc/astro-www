@@ -12,11 +12,15 @@ const toStatusClass = (rule: any) => `status -${rule.status}`
 
 const props = Astro.props as Props
 
-// const componentRulesets = props.compliance.contents.find(content => content.name === 'Components')?.rulesets
 const currentPathname: any = Astro.url.pathname
-// const componentPath = componentRulesets?.find(component => component.link === currentPathname)
+const contents = props.compliance.contents
+const shouldDisplayCompliance = contents.find(
+	content => content.rulesets?.find(
+		ruleset => ruleset.link === currentPathname
+	)
+)
 ---
-
+<When {shouldDisplayCompliance}>
 <aside class="compliance">
 	<header>
 		<span class="compliance-header">Compliance Requirements</span>
@@ -27,27 +31,30 @@ const currentPathname: any = Astro.url.pathname
 		<section class="p-compliance">
 			<When {isArray(content.rulesets)}>
 				<For of={content.rulesets!}>{ruleset => (
-					<section class="ruleset">
-						<When {isArray(ruleset.rules!)}>
-							<For of={ruleset.rules!}>{rule => ruleset.link !== currentPathname ? null : (
-								<dl class="rule-aside">
-									<dd class="numeral">{toNumeral(content, ruleset, rule)}</dd>
-									<div class="rule-text">
-										<dt class="rule-aside">{markdown(rule.rule)}</dt>
-										<When {rule.status !=='current' } {rule.status !=='updated'} {rule.status !=='under-review' }>
-											<dd class={toStatusClass(rule)}>{rule.status}</dd>
-										</When>
-									</div>
-								</dl>
-							)}</For>
-						</When>
-					</section>
+					<When {ruleset.link === currentPathname}>
+						<section class="ruleset">
+							<When {isArray(ruleset.rules!)}>
+								<For of={ruleset.rules!}>{rule =>(
+									<dl class="rule-aside">
+										<dd class="numeral">{toNumeral(content, ruleset, rule)}</dd>
+										<div class="rule-text">
+											<dt class="rule-aside">{markdown(rule.rule)}</dt>
+											<When {rule.status !=='current' } {rule.status !=='updated'} {rule.status !=='under-review' }>
+												<dd class={toStatusClass(rule)}>{rule.status}</dd>
+											</When>
+										</div>
+									</dl>
+								)}</For>
+							</When>
+						</section>
+					</When>
 				)}</For>
 			</When>
 		</section>
 		)}
 	</For>
 	<footer>
-		<a href="/design-guidelines/compliance/">See all EGS Compliance Requirements</a>
+		<a href="/compliance/">See all EGS Compliance Requirements</a>
 	</footer>
 </aside>
+</When>
