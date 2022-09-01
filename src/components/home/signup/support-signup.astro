@@ -5,19 +5,6 @@ const currentPathname = Astro.url.pathname
 const supportPath = (currentPathname === '/support/')
 ---
 
-<script>
-	const mailchimpTx = require("mailchimp_transactional")("5a852ed72eaf0776b74910e1a7071004-us12");
-
-async function run() {
-  const response = await mailchimpTx.users.ping();
-  console.log(response);
-  console.log("Hello")
-}
-
-run();
-
-</script>
-
 <style>
 
 /* Chrome, Safari, Edge, Opera */
