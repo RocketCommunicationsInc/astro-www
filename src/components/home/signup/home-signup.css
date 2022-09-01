@@ -1,3 +1,6 @@
+/* stylelint-disable declaration-no-important */
+/* stylelint-disable selector-max-id */
+
 .p-signup {
 	display: flex;
 
@@ -119,4 +122,71 @@
 	box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
 	color: var(--InverseColor);
 	cursor: pointer;
+}
+
+/* Chrome, Safari, Edge */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+
+input[type="number"] {
+	appearance: textfield;
+}
+
+#mc-embedded-subscribe {
+	/* Layout */
+	margin-inline: auto !important;
+	margin-block-start: 4--step;
+	padding-block: 2--step;
+	padding-inline: 11--step;
+
+	/* Text */
+	font-size: 16--rpx;
+	line-height: max(20 / 16);
+
+	/* Appearance */
+	background-color: var(--InteractiveColor);
+	border-radius: 3--rpx;
+	box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
+	color: var(--InverseColor);
+	cursor: pointer;
+	border: none !important;
+}
+
+#mc_embed_signup {
+	& form {
+		/* Layout */
+		margin-block-start: 5--step;
+		display: flex;
+		flex-flow: column;
+		padding-block: max(5 * var(--step)) max(10 * var(--step));
+		padding-inline: max(6 * var(--step));
+		max-width: 125--step;
+
+		/* Text */
+		font-size: max(4 * var(--step));
+		font-weight: 400;
+		letter-spacing: .5%;
+
+		/* Appearance */
+		background: var(--SurfaceColor);
+		border-radius: max(3 * var(--rpx));
+		color: var(--PrimaryColor);
+
+		& .mc-field-group input {
+			/* Layout */
+			padding-block: max(3 * var(--step));
+			padding-inline-start: max(4 * var(--step));
+
+			/* Appearance */
+			background: var(--BaseColor);
+			border-radius: max(3 * var(--rpx));
+			border: none;
+		}
+	}
 }
