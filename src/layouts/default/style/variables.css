@@ -6,9 +6,15 @@
 :root {
 	/* Reference Colors */
 
+	--BrightBlue600Color: hsl(209 61% 52%);
+	--Grey500Color: hsl(220 11% 68%);
+	--Grey800Color: hsl(220 5% 25%);
 	--Orange700Color: hsl(33 100% 50%);
+	--Pink600Color: hsl(290 100% 30%);
+	--Purple300Color: hsl(250 54% 78%);
+	--Red500Color: hsl(0 100% 61%);
 	--Red800Color: hsl(9 96% 28%);
-	--Gray800Color: hsl(220 5% 25%);
+	--Teal600Color: hsl(181 100% 32%);
 
 	/* System Colors */
 

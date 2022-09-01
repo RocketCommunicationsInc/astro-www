@@ -4,7 +4,7 @@
 	padding-block-start: 8--step;
 
 	/* Appearance */
-	box-shadow: var(--Gray800Color) 0 1--rpx 0 0 inset;
+	box-shadow: var(--Grey800Color) 0 1--rpx 0 0 inset;
 
 	& :where(.-heading) {
 		/* Layout */
