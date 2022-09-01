@@ -297,5 +297,8 @@
 		"ignoreFiles": [
 			"**/sanitize.css"
 		]
+	},
+	"dependencies": {
+		"@mailchimp/mailchimp_transactional": "^1.0.47"
 	}
 }
