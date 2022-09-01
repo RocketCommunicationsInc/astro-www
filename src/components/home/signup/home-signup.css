@@ -169,9 +169,8 @@ input[type="number"] {
 		max-width: 125--step;
 
 		/* Text */
-		font-size: max(4 * var(--step));
-		font-weight: 400;
-		letter-spacing: .5%;
+		font-size: max(14 * var(--rpx));
+		line-height: max(20 / 14);
 
 		/* Appearance */
 		background: var(--SurfaceColor);
@@ -187,6 +186,14 @@ input[type="number"] {
 			background: var(--BaseColor);
 			border-radius: max(3 * var(--rpx));
 			border: none;
+
+			/* Text */
+			font-size: max(14 * var(--rpx));
+			line-height: max(20 / 14);
 		}
+	}
+
+	& .mc-field-group {
+		padding-inline: 10--step;
 	}
 }
