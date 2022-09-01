@@ -5,6 +5,34 @@ const currentPathname = Astro.url.pathname
 const supportPath = (currentPathname === '/support/')
 ---
 
+<script>
+	const mailchimpTx = require("mailchimp_transactional")("5a852ed72eaf0776b74910e1a7071004-us12");
+
+async function run() {
+  const response = await mailchimpTx.users.ping();
+  console.log(response);
+  console.log("Hello")
+}
+
+run();
+
+</script>
+
+<style>
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+</style>
+
+
 <When {supportPath}>
 <section id="email-signup" class="support__email-signup">
 	<!-- Begin Mailchimp Signup Form -->
@@ -17,23 +45,33 @@ const supportPath = (currentPathname === '/support/')
 				<!-- <div class="indicates-required"><span class="asterisk">*</span> indicates required</div> -->
 				<div class="mc-field-layout">
 					<div class="mc-field-group">
+						<label for="mce-FNAME">First Name <span class="asterisk">*</span></label>
+						<input type="text" value="" name="FNAME" class="required firstName" id="mce-FNAME" aria-required="true"> 
+					</div>
+					<div class="mc-field-group">
+						<label for="mce-LNAME">Last Name <span class="asterisk">*</span></label>
+						<input type="text" value="" name="LNAME" class="required lastName" id="mce-LNAME" aria-required="true">
+					</div>
+				</div>
+				<div class="mc-field-layout">
+					<div class="mc-field-group">
 						<label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
 						</label>
 						<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" aria-required="true">
 					</div>
 					<div class="mc-field-group">
-						<label for="mce-COMPANY">Company </label>
+						<label for="mce-PHONE">Phone Number <span class="asterisk">*</span>
+						</label>
+						<input type="number" value="" name="PHONE" class="required phone" id="mce-PHONE" aria-required="true">
+					</div>
+					<div class="mc-field-group">
+						<label for="mce-COMPANY">Company Name</label>
 						<input type="text" value="" name="COMPANY" class="" id="mce-COMPANY">
 					</div>
-				</div>
-				<div class="mc-field-layout">
 					<div class="mc-field-group">
-						<label for="mce-FNAME">First Name </label>
-						<input type="text" value="" name="FNAME" class="" id="mce-FNAME">
-					</div>
-					<div class="mc-field-group">
-						<label for="mce-LNAME">Last Name </label>
-						<input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+						<label for="mce-EMAIL">Title/Position
+						</label>
+						<input type="text" value="" name="TITLE" class="" id="mce-TITLE">
 					</div>
 				</div>
 				<div id="mce-responses" class="clear">
@@ -62,16 +100,6 @@ const supportPath = (currentPathname === '/support/')
 			ftypes[3] = 'text';
 		}(jQuery));
 		var $mcj = jQuery.noConflict(true);
-
-
-const mailchimpTx = require("mailchimp_transactional")("c1af406c10");
-
-async function run() {
-  const response = await mailchimpTx.users.ping();
-  console.log(response);
-}
-
-run();
 	</script>
 </section>
 </When>
