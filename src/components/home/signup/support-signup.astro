@@ -4,11 +4,13 @@ import './home-signup.css'
 
 const currentPathname = Astro.url.pathname
 const supportPath = (currentPathname === '/support/')
+
+console.log("test")
 ---
 
 <style>
 
-/* Chrome, Safari, Edge, Opera */
+/* Chrome, Safari, Edge */
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -51,6 +53,7 @@ const supportPath = (currentPathname === '/support/')
     flex-flow: column;
     padding-block: max(5 * var(--step)) max(10 * var(--step));
     padding-inline: max(6 * var(--step));
+    max-width: 125--step;
 
     /* Text */
     font-size: max(4 * var(--step));
@@ -90,15 +93,15 @@ const supportPath = (currentPathname === '/support/')
                 <!-- <div class="indicates-required"><span class="asterisk">*</span> indicates required</div> -->
                 <div class="mc-field-layout">
                     <div class="mc-field-group">
-                        <label for="mce-FNAME">First Name <span class="asterisk">*</span></label>
+                        <label for="mce-FNAME">First Name <span class="asterisk">*</span>
+                        </label>
                         <input type="text" value="" name="FNAME" class="required firstName" id="mce-FNAME" aria-required="true" placeholder="Enter First Name" onkeyup= "handleSubmit()"> 
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-LNAME">Last Name <span class="asterisk">*</span></label>
+                        <label for="mce-LNAME">Last Name <span class="asterisk">*</span>
+                        </label>
                         <input type="text" value="" name="LNAME" class="required lastName" id="mce-LNAME" aria-required="true" placeholder="Enter Last Name" onkeyup= "handleSubmit()">
                     </div>
-                </div>
-                <div class="mc-field-layout">
                     <div class="mc-field-group">
                         <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
                         </label>
@@ -107,10 +110,11 @@ const supportPath = (currentPathname === '/support/')
                     <div class="mc-field-group">
                         <label for="mce-PHONE">Phone Number <span class="asterisk">*</span>
                         </label>
-                        <input type="number" value="" name="PHONE" class="required phone" id="mce-PHONE" aria-required="true" placeholder="Enter Phone Number ex. 123-456-7890" onkeyup= "handleSubmit()">
+                        <input type="number" value="" name="PHONE" class="required phone" id="mce-PHONE" aria-required="true" placeholder="Enter Phone Number (123-456-7890)" onkeyup= "handleSubmit()">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-COMPANY">Company Name</label>
+                        <label for="mce-COMPANY">Company Name
+                        </label>
                         <input type="text" value="" name="COMPANY" class="" id="mce-COMPANY" placeholder="Enter Company Name" onkeyup= "handleSubmit()">
                     </div>
                     <div class="mc-field-group">
@@ -121,18 +125,16 @@ const supportPath = (currentPathname === '/support/')
                 </div>
                 <div id="mce-responses" class="clear">
                     <div class="response" id="mce-error-response" style="display:none">
-						
-					</div>
-                    <div class="response" id="mce-success-response" style="display:none">
-
-					</div>
+						</div>
+                        <div class="response" id="mce-success-response" style="display:none">
+                    </div>
                 </div>
                 <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                 <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_f067e558ee805172850a87843_c1af406c10" tabindex="-1" value="">
 				</div>
 
                 <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="primary">
-				</div>
+                </div>
 			</div>
         </form>
     </div>
