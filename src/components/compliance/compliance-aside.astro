@@ -2,13 +2,16 @@
 import { For, When } from '@astropub/flow'
 import { markdown } from '@astropub/md'
 import './compliance.css'
+
 export interface Props {
-compliance: typeof import('project:data/compliance.json')
+	compliance: typeof import('project:data/compliance.json')
 }
 
 const { isArray } = Array
+
 const toNumeral = (content: any, ruleset: any, rule: any) => [ content.numeral, ruleset.numeral, rule.numeral].join('.')
-const toStatusClass = (rule: any) => `status -${rule.status}`
+
+const toStatusClassNames = (rule: any) => `compliance-status -${rule.status}`
 
 const props = Astro.props as Props
 const currentPathname = Astro.url.pathname
@@ -20,40 +23,41 @@ const shouldDisplayCompliance = contents.find(
 )
 ---
 <When {shouldDisplayCompliance}>
-<aside class="compliance">
-	<header>
-		<span class="compliance-header">Compliance Requirements</span>
-		<span class="compliance-version">(v{props.compliance.version })</span>
-	</header>
-	<br />
-	<For of={props.compliance.contents}>{content => (
-		<section class="p-compliance">
-			<When {isArray(content.rulesets)}>
-				<For of={content.rulesets!}>{ruleset => (
-					<When {ruleset.link === currentPathname}>
-						<section class="ruleset">
-							<When {isArray(ruleset.rules!)}>
+	<aside class="p-compliance-aside">
+		<header class="-header">
+			<h2 class="-heading">Compliance Requirements</h2>
+			<p class="-version">(v{props.compliance.version })</p>
+		</header>
+
+		<For of={props.compliance.contents}>{content => (
+			<section class="p-compliance">
+				<When {isArray(content.rulesets)}>
+					<For of={content.rulesets!}>{ruleset => (
+						<When {ruleset.link === currentPathname} {isArray(ruleset.rules!)}>
+							<section class="ruleset">
 								<For of={ruleset.rules!}>{rule =>(
 									<dl class="rule-aside">
-										<dd class="numeral">{toNumeral(content, ruleset, rule)}</dd>
-										<div class="rule-text">
-											<dt class="rule-aside">{markdown(rule.rule)}</dt>
+										<dt class="-numeral">{toNumeral(content, ruleset, rule)}</dt>
+
+										<dd class="-details">
+											<span class="-content">{markdown.inline(rule.rule)}</span>
 											<When {rule.status !=='current' } {rule.status !=='updated'} {rule.status !=='under-review' }>
-												<dd class={toStatusClass(rule)}>{rule.status}</dd>
+												<span class={toStatusClassNames(rule)}>{rule.status}</span>
 											</When>
-										</div>
+										</dd>
 									</dl>
 								)}</For>
-							</When>
-						</section>
-					</When>
-				)}</For>
-			</When>
-		</section>
-		)}
-	</For>
-	<footer>
-		<a href="/compliance/">See all EGS Compliance Requirements</a>
-	</footer>
-</aside>
+							</section>
+						</When>
+					)}</For>
+				</When>
+			</section>
+		)}</For>
+
+		<footer class="-footer">
+			<p>
+				<a href="/compliance/">See all EGS Compliance Requirements</a>
+			</p>
+		</footer>
+	</aside>
 </When>

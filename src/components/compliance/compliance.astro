@@ -9,8 +9,8 @@ export interface Props {
 
 const { isArray } = Array
 const toNumeral = (content: any, ruleset: any, rule: any) => [ content.numeral, ruleset.numeral, rule.numeral].join('.')
-const toTierClass = (rule: any) => `tier t${rule.tier}`
-const toStatusClass = (rule: any) => `status -${rule.status}`
+const toTierClass = (rule: any) => `p-compliance-tier -t${rule.tier}`
+const toStatusClass = (rule: any) => `compliance-status -${rule.status}`
 
 const props = Astro.props as Props
 ---
@@ -42,63 +42,73 @@ const props = Astro.props as Props
 			made through <a href="https://github.com/RocketCommunicationsInc/astro/discussions"> Astro’s GitHub
 				page</a>.
 		</p>
-		<ul class="compliancy-list">
+		<ul class="p-compliance-list">
 			<li>
-				<span class="tier tier--1">Tier 1</span>
+				<span class="p-compliance-tier -t1">Tier 1</span>
 				Basic status icons, status colors, really important things for operators to quickly become familiar with
 				the application
 			</li>
 			<li>
-				<span class="tier tier--2">Tier 2</span>
+				<span class="p-compliance-tier -t2">Tier 2</span>
 				Tier 1 + Astro colors to make it look like an Astro application (visual)
 			</li>
 			<li>
-				<span class="tier tier--3">Tier 3</span>
+				<span class="p-compliance-tier -t3">Tier 3</span>
 				Tier 2 + interaction patterns (behavioral)
 			</li>
 		</ul>
 	</article>
-	<hr>
 </section>
+
+<hr class="p-compliance-divider" />
+
 <For of={props.compliance.contents}>{content => (
 	<section class="p-compliance">
-		<h2><span class="numeral">{content.numeral}.0 </span>{content.name}</h2>
+		<header class="-header">
+			<span class="-numeral">{content.numeral}.0</span>
+
+			<h2 class="-heading">{content.name}</h2>
+		</header>
+
 		<When {isArray(content.rules)}>
 			<For of={content.rules!}>{rule => (
-				<dl>
-					<dd class="ruleset-general">{content.numeral}.1</dd>
-					<dd class="ruleset-general">{rule.rule}</dd>
+				<dl class="-rule">
+					<dd class="-numeral">{content.numeral}.1</dd>
+					<dd class="-details">{rule.rule}</dd>
 				</dl>
-				)}
-			</For>
+			)}</For>
 		</When>
+
 		<When {isArray(content.rulesets)}>
 			<For of={content.rulesets!}>{ruleset => (
-				<section class="ruleset">
-					<header>
-						<h3 class="rules-name"> <span class="numeral"> {content.numeral}.{ruleset.numeral}.0</span>
-							<span class="ruleset-name">{ruleset.name}</span> <a class="ruleset-link"
-								href={ruleset.link}>View {ruleset.name} Page</a></h3>
+				<section class="-ruleset">
+					<header class="-header">
+						<span class="-numeral">{content.numeral}.{ruleset.numeral}.0</span>
+
+						<h3 class="-heading">{ruleset.name}</h3>
+
+						<a class="-link" href={ruleset.link}>View {ruleset.name} Page</a>
 					</header>
+
 					<When {isArray(ruleset.rules)}>
 						<For of={ruleset.rules!}>{rule => (
-							<dl class="rule">
-								<dd class="numeral">{toNumeral(content, ruleset, rule)}</dd>
+							<dl class="-rule">
+								<dd class="-numeral">{toNumeral(content, ruleset, rule)}</dd>
+
 								<dd class={toTierClass(rule)}>Tier {rule.tier}</dd>
-								<div class="rule-text">
-									<dt class="rule"> 
-										{markdown(rule.rule)} </dt>
-									<When {rule.status !=='current' }>
-										<dd class={toStatusClass(rule)}>{rule.status} </dd>
+
+								<dt class="-details">
+									<span class="-content">{markdown.inline(rule.rule)}</span>
+
+									<When {(rule.status !== 'current')}>
+										<span class={toStatusClass(rule)}>{rule.status}</span>
 									</When>
-								</div>
+								</dt>
 							</dl>
 						)}</For>
 					</When>
 				</section>
-				)}
-			</For>
+			)}</For>
 		</When>
 	</section>
-	)}
-</For>
+)}</For>
