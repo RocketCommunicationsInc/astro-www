@@ -6,33 +6,36 @@ import SiteFooter from 'project:components/site-footer/site-footer.astro'
 import './docs-layout.css'
 import compliance from 'project:data/compliance.json'
 import ComplianceAside from 'project:components/compliance/compliance-aside.astro'
+import SignupSupport from 'project:components/home/signup/support-signup.astro'
 
 const {
-	git: GitHubId,
-	height: StorybookPreviewHeight,
-	storybook: StorybookId,
-	title,
+    git: GitHubId,
+    height: StorybookPreviewHeight,
+    storybook: StorybookId,
+    title,
 } = Object(Astro.props.content)
 ---
 <script>import './docs-layout.client.js'</script>
 <Layout {title} tabtitle={title}>
-	<SiteNavigation slot="side" />
-	<style is:global define:vars={{ GitHubId, StorybookId, StorybookPreviewHeight }}>
-	.storybook-demo {
-		/* preview frame (1--StorybookPreviewHeight) + navigation links (20--step) */
-		min-block-size: calc(1--StorybookPreviewHeight + 20--step);
+    <SiteNavigation slot="side" />
+    <style is:global define:vars={{ GitHubId, StorybookId, StorybookPreviewHeight }}>
+    .storybook-demo {
+        /* preview frame (1--StorybookPreviewHeight) + navigation links (20--step) */
+        min-block-size: calc(1--StorybookPreviewHeight + 20--step);
 
-		& iframe {
-			block-size: 1--StorybookPreviewHeight;
-		}
-	}
-	</style>
-	<main class="p-content" id="content">
+        & iframe {
+            block-size: 1--StorybookPreviewHeight;
+        }
+    }
+    </style>
+    <main class="p-content" id="content">
 
-		<slot />
-		<ComplianceAside compliance={compliance} />
-		<ContributionFooter />
-		
-	</main>
-	<SiteFooter slot="foot" />
+        <slot />
+        <ComplianceAside compliance={compliance} />
+
+        <SignupSupport/>
+        <ContributionFooter />
+        
+    </main>
+    <SiteFooter slot="foot" />
 </Layout>
