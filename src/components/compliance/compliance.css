@@ -81,7 +81,6 @@
 	box-shadow: var(--Grey800Color) 0 0 0 2--rpx inset;
 
 	&::before {
-		content: "";
 		position: absolute;
 
 		/* Layout */
@@ -96,6 +95,9 @@
 		background-repeat: no-repeat;
 		border-end-start-radius: 6--rpx;
 		border-start-start-radius: 6--rpx;
+
+		/* Generated */
+		content: "";
 	}
 
 	& .-header {
