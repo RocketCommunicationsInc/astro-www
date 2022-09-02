@@ -1,18 +1,15 @@
 ---
 import { For, When } from '@astropub/flow'
 import { markdown } from '@astropub/md'
+import { isArray, toNumeral, toStatusClassNames, toTierClassNames } from './compliance-utils'
 import './compliance.css'
+
 export interface Props {
 	title: string,
 	compliance: typeof import('project:data/compliance.json')
 }
 
-const { isArray } = Array
-const toNumeral = (content: any, ruleset: any, rule: any) => [ content.numeral, ruleset.numeral, rule.numeral].join('.')
-const toTierClass = (rule: any) => `p-compliance-tier -t${rule.tier}`
-const toStatusClass = (rule: any) => `compliance-status -${rule.status}`
-
-const props = Astro.props as Props
+const { props } = Astro as { props: Props }
 ---
 <hgroup>
 	<h1>{props.title}</h1>
@@ -70,45 +67,39 @@ const props = Astro.props as Props
 			<h2 class="-heading">{content.name}</h2>
 		</header>
 
-		<When {isArray(content.rules)}>
-			<For of={content.rules!}>{rule => (
-				<dl class="-rule">
-					<dd class="-numeral">{content.numeral}.1</dd>
-					<dd class="-details">{rule.rule}</dd>
-				</dl>
-			)}</For>
-		</When>
+		<For of={content.rules!}>{rule => (
+			<dl class="-rule">
+				<dd class="-numeral">{content.numeral}.1</dd>
+				<dd class="-details">{rule.rule}</dd>
+			</dl>
+		)}</For>
 
-		<When {isArray(content.rulesets)}>
-			<For of={content.rulesets!}>{ruleset => (
-				<section class="-ruleset">
-					<header class="-header">
-						<span class="-numeral">{content.numeral}.{ruleset.numeral}.0</span>
+		<For of={content.rulesets!}>{ruleset => (
+			<section class="-ruleset">
+				<header class="-header">
+					<span class="-numeral">{content.numeral}.{ruleset.numeral}.0</span>
 
-						<h3 class="-heading">{ruleset.name}</h3>
+					<h3 class="-heading">{ruleset.name}</h3>
 
-						<a class="-link" href={ruleset.link}>View {ruleset.name} Page</a>
-					</header>
+					<a class="-link" href={ruleset.link}>View {ruleset.name} Page</a>
+				</header>
 
-					<When {isArray(ruleset.rules)}>
-						<For of={ruleset.rules!}>{rule => (
-							<dl class="-rule">
-								<dd class="-numeral">{toNumeral(content, ruleset, rule)}</dd>
+				<For of={ruleset.rules!}>{rule => (
+					<dl class="-rule">
+						<dd class="-numeral">{toNumeral(content, ruleset, rule)}</dd>
 
-								<dd class={toTierClass(rule)}>Tier {rule.tier}</dd>
+						<dd class={toTierClassNames(rule)}>Tier {rule.tier}</dd>
 
-								<dt class="-details">
-									<span class="-content">{markdown.inline(rule.rule)}</span>
+						<dt class="-details">
+							<span class="-content">{markdown.inline(rule.rule)}</span>
 
-									<When {(rule.status !== 'current')}>
-										<span class={toStatusClass(rule)}>{rule.status}</span>
-									</When>
-								</dt>
-							</dl>
-						)}</For>
-					</When>
-				</section>
-			)}</For>
-		</When>
+							<When {(rule.status !== 'current')}>
+								<span class={toStatusClassNames(rule)}>{rule.status}</span>
+							</When>
+						</dt>
+					</dl>
+				)}</For>
+			</section>
+		)}</For>
 	</section>
 )}</For>
