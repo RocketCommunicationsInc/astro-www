@@ -4,8 +4,20 @@ import './home-signup.css'
 
 const currentPathname = Astro.url.pathname
 const supportPath = (currentPathname === '/support/')
----
 
+// Mailchimp key
+const MY_KEY = process.env.MAILCHIMP_API_KEY;
+import mailchimpAPI from '@mailchimp/mailchimp_transactional';
+const mailchimp = mailchimpAPI(MY_KEY);
+
+
+async function callPing() {
+  const response = await mailchimp.users.ping();
+  console.log(response);
+}
+
+callPing();
+---
 <When {supportPath}>
     <section id="email-signup" class="support__email-signup">
         <!-- Begin Mailchimp Signup Form -->
@@ -76,10 +88,11 @@ const supportPath = (currentPathname === '/support/')
             </form>
         </div>
 
-
-        <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
-        <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-        <script type="text/javascript">
+        <script type="module" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+        <script type="module">
+            const { JSDOM } = require( "jsdom" );
+            const { window } = new JSDOM( "" );
+            const $ = require( "jquery" )( window );
             (function ($) {
                 window.fnames = new Array();
                 window.ftypes = new Array();
@@ -97,6 +110,8 @@ const supportPath = (currentPathname === '/support/')
                 ftypes[5] = 'text';
             }(jQuery));
             var $mcj = jQuery.noConflict(true);
+        </script>
+        <script type="module" async="" src="https://www.google-analytics.com/analytics.js">
         </script>
     </section>
 </When>

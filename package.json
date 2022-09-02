@@ -299,6 +299,8 @@
 		]
 	},
 	"dependencies": {
-		"@mailchimp/mailchimp_transactional": "^1.0.47"
+		"@mailchimp/mailchimp_transactional": "^1.0.47",
+		"dotenv": "^16.0.2",
+		"jquery": "^3.6.1"
 	}
 }
