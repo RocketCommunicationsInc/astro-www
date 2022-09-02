@@ -29,7 +29,7 @@
 	/* Text */
 	font-size: 34--rpx;
 	font-weight: 700;
-	line-height: max(40 / 34);
+	line-height: calc(40 / 34);
 }
 
 /* Community: Content */
@@ -64,7 +64,7 @@
 	/* Text */
 	font-size: 24--rpx;
 	font-weight: 600;
-	line-height: max(28 / 24);
+	line-height: calc(28 / 24);
 
 	& + * {
 		/* Layout */
@@ -85,6 +85,42 @@
 	/* Layout */
 	flex-flow: column;
 	gap: 3--step;
+}
+
+.p-community-events-action {
+	display: flex;
+
+	/* Layout */
+	justify-content: center;
+	margin-block-start: 3--step;
+
+	& .-link {
+		display: inline-block;
+
+		/* Layout */
+		padding-block: 2--step;
+		padding-inline: 5--step;
+
+		/* Text */
+		font-size: 20--rpx;
+		line-height: calc(20 /16);
+
+		/* Appearance */
+		background-color: var(--InteractiveColor);
+		border-radius: 3--rpx;
+		color: var(--InverseColor);
+
+		&:where(:hover, :focus-visible) {
+			/* Appearance */
+			background-color: var(--InteractiveHoverColor);
+		}
+
+		&:where(:active) {
+			/* Appearance */
+			background-color: var(--InteractivePressColor);
+			translate: 0 1px;
+		}
+	}
 }
 
 .p-community-event {
@@ -115,12 +151,17 @@
 	line-height: 24--rpx;
 }
 
-.p-community-event-date span + span {
-	display: block;
+.p-community-event-date {
+	& .-time {
+		display: block;
 
-	/* Text */
-	font-size: 14--rpx;
-	line-height: max(20 / 14);
+		/* Text */
+		font-size: 14--rpx;
+		line-height: calc(20 / 14);
+
+		/* Appearance */
+		color: var(--SecondaryColor);
+	}
 }
 
 .p-community-event-heading {
@@ -130,7 +171,10 @@
 	& small {
 		/* Text */
 		font-size: 14--rpx;
-		line-height: max(20 / 14);
+		line-height: calc(20 / 14);
+
+		/* Appearance */
+		color: var(--SecondaryColor);
 	}
 
 	@media (width < 1200px) {
@@ -162,6 +206,11 @@
 		color: var(--InteractiveHoverColor);
 	}
 
+	&:is(:active) {
+		/* Appearance */
+		translate: 0 1px;
+	}
+
 	@media (width < 1200px) {
 		/* Layout */
 		margin-block-start: 4--step;
@@ -176,7 +225,7 @@
 
 	@media (width >= 1200px) {
 		/* Layout */
-		flex-basis: max(100% / 8 * 3);
+		flex-basis: calc(100% / 8 * 3);
 		margin-block-start: 0;
 	}
 }
@@ -242,7 +291,7 @@
 .p-community-link-heading {
 	/* Text */
 	font-size: 20--rpx;
-	line-height: max(24 / 20);
+	line-height: calc(24 / 20);
 
 	@media (width >= 800px) and (width < 1200px) {
 		/* Layout */
@@ -256,5 +305,5 @@
 
 	/* Text */
 	font-size: 14--rpx;
-	line-height: max(20 / 14);
+	line-height: calc(20 / 14);
 }

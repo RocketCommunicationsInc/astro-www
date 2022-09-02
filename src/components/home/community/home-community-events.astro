@@ -10,9 +10,9 @@ const { data } = Astro.props as typeof community['data']['events']
 		<For of={data.content.data}>{(item) => (
 			<article class="p-community-event">
 				<small class="p-community-event-date">
-					<span>{item.date.data}</span>
+					<span class="-date">{item.date.data}</span>
 					{item.time && (
-						<span>{item.time.data}</span>
+						<span class="-time">{item.time.data}</span>
 					)}
 				</small>
 				<hgroup class="p-community-event-heading">
@@ -27,4 +27,7 @@ const { data } = Astro.props as typeof community['data']['events']
 			</article>
 		)}</For>
 	</div>
+	<p class="p-community-events-action">
+		<a class="-link" href="/">View Full Calendar</a>
+	</p>
 </section>
