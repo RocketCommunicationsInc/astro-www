@@ -6,14 +6,14 @@ import './home-articles.css'
 const { data } = Astro.props as typeof articles
 ---
 <section class="p-articles">
-	<h3>{data.heading.data}</h3>
+	<h3 class="-heading">{data.heading.data}</h3>
 	<div class="content">
 		<For of={data.content.data}>{item => (
-			<article>
-				<img src={item.image.data.url} alt={item.image.data.description} width={item.image.data.width} height={item.image.data.height} aria-hidden="true" />
-				<h4>{item.heading.data}</h4>
-				<p>{item.content.data}</p>
-				<a href={item.action.data.url}>{item.action.data.description}</a>
+			<article class="p-article">
+				<img class="-image" src={item.image.data.url} alt={item.image.data.description} width={item.image.data.width} height={item.image.data.height} aria-hidden="true" />
+				<h4 class="-heading">{item.heading.data}</h4>
+				<p class="-content">{item.content.data}</p>
+				<a class="-action" href={item.action.data.url}>{item.action.data.description}</a>
 			</article>
 		)}</For>
 	</div>
