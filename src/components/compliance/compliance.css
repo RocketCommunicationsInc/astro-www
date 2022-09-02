@@ -185,7 +185,8 @@
 .p-compliance-tier {
 	/* Layout */
 	margin-inline-end: 2--step;
-	padding: .5--step 3--step;
+	padding-block: .5--step;
+	padding-inline: 3--step;
 
 	/* Text */
 	font-size: 12--rpx;
