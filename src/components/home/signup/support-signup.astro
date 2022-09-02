@@ -4,6 +4,7 @@ import './home-signup.css'
 
 const currentPathname = Astro.url.pathname
 const supportPath = (currentPathname === '/support/')
+
 ---
 <When {supportPath}>
     <section id="email-signup" class="support__email-signup">
