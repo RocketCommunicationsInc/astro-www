@@ -5,7 +5,7 @@
 	align-items: center;
 	flex-flow: column;
 	padding-block-end: 18--step;
-	padding-inline: max(4--step, 50% - 175--step);
+	padding-inline: max(4--step, 50% - 190--step);
 
 	/* Appearance */
 	background:
