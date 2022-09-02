@@ -4,19 +4,6 @@ import './home-signup.css'
 
 const currentPathname = Astro.url.pathname
 const supportPath = (currentPathname === '/support/')
-
-// Mailchimp key
-const MY_KEY = process.env.MAILCHIMP_API_KEY;
-import mailchimpAPI from '@mailchimp/mailchimp_transactional';
-const mailchimp = mailchimpAPI(MY_KEY);
-
-
-async function callPing() {
-  const response = await mailchimp.users.ping();
-  console.log(response);
-}
-
-callPing();
 ---
 <When {supportPath}>
     <section id="email-signup" class="support__email-signup">
