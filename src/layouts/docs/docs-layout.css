@@ -26,7 +26,7 @@
 		line-height: calc(52 / 48);
 
 		/* Appearance */
-		box-shadow: var(--Gray800Color) 0 -1px 0 0 inset;
+		box-shadow: var(--Grey800Color) 0 -1px 0 0 inset;
 	}
 
 	& :where(h2, h3) {

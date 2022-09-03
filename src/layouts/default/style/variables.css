@@ -6,37 +6,58 @@
 :root {
 	/* Reference Colors */
 
+	--BrightBlue300Color: hsl(209 100% 86%);
+	--BrightBlue400Color: hsl(209 100% 79%);
+	--BrightBlue500Color: hsl(208 100% 65%);
+	--BrightBlue600Color: hsl(209 61% 52%);
+	--BrightBlue700Color: hsl(209 57% 39%);
+	--BrightBlue800Color: hsl(208 49% 21%);
+	--BrightBlue850Color: hsl(211 45% 14%);
+	--BrightBlue900Color: hsl(212 37% 10%);
+	--DarkBlue700Color: hsl(208 54% 24%);
+	--DarkBlue850Color: hsl(209 39% 17%);
+	--DarkBlue850ColorA0: hsl(209 39% 17% / 0%);
+	--DarkBlue900Color: hsl(210 39% 15%);
+	--DarkBlue950Color: hsl(213 36% 5%);
+	--Grey300Color: hsl(213 12% 85%);
+	--Grey500Color: hsl(217 11% 68%);
+	--Grey800Color: hsl(220 5% 25%);
+	--Neutral000Color: hsl(0 0% 100%);
 	--Orange700Color: hsl(33 100% 50%);
+	--Pink600Color: hsl(290 100% 30%);
+	--Purple300Color: hsl(250 54% 78%);
+	--Red500Color: hsl(0 100% 61%);
 	--Red800Color: hsl(9 96% 28%);
-	--Gray800Color: hsl(220 5% 25%);
+	--Teal600Color: hsl(181 100% 32%);
 
 	/* System Colors */
 
-	--InverseColor: hsl(213 36% 5%);
-	--PlaceholderColor: hsl(217 11% 68%);
-	--PrimaryColor: hsl(0 0% 100%);
-	--SecondaryColor: hsl(213 12% 85%);
+	--InverseColor: var(--DarkBlue950Color);
+	--PlaceholderColor: var(--Grey500Color);
+	--PrimaryColor: var(--Neutral000Color);
+	--SecondaryColor: var(--Grey300Color);
 
 	/* Base Colors */
 
-	--BaseColor: hsl(212 37% 10%);
-	--BaseHeaderColor: hsl(210 39% 15%);
-	--BaseHoverColor: hsl(211 45% 14%);
-	--BaseSelectedColor: hsl(208 54% 24%);
+	--BaseColor: var(--BrightBlue900Color);
+	--BaseHeaderColor: var(--DarkBlue900Color);
+	--BaseHoverColor: var(--BrightBlue850Color);
+	--BaseSelectedColor: var(--DarkBlue700Color);
 
 	/* Interactive Colors */
 
-	--InteractiveColor: hsl(208 100% 65%);
-	--InteractiveHoverColor: hsl(209 100% 79%);
-	--InteractiveMutedColor: hsl(209 57% 39%);
+	--InteractiveColor: var(--BrightBlue500Color);
+	--InteractiveHoverColor: var(--BrightBlue400Color);
+	--InteractivePressColor: var(--BrightBlue300Color);
+	--InteractiveMutedColor: var(--BrightBlue700Color);
 
 	/* Surface Colors */
 
-	--SurfaceColor: hsl(209 39% 17%);
-	--SurfaceColorTransparent: hsl(209 39% 17% / 0%);
-	--SurfaceHeaderColor: hsl(210 39% 15%);
-	--SurfaceHoverColor: hsl(208 49% 21%);
-	--SurfaceSelectedColor: hsl(208 54% 24%);
+	--SurfaceColor: var(--DarkBlue850Color);
+	--SurfaceColorTransparent: var(--DarkBlue850ColorA0);
+	--SurfaceHeaderColor: var(--DarkBlue900Color);
+	--SurfaceHoverColor: var(--BrightBlue800Color);
+	--SurfaceSelectedColor: var(--DarkBlue700Color);
 
 	/* Typography Styles */
 

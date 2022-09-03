@@ -16,30 +16,33 @@ import './client/h-navigation-list.js'
 			<svg class="p-navigation-heading-image" role="none" viewBox="0 0 291 123"><use href="/images/astro.svg#content"></use></svg>
 		</h1>
 	</a>
+
 	<h-navigation-list>
 		<SiteSearch />
+
 		<ul class="p-navigation-list">
 			<For of={navigation.items}>{item => (
 				<li class={current.has(item) ? 'current' : null}>
 					<When {item.url}>
 						<a href={item.url}>{item.label}</a>
+					</When>
 
-						<Fragment slot="else">
-							<h-navigation-disclosure>
-								<span>{item.label}</span>
-								<ul>
-									<For of={item.items!}>{subitem => (
-										<When {subitem.label === 'separator'}>
-											<hr />
+					<When {!item.url}>
+						<h-navigation-disclosure>
+							<span>{item.label}</span>
 
-											<li slot="else" class={current.has(subitem) ? 'current' : null}>
-												<a href={subitem.url} aria-current={current.has(item)}>{subitem.label}</a>
-											</li>
-										</When>
-									)}</For>
-								</ul>
-							</h-navigation-disclosure>
-						</Fragment>
+							<ul>
+								<For of={item.items!}>{subitem => (
+									<When {subitem.label === 'separator'}>
+										<hr />
+
+										<li slot="else" class={current.has(subitem) ? 'current' : null}>
+											<a href={subitem.url} aria-current={current.has(item)}>{subitem.label}</a>
+										</li>
+									</When>
+								)}</For>
+							</ul>
+						</h-navigation-disclosure>
 					</When>
 				</li>
 			)}</For>

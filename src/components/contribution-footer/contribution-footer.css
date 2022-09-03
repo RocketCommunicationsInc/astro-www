@@ -1,5 +1,13 @@
 .contribution-footer {
 	/* Layout */
-	border-block-start: 1px solid var(--Gray800Color);
 	margin-block-start: 12--step;
+	padding-block-start: 8--step;
+
+	/* Appearance */
+	box-shadow: var(--Grey800Color) 0 1--rpx 0 0 inset;
+
+	& :where(.-heading) {
+		/* Layout */
+		margin-block-start: 0;
+	}
 }

@@ -21,7 +21,7 @@
 		"@csstools/custom-units": "0.1.1",
 		"@typescript-eslint/eslint-plugin": "5.36.1",
 		"@typescript-eslint/parser": "5.36.1",
-		"astro": "1.1.1",
+		"astro": "1.1.3",
 		"eslint": "8.23.0",
 		"eslint-config-dev": "3.1.0",
 		"parse-yaml": "0.1.0",

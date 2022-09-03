@@ -1,59 +1,99 @@
 ---
 import { For, When } from '@astropub/flow'
 import { markdown } from '@astropub/md'
-import './compliance.css'
+import { toNumeral, toStatusClassNames } from './compliance-utils'
+import './compliance-aside.css'
+
 export interface Props {
-compliance: typeof import('project:data/compliance.json')
+	compliance: typeof import('project:data/compliance.json')
 }
 
-const { isArray } = Array
-const toNumeral = (content: any, ruleset: any, rule: any) => [ content.numeral, ruleset.numeral, rule.numeral].join('.')
-const toStatusClass = (rule: any) => `status -${rule.status}`
+const { props, url } = Astro as { props: Props, url: URL }
+const { contents, version } = props.compliance
 
-const props = Astro.props as Props
-const currentPathname = Astro.url.pathname
-const contents = props.compliance.contents
-const shouldDisplayCompliance = contents.find(
-	content => content.rulesets?.find(
-		ruleset => ruleset.link === currentPathname
-	)
+/** Compliance contents, filtered by the given url. */
+const filteredContents = contents.reduce(
+	(filteredContents: typeof contents, content) => {
+		const rulesets = content.rulesets?.filter(
+			ruleset => ruleset.link === url.pathname
+		)!
+
+		if (rulesets && rulesets.length) {
+			filteredContents.push({ ...content, rulesets } as never)
+		}
+
+		return filteredContents
+	},
+	[]
 )
+
+/* Data used by the footer. */
+const footer = {
+	type: 'object',
+	data: {
+		title: {
+			type: 'text',
+			data: `Compliance Requirements`,
+		},
+		version: {
+			type: 'text',
+			data: `v${version}`
+		},
+		link: {
+			type: 'link',
+			data: {
+				url: '/compliance/',
+				alt: 'See all EGS Compliance Requirements',
+			},
+		},
+	},
+} as const
 ---
-<When {shouldDisplayCompliance}>
-<aside class="compliance">
-	<header>
-		<span class="compliance-header">Compliance Requirements</span>
-		<span class="compliance-version">(v{props.compliance.version })</span>
-	</header>
-	<br />
-	<For of={props.compliance.contents}>{content => (
-		<section class="p-compliance">
-			<When {isArray(content.rulesets)}>
+<When {filteredContents.length}>
+	<aside class="p-compliance-aside">
+		<header class="-header">
+			<h2 class="-heading">{
+				footer.data.title.data
+			}</h2>
+			<p class="-version">({
+				footer.data.version.data
+			})</p>
+		</header>
+
+		<For of={filteredContents}>{content => (
+			<section class="p-compliance">
 				<For of={content.rulesets!}>{ruleset => (
-					<When {ruleset.link === currentPathname}>
-						<section class="ruleset">
-							<When {isArray(ruleset.rules!)}>
-								<For of={ruleset.rules!}>{rule =>(
-									<dl class="rule-aside">
-										<dd class="numeral">{toNumeral(content, ruleset, rule)}</dd>
-										<div class="rule-text">
-											<dt class="rule-aside">{markdown(rule.rule)}</dt>
-											<When {rule.status !=='current' } {rule.status !=='updated'} {rule.status !=='under-review' }>
-												<dd class={toStatusClass(rule)}>{rule.status}</dd>
-											</When>
-										</div>
-									</dl>
-								)}</For>
-							</When>
-						</section>
-					</When>
+					<section class="ruleset">
+						<For of={ruleset.rules!}>{rule =>(
+							<dl class="rule-aside">
+								<dt class="-numeral">{
+									toNumeral(content, ruleset, rule)
+								}</dt>
+
+								<dd class="-details">
+									<span class="-content">{
+										markdown.inline(rule.rule)
+									}</span>
+
+									<When {rule.status !=='current'} {rule.status !=='updated'} {rule.status !=='under-review'}>
+										<span class={toStatusClassNames(rule)}>{
+											rule.status
+										}</span>
+									</When>
+								</dd>
+							</dl>
+						)}</For>
+					</section>
 				)}</For>
-			</When>
-		</section>
-		)}
-	</For>
-	<footer>
-		<a href="/compliance/">See all EGS Compliance Requirements</a>
-	</footer>
-</aside>
+			</section>
+		)}</For>
+
+		<footer class="-footer">
+			<p>
+				<a href={footer.data.link.data.url}>{
+					footer.data.link.data.alt
+				}</a>
+			</p>
+		</footer>
+	</aside>
 </When>

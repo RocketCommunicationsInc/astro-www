@@ -1,22 +1,28 @@
 ---
 import './contribution-footer.css'
 
-function removeTrailingSlash(str) {
-  return str.endsWith('/') ? str.slice(0, -1) : str;
-}
+/** RegEx to match a slash (/) at the end ($) of a string. */
+const matchTrailingSlash = /\/$/
 
-const pathname = Astro.url.pathname
-const updatedPathname = removeTrailingSlash(pathname)
+/** Removes the trailing slash from a string. */
+const withoutTrailingSlash = (value: string) => value.replace(matchTrailingSlash, '')
+
+/** URL to the current source for this page. */
+const githubSourceURL = `https://github.com/RocketCommunicationsInc/astro/edit/next/packages/astro-uxds/_content${withoutTrailingSlash(Astro.url.pathname)}.md`
 ---
-<footer id="contribution-footer">
-    <h3>Help improve this page</h3>
-    <p>You can help improve this page, with updated information, guidance or fixes for typos and errors.</p>
-    <ul>
-        <li>
-            <a href={`https://github.com/RocketCommunicationsInc/astro/edit/next/packages/astro-uxds/_content/${updatedPathname}.md`}>Propose a change or fix to this page</a>
-        </li>
-        <li>
-            <a href="/community/propose-a-change/">How to propose a change</a>
-        </li>
-    </ul>
+<footer id="contribution-footer" class="contribution-footer">
+	<h3 class="-heading">
+		Help improve this page
+	</h3>
+	<p>
+		You can help improve this page, with updated information, guidance or fixes for typos and errors.
+	</p>
+	<ul>
+		<li>
+			<a href={githubSourceURL}>Propose a change or fix to this page</a>
+		</li>
+		<li>
+			<a href="/community/propose-a-change/">How to propose a change</a>
+		</li>
+	</ul>
 </footer>

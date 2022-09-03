@@ -10,6 +10,19 @@
 			"type": "text",
 			"data": "Sign up to learn more about what Astro has to offer and to stay up to date on events, releases, and news."
 		},
+		"form": {
+			"type": "object",
+			"data": {
+				"action": {
+					"type": "text",
+					"data": "https://rocketcom.us12.list-manage.com/subscribe/post?u=f067e558ee805172850a87843&id=c1af406c10"
+				},
+				"method": {
+					"type": "text",
+					"data": "post"
+				}
+			}
+		},
 		"content": {
 			"type": "objects",
 			"data": [
@@ -167,6 +180,21 @@
 					"required": {
 						"type": "switch",
 						"data": false
+					}
+				}
+			]
+		},
+		"hidden": {
+			"type": "objects",
+			"data": [
+				{
+					"type": {
+						"type": "text",
+						"data": "hidden"
+					},
+					"value": {
+						"type": "text",
+						"data": "b_f067e558ee805172850a87843_c1af406c10"
 					}
 				}
 			]
