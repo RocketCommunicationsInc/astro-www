@@ -14,7 +14,9 @@ const {
 	title,
 } = Object(Astro.props.content)
 ---
-<script>import './docs-layout.client.js'</script>
+<script>
+import './docs-layout.client.js'
+</script>
 <Layout {title} tabtitle={title}>
 	<SiteNavigation slot="side" />
 	<style is:global define:vars={{ GitHubId, StorybookId, StorybookPreviewHeight }}>
@@ -32,7 +34,7 @@ const {
 		<slot />
 		<ComplianceAside compliance={compliance} />
 		<ContributionFooter />
-		
+
 	</main>
 	<SiteFooter slot="foot" />
 </Layout>

@@ -64,7 +64,7 @@ const footer = {
 			<section class="p-compliance">
 				<For of={content.rulesets!}>{ruleset => (
 					<section class="ruleset">
-						<For of={ruleset.rules!}>{rule =>(
+						<For of={ruleset.rules!}>{rule => (
 							<dl class="rule-aside">
 								<dt class="-numeral">{
 									toNumeral(content, ruleset, rule)
@@ -75,7 +75,7 @@ const footer = {
 										markdown.inline(rule.rule)
 									}</span>
 
-									<When {rule.status !=='current'} {rule.status !=='updated'} {rule.status !=='under-review'}>
+									<When {rule.status !== 'current'} {rule.status !== 'updated'} {rule.status !== 'under-review'}>
 										<span class={toStatusClassNames(rule)}>{
 											rule.status
 										}</span>
