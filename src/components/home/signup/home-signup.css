@@ -141,3 +141,27 @@
 #mc_embed_signup input {
 	border: none;
 }
+
+.p-signup-support {
+	display: flex;
+
+	/* Layout */
+	flex-flow: column;
+	padding-block: 3--step 3--step;
+
+	/* Appearance */
+	background: var(--SurfaceColor);
+	border-radius: 3--rpx;
+	color: var(--PrimaryColor);
+
+	@media (width >= 400px) {
+		/* Layout */
+		inline-size: min(100% - 4--step, 134--step);
+		padding-inline: 8--step;
+	}
+
+	@media (width >= 800px) {
+		/* Layout */
+		padding-inline: 12--step;
+	}
+}
