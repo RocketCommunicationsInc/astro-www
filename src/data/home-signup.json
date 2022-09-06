@@ -107,32 +107,6 @@
 				{
 					"type": {
 						"type": "text",
-						"data": "tel"
-					},
-					"name": {
-						"type": "text",
-						"data": "phone-number"
-					},
-					"label": {
-						"type": "text",
-						"data": "Phone Number"
-					},
-					"autocomplete": {
-						"type": "text",
-						"data": "tel"
-					},
-					"placeholder": {
-						"type": "text",
-						"data": "Enter phone number"
-					},
-					"required": {
-						"type": "switch",
-						"data": true
-					}
-				},
-				{
-					"type": {
-						"type": "text",
 						"data": "text"
 					},
 					"name": {
@@ -150,32 +124,6 @@
 					"placeholder": {
 						"type": "text",
 						"data": "Enter company name"
-					},
-					"required": {
-						"type": "switch",
-						"data": false
-					}
-				},
-				{
-					"type": {
-						"type": "text",
-						"data": "text"
-					},
-					"name": {
-						"type": "text",
-						"data": "organization-title"
-					},
-					"label": {
-						"type": "text",
-						"data": "Title / Position"
-					},
-					"autocomplete": {
-						"type": "text",
-						"data": "organization-title"
-					},
-					"placeholder": {
-						"type": "text",
-						"data": "Enter title / position"
 					},
 					"required": {
 						"type": "switch",
