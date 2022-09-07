@@ -16,8 +16,7 @@ We update these guidelines regularly. If you'd like to get emailed when we do, p
 <br />
 
 <section class="p-signup-support" class="support__email-signup">
-    <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
-    <link href="/Users/maria.paterno/Desktop/astro-www/src/components/home/signup/home-signup.css" rel="stylesheet"
+    <link href="/src/components/home/signup/home-signup.css" rel="stylesheet"
         type="text/css">
     <div id="mc_embed_signup">
         <form action="https://rocketcom.us12.list-manage.com/subscribe/post" method="GET" id="mc-embedded-subscribe-form"  name="mc-embedded-subscribe-form" class="validate" target="_blank"
@@ -26,22 +25,22 @@ We update these guidelines regularly. If you'd like to get emailed when we do, p
                 <div class="mc-field-layout">
                     <div class="mc-field-group" class="p-signup-content">
                         <label for="mce-EMAIL">Email Address*</label>
-                        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL"
+                        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Enter Email Address"
                             aria-required="true">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-COMPANY">Company*</label>
-                        <input type="text" value="" name="COMPANY" class="required company" id="mce-COMPANY">
+                        <label for="mce-COMPANY">Company</label>
+                        <input type="text" value="" name="COMPANY" id="mce-COMPANY">
                     </div>
                 </div>
                 <div class="mc-field-layout">
                     <div class="mc-field-group">
-                        <label for="mce-FNAME">First Name*</label>
-                        <input type="text" value="" name="FNAME" class="required fname" id="mce-FNAME">
+                        <label for="mce-FNAME">First Name</label>
+                        <input type="text" value="" name="FNAME" id="mce-FNAME" placeholder="Enter First Name">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-LNAME">Last Name*</label>
-                        <input type="text" value="" name="LNAME" class="required lname" id="mce-LNAME">
+                        <label for="mce-LNAME">Last Name</label>
+                        <input type="text" value="" name="LNAME" id="mce-LNAME" placeholder="Enter Last Name">
                     </div>
                 </div>
                 <div id="mce-responses" class="clear">

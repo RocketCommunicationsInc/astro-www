@@ -121,9 +121,11 @@
 	cursor: pointer;
 }
 
-#mc-embedded-subscribe {
+.submit-support-button {
 	/* Layout */
+	display: block;
 	margin-inline: auto;
+	margin-block: 4--step;
 	padding-block: 2--step;
 	padding-inline: 11--step;
 
@@ -136,10 +138,6 @@
 	box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
 	color: var(--InverseColor);
 	cursor: pointer;
-}
-
-#mc_embed_signup input {
-	border: none;
 }
 
 .p-signup-support {
@@ -164,4 +162,16 @@
 		/* Layout */
 		padding-inline: 12--step;
 	}
+
+	& label {
+		/* Layout */
+		margin-block-end: 1--step;
+	}
+}
+
+.mc-field-group {
+	/* Layout */
+	display: flex;
+	flex-flow: column;
+	padding-block: 3--step 3--step;
 }
