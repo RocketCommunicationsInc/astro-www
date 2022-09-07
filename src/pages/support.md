@@ -16,8 +16,6 @@ We update these guidelines regularly. If you'd like to get emailed when we do, p
 <br />
 
 <section class="p-signup-support" class="support__email-signup">
-    <link href="/src/components/home/signup/home-signup.css" rel="stylesheet"
-        type="text/css">
     <div id="mc_embed_signup">
         <form action="https://rocketcom.us12.list-manage.com/subscribe/post" method="GET" id="mc-embedded-subscribe-form"  name="mc-embedded-subscribe-form" class="validate" target="_blank"
             novalidate="novalidate">
@@ -25,8 +23,7 @@ We update these guidelines regularly. If you'd like to get emailed when we do, p
                 <div class="mc-field-layout">
                     <div class="mc-field-group" class="p-signup-content">
                         <label for="mce-EMAIL">Email Address*</label>
-                        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Enter Email Address" onkeyup= handleSubmit()
-                            aria-required="true">
+                        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Enter Email Address" onkeyup= handleSubmit() aria-required="true">
                     </div>
                     <div class="mc-field-group">
                         <label for="mce-COMPANY">Company</label>
@@ -51,7 +48,7 @@ We update these guidelines regularly. If you'd like to get emailed when we do, p
                         name="b_f067e558ee805172850a87843_c1af406c10" tabindex="-1" value="">
                 </div>
             </div>
-            <div><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="submit-support-button"  disabled="disabled"></div>
+            <div><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="submit-support-button"  disabled="disabled" ></div>
             <input type="hidden" name="id" value="c1af406c10" />
             <input type="hidden" name="u" value="f067e558ee805172850a87843" />
             <input type="hidden" name="b_f067e558ee805172850a87843_c1af406c10" />
@@ -59,10 +56,10 @@ We update these guidelines regularly. If you'd like to get emailed when we do, p
     </div>
     <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js">
     </script>
-    <script type="text/javascript">
+     <script type="text/javascript">
         function handleSubmit() {
- const button = document.getElementById('mc-embedded-subscribe')
+        const button = document.getElementById('mc-embedded-subscribe')
         button.removeAttribute("disabled")
         }
-</script>
-</section>
+     </script>
+     <script>
