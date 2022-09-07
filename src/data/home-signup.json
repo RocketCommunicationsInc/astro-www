@@ -29,58 +29,6 @@
 				{
 					"type": {
 						"type": "text",
-						"data": "text"
-					},
-					"name": {
-						"type": "text",
-						"data": "given-name"
-					},
-					"label": {
-						"type": "text",
-						"data": "First Name"
-					},
-					"autocomplete": {
-						"type": "text",
-						"data": "given-name"
-					},
-					"placeholder": {
-						"type": "text",
-						"data": "Enter first name"
-					},
-					"required": {
-						"type": "switch",
-						"data": true
-					}
-				},
-				{
-					"type": {
-						"type": "text",
-						"data": "text"
-					},
-					"name": {
-						"type": "text",
-						"data": "family-name"
-					},
-					"label": {
-						"type": "text",
-						"data": "Last Name"
-					},
-					"autocomplete": {
-						"type": "text",
-						"data": "family-name"
-					},
-					"placeholder": {
-						"type": "text",
-						"data": "Enter last name"
-					},
-					"required": {
-						"type": "switch",
-						"data": true
-					}
-				},
-				{
-					"type": {
-						"type": "text",
 						"data": "email"
 					},
 					"name": {
@@ -111,19 +59,45 @@
 					},
 					"name": {
 						"type": "text",
-						"data": "organization"
+						"data": "given-name"
 					},
 					"label": {
 						"type": "text",
-						"data": "Company Name"
+						"data": "First Name"
 					},
 					"autocomplete": {
 						"type": "text",
-						"data": "organization"
+						"data": "given-name"
 					},
 					"placeholder": {
 						"type": "text",
-						"data": "Enter company name"
+						"data": "Enter first name"
+					},
+					"required": {
+						"type": "switch",
+						"data": false
+					}
+				},
+				{
+					"type": {
+						"type": "text",
+						"data": "text"
+					},
+					"name": {
+						"type": "text",
+						"data": "family-name"
+					},
+					"label": {
+						"type": "text",
+						"data": "Last Name"
+					},
+					"autocomplete": {
+						"type": "text",
+						"data": "family-name"
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "Enter last name"
 					},
 					"required": {
 						"type": "switch",
