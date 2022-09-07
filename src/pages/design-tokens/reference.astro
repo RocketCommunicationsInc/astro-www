@@ -4,6 +4,11 @@ import { For } from '@astropub/flow'
 import DocsLayout from 'project:layouts/docs/docs-layout.astro'
 import DesignToken from 'project:components/design-token/design-token'
 ---
+<style>
+.p-design-token .--preview {
+	flex-shrink: 0;
+}
+</style>
 
 <DocsLayout content={{ title: 'Reference Tokens' }}>
 	<h1>Reference Tokens</h1>
