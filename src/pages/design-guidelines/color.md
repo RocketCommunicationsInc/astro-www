@@ -9,10 +9,6 @@ Maintaining color consistency across applications is an essential part of what m
 
 Color palettes are provided here with their respective RGB and CSS values as well as their [CSS Custom Property](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables) names, which can be used in conjunction with the Astro CSS library. Example text overlays use the optimal colors for [WCAG contrast compliance](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html).
 
-| hello | goodbye |
-| ----- | ------- |
-| lol   | yay     |
-
 :::note
 The Astro library makes use of CSS Custom Properties by offering semantic color assignment and support for live theme switching. Using the CSS Custom Properties instead of the RGB or Hex values will future-proof your application.
 :::
