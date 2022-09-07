@@ -25,19 +25,15 @@ We update these guidelines regularly. If you'd like to get emailed when we do, p
                         <label for="mce-EMAIL">Email Address*</label>
                         <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Enter Email Address" onkeyup= handleSubmit() aria-required="true">
                     </div>
-                    <div class="mc-field-group">
-                        <label for="mce-COMPANY">Company</label>
-                        <input type="text" value="" name="COMPANY" id="mce-COMPANY">
-                    </div>
                 </div>
                 <div class="mc-field-layout">
                     <div class="mc-field-group">
                         <label for="mce-FNAME">First Name</label>
-                        <input type="text" value="" name="FNAME" id="mce-FNAME" placeholder="Enter First Name">
+                        <input type="text" value="" maxlength="50" onkeyup="this.value=this.value.replace(/[^a-zA-Z]/g, '')" name="FNAME" id="mce-FNAME" placeholder="Enter First Name">
                     </div>
                     <div class="mc-field-group">
                         <label for="mce-LNAME">Last Name</label>
-                        <input type="text" value="" name="LNAME" id="mce-LNAME" placeholder="Enter Last Name">
+                        <input type="text" value="" maxlength="50" onkeyup="this.value=this.value.replace(/[^a-zA-Z]/g, '')" name="LNAME" id="mce-LNAME" placeholder="Enter Last Name">
                     </div>
                 </div>
                 <div id="mce-responses" class="clear">
