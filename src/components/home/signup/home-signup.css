@@ -138,6 +138,13 @@
 	box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
 	color: var(--InverseColor);
 	cursor: pointer;
+
+	&:disabled {
+		background: #4dacff6f;
+		color: ar(--InverseColor);
+		border-color: none !important;
+		cursor: not-allowed;
+	}
 }
 
 .p-signup-support {
