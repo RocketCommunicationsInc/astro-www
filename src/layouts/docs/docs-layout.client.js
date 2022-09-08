@@ -33,6 +33,9 @@ requestAnimationFrame(() => {
 				delete globalThis[jsonpName]
 
 				// do something with response
+				const submitMessage = document.querySelector("#mce-error-response")
+				submitMessage.style.display = "block"
+				submitMessage.textContent = response.msg
 				console.log(response)
 			}
 
