@@ -15,9 +15,6 @@ import community from 'project:data/home-community.json'
 
 import Articles from 'project:components/home/articles/home-articles.astro'
 import articles from 'project:data/home-articles.json'
-
-import Signup from 'project:components/home/signup/home-signup.astro'
-import signup from 'project:data/home-signup.json'
 ---
 <Layout>
 	<Banner data={banner.data} />
@@ -25,5 +22,4 @@ import signup from 'project:data/home-signup.json'
 	<Explainer data={explainer.data} />
 	<Community data={community.data} />
 	<Articles data={articles.data} />
-	<Signup data={signup.data} />
 </Layout>

@@ -2,6 +2,7 @@
 import DefaultLayout from 'project:layouts/default/default-layout-with-grid.astro'
 import SiteNavigation from 'project:components/site-navigation/site-navigation.astro'
 import SiteFooter from 'project:components/site-footer/site-footer.astro'
+import Signup from 'project:components/sign-up/signup.astro'
 
 import './home-layout.css'
 ---
@@ -11,7 +12,7 @@ import './home-layout.css'
 
 	<main class="p-content" id="content">
 		<slot />
+		<Signup />
 	</main>
-
 	<SiteFooter slot="foot" />
 </DefaultLayout>
