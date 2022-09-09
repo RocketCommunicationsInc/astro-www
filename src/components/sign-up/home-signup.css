@@ -1,3 +1,4 @@
+/* stylelint-disable declaration-no-important */
 /* stylelint-disable selector-max-id */
 /* Signup: Heading */
 
@@ -153,7 +154,7 @@
 }
 
 #mc_embed_signup div.mce_inline_error {
-	background-color: var(--SurfaceColor);
-	color: var(--Red500Color);
-	font-weight: 400;
+	background-color: var(--SurfaceColor) !important;
+	color: var(--Red500Color) !important;
+	font-weight: 400 !important;
 }

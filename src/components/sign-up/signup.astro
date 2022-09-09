@@ -4,7 +4,7 @@ import { When } from '@astropub/flow'
 import './home-signup.css'
 
 const currentPathname = Astro.url.pathname
-const supportPath = (currentPathname === '/support/' || currentPathname === '/')
+const supportOrHomePath = (currentPathname === '/support/' || currentPathname === '/')
 const homePath = (currentPathname === "/")
 const homeSignUpIntro = "Sign up to learn more about what Astro has to offer and to stay up to date on events, releases, and news."
 ---
@@ -12,7 +12,7 @@ const homeSignUpIntro = "Sign up to learn more about what Astro has to offer and
     import '../../layouts/docs/docs-layout.client.js'
 </script>
 
-<When {supportPath}>
+<When {supportOrHomePath}>
     <section class="p-signup-support" class="support__email-signup">
         <div id="mc_embed_signup">
             <form action="https://rocketcom.us12.list-manage.com/subscribe/post" method="GET"
