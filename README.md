@@ -84,6 +84,26 @@ The `astro.config.js` file is used by Astro to configure how the website is proj
 
 [Learn More about `astro.config.js`](https://docs.astro.build/en/guides/configuring-astro/)
 
+### The `components` directory
+
+The `components` directory contains any reusable snippets of code used throughout the site.
+
+### The `data` directory
+
+The `data` directory contains JSON files that represent content used in special sections or landing pages.
+
+### The `layouts` directory
+
+The `layouts` directory contains snippets of layout code used by one or across several pages.
+
+### The `pages` directory
+
+The `pages` directory contains Astro and Markdown files used to generate pages on the site.
+
+### The `utils` directory
+
+...
+
 ## Commands
 
 All commands are run from the root of the project, from a terminal:
