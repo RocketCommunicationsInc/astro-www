@@ -34,9 +34,12 @@ requestAnimationFrame(() => {
 
 				// do something with response
 				const submitMessage = document.querySelector("#mce-responses")
-				submitMessage.style.display = "block"
-				submitMessage.textContent = response.msg
-				console.log(response)
+				if(submitMessage) {
+					const submitMessageNoNum = response.msg.toString().replace(/[0-9]/g, '');
+					const submitMessageNoChar = submitMessageNoNum.replace("-", "")
+					submitMessage.style.display = "block"
+					submitMessage.textContent = submitMessageNoChar
+				}
 			}
 
 			/** Captured form data as an object. */
