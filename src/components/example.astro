@@ -1,0 +1,21 @@
+---
+const { title }  = Astro.props;
+---
+<div class="flex">
+	<div class="mr-4">
+		<div class="font-bold text-lg">
+			{title}
+		</div>
+		<p class="">
+			<slot>
+				Engorgio wingardium wingardium immobilus immobilus evanesco wingardium. Rictusempra impedimenta lumos aresto. Petrificus elixir locomotor mortis momentum evanesco quietus totalus imperio point.
+			</slot>
+		</p>
+	</div>
+	<div>
+		<div class="rounded bg-gray-200 w-72 h-72 flex justify-center">
+			<slot name="image"></slot>
+		</div>
+
+	</div>
+</div>

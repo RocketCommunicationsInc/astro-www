@@ -1,0 +1,10 @@
+---
+const { type }  = Astro.props;
+---
+
+<div class="">
+	<div class="h-72 bg-gray-400"></div>
+	<div class={`${type === 'do' ? 'bg-green-600' : 'bg-red-600'} p-2 text-white`}>
+		{type === 'do' ? 'Do' : 'Dont'}
+	</div>
+</div>

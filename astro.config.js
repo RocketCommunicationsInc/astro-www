@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config'
-
+import tailwind from '@astrojs/tailwind';
 import remarkPlugins from './.vscode/remark-plugins.js'
 import vitePlugins from './.vscode/vite-plugins.js'
 import sitemapIntegration from '@astrojs/sitemap'
@@ -19,5 +19,6 @@ export default defineConfig({
 	},
 	integrations: [
 		sitemapIntegration(),
+		tailwind()
 	],
 })

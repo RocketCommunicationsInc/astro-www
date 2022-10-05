@@ -9,8 +9,8 @@
 	font-family: var(--SystemType);
 
 	/* Appearance */
-	background-color: var(--BaseColor);
-	color: var(--PrimaryColor);
+	/* background-color: var(--BaseColor); */
+	/* color: var(--PrimaryColor); */
 
 	/* Behavior */
 	scroll-behavior: smooth;

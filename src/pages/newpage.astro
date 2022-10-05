@@ -1,0 +1,95 @@
+---
+import compliance from 'project:data/compliance.json'
+import DocsLayout from 'project:layouts/docs/docs-layout.astro'
+import Compliance from 'project:components/compliance/compliance.astro'
+import Guidance from 'project:components/guidance.astro'
+import Example from 'project:components/example.astro'
+
+const title = 'EGS Design Compliance'
+---
+<style>
+	@import "https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.83/dist/themes/light.css";
+</style>
+<DocsLayout content={{ title }}>
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.83/dist/shoelace.js"></script>
+	
+	<h1>Button</h1>
+	<p>Action Buttons allow users to trigger actions by clicking, tapping, or pressing a corresponding key on a keyboard, such as the “Enter” key.</p>
+
+	<sl-tab-group>
+        <sl-tab slot="nav" panel="overview">Overview</sl-tab>
+        <sl-tab slot="nav" panel="variants">Variants</sl-tab>
+        <sl-tab slot="nav" panel="advanced">Implementation</sl-tab>
+        <sl-tab slot="nav" panel="compliance">Compliance</sl-tab>
+        
+        <sl-tab-panel name="overview">
+			<div class="border-2 border-black p-4 w-50 h-72">
+
+			</div>
+
+			<h2>Anatomy</h2>
+			<p>Posuere eros per ac tincidunt cras et facilisis eget iaculis, aliquet senectus sem cubilia sit sapien himenaeos taciti. Etiam class sapien placerat taciti quisque massa turpis quis dui metus donec ultrices, facilisis viverra eu dis rutrum tempus maecenas lobortis erat convallis eget. Sapien ultrices porttitor potenti malesuada scelerisque aptent venenatis, pretium suscipit porta leo parturient maecenas.</p>
+			<img src="/img/innovation/anatomy.svg"/>
+
+			<h2>When To Use</h2>
+			
+			<div class="grid grid-cols-2 gap-4">
+				<Guidance type="do"></Guidance>
+				<Guidance type="dont"></Guidance>
+				<Guidance type="do"></Guidance>
+				<Guidance type="dont"></Guidance>
+			</div>
+
+			<section>
+				<h2>Positioning</h2>
+				<Example title="Bottom Right"></Example>
+				<div class="mt-8">
+					<Example title="Full Width"></Example>
+				</div>
+
+			</section>
+		</sl-tab-panel>
+
+		<sl-tab-panel name="variants">
+			<section>
+				<h2>Primary</h2>
+
+				<h3>Sizes</h3>
+
+				<Example title="small">
+					<img slot="image" style="width: 200px;" src="/img/innovation/button-primary-small.svg"/>
+				</Example>
+				<div class="mt-4">
+					<Example title="medium">
+						<img slot="image" style="width: 200px;" src="/img/innovation/button-primary-medium.svg"/>
+					</Example>
+				</div>
+
+				<div class="mt-4">
+					<Example title="large">
+						<img slot="image" style="width: 200px;" src="/img/innovation/button-primary-large.svg"/>
+					</Example>
+				</div>
+
+				<h3>With Icon</h3>
+				<div class="mt-4">
+					<Example title="With Icon">
+						<img slot="image" style="width: 200px;" src="/img/innovation/button-primary-medium-icon.svg"/>
+					</Example>
+				</div>
+
+				<div class="mt-4">
+					<Example title="Icon Only">
+						<img slot="image" style="width: 40px;" src="/img/innovation/button-primary-medium-icononly.svg"/>
+					</Example>
+				</div>
+
+
+
+
+			</section>
+
+		</sl-tab-panel>
+    </sl-tab-group>
+</DocsLayout>

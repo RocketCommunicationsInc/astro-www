@@ -9,7 +9,7 @@
 	line-height: calc(24 / 16);
 
 	/* Appearance */
-	background: radial-gradient(ellipse at top, hsl(209deg 39% 12%), hsl(209deg 39% 0% / 50%)) no-repeat 50% 0% / 100% auto;
+	/* background: radial-gradient(ellipse at top, hsl(209deg 39% 12%), hsl(209deg 39% 0% / 50%)) no-repeat 50% 0% / 100% auto; */
 
 	@media (width >= 1680px) {
 		/* Layout */
