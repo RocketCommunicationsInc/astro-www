@@ -1,21 +1,20 @@
 ---
 const { title, badge }  = Astro.props;
 ---
-<div class="flex flex">
+<div class="flex flex-col">
 	<div>
 		<div class="border-gray-400 border-2 rounded bg-gray-200 w-72 h-72 flex justify-center items-center">
 			<slot name="image"></slot>
 		</div>
 
 	</div>
-	<div class="ml-8">
+	<div class="mt-4">
 		<div class="font-bold text-lg">
 			{title} {badge ? (<sl-badge>{badge}</sl-badge>) : ''}
 		</div>
 		<div class="m-0">
 
 			<slot>
-				Engorgio wingardium wingardium immobilus immobilus evanesco wingardium. Rictusempra impedimenta lumos aresto. Petrificus elixir locomotor mortis momentum evanesco quietus totalus imperio point.
 			</slot>
 		</div>
 	</div>
