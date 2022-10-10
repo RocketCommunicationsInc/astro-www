@@ -3,6 +3,7 @@ import tailwind from '@astrojs/tailwind';
 import remarkPlugins from './.vscode/remark-plugins.js'
 import vitePlugins from './.vscode/vite-plugins.js'
 import sitemapIntegration from '@astrojs/sitemap'
+import typo from '@tailwindcss/typography'
 
 export default defineConfig({
 	site: 'https://astro-astro-www.netlify.app/',
@@ -19,6 +20,10 @@ export default defineConfig({
 	},
 	integrations: [
 		sitemapIntegration(),
-		tailwind()
+		tailwind({
+			plugins: [
+				typo
+			]
+		})
 	],
 })

@@ -1,56 +1,216 @@
 ---
-import compliance from 'project:data/compliance.json'
-import DocsLayout from 'project:layouts/docs/docs-layout.astro'
-import Compliance from 'project:components/compliance/compliance.astro'
-import Guidance from 'project:components/guidance.astro'
-import Example from 'project:components/example.astro'
+import compliance from 'project:data/compliance.json';
+import DocsLayout from 'project:layouts/docs/docs-layout.astro';
+import Compliance from 'project:components/compliance/compliance.astro';
+import Guidance from 'project:components/guidance.astro';
+import Example from 'project:components/example.astro';
+import Smallexample from 'project:components/smallexample.astro';
+import Examplealt from 'project:components/examplealt.astro';
+import Listdo from 'project:components/listdo.astro';
 
-const title = 'EGS Design Compliance'
+const title = 'EGS Design Compliance';
 ---
+
 <style>
-	@import "https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.83/dist/themes/light.css";
+	@import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.83/dist/themes/light.css';
 </style>
 <DocsLayout content={{ title }}>
+<script
+    type="module"
+    src="https://unpkg.com/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.esm.js"
+></script>
+	<script
+		type="module"
+		src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.83/dist/shoelace.js"
+	></script>
+	<div class="">
 
-<script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.83/dist/shoelace.js"></script>
-	
+
 	<h1>Input</h1>
-	<p>Action Buttons allow users to trigger actions by clicking, tapping, or pressing a corresponding key on a keyboard, such as the “Enter” key.</p>
-
+	<p>
+		Action Buttons allow users to trigger actions by clicking, tapping, or
+		pressing a corresponding key on a keyboard, such as the “Enter” key.
+	</p>
+	<Listdo type="do">Use only predefined Button colors and sizes.</Listdo>
 	<sl-tab-group>
-        <sl-tab slot="nav" panel="overview">Overview</sl-tab>
-        <sl-tab slot="nav" panel="variants">Variants</sl-tab>
-        <sl-tab slot="nav" panel="advanced">Implementation</sl-tab>
-        <sl-tab slot="nav" panel="compliance">Compliance</sl-tab>
-        
+		<sl-tab slot="nav" panel="overview">Overview</sl-tab>
+		<sl-tab slot="nav" panel="variants">Variants</sl-tab>
+		<sl-tab slot="nav" panel="advanced">Implementation</sl-tab>
+		<sl-tab slot="nav" panel="compliance">Compliance</sl-tab>
+
 		<sl-tab-panel name="overview">
-			
-		</sl-tab-panel>
-        <sl-tab-panel name="notoverviw">
-			<div class="border-2 border-black p-4 w-50 h-72">
+			<div class="prose">
+				<section>
+					<h2>Anatomy</h2>
+					<ol class="list-none">
+						<li>Container</li>
+						<li>Prefix Slot (Optional)</li>
+						<li>Label</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>When To Use</h2>
+				</section>
+				<section>
+					<h2>When Not To Use</h2>
+					<Listdo type="dont">Open Popups. Use Icons instead.</Listdo>
+				</section>
+
+				<h3>Types</h3>
+				<section class="grid grid-cols-2 gap-4">
+					<Example title="Text">
+						<div slot="image">
+							<rux-input type="text"></rux-input>
+						</div>
+					</Example>
+					<Example title="Password">
+						<div slot="image">
+							<rux-input type="password"></rux-input>
+						</div>
+					</Example>
+					<Example title="Search">
+						<div slot="image">
+							<rux-input type="search"></rux-input>
+						</div>
+					</Example>
+					<Example title="Date">
+						<div slot="image">
+							<rux-input type="date"></rux-input>
+						</div>
+					</Example>
+				</section>
+				
+				<h3>Sizes</h3>
+				<section class="grid grid-cols-2 gap-4">
+					<Example title="Small">
+						<div slot="image">
+							<rux-input size="small" type="text"></rux-input>
+						</div>
+					</Example>
+					<Example title="Medium" badge="default">
+						<div slot="image">
+							<rux-input size="medium" type="text"></rux-input>
+						</div>
+					</Example>
+					<Example title="Large">
+						<div slot="image">
+							<rux-input size="large" type="text"></rux-input>
+						</div>
+					</Example>
+
+					
+
+				</section>
+				<div>
+					<Guidance type="dont">
+						<div slot="image">
+							<div class="flex">
+								<rux-button borderless class="mr-4">Close</rux-button>
+								<rux-button secondary size="small" class="mr-4">Deny</rux-button>
+								<rux-button size="large">Accept</rux-button>
+							</div>
+						</div>
+						Dont mix Button sizes</Guidance>
+				</div>
+
+				<h3>Icons</h3>
+				<section class="grid gap-4">
+					<Example title="With Icon">
+						<div slot="image">
+							<rux-button icon="apps">Submit</rux-button>
+						</div>
+						<strong>When To Use:</strong> 
+						visually emphasized to guide the user to the action that is most likely to be most desirable to them at a given point
+					</Example>
+
+					<Example title="Icon Only">
+						<div slot="image">
+							<rux-button icon-only icon="apps"></rux-button>
+						</div>
+						<strong>When To Use:</strong> 
+						visually emphasized to guide the user to the action that is most likely to be most desirable to them at a given point
+					</Example>
+					
+
+				</section>
+			</div>
+			<div>
+				<h2>Behavior</h2>
+				
+				<h3>States</h3>
+				<section class="grid grid-cols-2 gap-4">
+					<Smallexample title="Disabled">
+						<img slot="image" src="https://via.placeholder.com/100x40"/>
+					</Smallexample>
+
+					<Smallexample title="Hover">
+						<img slot="image" src="https://via.placeholder.com/100x40"/>
+					</Smallexample>
+					
+
+				</section>
+				
+			</div>
+			<div>
+				<h2>Positioning</h2>
+				<div class="mb-2">
+					<Listdo type="do">
+						Space Buttons evenly
+					</Listdo>
+				</div>
+				<div class="mb-2">
+					<Listdo type="do">
+						In Button groups, the primary Button with the preferred user action shall be placed on the right .
+					</Listdo>
+				</div>
+				<div class="mb-2">
+					<Listdo type="do">
+						Buttons within the same group should be the same size. Use the width of the widest Button.
+					</Listdo>
+				</div>
+				
 
 			</div>
+			<div class="text-2xl">Properties</div>
+			<div>
+				<div class="text-xl">Hierarchy</div>
+				<div>
+					<div class="text-lg">Primary</div>
+					<img src="https://via.placeholder.com/100x40" />
+				</div>
+			</div>
+		</sl-tab-panel>
+
+		<sl-tab-panel name="overviewnot">
+			<div class="border-2 border-black p-4 w-50 h-72"></div>
 
 			<h2>Anatomy</h2>
-			<p>Posuere eros per ac tincidunt cras et facilisis eget iaculis, aliquet senectus sem cubilia sit sapien himenaeos taciti. Etiam class sapien placerat taciti quisque massa turpis quis dui metus donec ultrices, facilisis viverra eu dis rutrum tempus maecenas lobortis erat convallis eget. Sapien ultrices porttitor potenti malesuada scelerisque aptent venenatis, pretium suscipit porta leo parturient maecenas.</p>
-			<img src="/img/innovation/anatomy.svg"/>
+			<p>
+				Posuere eros per ac tincidunt cras et facilisis eget iaculis, aliquet
+				senectus sem cubilia sit sapien himenaeos taciti. Etiam class sapien
+				placerat taciti quisque massa turpis quis dui metus donec ultrices,
+				facilisis viverra eu dis rutrum tempus maecenas lobortis erat convallis
+				eget. Sapien ultrices porttitor potenti malesuada scelerisque aptent
+				venenatis, pretium suscipit porta leo parturient maecenas.
+			</p>
+			<img src="/img/innovation/anatomy.svg" />
 
 			<h2>When To Use</h2>
-			
+
 			<div class="grid grid-cols-2 gap-4">
-				<Guidance type="do"></Guidance>
-				<Guidance type="dont"></Guidance>
-				<Guidance type="do"></Guidance>
-				<Guidance type="dont"></Guidance>
+				<Guidance type="do" />
+				<Guidance type="dont" />
+				<Guidance type="do" />
+				<Guidance type="dont" />
 			</div>
 
 			<section>
 				<h2>Positioning</h2>
-				<Example title="Bottom Right"></Example>
+				<Example title="Bottom Right" />
 				<div class="mt-8">
-					<Example title="Full Width"></Example>
+					<Example title="Full Width" />
 				</div>
-
 			</section>
 		</sl-tab-panel>
 
@@ -61,41 +221,58 @@ const title = 'EGS Design Compliance'
 				<h3>Sizes</h3>
 
 				<Example title="small">
-					<img slot="image" style="width: 200px;" src="/img/innovation/button-primary-small.svg"/>
+					<img
+						slot="image"
+						style="width: 200px;"
+						src="/img/innovation/button-primary-small.svg"
+					/>
 					Small buttons can be used when there is not much space available
 				</Example>
 				<div class="mt-4">
 					<Example title="medium" badge="Default">
-						<img slot="image" style="width: 200px;" src="/img/innovation/button-primary-medium.svg"/>
-						Medium buttons are suggested as the default option to use in a layout. 
+						<img
+							slot="image"
+							style="width: 200px;"
+							src="/img/innovation/button-primary-medium.svg"
+						/>
+						Medium buttons are suggested as the default option to use in a layout.
 					</Example>
 				</div>
 
 				<div class="mt-4">
 					<Example title="Large">
-						<img slot="image" style="width: 200px;" src="/img/innovation/button-primary-large.svg"/>
-						Large buttons are rarely used, but can highlight a particular action when more space is available like on a full page Sign In form.
+						<img
+							slot="image"
+							style="width: 200px;"
+							src="/img/innovation/button-primary-large.svg"
+						/>
+						Large buttons are rarely used, but can highlight a particular action
+						when more space is available like on a full page Sign In form.
 					</Example>
 				</div>
 
 				<h3>With Icon</h3>
 				<div class="mt-4">
 					<Example title="With Icon">
-						<img slot="image" style="width: 200px;" src="/img/innovation/button-primary-medium-icon.svg"/>
+						<img
+							slot="image"
+							style="width: 200px;"
+							src="/img/innovation/button-primary-medium-icon.svg"
+						/>
 					</Example>
 				</div>
 
 				<div class="mt-4">
 					<Example title="Icon Only">
-						<img slot="image" style="width: 40px;" src="/img/innovation/button-primary-medium-icononly.svg"/>
+						<img
+							slot="image"
+							style="width: 40px;"
+							src="/img/innovation/button-primary-medium-icononly.svg"
+						/>
 					</Example>
 				</div>
-
-
-
-
 			</section>
-
 		</sl-tab-panel>
-    </sl-tab-group>
+	</sl-tab-group>
+	</div> 
 </DocsLayout>

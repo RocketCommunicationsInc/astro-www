@@ -8,14 +8,12 @@ const { title, badge }  = Astro.props;
 		</div>
 
 	</div>
-	<div class="mt-4">
-		<div class="font-bold text-lg">
-			{title} {badge ? (<sl-badge>{badge}</sl-badge>) : ''}
+	<div class="mt-2">
+		<div class="text-sm">
+			{badge ? (<sl-badge>{badge}</sl-badge>) : ''} <span class="font-bold">{title}:</span> <slot></slot>
 		</div>
-		<div class="mt-2">
+		<div class="m-0">
 
-			<slot>
-			</slot>
 		</div>
 	</div>
 	

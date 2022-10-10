@@ -5,6 +5,7 @@ import Compliance from 'project:components/compliance/compliance.astro';
 import Guidance from 'project:components/guidance.astro';
 import Example from 'project:components/example.astro';
 import Smallexample from 'project:components/smallexample.astro';
+import Examplealt from 'project:components/examplealt.astro';
 import Listdo from 'project:components/listdo.astro';
 
 const title = 'EGS Design Compliance';
@@ -14,10 +15,16 @@ const title = 'EGS Design Compliance';
 	@import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.83/dist/themes/light.css';
 </style>
 <DocsLayout content={{ title }}>
+<script
+    type="module"
+    src="https://unpkg.com/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.esm.js"
+></script>
 	<script
 		type="module"
 		src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.83/dist/shoelace.js"
 	></script>
+	<div class="">
+
 
 	<h1>Button</h1>
 	<p>
@@ -32,7 +39,7 @@ const title = 'EGS Design Compliance';
 		<sl-tab slot="nav" panel="compliance">Compliance</sl-tab>
 
 		<sl-tab-panel name="overview">
-			<div>
+			<div class="prose">
 				<section>
 					<h2>Anatomy</h2>
 					<ol class="list-none">
@@ -44,77 +51,103 @@ const title = 'EGS Design Compliance';
 
 				<section>
 					<h2>When To Use</h2>
-					<div class="flex">
-						<Listdo type="do">Trigger Actions</Listdo>
-						<div class="ml-auto">
-							<Listdo type="do">Open Popups. Use Icons instead.</Listdo>
-						</div>
-					</div>
+				</section>
+				<section>
+					<h2>When Not To Use</h2>
+					<Listdo type="dont">Open Popups. Use Icons instead.</Listdo>
 				</section>
 
 				<h3>Kinds</h3>
-				<p>Use Kinds to guide the user toward most desirable actions.s</p>
-				<section class="grid gap-4">
+				<p>Astro uses Primary, Secondary, and Borderless buttons to help the user visually distinguish options and preferences.</p>
+				<section class="grid grid-cols-2 gap-4">
 					<Example title="Primary">
-						<img slot="image" src="https://via.placeholder.com/100x40" />
+						<div slot="image">
+							<rux-button id="rux">Button</rux-button>
+						</div>
 						<strong>When To Use:</strong>
-						visually emphasized to guide the user to the action that is most likely
+						Guide the user to the action that is most likely
 						to be most desirable to them at a given point
 					</Example>
 
 					<Example title="Secondary">
-						<img slot="image" src="https://via.placeholder.com/100x40" />
-						alternative Button style to be used in situations where a de-emphasized
-						Button is beneficial in guiding the user to a preferred option
-						<Listdo type="do"
-							>For example, use a Secondary Button for the less preferred option
-							in OK/Cancel Button pairings</Listdo
-						>
+						<div slot="image">
+							<rux-button secondary>Button</rux-button>
+						</div>
+						<strong>When to Use:</strong>
+						a de-emphasized Button is beneficial in guiding the user to a preferred option
+						<div class="mt-2">
+							<strong>Example:</strong>
+							the less preferred option in OK/Cancel Button pairings
+						</div>
 					</Example>
 
-					<Example title="Primary">
-						<img slot="image" src="https://via.placeholder.com/100x40" />
-						visually emphasized to guide the user to the action that is most likely
-						to be most desirable to them at a given point
+					<Example title="Borderless">
+						<div slot="image">
+							<rux-button borderless>Button</rux-button>
+						</div>
+						<strong>When to Use:</strong>
+						the same rules as Secondary Buttons but do not have borders.
 					</Example>
 
-					<p>Dont: mix button sizes.</p>
 				</section>
 
 				<h3>Sizes</h3>
-				<section class="grid gap-4">
+				<section class="grid grid-cols-2 gap-4">
 					<Example title="Small">
-						<img slot="image" src="https://via.placeholder.com/100x40" />
+						<div slot="image">
+							<rux-button size="small">Button</rux-button>
+						</div>
 						<strong>When To Use:</strong>
 						when there is not much space available
 					</Example>
 
 					<Example title="Medium" badge="default">
-						<img slot="image" src="https://via.placeholder.com/100x40" />
+						<div slot="image">
+							<rux-button size="medium">Button</rux-button>
+						</div>
 						alternative Button style to be used in situations where a de-emphasized
 						Button is beneficial in guiding the user to a preferred option
-						<Listdo type="do"
-							>For example, use a Secondary Button for the less preferred option
-							in OK/Cancel Button pairings</Listdo
-						>
 					</Example>
 
+					
+
+					
+
 					<Example title="Large">
-						<img slot="image" src="https://via.placeholder.com/100x40" />
+						<div slot="image">
+							<rux-button size="large">Button</rux-button>
+						</div>
 						highlight a particular action when more space is available
 						<strong>Example:</strong> Sign In Forms
 					</Example>
 
-					<p>Dont: mix button sizes.</p>
 				</section>
 				<div>
-					<Guidance type="dont">Dont mix Button sizes</Guidance>
+					<Guidance type="dont">
+						<div slot="image">
+							<div class="flex">
+								<rux-button borderless class="mr-4">Close</rux-button>
+								<rux-button secondary size="small" class="mr-4">Deny</rux-button>
+								<rux-button size="large">Accept</rux-button>
+							</div>
+						</div>
+						Dont mix Button sizes</Guidance>
 				</div>
 
-				<h3>With Icons</h3>
+				<h3>Icons</h3>
 				<section class="grid gap-4">
 					<Example title="With Icon">
-						<img slot="image" src="https://via.placeholder.com/100x40"/>
+						<div slot="image">
+							<rux-button icon="apps">Submit</rux-button>
+						</div>
+						<strong>When To Use:</strong> 
+						visually emphasized to guide the user to the action that is most likely to be most desirable to them at a given point
+					</Example>
+
+					<Example title="Icon Only">
+						<div slot="image">
+							<rux-button icon-only icon="apps"></rux-button>
+						</div>
 						<strong>When To Use:</strong> 
 						visually emphasized to guide the user to the action that is most likely to be most desirable to them at a given point
 					</Example>
@@ -139,14 +172,40 @@ const title = 'EGS Design Compliance';
 				</section>
 				
 			</div>
-			<div class="text-2xl">Properties</div>
 			<div>
-				<div class="text-xl">Hierarchy</div>
-				<div>
-					<div class="text-lg">Primary</div>
-					<img src="https://via.placeholder.com/100x40" />
+				<h2>Positioning</h2>
+				<div class="mb-2">
+					<Listdo type="do">
+						Space Buttons evenly
+					</Listdo>
 				</div>
+				<div class="mb-2">
+					<Listdo type="do">
+						In Button groups, the primary Button with the preferred user action shall be placed on the right .
+					</Listdo>
+				</div>
+				<div class="mb-2">
+					<Listdo type="do">
+						Buttons within the same group should be the same size. Use the width of the widest Button.
+					</Listdo>
+				</div>
+				
+
 			</div>
+			<section>
+				<h2>Content</h2>
+				<h3>Label</h3>
+				<Listdo type="do">
+					Clearly title Buttons by choosing a verb that describes the action the user performs at precisely the moment the Button is clicked: “Save, Close, Print, * Delete, Change Password,” etc.
+				</Listdo>
+				<Listdo type="do">
+					Add an ellipsis (…) to the Button title if it opens another window, Dialog, or app.
+				</Listdo>
+				<Listdo type="dont">
+					Don’t use an outside label to introduce a Button. Instead, clearly title the Button.
+				</Listdo>
+			</section>
+			
 		</sl-tab-panel>
 
 		<sl-tab-panel name="overviewnot">
@@ -241,4 +300,5 @@ const title = 'EGS Design Compliance';
 			</section>
 		</sl-tab-panel>
 	</sl-tab-group>
+	</div> 
 </DocsLayout>

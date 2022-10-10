@@ -1,3 +1,5 @@
+@import "@astrouxds/tokens/dist/css";
+
 :where(.p-root) {
 	/* Layout */
 	height: 100%;
