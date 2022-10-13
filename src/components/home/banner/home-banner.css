@@ -47,3 +47,10 @@
 		--text-shadow-color: hsl(0 0% 0% / max(100% / 3));
 	}
 }
+
+.p-version {
+	font-size: 14--rpx;
+	margin-block-start: 4--step;
+	margin-block-end: 4--step;
+	margin-inline-start: auto;
+}

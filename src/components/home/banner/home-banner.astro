@@ -5,6 +5,7 @@ import './home-banner.css'
 
 const { data } = Astro.props as typeof banner
 ---
+<span class="p-version">{data.version.data}</span>
 <header class="p-banner" role="banner">
 	<hgroup class="x-heading-group" role="group" aria-roledescription="Heading group">
 		<h2 class="x-heading">
