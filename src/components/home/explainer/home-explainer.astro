@@ -10,9 +10,8 @@ const { data } = Astro.props as typeof explainer
 	<For of={data}>{(item) => (
 		<article>
 			<Image {...item.image.data} />
-			<h3>{item.heading.data}</h3>
+			<h3><a href={item.action.data.url}>{item.heading.data}</a></h3>
 			<p>{item.content.data}</p>
-			<a href={item.action.data.url}>{item.action.data.description}</a>
 		</article>
 	)}</For>
 </section>

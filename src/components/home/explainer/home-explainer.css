@@ -36,8 +36,10 @@
 	}
 
 	& article {
+		position: relative;
 		display: flex;
 		box-shadow: 0 0 0 1px inset var(--Grey700Color);
+		isolation: isolate;
 
 		--padding-block: 5--step;
 		--padding-inline: 10--step;
@@ -76,7 +78,7 @@
 			/* Text */
 			font-size: 24--rpx;
 			font-weight: 600;
-			line-height: max(28 / 24);
+			line-height: calc(28 / 24);
 		}
 
 		& > svg + h3 {
@@ -88,29 +90,30 @@
 			/* Layout */
 			flex-grow: 1;
 			margin-block-start: 5--step;
+
+			&::after {
+				content: "";
+				background: url(/images/arrow.svg) center center no-repeat;
+				padding: 2--step;
+				margin-inline-start: 2--step;
+			}
 		}
 
 		& a {
-			/* Layout */
-			align-self: center;
-			margin-block-start: 5--step;
-			padding-block: 2--step;
-			padding-inline: 4--step;
-
-			/* Text */
-			font-size: 16--rpx;
-			line-height: max(20 / 16);
-
-			/* Appearance */
-			background-color: var(--InteractiveColor);
-			border-radius: 3--rpx;
-			box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
-			color: var(--InverseColor);
+			color: var(--PrimaryColor);
 			cursor: pointer;
 
 			&:is(:hover, :focus-visible) {
 				/* Appearance */
-				background-color: var(--InteractiveHoverColor);
+			}
+
+			@media (hover: hover) {
+				&::before {
+					content: "";
+					position: absolute;
+					inset: 0;
+					z-index: 1;
+				}
 			}
 		}
 	}
