@@ -3,12 +3,20 @@
 	--article-size: 75--step;
 	--article-gap: 15--step;
 
-	display: grid;
+	/* display: grid; */
 
 	/* Layout */
-	flex-flow: column;
-	grid-template-rows: auto auto;
+	/* flex-flow: column; */
+	/* grid-template-rows: auto auto; */
 	max-inline-size: 100%;
+	inline-size: 100%;
+
+	&-content {
+		/* Appearance */
+		background-color: var(--SurfaceHeaderColor);
+		border-radius: 6--rpx;
+		color: var(--PrimaryColor);
+	}
 
 	@media (width >= 760px) {
 		--articles-size: max(2 * var(--article-size) + 1 * var(--article-gap));
@@ -46,6 +54,7 @@
 
 	& > .content {
 		display: flex;
+		flex-direction: row;
 
 		/* Layout */
 		gap: var(--article-gap);
@@ -123,7 +132,7 @@
 	&:is(.obscured-lead, .obscured-tail) .content {
 		/* Masking */
 		mask-composite: intersect;
-		mask-image: var(--lead-mask), var(--tail-mask);
+		mask-: var(--lead-mask), var(--tail-mask);
 		mask-position: var(--lead-posi), var(--tail-posi);
 		mask-size: var(--mask-size) 100%, var(--mask-size) 100%;
 	}
@@ -144,6 +153,7 @@
 
 .p-article {
 	display: flex;
+	position: relative;
 
 	/* Layout */
 	flex-flow: column;
@@ -152,8 +162,13 @@
 	scroll-snap-align: start;
 
 	/* Appearance */
-	background-color: var(--BaseHeaderColor);
+	background-color: var(--SurfaceSelectedColor);
 	border-radius: 3--rpx;
+	box-shadow: 0 0 0 1px inset var(--Grey700Color);
+
+	&:is(:hover, :focus-visible) {
+		background: var(--InteractiveMutedColor);
+	}
 
 	/* Animation */
 	transition: 600ms opacity;
@@ -183,41 +198,20 @@
 		/* Text */
 		font-size: 20--rpx;
 		font-weight: 500;
-		line-height: max(24 / 20);
+		line-height: calc(24 / 20);
 	}
 
 	& .-content {
 		/* Layout */
 		margin-block-start: 4--step;
+		margin-block-end: 5--step;
 		padding-inline: 5--step;
 
 		/* Text */
-		font-size: 14--rpx;
-		line-height: 4--step;
-	}
-
-	& .-action {
-		/* Layout */
-		align-self: center;
-		margin-block: 8--step 4--step;
-		margin-inline: 20--step;
-		padding-block: 2--step;
-		padding-inline: 4--step;
-
-		/* Text */
 		font-size: 16--rpx;
-		line-height: max(20 / 16);
+		line-height: 6--step;
 
 		/* Appearance */
-		background-color: var(--InteractiveColor);
-		border-radius: 3--rpx;
-		box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
-		color: var(--InverseColor);
-		cursor: pointer;
-
-		&:is(:hover, :focus-visible) {
-			/* Appearance */
-			background-color: var(--InteractiveHoverColor);
-		}
+		color: var(--Grey300Color);
 	}
 }
