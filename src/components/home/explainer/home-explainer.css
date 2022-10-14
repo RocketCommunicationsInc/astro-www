@@ -35,11 +35,10 @@
 		padding-inline: 17--step;
 	}
 
-	& article {
+	& .x-card {
 		position: relative;
 		display: flex;
 		box-shadow: 0 0 0 1px inset var(--Grey700Color);
-		isolation: isolate;
 
 		--padding-block: 5--step;
 		--padding-inline: 10--step;
@@ -59,7 +58,7 @@
 		}
 	}
 
-	& article {
+	& .x-card {
 		@media (width < 800px) {
 			--padding-block: 6--step;
 			--padding-inline: 5--step;

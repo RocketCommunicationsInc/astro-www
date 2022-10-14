@@ -5,20 +5,20 @@ import './home-articles.css'
 
 const { data } = Astro.props as typeof articles
 ---
-<section class="p-articles">
+<article class="p-articles">
 	<h3 class="-heading">{data.heading.data}</h3>
-	<div class="p-articles-content">
-		<div class="content">
+	<div class="-articles-content">
+		<h-slideshow class="p-article-slideshow">
 			<For of={data.content.data}>{item => (
-				<article class="p-article">
+				<section class="p-article">
 					<img class="-image" src={item.image.data.url} alt={item.image.data.description} width={item.image.data.width} height={item.image.data.height} aria-hidden="true" />
 					<h4 class="-heading"><a href="{item.action.data.url}" target="_blank">{item.heading.data}</a></h4>
 					<p class="-content">{item.content.data}</p>
-				</article>
+				</section>
 			)}</For>
-		</div>
+		</h-slideshow>
 	</div>
-</section>
+</article>
 <script>
 import './home-articles.client.ts'
 </script>

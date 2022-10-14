@@ -5,13 +5,15 @@ import Image from 'project:components/image/image'
 import './home-explainer.css'
 
 const { data } = Astro.props as typeof explainer
+
+// const slugify = (value) => value.replace(/[^\w]/g, '-').toLowerCase()
 ---
-<section class="p-explainer" id="explainer">
+<article class="p-explainer" id="explainer" aria-label="getting started">
 	<For of={data}>{(item) => (
-		<article>
-			<Image {...item.image.data} />
+		<section class="x-card">
+			<Image {...item.image.data} aria-hidden="true" />
 			<h3><a href={item.action.data.url}>{item.heading.data}</a></h3>
 			<p>{item.content.data}</p>
-		</article>
+		</section>
 	)}</For>
-</section>
+</article>

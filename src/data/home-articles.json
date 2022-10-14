@@ -112,6 +112,32 @@
 							"description": "Start reading"
 						}
 					}
+				},
+				{
+					"heading": {
+						"type": "text",
+						"data": "UX Maturity"
+					},
+					"image": {
+						"type": "link",
+						"data": {
+							"url": "/images/article-ux-maturity.webp",
+							"description": "",
+							"width": 300,
+							"height": 230
+						}
+					},
+					"content": {
+						"type": "text",
+						"data": "How good is your Organization practicing UX? There are tons of companies who practive UX design. In this artivle we will shed some light on the stages..."
+					},
+					"action": {
+						"type": "link",
+						"data": {
+							"url": "#",
+							"description": "Start reading"
+						}
+					}
 				}
 			]
 		}
