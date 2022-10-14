@@ -53,6 +53,10 @@
 		/* Appearance */
 		background-color: var(--SurfaceSelectedColor);
 		border-radius: 3--rpx;
+
+		&:is(:hover, :focus-visible) {
+			background: var(--InteractiveMutedColor);
+		}
 	}
 
 	& article {

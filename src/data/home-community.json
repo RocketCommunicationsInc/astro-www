@@ -19,32 +19,40 @@
 						{
 							"heading": {
 								"type": "text",
-								"data": "Release of Astro Wireframe 6.0"
+								"data": "Astro Office Hours"
+							},
+							"subheading": {
+								"type": "text",
+								"data": "Colorado Springs"
 							},
 							"date": {
 								"type": "text",
-								"data": "05/23/2022"
+								"data": "10/19/2022"
+							},
+							"time": {
+								"type": "text",
+								"data": "7:00 AM PST"
 							},
 							"action": {
 								"type": "link",
 								"data": {
-									"url": "#",
-									"description": "Release notes"
+									"url": "mailto:dnutter@rocketcom.com",
+									"description": "Contact Us"
 								}
 							}
 						},
 						{
 							"heading": {
 								"type": "text",
-								"data": "Astro Working Group"
+								"data": "Astro UX Working Group"
 							},
 							"subheading": {
 								"type": "text",
-								"data": "www.astrouxds.com/working-group"
+								"data": "Request an invite by email: support@astrouxds.com"
 							},
 							"date": {
 								"type": "text",
-								"data": "05/23/2022"
+								"data": "10/24/2022"
 							},
 							"time": {
 								"type": "text",
@@ -53,65 +61,73 @@
 							"action": {
 								"type": "link",
 								"data": {
-									"url": "#",
-									"description": "Add to Calendar"
+									"url": "mailto:support@astrouxds.com",
+									"description": "Join the Group"
 								}
 							}
 						},
 						{
 							"heading": {
 								"type": "text",
-								"data": "Astro Working Group"
-							},
-							"date": {
-								"type": "text",
-								"data": "07/25/2022"
-							},
-							"action": {
-								"type": "link",
-								"data": {
-									"url": "#",
-									"description": "Read More"
-								}
-							}
-						},
-						{
-							"heading": {
-								"type": "text",
-								"data": "Astro Launch Party"
+								"data": "Astro Office Hours"
 							},
 							"subheading": {
 								"type": "text",
-								"data": "www.astrouxds.com/launchparty/7.0"
+								"data": "Colorado Springs"
 							},
 							"date": {
 								"type": "text",
-								"data": "07/25/2022"
+								"data": "10/26/2022"
 							},
 							"time": {
 								"type": "text",
-								"data": "1:00 PM PST"
+								"data": "7:00 AM PST"
 							},
 							"action": {
 								"type": "link",
 								"data": {
-									"url": "#",
-									"description": "Add to Calendar"
+									"url": "mailto:dnutter@rocketcom.com",
+									"description": "Contact Us"
 								}
 							}
 						},
 						{
 							"heading": {
 								"type": "text",
-								"data": "Astro Working Group"
+								"data": "Astro Office Hours"
 							},
 							"subheading": {
 								"type": "text",
-								"data": "www.astrouxds.com/working-group"
+								"data": "Colorado Springs"
 							},
 							"date": {
 								"type": "text",
-								"data": "08/01/2022"
+								"data": "11/02/2022"
+							},
+							"time": {
+								"type": "text",
+								"data": "7:00 AM PST"
+							},
+							"action": {
+								"type": "link",
+								"data": {
+									"url": "mailto:dnutter@rocketcom.com",
+									"description": "Contact Us"
+								}
+							}
+						},
+						{
+							"heading": {
+								"type": "text",
+								"data": "Astro UX Working Group"
+							},
+							"subheading": {
+								"type": "text",
+								"data": "Request an invite by email: support@astrouxds.com"
+							},
+							"date": {
+								"type": "text",
+								"data": "11/07/2022"
 							},
 							"time": {
 								"type": "text",
@@ -120,8 +136,8 @@
 							"action": {
 								"type": "link",
 								"data": {
-									"url": "#",
-									"description": "Add to Calendar"
+									"url": "mailto:support@astrouxds.com",
+									"description": "Join the Group"
 								}
 							}
 						}
@@ -155,7 +171,14 @@
 							},
 							"content": {
 								"type": "text",
-								"data": "They’ve shut down the main reactor. We’ll be destroyed for sure. This is madness! We’re doomed! There’ll be no escape for the Princess this time."
+								"data": "Get the ASTRO UXDS code repository, getting started instructions, and join in the conversations happening on our ASTRO Dicussions board."
+							},
+							"website": {
+								"type":"link",
+								"data":{
+									"url": "https://github.com/RocketCommunicationsInc/astro",
+									"description": "Astro Github"
+								}
 							}
 						},
 						{
@@ -174,7 +197,14 @@
 							},
 							"content": {
 								"type": "text",
-								"data": "They’ve shut down the main reactor. We’ll be destroyed for sure. This is madness! We’re doomed! There’ll be no escape for the Princess this time."
+								"data": "The Astro UXDS design files can help you build rich space app experiences and custom applications with established interaction patterns & best practices."
+							},
+							"website": {
+								"type":"link",
+								"data":{
+									"url": "https://www.figma.com/@astrouxds",
+									"description": "Astro Figma"
+								}
 							}
 						},
 						{
@@ -193,7 +223,14 @@
 							},
 							"content": {
 								"type": "text",
-								"data": "They’ve shut down the main reactor. We’ll be destroyed for sure. This is madness! We’re doomed! There’ll be no escape for the Princess this time."
+								"data": "Sign up to gain access to our external ASTRO Slack Channel and stay up to date on all things ASTRO."
+							},
+							"website": {
+								"type":"link",
+								"data":{
+									"url": "https://forms.gle/NiSV47SbJFb8kAWdA",
+									"description": "Join Astro on Slack"
+								}
 							}
 						}
 					]

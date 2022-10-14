@@ -21,13 +21,10 @@ const { data } = Astro.props as typeof community['data']['events']
 						<small class="p-community-event-subheading">{item.subheading.data}</small>
 					)}
 				</hgroup>
-				<small class="p-community-event-actions">
+				<span class="p-community-event-actions">
 					<a href={item.action.data.url}>{item.action.data.description}</a>
-				</small>
+				</span>
 			</article>
 		)}</For>
 	</div>
-	<p class="p-community-events-action">
-		<a class="-link" href="/">View Full Calendar</a>
-	</p>
 </section>
