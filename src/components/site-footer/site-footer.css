@@ -120,7 +120,7 @@
 
 	/* Layout */
 	flex-flow: column;
-	gap: 7--step;
+	gap: 5--step;
 
 	/* Text */
 	text-align: end;
@@ -148,5 +148,10 @@
 	& :where(svg) {
 		/* Layout */
 		block-size: 36px;
+	}
+
+	& :where(img) {
+		/* Layout */
+		block-size: 32px;
 	}
 }
