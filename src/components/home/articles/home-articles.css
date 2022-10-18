@@ -48,6 +48,7 @@
 
 	& .-articles-content {
 		display: flex;
+		flex-direction: column;
 
 		/* Layout */
 		justify-content: center;
@@ -58,8 +59,28 @@
 	}
 }
 
+:root {
+	/* Slideshow Variables */
+	--articlecount: 4;
+	--articlesize: 74--step;
+	--gap: 8--step;
+
+	@media (width < 1080px) {
+		--articlecount: 1;
+	}
+
+	@media (1080px <= width < 1440px) {
+		--articlecount: 2;
+	}
+
+	@media (1440px <= width < 1770px) {
+		--articlecount: 3;
+	}
+}
+
 .p-article {
 	display: flex;
+	position: relative;
 
 	/* Layout */
 	flex-flow: column;
@@ -76,10 +97,33 @@
 		font-weight: 700;
 		line-height: calc(24 / 20);
 		padding-inline: 6--step;
+		/* stylelint-disable-next-line value-no-vendor-prefix */
+		display: -webkit-box;
+		-webkit-line-clamp: 1;
+		overflow: hidden;
+		-webkit-box-orient: vertical;
+
+		& > a {
+			@media (hover: hover) {
+				&::before {
+					content: "";
+					position: absolute;
+					inset: 0;
+					z-index: 1;
+				}
+			}
+		}
 	}
 
 	& .-content {
 		padding-inline: 6--step;
+
+		&::after {
+			content: "";
+			background: url(/images/arrow.svg) center center no-repeat;
+			padding: 2--step;
+			margin-inline-start: 2--step;
+		}
 	}
 
 	& .-image {
@@ -88,6 +132,10 @@
 		margin-block-end: 2--step;
 		border-start-start-radius: 1--step;
 		border-start-end-radius: 1--step;
+	}
+
+	&:is(:hover, :focus-visible) {
+		background: var(--InteractiveMutedColor);
 	}
 }
 
@@ -102,10 +150,20 @@
 	scroll-behavior: smooth;
 	scrollbar-width: none;
 
-	/* Variable */
-	--articlecount: 4;
-	--articlesize: 74--step;
-	--gap: 8--step;
+	& + .-link {
+		color: var(--Orange600Color);
+		display: block;
+		width: min(100%, calc(1--articlesize * 1--articlecount + 1--gap * (1--articlecount - 1)));
+		margin: 2--step auto;
+		text-align: end;
+
+		&::after {
+			content: "";
+			background: url(/images/arrow.svg) center center no-repeat;
+			padding: 2--step;
+			margin-inline-start: 2--step;
+		}
+	}
 
 	&:defined {
 		justify-content: center;
@@ -116,18 +174,6 @@
 		inline-size: min(100%, calc(1--articlesize * 1--articlecount + 1--gap * (1--articlecount - 1)));
 		gap: 1--gap;
 		overflow: auto hidden;
-	}
-
-	@media (width < 1080px) {
-		--articlecount: 1;
-	}
-
-	@media (1080px <= width < 1440px) {
-		--articlecount: 2;
-	}
-
-	@media (1440px <= width < 1770px) {
-		--articlecount: 3;
 	}
 
 	&::-webkit-scrollbar, &::-webkit-scrollbar {

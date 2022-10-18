@@ -6,18 +6,25 @@
 			"type": "text",
 			"data": "Articles"
 		},
+		"mainlink": {
+			"type": "link",
+			"data": {					
+					"url": "https://medium.com/astrouxds",
+					"description": "View all articles"
+				}
+			},
 		"content": {
 			"type": "objects",
 			"data": [
 				{
 					"heading": {
 						"type": "text",
-						"data": "Design Tokens"
+						"data": "Testing pixel perfection in Figma and code"
 					},
 					"image": {
 						"type": "link",
 						"data": {
-							"url": "/images/article-design-tokens.webp",
+							"url": "/images/article.svg",
 							"description": "",
 							"width": 300,
 							"height": 230
@@ -25,25 +32,24 @@
 					},
 					"content": {
 						"type": "text",
-						"data": "Design token is a hot cake topic for designers and frontend dev. We will have a clear understanding of design tokens and how to build one for your next project."
+						"data": "“Pixel Perfect”. The Holy Grail. The Dream. The ability to take an asset designed in Figma and implement in code is the superpower..."
 					},
 					"action": {
 						"type": "link",
 						"data": {
-							"url": "#",
-							"description": "Start reading"
+							"url": "https://uxdesign.cc/testing-pixel-perfection-in-figma-and-code-a7dab69d42eb"
 						}
 					}
 				},
 				{
 					"heading": {
 						"type": "text",
-						"data": "Visual regression testing"
+						"data": "Astro Beyond the Web"
 					},
 					"image": {
 						"type": "link",
 						"data": {
-							"url": "/images/article-visual-regression-testing.webp",
+							"url": "/images/article-1.svg",
 							"description": "",
 							"width": 300,
 							"height": 230
@@ -51,25 +57,24 @@
 					},
 					"content": {
 						"type": "text",
-						"data": "How to confidently chane your Design System. – Full disclosure: This article mentions a plugin that I wrote myself. How can we actually manage design systems at scale?"
+						"data": "Transforming a web design system for new platforms is, unsurprisingly, an exercise in making tradeoffs."
 					},
 					"action": {
 						"type": "link",
 						"data": {
-							"url": "#",
-							"description": "Start reading"
+							"url": "https://medium.com/astrouxds/astro-beyond-the-web-d97eb4e6938f"
 						}
 					}
 				},
 				{
 					"heading": {
 						"type": "text",
-						"data": "Design Token Thinking"
+						"data": "How to Implement a Light to Dark Theme Switch Using Astro UXDS"
 					},
 					"image": {
 						"type": "link",
 						"data": {
-							"url": "/images/article-design-token-thinking.webp",
+							"url": "/images/article-2.svg",
 							"description": "",
 							"width": 300,
 							"height": 230
@@ -77,25 +82,24 @@
 					},
 					"content": {
 						"type": "text",
-						"data": "Everybody’s talking about design tokens — how to name them, how to organize them, how to use them, but design tokens aren’t just something that you can easily retrofit..."
+						"data": "This quick four-step tutorial will show you how to implement a light to dark theme Switch without losing the user’s preferred state."
 					},
 					"action": {
 						"type": "link",
 						"data": {
-							"url": "#",
-							"description": "Start reading"
+							"url": "https://medium.com/astrouxds/how-to-implement-a-light-to-dark-theme-switch-using-astro-uxds-af6fcdc4cb3c"
 						}
 					}
 				},
 				{
 					"heading": {
 						"type": "text",
-						"data": "UX Maturity"
+						"data": "Reworking a Color System for Flexibility and Growth"
 					},
 					"image": {
 						"type": "link",
 						"data": {
-							"url": "/images/article-ux-maturity.webp",
+							"url": "/images/article-3.svg",
 							"description": "",
 							"width": 300,
 							"height": 230
@@ -103,25 +107,24 @@
 					},
 					"content": {
 						"type": "text",
-						"data": "How good is your Organization practicing UX? There are tons of companies who practive UX design. In this artivle we will shed some light on the stages..."
+						"data": "When your color system gets ugly, how do you make it pretty again, and keep it that way?"
 					},
 					"action": {
 						"type": "link",
 						"data": {
-							"url": "#",
-							"description": "Start reading"
+							"url": "https://medium.com/astrouxds/reworking-a-color-system-for-flexibility-and-growth-35e950091a2a"
 						}
 					}
 				},
 				{
 					"heading": {
 						"type": "text",
-						"data": "UX Maturity"
+						"data": "Styling an input range to have different track heights before and after the thumb"
 					},
 					"image": {
 						"type": "link",
 						"data": {
-							"url": "/images/article-ux-maturity.webp",
+							"url": "/images/article.svg",
 							"description": "",
 							"width": 300,
 							"height": 230
@@ -129,13 +132,12 @@
 					},
 					"content": {
 						"type": "text",
-						"data": "How good is your Organization practicing UX? There are tons of companies who practive UX design. In this artivle we will shed some light on the stages..."
+						"data": "Styling native HTML elements can be tricky, and the range input is certainly no different."
 					},
 					"action": {
 						"type": "link",
 						"data": {
-							"url": "#",
-							"description": "Start reading"
+							"url": "https://medium.com/astrouxds/styling-an-input-range-to-have-different-track-heights-before-and-after-the-thumb-a03975d15bd0"
 						}
 					}
 				}

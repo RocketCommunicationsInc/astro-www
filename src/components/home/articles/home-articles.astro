@@ -13,12 +13,13 @@ const { data } = Astro.props as typeof articles
 				<section class="p-article">
 					<img class="-image" src={item.image.data.url} alt={item.image.data.description} width={item.image.data.width} height={item.image.data.height} aria-hidden="true" />
 					<h4 class="-heading">
-						<a href="{item.action.data.url}" target="_blank">{item.heading.data}</a>
+						<a href={item.action.data.url} target="_blank">{item.heading.data}</a>
 					</h4>
 					<p class="-content">{item.content.data}</p>
 				</section>
 			)}</For>
 		</h-slideshow>
+		<a href={data.mainlink.data.url} class="-link" target="_blank">{data.mainlink.data.description}</a>
 	</div>
 </article>
 <script>

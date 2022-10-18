@@ -13,7 +13,7 @@ export class SlideshowElement extends HTMLElement {
 
 		root.append(slot, prev, next, csso)
 
-		const updateIncButtons = () => {
+		const updateScrollButtons = () => {
 			switch (slot.scrollLeft) {
 				case 0: {
 					prev.disabled = true
@@ -32,7 +32,7 @@ export class SlideshowElement extends HTMLElement {
 			}
 		}
 
-		const handleIncButtonClick = (event: PointerEvent) => {
+		const handleScrollButtonClick = (event: PointerEvent) => {
 			let button = event.target as HTMLButtonElement
 
 			switch (true) {
@@ -48,10 +48,10 @@ export class SlideshowElement extends HTMLElement {
 			}
 		}
 
-		slot.addEventListener('scroll', updateIncButtons, { passive: true })
-		root.addEventListener('click', handleIncButtonClick, { passive: true })
+		slot.addEventListener('scroll', updateScrollButtons, { passive: true })
+		root.addEventListener('click', handleScrollButtonClick, { passive: true })
 
-		updateIncButtons()
+		updateScrollButtons()
 	}
 }
 
