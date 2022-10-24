@@ -1,14 +1,18 @@
 .p-articles {
-	--articles-size: max(1 * var(--article-size) + 0 * var(--article-gap));
-	--article-size: 75--step;
-	--article-gap: 15--step;
-
-	display: grid;
-
 	/* Layout */
-	flex-flow: column;
-	grid-template-rows: auto auto;
 	max-inline-size: 100%;
+	inline-size: 100%;
+
+	& .p-articles-content {
+		/* Layout */
+		padding-block: 5--step;
+		padding-inline: 9--step;
+
+		/* Appearance */
+		background-color: var(--SurfaceHeaderColor);
+		border-radius: 6--rpx;
+		color: var(--PrimaryColor);
+	}
 
 	@media (width >= 760px) {
 		--articles-size: max(2 * var(--article-size) + 1 * var(--article-gap));
@@ -42,182 +46,144 @@
 		line-height: max(40 / 34);
 	}
 
-	/* Articles: Content */
-
-	& > .content {
+	& .-articles-content {
 		display: flex;
+		flex-direction: column;
 
 		/* Layout */
-		gap: var(--article-gap);
-		grid-column: 1 / 2;
-		grid-row: 2;
-		margin-block-start: 4--step;
-
-		/* Layout */
-		overflow-x: auto;
-		overflow-x: overlay;
-
-		/* Behavior */
-		overscroll-behavior-x: contain;
-		scroll-snap-type: x mandatory;
-		-webkit-overflow-scrolling: touch;
-
-		--mask-size: max(100% + 38--step);
-		--lead-mask: linear-gradient(90deg, hsl(0 0% 0% / 0%), hsl(0 0% 0% / 100%) 38--step);
-		--tail-mask: linear-gradient(90deg, hsl(0 0% 0% / 100%) max(100% - 38--step), hsl(0 0% 0% / 0%));
-		--lead-posi: right;
-		--tail-posi: left;
-	}
-
-	& > .icon {
-		/* parent layout */
-		align-self: center;
-		block-size: 112--step;
-		grid-row: 2;
-
-		/* Layout */
-		inline-size: 5--step;
-		padding-inline: 1--step;
+		justify-content: center;
+		padding: 9--step;
 
 		/* Appearance */
-		color: var(--InteractiveColor);
-		cursor: pointer;
+		background: var(--SurfaceColor);
+	}
+}
 
-		/* Animation */
-		transition: 400ms opacity;
+:root {
+	/* Slideshow Variables */
+	--articlecount: 4;
+	--articlesize: 74--step;
+	--gap: 8--step;
 
-		&:not(:hover) {
-			/* Appearance */
-			opacity: .75;
-		}
-
-		&.icon-carrot-prev {
-			/* Layout */
-			grid-column: 1;
-			transform: scale(-1, 1);
-		}
-
-		&.icon-carrot-next {
-			/* Layout */
-			grid-column: 2;
-		}
+	@media (width < 1080px) {
+		--articlecount: 1;
 	}
 
-	&:not(.obscured-lead) .icon-carrot-prev {
-		/* Layout */
-		block-size: 0;
-
-		/* Appearance */
-		color: var(--InteractiveHoverColor);
-		opacity: 0;
+	@media (1080px <= width < 1440px) {
+		--articlecount: 2;
 	}
 
-	&:not(.obscured-tail) .icon-carrot-next {
-		/* Layout */
-		block-size: 0;
-
-		/* Appearance */
-		opacity: 0;
-	}
-
-	&:is(.obscured-lead, .obscured-tail) .content {
-		/* Masking */
-		mask-composite: intersect;
-		mask-image: var(--lead-mask), var(--tail-mask);
-		mask-position: var(--lead-posi), var(--tail-posi);
-		mask-size: var(--mask-size) 100%, var(--mask-size) 100%;
-	}
-
-	&:is(.obscured-lead, .obscured-tail).animate .content {
-		/* Animation */
-		transition: mask-position 900ms;
-	}
-
-	&.obscured-lead .content {
-		--lead-posi: left;
-	}
-
-	&.obscured-tail .content {
-		--tail-posi: right;
+	@media (1440px <= width < 1770px) {
+		--articlecount: 3;
 	}
 }
 
 .p-article {
 	display: flex;
+	position: relative;
 
 	/* Layout */
 	flex-flow: column;
-	flex-shrink: 0;
-	inline-size: var(--article-size);
-	scroll-snap-align: start;
+	gap: 4--step;
+	padding-block-end: 6--step;
 
 	/* Appearance */
-	background-color: var(--BaseHeaderColor);
-	border-radius: 3--rpx;
-
-	/* Animation */
-	transition: 600ms opacity;
-
-	&.obscured {
-		/* Appearance */
-		opacity: .5;
-	}
-
-	& .-image {
-		/* Layout */
-		aspect-ratio: 300 / 230;
-		block-size: auto;
-		inline-size: 100%;
-
-		/* Appearance */
-		border-start-end-radius: 3--rpx;
-		border-start-start-radius: 3--rpx;
-		object-fit: cover;
-	}
+	background-color: var(--SurfaceSelectedColor);
+	border-radius: 1--step;
+	box-shadow: var(--Grey700Color) 0 0 0 1px inset;
 
 	& .-heading {
-		/* Layout */
-		margin-block-start: 5--step;
-		padding-inline: 5--step;
-
-		/* Text */
 		font-size: 20--rpx;
-		font-weight: 500;
-		line-height: max(24 / 20);
+		font-weight: 700;
+		line-height: calc(24 / 20);
+		padding-inline: 6--step;
+		/* stylelint-disable-next-line value-no-vendor-prefix */
+		display: -webkit-box;
+		-webkit-line-clamp: 1;
+		overflow: hidden;
+		-webkit-box-orient: vertical;
+
+		& > a {
+			@media (hover: hover) {
+				&::before {
+					content: "";
+					position: absolute;
+					inset: 0;
+					z-index: 1;
+				}
+			}
+		}
 	}
 
 	& .-content {
-		/* Layout */
-		margin-block-start: 4--step;
-		padding-inline: 5--step;
+		padding-inline: 6--step;
 
-		/* Text */
-		font-size: 14--rpx;
-		line-height: 4--step;
+		&::after {
+			content: "";
+			background: url(/images/arrow.svg) center center no-repeat;
+			padding: 2--step;
+			margin-inline-start: 2--step;
+		}
 	}
 
-	& .-action {
-		/* Layout */
-		align-self: center;
-		margin-block: 8--step 4--step;
-		margin-inline: 20--step;
-		padding-block: 2--step;
-		padding-inline: 4--step;
+	& .-image {
+		inline-size: auto;
+		aspect-ratio: 4 / 3;
+		margin-block-end: 2--step;
+		border-start-start-radius: 1--step;
+		border-start-end-radius: 1--step;
+	}
 
-		/* Text */
-		font-size: 16--rpx;
-		line-height: max(20 / 16);
+	&:is(:hover, :focus-visible) {
+		background: var(--InteractiveMutedColor);
+	}
+}
 
-		/* Appearance */
-		background-color: var(--InteractiveColor);
-		border-radius: 3--rpx;
-		box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
-		color: var(--InverseColor);
-		cursor: pointer;
+.p-article-slideshow {
+	display: flex;
 
-		&:is(:hover, :focus-visible) {
-			/* Appearance */
-			background-color: var(--InteractiveHoverColor);
+	/* Layout */
+	align-items: center;
+	scroll-snap-type: x mandatory;
+
+	/* Interface */
+	scroll-behavior: smooth;
+	scrollbar-width: none;
+
+	& + .-link {
+		color: var(--Orange600Color);
+		display: block;
+		width: min(100%, calc(1--articlesize * 1--articlecount + 1--gap * (1--articlecount - 1)));
+		margin: 2--step auto;
+		text-align: end;
+
+		&::after {
+			content: "";
+			background: url(/images/arrow.svg) center center no-repeat;
+			padding: 2--step;
+			margin-inline-start: 2--step;
 		}
+	}
+
+	&:defined {
+		justify-content: center;
+		overflow: hidden;
+	}
+
+	&:not(:defined) {
+		inline-size: min(100%, calc(1--articlesize * 1--articlecount + 1--gap * (1--articlecount - 1)));
+		gap: 1--gap;
+		overflow: auto hidden;
+	}
+
+	&::-webkit-scrollbar, &::-webkit-scrollbar {
+		/* Layout */
+		width: 0;
+		height: 0;
+	}
+
+	& .p-article {
+		inline-size: 74--step;
+		scroll-snap-align: start;
 	}
 }

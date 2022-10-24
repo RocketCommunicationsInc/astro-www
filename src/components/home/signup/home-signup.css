@@ -25,11 +25,13 @@
 	@media (width >= 800px) {
 		/* Layout */
 		padding-inline: 14--step;
+		inline-size: min(100% - 4--step, 225--step);
 	}
 
 	& button[type="submit"]:is(:hover, :focus-visible) {
 		/* Appearance */
-		background-color: var(--InteractiveHoverColor);
+		color: var(--InteractiveHoverColor);
+		box-shadow: var(--InteractiveHoverColor) 0 0 0 1px inset;
 	}
 }
 
@@ -52,11 +54,17 @@
 
 .p-signup-form {
 	display: flex;
+	justify-content: space-between;
 
 	/* Layout */
 	flex-flow: column;
 	gap: 4--step;
 	margin-block-start: 8--step;
+
+	@media (width >= 1199px) {
+		flex-flow: row;
+		flex-wrap: wrap;
+	}
 }
 
 /* Signup: Form: Control */
@@ -100,11 +108,16 @@
 			--border-color: var(--InteractiveHoverColor);
 		}
 	}
+
+	@media (width >= 1199px) {
+		flex: 0 0 calc(50% - 4--step);
+	}
 }
 
 .p-signup-form-submit {
 	/* Layout */
 	align-self: center;
+	margin-inline-start: auto;
 	margin-block-start: 4--step;
 	padding-block: 2--step;
 	padding-inline: 11--step;
@@ -114,10 +127,9 @@
 	line-height: max(20 / 16);
 
 	/* Appearance */
-	background-color: var(--InteractiveColor);
 	border-radius: 3--rpx;
 	box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
-	color: var(--InverseColor);
+	color: var(--InteractiveColor);
 	cursor: pointer;
 }
 

@@ -9,7 +9,7 @@
 			},
 			"content": {
 				"type": "text",
-				"data": "Learn what Astro is and what a design systems can do for you and your applications."
+				"data": "Learn what Astro is and what a design system can do for you and your applications."
 			},
 			"image": {
 				"type": "link",
@@ -30,7 +30,7 @@
 		{
 			"heading": {
 				"type": "text",
-				"data": "Getting started as a Designer"
+				"data": "Start Designing"
 			},
 			"content": {
 				"type": "text",
@@ -55,7 +55,7 @@
 		{
 			"heading": {
 				"type": "text",
-				"data": "Getting started as a Developer"
+				"data": "Start Developing"
 			},
 			"content": {
 				"type": "text",
