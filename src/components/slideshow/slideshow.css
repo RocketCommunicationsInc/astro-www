@@ -1,0 +1,72 @@
+slot {
+	display: flex;
+
+	/* Layout */
+	gap: var(--gap);
+	inline-size: min(100%, 1--articlesize * 1--articlecount + 1--gap * (1--articlecount - 1));
+
+	/* Interface */
+	overflow: auto hidden;
+	scroll-behavior: smooth;
+	scroll-snap-type: x mandatory;
+	scrollbar-width: none;
+
+	&::-webkit-scrollbar, &::-webkit-scrollbar {
+		/* Layout */
+		width: 0;
+		height: 0;
+	}
+}
+
+/* Reset button styles */
+
+button {
+	/* Layout */
+	margin: 0;
+	padding: 0;
+
+	/* Text */
+	font: inherit;
+	line-height: inherit;
+	text-align: inherit;
+
+	/* Appearance */
+	appearance: none;
+	background-color: transparent;
+	border-width: 0;
+	color: inherit;
+	cursor: inherit;
+}
+
+button {
+	/* Layout */
+	padding: 4--step;
+
+	/* Appearance */
+	color: var(--InteractiveColor);
+
+	&:focus,
+	&:hover {
+		/* Appearance */
+		color: var(--InteractiveHoverColor);
+	}
+
+	&:disabled {
+		/* Appearance */
+		opacity: .3;
+	}
+
+	&.prev {
+		/* Layout */
+		order: -1;
+	}
+}
+
+svg {
+	/* Layout */
+	block-size: 8--step;
+	inline-size: 8--step;
+
+	/* Apperance */
+	fill: currentColor;
+}
