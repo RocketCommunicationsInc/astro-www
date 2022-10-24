@@ -167,11 +167,6 @@
 
 	/* Appearance */
 
-	&:is(:hover, :focus-visible) {
-		/* Appearance */
-		/* color: var(--InteractiveHoverColor); */
-	}
-
 	&:is(:active) {
 		/* Appearance */
 		translate: 0 1px;

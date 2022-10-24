@@ -38,7 +38,7 @@
 	& .x-card {
 		position: relative;
 		display: flex;
-		box-shadow: 0 0 0 1px inset var(--Grey700Color);
+		box-shadow: var(--Grey700Color) 0 0 0 1px inset;
 
 		--padding-block: 5--step;
 		--padding-inline: 10--step;
