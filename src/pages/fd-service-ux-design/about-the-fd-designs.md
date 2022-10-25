@@ -1,4 +1,7 @@
 ---
+tags: ["flight dynamics", "egs"]
+path: /fd-service-ux-design/about-the-fd-designs
+date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
 title: Flight Dynamics Service
 class: fds
@@ -117,24 +120,25 @@ The [Global Status Bar](../../components/global-status-bar) of the FDS App conta
 
 :::two-col
 ![Scenarios wireframe](/img/service-specific-ux-design/fds-scenarios.png)
+::: col
 
-:::col
 The scenarios panel is where a task begins. Depending on common mission tasks, operators may create, edit, or delete scenarios that best fit their workflows. For example, if an operator performs orbit determinations on Mondays for each satellite they are responsible for, they might create a “Nominal OD” scenario. Clicking a satellite in this scenario would load its last state, its last input files, and pre-select all the necessary products and reports needed for this task.
 
 1. **Expandable/Collapsible Scenario Groups** - Expands to show items, such as spacecrafts, grouped in the respected scenario for quickly loading the attributes for the scenario.
 2. **Create New Scenario** - Allows operators to create and name new scenarios.
+
 :::
 
 ### Properties Pane
 
 :::two-col
 ![Properties Pane wireframe](/img/service-specific-ux-design/fds-properties-pane.png)
-
 :::col
 The properties pane displays various attributes an operator may expect to see when selecting an item in the scenarios panel.
 
 1. **Properties** - Displays select items attributes and/or properties.
 2. **Properties Settings** - Users can edit what properties they wish to display in the properties pane, using the properties settings feature.
+
 :::
 
 ### Inputs/Outputs Pange
@@ -153,17 +157,19 @@ The inputs pane houses the initial input files required in order to run an orbit
 4. **Epoch Fields** - Displays the reference epoch, range, and span for the selected input file.
 5. **Other inputs** - Missions may require different input files to determine their orbit. The remaining fields provide this flexibility. For instance, some user permissions may allow for replacing, or not including a Thrust Profile for maneuvers, or a Processed Track File in determining an orbit.
 6. **Determine Orbit Button** - The determine orbit button initializes an orbit determination.
-:::
+   :::
 
 #### Outputs
 
 :::two-col
-![Outputs wireframe](/img/service-specific-ux-design/fds-outputs.png)
 
+![Outputs wireframe](/img/service-specific-ux-design/fds-outputs.png)
 :::col
+
 The outputs pane houses the required output files and products for a scenario.
 
 1. Products and reports are pre-selected based on the scenario selected, but an operator may include or exclude any before running an orbit determination.
+
 :::
 
 ### Data Display

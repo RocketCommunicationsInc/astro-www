@@ -22,7 +22,8 @@ Tabs in Astro applications are used to divide major areas of content and to indi
 - Use title-style capitalization for labels.
 - High level Tabs are often used to organize an application by work process.
 
-:::note note High Level Tabs are often process/workflow oriented. Process oriented Tabs should:
+:::note
+High Level Tabs are often process/workflow oriented. Process oriented Tabs should:
 
 - Appear in the upper left quadrant.
 - Be clearly labeled.

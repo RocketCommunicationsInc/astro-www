@@ -1,14 +1,18 @@
 ---
+tags: components
+path: /components/timeline
+date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
 title: Timeline
-demo:
-storybook:
+storybook: beta-timeline-beta--default-story
 git: rux-timeline
-height: 160px
+height: 460px
 theme: true
 ---
 
 # Timeline
+
+::storybook-demo
 
 Timeline displays a sequence of realtime events during a fixed time span. The Playhead indicates the current time of day. Time Regions represent events.
 

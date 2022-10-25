@@ -1,12 +1,15 @@
 ---
-title: About the GRM Designs
+tags: ["grm", "egs"]
+path: /grm-service-ux-design/about-the-grm-designs
+date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
+title: About the GRM Designs
 ---
 
 # Ground Resource Management (GRM)
 
 :::note
-The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 5 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
+The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
 :::
 
 Directing and maintaining satellites orbiting in space requires coordinating personnel, processes, and equipment on the ground. This is the role of Ground Resource Management (GRM) systems. Key aspects of GRM services include the following:

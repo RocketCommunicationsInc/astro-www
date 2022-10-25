@@ -1,6 +1,6 @@
 ---
-title: Design Resources
 layout: project:layouts/docs/docs-layout.astro
+title: Design Resources
 ---
 
 # Resources

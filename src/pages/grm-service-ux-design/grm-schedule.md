@@ -1,12 +1,15 @@
 ---
-title: GRM Schedule
+tags: ["grm", "egs"]
+path: /grm-service-ux-design/grm-schedule
+date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
+title: GRM Schedule
 ---
 
 # GRM Schedule
 
 :::note
-The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 5 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
+The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
 :::
 [Launch GRM Schedule Sample App](https://grm-schedule.astrouxds.com/) | [Design Materials and Source Code](#contentBottom)
 
@@ -78,24 +81,26 @@ The image below shows the Contact pane for this Add Contact task flow. To see th
 Below is an animated walkthrough of a representative task flow using the GRM Schedule app. In this scenario, an operator uses the GRM Schedule app to change the priority of an upcoming contact.
 
 <div markdown="1">
-	<figure>
-		<a href="#demo" class="demo" name="close">
-			<span class="icon-play"></span>
-			<img src="/img/service-specific-ux-design/grm-schedule-modify-contact-placeholder.png"
-			alt="Grm Schedule Modify Contact Demo" />
-		</a>
-	</figure>
-	<a href="#close" class="lightbox" id="demo" markdown="1">
-		<img src="/img/service-specific-ux-design/grm-schedule-modify-contact.gif" alt="GRM schedule modify" />
-	</a>
+ <figure>
+  <a href="#demo" class="demo" name="close">
+   <span class="icon-play"></span>
+   <img src="/img/service-specific-ux-design/grm-schedule-modify-contact-placeholder.png"
+   alt="Grm Schedule Modify Contact Demo" />
+  </a>
+ </figure>
+ <a href="#close" class="lightbox" id="demo" markdown="1">
+  <img src="/img/service-specific-ux-design/grm-schedule-modify-contact.gif" alt="GRM schedule modify" />
+ </a>
 </div>
 
 ## Design Materials and Source Code
 
 Below are design and development resources to get you started on an app that supports GRM equipment management. Note that there are some discrepancies between the design documents and the [GRM Schedule Sample App](https://grm-equipment.astrouxds.com/) due to design improvements that were introduced late in the app development cycle.
 
+:::table-overflow
 | Resources                                                                                                                                       | Description                                                                                                                                                |
 | ----------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [GRM Design Specifications (pdf)](http://com.rocketcom.astrouxds.s3.amazonaws.com/attachments/cjx3r384i2gbihmqnxcwrq25d-grm-specifications.pdf) | The GRM Design Specification contains information on use cases, task flows, UX research and wireframes for key features of the GRM App Suite.              |
 | [GRM Design Wireframes (pdf)](http://com.rocketcom.astrouxds.s3.amazonaws.com/attachments/cjtsx349t073s4iqnxbejjwg6-grm-wireframes.pdf)         | The GRM Design Wireframes document contains the complete set of wireframes (mid-fidelity renderings) of the screens designed for the GRM App Suite.        |
 | [App Source Code (Git Repository)](https://bitbucket.org/rocketcom/grm-sample-apps-schedule/src/master/)                                        | The source code Git repository and other useful documentation for the GRM Dashboard App is hosted at bitbucket.org so that you can check it out in detail. |
+:::

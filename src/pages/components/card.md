@@ -1,11 +1,11 @@
 ---
 layout: project:layouts/docs/docs-layout.astro
 title: Card
-demo: components-card--full-example
+theme: true
 storybook: components-card--full-example
 git: rux-card
+scrolling: false
 height: 330px
-theme: true
 ---
 
 # Card
@@ -51,12 +51,12 @@ Use sentence case unless an extenuating circumstance arises.
 
 :::two-col
 
-![Do: Group content that is short and scannable with obvious hero content and a clear action item.](/img/components/card-do-1.png 'Do: Group content that is short and scannable with obvious hero content and a clear action item.')
+![Do: Group content that is short and scannable with obvious hero content and a clear action item.](/img/components/card-do-1.png "Do: Group content that is short and scannable with obvious hero content and a clear action item.")
 
-![Don’t: Clutter the card with long blocks of text, multiple hero items, or any not easily scannable and un-actionable content where the purpose is unclear. ](/img/components/card-dont-1.png 'Don’t: Clutter the card with long blocks of text, multiple hero items, or any not easily scannable and un-actionable content where the purpose is unclear. ')
+![Don’t: Clutter the card with long blocks of text, multiple hero items, or any not easily scannable and un-actionable content where the purpose is unclear. ](/img/components/card-dont-1.png "Don’t: Clutter the card with long blocks of text, multiple hero items, or any not easily scannable and un-actionable content where the purpose is unclear. ")
 
-![Do: Keep cards in a container the same size, and cards used in similar contexts across the application a consistent size. ](/img/components/card-do-2.png 'Do: Keep cards in a container the same size, and cards used in similar contexts across the application a consistent size. ')
+![Do: Keep cards in a container the same size, and cards used in similar contexts across the application a consistent size. ](/img/components/card-do-2.png "Do: Keep cards in a container the same size, and cards used in similar contexts across the application a consistent size. ")
 
-![Don’t: Vary the size of cards in a group or container, or use different sized cards in similar situations across the application. ](/img/components/card-dont-2.png 'Don’t: Vary the size of cards in a group or container, or use different sized cards in similar situations across the application. ')
+![Don’t: Vary the size of cards in a group or container, or use different sized cards in similar situations across the application. ](/img/components/card-dont-2.png "Don’t: Vary the size of cards in a group or container, or use different sized cards in similar situations across the application. ")
 
 :::

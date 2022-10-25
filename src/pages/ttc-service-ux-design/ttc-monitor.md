@@ -1,4 +1,7 @@
 ---
+tags: ["ttc", "egs"]
+path: /ttc-service-ux-design/ttc-monitor
+date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
 title: TT&C Monitor
 ---
@@ -6,7 +9,7 @@ title: TT&C Monitor
 # TT&C Monitor
 
 :::note
-The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 5 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
+The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
 :::
 [Launch TT&C Monitor Sample App](https://ttc-monitor.astrouxds.com/) | [Design Materials and Source Code](/ttc-service-ux-design/ttc-monitor#contentBottom)
 
@@ -93,24 +96,26 @@ The Watcher functionality allows the operator to flag and watch specific telemet
 Below is an animated walkthrough of a representative task flow using the TT&C Monitor App. In this flow, an operator reviews the details and Pass Plan for an upcoming contact and then navigates to the Command App to conduct pass operations.
 
 <div markdown="1">
-	<figure markdown="1">
-		<a href="#demo" class="demo" name="close">
-			<span class="icon-play"></span>
-			<img src="/img/service-specific-ux-design/ttc-monitor-prep-for-pass-placeholder.png"
-			alt="TT&C Monitor Prep for Pass demo" />
-		</a>
-	</figure>
-	<a href="#close" class="lightbox" id="demo">
-		<img src="/img/service-specific-ux-design/ttc-monitor-prep-for-pass.gif" alt="TT&C Monitor Prep for pass" />
-	</a>
+ <figure markdown="1">
+  <a href="#demo" class="demo" name="close">
+   <span class="icon-play"></span>
+   <img src="/img/service-specific-ux-design/ttc-monitor-prep-for-pass-placeholder.png"
+   alt="TT&C Monitor Prep for Pass demo" />
+  </a>
+ </figure>
+ <a href="#close" class="lightbox" id="demo">
+  <img src="/img/service-specific-ux-design/ttc-monitor-prep-for-pass.gif" alt="TT&C Monitor Prep for pass" />
+ </a>
 </div>
 
 ## Design Materials and Source Code
 
 Below are design and development resources to get you started on an app that supports TT&C services. Note that there are some discrepancies between the design documents and the [TT&C Monitor Sample App](https://ttc-monitor.astrouxds.com/) due to design improvements that were introduced late in the app development cycle.
 
+:::table-overflow
 | Resources                                                                                                                       | Description                                                                                                                                               |
 | ------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [TT&C Design Specifications (pdf)](https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/ttc-specifications.pdf) | The TT&C Design Specification contains information on use cases, task flows, UX research and wireframes for key features of the TT&C App Suite.           |
 | [TT&C Design Wireframes (pdf)](https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/ttc-wireframes.pdf)         | The TT&C Design Wireframes document contains the complete set of wireframes (mid-fidelity renderings) of the screens designed for the TT&C App Suite.     |
 | [App Source Code (Git Repository)](https://bitbucket.org/rocketcom/tt-c-monitor/src/master/)                                    | The source code Git repository and other useful documentation for the TT&C Monitor App is hosted at bitbucket.org so that you can check it out in detail. |
+:::

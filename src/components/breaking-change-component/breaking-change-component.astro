@@ -1,0 +1,17 @@
+---
+export interface Props {
+	name: string;
+}
+
+const { props } = Astro as { props: Props };
+---
+
+<style>
+	.breaking-change-details {
+		margin-bottom: 1rem;
+	}
+</style>
+<sl-details class="breaking-change-details">
+	<summary slot="summary">{props.name}</summary>
+	<slot />
+</sl-details>

@@ -1,14 +1,16 @@
 ---
-title: GRM Dashboard
+tags: ["grm", "egs"]
+path: /grm-service-ux-design/grm-dashboard
+date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
+title: GRM Dashboard
 ---
 
 # GRM Dashboard
 
 :::note
-The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 5 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
+The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
 :::
-
 [Launch GRM Dashboard Sample App](https://grm-dashboard.astrouxds.com/) | [Design Materials and Source Code](/grm-service-ux-design/grm-dashboard#contentBottom)
 
 Given the large number of satellite contacts and equipment assets that operators are responsible for, maintaining situational awareness poses a significant challenge. Operators must be able to quickly identify equipment issues and resolve them so that there are no missed opportunities to communicate with satellites. The GRM Dashboard app was designed with this goal in mind. As the operators’ primary GRM app, it would constantly occupy one of their large displays.
@@ -32,7 +34,6 @@ As outlined on the [About GRM Designs](/grm-service-ux-design/about-the-grm-desi
 ## Alerts
 
 The Alerts panel provides operators with a roll-up of issues across the ground system, satellite vehicles, and satellite subsystems. Operators can filter the alerts by Severity and Category, allowing them to quickly identify the most critical issues or focus in on particular areas of the global system. This allows operators to efficiently track their workflow and keeps the Alerts panel more sparsely populated, so they’ll be more likely to notice when new alerts come in.
-
 :::two-col
 ![GRM Dashboard Alerts Details](/img/service-specific-ux-design/grm-dashboard-alert-details.png)
 
@@ -41,7 +42,7 @@ The Alerts panel provides operators with a roll-up of issues across the ground s
 3. **Expandable List Items** - Expands to show alert details and call-to-action (if applicable).
 4. **Investigate** - Sends operators to a page with full alert details and actions for resolving the alert.
 5. **Acknowledge/Dismiss** - Acknowledges or dismisses alerts.
-:::
+   :::
 
 ## Contacts
 
@@ -86,24 +87,26 @@ If operators choose to drill into an alert via the Investigate button in the Ale
 Below is an animated walkthrough of a representative task flow using the GRM Dashboard app. In this flow, the operator notices a critical alert for an upcoming contact, investigates it via the Contact Alert Details page and then resolves the issue by selecting an alternative piece of equipment to use for the contact.
 
 <div markdown="1">
-	<figure>
-		<a href="#demo" class="demo" name="close">
-			<span class="icon-play"></span>
-			<img src="/img/service-specific-ux-design/grm-dashboard-modify-string-placeholder.png"
-			alt="GRM Dashboard demo" />
-		</a>
-	</figure>
-	<a href="#close" class="lightbox" id="demo" markdown="1">
-		<img src="/img/service-specific-ux-design/grm-dashboard-modify-string.gif" alt="GRM Dashboard" />
-	</a>
+ <figure>
+  <a href="#demo" class="demo" name="close">
+   <span class="icon-play"></span>
+   <img src="/img/service-specific-ux-design/grm-dashboard-modify-string-placeholder.png"
+   alt="GRM Dashboard demo" />
+  </a>
+ </figure>
+ <a href="#close" class="lightbox" id="demo" markdown="1">
+  <img src="/img/service-specific-ux-design/grm-dashboard-modify-string.gif" alt="GRM Dashboard" />
+ </a>
 </div>
 
 ## Design Materials and Source Code
 
 Below are design and development resources to get you started on an app that supports GRM services. Note that there are some discrepancies between the design documents and the [GRM Dashboard Sample App](https://grm-dashboard.astrouxds.com/) due to design improvements that were introduced late in the app development cycle.
 
+:::table-overflow
 | Resources                                                                                                                                       | Description                                                                                                                                                |
 | ----------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [GRM Design Specifications (pdf)](http://com.rocketcom.astrouxds.s3.amazonaws.com/attachments/cjx3r384i2gbihmqnxcwrq25d-grm-specifications.pdf) | The GRM Design Specification contains information on use cases, task flows, UX research and wireframes for key features of the GRM App Suite.              |
 | [GRM Design Wireframes (pdf)](http://com.rocketcom.astrouxds.s3.amazonaws.com/attachments/cjtsx349t073s4iqnxbejjwg6-grm-wireframes.pdf)         | The GRM Design Wireframes document contains the complete set of wireframes (mid-fidelity renderings) of the screens designed for the GRM App Suite.        |
 | [App Source Code (Git Repository)](https://bitbucket.org/rocketcom/grm-sample-apps-dashboard/src/master/)                                       | The source code Git repository and other useful documentation for the GRM Dashboard App is hosted at bitbucket.org so that you can check it out in detail. |
+:::

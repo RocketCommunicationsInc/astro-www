@@ -8,7 +8,6 @@ scrolling: yes
 height: 560px
 theme: true
 ---
-
 # Notification Banner
 
 ::storybook-demo

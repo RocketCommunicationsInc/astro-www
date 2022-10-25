@@ -1,6 +1,6 @@
 ---
-title: Getting Started for Developers
 layout: project:layouts/docs/docs-layout.astro
+title: "Getting Started for Developers"
 ---
 
 # Getting Started for Developers
@@ -27,14 +27,16 @@ You can review the latest versions of the web components at the [Astro Storybook
 
 For online examples of full Astro app experiences, check out these EGS Service-Specific sample experiences:
 
+:::table-overflow
 | Ground Resources Management                                                                                                                               | Telemetry, Tracking, and Control                                                                                                     |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | [Dashboard](/grm-service-ux-design/grm-dashboard/) - [Source code](https://bitbucket.org/rocketcom/grm-sample-apps-dashboard/src/master/)                 | [Monitor](/ttc-service-ux-design/ttc-monitor/) - [Source code](https://bitbucket.org/rocketcom/tt-c-monitor/src/master/)             |
 | [Equipment Manager](/grm-service-ux-design/grm-equipment-manager/) - [Source code](https://bitbucket.org/rocketcom/grm-sample-apps-equipment/src/master/) | [Command](/ttc-service-ux-design/ttc-command/) - [Source code](https://bitbucket.org/rocketcom/tt-c-command/src/master/)             |
 | [Schedule](/grm-service-ux-design/grm-schedule/) - [Source code](https://bitbucket.org/rocketcom/grm-sample-apps-schedule/src/master/)                    | [Investigate](/ttc-service-ux-design/ttc-investigate/) - [Source code](https://bitbucket.org/rocketcom/tt-c-investigate/src/master/) |
+:::
 
 :::note
-These examples use a previous release of Astro, and are not intended as boilerplates for building new applications. See below for easy ways to get started building Astro web applications.
+These examples use a previous release of Astro, and are not intended as boilerplates for building new applications. See below for easy ways to get started building Astro web applications.  
 :::
 
 ### Astro for Material Design
@@ -46,7 +48,7 @@ There are two ways to add Astro for Material Design CSS to your project:
 - Via CDN - Simply add the one line of code to your HTML and get the newest version of Astro for Material Design.
   - Dark Theme (Default) <div class="code-block">`<link rel="stylesheet" href="https://gitcdn.link/repo/RocketCommunicationsInc/astro-material-themes/main/dark/dist/darkTheme.css" />`</div>
   - Light Theme <div class="code-block">`<link rel="stylesheet" href="https://min.gitcdn.link/repo/RocketCommunicationsInc/astro-material-themes/main/light/dist/lightTheme.css" />`</div>
-- Download CSS Files Directly - Each can be found in our [downloads section](/downloads/).
+- Download CSS Files Directly - Each can be found in our [downloads section](/downloads).
 
 ### EGS Compliance
 

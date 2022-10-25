@@ -1,26 +1,26 @@
 ---
 title: Content Policy
 layout: project:layouts/docs/docs-layout.astro
-draft: true
 ---
 
-# AstroUXDS.com Content Policy v0.2
 
-## Policy Principles:
+# AstroUXDS<nolink>.com Content Policy v0.2
 
-1.  Developers, designers, and others using the Astro User Experience Design System should be able to easily access and understand the information they need to design and develop space apps.
-2.  Astro UXDS content editors should be able to easily and predictably manage content changes, adhering to the Semantic Versioning[¹](#footnote-1) principles
-3.  The Astro UXDS content management process should not seem opaque, untimely, reactive, or inconsistent to designers, developers, and other primary users.
-4.  Due to the nature of our work, Astro UXDS content has a much longer shelf-life than typical web guidelines or frameworks. Wherever possible, we will be transparent about previous versions of Astro, which users may be working with well into the future.
+## Policy Principles
 
-## Content states:
+1. Developers, designers, and others using the Astro User Experience Design System should be able to easily access and understand the information they need to design and develop space apps.
+2. Astro UXDS content editors should be able to easily and predictably manage content changes, adhering to the Semantic Versioning[¹](#footnote-1) principles
+3. The Astro UXDS content management process should not seem opaque, untimely, reactive, or inconsistent to designers, developers, and other primary users.
+4. Due to the nature of our work, Astro UXDS content has a much longer shelf-life than typical web guidelines or frameworks. Wherever possible, we will be transparent about previous versions of Astro, which users may be working with well into the future.
+
+## Content states
 
 Ultimately, all Astro UXDS documentation content exists in one of 4 states:
 
-1.  **Current** (canonical, effective, supported), 'master' branch
-2.  **Draft** (proposed, open for comment, alpha, beta). e.g., 'compliance' and 'next' branches
-3.  **Deprecated** (archived, renamed, obsolete, no longer recommended or supported ) e.g., Spectrum Analyzer
-4.  **Deleted** (hidden, moved, no longer available, published in error, redacted)
+1. **Current** (canonical, effective, supported), 'master' branch
+2. **Draft** (proposed, open for comment, alpha, beta). e.g., 'compliance' and 'next' branches
+3. **Deprecated** (archived, renamed, obsolete, no longer recommended or supported ) e.g., Spectrum Analyzer
+4. **Deleted** (hidden, moved, no longer available, published in error, redacted)
 
 Further distinctions are unhelpful noise to the customer seeking to build Astro UXDS-based applications. Additional commentary regarding the program's state and pipeline is far more effectively communicated through official channels to the directly responsible points of contact at EGS and not to be published on [AstroUXDS.com](http://astrouxds.com). However, there is an opportunity in future program increments to explore opportunities to publicize what's coming in future Astro UXDS releases given additional development resources.
 

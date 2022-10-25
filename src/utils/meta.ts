@@ -1,6 +1,10 @@
 export default {
-	version: '6.0',
+	version: '7.0',
 	copyright: new Date().getFullYear(),
 	branch: 'main',
 	repo: 'https://github.com/RocketCommunicationsInc/astro',
+	algoliaIndex: 'astrouxds',
+	algoliaAppId: 'EQEH1X5N4X',
+	algoliaApiKey: 'a402f3cc6d8965606af2d7235ba75700',
+	googleAnalyticsTrackingId: 'UA-114182957-1'
 }

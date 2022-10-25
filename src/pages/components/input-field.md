@@ -19,7 +19,7 @@ Input Fields allow users to enter freeform text. Variations on this field often 
 
 - Stacked Input Fields are left justified to one another.
 - Use consistent spacing between stacked fields.
-- Don’t use text smaller than what is defined in the CSS. Text size within fields is critical to usability.
+- Don't use text smaller than what is defined in the CSS. Text size within fields is critical to usability.
 - Generally, the size of the Input should match the length of the expected Input content.
 - Use Help Text to provide validation support, rather than placeholder text.
 - Do not use placeholder text for information that is vital to the user's understanding of the text Input. A placeholder will disappear once the Input has focus and it should only be used for short, clear and generic instructions, such as using "Search..." in a Search field.
@@ -33,7 +33,7 @@ Input Fields allow users to enter freeform text. Variations on this field often 
 
 An Input Field consists of a descriptive, concise label paired with an entry field. Optionally, Inputs may include Help Text, left-aligned beneath the Input, to assist the user in understanding what kind of content is accepted by the Input. Inputs displayed in a form may also be paired with a visual indicator of a required, or optional state. Disabled Inputs are displayed with a different opacity and cannot be interacted with by the user.
 
-Standard states for Input Fields include Active (the default, interactive state for a text Input), Hover (the user has paused over an active or focused Input), Focus (the field is selected and ready for data entry), Disabled (the field is not interactive, and its content is not sent when the form is submitted), and Read-only.
+Standard states for Input Fields include Default (the initial, interactive state for a text Input), Hover (the user has paused over an active or focused Input), Focus (the field is selected and ready for data entry), Invalid (the field shows an error in data entry or formatting, such as going over a character limit), Disabled (the field is not interactive, and its content is not sent when the form is submitted), and Read-only.
 
 An Input Field is enabled if it is eligible for interaction and focused if it is the current target for keystrokes.
 
