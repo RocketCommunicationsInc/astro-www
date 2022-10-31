@@ -3,9 +3,9 @@ title: Getting Started
 layout: project:layouts/docs/docs-layout.astro
 ---
 
-# Getting Started
+# Getting Started with Astro
 
-The Astro design system brings together UX guidelines, [HTML/CSS](/components/) framework, and web components to design and develop a modern, consistent user experience. Astro was commissioned by the United States Space Force and Missile System Center (SMC) for designing Enterprise Ground Services (EGS) and Satellite Operations (SATOPS) web applications.
+The Astro design system brings together UX guidelines, [HTML/CSS](/components/readme/) framework, and web components to design and develop a modern, consistent user experience. Astro was commissioned by the United States Space Force and Missile System Center (SMC) for designing Enterprise Ground Services (EGS) and Satellite Operations (SATOPS) web applications.
 
 Astro’s designs are based on user-centered research into the functions and capabilities required for applications used in space operations. This approach involves SMC and commercial space systems operators in all phases of research and design validation. Their direct participation ensures that applications developed with these guidelines will meet user needs. To learn about incorporating a user-centered approach in your application designs, leverage guidance provided in Astro’s [Research](/design-process/research/) section. Astro is a living design system for government and commercial space-based applications, created and stewarded by [Rocket Communications Inc.](https://rocketcom.com/), for the United States Space Force and Missile System Center (SMC). For questions, contact Rocket at: [UXsupport@rocketcom.com](mailto:UXsupport@rocketcom.com).
 
@@ -22,11 +22,7 @@ Learn more about the software design process with Astro:
 
 **Design Assets**
 
-:::note
-Sketch is being deprecated in favor of Figma. [Astro UXDS Figma Page](https://www.figma.com/community/file/1014254163928270411)
-:::
-
-Astro UX design assets include files for creating Astro application wireframes and high-fidelity mockups in Sketch and Adobe XD.
+Astro UXDS design assets include files for creating Astro application wireframes and high-fidelity mockups in Figma. Visit the [Astro UXDS Figma community page.](https://www.figma.com/@astrouxds)
 
 Learn more about designing with Astro design assets with Astro's guide to getting started [For Designers](/getting-started/designers).
 
@@ -41,15 +37,15 @@ Learn more about designing with Astro development assets, and why the Astro team
 
 Astro is tested & supported in major 'evergreen' web browsers (the latest browser version from each vendor -1). Please submit an issue for problems with the browsers listed below. Mobile browsers are not yet fully supported in Astro.
 
+:::table-overflow
 |       |  Chrome  | Firefox  |   Edge   |  Safari  | Chrome (Android) | Safari (iOS) |
 | :---- | :------: | :------: | :------: | :------: | :--------------: | :----------: |
-| Astro | &#x2715; | &#x2715; | &#x2715; | &#x2715; |   unsupported    | unsupported  |
+| Astro | &check;  | &check;  | &check;  | &check;  |   unsupported    | unsupported  |
+:::
 
 ### Versioning
 
-Current version: meta.version
-
-Last updated: page.date
+Current version: 7.0
 
 ### Astro Licensing
 

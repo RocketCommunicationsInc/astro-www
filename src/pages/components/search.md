@@ -1,9 +1,6 @@
 ---
 layout: project:layouts/docs/docs-layout.astro
 title: Search
-legacyDemo: https://rocketcom.bitbucket.io/html-demos/search.html
-git:
-height: 50px
 theme: true
 ---
 

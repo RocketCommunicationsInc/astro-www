@@ -35,6 +35,10 @@
 						"type": "text",
 						"data": "given-name"
 					},
+					"mcname":{
+						"type": "text",
+						"data": "FNAME"
+					},
 					"label": {
 						"type": "text",
 						"data": "First Name"
@@ -60,6 +64,10 @@
 					"name": {
 						"type": "text",
 						"data": "family-name"
+					},
+					"mcname":{
+						"type": "text",
+						"data": "LNAME"
 					},
 					"label": {
 						"type": "text",
@@ -87,6 +95,10 @@
 						"type": "text",
 						"data": "email"
 					},
+					"mcname":{
+						"type": "text",
+						"data": "EMAIL"
+					},
 					"label": {
 						"type": "text",
 						"data": "Email"
@@ -112,6 +124,10 @@
 					"name": {
 						"type": "text",
 						"data": "organization"
+					},
+					"mcname":{
+						"type": "text",
+						"data": "COMPANY"
 					},
 					"label": {
 						"type": "text",

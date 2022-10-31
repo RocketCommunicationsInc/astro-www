@@ -12,11 +12,11 @@ theme: true
 
 ::storybook-demo
 
-Clock shows the current time and, optionally, Julian date, AOS, and LOS timers. It will typically be positioned on the Global Status Bar.
+Clock shows the current time and optional date, AOS, and LOS timers. It will typically be positioned on the Global Status Bar.
 
 ## Appearance and Behavior
 
-The Clock is not an interactive component. Date and Time are always present. AOS and LOS are optional. The time is UTC by default but can be configured for any time zone.
+The Clock is not an interactive component. Time is always present. Date, AOS and LOS are optional. The time is UTC by default but can be configured for any time zone.
 
 The optional date feature uses the Julian day number format. Julian day number format requires 3 digits with placeholder 0s for the hundreds and tens places.
 

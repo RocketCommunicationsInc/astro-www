@@ -38,6 +38,7 @@
 	--PlaceholderColor: var(--Grey500Color);
 	--PrimaryColor: var(--Neutral000Color);
 	--SecondaryColor: var(--Grey300Color);
+	--WarningColor: #fcf1bf;
 
 	/* Base Colors */
 
@@ -63,6 +64,7 @@
 
 	/* Typography Styles */
 
-	--SystemType: system-ui;
+	/* --SystemType: system-ui; */
+	--SystemType: Helvetica, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	--SystemMonoType: ui-monospace;
 }

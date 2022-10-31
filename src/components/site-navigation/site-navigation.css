@@ -7,6 +7,7 @@
 	align-items: center;
 	flex-flow: column;
 	padding-block: 6--step;
+	z-index: 10;
 
 	/* Appearance */
 	background: var(--SurfaceColor);
@@ -74,13 +75,14 @@
 /* Navigation: Heading */
 
 :where(.p-navigation-heading) {
-	/* Animation */
-	transition: filter 200ms;
+	& :where(.logo-text) {
+		opacity: .75;
+	}
 
-	&:where(:hover, :focus) {
-		/* Appearance */
-		filter: drop-shadow(0 2--rpx 0 var(--InverseColor)) drop-shadow(0 2--rpx 0 var(--InverseColor)) drop-shadow(0 0 8--step var(--PrimaryColor));
-		outline: none;
+	& :where(:hover, :focus) {
+		& :where(.logo-text) {
+			opacity: 1;
+		}
 	}
 }
 

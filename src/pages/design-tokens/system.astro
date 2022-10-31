@@ -1,169 +1,197 @@
 ---
-import * as tokens from 'project:utils/tokens'
-import { For } from '@astropub/flow'
-import DocsLayout from 'project:layouts/docs/docs-layout.astro'
-import DesignToken from 'project:components/design-token/design-token'
+import DocsLayout from 'project:layouts/docs/docs-layout.astro';
+import { system } from 'project:utils/tokens.js';
+const title = 'System Tokens';
 ---
-<style is:global>
-sl-tab-group {
-	--indicator-color: var(--secondary-color);
-}
-sl-tab[active]::part(base) {
-	color: var(--secondary-color);
-}
-sl-tab:hover::part(base) {
-	color: var(--secondary-color);
-}
-.p-design-token .--preview {
-	flex-shrink: 0;
-}
-</style>
 
-<DocsLayout content={{ title: 'System Tokens' }}>
+<style>
+	@import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.83/dist/themes/light.css';
+</style>
+<script
+	type="module"
+	src="https://unpkg.com/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.esm.js"
+></script>
+<script
+	type="module"
+	src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.83/dist/shoelace.js"
+></script>
+<script
+	type="module"
+	src="https://unpkg.com/@astrouxds/documentation-components?module"
+></script>
+<DocsLayout content={{ title }}>
+	<style>
+		sl-tab-group {
+			--indicator-color: var(--Orange700Color);
+		}
+		sl-tab[active]::part(base) {
+			color: var(--Orange700Color);
+		}
+		sl-tab:hover::part(base) {
+			color: var(--Orange700Color);
+		}
+	</style>
+
 	<h1>System Tokens</h1>
 
-		<section data-name="dark">
-			<h2>Dark Theme</h2>
+	<sl-tab-group>
+		<sl-tab slot="nav" panel="dark">Dark Theme</sl-tab>
+		<sl-tab slot="nav" panel="light">Light Theme</sl-tab>
 
+		<sl-tab-panel name="dark">
 			<h2>Background Colors</h2>
 
-			<For of={tokens.system('dark', 'color', 'background')}>{token => (
-				<DesignToken
-					name={token.name}
-					value={token.value}
-					alias={token.referenceToken}
-					description={token.description}
-					type="background"
-				></DesignToken>
-			)}</For>
+			{
+				system('dark', 'color', 'background').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="background"
+					/>
+				))
+			}
 
-			<hr/>
+			<hr />
 
 			<h2>Text Colors</h2>
 
-			<For of={tokens.system('dark', 'color', 'text')}>{token => (
-				<DesignToken
-					name={token.name}
-					value={token.value}
-					alias={token.referenceToken}
-					description={token.description}
-					type="text"
-				></DesignToken>
-			)}</For>
+			{
+				system('dark', 'color', 'text').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="text"
+					/>
+				))
+			}
 
-			<hr/>
+			<hr />
 
 			<h2>Border Colors</h2>
 
-			<For of={tokens.system('dark', 'color', 'border')}>{token => (
-				<DesignToken
-					name={token.name}
-					value={token.value}
-					alias={token.referenceToken}
-					description={token.description}
-					type="border"
-				></DesignToken>
-			)}</For>
+			{
+				system('dark', 'color', 'border').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="border"
+					/>
+				))
+			}
 
-			<hr/>
+			<hr />
 
 			<h2>Status Colors</h2>
+			{
+				system('dark', 'color', 'status').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="background"
+					/>
+				))
+			}
 
-			<For of={tokens.system('dark', 'color', 'status')}>{token => (
-				<DesignToken
-					name={token.name}
-					value={token.value}
-					alias={token.referenceToken}
-					description={token.description}
-					type="background"
-				></DesignToken>
-			)}</For>
-
-			<hr/>
+			<hr />
 
 			<h2>Classification Colors</h2>
+			{
+				system('dark', 'color', 'classification').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="background"
+					/>
+				))
+			}
+		</sl-tab-panel>
 
-			<For of={tokens.system('dark', 'color', 'classification')}>{token => (
-				<DesignToken
-					name={token.name}
-					value={token.value}
-					alias={token.referenceToken}
-					description={token.description}
-					type="background"
-				></DesignToken>
-			)}</For>
-
-		</section>
-
-		<section data-name="light">
-			<h2>Light Theme</h2>
+		<sl-tab-panel name="light">
 			<h2>Background Colors</h2>
 
-			<For of={tokens.system('light', 'color', 'background')}>{token => (
-				<DesignToken
-					name={token.name}
-					value={token.value}
-					alias={token.referenceToken}
-					description={token.description}
-					type="background"
-				></DesignToken>
-			)}</For>
+			{
+				system('light', 'color', 'background').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="background"
+					/>
+				))
+			}
 
-			<hr/>
+			<hr />
 
 			<h2>Text Colors</h2>
 
-			<For of={tokens.system('light', 'color', 'text')}>{token => (
-				<DesignToken
-					name={token.name}
-					value={token.value}
-					alias={token.referenceToken}
-					description={token.description}
-					type="text"
-				></DesignToken>
-			)}</For>
+			{
+				system('light', 'color', 'text').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="text"
+					/>
+				))
+			}
 
-			<hr/>
+			<hr />
 
 			<h2>Border Colors</h2>
 
-			<For of={tokens.system('light', 'color', 'border')}>{token => (
-				<DesignToken
-					name={token.name}
-					value={token.value}
-					alias={token.referenceToken}
-					description={token.description}
-					type="border"
-				></DesignToken>
-			)}</For>
+			{
+				system('light', 'color', 'border').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="border"
+					/>
+				))
+			}
 
-			<hr/>
+			<hr />
 
 			<h2>Status Colors</h2>
+			{
+				system('light', 'color', 'status').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="background"
+					/>
+				))
+			}
 
-			<For of={tokens.system('light', 'color', 'status')}>{token => (
-				<DesignToken
-					name={token.name}
-					value={token.value}
-					alias={token.referenceToken}
-					description={token.description}
-					type="background"
-				></DesignToken>
-			)}</For>
-
-			<hr/>
+			<hr />
 
 			<h2>Classification Colors</h2>
-
-			<For of={tokens.system('light', 'color', 'classification')}>{token => (
-				<DesignToken
-					name={token.name}
-					value={token.value}
-					alias={token.referenceToken}
-					description={token.description}
-					type="background"
-				></DesignToken>
-			)}</For>
-
-		</section>
+			{
+				system('light', 'color', 'classification').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="background"
+					/>
+				))
+			}
+		</sl-tab-panel>
+	</sl-tab-group>
 </DocsLayout>

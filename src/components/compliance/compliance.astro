@@ -94,7 +94,7 @@ const { props } = Astro as { props: Props }
 							<span class="-content">{markdown.inline(rule.rule)}</span>
 
 							<When {(rule.status !== 'current')}>
-								<span class={toStatusClassNames(rule)}>{rule.status}</span>
+								<span class={toStatusClassNames(rule)}>{rule.status.replace('-', ' ')}</span>
 							</When>
 						</dt>
 					</dl>
