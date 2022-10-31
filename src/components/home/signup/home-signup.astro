@@ -11,7 +11,7 @@ const { data } = Astro.props as typeof signup
 <section class="p-signup">
 	<h3 class="p-signup-heading">{data.heading.data}</h3>
 	<p class="p-signup-content">{data.summary.data}</p>
-	<form id="mc-embedded-subscribe-form" class="p-signup-form" action={data.form.data.action.data} method={data.form.data.method.data}>
+	<form class="p-signup-form" action={data.form.data.action.data} method={data.form.data.method.data}>
 		<For of={data.content.data}>{item => (
 			<Control type={item.type.data} required={item.required.data} placeholder={item.placeholder.data} autocomplete={item.autocomplete.data} name={item.mcname.data}>{item.label.data}</Control>
 		)}</For>
