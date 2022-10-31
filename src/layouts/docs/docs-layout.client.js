@@ -1,4 +1,5 @@
 const template = document.createElement('template')
+import metaData from 'project:utils/meta'
 
 template.innerHTML = [
 	`<div class="demo-container">`,
@@ -15,9 +16,9 @@ requestAnimationFrame(() => {
 		const style = getComputedStyle(el)
 		const content = template.content.cloneNode(true)
 
-		content.querySelector('[src="#preview"]').src = `https://beta-astro-components.netlify.app/iframe.html?id=${style.getPropertyValue('--StorybookId').trim()}&viewMode=story`
-		content.querySelector('[href="#storybook"]').href = `https://astro-components.netlify.app/?path=/story/${style.getPropertyValue('--StorybookId').trim()}`
-		content.querySelector('[href="#github"]').href = `https://github.com/RocketCommunicationsInc/astro/tree/main/packages/web-components/src/components/${style.getPropertyValue('--GitHubId').trim()}`
+		content.querySelector('[src="#preview"]').src = `${metaData.storybookURL}iframe.html?id=${style.getPropertyValue('--StorybookId').trim()}&viewMode=story`
+		content.querySelector('[href="#storybook"]').href = `${metaData.storybookURL}?path=/story/${style.getPropertyValue('--StorybookId').trim()}`
+		content.querySelector('[href="#github"]').href = `${metaData.repo}/tree/${metaData.branch}/packages/web-components/src/components/${style.getPropertyValue('--GitHubId').trim()}`
 
 		el.append(content)
 	}
