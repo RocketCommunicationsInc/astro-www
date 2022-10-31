@@ -17,24 +17,26 @@ const { data } = Astro.props as typeof signup
 		)}</For>
 		<Submit>Submit</Submit>
 		<For of={data.hidden.data}>{item => (
-			<input type={item.type.data as any} value={item.value.data} />
+			<input type={item.type.data as null} value={item.value.data} />
 		)}</For>
 	</form>
-	<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-	<script type="text/javascript">
-		(function ($) {
-			window.fnames = new Array();
-			window.ftypes = new Array();
-			fnames[0] = 'EMAIL';
-			ftypes[0] = 'email';
-			fnames[1] = 'FNAME';
-			ftypes[1] = 'text';
-			fnames[2] = 'LNAME';
-			ftypes[2] = 'text';
-			fnames[3] = 'COMPANY';
-			ftypes[3] = 'text';
-		}(jQuery));
-		var $mcj = jQuery.noConflict(true);
-	</script>
+	<script src="https://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+	<script>
+		const window = globalThis
+
+		window.fnames = []
+		window.ftypes = []
+
+		window.fnames[0] = 'EMAIL'
+		window.ftypes[0] = 'email'
+		window.fnames[1] = 'FNAME'
+		window.ftypes[1] = 'text'
+		window.fnames[2] = 'LNAME'
+		window.ftypes[2] = 'text'
+		window.fnames[3] = 'COMPANY'
+		window.ftypes[3] = 'text'
+
+		window.$mcj = window.jQuery.noConflict(true)
+</script>
 	<!--End mc_embed_signup-->
 </section>

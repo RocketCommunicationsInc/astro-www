@@ -49,7 +49,7 @@ const footer = {
 	},
 } as const
 ---
-<When {filteredContents.length}>
+<When match={filteredContents.length}>
 	<aside class="p-compliance-aside">
 		<header class="-header">
 			<h2 class="-heading">{
@@ -75,7 +75,7 @@ const footer = {
 										markdown.inline(rule.rule)
 									}</span>
 
-									<When {rule.status !== 'current'} {rule.status !== 'updated'} {rule.status !== 'under-review'}>
+									<When match={rule.status !== 'current' && rule.status !== 'updated' && rule.status !== 'under-review'}>
 										<span class={toStatusClassNames(rule)}>{
 											rule.status
 										}</span>

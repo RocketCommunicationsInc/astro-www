@@ -153,8 +153,8 @@
 
 	&:disabled {
 		background: #4dacff6f;
+		border-color: none;
 		color: ar(--InverseColor);
-		border-color: none !important;
 		cursor: not-allowed;
 	}
 }

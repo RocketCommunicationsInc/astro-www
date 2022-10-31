@@ -31,6 +31,12 @@
 	--Red500Color: hsl(0 100% 61%);
 	--Red800Color: hsl(9 96% 28%);
 	--Teal600Color: hsl(181 100% 32%);
+	--WebGrey29Color: hsl(0 0% 29%);
+	--WebGrey50Color: hsl(0 0% 50%);
+	--WebGrey66Color: hsl(0 0% 66%);
+	--WebPinkColor: hsl(350 100% 88%);
+	--WebPinkInverseColor: hsl(350 33% 14%);
+	--WebWhite25Color: hsl(0 0% 100% / 25%);
 
 	/* System Colors */
 

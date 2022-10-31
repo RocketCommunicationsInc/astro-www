@@ -22,8 +22,9 @@ import './docs-layout.client.js'
 	<SiteNavigation slot="side" />
 	<style is:global define:vars={{ GitHubId, StorybookId, StorybookPreviewHeight }}>
 	.p-grid-main {
-		 background: white;
+		background: var(--PrimaryColor);
 	}
+
 	.storybook-demo {
 		/* preview frame (1--StorybookPreviewHeight) + navigation links (20--step) */
 		min-block-size: calc(1--StorybookPreviewHeight + 20--step);
