@@ -3,6 +3,8 @@ export default {
 	copyright: new Date().getFullYear(),
 	branch: 'main',
 	repo: 'https://github.com/RocketCommunicationsInc/astro',
+	docsRepo: 'https://github.com/RocketCommunicationsInc/astro-www',
+	docsBranch: 'main',
 	algoliaIndex: 'astrouxds',
 	algoliaAppId: 'EQEH1X5N4X',
 	algoliaApiKey: 'a402f3cc6d8965606af2d7235ba75700',
