@@ -1,6 +1,6 @@
 ---
-title: Visual Design
 layout: project:layouts/docs/docs-layout.astro
+title: Visual Design
 ---
 
 # Visual Design
@@ -11,7 +11,7 @@ The visual language for Astro applications is designed to reinforce usability an
 
 If an application requires the design of unique application elements that aren't covered in the guidelines, make the new designs complement the Astro visual language. Whenever possible, use the same color palette, fonts, and icon style. The goal is to evolve the visual language to meet specific application needs, not redesign it.
 
-All icon metaphors must be the same across applications. Don’t assign them new meaning. It's important that icons have metaphors that are quickly identifiable and clearly distinguishable from one another. To maintain consistency, when creating new icons, make sure they use the same design style, colors, and sizes.
+All icon metaphors must be the same across applications. Don't assign them new meaning. It's important that icons have metaphors that are quickly identifiable and clearly distinguishable from one another. To maintain consistency, when creating new icons, make sure they use the same design style, colors, and sizes.
 
 Once you have completed the interface with wireframes, it’s time to consider the visual design. Visual design focuses on the overall aesthetics of the interface. A good visual design should reinforce the appropriate use of the functionality and communicate the overall goal of the user. For example, if the most important goal of the application is to communicate overall health and status of the system, the visual design should reinforce communication through use of color, imagery, and designed controls.
 

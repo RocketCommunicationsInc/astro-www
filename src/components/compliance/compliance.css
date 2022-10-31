@@ -94,12 +94,12 @@
 
 	&.-under-review {
 		/* Appearance */
-		color: var(--Red500Color);
+		color: #c8102e;
 	}
 
 	&.-updated {
 		/* Appearance */
-		color: var(--Purple300Color);
+		color: #786dd3;
 	}
 }
 
@@ -134,6 +134,7 @@
 	font-weight: 700;
 	line-height: calc(16 / 12);
 	white-space: nowrap;
+	color: #ffffff;
 
 	/* Appearance */
 	border-radius: 3--rpx;

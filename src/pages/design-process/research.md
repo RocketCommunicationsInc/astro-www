@@ -1,6 +1,6 @@
 ---
-title: Research
 layout: project:layouts/docs/docs-layout.astro
+title: Research
 ---
 
 # Research

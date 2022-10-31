@@ -1,11 +1,13 @@
 const template = document.createElement('template')
 
 template.innerHTML = [
-	`<iframe scrolling="yes" src="#preview"></iframe>`,
-	`<ul>`,
-		`<li><a href="#storybook" target="_blank">Storybook</a></li>`,
-		`<li><a href="#github" target="_blank">Github</a></li>`,
-	`</ul>`,
+	`<div class="demo-container">`,
+	`<iframe id="live-sample" scrolling="yes" src="#preview"></iframe>`,
+	`<div class="demo-container__sample-links">`,
+		`<a href="#storybook" target="_blank" class="sample-links__storybook">Storybook</a>`,
+		`<a href="#github" target="_blank" class="sample-links__github">Github</a>`,
+	`</div>`,
+	`</div>`
 ].join('')
 
 requestAnimationFrame(() => {
@@ -33,8 +35,8 @@ requestAnimationFrame(() => {
 				delete globalThis[jsonpName]
 
 				// do something with response
-				const submitMessage = document.querySelector("#mce-error-response")
-				submitMessage.style.display = "block"
+				const submitMessage = document.querySelector('#mce-error-response')
+				submitMessage.style.display = 'block'
 				submitMessage.textContent = response.msg
 				console.log(response)
 			}

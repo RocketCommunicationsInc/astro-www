@@ -1,0 +1,41 @@
+.breaking-change {
+	& h3 {
+		border-block-end: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	& header {
+		display: flex;
+		align-items: center;
+		padding-block-end: 1rem;
+		border-block-end: 1px solid #eeeeee;
+
+		& .breaking-change__impact {
+			margin-inline-start: auto;
+		}
+	}
+
+	& p {
+		line-height: 1.5;
+		padding-block-start: .4rem;
+		margin-block-end: .8rem;
+	}
+}
+
+.breaking-change__content {
+	padding: 1rem;
+}
+
+.breaking-change__code {
+	display: flex;
+	justify-content: space-between;
+}
+
+.breaking-change__code__title {
+	font-size: 1.5rem;
+}
+
+.breaking-change__code__block {
+	width: 45%;
+}

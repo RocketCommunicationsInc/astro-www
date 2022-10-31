@@ -1,60 +1,64 @@
-import darkTokens from '@astrouxds/design-tokens/dist/json/docs.json'
-import liteTokens from '@astrouxds/design-tokens/dist/json/docs-light.json'
+import tokens from '@astrouxds/tokens/dist/json/docs.json';
+import lightTokens from '@astrouxds/tokens/dist/json/docs-light.json';
 
-export const components = (theme: string, componentName: string) => {
-	let themeTokens = theme === 'dark' ? darkTokens : liteTokens
-
-	return themeTokens.filter((token) => token.component === componentName)
-}
-
-export const references = (theme: string, category: string) => {
-	let themeTokens = theme === 'dark' ? darkTokens : liteTokens
+export const reference = (theme, category) => {
+	let themeTokens = tokens;
+	if (theme === 'light') {
+		themeTokens = lightTokens;
+	}
 
 	themeTokens = themeTokens.filter(
 		(token) => token.tokenLevel === 'reference' && token.category === category
-	)
-
+	);
 	if (category === 'spacing') {
-		themeTokens = themeTokens.sort(
-			(a, b) => parseFloat(a.value as string) - parseFloat(b.value as string)
-		)
+		themeTokens = themeTokens.sort((a, b) => {
+			return a.value.replace('rem', '') - b.value.replace('rem', '');
+		});
 	}
-
-	return themeTokens
+	return themeTokens;
 }
 
-export const system = (theme: string, category: string, property: string) => {
-	let themeTokens = theme === 'dark' ? darkTokens : liteTokens
-
-	return themeTokens.filter((token) => {
-		return (
-			token.tokenLevel === 'system' &&
-			token.category === category &&
-			token.property === property
-		)
-	})
+export const component = (theme, componentName) => {
+    let themeTokens = tokens;
+    if (theme === 'light') {
+      themeTokens = lightTokens;
+    }
+    return themeTokens.filter((token) => token.component === componentName);
 }
 
-export const lookupProperty = (category?: string, property?: string) => {
-	switch (category) {
-		case 'boxShadow':
-			return 'shadow'
+export const system = (theme, category, property) => {
+	let themeTokens = tokens;
+    if (theme === 'light') {
+      themeTokens = lightTokens;
+    }
+    return themeTokens.filter((token) => {
+      return (
+        token.tokenLevel === 'system' &&
+        token.category === category &&
+        token.property === property
+      );
+    });
+}
+export const findByName = (name) => {
+	return tokens.find((token) => token.name === name);
+}
 
-		case 'borderRadius':
-			return 'radius'
+export const lookupProperty = (category, property?: string) => {
+	if (category === 'boxShadow') {
+		return 'shadow';
 	}
 
-	switch (property) {
-		case 'fill':
-		case 'icon':
-			return 'background'
-
-		// TODO fix in transformer
-		case 'on-dark':
-		case 'on-light':
-			return 'border-width'
-
-		default:
-			return property
+	if (category === 'borderRadius') {
+		return 'radius';
 	}
+
+	if (property === 'fill' || property === 'icon') {
+		return 'background';
+	}
+
+	if (property === 'on-dark' || property === 'on-light') {
+		return 'border-width';
+	}
+
+	return property;
 }

@@ -1,6 +1,9 @@
 ---
-title: Sign In
+tags: patterns
+path: /patterns/sign-in
+date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
+title: Sign In
 ---
 
 # Sign In
@@ -8,11 +11,11 @@ layout: project:layouts/docs/docs-layout.astro
 The Sign In page is often the first interaction a user has with your product. This entry point experience is an important moment in establishing your product’s brand and experience and sets the tone for their overall experience with the product.
 “Signing in” provides an authentication method to validate a user’s unique identification and allow them access to protected areas of an application. A user provides their required identification and, if correct, they are provided access to the product.
 
-::: caution
+:::caution
 When implementing validation and security measures Astro users should consult with their organization's IT/Security departments and adapt these patterns to suit the requirements of their organization’s best practices and security needs.
 :::
 
-![Example of a full-page, Simple Sign In screen](/img/components/signin-simple-full.png 'Example of a full-page, Simple Sign In screen')
+![Example of a full-page, Simple Sign In screen](/img/components/signin-simple-full.png "Example of a full-page, Simple Sign In screen")
 
 The Sign In page is presented to users in the following scenarios:
 
@@ -31,26 +34,26 @@ The Sign In page is presented to users in the following scenarios:
 
 There are four established types of sign in workflows.
 
-1. Sign in with Username or Email Plus Password
+1. Sign in with Username or Email Plus Password  
    This is the most basic sign in workflow, wherein the user identifies and authenticates from the same screen using an ID and passcode.
-2. Sign in with Common Access Card (CAC)
+2. Sign in with Common Access Card (CAC)  
    This sign in requires additional authentication via a CAC reader and PIN.
-3. Sign in with Single Sign-on (SSO)
+3. Sign in with Single Sign-on (SSO)  
    SSO allows the user to authenticate to multiple systems using one identification and passcode method.
-4. Sign in with Multi-Factor Authentication (MFA)
+4. Sign in with Multi-Factor Authentication (MFA)  
    MFA requires the user to set up additional methods of identification, such as a PIN, or through a verification code sent to a user's mobile device.
 
 The Sign In can currently be configured to display _Sign in with Username or Email Plus Password_, _Sign in with SSO_ and validation.
 
 ### Sign in with Username or Email Plus Password
 
-![Example of a Sign In screen hosted within a modal dialog](/img/components/signin-dialog-simple.png 'Example of a Sign In screen hosted within a modal dialog')
+![Example of a Sign In screen hosted within a modal dialog](/img/components/signin-dialog-simple.png "Example of a Sign In screen hosted within a modal dialog")
 
 The Sign In component consists of a field to identify the user, typically a username or email, and a masked field for a unique passcode, as well as a button that submits the content.
 
 ### Sign in with Single Sign-on (SSO)
 
-![Example of Single Sign-on hosted within a modal dialog](/img/components/signin-dialog-sso.png 'Example of Single Sign-on hosted within a modal dialog')
+![Example of Single Sign-on hosted within a modal dialog](/img/components/signin-dialog-sso.png "Example of Single Sign-on hosted within a modal dialog")
 
 The Sign In component consists of a field to identify the user, typically a username or email, and a button that submits the content for SSO verification.
 
@@ -58,7 +61,7 @@ The Sign In component consists of a field to identify the user, typically a user
 
 The Sign In UI elements can be added in 3 possible placement areas.
 
-1. Modal dialog
+1. Modal dialog  
 
    <img src="/img/components/signin-dialog-simple.png" alt="Example of a sign in screen hosted within a modal dialog" title="Example of a sign in screen hosted within a modal dialog" style="width: 75%">
 
@@ -66,7 +69,7 @@ The Sign In UI elements can be added in 3 possible placement areas.
    - Can allow application to be running in the background when signed out
    - Ideal for switching applications
 
-2. Sidebar
+2. Sidebar  
 
    <img src="/img/components/signin-sidebar-simple-full.png" alt="Example of a sign in screen located within a sidebar" title="Example of a sign in screen located within a sidebar" style="width: 75%">
 
@@ -74,7 +77,7 @@ The Sign In UI elements can be added in 3 possible placement areas.
    - Allows imagery/branding on opposite side of page to differentiate application
    - Often used alongside SSO
 
-3. Full page
+3. Full page  
 
    <img src="/img/components/signin-simple-full.png" alt="Example of a full-page sign in screen" title="Example of a full-page sign in screen" style="width: 75%">
 
@@ -103,7 +106,7 @@ Common server-side errors:
 - Account lock out
 - Database or system error
 
-![Example of a full-page account lock out (access denied) screen](/img/components/signin-accessdenied-full.png 'Example of a full-page account lock out (access denied) screen')
+![Example of a full-page account lock out (access denied) screen](/img/components/signin-accessdenied-full.png "Example of a full-page account lock out (access denied) screen")
 
 ## Accessibility
 
@@ -112,24 +115,24 @@ Ensure that users can tab through the Sign In form and navigate the page using o
 ## Examples
 
 :::two-col
-![Do: Mask sensitive data, such as passwords](/img/components/signin-do-1.png 'Do: Mask sensitive data, such as passwords')
+![Do: Mask sensitive data, such as passwords](/img/components/signin-do-1.png "Do: Mask sensitive data, such as passwords")
 
-![Don’t: Display sensitive data, such as passwords, unmasked by default](/img/components/signin-dont-1.png 'Don’t: Display sensitive data, such as passwords, unmasked by default')
+![Don’t: Display sensitive data, such as passwords, unmasked by default](/img/components/signin-dont-1.png "Don’t: Display sensitive data, such as passwords, unmasked by default")
 
 ![Do: Use clear button labels that describe specific tasks like "Sign in" or "Update password"](/img/components/signin-do-2.png "Do: Use clear button labels that describe specific tasks like 'Sign in' or 'Update password'")
 
 ![Don’t: Use vague button labels like "Submit" to guide users through authentication flows](/img/components/signin-dont-2.png "Don’t: Use vague button labels like 'Submit' to guide users through authentication flows")
 
-![Do: Use clear and concise messaging to help users understand what went wrong and give users steps to resolve the error, e.g. let users know when the caps lock is on.](/img/components/signin-do-3.png 'Do: Use clear and concise messaging to help users understand what went wrong and give users steps to resolve the error, e.g. let users know when the caps lock is on.')
+![Do: Use clear and concise messaging to help users understand what went wrong and give users steps to resolve the error, e.g. let users know when the caps lock is on.](/img/components/signin-do-3.png "Do: Use clear and concise messaging to help users understand what went wrong and give users steps to resolve the error, e.g. let users know when the caps lock is on.")
 
-![Don’t: Provide field-specific information that may violate your IT/Security standards](/img/components/signin-dont-3.png 'Don’t: Provide field-specific information that may violate your IT/Security standards')
+![Don’t: Provide field-specific information that may violate your IT/Security standards](/img/components/signin-dont-3.png "Don’t: Provide field-specific information that may violate your IT/Security standards")
 
-![Do: Guide users through authentication flows with a primary, highly visible button on each screen](/img/components/signin-do-4.png 'Do: Guide users through authentication flows with a primary, highly visible button on each screen')
+![Do: Guide users through authentication flows with a primary, highly visible button on each screen](/img/components/signin-do-4.png "Do: Guide users through authentication flows with a primary, highly visible button on each screen")
 
-![Don’t: Draw attention to secondary and tertiary tasks with competing buttons and calls to action](/img/components/signin-dont-4.png 'Don’t: Draw attention to secondary and tertiary tasks with competing buttons and calls to action')
+![Don’t: Draw attention to secondary and tertiary tasks with competing buttons and calls to action](/img/components/signin-dont-4.png "Don’t: Draw attention to secondary and tertiary tasks with competing buttons and calls to action")
 
-![Do: Find small efficiencies in the flow like auto-focusing on input boxes](/img/components/signin-do-5.png 'Do: Find small efficiencies in the flow like auto-focusing on input boxes')
+![Do: Find small efficiencies in the flow like auto-focusing on input boxes](/img/components/signin-do-5.png "Do: Find small efficiencies in the flow like auto-focusing on input boxes")
 
-![Don’t: Add unnecessary steps to the interaction like requiring users to click into form fields](/img/components/signin-dont-5.png 'Don’t: Add unnecessary steps to the interaction like requiring users to click into form fields')
+![Don’t: Add unnecessary steps to the interaction like requiring users to click into form fields](/img/components/signin-dont-5.png "Don’t: Add unnecessary steps to the interaction like requiring users to click into form fields")
 
 :::

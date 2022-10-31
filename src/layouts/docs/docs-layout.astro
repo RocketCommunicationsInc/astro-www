@@ -21,6 +21,9 @@ import './docs-layout.client.js'
 <Layout {title} tabtitle={title}>
 	<SiteNavigation slot="side" />
 	<style is:global define:vars={{ GitHubId, StorybookId, StorybookPreviewHeight }}>
+	.p-grid-main {
+		 background: white;
+	}
 	.storybook-demo {
 		/* preview frame (1--StorybookPreviewHeight) + navigation links (20--step) */
 		min-block-size: calc(1--StorybookPreviewHeight + 20--step);
@@ -30,7 +33,7 @@ import './docs-layout.client.js'
 		}
 	}
 	</style>
-	<main class="p-content" id="content">
+	<main class="p-content DocSearch-content" id="content">
 
 		<slot />
 		<ComplianceAside compliance={compliance} />

@@ -7,7 +7,6 @@ git: rux-dialog
 height: 240px
 theme: true
 ---
-
 # Dialog
 
 ::storybook-demo

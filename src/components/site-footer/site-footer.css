@@ -8,7 +8,7 @@
 	line-height: max(20 / 14);
 
 	/* Appearance */
-	background-color: var(--color-background-base-default);
+	background-color: var(--color-background-base-default, #101923);
 	box-shadow: var(--color-wireframe-primary) 0 1px0 0 inset;
 
 	@media (width < 1024px) {

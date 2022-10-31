@@ -1,0 +1,27 @@
+---
+import './breaking-change.css'
+
+export interface Props {
+	title: string,
+	impact: string;
+}
+
+const badgeVariant = {
+        Low: "neutral",
+        Medium: "warning",
+        High: "danger",
+      };
+
+
+const { props } = Astro as { props: Props }
+---
+
+<div class="breaking-change">
+	<header>
+	  <h3 style={`color: var(--sl-color-${badgeVariant[props.impact]}-500);`}>{props.title}</h3>
+	  <sl-badge class="breaking-change__impact" variant={badgeVariant[props.impact]}>{props.impact} Impact</sl-badge>
+	</header>
+	<div class="breaking-change__content">
+		<slot></slot>
+	</div>
+  </div>

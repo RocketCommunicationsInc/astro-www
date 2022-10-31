@@ -1,4 +1,7 @@
 ---
+tags: resources
+path: /patterns/modeless-panes
+date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
 title: Modeless Panes
 ---
@@ -33,7 +36,7 @@ Note that the design of this interaction, and the very nature of the Web, means 
 
 **Never place two “close” buttons on the same Pane.** Users may think they have different purposes. Always follow the distinct button layout described above.
 
-![Modeless Pane Don’t Example.](/img/patterns/modeless-panes-dont-2.png)
+![Modeless Pane Don't Example.](/img/patterns/modeless-panes-dont-2.png)
 :::note
-Developer Note: Modeless Panes aren’t a specific programming construct. They may be implemented in a variety of ways. Astro doesn’t provide a standard implementation, so it’s important to follow the spirit and best practices of these guidelines as closely as possible.
+Modeless Panes aren’t a specific programming construct. They may be implemented in a variety of ways. Astro doesn’t provide a standard implementation, so it’s important to follow the spirit and best practices of these guidelines as closely as possible. However, one way to build a Modeless panes is from [Containers](/components/containers) which allow for custom content in the same way that Modeless panes are often designed.
 :::
