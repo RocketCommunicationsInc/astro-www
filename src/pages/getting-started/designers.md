@@ -10,19 +10,19 @@ Before reading any further, we recommend you review available Astro components o
 
 ## Design Guidance
 
-[Color](/design-guidelines/color/)
-[Typography](/design-guidelines/typography/)
-[Theme](/design-guidelines/theme/)
-[Grid](/design-guidelines/grid/)
-[Glossary](/design-guidelines/glossary/)
+- [Color](/design-guidelines/color/)
+- [Typography](/design-guidelines/typography/)
+- [Theme](/design-guidelines/theme/)
+- [Grid](/design-guidelines/grid/)
+- [Glossary](/design-guidelines/glossary/)
 
 ## Figma
 
-[Astro 7 UXDS - Dark Theme](https://www.figma.com/community/file/1157371532469023309)
-[Astro UXDS 6.0 - Dark Theme](https://www.figma.com/community/file/1014254163928270411)
-[Astro UXDS 6.0 - Light Theme](https://www.figma.com/community/file/1157352889822768689)
-[Astro UXDS 6.0 - Wireframe Theme](https://www.figma.com/community/file/1101538528179386032)
-[Astro UXDS Icon Library](https://www.figma.com/community/file/1022883566772542677)
+- [Astro 7 UXDS - Dark Theme](https://www.figma.com/community/file/1157371532469023309)
+- [Astro UXDS 6.0 - Dark Theme](https://www.figma.com/community/file/1014254163928270411)
+- [Astro UXDS 6.0 - Light Theme](https://www.figma.com/community/file/1157352889822768689)
+- [Astro UXDS 6.0 - Wireframe Theme](https://www.figma.com/community/file/1101538528179386032)
+- [Astro UXDS Icon Library](https://www.figma.com/community/file/1022883566772542677)
 
 ## Astro and EGS Design Compliance
 
@@ -38,15 +38,16 @@ Astro strives to achieve compliance with applicable DOD design standards. Astro 
 
 ## Training
 
-[Research](/design-process/research/)
-[UI Design](/design-process/ui-design/)
-[Visual Design](/design-process/visual-design/)
-[Service Specific](/service-specific-ux-design/)
+- [Research](/design-process/research/)
+- [UI Design](/design-process/ui-design/)
+- [Visual Design](/design-process/visual-design/)
+- [Service Specific](/service-specific-ux-design/)
 
 **UX Design:**
-[GRM Service](/grm-service-ux-design/about-the-grm-designs/)
-[TT&C Service](/ttc-service-ux-design/about-the-ttc-designs/)
-[FD Service UX Design](/fd-service-ux-design/about-the-fd-designs/)
+
+- [GRM Service](/grm-service-ux-design/about-the-grm-designs/)
+- [TT&C Service](/ttc-service-ux-design/about-the-ttc-designs/)
+- [FD Service UX Design](/fd-service-ux-design/about-the-fd-designs/)
 
 ## Support
 
@@ -55,13 +56,14 @@ Each page on astrouxds.com has a support button at the bottom of the page for te
 ## Additional resources
 
 **Web Design**
-[Stackoverflow](https://stackoverflow.com/) – Questions and problem solving
-[SmashingMagazine](https://www.smashingmagazine.com/) - HTML, CSS, JS, UX/UI, typography and design
-[Alistapart](https://alistapart.com/) - Web design, development, standards, and best practices
-[Abookapart](https://abookapart.com/) - Books for web design, development, standards, and best practices
-[w3.org](https://www.w3.org/) - Authoritative source for HTML standards
-[Accessible Colors](https://accessible-colors.com/) - Evaluate color combinations using the WCAG 2.0 guidelines for contrast
-[Can I Use?](https://www.caniuse.com/) - Browser support tables
+
+- [Stackoverflow](https://stackoverflow.com/) – Questions and problem solving
+- [SmashingMagazine](https://www.smashingmagazine.com/) - HTML, CSS, JS, UX/UI, typography and design
+- [Alistapart](https://alistapart.com/) - Web design, development, standards, and best practices
+- [Abookapart](https://abookapart.com/) - Books for web design, development, standards, and best practices
+- [w3.org](https://www.w3.org/) - Authoritative source for HTML standards
+- [Accessible Colors](https://accessible-colors.com/) - Evaluate color combinations using the WCAG 2.0 guidelines for contrast
+- [Can I Use?](https://www.caniuse.com/) - Browser support tables
 
 ## Books on UX Design
 
