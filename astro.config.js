@@ -5,7 +5,7 @@ import vitePlugins from './.vscode/vite-plugins.js'
 import sitemapIntegration from '@astrojs/sitemap'
 
 export default defineConfig({
-	site: 'https://astro-astro-www.netlify.app/',
+	site: 'https://www.astrouxds.com/',
 	trailingSlash: 'always',
 	markdown: {
 		remarkPlugins: remarkPlugins()
