@@ -50,7 +50,6 @@
 
 @media (width >= 800px) {
 	:where(.p-navigation) {
-		--mask: linear-gradient(0deg, hsl(0 0% 0% / 0%), hsl(0 0% 0% / 100%) 10--step);
 
 		/* Layout */
 		block-size: min(100%, 100vh);
