@@ -15,11 +15,6 @@
 	/* Animation */
 	transition: inline-size 200ms;
 
-	&.-has-results {
-		/* Layout */
-		inline-size: min(50vw, 140--step);
-	}
-
 	@media (width < 800px) {
 		display: grid;
 
@@ -68,6 +63,11 @@
 		/* Behavior */
 		scroll-behavior: smooth;
 		scrollbar-gutter: stable;
+
+		&.-has-results {
+			/* Layout */
+			inline-size: min(50vw, 140--step);
+		}
 	}
 }
 
