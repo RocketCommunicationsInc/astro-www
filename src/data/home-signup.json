@@ -156,7 +156,7 @@
 						"type": "text",
 						"data": "hidden"
 					},
-					"value": {
+					"name": {
 						"type": "text",
 						"data": "b_f067e558ee805172850a87843_c1af406c10"
 					}
@@ -187,20 +187,6 @@
 					"value": {
 						"type": "text",
 						"data": "c1af406c10"
-					}
-				},
-				{
-					"type": {
-						"type": "text",
-						"data": "hidden"
-					},
-					"name":{
-						"type": "text",
-						"data": "u"
-					},
-					"value": {
-						"type": "text",
-						"data": "f067e558ee805172850a87843"
 					}
 				}
 
