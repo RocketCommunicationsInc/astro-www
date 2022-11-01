@@ -15,11 +15,11 @@
 			"data": {
 				"action": {
 					"type": "text",
-					"data": "https://rocketcom.us12.list-manage.com/subscribe/post?u=f067e558ee805172850a87843&id=c1af406c10"
+					"data": "https://rocketcom.us12.list-manage.com/subscribe/post"
 				},
 				"method": {
 					"type": "text",
-					"data": "post"
+					"data": "GET"
 				}
 			}
 		},
@@ -160,7 +160,50 @@
 						"type": "text",
 						"data": "b_f067e558ee805172850a87843_c1af406c10"
 					}
+				},
+				{
+					"type": {
+						"type": "text",
+						"data": "hidden"
+					},
+					"name":{
+						"type": "text",
+						"data": "u"
+					},
+					"value": {
+						"type": "text",
+						"data": "f067e558ee805172850a87843"
+					}
+				},
+				{
+					"type": {
+						"type": "text",
+						"data": "hidden"
+					},
+					"name":{
+						"type": "text",
+						"data": "id"
+					},
+					"value": {
+						"type": "text",
+						"data": "c1af406c10"
+					}
+				},
+				{
+					"type": {
+						"type": "text",
+						"data": "hidden"
+					},
+					"name":{
+						"type": "text",
+						"data": "u"
+					},
+					"value": {
+						"type": "text",
+						"data": "f067e558ee805172850a87843"
+					}
 				}
+
 			]
 		}
 	}
