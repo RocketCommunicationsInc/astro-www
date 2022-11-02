@@ -59,13 +59,17 @@ requestAnimationFrame(() => {
 	}
 
 	if (searchElement) {
+		document.addEventListener('keydown', (event) => {
+			if (event.key === 'k' && (event.metaKey || event.ctrlKey)) {
+				searchElement.focus()
+			}
+		})
 		searchElement.addEventListener('focus', (event) => {
 			search = search || createSearch()
 		})
 
 		searchElement.addEventListener('input', (event: InputEvent & { target: HTMLInputElement }) => {
 			cancelAnimationFrame(searchFrame)
-
 			search.then(searchUtils => {
 				searchFrame = requestAnimationFrame(async () => {
 					const results = await searchUtils.search(event.target.value)
