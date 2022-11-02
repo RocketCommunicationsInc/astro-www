@@ -3,6 +3,7 @@ import type community from 'project:data/home-community.json'
 import { For } from '@astropub/flow'
 
 const { data } = Astro.props as typeof community['data']['events']
+
 ---
 <section class="p-community-events">
 	<h4>{data.heading.data}</h4>
@@ -28,3 +29,45 @@ const { data } = Astro.props as typeof community['data']['events']
 		)}</For>
 	</div>
 </section>
+<script>
+	const APIKEY = `AIzaSyCv0VW46P7doaxrHdQo4DGD_ydxKDDkKdA`
+	const getCalendar = () => {
+    const url = `https://www.googleapis.com/calendar/v3/calendars/c_d7181fa819c105073271d10fa14adc7f49a563dd2b543df21f84b92bc53f5bdc@group.calendar.google.com/events?maxResults=6&orderBy=startTime&singleEvents=true&key=${APIKEY}`
+	fetch(url)           //api for the get request
+  .then(response => response.json())
+  .then((data) => {
+	//if the data is good -- yay!
+	if(data.kind === `calendar#events`){
+		//grab what we need and stick it in an array
+		const events = data.items;
+		console.log(events[0])
+		const eventsArr = events.map((item)=>{
+			console.log(item)
+			// getTime(item.start)
+			// getZone(item.start.timeZone)
+			const thingy =  {
+				date: item.start.dateTime,
+				time: item.start.dateTime,
+				title: item.summary,
+				subTitle: item.description,
+				url: item.htmlLink,
+			}
+			return thingy;
+		})
+		console.log(eventsArr)
+		return eventsArr;
+
+	} else
+	//if there's an error
+	if(data.error){
+		//do some stuff in here.. for now just make it log it
+		console.log(data.error.code, data.error.message)
+	} else{
+		//something else happened?
+		console.log(data, 'Something has gone horribly wrong!')
+	}
+});
+}
+const calData = getCalendar();
+console.log(calData);
+</script>
