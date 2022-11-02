@@ -23,44 +23,44 @@ requestAnimationFrame(() => {
 		el.append(content)
 	}
 
-	for (const formEl of /** @type {HTMLFormElement[]} */ (document.querySelectorAll('form[action="https://rocketcom.us12.list-manage.com/subscribe/post"]'))) {
-		formEl.addEventListener('submit', async (event) => {
-			// handle the form with javascript, prevent the native handling
-			event.preventDefault()
+	// for (const formEl of /** @type {HTMLFormElement[]} */ (document.querySelectorAll('form[action="https://rocketcom.us12.list-manage.com/subscribe/post"]'))) {
+	// 	formEl.addEventListener('submit', async (event) => {
+	// 		// handle the form with javascript, prevent the native handling
+	// 		event.preventDefault()
 
-			/** Temporary JSONP name used to intercept response from JSONP. */
-			const jsonpName = 'jsonp' + Date.now()
+	// 		/** Temporary JSONP name used to intercept response from JSONP. */
+	// 		const jsonpName = 'jsonp' + Date.now()
 
-			/** Temporary JSONP global function used to intercept a JSONP response. */
-			globalThis[jsonpName] = (response) => {
-				delete globalThis[jsonpName]
+	// 		/** Temporary JSONP global function used to intercept a JSONP response. */
+	// 		globalThis[jsonpName] = (response) => {
+	// 			delete globalThis[jsonpName]
 
-				// do something with response
-				const submitMessage = document.querySelector('#mce-error-response')
-				submitMessage.style.display = 'block'
-				submitMessage.textContent = response.msg
-				console.log(response)
-			}
+	// 			// do something with response
+	// 			const submitMessage = document.querySelector('#mce-error-response')
+	// 			submitMessage.style.display = 'block'
+	// 			submitMessage.textContent = response.msg
+	// 			console.log(response)
+	// 		}
 
-			/** Captured form data as an object. */
-			const formData = new FormData(formEl)
+	// 		/** Captured form data as an object. */
+	// 		const formData = new FormData(formEl)
 
-			// add some special fields to the data
-			formData.append('_', Date.now())
-			formData.append('c', jsonpName)
+	// 		// add some special fields to the data
+	// 		formData.append('_', Date.now())
+	// 		formData.append('c', jsonpName)
 
-			// inject script to page to temporarily receive JSONP response
-			document.head.append(
-				Object.assign(
-					document.createElement('script'),
-					{
-						src: formEl.action + '-json?' + new URLSearchParams(formData),
-						onload() {
-							this.remove()
-						}
-					}
-				)
-			)
-		})
-	}
+	// 		// inject script to page to temporarily receive JSONP response
+	// 		document.head.append(
+	// 			Object.assign(
+	// 				document.createElement('script'),
+	// 				{
+	// 					src: formEl.action + '-json?' + new URLSearchParams(formData),
+	// 					onload() {
+	// 						this.remove()
+	// 					}
+	// 				}
+	// 			)
+	// 		)
+	// 	})
+	// }
 })

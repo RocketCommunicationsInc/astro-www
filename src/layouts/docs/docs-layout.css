@@ -439,6 +439,42 @@ body:not(.compliance) {
 	}
 }
 
+.support__email-signup {
+	& input {
+		/* Layout */
+		padding-block: 2--step;
+		padding-inline: 2--step;
+		margin-block-start: 1--step;
+
+		/* Appearance */
+		border: 1px solid var(--Grey700Color);
+		border-radius: max(3--rpx);
+	}
+
+	& button {
+		/* Layout */
+		align-self: center;
+		margin-inline-start: auto;
+		margin-block-start: 4--step;
+		padding-block: 2--step;
+		padding-inline: 11--step;
+
+		/* Text */
+		font-size: 16--rpx;
+		line-height: max(20 / 16);
+
+		/* Appearance */
+		border-radius: 3--rpx;
+		background: var(--DarkBlue700Color);
+		color: var(--PrimaryColor);
+		cursor: pointer;
+
+		&:is(:hover, :focus-visible) {
+			background: var(--BrightBlue700Color);
+		}
+	}
+}
+
 @media screen and (min-width: 1000px) {
 	table {
 		max-width: 120%;
