@@ -89,6 +89,32 @@ requestAnimationFrame(() => {
 								link.href.replace(/^https:\/\/www\.astrouxds\.com/, '').replace(/\/readme\//, '/')
 							)
 						}
+						link.addEventListener('focus', (event) => {
+							document.addEventListener('keydown', (event) => {
+								if (event.key === 'ArrowDown') {
+									event.preventDefault()
+									if (link.parentElement?.nextSibling) {
+										const nextSibling = link.parentElement?.nextSibling as HTMLElement
+										const nextLink = nextSibling.querySelector('a')
+										nextLink?.focus()
+									}
+								} else if (event.key === 'ArrowUp') {
+									event.preventDefault()
+									if (link.parentElement?.previousSibling) {
+										const previousSibling = link.parentElement?.previousSibling as HTMLElement
+										const previousLink = previousSibling.querySelector('a')
+										previousLink?.focus()
+									}
+								} else if (event.key === 'Enter') {
+									link.click()
+								} else if (event.key === 'Escape') {
+									searchElement.value = ''
+									searchResults.replaceChildren('')
+									searchForm.classList.remove('-has-results')
+									navigation.classList.remove('-has-results')
+								}
+							})
+						})
 
 						link.parentNode!.addEventListener('click', (event) => {
 							link.click()
