@@ -61,6 +61,7 @@ requestAnimationFrame(() => {
 	if (searchElement) {
 		document.addEventListener('keydown', (event) => {
 			if (event.key === 'k' && (event.metaKey || event.ctrlKey)) {
+				event.preventDefault()
 				searchElement.focus()
 			}
 		})
@@ -97,17 +98,37 @@ requestAnimationFrame(() => {
 
 					searchResults.replaceChildren(hdom)
 					const resultChildren = searchResults.querySelectorAll('.listitem a')
+					if (hasResults) {
+						onkeydown = (event) => {
+							if (event.key === 'Tab') {
+								event.preventDefault()
+								const firstResult = resultChildren[0] as HTMLElement
+								firstResult.focus()
+							}
+						}
+					}
 					resultChildren.forEach((result) => {
 						result.addEventListener('focus', (event) => {
 							onkeydown = (event) => {
-								if (event.key === 'ArrowDown') {
+								let keys = {
+									tab: false,
+									shift: false,
+								};
+								if (event.key === 'Tab') {
+									keys.tab = true;
+								}
+								if (event.key === 'Shift') {
+									keys.shift = true;
+								}
+								if (event.key === 'Tab' || event.key === 'ArrowDown') {
 									event.preventDefault()
+									console.log(event.key)
 									if (result.parentElement?.nextSibling) {
 										const nextSibling = result.parentElement?.nextSibling as HTMLElement
 										const nextresult = nextSibling.querySelector('a')
 										nextresult?.focus()
 									}
-								} else if (event.key === 'ArrowUp') {
+								} else if (event.key === 'ArrowUp' || (keys.tab && keys.shift)) {
 									event.preventDefault()
 									if (result.parentElement?.previousSibling) {
 										const previousSibling = result.parentElement?.previousSibling as HTMLElement
