@@ -30,18 +30,18 @@ const { data } = Astro.props as typeof community['data']['events']
 	</div>
 </section>
 <script>
-	const APIKEY = `AIzaSyCv0VW46P7doaxrHdQo4DGD_ydxKDDkKdA`
-	const getCalendar = () => {
-    const url = `https://www.googleapis.com/calendar/v3/calendars/c_d7181fa819c105073271d10fa14adc7f49a563dd2b543df21f84b92bc53f5bdc@group.calendar.google.com/events?maxResults=6&orderBy=startTime&singleEvents=true&key=${APIKEY}`
+	(() => {
+    const url = `https://www.googleapis.com/calendar/v3/calendars/c_d7181fa819c105073271d10fa14adc7f49a563dd2b543df21f84b92bc53f5bdc@group.calendar.google.com/events?maxResults=6&orderBy=startTime&singleEvents=true&key=AIzaSyCv0VW46P7doaxrHdQo4DGD_ydxKDDkKdA`
 	fetch(url)           //api for the get request
   .then(response => response.json())
   .then((data) => {
 	//if the data is good -- yay!
 	if(data.kind === `calendar#events`){
+		const comEvents = document.querySelector(".p-community-events-content") as HTMLElement;
 		//grab what we need and stick it in an array
 		const events = data.items;
 		console.log(events[0])
-		const eventsArr = events.map((item)=>{
+		for (const item of events){
 			console.log(item)
 			// getTime(item.start)
 			// getZone(item.start.timeZone)
@@ -52,11 +52,26 @@ const { data } = Astro.props as typeof community['data']['events']
 				subTitle: item.description,
 				url: item.htmlLink,
 			}
-			return thingy;
-		})
-		console.log(eventsArr)
-		return eventsArr;
-
+			comEvents.innerHTML += (
+`			<article class="p-community-event">
+				<small class="p-community-event-date">
+					<span class="-date">${thingy.date}</span>
+					${thingy.time && (
+						`<span class="-time">${thingy.time}</span>`
+					)}
+				</small>
+				<hgroup class="p-community-event-heading">
+					<h5>${thingy.title}</h5>
+					${thingy.subTitle && (
+						`<small class="p-community-event-subheading">${thingy.subTitle}</small>`
+					)}
+				</hgroup>
+				<span class="p-community-event-actions">
+					<a href=${thingy.url} target="_blank">Add to Calendar</a>
+				</span>
+			</article>`
+			)
+		}
 	} else
 	//if there's an error
 	if(data.error){
@@ -67,7 +82,5 @@ const { data } = Astro.props as typeof community['data']['events']
 		console.log(data, 'Something has gone horribly wrong!')
 	}
 });
-}
-const calData = getCalendar();
-console.log(calData);
+})()
 </script>
