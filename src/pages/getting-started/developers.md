@@ -58,7 +58,7 @@ The Astro team has worked with EGS to establish the EGS Compliance requirements 
 
 This website and its contents are provided as separate downloadable files for the convenience of developers and designers working in closed environments. Designer and developer assets are provided as downloads on their respective ‘Getting Started’ sections:
 
-[Gzip Archive of Astro](git@github.com:RocketCommunicationsInc/astro.git)
+[Gzip Archive of Astro](https://github.com/RocketCommunicationsInc/astro/releases)
 
 ### Reporting Bugs
 

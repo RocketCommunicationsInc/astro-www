@@ -35,12 +35,12 @@ title: Glossary
 
 - [Data Visualization](/patterns/data-visualization) - The goal of Data Visualization is to make complex information accessible and easy to digest in a visual manner.
 - Default Action - The action that users would most likely want to execute in the window with focus.
-- [Design Tokens](design-tokens/getting-started) - A pairing of the same code and visual properties in a format that is deployable across all platforms, acting as a single source of truth for both designers and developers.
+- [Design Tokens](/design-tokens/getting-started) - A pairing of the same code and visual properties in a format that is deployable across all platforms, acting as a single source of truth for both designers and developers.
 - [Dialog](/components/dialog) - A Dialog interrupts app processing to prompt a user to confirm an action or acknowledge a piece of information. It displays information along with a set of buttons allowing users to accept or cancel the actions presented within the Dialog.
 
 ### F
 
-- [Forms](patterns/forms-and-validation/) - A text field, input, or inputs which require interaction with the user to complete an action such as signing up for an account.
+- [Forms](/patterns/forms-and-validation/) - A text field, input, or inputs which require interaction with the user to complete an action such as signing up for an account.
 
 ### G
 

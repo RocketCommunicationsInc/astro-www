@@ -11,30 +11,13 @@ const { data } = Astro.props as typeof signup
 <section class="p-signup">
 	<h3 class="p-signup-heading">{data.heading.data}</h3>
 	<p class="p-signup-content">{data.summary.data}</p>
-	<form class="p-signup-form" action={data.form.data.action.data} method={data.form.data.method.data}>
+	<form class="p-signup-form" action={data.form.data.action.data} method={data.form.data.method.data} target="_blank">
 		<For of={data.content.data}>{item => (
 			<Control type={item.type.data} required={item.required.data} placeholder={item.placeholder.data} autocomplete={item.autocomplete.data} name={item.mcname.data}>{item.label.data}</Control>
 		)}</For>
 		<Submit>Submit</Submit>
 		<For of={data.hidden.data}>{item => (
-			<input type={item.type.data as any} value={item.value.data} />
+			<input type={item.type.data as any}  name={item.name.data} value={item.value?.data} />
 		)}</For>
 	</form>
-	<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-	<script type="text/javascript">
-		(function ($) {
-			window.fnames = new Array();
-			window.ftypes = new Array();
-			fnames[0] = 'EMAIL';
-			ftypes[0] = 'email';
-			fnames[1] = 'FNAME';
-			ftypes[1] = 'text';
-			fnames[2] = 'LNAME';
-			ftypes[2] = 'text';
-			fnames[3] = 'COMPANY';
-			ftypes[3] = 'text';
-		}(jQuery));
-		var $mcj = jQuery.noConflict(true);
-	</script>
-	<!--End mc_embed_signup-->
 </section>
