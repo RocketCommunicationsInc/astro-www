@@ -21,7 +21,7 @@ All color pairings should follow the latest WCAG AA contrast rules. Astro compon
 
 :::table-overflow
 | 6.0 Hex Code | 6.0 CSS Name             | 7.0 Hex Code | 7.0 Design Token               |
-| ------------ | ------------------------ | ------------ | ------------------------------ |
+|--------------|--------------------------|--------------|--------------------------------|
 | #CBDEE9      | `--colorPrimaryLighten4` | #CBDEE9      | `--color-palette-darkblue-100` |
 | #98BDD3      | `--colorPrimaryLighten3` | #98BDD3      | `--color-palette-darkblue-200` |
 | #649CBD      | `--colorPrimaryLighten2` | #649CBD      | `--color-palette-darkblue-300` |
@@ -38,7 +38,7 @@ All color pairings should follow the latest WCAG AA contrast rules. Astro compon
 
 :::table-overflow
 | 6.0 Hex Code | 6.0 CSS Name                | 7.0 Hex Code | 7.0 Design Token                 |
-| ------------ | --------------------------- | ------------ | -------------------------------- |
+|--------------|-----------------------------|--------------|----------------------------------|
 | #DAEEFF      | `--colorSecondaryLighten4`  | #DAEEFF      | `--color-palette-brightblue-100` |
 | #B7DCFF      | `--colorSecondaryLighten3`  | #CEE9FC      | `--color-palette-brightblue-200` |
 | #92CBFF      | `--colorsSecondaryLighten2` | #87DCFF      | `--color-palette-brightblue-300` |
@@ -55,7 +55,7 @@ All color pairings should follow the latest WCAG AA contrast rules. Astro compon
 
 :::table-overflow
 | 6.0 Hex Code | 6.0 CSS Name               | 7.0 Hex Code | 7.0 Design Token           |
-| ------------ | -------------------------- | ------------ | -------------------------- |
+|--------------|----------------------------|--------------|----------------------------|
 | #D4D8DD      | `--colorTertiaryLighten4`  | #F5F6F9      | `--color-palette-grey-100` |
 | #A9B2BC      | `--colorTertiaryLighten3`  | #EAEEF4      | `--color-palette-grey-200` |
 | #7E8C9B      | `--colorsTertiaryLighten2` | #E0E5EB      | `--color-palette-grey-250` |
@@ -76,8 +76,8 @@ The Quaternary Palette has been removed entirely.
 
 :::table-overflow
 | 6.0 Hex Code | 6.0 CSS Name          | 7.0 Hex Code | 7.0 Design Token           |
-| ------------ | --------------------- | ------------ | -------------------------- |
-| #DOF4F4      | `--colorTag1Lighten4` | #DOF4F4      | `--color-palette-teal-100` |
+|--------------|-----------------------|--------------|----------------------------|
+| #D0F4F4      | `--colorTag1Lighten4` | #D0F4F4      | `--color-palette-teal-100` |
 | #A1E9EB      | `--colorTag1Lighten3` | #A1E9EB      | `--color-palette-teal-200` |
 | #70DDE0      | `--colorTag1Lighten2` | #70DDE0      | `--color-palette-teal-300` |
 | #3ED2D6      | `--colorTag1Lighten1` | #3ED2D6      | `--color-palette-teal-400` |
@@ -92,7 +92,7 @@ The Quaternary Palette has been removed entirely.
 
 :::table-overflow
 | 6.0 Hex Code | 6.0 CSS Name          | 7.0 Hex Code | 7.0 Design Token             |
-| ------------ | --------------------- | ------------ | ---------------------------- |
+|--------------|-----------------------|--------------|------------------------------|
 | #E4E2F7      | `--colorTag2Lighten4` | #E4E2F7      | `--color-palette-purple-100` |
 | #C9C5ED      | `--colorTag2Lighten3` | #C9C5ED      | `--color-palette-purple-200` |
 | #AEA8E5      | `--colorTag2Lighten2` | #AEA8E5      | `--color-palette-purple-300` |
@@ -108,7 +108,7 @@ The Quaternary Palette has been removed entirely.
 
 :::table-overflow
 | 6.0 Hex Code | 6.0 CSS Name          | 7.0 Hex Code | 7.0 Design Token           |
-| ------------ | --------------------- | ------------ | -------------------------- |
+|--------------|-----------------------|--------------|----------------------------|
 | #EDCEF3      | `--colorTag3Lighten4` | #EDCEF3      | `--color-palette-pink-100` |
 | #DA9CE7      | `--colorTag3Lighten3` | #DA9CE7      | `--color-palette-pink-200` |
 | #C76ADA      | `--colorTag3Lighten2` | #C76ADA      | `--color-palette-pink-300` |
@@ -124,7 +124,7 @@ The Quaternary Palette has been removed entirely.
 
 :::table-overflow
 | 6.0 Hex Code | 6.0 CSS Name          | 7.0 Hex Code | 7.0 Design Token                |
-| ------------ | --------------------- | ------------ | ------------------------------- |
+|--------------|-----------------------|--------------|---------------------------------|
 | #F8DDD1      | `--colorTag4Lighten4` | #F8DDD1      | `--color-palette-hotorange-100` |
 | #F0BAA3      | `--colorTag4Lighten3` | #F0BAA3      | `--color-palette-hotorange-200` |
 | #EA9875      | `--colorTag4Lighten2` | #EA9875      | `--color-palette-hotorange-300` |
@@ -135,3 +135,60 @@ The Quaternary Palette has been removed entirely.
 | #572108      | `--colorTag4Darken3`  | #572108      | `--color-palette-hotorange-800` |
 | #2B1105      | `--colorTag4Darken4`  | #2B1105      | `--color-palette-hotorange-900` |
 :::
+
+<script type="module">
+/** Matches a value which is a 6-digit hex color. */
+const matchHexColor = /^#[0-9A-Fa-f]{6}$/
+
+/** Matches a value which is CSS custom property. */
+const matchCustomProp = /^--[\w-]+$/
+
+// transform tables within any available table overflow elements
+for (const td of document.querySelectorAll('.table-overflow td')) {
+	const tdContent = td.textContent
+
+	/* Whether the content of the TD matched a 6-digit hex color. */
+	const isTdHexColor = matchHexColor.test(tdContent)
+
+	// conditionally wrap the contents of the td in a <color-swab>
+	if (isTdHexColor) {
+		td.innerHTML = (
+			`<color-swab style="--color:${tdContent}">${tdContent}</color-swab>`
+		)
+
+		const nextTd = td.nextSibling
+		const nextTdContent = nextTd?.textContent
+
+		/* Whether the content of the next TD matched a CSS custom property. */
+		const isTdHexColor = matchCustomProp.test(nextTdContent)
+
+		// conditionally wrap the contents of the next td in a <color-swab>
+		if (isTdHexColor) {
+			nextTd.innerHTML = (
+				`<color-swab style="--color:${tdContent}">${nextTdContent}</color-swab>`
+			)
+		}
+	}
+}
+</script>
+<style>
+color-swab {
+	display: flex;
+
+	/* Layout */
+	align-items: center;
+	gap: .25em;
+}
+
+color-swab::before {
+	content: "";
+
+	/* Layout */
+	inline-size: .875em;
+	block-size: .875em;
+
+	/* Appearance */
+	background-color: var(--color);
+	box-shadow: 0 0 0 1px inset;
+}
+</style>
