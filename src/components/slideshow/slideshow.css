@@ -42,6 +42,10 @@ button {
 	/* Layout */
 	padding: 4--step;
 
+	@media (width < 460px) {
+		padding: 1--step;
+	}
+
 	/* Appearance */
 	color: var(--InteractiveColor);
 
