@@ -107,33 +107,29 @@ requestAnimationFrame(() => {
 							}
 						}
 					}
+					let keyArray: string[] = []
 					resultChildren.forEach((result) => {
 						result.addEventListener('focus', (event) => {
 							onkeydown = (event) => {
-								let keys = {
-									tab: false,
-									shift: false,
-								};
-								if (event.key === 'Tab') {
-									keys.tab = true;
-								}
 								if (event.key === 'Shift') {
-									keys.shift = true;
+									keyArray.push(event.key)
 								}
-								if (event.key === 'Tab' || event.key === 'ArrowDown') {
-									event.preventDefault()
-									console.log(event.key)
-									if (result.parentElement?.nextSibling) {
-										const nextSibling = result.parentElement?.nextSibling as HTMLElement
-										const nextresult = nextSibling.querySelector('a')
-										nextresult?.focus()
-									}
-								} else if (event.key === 'ArrowUp' || (keys.tab && keys.shift)) {
+								if (event.key === 'Tab') {
+									keyArray.push(event.key)
+								}
+								if (event.key === 'ArrowUp' || (keyArray.includes('Shift') && keyArray.includes('Tab'))) {
 									event.preventDefault()
 									if (result.parentElement?.previousSibling) {
 										const previousSibling = result.parentElement?.previousSibling as HTMLElement
 										const previousresult = previousSibling.querySelector('a')
 										previousresult?.focus()
+									}
+								} else if (event.key === 'ArrowDown' || (!keyArray.includes('Shift') && keyArray.includes('Tab'))) {
+									event.preventDefault()
+									if (result.parentElement?.nextSibling) {
+										const nextSibling = result.parentElement?.nextSibling as HTMLElement
+										const nextresult = nextSibling.querySelector('a')
+										nextresult?.focus()
 									}
 								} else if (event.key === 'Enter') {
 									result.querySelector('a')?.click()
@@ -142,6 +138,20 @@ requestAnimationFrame(() => {
 									searchResults.replaceChildren('')
 									searchForm.classList.remove('-has-results')
 									navigation.classList.remove('-has-results')
+								}
+							}
+							onkeyup = (event) => {
+								if (event.key === 'Shift') {
+									const shiftKey = keyArray.indexOf('Shift');
+									if (shiftKey > -1) {
+									keyArray.splice(shiftKey, 1)
+									}
+								}
+								if (event.key === 'Tab') {
+									const tabKey = keyArray.indexOf('Tab');
+									if (tabKey > -1) {
+									keyArray.splice(tabKey, 1)
+									}
 								}
 							}
 						})
