@@ -6,7 +6,7 @@
 	& .p-articles-content {
 		/* Layout */
 		padding-block: 5--step;
-		padding-inline: 9--step;
+		padding-inline: 2--step;
 
 		/* Appearance */
 		background-color: var(--SurfaceHeaderColor);
@@ -52,10 +52,16 @@
 
 		/* Layout */
 		justify-content: center;
-		padding: 9--step;
+		padding-block: 9--step;
+		padding-inline: 0;
 
 		/* Appearance */
 		background: var(--SurfaceColor);
+
+		@media (width >= 760px) {
+			/* Layout */
+			padding-inline: 9--step;
+		}
 	}
 }
 
@@ -64,6 +70,10 @@
 	--articlecount: 4;
 	--articlesize: 74--step;
 	--gap: 8--step;
+
+	@media (width < 460px) {
+		--articlesize: 65--step;
+	}
 
 	@media (width < 1080px) {
 		--articlecount: 1;
@@ -132,6 +142,7 @@
 		margin-block-end: 2--step;
 		border-start-start-radius: 1--step;
 		border-start-end-radius: 1--step;
+		margin-block-start: 1--rpx; /* set so image won't overlap the top border */
 	}
 
 	&:is(:hover, :focus-visible) {
@@ -183,7 +194,7 @@
 	}
 
 	& .p-article {
-		inline-size: 74--step;
+		inline-size: 1--articlesize;
 		scroll-snap-align: start;
 	}
 }
