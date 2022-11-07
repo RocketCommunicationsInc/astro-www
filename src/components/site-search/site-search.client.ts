@@ -45,7 +45,8 @@ requestAnimationFrame(() => {
 			html: utils.html,
 		}
 	}
-
+	/** The modifier key of the platform ('Meta' for Apple devices, otherwise 'Control'). */
+	const modifierKey = /^(MacIntel|iPhone)$/.test(navigator.platform) ? 'metaKey' : 'ctrlKey'
 	let search: Promise<SearchUtils>
 	let searchFrame = 0
 	let searchForm = document.getElementById('search')!
@@ -60,7 +61,7 @@ requestAnimationFrame(() => {
 
 	if (searchElement) {
 		document.addEventListener('keydown', (event) => {
-			if (event.key === 'k' && (event.metaKey || event.ctrlKey)) {
+			if (event.key === 'k' && event[modifierKey]) {
 				event.preventDefault()
 				searchElement.focus()
 			}
@@ -135,7 +136,7 @@ requestAnimationFrame(() => {
 									result.querySelector('a')?.click()
 								} else if (event.key === 'Escape') {
 									searchElement.value = ''
-									searchResults.replaceChildren('')
+									searchResults.replaceChildren()
 									searchForm.classList.remove('-has-results')
 									navigation.classList.remove('-has-results')
 								}
