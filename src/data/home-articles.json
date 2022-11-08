@@ -25,9 +25,7 @@
 						"type": "link",
 						"data": {
 							"url": "/images/article.svg",
-							"description": "",
-							"width": 318,
-							"height": 224
+							"description": ""
 						}
 					},
 					"content": {
@@ -50,9 +48,7 @@
 						"type": "link",
 						"data": {
 							"url": "/images/article-1.svg",
-							"description": "",
-							"width": 318,
-							"height": 224
+							"description": ""
 						}
 					},
 					"content": {
@@ -75,9 +71,7 @@
 						"type": "link",
 						"data": {
 							"url": "/images/article-2.svg",
-							"description": "",
-							"width": 318,
-							"height": 224
+							"description": ""
 						}
 					},
 					"content": {
@@ -100,9 +94,7 @@
 						"type": "link",
 						"data": {
 							"url": "/images/article-3.svg",
-							"description": "",
-							"width": 318,
-							"height": 224
+							"description": ""
 						}
 					},
 					"content": {
@@ -125,9 +117,7 @@
 						"type": "link",
 						"data": {
 							"url": "/images/article.svg",
-							"description": "",
-							"width": 318,
-							"height": 224
+							"description": ""
 						}
 					},
 					"content": {
