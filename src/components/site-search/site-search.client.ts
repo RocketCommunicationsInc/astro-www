@@ -98,65 +98,83 @@ requestAnimationFrame(() => {
 					}
 
 					searchResults.replaceChildren(hdom)
-					const resultChildren = searchResults.querySelectorAll('.listitem a')
-					if (hasResults) {
-						onkeydown = (event) => {
-							if (event.key === 'Tab') {
-								event.preventDefault()
-								const firstResult = resultChildren[0] as HTMLElement
-								firstResult.focus()
-							}
-						}
-					}
-					let keyArray: string[] = []
-					resultChildren.forEach((result) => {
-						result.addEventListener('focus', (event) => {
-							onkeydown = (event) => {
-								if (event.key === 'Shift') {
-									keyArray.push(event.key)
-								}
-								if (event.key === 'Tab') {
-									keyArray.push(event.key)
-								}
-								if (event.key === 'ArrowUp' || (keyArray.includes('Shift') && keyArray.includes('Tab'))) {
-									event.preventDefault()
-									if (result.parentElement?.previousSibling) {
-										const previousSibling = result.parentElement?.previousSibling as HTMLElement
-										const previousresult = previousSibling.querySelector('a')
-										previousresult?.focus()
-									}
-								} else if (event.key === 'ArrowDown' || (!keyArray.includes('Shift') && keyArray.includes('Tab'))) {
-									event.preventDefault()
-									if (result.parentElement?.nextSibling) {
-										const nextSibling = result.parentElement?.nextSibling as HTMLElement
-										const nextresult = nextSibling.querySelector('a')
-										nextresult?.focus()
-									}
-								} else if (event.key === 'Enter') {
-									result.querySelector('a')?.click()
-								} else if (event.key === 'Escape') {
-									searchElement.value = ''
-									searchResults.replaceChildren()
-									searchForm.classList.remove('-has-results')
-									navigation.classList.remove('-has-results')
-								}
-							}
-							onkeyup = (event) => {
-								if (event.key === 'Shift') {
-									const shiftKey = keyArray.indexOf('Shift');
-									if (shiftKey > -1) {
-									keyArray.splice(shiftKey, 1)
-									}
-								}
-								if (event.key === 'Tab') {
-									const tabKey = keyArray.indexOf('Tab');
-									if (tabKey > -1) {
-									keyArray.splice(tabKey, 1)
-									}
-								}
+
+					let resultChildren = searchResults.querySelectorAll('.listitem')
+					if (resultChildren) {
+						resultChildren.forEach((result, index) => {
+							if (index === 0) {
+								result.setAttribute('aria-selected', '')
 							}
 						})
-					})
+						let indexNumber = 0
+						onkeydown = (event) => {
+							if (event.key === 'ArrowDown') {
+								event.preventDefault()
+								if (indexNumber <= 3) {
+									indexNumber++
+								}
+								resultChildren.forEach((result, index) => {
+									if (index === indexNumber) {
+										result.setAttribute('aria-selected', '')
+									} else {
+										result.removeAttribute('aria-selected')
+									}
+								})
+							} else if (event.key === 'ArrowUp') {
+								event.preventDefault()
+								if (indexNumber >= 1) {
+									indexNumber--
+								}
+								resultChildren.forEach((result, index) => {
+									if (index === indexNumber) {
+										result.setAttribute('aria-selected', '')
+									} else {
+										result.removeAttribute('aria-selected')
+									}
+								})
+							} else if (event.key === 'Enter') {
+								resultChildren.forEach((result) => {
+									if (result.hasAttribute('aria-selected')) {
+										result.querySelector('a')?.click()
+									}
+								})
+							} else if (event.key === 'Escape') {
+								searchElement.value = ''
+								searchResults.replaceChildren()
+								searchForm.classList.remove('-has-results')
+								navigation.classList.remove('-has-results')
+							}
+						}
+
+						// resultChildren.forEach((result) => {
+						// 	result.addEventListener('focus', (event) => {
+						// 		onkeydown = (event) => {
+						// 			if (event.key === 'ArrowUp') {
+						// 				event.preventDefault()
+						// 				if (result.parentElement?.previousSibling) {
+						// 					const previousSibling = result.parentElement?.previousSibling as HTMLElement
+						// 					const previousresult = previousSibling.querySelector('a')
+						// 					previousresult?.focus()
+						// 				}
+						// 			} else if (event.key === 'ArrowDown') {
+						// 				event.preventDefault()
+						// 				if (result.parentElement?.nextSibling) {
+						// 					const nextSibling = result.parentElement?.nextSibling as HTMLElement
+						// 					const nextresult = nextSibling.querySelector('a')
+						// 					nextresult?.focus()
+						// 				}
+						// 			} else if (event.key === 'Enter') {
+						// 				result.querySelector('a')?.click()
+						// 			} else if (event.key === 'Escape') {
+						// 				searchElement.value = ''
+						// 				searchResults.replaceChildren()
+						// 				searchForm.classList.remove('-has-results')
+						// 				navigation.classList.remove('-has-results')
+						// 			}
+						// 		}
+						// 	})
+						// })
+					}
 				})
 			})
 		})
