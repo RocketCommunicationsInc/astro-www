@@ -1,4 +1,84 @@
-export const getCalendar = () => {
-    console.log('hiya!')
-    return 'yay!';
+(() => {
+	// get todays date and convert it to ISO so we only get events that happen today or after
+	const startDate = new Date().toISOString();
+
+    const url = `https://www.googleapis.com/calendar/v3/calendars/c_d7181fa819c105073271d10fa14adc7f49a563dd2b543df21f84b92bc53f5bdc@group.calendar.google.com/events?maxResults=6&orderBy=startTime&singleEvents=true&timeMin=${startDate}&key=AIzaSyCv0VW46P7doaxrHdQo4DGD_ydxKDDkKdA`
+	fetch(url) // api for the get request
+  .then(response => response.json())
+  .then((data) => {
+	// if the data is good -- yay!
+	if (data.kind === `calendar#events`) {
+		const communityEvents = document.querySelector('.p-community-events-content');
+		// grab what we need and stick it in an array
+		const events = data.items;
+
+		// run through the array and add events to the .p-community-events-content div
+		for (const item of events) {
+			// format the date and time properly and then desconstruct
+			const { date, time } = getTime(item.start.dateTime)
+
+			// set up the event for posting
+			const event = {
+				date,
+				time,
+				title: item.summary,
+				subTitle: item.description,
+				url: item.htmlLink,
+			}
+
+			// add the event to community events list
+			communityEvents.innerHTML += (
+`			<article class="p-community-event">
+				<small class="p-community-event-date">
+					<span class="-date">${event.date}</span>
+					${event.time && (
+						`<span class="-time">${event.time}</span>`
+					)}
+				</small>
+				<hgroup class="p-community-event-heading">
+					<h5>${event.title}</h5>
+					${event.subTitle && (
+						`<small class="p-community-event-subheading">${event.subTitle}</small>`
+					)}
+				</hgroup>
+				<span class="p-community-event-actions">
+					<a href=${event.url} target="_blank">Add to Calendar</a>
+				</span>
+			</article>`
+			)
+		}
+	} else
+	// if there's an error
+	if (data.error) {
+		// do some stuff in here.. for now just make it log it
+		console.log(data.error.code, data.error.message)
+	} else {
+		// something else happened?
+		console.log(data, 'Something has gone horribly wrong!')
+	}
+});
+})()
+
+function getTime(ISOdate) {
+	// set isoDate to something workable
+	const dateTime = new Date(ISOdate);
+
+	// get an appropriate datestring
+	const date = dateTime.toLocaleString('en-US', {
+		day: '2-digit',
+		month: '2-digit',
+		year: 'numeric',
+		});
+		// create an appropriate time string
+		const time = dateTime.toLocaleString('en-US', {
+		timeZone: 'PST',
+		hour: 'numeric',
+		minute: '2-digit',
+		timeZoneName: 'short'
+		});
+
+	return {
+		date,
+		time,
+	}
 }
