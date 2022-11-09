@@ -107,7 +107,7 @@ requestAnimationFrame(() => {
 							}
 						})
 						let indexNumber = 0
-						onkeydown = (event) => {
+						searchElement.onkeydown = (event) => {
 							if (event.key === 'ArrowDown') {
 								event.preventDefault()
 								if (indexNumber <= 3) {
@@ -145,35 +145,6 @@ requestAnimationFrame(() => {
 								navigation.classList.remove('-has-results')
 							}
 						}
-
-						// resultChildren.forEach((result) => {
-						// 	result.addEventListener('focus', (event) => {
-						// 		onkeydown = (event) => {
-						// 			if (event.key === 'ArrowUp') {
-						// 				event.preventDefault()
-						// 				if (result.parentElement?.previousSibling) {
-						// 					const previousSibling = result.parentElement?.previousSibling as HTMLElement
-						// 					const previousresult = previousSibling.querySelector('a')
-						// 					previousresult?.focus()
-						// 				}
-						// 			} else if (event.key === 'ArrowDown') {
-						// 				event.preventDefault()
-						// 				if (result.parentElement?.nextSibling) {
-						// 					const nextSibling = result.parentElement?.nextSibling as HTMLElement
-						// 					const nextresult = nextSibling.querySelector('a')
-						// 					nextresult?.focus()
-						// 				}
-						// 			} else if (event.key === 'Enter') {
-						// 				result.querySelector('a')?.click()
-						// 			} else if (event.key === 'Escape') {
-						// 				searchElement.value = ''
-						// 				searchResults.replaceChildren()
-						// 				searchForm.classList.remove('-has-results')
-						// 				navigation.classList.remove('-has-results')
-						// 			}
-						// 		}
-						// 	})
-						// })
 					}
 				})
 			})
