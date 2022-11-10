@@ -52,6 +52,7 @@ requestAnimationFrame(() => {
 	let searchForm = document.getElementById('search')!
 	let searchResults = document.getElementById('search-results')!
 	let searchElement = <HTMLInputElement>document.getElementById('search-field')!
+	let resultChildren: any[] | NodeListOf<Element>
 
 	if (searchForm) {
 		searchForm.addEventListener('submit', (event) => {
@@ -98,56 +99,59 @@ requestAnimationFrame(() => {
 					}
 
 					searchResults.replaceChildren(hdom)
-
-					let resultChildren = searchResults.querySelectorAll('.listitem')
-					if (resultChildren) {
-						resultChildren.forEach((result, index) => {
-							if (index === 0) {
-								result.setAttribute('aria-selected', '')
-							}
-						})
-						let indexNumber = 0
-						searchElement.onkeydown = (event) => {
-							if (event.key === 'ArrowDown') {
-								event.preventDefault()
-								if (indexNumber <= 3) {
-									indexNumber++
-								}
-								resultChildren.forEach((result, index) => {
-									if (index === indexNumber) {
-										result.setAttribute('aria-selected', '')
-									} else {
-										result.removeAttribute('aria-selected')
-									}
-								})
-							} else if (event.key === 'ArrowUp') {
-								event.preventDefault()
-								if (indexNumber >= 1) {
-									indexNumber--
-								}
-								resultChildren.forEach((result, index) => {
-									if (index === indexNumber) {
-										result.setAttribute('aria-selected', '')
-									} else {
-										result.removeAttribute('aria-selected')
-									}
-								})
-							} else if (event.key === 'Enter') {
-								resultChildren.forEach((result) => {
-									if (result.hasAttribute('aria-selected')) {
-										result.querySelector('a')?.click()
-									}
-								})
-							} else if (event.key === 'Escape') {
-								searchElement.value = ''
-								searchResults.replaceChildren()
-								searchForm.classList.remove('-has-results')
-								navigation.classList.remove('-has-results')
-							}
+					resultChildren = searchResults.querySelectorAll('.listitem')
+					resultChildren.forEach((result, index) => {
+						if (index === 0) {
+							result.setAttribute('aria-selected', '')
+							console.log(result)
 						}
-					}
+					})
 				})
 			})
 		})
+		let indexNumber = 0
+		const onKeydown = (event: { key: string; preventDefault: () => void }) => {
+			const navigation = searchForm.closest('.p-navigation')!
+			resultChildren = searchResults.querySelectorAll('.listitem')
+			if (resultChildren.length > 0) {
+				if (event.key === 'ArrowDown') {
+					event.preventDefault()
+					if (indexNumber <= 3) {
+						indexNumber++
+					}
+					resultChildren.forEach((result, index) => {
+						if (index === indexNumber) {
+							result.setAttribute('aria-selected', '')
+						} else {
+							result.removeAttribute('aria-selected')
+						}
+					})
+				} else if (event.key === 'ArrowUp') {
+					event.preventDefault()
+					if (indexNumber >= 1) {
+						indexNumber--
+					}
+					resultChildren.forEach((result, index) => {
+						if (index === indexNumber) {
+							result.setAttribute('aria-selected', '')
+						} else {
+							result.removeAttribute('aria-selected')
+						}
+					})
+				} else if (event.key === 'Enter') {
+					resultChildren.forEach((result) => {
+						if (result.hasAttribute('aria-selected')) {
+							result.querySelector('a')?.click()
+						}
+					})
+				} else if (event.key === 'Escape') {
+					searchElement.value = ''
+					searchResults.replaceChildren()
+					searchForm.classList.remove('-has-results')
+					navigation.classList.remove('-has-results')
+				}
+			}
+		}
+		searchElement.addEventListener('keydown', onKeydown)
 	}
 })
