@@ -176,7 +176,7 @@ The outputs pane houses the required output files and products for a scenario.
 
 The data display is a multi-functional output view of an orbit determination.
 
-![Data Display wireframe](/img/service-specific-ux-design/fds-log-utility.png)
+![Data Display wireframe](/img/service-specific-ux-design/fds-table-data-display.png)
 
 1. **Notification Banner** - The Notification Banner shows the status for the latest/last orbit determination that was initiated.
 2. **Deviation Count** - The deviation count shows the total number of deviations (violations of the standard deviation found in the OD Results.
@@ -204,7 +204,7 @@ The Utility Tool Kit is a collection of contextual utilities for accessing secon
 
 The Log Utility shows a log of application and system messages. Usage and functionality of this utility is mission-agnostic based on what is most valuable to the operator/mission.
 
-![Log Utility wireframe](/img/service-specific-ux-design/fds-utility-tool-kit.png)
+![Log Utility wireframe](/img/service-specific-ux-design/fds-log-utility.png)
 
 1. **Tabs** - Allows for more than view or category of log messages.
 2. **Control Buttons** - Triggers a slide in pane that allows the operator control over the event log display.
