@@ -52,7 +52,8 @@ requestAnimationFrame(() => {
 	let searchForm = document.getElementById('search')!
 	let searchResults = document.getElementById('search-results')!
 	let searchElement = <HTMLInputElement>document.getElementById('search-field')!
-	let resultChildren: any[] | NodeListOf<Element>
+	let resultChildren: any[] | NodeListOf<Element> = []
+	const navigation = searchForm.closest('.p-navigation')!
 
 	if (searchForm) {
 		searchForm.addEventListener('submit', (event) => {
@@ -77,7 +78,6 @@ requestAnimationFrame(() => {
 				searchFrame = requestAnimationFrame(async () => {
 					const results = await searchUtils.search(event.target.value)
 					const hasResults = Boolean(results && results.items.length)
-					const navigation = searchForm.closest('.p-navigation')!
 
 					searchForm.classList.toggle('-has-results', hasResults)
 					navigation.classList.toggle('-has-results', hasResults)
@@ -102,8 +102,9 @@ requestAnimationFrame(() => {
 					resultChildren = searchResults.querySelectorAll('.listitem')
 					resultChildren.forEach((result, index) => {
 						if (index === 0) {
-							result.setAttribute('aria-selected', '')
-							console.log(result)
+							result.setAttribute('aria-selected', 'true')
+						} else {
+							result.setAttribute('aria-selected', 'false')
 						}
 					})
 				})
@@ -111,19 +112,17 @@ requestAnimationFrame(() => {
 		})
 		let indexNumber = 0
 		const onKeydown = (event: { key: string; preventDefault: () => void }) => {
-			const navigation = searchForm.closest('.p-navigation')!
-			resultChildren = searchResults.querySelectorAll('.listitem')
 			if (resultChildren.length > 0) {
 				if (event.key === 'ArrowDown') {
 					event.preventDefault()
-					if (indexNumber <= 3) {
+					if (indexNumber < (resultChildren.length - 1)) {
 						indexNumber++
 					}
-					resultChildren.forEach((result, index) => {
+					resultChildren.forEach((result: HTMLElement, index: number) => {
 						if (index === indexNumber) {
-							result.setAttribute('aria-selected', '')
+							result.setAttribute('aria-selected', 'true')
 						} else {
-							result.removeAttribute('aria-selected')
+							result.setAttribute('aria-selected', 'false')
 						}
 					})
 				} else if (event.key === 'ArrowUp') {
@@ -131,20 +130,21 @@ requestAnimationFrame(() => {
 					if (indexNumber >= 1) {
 						indexNumber--
 					}
-					resultChildren.forEach((result, index) => {
+					resultChildren.forEach((result: HTMLElement, index: number) => {
 						if (index === indexNumber) {
-							result.setAttribute('aria-selected', '')
+							result.setAttribute('aria-selected', 'true')
 						} else {
-							result.removeAttribute('aria-selected')
+							result.setAttribute('aria-selected', 'false')
 						}
 					})
 				} else if (event.key === 'Enter') {
-					resultChildren.forEach((result) => {
-						if (result.hasAttribute('aria-selected')) {
+					resultChildren.forEach((result: HTMLElement) => {
+						if (result.getAttribute('aria-selected') === 'true') {
 							result.querySelector('a')?.click()
 						}
 					})
 				} else if (event.key === 'Escape') {
+					// clears the search control and removes search results
 					searchElement.value = ''
 					searchResults.replaceChildren()
 					searchForm.classList.remove('-has-results')

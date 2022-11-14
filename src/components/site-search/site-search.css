@@ -119,7 +119,7 @@
 			cursor: pointer;
 		}
 
-		&[aria-selected] {
+		&[aria-selected="true"] {
 			/* Appearance */
 			background-color: var(--InteractiveColor);
 			color: var(--InverseColor);
@@ -168,7 +168,7 @@
 		color: currentColor;
 	}
 
-	& .listitem[aria-selected] mark {
+	& .listitem[aria-selected="true"] mark {
 		/* Appearance */
 		color: currentColor;
 	}
@@ -178,7 +178,7 @@
 		outline: none;
 	}
 
-	& .listitem[aria-selected] a {
+	& .listitem[aria-selected="true"] a {
 		/* Appearance */
 		outline: none;
 	}
@@ -188,7 +188,7 @@
 		color: var(--PlaceholderColor);
 	}
 
-	& .listitem[aria-selected] svg {
+	& .listitem[aria-selected="true"] svg {
 		/* Appearance */
 		color: currentColor;
 	}
