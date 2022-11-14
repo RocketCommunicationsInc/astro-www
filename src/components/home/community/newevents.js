@@ -9,13 +9,16 @@
 	// if the data is good -- yay!
 	if (data.kind === `calendar#events`) {
 		const communityEvents = document.querySelector('.p-community-events-content');
+		// clear events
+		communityEvents.innerHTML = '';
 		// grab what we need and stick it in an array
 		const events = data.items;
 
 		// run through the array and add events to the .p-community-events-content div
 		for (const item of events) {
 			// format the date and time properly and then desconstruct
-			const { date, time } = getTime(item.start.dateTime)
+			const { date, time } = getTime(item.start.dateTime, item.start.date)
+			console.log(item)
 
 			// set up the event for posting
 			const event = {
@@ -42,7 +45,7 @@
 					)}
 				</hgroup>
 				<span class="p-community-event-actions">
-					<a href=${event.url} target="_blank">Add to Calendar</a>
+					<a href=${event.url} target="_blank">View Details</a>
 				</span>
 			</article>`
 			)
@@ -59,9 +62,19 @@
 });
 })()
 
-function getTime(ISOdate) {
+function getTime(ISOdateTime, ISOdate) {
+	// does ISODateTime exist? If not then it is an all day event
+	if (!ISOdateTime && ISOdate) {
+		// since the date for all day events has strangeness due to timezone when converted, just reorganize the date instead
+		const dateArray = ISOdate.split('-');
+		const date = `${dateArray[1]}/${dateArray[2]}/${dateArray[0]}`
+		return {
+			date,
+			time: 'All Day!'
+		}
+	}
 	// set isoDate to something workable
-	const dateTime = new Date(ISOdate);
+	const dateTime = new Date(ISOdateTime);
 
 	// get an appropriate datestring
 	const date = dateTime.toLocaleString('en-US', {
