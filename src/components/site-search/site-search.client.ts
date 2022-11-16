@@ -111,7 +111,7 @@ requestAnimationFrame(() => {
 			})
 		})
 		let indexNumber = 0
-		const onKeydown = (event: { key: string; preventDefault: () => void }) => {
+		const onKeydown = (event: KeyboardEvent) => {
 			if (resultChildren.length > 0) {
 				if (event.key === 'ArrowDown') {
 					event.preventDefault()
