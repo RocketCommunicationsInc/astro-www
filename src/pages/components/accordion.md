@@ -5,9 +5,12 @@ theme: false
 height: 210px
 scrolling: true
 git: rux-accordion
+storybook: components-accordion--default-story
 ---
 
 # Accordion
+
+::storybook-demo
 
 An Accordion is a device which presents a hierarchical set of items in which only a single branch of that hierarchy may be exposed at one time.
 
