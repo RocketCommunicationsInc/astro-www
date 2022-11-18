@@ -52,6 +52,22 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
+			<h2>Clock</h2>
+
+			{
+				component('dark', 'clock').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="background"
+					/>
+				))
+			}
+
+			<hr />
+
 			<h2>Link</h2>
 			{
 				component('dark', 'link').map((token) => (
@@ -61,6 +77,36 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 						alias={token.referenceToken}
 						description={token.description}
 						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2>Log</h2>
+			{
+				component('dark', 'log').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2>Monitoring Icon</h2>
+			{
+				component('dark', 'monitoring-icon').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="background"
 					/>
 				))
 			}
@@ -277,6 +323,22 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
+			<h2>Clock</h2>
+
+			{
+				component('light', 'clock').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="background"
+					/>
+				))
+			}
+
+			<hr />	
+
 			<h2>Link</h2>
 			{
 				component('light', 'link').map((token) => (
@@ -286,6 +348,36 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 						alias={token.referenceToken}
 						description={token.description}
 						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2>Log</h2>
+			{
+				component('light', 'log').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2>Monitoring Icon</h2>
+			{
+				component('light', 'monitoring-icon').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="background"
 					/>
 				))
 			}
