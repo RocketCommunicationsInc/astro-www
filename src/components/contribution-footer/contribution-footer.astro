@@ -1,7 +1,7 @@
 ---
 import './contribution-footer.css'
 const { props } = Astro
-console.log(props)
+const githubURL = props.sourceurl
 
 
 ---
@@ -14,7 +14,7 @@ console.log(props)
 	</p>
 	<ul>
 		<li>
-			<a href="" target="_blank">Propose a change or fix to this page</a>
+			<a href={githubURL} target="_blank">Propose a change or fix to this page</a>
 		</li>
 		<li>
 			<a href="/community/propose-a-change/">How to propose a change</a>
