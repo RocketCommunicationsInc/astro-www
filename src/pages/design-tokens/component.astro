@@ -2,6 +2,7 @@
 import DocsLayout from 'project:layouts/docs/docs-layout.astro';
 const title = 'Component Tokens';
 import { component, lookupProperty } from 'project:utils/tokens.js';
+console.log(Astro.props)
 ---
 
 <style>
@@ -19,7 +20,7 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 	type="module"
 	src="https://unpkg.com/@astrouxds/documentation-components?module"
 ></script>
-<DocsLayout content={{ title }}>
+<DocsLayout content={{ title }} file={import.meta.url}>
 	<style>
 		sl-tab-group {
 			--indicator-color: var(--Orange700Color);

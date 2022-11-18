@@ -7,6 +7,7 @@ import './docs-layout.css'
 import compliance from 'project:data/compliance.json'
 import ComplianceAside from 'project:components/compliance/compliance-aside.astro'
 import '../../components/home/signup/home-signup.css'
+import metaData from 'project:utils/meta'
 
 const {
 	git: GitHubId,
@@ -14,6 +15,20 @@ const {
 	storybook: StorybookId,
 	title,
 } = Object(Astro.props.content)
+/* Create github link to source file */
+/** RegEx to match a slash (/) at the end ($) of a string. */
+const matchTrailingSlash = /\/$/
+
+/** Removes the trailing slash from a string. */
+const withoutTrailingSlash = (value: string) => value.replace(matchTrailingSlash, '')
+
+/* grab the source file url and then get the extension */
+const fileName = new URL(Astro.props.file, 'file:').toString()
+const fileExt = fileName.split('.')[1]
+
+/** URL to the current source for this page. */
+const githubSourceURL = `${metaData.docsRepo}/tree/${metaData.docsBranch}/src/pages${withoutTrailingSlash(Astro.url.pathname)}.${fileExt}`
+
 ---
 <script>
 import './docs-layout.client.js'
@@ -37,7 +52,7 @@ import './docs-layout.client.js'
 
 		<slot />
 		<ComplianceAside compliance={compliance} />
-		<ContributionFooter />
+		<ContributionFooter sourceurl={githubSourceURL} />
 
 	</main>
 	<SiteFooter slot="foot" />

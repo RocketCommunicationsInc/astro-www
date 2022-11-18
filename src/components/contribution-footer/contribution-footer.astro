@@ -1,15 +1,9 @@
 ---
 import './contribution-footer.css'
-import metaData from 'project:utils/meta'
+const { props } = Astro
+console.log(props)
 
-/** RegEx to match a slash (/) at the end ($) of a string. */
-const matchTrailingSlash = /\/$/
 
-/** Removes the trailing slash from a string. */
-const withoutTrailingSlash = (value: string) => value.replace(matchTrailingSlash, '')
-
-/** URL to the current source for this page. */
-const githubSourceURL = `${metaData.docsRepo}/tree/${metaData.docsBranch}/src/pages${withoutTrailingSlash(Astro.url.pathname)}.md`
 ---
 <footer id="contribution-footer" class="contribution-footer">
 	<h3 class="-heading">
@@ -20,7 +14,7 @@ const githubSourceURL = `${metaData.docsRepo}/tree/${metaData.docsBranch}/src/pa
 	</p>
 	<ul>
 		<li>
-			<a href={githubSourceURL} target="_blank">Propose a change or fix to this page</a>
+			<a href="" target="_blank">Propose a change or fix to this page</a>
 		</li>
 		<li>
 			<a href="/community/propose-a-change/">How to propose a change</a>
