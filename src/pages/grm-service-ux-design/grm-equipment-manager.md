@@ -11,7 +11,7 @@ title: GRM Equipment Manager
 :::note
 The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
 :::
-[Launch GRM Equipment Manager Sample App](https://grm-equipment.astrouxds.com/) | [Design Materials and Source Code](#contentBottom)
+[Launch GRM Equipment Manager Sample App](https://grm-equipment.astrouxds.com/) | [Design Materials and Source Code](/grm-service-ux-design/grm-equipment-manager/#design-materials-and-source-code)
 
 A core requirement of GRM is to ensure that the equipment on the ground responsible for communicating with satellites is operational and available. This equipment includes hardware such as antennas, processors and software systems that all must interact with one another during a satellite contact. These resources are often shared amongst multiple operations, so if a piece of equipment is not available, it can affect multiple missions. As such, it is critical for operators to quickly identify equipment in need of attention and schedule maintenance to get it back up and running as quickly as possible.
 
@@ -78,7 +78,7 @@ There are two panels on the Equipment Details page, one on top designed to provi
 
 A key capability of the Maintenance panel is that it allows operators to schedule a new job. When Schedule Job is clicked, Maintenance Details appear and operators can enter all required information. Once a time frame for the job has been entered, clicking the Calculate Conflicts button will display any schedule conflicts that will arise when this equipment is unavailable during the maintenance window. Seeing this information allows operators to either schedule the maintenance to minimize impact or to see the contacts that will have to be modified to use a different piece of equipment during that period.
 
-Note that maintenance-related task flows are covered in much more detail in the [GRM Design Specification and Wireframes](/grm-service-ux-design/grm-equipment-manager#contentBottom) documents, so be sure to consult those for more information.
+Note that maintenance-related task flows are covered in much more detail in the [GRM Design Specification and Wireframes](/grm-service-ux-design/grm-equipment-manager/#design-materials-and-source-code) documents, so be sure to consult those for more information.
 
 ![GRM Equipment Manager Schedule Jobs Details](/img/service-specific-ux-design/grm-equipment-manager-sched-maint-details.png)
 
@@ -111,7 +111,7 @@ Below are design and development resources to get you started on an app that sup
 
 :::table-overflow
 | Resources                                                                                                                                       | Description                                                                                                                                                |
-| ----------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|-------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [GRM Design Specifications (pdf)](http://com.rocketcom.astrouxds.s3.amazonaws.com/attachments/cjx3r384i2gbihmqnxcwrq25d-grm-specifications.pdf) | The GRM Design Specification contains information on use cases, task flows, UX research and wireframes for key features of the GRM App Suite.              |
 | [GRM Design Wireframes (pdf)](http://com.rocketcom.astrouxds.s3.amazonaws.com/attachments/cjtsx349t073s4iqnxbejjwg6-grm-wireframes.pdf)         | The GRM Design Wireframes document contains the complete set of wireframes (mid-fidelity renderings) of the screens designed for the GRM App Suite.        |
 | [App Source Code (Git Repository)](https://bitbucket.org/rocketcom/grm-sample-apps-equipment/src/master/)                                       | The source code Git repository and other useful documentation for the GRM Dashboard App is hosted at bitbucket.org so that you can check it out in detail. |
