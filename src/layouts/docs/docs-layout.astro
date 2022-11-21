@@ -24,7 +24,7 @@ const withoutTrailingSlash = (value: string) => value.replace(matchTrailingSlash
 
 /* grab the source file url and then get the extension */
 const fileName = new URL(Astro.props.file, 'file:').toString()
-const fileExt = fileName.split('.')[1]
+const fileExt = fileName.split('.').at(-1)
 
 /** URL to the current source for this page. */
 const githubSourceURL = `${metaData.docsRepo}/tree/${metaData.docsBranch}/src/pages${withoutTrailingSlash(Astro.url.pathname)}.${fileExt}`
