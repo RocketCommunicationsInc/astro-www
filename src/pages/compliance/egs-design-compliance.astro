@@ -4,6 +4,6 @@ import DocsLayout from 'project:layouts/docs/docs-layout.astro'
 import Compliance from 'project:components/compliance/compliance.astro'
 const title = 'EGS Design Compliance'
 ---
-<DocsLayout content={{ title }}>
+<DocsLayout content={{ title }} file={import.meta.url}>
 	<Compliance title={title} compliance={compliance} />
 </DocsLayout>
