@@ -3,7 +3,7 @@ import DocsLayout from 'project:layouts/docs/docs-layout.astro';
 const title = 'Getting Started';
 ---
 
-<DocsLayout content={{ title }}>
+<DocsLayout content={{ title }} file={import.meta.url}>
 	<style>
 		.font-bold {
 			font-weight: bold;
