@@ -19,56 +19,6 @@
 						{
 							"heading": {
 								"type": "text",
-								"data": "Astro UX Working Group"
-							},
-							"subheading": {
-								"type": "text",
-								"data": "Request an invite by email: support@astrouxds.com"
-							},
-							"date": {
-								"type": "text",
-								"data": "11/21/2022"
-							},
-							"time": {
-								"type": "text",
-								"data": "11:00 AM PST"
-							},
-							"action": {
-								"type": "link",
-								"data": {
-									"url": "mailto:support@astrouxds.com",
-									"description": "Join the Group"
-								}
-							}
-						},
-						{
-							"heading": {
-								"type": "text",
-								"data": "Astro Office Hours"
-							},
-							"subheading": {
-								"type": "text",
-								"data": "Colorado Springs"
-							},
-							"date": {
-								"type": "text",
-								"data": "11/23/2022"
-							},
-							"time": {
-								"type": "text",
-								"data": "7:00 AM PST"
-							},
-							"action": {
-								"type": "link",
-								"data": {
-									"url": "mailto:dnutter@rocketcom.com",
-									"description": "Contact Us"
-								}
-							}
-						},
-						{
-							"heading": {
-								"type": "text",
 								"data": "Astro Office Hours"
 							},
 							"subheading": {
@@ -153,6 +103,55 @@
 							"date": {
 								"type": "text",
 								"data": "12/14/2022"
+							},
+							"time": {
+								"type": "text",
+								"data": "7:00 AM PST"
+							},
+							"action": {
+								"type": "link",
+								"data": {
+									"url": "mailto:dnutter@rocketcom.com",
+									"description": "Contact Us"
+								}
+							}
+						},{
+							"heading": {
+								"type": "text",
+								"data": "Astro UX Working Group"
+							},
+							"subheading": {
+								"type": "text",
+								"data": "Request an invite by email: support@astrouxds.com"
+							},
+							"date": {
+								"type": "text",
+								"data": "12/19/2022"
+							},
+							"time": {
+								"type": "text",
+								"data": "11:00 AM PST"
+							},
+							"action": {
+								"type": "link",
+								"data": {
+									"url": "mailto:support@astrouxds.com",
+									"description": "Join the Group"
+								}
+							}
+						},
+						{
+							"heading": {
+								"type": "text",
+								"data": "Astro Office Hours"
+							},
+							"subheading": {
+								"type": "text",
+								"data": "Colorado Springs"
+							},
+							"date": {
+								"type": "text",
+								"data": "12/21/2022"
 							},
 							"time": {
 								"type": "text",
