@@ -24,7 +24,7 @@ Events of least urgency may be added to a [Log](/components/log). Logged events 
 
 Events that require some user attention, but no immediate response, may be indicated by changes to a [Notification Symbol](/components/icons-and-symbols).
 
-This Notification Symbol shows that five events related to a satellite have occurred. You may hyperlink icons to reveal a deeper view of relevant Notification information. You may also link to the general Log.
+This Notification Symbol shows that one event related to a satellite has occurred. You may hyperlink icons to reveal a deeper view of relevant Notification information. You may also link to the general Log.
 
 ![Notification symbols example.](/img/patterns/notification-symbols.png)
 
