@@ -19,7 +19,7 @@ Each of these must be easily identifiable by users and also be immediately disti
 Astro’s icons have been designed to utilize the Astro Status System.
 
 :::note
-Monitoring Icons must include a label, a title attribute in the HTML and a status indicator. When used in a light theme status indicators must also include a 1 pixel border around the status indicator set to rgba(0,0,0,0.5)
+Monitoring Icons must include a label, and a status indicator. When used in a light theme status indicators must also include a 1 pixel border around the status indicator set to rgba(0,0,0,0.5)
 :::
 
 ## Astro Icon Classes
