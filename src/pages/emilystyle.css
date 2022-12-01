@@ -1,0 +1,73 @@
+.font-test :where(h1, h2, h3, h4) {
+	font-weight: 400;
+	color: #000000;
+}
+
+.font-test :where(h1) {
+	font-size: 64px;
+	font-weight: 300;
+	line-height: 70px;
+	border-block-end: 0;
+}
+
+.font-test :where(h2) {
+	font-size: 36px;
+	line-height: 40px;
+}
+
+.font-test :where(h3) {
+	font-size: 24px;
+	line-height: 28px;
+}
+
+.font-test :where(h4) {
+	font-size: 20px;
+	line-height: 24px;
+}
+
+.font-test :where(p) {
+	font-size: 16px;
+	line-height: 24px;
+	color: #000000;
+}
+
+.header {
+	background: #eceff6;
+	padding: 2rem 4rem;
+	margin-block-end: 4rem;
+	display: flex;
+	flex-direction: column;
+	align-content: flex-end;
+	color: #071943;
+	position: relative;
+
+	& h1 {
+		margin: 0;
+		padding: 0;
+		margin-block-end: 20px;
+	}
+
+	& h4 {
+		padding: 0;
+		margin: 0;
+		font-weight: 300;
+	}
+
+	&::after {
+		position: absolute;
+		height: 100%;
+		width: 9999rem;
+		background: #eceff6;
+		content: " ";
+		inset-block-start: 0;
+		inset-inline-start: 100%;
+	}
+}
+
+.content, #contribution-footer {
+	padding-inline-start: 4rem;
+}
+
+.p-content {
+	padding-inline-start: 0;
+}
