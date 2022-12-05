@@ -118,6 +118,13 @@
 			color: var(--InverseColor);
 			cursor: pointer;
 		}
+
+		&[aria-selected="true"] {
+			/* Appearance */
+			background-color: var(--InteractiveColor);
+			color: var(--InverseColor);
+			cursor: pointer;
+		}
 	}
 
 	& .search-result-icon {
@@ -161,7 +168,17 @@
 		color: currentColor;
 	}
 
+	& .listitem[aria-selected="true"] mark {
+		/* Appearance */
+		color: currentColor;
+	}
+
 	& .listitem:is(:hover, :focus-within) a {
+		/* Appearance */
+		outline: none;
+	}
+
+	& .listitem[aria-selected="true"] a {
 		/* Appearance */
 		outline: none;
 	}
@@ -169,5 +186,10 @@
 	& .listitem:not(:hover, :focus-within) svg {
 		/* Appearance */
 		color: var(--PlaceholderColor);
+	}
+
+	& .listitem[aria-selected="true"] svg {
+		/* Appearance */
+		color: currentColor;
 	}
 }
