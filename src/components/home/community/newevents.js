@@ -2,10 +2,11 @@
 	// get todays date and convert it to ISO so we only get events that happen today or after
 	const startDate = new Date().toISOString();
 
-    const url = `https://www.googleapis.com/calendar/v3/calendars/c_d7181fa819c105073271d10fa14adc7f49a563dd2b543df21f84b92bc53f5bdc@group.calendar.google.com/events?maxResults=6&orderBy=startTime&singleEvents=true&timeMin=${startDate}&key=AIzaSyCv0VW46P7doaxrHdQo4DGD_ydxKDDkKdA`
+    const url = `https://www.googleapis.com/calendar/v3/calendars/c_c00bcad50f7ad0acd24c335ddf65e16efd7538c0dd57be307b40c1677feb2637@group.calendar.google.com/events?maxResults=6&orderBy=startTime&singleEvents=true&timeMin=${startDate}&key=AIzaSyCv0VW46P7doaxrHdQo4DGD_ydxKDDkKdA`
 	fetch(url) // api for the get request
   .then(response => response.json())
   .then((data) => {
+	console.log(data)
 	// if the data is good -- yay!
 	if (data.kind === `calendar#events`) {
 		const communityEvents = document.querySelector('.p-community-events-content');
@@ -18,14 +19,13 @@
 		for (const item of events) {
 			// format the date and time properly and then desconstruct
 			const { date, time } = getTime(item.start.dateTime, item.start.date)
-			console.log(item)
 
 			// set up the event for posting
 			const event = {
 				date,
 				time,
 				title: item.summary,
-				subTitle: item.description,
+				subTitle: item.location,
 				url: item.htmlLink,
 			}
 
