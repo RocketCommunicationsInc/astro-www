@@ -115,7 +115,8 @@
 									"description": "Contact Us"
 								}
 							}
-						},{
+						},
+						{
 							"heading": {
 								"type": "text",
 								"data": "Astro UX Working Group"
@@ -198,8 +199,8 @@
 								"data": "Get the ASTRO UXDS code repository, getting started instructions, and join in the conversations happening on our ASTRO Discussions board."
 							},
 							"website": {
-								"type":"link",
-								"data":{
+								"type": "link",
+								"data": {
 									"url": "https://github.com/RocketCommunicationsInc/astro",
 									"description": "Astro Github"
 								}
@@ -224,8 +225,8 @@
 								"data": "The Astro UXDS design files can help you build rich space app experiences and custom applications with established interaction patterns & best practices."
 							},
 							"website": {
-								"type":"link",
-								"data":{
+								"type": "link",
+								"data": {
 									"url": "https://www.figma.com/@astrouxds",
 									"description": "Astro Figma"
 								}
@@ -250,8 +251,8 @@
 								"data": "Sign up to gain access to our external ASTRO Slack Channel and stay up to date on all things ASTRO."
 							},
 							"website": {
-								"type":"link",
-								"data":{
+								"type": "link",
+								"data": {
 									"url": "https://forms.gle/NiSV47SbJFb8kAWdA",
 									"description": "Join Astro on Slack"
 								}
