@@ -1,10 +1,14 @@
-const key = import.meta.env.PUBLIC_GCAL_KEY;
+const comData = await fetch('./src/data/home-community.json')
+.then(response => {
+   return response.json();
+});
+console.log(comData);
 
 (() => {
 	// get todays date and convert it to ISO so we only get events that happen today or after
 	const startDate = new Date().toISOString();
 
-    const url = `https://www.googleapis.com/calendar/v3/calendars/c_c00bcad50f7ad0acd24c335ddf65e16efd7538c0dd57be307b40c1677feb2637@group.calendar.google.com/events?maxResults=6&orderBy=startTime&singleEvents=true&timeMin=${startDate}&key=${key}`
+    const url = `https://www.googleapis.com/calendar/v3/calendars/c_c00bcad50f7ad0acd24c335ddf65e16efd7538c0dd57be307b40c1677feb2637@group.calendar.google.com/events?maxResults=6&orderBy=startTime&singleEvents=true&timeMin=${startDate}&key=${comData.data.key.data}`
 	fetch(url) // api for the get request
   .then(response => response.json())
   .then((data) => {

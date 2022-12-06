@@ -169,6 +169,10 @@
 				}
 			}
 		},
+		"key":{
+			"type":"text",
+			"data":"AIzaSyDDR9nPrJn5F2oX9qw5uCpY4swStcV18rA"
+		},
 		"links": {
 			"type": "object",
 			"data": {
