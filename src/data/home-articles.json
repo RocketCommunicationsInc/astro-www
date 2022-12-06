@@ -8,11 +8,11 @@
 		},
 		"mainlink": {
 			"type": "link",
-			"data": {					
-					"url": "https://medium.com/astrouxds",
-					"description": "View all articles"
-				}
-			},
+			"data": {
+				"url": "https://medium.com/astrouxds",
+				"description": "View all articles"
+			}
+		},
 		"content": {
 			"type": "objects",
 			"data": [
