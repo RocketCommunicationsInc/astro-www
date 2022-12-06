@@ -13,6 +13,10 @@
 					"type": "text",
 					"data": "Upcoming Events"
 				},
+				"key":{
+					"type":"text",
+					"data":"AIzaSyCv0VW46P7doaxrHdQo4DGD_ydxKDDkKdA"
+				},
 				"content": {
 					"type": "objects",
 					"data": [
@@ -168,10 +172,6 @@
 					]
 				}
 			}
-		},
-		"key":{
-			"type":"text",
-			"data":"AIzaSyDDR9nPrJn5F2oX9qw5uCpY4swStcV18rA"
 		},
 		"links": {
 			"type": "object",
