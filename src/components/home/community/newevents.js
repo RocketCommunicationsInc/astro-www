@@ -1,97 +1,136 @@
-const key = 'AIzaSyCv0VW46P7doaxrHdQo4DGD_ydxKDDkKdA';
-(() => {
-	// get todays date and convert it to ISO so we only get events that happen today or after
-	const startDate = new Date().toISOString();
+import { h } from 'project:utils/html.ts'
 
-    const url = `https://www.googleapis.com/calendar/v3/calendars/c_c00bcad50f7ad0acd24c335ddf65e16efd7538c0dd57be307b40c1677feb2637@group.calendar.google.com/events?maxResults=6&orderBy=startTime&singleEvents=true&timeMin=${startDate}&key=${key}`
-	fetch(url) // api for the get request
-  .then(response => response.json())
-  .then((data) => {
-	// if the data is good -- make sure its the right kind
-	if (data.kind === `calendar#events`) {
-		const communityEvents = document.querySelector('.p-community-events-content');
-		// clear events
-		communityEvents.innerHTML = '';
-		// grab what we need and stick it in an array
-		const events = data.items;
+/** Returns a string, empty if the value is nullish. */
+const toString = (value) => value == null ? '' : String(value)
 
-		// run through the array and add events to the .p-community-events-content div
-		for (const item of events) {
-			// format the date and time properly and then desconstruct
-			const { date, time } = getTime(item.start.dateTime, item.start.date)
+/** Google Calendar API. */
+const fetchGoogleCalendarEventsURL = 'https://www.googleapis.com/calendar/v3/calendars/c_c00bcad50f7ad0acd24c335ddf65e16efd7538c0dd57be307b40c1677feb2637@group.calendar.google.com/events'
 
-			// set up the event for posting
-			const event = {
-				date,
-				time,
-				title: item.summary,
-				subTitle: item.location,
-				url: item.htmlLink,
-			}
+/** Returns a list of fetched Google Calendar Events. */
+const fetchGoogleCalendarEvents = async () => {
+	/** Search Parameters attached to the Request URL */
+	const searchParams = new URLSearchParams({
+		key: 'AIzaSyCv0VW46P7doaxrHdQo4DGD_ydxKDDkKdA',
+		maxResults: '6',
+		orderBy: 'startTime',
+		singleEvents: 'true',
+		startDate: new Date().toISOString(),
+	})
 
-			// add the event to community events list
-			communityEvents.innerHTML += (
-`			<article class="p-community-event">
-				<small class="p-community-event-date">
-					<span class="-date">${event.date}</span>
-					${event.time && (
-						`<span class="-time">${event.time}</span>`
-					)}
-				</small>
-				<hgroup class="p-community-event-heading">
-					<h5>${event.title}</h5>
-					${event.subTitle && (
-						`<small class="p-community-event-subheading">${event.subTitle}</small>`
-					)}
-				</hgroup>
-				<span class="p-community-event-actions">
-					<a href=${event.url} target="_blank">View Details</a>
-				</span>
-			</article>`
-			)
-		}
-	} else
-	// if there's an error
-	if (data.error) {
-		// do some stuff in here.. for now just make it log it
-		console.log(data.error.code, data.error.message)
-	} else {
-		// something else happened?
-		console.log(data, 'Something has gone horribly wrong!')
-	}
-});
-})()
+	/** Request URL */
+	const request = fetchGoogleCalendarEventsURL + '?' + searchParams
 
-function getTime(ISOdateTime, ISOdate) {
-	// does ISODateTime exist? If not then it is an all day event
-	if (!ISOdateTime && ISOdate) {
-		// since the date for all day events has strangeness due to timezone when converted, just reorganize the date instead
-		const dateArray = ISOdate.split('-');
-		const date = `${dateArray[1]}/${dateArray[2]}/${dateArray[0]}`
-		return {
-			date,
-			time: 'All Day!'
-		}
-	}
-	// set isoDate to something workable
-	const dateTime = new Date(ISOdateTime);
+	/** Response from the Google Calendar API. */
+	const response = await fetch(request, { cache: 'force-cache' })
 
-	// get an appropriate datestring
-	const date = dateTime.toLocaleString('en-US', {
-		day: '2-digit',
-		month: '2-digit',
-		year: 'numeric',
-		});
-		// create an appropriate time string
-		const time = dateTime.toLocaleString('en-US', {
-		timeZone: 'PST',
-		hour: 'numeric',
-		minute: '2-digit',
-		timeZoneName: 'short'
-		});
+	/** @type {{ kind: string, items: CalendarEvent[] }} */
+	const { kind, items } = await response.json()
 
-	return {
-		date,
-		time,
-	}
+	// return an empty array if the response is not calendar events
+	if (kind !== 'calendar#events' || !items) return []
+
+	return items
 }
+
+/** Returns a DOM fragment representing a Google Calendar event. */
+const createCalendarEventFragment = (
+	/** @type {CalendarEvent} */
+	event
+) => withCalendarInteractiveBehavior(h(`<article class="p-community-event" id="${event.id}">
+	<small class="p-community-event-date">
+		<span class="-date">${
+			new Date(event.start.date || event.start.dateTime).toLocaleString('en-US', {
+				day: '2-digit',
+				month: '2-digit',
+				year: 'numeric',
+			})
+		}</span>
+		${
+			event.start.dateTime
+				? `<span class="-time">${
+					new Date(event.start.dateTime).toLocaleString('en-US', {
+						hour: 'numeric',
+						minute: '2-digit',
+						timeZoneName: 'short'
+					})
+			}</span>`
+			: toString(event.start.date && `<span class="-time">All Day!</span>`)
+		}
+	</small>
+	<hgroup class="p-community-event-heading">
+		<h5>${event.summary}</h5>
+		${toString(event.location && `<small class="p-community-event-subheading">${event.location}</small>`)}
+	</hgroup>
+	<span class="p-community-event-actions">
+		<button>View Details</button>
+	</span>
+	${toString(event.description && `<span class="p-community-event-details --closed">${
+		event.description
+	}</span>`)}
+</article>`))
+
+/** Prepares a DOM fragment representing a Google Calendar event for interactive behavior. */
+const withCalendarInteractiveBehavior = (/** @type {HTMLElement} */ calendarEventFragment) => {
+	/** Calendar Events Details Element. */
+	const detailsElement = /** @type {HTMLElement} */ (calendarEventFragment.querySelector('.p-community-event-details'))
+
+	// skip if there is no details element
+	if (!detailsElement) return calendarEventFragment
+
+	/** Button toggling the appearance of the Calendar Events Details Element. */
+	const actionsElement = /** @type {HTMLElement} */ (calendarEventFragment.querySelector('.p-community-event-actions button'))
+
+	// handle toggle events on the button
+	actionsElement.addEventListener('click', event => {
+		detailsElement.style.setProperty('--content-height', detailsElement.scrollHeight + 'px')
+
+		detailsElement.classList.toggle('--closed')
+		detailsElement.classList.toggle('--open')
+	})
+
+	return calendarEventFragment
+}
+
+/** Returns a DOM Fragment representing a list of Google Calendar events. */
+const createCalendarEventFragments = (
+	/** @type {CalendarEvent[]} */
+	calendarEvents
+) => {
+	/** DOM Fragment containing all Google Calendar events. */
+	const eventsFragment = new DocumentFragment()
+
+	// append each calendar event to the fragment
+	for (const calendarEvent of calendarEvents) {
+		eventsFragment.append(
+			createCalendarEventFragment(calendarEvent)
+		)
+	}
+
+	return eventsFragment
+}
+
+/** Replaces the contents of the calendar container with Google Calendar Events. */
+const updateCalendarContainer = async () => {
+	/** Google Calendar Events Container. */
+	const eventsElement = document.querySelector('.p-community-events-content')
+
+	// do nothing if the event contents could not be found
+	if (!eventsElement) return
+
+	/** Google Calendar Events. */
+	const events = await fetchGoogleCalendarEvents()
+
+	/** DOM Fragment representing the Google Calendar Events. */
+	const eventsFragment = createCalendarEventFragments(events)
+
+	// replace the contents of the Google Calendar Events Container with the DOM Fragment
+	eventsElement.replaceChildren(eventsFragment)
+}
+
+// immediately update the calendar container
+updateCalendarContainer()
+
+/** @typedef {{ email: string, displayName: string, self: boolean }} EventOrganizer */
+/** @typedef {{ email: string }} EventCreator */
+/** @typedef {{ date: string, dateTime: string, timeZone: string }} EventTime */
+/** @typedef {{ kind: string, etag: string, id: string, status: string, htmlLink: string, created: string, updated: string, summary: string, description: string, location: string, creator: EventCreator, organizer: EventOrganizer, start: EventTime, end: EventTime, recurringEventId: string, originalStartTime?: EventTime, iCalUID: string, sequence: number, guestsCanInviteOthers: boolean, guestsCanSeeOtherGuests: boolean, eventType: string }} CalendarEvent */
