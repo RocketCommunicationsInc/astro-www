@@ -10,7 +10,7 @@ const fetchGoogleCalendarEventsURL = 'https://www.googleapis.com/calendar/v3/cal
 const fetchGoogleCalendarEvents = async () => {
 	/** Search Parameters attached to the Request URL */
 	const searchParams = new URLSearchParams({
-		key: 'AIzaSyCv0VW46P7doaxrHdQo4DGD_ydxKDDkKdA',
+		key: 'AIzaSyDDR9nPrJn5F2oX9qw5uCpY4swStcV18rA',
 		maxResults: '6',
 		orderBy: 'startTime',
 		singleEvents: 'true',
@@ -36,7 +36,7 @@ const fetchGoogleCalendarEvents = async () => {
 const createCalendarEventFragment = (
 	/** @type {CalendarEvent} */
 	event
-) => withCalendarInteractiveBehavior(h(`<article class="p-community-event" id="${event.id}">
+) => withCalendarInteractiveBehavior(h(`<article class="p-community-event --closed">
 	<small class="p-community-event-date">
 		<span class="-date">${
 			new Date(event.start.date || event.start.dateTime).toLocaleString('en-US', {
@@ -64,7 +64,7 @@ const createCalendarEventFragment = (
 	<span class="p-community-event-actions">
 		<button>View Details</button>
 	</span>
-	${toString(event.description && `<span class="p-community-event-details --closed">${
+	${toString(event.description && `<span class="p-community-event-details">${
 		event.description
 	}</span>`)}
 </article>`))
@@ -73,6 +73,8 @@ const createCalendarEventFragment = (
 const withCalendarInteractiveBehavior = (/** @type {HTMLElement} */ calendarEventFragment) => {
 	/** Calendar Events Details Element. */
 	const detailsElement = /** @type {HTMLElement} */ (calendarEventFragment.querySelector('.p-community-event-details'))
+	const articleElement = /** @type {HTMLElement} */ (calendarEventFragment)
+	console.log(articleElement)
 
 	// skip if there is no details element
 	if (!detailsElement) return calendarEventFragment
@@ -84,8 +86,10 @@ const withCalendarInteractiveBehavior = (/** @type {HTMLElement} */ calendarEven
 	actionsElement.addEventListener('click', event => {
 		detailsElement.style.setProperty('--content-height', detailsElement.scrollHeight + 'px')
 
-		detailsElement.classList.toggle('--closed')
-		detailsElement.classList.toggle('--open')
+		articleElement.classList.toggle('--closed')
+		articleElement.classList.toggle('--open')
+
+		articleElement.classList.contains('--open') ? actionsElement.textContent = 'Hide Details' : actionsElement.textContent = 'View Details'
 	})
 
 	return calendarEventFragment
