@@ -127,7 +127,7 @@ const updateCalendarContainer = async () => {
 	const eventsFragment = createCalendarEventFragments(events)
 
 	// replace the contents of the Google Calendar Events Container with the DOM Fragment if the calendar returned events
-	eventsElement.replaceChildren(eventsFragment)
+	if (events.length !== 0) eventsElement.replaceChildren(eventsFragment)
 }
 
 // immediately update the calendar container
