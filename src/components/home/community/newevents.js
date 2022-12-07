@@ -74,7 +74,6 @@ const withCalendarInteractiveBehavior = (/** @type {HTMLElement} */ calendarEven
 	/** Calendar Events Details Element. */
 	const detailsElement = /** @type {HTMLElement} */ (calendarEventFragment.querySelector('.p-community-event-details'))
 	const articleElement = /** @type {HTMLElement} */ (calendarEventFragment)
-	console.log(articleElement)
 
 	// skip if there is no details element
 	if (!detailsElement) return calendarEventFragment
@@ -127,8 +126,8 @@ const updateCalendarContainer = async () => {
 	/** DOM Fragment representing the Google Calendar Events. */
 	const eventsFragment = createCalendarEventFragments(events)
 
-	// replace the contents of the Google Calendar Events Container with the DOM Fragment
-	eventsElement.replaceChildren(eventsFragment)
+	// replace the contents of the Google Calendar Events Container with the DOM Fragment if the calendar returned events
+	if (events.length !== 0) eventsElement.replaceChildren(eventsFragment)
 }
 
 // immediately update the calendar container

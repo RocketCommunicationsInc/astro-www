@@ -127,6 +127,10 @@
 	line-height: 24--rpx;
 }
 
+.p-community-event-subheading a {
+	color: var(--Orange600Color);
+}
+
 .p-community-event-date {
 	& .-time {
 		display: block;
