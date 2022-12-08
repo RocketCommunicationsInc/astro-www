@@ -1,4 +1,4 @@
-import * as DOMPurify from 'isomorphic-dompurify'
+import DOMPurify from 'isomorphic-dompurify'
 
 export class Sanitizer {
 	constructor(config?: Partial<SanitizerConfig>) {

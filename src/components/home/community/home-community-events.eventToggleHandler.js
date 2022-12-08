@@ -1,18 +1,17 @@
 /** Prepares a DOM fragment representing a Google Calendar event for interactive behavior. */
-// @ts-ignore
 {
 	const scriptEl = document.currentScript
 
 	/** Calendar Event Element. */
-	const eventElement = scriptEl!.previousSibling as HTMLElement
+	const eventElement = scriptEl.previousSibling
 
 	eventElement.classList.add('--closed')
 
 	/** Calendar Events Details Element. */
-	const eventDetailsElement = eventElement.querySelector('.p-community-event-details') as HTMLElement
+	const eventDetailsElement = eventElement.querySelector('.p-community-event-details')
 
 	/** Button toggling the appearance of the Calendar Events Details Element. */
-	const eventDetailsToggle = eventElement.querySelector('.p-community-event-actions button') as HTMLElement
+	const eventDetailsToggle = eventElement.querySelector('.p-community-event-actions button')
 
 	// handle toggle events
 	eventDetailsToggle.addEventListener('click', event => {
