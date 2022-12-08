@@ -1,32 +1,59 @@
 ---
+import { Sanitizer } from 'project:utils/sanitizer.js'
+import { For, When } from '@astropub/flow';
+import { fetchGoogleCalendarEvents } from './home-community-events.constants.js'
+import eventToggleHandler from './home-community-events.eventToggleHandler.js?url'
 
+/** Google Calendar Events. */
+const calendarEvents = await fetchGoogleCalendarEvents()
+
+const sanitizer = new Sanitizer()
 ---
 <section class="p-community-events">
 	<h4>Upcoming Events</h4>
 	<div class="p-community-events-content">
-		<article class="p-community-event --closed">
-			<small class="p-community-event-date">
-				<span class="-date">Every Other Monday</span>
-				<span class="-time">11AM PST</span>
-			</small>
-			<hgroup class="p-community-event-heading">
-				<h5>Astro UX Working Group</h5>
-				<small class="p-community-event-subheading">Request an invite by email: <a href="mailto:support@astrouxds.com">support@astrouxds.com</a></small>
-			</hgroup>
-			<span class="p-community-event-actions"></span>
-		</article>
-
-		<article class="p-community-event --closed">
-			<small class="p-community-event-date">
-				<span class="-date">Wednesdays</span>
-				<span class="-time">7:30 AM PST</span>
-			</small>
-			<hgroup class="p-community-event-heading">
-				<h5>Astro Office Hours</h5>
-				<small class="p-community-event-subheading"><a href="mailto:dnutter@rocketcom.com">Email the organizer</a> for more information</small>
-			</hgroup>
-			<span class="p-community-event-actions"></span>
-		</article>
+		<For of={calendarEvents}>{calendarEvent => (
+			<article class="p-community-event">
+				<small class="p-community-event-date">
+					<span class="-date">{
+						new Date(calendarEvent.start.date || calendarEvent.start.dateTime).toLocaleString('en-US', {
+							day: '2-digit',
+							month: '2-digit',
+							year: 'numeric',
+						})
+					}</span>
+					{
+						calendarEvent.start.dateTime
+							? (
+								<span class="-time">{
+									new Date(calendarEvent.start.dateTime).toLocaleString('en-US', {
+										hour: 'numeric',
+										minute: '2-digit',
+										timeZoneName: 'short'
+									})
+								}</span>
+							)
+						: calendarEvent.start.date
+							? <span class="-time">All Day!</span>
+						: <Fragment />
+					}
+				</small>
+				<hgroup class="p-community-event-heading">
+					<h5>{calendarEvent.summary}</h5>
+					<When {calendarEvent.location}>
+						<small class="p-community-event-subheading">{calendarEvent.location}</small>
+					</When>
+				</hgroup>
+				<span class="p-community-event-actions">
+					<button>View Details</button>
+				</span>
+				{
+					calendarEvent.description
+						? <span class="p-community-event-details" set:html={sanitizer.sanitizeFor('div', calendarEvent.description)} />
+					: <Fragment />
+				}
+			</article><script src={eventToggleHandler} defer />
+		)}</For>
 
 		<a href="https://calendar.google.com/calendar/u/0?cid=Y19jMDBiY2FkNTBmN2FkMGFjZDI0YzMzNWRkZjY1ZTE2ZWZkNzUzOGMwZGQ1N2JlMzA3YjQwYzE2NzdmZWIyNjM3QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20" class="p-signup-form-submit" target="_blank">View Full Calendar</a>
 	</div>

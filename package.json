@@ -26,6 +26,7 @@
 		"eslint": "8.23.0",
 		"eslint-config-dev": "3.1.0",
 		"eslint-plugin-astro": "0.18.0",
+		"isomorphic-dompurify": "0.24.0",
 		"parse-yaml": "0.1.0",
 		"postcss-preset-env": "7.8.1",
 		"remark-directive": "2.0.1",
