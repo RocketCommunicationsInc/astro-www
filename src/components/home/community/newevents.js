@@ -13,8 +13,8 @@ const fetchGoogleCalendarEvents = async () => {
 		key: 'AIzaSyDDR9nPrJn5F2oX9qw5uCpY4swStcV18rA',
 		maxResults: '6',
 		orderBy: 'startTime',
-		singleEvents: 'true',
-		startDate: new Date().toISOString(),
+		singleEvents: true,
+		timeMin: new Date().toISOString(),
 	})
 
 	/** Request URL */
