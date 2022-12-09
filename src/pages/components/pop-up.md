@@ -40,11 +40,11 @@ All interactable items (e.g. menu items, links, buttons, checkboxes) appearing w
 :::two-col
 ![Do: Position Pop Ups to avoid obscuring vital screen elements like classification banners](/img/components/popup-do-1.png "Do: Position Pop Ups to avoid obscuring vital screen elements like classification banners")
 
-![Don’t: Cover vital screen elements like classification markings](/img/components/popup-dont-1.png "Cover vital screen elements like classification markings")
+![Don’t: Cover vital screen elements like classification markings](/img/components/popup-dont-1.png "Don't: Cover vital screen elements like classification markings")
 
-![Do: Position a Pop Up so it stays within the edges of the frame](/img/components/popup-do-2.png "Position a Pop Up so it stays within the edges of the frame")
+![Do: Position a Pop Up so it stays within the edges of the frame](/img/components/popup-do-2.png "Do: Position a Pop Up so it stays within the edges of the frame")
 
-![Don’t:Position Pop Up so it exceeds the limits of the frame](/img/components/popup-dont-2.png "Don’t: Position Pop Up so it exceeds the limits of the frame")
+![Don’t: Position Pop Up so it exceeds the limits of the frame](/img/components/popup-dont-2.png "Don’t: Position Pop Up so it exceeds the limits of the frame")
 
 ![Do: Originate Pop Up from obvious, interactable triggers](/img/components/popup-do-3.png "Do: Originate Pop Up from obvious, interactable triggers")
 
