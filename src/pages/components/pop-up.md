@@ -73,5 +73,5 @@ While rules governing the Pop Up Menu appearance and behavior generally mirror t
 :::two-col
 ![Do: Use ellipses to indicate when further action will be required for that item](/img/components/popup-do-4.png "Do: Use ellipses to indicate when further action will be required for that item")
 
-![Don’t: Use long menu item names that cause the the text to wrap](/img/components/popup-dont-4.png "Use long menu item names that cause the the text to wrap")
+![Don’t: Use long menu item names that cause the the text to wrap](/img/components/popup-dont-4.png "Don't: Use long menu item names that cause the the text to wrap")
 :::
