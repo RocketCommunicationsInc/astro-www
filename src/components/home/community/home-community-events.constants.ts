@@ -10,7 +10,7 @@ export const fetchGoogleCalendarEvents = async () => {
 		maxResults: '6',
 		orderBy: 'startTime',
 		singleEvents: 'true',
-		minTime: new Date().toISOString(),
+		timeMin: new Date().toISOString(),
 	})
 
 	/** Request URL */
