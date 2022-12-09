@@ -1,6 +1,6 @@
 export const googleCalendarEventsApiUrl = 'https://www.googleapis.com/calendar/v3/calendars/c_c00bcad50f7ad0acd24c335ddf65e16efd7538c0dd57be307b40c1677feb2637@group.calendar.google.com/events'
 
-export const googleCalendarEventsApiKey = 'AIzaSyDDR9nPrJn5F2oX9qw5uCpY4swStcV18rA'
+export const googleCalendarEventsApiKey = 'AIzaSyCv0VW46P7doaxrHdQo4DGD_ydxKDDkKdA'
 
 /** Returns a list of fetched Google Calendar Events. */
 export const fetchGoogleCalendarEvents = async () => {

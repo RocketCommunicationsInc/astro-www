@@ -197,6 +197,7 @@
 
 		/* Appearance */
 		color: var(--Orange600Color);
+		cursor: pointer;
 
 		&:is(:active) {
 			/* Appearance */

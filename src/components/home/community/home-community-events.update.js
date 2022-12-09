@@ -1,36 +1,8 @@
 import { h } from 'project:utils/html.ts'
+import { fetchGoogleCalendarEvents } from './home-community-events.constants.ts'
 
 /** Returns a string, empty if the value is nullish. */
 const toString = (value) => value == null ? '' : String(value)
-
-/** Google Calendar API. */
-const fetchGoogleCalendarEventsURL = 'https://www.googleapis.com/calendar/v3/calendars/c_c00bcad50f7ad0acd24c335ddf65e16efd7538c0dd57be307b40c1677feb2637@group.calendar.google.com/events'
-
-/** Returns a list of fetched Google Calendar Events. */
-const fetchGoogleCalendarEvents = async () => {
-	/** Search Parameters attached to the Request URL */
-	const searchParams = new URLSearchParams({
-		key: 'AIzaSyDDR9nPrJn5F2oX9qw5uCpY4swStcV18rA',
-		maxResults: '6',
-		orderBy: 'startTime',
-		singleEvents: true,
-		timeMin: new Date().toISOString(),
-	})
-
-	/** Request URL */
-	const request = fetchGoogleCalendarEventsURL + '?' + searchParams
-
-	/** Response from the Google Calendar API. */
-	const response = await fetch(request, { cache: 'force-cache' })
-
-	/** @type {{ kind: string, items: CalendarEvent[] }} */
-	const { kind, items } = await response.json()
-
-	// return an empty array if the response is not calendar events
-	if (kind !== 'calendar#events' || !items) return []
-
-	return items
-}
 
 /** Returns a DOM fragment representing a Google Calendar event. */
 const createCalendarEventFragment = (
@@ -69,7 +41,7 @@ const createCalendarEventFragment = (
 	}</span>`)}
 </article>`))
 
-/** Prepares a DOM fragment representing a Google Calendar event for interactive behavior. */
+// /** Prepares a DOM fragment representing a Google Calendar event for interactive behavior. */
 const withCalendarInteractiveBehavior = (/** @type {HTMLElement} */ calendarEventFragment) => {
 	/** Calendar Events Details Element. */
 	const detailsElement = /** @type {HTMLElement} */ (calendarEventFragment.querySelector('.p-community-event-details'))
