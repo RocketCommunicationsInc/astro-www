@@ -35,7 +35,7 @@
 						"type": "text",
 						"data": "given-name"
 					},
-					"mcname":{
+					"mcname": {
 						"type": "text",
 						"data": "FNAME"
 					},
@@ -65,7 +65,7 @@
 						"type": "text",
 						"data": "family-name"
 					},
-					"mcname":{
+					"mcname": {
 						"type": "text",
 						"data": "LNAME"
 					},
@@ -95,7 +95,7 @@
 						"type": "text",
 						"data": "email"
 					},
-					"mcname":{
+					"mcname": {
 						"type": "text",
 						"data": "EMAIL"
 					},
@@ -125,7 +125,7 @@
 						"type": "text",
 						"data": "organization"
 					},
-					"mcname":{
+					"mcname": {
 						"type": "text",
 						"data": "COMPANY"
 					},
@@ -166,7 +166,7 @@
 						"type": "text",
 						"data": "hidden"
 					},
-					"name":{
+					"name": {
 						"type": "text",
 						"data": "u"
 					},
@@ -180,7 +180,7 @@
 						"type": "text",
 						"data": "hidden"
 					},
-					"name":{
+					"name": {
 						"type": "text",
 						"data": "id"
 					},
@@ -189,7 +189,6 @@
 						"data": "c1af406c10"
 					}
 				}
-
 			]
 		}
 	}
