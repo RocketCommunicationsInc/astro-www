@@ -34,7 +34,7 @@
 
 	/* Appearance */
 	background: var(--SurfaceColor);
-	border-radius: 3--rpx;
+	border-radius: var(--EdgeRadius);
 }
 
 .search-form input[type="search"]::-webkit-search-cancel-button {
@@ -74,7 +74,7 @@
 
 	/* Appearance */
 	background: var(--BaseColor);
-	border-radius: 3--rpx;
+	border-radius: var(--EdgeRadius);
 
 	/* Appearance */
 	box-shadow: var(--border-color) 0 0 0 1px inset;
@@ -130,7 +130,7 @@
 
 	/* Appearance */
 	background-color: var(--BaseColor);
-	border-radius: 3--rpx;
+	border-radius: var(--EdgeRadius);
 
 	/* Appearance */
 	color: var(--SecondaryColor);

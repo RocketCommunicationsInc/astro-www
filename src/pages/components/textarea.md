@@ -1,15 +1,9 @@
 ---
-tags: components
-path: /components/textarea
-date: Last Modified
-layout: project:layouts/docs/docs-layout.astro
 title: Textarea
-demo: forms-textarea--default-story
+layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: forms-textarea--default-story
+height: 128px
 git: rux-textarea
-height: 135px
-scrolling: yes
-theme: true
 ---
 
 # Textarea

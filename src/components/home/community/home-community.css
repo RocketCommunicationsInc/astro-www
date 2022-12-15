@@ -95,7 +95,7 @@
 
 	/* Appearance */
 	background: var(--SurfaceSelectedColor);
-	border-radius: 3--rpx;
+	border-radius: var(--EdgeRadius);
 	box-shadow: 0 0 0 1px inset var(--Grey700Color);
 
 	/* Appearance */
@@ -227,7 +227,7 @@
 
 	/* Appearance */
 	background: var(--SurfaceSelectedColor);
-	border-radius: 3--rpx;
+	border-radius: var(--EdgeRadius);
 	box-shadow: 0 0 0 1px inset var(--Grey700Color);
 
 	/* Appearance */

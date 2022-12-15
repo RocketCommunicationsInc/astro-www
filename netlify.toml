@@ -39,13 +39,13 @@ command = "npm run build"
 	to = "/patterns/panes"
 	status = 301
 	force = true
-	
+
 [[redirects]]
 	from = "/components/validation"
 	to = "/patterns/forms-and-validation"
 	status = 301
 	force = true
-	
+
 [[redirects]]
 	from = "/components/toggle"
 	to = "/components/switch"
@@ -69,7 +69,7 @@ command = "npm run build"
 	to = "/ttc-service-ux-design/ttc-monitor"
 	status = 301
 	force = true
-	
+
 [[redirects]]
 	from = "/tt-c-service-ux-design/tt-c-command"
 	to = "/ttc-service-ux-design/ttc-command"
@@ -99,7 +99,7 @@ command = "npm run build"
 	to = "/compliance"
 	status = 301
 	force = true
-	
+
 [[redirects]]
 	from = "/components/dialog-box"
 	to = "/components/dialog"
@@ -127,7 +127,7 @@ command = "npm run build"
 [[redirects]]
 	from = "/components/pop-up"
 	to = "/components/pop-up-menu"
-  status = 301
+	status = 301
 	force = true
 
 [[redirects]]

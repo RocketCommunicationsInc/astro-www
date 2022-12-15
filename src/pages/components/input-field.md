@@ -1,12 +1,9 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
 title: Input Field
-demo: forms-input--types
+layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: forms-input--types
-git: rux-input
 height: 400px
-scrolling: yes
-theme: true
+git: rux-input
 ---
 
 # Input Field

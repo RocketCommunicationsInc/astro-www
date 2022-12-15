@@ -1,11 +1,9 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
 title: Icons and Symbols
-demo: components-monitoring-icon--all-variants
+layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-monitoring-icon--all-variants
+height: 160px
 git: rux-monitoring-icon
-height: 100
-theme: true
 ---
 
 # Icons and Symbols

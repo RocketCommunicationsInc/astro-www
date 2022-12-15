@@ -2,6 +2,7 @@
 import { For, When } from '@astropub/flow'
 import { markdown } from '@astropub/md'
 import { toNumeral, toStatusClassNames } from './compliance-utils'
+import complianceFooter from 'project:data/compliance-footer.json'
 import './compliance-aside.css'
 
 export interface Props {
@@ -26,72 +27,48 @@ const filteredContents = contents.reduce(
 	},
 	[]
 )
-
-/* Data used by the footer. */
-const footer = {
-	type: 'object',
-	data: {
-		title: {
-			type: 'text',
-			data: `Compliance Requirements`,
-		},
-		version: {
-			type: 'text',
-			data: `v${version}`
-		},
-		link: {
-			type: 'link',
-			data: {
-				url: '/compliance/',
-				alt: 'See all EGS Compliance Requirements',
-			},
-		},
-	},
-} as const
 ---
-<When {filteredContents.length}>
+<When match={filteredContents.length}>
 	<aside class="p-compliance-aside">
 		<header class="-header">
 			<h2 class="-heading">{
-				footer.data.title.data
+				complianceFooter.data.title.data
 			}</h2>
-			<p class="-version">({
-				footer.data.version.data
+			<p class="-version">(v{
+				version
 			})</p>
 		</header>
 
 		<For of={filteredContents}>{content => (
 			<section class="p-compliance">
 				<For of={content.rulesets!}>{ruleset => (
-					<section class="ruleset">
+					<dl class="-ruleset">
 						<For of={ruleset.rules!}>{rule => (
-							<dl class="rule-aside">
-								<dt class="-numeral">{
-									toNumeral(content, ruleset, rule)
-								}</dt>
+							<dt class="-numeral">{
+								toNumeral(content, ruleset, rule)
+							}</dt>
 
-								<dd class="-details">
-									<span class="-content">{
-										markdown.inline(rule.rule)
+							<dd class="-details">
+								<span class="-content">{
+									markdown.inline(rule.rule)
+								}</span>
+
+								<When a={rule.status !== 'current'} b={rule.status !== 'updated'} c={rule.status !== 'under-review'}>
+									<span class={toStatusClassNames(rule)}>{
+										rule.status
 									}</span>
-
-									<When {rule.status !== 'current'} {rule.status !== 'updated'} {rule.status !== 'under-review'}>
-										<span class={toStatusClassNames(rule)}>{
-											rule.status
-										}</span>
-									</When>
-								</dd>
-							</dl>
+								</When>
+							</dd>
 						)}</For>
-					</section>
+					</dl>
 				)}</For>
 			</section>
 		)}</For>
 
 		<footer class="-footer">
 			<p>
-				<a href={footer.data.link.data.url}>{
-					footer.data.link.data.alt
+				<a href={complianceFooter.data.link.data.url}>{
+					complianceFooter.data.link.data.alt
 				}</a>
 			</p>
 		</footer>

@@ -53,6 +53,25 @@
 				font-size: 14--rpx;
 				line-height: calc(20 / 14);
 
+				&:focus-visible {
+					/* Appearance */
+					background-color: var(--InverseColor);
+					color: var(--Orange400Color);
+				}
+
+				&:not(:focus-visible) {
+					/* Text */
+					text-decoration: underline;
+					text-decoration-thickness: 1.25px;
+					text-decoration-color: var(--LinkColor);
+
+					&:hover {
+						/* Text */
+						text-decoration-style: double;
+						text-decoration-thickness: 1.5px;
+					}
+				}
+
 				@media (width < 400px) {
 					flex-basis: 100%;
 				}
@@ -85,7 +104,7 @@
 	text-transform: uppercase;
 
 	/* Appearance */
-	border-radius: 3--rpx;
+	border-radius: var(--EdgeRadius);
 
 	&.-deprecated {
 		/* Appearance */
@@ -137,7 +156,7 @@
 	color: #ffffff;
 
 	/* Appearance */
-	border-radius: 3--rpx;
+	border-radius: var(--EdgeRadius);
 
 	&.-t1 {
 		/* Appearance */

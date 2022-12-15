@@ -11,8 +11,3 @@
 	/* Animation */
 	animation: .2s ElementDisplay;
 }
-
-:where(:defined) {
-	/* Animation */
-	animation-name: none;
-}

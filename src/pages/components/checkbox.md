@@ -1,11 +1,9 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
 title: Checkbox
-demo: forms-checkbox-group--with-help-text
+layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: forms-checkbox-group--default-story
+height: 188px
 git: rux-checkbox
-height: 180px
-theme: true
 ---
 
 # Checkbox

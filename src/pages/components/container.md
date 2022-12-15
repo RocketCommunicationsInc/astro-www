@@ -1,12 +1,9 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
 title: Container
-demo: components-container--default-story
+layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-container--default-story
-git: rux-container
-scrolling: yes
 height: 140px
-theme: true
+git: rux-container
 ---
 
 # Container

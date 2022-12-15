@@ -1,51 +1,82 @@
 ---
 import DocsLayout from 'project:layouts/docs/docs-layout.astro'
+
 const title = 'Support'
-
 ---
+<style is:global>
+.p-email-signup {
+	& input {
+		/* Layout */
+		margin-block-start: max(1 * var(--step));
+		padding-block: max(2 * var(--step));
+		padding-inline: max(2 * var(--step));
+
+		/* Appearance */
+		box-shadow: var(--Grey700Color) 0 0 0 1px inset;
+		border-radius: max(max(3 * var(--rpx)));
+	}
+
+	& button[type="submit"] {
+		/* Layout */
+		align-self: center;
+		margin-block-start: 4--step;
+		padding-block: 2--step;
+		padding-inline: 11--step;
+
+		/* Text */
+		font-size: 16--rpx;
+		line-height: calc(20 / 16);
+
+		/* Appearance */
+		background: var(--DarkBlue700Color);
+		border-radius: var(--EdgeRadius);
+		color: var(--PrimaryColor);
+	}
+}
+</style>
 <DocsLayout content={{ title }} file={import.meta.url}>
+	<h1>
+		Support
+	</h1>
 
-<h1>Support</h1>
+	<h2>
+		Contact Us
+	</h2>
+	<p>
+		Astro belongs to the Space App Community, so please provide feedback and let us know when you have questions or need help by using our <a href="https://github.com/RocketCommunicationsInc/astro/issues" target="_blank">GitHub Issues</a>, <a href="https://github.com/RocketCommunicationsInc/astro/discussions" target="_blank">GitHub Discussions</a>, <a href="https://www.figma.com/@astrouxds" target="_blank">Figma</a> on the <a href="https://astrouxds.slack.com" target="_blank">AstroUXDS Slack Channel</a> or emailing <a href="mailto:support@astrouxds.com">support@astrouxds.com</a>.
+	</p>
 
-<h2>Contact Us</h2>
-<p>
-Astro belongs to the Space App Community, so please provide feedback and let us 
-know when you have questions or need help by using our <a href="https://github.com/RocketCommunicationsInc/astro/issues" target="_blank">GitHub Issues</a>, <a href="https://github.com/RocketCommunicationsInc/astro/discussions" target="_blank">GitHub Discussions</a>, <a href="https://www.figma.com/@astrouxds" target="_blank">Figma</a> on the <a href="https://astrouxds.slack.com" target="_blank">AstroUXDS Slack Channel</a> or emailing <a href="mailto:support@astrouxds.com">support@astrouxds.com</a>.
-</p>
+	<h2>
+		Sign Up
+	</h2>
+	<p>
+		We update these guidelines regularly.
+		If you'd like to get emailed when we do, please provide your contact information here.
+	</p>
 
-
-<h2>Sign Up</h2>
-
-<p>
-
-We update these guidelines regularly. If you'd like to get emailed when we do, please provide your contact information here.
-</p>
-<section id="email-signup" class="support__email-signup">
-		<form action="https://rocketcom.us12.list-manage.com/subscribe/post" method="get" target="_blank">
-			<p>
-				<label for="firstname">First Name</label><br />
-				<input type="text" name="FNAME" id="fistname" />
-			</p>
-			<p>
-				<label for="lastname">Last Name</label><br />
-				<input type="text" name="LNAME" id="lastname" />
-			</p>
-			<p>
-				<label for="email">Email Address*</label><br />
-				<input type="email" required name="EMAIL" id="email" />
-			</p>
-			<p>
-				<label for="company">Company</label><br />
-				<input type="text" name="COMPANY" id="company" />
-			</p>
-			<p>
-				<button type="submit">Submit</button>
-			</p>
-			<input type="hidden" name="u" value="f067e558ee805172850a87843" />
-			<input type="hidden" name="id" value="c1af406c10" />
-			<input type="hidden" name="u" value="f067e558ee805172850a87843" />
-			<input type="hidden" name="b_f067e558ee805172850a87843_c1af406c10" />
-		</form>
-	<!--End mc_embed_signup-->
-</section>
+	<form id="email-signup" class="p-email-signup" action="https://rocketcom.us12.list-manage.com/subscribe/post" method="get" target="_blank">
+		<p>
+			<label for="firstname">First Name</label><br />
+			<input type="text" name="FNAME" id="fistname" />
+		</p>
+		<p>
+			<label for="lastname">Last Name</label><br />
+			<input type="text" name="LNAME" id="lastname" />
+		</p>
+		<p>
+			<label for="email">Email Address*</label><br />
+			<input type="email" required name="EMAIL" id="email" />
+		</p>
+		<p>
+			<label for="company">Company</label><br />
+			<input type="text" name="COMPANY" id="company" />
+		</p>
+		<p>
+			<button type="submit">Submit</button>
+		</p>
+		<input type="hidden" name="u" value="f067e558ee805172850a87843" />
+		<input type="hidden" name="id" value="c1af406c10" />
+		<input type="hidden" name="u" value="f067e558ee805172850a87843" />
+		<input type="hidden" name="b_f067e558ee805172850a87843_c1af406c10" />
+	</form>
 </DocsLayout>

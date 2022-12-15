@@ -5,7 +5,11 @@ import vitePlugins from './.vscode/vite-plugins.js'
 import sitemapIntegration from '@astrojs/sitemap'
 
 export default defineConfig({
-	site: 'https://www.astrouxds.com/',
+	site: (
+		import.meta.env.MODE === 'development'
+			? 'http://localhost:3000'
+		: 'https://www.astrouxds.com/'
+	),
 	trailingSlash: 'always',
 	markdown: {
 		remarkPlugins: remarkPlugins()

@@ -1,53 +1,77 @@
 ---
-import DocsLayout from 'project:layouts/docs/docs-layout.astro';
-import { Code } from 'astro/components';
-import BreakingChangeComponent from 'project:components/breaking-change-component/breaking-change-component.astro';
-import BreakingChange from 'project:components/breaking-change/breaking-change.astro';
-const title = 'Migration';
+import DocsLayout from 'project:layouts/docs/docs-layout.astro'
+import BreakingChangeComponent from 'project:components/breaking-change-component/breaking-change-component.astro'
+import BreakingChange from 'project:components/breaking-change/breaking-change.astro'
+import { Code } from 'astro/components'
+
+const title = 'Migration'
 ---
-
-<style>
-	@import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.83/dist/themes/light.css';
+<style is:global>
+@import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.83/dist/themes/light.css';
 </style>
-<script
-	type="module"
-	src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.83/dist/shoelace.js"
-></script>
+<style is:global>
+:root {
+	--Grey200Color: hsl(216 31% 94%);
+}
 
+li > code, p > code {
+	/* Layout */
+	overflow-x: auto;
+	padding-block: .875--step;
+	padding-inline: 1--step;
+
+	/* Text */
+	font-family: var(--SystemMonoType);
+	font-size: 14--rpx;
+	line-height: calc(20 / 14);
+	white-space: pre;
+
+	/* Appearance */
+	background: var(--Grey200Color);
+	border-radius: var(--EdgeRadius);
+	color: var(--InverseColor);
+}
+</style>
 <DocsLayout content={{ title }} file={import.meta.url}>
-	<h1>7.0 Migration Guide</h1>
-
+	<script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.83/dist/shoelace.js"></script>
+	<h1>
+		7.0 Migration Guide
+	</h1>
 	<p>
-		Astro 7.0 introduces a number of breaking changes that require developers to
-		update their application code. We've compiled a list of every breaking
-		change below. Since the migration process will vary on an
-		application-by-application basis, we've broken down changes per component
-		based on the likelihood of impact.
-	</p><ul>
+		Astro 7.0 introduces a number of breaking changes that require developers to update their application code.
+		We've compiled a list of every breaking change below.
+		Since the migration process will vary on an application-by-application basis, we've broken down changes per component based on the likelihood of impact.
+	</p>
+	<ul>
 		<li>
-			<sl-badge variant="danger">High Impact</sl-badge> If you're using this component,
-			this change is required.
+			<sl-badge variant="danger">High Impact</sl-badge>
+			If you're using this component, this change is required.
 		</li>
 		<li>
-			<sl-badge variant="warning">Medium Impact</sl-badge> Evaluate your application's
-			usage.
+			<sl-badge variant="warning">Medium Impact</sl-badge>
+			Evaluate your application's usage.
 		</li>
 		<li>
-			<sl-badge variant="neutral">Low Impact</sl-badge> You will most likely not
-			be impacted by this change.
+			<sl-badge variant="neutral">Low Impact</sl-badge>
+			You will most likely not be impacted by this change.
 		</li>
 	</ul>
 
-	<h2>Steps:</h2>
-
+	<h2>
+		Steps:
+	</h2>
 	<ol style="margin-bottom: 2rem;">
 		<li>
 			Update your package.json
 			<ul>
-				<li>For React: `"@astrouxds/react": "^7.0.0"`</li>
-				<li>For Angular: `"@astrouxds/angular": "^7.0.0"`</li>
 				<li>
-					For Web Components: "@astrouxds/astro-web-components": "^7.0.0"`
+					For React: <code>"@astrouxds/react": "^7.0.0"</code>
+				</li>
+				<li>
+					For Angular: <code>"@astrouxds/angular": "^7.0.0"</code>
+				</li>
+				<li>
+					For Web Components: <code>"@astrouxds/astro-web-components": "^7.0.0"</code>
 				</li>
 			</ul>
 		</li>
@@ -60,9 +84,8 @@ const title = 'Migration';
 	<BreakingChangeComponent name="General">
 		<BreakingChange title="Remove Custom Elements Bundle" impact="Medium">
 			<p>
-				Our <code>dist/custom-elements</code> build has been removed in favor of
-				a more lightweight and better tree-shakeable
-				<code>dist/components</code> build. Search your project for any reference
+				Our <code>dist/custom-elements</code> build has been removed in favor of a more lightweight and better tree-shakeable <code>dist/components</code> build.
+				Search your project for any reference
 				to <code>dist/custom-elements</code> and replace it with
 				<code>dist/components</code>.
 			</p>
@@ -79,7 +102,8 @@ const title = 'Migration';
 				>.
 			</p>
 			<p class="resolution">
-				<strong>Resolution:</strong> Upgrade your application to Angular v12+.
+				<strong>Resolution:</strong>
+				Upgrade your application to Angular v12+.
 			</p>
 		</BreakingChange>
 	</BreakingChangeComponent>
@@ -91,31 +115,22 @@ const title = 'Migration';
 				tabular figures when displaying numbers within components such as Clock.
 			</p>
 			<p>
-				<strong>Resolution:</strong> Remove any import of Roboto Mono from your application.
+				<strong>Resolution:</strong>
+				Remove any import of Roboto Mono from your application.
 			</p>
 			<p></p><div class="breaking-change__code">
 				<div class="breaking-change__code__block">
 					<div class="breaking-change__code__title">v6</div>
 					<Code
 						lang="html"
-						code={`
-	<link
-		href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&family=Roboto:wght@300;400;500;700&display=swap"
-		rel="stylesheet"
-	/>
-							`}
+						code={`<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&family=Roboto:wght@300;400;500;700&display=swap" />`}
 					/>
 				</div>
 				<div class="breaking-change__code__block">
 					<div class="breaking-change__code__title">v7</div>
 					<Code
 						lang="html"
-						code={`
-	<link
-		href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
-		rel="stylesheet"
-	/>
-							`}
+						code={`<lin rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />`}
 					/>
 				</div>
 			</div>
@@ -123,10 +138,7 @@ const title = 'Migration';
 	</BreakingChangeComponent>
 
 	<BreakingChangeComponent name="Button">
-		<BreakingChange
-			title="Remove Deprecated CSS Custom Properties"
-			impact="Low"
-		>
+		<BreakingChange title="Remove Deprecated CSS Custom Properties" impact="Low">
 			<ul>
 				<li>
 					The following deprecated CSS Custom Properties have been removed:
@@ -148,20 +160,13 @@ const title = 'Migration';
 			</ul>
 			<p class="resolution">
 				<strong>Resolution:</strong>
-				<a
-					href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md"
-				>
-					View the CSS Custom Properties Migration document for more details.
-				</a>
+				<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">View the CSS Custom Properties Migration document for more details.</a>
 			</p>
 		</BreakingChange>
 	</BreakingChangeComponent>
 
 	<BreakingChangeComponent name="Clock">
-		<BreakingChange
-			title="Remove Deprecated CSS Custom Properties"
-			impact="Low"
-		>
+		<BreakingChange title="Remove Deprecated CSS Custom Properties" impact="Low">
 			<ul>
 				<li>
 					The following deprecated CSS Custom Properties have been removed:
@@ -174,44 +179,35 @@ const title = 'Migration';
 				</li>
 			</ul>
 			<p>
-				<strong>Resolution:</strong>
-				<a
-					href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md"
-				>
-					View the CSS Custom Properties Migration document for more details.
-				</a>
+				<strong>
+					Resolution:
+				</strong>
+				<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">View the CSS Custom Properties Migration document for more details.</a>
 			</p>
 		</BreakingChange>
 
 		<BreakingChange title="Host Style Changes" impact="Low">
 			<p>
-				Previously it was possible to change the <code>color</code> by targeting
-				the <code>rux-clock</code> element instead of using the available CSS Shadow
-				Parts. These styles have now been properly moved to the shadow dom and require
-				the use of CSS Shadow Parts.
+				Previously it was possible to change the <code>color</code> by targeting the <code>rux-clock</code> element instead of using the available CSS Shadow Parts.
+				These styles have now been properly moved to the shadow dom and require the use of CSS Shadow Parts.
 			</p>
 			<p>
-				<strong>Resolution:</strong> Search your application&#39;s CSS for anything
-				that may be targeting <code>rux-clock</code> directly and replace with the
-				appropriate CSS Shadow Part.
+				<strong>Resolution:</strong>
+				Search your application&#39;s CSS for anything that may be targeting <code>rux-clock</code> directly and replace with the appropriate CSS Shadow Part.
 			</p>
 			<p></p><div class="breaking-change__code">
 				<div class="breaking-change__code__block">
 					<div class="breaking-change__code__title">v6</div>
 					<Code
 						lang="css"
-						code={`
-								rux-clock { color: red; }
-							`}
+						code={`rux-clock { color: red; }`}
 					/>
 				</div>
 				<div class="breaking-change__code__block">
 					<div class="breaking-change__code__title">v7</div>
 					<Code
 						lang="css"
-						code={`
-								rux-clock::part(container) { color: red; }	
-							`}
+						code={`rux-clock::part(container) { color: red; }`}
 					/>
 				</div>
 			</div>
@@ -223,24 +219,18 @@ const title = 'Migration';
 				<code>flex</code> to <code>inline-block</code>.
 			</p>
 			<p>
-				<strong>Resolution:</strong> If you were relying on the element to be
-				<code>display: flex</code>, you can change the
-				<code>display</code> yourself on the root.
+				<strong>Resolution:</strong>
+				If you were relying on the element to be <code>display: flex</code>, you can change the <code>display</code> yourself on the root.
 			</p>
 			<Code
 				lang="css"
-				code={`
-				rux-clock { display: flex; }
-			`}
+				code={`rux-clock { display: flex; }`}
 			/>
 		</BreakingChange>
 	</BreakingChangeComponent>
 
 	<BreakingChangeComponent name="Checkbox">
-		<BreakingChange
-			title="Remove Deprecated CSS Custom Properties"
-			impact="Low"
-		>
+		<BreakingChange title="Remove Deprecated CSS Custom Properties" impact="Low">
 			<ul>
 				<li>
 					The following deprecated CSS Custom Properties have been removed:
@@ -255,20 +245,13 @@ const title = 'Migration';
 			</ul>
 			<p>
 				<strong>Resolution:</strong>
-				<a
-					href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md"
-				>
-					View the CSS Custom Properties Migration document for more details.
-				</a>
+				<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">View the CSS Custom Properties Migration document for more details.</a>
 			</p>
 		</BreakingChange>
 	</BreakingChangeComponent>
 
 	<BreakingChangeComponent name="Checkbox Group">
-		<BreakingChange
-			title="Remove Deprecated CSS Custom Properties"
-			impact="Low"
-		>
+		<BreakingChange title="Remove Deprecated CSS Custom Properties" impact="Low">
 			<ul>
 				<li>
 					The following deprecated CSS Custom Properties have been removed:
@@ -279,31 +262,21 @@ const title = 'Migration';
 			</ul>
 			<p>
 				<strong>Resolution:</strong>
-				<a
-					href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md"
-				>
-					View the CSS Custom Properties Migration document for more details.
-				</a>
+				<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">View the CSS Custom Properties Migration document for more details.</a>
 			</p>
 		</BreakingChange>
 
 		<BreakingChange title="Host Style Changes" impact="Low">
 			<p>
-				Previously it was possible to change the following CSS properties by
-				targeting the <code>rux-checkbox-group</code> element instead of using the
-				available CSS Shadow Parts: <code>color</code>,
-				<code>font-family</code>, <code>font-size</code>,
-				<code>font-weight</code>, <code>line-height</code>,
-				<code>letter-spacing</code>.
+				Previously it was possible to change the following CSS properties by targeting the <code>rux-checkbox-group</code> element instead of using the available CSS Shadow Parts:
+				<code>color</code>, <code>font-family</code>, <code>font-size</code>, <code>font-weight</code>, <code>line-height</code>, <code>letter-spacing</code>.
 			</p>
 			<p>
-				These styles have now been properly moved to the shadow dom and require
-				the use of CSS Shadow Parts.
+				These styles have now been properly moved to the shadow dom and require the use of CSS Shadow Parts.
 			</p>
 			<p>
-				<strong>Resolution:</strong> Search your application&#39;s CSS for anything
-				that may be targeting <code>rux-checkbox-group</code> directly and replace
-				with the appropriate CSS Shadow Part.
+				<strong>Resolution:</strong>
+				Search your application&#39;s CSS for anything that may be targeting <code>rux-checkbox-group</code> directly and replace with the appropriate CSS Shadow Part.
 			</p>
 			<p></p><div class="breaking-change__code">
 				<div class="breaking-change__code__block">
@@ -311,15 +284,15 @@ const title = 'Migration';
 					<Code
 						lang="css"
 						code={`
-	rux-checkbox-group {
-		color: red;
-		font-family: Arial;
-		font-size: 2rem;
-		font-weight: 800;
-		line-height: 1;
-		letter-spacing: 0.3em;
-	}
-							`}
+rux-checkbox-group {
+	color: red;
+	font-family: Arial;
+	font-size: 2rem;
+	font-weight: 800;
+	line-height: 1;
+	letter-spacing: 0.3em;
+}
+							`.trim()}
 					/>
 				</div>
 				<div class="breaking-change__code__block">
@@ -327,15 +300,15 @@ const title = 'Migration';
 					<Code
 						lang="css"
 						code={`
-	rux-checkbox-group::part(container) {
-		color: red;
-		font-family: Arial;
-		font-size: 2rem;
-		font-weight: 800;
-		line-height: 1;
-		letter-spacing: 0.3em;
-	}
-							`}
+rux-checkbox-group::part(container) {
+	color: red;
+	font-family: Arial;
+	font-size: 2rem;
+	font-weight: 800;
+	line-height: 1;
+	letter-spacing: 0.3em;
+}
+							`.trim()}
 					/>
 				</div>
 			</div>
@@ -343,10 +316,7 @@ const title = 'Migration';
 	</BreakingChangeComponent>
 
 	<BreakingChangeComponent name="Classification Marking">
-		<BreakingChange
-			title="Remove Deprecated CSS Custom Properties"
-			impact="Low"
-		>
+		<BreakingChange title="Remove Deprecated CSS Custom Properties" impact="Low">
 			<ul>
 				<li>
 					The following deprecated CSS Custom Properties have been removed:
@@ -358,11 +328,7 @@ const title = 'Migration';
 			</ul>
 			<p>
 				<strong>Resolution:</strong>
-				<a
-					href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md"
-				>
-					View the CSS Custom Properties Migration document for more details.
-				</a>
+				<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">View the CSS Custom Properties Migration document for more details.</a>
 			</p>
 		</BreakingChange>
 
@@ -371,9 +337,8 @@ const title = 'Migration';
 				The deprecated <code>footer-banner</code> CSS Shadow Part has been removed
 			</p>
 			<p>
-				<strong>Resolution:</strong> Search your application&#39;s CSS for anything
-				targeting <code>::part(footer-banner)</code> and replace with
-				<code>::part(footer)</code>
+				<strong>Resolution:</strong>
+				Search your application&#39;s CSS for anything targeting <code>::part(footer-banner)</code> and replace with <code>::part(footer)</code>
 			</p>
 		</BreakingChange>
 	</BreakingChangeComponent>
@@ -381,18 +346,12 @@ const title = 'Migration';
 	<BreakingChangeComponent name="Global Status Bar">
 		<BreakingChange title="Host Style Changes" impact="Low">
 			<p>
-				Previously it was possible to change the following CSS properties by
-				targeting the <code>rux-global-status-bar</code> element instead of using
-				the available CSS Shadow Parts: <code>font-family</code>,
-				<code>line-height</code>, <code>letter-spacing</code>. These styles have
-				now been properly moved to the shadow dom and require the use of CSS
-				Shadow Parts.
+				Previously it was possible to change the following CSS properties by targeting the <code>rux-global-status-bar</code> element instead of using the available CSS Shadow Parts: <code>font-family</code>, <code>line-height</code>, <code>letter-spacing</code>.
+				These styles have now been properly moved to the shadow dom and require the use of CSS Shadow Parts.
 			</p>
 			<p>
-				<strong>Resolution:</strong> Search your application&#39;s CSS for anything
-				that may be targeting
-				<code>rux-global-status-bar</code> directly and replace with the appropriate
-				CSS Shadow Part.
+				<strong>Resolution:</strong>
+				Search your application&#39;s CSS for anything that may be targeting <code>rux-global-status-bar</code> directly and replace with the appropriate CSS Shadow Part.
 			</p>
 			<div class="breaking-change__code">
 				<div class="breaking-change__code__block">
@@ -400,12 +359,12 @@ const title = 'Migration';
 					<Code
 						lang="css"
 						code={`
-	rux-global-status-bar {
-		font-family: Arial;
-		line-height: 1;
-		letter-spacing: 0.3em;
-	}
-							`}
+rux-global-status-bar {
+	font-family: Arial;
+	line-height: 1;
+	letter-spacing: 0.3em;
+}
+							`.trim()}
 					/>
 				</div>
 				<div class="breaking-change__code__block">
@@ -413,12 +372,12 @@ const title = 'Migration';
 					<Code
 						lang="css"
 						code={`
-	rux-global-status-bar::part(container) {
-		font-family: Arial;
-		line-height: 1;
-		letter-spacing: 0.3em;
-	}
-							`}
+rux-global-status-bar::part(container) {
+	font-family: Arial;
+	line-height: 1;
+	letter-spacing: 0.3em;
+}
+							`.trim()}
 					/>
 				</div>
 			</div>
@@ -430,67 +389,47 @@ const title = 'Migration';
 				uppercase by default.
 			</p>
 			<p>
-				<strong>Resolution:</strong> Add your own style via the
-				<code>container</code> CSS Shadow Part
+				<strong>Resolution:</strong>
+				Add your own style via the <code>container</code> CSS Shadow Part
 			</p>
 			<Code
 				lang="css"
 				code={`
-	rux-global-status-bar::part(container) {
-		text-transform: uppercase;
-	}
-			`}
+rux-global-status-bar::part(container) {
+	text-transform: uppercase;
+}
+			`.trim()}
 			/>
 		</BreakingChange>
 	</BreakingChangeComponent>
 
 	<BreakingChangeComponent name="Icon">
-		<BreakingChange
-			title="Remove Deprecated CSS Custom Properties"
-			impact="Low"
-		>
+		<BreakingChange title="Remove Deprecated CSS Custom Properties" impact="Low">
 			<ul>
 				<li>
-					The deprecated <code>--icon-default-color</code> CSS Custom Property has
-					been removed.
+					The deprecated <code>--icon-default-color</code> CSS Custom Property has been removed.
 				</li>
 			</ul>
 			<p>
 				<strong>Resolution:</strong>
-				<a
-					href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md"
-				>
-					View the CSS Custom Properties Migration document for more details.
-				</a>
+				<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">View the CSS Custom Properties Migration document for more details.</a>
 			</p>
 		</BreakingChange>
 		<BreakingChange title="Label Removal" impact="Low">
 			<p>
-				The <code>label</code> attribute has been removed and the
-				<code>title</code> for our icons no longer defaults to the icon name. This
-				was causing confusion because the browser would display the title as a tooltip
-				when an icon was used inside a button. Because accessibility for svgs can
-				be complicated and heavily dependent on context, we&#39;ve decided to remove
-				this feature for now.
+				The <code>label</code> attribute has been removed and the <code>title</code> for our icons no longer defaults to the icon name.
+				This was causing confusion because the browser would display the title as a tooltip when an icon was used inside a button.
+				Because accessibility for svgs can be complicated and heavily dependent on context, we&#39;ve decided to remove this feature for now.
 			</p>
 			<p>
-				<strong>Resolution:</strong> If you need more control over the
-				<code>title</code> and aria attributes of our icons, it is recommended that
-				you instead
-				<a
-					href="https://github.com/RocketCommunicationsInc/astro/tree/main/packages/web-components/src/icons"
-					>import and use our svg assets</a
-				>
-				directly.
+				<strong>Resolution:</strong>
+				If you need more control over the <code>title</code> and aria attributes of our icons, it is recommended that you instead <a href="https://github.com/RocketCommunicationsInc/astro/tree/main/packages/web-components/src/icons">import and use our svg assets</a> directly.
 			</p>
 		</BreakingChange>
 	</BreakingChangeComponent>
 
 	<BreakingChangeComponent name="Input">
-		<BreakingChange
-			title="Remove Deprecated CSS Custom Properties"
-			impact="Low"
-		>
+		<BreakingChange title="Remove Deprecated CSS Custom Properties" impact="Low">
 			<ul>
 				<li>
 					The following deprecated CSS Custom Properties have been removed:
@@ -505,9 +444,7 @@ const title = 'Migration';
 			</ul>
 			<p>
 				<strong>Resolution:</strong>
-				<a
-					href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md"
-				>
+				<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">
 					View the CSS Custom Properties Migration document for more details.
 				</a>
 			</p>
@@ -515,10 +452,7 @@ const title = 'Migration';
 	</BreakingChangeComponent>
 
 	<BreakingChangeComponent name="Log">
-		<BreakingChange
-			title="Remove Deprecated CSS Custom Properties"
-			impact="Low"
-		>
+		<BreakingChange title="Remove Deprecated CSS Custom Properties" impact="Low">
 			<ul>
 				<li>
 					The following deprecated CSS Custom Properties have been removed:
@@ -531,9 +465,7 @@ const title = 'Migration';
 			</ul>
 			<p>
 				<strong>Resolution:</strong>
-				<a
-					href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md"
-				>
+				<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">
 					View the CSS Custom Properties Migration document for more details.
 				</a>
 			</p>
@@ -543,13 +475,12 @@ const title = 'Migration';
 	<BreakingChangeComponent name="Modal">
 		<BreakingChange title="Component Renamed" impact="High">
 			<p>
-				Modal has been renamed to Dialog. Additionally, there have been a few
-				other breaking changes to the API.
+				Modal has been renamed to Dialog.
+				Additionally, there have been a few other breaking changes to the API.
 			</p>
 			<p>
-				<strong>Resolution:</strong> Search your application for any instances of
-				<code>&lt;rux-modal&gt;</code> and replace them with
-				<code>&lt;rux-dialog&gt;</code>.
+				<strong>Resolution:</strong>
+				Search your application for any instances of <code>&lt;rux-modal&gt;</code> and replace them with <code>&lt;rux-dialog&gt;</code>.
 			</p>
 		</BreakingChange>
 
@@ -571,21 +502,16 @@ const title = 'Migration';
 				be closed only with confirm or cancel Buttons.&quot;
 			</p>
 			<p>
-				<strong>Resolution:</strong> If you need to restore this functionality, you
-				may use the new <code>click-to-close</code> property.
+				<strong>Resolution:</strong>
+				If you need to restore this functionality, you may use the new <code>click-to-close</code> property.
 			</p>
 			<Code
 				lang="html"
-				code={`
-	<rux-dialog click-to-close></rux-dialog>
-			`}
+				code={`<rux-dialog click-to-close></rux-dialog>`}
 			/>
 		</BreakingChange>
 
-		<BreakingChange
-			title="Remove Deprecated CSS Custom Properties"
-			impact="Low"
-		>
+		<BreakingChange title="Remove Deprecated CSS Custom Properties" impact="Low">
 			<ul>
 				<li>
 					The following deprecated CSS Custom Properties have been removed:
@@ -598,11 +524,7 @@ const title = 'Migration';
 			</ul>
 			<p>
 				<strong>Resolution:</strong>
-				<a
-					href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md"
-				>
-					View the CSS Custom Properties Migration document for more details.
-				</a>
+				<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">View the CSS Custom Properties Migration document for more details.</a>
 			</p>
 		</BreakingChange>
 	</BreakingChangeComponent>
@@ -613,14 +535,13 @@ const title = 'Migration';
 				Previously it was possible to change the <code>color</code> CSS properties
 				by targeting the
 				<code>rux-monitoring-progress-icon</code> element instead of using the available
-				CSS Shadow Parts. These styles have now been properly moved to the shadow
+				CSS Shadow Parts.
+				These styles have now been properly moved to the shadow
 				dom and require the use of CSS Shadow Parts.
 			</p>
 			<p>
-				<strong>Resolution:</strong> Search your application&#39;s CSS for anything
-				that may be targeting
-				<code>rux-monitoring-progress-icon</code> directly and replace with the appropriate
-				CSS Shadow Part.
+				<strong>Resolution:</strong>
+				Search your application&#39;s CSS for anything that may be targeting <code>rux-monitoring-progress-icon</code> directly and replace with the appropriate CSS Shadow Part.
 			</p>
 			<div class="breaking-change__code">
 				<div class="breaking-change__code__block">
@@ -628,10 +549,10 @@ const title = 'Migration';
 					<Code
 						lang="css"
 						code={`
-	rux-monitoring-progress-icon {
-		color: red;
-	}
-						`}
+rux-monitoring-progress-icon {
+	color: red;
+}
+						`.trim()}
 					/>
 				</div>
 				<div class="breaking-change__code__block">
@@ -639,10 +560,10 @@ const title = 'Migration';
 					<Code
 						lang="css"
 						code={`
-	rux-monitoring-progress-icon::part(container) {
-		color: red;
-	}
-						`}
+rux-monitoring-progress-icon::part(container) {
+	color: red;
+}
+						`.trim()}
 					/>
 				</div>
 			</div>
@@ -657,33 +578,25 @@ const title = 'Migration';
 				<code>overflow: hidden</code> applied.
 			</p>
 			<p>
-				<strong>Resolution:</strong> Check your implementation of
-				<code>rux-notification</code> and remove the
-				<code>position: relative</code> and
-				<code>overflow: hidden</code> styles.
+				<strong>Resolution:</strong>
+				Check your implementation of <code>rux-notification</code> and remove the <code>position: relative</code> and <code>overflow: hidden</code> styles.
 			</p>
 		</BreakingChange>
 
 		<BreakingChange title="Multiple Notification Stacking" impact="High">
 			<p>
 				Multiple sibling notifications will no longer stack by default.
-				Previously, you could have multiple notifications and they would stack
-				on top of each other. Because only one notification should be visible at
+				Previously, you could have multiple notifications and they would stack on top of each other.
+				Because only one notification should be visible at
 				a time, you should only need one element in the DOM.
 			</p>
 			<p>
-				<strong>Resolution:</strong> You&#39;ll need to add some of your own custom
-				logic to manage which notification should be presented.
-				<a
-					href="https://astro-components.netlify.app/?path=/docs/components-notification--default-story#multiple-notifications"
-					>Consult the documentation for more details</a
-				>
+				<strong>Resolution:</strong>
+				You&#39;ll need to add some of your own custom logic to manage which notification should be presented.
+				<a href="https://astro-components.netlify.app/?path=/docs/components-notification--default-story#multiple-notifications">Consult the documentation for more details</a>
 			</p>
 		</BreakingChange>
-		<BreakingChange
-			title="Remove Deprecated CSS Custom Properties"
-			impact="Low"
-		>
+		<BreakingChange title="Remove Deprecated CSS Custom Properties" impact="Low">
 			<ul>
 				<li>
 					The following deprecated CSS Custom Properties have been removed:
@@ -695,29 +608,20 @@ const title = 'Migration';
 			</ul>
 			<p>
 				<strong>Resolution:</strong>
-				<a
-					href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md"
-				>
-					View the CSS Custom Properties Migration document for more details.
-				</a>
+				<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">View the CSS Custom Properties Migration document for more details.</a>
 			</p>
 		</BreakingChange>
 
 		<BreakingChange title="Host Style Changes" impact="Low">
 			<p>
-				Previously it was possible to change the following CSS properties by
-				targeting the <code>rux-notification</code> element instead of using the
-				available CSS Shadow Parts: <code>color</code>,
-				<code>font-family</code>, <code>font-size</code>,
-				<code>font-weight</code>, <code>line-height</code>,
-				<code>letter-spacing</code>, <code>padding</code>. These styles have now
+				Previously it was possible to change the following CSS properties by targeting the <code>rux-notification</code> element instead of using the available CSS Shadow Parts: <code>color</code>, <code>font-family</code>, <code>font-size</code>, <code>font-weight</code>, <code>line-height</code>, <code>letter-spacing</code>, <code>padding</code>.
+				These styles have now
 				been properly moved to the shadow dom and require the use of CSS Shadow
 				Parts.
 			</p>
 			<p>
-				<strong>Resolution:</strong> Search your application&#39;s CSS for anything
-				that may be targeting <code>rux-notification</code> directly and replace
-				with the appropriate CSS Shadow Part.
+				<strong>Resolution:</strong>
+				Search your application&#39;s CSS for anything that may be targeting <code>rux-notification</code> directly and replace with the appropriate CSS Shadow Part.
 			</p>
 			<div class="breaking-change__code">
 				<div class="breaking-change__code__block">
@@ -725,16 +629,16 @@ const title = 'Migration';
 					<Code
 						lang="css"
 						code={`
-	rux-notification {
-		color: red;
-		padding: 1rem;
-		font-family: Arial;
-		font-size: 2rem;
-		font-weight: 800;
-		line-height: 1;
-		letter-spacing: 0.3em;
-	}
-							`}
+rux-notification {
+	color: red;
+	padding: 1rem;
+	font-family: Arial;
+	font-size: 2rem;
+	font-weight: 800;
+	line-height: 1;
+	letter-spacing: 0.3em;
+}
+							`.trim()}
 					/>
 				</div>
 				<div class="breaking-change__code__block">
@@ -742,16 +646,16 @@ const title = 'Migration';
 					<Code
 						lang="css"
 						code={`
-	rux-notification::part(container) {
-		color: red;
-		padding: 1rem;
-		font-family: Arial;
-		font-size: 2rem;
-		font-weight: 800;
-		line-height: 1;
-		letter-spacing: 0.3em;
-	}
-							`}
+rux-notification::part(container) {
+	color: red;
+	padding: 1rem;
+	font-family: Arial;
+	font-size: 2rem;
+	font-weight: 800;
+	line-height: 1;
+	letter-spacing: 0.3em;
+}
+							`.trim()}
 					/>
 				</div>
 			</div>
@@ -778,26 +682,26 @@ const title = 'Migration';
 					<Code
 						lang="html"
 						code={`
-	<rux-icon icon="apps" aria-controls="popup-menu-1"></rux-icon>
-	<rux-pop-up-menu id="popup-menu-1">
-		<rux-menu-item>
-			Item 1
-		</rux-menu-item>
-		<rux-menu-item-divider></rux-menu-item-divider>
-		<rux-menu-item value="2">
-			Item 2
-		</rux-menu-item>
-		<rux-menu-item disabled>
-			Item 3 is disabled
-		</rux-menu-item>
-		<rux-menu-item value="Item 4">
-			Item 4 has a string value
-		</rux-menu-item>
-		<rux-menu-item href="https://www.astrouxds.com">
-			Item 5 is an anchor/action item...
-		</rux-menu-item>
-	</rux-pop-up-menu>
-							`}
+<rux-icon icon="apps" aria-controls="popup-menu-1"></rux-icon>
+<rux-pop-up-menu id="popup-menu-1">
+	<rux-menu-item>
+		Item 1
+	</rux-menu-item>
+	<rux-menu-item-divider></rux-menu-item-divider>
+	<rux-menu-item value="2">
+		Item 2
+	</rux-menu-item>
+	<rux-menu-item disabled>
+		Item 3 is disabled
+	</rux-menu-item>
+	<rux-menu-item value="Item 4">
+		Item 4 has a string value
+	</rux-menu-item>
+	<rux-menu-item href="https://www.astrouxds.com">
+		Item 5 is an anchor/action item...
+	</rux-menu-item>
+</rux-pop-up-menu>
+							`.trim()}
 					/>
 				</div>
 				<div class="breaking-change__code__block">
@@ -805,58 +709,63 @@ const title = 'Migration';
 					<Code
 						lang="html"
 						code={`
-	<rux-pop-up open placement="right">
-		<rux-icon icon="apps" slot="trigger"></rux-icon>
-		<rux-menu>
-			<rux-menu-item value="1">Menu Item 1</rux-menu-item>
-			<rux-menu-item value="2">Menu Item 2</rux-menu-item>
-			<rux-menu-item value="3">Menu Item 3</rux-menu-item>
-		</rux-menu>
-	</rux-pop-up>
-							`}
+<rux-pop-up open placement="right">
+	<rux-icon icon="apps" slot="trigger"></rux-icon>
+	<rux-menu>
+		<rux-menu-item value="1">Menu Item 1</rux-menu-item>
+		<rux-menu-item value="2">Menu Item 2</rux-menu-item>
+		<rux-menu-item value="3">Menu Item 3</rux-menu-item>
+	</rux-menu>
+</rux-pop-up>
+							`.trim()}
 					/>
 				</div>
 			</div>
 		</BreakingChange>
 
 		<BreakingChange title="Event Changes" impact="High">
-			<p>
-				The following events have been removed: <code>ruxmenuwillclose</code>,
-				<code>ruxmenuwillopen</code>. The <code>ruxmenudidclose</code> event has
-				been renamed to <code>ruxpopupclosed</code>. The
-				<code>ruxmenudidopen</code> event has been renamed to
-				<code>ruxpopupopened</code>.
-			</p>
+			<ul>
+				<li>
+					The following events have been removed:
+					<ul>
+						<li><code>ruxmenuwillclose</code></li>
+						<li><code>ruxmenuwillopen</code></li>
+					</ul>
+				</li>
+				<li>
+					The <code>ruxmenudidclose</code> event has been renamed to <code>ruxpopupclosed</code>.
+				</li>
+				<li>
+					The <code>ruxmenudidopen</code> event has been renamed to <code>ruxpopupopened</code>.
+				</li>
+			</ul>
 		</BreakingChange>
 
 		<BreakingChange title="Method Changes" impact="High">
 			<ul>
 				<li>
-					The <code>close</code> method has been removed. Use
-					<code>hide</code> instead.
+					The <code>close</code> method has been removed.
+					Use <code>hide</code> instead.
 				</li>
 				<li>
-					The <code>isOpen</code> method has been removed. Use the
-					<code>open</code> property to check if the menu is open.
+					The <code>isOpen</code> method has been removed.
+					Use the <code>open</code> property to check if the menu is open.
 				</li>
 				<li>
-					The <code>toggle</code> method has been removed. Use the
-					<code>show</code> or <code>hide</code> methods where appropriate.
+					The <code>toggle</code> method has been removed.
+					Use the <code>show</code> or <code>hide</code> methods where appropriate.
 				</li>
 			</ul>
 		</BreakingChange>
 
 		<BreakingChange title="Slot Removal" impact="High">
 			<p>
-				The <code>menu-end</code> slot has been removed. Use a regular
-				<code>rux-menu-item</code> and style it accordingly.
+				The <code>menu-end</code> slot has been removed.
+				Use a regular <code>rux-menu-item</code> and style it accordingly.
 			</p>
 		</BreakingChange>
 
-		<BreakingChange
-			title="Remove Deprecated CSS Custom Properties"
-			impact="Low"
-		>
+		<BreakingChange title="Remove Deprecated CSS Custom Properties" impact="Low">
 			<ul>
 				<li>
 					The following deprecated CSS Custom Properties have been removed:
@@ -873,11 +782,7 @@ const title = 'Migration';
 			</ul>
 			<p>
 				<strong>Resolution:</strong>
-				<a
-					href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md"
-				>
-					View the CSS Custom Properties Migration document for more details.
-				</a>
+				<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">View the CSS Custom Properties Migration document for more details.</a>
 			</p>
 		</BreakingChange>
 	</BreakingChangeComponent>
@@ -893,19 +798,13 @@ const title = 'Migration';
 				<strong>Resolution:</strong>
 			</p>
 			<p>
-				Search your application for any usage of
-				<code>&lt;rux-progress&gt;</code> in it&#39;s indeterminate state.
-				<code>rux-progress</code> is considered indeterminate if no
-				<code>value</code> property is present. Replace
-				<code>&lt;rux-progress&gt;</code> with
-				<code>&lt;rux-indeterminate-progress&gt;</code>.
+				Search your application for any usage of <code>&lt;rux-progress&gt;</code> in it&#39;s indeterminate state.
+				<code>rux-progress</code> is considered indeterminate if no <code>value</code> property is present.
+				Replace <code>&lt;rux-progress&gt;</code> with <code>&lt;rux-indeterminate-progress&gt;</code>.
 			</p>
 		</BreakingChange>
 
-		<BreakingChange
-			title="Remove Deprecated CSS Custom Properties"
-			impact="Low"
-		>
+		<BreakingChange title="Remove Deprecated CSS Custom Properties" impact="Low">
 			<ul>
 				<li>
 					The following deprecated CSS Custom Properties have been removed:
@@ -923,28 +822,18 @@ const title = 'Migration';
 			</ul>
 			<p>
 				<strong>Resolution:</strong>
-				<a
-					href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md"
-				>
-					View the CSS Custom Properties Migration document for more details.
-				</a>
+				<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">View the CSS Custom Properties Migration document for more details.</a>
 			</p>
 		</BreakingChange>
 
 		<BreakingChange title="Host Style Changes" impact="Low">
 			<p>
-				Previously it was possible to change the following CSS properties by
-				targeting the <code>rux-progress</code> element instead of using the available
-				CSS Shadow Parts: <code>color</code>,
-				<code>font-family</code>, <code>font-size</code>,
-				<code>font-weight</code>, <code>line-height</code>,
-				<code>letter-spacing</code>. These styles have now been properly moved
-				to the shadow dom and require the use of CSS Shadow Parts.
+				Previously it was possible to change the following CSS properties by targeting the <code>rux-progress</code> element instead of using the available CSS Shadow Parts: <code>color</code>, <code>font-family</code>, <code>font-size</code>, <code>font-weight</code>, <code>line-height</code>, <code>letter-spacing</code>.
+				These styles have now been properly moved to the shadow dom and require the use of CSS Shadow Parts.
 			</p>
 			<p>
-				<strong>Resolution:</strong> Search your application&#39;s CSS for anything
-				that may be targeting <code>rux-progress</code> directly and replace with
-				the appropriate CSS Shadow Part.
+				<strong>Resolution:</strong>
+				Search your application&#39;s CSS for anything that may be targeting <code>rux-progress</code> directly and replace with the appropriate CSS Shadow Part.
 			</p>
 			<div class="breaking-change__code">
 				<div class="breaking-change__code__block">
@@ -952,16 +841,15 @@ const title = 'Migration';
 					<Code
 						lang="css"
 						code={`
-	rux-progress {
-		color: red;
-		font-family: Arial;
-		font-size: 2rem;
-		font-weight: 800;
-		line-height: 1;
-		letter-spacing: 0.3em;
-	}
-			
-							`}
+rux-progress {
+	color: red;
+	font-family: Arial;
+	font-size: 2rem;
+	font-weight: 800;
+	line-height: 1;
+	letter-spacing: 0.3em;
+}
+							`.trim()}
 					/>
 				</div>
 				<div class="breaking-change__code__block">
@@ -969,16 +857,16 @@ const title = 'Migration';
 					<Code
 						lang="html"
 						code={`
-	rux-progress::part(output),
-	rux-progress::part(progress) {
-		color: red;
-		font-family: Arial;
-		font-size: 2rem;
-		font-weight: 800;
-		line-height: 1;
-		letter-spacing: 0.3em;
-	}						
-							`}
+rux-progress::part(output),
+rux-progress::part(progress) {
+	color: red;
+	font-family: Arial;
+	font-size: 2rem;
+	font-weight: 800;
+	line-height: 1;
+	letter-spacing: 0.3em;
+}
+							`.trim()}
 					/>
 				</div>
 			</div>
@@ -986,10 +874,7 @@ const title = 'Migration';
 	</BreakingChangeComponent>
 
 	<BreakingChangeComponent name="Push Button">
-		<BreakingChange
-			title="Remove Deprecated CSS Custom Properties"
-			impact="Low"
-		>
+		<BreakingChange title="Remove Deprecated CSS Custom Properties" impact="Low">
 			<ul>
 				<li>
 					The following deprecated CSS Custom Properties have been removed:
@@ -1006,30 +891,21 @@ const title = 'Migration';
 			</ul>
 			<p>
 				<strong>Resolution:</strong>
-				<a
-					href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md"
-				>
-					View the CSS Custom Properties Migration document for more details.
-				</a>
+				<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">View the CSS Custom Properties Migration document for more details.</a>
 			</p>
 		</BreakingChange>
 
 		<BreakingChange title="Part Rename" impact="Low">
 			<p>
-				The <code>label</code> CSS Shadow Part has been renamed to
-				<code>container</code>to be more consistent with other components.
-				<strong>Resolution:</strong> Search your application for any usage of
-				<code>rux-push-button::part(label)</code> and replace it with
-				<code>rux-push-button::part(container)</code>.
+				The <code>label</code> CSS Shadow Part has been renamed to <code>container</code>to be more consistent with other components.
+				<strong>Resolution:</strong>
+				Search your application for any usage of <code>rux-push-button::part(label)</code> and replace it with <code>rux-push-button::part(container)</code>.
 			</p>
 		</BreakingChange>
 	</BreakingChangeComponent>
 
 	<BreakingChangeComponent name="Radio">
-		<BreakingChange
-			title="Remove Deprecated CSS Custom Properties"
-			impact="Low"
-		>
+		<BreakingChange title="Remove Deprecated CSS Custom Properties" impact="Low">
 			<ul>
 				<li>
 					The following deprecated CSS Custom Properties have been removed:
@@ -1044,20 +920,13 @@ const title = 'Migration';
 			</ul>
 			<p>
 				<strong>Resolution:</strong>
-				<a
-					href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md"
-				>
-					View the CSS Custom Properties Migration document for more details.
-				</a>
+				<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">View the CSS Custom Properties Migration document for more details.</a>
 			</p>
 		</BreakingChange>
 	</BreakingChangeComponent>
 
 	<BreakingChangeComponent name="Radio Group">
-		<BreakingChange
-			title="Remove Deprecated CSS Custom Properties"
-			impact="Low"
-		>
+		<BreakingChange title="Remove Deprecated CSS Custom Properties" impact="Low">
 			<ul>
 				<li>
 					The deprecated <code>--radiogroup-border-color</code> CSS Custom Property
@@ -1066,55 +935,44 @@ const title = 'Migration';
 			</ul>
 			<p>
 				<strong>Resolution:</strong>
-				<a
-					href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md"
-				>
-					View the CSS Custom Properties Migration document for more details.
-				</a>
+				<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">View the CSS Custom Properties Migration document for more details.</a>
 			</p>
 		</BreakingChange>
 	</BreakingChangeComponent>
 
 	<BreakingChangeComponent name="Segmented Button">
-		<BreakingChange
-			title="Remove Deprecated CSS Custom Properties"
-			impact="Low"
-		>
+		<BreakingChange title="Remove Deprecated CSS Custom Properties" impact="Low">
 			<ul>
 				<li>
-					The following deprecated CSS Custom Properties have been removed: -
-					--segmented-button-background-color - --segmented-button-text-color -
-					--segmented-button-border-color -
-					--segmented-button-hover-background-color -
-					--segmented-button-hover-text-color -
-					--segmented-button-hover-border-color -
-					--segmented-button-selected-background-color
+					The following deprecated CSS Custom Properties have been removed:
+					<ul>
+						<li><code>--segmented-button-background-color</code></li>
+						<li><code>--segmented-button-text-color</code></li>
+						<li><code>--segmented-button-border-color</code></li>
+						<li><code>--segmented-button-hover-background-color</code></li>
+						<li><code>--segmented-button-hover-text-color</code></li>
+						<li><code>--segmented-button-hover-border-color</code></li>
+						<li><code>--segmented-button-selected-background-color</code></li>
+					</ul>
 				</li>
-				<strong>Resolution:</strong>
-				<a
-					href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md"
-				>
-					View the CSS Custom Properties Migration document for more details.
-				</a>
+				<p>
+					<strong>Resolution:</strong>
+					<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">View the CSS Custom Properties Migration document for more details.</a>
+				</p>
 			</ul>
 		</BreakingChange>
 
 		<BreakingChange title="Medium Default Size" impact="Low">
 			<p>
-				The default <code>size</code> property is now
-				<code>medium</code> instead of <code>small</code>.
-				<strong>Resolution:</strong> Search your app for
-				<code>rux-segmented-button</code> and manually add set the
-				<code>size</code> property to <code>small</code> where desired.
+				The default <code>size</code> property is now <code>medium</code> instead of <code>small</code>.
+				<strong>Resolution:</strong>
+				Search your app for <code>rux-segmented-button</code> and manually add set the <code>size</code> property to <code>small</code> where desired.
 			</p>
 		</BreakingChange>
 	</BreakingChangeComponent>
 
 	<BreakingChangeComponent name="Select">
-		<BreakingChange
-			title="Remove Deprecated CSS Custom Properties"
-			impact="Low"
-		>
+		<BreakingChange title="Remove Deprecated CSS Custom Properties" impact="Low">
 			<ul>
 				<li>
 					The following deprecated CSS Custom Properties have been removed:
@@ -1137,20 +995,13 @@ const title = 'Migration';
 			</ul>
 			<p>
 				<strong>Resolution:</strong>
-				<a
-					href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md"
-				>
-					View the CSS Custom Properties Migration document for more details.
-				</a>
+				<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">View the CSS Custom Properties Migration document for more details.</a>
 			</p>
 		</BreakingChange>
 	</BreakingChangeComponent>
 
 	<BreakingChangeComponent name="Slider">
-		<BreakingChange
-			title="Remove Deprecated CSS Custom Properties"
-			impact="Low"
-		>
+		<BreakingChange title="Remove Deprecated CSS Custom Properties" impact="Low">
 			<ul>
 				<li>
 					The following deprecated CSS Custom Properties have been removed:
@@ -1173,9 +1024,7 @@ const title = 'Migration';
 			</ul>
 			<p>
 				<strong>Resolution:</strong>
-				<a
-					href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md"
-				>
+				<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">
 					View the CSS Custom Properties Migration document for more details.
 				</a>
 			</p>
@@ -1183,10 +1032,7 @@ const title = 'Migration';
 	</BreakingChangeComponent>
 
 	<BreakingChangeComponent name="Switch">
-		<BreakingChange
-			title="Remove Deprecated CSS Custom Properties"
-			impact="Low"
-		>
+		<BreakingChange title="Remove Deprecated CSS Custom Properties" impact="Low">
 			<ul>
 				<li>
 					The following deprecated CSS Custom Properties have been removed:
@@ -1201,27 +1047,18 @@ const title = 'Migration';
 			</ul>
 			<p>
 				<strong>Resolution:</strong>
-				<a
-					href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md"
-				>
-					View the CSS Custom Properties Migration document for more details.
-				</a>
+				<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">View the CSS Custom Properties Migration document for more details.</a>
 			</p>
 		</BreakingChange>
 		<BreakingChange title="Host Style Changs" impact="Low">
 			<p>
-				Previously it was possible to change the following CSS properties by
-				targeting the <code>rux-switch</code> element instead of using the available
-				CSS Shadow Parts: <code>color</code>,
-				<code>font-family</code>, <code>font-size</code>,
-				<code>font-weight</code>, <code>line-height</code>,
-				<code>letter-spacing</code>. These styles have now been properly moved
-				to the shadow dom and require the use of CSS Shadow Parts.
+				Previously it was possible to change the following CSS properties by targeting the <code>rux-switch</code> element instead of using the available CSS Shadow Parts:
+				<code>color</code>, <code>font-family</code>, <code>font-size</code>, <code>font-weight</code>, <code>line-height</code>, <code>letter-spacing</code>.
+				These styles have now been properly moved to the shadow dom and require the use of CSS Shadow Parts.
 			</p>
 			<p>
-				<strong>Resolution:</strong> Search your application&#39;s CSS for anything
-				that may be targeting <code>rux-switch</code> directly and replace with the
-				appropriate CSS Shadow Part.
+				<strong>Resolution:</strong>
+				Search your application&#39;s CSS for anything that may be targeting <code>rux-switch</code> directly and replace with the appropriate CSS Shadow Part.
 			</p>
 			<div class="breaking-change__code">
 				<div class="breaking-change__code__block">
@@ -1229,15 +1066,15 @@ const title = 'Migration';
 					<Code
 						lang="css"
 						code={`
-	rux-switch {
-		color: red;
-		font-family: Arial;
-		font-size: 2rem;
-		font-weight: 800;
-		line-height: 1;
-		letter-spacing: 0.3em;
-	}
-							`}
+rux-switch {
+	color: red;
+	font-family: Arial;
+	font-size: 2rem;
+	font-weight: 800;
+	line-height: 1;
+	letter-spacing: 0.3em;
+}
+							`.trim()}
 					/>
 				</div>
 				<div class="breaking-change__code__block">
@@ -1245,16 +1082,16 @@ const title = 'Migration';
 					<Code
 						lang="css"
 						code={`
-	rux-switch::part(label),
-	rux-switch::part(switch) {
-		color: red;
-		font-family: Arial;
-		font-size: 2rem;
-		font-weight: 800;
-		line-height: 1;
-		letter-spacing: 0.3em;
-	}
-							`}
+rux-switch::part(label),
+rux-switch::part(switch) {
+	color: red;
+	font-family: Arial;
+	font-size: 2rem;
+	font-weight: 800;
+	line-height: 1;
+	letter-spacing: 0.3em;
+}
+							`.trim()}
 					/>
 				</div>
 			</div>
@@ -1262,10 +1099,7 @@ const title = 'Migration';
 	</BreakingChangeComponent>
 
 	<BreakingChangeComponent name="Tab">
-		<BreakingChange
-			title="Remove Deprecated CSS Custom Properties"
-			impact="Low"
-		>
+		<BreakingChange title="Remove Deprecated CSS Custom Properties" impact="Low">
 			<ul>
 				<li>
 					The following deprecated CSS Custom Properties have been removed:
@@ -1279,29 +1113,19 @@ const title = 'Migration';
 			</ul>
 			<p>
 				<strong>Resolution:</strong>
-				<a
-					href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md"
-				>
-					View the CSS Custom Properties Migration document for more details.
-				</a>
+				<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">View the CSS Custom Properties Migration document for more details.</a>
 			</p>
 		</BreakingChange>
 
 		<BreakingChange title="Host Style Changes" impact="Low">
 			<p>
-				Previously it was possible to change the following CSS properties by
-				targeting the <code>rux-tab</code> element instead of using the available
-				CSS Shadow Parts: <code>border-color</code>,
-				<code>border-bottom</code>, <code>min-width</code>,
-				<code>padding</code> ,<code>font-family</code>, <code>font-size</code>,
-				<code>font-weight</code>, <code>letter-spacing</code>. These styles have
-				now been properly moved to the shadow dom and require the use of CSS
-				Shadow Parts.
+				Previously it was possible to change the following CSS properties by targeting the <code>rux-tab</code> element instead of using the available CSS Shadow Parts:
+				<code>border-color</code>, <code>border-bottom</code>, <code>min-width</code>, <code>padding</code> ,<code>font-family</code>, <code>font-size</code>, <code>font-weight</code>, <code>letter-spacing</code>.
+				These styles have now been properly moved to the shadow dom and require the use of CSS Shadow Parts.
 			</p>
 			<p>
-				<strong>Resolution:</strong> Search your application&#39;s CSS for anything
-				that may be targeting <code>rux-tab</code> directly and replace with the
-				appropriate CSS Shadow Part.
+				<strong>Resolution:</strong>
+				Search your application&#39;s CSS for anything that may be targeting <code>rux-tab</code> directly and replace with the appropriate CSS Shadow Part.
 			</p>
 			<div class="breaking-change__code">
 				<div class="breaking-change__code__block">
@@ -1309,18 +1133,18 @@ const title = 'Migration';
 					<Code
 						lang="css"
 						code={`
-	rux-tab {
-		color: red;
-		min-width: 3rem;
-		padding: 1rem;
-		border-bottom: 2px solid red;
-		border-color: red;
-		font-family: Arial;
-		font-size: 2rem;
-		font-weight: 800;
-		letter-spacing: 0.3em;
-	}
-							`}
+rux-tab {
+	color: red;
+	min-width: 3rem;
+	padding: 1rem;
+	border-bottom: 2px solid red;
+	border-color: red;
+	font-family: Arial;
+	font-size: 2rem;
+	font-weight: 800;
+	letter-spacing: 0.3em;
+}
+							`.trim()}
 					/>
 				</div>
 				<div class="breaking-change__code__block">
@@ -1328,18 +1152,18 @@ const title = 'Migration';
 					<Code
 						lang="css"
 						code={`
-	rux-tab::part(container) {
-		color: red;
-		min-width: 3rem;
-		padding: 1rem;
-		border-bottom: 2px solid red;
-		border-color: red;
-		font-family: Arial;
-		font-size: 2rem;
-		font-weight: 800;
-		letter-spacing: 0.3em;
-	}
-							`}
+rux-tab::part(container) {
+	color: red;
+	min-width: 3rem;
+	padding: 1rem;
+	border-bottom: 2px solid red;
+	border-color: red;
+	font-family: Arial;
+	font-size: 2rem;
+	font-weight: 800;
+	letter-spacing: 0.3em;
+}
+							`.trim()}
 					/>
 				</div>
 			</div>
@@ -1349,29 +1173,25 @@ const title = 'Migration';
 	<BreakingChangeComponent name="Table">
 		<BreakingChange title="Borders Removed" impact="Medium">
 			<p>
-				The right and left borders have been removed by default to make them
-				easier to use within Cards and Containers.
+				The right and left borders have been removed by default to make them easier to use within Cards and Containers.
 			</p>
 			<p>
-				<strong>Resolution:</strong> You can manually reapply the left and right
-				borders by targeting the host element itself:
+				<strong>Resolution:</strong>
+				You can manually reapply the left and right borders by targeting the host element itself:
 			</p>
 			<Code
 				lang="css"
 				code={`
-	rux-table {
-		border: 1px solid var(--color-background-base-default);
-	}
-			`}
+rux-table {
+	border: 1px solid var(--color-background-base-default);
+}
+			`.trim()}
 			/>
 		</BreakingChange>
 	</BreakingChangeComponent>
 
 	<BreakingChangeComponent name="Textarea">
-		<BreakingChange
-			title="Remove Deprecated CSS Custom Properties"
-			impact="Low"
-		>
+		<BreakingChange title="Remove Deprecated CSS Custom Properties" impact="Low">
 			<ul>
 				<li>
 					The following deprecated CSS Custom Properties have been removed:
@@ -1385,18 +1205,11 @@ const title = 'Migration';
 			</ul>
 			<p>
 				<strong>Resolution:</strong>
-				<a
-					href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md"
-				>
-					View the CSS Custom Properties Migration document for more details.
-				</a>
+				<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">View the CSS Custom Properties Migration document for more details.</a>
 			</p>
 		</BreakingChange>
 
-		<BreakingChange
-			title="Remove Deprecated CSS Custom Properties"
-			impact="Low"
-		>
+		<BreakingChange title="Remove Deprecated CSS Custom Properties" impact="Low">
 			<ul>
 				<li>
 					The following deprecated CSS Custom Properties have been removed:
@@ -1418,20 +1231,13 @@ const title = 'Migration';
 			</ul>
 			<p>
 				<strong>Resolution:</strong>
-				<a
-					href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md"
-				>
-					View the CSS Custom Properties Migration document for more details.
-				</a>
+				<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">View the CSS Custom Properties Migration document for more details.</a>
 			</p>
 		</BreakingChange>
 	</BreakingChangeComponent>
 
 	<BreakingChangeComponent name="Tree">
-		<BreakingChange
-			title="Remove Deprecated CSS Custom Properties"
-			impact="Low"
-		>
+		<BreakingChange title="Remove Deprecated CSS Custom Properties" impact="Low">
 			<ul>
 				<li>
 					The following deprecated CSS Custom Properties have been removed:
@@ -1450,11 +1256,7 @@ const title = 'Migration';
 			</ul>
 			<p>
 				<strong>Resolution:</strong>
-				<a
-					href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md"
-				>
-					View the CSS Custom Properties Migration document for more details.
-				</a>
+				<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">View the CSS Custom Properties Migration document for more details.</a>
 			</p>
 		</BreakingChange>
 	</BreakingChangeComponent>
@@ -1462,13 +1264,11 @@ const title = 'Migration';
 	<BreakingChangeComponent name="Tree Node">
 		<BreakingChange title="Icons Prefix Slot" impact="Medium">
 			<p>
-				The default display for content inside Tree Nodes has changed and may
-				break your application if you are using the Tree Node with icons or
-				status symbols.
+				The default display for content inside Tree Nodes has changed and may break your application if you are using the Tree Node with icons or status symbols.
 			</p>
 			<p>
-				<strong>Resolution:</strong> Add <code>slot=&quot;prefix&quot;</code> to
-				any icons or status symbols.
+				<strong>Resolution:</strong>
+				Add <code>slot=&quot;prefix&quot;</code> to any icons or status symbols.
 			</p>
 			<div class="breaking-change__code">
 				<div class="breaking-change__code__block">
@@ -1476,11 +1276,11 @@ const title = 'Migration';
 					<Code
 						lang="html"
 						code={`
-	<rux-tree-node>
-		<rux-status status="critical"></rux-status>
-		Tree Node 1.1
-	</rux-tree-node>					
-							`}
+<rux-tree-node>
+	<rux-status status="critical"></rux-status>
+	Tree Node 1.1
+</rux-tree-node>
+							`.trim()}
 					/>
 				</div>
 				<div class="breaking-change__code__block">
@@ -1488,11 +1288,11 @@ const title = 'Migration';
 					<Code
 						lang="html"
 						code={`
-	<rux-tree-node>
-		<rux-status slot="prefix" status="critical"></rux-status>
-		Tree Node 1.1
-	</rux-tree-node>
-							`}
+<rux-tree-node>
+	<rux-status slot="prefix" status="critical"></rux-status>
+	Tree Node 1.1
+</rux-tree-node>
+							`.trim()}
 					/>
 				</div>
 			</div>
@@ -1500,18 +1300,13 @@ const title = 'Migration';
 
 		<BreakingChange title="Host Style Changes" impact="Low">
 			<p>
-				Previously it was possible to change the following CSS properties by
-				targeting the <code>rux-tree-node</code> element instead of using the available
-				CSS Shadow Parts: <code>color</code>,
-				<code>font-family</code>, <code>font-size</code>,
-				<code>font-weight</code>, <code>line-height</code>,
-				<code>letter-spacing</code>. These styles have now been properly moved
-				to the shadow dom and require the use of CSS Shadow Parts.
+				Previously it was possible to change the following CSS properties by targeting the <code>rux-tree-node</code> element instead of using the available CSS Shadow Parts:
+				<code>color</code>, <code>font-family</code>, <code>font-size</code>, <code>font-weight</code>, <code>line-height</code>, <code>letter-spacing</code>.
+				These styles have now been properly moved to the shadow dom and require the use of CSS Shadow Parts.
 			</p>
 			<p>
-				<strong>Resolution:</strong> Search your application&#39;s CSS for anything
-				that may be targeting <code>rux-tree-node</code> directly and replace with
-				the appropriate CSS Shadow Part.
+				<strong>Resolution:</strong>
+				Search your application&#39;s CSS for anything that may be targeting <code>rux-tree-node</code> directly and replace with the appropriate CSS Shadow Part.
 			</p>
 			<div class="breaking-change__code">
 				<div class="breaking-change__code__block">
@@ -1519,15 +1314,15 @@ const title = 'Migration';
 					<Code
 						lang="css"
 						code={`
-	rux-tree-node {
-		color: red;
-		font-family: Arial;
-		font-size: 2rem;
-		font-weight: 800;
-		line-height: 1;
-		letter-spacing: 0.3em;
-	}						
-							`}
+rux-tree-node {
+	color: red;
+	font-family: Arial;
+	font-size: 2rem;
+	font-weight: 800;
+	line-height: 1;
+	letter-spacing: 0.3em;
+}
+							`.trim()}
 					/>
 				</div>
 				<div class="breaking-change__code__block">
@@ -1535,15 +1330,15 @@ const title = 'Migration';
 					<Code
 						lang="css"
 						code={`
-	rux-tree-node::part(node) {
-		color: red;
-		font-family: Arial;
-		font-size: 2rem;
-		font-weight: 800;
-		line-height: 1;
-		letter-spacing: 0.3em;
-	}
-							`}
+rux-tree-node::part(node) {
+	color: red;
+	font-family: Arial;
+	font-size: 2rem;
+	font-weight: 800;
+	line-height: 1;
+	letter-spacing: 0.3em;
+}
+							`.trim()}
 					/>
 				</div>
 			</div>

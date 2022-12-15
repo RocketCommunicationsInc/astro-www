@@ -1,11 +1,9 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
 title: Log
-demo: components-log--log
+layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-log--log
+height: 380px
 git: rux-log
-height: 510px
-theme: true
 ---
 
 # Log

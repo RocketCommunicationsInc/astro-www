@@ -13,7 +13,7 @@
 
 	/* Appearance */
 	background: var(--SurfaceColor);
-	border-radius: 3--rpx;
+	border-radius: var(--EdgeRadius);
 	color: var(--PrimaryColor);
 
 	@media (width >= 400px) {
@@ -99,7 +99,7 @@
 
 		/* Appearance */
 		background: var(--BaseColor);
-		border-radius: 3--rpx;
+		border-radius: var(--EdgeRadius);
 
 		/* Appearance */
 		color: var(--PrimaryColor);
@@ -127,7 +127,7 @@
 	line-height: max(20 / 16);
 
 	/* Appearance */
-	border-radius: 3--rpx;
+	border-radius: var(--EdgeRadius);
 	box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
 	color: var(--InteractiveColor);
 	cursor: pointer;
@@ -146,7 +146,7 @@
 
 	/* Appearance */
 	background-color: var(--InteractiveColor);
-	border-radius: 3--rpx;
+	border-radius: var(--EdgeRadius);
 	box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
 	color: var(--InverseColor);
 	cursor: pointer;
@@ -168,7 +168,7 @@
 
 	/* Appearance */
 	background: var(--SurfaceColor);
-	border-radius: 3--rpx;
+	border-radius: var(--EdgeRadius);
 	color: var(--PrimaryColor);
 
 	@media (width >= 400px) {

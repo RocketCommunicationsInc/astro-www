@@ -1,6 +1,6 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
 title: Getting Started
+layout: project:layouts/docs/docs-layout.astro
 ---
 
 # Getting Started

@@ -1,17 +1,7 @@
 ---
 import DefaultLayout from 'project:layouts/default/default-layout-with-grid.astro'
-import SiteNavigation from 'project:components/site-navigation/site-navigation.astro'
-import SiteFooter from 'project:components/site-footer/site-footer.astro'
-
 import './home-layout.css'
 ---
-
 <DefaultLayout>
-	<SiteNavigation slot="side" />
-
-	<main class="p-content" id="content">
-		<slot />
-	</main>
-
-	<SiteFooter slot="foot" />
+	<slot />
 </DefaultLayout>

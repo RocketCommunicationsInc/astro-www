@@ -1,0 +1,142 @@
+---
+import DocsLayout from 'project:layouts/docs/docs-layout.astro'
+import globalData from 'project:data/global.json'
+
+const title = 'releases'
+---
+<DocsLayout content={{ title }} file={import.meta.url}>
+	<a href="#releases" class="h h1">
+		<h1 id="releases">
+			Releases
+		</h1>
+	</a>
+	<p>
+		Astro represents a collection of artifacts including, but not limited to, guidance, compliance, design assets/tools, coded components, third-party themes, and related samples. The major version of Astro as indicated in the website footer and below is the version that should be included in contracts. The associated asset versions should not be referenced in contract language.
+	</p>
+
+	<a href="#current-version" class="h h2">
+		<h2 id="current-version">
+			Current Version ({globalData.designSystem.version})
+		</h2>
+	</a>
+	<table class="release-table release-table--current-version">
+		<thead>
+			<tr>
+			<th colspan="3">Astro { globalData.designSystem.version } - Updated <time>December 08, 2022</time></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+			<td>Design Language</td>
+			<td class="tabular"><b>{ globalData.designSystem.version }</b></td>
+			<td></td>
+			</tr>
+			<tr>
+				<td>Design Tokens</td>
+				<td class="tabular">1.1.0 -&gt; <b>1.2.0</b></td>
+				<td><a href="https://github.com/RocketCommunicationsInc/astro-design-tokens/blob/main/CHANGELOG.md">Release Notes</a></td>
+			</tr>
+			<tr>
+			<td>Figma Dark Theme Library</td>
+			<td class="tabular">7.1.0 -&gt; <b>7.1.1</b></td>
+			<td><a href="https://www.figma.com/community/file/1157371532469023309">Release Notes</a></td>
+			</tr>
+			<tr>
+			<td>Web Components</td>
+			<td class="tabular">7.3.0 -&gt; <b>7.4.0</b></td>
+			<td><a href="https://github.com/RocketCommunicationsInc/astro/releases/tag/v7.4.0">Release Notes</a></td>
+			</tr>
+			<tr>
+			<td>EGS Design Compliance</td>
+			<td class="tabular">6.2.0</td>
+			<td>No Changes</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<a href="#previous-major-versions" class="h h2">
+		<h2 id="previous-major-versions">
+			Previous Major Versions
+		</h2>
+	</a>
+	<p>
+		Visit our <a href="https://v6.astrouxds.com/" target="_blank">Legacy Documentation</a> for more information about Astro V6.
+	</p>
+	<table class="release-table releast-table--previous-versions">
+		<thead>
+			<tr>
+				<th class="release-table__version">Version</th>
+				<th>Status</th>
+				<th>Released</th>
+				<th>End of Support</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1.0</td>
+				<td>Unsupported</td>
+				<td>Sep 1, 2015</td>
+				<td>Dec 15, 2016</td>
+			</tr>
+			<tr>
+				<td>2.0</td>
+				<td>Unsupported</td>
+				<td>Dec 15, 2016</td>
+				<td>April 16, 2018</td>
+			</tr>
+			<tr>
+				<td>3.0</td>
+				<td>Unsupported</td>
+				<td>Apr 16, 2018</td>
+				<td>Apr 8, 2019</td>
+			</tr>
+			<tr>
+				<td>4.0</td>
+				<td>Unsupported</td>
+				<td>Apr 8, 2019</td>
+				<td>Jan 27, 2021</td>
+			</tr>
+			<tr>
+				<td><a href="https://github.com/RocketCommunicationsInc/astro-uxds/tree/v5.0">5.0</a></td>
+				<td>Unsupported</td>
+				<td>Jan 27, 2021</td>
+				<td>Jul 7, 2022</td>
+			</tr>
+			<tr>
+				<td><a href="https://github.com/RocketCommunicationsInc/astro/tree/v6.0.0">6.0</a></td>
+				<td>Supported</td>
+				<td>Oct 27, 2021</td>
+				<td>Jan 12, 2023</td>
+			</tr>
+			<tr>
+				<td><a href="https://github.com/RocketCommunicationsInc/astro/tree/v7.0.0">7.0</a></td>
+				<td>Supported</td>
+				<td>September 29, 2022</td>
+				<td>TBD</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<a href="#release-schedule" class="h h2">
+		<h2 id="release-schedule">
+			Release Schedule
+		</h2>
+	</a>
+	<p>
+		During 2022, Astro will publish minor and patch updates on a bi-weekly basis on Thursday and major updates on a bi-annual cadence. Astro patch/minor releases may include updates to design assets, compliance, components, design tokens and documentation.
+	</p>
+
+	<a href="#semantic-versioning" class="h h3">
+		<h3 id="semantic-versioning">
+			Semantic Versioning
+		</h3>
+	</a>
+	<p>
+		Astro uses Semantic Versioning or <a href="https://semver.org/" target="_blank">SemVer</a>, a widely adopted method of conveying meaning about the change. SemVer is expressed as three numbers delimited by a decimal point (1.4.3). While SemVer has quite a lot of nuance, for Astro we are adopting the basic patch, minor, and major nomenclature.
+	</p>
+	<div class="note">
+		<p>
+			Unlike standard decimals, each numeral is separated by a full-stop, increments numerically, and resets the numbers to the right. E.g., making a minor change to version 1.9.3 would result in a new version number of 1.10.0. There is no limit to how high each number can go, but practically speaking anything beyond 999 becomes unwieldy.
+		</p>
+	</div>
+</DocsLayout>

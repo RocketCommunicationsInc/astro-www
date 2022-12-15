@@ -1,11 +1,9 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
 title: Clock
-demo: components-clock--default-story
+layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-clock--default-story
+height: 220px
 git: rux-clock
-height: 230px
-theme: true
 ---
 
 # Clock

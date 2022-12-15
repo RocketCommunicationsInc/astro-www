@@ -1,13 +1,9 @@
 ---
-tags: components
-path: /components/tag
-date: Last Modified
-layout: project:layouts/docs/docs-layout.astro
 title: Tag
+layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-tag--all-variants
+height: 180px
 git: rux-tag
-height: 200px
-theme: true
 ---
 
 # Tag

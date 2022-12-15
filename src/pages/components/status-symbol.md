@@ -1,12 +1,9 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
 title: Status Symbol
-demo: components-status--all-variants
+layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-status--all-variants
+height: 112px
 git: rux-status
-height: 100px
-theme: true
-class: color
 ---
 
 # Status Symbol

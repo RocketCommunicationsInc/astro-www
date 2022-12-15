@@ -1,15 +1,9 @@
 ---
-tags: components
-path: /components/tree
-date: Last Modified
-layout: project:layouts/docs/docs-layout.astro
 title: Tree
-demo: components-tree--default-story
+layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-tree--default-story
+height: 428px
 git: rux-tree
-height: 480px
-scrolling: yes
-theme: true
 ---
 
 # Tree

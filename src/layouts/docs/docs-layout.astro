@@ -1,21 +1,22 @@
 ---
-import Layout from 'project:layouts/default/default-layout-with-grid.astro'
-import SiteNavigation from 'project:components/site-navigation/site-navigation.astro'
-import ContributionFooter from 'project:components/contribution-footer/contribution-footer.astro'
-import SiteFooter from 'project:components/site-footer/site-footer.astro'
-import './docs-layout.css'
-import compliance from 'project:data/compliance.json'
-import ComplianceAside from 'project:components/compliance/compliance-aside.astro'
-import '../../components/home/signup/home-signup.css'
-import metaData from 'project:utils/meta'
+import Layout from 'project:layouts/default/default-layout-with-grid.astro';
+import ContributionFooter from 'project:components/contribution-footer/contribution-footer.astro';
+import ComplianceAside from 'project:components/compliance/compliance-aside.astro';
+import SiteSkipTo from 'project:components/site-skipto/site-skipto.astro'
+
+import complianceData from 'project:data/compliance.json';
+import globalData from 'project:data/global.json';
+import './docs-layout.css';
 
 const {
 	git: GitHubId,
 	height: StorybookPreviewHeight,
 	storybook: StorybookId,
 	title,
-} = Object(Astro.props.content)
+} = Object(Astro.props.content);
+
 /* Create github link to source file */
+
 /** RegEx to match a slash (/) at the end ($) of a string. */
 const matchTrailingSlash = /\/$/
 
@@ -27,33 +28,13 @@ const fileName = new URL(Astro.props.file, 'file:').toString()
 const fileExt = fileName.split('.').at(-1)
 
 /** URL to the current source for this page. */
-const githubSourceURL = `${metaData.docsRepo}/tree/${metaData.docsBranch}/src/pages${withoutTrailingSlash(Astro.url.pathname)}.${fileExt}`
-
+const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData.designSystem.repositoryBranch}/src/pages${withoutTrailingSlash(Astro.url.pathname)}.${fileExt}`
 ---
-<script>
-import './docs-layout.client.js'
-</script>
 <Layout {title} tabtitle={title}>
-	<SiteNavigation slot="side" />
-	<style is:global define:vars={{ GitHubId, StorybookId, StorybookPreviewHeight }}>
-	.p-grid-main {
-		 background: white;
-	}
-	.storybook-demo {
-		/* preview frame (1--StorybookPreviewHeight) + navigation links (20--step) */
-		min-block-size: calc(1--StorybookPreviewHeight + 20--step);
-
-		& iframe {
-			block-size: 1--StorybookPreviewHeight;
-		}
-	}
-	</style>
-	<main class="p-content DocSearch-content" id="content">
-
+	<SiteSkipTo slot="top" />
+	<main id="content">
 		<slot />
-		<ComplianceAside compliance={compliance} />
+		<ComplianceAside compliance={complianceData} />
 		<ContributionFooter sourceurl={githubSourceURL} />
-
 	</main>
-	<SiteFooter slot="foot" />
 </Layout>

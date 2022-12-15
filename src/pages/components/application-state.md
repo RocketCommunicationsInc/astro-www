@@ -1,11 +1,6 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
 title: Application State
-# demo: components-application-state--application-state
-# storybook: components-application-state--application-state
-# git: application-state
-height: 260px
-theme: true
+layout: project:layouts/component-docs/component-docs-layout.astro
 ---
 
 # Application State
