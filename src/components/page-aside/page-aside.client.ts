@@ -37,10 +37,7 @@ const createTableOfContentsNavigation = (headings: NodeListOf<HTMLHeadingElement
 
 	const asideLinkMap = new WeakMap<HTMLHeadingElement, HTMLAnchorElement>()
 
-	const aside = document.querySelector('.p-aside')!
-	const float = h<HTMLAnchorElement>('<div class="float">')
-	const fakeLink = h<HTMLAnchorElement>('<a href="">Nowhere</a>')
-	const divider = h<HTMLHRElement>('<hr>')
+	const aside = document.querySelector('.p-aside .-contents')!
 	const navElement = h<HTMLElement>('<nav class="p-inpage-navigation">')
 	const listElement = h<HTMLUListElement>('<ul>')
 
@@ -57,8 +54,7 @@ const createTableOfContentsNavigation = (headings: NodeListOf<HTMLHeadingElement
 	}
 
 	navElement.append(listElement)
-	float.append(fakeLink, divider, navElement)
-	aside.append(float)
+	aside.append(navElement)
 }
 
 createTableOfContentsNavigation(document.querySelectorAll('main [id]:is(h1,h2,h3,h4,h5,h6)'))
