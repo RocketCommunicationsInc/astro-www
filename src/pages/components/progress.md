@@ -1,11 +1,9 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
 title: Progress
-demo: components-progress--determinate-progress
+layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-progress
-git: rux-progress
 height: 220px
-theme: true
+git: rux-progress
 ---
 # Progress
 

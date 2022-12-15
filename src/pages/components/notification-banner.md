@@ -1,12 +1,9 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
 title: Notification Banner
-demo: components-notification--all-variants
+layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-notification--all-variants
+height: 600px
 git: rux-notification
-scrolling: yes
-height: 560px
-theme: true
 ---
 # Notification Banner
 

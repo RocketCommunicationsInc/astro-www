@@ -1,11 +1,9 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
 title: Tabs
-demo: components-tabs--default-story
+layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-tabs--default-story
-git: rux-tabs
 height: 160px
-theme: true
+git: rux-tabs
 ---
 
 # Tabs

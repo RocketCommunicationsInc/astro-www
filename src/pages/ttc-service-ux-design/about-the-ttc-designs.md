@@ -43,7 +43,7 @@ UX research conducted in collaboration with users and domain experts on existing
 - The majority of operators’ TT&C activities take place when a target satellite is within contact range, but there are activities to be completed between contacts, including preparing for contact with the next satellite in the constellation.
 - Accomplishing all the necessary tasks during a pass (when the satellite is within contact) can require switching between many windows or workstations to access controls and information.
 - Current TT&C solutions lack a centralized place for operators to view important information at-a-glance.
-- Operators are responsible for multiple satellites and there is a limited window to communicate with each, so it is imperative that they be able to perform their tasks quickly and with a minimum of cognitive load.  
+- Operators are responsible for multiple satellites and there is a limited window to communicate with each, so it is imperative that they be able to perform their tasks quickly and with a minimum of cognitive load.
   The software used for these systems often appears dated and visually disjointed.
 
 ## UX Design and Sample Apps

@@ -1,0 +1,37 @@
+{
+	"algolia": {
+		"apiKey": "a402f3cc6d8965606af2d7235ba75700",
+		"appId": "EQEH1X5N4X",
+		"index": "astrouxds"
+	},
+	"components": {
+		"repository": "https://github.com/RocketCommunicationsInc/astro",
+		"repositoryBranch": "main"
+	},
+	"designSystem": {
+		"homepage": "https://www.astrouxds.com/",
+		"repository": "https://github.com/RocketCommunicationsInc/astro-www",
+		"repositoryBranch": "main",
+		"version": "7.0"
+	},
+	"figma": {
+		"homepage": "https://www.figma.com/@astrouxds"
+	},
+	"googleAnalytics": {
+		"trackingId": "UA-114182957-1"
+	},
+	"siteMeta": {
+		"title": "Astro",
+		"tabtitle": "Astro UXDS",
+		"type": "website",
+		"description": "The Astro Space UX Design System enables developers & designers to build rich space app experiences with established interaction patterns & best practices.",
+		"imageurl": "/images/astro-card.jpg",
+		"imagealt": "Astro Space UX Design System 7.0",
+		"icon": "/favicon.svg",
+		"touchicon": "/apple-touch-icon.png",
+		"lang": "en-US"
+	},
+	"storybook": {
+		"homepage": "https://astro-components.netlify.app/"
+	}
+}

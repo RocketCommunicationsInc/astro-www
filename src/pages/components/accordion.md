@@ -1,11 +1,9 @@
 ---
 title: Accordion
-layout: project:layouts/docs/docs-layout.astro
-theme: false
-height: 210px
-scrolling: true
-git: rux-accordion
+layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-accordion--default-story
+height: 216px
+git: rux-accordion
 ---
 
 # Accordion

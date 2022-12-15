@@ -611,7 +611,7 @@
 				{
 					"name": "Pop Up",
 					"numeral": 11,
-					"link": "/components/pop-up/",
+					"link": "/components/pop-up-menu/",
 					"rules": [
 						{
 							"numeral": 1,

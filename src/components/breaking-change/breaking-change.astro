@@ -7,21 +7,21 @@ export interface Props {
 }
 
 const badgeVariant = {
-        Low: "neutral",
-        Medium: "warning",
-        High: "danger",
-      };
+	Low: 'neutral',
+	Medium: 'warning',
+	High: 'danger',
+}
 
-
-const { props } = Astro as { props: Props }
+const {
+	...props
+} = Astro.props as Props
 ---
-
-<div class="breaking-change">
+<article class="breaking-change">
 	<header>
-	  <h3 style={`color: var(--sl-color-${badgeVariant[props.impact]}-500);`}>{props.title}</h3>
-	  <sl-badge class="breaking-change__impact" variant={badgeVariant[props.impact]}>{props.impact} Impact</sl-badge>
+		<h3>{props.title}</h3>
+		<sl-badge class="breaking-change__impact" variant={badgeVariant[props.impact]}>{props.impact} Impact</sl-badge>
 	</header>
 	<div class="breaking-change__content">
 		<slot></slot>
 	</div>
-  </div>
+</article>

@@ -3,4 +3,5 @@
 @import "style/variables.css";
 @import "style/utilities.css";
 @import "style/custom-element-display.css";
-@import "style/root.css";
+@import "style/reset.css";
+@import "style/layout.css";

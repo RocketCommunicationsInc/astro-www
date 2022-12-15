@@ -1,9 +1,6 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
 title: Pagination
-legacyDemo: https://rocketcom.bitbucket.io/_html-samples/samples/pagination.html
-git:
-height: 300px
+layout: project:layouts/docs/docs-layout.astro
 ---
 
 # Pagination

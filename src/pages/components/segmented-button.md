@@ -1,11 +1,9 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
 title: Segmented Button
-demo: components-segmented-button--default-story
+layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-segmented-button--default-story
-git: rux-segmented-button
 height: 80px
-theme: true
+git: rux-segmented-button
 ---
 
 # Segmented Button

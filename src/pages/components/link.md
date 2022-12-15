@@ -1,6 +1,6 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
 title: Link
+layout: project:layouts/docs/docs-layout.astro
 ---
 # Link
 

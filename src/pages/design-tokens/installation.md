@@ -1,8 +1,6 @@
 ---
-path: /design-tokens/installation
-date: Last Modified
-layout: project:layouts/docs/docs-layout.astro
 title: Installation
+layout: project:layouts/docs/docs-layout.astro
 ---
 
 # Installation

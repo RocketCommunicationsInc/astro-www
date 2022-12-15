@@ -1,7 +1,38 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
 title: Color
+layout: project:layouts/docs/docs-layout.astro
 ---
+<style>
+td:not(.processed):nth-child(1),
+td:not(.processed):nth-child(3),
+td:not(.processed) > *,
+color-swab {
+	display: flex;
+
+	/* Layout */
+	align-items: center;
+	gap: .25em;
+
+	/* Text */
+	font-family: ui-monospace;
+	white-space: nowrap;
+}
+
+td:not(.processed):nth-child(1)::before,
+td:not(.processed):nth-child(3)::before,
+td:not(.processed) > *::before,
+color-swab::before {
+	content: "";
+
+	/* Layout */
+	inline-size: .875em;
+	block-size: .875em;
+
+	/* Appearance */
+	background-color: var(--color);
+	box-shadow: 0 0 0 1px inset;
+}
+</style>
 
 # Color
 
@@ -137,6 +168,8 @@ The Quaternary Palette has been removed entirely.
 :::
 
 <script type="module">
+customElements.define('color-swab', class extends HTMLElement {})
+
 /** Matches a value which is a 6-digit hex color. */
 const matchHexColor = /^#[0-9A-Fa-f]{6}$/
 
@@ -145,6 +178,8 @@ const matchCustomProp = /^--[\w-]+$/
 
 // transform tables within any available table overflow elements
 for (const td of document.querySelectorAll('.table-overflow td')) {
+	td.classList.add('processed')
+
 	const tdContent = td.textContent
 
 	/* Whether the content of the TD matched a 6-digit hex color. */
@@ -171,24 +206,3 @@ for (const td of document.querySelectorAll('.table-overflow td')) {
 	}
 }
 </script>
-<style>
-color-swab {
-	display: flex;
-
-	/* Layout */
-	align-items: center;
-	gap: .25em;
-}
-
-color-swab::before {
-	content: "";
-
-	/* Layout */
-	inline-size: .875em;
-	block-size: .875em;
-
-	/* Appearance */
-	background-color: var(--color);
-	box-shadow: 0 0 0 1px inset;
-}
-</style>

@@ -51,7 +51,7 @@
 
 		/* Appearance */
 		background-color: var(--SurfaceSelectedColor);
-		border-radius: 3--rpx;
+		border-radius: var(--EdgeRadius);
 
 		&:is(:hover, :focus-visible) {
 			background: var(--InteractiveMutedColor);

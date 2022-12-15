@@ -1,11 +1,9 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
 title: Card
-theme: true
+layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-card--full-example
+height: 320px
 git: rux-card
-scrolling: false
-height: 330px
 ---
 
 # Card

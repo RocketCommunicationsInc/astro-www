@@ -1,8 +1,6 @@
 ---
-path: /compliance/mil-std-1472
-date: Last Modified
-layout: project:layouts/docs/docs-layout.astro
 title: MIL-STD-1472 Compliance
+layout: project:layouts/docs/docs-layout.astro
 ---
 
 # MIL-STD-1472 Compliance

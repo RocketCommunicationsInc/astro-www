@@ -40,7 +40,7 @@ const sanitizer = new Sanitizer()
 				</small>
 				<hgroup class="p-community-event-heading">
 					<h5>{calendarEvent.summary}</h5>
-					<When {calendarEvent.location}>
+					<When test={calendarEvent.location}>
 						<small class="p-community-event-subheading">{calendarEvent.location}</small>
 					</When>
 				</hgroup>
