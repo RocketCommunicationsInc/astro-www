@@ -1,13 +1,9 @@
 ---
-tags: components
-path: /components/timeline
-date: Last Modified
-layout: project:layouts/docs/docs-layout.astro
 title: Timeline
+layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: beta-timeline-beta--default-story
+height: 488px
 git: rux-timeline
-height: 460px
-theme: true
 ---
 
 # Timeline

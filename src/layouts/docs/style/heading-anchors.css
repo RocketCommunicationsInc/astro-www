@@ -1,0 +1,55 @@
+a.h {
+	/* Appearance */
+	color: inherit;
+
+	/* Reference */
+	--icon-size: max(.75em, 1rem);
+
+	& > * {
+		display: flex;
+
+		--border-color: var(--Heading1BorderColor);
+		--border-size: 1px;
+
+		@nest :focus-visible > &, :active > & {
+			--border-color: var(--Orange700Color);
+			--border-size: max(2px, .25em);
+		}
+
+		/* Appearance */
+		box-shadow: var(--border-color) 0 -1--border-size 0 0 inset;
+		transition: box-shadow 60ms;
+
+		&::before {
+			content: var(--AnchorIcon);
+			display: inline-block;
+
+			/* Layout */
+			height: 1--icon-size;
+			margin-inline: -1.25--icon-size .25--icon-size;
+			width: 1--icon-size;
+
+			/* Appearance */
+			opacity: 0;
+			transition: opacity 200ms;
+		}
+	}
+
+	&:hover:not(:focus-visible) {
+		& > * {
+			&::before {
+				/* Appearance */
+				opacity: 60%;
+			}
+		}
+	}
+
+	&:hover, &:focus-visible {
+		color: var(--InvertedColor);
+	}
+
+	&:focus-visible {
+		/* Appearance */
+		outline: none;
+	}
+}

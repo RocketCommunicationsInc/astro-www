@@ -1,20 +1,22 @@
 ---
 import DefaultLayout from './default-layout.astro'
+import SiteNavigation from 'project:components/site-navigation/site-navigation.astro'
+import SiteFooter from 'project:components/site-footer/site-footer.astro'
 import './default-layout-with-grid.css'
 
 export type { Props } from '@astropub/doc'
 ---
-<DefaultLayout {...Astro.props}>
+<DefaultLayout body-class="p-grid" {...Astro.props}>
 	<slot slot="head" name="head" />
-	<div class="p-grid">
-		<div class="p-grid-side">
-			<slot name="side" />
-		</div>
-		<div class="p-grid-main">
-			<slot />
-		</div>
-		<div class="p-grid-foot">
-			<slot name="foot" />
-		</div>
+	<meta slot="head" name="theme-color" content="#101923" />
+	<slot name="top" />
+	<div class="-side">
+		<SiteNavigation />
+	</div>
+	<div class="-main">
+		<slot />
+	</div>
+	<div class="-foot">
+		<SiteFooter />
 	</div>
 </DefaultLayout>

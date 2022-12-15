@@ -1,42 +1,18 @@
 ---
-export type { Props } from '@astropub/doc'
-
 import { Document, Props } from '@astropub/doc'
-import SiteSkipTo from 'project:components/site-skipto/site-skipto.astro'
-import metaData from 'project:utils/meta'
-const gaConfig = metaData.googleAnalyticsTrackingId
-
+import GoogleAnalytics from 'project:components/google-analytics/google-analytics.astro'
+import globalData from 'project:data/global.json'
 import './default-layout.css'
 
+export type { Props } from '@astropub/doc'
+
 const props = {
-	title: 'Astro',
-	tabtitle: 'Astro UXDS',
-
-	type: 'website',
-	description: 'The Astro Space UX Design System enables developers & designers to build rich space app experiences with established interaction patterns & best practices.',
-
-	imageurl: '/images/astro-card.jpg',
-	imagealt: 'Astro Space UX Design System 7.0',
-
-	icon: '/favicon.svg',
-	touchicon: '/apple-touch-icon.png',
-
+	...globalData.siteMeta,
 	url: Astro.url.href,
-
-	lang: 'en-US',
-
 	...Astro.props,
 } as Props
 ---
-<Document class="p-root" body-class="p-body" {...props}>
-	<!-- Google tag (gtag.js) -->
-	<script slot="head" async src="https://www.googletagmanager.com/gtag/js?id=UA-114182957-1"></script>
-	<script slot="head" define:vars={{ gaConfig }}>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', gaConfig)
-	</script>
-	<SiteSkipTo />
+<Document {...props}>
+	<GoogleAnalytics slot="head" />
 	<slot />
 </Document>

@@ -1,12 +1,9 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
-class: marking
 title: Classification & Control Markings
-demo: components-classification-markings--all-banner-variants
+layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-classification-markings--all-banner-variants
-git: rux-classification-marking
 height: 500px
-theme: false
+git: rux-classification-marking
 ---
 
 # Classification & Control Markings

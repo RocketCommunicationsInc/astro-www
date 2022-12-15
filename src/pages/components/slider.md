@@ -1,11 +1,9 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
 title: Slider
-demo: forms-slider--default-story
+layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: forms-slider--default-story
+height: 116px
 git: rux-slider
-height: 130px
-theme: true
 ---
 
 # Slider

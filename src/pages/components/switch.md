@@ -1,11 +1,9 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
 title: Switch
-demo: components-switch--switch
+layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-switch--switch
+height: 152px
 git: rux-switch
-height: 150px
-theme: true
 ---
 
 # Switch

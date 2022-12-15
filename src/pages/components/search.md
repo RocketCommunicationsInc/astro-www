@@ -1,7 +1,6 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
 title: Search
-theme: true
+layout: project:layouts/docs/docs-layout.astro
 ---
 
 # Search

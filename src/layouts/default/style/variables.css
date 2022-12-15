@@ -24,6 +24,7 @@
 	--Grey700Color: hsl(216, 6%, 34%);
 	--Grey800Color: hsl(220 5% 25%);
 	--Neutral000Color: hsl(0 0% 100%);
+	--Orange400Color: hsl(42 100% 67%);
 	--Orange600Color: hsl(35, 100%, 62%);
 	--Orange700Color: hsl(33 100% 50%);
 	--Pink600Color: hsl(290 100% 30%);
@@ -38,7 +39,6 @@
 	--PlaceholderColor: var(--Grey500Color);
 	--PrimaryColor: var(--Neutral000Color);
 	--SecondaryColor: var(--Grey300Color);
-	--WarningColor: #fcf1bf;
 
 	/* Base Colors */
 
@@ -64,7 +64,10 @@
 
 	/* Typography Styles */
 
-	/* --SystemType: system-ui; */
-	--SystemType: Helvetica, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	--SystemType: system-ui;
 	--SystemMonoType: ui-monospace;
+
+	/* Radius */
+
+	--EdgeRadius: 3--rpx;
 }

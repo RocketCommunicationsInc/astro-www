@@ -1,10 +1,9 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
 title: Global Status Bar
-demo: components-global-status-bar--default-story
+layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-global-status-bar--default-story
+height: 140px
 git: rux-global-status-bar
-height: 150px
 ---
 
 # Global Status Bar
