@@ -3,7 +3,6 @@
 publish = "dist/"
 command = "npm run build"
 
-
 [[redirects]]
 	from = "/ui-components/*"
 	to = "/components/:splat"
