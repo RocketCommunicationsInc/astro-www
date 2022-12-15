@@ -39,8 +39,13 @@
 
 .caution,
 .note {
+	display: flex;
+
 	/* Layout */
+	flex-flow: column;
+	justify-content: center;
 	margin-block-start: 4--step;
+	min-height: 18--step;
 	padding-block: 4--step;
 	padding-inline: 16--step 4--step;
 
