@@ -1,0 +1,80 @@
+---
+import DocsLayout from 'project:layouts/new-docs/new-docs-layout.astro'
+import PageHeader from 'project:components/page-header/page-header.js'
+---
+<DocsLayout content={{ title: 'Icon Library' }} file={import.meta.url}>
+	<PageHeader>
+		<PageHeader.Heading>
+			Icon Library
+		</PageHeader.Heading>
+		<PageHeader.Subheading>
+			The Status Symbol combines color and shape to create a standard and consistent way to indicate the status of a device or feature.
+		</PageHeader.Subheading>
+	</PageHeader>
+
+	<form class="p-search">
+		<label>
+			<span>Search icons ...</span>
+			<input type="text" />
+		</label>
+	</form>
+
+	<article>
+		<h2>
+			Astro
+		</h2>
+	</article>
+
+	<article>
+		<h2>
+			Actions
+		</h2>
+	</article>
+
+	<article>
+		<h2>
+			Alerts
+		</h2>
+	</article>
+
+	<article>
+		<h2>
+			AV
+		</h2>
+	</article>
+</DocsLayout>
+<style is:global>
+.p-search {
+	& label {
+		display: grid;
+
+		/* Layout */
+		align-items: stretch;
+		inline-size: 100%;
+		block-size: 15--step;
+
+		/* Appearance */
+		border-radius: 12--rpx;
+		box-shadow: 0 0 0 1px inset;
+
+		& > * {
+			display: flex;
+
+			/* Layout */
+			align-items: center;
+			grid-area: 1 / 1 / 2 / 2;
+			padding-inline: 18--step;
+
+			/* Appearance */
+			border-radius: 12--rpx;
+		}
+
+		& > span {
+			pointer-events: none;
+		}
+
+		& > input {
+		}
+	}
+}
+</style>

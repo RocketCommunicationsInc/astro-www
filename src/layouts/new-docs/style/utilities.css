@@ -1,0 +1,65 @@
+/* Aside Column */
+/* ========================================================================== */
+
+.p-aside {
+	& .float {
+		position: sticky;
+
+		/* Layout */
+		margin-block-start: 25--step;
+		inset-block-start: 25--step;
+	}
+
+	& hr {
+		/* Layout */
+		height: 18--step;
+
+		/* Appearance */
+		background: linear-gradient(0deg, transparent calc(50% - .5px), var(--Grey700Color) calc(50% - .5px), var(--Grey700Color) calc(50% + .5px), transparent calc(50% + .5px)) 50% 0;
+	}
+}
+
+/* In-Page Navigation */
+/* ========================================================================== */
+
+.p-inpage-navigation {
+	/* Appearance */
+	background:
+		linear-gradient(90deg, transparent 1px, var(--InverseColor) 1px, var(--InverseColor) 2px, transparent 2px),
+		linear-gradient(90deg, var(--DarkBlue500Color), var(--DarkBlue500Color));
+	background-size: auto, 3px var(--height, 24px);
+	background-position: 0 0, 0 var(--offset, 0);
+	background-repeat: repeat-y, no-repeat;
+	transition: background-position 120ms, background-size 120ms;
+
+	& ul {
+		display: flex;
+
+		/* Layout */
+		flex-flow: column;
+		gap: 6--step;
+	}
+
+	& a {
+		display: block;
+
+		/* Layout */
+		padding-block: 2--rpx;
+		padding-inline: 6--step;
+
+		/* Text */
+		font-size: 14--rpx;
+		line-height: calc(20 / 14);
+
+		/* Appearance */
+		color: var(--Grey700Color);
+
+		&.current {
+			/* Text */
+			font-weight: 700;
+
+			/* Appearance */
+			color: var(--DarkBlue500Color);
+		}
+	}
+}

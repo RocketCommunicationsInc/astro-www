@@ -1,0 +1,12 @@
+:root {
+	/* Color References */
+
+	--DarkBlue500Color: hsl(202 100% 28%);
+	--DarkBlue800Color: hsl(209 39% 17%);
+	--Grey200Color: hsl(216 31% 94%);
+	--Grey700Color: hsl(216 6% 34%);
+
+	/* Color References */
+
+	--TextColor: hsl(0 0% 0%);
+}

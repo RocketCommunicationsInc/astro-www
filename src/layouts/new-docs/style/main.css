@@ -1,0 +1,51 @@
+main {
+	display: grid;
+
+	/* Layout */
+	align-content: end;
+	column-gap: calc(1.5%);
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: min-content;
+	padding-block-end: 25--step;
+
+	& > * {
+		grid-column: 2 / 10;
+	}
+
+	& > .p-header {
+		grid-column: 1 / 13;
+	}
+
+	& > .p-aside {
+		grid-column: 10 / 12;
+		grid-row: 2 / 99;
+	}
+
+	& h2 {
+		/* Layout */
+		margin-block-start: 20--step;
+
+		/* Text */
+		font-size: 36--rpx;
+		line-height: calc(40 / 36);
+	}
+
+	& p {
+		/* Layout */
+		margin-block-start: 9--step;
+	}
+
+	& figure {
+		/* Layout */
+		margin-block-start: 16--step;
+
+		& > img {
+			display: block;
+		}
+	}
+
+	& figcaption {
+		/* Layout */
+		margin-block-start: 4--step;
+	}
+}

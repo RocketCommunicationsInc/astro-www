@@ -1,0 +1,81 @@
+---
+import DocsLayout from 'project:layouts/new-docs/new-docs-layout.astro'
+import PageHeader from 'project:components/page-header/page-header.js'
+import PageHeading from 'project:components/page-heading/page-heading.astro';
+
+const title = 'Icon Library'
+---
+<DocsLayout content={{ title }} file={import.meta.url}>
+	<PageHeader>
+		<PageHeader.Heading>
+			Classification & Control Markings
+		</PageHeader.Heading>
+		<PageHeader.Subheading>
+			The Status Symbol combines color and shape to create a standard and consistent way to indicate the status of a device or feature.
+		</PageHeader.Subheading>
+		<PageHeader.Nav>
+			<PageHeader.NavItem href="#overview" aria-current="page">
+				Overview
+			</PageHeader.NavItem>
+			<PageHeader.NavItem href="#specifications">
+				Specifications
+			</PageHeader.NavItem>
+			<PageHeader.NavItem href="#compliance">
+				Compliance
+			</PageHeader.NavItem>
+		</PageHeader.Nav>
+	</PageHeader>
+
+	<div style="block-size: calc(168 * var(--step)); background: var(--DarkBlue800Color);"></div>
+
+	<PageHeading level="2" id="when-to-use">
+		When to Use
+	</PageHeading>
+	<p>
+		I’m a paragraph.
+		Click here to add your own text and edit me.
+		It’s easy.
+		I’m a paragraph.
+		Click here to add your own text and edit me.
+	</p>
+
+	<PageHeading level="2" id="next-section">
+		Next Section
+	</PageHeading>
+	<p>
+		I’m a paragraph.
+		Click here to add your own text and edit me.
+		It’s easy.
+		I’m a paragraph.
+		Click here to add your own text and edit me.
+	</p>
+
+	<PageHeading level="2" id="third-section">
+		Third Section
+	</PageHeading>
+	<p>
+		I’m a paragraph.
+		Click here to add your own text and edit me.
+		It’s easy.
+		I’m a paragraph.
+		Click here to add your own text and edit me.
+	</p>
+
+	<PageHeading level="2" id="final-section">
+		Final Section
+	</PageHeading>
+	<p>
+		I’m a paragraph.
+		Click here to add your own text and edit me.
+		It’s easy.
+		I’m a paragraph.
+		Click here to add your own text and edit me.
+	</p>
+
+	<figure>
+		<img src="https://via.placeholder.com/800x400" alt="" width="736" height="368" />
+		<figcaption>
+			Astro Status Symbols in context of a modem list layout.
+		</figcaption>
+	</figure>
+</DocsLayout>

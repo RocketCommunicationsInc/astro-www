@@ -1,0 +1,16 @@
+---
+import Layout from 'project:layouts/default/default-layout-with-grid.astro';
+import SiteSkipTo from 'project:components/site-skipto/site-skipto.astro'
+
+import './new-docs-layout.css';
+---
+<Layout {...Astro.props}>
+	<SiteSkipTo slot="top" />
+	<main id="content">
+		<slot />
+		<aside class="p-aside" id="aside"></aside>
+	</main>
+</Layout>
+<script>
+import './new-docs-layout.client.js'
+</script>
