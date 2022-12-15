@@ -1,0 +1,26 @@
+---
+import './icon-search.css'
+import { For } from '@astropub/flow'
+
+import icons from 'project:data/icons.json'
+---
+<form class="p-search">
+	<label>
+		<input type="text" />
+		<span>Search icons ...</span>
+	</label>
+</form>
+
+<For of={Object.entries(icons)}>{([ name, icons ]) => (
+	<article>
+		<h2>{name}</h2>
+		<div class="icons">
+			<For of={Object.entries(icons)}>{([ id, { name, html } ]) => (
+				<figure class="icon" tabindex="0">
+					<svg viewBox="0 0 24 24" aria-label={name} set:html={html} />
+					<figcaption>{name}</figcaption>
+				</figure>
+			)}</For>
+		</div>
+	</article>
+)}</For>

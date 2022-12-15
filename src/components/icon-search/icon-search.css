@@ -1,0 +1,72 @@
+.p-search {
+	& label {
+		display: grid;
+
+		/* Layout */
+		align-items: stretch;
+		inline-size: 100%;
+		block-size: 15--step;
+
+		/* Appearance */
+		border-radius: 12--rpx;
+		box-shadow: 0 0 0 1px inset;
+
+		& > * {
+			display: flex;
+
+			/* Layout */
+			align-items: center;
+			grid-area: 1 / 1 / 2 / 2;
+			padding-inline: 18--step;
+
+			/* Appearance */
+			border-radius: 12--rpx;
+		}
+
+		& > span {
+			pointer-events: none;
+			transition: translate 120ms;
+		}
+
+		& > input {
+			&:focus + span {
+				translate: -12--step -12--step;
+			}
+		}
+	}
+}
+
+.icons {
+	display: grid;
+
+	/* Layout */
+	grid-template-columns: repeat(6, 1fr);
+
+	& .icon {
+		display: flex;
+
+		/* Layout */
+		align-items: center;
+		flex-flow: column;
+		padding-block: 8--step;
+		padding-inline: 3--step;
+
+		/* Typography */
+		text-align: center;
+
+		&:is(figure) {
+			margin-block: 0;
+		}
+
+		&:hover, &:focus-visible {
+			background-color: var(--Grey200Color);
+		}
+	}
+
+	& svg {
+		display: block;
+		aspect-ratio: 1 / 1;
+		width: 50px;
+		height: 50px;
+	}
+}
