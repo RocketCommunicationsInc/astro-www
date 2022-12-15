@@ -171,8 +171,4 @@ main {
 			}
 		}
 	}
-
-	& :nth-child(1) {
-		margin-block-start: 0;
-	}
 }
