@@ -1,0 +1,11 @@
+sl-tab-group {
+	--indicator-color: var(--Orange700Color);
+}
+
+sl-tab[active]::part(base) {
+	color: var(--Orange700Color);
+}
+
+sl-tab:hover::part(base) {
+	color: var(--Orange700Color);
+}

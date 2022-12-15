@@ -8,6 +8,7 @@ export type { Props } from '@astropub/doc'
 ---
 <DefaultLayout body-class="p-grid" {...Astro.props}>
 	<slot slot="head" name="head" />
+	<meta slot="head" name="theme-color" content="#101923" />
 	<slot name="top" />
 	<div class="-side">
 		<SiteNavigation />

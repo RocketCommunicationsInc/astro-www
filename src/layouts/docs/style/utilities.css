@@ -139,11 +139,16 @@
 		background-color: #efefef;
 	}
 
-	& :where(td) {
+	& td {
 		/* Layout */
 		padding: 2--step;
 
 		/* Appearance */
 		box-shadow: #efefef 0 -1px 0 0 inset;
 	}
+}
+
+.breaking-change-details {
+	/* Layout */
+	margin-block-start: 4--step;
 }

@@ -6,34 +6,9 @@ import { Code } from 'astro/components'
 
 const title = 'Migration'
 ---
-<style is:global>
-@import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.83/dist/themes/light.css';
-</style>
-<style is:global>
-:root {
-	--Grey200Color: hsl(216 31% 94%);
-}
-
-li > code, p > code {
-	/* Layout */
-	overflow-x: auto;
-	padding-block: .875--step;
-	padding-inline: 1--step;
-
-	/* Text */
-	font-family: var(--SystemMonoType);
-	font-size: 14--rpx;
-	line-height: calc(20 / 14);
-	white-space: pre;
-
-	/* Appearance */
-	background: var(--Grey200Color);
-	border-radius: var(--EdgeRadius);
-	color: var(--InverseColor);
-}
-</style>
 <DocsLayout content={{ title }} file={import.meta.url}>
-	<script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.83/dist/shoelace.js"></script>
+	<link slot="head" rel="stylesheet" href="https://unpkg.com/@shoelace-style/shoelace@2.0.0-beta.83/dist/themes/light.css" />
+
 	<h1>
 		7.0 Migration Guide
 	</h1>
@@ -60,7 +35,7 @@ li > code, p > code {
 	<h2>
 		Steps:
 	</h2>
-	<ol style="margin-bottom: 2rem;">
+	<ol>
 		<li>
 			Update your package.json
 			<ul>
@@ -1345,3 +1320,26 @@ rux-tree-node::part(node) {
 		</BreakingChange>
 	</BreakingChangeComponent>
 </DocsLayout>
+<style is:global>
+:root {
+	--Grey200Color: hsl(216 31% 94%);
+}
+
+li > code, p > code {
+	/* Layout */
+	overflow-x: auto;
+	padding-block: .875--step;
+	padding-inline: 1--step;
+
+	/* Text */
+	font-family: var(--SystemMonoType);
+	font-size: 14--rpx;
+	line-height: calc(20 / 14);
+	white-space: pre;
+
+	/* Appearance */
+	background: var(--Grey200Color);
+	border-radius: var(--EdgeRadius);
+	color: var(--InverseColor);
+}
+</style>

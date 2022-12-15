@@ -4,13 +4,8 @@ import { reference, findByName } from 'project:utils/tokens.js';
 
 const title = 'Reference';
 ---
-<style is:global>
-@import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.83/dist/themes/light.css';
-</style>
 <DocsLayout content={{ title }} file={import.meta.url}>
-	<script type="module" src="https://unpkg.com/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.esm.js"></script>
-	<script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.83/dist/shoelace.js"></script>
-	<script type="module" src="https://unpkg.com/@astrouxds/documentation-components?module"></script>
+	<link slot="head" rel="stylesheet" href="https://unpkg.com/@shoelace-style/shoelace@2.0.0-beta.83/dist/themes/light.css" />
 
 	<a href="#reference-tokens" class="h h1">
 		<h1 id="reference-tokens">
@@ -575,4 +570,10 @@ const title = 'Reference';
 		description={findByName('font-heading-6-letter-spacing')?.description}
 		type="letter-spacing"
 	/>
+
+	<script>
+	import 'https://unpkg.com/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.esm.js'
+	import 'https://unpkg.com/@astrouxds/documentation-components?module'
+	import 'https://unpkg.com/@shoelace-style/shoelace@2.0.0-beta.83/dist/shoelace.js'
+	</script>
 </DocsLayout>
