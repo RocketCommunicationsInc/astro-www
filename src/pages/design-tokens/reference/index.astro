@@ -5,8 +5,6 @@ import { reference, findByName } from 'project:utils/tokens.js';
 const title = 'Reference';
 ---
 <DocsLayout content={{ title }} file={import.meta.url}>
-	<link slot="head" rel="stylesheet" href="https://unpkg.com/@shoelace-style/shoelace@2.0.0-beta.83/dist/themes/light.css" />
-
 	<a href="#reference-tokens" class="h h1">
 		<h1 id="reference-tokens">
 			Reference Tokens
@@ -576,4 +574,7 @@ const title = 'Reference';
 	import 'https://unpkg.com/@astrouxds/documentation-components?module'
 	import 'https://unpkg.com/@shoelace-style/shoelace@2.0.0-beta.83/dist/shoelace.js'
 	</script>
+	<style is:global>
+	@import "https://unpkg.com/@shoelace-style/shoelace@2.0.0-beta.83/dist/themes/light.css";
+	</style>
 </DocsLayout>
