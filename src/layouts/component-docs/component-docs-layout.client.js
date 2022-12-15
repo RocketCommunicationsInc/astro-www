@@ -1,5 +1,3 @@
-import metaData from 'project:utils/meta'
-
 const template = document.createElement('template')
 
 template.innerHTML = [
