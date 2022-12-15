@@ -3,38 +3,6 @@ import DocsLayout from 'project:layouts/docs/docs-layout.astro'
 
 const title = 'Support'
 ---
-<style is:global>
-.p-email-signup {
-	& input {
-		/* Layout */
-		inline-size: 100%;
-		margin-block-start: max(1 * var(--step));
-		padding-block: max(2 * var(--step));
-		padding-inline: max(2 * var(--step));
-
-		/* Appearance */
-		box-shadow: var(--Grey700Color) 0 0 0 1px inset;
-		border-radius: max(max(3 * var(--rpx)));
-	}
-
-	& button[type="submit"] {
-		/* Layout */
-		align-self: center;
-		margin-block-start: 4--step;
-		padding-block: 2--step;
-		padding-inline: 11--step;
-
-		/* Text */
-		font-size: 16--rpx;
-		line-height: calc(20 / 16);
-
-		/* Appearance */
-		background: var(--DarkBlue700Color);
-		border-radius: var(--EdgeRadius);
-		color: var(--PrimaryColor);
-	}
-}
-</style>
 <DocsLayout content={{ title }} file={import.meta.url}>
 	<h1>
 		Support
@@ -80,4 +48,37 @@ const title = 'Support'
 		<input type="hidden" name="u" value="f067e558ee805172850a87843" />
 		<input type="hidden" name="b_f067e558ee805172850a87843_c1af406c10" />
 	</form>
+
+	<style is:global>
+	.p-email-signup {
+		& input {
+			/* Layout */
+			inline-size: 100%;
+			margin-block-start: max(1 * var(--step));
+			padding-block: max(2 * var(--step));
+			padding-inline: max(2 * var(--step));
+
+			/* Appearance */
+			box-shadow: var(--Grey700Color) 0 0 0 1px inset;
+			border-radius: max(max(3 * var(--rpx)));
+		}
+
+		& button[type="submit"] {
+			/* Layout */
+			align-self: center;
+			margin-block-start: 4--step;
+			padding-block: 2--step;
+			padding-inline: 11--step;
+
+			/* Text */
+			font-size: 16--rpx;
+			line-height: calc(20 / 16);
+
+			/* Appearance */
+			background: var(--DarkBlue700Color);
+			border-radius: var(--EdgeRadius);
+			color: var(--PrimaryColor);
+		}
+	}
+	</style>
 </DocsLayout>
