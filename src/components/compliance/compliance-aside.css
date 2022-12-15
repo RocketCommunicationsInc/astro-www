@@ -1,22 +1,23 @@
 :root {
-	--ComplianceIcon: url(
-		'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 35">\
-			<path fill="%23fff" d="M12.5 0A2.5 2.5 0 0 1 15 3h5v1.9h3a2 2 0 0 1 2 2V33a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6.9c0-1.1.9-2 2-2h3v-2h5v-.5C10 1.1 11.1 0 12.5 0ZM23 7H2v26h21V7ZM9.7 25.1c.3.3.4.8.2 1.1l-3 4.4c0 .2-.2.3-.3.3-.3.2-.6.1-.8-.1L4.2 29a.8.8 0 0 1 0-1c.3-.4.8-.4 1 0l1 1 2.5-3.8c.2-.3.7-.4 1-.2ZM21 28v2h-9v-2h9ZM9.7 17.1c.3.3.4.8.2 1.1l-3 4.4c0 .2-.2.3-.3.3-.3.2-.6.1-.8-.1L4.2 21a.8.8 0 0 1 0-1c.3-.4.8-.4 1 0l1 1 2.5-3.8c.2-.3.7-.4 1-.2ZM21 20v2h-9v-2h9ZM9.7 9.1c.3.3.4.8.2 1.1l-3 4.4c0 .2-.2.3-.3.3-.3.2-.6.1-.8-.1L4.2 13a.8.8 0 0 1 0-1c.3-.4.8-.4 1 0l1 1 2.5-3.8c.2-.3.7-.4 1-.2ZM21 12v2h-9v-2h9ZM12.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" />\
-		</svg>'
-	);
+	--ComplianceIcon:
+		url(
+			'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 35">\
+				<path fill="%23fff" d="M12.5 0A2.5 2.5 0 0 1 15 3h5v1.9h3a2 2 0 0 1 2 2V33a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6.9c0-1.1.9-2 2-2h3v-2h5v-.5C10 1.1 11.1 0 12.5 0ZM23 7H2v26h21V7ZM9.7 25.1c.3.3.4.8.2 1.1l-3 4.4c0 .2-.2.3-.3.3-.3.2-.6.1-.8-.1L4.2 29a.8.8 0 0 1 0-1c.3-.4.8-.4 1 0l1 1 2.5-3.8c.2-.3.7-.4 1-.2ZM21 28v2h-9v-2h9ZM9.7 17.1c.3.3.4.8.2 1.1l-3 4.4c0 .2-.2.3-.3.3-.3.2-.6.1-.8-.1L4.2 21a.8.8 0 0 1 0-1c.3-.4.8-.4 1 0l1 1 2.5-3.8c.2-.3.7-.4 1-.2ZM21 20v2h-9v-2h9ZM9.7 9.1c.3.3.4.8.2 1.1l-3 4.4c0 .2-.2.3-.3.3-.3.2-.6.1-.8-.1L4.2 13a.8.8 0 0 1 0-1c.3-.4.8-.4 1 0l1 1 2.5-3.8c.2-.3.7-.4 1-.2ZM21 12v2h-9v-2h9ZM12.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" />\
+			</svg>'
+		);
 }
 
 .p-compliance-aside {
 	display: grid;
 
+	/* Layout */
 	padding-block: 4--step;
 	padding-inline: 18--step 4--step;
 
 	/* Appearance */
 	background:
 		var(--ComplianceIcon) no-repeat 4--step 4--step / 6--step auto,
-		linear-gradient(90deg, var(--Grey800Color) 14--step, var(--PrimaryColor) 14--step)
-	;
+		linear-gradient(90deg, var(--Grey800Color) 14--step, var(--PrimaryColor) 14--step);
 	border-radius: 6--rpx;
 	box-shadow: var(--Grey800Color) 0 0 0 2--rpx inset;
 

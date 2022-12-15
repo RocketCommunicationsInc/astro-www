@@ -16,7 +16,7 @@ main {
 	& ol,
 	& p,
 	& pre,
-	& table
+	& table,
 	& ul {
 		/* Layout */
 		margin-block-start: 4--step;
@@ -75,6 +75,7 @@ main {
 		/* Layout */
 		min-width: 100%;
 
+		/* Text */
 		font-size: 15--rpx;
 		line-height: calc(16 / 15);
 	}
@@ -84,7 +85,7 @@ main {
 		padding: 2--step;
 
 		/* Type */
-		text-align: left;
+		text-align: start;
 		white-space: nowrap;
 	}
 
@@ -147,7 +148,7 @@ main {
 			&::before {
 				content: counter(counter);
 				display: inline-block;
-				float: left;
+				float: inline-start;
 
 				/* Layout */
 				margin-block-start: -.25--step;

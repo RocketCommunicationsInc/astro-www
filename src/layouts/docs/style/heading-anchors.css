@@ -21,7 +21,7 @@ a.h {
 		transition: box-shadow 60ms;
 
 		&::before {
-			content: var(--LinkSVG);
+			content: var(--AnchorIcon);
 			display: inline-block;
 
 			/* Layout */

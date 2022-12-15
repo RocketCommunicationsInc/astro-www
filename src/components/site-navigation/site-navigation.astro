@@ -27,17 +27,17 @@ import './client/h-navigation-list.js'
 		<ul class="p-navigation-list">
 			<For of={navigation.items}>{item => (
 				<li class={current.has(item) ? 'current' : null}>
-					<When {item.url}>
+					<When test={item.url}>
 						<a href={item.url}>{item.label}</a>
 					</When>
 
-					<When {!item.url}>
+					<When test={!item.url}>
 						<h-navigation-disclosure>
 							<span>{item.label}</span>
 
 							<ul>
 								<For of={item.items!}>{subitem => (
-									<When {subitem.label === 'separator'}>
+									<When test={subitem.label === 'separator'}>
 										<hr />
 
 										<li slot="else" class={current.has(subitem) ? 'current' : null}>

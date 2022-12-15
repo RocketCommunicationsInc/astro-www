@@ -154,6 +154,7 @@
 	&:disabled {
 		background: #4dacff6f;
 		color: ar(--InverseColor);
+		/* stylelint-disable-next-line declaration-no-important */
 		border-color: none !important;
 		cursor: not-allowed;
 	}

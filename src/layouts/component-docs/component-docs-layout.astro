@@ -17,7 +17,6 @@ const {
 	git: GitHubId,
 	height: StorybookPreviewHeight,
 	storybook: StorybookId,
-	title,
 } = Object(Astro.props.content)
 
 const html = `<style>:root{--StorybookPreviewHeight:${StorybookPreviewHeight};}</style>`
@@ -26,7 +25,7 @@ const html = `<style>:root{--StorybookPreviewHeight:${StorybookPreviewHeight};}<
 	<Fragment set:html={html} />
 	<slot />
 </Layout>
-<script define:vars={{ GitHubId, GitHubRepoURL, GitHubRepoBranch, StorybookId, StorybookPreviewHeight, storybookURL }}>
+<script define:vars={{ GitHubId, GitHubRepoURL, GitHubRepoBranch, StorybookId, storybookURL }}>
 const template = document.createElement('template')
 
 template.innerHTML = [

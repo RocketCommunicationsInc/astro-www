@@ -17,7 +17,7 @@ const { data } = Astro.props as typeof signup
 		)}</For>
 		<Submit>Submit</Submit>
 		<For of={data.hidden.data}>{item => (
-			<input type={item.type.data as any}  name={item.name.data} value={item.value?.data} />
+			<input type={item.type.data as any} name={item.name.data} value={item.value?.data} />
 		)}</For>
 	</form>
 </section>

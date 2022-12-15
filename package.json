@@ -308,7 +308,7 @@
 			"indentation": "tab",
 			"max-empty-lines": 1,
 			"max-line-length": null,
-			"max-nesting-depth": 4,
+			"max-nesting-depth": 6,
 			"no-descending-specificity": null,
 			"no-duplicate-selectors": null,
 			"no-empty-source": true,

@@ -16,7 +16,7 @@
 	const serialize = (obj) => {
 		const str = []
 		for (const p in obj) {
-			if (obj.hasOwnProperty(p)) {
+			if (Object.hasOwn(obj, p)) {
 				if (obj[p] !== undefined) {
 					str.push(encode(p) + '=' + encode(obj[p]))
 				}
