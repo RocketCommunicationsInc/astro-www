@@ -25,7 +25,9 @@
 						"type": "link",
 						"data": {
 							"url": "/images/article.svg",
-							"description": ""
+							"description": "",
+							"width": 318,
+							"height": 240
 						}
 					},
 					"content": {
@@ -48,7 +50,9 @@
 						"type": "link",
 						"data": {
 							"url": "/images/article-1.svg",
-							"description": ""
+							"description": "",
+							"width": 318,
+							"height": 240
 						}
 					},
 					"content": {
@@ -71,7 +75,9 @@
 						"type": "link",
 						"data": {
 							"url": "/images/article-2.svg",
-							"description": ""
+							"description": "",
+							"width": 318,
+							"height": 240
 						}
 					},
 					"content": {
@@ -94,7 +100,9 @@
 						"type": "link",
 						"data": {
 							"url": "/images/article-3.svg",
-							"description": ""
+							"description": "",
+							"width": 318,
+							"height": 240
 						}
 					},
 					"content": {
@@ -117,7 +125,9 @@
 						"type": "link",
 						"data": {
 							"url": "/images/article.svg",
-							"description": ""
+							"description": "",
+							"width": 318,
+							"height": 240
 						}
 					},
 					"content": {
