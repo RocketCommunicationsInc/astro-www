@@ -29,7 +29,7 @@ const countOfIcons = Object.keys(icons).reduce(
 			<div class="-icons">
 				<For of={Object.entries(icons)}>{([ id, { name, html } ]) => (
 					<figure class="icon" tabindex="0">
-						<svg viewBox="0 0 24 24" aria-label={name} set:html={html} />
+						<svg aria-label={name}><use href={`#icon-${id}`} /></svg>
 						<figcaption>{name}</figcaption>
 					</figure>
 				)}</For>
