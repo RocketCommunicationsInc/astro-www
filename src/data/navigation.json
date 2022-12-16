@@ -44,10 +44,6 @@
 				"url": "/design-guidelines/color/"
 			},
 			{
-				"label": "Icons",
-				"url": "/design-guidelines/icons/"
-			},
-			{
 				"label": "Typography",
 				"url": "/design-guidelines/typography/"
 			},
@@ -344,6 +340,10 @@
 			}
 		],
 		"label": "Compliance"
+	},
+	{
+		"label": "Icons",
+		"url": "/icons/"
 	},
 	{
 		"label": "Releases",
