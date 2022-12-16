@@ -54,6 +54,11 @@
 			/* Appearance */
 			color: var(--Grey700Color);
 			outline-offset: -2px;
+
+			&:hover,
+			&:focus-visible {
+				color: var(--DarkBlue500Color);
+			}
 		}
 
 		& [aria-current="page"] {
