@@ -33,6 +33,7 @@
 	& .-navigation {
 		/* Layout */
 		margin-block-start: var(--header-nav-block-start);
+		min-block-size: 20--step;
 		overflow-x: auto;
 
 		& ul {
