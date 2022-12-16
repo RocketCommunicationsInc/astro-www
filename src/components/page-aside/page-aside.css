@@ -19,22 +19,6 @@
 /* ========================================================================== */
 
 .p-aside {
-	& .-contents {
-		position: sticky;
-
-		/* Layout */
-		margin-block-start: 25--step;
-		inset-block-start: 25--step;
-	}
-
-	& hr {
-		/* Layout */
-		height: 18--step;
-
-		/* Appearance */
-		background: linear-gradient(0deg, transparent calc(50% - .5px), var(--Grey700Color) calc(50% - .5px), var(--Grey700Color) calc(50% + .5px), transparent calc(50% + .5px)) 50% 0;
-	}
-
 	& ul {
 		display: flex;
 

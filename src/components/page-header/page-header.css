@@ -1,63 +1,55 @@
 .p-header {
-	display: grid;
+	display: flex;
 
 	/* Layout */
-	align-content: end;
-	column-gap: calc(1.5%);
-	grid-template-columns: repeat(12, 1fr);
-	grid-template-rows: min-content min-content 35--step;
-	min-height: 430--rpx;
+	flex-flow: column;
+	justify-content: end;
+	min-height: var(--header-block-size);
+	padding-block-start: 4--step;
+	padding-inline: var(--layout-inline-gap-start) var(--layout-inline-gap-end);
 
 	/* Appearance */
 	background-color: var(--Grey200Color);
 	color: var(--DarkBlue800Color);
 
 	& .-heading {
-		/* Layout */
-		grid-column: 2 / 10;
-		grid-row: 1 / 2;
-
 		/* Text */
-		font-size: 64--rpx;
+		font-size: var(--heading-1-text-size);
 		font-weight: 300;
-		line-height: calc(70 / 64);
+		line-height: var(--heading-1-text-line);
 		letter-spacing: -.005em;
 	}
 
 	& .-subheading {
 		/* Layout */
-		grid-column: 2 / 10;
-		grid-row: 2 / 3;
 		margin-block-start: 6--step;
 
 		/* Text */
 		font-weight: 300;
-		font-size: 20--rpx;
-		line-height: calc(28 / 20);
+		font-size: var(--subheading-1-text-size);
+		line-height: var(--subheading-1-text-line);
 	}
 
 	& .-navigation {
 		/* Layout */
-		grid-column: 2 / 10;
-		grid-row: 3 / 4;
-		margin-block-start: 16--step;
+		margin-block-start: var(--header-nav-block-start);
 		overflow-x: auto;
 
 		& ul {
 			display: flex;
-			gap: 9--step;
+			gap: var(--header-nav-gap);
 		}
 
 		& a {
 			display: block;
 
 			/* Layout */
-			padding-block: 6--step;
-			padding-inline: 3--step;
+			padding-block: var(--header-nav-padding-block);
+			padding-inline: var(--header-nav-padding-inline);
 
 			/* Text */
-			font-size: 24--rpx;
-			line-height: calc(28 / 24);
+			font-size: var(--header-nav-text-size);
+			line-height: var(--header-nav-text-line);
 
 			/* Appearance */
 			color: var(--Grey700Color);

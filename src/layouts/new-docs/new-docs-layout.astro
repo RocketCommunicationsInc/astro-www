@@ -8,7 +8,14 @@ import './new-docs-layout.css';
 <Layout {...Astro.props}>
 	<SiteSkipTo slot="top" />
 	<main id="content">
-		<slot />
-		<PageAside />
+		<slot name="header" />
+		<div class="p-layout">
+			<div class="-content"><slot /></div>
+			<aside id="aside" class="p-aside">
+				<div class="-contents">
+					<PageAside />
+				</div>
+			</aside>
+		</div>
 	</main>
 </Layout>

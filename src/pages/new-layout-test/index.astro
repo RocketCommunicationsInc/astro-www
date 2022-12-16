@@ -6,7 +6,7 @@ import PageHeading from 'project:components/page-heading/page-heading.astro';
 const title = 'Icon Library'
 ---
 <DocsLayout content={{ title }} file={import.meta.url}>
-	<PageHeader>
+	<PageHeader slot="header">
 		<PageHeader.Heading>
 			Classification & Control Markings
 		</PageHeader.Heading>
@@ -26,7 +26,7 @@ const title = 'Icon Library'
 		</PageHeader.Nav>
 	</PageHeader>
 
-	<div style="block-size: calc(168 * var(--step)); background: var(--DarkBlue800Color);"></div>
+	<div style="block-size: calc(60 * var(--step)); background: var(--DarkBlue800Color);"></div>
 
 	<p>
 		Classification and Control Markings are required for digital products created for government clients who interact with classified or controlled information.
