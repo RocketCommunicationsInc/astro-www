@@ -1,0 +1,29 @@
+---
+import icons from './icons/icons.js'
+import './icon-link.css'
+
+const process = ({ props, slots }: Astro) => ({
+	attrs: props,
+	slots: new Proxy({
+		__proto__: null
+	} as any as Record<PropertyKey, Promise<string>>, {
+		get(target, slotName) {
+			return slotName in target ? target[slotName] : (
+				target[slotName] = slots.render(slotName as string)
+			)
+		}
+	}),
+})
+
+const {
+	attrs: {
+		icon,
+		...attrs
+	},
+	slots,
+} = process(Astro)
+---
+<a class="icon" {...attrs}>
+	<Fragment set:html={icon in icons ? icons[icon ] : null} />
+	{slots.default}
+</a>
