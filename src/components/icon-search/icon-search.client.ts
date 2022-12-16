@@ -26,26 +26,41 @@ const iconGroups = [
 )
 
 const searchControl = document.querySelector<HTMLInputElement>('.p-icon-search input')!
-
-console.log(searchControl)
+const searchResultCountEl = document.querySelector<HTMLParagraphElement>('.p-icon-results')!
 
 searchControl.addEventListener('input', () => {
 	let { value } = searchControl
+	let searchResultCount = 0
 
 	value = value.trim().toLowerCase()
 
 	for (let iconGroup of iconGroups) {
 		let nomatches = true
+		let earlymatch = !value || iconGroup.name.includes(value)
 
 		for (let icon of iconGroup.icons) {
-			const nomatch = Boolean(value) && !icon.name.includes(value)
+			const nomatch = !earlymatch && Boolean(value) && !icon.name.includes(value)
 
 			nomatches = nomatches && nomatch
 
 			icon.element.classList.toggle('nomatch', nomatch)
+
+			if (!nomatch) {
+				++searchResultCount
+			}
 		}
 
 		iconGroup.element.classList.toggle('nomatch', nomatches)
+
+		searchResultCountEl.textContent = (
+			searchResultCount
+				? (
+					searchResultCount === Number(searchResultCountEl.dataset.maxSize)
+				)
+					? `Showing all ${searchResultCount} icons.`
+				: `Showing ${searchResultCount} matching icons.`
+			: `No matching icons.`
+		)
 	}
 })
 
