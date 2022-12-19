@@ -7,7 +7,7 @@ const createTableOfContentsNavigation = (headings: NodeListOf<HTMLHeadingElement
 
 	const asideLinkMap = new WeakMap<HTMLHeadingElement, HTMLAnchorElement>()
 
-	const aside = document.querySelector('.p-aside .-contents')!
+	const aside = document.querySelector('.page-content-side-col .-content')!
 	const navElement = h<HTMLElement>('<nav class="p-inpage-navigation">')
 	const listElement = h<HTMLUListElement>('<ul>')
 

@@ -1,9 +1,9 @@
 ---
-import DocsLayout from 'project:layouts/new-docs/new-docs-layout.astro'
+import Layout from 'project:layouts/new-docs/new-docs-layout.astro'
 import IconSearch from 'project:components/icon-search/icon-search.astro'
 import PageHeader from 'project:components/page-header/page-header.js'
 ---
-<DocsLayout content={{ title: 'Icon Library' }} file={import.meta.url}>
+<Layout content={{ title: 'Icon Library' }} file={import.meta.url}>
 	<PageHeader slot="header">
 		<PageHeader.Heading>
 			Icon Library
@@ -15,4 +15,4 @@ import PageHeader from 'project:components/page-header/page-header.js'
 	</PageHeader>
 
 	<IconSearch />
-</DocsLayout>
+</Layout>
