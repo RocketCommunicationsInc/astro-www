@@ -30,6 +30,16 @@ const iconGroups = [
 const searchControl = document.querySelector<HTMLInputElement>('.icon-search-form .-control')!
 const searchResultCountEl = document.querySelector<HTMLParagraphElement>('.p-icon-results')!
 
+searchControl.toggleAttribute(':empty', !searchControl.value)
+
+searchControl.addEventListener('focus', () => {
+	searchControl.toggleAttribute(':empty', false)
+})
+
+searchControl.addEventListener('blur', () => {
+	searchControl.toggleAttribute(':empty', !searchControl.value)
+})
+
 searchControl.addEventListener('input', () => {
 	let { value } = searchControl
 	let searchResultCount = 0

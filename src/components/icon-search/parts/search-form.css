@@ -4,8 +4,8 @@
 
 		/* Layout */
 		align-items: center;
-		inline-size: 100%;
 		block-size: 15--step;
+		inline-size: 100%;
 
 		/* Appearance */
 		border-radius: 12--rpx;
@@ -41,7 +41,7 @@
 		margin-inline: 5--step;
 	}
 
-	& :focus ~ .-label {
+	& input:not([\:empty]) ~ .-label {
 		/* Transform */
 		translate: -12--step -12--step;
 
