@@ -29,15 +29,27 @@ class IconPanel extends HTMLElement {
 					}
 				}
 
+				const iconRawID = iconID.replace(/^#icon-/, '')
 				const svgHTML = svg.outerHTML
 
+				const wcHTML = `<rux-icon size="normal" icon=${JSON.stringify(iconRawID)}></rux-icon>`
+
 				switch (button.dataset.copy) {
+					case 'id': {
+						navigator.clipboard.writeText(iconRawID)
+						console.log('copied id')
+						break
+					}
+
 					case 'svg': {
 						navigator.clipboard.writeText(svgHTML)
+						console.log('copied svg')
 						break
 					}
 
 					case 'wc': {
+						navigator.clipboard.writeText(wcHTML)
+						console.log('copied web component')
 						break
 					}
 				}

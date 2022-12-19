@@ -21,6 +21,7 @@ svg {
 
 	/* Appearance */
 	background-color: var(--DarkBlue800Color);
+	border-radius: 3--rpx;
 	color: var(--PrimaryColor);
 
 	/* Reference */
@@ -74,12 +75,20 @@ svg {
 
 		/* Appearance */
 		appearance: auto;
-		background-color: buttonface;
 		background-color: var(--InverseColor);
 		border: none;
 		border-radius: 6--rpx;
 		color: var(--PrimaryColor);
 		cursor: pointer;
+
+		&:hover {
+			/* Appearance */
+			background-color: var(--DarkBlue500Color);
+		}
+
+		&:active {
+			translate: 0 1px;
+		}
 	}
 
 	&::part(button-icon) {
