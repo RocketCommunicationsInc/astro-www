@@ -23,13 +23,13 @@
 			border-radius: 12--rpx;
 		}
 
-		& > span {
-			pointer-events: none;
-			transition: translate 120ms;
-		}
-
 		& > input {
+			& + span {
+				color: var(--Grey700Color);
+			}
+
 			&:focus + span {
+				animation: slidein 300ms ease-out;
 				translate: -12--step -12--step;
 			}
 		}
@@ -95,4 +95,11 @@
 
 .p-icon-shapes {
 	display: none;
+}
+
+@keyframes slidein {
+	from {
+		opacity: 20%;
+		translate: -12--step -10--step;
+	}
 }
