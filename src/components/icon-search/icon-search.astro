@@ -1,8 +1,8 @@
 ---
-import './icon-search.css'
 import { For } from '@astropub/flow'
-
+import IconSearchForm from './parts/icon-search-form.astro'
 import icons from 'project:data/icons.json'
+import './icon-search.css'
 
 const countOfIcons = Object.keys(icons).reduce(
 	(acc, key)=> (
@@ -11,12 +11,7 @@ const countOfIcons = Object.keys(icons).reduce(
 	0
 )
 ---
-<form class="p-icon-search">
-	<label>
-		<input type="text" />
-		<span>Search icons ...</span>
-	</label>
-</form>
+<IconSearchForm label="Search icons ..." />
 
 <p class="p-icon-results" data-max-size={countOfIcons}>
 	Showing all {countOfIcons} icons.

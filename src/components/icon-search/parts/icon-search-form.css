@@ -1,0 +1,51 @@
+.icon-search-form {
+	& .-field {
+		display: grid;
+
+		/* Layout */
+		align-items: center;
+		inline-size: 100%;
+		block-size: 15--step;
+
+		/* Appearance */
+		border-radius: 12--rpx;
+		box-shadow: 0 0 0 1px inset;
+
+		& > * {
+			display: flex;
+
+			/* Layout */
+			align-items: center;
+			grid-area: 1 / 1 / 2 / 2;
+
+			/* Appearance */
+			border-radius: 12--rpx;
+		}
+	}
+
+	& .-control, & .-label {
+		/* Layout */
+		align-self: stretch;
+		padding-inline: 18--step;
+	}
+
+	& .-icon, & .-label {
+		/* Appearance */
+		color: var(--Grey700Color);
+	}
+
+	& .-icon {
+		/* Layout */
+		block-size: 5--step;
+		inline-size: 5--step;
+		margin-inline: 5--step;
+	}
+
+	& :focus ~ .-label {
+		/* Transform */
+		translate: -12--step -12--step;
+
+		/* Animate */
+		animation: slidein 300ms ease-out;
+	}
+}

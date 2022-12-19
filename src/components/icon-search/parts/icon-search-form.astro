@@ -1,0 +1,16 @@
+---
+import Icon from 'project:components/icon/icon.astro'
+import './icon-search-form.css'
+
+const {
+	label,
+	...attrs
+} = Astro.props
+---
+<form class="icon-search-form">
+	<label class="-field">
+		<input class="-control" type="text" {...attrs} />
+		<Icon class="-icon" type="search" />
+		<span class="-label">{label}</span>
+	</label>
+</form>
