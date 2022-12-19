@@ -1,3 +1,5 @@
+const iconPanel = document.querySelector<HTMLElement>('icon-panel')!
+
 const iconGroups = [
 	...document.querySelectorAll('.p-icon-groups .-group')!
 ].map(
@@ -25,7 +27,7 @@ const iconGroups = [
 	}
 )
 
-const searchControl = document.querySelector<HTMLInputElement>('.p-icon-search input')!
+const searchControl = document.querySelector<HTMLInputElement>('.icon-search-form .-control')!
 const searchResultCountEl = document.querySelector<HTMLParagraphElement>('.p-icon-results')!
 
 searchControl.addEventListener('input', () => {
@@ -33,6 +35,8 @@ searchControl.addEventListener('input', () => {
 	let searchResultCount = 0
 
 	value = value.trim().toLowerCase()
+
+	iconPanel.removeAttribute('use')
 
 	for (let iconGroup of iconGroups) {
 		let nomatches = true
@@ -63,5 +67,17 @@ searchControl.addEventListener('input', () => {
 		)
 	}
 })
+
+addEventListener('focus', event => {
+	const icon = event.target as HTMLElement
+
+	if (icon.matches?.('figure.icon')) {
+		const use = icon.querySelector<SVGUseElement>('use[href]')!
+
+		const iconID = use.href.baseVal
+
+		iconPanel.setAttribute('use', iconID)
+	}
+}, true)
 
 export {}

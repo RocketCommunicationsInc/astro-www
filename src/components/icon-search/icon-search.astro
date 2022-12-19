@@ -1,6 +1,6 @@
 ---
 import { For } from '@astropub/flow'
-import IconSearchForm from './parts/icon-search-form.astro'
+import IconSearchForm from './parts/search-form.astro'
 import icons from 'project:data/icons.json'
 import './icon-search.css'
 
@@ -33,7 +33,7 @@ const countOfIcons = Object.keys(icons).reduce(
 	)}</For>
 </div>
 
-<svg class="p-icon-shapes">
+<svg id="shapes" class="p-icon-shapes">
 	<For of={Object.entries(icons)}>{([ name, icons ]) => (
 		<g data-name={name}>
 			<For of={Object.entries(icons)}>{([ id, { name, html } ]) => (

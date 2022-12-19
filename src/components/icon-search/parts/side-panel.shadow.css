@@ -1,0 +1,96 @@
+* {
+	/* Layout */
+	box-sizing: border-box;
+}
+
+[hidden] {
+	display: none;
+}
+
+svg {
+	fill: CurrentColor;
+}
+
+:host {
+	display: flex;
+
+	/* Layout */
+	align-items: center;
+	flex-flow: column;
+	padding: 9--step;
+
+	/* Appearance */
+	background-color: var(--DarkBlue800Color);
+	color: var(--PrimaryColor);
+
+	/* Reference */
+	--icon-size: 50--step;
+
+	&::part(label) {
+		/* Text */
+		font-size: 36--rpx;
+		font-weight: 400;
+		letter-spacing: .0025em;
+		line-height: calc(40 / 36);
+		text-align: center;
+	}
+
+	&::part(icon) {
+		/* Layout */
+		block-size: var(--icon-size);
+		inline-size: var(--icon-size);
+
+		/* Appearance */
+		background-color: var(--PrimaryColor);
+		border-radius: 12--rpx;
+		color: var(--InverseColor);
+	}
+
+	&::part(button-group) {
+		display: flex;
+
+		/* Layout */
+		align-self: stretch;
+		flex-flow: column;
+		gap: 3--step;
+		margin-block-start: 11--step;
+	}
+
+	&::part(button) {
+		display: flex;
+
+		/* Layout */
+		justify-content: space-between;
+		margin: 0;
+		padding: 3--step;
+
+		/* Text */
+		font: inherit;
+		letter-spacing: inherit;
+		text-align: inherit;
+		text-shadow: inherit;
+		text-transform: inherit;
+		word-spacing: normal;
+
+		/* Appearance */
+		appearance: auto;
+		background-color: buttonface;
+		background-color: var(--InverseColor);
+		border: none;
+		border-radius: 6--rpx;
+		color: var(--PrimaryColor);
+		cursor: pointer;
+	}
+
+	&::part(button-icon) {
+		/* Layout */
+		block-size: 1em;
+		inline-size: 1em;
+	}
+}
+
+/* Hello */
+
+:host(:not([use])) {
+	display: none;
+}

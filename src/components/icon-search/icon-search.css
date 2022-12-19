@@ -1,3 +1,8 @@
+.page-content-side-col {
+	/* Layout */
+	flex-basis: 80--step;
+}
+
 .p-icon-groups {
 	@media (width < 1440px) {
 		--grid-size: 4;
@@ -33,11 +38,16 @@
 			/* Typography */
 			text-align: center;
 
+			/* Appearance */
+			border-radius: 6--rpx;
+
 			&:is(figure) {
+				/* Layout */
 				margin-block: 0;
 			}
 
 			&:hover, &:focus-visible {
+				/* Appearance */
 				background-color: var(--Grey200Color);
 			}
 
@@ -48,9 +58,11 @@
 
 		& svg {
 			display: block;
+
+			/* Layout */
 			aspect-ratio: 1 / 1;
-			width: var(--icon-size);
 			height: var(--icon-size);
+			width: var(--icon-size);
 		}
 	}
 }
@@ -61,6 +73,7 @@
 
 @keyframes slidein {
 	from {
+		/* Appearance */
 		opacity: 20%;
 		translate: -12--step -10--step;
 	}

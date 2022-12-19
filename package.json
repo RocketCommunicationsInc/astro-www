@@ -98,7 +98,8 @@
 	"stylelint": {
 		"plugins": [
 			"stylelint-use-logical",
-			"stylelint-use-nesting"
+			"stylelint-use-nesting",
+			"./.vscode/postcss-plugins/order.cjs"
 		],
 		"rules": {
 			"color-hex-case": "lower",
@@ -320,7 +321,8 @@
 			"csstools/use-logical": [
 				true
 			],
-			"csstools/use-nesting": "always"
+			"csstools/use-nesting": "always",
+			"csstools/order": "always"
 		},
 		"ignoreFiles": [
 			"**/sanitize.css"
