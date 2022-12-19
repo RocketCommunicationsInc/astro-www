@@ -1,6 +1,6 @@
 import templateHTML from './side-panel.shadow.html?raw'
 import templateCSS from './side-panel.shadow.css'
-import { c, html } from 'project:utils/html.js'
+import { c, cloneContents, h, html } from 'project:utils/html.js'
 
 const template = html(templateHTML + '<style>' + templateCSS + '</style>')
 // const shapes = document.getElementById('shapes')
@@ -10,23 +10,50 @@ class IconPanel extends HTMLElement {
 		let host = super() as any as IconPanel
 		let root = c(host.attachShadow({ mode: 'open' }), template.cloneNode(true))
 
-		// eslint-disable-next-line no-void
-		void root
+		for (let button of root.querySelectorAll('button')) {
+			button.addEventListener('click', event => {
+				event.preventDefault()
+
+				const iconID = host.getAttribute('use')!
+				const icon = document.querySelector(iconID)!
+
+				const viewBox = (icon.attributes as any).viewBox.value
+				const svg = c(h(`<svg viewBox="${viewBox}">`), cloneContents(icon))
+
+				const iterator = document.createNodeIterator(svg, NodeFilter.SHOW_TEXT)
+				let node: Node | null
+
+				while (node = iterator.nextNode()) {
+					if (!node.textContent!.trim()) {
+						(node as ChildNode).remove()
+					}
+				}
+
+				const svgHTML = svg.outerHTML
+
+				switch (button.dataset.copy) {
+					case 'svg': {
+						navigator.clipboard.writeText(svgHTML)
+						break
+					}
+
+					case 'wc': {
+						break
+					}
+				}
+			})
+		}
 	}
 
 	attributeChangedCallback(name: string, oldValue: string, newValue: string) {
 		let host = this
-		let root = this.shadowRoot!
+		let root = host.shadowRoot!
 
 		if (newValue) {
 			const icon = document.querySelector<SVGSymbolElement>(newValue)
 
 			if (icon) {
-				const range = new Range()
-
-				range.selectNodeContents(icon)
-
-				const clone = range.cloneContents()
+				const clone = cloneContents(icon)
 
 				const heading = root.querySelector<HTMLHeadingElement>('[part~="label"]')!
 
