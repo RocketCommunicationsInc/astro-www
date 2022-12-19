@@ -12,9 +12,9 @@ An application is fundamentally shaped by its navigation. Navigation defines how
 
 It’s best to start with a consideration of the primary objects your application will display. How are those objects divided or grouped? Is there a hierarchy of objects or a flat organization? Are there a small number of primary objects or many?
 
-## Master-Detail Navigation
+## List-Detail Navigation
 
-For a small, flat collection of like objects, consider Master-Detail navigation. Master-Detail is implemented with a list on the left and a detail panel on the right. The Master list shows key information for each item. The detail panel shows in-depth information and options.
+For a small, flat collection of like objects, consider List-Detail navigation, implemented with a list on the left and a detail panel on the right. The list shows key information for each item. The detail panel shows in-depth information and options.
 
 ![Master-detail sample app layout](/img/patterns/master-detail-nav.png)
 
@@ -34,7 +34,7 @@ The contents of each tab may be similar objects with a different view or unique 
 
 ## Tree Navigation
 
-Tree Navigation resembles Master-Detail, but uses a hierarchal tree rather than a flat list to drive selection. The guidelines you’re reading right now use [Tree Navigation](/components/tree).
+Tree Navigation resembles List-Detail, but uses a hierarchal tree rather than a flat list to drive selection. The guidelines you’re reading right now use [Tree Navigation](/components/tree).
 
 Use Tree Navigation only with a set of objects that fall into a natural single hierarchy, such as sections, chapters, and paragraphs.
 
@@ -58,6 +58,6 @@ Applications that are principally organized around events on a realtime schedule
 
 ## Combining Navigation
 
-Navigation types are often combined within complex applications. For example, an application can have Tab main navigation with Master-Detail sub-navigation.
+Navigation types are often combined within complex applications. For example, an application can have Tab main navigation with List-Detail sub-navigation.
 
 ![Combined navigation sample app layout](/img/patterns/combined-nav.png)
