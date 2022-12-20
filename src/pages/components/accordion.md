@@ -16,9 +16,6 @@ An Accordion is a device which presents a hierarchical set of items in which onl
 
 - Give titles to Accordions if content is not obvious to users.
 - Titles should use sentence case capitalization.
-  :::note
-  Accordions are not commonly used for direct action or data manipulation. Use Accordions for navigation within a master-detail navigational pattern.
-  :::
 
 ![Example of an Accordion in its collapsed state](/img/components/accordion-1.png)
 
