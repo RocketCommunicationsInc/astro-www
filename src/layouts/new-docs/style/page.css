@@ -66,6 +66,7 @@
 
 	& li,
 	& p {
+		/* Layout */
 		max-width: 160--step;
 	}
 
@@ -118,23 +119,28 @@
 	}
 
 	@media (width < 1408px) {
+		/* Layout */
 		max-width: 265--step;
 	}
 
 	@media (width >= 1408px) {
+		/* Layout */
 		max-width: 300--step;
 	}
 
 	@media (width >= 1408px) {
+		/* Layout */
 		padding-inline-start: 28--step;
 	}
 }
 
 .page-content-main-col {
+	/* Layout */
 	flex-grow: 1;
 }
 
 .page-content-side-col {
+	/* Layout */
 	flex-basis: 56--step;
 	flex-shrink: 0;
 
@@ -143,10 +149,9 @@
 	}
 
 	& .-content {
-		position: sticky;
-
 		/* Layout */
-		inset-block-start: 25--step;
+		inset-block-start: 10--step;
+		position: sticky;
 	}
 
 	& hr {

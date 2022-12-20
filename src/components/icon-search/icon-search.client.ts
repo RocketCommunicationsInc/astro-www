@@ -1,93 +1,83 @@
-const iconPanel = document.querySelector<HTMLElement>('icon-panel')!
+// const iconPanel = document.querySelector<HTMLElement>('icon-panel')!
 
-const iconGroups = [
-	...document.querySelectorAll('.p-icon-groups .-group')!
-].map(
-	element => {
-		const name = element.querySelector('.-group-heading')?.textContent!.toLowerCase()!
+// const iconGroups = [
+// 	...document.querySelectorAll('.p-icon-groups .-group')!
+// ].map(
+// 	element => {
+// 		const name = element.querySelector('.-group-heading')?.textContent!.toLowerCase()!
 
-		const icons = [
-			...element.querySelectorAll('.icon')
-		].map(
-			element => {
-				const name = element.querySelector('figcaption')?.textContent!.toLowerCase()!
+// 		const icons = [
+// 			...element.querySelectorAll('.icon')
+// 		].map(
+// 			element => {
+// 				const name = element.querySelector('figcaption')?.textContent!.toLowerCase()!
 
-				return {
-					name,
-					element,
-				}
-			}
-		)
+// 				return {
+// 					name,
+// 					element,
+// 				}
+// 			}
+// 		)
 
-		return {
-			name,
-			element,
-			icons
-		}
-	}
-)
+// 		return {
+// 			name,
+// 			element,
+// 			icons
+// 		}
+// 	}
+// )
 
-const searchControl = document.querySelector<HTMLInputElement>('.icon-search-form .-control')!
-const searchResultCountEl = document.querySelector<HTMLParagraphElement>('.p-icon-results')!
+// const searchControl = document.querySelector<HTMLInputElement>('.icon-search-form .-control')!
+// const searchResultCountEl = document.querySelector<HTMLParagraphElement>('.p-icon-results')!
 
-searchControl.toggleAttribute(':empty', !searchControl.value)
 
-searchControl.addEventListener('focus', () => {
-	searchControl.toggleAttribute(':empty', false)
-})
 
-searchControl.addEventListener('blur', () => {
-	searchControl.toggleAttribute(':empty', !searchControl.value)
-})
+// searchControl.addEventListener('input', () => {
+// 	let { value } = searchControl
+// 	let searchResultCount = 0
 
-searchControl.addEventListener('input', () => {
-	let { value } = searchControl
-	let searchResultCount = 0
+// 	value = value.trim().toLowerCase()
 
-	value = value.trim().toLowerCase()
+// 	iconPanel.removeAttribute('use')
 
-	iconPanel.removeAttribute('use')
+// 	for (let iconGroup of iconGroups) {
+// 		let nomatches = true
+// 		let earlymatch = !value || iconGroup.name.includes(value)
 
-	for (let iconGroup of iconGroups) {
-		let nomatches = true
-		let earlymatch = !value || iconGroup.name.includes(value)
+// 		for (let icon of iconGroup.icons) {
+// 			const nomatch = !earlymatch && Boolean(value) && !icon.name.includes(value)
 
-		for (let icon of iconGroup.icons) {
-			const nomatch = !earlymatch && Boolean(value) && !icon.name.includes(value)
+// 			nomatches = nomatches && nomatch
 
-			nomatches = nomatches && nomatch
+// 			icon.element.classList.toggle('nomatch', nomatch)
 
-			icon.element.classList.toggle('nomatch', nomatch)
+// 			if (!nomatch) {
+// 				++searchResultCount
+// 			}
+// 		}
 
-			if (!nomatch) {
-				++searchResultCount
-			}
-		}
+// 		iconGroup.element.classList.toggle('nomatch', nomatches)
 
-		iconGroup.element.classList.toggle('nomatch', nomatches)
+// 		searchResultCountEl.textContent = (
+// 			searchResultCount
+// 				? (
+// 					searchResultCount === Number(searchResultCountEl.dataset.maxSize)
+// 				)
+// 					? `Showing all ${searchResultCount} icons.`
+// 				: `Showing ${searchResultCount} matching icons.`
+// 			: `No matching icons.`
+// 		)
+// 	}
+// })
 
-		searchResultCountEl.textContent = (
-			searchResultCount
-				? (
-					searchResultCount === Number(searchResultCountEl.dataset.maxSize)
-				)
-					? `Showing all ${searchResultCount} icons.`
-				: `Showing ${searchResultCount} matching icons.`
-			: `No matching icons.`
-		)
-	}
-})
+// addEventListener('focus', event => {
+// 	const icon = event.target as HTMLElement
 
-addEventListener('focus', event => {
-	const icon = event.target as HTMLElement
+// 	if (icon.matches?.('figure.icon')) {
+// 		const use = icon.querySelector<SVGUseElement>('use[href]')!
 
-	if (icon.matches?.('figure.icon')) {
-		const use = icon.querySelector<SVGUseElement>('use[href]')!
+// 		const iconID = use.href.baseVal
 
-		const iconID = use.href.baseVal
-
-		iconPanel.setAttribute('use', iconID)
-	}
-}, true)
-
-export {}
+// 		iconPanel.setAttribute('use', iconID)
+// 	}
+// }, true)

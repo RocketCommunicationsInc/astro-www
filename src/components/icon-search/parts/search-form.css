@@ -1,4 +1,27 @@
-.icon-search-form {
+.p-searchform {
+	/* Layout */
+	inset-block-start: 10--step;
+	position: sticky;
+
+	/* Reference */
+	--border-color: var(--Grey700Color);
+	--clear-color: var(--PlaceholderColor);
+	--label-color: var(--PlaceholderColor);
+	--search-color: var(--Grey700Color);
+
+	&.-filled {
+		--border-color: var(--DarkBlue500Color);
+		--label-color: var(--InverseColor);
+	}
+
+	&:focus-within, &:hover {
+		--border-color: var(--DarkBlue500Color);
+	}
+
+	&:focus-within {
+		--search-color: var(--InverseColor);
+	}
+
 	& .-field {
 		display: grid;
 
@@ -8,8 +31,9 @@
 		inline-size: 100%;
 
 		/* Appearance */
+		background-color: var(--PrimaryColor);
 		border-radius: 12--rpx;
-		box-shadow: 0 0 0 1px inset;
+		box-shadow: var(--border-color) 0 0 0 2px inset;
 
 		& > * {
 			display: flex;
@@ -26,26 +50,83 @@
 	& .-control, & .-label {
 		/* Layout */
 		align-self: stretch;
-		padding-inline: 18--step;
+		padding-inline: 12--step;
 	}
 
-	& .-icon, & .-label {
+	& .-control {
 		/* Appearance */
-		color: var(--Grey700Color);
+		outline: none;
 	}
 
 	& .-icon {
 		/* Layout */
 		block-size: 5--step;
 		inline-size: 5--step;
-		margin-inline: 5--step;
+
+		/* Animation */
+		transition: color 300ms;
 	}
 
-	& input:not([\:empty]) ~ .-label {
+	& .-search-icon {
+		/* Layout */
+		margin-inline-start: 5--step;
+
+		/* Appearance */
+		color: var(--search-color);
+	}
+
+	& .-clear {
+		/* Layout */
+		justify-self: end;
+		margin-inline-end: 4--step;
+		padding: 2--step;
+
+		/* Appearance */
+		color: var(--clear-color);
+		cursor: pointer;
+
+		/* Animation */
+		transition: opacity 300ms;
+
+		&:focus-within, &:hover {
+			--clear-color: var(--InverseColor);
+		}
+
+		&:focus {
+			/* Animation */
+			transition-duration: 0ms;
+		}
+	}
+
+	&:not(.-filled) .-clear {
+		/* Appearance */
+		opacity: 0;
+	}
+
+	& .-label {
+		/* Appearance */
+		color: var(--label-color);
+
 		/* Transform */
+		transform-origin: 40% 100%;
+	}
+
+	&.-filled .-label {
+		/* Transform */
+		scale: 80%;
 		translate: -12--step -12--step;
 
 		/* Animate */
 		animation: slidein 300ms ease-out;
+	}
+}
+
+@keyframes slidein {
+	from {
+		/* Appearance */
+		opacity: 20%;
+
+		/* Transform */
+		translate: -12--step -11--step;
 	}
 }

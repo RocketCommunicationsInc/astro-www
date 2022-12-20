@@ -86,7 +86,7 @@
 
 :where(.p-navigation-heading-image) {
 	/* Layout */
-	aspect-ratio: 291 / 123;
+	aspect-ratio: 134 / 56;
 	block-size: 14--step;
 
 	@media (width < 800px) {

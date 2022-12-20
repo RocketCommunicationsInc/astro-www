@@ -70,6 +70,18 @@ class IconPanel extends HTMLElement {
 
 				heading.textContent = clone.firstElementChild!.textContent!
 
+				let headingStyle = getComputedStyle(heading)
+				let headingFontSize = 36
+
+				do {
+					heading.style.setProperty('font-size', headingFontSize + 'px', 'important')
+					heading.style.setProperty('line-height', String(40 / headingFontSize + 0.0001), 'important')
+
+					--headingFontSize
+				} while (
+					parseFloat(headingStyle.height) > 40
+				)
+
 				const svg = root.querySelector<SVGSVGElement>('svg')!
 
 				svg.setAttribute('viewBox', (icon.attributes as any).viewBox.value)

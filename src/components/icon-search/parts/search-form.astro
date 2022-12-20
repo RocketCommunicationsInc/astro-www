@@ -1,16 +1,18 @@
 ---
-import Icon from 'project:components/icon/icon.astro'
-import './search-form.css'
+const { disabled, label } = Astro.props
 
-const {
-	label,
-	...attrs
-} = Astro.props
+import './search-form.css'
+import scriptURL from './search-form.ts?url'
 ---
-<form class="icon-search-form">
+<form class="p-searchform">
 	<label class="-field">
-		<input class="-control" type="text" {...attrs} />
-		<Icon class="-icon" type="search" />
+		<svg class="-icon -search-icon" viewBox="0 0 23 23" width="30" height="30"><path d="M15.4 14.5h1l5.3 5.3a1.3 1.3 0 0 1-1.9 1.9l-5.3-5.3v-1l-.3-.4a8.1 8.1 0 1 1 .8-.8l.4.3ZM3.2 8.9a5.6 5.6 0 1 0 11.3 0 5.6 5.6 0 0 0-11.3 0Z" /></svg>
 		<span class="-label">{label}</span>
+		<input class="-control" {disabled} />
+		<button class="-clear" type="reset">
+			<svg class="-icon -clear-icon" viewBox="0 0 30 30">
+				<path d="M22.88 7.14a1.24 1.24 0 0 0-1.77 0L15 13.24 8.89 7.12A1.24 1.24 0 1 0 7.13 8.9l6.1 6.11-6.1 6.11a1.24 1.24 0 1 0 1.76 1.76l6.11-6.1 6.11 6.1a1.24 1.24 0 1 0 1.77-1.76L16.75 15l6.11-6.11c.48-.48.48-1.28 0-1.75Z"/>
+			</svg>
+		</button>
 	</label>
-</form>
+</form><script defer src={scriptURL} />

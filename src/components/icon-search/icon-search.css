@@ -70,11 +70,3 @@
 .p-icon-shapes {
 	display: none;
 }
-
-@keyframes slidein {
-	from {
-		/* Appearance */
-		opacity: 20%;
-		translate: -12--step -10--step;
-	}
-}
