@@ -1,9 +1,8 @@
 import templateHTML from './side-panel.shadow.html?raw'
-import templateCSS from './side-panel.shadow.css'
+import templateCSS from './side-panel.shadow.css?raw'
 import { c, cloneContents, h, html } from 'project:utils/html.js'
 
 const template = html(templateHTML + '<style>' + templateCSS + '</style>')
-// const shapes = document.getElementById('shapes')
 
 class IconPanel extends HTMLElement {
 	constructor() {
@@ -72,6 +71,7 @@ class IconPanel extends HTMLElement {
 				heading.textContent = clone.firstElementChild!.textContent!
 
 				const svg = root.querySelector<SVGSVGElement>('svg')!
+
 				svg.setAttribute('viewBox', (icon.attributes as any).viewBox.value)
 				svg.replaceChildren(clone)
 			} else {
