@@ -609,9 +609,9 @@
 					]
 				},
 				{
-					"name": "Pop Up",
+					"name": "Pop Up Menu",
 					"numeral": 11,
-					"link": "/components/pop-up/",
+					"link": "/components/pop-up-menu/",
 					"rules": [
 						{
 							"numeral": 1,
