@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 tags: components
 path: /components/pop-up-menu
 date: Last Modified
@@ -10,13 +9,6 @@ storybook: components-pop-up-menu--default-story
 git: rux-pop-up-menu
 height: 250px
 theme: true
-=======
-title: Pop Up
-layout: project:layouts/component-docs/component-docs-layout.astro
-storybook: components-pop-up--default-story
-height: 220px
-git: rux-pop-up
->>>>>>> main
 ---
 
 # Pop Up Menu
