@@ -1,30 +1,61 @@
 ---
-import type community from 'project:data/home-community.json'
-import { For } from '@astropub/flow'
+import { Sanitizer } from 'project:utils/sanitizer.js'
+import { For, When } from '@astropub/flow';
+import { fetchGoogleCalendarEvents } from './home-community-events.constants.js'
+import eventToggleHandler from './home-community-events.eventToggleHandler.js?url'
 
-const { data } = Astro.props as typeof community['data']['events']
+/** Google Calendar Events. */
+const calendarEvents = await fetchGoogleCalendarEvents()
+
+const sanitizer = new Sanitizer()
 ---
 <section class="p-community-events">
-	<h4>{data.heading.data}</h4>
+	<h4>Upcoming Events</h4>
 	<div class="p-community-events-content">
-		<For of={data.content.data}>{(item) => (
+		<For of={calendarEvents}>{calendarEvent => (
 			<article class="p-community-event">
 				<small class="p-community-event-date">
-					<span class="-date">{item.date.data}</span>
-					{item.time && (
-						<span class="-time">{item.time.data}</span>
-					)}
+					<span class="-date">{
+						new Date(calendarEvent.start.date || calendarEvent.start.dateTime).toLocaleString('en-US', {
+							day: '2-digit',
+							month: '2-digit',
+							year: 'numeric',
+						})
+					}</span>
+					{
+						calendarEvent.start.dateTime
+							? (
+								<span class="-time">{
+									new Date(calendarEvent.start.dateTime).toLocaleString('en-US', {
+										hour: 'numeric',
+										minute: '2-digit',
+										timeZoneName: 'short'
+									})
+								}</span>
+							)
+						: calendarEvent.start.date
+							? <span class="-time">All Day!</span>
+						: <Fragment />
+					}
 				</small>
 				<hgroup class="p-community-event-heading">
-					<h5>{item.heading.data}</h5>
-					{item.subheading && (
-						<small class="p-community-event-subheading">{item.subheading.data}</small>
-					)}
+					<h5>{calendarEvent.summary}</h5>
+					<When test={calendarEvent.location}>
+						<small class="p-community-event-subheading">{calendarEvent.location}</small>
+					</When>
 				</hgroup>
 				<span class="p-community-event-actions">
-					<a href={item.action.data.url}>{item.action.data.description}</a>
+					<button>View Details</button>
 				</span>
-			</article>
+				{
+					calendarEvent.description
+						? <span class="p-community-event-details" set:html={sanitizer.sanitizeFor('div', calendarEvent.description)} />
+					: <Fragment />
+				}
+			</article><script src={eventToggleHandler} defer />
 		)}</For>
 	</div>
 </section>
+<script>
+import './home-community-events.update.js'
+</script>

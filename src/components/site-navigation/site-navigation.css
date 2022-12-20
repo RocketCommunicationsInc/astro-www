@@ -45,7 +45,6 @@
 
 @media (width >= 800px) {
 	:where(.p-navigation) {
-
 		/* Layout */
 		block-size: min(100%, 100vh);
 		inline-size: 79--step;

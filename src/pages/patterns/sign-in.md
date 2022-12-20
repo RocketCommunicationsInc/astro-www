@@ -34,13 +34,13 @@ The Sign In page is presented to users in the following scenarios:
 
 There are four established types of sign in workflows.
 
-1. Sign in with Username or Email Plus Password  
+1. Sign in with Username or Email Plus Password
    This is the most basic sign in workflow, wherein the user identifies and authenticates from the same screen using an ID and passcode.
-2. Sign in with Common Access Card (CAC)  
+2. Sign in with Common Access Card (CAC)
    This sign in requires additional authentication via a CAC reader and PIN.
-3. Sign in with Single Sign-on (SSO)  
+3. Sign in with Single Sign-on (SSO)
    SSO allows the user to authenticate to multiple systems using one identification and passcode method.
-4. Sign in with Multi-Factor Authentication (MFA)  
+4. Sign in with Multi-Factor Authentication (MFA)
    MFA requires the user to set up additional methods of identification, such as a PIN, or through a verification code sent to a user's mobile device.
 
 The Sign In can currently be configured to display _Sign in with Username or Email Plus Password_, _Sign in with SSO_ and validation.
@@ -61,7 +61,7 @@ The Sign In component consists of a field to identify the user, typically a user
 
 The Sign In UI elements can be added in 3 possible placement areas.
 
-1. Modal dialog  
+1. Modal dialog
 
    <img src="/img/components/signin-dialog-simple.png" alt="Example of a sign in screen hosted within a modal dialog" title="Example of a sign in screen hosted within a modal dialog" style="width: 75%">
 
@@ -69,7 +69,7 @@ The Sign In UI elements can be added in 3 possible placement areas.
    - Can allow application to be running in the background when signed out
    - Ideal for switching applications
 
-2. Sidebar  
+2. Sidebar
 
    <img src="/img/components/signin-sidebar-simple-full.png" alt="Example of a sign in screen located within a sidebar" title="Example of a sign in screen located within a sidebar" style="width: 75%">
 
@@ -77,7 +77,7 @@ The Sign In UI elements can be added in 3 possible placement areas.
    - Allows imagery/branding on opposite side of page to differentiate application
    - Often used alongside SSO
 
-3. Full page  
+3. Full page
 
    <img src="/img/components/signin-simple-full.png" alt="Example of a full-page sign in screen" title="Example of a full-page sign in screen" style="width: 75%">
 

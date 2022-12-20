@@ -28,7 +28,7 @@ Before reading any further, we recommend you review available Astro components o
 
 The Astro team has worked with EGS to establish the EGS Design Compliance requirements for developers targeting the EGS Platform. These requirements are specific to EGS development; these requirements are based on common best practices and accessibility guidelines and it is highly recommended for all users to incorporate them into their applications.
 
-[EGS Design Compliance](/design-guidelines/compliance/)
+[EGS Design Compliance](/compliance/egs-design-compliance/)
 
 ## MIL-STD-1472 Compliance
 

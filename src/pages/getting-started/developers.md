@@ -19,8 +19,6 @@ Icon assets are available as SVGs via the [Astro Icon Github Repository](https:/
 
 Astro uses the freely availabe [Roboto](https://fonts.google.com/specimen/Roboto) and [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono?query=roboto+mono).
 
-For
-
 ### Astro Storybook and Sample Apps
 
 You can review the latest versions of the web components at the [Astro Storybook](https://astro-components.netlify.app/?path=/story/astro-uxds-welcome-start-here--page). The Astro development team uses Storybook as an environment for building and demonstrating the capabilities of each component. If your team often works offline, you may want to [download and run the Storybook](https://github.com/RocketCommunicationsInc/astro/tree/main/packages/web-components) on your local network to see how the examples work.
@@ -36,7 +34,7 @@ For online examples of full Astro app experiences, check out these EGS Service-S
 :::
 
 :::note
-These examples use a previous release of Astro, and are not intended as boilerplates for building new applications. See below for easy ways to get started building Astro web applications.  
+These examples use a previous release of Astro, and are not intended as boilerplates for building new applications. See below for easy ways to get started building Astro web applications.
 :::
 
 ### Astro for Material Design

@@ -1,9 +1,9 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
-theme: true
+title: Button
+layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-button--all-variants
+height: 300px
 git: rux-button
-height: 260px
 ---
 
 # Button

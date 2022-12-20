@@ -1,14 +1,15 @@
 ---
 import './contribution-footer.css'
+
 const { props } = Astro
 const githubURL = props.sourceurl
-
-
 ---
-<footer id="contribution-footer" class="contribution-footer">
-	<h3 class="-heading">
-		Help improve this page
-	</h3>
+<footer id="contribution-footer" class="p-contribution-footer">
+	<a href="#contribution-footer" class="h h3">
+		<h3 class="-heading">
+			Help improve this page
+		</h3>
+	</a>
 	<p>
 		You can help improve this page, with updated information, guidance or fixes for typos and errors.
 	</p>

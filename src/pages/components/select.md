@@ -1,12 +1,9 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
 title: Select Menu
-demo: forms-select-menu--with-option-groups
+layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: forms-select-menu--with-option-groups
+height: 120px
 git: rux-select
-height: 130px
-scrolling: yes
-theme: true
 ---
 
 

@@ -1,10 +1,15 @@
-.contribution-footer {
+.p-contribution-footer {
 	/* Layout */
 	margin-block-start: 12--step;
-	padding-block-start: 8--step;
 
-	& :where(.-heading) {
+	& .-heading {
 		/* Layout */
-		margin-block-start: 0;
+		margin-block: 4--step 1--step;
+		padding-block: 2--step;
+
+		/* Typography */
+		font-size: 18--rpx;
+		font-weight: 700;
+		line-height: calc(20 / 18);
 	}
 }

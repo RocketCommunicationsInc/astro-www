@@ -85,17 +85,18 @@
 	/* Layout */
 	flex-flow: column;
 	gap: 3--step;
+	max-width: 220--step;
 }
 
 .p-community-event {
 	/* Layout */
-	position: relative;
 	padding-block: 3--step;
 	padding-inline: 5--step;
+	display: grid;
 
 	/* Appearance */
 	background: var(--SurfaceSelectedColor);
-	border-radius: 3--rpx;
+	border-radius: var(--EdgeRadius);
 	box-shadow: 0 0 0 1px inset var(--Grey700Color);
 
 	/* Appearance */
@@ -105,12 +106,35 @@
 		background: var(--InteractiveMutedColor);
 	}
 
-	@media (width >= 1200px) {
-		display: flex;
+	&.--closed {
+		gap: 0 10--step;
+	}
 
+	&.--open {
+		transition: gap 150ms;
+	}
+
+	@media (width < 1000px) {
 		/* Layout */
 		align-items: center;
-		gap: 10--step;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+
+		&.--closed {
+			gap: 0 2--step;
+		}
+
+		&.--open > *:nth-child(4) {
+			margin-block-start: 20px;
+		}
+	}
+
+	@media (width >= 1000px) {
+		/* Layout */
+		align-items: center;
+		gap: 5--step 10--step;
+		grid-template-columns: minmax(28--step, min-content) 1fr minmax(28--step, min-content);
+		grid-template-rows: auto auto;
 	}
 }
 
@@ -119,6 +143,10 @@
 	font-size: 20--rpx;
 	font-weight: 500;
 	line-height: 24--rpx;
+}
+
+.p-community-event-subheading a, .p-community-event-details a {
+	color: var(--Orange600Color);
 }
 
 .p-community-event-date {
@@ -132,6 +160,11 @@
 		/* Appearance */
 		color: var(--SecondaryColor);
 	}
+
+	@media (width < 1000px) {
+		/* Layout */
+		grid-area: 1 / 1 / 2 / 5;
+	}
 }
 
 .p-community-event-heading {
@@ -139,6 +172,13 @@
 	flex-grow: 1;
 
 	& small {
+		/* Layout */
+		/* stylelint-disable-next-line value-no-vendor-prefix */
+		display: -webkit-box;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+
 		/* Text */
 		font-size: 14--rpx;
 		line-height: calc(20 / 14);
@@ -147,50 +187,79 @@
 		color: var(--SecondaryColor);
 	}
 
+	@media (width < 1000px) {
+		grid-area: 2 / 1 / 3 / 5;
+	}
+
 	@media (width < 1200px) {
 		/* Layout */
 		margin-block-start: 4--step;
 	}
 }
 
-.p-community-event-actions a {
-	display: inline-block;
+.p-community-event-actions {
+	display: flex;
 
 	/* Layout */
-	align-self: center;
-	inline-size: 35--step;
+	align-self: stretch;
+	grid-area: 1 / 3 / 3 / 3;
 
-	/* Text */
-	text-align: end;
-	white-space: nowrap;
-	color: var(--Orange600Color);
+	@media (width < 1000px) {
+		/* Layout */
+		grid-area: 1 / 5 / 2 / 6;
+	}
 
-	/* Appearance */
+	& button {
+		display: flex;
 
-	&:is(:active) {
+		/* Layout */
+		align-items: start;
+		align-self: stretch;
+		inline-size: 100%;
+		justify-content: end;
+		padding-block: 2.5--step;
+
+		/* Text */
+		text-align: end;
+		white-space: nowrap;
+
 		/* Appearance */
-		translate: 0 1px;
-	}
+		color: var(--Orange600Color);
+		cursor: pointer;
 
-	&::after {
-		content: "";
-		background: url(/images/arrow.svg) center center no-repeat;
-		padding: 2--step;
-		margin-inline-start: 2--step;
-	}
+		&:is(:active) {
+			/* Appearance */
+			translate: 0 1px;
+		}
 
-	@media (hover: hover) {
-		&::before {
-			content: "";
-			position: absolute;
-			inset: 0;
-			z-index: 1;
+		@media (width < 1200px) {
+			/* Layout */
+			margin-block-start: 4--step;
 		}
 	}
+}
 
-	@media (width < 1200px) {
+.p-community-event-details {
+	/* Layout */
+	grid-area: 2 / 2 / 2 / 3;
+	overflow: hidden;
+
+	@nest .p-community-event.--open & {
+		/* Animation */
+		animation: slideDown 150ms ease-out;
+	}
+
+	@nest .p-community-event.--closed & {
 		/* Layout */
-		margin-block-start: 4--step;
+		height: 0;
+		visibility: none;
+		animation: slideUp 150ms ease-out;
+	}
+
+	@media (width < 1000px) {
+		/* Layout */
+		grid-area: 3 / 1 / 4 / 6;
+		overflow: hidden;
 	}
 }
 
@@ -227,7 +296,7 @@
 
 	/* Appearance */
 	background: var(--SurfaceSelectedColor);
-	border-radius: 3--rpx;
+	border-radius: var(--EdgeRadius);
 	box-shadow: 0 0 0 1px inset var(--Grey700Color);
 
 	/* Appearance */
@@ -304,5 +373,27 @@
 		background: url(/images/arrow.svg) center center no-repeat;
 		padding: 2--step;
 		margin-inline-start: 2--step;
+	}
+}
+
+/* Animations */
+
+@keyframes slideDown {
+	from {
+		height: 0;
+	}
+
+	to {
+		height: var(--content-height, 0);
+	}
+}
+
+@keyframes slideUp {
+	from {
+		height: var(--content-height, 0);
+	}
+
+	to {
+		height: 0;
 	}
 }

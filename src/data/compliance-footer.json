@@ -1,0 +1,21 @@
+{
+	"$schema": "./schema.json",
+	"type": "object",
+	"data": {
+		"title": {
+			"type": "text",
+			"data": "Compliance Requirements"
+		},
+		"version": {
+			"type": "text",
+			"data": "3.2.0"
+		},
+		"link": {
+			"type": "link",
+			"data": {
+				"url": "/compliance/egs-design-compliance/",
+				"alt": "See all EGS Compliance Requirements"
+			}
+		}
+	}
+}

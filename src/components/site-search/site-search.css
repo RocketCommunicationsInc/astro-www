@@ -38,7 +38,7 @@
 
 		/* Appearance */
 		background: var(--BaseColor);
-		border-radius: 3--rpx;
+		border-radius: var(--EdgeRadius);
 		box-shadow: var(--border-color) 0 0 0 1px inset;
 		color: var(--PrimaryColor);
 
@@ -109,7 +109,7 @@
 
 		/* Appearance */
 		background-color: var(--BaseColor);
-		border-radius: 3--rpx;
+		border-radius: var(--EdgeRadius);
 		color: var(--SecondaryColor);
 
 		&:is(:hover, :focus-within) {

@@ -1,4 +1,4 @@
-import metaData from 'project:utils/meta'
+import globalData from 'project:data/global.json'
 
 interface Utils {
 	createSearch(init: { appId: string, indexName: string, apiKey: string }): SearchUtils
@@ -34,9 +34,9 @@ requestAnimationFrame(() => {
 		let utils = await import('./site-search-engine.js') as Utils
 
 		let search = utils.createSearch({
-			appId: metaData.algoliaAppId,
-			indexName: metaData.algoliaIndex,
-			apiKey: metaData.algoliaApiKey
+			appId: globalData.algolia.appId,
+			indexName: globalData.algolia.index,
+			apiKey: globalData.algolia.apiKey,
 		})
 
 		return {

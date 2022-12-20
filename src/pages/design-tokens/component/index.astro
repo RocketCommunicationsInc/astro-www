@@ -1,43 +1,22 @@
 ---
-import DocsLayout from 'project:layouts/docs/docs-layout.astro';
-const title = 'Component Tokens';
-import { component, lookupProperty } from 'project:utils/tokens.js';
----
+import DocsLayout from 'project:layouts/docs/docs-layout.astro'
+import { component, lookupProperty } from 'project:utils/tokens.js'
+import '../shared.css'
 
-<style>
-	@import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.83/dist/themes/light.css';
-</style>
-<script
-	type="module"
-	src="https://unpkg.com/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.esm.js"
-></script>
-<script
-	type="module"
-	src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.83/dist/shoelace.js"
-></script>
-<script
-	type="module"
-	src="https://unpkg.com/@astrouxds/documentation-components?module"
-></script>
+const title = 'Component Tokens';
+---
 <DocsLayout content={{ title }} file={import.meta.url}>
-	<style>
-		sl-tab-group {
-			--indicator-color: var(--Orange700Color);
-		}
-		sl-tab[active]::part(base) {
-			color: var(--Orange700Color);
-		}
-		sl-tab:hover::part(base) {
-			color: var(--Orange700Color);
-		}
-	</style>
-	<h1>Component Tokens</h1>
+	<h1>
+		Component Tokens
+	</h1>
 	<sl-tab-group>
 		<sl-tab slot="nav" panel="dark">Dark Theme</sl-tab>
 		<sl-tab slot="nav" panel="light">Light Theme</sl-tab>
-		<sl-tab-panel name="dark">
-			<h2>Classification Banner</h2>
 
+		<sl-tab-panel name="dark">
+			<h2>
+				Classification Banner
+			</h2>
 			{
 				component('dark', 'classification-banner').map((token) => (
 					<rux-design-token-preview
@@ -52,8 +31,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Clock</h2>
-
+			<h2>
+				Clock
+			</h2>
 			{
 				component('dark', 'clock').map((token) => (
 					<rux-design-token-preview
@@ -68,7 +48,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Link</h2>
+			<h2>
+				Link
+			</h2>
 			{
 				component('dark', 'link').map((token) => (
 					<rux-design-token-preview
@@ -83,7 +65,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Log</h2>
+			<h2>
+				Log
+			</h2>
 			{
 				component('dark', 'log').map((token) => (
 					<rux-design-token-preview
@@ -98,7 +82,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Monitoring Icon</h2>
+			<h2>
+				Monitoring Icon
+			</h2>
 			{
 				component('dark', 'monitoring-icon').map((token) => (
 					<rux-design-token-preview
@@ -113,8 +99,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Notification Banner</h2>
-
+			<h2>
+				Notification Banner
+			</h2>
 			{
 				component('dark', 'notification-banner').map((token) => (
 					<rux-design-token-preview
@@ -144,7 +131,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Slider</h2>
+			<h2>
+				Slider
+			</h2>
 			{
 				component('dark', 'slider').map((token) => (
 					<rux-design-token-preview
@@ -159,7 +148,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Global Status Bar</h2>
+			<h2>
+				Global Status Bar
+			</h2>
 			{
 				component('dark', 'gsb').map((token) => (
 					<rux-design-token-preview
@@ -174,7 +165,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Switch</h2>
+			<h2>
+				Switch
+			</h2>
 			{
 				component('dark', 'switch').map((token) => (
 					<rux-design-token-preview
@@ -189,7 +182,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Radio</h2>
+			<h2>
+				Radio
+			</h2>
 			{
 				component('dark', 'radio').map((token) => (
 					<rux-design-token-preview
@@ -204,7 +199,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Checkbox</h2>
+			<h2>
+				Checkbox
+			</h2>
 			{
 				component('dark', 'checkbox').map((token) => (
 					<rux-design-token-preview
@@ -219,7 +216,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Tag</h2>
+			<h2>
+				Tag
+			</h2>
 			{
 				component('dark', 'tag').map((token) => (
 					<rux-design-token-preview
@@ -233,7 +232,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 			}
 			<hr />
 
-			<h2>Scrollbar</h2>
+			<h2>
+				Scrollbar
+			</h2>
 			{
 				component('dark', 'scrollbar').map((token) => (
 					<rux-design-token-preview
@@ -248,7 +249,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Progress</h2>
+			<h2>
+				Progress
+			</h2>
 			{
 				component('dark', 'progress').map((token) => (
 					<rux-design-token-preview
@@ -263,7 +266,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Indeterminate Progress</h2>
+			<h2>
+				Indeterminate Progress
+			</h2>
 			{
 				component('dark', 'indeterminate-progress').map((token) => (
 					<rux-design-token-preview
@@ -278,7 +283,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Card</h2>
+			<h2>
+				Card
+			</h2>
 			{
 				component('dark', 'card').map((token) => (
 					<rux-design-token-preview
@@ -293,7 +300,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Container</h2>
+			<h2>
+				Container
+			</h2>
 			{
 				component('dark', 'container').map((token) => (
 					<rux-design-token-preview
@@ -306,9 +315,11 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 				))
 			}
 		</sl-tab-panel>
-		<sl-tab-panel name="light">
-			<h2>Classification Banner</h2>
 
+		<sl-tab-panel name="light">
+			<h2>
+				Classification Banner
+			</h2>
 			{
 				component('light', 'classification-banner').map((token) => (
 					<rux-design-token-preview
@@ -323,8 +334,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Clock</h2>
-
+			<h2>
+				Clock
+			</h2>
 			{
 				component('light', 'clock').map((token) => (
 					<rux-design-token-preview
@@ -337,9 +349,11 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 				))
 			}
 
-			<hr />	
+			<hr />
 
-			<h2>Link</h2>
+			<h2>
+				Link
+			</h2>
 			{
 				component('light', 'link').map((token) => (
 					<rux-design-token-preview
@@ -354,7 +368,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Log</h2>
+			<h2>
+				Log
+			</h2>
 			{
 				component('light', 'log').map((token) => (
 					<rux-design-token-preview
@@ -369,7 +385,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Monitoring Icon</h2>
+			<h2>
+				Monitoring Icon
+			</h2>
 			{
 				component('light', 'monitoring-icon').map((token) => (
 					<rux-design-token-preview
@@ -384,8 +402,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Notification Banner</h2>
-
+			<h2>
+				Notification Banner
+			</h2>
 			{
 				component('light', 'notification-banner').map((token) => (
 					<rux-design-token-preview
@@ -400,7 +419,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Status Symbol</h2>
+			<h2>
+				Status Symbol
+			</h2>
 			{
 				component('light', 'status-symbol').map((token) => (
 					<rux-design-token-preview
@@ -415,7 +436,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Slider</h2>
+			<h2>
+				Slider
+			</h2>
 			{
 				component('light', 'slider').map((token) => (
 					<rux-design-token-preview
@@ -430,7 +453,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Global Status Bar</h2>
+			<h2>
+				Global Status Bar
+			</h2>
 			{
 				component('light', 'gsb').map((token) => (
 					<rux-design-token-preview
@@ -445,7 +470,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Switch</h2>
+			<h2>
+				Switch
+			</h2>
 			{
 				component('light', 'switch').map((token) => (
 					<rux-design-token-preview
@@ -460,7 +487,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Radio</h2>
+			<h2>
+				Radio
+			</h2>
 			{
 				component('light', 'radio').map((token) => (
 					<rux-design-token-preview
@@ -475,7 +504,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Checkbox</h2>
+			<h2>
+				Checkbox
+			</h2>
 			{
 				component('light', 'checkbox').map((token) => (
 					<rux-design-token-preview
@@ -490,7 +521,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Tag</h2>
+			<h2>
+				Tag
+			</h2>
 			{
 				component('light', 'tag').map((token) => (
 					<rux-design-token-preview
@@ -504,7 +537,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 			}
 			<hr />
 
-			<h2>Scrollbar</h2>
+			<h2>
+				Scrollbar
+			</h2>
 			{
 				component('light', 'scrollbar').map((token) => (
 					<rux-design-token-preview
@@ -519,7 +554,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Progress</h2>
+			<h2>
+				Progress
+			</h2>
 			{
 				component('light', 'progress').map((token) => (
 					<rux-design-token-preview
@@ -534,7 +571,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Indeterminate Progress</h2>
+			<h2>
+				Indeterminate Progress
+			</h2>
 			{
 				component('light', 'indeterminate-progress').map((token) => (
 					<rux-design-token-preview
@@ -549,7 +588,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Card</h2>
+			<h2>
+				Card
+			</h2>
 			{
 				component('light', 'card').map((token) => (
 					<rux-design-token-preview
@@ -564,7 +605,9 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 
 			<hr />
 
-			<h2>Container</h2>
+			<h2>
+				Container
+			</h2>
 			{
 				component('light', 'container').map((token) => (
 					<rux-design-token-preview
@@ -579,3 +622,11 @@ import { component, lookupProperty } from 'project:utils/tokens.js';
 		</sl-tab-panel>
 	</sl-tab-group>
 </DocsLayout>
+<script>
+import 'https://unpkg.com/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.esm.js'
+import 'https://unpkg.com/@astrouxds/documentation-components?module'
+import 'https://unpkg.com/@shoelace-style/shoelace@2.0.0-beta.83/dist/shoelace.js'
+</script>
+<style is:global>
+@import "https://unpkg.com/@shoelace-style/shoelace@2.0.0-beta.83/dist/themes/light.css";
+</style>

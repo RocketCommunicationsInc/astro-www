@@ -1,0 +1,5 @@
+.-main {
+	/** Appearance */
+	background-color: var(--PrimaryColor);
+	color: var(--TextColor);
+}

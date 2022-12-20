@@ -11,7 +11,7 @@ const { data } = Astro.props as typeof articles
 		<h-slideshow class="p-article-slideshow">
 			<For of={data.content.data}>{item => (
 				<section class="p-article">
-					<img class="-image" src={item.image.data.url} alt={item.image.data.description} aria-hidden="true" />
+					<img class="-image" src={item.image.data.url} alt={item.image.data.description} width="296" height="222" aria-hidden="true" loading="lazy" />
 					<h4 class="-heading">
 						<a href={item.action.data.url} target="_blank">{item.heading.data}</a>
 					</h4>
@@ -23,5 +23,5 @@ const { data } = Astro.props as typeof articles
 	</div>
 </article>
 <script>
-import 'project:components/slideshow/slideshow.js' 
+import 'project:components/slideshow/slideshow.js'
 </script>

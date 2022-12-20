@@ -1,11 +1,9 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
 title: Dialog
-demo: components-dialog--dialog
+layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-dialog--dialog
-git: rux-dialog
 height: 240px
-theme: true
+git: rux-dialog
 ---
 # Dialog
 

@@ -1,11 +1,9 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
 title: Radio Button
-demo: forms-radio-group--default-story
+layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: forms-radio-group--default-story
-git: rux-radio
 height: 180px
-theme: true
+git: rux-radio
 ---
 # Radio Button
 
