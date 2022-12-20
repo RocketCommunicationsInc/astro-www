@@ -1,0 +1,20 @@
+a.icon {
+	display: inline-flex;
+
+	/* Layout */
+	align-items: center;
+	gap: 2--step;
+
+	/* Layout */
+	--icon: 5--step;
+
+	& svg {
+		/* Layout */
+		height: var(--icon);
+		width: var(--icon);
+	}
+
+	&:hover {
+		color: var(--DarkBlue500Color);
+	}
+}

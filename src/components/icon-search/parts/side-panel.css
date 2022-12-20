@@ -1,0 +1,8 @@
+.icon-library-side-panel {
+	/* Layout */
+	padding: 9--step;
+
+	/* Appearance */
+	background-color: var(--DarkBlue800Color);
+	color: var(--PrimaryColor);
+}

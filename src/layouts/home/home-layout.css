@@ -1,5 +1,6 @@
 .-main {
 	display: flex;
+	overflow: hidden;
 
 	/* Layout */
 	align-items: center;
