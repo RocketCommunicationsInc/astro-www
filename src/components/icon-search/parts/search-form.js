@@ -1,10 +1,10 @@
 {
-	let form = document.currentScript!.previousSibling! as HTMLFormElement
+	let form = document.currentScript.previousSibling
 
 	let element = {
 		form,
-		control: form.querySelector('.-control')! as HTMLInputElement,
-		clear: form.querySelector('.-clear') as HTMLButtonElement,
+		control: form.querySelector('.-control'),
+		clear: form.querySelector('.-clear'),
 	}
 
 	let state = {
@@ -42,31 +42,24 @@
 		onInputQueue = requestAnimationFrame(() => onInput(element.control.value))
 	})
 
-	let groups: {
-		name: string
-		element: HTMLElement
-		icons: {
-			name: string
-			element: HTMLElement
-		}[]
-	}[]
+	let groups
 
-	let searchResultCountEl: HTMLParagraphElement
+	let searchResultCountEl
 
-	let onInputQueue: number
+	let onInputQueue
 
-	let onInput = (value: string) => {
+	let onInput = (value) => {
 		groups = groups || [
-			...document.querySelectorAll('.p-icon-groups .-group')!
+			...document.querySelectorAll('.p-icon-groups .-group')
 		].map(
 			element => {
-				const name = element.querySelector('.-group-heading')?.textContent!.toLowerCase()!
+				const name = element.querySelector('.-group-heading')?.textContent.toLowerCase()
 
 				const icons = [
 					...element.querySelectorAll('.icon')
 				].map(
 					element => {
-						const name = element.querySelector('figcaption')?.textContent!.toLowerCase()!
+						const name = element.querySelector('figcaption')?.textContent.toLowerCase()
 
 						return {
 							name,
@@ -83,7 +76,7 @@
 			}
 		)
 
-		searchResultCountEl = searchResultCountEl || document.querySelector('.p-icon-results')!
+		searchResultCountEl = searchResultCountEl || document.querySelector('.p-icon-results')
 
 		let searchResultCount = 0
 
