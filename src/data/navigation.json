@@ -182,6 +182,10 @@
 				"url": "/components/pop-up/"
 			},
 			{
+				"label": "Pop Up Menu",
+				"url": "/components/pop-up-menu/"
+			},
+			{
 				"label": "Progress",
 				"url": "/components/progress/"
 			},

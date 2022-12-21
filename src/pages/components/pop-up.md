@@ -1,6 +1,6 @@
 ---
 title: Pop Up
-layout: project:layouts/docs/docs-layout.astro
+layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-pop-up--default-story
 height: 250px
 git: rux-pop-up
