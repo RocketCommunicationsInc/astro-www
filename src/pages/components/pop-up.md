@@ -1,14 +1,9 @@
 ---
-tags: components
-path: /components/pop-up
-date: Last Modified
-layout: project:layouts/docs/docs-layout.astro
 title: Pop Up
-demo: components-pop-up--default-story
+layout: project:layouts/docs/docs-layout.astro
 storybook: components-pop-up--default-story
-git: rux-pop-up
 height: 250px
-theme: true
+git: rux-pop-up
 ---
 
 # Pop Up

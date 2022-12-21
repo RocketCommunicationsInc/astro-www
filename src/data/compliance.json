@@ -1077,6 +1077,25 @@
 							"tier": 3
 						}
 					]
+				},
+				{
+					"name": "Pop Up",
+					"numeral": 27,
+					"link": "/components/pop-up/",
+					"rules": [
+						{
+							"numeral": 1,
+							"rule": "A Pop Up shall be visible in its entirety and never exceed the constraints of the window frame.",
+							"status": "under-review",
+							"tier": 3
+						},
+						{
+							"numeral": 2,
+							"rule": "Pop Ups shall never obscure screen items that require persistent visibility (such as Classification Banners or Application States).",
+							"status": "under-review",
+							"tier": 3
+						}
+					]
 				}
 			]
 		}
