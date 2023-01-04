@@ -17,7 +17,7 @@ Typically invoked upon clicking an identifiable interactive element, a Pop Up co
 
 Usually hidden on load, a Pop Up is invoked by clicking an interactable element with a defined target area. To close a Pop Up, the user may click outside its bounds, click a dedicated close button, or select an option within.
 
-Anatomically, a Pop Up is comprised of content container with an arrow protruding from its edge that always points at the item from which it was invoked. Depending on a variety of factors – such as the size of the Pop Up itself, the size of the display, and scrolled position of the window – the arrow’s location along the Pop Up’s edge is variable. The width of the Pop will be pre-defined and specific to its content.
+Anatomically, a Pop Up is comprised of a content container with an arrow protruding from its edge that always points at the item from which it was invoked. Depending on a variety of factors – such as the size of the Pop Up itself, the size of the display, and scrolled position of the window – the arrow’s location along the Pop Up’s edge is variable. The width of the Pop will be pre-defined and specific to its content.
 
 In terms of placement screen, the entire Pop Up must always be visible and never exceed the window frame. Furthermore, it must never obscure other screen items that require persistent visibility (such as Classification Banners or Application States).
 
