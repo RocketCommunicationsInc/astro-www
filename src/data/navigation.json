@@ -178,6 +178,10 @@
 				"url": "/components/pagination/"
 			},
 			{
+				"label": "Pop Up",
+				"url": "/components/pop-up/"
+			},
+			{
 				"label": "Pop Up Menu",
 				"url": "/components/pop-up-menu/"
 			},
