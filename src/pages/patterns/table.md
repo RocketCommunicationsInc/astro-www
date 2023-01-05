@@ -6,15 +6,15 @@ layout: project:layouts/docs/docs-layout.astro
 title: Table
 ---
 
-# Table
+# Tables
 
 ## Appearance and Behavior
 
-Tables are a fundamental UX design tool for organizing and displaying data. They are used throughout space applications and may take many forms. The principal table interactions and styles are illustrated below and demonstrated in the [GRM](https://grm-dashboard.astrouxds.com/) and [TT&C](https://ttc-monitor.astrouxds.com/) sample applications. Types of content used in table cells varies by use case, but often includes: [text](/design-guidelines/typography/), [checkboxes](/components/checkbox/), [icons](/components/icons-and-symbols/), [status indicators](/components/status-symbol/), or [buttons](/components/button/).
+Tables are a fundamental UX design tool for organizing and displaying data. They are used throughout space applications and may take many forms. Tables are comprised of columns and rows of cells and typically have column headers oriented horizontally across the top of a table. The principal table interactions and styles are illustrated below, and demonstrated in the [GRM](https://grm-dashboard.astrouxds.com/) and [TT&C](https://ttc-monitor.astrouxds.com/) sample applications. Types of content used in table cells varies by use case, but can include [Text](/design-guidelines/typography/), [Checkboxes](/components/checkbox/), [Icons](/components/icons-and-symbols/), [Status Indicators](/components/status-symbol/), or [Buttons](/components/button/).
 
 ## Filtering
 
-Filters, to narrow what is displayed in the Table, may be presented in the header as Select Menus, as a Segmented Button, or as an Input Field. If it is critical that the user knows that not all data is displayed, a warning may be shown when filters are applied. Though it is not a requirement to display filters in the header row of the column to which they correspond, tables created using ag-Grid default to this design pattern.
+Filters, to narrow what is displayed in the Table, may be presented in the header as [Select Menus](/components/select/), a [Segmented Button](/components/segmented-button/), or an [Input Field](/components/input-field/). If it is critical that the user knows that not all data is displayed, a warning may be shown when filters are applied. Though it is not a requirement to display filters in the header row of the column to which they correspond, tables created using ag-Grid default to this design pattern.
 
 ## Sorting
 
@@ -22,11 +22,19 @@ Tables default to being sorted by the data in the first column with an arrow poi
 
 ## Selection and Action
 
-Tables use a familiar Selection/Action model. Selection is accomplished by clicking in a row. Multiple selection can be enabled by adding a selection column of Checkboxes. Action Buttons may appear in an inline detail area or in a footer.
+Tables use a familiar Selection/Action model. In simple Tables, selection can be accomplished by clicking in a row. [Checkboxes](/components/checkbox/) can also be used for single selection actions in Tables where content is dense and interactable to avoid triggering unintended actions during selection. Checkboxes are also recommended for multiple row selection. Action [Buttons](/components/button/) may appear in an inline detail area or in a footer.
 
-![Table with inline action.](/img/patterns/table-inline-action.png "Table with inline action.")
+## Rules of Thumb
 
-![Table with multiple selection and actions in footer.](/img/patterns/table-action-footer.png "Table with multiple selection and actions in footer.")
+- Tables shall always fit within the confines of the user's display.
+  - Overflow of row or column data shall be accomplished via scrolling, [Pagination](/components/pagination/), or tabbing.
+  - Clearly indicate to the user if a Table is scrollable.
+- By default, arrange columns in order of importance from left to right.
+- Keep column headers short, ideally one or two words. If column headers must be longer, the text can either be truncated or wrapped. For truncation, truncate the text with an ellipsis and provide a tooltip on hover that displays the full text. If the data is critical and cannot be hidden with a tooltip, wrap the text. Be consistent within a Table and across an application about whether to truncate or wrap text.
+- Ensure the data within the table is user-facing and human-readable. Translate backend or other system-facing data into information that can be more easily read by users. Consider how much precision is needed for numerical data for the audience.
+- Body text size should generally be used for data within a table. Some Tables may use a larger text size for column headers. If space is limited or the table is dense, a smaller text size may be used. Text should be no smaller than 14 px/0.875 rem, or the Body 2 text size.
+- Generally, data should be left-aligned. However, if the data is a date, time, currency, or numerical data related to size (i.e., values that a user might want to quickly scan and compare), it should be right-aligned. Column headers match the alignment of the data in the column.
+- In a table with a column of checkboxes, if one or more rows are selected (but not all rows) then the parent checkbox in the column header row should be in the indeterminate state. This behavior is in keeping with checkbox guidance.
 
 ## Complex Tables
 
