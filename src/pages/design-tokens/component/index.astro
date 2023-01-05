@@ -314,6 +314,22 @@ const title = 'Component Tokens';
 					/>
 				))
 			}
+			<hr />
+
+			<h2>
+				Tooltip
+			</h2>
+			{
+				component('dark', 'tooltip').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
 		</sl-tab-panel>
 
 		<sl-tab-panel name="light">
@@ -610,6 +626,20 @@ const title = 'Component Tokens';
 			</h2>
 			{
 				component('light', 'container').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+			<h2>
+				Tooltip
+			</h2>
+			{
+				component('light', 'tooltip').map((token) => (
 					<rux-design-token-preview
 						name={token.name}
 						value={token.value}
