@@ -10,28 +10,30 @@ git: rux-accordion
 
 ::storybook-demo
 
-An Accordion is a device which presents a hierarchical set of items in which only a single branch of that hierarchy may be exposed at one time.
+An Accordion is a component comprised of one or more vertically stacked sections or items, which can be expanded and collapsed to hide or reveal content.
 
-## Rules of Thumb
-
-- Give titles to Accordions if content is not obvious to users.
-- Titles should use sentence case capitalization.
-  :::note
-  Accordions are not commonly used for direct action or data manipulation. Use Accordions for navigation within a master-detail navigational pattern.
-  :::
-
-![Example of an Accordion in its collapsed state](/img/components/accordion-1.png)
+While Accordions are often used to present information hierarchy or hide lengthy descriptive text, they may also be used to display controls, input fields, and data visualizations.
 
 ## Appearance and Behavior
 
-Clicking on an item in an Accordion selects and expands that item. While Accordions are often used for presenting information hierarchy, Accordions can also be used to display controls, input fields and data visualizations. Users are able to swap components into the expanded content area.
+Clicking on an item in an Accordion selects and expands that item. Once expanded, the user may click on the header to return the item to its collapsed state.
+
+In the collapsed state, only the header portions of Accordion items are visible. The header consists of a title and right-aligned caret icon. When Accordion items are disabled, they remain collapsed and non-interactive, with an opacity applied to give them a “greyed out” appearance.
+
+It is common practice to allow multiple Accordion items to be expanded at once. In some cases, however, it may be necessary to limit expansion to one item at a time.
 
 :::two-col
 
-![Item 1 is selected and its expanded accordion content is displayed.](/img/components/accordion-2.png "Do: Item 1 is selected and its expanded accordion content is displayed.")
+![Orient the caret icon in the direction in which the content will move when selected.](/img/components/accordion-2.png "Orient the caret icon in the direction in which the content will move when selected.")
 
-![If a different branch is selected, for example, by clicking on a different top level item, the current branch automatically closes and the new branch opens.](/img/components/accordion-3.png "If a different branch is selected, for example, by clicking on a different top level item, the current branch automatically closes and the new branch opens.")
-
-![Accordions can be used for displaying user controls.](/img/components/accordion-4.png "Accordions can be used for displaying user controls.")
+![Use Accordions to display user controls.](/img/components/accordion-4.png "Use Accordions to display user controls.")
 
 :::
+
+
+## Best Practices
+
+- Differentiate the Accordion header from its content via color, spacing, separator lines, or other methods.
+- Use spacing and background shading to achieve separation between Accordion items.
+- If content needs to be visible at all times, use a different component or design pattern instead of an Accordion.
+
