@@ -178,6 +178,25 @@
 							"tier": 3
 						}
 					]
+				},
+				{
+					"name": "Focus State",
+					"numeral": 5,
+					"link": "/patterns/focus/",
+					"rules": [
+						{
+							"numeral": 1,
+							"rule": "There shall be only one Focus State displayed on the screen at any time.",
+							"status": "new",
+							"tier": 2
+						},
+						{
+							"numeral": 2,
+							"rule": "The Focus State shall encompass only the part of the target UI element that is interactive.",
+							"status": "new",
+							"tier": 3
+						}
+					]
 				}
 			]
 		},
