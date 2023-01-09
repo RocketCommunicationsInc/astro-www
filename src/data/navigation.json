@@ -95,6 +95,10 @@
 			{
 				"label": "Sign In",
 				"url": "/patterns/sign-in/"
+			},
+			{
+				"label": "Focus State",
+				"url": "/patterns/focus/"
 			}
 		],
 		"label": "Patterns"
