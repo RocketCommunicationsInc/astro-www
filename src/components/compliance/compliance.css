@@ -120,6 +120,11 @@
 		/* Appearance */
 		color: #786dd3;
 	}
+
+	&.-new {
+		/* Appearance */
+		color: #005a00;
+	}
 }
 
 .p-compliance-list {

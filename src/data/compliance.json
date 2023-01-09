@@ -341,6 +341,12 @@
 							"rule": "Dialog title and button labels shall use sentence case capitalization.",
 							"status": "current",
 							"tier": 3
+						},
+						{
+							"numeral": 7,
+							"rule": "Dialogs must be actively closed by the user — self-dismissing dialogs shall not be used.",
+							"status": "new",
+							"tier": 3
 						}
 					]
 				},
