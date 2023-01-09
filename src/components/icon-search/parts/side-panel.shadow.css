@@ -7,6 +7,30 @@
 	display: none;
 }
 
+button {
+	/* Layout */
+	align-items: normal;
+	margin: 0;
+	padding: 0;
+
+	/* Text */
+	font: inherit;
+	letter-spacing: inherit;
+	text-align: inherit;
+	text-indent: inherit;
+	text-shadow: inherit;
+	text-transform: inherit;
+	word-spacing: inherit;
+
+	/* Appearance */
+	appearance: none;
+	background-color: transparent;
+	border: none;
+	color: inherit;
+	cursor: inherit;
+	text-rendering: inherit;
+}
+
 svg {
 	fill: CurrentColor;
 }
@@ -53,9 +77,7 @@ h2 {
 		margin-block-start: 10--step;
 
 		/* Appearance */
-		background-color: var(--PrimaryColor);
 		border-radius: 12--rpx;
-		color: var(--InverseColor);
 	}
 
 	&::part(button-group) {
@@ -73,24 +95,12 @@ h2 {
 
 		/* Layout */
 		justify-content: space-between;
-		margin: 0;
 		padding: 3--step;
 
-		/* Text */
-		font: inherit;
-		letter-spacing: inherit;
-		text-align: inherit;
-		text-shadow: inherit;
-		text-transform: inherit;
-		word-spacing: normal;
-
 		/* Appearance */
-		appearance: auto;
 		background-color: var(--InverseColor);
-		border: none;
 		border-radius: 6--rpx;
 		color: var(--PrimaryColor);
-		cursor: pointer;
 
 		&:hover {
 			/* Appearance */
@@ -107,6 +117,19 @@ h2 {
 		/* Layout */
 		block-size: 1em;
 		inline-size: 1em;
+	}
+
+	&::part(close-button) {
+		/* Layout */
+		align-self: end;
+		block-size: 6--step;
+		inline-size: 6--step;
+		margin-block-start: -13--step;
+		margin-inline-end: -7--step;
+
+		/* Appearance */
+		color: var(--Grey500Color);
+		cursor: pointer;
 	}
 }
 

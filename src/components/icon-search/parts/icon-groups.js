@@ -1,13 +1,17 @@
 const iconPanel = document.querySelector('icon-panel')
 
-addEventListener('focus', event => {
-	const icon = event.target
+import('project:utils/use-click').then(({ useClick }) => {
+	for (let icon of document.querySelectorAll('figure.icon')) {
+		useClick.on(icon)
 
-	if (icon.matches?.('figure.icon')) {
-		const use = icon.querySelector('use[href]')
+		icon.addEventListener('click', event => {
+			const use = icon.querySelector('use[href]')
 
-		const iconID = use.href.baseVal.replace(/^[^#]*/, '')
+			const iconID = use.href.baseVal.replace(/^[^#]*/, '')
 
-		iconPanel.setAttribute('use', iconID)
+			iconPanel.setAttribute('use', iconID)
+
+			iconPanel.focus()
+		})
 	}
-}, true)
+})

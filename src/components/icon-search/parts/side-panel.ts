@@ -7,9 +7,15 @@ const template = html(templateHTML + '<style>' + templateCSS + '</style>')
 class IconPanel extends HTMLElement {
 	constructor() {
 		let host = super() as any as IconPanel
-		let root = c(host.attachShadow({ mode: 'open' }), template.cloneNode(true))
+		let root = c(host.attachShadow({ delegatesFocus: true, mode: 'open' }), template.cloneNode(true))
 
-		for (let button of root.querySelectorAll('button')) {
+		for (let button of root.querySelectorAll('button[data-action="close"]')) {
+			button.addEventListener('click', event => {
+				host.removeAttribute('use')
+			})
+		}
+
+		for (let button of root.querySelectorAll('.button-group button')) {
 			button.addEventListener('click', event => {
 				event.preventDefault()
 
@@ -82,7 +88,7 @@ class IconPanel extends HTMLElement {
 					parseFloat(headingStyle.height) > 40
 				)
 
-				const svg = root.querySelector<SVGSVGElement>('svg')!
+				const svg = root.querySelector<SVGSVGElement>('[part~="icon"]')!
 
 				svg.setAttribute('viewBox', (icon.attributes as any).viewBox.value)
 				svg.replaceChildren(clone)
