@@ -1096,6 +1096,25 @@
 							"tier": 3
 						}
 					]
+				},
+				{
+					"name": "Tooltip",
+					"numeral": 28,
+					"link": "/components/tooltip/",
+					"rules": [
+						{
+							"numeral": 1,
+							"rule": "Tooltips shall not contain information essential for the tasks the user needs to accomplish in their application.",
+							"status": "current",
+							"tier": 1
+						},
+						{
+							"numeral": 2,
+							"rule": "Tooltips shall not include icons, rich text, images, links, or actions.",
+							"status": "current",
+							"tier": 2
+						}
+					]
 				}
 			]
 		}
