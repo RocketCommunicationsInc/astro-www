@@ -242,6 +242,10 @@
 				"url": "/components/timeline/"
 			},
 			{
+				"label": "Tooltip",
+				"url": "/components/tooltip/"
+			},
+			{
 				"label": "Tree",
 				"url": "/components/tree/"
 			}
