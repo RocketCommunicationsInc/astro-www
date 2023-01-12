@@ -1,0 +1,33 @@
+---
+import type { MarkdownContent } from 'astro'
+
+import Layout from 'project:layouts/default/default-layout-with-grid.astro';
+import SiteSkipTo from 'project:components/site-skipto/site-skipto.astro'
+import PageAside from 'project:components/page-aside/page-aside.astro'
+
+import './new-docs-layout.css'
+
+const {
+	title,
+} = Object<MarkdownContent<{
+	title: string
+}>>(Astro.props.content)
+---
+<Layout title={title} tabtitle={title}>
+	<SiteSkipTo slot="top" />
+	<main class="page" id="content">
+		<slot name="header" />
+		<div class="page-content">
+			<div class="page-content-main-col">
+				<slot />
+			</div>
+			<aside class="page-content-side-col" id="aside">
+				<div class="-content">
+					<slot name="aside">
+						<PageAside />
+					</slot>
+				</div>
+			</aside>
+		</div>
+	</main>
+</Layout>

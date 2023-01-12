@@ -16,6 +16,7 @@ export default defineConfig({
 	},
 	vite: {
 		plugins: vitePlugins(),
+		logLevel: 'error',
 	},
 	integrations: [
 		sitemapIntegration(),
