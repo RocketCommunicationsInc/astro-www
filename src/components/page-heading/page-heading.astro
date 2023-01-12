@@ -1,0 +1,24 @@
+---
+let {
+	class: className = null,
+	id = null,
+	level = null,
+	...props
+} = Astro.props as Record<string, any>
+
+className = className == null ? '' : String(className).trim()
+level = level == null ? 1 : Number(level) || 1
+id = id == null ? 'heading' : String(id).trim().toLowerCase()
+
+const classList = new Set(className ? className.split(/\s+/) : [])
+const href = `#${id}`
+const Tag = `h${level}`
+
+classList.add('h')
+classList.add(Tag)
+
+className = [ ...classList ].join(' ')
+---
+<a href={href} class={className}>
+	<Tag id={id} {...props}><slot /></Tag>
+</a>
