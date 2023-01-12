@@ -152,7 +152,7 @@
 
 .page-content-side-col {
 	/* Layout */
-	flex-basis: 56--step;
+	flex-basis: 80--step;
 	flex-shrink: 0;
 
 	@media (width < 1120px) {
