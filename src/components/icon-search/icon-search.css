@@ -1,8 +1,3 @@
-.page-content-side-col {
-	/* Layout */
-	flex-basis: 80--step;
-}
-
 .p-icon-groups {
 	@media (width < 1440px) {
 		--grid-size: 4;
