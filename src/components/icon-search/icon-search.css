@@ -48,6 +48,11 @@
 
 			&:hover, &:focus-visible {
 				/* Appearance */
+				background-color: var(--BrightBlue200Color);
+			}
+
+			&.selected {
+				/* Appearance */
 				background-color: var(--Grey200Color);
 			}
 

@@ -1,16 +1,20 @@
 ---
-import Layout from 'project:layouts/default/default-layout-with-grid.astro';
-import ContributionFooter from 'project:components/contribution-footer/contribution-footer.astro';
-import ComplianceAside from 'project:components/compliance/compliance-aside.astro';
+import type { MarkdownContent } from 'astro'
+import Layout from 'project:layouts/default/default-layout-with-grid.astro'
+import ContributionFooter from 'project:components/contribution-footer/contribution-footer.astro'
+import ComplianceAside from 'project:components/compliance/compliance-aside.astro'
 import SiteSkipTo from 'project:components/site-skipto/site-skipto.astro'
 
-import complianceData from 'project:data/compliance.json';
-import globalData from 'project:data/global.json';
-import './docs-layout.css';
+import complianceData from 'project:data/compliance.json'
+import globalData from 'project:data/global.json'
+
+import './docs-layout.css'
 
 const {
 	title,
-} = Object(Astro.props.content);
+} = Object<MarkdownContent<{
+	title: string
+}>>(Astro.props.content)
 
 /* Create github link to source file */
 
@@ -27,7 +31,7 @@ const fileExt = fileName.split('.').at(-1)
 /** URL to the current source for this page. */
 const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData.designSystem.repositoryBranch}/src/pages${withoutTrailingSlash(Astro.url.pathname)}.${fileExt}`
 ---
-<Layout {title} tabtitle={title}>
+<Layout title={title} tabtitle={title}>
 	<SiteSkipTo slot="top" />
 	<main id="content">
 		<slot />

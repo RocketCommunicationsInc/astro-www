@@ -53,6 +53,7 @@
 		overflow-y: auto;
 		overflow-y: overlay;
 		position: sticky;
+		scrollbar-width: none;
 
 		/* Masking */
 		mask-image: var(--mask);
@@ -62,6 +63,11 @@
 		/* Behavior */
 		scroll-behavior: smooth;
 		scrollbar-gutter: stable;
+
+		&::-webkit-scrollbar {
+			/* Layout */
+			width: 0;
+		}
 
 		&.-has-results {
 			/* Layout */

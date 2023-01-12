@@ -1,8 +1,8 @@
 .p-searchform {
 	/* Layout */
 	inset-block-start: 0;
-	margin-block: -10--step -4--step;
-	padding-block: 10--step 4--step;
+	margin-block: -5--step -5--step;
+	padding-block: 5--step 5--step;
 	position: sticky;
 
 	/* Appearance */
@@ -117,21 +117,11 @@
 	}
 
 	&.-filled .-label {
+		/* Appearance */
+		opacity: 0;
+
 		/* Transform */
 		scale: 80%;
 		translate: -12--step -12--step;
-
-		/* Animate */
-		animation: slidein 300ms ease-out;
-	}
-}
-
-@keyframes slidein {
-	from {
-		/* Appearance */
-		opacity: 20%;
-
-		/* Transform */
-		translate: -12--step -11--step;
 	}
 }

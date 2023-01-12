@@ -5,100 +5,182 @@ import { c, cloneContents, h, html } from 'project:utils/html.js'
 const template = html(templateHTML + '<style>' + templateCSS + '</style>')
 
 class IconPanel extends HTMLElement {
+	#internals: {
+		id: string
+		content: DocumentFragment | null
+		heading: HTMLHeadingElement
+		preview: SVGSVGElement
+		viewBox: string | null
+		markupForHTML: string
+		markupForSVG: string
+	}
+
 	constructor() {
 		let host = super() as any as IconPanel
-		let root = c(host.attachShadow({ delegatesFocus: true, mode: 'open' }), template.cloneNode(true))
+		let root = c(host.attachShadow({ mode: 'open' }), template.cloneNode(true))
 
-		for (let button of root.querySelectorAll('button[data-action="close"]')) {
-			button.addEventListener('click', event => {
-				host.removeAttribute('use')
-			})
+		this.#internals = {
+			id: '',
+			content: null,
+			heading: root.querySelector<HTMLHeadingElement>('[part~="label"]')!,
+			preview: root.querySelector<SVGSVGElement>('[part~="icon"]')!,
+			viewBox: null,
+			markupForHTML: '',
+			markupForSVG: '',
 		}
 
-		for (let button of root.querySelectorAll('.button-group button')) {
-			button.addEventListener('click', event => {
+		root.addEventListener('click', event => {
+			const button = (event.target as Element).closest<HTMLButtonElement>('button[data-action]')
+
+			if (button) {
 				event.preventDefault()
 
-				const iconID = host.getAttribute('use')!
-				const icon = document.querySelector(iconID)!
+				const { dataset: { action }, value } = button
 
-				const viewBox = (icon.attributes as any).viewBox.value
-				const svg = c(h(`<svg viewBox="${viewBox}">`), cloneContents(icon))
+				this.#do(action!, value)
+			}
+		}, {
+			capture: true,
+		})
 
-				const iterator = document.createNodeIterator(svg, NodeFilter.SHOW_TEXT)
-				let node: Node | null
+		host.tabIndex = -1
 
-				while (node = iterator.nextNode()) {
-					if (!node.textContent!.trim()) {
-						(node as ChildNode).remove()
+		if ('attachInternals' in host) {
+			const internals = host.attachInternals()
+
+			internals.role = 'dialog'
+			internals.ariaModal = 'true'
+			internals.ariaLabel = 'Icon Details'
+		}
+	}
+
+	attributeChangedCallback(name: string, _oldValue: string, newValue: string) {
+		// skip all attributes except "use"
+		if (name !== 'use') return
+
+		// skip if the "use" attribute is being removed
+		if (newValue === null) return
+
+		/** Element matching the given hash from the "use" attribute. */
+		const iconElement = document.querySelector<SVGSymbolElement>(newValue.trim())!
+
+		// skip if the element is not matched
+		if (iconElement === null) {
+			this.removeAttribute('use')
+
+			return
+		}
+
+		const iconID = this.#internals.id = newValue.replace(/^#icon-/, '')
+		const iconViewBox = iconElement.getAttribute('viewBox')!
+		const iconContent = getContentsOfSVG(iconElement)
+
+		this.#internals.content = iconContent
+		this.#internals.viewBox = iconViewBox
+
+		this.#internals.markupForHTML = getMarkupOfHTML(iconID)
+		this.#internals.markupForSVG = getMarkupOfSVG(iconContent, iconViewBox)
+
+		this.#internals.preview.setAttribute('viewBox', iconViewBox)
+		this.#internals.preview.replaceChildren(iconContent)
+
+		resizeHeadingElement(this.#internals.heading, iconElement.firstElementChild!.textContent!)
+	}
+
+	#do(type: string, value: string) {
+		switch (type) {
+			case 'close': {
+				this.removeAttribute('use')
+
+				this.ownerDocument.defaultView!.dispatchEvent(
+					new Event('close-icon-side-panel')
+				)
+
+				break
+			}
+
+			case 'copy': {
+				switch (value) {
+					case 'html': {
+						navigator.clipboard.writeText(this.#internals.markupForHTML)
+						break
 					}
-				}
 
-				const iconRawID = iconID.replace(/^#icon-/, '')
-				const svgHTML = svg.outerHTML
-
-				const wcHTML = `<rux-icon size="normal" icon=${JSON.stringify(iconRawID)}></rux-icon>`
-
-				switch (button.dataset.copy) {
 					case 'id': {
-						navigator.clipboard.writeText(iconRawID)
-						console.log('copied id')
+						navigator.clipboard.writeText(this.#internals.id)
 						break
 					}
 
 					case 'svg': {
-						navigator.clipboard.writeText(svgHTML)
-						console.log('copied svg')
-						break
-					}
-
-					case 'wc': {
-						navigator.clipboard.writeText(wcHTML)
-						console.log('copied web component')
+						navigator.clipboard.writeText(this.#internals.markupForSVG)
 						break
 					}
 				}
-			})
-		}
-	}
+				break
+			}
 
-	attributeChangedCallback(name: string, oldValue: string, newValue: string) {
-		let host = this
-		let root = host.shadowRoot!
-
-		if (newValue) {
-			const icon = document.querySelector<SVGSymbolElement>(newValue)
-
-			if (icon) {
-				const clone = cloneContents(icon)
-
-				const heading = root.querySelector<HTMLHeadingElement>('[part~="label"]')!
-
-				heading.textContent = clone.firstElementChild!.textContent!
-
-				let headingStyle = getComputedStyle(heading)
-				let headingFontSize = 36
-
-				do {
-					heading.style.setProperty('font-size', headingFontSize + 'px', 'important')
-					heading.style.setProperty('line-height', String(40 / headingFontSize + 0.0001), 'important')
-
-					--headingFontSize
-				} while (
-					parseFloat(headingStyle.height) > 40
-				)
-
-				const svg = root.querySelector<SVGSVGElement>('[part~="icon"]')!
-
-				svg.setAttribute('viewBox', (icon.attributes as any).viewBox.value)
-				svg.replaceChildren(clone)
-			} else {
-				this.removeAttribute('use')
+			case 'download': {
+				downloadFileOfText(this.#internals.markupForSVG, this.#internals.id + '.svg', { type: 'image/svg+xml' })
 			}
 		}
 	}
 
 	static observedAttributes = [ 'use' ]
+}
+
+/** Downloads the given text content as a file. */
+const downloadFileOfText = (textContent: string, fileName: string, options: BlobPropertyBag) => {
+	const file = new File([ textContent ], fileName, options)
+	const linkElement = h<HTMLAnchorElement>(`<a href=${URL.createObjectURL(file)} download=${JSON.stringify(fileName)}>`)
+
+	document.body.append(linkElement)
+
+	linkElement.click()
+
+	linkElement.remove()
+}
+
+/** Returns the sanitized contents of the given icon symbol, with whitespace text nodes removed. */
+const getContentsOfSVG = (iconSymbol: SVGSymbolElement) => {
+	const contents = cloneContents(iconSymbol)
+	const iterator = document.createNodeIterator(contents, NodeFilter.SHOW_TEXT)
+
+	let node: Node | null
+
+	while (node = iterator.nextNode()) {
+		if (!node.textContent!.trim()) {
+			(node as ChildNode).remove()
+		}
+	}
+
+	return contents
+}
+
+/** Returns serialized markup for the given contents of an SVG icon. */
+const getMarkupOfSVG = (contents: DocumentFragment, viewBox: string) => c(
+	h<SVGSVGElement>(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}">`),
+	contents.cloneNode(true)
+).outerHTML
+
+/** Returns serialized markup for the given icon web component. */
+const getMarkupOfHTML = (id: string) => `<rux-icon size="normal" icon=${JSON.stringify(id)}></rux-icon>`
+
+/** Resizes the heading of an icon panel to prevent it from requiring more than one line. */
+const resizeHeadingElement = (headingElement: HTMLHeadingElement, headingText: string) => {
+	const headingStyle = getComputedStyle(headingElement)
+
+	let headingFontSize = 36
+
+	headingElement.textContent = headingText
+
+	do {
+		headingElement.style.setProperty('font-size', headingFontSize + 'px', 'important')
+		headingElement.style.setProperty('line-height', String(40 / headingFontSize + 0.0001), 'important')
+
+		--headingFontSize
+	} while (
+		parseFloat(headingStyle.height) > 40
+	)
 }
 
 customElements.define('icon-panel', IconPanel)

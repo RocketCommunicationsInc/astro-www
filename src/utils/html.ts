@@ -7,7 +7,7 @@ const cloneRange = new Range()
 export const html = templateRange.createContextualFragment.bind(templateRange) as (fragment: string) => DocumentFragment
 
 /** Returns a Node representing the first contents of the given HTML markup. */
-export const h = <T extends HTMLElement>(fragment: string) => html(fragment).firstChild as T
+export const h = <T extends Element>(fragment: string) => html(fragment).firstChild as T
 
 export const c = <T extends ParentNode>(
 	container: T,

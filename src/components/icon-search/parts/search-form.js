@@ -99,14 +99,14 @@
 			iconGroup.element.classList.toggle('nomatch', nomatches)
 		}
 
-		searchResultCountEl.textContent = (
+		searchResultCountEl.innerHTML = (
 			searchResultCount
 				? (
 					searchResultCount === Number(searchResultCountEl.dataset.maxSize)
 				)
-					? `Showing all ${searchResultCount} icons.`
-				: `Showing ${searchResultCount} matching icons.`
-			: `No matching icons.`
+					? ``
+				: ``
+			: `No matching icons. Please contact <a href="mailto:support@astrouxds.com">support@astrouxds.com</a>.`
 		)
 	}
 }
