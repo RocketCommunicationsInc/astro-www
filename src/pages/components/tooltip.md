@@ -10,7 +10,7 @@ git: rux-tooltip
 
 ::storybook-demo
 
-A Tooltip is a message box that provides a concise amount of relevant contextual information about an associated UI element. Tooltips are activated by hovering over, focusing on, or tapping an element.
+A Tooltip is a message box that provides a concise amount of relevant contextual information about an associated UI element. Tooltips are activated by hovering over or focusing on an element.
 
 ## Rules of Thumb
 
@@ -23,7 +23,7 @@ A Tooltip is a message box that provides a concise amount of relevant contextual
 
 **Behavior** 
 
-Tooltips display informative text in a message box when the user has hovered or paused their mouse over an associated UI element for a brief length of time (800 ms by default). They should remain visible if the user briefly moves the mouse off and back on to the target. When the user scrolls, exits the element area, or clicks on an element, the Tooltip is hidden.
+Tooltips display informative text in a message box when the user has hovered or paused their mouse over an associated UI element for a brief length of time (800 ms by default). They can also be activated by focusing an element using the keyboard or voice activation. They should remain visible if the user briefly moves the mouse off and back on to the target. When the user exits the element area, moves the cursor off the element by scrolling, or clicks on another UI element, the Tooltip is hidden.
 
 **Appearance**
 
