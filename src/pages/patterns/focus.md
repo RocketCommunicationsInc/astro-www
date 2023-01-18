@@ -14,15 +14,15 @@ Focus State communicates when a user has engaged or highlighted an interactive c
 
 The Focus State consists of a 1 pixel outline which sits 2 pixels away from the focused element. The Focus State uses a bright pink color style, as it stands out from the rest of the Astro color palette sufficiently to attract a user's attention.
 
-Generally, the Focus State encompasses the part of the element that is interactive. In certain cases, such as the slider component, the thumb is interactive. With simpler elements that have labels (like radio and checkboxes), giving focus to the whole component makes the intention of the form item more clear (for example, this radio is connected to this text label).
+Generally, the Focus State encompasses the part of the element that is interactive. In certain cases, such as the slider component, the thumb is interactive. With simpler elements that have labels (like radio and checkboxes), giving focus to the whole component makes the intention of the form item more clear (for example, *this radio* is connected to this *text label*).
 
-Focus should only appear when using the keyboard or voice control. Use the css pseudo-element `:focus-visible` rather than `:focus` to achieve this. 
+Focus should only appear when using the keyboard or voice control. Use the css pseudo-element `:focus-visible` rather than `:focus` to achieve this.
 Here is an example of focus CSS using Astro design tokens.
 
-    &:focus-visible { 
-        outline: var(--border-width-focus-default) solid var(--color-border-focus-default); 
-        outline-offset: var(--spacing-focus-default); 
-        border-radius: var(--radius-base) //optional 
+    &:focus-visible {
+        outline: var(--border-width-focus-default) solid var(--color-border-focus-default);
+        outline-offset: var(--spacing-focus-default);
+        border-radius: var(--radius-base) //optional
     }
 
 ## Rules of Thumb
