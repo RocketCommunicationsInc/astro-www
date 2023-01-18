@@ -253,6 +253,10 @@
 		"label": "Components"
 	},
 	{
+		"label": "Icon Library",
+		"url": "/icon-library/"
+	},
+	{
 		"label": "Service Specific UX Design",
 		"url": "/service-specific-ux-design/"
 	},
@@ -352,10 +356,6 @@
 			}
 		],
 		"label": "Compliance"
-	},
-	{
-		"label": "Icons",
-		"url": "/icons/"
 	},
 	{
 		"label": "Releases",
