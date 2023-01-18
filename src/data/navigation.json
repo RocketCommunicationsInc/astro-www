@@ -158,10 +158,6 @@
 				"url": "/components/global-status-bar/"
 			},
 			{
-				"label": "Icon Library",
-				"url": "/components/icon-library/"
-			},
-			{
 				"label": "Icons and Symbols",
 				"url": "/components/icons-and-symbols/"
 			},
@@ -255,6 +251,10 @@
 			}
 		],
 		"label": "Components"
+	},
+	{
+		"label": "Icon Library",
+		"url": "/icon-library/"
 	},
 	{
 		"label": "Service Specific UX Design",
