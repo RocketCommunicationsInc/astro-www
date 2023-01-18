@@ -187,13 +187,13 @@
 						{
 							"numeral": 1,
 							"rule": "There shall be only one Focus State displayed on the screen at any time.",
-							"status": "new",
+							"status": "current",
 							"tier": 2
 						},
 						{
 							"numeral": 2,
 							"rule": "The Focus State shall encompass only the part of the target UI element that is interactive.",
-							"status": "new",
+							"status": "current",
 							"tier": 3
 						}
 					]
@@ -364,7 +364,7 @@
 						{
 							"numeral": 7,
 							"rule": "Dialogs must be actively closed by the user — self-dismissing dialogs shall not be used.",
-							"status": "new",
+							"status": "current",
 							"tier": 3
 						}
 					]
