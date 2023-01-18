@@ -38,9 +38,9 @@ Learn more about designing with Astro development assets, and why the Astro team
 Astro is tested & supported in major 'evergreen' web browsers (the latest browser version from each vendor -1). Please submit an issue for problems with the browsers listed below. Mobile browsers are not yet fully supported in Astro.
 
 :::table-overflow
-|       |  Chrome  | Firefox  |   Edge   |  Safari  | Chrome (Android) | Safari (iOS) |
-| :---- | :------: | :------: | :------: | :------: | :--------------: | :----------: |
-| Astro | &check;  | &check;  | &check;  | &check;  |   unsupported    | unsupported  |
+|       | Chrome  | Firefox |  Edge   | Safari  | Chrome (Android) | Safari (iOS) |
+|:------|:-------:|:-------:|:-------:|:-------:|:----------------:|:------------:|
+| Astro | &check; | &check; | &check; | &check; |   unsupported    | unsupported  |
 :::
 
 ### Versioning
@@ -57,7 +57,7 @@ When implementing Astro Space UX Design System users should consult with their o
 
 :::
 
-> Copyright © 2022 Rocket Communications, Inc.
+> Copyright © 2023 Rocket Communications, Inc.
 >
 > The Astro Space UX Design System, which includes user workflows, interfaces, visual components, system functionality, sample code, style guides, best practices guidelines, sample applications, and related sample software, all of which is publicly available at www.astroUXDS.com (collectively referred to herein as the “Software”), is developed and maintained by Rocket Communications, Inc. (“Rocket”) through a contract with the United States government.
 >
