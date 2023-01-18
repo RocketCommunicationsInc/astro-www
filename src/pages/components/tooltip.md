@@ -27,7 +27,7 @@ Tooltips display informative text in a message box when the user has hovered or 
 
 **Appearance**
 
-Tooltips have consistent text styling and do not include icons, rich text, images, links, or actions. If those options are desired, consider using the [Pop Up Menu](/components/pop-up/) component.
+Tooltips have consistent text styling and do not include icons, rich text, images, links, or actions. If those options are desired, consider using the [Pop Up](/components/pop-up/) component.
 
 ## Examples
 
