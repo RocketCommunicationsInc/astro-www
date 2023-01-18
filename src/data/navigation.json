@@ -158,6 +158,10 @@
 				"url": "/components/global-status-bar/"
 			},
 			{
+				"label": "Icon Library",
+				"url": "/components/icon-library/"
+			},
+			{
 				"label": "Icons and Symbols",
 				"url": "/components/icons-and-symbols/"
 			},
@@ -352,10 +356,6 @@
 			}
 		],
 		"label": "Compliance"
-	},
-	{
-		"label": "Icons",
-		"url": "/icons/"
 	},
 	{
 		"label": "Releases",

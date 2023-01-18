@@ -134,3 +134,9 @@ command = "npm run build"
 	to = "/components/getting-started/"
 	status = 301
 	force = true
+
+[[redirects]]
+	from = "/icons/"
+	to = "/components/icon-library/"
+	status = 301
+	force = true
