@@ -358,10 +358,6 @@
 		"label": "Compliance"
 	},
 	{
-		"label": "Icons",
-		"url": "/icons/"
-	},
-	{
 		"label": "Releases",
 		"url": "/releases/"
 	},
