@@ -13,12 +13,12 @@ class IconPanelElement extends HTMLElement {
 		window.dispatchEvent(new CustomEvent('close-icon-side-panel'))
 
 		// clear button data
-		this.#$.downloadVgButton.dataset.data = ''
 		this.#$.downloadVgButton.dataset.name = ''
+		this.#$.downloadVgButton.dataset.text = ''
 		this.#$.downloadVgButton.dataset.type = ''
-		this.#$.emitClipboardWriteIdButton.dataset.data = ''
-		this.#$.emitClipboardWriteVgButton.dataset.data = ''
-		this.#$.emitClipboardWriteWcButton.dataset.data = ''
+		this.#$.emitClipboardWriteIdButton.dataset.text = ''
+		this.#$.emitClipboardWriteVgButton.dataset.text = ''
+		this.#$.emitClipboardWriteWcButton.dataset.text = ''
 	}
 
 	attributeChangedCallback(name: string, _oldValue: string, newValue: string) {
@@ -146,12 +146,12 @@ class IconPanelInternals {
 
 		// update the download button
 		this.downloadVgButton.dataset.name = fileName
-		this.downloadVgButton.dataset.data = serializedVGContent
+		this.downloadVgButton.dataset.text = serializedVGContent
 
 		// update the emit buttons
-		this.emitClipboardWriteIdButton.dataset.data = id
-		this.emitClipboardWriteWcButton.dataset.data = serializedWCContent
-		this.emitClipboardWriteVgButton.dataset.data = serializedVGContent
+		this.emitClipboardWriteIdButton.dataset.text = id
+		this.emitClipboardWriteWcButton.dataset.text = serializedWCContent
+		this.emitClipboardWriteVgButton.dataset.text = serializedVGContent
 
 		// adjust the preview viewbox to the viewbox of the current icon
 		this.preview.setAttribute('viewBox', viewBox)
