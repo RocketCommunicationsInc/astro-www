@@ -79,7 +79,7 @@ class IconPanelInternals {
 
 		Object.assign(this, { host, root, heading, preview })
 
-		root.addEventListener('close:panel', this, { capture: true })
+		root.addEventListener('close:panel', this, { capture: true, passive: true })
 
 		// give ARIA affordances to the Icon Panel
 		if ('attachInternals' in host) {
