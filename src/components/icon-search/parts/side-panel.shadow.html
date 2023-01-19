@@ -1,4 +1,4 @@
-<button part="close-button" data-action="close" aria-label="Close">
+<button part="close-button" data-emit="close:panel" aria-label="Close">
 	<svg role="none" part="close-icon" viewBox="0 0 24 24">
 		<path d="M18.3 5.71a1 1 0 0 0-1.41 0L12 10.59 7.11 5.7A1 1 0 1 0 5.7 7.11L10.59 12 5.7 16.89a1 1 0 1 0 1.41 1.41L12 13.41l4.89 4.89a1 1 0 1 0 1.41-1.41L13.41 12l4.89-4.89a1 1 0 0 0 0-1.4Z" />
 	</svg>
@@ -6,20 +6,20 @@
 <h2 part="label"> </h2>
 <svg part="icon"></svg>
 <div part="button-group">
-	<button part="button" data-action="copy" value="svg" aria-label="Copy SVG to clipboard">
+	<button part="button" value="clipboard:write:vg" data-emit="clipboard:write" aria-label="Copy SVG to clipboard">
 		<span part="button-text">Copy SVG</span>
 		<svg part="button-icon" role="none"><use href="#file-copy" /></svg>
 	</button>
-	<button part="button" data-action="copy" value="id" aria-label="Copy Icon ID to clipboard">
+	<button part="button" value="clipboard:write:id" data-emit="clipboard:write" aria-label="Copy Icon ID to clipboard">
 		<span part="button-text">Copy Icon ID</span>
 		<svg part="button-icon" role="none"><use href="#file-copy" /></svg>
 	</button>
-	<button part="button" data-action="copy" value="html" aria-label="Copy Web Component to clipboard">
+	<button part="button" value="clipboard:write:wc" data-emit="clipboard:write" aria-label="Copy Web Component to clipboard">
 		<span part="button-text">Copy Web Component</span>
 		<svg part="button-icon" role="none"><use href="#file-copy" /></svg>
 	</button>
 </div>
-<button part="button download-button" data-action="download" value="svg" aria-label="Download SVG">
+<button part="button download-button" value="download:svg" data-emit="download:file" data-type="image/svg+xml" aria-label="Download SVG">
 	<svg part="button-icon download-button-icon" role="none"><use href="#get-app" /></svg>
 	<span part="button-text download-button-text">SVG</span>
 </button>

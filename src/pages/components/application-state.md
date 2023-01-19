@@ -1,6 +1,6 @@
 ---
 title: Application State
-layout: project:layouts/component-docs/component-docs-layout.astro
+layout: project:layouts/docs/docs-layout.astro
 ---
 
 # Application State
@@ -43,13 +43,13 @@ Only use Tag colors when necessary as overuse of colors may reduce efficacy of m
 
 ### Location
 
-- The App State component is placed below the application title text in the [Global Status Bar](https://astrouxds.com/components/global-status-bar/).
+- The App State component is placed below the application title text in the [Global Status Bar](https://www.astrouxds.com/components/global-status-bar/).
 
 - The App State should be left-aligned to the application title text, not the menu.
 
 - If a left-aligned username is present, add space between the App State and the username to ensure legibility of both elements.
 
-- When the App State is present, the application title, menu, state, and username section should be vertically centered in the allotted space within the [Global Status Bar](https://astrouxds.com/components/global-status-bar/).
+- When the App State is present, the application title, menu, state, and username section should be vertically centered in the allotted space within the [Global Status Bar](https://www.astrouxds.com/components/global-status-bar/).
 
 ## Examples
 

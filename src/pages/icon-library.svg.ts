@@ -12,10 +12,10 @@ const html = `<svg xmlns="http://www.w3.org/2000/svg">${
 							`<title>${name}</title>${html}`
 						}</symbol>`
 					)
-				)
+				).join('')
 			}</g>`
 		)
-	)
+	).join('')
 }</svg>`
 
 export const get: APIRoute = () => ({
