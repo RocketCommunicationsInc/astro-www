@@ -13,6 +13,8 @@ const props = {
 } as Props
 ---
 <Document {...props}>
-	<GoogleAnalytics slot="head" />
 	<slot />
 </Document>
+<script>
+import './default-layout.client'
+</script>

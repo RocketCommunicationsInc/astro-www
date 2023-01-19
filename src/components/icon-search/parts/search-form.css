@@ -1,0 +1,127 @@
+.p-searchform {
+	/* Layout */
+	inset-block-start: 0;
+	margin-block: -5--step -5--step;
+	padding-block: 5--step 5--step;
+	position: sticky;
+
+	/* Appearance */
+	background-color: var(--PrimaryColor);
+
+	/* Reference */
+	--border-color: var(--Grey700Color);
+	--clear-color: var(--PlaceholderColor);
+	--label-color: var(--PlaceholderColor);
+	--search-color: var(--Grey700Color);
+
+	&.-filled {
+		--border-color: var(--DarkBlue500Color);
+		--label-color: var(--InverseColor);
+	}
+
+	&:focus-within, &:hover {
+		--border-color: var(--DarkBlue500Color);
+	}
+
+	&:focus-within {
+		--search-color: var(--InverseColor);
+	}
+
+	& .-field {
+		display: grid;
+
+		/* Layout */
+		align-items: center;
+		block-size: 15--step;
+		inline-size: 100%;
+
+		/* Appearance */
+		background-color: var(--PrimaryColor);
+		border-radius: 12--rpx;
+		box-shadow: var(--border-color) 0 0 0 2px inset;
+
+		& > * {
+			display: flex;
+
+			/* Layout */
+			align-items: center;
+			grid-area: 1 / 1 / 2 / 2;
+
+			/* Appearance */
+			border-radius: 12--rpx;
+		}
+	}
+
+	& .-control, & .-label {
+		/* Layout */
+		align-self: stretch;
+		padding-inline: 12--step;
+	}
+
+	& .-control {
+		/* Appearance */
+		outline: none;
+	}
+
+	& .-icon {
+		/* Layout */
+		block-size: 5--step;
+		inline-size: 5--step;
+
+		/* Animation */
+		transition: color 300ms;
+	}
+
+	& .-search-icon {
+		/* Layout */
+		margin-inline-start: 5--step;
+
+		/* Appearance */
+		color: var(--search-color);
+	}
+
+	& .-clear {
+		/* Layout */
+		justify-self: end;
+		margin-inline-end: 4--step;
+		padding: 2--step;
+
+		/* Appearance */
+		color: var(--clear-color);
+		cursor: pointer;
+
+		/* Animation */
+		transition: opacity 300ms;
+
+		&:focus-within, &:hover {
+			--clear-color: var(--InverseColor);
+		}
+
+		&:focus {
+			/* Animation */
+			transition-duration: 0ms;
+		}
+	}
+
+	&:not(.-filled) .-clear {
+		/* Appearance */
+		opacity: 0;
+	}
+
+	& .-label {
+		/* Appearance */
+		color: var(--label-color);
+
+		/* Transform */
+		transform-origin: 40% 100%;
+	}
+
+	&.-filled .-label {
+		/* Appearance */
+		opacity: 0;
+
+		/* Transform */
+		scale: 80%;
+		translate: -12--step -12--step;
+	}
+}

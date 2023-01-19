@@ -49,7 +49,7 @@
 	padding: 0;
 
 	/* Appearance */
-	border: 0 solid;
+	border: 0;
 }
 
 :where(figure) {

@@ -1,6 +1,6 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
 title: Component Sandbox
+layout: project:layouts/docs/docs-layout.astro
 ---
 
 # Component Sandbox

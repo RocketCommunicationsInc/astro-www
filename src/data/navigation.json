@@ -95,6 +95,10 @@
 			{
 				"label": "Sign In",
 				"url": "/patterns/sign-in/"
+			},
+			{
+				"label": "Focus State",
+				"url": "/patterns/focus/"
 			}
 		],
 		"label": "Patterns"
@@ -238,11 +242,19 @@
 				"url": "/components/timeline/"
 			},
 			{
+				"label": "Tooltip",
+				"url": "/components/tooltip/"
+			},
+			{
 				"label": "Tree",
 				"url": "/components/tree/"
 			}
 		],
 		"label": "Components"
+	},
+	{
+		"label": "Icon Library",
+		"url": "/icon-library/"
 	},
 	{
 		"label": "Service Specific UX Design",

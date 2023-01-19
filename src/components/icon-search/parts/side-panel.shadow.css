@@ -1,0 +1,172 @@
+* {
+	/* Layout */
+	box-sizing: border-box;
+}
+
+[hidden] {
+	display: none;
+}
+
+button {
+	/* Layout */
+	align-items: normal;
+	margin: 0;
+	padding: 0;
+
+	/* Text */
+	font: inherit;
+	letter-spacing: inherit;
+	text-align: inherit;
+	text-indent: inherit;
+	text-shadow: inherit;
+	text-transform: inherit;
+	word-spacing: inherit;
+
+	/* Appearance */
+	appearance: none;
+	background-color: transparent;
+	border: none;
+	color: inherit;
+	cursor: inherit;
+	text-rendering: inherit;
+}
+
+svg {
+	fill: CurrentColor;
+}
+
+h2 {
+	/* Layout */
+	margin-block: 0;
+
+	/* Text */
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+:host {
+	display: flex;
+
+	/* Layout */
+	align-items: center;
+	block-size: 100dvh;
+	flex-flow: column;
+	overflow: hidden scroll;
+	padding-block: 15--step;
+	padding-inline: 9--step;
+
+	/* Appearance */
+	background-color: var(--DarkBlue800Color);
+	color: var(--PrimaryColor);
+	scrollbar-color: transparent transparent;
+	scrollbar-width: none;
+
+	/* Reference */
+	--icon-size: 50--step;
+
+	&::-webkit-scrollbar {
+		/* Layout */
+		width: 0;
+	}
+
+	&::part(label) {
+		/* Text */
+		font-size: 36--rpx;
+		font-weight: 400;
+		letter-spacing: .0025em;
+		line-height: calc(40 / 36);
+		text-align: center;
+	}
+
+	&::part(icon) {
+		/* Layout */
+		block-size: var(--icon-size);
+		flex-shrink: 0;
+		inline-size: var(--icon-size);
+		margin-block-start: 10--step;
+
+		/* Appearance */
+		border-radius: 12--rpx;
+	}
+
+	&::part(button-group) {
+		display: flex;
+
+		/* Layout */
+		align-self: stretch;
+		flex-flow: column;
+		gap: 3--step;
+		margin-block-start: 11--step;
+	}
+
+	&::part(button) {
+		display: flex;
+
+		/* Layout */
+		align-items: center;
+		justify-content: space-between;
+		padding: 3--step;
+
+		/* Appearance */
+		background-color: var(--InverseColor);
+		border-radius: 6--rpx;
+		color: var(--PrimaryColor);
+		cursor: pointer;
+
+		&:hover {
+			/* Appearance */
+			background-color: var(--DarkBlue500Color);
+		}
+
+		&:active {
+			/* Transform */
+			translate: 0 1px;
+		}
+	}
+
+	&::part(button-icon) {
+		/* Layout */
+		block-size: 1em;
+		inline-size: 1em;
+	}
+
+	&::part(download-button) {
+		/* Layout */
+		inline-size: 100%;
+		justify-content: center;
+		margin-block-start: 10--step;
+
+		/* Appearance */
+		background-color: var(--BrightBlue500Color);
+		color: var(--DarkBlue950Color);
+
+		&:hover, &:focus {
+			/* Appearance */
+			background-color: var(--BrightBlue400Color);
+		}
+	}
+
+	&::part(download-button-icon) {
+		/* Layout */
+		margin-inline-end: 2--step;
+	}
+
+	&::part(close-button) {
+		/* Layout */
+		align-self: end;
+		block-size: 6--step;
+		inline-size: 6--step;
+		margin-block-start: -13--step;
+		margin-inline-end: -7--step;
+
+		/* Appearance */
+		color: var(--Grey500Color);
+		cursor: pointer;
+	}
+}
+
+/* Hello */
+
+:host(:not([use])) {
+	display: none;
+}

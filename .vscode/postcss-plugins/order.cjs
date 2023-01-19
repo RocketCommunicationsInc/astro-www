@@ -153,6 +153,8 @@ const order = [
 			'grid-template-columns',
 			'grid-template-rows',
 			'justify-content',
+			'justify-items',
+			'justify-self',
 			'order',
 			'place-items',
 			'place-content',
@@ -229,6 +231,17 @@ const order = [
 			'cursor',
 			'tap-highlight-color'
 		].sort()
+	},
+	{
+		'groupName': 'Transform',
+		'emptyLineBefore': 'always',
+		'properties': [
+			'rotate',
+			'scale',
+			'translate',
+			'transform',
+			'transform-origin',
+		]
 	},
 	{
 		'groupName': 'Behavior',

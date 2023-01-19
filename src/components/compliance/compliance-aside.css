@@ -45,6 +45,42 @@
 
 		& .-details {
 			grid-column: 2 / 3;
+
+			& .compliance-status {
+				display: block;
+
+				/* Layout */
+				margin-block-start: 1--step;
+
+				/* Text */
+				font-size: 12--rpx;
+				font-weight: 700;
+				line-height: calc(16 / 12);
+				text-transform: uppercase;
+
+				/* Appearance */
+				border-radius: var(--EdgeRadius);
+
+				&.-deprecated {
+					/* Appearance */
+					color: var(--Grey500Color);
+				}
+
+				&.-under-review {
+					/* Appearance */
+					color: #c8102e;
+				}
+
+				&.-updated {
+					/* Appearance */
+					color: #786dd3;
+				}
+
+				&.-new {
+					/* Appearance */
+					color: #005a00;
+				}
+			}
 		}
 	}
 }

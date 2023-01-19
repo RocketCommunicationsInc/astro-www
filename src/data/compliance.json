@@ -1,5 +1,5 @@
 {
-	"version": "3.2.0",
+	"version": "4.1.0",
 	"contents": [
 		{
 			"name": "General",
@@ -178,6 +178,25 @@
 							"tier": 3
 						}
 					]
+				},
+				{
+					"name": "Focus State",
+					"numeral": 5,
+					"link": "/patterns/focus/",
+					"rules": [
+						{
+							"numeral": 1,
+							"rule": "There shall be only one Focus State displayed on the screen at any time.",
+							"status": "new",
+							"tier": 2
+						},
+						{
+							"numeral": 2,
+							"rule": "The Focus State shall encompass only the part of the target UI element that is interactive.",
+							"status": "new",
+							"tier": 3
+						}
+					]
 				}
 			]
 		},
@@ -340,6 +359,12 @@
 							"numeral": 6,
 							"rule": "Dialog title and button labels shall use sentence case capitalization.",
 							"status": "current",
+							"tier": 3
+						},
+						{
+							"numeral": 7,
+							"rule": "Dialogs must be actively closed by the user — self-dismissing dialogs shall not be used.",
+							"status": "new",
 							"tier": 3
 						}
 					]
@@ -1094,6 +1119,25 @@
 							"rule": "Pop Ups shall never obscure screen items that require persistent visibility (such as Classification Banners or Application States).",
 							"status": "under-review",
 							"tier": 3
+						}
+					]
+				},
+				{
+					"name": "Tooltip",
+					"numeral": 28,
+					"link": "/components/tooltip/",
+					"rules": [
+						{
+							"numeral": 1,
+							"rule": "Tooltips shall not contain information essential for the tasks the user needs to accomplish in their application.",
+							"status": "current",
+							"tier": 1
+						},
+						{
+							"numeral": 2,
+							"rule": "Tooltips shall not include icons, rich text, images, links, or actions.",
+							"status": "current",
+							"tier": 2
 						}
 					]
 				}
