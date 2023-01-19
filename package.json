@@ -50,6 +50,9 @@
 		"ignorePatterns": [
 			"src/components/site-search/site-search-engine.js"
 		],
+		"rules": {
+			"no-new": "off"
+		},
 		"overrides": [
 			{
 				"files": [
