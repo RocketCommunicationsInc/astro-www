@@ -1,20 +1,23 @@
 // intercept clipboard writes to copy values to the clipboard
 addEventListener('clipboard:write', (event: ClipboardWriteEvent) => {
 	const { href, type = typeOfTextPlain, text = '' } = event.detail
+	const target = event.composedPath().shift()!
 
-	if (href == null) {
-		navigator.clipboard.write([
-			toClipboardItem(
-				new Blob([ text ], { type })
-			),
-		])
-	} else {
-		fetch(href).then(
+	Object(
+		href == null
+			? navigator.clipboard.write([
+				toClipboardItem(
+					new Blob([ text ], { type })
+				),
+			])
+		: fetch(href).then(
 			response => response.blob()
 		).then(
 			blob => navigator.clipboard.write([ toClipboardItem(blob) ])
 		)
-	}
+	).then(
+		() => target.dispatchEvent(new CustomEvent('clipboard:write:success'))
+	)
 }, { capture: true })
 
 const toClipboardItem = (blob: Blob) => new ClipboardItem(

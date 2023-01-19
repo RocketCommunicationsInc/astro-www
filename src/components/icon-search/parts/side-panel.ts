@@ -60,6 +60,7 @@ class IconPanelInternals {
 	preview: SVGSVGElement
 
 	downloadVgButton: HTMLButtonElement
+	emitClipboardStatus: HTMLDivElement
 	emitClipboardWriteVgButton: HTMLButtonElement
 	emitClipboardWriteIdButton: HTMLButtonElement
 	emitClipboardWriteWcButton: HTMLButtonElement
@@ -73,6 +74,7 @@ class IconPanelInternals {
 		const preview = root.querySelector('[part~="icon"]')!
 
 		this.downloadVgButton = root.querySelector('button[value="download:svg"]')!
+		this.emitClipboardStatus = root.querySelector('div[part~="status"]')!
 		this.emitClipboardWriteVgButton = root.querySelector('button[value="clipboard:write:vg"]')!
 		this.emitClipboardWriteIdButton = root.querySelector('button[value="clipboard:write:id"]')!
 		this.emitClipboardWriteWcButton = root.querySelector('button[value="clipboard:write:wc"]')!
@@ -80,6 +82,7 @@ class IconPanelInternals {
 		Object.assign(this, { host, root, heading, preview })
 
 		root.addEventListener('close:panel', this, { capture: true, passive: true })
+		root.addEventListener('clipboard:write:success', this, { capture: true, passive: true })
 
 		// give ARIA affordances to the Icon Panel
 		if ('attachInternals' in host) {
@@ -95,11 +98,13 @@ class IconPanelInternals {
 	}
 
 	handleEvent(event: CustomEvent) {
-		event.stopImmediatePropagation()
-
 		switch (event.type) {
 			case 'close:panel':
 				this.host.close()
+				break
+			case 'clipboard:write:success':
+				// do nothing and continue
+				// @TODO: tooltip notification
 				break
 		}
 	}
