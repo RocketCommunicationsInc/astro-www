@@ -5,7 +5,6 @@
 		"moduleResolution": "node",
 		"resolveJsonModule": true,
 		"allowSyntheticDefaultImports": true,
-		"isolatedModules": true,
 		"types": ["astro/client", "types-object"],
 		"strictNullChecks": true,
 		"exactOptionalPropertyTypes": true,

@@ -1,0 +1,35 @@
+---
+import { For } from '@astropub/flow'
+import IconGroups from 'project:components/icon-search/parts/icon-groups.astro'
+import IconSearchForm from './parts/search-form.astro'
+import icons from 'project:data/icons.json'
+import './icon-search.css'
+
+const countOfIcons = Object.keys(icons).reduce(
+	(acc, key)=> (
+		acc += Object.keys(icons[key]).length
+	),
+	0
+)
+---
+<IconSearchForm label="Search icons ..." />
+
+<p class="p-icon-results" data-max-size={countOfIcons} />
+
+<IconGroups />
+
+<svg id="shapes" class="p-icon-shapes">
+	<For of={Object.entries(icons)}>{([ name, icons ]) => (
+		<g data-name={name}>
+			<For of={Object.entries(icons)}>{([ id, { name, html } ]) => (
+				<symbol id={`icon-${id}`} viewBox="0 0 24 24">
+					<title>{name}</title>
+					<Fragment set:html={html} />
+				</symbol>
+			)}</For>
+		</g>
+	)}</For>
+</svg>
+<script>
+import './icon-search.client.js'
+</script>

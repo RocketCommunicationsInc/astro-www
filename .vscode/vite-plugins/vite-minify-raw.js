@@ -1,6 +1,7 @@
 // @ts-check
 
 import { default as postcss } from 'postcss'
+import { transform as lightningcss } from 'lightningcss'
 
 export function viteMinifyRaw() {
 	/** @type {PostCSSPlugins} */
@@ -17,13 +18,21 @@ export function viteMinifyRaw() {
 			const matchingExtension = getMatchingExtension(importee)
 
 			if (matchingExtension === 'css') {
-				return getMinifiedCSL(code, postcssPlugins)
+				code = getMinifiedCSS(code, importee, postcssPlugins)
+
+				return {
+					code,
+					moduleSideEffects: false,
+				}
 			}
 
 			if (matchingExtension) {
-				code = getMinifiedTML(code)
+				code = getMinifiedHTM(code)
 
-				return { code }
+				return {
+					code,
+					moduleSideEffects: false,
+				}
 			}
 		},
 	}
@@ -32,25 +41,40 @@ export function viteMinifyRaw() {
 }
 
 /** Returns HTML that is minified. */
-const getMinifiedTML = (code = '') => {
+const getMinifiedHTM = (code = '') => {
 	code = code.replace(/=\\"([^"\s]+)\\"/g, '=$1')
-	code = code.replace(/\\n(\s|\\s|\\t)*/g, '').trim()
+	code = code.replace(/\\n(\s|\\s|\\t)*/g, '')
+	code = code.replace(/\s{2,}/g, ' ')
+	code = code.trim()
 
 	return code
 }
 
-/** Returns CSS that is PostCSS processed and minified. */
-const getMinifiedCSL = (code = '', /** @type {any} */ postcssPlugins) => {
+/** Returns CSS that is PostCSS processed and LightningCSS minified. */
+const getMinifiedCSS = (code = '', filename = '', /** @type {any} */ postcssPlugins) => {
+	let isolatedCSS = ''
 	try {
-		const isolatedCSS = JSON.parse(code.slice(15))
-		const preparedCSS = postcss(postcssPlugins).process(isolatedCSS).css
-		const minifiedCSS = preparedCSS.replace(/[\n\t ]+/g, ' ').trim()
-		const returnedESM = 'export default ' + JSON.stringify(minifiedCSS)
+		isolatedCSS = JSON.parse(code.slice(15))
+	} catch {}
 
-		return returnedESM
-	} catch {
-		return code
-	}
+	let preparedCSS = isolatedCSS
+	try {
+		preparedCSS = postcss(postcssPlugins).process(isolatedCSS).css
+	} catch {}
+
+	let minifiedCSS = preparedCSS
+	try {
+		minifiedCSS = lightningcss({
+			filename,
+			code: Buffer.from(preparedCSS),
+			minify: true,
+			sourceMap: true,
+			targets: {},
+			errorRecovery: true,
+		}).code.toString()
+	} catch {}
+
+	return 'export default ' + JSON.stringify(minifiedCSS)
 }
 
 /** Returns a matching file extension from an importee, otherwise null. */

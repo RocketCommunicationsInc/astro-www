@@ -6,6 +6,7 @@
 :root {
 	/* Reference Colors */
 
+	--BrightBlue200Color: hsl(205 88% 90%);
 	--BrightBlue300Color: hsl(209 100% 86%);
 	--BrightBlue400Color: hsl(209 100% 79%);
 	--BrightBlue500Color: hsl(208 100% 65%);

@@ -1,0 +1,17 @@
+---
+import icons from './icons/icons.js'
+
+export interface Props {
+	type: keyof typeof icons
+
+	[name: string]: any
+}
+
+const {
+	type,
+	...attrs
+} = Astro.props
+
+const icon = type in icons ? icons[type] : { attrs: { viewBox: '0 0 0 0' }, innerHTML: '' }
+---
+<svg {...icon.attrs} {...attrs} set:html={icon.innerHTML} />
