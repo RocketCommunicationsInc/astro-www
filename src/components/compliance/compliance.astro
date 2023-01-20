@@ -81,8 +81,10 @@ const { props } = Astro as { props: Props }
 
 					<h3 class="-heading">{ruleset.name}</h3>
 
-					<a class="-link" href={ruleset.link}>View {ruleset.name} Page</a>
+					{ruleset.link && <a class="-link" href={ruleset.link}>View {ruleset.name} Page</a>}
 				</header>
+				
+				{ruleset.note && <p><strong>Note:</strong> {ruleset.note}</p>}
 
 				<For of={ruleset.rules!}>{rule => (
 					<dl class="-rule">

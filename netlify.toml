@@ -134,3 +134,9 @@ command = "npm run build"
 	to = "/components/getting-started/"
 	status = 301
 	force = true
+
+[[redirects]]
+	from = "/components/pop-up-menu/"
+	to = "/patterns/pop-up-menu/"
+	status = 301
+	force = true
