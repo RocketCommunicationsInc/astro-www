@@ -1,6 +1,7 @@
 import templateHTML from './side-panel.shadow.html?raw'
 import templateCSS from './side-panel.shadow.css?raw'
 import { c, cloneContents, h, html } from 'project:utils/html.js'
+import { AnimationFrame } from 'project:utils/client/AnimationFrame.js'
 
 const template = html(templateHTML + '<style>' + templateCSS + '</style>')
 
@@ -31,6 +32,8 @@ class IconPanelElement extends HTMLElement {
 		/** Element matching the given hash from the "use" attribute. */
 		const iconElement = document.querySelector<SVGSymbolElement>(newValue)!
 
+		this.#$.closeStatus()
+
 		// skip if the element is not matched
 		if (iconElement === null) {
 			this.removeAttribute('use')
@@ -59,11 +62,21 @@ class IconPanelInternals {
 	/** ShadowRoot Preview Element of the Icon Panel. */
 	preview: SVGSVGElement
 
+	style: {
+		cssom: CSSStyleSheet
+		status: CSSStyleDeclaration
+		root: CSSStyleDeclaration
+	}
+
 	downloadVgButton: HTMLButtonElement
-	emitClipboardStatus: HTMLDivElement
+	emitClipboardStatus: HTMLDialogElement
+	emitClipboardStatusContent: HTMLSpanElement
+	emitClipboardActiveButton: HTMLButtonElement | null
 	emitClipboardWriteVgButton: HTMLButtonElement
 	emitClipboardWriteIdButton: HTMLButtonElement
 	emitClipboardWriteWcButton: HTMLButtonElement
+
+	timedStatusClose: AnimationFrame
 
 	/** ID of the current icon web component. */
 	id: string
@@ -73,14 +86,37 @@ class IconPanelInternals {
 		const heading = root.querySelector('[part~="label"]')!
 		const preview = root.querySelector('[part~="icon"]')!
 
-		this.downloadVgButton = root.querySelector('button[value="download:svg"]')!
-		this.emitClipboardStatus = root.querySelector('div[part~="status"]')!
-		this.emitClipboardWriteVgButton = root.querySelector('button[value="clipboard:write:vg"]')!
-		this.emitClipboardWriteIdButton = root.querySelector('button[value="clipboard:write:id"]')!
-		this.emitClipboardWriteWcButton = root.querySelector('button[value="clipboard:write:wc"]')!
+		this.downloadVgButton = root.querySelector('[value="download:svg"]')!
+		this.emitClipboardStatus = root.querySelector('[part~="status"]')!
+		this.emitClipboardStatusContent = root.querySelector('[part~="status-content"]')!
+		this.emitClipboardWriteVgButton = root.querySelector('[value="clipboard:write:vg"]')!
+		this.emitClipboardWriteIdButton = root.querySelector('[value="clipboard:write:id"]')!
+		this.emitClipboardWriteWcButton = root.querySelector('[value="clipboard:write:wc"]')!
 
-		Object.assign(this, { host, root, heading, preview })
+		Object.assign(this, {
+			host,
+			root,
+			heading,
+			preview,
+			timedStatusClose: new AnimationFrame(() => {
+				this.closeStatus()
+			}, 3000),
+			nextFrame: new AnimationFrame(() => {}, 0)
+		})
 
+		if (root.adoptedStyleSheets) {
+			const cssom = new CSSStyleSheet()
+
+			root.adoptedStyleSheets.push(cssom)
+
+			this.style = {
+				cssom,
+				root: (<CSSStyleRule>cssom.cssRules[cssom.insertRule(':host{', 0)]).style,
+				status: (<CSSStyleRule>cssom.cssRules[cssom.insertRule(':host::part(status){', 0)]).style,
+			}
+		}
+
+		host.addEventListener('scroll', this, { capture: true, passive: false })
 		root.addEventListener('close:panel', this, { capture: true, passive: true })
 		root.addEventListener('clipboard:write:success', this, { capture: true, passive: true })
 
@@ -97,15 +133,65 @@ class IconPanelInternals {
 		host.tabIndex = -1
 	}
 
-	handleEvent(event: CustomEvent) {
+	async handleEvent(event: CustomEvent) {
 		switch (event.type) {
 			case 'close:panel':
 				this.host.close()
 				break
 			case 'clipboard:write:success':
-				// do nothing and continue
-				// @TODO: tooltip notification
+				this.emitClipboardActiveButton = <HTMLButtonElement>event.target!
+				await this.closeStatus()
+				await this.openStatus()
 				break
+			case 'scroll': {
+				this.updateStatusPosition()
+				break
+			}
+		}
+	}
+
+	updateStatusPosition() {
+		if (this.style && this.emitClipboardActiveButton) {
+			const rect = this.emitClipboardActiveButton.getBoundingClientRect()
+
+			this.style.status.setProperty('--x', rect.right - rect.width / 2)
+			this.style.status.setProperty('--y', rect.top)
+		}
+	}
+
+	async closeStatus() {
+		if (this.style && this.emitClipboardActiveButton) {
+			this.timedStatusClose.cancel()
+
+			this.emitClipboardStatusContent.textContent = 'Copied!'
+			this.emitClipboardStatus.part.remove('status-open')
+			this.emitClipboardStatus.part.add('status-closing')
+
+			this.emitClipboardStatus.close()
+
+			await awaitAnimationFinishOf(this.emitClipboardStatus)
+
+			this.emitClipboardStatus.part.remove('status-closing')
+			this.emitClipboardStatus.part.add('status-closed')
+		}
+	}
+
+	async openStatus() {
+		if (this.style && this.emitClipboardActiveButton) {
+			this.updateStatusPosition()
+
+			this.emitClipboardStatusContent.textContent = 'Copied!'
+			this.emitClipboardStatus.part.remove('status-closed')
+			this.emitClipboardStatus.part.add('status-opening')
+
+			this.emitClipboardStatus.show()
+
+			await awaitAnimationFinishOf(this.emitClipboardStatus)
+
+			this.emitClipboardStatus.part.remove('status-opening')
+			this.emitClipboardStatus.part.add('status-open')
+
+			this.timedStatusClose.start()
 		}
 	}
 
@@ -184,4 +270,24 @@ const getCleanContentOfSVGSymbol = (symbol: SVGSymbolElement) => {
 	}
 
 	return contents
+}
+
+const awaitAnimationFinishOf = async (element: HTMLElement) => {
+	const animations = [
+		...element.getAnimations({ subtree: true }),
+	]
+
+	if (animations.length) {
+		for (const animation of animations) {
+			await animation.finished
+
+			const hasAnyRunningAnimation = animations.some(
+				animation => animation.pending
+			)
+
+			if (!hasAnyRunningAnimation) {
+				return
+			}
+		}
+	}
 }
