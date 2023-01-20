@@ -1,4 +1,7 @@
-/* eslint-disable */
+/*
+ * Corrects mistakes in the built-in TypeScript definitions.
+ * =============================================================================
+ */
 
 interface ScrollToOptions {
 	behavior: string
@@ -9,7 +12,7 @@ interface Element {
 }
 
 interface CSSStyleDeclaration {
-	setProperty(property: string, value: string | number | null, priority?: string): void
+	setProperty(property: string, value: string | number | boolean, priority?: string): void
 }
 
 interface SetTimeout {
