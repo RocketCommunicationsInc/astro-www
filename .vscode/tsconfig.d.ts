@@ -15,10 +15,6 @@ interface CSSStyleDeclaration {
 	setProperty(property: string, value: string | number | boolean, priority?: string): void
 }
 
-interface SetTimeout {
-	<TArgs extends any[]>(callback: (...args: TArgs) => void, ms?: number, ...args: TArgs): number
-}
-
 declare namespace NodeJS {
 	type Timeout = number
 	type Timer = number
