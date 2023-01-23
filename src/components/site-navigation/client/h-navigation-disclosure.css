@@ -46,16 +46,17 @@ svg {
 
 	& svg {
 		/* Layout */
-		block-size: 14px;
-		inline-size: 7px;
+		block-size: 12px;
+		inline-size: 6px;
 		margin-inline-end: 2--step;
-		margin-inline-start: max(-7px - 2--step);
+		margin-inline-start: max(-6px - 2--step);
 
 		/* Animation */
 		transition: transform 200ms;
 	}
 
 	&.open svg {
+		/* Transform */
 		transform: rotate3d(0, 0, 1, 90deg);
 	}
 }

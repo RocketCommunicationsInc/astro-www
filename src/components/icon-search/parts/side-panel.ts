@@ -104,16 +104,24 @@ class IconPanelInternals {
 			nextFrame: new AnimationFrame(() => {}, 0)
 		})
 
+		let cssom: CSSStyleSheet
+
 		if (root.adoptedStyleSheets) {
-			const cssom = new CSSStyleSheet()
+			cssom = new CSSStyleSheet()
 
 			root.adoptedStyleSheets.push(cssom)
+		} else {
+			const styleEl = document.createElement('style')
 
-			this.style = {
-				cssom,
-				root: (<CSSStyleRule>cssom.cssRules[cssom.insertRule(':host{', 0)]).style,
-				status: (<CSSStyleRule>cssom.cssRules[cssom.insertRule(':host::part(status){', 0)]).style,
-			}
+			root.prepend(styleEl)
+
+			cssom = styleEl.sheet!
+		}
+
+		this.style = {
+			cssom,
+			root: (<CSSStyleRule>cssom.cssRules[cssom.insertRule(':host{', 0)]).style,
+			status: (<CSSStyleRule>cssom.cssRules[cssom.insertRule(':host::part(status){', 0)]).style,
 		}
 
 		host.addEventListener('scroll', this, { capture: true, passive: false })

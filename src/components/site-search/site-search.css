@@ -4,6 +4,11 @@
 	/* Layout */
 	flex-flow: column;
 
+	&.-nojs {
+		/* Layout */
+		visibility: hidden;
+	}
+
 	& .field-decorator {
 		display: grid;
 

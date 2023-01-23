@@ -119,20 +119,15 @@ h2 {
 	}
 
 	&::part(status-open), &::part(status-opening), &::part(status-closing) {
-		display: grid;
+		display: flex;
+
+		/* Layout */
+		flex-flow: column;
 	}
 
 	&::part(status-open) {
 		/* Appearance */
 		opacity: 100%;
-
-		/* Transform */
-		scale: 100% 100%;
-	}
-
-	&::part(status-open) {
-		/* Appearance */
-		opacity: 1;
 
 		/* Transform */
 		scale: 100% 100%;
@@ -145,7 +140,7 @@ h2 {
 
 		/* Text */
 		font-size: 14--rpx;
-		line-height: calc(20 / 14);
+		line-height: calc(20 / 13.9999);
 
 		/* Appearance */
 		background-color: var(--Grey800Color);
