@@ -5,7 +5,12 @@
 </button>
 <h2 part="label"> </h2>
 <svg part="icon"></svg>
-<div part="status" role="alert"></div>
+<dialog part="status status-closed" data-placement="bottom">
+	<span part="status-content" role="status"></span>
+	<svg part="status-arrow" viewBox="0 0 30 10" preserveAspectRatio="none">
+		<polygon points="0,0 30,0 15,10"></polygon>
+	</svg>
+</dialog>
 <div part="button-group">
 	<button part="button" value="clipboard:write:vg" data-emit="clipboard:write" aria-label="Copy SVG to clipboard">
 		<span part="button-text">Copy SVG</span>

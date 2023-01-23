@@ -1,3 +1,26 @@
+// polyfill for ClipboardItem
+if (!globalThis.ClipboardItem) {
+	Object.assign(globalThis, {
+		ClipboardItem: class ClipboardItem {
+			constructor(data: Record<string, Blob>) {
+				Object.assign(this, data)
+			}
+		},
+	})
+
+	Object.assign(Clipboard.prototype, {
+		write: async function write(data: ClipboardItem[]) {
+			for (const clipboardItem of data) {
+				if (typeOfTextPlain in clipboardItem) {
+					const text = await (<Blob>clipboardItem[typeOfTextPlain]).text()
+
+					return navigator.clipboard.writeText(text)
+				}
+			}
+		}
+	})
+}
+
 // intercept clipboard writes to copy values to the clipboard
 addEventListener('clipboard:write', (event: ClipboardWriteEvent) => {
 	const { href, type = typeOfTextPlain, text = '' } = event.detail

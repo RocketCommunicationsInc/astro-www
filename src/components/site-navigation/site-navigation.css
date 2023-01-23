@@ -1,6 +1,6 @@
 /* Navigation */
 
-:where(.p-navigation) {
+.p-navigation {
 	display: flex;
 
 	/* Layout */
@@ -28,7 +28,7 @@
 }
 
 @media (width < 800px) {
-	:where(.p-navigation-heading) {
+	.p-navigation-heading {
 		display: flex;
 
 		/* Layout */
@@ -38,13 +38,13 @@
 		order: 2;
 	}
 
-	:where(.p-navigation h-navigation-list) {
+	.p-navigation h-navigation-list {
 		display: contents;
 	}
 }
 
 @media (width >= 800px) {
-	:where(.p-navigation) {
+	.p-navigation {
 		/* Layout */
 		block-size: min(100%, 100vh);
 		inline-size: 79--step;
@@ -78,19 +78,19 @@
 
 /* Navigation: Heading */
 
-:where(.p-navigation-heading) {
-	& :where(.logo-text) {
+.p-navigation-heading {
+	& .logo-text {
 		opacity: .75;
 	}
 
-	& :where(:hover, :focus) {
-		& :where(.logo-text) {
+	& :hover, :focus {
+		& .logo-text {
 			opacity: 1;
 		}
 	}
 }
 
-:where(.p-navigation-heading-image) {
+.p-navigation-heading-image {
 	/* Layout */
 	aspect-ratio: 134 / 56;
 	block-size: 14--step;
@@ -103,7 +103,7 @@
 
 /* Navigation: Search */
 
-:where(.p-search) {
+.p-search {
 	/* Layout */
 	inline-size: 100%;
 	margin-block-start: 7--step;
@@ -120,65 +120,65 @@ h-navigation-list {
 	display: contents;
 }
 
-:where(.p-navigation ul) {
+.p-navigation ul {
 	/* Text */
 	font-size: 18--rpx;
 	line-height: max(20 / 18);
 }
 
-:where(.p-navigation li) {
+.p-navigation li {
 	/* Appearance */
 	color: var(--PrimaryColor);
 	cursor: pointer;
+
+	& li {
+		/* Appearance */
+		color: var(--SecondaryColor);
+	}
+
+	& hr {
+		/* Layout */
+		block-size: 1px;
+		margin-block: calc(1 * var(--step));
+		margin-inline: calc(11 * var(--step));
+
+		/* Appearance */
+		box-shadow: #99999922 1px 1px 0 0;
+	}
 }
 
-:where(.p-navigation li li) {
-	/* Appearance */
-	color: var(--SecondaryColor);
-}
-
-:where(.p-navigation li hr) {
-	/* Layout */
-	block-size: 1px;
-	margin-block: calc(1 * var(--step));
-	margin-inline: calc(11 * var(--step));
-
-	/* Appearance */
-	box-shadow: #99999922 1px 1px 0 0;
-}
-
-:where(.p-navigation .current) {
+.p-navigation .current {
 	/* Appearance */
 	color: var(--Orange700Color);
+
+	& .current {
+		/* Text */
+		font-weight: 700;
+
+		/* Appearance */
+		color: var(--PrimaryColor);
+	}
 }
 
-:where(.p-navigation .current .current) {
-	/* Text */
-	font-weight: 700;
-
-	/* Appearance */
-	color: var(--PrimaryColor);
-}
-
-:where(.p-navigation ul ul) {
+.p-navigation ul ul {
 	/* Text */
 	font-size: 14--rpx;
 	line-height: max(16 / 14);
 }
 
-:where(.p-navigation > h-navigation-list > ul) {
+.p-navigation > h-navigation-list > ul {
 	/* Layout */
 	inline-size: 100%;
 	margin-block-start: 5--step;
+
+	& ul {
+		/* Layout */
+		margin-block-start: -2--step;
+		margin-inline-start: 5--step;
+	}
 }
 
-:where(.p-navigation > h-navigation-list > ul ul) {
-	/* Layout */
-	margin-block-start: -2--step;
-	margin-inline-start: 5--step;
-}
-
-:where(.p-navigation ul :is(a, span)) {
+.p-navigation ul :is(a, span) {
 	display: block;
 
 	/* Layout */
@@ -186,7 +186,7 @@ h-navigation-list {
 	padding-inline: 11--step;
 }
 
-:where(.p-navigation ul ul :is(a, span)) {
+.p-navigation ul ul :is(a, span) {
 	display: block;
 
 	/* Layout */
@@ -194,21 +194,21 @@ h-navigation-list {
 	padding-inline: 11--step;
 }
 
-:where(.p-navigation h-navigation-list > :is(a, span)) {
+.p-navigation h-navigation-list > :is(a, span) {
 	/* Appearance */
 	color: var(--parent-color);
 }
 
-:where(.p-navigation ul :is(a, span):is(:hover, :focus-visible)) {
+.p-navigation ul :is(a, span):is(:hover, :focus-visible) {
 	/* Appearance */
 	color: var(--Orange700Color);
 }
 
-:where(.p-navigation ul ul :is(a, span):is(:hover, :focus-visible)) {
+.p-navigation ul ul :is(a, span):is(:hover, :focus-visible) {
 	/* Appearance */
 	color: var(--PrimaryColor);
 }
 
-:where(h-navigation-disclosure) {
+h-navigation-disclosure {
 	display: contents;
 }
