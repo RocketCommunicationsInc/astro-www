@@ -115,7 +115,7 @@ h2 {
 		translate: calc(var(--x, 0) * 1px - 50%) calc(var(--y, 0) * 1px - 100%);
 
 		/* Animation */
-		transition: opacity .3s, scale .3s;
+		transition: opacity .15s, scale .075s;
 	}
 
 	&::part(status-open), &::part(status-opening), &::part(status-closing) {
