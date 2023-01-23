@@ -8,7 +8,7 @@ export default function getNavigationItems(pages: MarkdownInstance<Record<string
 
 		items.push({
 			title: page.frontmatter.title,
-			url: page.url,
+			url: page.url!,
 		})
 	}
 

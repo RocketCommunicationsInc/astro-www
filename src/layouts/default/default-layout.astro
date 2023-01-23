@@ -1,7 +1,8 @@
 ---
 import { Document, Props } from '@astropub/doc'
-import GoogleAnalytics from 'project:components/google-analytics/google-analytics.astro'
 import globalData from 'project:data/global.json'
+import SiteNavigation from 'project:components/site-navigation/site-navigation.astro'
+import SiteFooter from 'project:components/site-footer/site-footer.astro'
 import './default-layout.css'
 
 export type { Props } from '@astropub/doc'
@@ -12,8 +13,19 @@ const props = {
 	...Astro.props,
 } as Props
 ---
-<Document {...props}>
-	<slot />
+<Document body-class="p-grid" {...props}>
+	<slot slot="head" name="head" />
+	<meta slot="head" name="theme-color" content="#101923" />
+	<slot name="top" />
+	<div class="-side">
+		<SiteNavigation />
+	</div>
+	<div class="-main">
+		<slot />
+	</div>
+	<div class="-foot">
+		<SiteFooter />
+	</div>
 </Document>
 <script>
 import './default-layout.client'
