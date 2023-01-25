@@ -80,11 +80,16 @@ const { props } = Astro as { props: Props }
 					<span class="-numeral">{content.numeral}.{ruleset.numeral}.0</span>
 
 					<h3 class="-heading">{ruleset.name}</h3>
-
-					{ruleset.link && <a class="-link" href={ruleset.link}>View {ruleset.name} Page</a>}
+					<When test={ruleset.link}>
+						<a class="-link" href={ruleset.link}>View {ruleset.name} Page</a>
+					</When>
 				</header>
 				
-				{ruleset.note && <p><strong>Note:</strong> {ruleset.note}</p>}
+				<When test={ruleset.note}>
+					<p>
+						<strong>Note:</strong> {ruleset.note}
+					</p>
+				</When>
 
 				<For of={ruleset.rules!}>{rule => (
 					<dl class="-rule">
