@@ -1,0 +1,73 @@
+:root {
+	/* Color References */
+
+	--BrightBlue200Color: hsl(205 88% 90%);
+	--DarkBlue500Color: hsl(202 100% 28%);
+	--DarkBlue800Color: hsl(209 39% 17%);
+	--Grey200Color: hsl(216 31% 94%);
+	--Grey700Color: hsl(216 6% 34%);
+	--LinkColor: hsl(23 62% 43%);
+	--TextColor: hsl(0 0% 0%);
+}
+
+.-main {
+	/* Appearance */
+	background-color: var(--PrimaryColor);
+	color: var(--InverseColor);
+}
+
+.c-iconlibrary {
+	/* Layout */
+	inset-block-start: 0;
+	padding-inline: 9--step;
+	position: sticky;
+
+	/* Appearance */
+	background-color: var(--Grey200Color);
+
+	/* Masking */
+	mask-image: var(--MaskImage);
+
+	/* Behavior */
+	pointer-events: none;
+
+	/* Reference */
+	--ClipDelta: 0;
+	--ClipOffset: max(100% - var(--ClipDelta) * var(--ScrollOffset) * 1px, 48px);
+	--MaskImage: linear-gradient(rgb(0 0 0 / 100%) var(--ClipOffset), rgb(0 0 0 / 0%) var(--ClipOffset));
+	--ScrollOffset: 0;
+	--ScrollInvert: 1;
+
+	& .p-title {
+		/* Layout */
+		padding-block: calc((10 + calc(6 * var(--ScrollInvert, 1))) * .0625rem);
+
+		/* Text */
+		font-size: calc((16 + calc(8 * var(--ScrollInvert, 1))) * .0625rem);
+		font-weight: calc(300 + calc(400 * var(--ScrollOffset, 1)));
+		letter-spacing: -.005em;
+		line-height: calc(28 / (16 + calc(8 * var(--ScrollInvert, 1))));
+
+		/* Appearance */
+		color: var(--DarkBlue800Color);
+	}
+
+	& .p-summary {
+		/* Layout */
+		margin-block-start: calc((-8 + (12 * var(--ScrollOffset))) * .0625rem);
+		padding-block-end: 9--step;
+
+		/* Text */
+		font-size: 16px;
+		font-weight: 300;
+		line-height: calc(24 / 16);
+
+		/* Masking */
+		mask-image: var(--MaskImage);
+		mask-position: 0% -50%;
+
+		--MaskImage: linear-gradient(rgb(0 0 0 / 100%) var(--MaskPositionY1), rgb(0 0 0 / 0%) var(--MaskPositionY2));
+		--MaskPositionY1: calc(100% * var(--ScrollInvert) - 2em);
+		--MaskPositionY2: calc(100% * var(--ScrollInvert) - .75em);
+	}
+}

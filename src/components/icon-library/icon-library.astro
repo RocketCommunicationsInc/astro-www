@@ -1,0 +1,31 @@
+---
+import { For } from '@astropub/flow';
+import IconDialog from './client/icon-dialog.astro'
+import IconSearchField from './client/icon-search-field.astro'
+import './icon-library.css'
+---
+<header class="c-iconlibrary">
+	<h1 class="p-title">
+		Icon Library
+	</h1>
+	<p class="p-summary">
+		Search and download open source icons for use in Astro UXDS and web applications.
+	</p>
+</header>
+
+<div class="c-iconlibrary-filters">
+	<IconSearchField />
+</div>
+
+<div>
+	<For of={Array.from(Array(500), (_, index) => index)}>{index => (
+		<p>
+			<span>{index + 1}</span>
+		</p>
+	)}</For>
+</div>
+
+<IconDialog />
+<script>
+import './icon-library.js'
+</script>

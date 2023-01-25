@@ -16,6 +16,9 @@ interface CSSStyleDeclaration {
 }
 
 declare namespace NodeJS {
+	// @ts-expect-error
 	type Timeout = number
+
+	// @ts-expect-error
 	type Timer = number
 }

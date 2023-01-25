@@ -5,7 +5,7 @@
 	}
 }
 
-:where(:not(:defined)) {
+:where(:not(:defined, [hidden])) {
 	display: contents;
 
 	/* Animation */

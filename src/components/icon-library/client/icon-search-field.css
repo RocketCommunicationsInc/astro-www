@@ -1,0 +1,82 @@
+* {
+	/* Layout */
+	box-sizing: border-box;
+}
+
+input {
+	/* Layout */
+	margin: 0;
+	padding: 0;
+
+	/* Text */
+	font: inherit;
+
+	/* Appearance */
+	appearance: none;
+	background-color: transparent;
+	color: inherit;
+	border-width: 0;
+
+	&::-webkit-search-cancel-button {
+		display: none;
+	}
+}
+
+label {
+	/* Text */
+	white-space: nowrap;
+}
+
+:host {
+	display: grid;
+
+	/* Layout */
+	gap: calc(16 * .0625rem * var(--ScrollInvert));
+	grid-template-columns: 28--rpx auto;
+	inline-size: max(48--rpx, 100% * var(--ScrollInvert) - 48--rpx);
+	inset-block-start: 56--rpx;
+	inset-inline: 24--rpx;
+	margin-block-start: 10--step;
+	margin-inline-start: auto;
+	overflow: hidden;
+	padding-block: 10--rpx;
+	padding-inline: 12--rpx;
+	position: sticky;
+
+	/* Text */
+	font-size: 16--rpx;
+	line-height: calc(28 / 16);
+
+	/* Appearance */
+	border-radius: 6--rpx;
+	box-shadow: var(--Grey700Color) 0 0 0 1px;
+
+	/* Reference */
+	--ScrollOffset: 0;
+	--ScrollInvert: 1;
+
+	&::part(field) {
+		display: grid;
+
+		/* Layout */
+		grid-area: 1 / 2 / 2 / 3;
+		max-inline-size: var(--max-x);
+	}
+
+	&::part(label), &::part(control) {
+		/* Layout */
+		grid-area: 1 / 1 / 2 / 2;
+	}
+
+	&::part(icon) {
+		/* Layout */
+		block-size: 28--rpx;
+		grid-area: 1 / 1 / 2 / 2;
+		inline-size: 28--rpx;
+	}
+
+	&::part(label) {
+		/* Appearance */
+		color: hsl(217 11% 68%);
+	}
+}
