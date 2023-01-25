@@ -38,10 +38,10 @@ const filteredContents = contents.reduce(
 				version
 			})</p>
 		</header>
-
 		<For of={filteredContents}>{content => (
 			<section class="p-compliance">
 				<For of={content.rulesets!}>{ruleset => (
+					<When a={ruleset.note}><p class="-note"><strong>Note:</strong> {ruleset.note}</p></When>
 					<dl class="-ruleset">
 						<For of={ruleset.rules!}>{rule => (
 							<dt class="-numeral">{
