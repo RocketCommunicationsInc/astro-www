@@ -152,11 +152,23 @@
 
 .page-content-side-col {
 	/* Layout */
-	flex-basis: 80--step;
 	flex-shrink: 0;
 
-	@media (width < 1120px) {
-		display: none;
+	@media (width < 800px) {
+		/* Layout */
+		inset-block: 42--step auto;
+		inset-inline: 2--step 10--step;
+		position: fixed;
+	}
+
+	@media (width < 1200px) {
+		/* Layout */
+		flex-basis: 60--step;
+	}
+
+	@media (width >= 1200px) {
+		/* Layout */
+		flex-basis: 80--step;
 	}
 
 	& .-content {
