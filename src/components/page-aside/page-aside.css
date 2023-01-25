@@ -63,12 +63,14 @@
 		gap: 2--step;
 
 		&::before {
-			content: var(--icon);
 			display: inline-block;
 
 			/* Layout */
 			height: 5--step;
 			width: 5--step;
+
+			/* Generated */
+			content: var(--icon);
 		}
 
 		&.-figma {
@@ -93,8 +95,10 @@
 	background:
 		linear-gradient(90deg, transparent 1px, var(--InverseColor) 1px, var(--InverseColor) 2px, transparent 2px),
 		linear-gradient(90deg, var(--DarkBlue500Color), var(--DarkBlue500Color));
-	background-size: auto, 3px var(--height, 24px);
 	background-position: 0 0, 0 var(--offset, 0);
 	background-repeat: repeat-y, no-repeat;
+	background-size: auto, 3px var(--height, 24px);
+
+	/* Animation */
 	transition: background-position 120ms, background-size 120ms;
 }
