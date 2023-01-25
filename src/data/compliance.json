@@ -197,6 +197,38 @@
 							"tier": 3
 						}
 					]
+				},
+				{
+					"name": "Pop Up Menu",
+					"numeral": 6,
+					"note": "Compliance section previously known as 4.11.0 before Pop Up Menu was revised from a component to a pattern.",
+					"link": "/patterns/pop-up-menu/",
+					"rules": [
+						{
+							"numeral": 1,
+							"rule": "Menu items shall use sentence case capitalization.",
+							"status": "current",
+							"tier": 3
+						},
+						{
+							"numeral": 2,
+							"rule": "An ellipsis (…) shall follow a menu item when further action is required to complete the command.",
+							"status": "current",
+							"tier": 3
+						},
+						{
+							"numeral": 3,
+							"rule": "Related groups of menu items shall be indicated by separator lines.",
+							"status": "under-review",
+							"tier": 2
+						},
+						{
+							"numeral": 4,
+							"rule": "Pop Ups shall not exceed 25 menu items.",
+							"status": "current",
+							"tier": 3
+						}
+					]
 				}
 			]
 		},
@@ -636,33 +668,7 @@
 				{
 					"name": "Pop Up Menu",
 					"numeral": 11,
-					"link": "/components/pop-up-menu/",
-					"rules": [
-						{
-							"numeral": 1,
-							"rule": "Menu items shall use sentence case capitalization.",
-							"status": "current",
-							"tier": 3
-						},
-						{
-							"numeral": 2,
-							"rule": "An ellipsis (…) shall follow a menu item when further action is required to complete the command.",
-							"status": "current",
-							"tier": 3
-						},
-						{
-							"numeral": 3,
-							"rule": "Related groups of menu items shall be indicated by separator lines.",
-							"status": "under-review",
-							"tier": 2
-						},
-						{
-							"numeral": 4,
-							"rule": "Pop Ups shall not exceed 25 menu items.",
-							"status": "current",
-							"tier": 3
-						}
-					]
+					"note":"Pop Up Menu has been revised from a component to a pattern. See 3.6.0 for updates."
 				},
 				{
 					"name": "Progress",

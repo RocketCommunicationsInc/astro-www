@@ -99,6 +99,10 @@
 			{
 				"label": "Focus State",
 				"url": "/patterns/focus/"
+			},
+			{
+				"label": "Pop Up Menu",
+				"url": "/patterns/pop-up-menu/"
 			}
 		],
 		"label": "Patterns"
@@ -184,10 +188,6 @@
 			{
 				"label": "Pop Up",
 				"url": "/components/pop-up/"
-			},
-			{
-				"label": "Pop Up Menu",
-				"url": "/components/pop-up-menu/"
 			},
 			{
 				"label": "Progress",
