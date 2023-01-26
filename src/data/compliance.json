@@ -1,5 +1,5 @@
 {
-	"version": "4.1.0",
+	"version": "4.2.0",
 	"contents": [
 		{
 			"name": "General",
@@ -226,6 +226,25 @@
 							"numeral": 4,
 							"rule": "Pop Ups shall not exceed 25 menu items.",
 							"status": "current",
+							"tier": 3
+						}
+					]
+				},
+				{
+					"name": "Breadcrumbs",
+					"numeral": 7,
+					"link": "/patterns/breadcrumbs/",
+					"rules": [
+						{
+							"numeral": 1,
+							"rule": "Breadcrumbs shall not replace the primary navigation.",
+							"status": "new",
+							"tier": 2
+						},
+						{
+							"numeral": 2,
+							"rule": "Breadcrumbs shall not extend past seven items.",
+							"status": "new",
 							"tier": 3
 						}
 					]
