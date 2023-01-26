@@ -103,6 +103,10 @@
 			{
 				"label": "Pop Up Menu",
 				"url": "/patterns/pop-up-menu/"
+			},
+			{
+				"label": "Breadcrumbs",
+				"url": "/patterns/breadcrumbs/"
 			}
 		],
 		"label": "Patterns"
