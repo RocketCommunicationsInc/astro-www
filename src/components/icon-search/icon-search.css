@@ -39,7 +39,7 @@
 		--icon-size: 50px;
 	}
 
-	@media (1600px <= width) {
+	@media (width >= 1600px) {
 		--grid-size: 6;
 		--icon-size: 50px;
 	}
