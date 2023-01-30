@@ -31,17 +31,12 @@ label {
 	display: grid;
 
 	/* Layout */
-	gap: calc(16 * .0625rem * var(--ScrollInvert));
+	gap: 16--rpx;
 	grid-template-columns: 28--rpx auto;
-	inline-size: max(48--rpx, 100% * var(--ScrollInvert) - 48--rpx);
-	inset-block-start: 56--rpx;
-	inset-inline: 24--rpx;
-	margin-block-start: 10--step;
-	margin-inline-start: auto;
+	inline-size: 100%;
 	overflow: hidden;
 	padding-block: 10--rpx;
-	padding-inline: 12--rpx;
-	position: sticky;
+	padding-inline: 10--rpx;
 
 	/* Text */
 	font-size: 16--rpx;
@@ -49,18 +44,13 @@ label {
 
 	/* Appearance */
 	border-radius: 6--rpx;
-	box-shadow: var(--Grey700Color) 0 0 0 1px;
-
-	/* Reference */
-	--ScrollOffset: 0;
-	--ScrollInvert: 1;
+	box-shadow: var(--Grey700Color) 0 0 0 1px inset;
 
 	&::part(field) {
 		display: grid;
 
 		/* Layout */
 		grid-area: 1 / 2 / 2 / 3;
-		max-inline-size: var(--max-x);
 	}
 
 	&::part(label), &::part(control) {

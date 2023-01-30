@@ -1,10 +1,13 @@
 ---
 import { For } from '@astropub/flow';
+import IconGroups from 'project:components/icon-search/parts/icon-groups.astro';
 import IconDialog from './client/icon-dialog.astro'
 import IconSearchField from './client/icon-search-field.astro'
+import icons from 'project:data/icons.json'
 import './icon-library.css'
+import '../icon-search/icon-search.css'
 ---
-<header class="c-iconlibrary">
+<header class="c-iconlibrary-header">
 	<h1 class="p-title">
 		Icon Library
 	</h1>
@@ -14,18 +17,41 @@ import './icon-library.css'
 </header>
 
 <div class="c-iconlibrary-filters">
-	<IconSearchField />
+	<div class="x-choice">
+		<select>
+			<option>Astro</option>
+		</select>
+	</div>
+	<div class="x-search"><IconSearchField /></div>
 </div>
 
-<div>
-	<For of={Array.from(Array(500), (_, index) => index)}>{index => (
-		<p>
-			<span>{index + 1}</span>
-		</p>
+<div class="p-icon-groups">
+	<For of={Object.entries(icons)}>{([ name, icons ]) => (
+		<article class="-group">
+			<div class="-icons">
+				<For of={Object.entries(icons).sort(([ a ], [ b ]) => a < b ? -1 : a > b ? 1 : 0)}>{([ id, { name, html } ]) => (
+					<figure class="icon" tabindex="0">
+						<svg aria-label={name}><use href={`#icon-${id}`} /></svg>
+						<figcaption>{name}</figcaption>
+					</figure>
+				)}</For>
+			</div>
+		</article>
 	)}</For>
 </div>
 
-<IconDialog />
+<svg id="shapes" class="p-icon-shapes">
+	<For of={Object.entries(icons)}>{([ name, icons ]) => (
+		<g data-name={name}>
+			<For of={Object.entries(icons)}>{([ id, { name, html } ]) => (
+				<symbol id={`icon-${id}`} viewBox="0 0 24 24">
+					<title>{name}</title>
+					<Fragment set:html={html} />
+				</symbol>
+			)}</For>
+		</g>
+	)}</For>
+</svg>
 <script>
 import './icon-library.js'
 </script>

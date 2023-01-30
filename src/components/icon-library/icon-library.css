@@ -16,37 +16,81 @@
 	color: var(--InverseColor);
 }
 
-.c-iconlibrary {
+.c-iconlibrary-header {
 	/* Layout */
-	inset-block-start: 0;
-	padding-inline: 9--step;
-	position: sticky;
+	margin-block-end: 8--step;
+	padding-block-end: calc(9--step + var(--PaddingYLeadOff));
+	padding-block-start: var(--PaddingYLead);
+	padding-inline: 6--step;
 
 	/* Appearance */
 	background-color: var(--Grey200Color);
 
-	/* Masking */
-	mask-image: var(--MaskImage);
-
-	/* Behavior */
-	pointer-events: none;
-
-	/* Reference */
-	--ClipDelta: 0;
-	--ClipOffset: max(100% - var(--ClipDelta) * var(--ScrollOffset) * 1px, 48px);
-	--MaskImage: linear-gradient(rgb(0 0 0 / 100%) var(--ClipOffset), rgb(0 0 0 / 0%) var(--ClipOffset));
+	/* Scroll Reference */
 	--ScrollOffset: 0;
-	--ScrollInvert: 1;
+
+	/* Scroll Mask Reference */
+	--MaskSizeYEnter: 100%;
+	--MaskSizeYLeave: 100%;
+
+	/* Scroll Mask Reference (Calculated) */
+	--MaskImage: linear-gradient(rgb(0 0 0 / 100%) var(--MaskSizeY), rgb(0 0 0 / 0%) var(--MaskSizeY));
+	--MaskSizeY: calc(var(--MaskSizeYEnter) - var(--MaskSizeYDif) * var(--ScrollOffset));
+	--MaskSizeYDif: calc(var(--MaskSizeYEnter) - var(--MaskSizeYLeave));
+
+	/* Scroll Summary Mask Lead */
+	--SummaryMaskLeadEnter: calc(100% - 1rem);
+	--SummaryMaskLeadLeave: calc(0% - 1rem);
+
+	/* Scroll Summary Mask Tail */
+	--SummaryMaskTailEnter: 100%;
+	--SummaryMaskTailLeave: 0%;
+
+	/* Scroll Summary Mask (Calculated) */
+	--SummaryMaskImage: linear-gradient(rgb(0 0 0 / 100%) var(--SummaryMaskLead), rgb(0 0 0 / 0%) var(--SummaryMaskTail));
+	--SummaryMaskLead: calc(var(--SummaryMaskLeadEnter) - var(--SummaryMaskLeadOff));
+	--SummaryMaskLeadDif: calc(var(--SummaryMaskLeadEnter) - var(--SummaryMaskLeadLeave));
+	--SummaryMaskLeadOff: var(--SummaryMaskLeadDif) * var(--ScrollOffset);
+	--SummaryMaskTail: calc(var(--SummaryMaskTailEnter) - var(--SummaryMaskTailOff));
+	--SummaryMaskTailDif: calc(var(--SummaryMaskTailEnter) - var(--SummaryMaskTailLeave));
+	--SummaryMaskTailOff: var(--SummaryMaskTailDif) * var(--ScrollOffset);
+
+	/* Scroll Padding Reference */
+	--PaddingYLeadEnter: 4--step;
+	--PaddingYLeadLeave: 2--step;
+
+	/* Scroll Padding Reference (Calculated) */
+	--PaddingYLead: calc(var(--PaddingYLeadEnter) - var(--PaddingYLeadOff));
+	--PaddingYLeadDif: calc(var(--PaddingYLeadEnter) - var(--PaddingYLeadLeave));
+	--PaddingYLeadOff: var(--PaddingYLeadDif) * var(--ScrollOffset);
+
+	/* Scroll Title Text Reference */
+	--TitleTextSizeEnter: 24;
+	--TitleTextSizeLeave: 16;
+	--TitleTextWeitEnter: 300;
+	--TitleTextWeitLeave: 700;
+
+	/* Scroll Title Text Reference (Calculated) */
+	--TitleTextSize: calc(var(--TitleTextSizeEnter) - var(--TitleTextSizeDif) * var(--ScrollOffset));
+	--TitleTextSizeDif: calc(var(--TitleTextSizeEnter) - var(--TitleTextSizeLeave));
+	--TitleTextWeit: calc(var(--TitleTextWeitEnter) - var(--TitleTextWeitDif) * var(--ScrollOffset));
+	--TitleTextWeitDif: calc(var(--TitleTextWeitEnter) - var(--TitleTextWeitLeave));
+
+	&.js {
+		/* Layout */
+		inset-block-start: 0;
+		position: sticky;
+
+		/* Masking */
+		mask-image: var(--MaskImage);
+	}
 
 	& .p-title {
-		/* Layout */
-		padding-block: calc((10 + calc(6 * var(--ScrollInvert, 1))) * .0625rem);
-
 		/* Text */
-		font-size: calc((16 + calc(8 * var(--ScrollInvert, 1))) * .0625rem);
-		font-weight: calc(300 + calc(400 * var(--ScrollOffset, 1)));
+		font-size: calc(var(--TitleTextSize) * .0625rem);
+		font-weight: var(--TitleTextWeit);
 		letter-spacing: -.005em;
-		line-height: calc(28 / (16 + calc(8 * var(--ScrollInvert, 1))));
+		line-height: calc(28 / var(--TitleTextSize));
 
 		/* Appearance */
 		color: var(--DarkBlue800Color);
@@ -54,8 +98,8 @@
 
 	& .p-summary {
 		/* Layout */
-		margin-block-start: calc((-8 + (12 * var(--ScrollOffset))) * .0625rem);
 		padding-block-end: 9--step;
+		padding-block-start: 1--step;
 
 		/* Text */
 		font-size: 16px;
@@ -63,11 +107,100 @@
 		line-height: calc(24 / 16);
 
 		/* Masking */
-		mask-image: var(--MaskImage);
-		mask-position: 0% -50%;
+		mask-image: var(--SummaryMaskImage);
+	}
+}
 
-		--MaskImage: linear-gradient(rgb(0 0 0 / 100%) var(--MaskPositionY1), rgb(0 0 0 / 0%) var(--MaskPositionY2));
-		--MaskPositionY1: calc(100% * var(--ScrollInvert) - 2em);
-		--MaskPositionY2: calc(100% * var(--ScrollInvert) - .75em);
+.c-iconlibrary-filters {
+	display: grid;
+
+	/* Scroll Offset */
+	--ScrollOffset: 0;
+
+	/* Reference */
+	--SearchSizeXEnter: 100%;
+	--SearchSizeXLeave: 48px;
+
+	/* Reference (calculated) */
+	--SearchSizeXDelta: calc(var(--SearchSizeXEnter) - var(--SearchSizeXLeave));
+	--SearchSizeXValue: calc(var(--SearchSizeXEnter) - var(--SearchSizeXDelta) * var(--ScrollOffset));
+
+	/* Scroll Choice Reference */
+	--ChoiceSizeXEnter: 0%;
+	--ChoiceSizeXLeave: calc(100% - 48px);
+
+	/* Scroll Choice Reference (calculated) */
+	--ChoiceSizeXDelta: calc(var(--ChoiceSizeXEnter) - var(--ChoiceSizeXLeave));
+	--ChoiceSizeXValue: calc(var(--ChoiceSizeXEnter) - var(--ChoiceSizeXDelta) * var(--ScrollOffset));
+
+	/* Layout */
+	grid-template-columns: var(--ChoiceSizeXValue) var(--SearchSizeXValue);
+	padding-block: 8--rpx;
+	padding-inline: 24--rpx;
+
+	/* Appearance */
+	background-color: var(--PrimaryColor);
+	box-shadow: 0 1px 0 0 hsl(0 0% 75% / var(--BorderOpacityValue)), 0 2px 0 0 hsl(0 0% 100% / var(--BorderOpacityValue));
+	color: var(--InverseColor);
+
+	/* Scroll Reference */
+	--ScrollOffset: 0;
+
+	/* Border Opacity Reference */
+	--BorderOpacityEnter: 0%;
+	--BorderOpacityLeave: 100%;
+
+	/* Border Opacity Reference (Calculated) */
+	--BorderOpacityValue: calc(var(--BorderOpacityEnter) - var(--BorderOpacityDelta) * var(--ScrollOffset));
+	--BorderOpacityDelta: calc(var(--BorderOpacityEnter) - var(--BorderOpacityLeave));
+
+	/* Scroll Summary Mask Tail */
+	--SearchControlMaskEnter: 100%;
+	--SearchControlMaskLeave: calc(0% - 16--rpx);
+
+	/* Scroll Mask Reference (Calculated) */
+	--MaskImage: linear-gradient(90deg, rgb(0 0 0 / 100%) calc(var(--SearchControlMask) - 2em), rgb(0 0 0 / 0%) var(--SearchControlMask));
+	--SearchControlMask: calc(var(--SearchControlMaskEnter) - var(--SearchControlMaskDelta) * var(--ScrollOffset));
+	--SearchControlMaskDelta: calc(var(--SearchControlMaskEnter) - var(--SearchControlMaskLeave));
+
+	&.js {
+		/* Layout */
+		inset-block-start: 12--step;
+		position: sticky;
+	}
+
+	& > .x-choice {
+		/* Layout */
+		overflow: hidden;
+
+		& > select {
+			display: block;
+
+			/* Layout */
+			block-size: 12--step;
+			inline-size: 120--rpx;
+			margin: 0;
+			padding-inline: 24--rpx;
+
+			/* Text */
+			font: inherit;
+			letter-spacing: inherit;
+			text-align: inherit;
+			text-transform: inherit;
+			word-spacing: inherit;
+
+			/* Appearance */
+			appearance: auto;
+			background-color: transparent;
+			border: none;
+			border-radius: 6--rpx;
+			box-shadow: transparent 0 0 0 1px inset;
+			color: inherit;
+		}
+	}
+
+	& > .x-search > *::part(label) {
+		/* Masking */
+		mask-image: var(--MaskImage);
 	}
 }

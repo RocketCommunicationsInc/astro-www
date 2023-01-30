@@ -1,7 +1,7 @@
 .p-icon-groups {
 	@media (width < 1440px) {
-		--grid-size: 4;
-		--icon-size: 20px;
+		--grid-size: 3;
+		--icon-size: 48px;
 	}
 
 	@media (width >= 1440px) {
@@ -28,7 +28,7 @@
 			align-items: center;
 			flex-flow: column;
 			padding-block: 8--step;
-			padding-inline: 3--step;
+			padding-inline: .5--step;
 
 			/* Typography */
 			text-align: center;
@@ -38,6 +38,7 @@
 
 			&:is(figure) {
 				/* Layout */
+				gap: 4--rpx;
 				margin-block: 0;
 			}
 
@@ -63,6 +64,15 @@
 			aspect-ratio: 1 / 1;
 			height: var(--icon-size);
 			width: var(--icon-size);
+		}
+
+		& figcaption {
+			/* Layout */
+			width: 88--rpx;
+
+			/* Text */
+			font-size: 16--rpx;
+			line-height: calc(20 / 16);
 		}
 	}
 }
