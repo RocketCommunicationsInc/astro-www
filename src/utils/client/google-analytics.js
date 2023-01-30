@@ -1,4 +1,4 @@
-(function (context, trackingId, options) {
+(function (context, trackingId, g4TrackingId, options) {
 	const history = context.history
 	const doc = document
 	const nav = navigator || {}
@@ -87,12 +87,30 @@
 		setTimeout(track, options.delay || 10)
 		return pushState.apply(history, arguments)
 	}
+
 	track()
+
 	context.ma = {
 		trackEvent,
 		trackException,
 	}
-})(window, 'UA-114182957-1', {
+
+	// Google Analytics 4 Injection
+	// -------------------------------------
+
+	context.dataLayer = [
+		[ 'js', new Date() ],
+		[ 'config', g4TrackingId ],
+	]
+
+	context.gtag = (...args) => dataLayer.push(args)
+
+	doc.head.append(
+		Object.assign(doc.createElement('script'), {
+			src: 'https://www.googletagmanager.com/gtag/js?id=' + g4TrackingId,
+		})
+	)
+})(window, 'UA-114182957-1', 'G-ZHMMGPG3B3', {
 	anonymizeIp: true,
 	colorDepth: true,
 	characterSet: true,
