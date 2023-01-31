@@ -25,7 +25,7 @@ let searchFrame = 0
 let searchForm = <HTMLFormElement>document.getElementById('search')!
 let searchResults = document.getElementById('search-results')!
 let searchElement = <HTMLInputElement>document.getElementById('search-field')!
-let resultChildren: any[] | NodeListOf<Element> = []
+let resultChildren = <NodeListOf<HTMLElement>><any>[]
 
 const navigation = searchForm.closest('.p-navigation')!
 
@@ -53,6 +53,13 @@ searchElement.addEventListener('input', (event: InputEvent & { target: HTMLInput
 			const results = await searchUtils.search(event.target.value)
 			const hasResults = Boolean(results && results.items.length)
 
+			// results that have urls that end in #content are removed because #content is for accessibility
+			if (hasResults) {
+				results.items = results.items.filter(
+					searchResult => !searchResult.url.endsWith('#content')
+				).slice(0, 5)
+			}
+
 			searchForm.classList.toggle('-has-results', hasResults)
 			navigation.classList.toggle('-has-results', hasResults)
 
@@ -67,64 +74,110 @@ searchElement.addEventListener('input', (event: InputEvent & { target: HTMLInput
 					)
 				}
 
-				link.parentNode!.addEventListener('click', (event) => {
+				let listItem = <HTMLDivElement>link.parentNode!
+
+				listItem.addEventListener('click', () => {
 					link.click()
 				})
 			}
 
 			searchResults.replaceChildren(hdom)
+
 			resultChildren = searchResults.querySelectorAll('.listitem')
-			resultChildren.forEach((result, index) => {
-				if (index === 0) {
-					result.setAttribute('aria-selected', 'true')
-				} else {
-					result.setAttribute('aria-selected', 'false')
-				}
+
+			resultChildren.forEach((listItem, index) => {
+				listItem.setAttribute('aria-selected', String(index === 0))
+
+				listItem.addEventListener('focusin', () => {
+					selectListItem(listItem)
+				})
 			})
 		})
 	})
 })
+
+/** Index of the selected result child (list item). */
 let indexNumber = 0
+
+const selectListItem = (listItem: HTMLElement) => {
+	/** Index of the list item within the result children. */
+	const nextIndexNumber = [ ...resultChildren ].indexOf(listItem)
+
+	// if the new listitem is not a recognized result child, return early
+	if (nextIndexNumber === -1) return
+
+	// if the new listitem is already the selected result child, return early
+	if (nextIndexNumber === indexNumber) return
+
+	// set the new list item to be `aria-selected="true"`
+	listItem.ariaSelected = 'true'
+
+	// set the old list item to be `aria-selected="false"`
+	resultChildren[indexNumber].ariaSelected = 'false'
+
+	// set the index to match the new listitem
+	indexNumber = nextIndexNumber
+}
+
+const onPointerEnter = (event: PointerEvent & { target: HTMLElement }) => {
+	if (resultChildren.length < 1) return
+
+	const target = <HTMLElement>event.target!.closest('.listitem')
+
+	if (target === null) return
+
+	selectListItem(target)
+}
+
 const onKeydown = (event: KeyboardEvent) => {
-	if (resultChildren.length > 0) {
-		if (event.key === 'ArrowDown') {
-			event.preventDefault()
-			if (indexNumber < (resultChildren.length - 1)) {
-				indexNumber++
-			}
-			resultChildren.forEach((result: HTMLElement, index: number) => {
-				if (index === indexNumber) {
-					result.setAttribute('aria-selected', 'true')
-				} else {
-					result.setAttribute('aria-selected', 'false')
-				}
-			})
-		} else if (event.key === 'ArrowUp') {
-			event.preventDefault()
-			if (indexNumber >= 1) {
-				indexNumber--
-			}
-			resultChildren.forEach((result: HTMLElement, index: number) => {
-				if (index === indexNumber) {
-					result.setAttribute('aria-selected', 'true')
-				} else {
-					result.setAttribute('aria-selected', 'false')
-				}
-			})
-		} else if (event.key === 'Enter') {
-			resultChildren.forEach((result: HTMLElement) => {
-				if (result.getAttribute('aria-selected') === 'true') {
-					result.querySelector('a')?.click()
-				}
-			})
-		} else if (event.key === 'Escape') {
-			// clears the search control and removes search results
-			searchElement.value = ''
-			searchResults.replaceChildren()
-			searchForm.classList.remove('-has-results')
-			navigation.classList.remove('-has-results')
+	if (resultChildren.length < 1) return
+
+	resultChildren.forEach((child: HTMLElement, index: number) => {
+		if (child.ariaSelected === 'true') indexNumber = index
+	})
+
+	if (event.key === 'ArrowDown') {
+		event.preventDefault()
+
+		if (indexNumber < (resultChildren.length - 1)) {
+			indexNumber++
 		}
+
+		resultChildren.forEach((result: HTMLElement, index: number) => {
+			if (index === indexNumber) {
+				result.setAttribute('aria-selected', 'true')
+			} else {
+				result.setAttribute('aria-selected', 'false')
+			}
+		})
+	} else if (event.key === 'ArrowUp') {
+		event.preventDefault()
+
+		if (indexNumber >= 1) {
+			indexNumber--
+		}
+
+		resultChildren.forEach((result: HTMLElement, index: number) => {
+			if (index === indexNumber) {
+				result.setAttribute('aria-selected', 'true')
+			} else {
+				result.setAttribute('aria-selected', 'false')
+			}
+		})
+	} else if (event.key === 'Enter') {
+		resultChildren.forEach((result: HTMLElement) => {
+			if (result.getAttribute('aria-selected') === 'true') {
+				result.querySelector('a')?.click()
+			}
+		})
+	} else if (event.key === 'Escape') {
+		// clears the search control and removes search results
+		searchElement.value = ''
+		searchResults.replaceChildren()
+		searchForm.classList.remove('-has-results')
+		navigation.classList.remove('-has-results')
 	}
 }
 
 searchElement.addEventListener('keydown', onKeydown)
+searchResults.addEventListener('pointerover', onPointerEnter)

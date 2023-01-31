@@ -117,13 +117,6 @@
 		border-radius: var(--EdgeRadius);
 		color: var(--SecondaryColor);
 
-		&:is(:hover, :focus-within) {
-			/* Appearance */
-			background-color: var(--InteractiveColor);
-			color: var(--InverseColor);
-			cursor: pointer;
-		}
-
 		&[aria-selected="true"] {
 			/* Appearance */
 			background-color: var(--InteractiveColor);
