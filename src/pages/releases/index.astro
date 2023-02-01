@@ -144,4 +144,89 @@ const title = 'Releases'
 			Unlike standard decimals, each numeral is separated by a full-stop, increments numerically, and resets the numbers to the right. E.g., making a minor change to version 1.9.3 would result in a new version number of 1.10.0. There is no limit to how high each number can go, but practically speaking anything beyond 999 becomes unwieldy.
 		</p>
 	</div>
+	
+	<a href="#web-component-breaking-changes" class="h h2">
+		<h2 id="web-component-breaking-changes">
+			Web Component Breaking Changes 
+		</h2>
+	</a>
+
+	<a href="#what-to-expect" class="h h3">
+		<h3 id="what-to-expect">
+			What to expect
+		</h3>
+	</a>
+	<p>
+		“What is a breaking change?” can be subjective so we have outlined below explicitly what we are calling breaking changes and what you can expect in each release.
+	</p>
+
+	<p>
+		Any changes to this document will be announced in our Astro UXDS Working Group and on our <a href="https://github.com/RocketCommunicationsInc/astro/discussions/categories/announcements">Github Announcements</a> in advance.
+	</p>
+	
+	<a href="#our-public-api" class="h h3">
+		<h3 id="our-public-api">
+			Our public API
+		</h3>
+	</a>
+	<p>A component's API includes: </p>
+
+	<ul>
+		<li>Properties</li>
+		<li>Attributes</li>
+		<li>Slots</li>
+		<li>Events</li>
+		<li>Methods</li>
+		<li>CSS Custom Properties</li>
+		<li>CSS Shadow Parts</li>
+	</ul>
+
+	<a href="#major" class="h h3">
+		<h3 id="major">Major</h3>
+	</a>
+	<p>Major releases contain breaking changes.</p>
+	<ul>
+		<li>We may remove a deprecated component API</li>
+		<li>We may remove a deprecated design token</li>
+		<li>We may remove a deprecated component</li>
+		<li>We may change a component's default behavior</li>
+		<li>We may change an element's dimensions. </li>
+	</ul>
+
+	<a href="#minor" class="h h3">
+		<h3 id="minor">
+			Minor
+		</h3>
+	</a>
+
+	<p>Minor releases include new features and are always backwards compatible. 
+		Minor releases may include deprecation warnings where we signal in advanced that a particular feature is scheduled to be removed in the next upcoming major release. At your convenience, before the next major release, review the migration steps and upgrade your application accordingly.
+		Minor releases may also include patch features.
+	</p>
+	<ul>
+		<li>We may add new components,</li>
+		<li>We may add a new component API.</li>
+		<li>We may add a new design token.</li>
+		<li>
+			We may change CSS properties on internal elements that are exposed publicly as shadow parts. 
+			<ul>
+				<li>For example, changing border to use box-shadow instead.</li>
+			</ul>
+		</li>
+		<li>
+			We may change the value of a design token.
+			<ul>
+				<li>For example, --color-text-primary changes from #E3E3E3 to #e33e3e3.</li>
+			</ul>
+		</li>
+	</ul>
+	<a href="#patch" class="h h3">
+		<h3 id="patch">Patch</h3>
+	</a>
+	<p>Patch releases include bug fixes and should not require you to change your code.</p>
+	<ul>
+		<li>We can change the internals of the Shadow DOM</li>
+		<li>We will not change a component's width or height.</li>
+	</ul>
+
 </DocsLayout>
