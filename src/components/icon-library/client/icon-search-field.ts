@@ -46,6 +46,14 @@ class IconSearchFieldInternals {
 			}
 		})
 
+		this.control.addEventListener('focusin', () => {
+			host.toggleAttribute('data-focus', true)
+		})
+
+		this.control.addEventListener('focusout', () => {
+			host.toggleAttribute('data-focus', false)
+		})
+
 		adoptStyleSheet(root)
 	}
 }

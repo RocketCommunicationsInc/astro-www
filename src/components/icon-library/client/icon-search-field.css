@@ -44,7 +44,24 @@ label {
 
 	/* Appearance */
 	border-radius: 6--rpx;
-	box-shadow: var(--Grey700Color) 0 0 0 1px inset;
+	box-shadow: var(--border-color) 0 0 0 1px inset;
+
+	&:host([data-focus]) {
+		/* Appearance */
+		outline: 1px auto;
+		outline-color: -webkit-focus-ring-color;
+
+		/* Appearance Reference */
+		--border-color: var(--DarkBlue500Color);
+	}
+
+	&:host(:not([data-focus])) {
+		/* Appearance */
+		outline: none;
+
+		/* Appearance Reference */
+		--border-color: var(--Grey700Color);
+	}
 
 	&::part(field) {
 		display: grid;
@@ -77,5 +94,10 @@ label {
 	&::part(blank-label) {
 		/* Appearance */
 		opacity: 1;
+	}
+
+	&::part(control) {
+		/* Appearance */
+		outline: none;
 	}
 }
