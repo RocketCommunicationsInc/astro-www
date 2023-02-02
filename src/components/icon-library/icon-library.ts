@@ -1,3 +1,5 @@
+import type { IconSearchFieldElement } from './client/icon-search-field'
+
 const { max, min } = Math
 const clamp = (minNum: number, midNum: number, maxNum: number) => min(max(midNum, minNum), maxNum)
 
@@ -35,8 +37,8 @@ const getBoundingClientRect = (element: HTMLElement) => {
 	let rect = element.getBoundingClientRect()
 
 	return new DOMRectangle(
-		rect.x + view.pageLeft,
-		rect.y + view.pageTop,
+		rect.x + visualViewport.pageLeft,
+		rect.y + visualViewport.pageTop,
 		rect.width,
 		rect.height
 	)
@@ -57,18 +59,15 @@ const getStyleSheet = (rootElement: HTMLElement | ShadowRoot) => (
 	: rootElement.appendChild(document.createElement('style')).sheet!
 )
 
-const getStyle = (sheet: CSSStyleSheet, cssText: string) => (<CSSStyleRule>sheet.cssRules[sheet.insertRule(cssText, sheet.cssRules.length)]).style
+const getStyleRule = (sheet: CSSStyleSheet, cssText: string) => sheet.cssRules[sheet.insertRule(cssText, sheet.cssRules.length)] as CSSStyleRule
+const getStyleBySelector = (sheet: CSSStyleSheet, selectorText: string) => getStyleRule(sheet, selectorText + '{').style
 
 const sheet = getStyleSheet(document.documentElement)
-
-const view = visualViewport!
 
 class IconLibraryHeader {
 	host: HTMLElement
 
-	csso: {
-		host: CSSStyleDeclaration
-	}
+	csso: CSSStyleDeclaration
 
 	rect: DOMRect
 	last: Record<string, any>
@@ -79,9 +78,7 @@ class IconLibraryHeader {
 		this.host = document.querySelector(selectorText)!
 		this.opts = opts!
 
-		this.csso = {
-			host: getStyle(sheet, selectorText + '{'),
-		}
+		this.csso = getStyleBySelector(sheet, selectorText)
 
 		this.rect = DOMRectangle.fromElement(this.host)
 		this.last = { __proto__: null }
@@ -104,7 +101,7 @@ class IconLibraryHeader {
 	}
 
 	get nowY(): number {
-		return clamp(this.minY, view.pageTop, this.maxY)
+		return clamp(this.minY, visualViewport.pageTop, this.maxY)
 	}
 
 	handleEvent(event: Event & { target: Document | Element }) {
@@ -112,8 +109,8 @@ class IconLibraryHeader {
 
 		if (target !== document) return
 
-		this.page.scrollX = view.pageLeft
-		this.page.scrollY = view.pageTop
+		this.page.scrollX = visualViewport!.pageLeft
+		this.page.scrollY = visualViewport!.pageTop
 
 		if (this.nowY === this.last.nowY) return
 
@@ -121,9 +118,7 @@ class IconLibraryHeader {
 
 		const scrollOffset = (this.nowY - this.minY) / (this.maxY - this.minY)
 
-		this.csso.host.setProperty('--ScrollOffset', scrollOffset)
-		this.csso.host.setProperty('--MaskSizeYEnter', toRem(this.rect.height))
-		this.csso.host.setProperty('--MaskSizeYLeave', toRem(this.opts.minSizeY))
+		this.csso.setProperty('--Step', scrollOffset)
 	}
 }
 
@@ -138,7 +133,7 @@ class IconLibraryFilters {
 	constructor(selectorText: string, opts: IconLibraryFiltersOptions) {
 		this.host = document.querySelector(selectorText)!
 		this.opts = opts
-		this.push = getStyle(sheet, selectorText + '{')
+		this.push = getStyleBySelector(sheet, selectorText)
 		this.read = getReadableCss(this.host)
 		this.rect = DOMRectangle.fromElement(this.host)
 
@@ -147,6 +142,28 @@ class IconLibraryFilters {
 		queueMicrotask(() => {
 			this.host.classList.add('js')
 			this.handleEvent(<Event & { target: Document | Element }>{ target: document })
+		})
+
+		// groups
+		// search
+
+		const groupsEl = this.host.querySelector('.x-groups > *')!
+		const searchEl = this.host.querySelector<IconSearchFieldElement>('.x-search > *')!
+
+		groupsEl.addEventListener('focusin', () => {
+			this.host.dataset.focus = 'groups'
+		})
+
+		groupsEl.addEventListener('focusout', () => {
+			this.host.dataset.focus = ''
+		})
+
+		searchEl.addEventListener('focusin', () => {
+			this.host.dataset.focus = 'search'
+		})
+
+		searchEl.addEventListener('focusout', () => {
+			this.host.dataset.focus = ''
 		})
 	}
 
@@ -158,20 +175,12 @@ class IconLibraryFilters {
 		return this.rect.top - this.opts.minSizeY
 	}
 
-	// get maxY() {
-	// 	return this.rect.bottom - this.opts.minSizeY
-	// }
-
-	// get nowY(): number {
-	// 	return clamp(this.minY, view.pageTop, this.maxY)
-	// }
-
 	handleEvent(event: Event & { target: Document | Element }) {
 		const { target } = event
 
 		if (target !== document) return
 
-		const y = clamp(this.y1, view.pageTop, this.y2)
+		const y = clamp(this.y1, visualViewport!.pageTop, this.y2)
 
 		if (y === this.roll.y) return
 
@@ -179,11 +188,7 @@ class IconLibraryFilters {
 
 		const scrollOffset = (y - this.y1) / (this.y2 - this.y1)
 
-		this.push.setProperty('--ScrollOffset', scrollOffset)
-
-		// console.log(
-		// 	'gridTemplateColumns', this.read.getPropertyValue('grid-template-columns')
-		// )
+		this.push.setProperty('--Step', scrollOffset)
 	}
 }
 
@@ -193,23 +198,22 @@ interface IconLibraryFiltersOptions {
 }
 
 const remSize = parseFloat(getComputedStyle(document.documentElement).fontSize)
-const toRem = (number: number) => (number / remSize) + 'rem'
+const stepSize = remSize / 4
 
 interface IconLibraryHeaderOptions {
 	minSizeY: number
 }
 
+const isSmall = matchMedia('not (min-width: 1440px)')
+
 requestAnimationFrame(() => {
 	new IconLibraryHeader('.c-iconlibrary-header', {
-		minSizeY: 48
+		minSizeY: isSmall.matches ? 12 * stepSize : 42 * stepSize,
 	})
 
-	// x, y, w, h
-	// tl, tr, br, bl
-
 	new IconLibraryFilters('.c-iconlibrary-filters', {
-		marginY1: 32,
-		minSizeY: 48,
+		marginY1: isSmall.matches ? 8 * stepSize : 20 * stepSize,
+		minSizeY: isSmall.matches ? 12 * stepSize : 42 * stepSize,
 	})
 })
 

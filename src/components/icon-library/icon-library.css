@@ -1,6 +1,13 @@
-:root {
-	/* Color References */
+/* Scroll-Linked Timeline Terms & Calculations
+┌─────────────────────────────────────────────
+│ Step: Current position in a timeline, a number between 0 and 1.
+│ Step{N}: Value at a {N} position in a timeline.
+│ {K}-Diff: Difference between a value at Step{0} and a value at Step{1}.
+│ {K}-Step: Current value at a current position, i.e. {K}-Diff * {Step}.
+└──────────────────────────────────────────────────────────────────────────── */
 
+:root {
+	/* Color Reference */
 	--BrightBlue200Color: hsl(205 88% 90%);
 	--DarkBlue500Color: hsl(202 100% 28%);
 	--DarkBlue800Color: hsl(209 39% 17%);
@@ -8,6 +15,14 @@
 	--Grey700Color: hsl(216 6% 34%);
 	--LinkColor: hsl(23 62% 43%);
 	--TextColor: hsl(0 0% 0%);
+
+	@media (width < 1440px) {
+		--HeaderEdge: 12--step;
+	}
+
+	@media (width >= 1440px) {
+		--HeaderEdge: 42--step;
+	}
 }
 
 .-main {
@@ -18,63 +33,72 @@
 
 .c-iconlibrary-header {
 	/* Layout */
-	margin-block-end: 8--step;
-	padding-block-end: calc(9--step + var(--PaddingYLeadOff));
-	padding-block-start: var(--PaddingYLead);
-	padding-inline: 6--step;
+	padding-block: calc(var(--PaddingY)) calc(var(--padding-block-end) + var(--PaddingY-Step));
 
 	/* Appearance */
 	background-color: var(--Grey200Color);
 
-	/* Scroll Reference */
-	--ScrollOffset: 0;
+	@media (width < 1440px) {
+		/* Layout */
+		margin-block-end: 8--step;
+		padding-inline: 4--step;
 
-	/* Scroll Mask Reference */
-	--MaskSizeYEnter: 100%;
-	--MaskSizeYLeave: 100%;
+		/* Layout Reference */
+		--padding-block-end: 9--step;
+	}
 
-	/* Scroll Mask Reference (Calculated) */
-	--MaskImage: linear-gradient(rgb(0 0 0 / 100%) var(--MaskSizeY), rgb(0 0 0 / 0%) var(--MaskSizeY));
-	--MaskSizeY: calc(var(--MaskSizeYEnter) - var(--MaskSizeYDif) * var(--ScrollOffset));
-	--MaskSizeYDif: calc(var(--MaskSizeYEnter) - var(--MaskSizeYLeave));
+	@media (width >= 1440px) {
+		/* Layout */
+		margin-block-end: 24--step;
+		padding-inline: calc(100% / 2 - 264--step / 2);
 
-	/* Scroll Summary Mask Lead */
-	--SummaryMaskLeadEnter: calc(100% - 1rem);
-	--SummaryMaskLeadLeave: calc(0% - 1rem);
+		/* Layout Reference */
+		--padding-block-end: 32--step;
+	}
 
-	/* Scroll Summary Mask Tail */
-	--SummaryMaskTailEnter: 100%;
-	--SummaryMaskTailLeave: 0%;
+	/* ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ */
 
-	/* Scroll Summary Mask (Calculated) */
-	--SummaryMaskImage: linear-gradient(rgb(0 0 0 / 100%) var(--SummaryMaskLead), rgb(0 0 0 / 0%) var(--SummaryMaskTail));
-	--SummaryMaskLead: calc(var(--SummaryMaskLeadEnter) - var(--SummaryMaskLeadOff));
-	--SummaryMaskLeadDif: calc(var(--SummaryMaskLeadEnter) - var(--SummaryMaskLeadLeave));
-	--SummaryMaskLeadOff: var(--SummaryMaskLeadDif) * var(--ScrollOffset);
-	--SummaryMaskTail: calc(var(--SummaryMaskTailEnter) - var(--SummaryMaskTailOff));
-	--SummaryMaskTailDif: calc(var(--SummaryMaskTailEnter) - var(--SummaryMaskTailLeave));
-	--SummaryMaskTailOff: var(--SummaryMaskTailDif) * var(--ScrollOffset);
+	/* Step Reference */
+	--Step: 0;
 
-	/* Scroll Padding Reference */
-	--PaddingYLeadEnter: 4--step;
-	--PaddingYLeadLeave: 2--step;
+	/* Mask Edge
+	┌───────────
+	│ The mask edge transitions from directly below the bottom edge of the
+	│ header bounding box to 3rem.
+	└─────────────────────────────────────────────────────────────────────────── */
 
-	/* Scroll Padding Reference (Calculated) */
-	--PaddingYLead: calc(var(--PaddingYLeadEnter) - var(--PaddingYLeadOff));
-	--PaddingYLeadDif: calc(var(--PaddingYLeadEnter) - var(--PaddingYLeadLeave));
-	--PaddingYLeadOff: var(--PaddingYLeadDif) * var(--ScrollOffset);
+	/* Step Reference */
+	--MaskEdge-Step0: 100%;
+	--MaskEdge-Step1: var(--HeaderEdge);
 
-	/* Scroll Title Text Reference */
-	--TitleTextSizeEnter: 24;
-	--TitleTextSizeLeave: 16;
-	--TitleTextWeitEnter: 300;
-	--TitleTextWeitLeave: 700;
+	/* Calculation Reference */
+	--MaskEdge-Diff: (var(--MaskEdge-Step0) - var(--MaskEdge-Step1));
+	--MaskEdge-Step: var(--MaskEdge-Diff) * var(--Step);
+	--MaskEdge: (var(--MaskEdge-Step0) - var(--MaskEdge-Step));
 
-	/* Scroll Title Text Reference (Calculated) */
-	--TitleTextSize: calc(var(--TitleTextSizeEnter) - var(--TitleTextSizeDif) * var(--ScrollOffset));
-	--TitleTextSizeDif: calc(var(--TitleTextSizeEnter) - var(--TitleTextSizeLeave));
-	--TitleTextWeit: calc(var(--TitleTextWeitEnter) - var(--TitleTextWeitDif) * var(--ScrollOffset));
-	--TitleTextWeitDif: calc(var(--TitleTextWeitEnter) - var(--TitleTextWeitLeave));
+	/* Padding Y
+	┌───────────
+	│ The header padding transitions from 4 steps to 2 steps.
+	└─────────────────────────────────────────────────────────────────────────── */
+
+	@media (width < 1440px) {
+		/* Step Reference */
+		--PaddingY-Step0: 4--step;
+		--PaddingY-Step1: 2--step;
+	}
+
+	@media (width >= 1440px) {
+		/* Step Reference */
+		--PaddingY-Step0: 16--step;
+		--PaddingY-Step1: 12--step;
+	}
+
+	/* Calculation Reference */
+	--PaddingY: (var(--PaddingY-Step0) - var(--PaddingY-Step));
+	--PaddingY-Diff: (var(--PaddingY-Step0) - var(--PaddingY-Step1));
+	--PaddingY-Step: var(--PaddingY-Diff) * var(--Step);
+
+	/* ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ */
 
 	&.js {
 		/* Layout */
@@ -82,94 +106,252 @@
 		position: sticky;
 
 		/* Masking */
-		mask-image: var(--MaskImage);
+		mask-image: var(--mask-image);
+
+		/* Masking Reference */
+		--mask-image: linear-gradient(rgb(0 0 0 / 100%) calc(var(--MaskEdge)), rgb(0 0 0 / 0%) calc(var(--MaskEdge)));
 	}
 
 	& .p-title {
 		/* Text */
 		font-size: calc(var(--TitleTextSize) * .0625rem);
-		font-weight: var(--TitleTextWeit);
+		font-weight: calc(var(--TitleTextWeight));
 		letter-spacing: -.005em;
-		line-height: calc(28 / var(--TitleTextSize));
+		line-height: calc(var(--line-height) / var(--TitleTextSize));
 
 		/* Appearance */
 		color: var(--DarkBlue800Color);
+
+		@media (width < 1440px) {
+			/* Text Reference */
+			--line-height: 28;
+		}
+
+		@media (width >= 1440px) {
+			/* Text Reference */
+			--line-height: 72;
+		}
+
+		/* Title Text Size
+		┌─────────────────
+		│ The title text size transitions from 24px to 16px.
+		└─────────────────────────────────────────────────────────────────────────── */
+
+		@media (width < 1440px) {
+			/* Step Reference */
+			--TitleTextSize-Step0: 24;
+			--TitleTextSize-Step1: 16;
+		}
+
+		@media (width >= 1440px) {
+			/* Step Reference */
+			--TitleTextSize-Step0: 64;
+			--TitleTextSize-Step1: 64;
+		}
+
+		/* Calculation Reference */
+		--TitleTextSize-Diff: (var(--TitleTextSize-Step0) - var(--TitleTextSize-Step1));
+		--TitleTextSize-Step: var(--TitleTextSize-Diff) * var(--Step);
+		--TitleTextSize: (var(--TitleTextSize-Step0) - var(--TitleTextSize-Step));
+
+		/* Title Text Weight
+		┌───────────────────
+		│ The title text weight transitions from 300 to 700.
+		└─────────────────────────────────────────────────────────────────────────── */
+
+		@media (width < 1440px) {
+			/* Step Reference */
+			--TitleTextWeight-Step0: 300;
+			--TitleTextWeight-Step1: 700;
+		}
+
+		@media (width >= 1440px) {
+			/* Step Reference */
+			--TitleTextWeight-Step0: 300;
+			--TitleTextWeight-Step1: 300;
+		}
+
+		/* Calculation Reference */
+		--TitleTextWeight-Diff: (var(--TitleTextWeight-Step0) - var(--TitleTextWeight-Step1));
+		--TitleTextWeight-Step: var(--TitleTextWeight-Diff) * var(--Step);
+		--TitleTextWeight: (var(--TitleTextWeight-Step0) - var(--TitleTextWeight-Step));
 	}
 
 	& .p-summary {
 		/* Layout */
-		padding-block-end: 9--step;
-		padding-block-start: 1--step;
+		max-width: 152--step;
 
-		/* Text */
-		font-size: 16px;
-		font-weight: 300;
-		line-height: calc(24 / 16);
+		@media (width < 1440px) {
+			/* Layout */
+			padding-block-start: 2--step;
+
+			/* Text */
+			font-size: 16--rpx;
+			font-weight: 300;
+			line-height: calc(24 / 16);
+		}
+
+		@media (width >= 1440px) {
+			/* Layout */
+			padding-block-start: 5--step;
+
+			/* Text */
+			font-size: 20--rpx;
+			font-weight: 300;
+			line-height: calc(28 / 20);
+		}
 
 		/* Masking */
-		mask-image: var(--SummaryMaskImage);
+		mask-image: var(--mask-image);
+
+		/* Masking Reference */
+		--mask-image: linear-gradient(rgb(0 0 0 / 100%) calc(var(--SummaryMaskEdgeA)), rgb(0 0 0 / 0%) calc(var(--SummaryMaskEdgeB)));
+
+		/* Summary Mask Edge
+		┌───────────────────
+		│ The summary mask edges transitions from directly below the summary
+		│ bounding box to directly above the summary bounding box.
+		└─────────────────────────────────────────────────────────────────────────── */
+
+		@media (width < 1440px) {
+			/* Step Reference */
+			--SummaryMaskEdge-Step0: 100%;
+			--SummaryMaskEdge-Step1: 0%;
+
+			/* Spread Reference */
+			--SummaryMaskEdge-Spread: 1rem;
+		}
+
+		@media (width >= 1440px) {
+			/* Step Reference */
+			--SummaryMaskEdge-Step0: 250%;
+			--SummaryMaskEdge-Step1: 0%;
+
+			/* Spread Reference */
+			--SummaryMaskEdge-Spread: 3rem;
+		}
+
+		/* Calculation Reference */
+		--SummaryMaskEdgeA-Diff: (var(--SummaryMaskEdge-Step0) - (var(--SummaryMaskEdge-Step1) - var(--SummaryMaskEdge-Spread)));
+		--SummaryMaskEdgeA-Step: var(--SummaryMaskEdgeA-Diff) * var(--Step);
+		--SummaryMaskEdgeA: (var(--SummaryMaskEdge-Step0) - var(--SummaryMaskEdgeA-Step));
+
+		/* Calculation Reference */
+		--SummaryMaskEdgeB-Diff: (var(--SummaryMaskEdge-Step0) + var(--SummaryMaskEdge-Spread) - var(--SummaryMaskEdge-Step1));
+		--SummaryMaskEdgeB-Step: var(--SummaryMaskEdgeB-Diff) * var(--Step);
+		--SummaryMaskEdgeB: (var(--SummaryMaskEdge-Step0) + var(--SummaryMaskEdge-Spread) - var(--SummaryMaskEdgeB-Step));
 	}
 }
 
 .c-iconlibrary-filters {
 	display: grid;
 
-	/* Scroll Offset */
-	--ScrollOffset: 0;
-
-	/* Reference */
-	--SearchSizeXEnter: 100%;
-	--SearchSizeXLeave: 48px;
-
-	/* Reference (calculated) */
-	--SearchSizeXDelta: calc(var(--SearchSizeXEnter) - var(--SearchSizeXLeave));
-	--SearchSizeXValue: calc(var(--SearchSizeXEnter) - var(--SearchSizeXDelta) * var(--ScrollOffset));
-
-	/* Scroll Choice Reference */
-	--ChoiceSizeXEnter: 0%;
-	--ChoiceSizeXLeave: calc(100% - 48px);
-
-	/* Scroll Choice Reference (calculated) */
-	--ChoiceSizeXDelta: calc(var(--ChoiceSizeXEnter) - var(--ChoiceSizeXLeave));
-	--ChoiceSizeXValue: calc(var(--ChoiceSizeXEnter) - var(--ChoiceSizeXDelta) * var(--ScrollOffset));
-
 	/* Layout */
-	grid-template-columns: var(--ChoiceSizeXValue) var(--SearchSizeXValue);
+	grid-template-columns: calc(var(--GroupsSize)) calc(var(--SearchSize));
 	padding-block: 8--rpx;
-	padding-inline: 24--rpx;
 
 	/* Appearance */
 	background-color: var(--PrimaryColor);
-	box-shadow: 0 1px 0 0 hsl(0 0% 75% / var(--BorderOpacityValue)), 0 2px 0 0 hsl(0 0% 100% / var(--BorderOpacityValue));
+	box-shadow: 0 1px 0 0 hsl(0 0% 75% / calc(var(--BorderOpacity))), 0 2px 0 0 hsl(0 0% 100% / calc(var(--BorderOpacity)));
 	color: var(--InverseColor);
 
-	/* Scroll Reference */
-	--ScrollOffset: 0;
+	@media (width < 1440px) {
+		/* Layout */
+		padding-inline: 4--step;
 
-	/* Border Opacity Reference */
-	--BorderOpacityEnter: 0%;
-	--BorderOpacityLeave: 100%;
+		&[data-focus="groups"] {
+			--Step: 1;
 
-	/* Border Opacity Reference (Calculated) */
-	--BorderOpacityValue: calc(var(--BorderOpacityEnter) - var(--BorderOpacityDelta) * var(--ScrollOffset));
-	--BorderOpacityDelta: calc(var(--BorderOpacityEnter) - var(--BorderOpacityLeave));
+			/* Animation */
+			transition: grid-template-columns 200ms;
+		}
 
-	/* Scroll Summary Mask Tail */
-	--SearchControlMaskEnter: 100%;
-	--SearchControlMaskLeave: calc(0% - 16--rpx);
+		&[data-focus="search"] {
+			--BorderOpacity: 1;
+			--Step: 0;
 
-	/* Scroll Mask Reference (Calculated) */
-	--MaskImage: linear-gradient(90deg, rgb(0 0 0 / 100%) calc(var(--SearchControlMask) - 2em), rgb(0 0 0 / 0%) var(--SearchControlMask));
-	--SearchControlMask: calc(var(--SearchControlMaskEnter) - var(--SearchControlMaskDelta) * var(--ScrollOffset));
-	--SearchControlMaskDelta: calc(var(--SearchControlMaskEnter) - var(--SearchControlMaskLeave));
+			/* Animation */
+			transition: box-shadow 200ms, grid-template-columns 200ms;
+		}
+	}
+
+	@media (width >= 1440px) {
+		/* Layout */
+		padding-inline: calc(100% / 2 - 264--step / 2);
+	}
+
+	/* ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ */
+
+	/* Step Reference */
+	--Step: 0;
+
+	/* Groups Size
+	┌─────────────
+	│ The groups size transitions from 0% to 100% minus 12 steps.
+	└─────────────────────────────────────────────────────────────────────────── */
+
+	@media (width < 1440px) {
+		/* Step Reference */
+		--GroupsSize-Step0: 0%;
+		--GroupsSize-Step1: (100% - 12--step);
+	}
+
+	@media (width >= 1440px) {
+		/* Step Reference */
+		--GroupsSize-Step0: 0%;
+		--GroupsSize-Step1: 50--step;
+	}
+
+	/* Calculation Reference */
+	--GroupsSize-Diff: (var(--GroupsSize-Step0) - var(--GroupsSize-Step1));
+	--GroupsSize-Step: var(--GroupsSize-Diff) * var(--Step);
+	--GroupsSize: (var(--GroupsSize-Step0) - var(--GroupsSize-Step));
+
+	/* Search Size
+	┌──────────────
+	│ The search size transitions from 100% to 12 steps.
+	└─────────────────────────────────────────────────────────────────────────── */
+
+	@media (width < 1440px) {
+		/* Step Reference */
+		--SearchSize-Step0: 100%;
+		--SearchSize-Step1: 12--step;
+	}
+
+	@media (width >= 1440px) {
+		/* Step Reference */
+		--SearchSize-Step0: 100%;
+		--SearchSize-Step1: calc(100% - 50--step);
+	}
+
+	/* Calculation Reference */
+	--SearchSize-Diff: (var(--SearchSize-Step0) - var(--SearchSize-Step1));
+	--SearchSize-Step: var(--SearchSize-Diff) * var(--Step);
+	--SearchSize: (var(--SearchSize-Step0) - var(--SearchSize-Step));
+
+	/* Border Opacity
+	┌────────────────
+	│ The border opacity transitions from 0% to 100%.
+	└─────────────────────────────────────────────────────────────────────────── */
+
+	/* Step Reference */
+	--BorderOpacity-Step0: 0%;
+	--BorderOpacity-Step1: 100%;
+
+	/* Calculation Reference */
+	--BorderOpacity-Diff: (var(--BorderOpacity-Step0) - var(--BorderOpacity-Step1));
+	--BorderOpacity-Step: var(--BorderOpacity-Diff) * var(--Step);
+	--BorderOpacity: (var(--BorderOpacity-Step0) - var(--BorderOpacity-Step));
+
+	/* ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ */
 
 	&.js {
 		/* Layout */
-		inset-block-start: 12--step;
+		inset-block-start: var(--HeaderEdge);
 		position: sticky;
 	}
 
-	& > .x-choice {
+	& > .x-groups {
 		/* Layout */
 		overflow: hidden;
 
@@ -201,6 +383,31 @@
 
 	& > .x-search > *::part(label) {
 		/* Masking */
-		mask-image: var(--MaskImage);
+		mask-image: var(--mask-image);
+
+		/* Masking Reference */
+		--mask-image: linear-gradient(90deg, rgb(0 0 0 / 100%) calc(var(--ControlMaskEdge) - 2em), rgb(0 0 0 / 0%) calc(var(--ControlMaskEdge)));
+
+		/* Control Mask Edge
+		┌───────────────────
+		│ The control mask edge transitions from 100% to -4 steps.
+		└─────────────────────────────────────────────────────────────────────────── */
+
+		@media (width < 1440px) {
+			/* Step Reference */
+			--ControlMaskEdge-Step0: 100%;
+			--ControlMaskEdge-Step1: -4--step;
+		}
+
+		@media (width >= 1440px) {
+			/* Step Reference */
+			--ControlMaskEdge-Step0: 100%;
+			--ControlMaskEdge-Step1: 100%;
+		}
+
+		/* Calculation Reference */
+		--ControlMaskEdge-Diff: (var(--ControlMaskEdge-Step0) - var(--ControlMaskEdge-Step1));
+		--ControlMaskEdge-Step: var(--ControlMaskEdge-Diff) * var(--Step);
+		--ControlMaskEdge: (var(--ControlMaskEdge-Step0) - var(--ControlMaskEdge-Step));
 	}
 }

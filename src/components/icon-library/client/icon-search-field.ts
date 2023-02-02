@@ -13,16 +13,39 @@ const adoptStyleSheet = (root: ShadowRoot) => {
 const template = document.createElement('template')
 template.innerHTML = innerHTML
 
-class IconSearchFieldElement extends HTMLElement {
+export class IconSearchFieldElement extends HTMLElement {
 	#$ = new IconSearchFieldInternals(this)
+
+	get blank() {
+		return this.#$.blank
+	}
 }
 
 class IconSearchFieldInternals {
+	blank: boolean
+	label: HTMLLabelElement
+	control: HTMLInputElement
+
 	constructor(host: IconSearchFieldElement) {
 		let root = host.attachShadow({ mode: 'open' })
 
 		root.append(template.content.cloneNode(true))
-		// root.adoptedStyleSheets.push(sheet)
+
+		this.label = root.querySelector('[part~="label"]')!
+		this.control = root.querySelector('[part~="control"]')!
+
+		this.blank = this.control.value === ''
+
+		this.label.part.toggle('blank-label', this.blank)
+
+		this.control.addEventListener('input', () => {
+			if (this.blank !== (this.control.value === '')) {
+				this.blank = !this.blank
+
+				this.label.part.toggle('blank-label', this.blank)
+			}
+		})
+
 		adoptStyleSheet(root)
 	}
 }

@@ -68,5 +68,14 @@ label {
 	&::part(label) {
 		/* Appearance */
 		color: hsl(217 11% 68%);
+		opacity: 0;
+
+		/* Animation */
+		transition: opacity 40ms;
+	}
+
+	&::part(blank-label) {
+		/* Appearance */
+		opacity: 1;
 	}
 }

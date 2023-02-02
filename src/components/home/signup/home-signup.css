@@ -24,14 +24,20 @@
 
 	@media (width >= 800px) {
 		/* Layout */
-		padding-inline: 14--step;
+
 		inline-size: min(100% - 4--step, 225--step);
+
+		/* Layout */
+		padding-inline: 14--step;
 	}
 
 	& button[type="submit"]:is(:hover, :focus-visible) {
 		/* Appearance */
-		color: var(--InteractiveHoverColor);
+
 		box-shadow: var(--InteractiveHoverColor) 0 0 0 1px inset;
+
+		/* Appearance */
+		color: var(--InteractiveHoverColor);
 	}
 }
 
@@ -54,14 +60,16 @@
 
 .p-signup-form {
 	display: flex;
-	justify-content: space-between;
 
 	/* Layout */
 	flex-flow: column;
 	gap: 4--step;
+	justify-content: space-between;
 	margin-block-start: 8--step;
 
 	@media (width >= 1199px) {
+		/* Layout */
+
 		flex-flow: row;
 		flex-wrap: wrap;
 	}
@@ -110,6 +118,8 @@
 	}
 
 	@media (width >= 1199px) {
+		/* Layout */
+
 		flex: 0 0 calc(50% - 4--step);
 	}
 }
@@ -117,8 +127,8 @@
 .p-signup-form-submit {
 	/* Layout */
 	align-self: center;
-	margin-inline-start: auto;
 	margin-block-start: 4--step;
+	margin-inline-start: auto;
 	padding-block: 2--step;
 	padding-inline: 11--step;
 
@@ -136,8 +146,10 @@
 .submit-support-button {
 	/* Layout */
 	display: block;
-	margin-inline: auto;
+
+	/* Layout */
 	margin-block: 4--step;
+	margin-inline: auto;
 	padding-block: 2--step;
 	padding-inline: 11--step;
 
@@ -152,10 +164,14 @@
 	cursor: pointer;
 
 	&:disabled {
+		/* Appearance */
+
 		background: #4dacff6f;
 		color: ar(--InverseColor);
 		/* stylelint-disable-next-line declaration-no-important */
 		border-color: none !important;
+
+		/* Appearance */
 		cursor: not-allowed;
 	}
 }
@@ -192,6 +208,8 @@
 .mc-field-group {
 	/* Layout */
 	display: flex;
+
+	/* Layout */
 	flex-flow: column;
 	padding-block: 3--step 3--step;
 }
