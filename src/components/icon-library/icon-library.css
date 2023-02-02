@@ -255,16 +255,16 @@
 	box-shadow: 0 1px 0 0 hsl(0 0% 75% / calc(var(--BorderOpacity))), 0 2px 0 0 hsl(0 0% 100% / calc(var(--BorderOpacity)));
 	color: var(--InverseColor);
 
+	&[data-focus="groups"] {
+		--Step: 1;
+
+		/* Animation */
+		transition: grid-template-columns 200ms;
+	}
+
 	@media (width < 1440px) {
 		/* Layout */
 		padding-inline: 4--step;
-
-		&[data-focus="groups"] {
-			--Step: 1;
-
-			/* Animation */
-			transition: grid-template-columns 200ms;
-		}
 
 		&[data-focus="search"] {
 			--BorderOpacity: 1;
