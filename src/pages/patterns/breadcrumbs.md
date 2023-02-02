@@ -2,7 +2,7 @@
 title: Breadcrumbs
 layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-breadcrumb--default-story
-height: 250px
+height: 120px
 git: rux-breadcrumb
 ---
 
