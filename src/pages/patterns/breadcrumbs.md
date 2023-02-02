@@ -8,12 +8,8 @@ git: rux-breadcrumb
 
 # Breadcrumbs
 
-![](/img/patterns/breadcrumbs-sample.png)
+::storybook-demo
 
-:::note
-The Breadcrumbs web component is currently in development. Astro provides the guidance here for using Breadcrumbs and has developed a [Figma design component](https://www.figma.com/community/file/1157371532469023309) for use in UI mockups.
-:::
- 
 Breadcrumbs are a secondary navigation pattern that provides users with an ordered list of links that helps visualize locational awareness within a site’s hierarchy. Breadcrumbs provide a user with their current site location and allows them to quickly navigate to a parent page or previous step.
 
 ## Rules of Thumb
