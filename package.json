@@ -13,24 +13,24 @@
 		"serve": "astro preview"
 	},
 	"devDependencies": {
-		"@astrojs/sitemap": "1.0.0",
+		"@astrojs/sitemap": "1.0.1",
 		"@astropub/contentful": "0.1.0",
 		"@astropub/doc": "0.1.4",
 		"@astropub/flow": "0.3.6",
 		"@astropub/md": "0.1.4",
-		"@astrouxds/tokens": "1.4.0",
+		"@astrouxds/tokens": "1.4.1",
 		"@csstools/custom-units": "0.1.1",
-		"@typescript-eslint/eslint-plugin": "5.48.2",
-		"@typescript-eslint/parser": "5.48.2",
-		"astro": "2.0.0-beta.3",
-		"eslint": "8.32.0",
+		"@typescript-eslint/eslint-plugin": "5.50.0",
+		"@typescript-eslint/parser": "5.50.0",
+		"astro": "2.0.6",
+		"eslint": "8.33.0",
 		"eslint-config-dev": "3.1.0",
 		"eslint-plugin-astro": "0.23.0",
 		"isomorphic-dompurify": "0.26.0",
 		"lightningcss": "1.18.0",
 		"parse-yaml": "0.1.0",
 		"postcss-load-config": "4.0.1",
-		"postcss-preset-env": "7.8.3",
+		"postcss-preset-env": "8.0.1",
 		"remark-directive": "2.0.1",
 		"stylelint": "14.16.1",
 		"stylelint-config-dev": "4.0.0",
@@ -38,7 +38,7 @@
 		"stylelint-use-logical": "2.0.0",
 		"stylelint-use-nesting": "4.0.0",
 		"types-object": "0.3.0",
-		"typescript": "4.9.4"
+		"typescript": "4.9.5"
 	},
 	"eslintConfig": {
 		"extends": [
