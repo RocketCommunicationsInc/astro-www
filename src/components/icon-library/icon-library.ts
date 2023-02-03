@@ -33,16 +33,16 @@ class DOMRectangle extends DOMRect {
 
 const supportsAdoptedStyleSheets = Boolean(document.adoptedStyleSheets)
 
-const getBoundingClientRect = (element: HTMLElement) => {
-	let rect = element.getBoundingClientRect()
+// const getBoundingClientRect = (element: HTMLElement) => {
+// 	let rect = element.getBoundingClientRect()
 
-	return new DOMRectangle(
-		rect.x + visualViewport.pageLeft,
-		rect.y + visualViewport.pageTop,
-		rect.width,
-		rect.height
-	)
-}
+// 	return new DOMRectangle(
+// 		rect.x + visualViewport!.pageLeft,
+// 		rect.y + visualViewport!.pageTop,
+// 		rect.width,
+// 		rect.height
+// 	)
+// }
 
 const matchNumber = /^((\d+\.)?\d+)(px)?$/
 const getReadableCss = (host: Element) => new Proxy(getComputedStyle(host), {

@@ -23,14 +23,16 @@ import '../icon-search/icon-search.css'
 			<option>Astro</option>
 		</select>
 	</div>
-	<div class="x-search"><IconSearchField /></div>
+	<div class="x-search">
+		<IconSearchField />
+	</div>
 </div>
 
 <div class="p-icon-groups">
-	<For of={Object.entries(icons)}>{([ name, icons ]) => (
+	<For of={Object.entries(icons)}>{([ _name, icons ]) => (
 		<article class="-group">
 			<div class="-icons">
-				<For of={Object.entries(icons).sort(([ a ], [ b ]) => a < b ? -1 : a > b ? 1 : 0)}>{([ id, { name, html } ]) => (
+				<For of={Object.entries(icons).sort(([ a ], [ b ]) => a < b ? -1 : a > b ? 1 : 0)}>{([ id, { name } ]) => (
 					<figure class="icon" tabindex="0">
 						<svg aria-label={name}><use href={`#icon-${id}`} /></svg>
 						<figcaption>{name}</figcaption>
