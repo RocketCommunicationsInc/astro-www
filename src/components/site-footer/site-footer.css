@@ -220,10 +220,9 @@
 
 	/* Text */
 	font-size: 14--rpx;
-	text-align: center;
 
-	@media (width >= 1278px) {
+	&.right {
 		/* Layout */
-		margin-block-start: 4--step;
+		margin-block-start: 2--step;
 	}
 }
