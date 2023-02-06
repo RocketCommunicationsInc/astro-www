@@ -1,7 +1,6 @@
 .p-footer {
 	/* Layout */
-	padding-block-end: 5.5--step;
-	padding-block-start: 7.5--step;
+	padding-block: 7.5--step;
 	padding-inline: 11--step;
 
 	/* Text */
@@ -214,15 +213,8 @@
 
 .p-footer-copyright {
 	/* Layout */
-	flex-basis: 100%;
-	grid-column: 1 / 4;
-	grid-row: 2 / 2;
+	margin-block-start: 2--step;
 
 	/* Text */
 	font-size: 14--rpx;
-
-	&.right {
-		/* Layout */
-		margin-block-start: 2--step;
-	}
 }
