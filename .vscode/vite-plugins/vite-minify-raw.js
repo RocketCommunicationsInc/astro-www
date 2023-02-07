@@ -4,21 +4,20 @@ import { default as postcss } from 'postcss'
 import { transform as lightningcss } from 'lightningcss'
 
 export function viteMinifyRaw() {
-	/** @type {PostCSSPlugins} */
-	let postcssPlugins
+	let resolvedConfig
 
 	/** @type {Plugin} */
 	let plugin = {
 		name: 'vite:minify-raw',
 		enforce: 'pre',
 		configResolved(config) {
-			postcssPlugins = Object(config.css?.postcss).plugins || []
+			resolvedConfig = config
 		},
 		transform(code, importee) {
 			const matchingExtension = getMatchingExtension(importee)
 
 			if (matchingExtension === 'css') {
-				code = getMinifiedCSS(code, importee, postcssPlugins)
+				code = getMinifiedCSS(code, importee, resolvedConfig.css.postcss.plugins)
 
 				return {
 					code,
