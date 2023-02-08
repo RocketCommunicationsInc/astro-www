@@ -44,7 +44,7 @@ An Icon Sub-Label provides additional information to the user and may be dynamic
 
 Percentage Monitoring Icons depict a value between 0 and 100 as an arc and a numeric display. Ranges within the arc may be mapped to the standard [Astro Status Colors](/patterns/status-system). In this example the range containing 80% is mapped to Serious.
 
-![Anatomy of the Monitoring Progress Icon](/img/components/percentage-monitoring-graphic.png "Anatomy of the Monitoring Progress Icon")
+![Anatomy of the Percentage Monitoring Icon](/img/components/percentage-monitoring-graphic.png "Anatomy of the Monitoring Progress Icon")
 
 ### Notification Symbols
 
@@ -52,7 +52,7 @@ Events that require some user attention, but no immediate response, may be indic
 
 This Notification Symbol shows that ninety-nine events related to a Satellite have occurred. You may hyperlink indicators to reveal a deeper view of relevant [Notification](/patterns/notifications) information. You may also link to the general Log.
 
-![Anatomy of the Notification Count Symbol.](/img/components/notifications-symbol.png "Anatomy of the Notification Count Symbol.")
+![Anatomy of the Notification Symbol.](/img/components/notifications-symbol.png "Anatomy of the Notification Count Symbol.")
 
 ## Examples
 
