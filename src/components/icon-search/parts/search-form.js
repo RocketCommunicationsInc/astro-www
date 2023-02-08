@@ -42,30 +42,39 @@
 		onInputQueue = requestAnimationFrame(() => onInput(element.control.value))
 	})
 
+	/** @type {IconCategoryObject[]} */
 	let groups
 
 	let searchResultCountEl
 
 	let onInputQueue
 
-	let onInput = (value) => {
+	let onInput = (/** @type {string} */ value) => {
+		// value, trimmed and converted to lower case
+		value = value.trim().toLowerCase()
+
 		groups = groups || [
 			...document.querySelectorAll('.p-icon-groups .-group')
 		].map(
-			element => {
-				const name = element.querySelector('.-group-heading')?.textContent.toLowerCase()
+			(/** @type {HTMLElement} */ element) => {
+				/** Category name. */
+				const name = element.querySelector('.-group-heading').textContent.toLowerCase()
 
+				/** Icons as a normalized object. */
 				const icons = [
 					...element.querySelectorAll('.icon')
 				].map(
-					element => {
+					(/** @type {HTMLElement} */ element) => {
 						const use = element.querySelector('use')
-						const name = element.querySelector('figcaption')?.textContent.toLowerCase()
-						const tags = document.querySelector(use.getAttribute('href') + ' metadata').textContent
+						const name = element.querySelector('figcaption').textContent.toLowerCase()
+						const tags = document.querySelector(use.getAttribute('href') + ' metadata').textContent.split(', ')
 
 						return {
+							/** Icon name. */
 							name,
+							/** Icon (`<figure>`) element. */
 							element,
+							/** Icon tags. */
 							tags,
 						}
 					}
@@ -85,14 +94,22 @@
 
 		for (let iconGroup of groups) {
 			let nomatches = true
-			let earlymatch = !value || iconGroup.name.includes(value)
+
+			/** Whether the icon is matched early because it is empty or matches the category name. */
+			let earlymatch = !value || iconGroup.name.toLowerCase().includes(value)
 
 			for (let icon of iconGroup.icons) {
-				const nomatch = !earlymatch && Boolean(value) && !icon.name.includes(value) && !icon.tags.includes(value)
+				/** Whether the icon is not matching the search term. */
+				const nomatch = (
+					// whether the icon is
+					!earlymatch &&
+					!icon.name.includes(value) &&
+					!icon.tags.some(
+						tag => tag.includes(value)
+					)
+				)
 
 				nomatches = nomatches && nomatch
-
-				console.log({ value, name: icon.name, report: icon.tags })
 
 				icon.element.classList.toggle('nomatch', nomatch)
 
@@ -115,3 +132,6 @@
 		)
 	}
 }
+
+/** @typedef {{ name: string; element: HTMLElement; tags: string[] }} IconObject */
+/** @typedef {{ name: string, element: HTMLElement; icons: IconObject[] }} IconCategoryObject */
