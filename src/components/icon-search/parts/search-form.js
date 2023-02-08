@@ -1,59 +1,65 @@
 {
-	let form = document.currentScript.previousSibling
+	// eslint-disable-next-line no-undef-init
+	let any = /** @type {any} */ (undefined)
 
-	let element = {
-		form,
-		control: form.querySelector('.-control'),
-		clear: form.querySelector('.-clear'),
-	}
+	/** Search Form. */
+	let formElement = /** @type {HTMLFormElement} */ (document.currentScript.previousSibling)
 
-	let state = {
+	/** Search Terms Control. */
+	let formControl = /** @type {HTMLInputElement} */ (formElement.querySelector('.-control'))
+
+	/** Search Terms Clear Button. */
+	let formClear = /** @type {HTMLInputElement} */ (formElement.querySelector('.-clear'))
+
+	let formState = {
 		focused: false,
 		filled: false,
 	}
 
-	element.form.addEventListener('focus', () => {
-		if (state.focused !== true) element.form.classList.toggle('-focused', state.focused = true)
+	formElement.addEventListener('focus', () => {
+		if (formState.focused !== true) formElement.classList.toggle('-focused', formState.focused = true)
 	})
 
-	element.form.addEventListener('blur', () => {
-		if (state.focused !== false) element.form.classList.toggle('-focused', false)
+	formElement.addEventListener('blur', () => {
+		if (formState.focused !== false) formElement.classList.toggle('-focused', false)
 	})
 
-	element.form.addEventListener('submit', event => {
+	formElement.addEventListener('submit', event => {
 		event.preventDefault()
 	})
 
-	element.control.addEventListener('input', () => {
-		let isFilled = Boolean(element.control.value)
+	formControl.addEventListener('input', () => {
+		let isFilled = Boolean(formControl.value)
 
-		if (state.filled !== isFilled) element.form.classList.toggle('-filled', state.filled = isFilled)
-
-		cancelAnimationFrame(onInputQueue)
-		onInputQueue = requestAnimationFrame(() => onInput(element.control.value))
-	})
-
-	element.clear.addEventListener('click', () => {
-		element.control.focus()
-
-		element.form.classList.toggle('-filled', state.filled = false)
+		if (formState.filled !== isFilled) formElement.classList.toggle('-filled', formState.filled = isFilled)
 
 		cancelAnimationFrame(onInputQueue)
-		onInputQueue = requestAnimationFrame(() => onInput(element.control.value))
+		onInputQueue = requestAnimationFrame(() => onInput(formControl.value))
 	})
 
-	/** @type {IconCategoryObject[]} */
-	let groups
+	formClear.addEventListener('click', () => {
+		formControl.focus()
 
-	let searchResultCountEl
+		formElement.classList.toggle('-filled', formState.filled = false)
 
-	let onInputQueue
+		cancelAnimationFrame(onInputQueue)
+		onInputQueue = requestAnimationFrame(() => onInput(formControl.value))
+	})
+
+	/** Array of icon categories. */
+	let iconCategoryArray = /** @type {IconCategoryObject[]} */ (any)
+
+	/** Search result text (only currently used when there are no results). */
+	let noResultsElement = /** @type {HTMLParagraphElement} */ (any)
+
+	/** Number representing an awaited animation frame. */
+	let onInputQueue = 0
 
 	let onInput = (/** @type {string} */ value) => {
 		// value, trimmed and converted to lower case
 		value = value.trim().toLowerCase()
 
-		groups = groups || [
+		iconCategoryArray = iconCategoryArray || [
 			...document.querySelectorAll('.p-icon-groups .-group')
 		].map(
 			(/** @type {HTMLElement} */ element) => {
@@ -81,6 +87,7 @@
 				)
 
 				return {
+					/** Category Name */
 					name,
 					element,
 					icons,
@@ -88,11 +95,11 @@
 			}
 		)
 
-		searchResultCountEl = searchResultCountEl || document.querySelector('.p-icon-results')
+		noResultsElement = noResultsElement || document.querySelector('.p-icon-results')
 
 		let searchResultCount = 0
 
-		for (let iconGroup of groups) {
+		for (let iconGroup of iconCategoryArray) {
 			let nomatches = true
 
 			/** Whether the icon is matched early because it is empty or matches the category name. */
@@ -121,17 +128,13 @@
 			iconGroup.element.classList.toggle('nomatch', nomatches)
 		}
 
-		searchResultCountEl.innerHTML = (
-			searchResultCount
-				? (
-					searchResultCount === Number(searchResultCountEl.dataset.maxSize)
-				)
-					? ``
-				: ``
-			: `No matching icons. Please contact <a href="mailto:support@astrouxds.com">support@astrouxds.com</a>.`
+		noResultsElement.innerHTML = (
+			searchResultCount === 0
+				? `No matching icons. Please contact <a href="mailto:support@astrouxds.com">support@astrouxds.com</a>.`
+			: ``
 		)
 	}
 }
 
-/** @typedef {{ name: string; element: HTMLElement; tags: string[] }} IconObject */
-/** @typedef {{ name: string, element: HTMLElement; icons: IconObject[] }} IconCategoryObject */
+/** @typedef {import('./search-form.d').IconObject} IconObject */
+/** @typedef {import('./search-form.d').IconCategoryObject} IconCategoryObject */
