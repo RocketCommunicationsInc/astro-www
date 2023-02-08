@@ -232,7 +232,7 @@ class IconPanelInternals {
 		const viewBox = symbolElement.getAttribute('viewBox')!
 
 		/** ID of the current icon web component. */
-		const id = this.id = symbolElement.getAttribute('id')!.replace(/^#icon-/, '')
+		const id = this.id = symbolElement.getAttribute('id')!.replace(/^icon-/, '')
 
 		const fileName = id + '.svg'
 
