@@ -11,6 +11,8 @@ const countOfIcons = Object.keys(icons).reduce(
 	),
 	0
 )
+
+const Metadata = 'metadata'
 ---
 <IconSearchForm label="Search icons ..." />
 
@@ -21,10 +23,11 @@ const countOfIcons = Object.keys(icons).reduce(
 <svg id="shapes" class="p-icon-shapes">
 	<For of={Object.entries(icons)}>{([ name, icons ]) => (
 		<g data-name={name}>
-			<For of={Object.entries(icons)}>{([ id, { name, html } ]) => (
+			<For of={Object.entries(icons)}>{([ id, { name, html, tags } ]) => (
 				<symbol id={`icon-${id}`} viewBox="0 0 24 24">
 					<title>{name}</title>
 					<Fragment set:html={html} />
+					<Metadata>{tags.join(', ')}</Metadata>
 				</symbol>
 			)}</For>
 		</g>

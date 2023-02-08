@@ -59,11 +59,14 @@
 					...element.querySelectorAll('.icon')
 				].map(
 					element => {
+						const use = element.querySelector('use')
 						const name = element.querySelector('figcaption')?.textContent.toLowerCase()
+						const tags = document.querySelector(use.getAttribute('href') + ' metadata').textContent
 
 						return {
 							name,
 							element,
+							tags,
 						}
 					}
 				)
@@ -71,7 +74,7 @@
 				return {
 					name,
 					element,
-					icons
+					icons,
 				}
 			}
 		)
@@ -85,9 +88,11 @@
 			let earlymatch = !value || iconGroup.name.includes(value)
 
 			for (let icon of iconGroup.icons) {
-				const nomatch = !earlymatch && Boolean(value) && !icon.name.includes(value)
+				const nomatch = !earlymatch && Boolean(value) && !icon.name.includes(value) && !icon.tags.includes(value)
 
 				nomatches = nomatches && nomatch
+
+				console.log({ value, name: icon.name, report: icon.tags })
 
 				icon.element.classList.toggle('nomatch', nomatch)
 

@@ -69,6 +69,7 @@ class IconPanelInternals {
 	}
 
 	downloadVgButton: HTMLButtonElement
+	tagsParagraph: HTMLParagraphElement
 	emitClipboardStatus: HTMLDialogElement
 	emitClipboardStatusContent: HTMLSpanElement
 	emitClipboardActiveButton: HTMLButtonElement | null
@@ -87,6 +88,7 @@ class IconPanelInternals {
 		const preview = root.querySelector('[part~="icon"]')!
 
 		this.downloadVgButton = root.querySelector('[value="download:svg"]')!
+		this.tagsParagraph = root.querySelector('[part~="tags"]')!
 		this.emitClipboardStatus = root.querySelector('[part~="status"]')!
 		this.emitClipboardStatusContent = root.querySelector('[part~="status-content"]')!
 		this.emitClipboardWriteVgButton = root.querySelector('[value="clipboard:write:vg"]')!
@@ -246,6 +248,8 @@ class IconPanelInternals {
 		// update the download button
 		this.downloadVgButton.dataset.name = fileName
 		this.downloadVgButton.dataset.text = serializedVGContent
+
+		this.tagsParagraph.textContent = content.querySelector('metadata')!.textContent
 
 		// update the emit buttons
 		this.emitClipboardWriteIdButton.dataset.text = id
