@@ -89,10 +89,11 @@
 }
 
 .p-community-event {
+	display: grid;
+
 	/* Layout */
 	padding-block: 3--step;
 	padding-inline: 5--step;
-	display: grid;
 
 	/* Appearance */
 	background: var(--SurfaceSelectedColor);
@@ -103,14 +104,17 @@
 	color: var(--PrimaryColor);
 
 	&:is(:hover, :focus-visible) {
+		/* Appearance */
 		background: var(--InteractiveMutedColor);
 	}
 
 	&.--closed {
+		/* Layout */
 		gap: 0 10--step;
 	}
 
 	&.--open {
+		/* Animation */
 		transition: gap 150ms;
 	}
 
@@ -121,10 +125,12 @@
 		grid-template-rows: repeat(2, 1fr);
 
 		&.--closed {
+			/* Layout */
 			gap: 0 2--step;
 		}
 
 		&.--open > *:nth-child(4) {
+			/* Layout */
 			margin-block-start: 20px;
 		}
 	}
@@ -146,6 +152,7 @@
 }
 
 .p-community-event-subheading a, .p-community-event-details a {
+	/* Appearance */
 	color: var(--Orange600Color);
 }
 
@@ -177,6 +184,8 @@
 		display: -webkit-box;
 		-webkit-line-clamp: 1;
 		-webkit-box-orient: vertical;
+
+		/* Layout */
 		overflow: hidden;
 
 		/* Text */
@@ -188,6 +197,7 @@
 	}
 
 	@media (width < 1000px) {
+		/* Layout */
 		grid-area: 2 / 1 / 3 / 5;
 	}
 
@@ -253,6 +263,8 @@
 		/* Layout */
 		height: 0;
 		visibility: none;
+
+		/* Animation */
 		animation: slideUp 150ms ease-out;
 	}
 
@@ -290,9 +302,11 @@
 	--padding-inline: 4--step;
 
 	/* Layout */
-	position: relative;
 	padding-block: 4--step;
 	padding-inline: var(--padding-inline);
+
+	/* Layout */
+	position: relative;
 
 	/* Appearance */
 	background: var(--SurfaceSelectedColor);
@@ -303,6 +317,7 @@
 	color: var(--PrimaryColor);
 
 	&:is(:hover, :focus-visible) {
+		/* Appearance */
 		background: var(--InteractiveMutedColor);
 	}
 
@@ -347,10 +362,13 @@
 
 	@media (hover: hover) {
 		& a::before {
-			content: "";
-			position: absolute;
+			/* Layout */
 			inset: 0;
+			position: absolute;
 			z-index: 1;
+
+			/* Generated */
+			content: "";
 		}
 	}
 
@@ -369,10 +387,15 @@
 	line-height: calc(20 / 14);
 
 	&::after {
-		content: "";
-		background: url(/images/arrow.svg) center center no-repeat;
-		padding: 2--step;
+		/* Layout */
 		margin-inline-start: 2--step;
+		padding: 2--step;
+
+		/* Appearance */
+		background: url(/images/arrow.svg) center center no-repeat;
+
+		/* Generated */
+		content: "";
 	}
 }
 
@@ -380,20 +403,24 @@
 
 @keyframes slideDown {
 	from {
+		/* Layout */
 		height: 0;
 	}
 
 	to {
+		/* Layout */
 		height: var(--content-height, 0);
 	}
 }
 
 @keyframes slideUp {
 	from {
+		/* Layout */
 		height: var(--content-height, 0);
 	}
 
 	to {
+		/* Layout */
 		height: 0;
 	}
 }

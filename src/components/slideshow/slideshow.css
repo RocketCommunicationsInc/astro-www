@@ -7,14 +7,18 @@ slot {
 
 	/* Interface */
 	overflow: auto hidden;
+
+	/* Behavior */
 	scroll-behavior: smooth;
 	scroll-snap-type: x mandatory;
 	scrollbar-width: none;
 
 	&::-webkit-scrollbar, &::-webkit-scrollbar {
 		/* Layout */
-		width: 0;
 		height: 0;
+
+		/* Layout */
+		width: 0;
 	}
 }
 
@@ -34,6 +38,8 @@ button {
 	appearance: none;
 	background-color: transparent;
 	border-width: 0;
+
+	/* Appearance */
 	color: inherit;
 	cursor: inherit;
 }
@@ -43,6 +49,7 @@ button {
 	padding: 4--step;
 
 	@media (width < 460px) {
+		/* Layout */
 		padding: 1--step;
 	}
 

@@ -36,24 +36,25 @@
 	}
 
 	& .x-card {
-		position: relative;
 		display: flex;
-		box-shadow: var(--Grey700Color) 0 0 0 1px inset;
-
-		--padding-block: 5--step;
-		--padding-inline: 10--step;
 
 		/* Layout */
 		flex-basis: 100%;
 		flex-flow: column;
 		padding-block: var(--padding-block);
 		padding-inline: var(--padding-inline);
+		position: relative;
 
 		/* Appearance */
 		background-color: var(--SurfaceSelectedColor);
 		border-radius: var(--EdgeRadius);
+		box-shadow: var(--Grey700Color) 0 0 0 1px inset;
+
+		--padding-block: 5--step;
+		--padding-inline: 10--step;
 
 		&:is(:hover, :focus-visible) {
+			/* Appearance */
 			background: var(--InteractiveMutedColor);
 		}
 	}
@@ -95,14 +96,20 @@
 			margin-block-start: 5--step;
 
 			&::after {
-				content: "";
-				background: url(/images/arrow.svg) center center no-repeat;
-				padding: 2--step;
+				/* Layout */
 				margin-inline-start: 2--step;
+				padding: 2--step;
+
+				/* Appearance */
+				background: url(/images/arrow.svg) center center no-repeat;
+
+				/* Generated */
+				content: "";
 			}
 		}
 
 		& a {
+			/* Appearance */
 			color: var(--PrimaryColor);
 			cursor: pointer;
 
@@ -112,10 +119,13 @@
 
 			@media (hover: hover) {
 				&::before {
-					content: "";
-					position: absolute;
+					/* Layout */
 					inset: 0;
+					position: absolute;
 					z-index: 1;
+
+					/* Generated */
+					content: "";
 				}
 			}
 		}

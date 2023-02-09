@@ -3,9 +3,11 @@ sl-tab-group {
 }
 
 sl-tab[active]::part(base) {
+	/* Appearance */
 	color: var(--Orange700Color);
 }
 
 sl-tab:hover::part(base) {
+	/* Appearance */
 	color: var(--Orange700Color);
 }
