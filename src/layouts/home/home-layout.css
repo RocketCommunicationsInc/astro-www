@@ -1,10 +1,10 @@
 .-main {
 	display: flex;
-	overflow: hidden;
 
 	/* Layout */
 	align-items: center;
 	flex-flow: column;
+	overflow: hidden;
 	padding-block-end: 18--step;
 	padding-inline: max(4--step, 50% - 190--step);
 

@@ -6,7 +6,7 @@ import icons from 'project:data/icons.json'
 import './icon-search.css'
 
 const countOfIcons = Object.keys(icons).reduce(
-	(acc, key)=> (
+	(acc, key) => (
 		acc += Object.keys(icons[key]).length
 	),
 	0
@@ -21,7 +21,7 @@ const countOfIcons = Object.keys(icons).reduce(
 <svg id="shapes" class="p-icon-shapes">
 	<For of={Object.entries(icons)}>{([ name, icons ]) => (
 		<g data-name={name}>
-			<For of={Object.entries(icons)}>{([ id, { name, path, tags } ]) => (
+			<For of={Object.entries(icons)}>{([ id, { name, path, tags }]) => (
 				<symbol id={`icon-${id}`} viewBox="0 0 24 24">
 					<title>{name}</title>
 					<path {...path} />

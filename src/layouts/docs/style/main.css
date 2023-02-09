@@ -6,6 +6,7 @@ main {
 	padding-inline: 4--step;
 
 	@media (width > 800px) {
+		/* Layout */
 		padding-inline: 8--step;
 	}
 
@@ -58,9 +59,12 @@ main {
 	& ul {
 		/* Layout */
 		list-style: disc;
+
+		/* Layout */
 		padding-inline-start: 4--step;
 
 		& ul {
+			/* Layout */
 			margin-block-start: 2--step;
 			padding-inline-start: 5--step;
 		}
@@ -90,6 +94,7 @@ main {
 	}
 
 	& td img {
+		/* Layout */
 		max-inline-size: none;
 	}
 
@@ -110,9 +115,12 @@ main {
 				/* Text */
 				text-decoration: underline;
 				text-decoration-thickness: 1.25px;
+
+				/* Text */
 				text-decoration-color: var(--LinkColor);
 
 				&:hover {
+					/* Text */
 					text-decoration-style: double;
 					text-decoration-thickness: 1.5px;
 				}
@@ -121,6 +129,7 @@ main {
 	}
 
 	& img {
+		/* Layout */
 		block-size: auto;
 		max-inline-size: 100%;
 	}
@@ -146,14 +155,15 @@ main {
 			counter-increment: counter;
 
 			&::before {
-				content: counter(counter);
 				display: inline-block;
+
+				/* Layout */
 				float: inline-start;
+				height: var(--size);
 
 				/* Layout */
 				margin-block-start: -.25--step;
 				margin-inline: -8--step 1--step;
-				height: var(--size);
 				width: var(--size);
 
 				/* Text */
@@ -165,6 +175,9 @@ main {
 				background: var(--TextColor);
 				border-radius: 50%;
 				color: var(--PrimaryColor);
+
+				/* Generated */
+				content: counter(counter);
 
 				/* Reference */
 				--size: 6--step;

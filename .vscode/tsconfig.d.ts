@@ -19,3 +19,13 @@ declare namespace NodeJS {
 	type Timeout = number
 	type Timer = number
 }
+
+declare global {
+	/** GTag Data Layer. */
+	// eslint-disable-next-line no-unused-vars,no-var
+	var dataLayer: IArguments[]
+
+	/** GTag Command Queue function. */
+	// eslint-disable-next-line no-unused-vars,no-var
+	var gtag: Gtag
+}

@@ -1,7 +1,9 @@
 .p-articles {
 	/* Layout */
-	max-inline-size: 100%;
 	inline-size: 100%;
+
+	/* Layout */
+	max-inline-size: 100%;
 
 	& .p-articles-content {
 		/* Layout */
@@ -48,6 +50,8 @@
 
 	& .-articles-content {
 		display: flex;
+
+		/* Layout */
 		flex-direction: column;
 
 		/* Layout */
@@ -90,12 +94,12 @@
 
 .p-article {
 	display: flex;
-	position: relative;
 
 	/* Layout */
 	flex-flow: column;
 	gap: 4--step;
 	padding-block-end: 6--step;
+	position: relative;
 
 	/* Appearance */
 	background-color: var(--SurfaceSelectedColor);
@@ -103,49 +107,64 @@
 	box-shadow: var(--Grey700Color) 0 0 0 1px inset;
 
 	& .-heading {
+		/* stylelint-disable-next-line value-no-vendor-prefix */
+		display: -webkit-box;
+
+		/* Layout */
+		overflow: hidden;
+		padding-inline: 6--step;
+
+		/* Text */
 		font-size: 20--rpx;
 		font-weight: 700;
 		line-height: calc(24 / 20);
-		padding-inline: 6--step;
-		/* stylelint-disable-next-line value-no-vendor-prefix */
-		display: -webkit-box;
 		-webkit-line-clamp: 1;
-		overflow: hidden;
 		-webkit-box-orient: vertical;
 
 		& > a {
 			@media (hover: hover) {
 				&::before {
-					content: "";
-					position: absolute;
+					/* Layout */
 					inset: 0;
+					position: absolute;
 					z-index: 1;
+
+					/* Generated */
+					content: "";
 				}
 			}
 		}
 	}
 
 	& .-content {
+		/* Layout */
 		padding-inline: 6--step;
 
 		&::after {
-			content: "";
-			background: url(/images/arrow.svg) center center no-repeat;
-			padding: 2--step;
+			/* Layout */
 			margin-inline-start: 2--step;
+			padding: 2--step;
+
+			/* Appearance */
+			background: url(/images/arrow.svg) center center no-repeat;
+
+			/* Generated */
+			content: "";
 		}
 	}
 
 	& .-image {
-		inline-size: auto;
+		/* Layout */
 		aspect-ratio: 4 / 3;
+		inline-size: auto;
 		margin-block-end: 2--step;
+		margin-block-start: 1--rpx; /* set so image won't overlap the top border */
 		border-start-start-radius: 1--step;
 		border-start-end-radius: 1--step;
-		margin-block-start: 1--rpx; /* set so image won't overlap the top border */
 	}
 
 	&:is(:hover, :focus-visible) {
+		/* Appearance */
 		background: var(--InteractiveMutedColor);
 	}
 }
@@ -155,45 +174,61 @@
 
 	/* Layout */
 	align-items: center;
-	scroll-snap-type: x mandatory;
 
 	/* Interface */
 	scroll-behavior: smooth;
+	scroll-snap-type: x mandatory;
 	scrollbar-width: none;
 
 	& + .-link {
-		color: var(--Orange600Color);
 		display: block;
-		width: min(100%, calc(1--articlesize * 1--articlecount + 1--gap * (1--articlecount - 1)));
+
+		/* Layout */
 		margin: 2--step auto;
+		width: min(100%, calc(1--articlesize * 1--articlecount + 1--gap * (1--articlecount - 1)));
+
+		/* Text */
 		text-align: end;
 
+		/* Appearance */
+		color: var(--Orange600Color);
+
 		&::after {
-			content: "";
-			background: url(/images/arrow.svg) center center no-repeat;
-			padding: 2--step;
+			/* Layout */
 			margin-inline-start: 2--step;
+			padding: 2--step;
+
+			/* Appearance */
+			background: url(/images/arrow.svg) center center no-repeat;
+
+			/* Generated */
+			content: "";
 		}
 	}
 
 	&:defined {
+		/* Layout */
 		justify-content: center;
 		overflow: hidden;
 	}
 
 	&:not(:defined) {
-		inline-size: min(100%, calc(1--articlesize * 1--articlecount + 1--gap * (1--articlecount - 1)));
+		/* Layout */
 		gap: 1--gap;
+		inline-size: min(100%, calc(1--articlesize * 1--articlecount + 1--gap * (1--articlecount - 1)));
 		overflow: auto hidden;
 	}
 
 	&::-webkit-scrollbar, &::-webkit-scrollbar {
 		/* Layout */
-		width: 0;
 		height: 0;
+
+		/* Layout */
+		width: 0;
 	}
 
 	& .p-article {
+		/* Layout */
 		inline-size: 1--articlesize;
 		scroll-snap-align: start;
 	}

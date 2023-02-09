@@ -22,4 +22,11 @@
 
 		eventElement.classList.contains('--open') ? eventDetailsToggle.textContent = 'Hide Details' : eventDetailsToggle.textContent = 'View Details'
 	})
+
+	// telemetry: user opens the community event details
+	eventDetailsToggle.addEventListener('click', () => {
+		if (!eventElement.classList.contains('--open')) return
+
+		gtag('event', 'open_community_event_details')
+	})
 }
