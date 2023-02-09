@@ -1,0 +1,13 @@
+.p-category-select {
+
+	/* Reset */
+	appearance: none;
+
+	/* Appearance */
+	background: var(--PrimaryColor);
+	border-color: transparent;
+
+	/* Text */
+	font-family: var(--SystemType);
+	font-size: 9--step;
+}

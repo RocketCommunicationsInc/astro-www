@@ -1,47 +1,61 @@
+.p-icon-search {
+	/* Layout */
+	inset-block-start: 0;
+	margin-inline: -16px;
+	margin-inline-end: -16px;
+	padding-inline: 16px;
+	padding-inline-end: 16px;
+	position: sticky;
+
+	/* Appearance */
+	background-color: var(--PrimaryColor);
+	filter: drop-shadow(0 3px 2px rgba(0, 0, 0, .25));
+}
+
 .p-icon-groups {
-	@media (width < 400px) {
+	@media (width < 360px) {
 		--grid-size: 2;
-		--icon-size: 16px;
+		--icon-size: 50--rpx;
 	}
 
-	@media (400px <= width < 600px) {
+	@media (360px <= width < 600px) {
 		--grid-size: 3;
-		--icon-size: 16px;
+		--icon-size: 50--rpx;
 	}
 
 	@media (600px <= width < 800px) {
 		--grid-size: 4;
-		--icon-size: 16px;
+		--icon-size: 50--rpx;
 	}
 
 	@media (800px <= width < 960px) {
-		--grid-size: 1;
-		--icon-size: 16px;
+		--grid-size: 4;
+		--icon-size: 50--rpx;
 	}
 
 	@media (960px <= width < 1024px) {
-		--grid-size: 2;
-		--icon-size: 16px;
+		--grid-size: 4;
+		--icon-size: 50--rpx;
 	}
 
 	@media (1024px <= width < 1160px) {
-		--grid-size: 3;
-		--icon-size: 16px;
+		--grid-size: 5;
+		--icon-size: 50--rpx;
 	}
 
 	@media (1160px <= width < 1480px) {
-		--grid-size: 4;
-		--icon-size: 20px;
+		--grid-size: 5;
+		--icon-size: 50--rpx;
 	}
 
 	@media (1480px <= width < 1600px) {
-		--grid-size: 5;
-		--icon-size: 50px;
+		--grid-size: 6;
+		--icon-size: 50--rpx;
 	}
 
 	@media (width >= 1600px) {
-		--grid-size: 6;
-		--icon-size: 50px;
+		--grid-size: 8;
+		--icon-size: 50--rpx;
 	}
 
 	& .-group {
@@ -62,18 +76,30 @@
 			/* Layout */
 			align-items: center;
 			flex-flow: column;
+			margin-inline: 1--step;
 			padding-block: 8--step;
-			padding-inline: 3--step;
+			padding-inline: 5--step;
+
+			@media (width < 1024px) {
+				/* Layout */
+				padding-block: 2--step;
+				padding-inline: 1--step;
+			}
 
 			/* Typography */
 			text-align: center;
 
 			/* Appearance */
+			background-color: var(--PrimaryColor);
 			border-radius: 6--rpx;
+			cursor: pointer;
+
+			/* Interaction */
+			transition: background-color 200ms ease-in-out;
 
 			&:is(figure) {
 				/* Layout */
-				margin-block: 0;
+				margin-block: 1--step;
 			}
 
 			&:hover, &:focus-visible {

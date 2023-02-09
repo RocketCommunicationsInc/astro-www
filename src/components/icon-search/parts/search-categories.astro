@@ -1,0 +1,9 @@
+---
+const { disabled, label } = Astro.props
+
+import './search-categories.css'
+import scriptURL from './search-categories.js?url'
+---
+<select class="p-category-select">
+		<option value="content" style="font-size:10px">Categories...</option>
+</select><script defer src={scriptURL} />

@@ -6,7 +6,7 @@ import scriptURL from './icon-groups.js?url'
 <div class="p-icon-groups">
 	<For of={Object.entries(icons)}>{([ name, icons ]) => (
 		<article class="-group">
-			<h2 class="-group-heading">{name}</h2>
+			<h2 class="-group-heading" id={name}>{name}</h2>
 			<div class="-icons">
 				<For of={Object.entries(icons).sort()}>{([ id, { name, html } ]) => (
 					<figure class="icon" tabindex="0">

@@ -1,12 +1,7 @@
 .p-searchform {
 	/* Layout */
-	inset-block-start: 0;
 	margin-block: -5--step -5--step;
 	padding-block: 5--step 5--step;
-	position: sticky;
-
-	/* Appearance */
-	background-color: var(--PrimaryColor);
 
 	/* Reference */
 	--border-color: var(--Grey700Color);

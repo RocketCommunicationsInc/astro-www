@@ -2,6 +2,7 @@
 import { For } from '@astropub/flow'
 import IconGroups from 'project:components/icon-search/parts/icon-groups.astro'
 import IconSearchForm from './parts/search-form.astro'
+import IconCategories from './parts/search-categories.astro'
 import icons from 'project:data/icons.json'
 import './icon-search.css'
 
@@ -12,7 +13,7 @@ const countOfIcons = Object.keys(icons).reduce(
 	0
 )
 ---
-<IconSearchForm label="Search icons ..." />
+<section class="p-icon-search"><IconCategories /><IconSearchForm label="Search icons ..." /></section>
 
 <p class="p-icon-results" data-max-size={countOfIcons} />
 

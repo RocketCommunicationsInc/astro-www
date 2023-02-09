@@ -86,6 +86,10 @@ h2 {
 		letter-spacing: .0025em;
 		line-height: calc(40 / 36);
 		text-align: center;
+
+		@media (width < 800px) {
+			font-size: 16--rpx;
+		}
 	}
 
 	&::part(icon) {
@@ -97,6 +101,10 @@ h2 {
 
 		/* Appearance */
 		border-radius: 12--rpx;
+
+		@media (width < 800px) {
+			block-size: 50--rpx;
+		}
 	}
 
 	&::part(status) {
