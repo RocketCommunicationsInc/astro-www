@@ -31,6 +31,7 @@
 		"parse-yaml": "0.1.0",
 		"postcss-load-config": "^4.0.1",
 		"postcss-preset-env": "8.0.1",
+		"postcss-short-size": "5.0.0",
 		"remark-directive": "2.0.1",
 		"stylelint": "14.16.1",
 		"stylelint-config-dev": "4.0.0",

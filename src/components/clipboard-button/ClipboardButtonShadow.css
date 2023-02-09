@@ -1,0 +1,41 @@
+* {
+	/* Layout */
+	box-sizing: border-box;
+}
+
+button {
+	all: unset;
+}
+
+:host {
+	&::part(button) {
+		display: flex;
+
+		/* Layout */
+		padding: 1--step;
+
+		/* Appearance */
+		background-color: var(--Grey100Color);
+		border-radius: var(--EdgeRadius);
+		box-shadow: var(--Grey500Color) 0 0 0 1px inset;
+		color: var(--Grey800Color);
+		cursor: pointer;
+
+		&:is(:focus-visible, :hover) {
+			/* Appearance */
+			background-color: var(--Grey200Color);
+		}
+
+		&:is(:active) {
+			/* Appearance */
+			background-color: var(--Grey300Color);
+			color: var(--Grey900Color);
+		}
+	}
+
+	&::part(icon) {
+		/* Layout */
+		block-size: 3--step;
+		inline-size: 3--step;
+	}
+}
