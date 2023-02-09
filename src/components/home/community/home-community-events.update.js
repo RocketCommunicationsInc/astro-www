@@ -64,6 +64,13 @@ const withCalendarInteractiveBehavior = (/** @type {HTMLElement} */ calendarEven
 		articleElement.classList.contains('--open') ? actionsElement.textContent = 'Hide Details' : actionsElement.textContent = 'View Details'
 	})
 
+	// telemetry: user opens the community event details
+	actionsElement.addEventListener('click', () => {
+		if (!articleElement.classList.contains('--open')) return
+
+		gtag('event', 'open_community_event_details')
+	})
+
 	return calendarEventFragment
 }
 
