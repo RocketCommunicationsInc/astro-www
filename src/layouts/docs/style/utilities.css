@@ -12,6 +12,36 @@
 	}
 }
 
+/* Table for Status System page */
+/* ========================================================================== */
+
+.status-system-colors {
+	/* Layout */
+	overflow-x: auto;
+
+	& table {
+		/* Layout */
+		min-width: auto;
+		width: 100%;
+
+		& td {
+			/* Text */
+			line-height: 1.5rem;
+		}
+	}
+
+	& .status-color {
+		/* Layout */
+		box-sizing: border-box;
+		height: 16--step;
+		width: 16--step;
+
+		/* Appearance */
+		background: transparent;
+		border: 1--step solid transparent;
+	}
+}
+
 /* Code */
 /* ========================================================================== */
 
