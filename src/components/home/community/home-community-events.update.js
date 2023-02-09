@@ -1,5 +1,6 @@
 import { h } from 'project:utils/html.ts'
 import { fetchGoogleCalendarEvents } from './home-community-events.constants.ts'
+import { gtag } from 'project:utils/client/google-analytics.ts'
 
 /** Returns a string, empty if the value is nullish. */
 const toString = (value) => value == null ? '' : String(value)
@@ -61,6 +62,16 @@ const withCalendarInteractiveBehavior = (/** @type {HTMLElement} */ calendarEven
 		articleElement.classList.toggle('--open')
 
 		articleElement.classList.contains('--open') ? actionsElement.textContent = 'Hide Details' : actionsElement.textContent = 'View Details'
+	})
+
+	console.log(detailsElement, articleElement)
+
+	actionsElement.addEventListener('click', event => {
+		if (articleElement.classList.contains('--open')) {
+			gtag('event', 'open_community_event_details', {
+
+			})
+		}
 	})
 
 	return calendarEventFragment
