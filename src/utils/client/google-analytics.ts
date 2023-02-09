@@ -14,8 +14,16 @@ if (!globalThis.dataLayer) {
 	]
 }
 
+const dataLayer = globalThis.dataLayer
+
 if (!globalThis.gtag) {
-	globalThis.gtag = (...args: any) => globalThis.dataLayer.push(args)
+	globalThis.gtag = function gtag() {
+		dataLayer.push(arguments)
+	}
 }
 
-export const gtag = globalThis.gtag
+export const gtag: Push = globalThis.gtag
+
+interface Push {
+	(event: string, parameters: any[]): void
+}
