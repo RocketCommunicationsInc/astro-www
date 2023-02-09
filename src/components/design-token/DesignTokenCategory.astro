@@ -56,6 +56,10 @@ const { theme, ...category } = Astro.props
 	/* Appearance */
 	outline-offset: -3--step;
 
+	&::-webkit-details-marker {
+		display: none;
+	}
+
 	& a {
 		/* Text */
 		user-select: auto;
