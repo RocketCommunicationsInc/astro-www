@@ -8,7 +8,7 @@ import scriptURL from './icon-groups.js?url'
 		<article class="-group">
 			<h2 class="-group-heading">{name}</h2>
 			<div class="-icons">
-				<For of={Object.entries(icons).sort()}>{([ id, { name }]) => (
+				<For of={Object.entries(icons)}>{([ id, { name }]) => (
 					<figure class="icon" tabindex="0">
 						<svg aria-label={name}><use href={`#icon-${id}`} /></svg>
 						<figcaption>{name}</figcaption>
