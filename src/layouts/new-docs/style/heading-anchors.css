@@ -9,7 +9,6 @@ a.h {
 		display: flex;
 
 		&::before {
-			content: var(--AnchorIcon);
 			display: inline-block;
 
 			/* Layout */
@@ -19,7 +18,12 @@ a.h {
 
 			/* Appearance */
 			opacity: 0;
+
+			/* Animation */
 			transition: opacity 200ms;
+
+			/* Generated */
+			content: var(--AnchorIcon);
 		}
 	}
 
@@ -33,6 +37,7 @@ a.h {
 	}
 
 	&:hover, &:focus-visible {
+		/* Appearance */
 		color: var(--InvertedColor);
 	}
 

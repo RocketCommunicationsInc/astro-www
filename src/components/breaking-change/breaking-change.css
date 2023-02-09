@@ -1,5 +1,6 @@
 .breaking-change {
 	& h3 {
+		/* Layout */
 		border-block-end: none;
 		margin: 0;
 		padding: 0;
@@ -7,35 +8,46 @@
 
 	& header {
 		display: flex;
+
+		/* Layout */
 		align-items: center;
-		padding-block-end: 1rem;
 		border-block-end: 1px solid #eeeeee;
+		padding-block-end: 1rem;
 
 		& .breaking-change__impact {
+			/* Layout */
 			margin-inline-start: auto;
 		}
 	}
 
 	& p {
-		line-height: 1.5;
-		padding-block-start: .4rem;
+		/* Layout */
 		margin-block-end: .8rem;
+		padding-block-start: .4rem;
+
+		/* Text */
+		line-height: 1.5;
 	}
 }
 
 .breaking-change__content {
+	/* Layout */
 	padding: 1rem;
 }
 
 .breaking-change__code {
 	display: flex;
+
+	/* Layout */
 	justify-content: space-between;
 }
 
 .breaking-change__code__title {
+	/* Text */
 	font-size: 1.5rem;
 }
 
 .breaking-change__code__block {
+	/* Layout */
 	width: 45%;
 }

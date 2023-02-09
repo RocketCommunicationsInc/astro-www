@@ -18,10 +18,11 @@ a.h {
 
 		/* Appearance */
 		box-shadow: var(--border-color) 0 -1--border-size 0 0 inset;
+
+		/* Animation */
 		transition: box-shadow 60ms;
 
 		&::before {
-			content: var(--AnchorIcon);
 			display: inline-block;
 
 			/* Layout */
@@ -31,7 +32,12 @@ a.h {
 
 			/* Appearance */
 			opacity: 0;
+
+			/* Animation */
 			transition: opacity 200ms;
+
+			/* Generated */
+			content: var(--AnchorIcon);
 		}
 	}
 
@@ -45,6 +51,7 @@ a.h {
 	}
 
 	&:hover, &:focus-visible {
+		/* Appearance */
 		color: var(--InvertedColor);
 	}
 

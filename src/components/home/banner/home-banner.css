@@ -49,8 +49,11 @@
 }
 
 .p-version {
-	font-size: 14--rpx;
-	margin-block-start: 4--step;
+	/* Layout */
 	margin-block-end: 4--step;
+	margin-block-start: 4--step;
 	margin-inline-start: auto;
+
+	/* Text */
+	font-size: 14--rpx;
 }
