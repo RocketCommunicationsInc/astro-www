@@ -1,0 +1,92 @@
+---
+import type { TokenCategory } from 'project:utils/tokens-types'
+import { For, When } from '@astropub/flow'
+import DesignToken from 'project:components/design-token/DesignToken.astro'
+
+export interface Props extends TokenCategory {
+	theme: 'dark' | 'lite'
+}
+
+const { theme, ...category } = Astro.props
+---
+<article class="token-list">
+	<details class="token-details" open>
+		<summary class="token-details-summary">
+			<a href={category.hash} class="h h2">
+				<h2 id={category.slug}>{category.name}</h2>
+			</a>
+		</summary>
+		<When test={category.description}>
+			<p>{category.description}</p>
+		</When>
+		<When test={category.note}>
+			<div class="note">
+				<p>{category.note}</p>
+			</div>
+		</When>
+		<div class="x-listing">
+			<For of={Object.values(category.tokens)}>{token => (
+				<DesignToken theme={theme} {...token} />
+			)}</For>
+		</div>
+	</details>
+</article>
+<style is:global>
+.token-list {
+	& .x-listing {
+		display: flex;
+
+		/* Layout */
+		flex-flow: column;
+		gap: 12--step 8--step;
+		margin-block-start: 8--step;
+	}
+}
+
+.token-details-summary {
+	display: flex;
+
+	/* Layout */
+	align-items: baseline;
+	gap: 6--step;
+
+	/* Text */
+	user-select: none;
+
+	/* Appearance */
+	outline-offset: -3--step;
+
+	&::-webkit-details-marker {
+		display: none;
+	}
+
+	& a {
+		/* Text */
+		user-select: auto;
+	}
+
+	@nest details > &::before {
+		display: inline-block;
+
+		@media (width < 800px) {
+			/* Layout */
+			margin-inline-start: -2--step;
+			inline-size: 2--step;
+		}
+
+		@media (width >= 800px) {
+			/* Layout */
+			margin-inline-start: -4--step;
+			inline-size: 4--step;
+		}
+	}
+
+	@nest details:not([open]) > &::before {
+		content: "▶";
+	}
+
+	@nest details[open] > &::before {
+		content: "▼";
+	}
+}
+</style>

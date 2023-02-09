@@ -1,0 +1,190 @@
+---
+import type { Token } from 'project:utils/tokens-types'
+import { When } from '@astropub/flow'
+
+export interface Props extends Token {
+	theme: 'dark' | 'lite'
+}
+
+/** Returns CSS to inject into style attribute. */
+const getCategoryStyle = (category: string, value: string) => (
+	category === 'border-width' ? `--border-width:${value}` :
+	category.endsWith('color') ? `background-color:${value}` :
+	category === 'opacity' ? `--opacity:${value}` :
+	category === 'radius' ? `border-radius:${value}` :
+	category === 'spacing' ? `--spacing:${value}` :
+	category === 'text-case' ? `text-decoration:${value}` :
+	`${category}:${value}`
+)
+
+const { theme, ...token } = Astro.props
+---
+<article class="token" aria-labelledby={token.slug}>
+	<div class="x-preview">
+		<div class="x-image" role="img" aria-label="preview" data-category={token.category} data-value={token[theme].value} style={getCategoryStyle(token.category, token[theme].value)} />
+	</div>
+	<div class="x-details" role="none">
+		<div class="x-label" role="heading" aria-level="3" id={token.slug}>{token.name}</div>
+		<div class="x-property" role="none" data-append="a-clipboard-button"><code>var(--{token.slug})</code></div>
+		<div class="x-value">{token[theme].value}</div>
+		<When test={token.description !== ''}>
+			<div class="x-description">{token.description}</div>
+		</When>
+	</div>
+</article>
+<style is:global>
+.token {
+	display: grid;
+
+	/* Layout */
+	grid-template-columns: 24--step auto;
+	padding-block-end: 2--step;
+	gap: 4--step;
+
+	/* Appearance */
+	box-shadow: var(--Grey200Color) 0 -1px 0 0 inset;
+
+	& .x-preview, & .x-details {
+		display: flex;
+
+		/* Layout */
+		flex-flow: column;
+		gap: 1--step;
+	}
+
+	& .x-details {
+		/* Layout */
+		align-items: start;
+		flex-basis: 100%;
+		overflow: hidden;
+	}
+
+	& .x-value {
+		/* Text */
+		font-family: var(--SystemMonoType);
+		font-size: 12--rpx;
+		line-height: calc(20 / 12);
+
+		color: var(--Grey600Color);
+	}
+
+	& .x-image {
+		/* Layout */
+		block-size: 24--step;
+		inline-size: 24--step;
+
+		/* Appearance */
+		border-radius: var(--EdgeRadius);
+		box-shadow: var(--Grey500Color) 0 0 0 calc(var(--border-width)) inset;
+
+		--border-width: 1px;
+	}
+
+	& .x-image[data-category="font-family"],
+	& .x-image[data-category="font-size"],
+	& .x-image[data-category="font-weight"],
+	& .x-image[data-category="letter-spacing"],
+	& .x-image[data-category="paragraph-spacing"],
+	& .x-image[data-category="text-case"],
+	& .x-image[data-category="text-decoration"] {
+		display: flex;
+
+		/* Layout */
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+
+		/* Text */
+		font-size: 12--rpx;
+		line-height: calc(16 / 12);
+
+		&::before {
+			content: "Aa";
+		}
+	}
+
+	& .x-image[data-category="radius"] {
+		background-color: var(--Grey100Color);
+	}
+
+	& .x-image[data-category="line-height"] {
+		display: flex;
+
+		/* Layout */
+		align-items: start;
+		justify-content: center;
+		overflow: hidden;
+
+		&::before {
+			content: "In my younger and more vulnerable years";
+		}
+	}
+
+	& .x-image[data-category="border-width"],
+	& .x-image[data-category="opacity"] {
+		background: repeating-conic-gradient(
+			hsl(0 0% 50% / var(--opacity, 10%)) 0% 25%,
+			hsl(0 0% 50% / 0%) 0% 50%
+		) 50% / 4--step 4--step;
+	}
+
+	& .x-image[data-category="spacing"] {
+		display: flex;
+
+		/* Layout */
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+
+		&::before {
+			display: block;
+			content: "";
+			block-size: var(--spacing);
+			inline-size: var(--spacing);
+
+			/* Appearance */
+			background-color: var(--Grey700Color);
+			border-radius: var(--EdgeRadius);
+		}
+	}
+
+	& .x-label {
+		/* Text */
+		font-weight: 700;
+	}
+
+	& .x-property {
+		display: grid;
+
+		/* Layout */
+		align-items: self-start;
+		grid-template-columns: auto 5--step;
+		gap: 1--step;
+
+		/* Text */
+		font-size: 14--rpx;
+		line-height: calc(20 / 14);
+
+		& code {
+			display: block;
+
+			/* Layout */
+			overflow-x: auto;
+
+			/* Text */
+			font-family: var(--SystemMonoType);
+			word-break: break-all;
+			white-space: nowrap;
+		}
+	}
+
+	& .x-description {
+		/* Layout */
+		margin-block-start: 1--step;
+
+		/* Text */
+		font-size: 14--rpx;
+		line-height: calc(20 / 14);
+	}
+}
+</style>
