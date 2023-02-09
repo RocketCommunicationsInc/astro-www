@@ -64,16 +64,6 @@ const withCalendarInteractiveBehavior = (/** @type {HTMLElement} */ calendarEven
 		articleElement.classList.contains('--open') ? actionsElement.textContent = 'Hide Details' : actionsElement.textContent = 'View Details'
 	})
 
-	console.log(detailsElement, articleElement)
-
-	actionsElement.addEventListener('click', event => {
-		if (articleElement.classList.contains('--open')) {
-			gtag('event', 'open_community_event_details', {
-
-			})
-		}
-	})
-
 	return calendarEventFragment
 }
 

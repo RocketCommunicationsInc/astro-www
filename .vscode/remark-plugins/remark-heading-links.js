@@ -6,6 +6,8 @@ function remarkHeadingLinks() {
 	const visited = new WeakSet()
 
 	return (tree) => {
+		let hasVisitedH1 = false
+
 		visit(tree, (node) => {
 			if (visited.has(node)) return
 			if (node.type !== 'heading') return
@@ -28,9 +30,20 @@ function remarkHeadingLinks() {
 			delete node.children
 			delete node.position
 
+			/** Slug (URL hash) given to the heading. */
+			let slug = slugger.slug(child.value)
+
+			// if the heading is the first H1
+			if (!hasVisitedH1 && heading.depth === 1) {
+				// change the slug to the #content
+				slug = 'content'
+
+				hasVisitedH1 = true
+			}
+
 			Object.assign(node, {
 				type: 'link',
-				url: `#${slugger.slug(child.value)}`,
+				url: `#${slug}`,
 				children: [
 					heading
 				],

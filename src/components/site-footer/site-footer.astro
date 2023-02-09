@@ -1,5 +1,6 @@
 ---
 import './site-footer.css'
+const year = new Date().getFullYear()
 ---
 <footer class="p-footer">
 	<div class="p-footer-author">
@@ -67,6 +68,7 @@ import './site-footer.css'
 			<p>
 				<strong>Provided by</strong>: <span>United States Space Force | SSC | EGS | SY | SATOPS</span>
 			</p>
+			<p class="p-footer-copyright">© {year} Rocket Communications, Inc.</p>
 		</div>
 	</div>
 </footer>

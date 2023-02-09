@@ -1,18 +1,28 @@
 export const id = 'G-ZHMMGPG3B3'
 
-const dataLayer = globalThis.dataLayer = [
-	[ 'js', new Date() ],
-	[ 'config', id ],
-] as [ command: string, ...parameters: any[]][ ]
+const scriptURL = `https://www.googletagmanager.com/gtag/js?id=${id}`
 
-export const gtag = globalThis.gtag = (command: string, ...parameters: string[]) => {
-	dataLayer.push([ command, ...parameters ])
+const dataLayer = (
+	globalThis.dataLayer = (
+		globalThis.dataLayer || [
+			[ 'js', new Date() ],
+			[ 'config', id ],
+		]
+	)
+) as [ command: string, ...parameters: any[]][ ]
+
+export const gtag = (
+	globalThis.gtag = (
+		globalThis.gtag || (
+			(...args: any) => dataLayer.push(args)
+		)
+	)
+) as {
+	(command: string, ...parameters: string[]): void
 }
 
-if (globalThis.document) {
-	const scriptElement = document.createElement('script')
+const scriptElement = document.querySelector(`script[src=${JSON.stringify(scriptURL)}]`) || Object.assign(document.createElement('script'), { src: scriptURL })
 
-	scriptElement.src = `https://www.googletagmanager.com/gtag/js?id=${id}`
-
+if (!scriptElement.isConnected) {
 	document.head.append(scriptElement)
 }

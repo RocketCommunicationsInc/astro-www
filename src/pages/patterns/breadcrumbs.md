@@ -2,18 +2,14 @@
 title: Breadcrumbs
 layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-breadcrumb--default-story
-height: 250px
+height: 120px
 git: rux-breadcrumb
 ---
 
 # Breadcrumbs
 
-![](/img/patterns/breadcrumbs-sample.png)
+::storybook-demo
 
-:::note
-The Breadcrumbs web component is currently in development. Astro provides the guidance here for using Breadcrumbs and has developed a [Figma design component](https://www.figma.com/community/file/1157371532469023309) for use in UI mockups.
-:::
- 
 Breadcrumbs are a secondary navigation pattern that provides users with an ordered list of links that helps visualize locational awareness within a site’s hierarchy. Breadcrumbs provide a user with their current site location and allows them to quickly navigate to a parent page or previous step.
 
 ## Rules of Thumb
@@ -29,7 +25,7 @@ Each Breadcrumb item is comprised of a clickable page link followed by a dividin
 
 Breadcrumb links should be styled in the Astro-defined primary interactive color. Breadcrumb items that are hovered over should be styled in the interactive hover color and have no underline. The last current page Breadcrumb item should not be interactive and should be styled as the primary text color.
 
-A Breadcrumb trail should span no more than half of the parent window’s width, beyond which label truncation or line wrapping should be used.
+When used in applications intended for large monitors, Breadcrumb trails should span no more than half of the parent window’s width, beyond which label truncation or line wrapping should be used.
 
 ![](/img/patterns/breadcrumbs-halfway.png)
 
@@ -54,7 +50,7 @@ While presenting a single non-interactive Breadcrumb on a homepage is relatively
 
 ![Do: Truncate breadcrumbs with an ellipsis when space is limited or the seven item limit is reached. It is also recommended to show at least three items in addition to an ellipsis at a minimum.](/img/patterns/breadcrumbs-do-4.png "Do: Truncate breadcrumbs with an ellipsis when space is limited or the seven item limit is reached. It is also recommended to show at least three items in addition to an ellipsis at a minimum.")
 
-![Don’t: Truncate Breadcrumbs when there are fewer than three items.](/img/patterns/breadcrumbs-dont-4.png "Don’t: Truncate Breadcrumbs when there are fewer than three items.")
+![Don’t: Truncate Breadcrumbs when there are three or fewer items if space allows.](/img/patterns/breadcrumbs-dont-4.png "Don’t: Truncate Breadcrumbs when there are three or fewer items if space allows.")
 
 ![Do: Use an ellipsis to trigger a Pop Up Menu of hidden page links on-click.](/img/patterns/breadcrumbs-do-5.png "Do: Use an ellipsis to trigger a Pop Up Menu of hidden page links on-click.")
 
@@ -62,5 +58,5 @@ While presenting a single non-interactive Breadcrumb on a homepage is relatively
 
 ![Do: Nest all truncated links under a single ellipsis if more than one Breadcrumb item needs to be truncated.](/img/patterns/breadcrumbs-do-6.png "Do: Nest all truncated links under a single ellipsis if more than one Breadcrumb item needs to be truncated.")
 
-![Don’t: Truncate a single item with an ellipsis.](/img/patterns/breadcrumbs-dont-6.png "Don’t: Truncate a single item with an ellipsis.")
+![Don’t: Truncate a single item with an ellipsis unless space is limited.](/img/patterns/breadcrumbs-dont-6.png "Truncate a single item with an ellipsis unless space is limited.")
 :::
