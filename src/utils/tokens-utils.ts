@@ -105,10 +105,13 @@ const toNormalizedTokenDescription = (description: string) => description.replac
 
 /** Returns the token type, with corrections appied by working knowledge. */
 const normalizeTokenType = (type: string, name: string) => (
-	// correct font tokens not necessarily listed as System Tokens
-	/^font-((control-)?body-|display)/.test(name)
+	// correct any Status Symbol Token not correctly listed as a Component Token
+	/^status-symbol/.test(name)
+		? 'component'
+	// correct any Font Token not correctly listed as a System Token
+	: /^font-((control-)?body-|display)/.test(name)
 		? 'system'
-	// correct font monospace tokens not necessarily listed as Reference Tokens
+	// correct any Font Monospace Token not correctly listed as a Reference Token
 	: /^font-monospace/.test(name)
 		? 'reference'
 	: type
