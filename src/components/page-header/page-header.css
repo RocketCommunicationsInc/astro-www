@@ -84,11 +84,11 @@
 
 	& + * {
 		/* Layout */
-		margin-block-start: 25--step;
+		//margin-block-start: 25--step;
 
 		@media (width <= 400px) {
 			/* Layout */
-			margin-block-start: 6--step;
+			//margin-block-start: 6--step;
 		}
 	}
 }

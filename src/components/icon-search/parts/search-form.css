@@ -1,7 +1,9 @@
 .p-searchform {
 	/* Layout */
-	margin-block: -5--step -5--step;
-	padding-block: 5--step 5--step;
+	//margin-block: -5--step -5--step;
+	//padding-block: 5--step 5--step;
+
+	/* Layout */
 	width: 100%;
 
 	/* Reference */
