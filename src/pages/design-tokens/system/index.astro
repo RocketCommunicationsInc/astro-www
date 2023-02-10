@@ -16,8 +16,19 @@ const title = 'System Tokens'
 		System Tokens represent the all of the intent, usage, patterns and concepts within the Astro Design System, organized according to category.
 	</p>
 	<section>
+		<a href="#dark-tokens" class="h h2">
+			<h2 id="dark-tokens">Dark Tokens</h2>
+		</a>
 		<For of={Object.values(systemTokens)}>{category => (
 			<DesignTokenCategory theme="dark" {...category} />
+		)}</For>
+	</section>
+	<section>
+		<a href="#light-tokens" class="h h2">
+			<h2 id="light-tokens">Light Tokens</h2>
+		</a>
+		<For of={Object.values(systemTokens)}>{category => (
+			<DesignTokenCategory theme="lite" {...category} />
 		)}</For>
 	</section>
 </DocsLayout>
