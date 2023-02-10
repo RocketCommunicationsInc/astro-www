@@ -1,1 +1,1 @@
-// import 'project:utils/client/google-analytics'
+import 'project:utils/client/google-analytics'

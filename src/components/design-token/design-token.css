@@ -1,0 +1,73 @@
+.p-design-token {
+	display: flex;
+
+	/* Layout */
+	padding: 5--step;
+
+	& + & {
+		/* Layout */
+		margin-block-start: 4--step;
+	}
+
+	& .--preview {
+		display: flex;
+
+		/* Layout */
+		align-items: center;
+		block-size: 16--step;
+		inline-size: 16--step;
+		justify-content: center;
+		margin-inline-end: 5--step;
+
+		/* Appearance */
+		background-color: #1b2d3e;
+		color: #4dacff;
+	}
+
+	&:where(.--type-text) .--preview {
+		&::before {
+			/* Text */
+			font-size: 20--rpx;
+			line-height: max(28 / 20);
+
+			/* Generated */
+			content: "Aa";
+		}
+	}
+
+	&:where(.--type-background) .--preview {
+		/* Appearance */
+		background-color: var(--value);
+	}
+
+	&:where(.--type-radius) .--preview {
+		/* Appearance */
+		border-radius: var(--value);
+		box-shadow: var(--PrimaryColor) 0 0 0 1--rpx inset;
+	}
+
+	&:where(.--type-shadow) .--preview {
+		/* Appearance */
+		box-shadow: var(--PrimaryColor) 0 0 0 1--rpx inset, var(--value);
+	}
+
+	& .--name {
+		/* Text */
+		font-weight: 700;
+	}
+
+	& .--value {
+		/* Text */
+		font-family: var(--SystemMonoType);
+	}
+
+	& .--alias {
+		/* Appearance */
+		color: var(--SecondaryColor);
+	}
+
+	& dd:not(:first-of-type) {
+		/* Layout */
+		margin-block-start: 2--step;
+	}
+}
