@@ -1,26 +1,194 @@
 ---
-import { For } from '@astropub/flow'
-import DesignTokenCategory from 'project:components/design-token/DesignTokenCategory.astro'
 import DocsLayout from 'project:layouts/docs/docs-layout.astro'
-import { systemTokens } from 'project:utils/tokens'
+import { system } from 'project:utils/tokens.js'
+import '../shared.css'
 
 const title = 'System Tokens'
 ---
 <DocsLayout content={{ title }} file={import.meta.url}>
-	<a href="#content" class="h h1">
-		<h1>
-			{title}
-		</h1>
-	</a>
-	<p>
-		System Tokens represent the all of the intent, usage, patterns and concepts within the Astro Design System, organized according to category.
-	</p>
-	<section>
-		<For of={Object.values(systemTokens)}>{category => (
-			<DesignTokenCategory theme="dark" {...category} />
-		)}</For>
-	</section>
+	<h1>
+		System Tokens
+	</h1>
+	<sl-tab-group>
+		<sl-tab slot="nav" panel="dark">Dark Theme</sl-tab>
+		<sl-tab slot="nav" panel="light">Light Theme</sl-tab>
+
+		<sl-tab-panel name="dark">
+			<h2>
+				Background Colors
+			</h2>
+			{
+				system('dark', 'color', 'background').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="background"
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2>
+				Text Colors
+			</h2>
+			{
+				system('dark', 'color', 'text').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="text"
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2>
+				Border Colors
+			</h2>
+			{
+				system('dark', 'color', 'border').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="border"
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2>
+				Status Colors
+			</h2>
+			{
+				system('dark', 'color', 'status').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="background"
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2>
+				Classification Colors
+			</h2>
+			{
+				system('dark', 'color', 'classification').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="background"
+					/>
+				))
+			}
+		</sl-tab-panel>
+
+		<sl-tab-panel name="light">
+			<h2>
+				Background Colors
+			</h2>
+			{
+				system('light', 'color', 'background').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="background"
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2>
+				Text Colors
+			</h2>
+			{
+				system('light', 'color', 'text').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="text"
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2>
+				Border Colors
+			</h2>
+			{
+				system('light', 'color', 'border').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="border"
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2>
+				Status Colors
+			</h2>
+			{
+				system('light', 'color', 'status').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="background"
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2>
+				Classification Colors
+			</h2>
+			{
+				system('light', 'color', 'classification').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="background"
+					/>
+				))
+			}
+		</sl-tab-panel>
+	</sl-tab-group>
 </DocsLayout>
 <script>
-import 'project:components/clipboard-button/ClipboardButtonObserver'
+import 'https://unpkg.com/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.esm.js'
+import 'https://unpkg.com/@astrouxds/documentation-components?module'
+import 'https://unpkg.com/@shoelace-style/shoelace@2.0.0-beta.83/dist/shoelace.js'
 </script>
+<style is:global>
+@import "https://unpkg.com/@shoelace-style/shoelace@2.0.0-beta.83/dist/themes/light.css";
+</style>

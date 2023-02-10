@@ -1,18 +1,64 @@
-import rawDarkTokens from '@astrouxds/tokens/dist/json/docs.json'
-import rawLiteTokens from '@astrouxds/tokens/dist/json/docs-light.json'
-import { normalizeToken, sortToken, transformComponentTokensByType, transformTokensByType } from './tokens-utils.js'
+import tokens from '@astrouxds/tokens/dist/json/docs.json';
+import lightTokens from '@astrouxds/tokens/dist/json/docs-light.json';
 
-/** Array of all Lite-Theme Tokens. */
-export const liteTokens = rawLiteTokens.map(normalizeToken).sort(sortToken)
+export const reference = (theme, category) => {
+	let themeTokens = tokens;
+	if (theme === 'light') {
+		themeTokens = lightTokens;
+	}
 
-/** Array of all Dark-Theme Tokens. */
-export const darkTokens = rawDarkTokens.map(normalizeToken).sort(sortToken)
+	themeTokens = themeTokens.filter(
+		(token) => token.tokenLevel === 'reference' && token.category === category
+	);
+	if (category === 'spacing') {
+		themeTokens = themeTokens.sort((a, b) => {
+			return a.value.replace('rem', '') - b.value.replace('rem', '');
+		});
+	}
+	return themeTokens;
+}
 
-/** Catalog of all Component Tokens, organized by Component. */
-export const componentTokens = transformComponentTokensByType('component')(darkTokens, liteTokens)
+export const component = (theme, componentName) => {
+    let themeTokens = tokens;
+    if (theme === 'light') {
+      themeTokens = lightTokens;
+    }
+    return themeTokens.filter((token) => token.component === componentName);
+}
 
-/** Catalog of all Reference Tokens, organized by Category. */
-export const referenceTokens = transformTokensByType('reference')(darkTokens, liteTokens)
+export const system = (theme, category, property) => {
+	let themeTokens = tokens;
+    if (theme === 'light') {
+      themeTokens = lightTokens;
+    }
+    return themeTokens.filter((token) => {
+      return (
+        token.tokenLevel === 'system' &&
+        token.category === category &&
+        token.property === property
+      );
+    });
+}
+export const findByName = (name) => {
+	return tokens.find((token) => token.name === name);
+}
 
-/** Catalog of all System Tokens, organized by Category. */
-export const systemTokens = transformTokensByType('system')(darkTokens, liteTokens)
+export const lookupProperty = (category, property?: string) => {
+	if (category === 'boxShadow') {
+		return 'shadow';
+	}
+
+	if (category === 'borderRadius') {
+		return 'radius';
+	}
+
+	if (property === 'fill' || property === 'icon') {
+		return 'background';
+	}
+
+	if (property === 'on-dark' || property === 'on-light') {
+		return 'border-width';
+	}
+
+	return property;
+}
