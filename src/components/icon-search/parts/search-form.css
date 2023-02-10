@@ -2,6 +2,7 @@
 	/* Layout */
 	margin-block: -5--step -5--step;
 	padding-block: 5--step 5--step;
+	width: 100%;
 
 	/* Reference */
 	--border-color: var(--Grey700Color);

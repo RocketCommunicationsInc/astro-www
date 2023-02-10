@@ -64,6 +64,22 @@ h2 {
 	overflow: hidden scroll;
 	padding-block: 15--step;
 	padding-inline: 9--step;
+	width: 360--rpx;
+
+	@media (width < 1440px) {
+		/* Layout */
+		width: 300--rpx;
+	}
+
+	@media (width < 1200px) {
+		/* Layout */
+		width: 280--rpx;
+	}
+
+	@media (width >= 1440px) {
+		/* Layout */
+		width: 360--rpx;
+	}
 
 	/* Appearance */
 	background-color: var(--DarkBlue800Color);
@@ -88,6 +104,7 @@ h2 {
 		text-align: center;
 
 		@media (width < 800px) {
+			/* Text */
 			font-size: 16--rpx;
 		}
 	}
@@ -103,6 +120,7 @@ h2 {
 		border-radius: 12--rpx;
 
 		@media (width < 800px) {
+			/* Layout */
 			block-size: 50--rpx;
 		}
 	}
