@@ -17,7 +17,7 @@ A Tooltip is a message box that provides a concise amount of relevant contextual
 - Important information should always be visible on the page.
 - Don’t use to mirror visible content, communicate errors, or display interactive links or menus.
 - Use for small amounts of contextual information.
-- Avoid tooltips in areas with dense information, as the screen may become crowded as the user moves throughout the application. Instead, use [Pop Up](/components/pop-up/) to have information appear on click rather than hover.
+- Avoid tooltips in areas with dense information, as the screen may become crowded as the user moves throughout the application, blocking other visual information. Instead, use a [Pop Up](/components/pop-up/) to have information appear on click rather than hover.
 
 ## Appearance and Behavior
 
