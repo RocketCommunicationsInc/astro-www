@@ -1,6 +1,9 @@
 .p-category-select {
 	/* Layout */
-	display: inline-block;
+	display: inline-flex;
+
+	/* Layout */
+	align-items: center;
 
 	/* Layout */
 	position: relative;
@@ -15,8 +18,10 @@
 	& select {
 		/* Layout */
 		max-width: 400px;
-		padding: .75rem;
-		padding-inline-start: 96--rpx;
+		padding-block: .75rem;
+
+		/* Layout */
+		width: 200--rpx;
 
 		/* Text */
 		font-size: 24--rpx;
@@ -35,11 +40,6 @@
 
 			/* Text */
 			font-size: 16--rpx;
-		}
-
-		@media (width < 1408px) {
-			/* Layout */
-			padding-inline-start: 16--rpx;
 		}
 	}
 

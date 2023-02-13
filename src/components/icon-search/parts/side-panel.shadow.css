@@ -95,6 +95,14 @@ h2 {
 		width: 0;
 	}
 
+	&::part(heading-wrapper) {
+		display: flex;
+
+		/* Layout */
+		align-items: center;
+		flex-direction: column;
+	}
+
 	&::part(label) {
 		/* Text */
 		font-size: 36--rpx;

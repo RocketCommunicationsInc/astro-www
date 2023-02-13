@@ -8,12 +8,19 @@
 	inset-block-start: 0;
 	margin-inline: var(--icon-search-margin-inline);
 	margin-inline-end: var(--icon-search-margin-inline-end);
-	padding: 4--step;
+	padding-block: 4--step;
+	padding-inline-end: 16--step;
+	padding-inline-start: 8--step;
 	position: sticky;
 
 	/* Appearance */
 	background-color: var(--PrimaryColor);
 	//filter: drop-shadow(0 3px 2px rgba(0, 0, 0, .25));
+
+	@media (width > 1408px) {
+		/* Layout */
+		padding-inline-start: 28--step;
+	}
 
 	@media (width < 800px) {
 		/* Layout */
@@ -27,6 +34,9 @@
 		/* Layout */
 		margin-inline: -16--rpx;
 		margin-inline-end: -16--rpx;
+
+		/* Layout */
+		padding-inline: 4--step;
 	}
 }
 

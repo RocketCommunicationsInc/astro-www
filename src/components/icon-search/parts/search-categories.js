@@ -20,4 +20,34 @@
 	}
 
 	select.addEventListener('change', changeLocation)
+
+	// create intersection observer to watch for when group headings intersect search bar, update selected option displayed
+	// const iconSearchHeight = document.querySelector('.p-icon-search').offsetHeight
+	const iconSearchHeight = 200
+	const viewportHeight = window.innerHeight
+	const intersectionOffset = viewportHeight - iconSearchHeight
+	const iconGroups = document.querySelectorAll('.-group')
+
+	let intersectOptions = {
+		root: null,
+		rootMargin: `0px 0px -${intersectionOffset}px 0px`,
+		threshold: 0,
+	}
+
+	let callback = (entries) => {
+		console.log('observed')
+		entries.forEach((entry) => {
+			console.log(entry.intersectionRatio)
+			if (entry.intersectionRatio > 0) {
+				const headingName = entry.target.querySelector('.-group-heading').getAttribute('id')
+				console.log(headingName)
+				select.value = headingName
+			}
+		});
+	};
+
+	iconGroups.forEach((group) => {
+		let observer = new IntersectionObserver(callback, intersectOptions);
+		observer.observe(group)
+	})
 }

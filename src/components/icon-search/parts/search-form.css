@@ -54,6 +54,7 @@
 		/* Layout */
 		align-self: stretch;
 		padding-inline: 12--step;
+		width: 100%;
 	}
 
 	& .-control {

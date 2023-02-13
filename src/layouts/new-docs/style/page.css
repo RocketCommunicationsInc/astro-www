@@ -171,12 +171,12 @@
 
 	@media (width < 1200px) {
 		/* Layout */
-		//flex-basis: 60--step;
+		flex-basis: 60--step;
 	}
 
 	@media (width >= 1200px) {
 		/* Layout */
-		//flex-basis: 80--step;
+		flex-basis: 80--step;
 
 		/* Layout */
 		//width: 30%;
@@ -186,10 +186,17 @@
 		/* Layout */
 		@media (width >= 1200px) {
 			/* Layout */
-			inset-block-start: 0;
-			margin-block-start: -25--step;
-			margin-inline-end: -8--step;
-			position: sticky;
+			inset-block-start: 92--rpx;
+			inset-inline-end: 0;
+			position: fixed;
+
+			/* Layout */
+			/* inset-block-start: 0; */
+			//margin-block-start: -25--step;
+
+			/* Layout */
+			/* margin-inline-end: -8--step;
+			position: sticky; */
 		}
 
 		@media (width < 1200px) {
