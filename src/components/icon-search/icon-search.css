@@ -105,3 +105,10 @@
 .p-icon-shapes {
 	display: none;
 }
+
+p.lead {
+	/* Layout */
+	margin-block-end: 5--step;
+	margin-block-start: calc(- 5--step);
+	max-width: 230--step;
+}
