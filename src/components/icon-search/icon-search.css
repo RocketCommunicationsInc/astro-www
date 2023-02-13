@@ -106,7 +106,7 @@
 	display: none;
 }
 
-p.lead {
+.page p.lead {
 	/* Layout */
 	margin-block-end: 5--step;
 	margin-block-start: calc(- 5--step);
