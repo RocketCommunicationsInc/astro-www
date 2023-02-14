@@ -15,15 +15,15 @@
 	const changeLocation = (event) => {
 		const offset = stickySearch.getBoundingClientRect().height
 		const scrollTarget = document.getElementById(event.target.value)
-		scrollTarget.style.scrollMarginBlockStart = offset + 'px'
+		// scrollTarget.style.scrollMarginBlockStart = offset + 'px'
+		scrollTarget.style.scrollMarginBlockStart = '50px'
 		location.hash = `#${event.target.value}`
 	}
 
 	select.addEventListener('change', changeLocation)
 
 	// create intersection observer to watch for when group headings intersect search bar, update selected option displayed
-	// const iconSearchHeight = document.querySelector('.p-icon-search').offsetHeight
-	const iconSearchHeight = 200
+	const iconSearchHeight = document.querySelector('.p-icon-search').offsetHeight
 	const viewportHeight = window.innerHeight
 	const intersectionOffset = viewportHeight - iconSearchHeight
 	const iconGroups = document.querySelectorAll('.-group')
@@ -34,20 +34,18 @@
 		threshold: 0,
 	}
 
-	let callback = (entries) => {
-		console.log('observed')
+	let callback = (entries, observer) => {
 		entries.forEach((entry) => {
-			console.log(entry.intersectionRatio)
-			if (entry.intersectionRatio > 0) {
+			if (entry.isIntersecting) {
 				const headingName = entry.target.querySelector('.-group-heading').getAttribute('id')
-				console.log(headingName)
 				select.value = headingName
 			}
 		});
 	};
 
+	let observer = new IntersectionObserver(callback, intersectOptions);
+
 	iconGroups.forEach((group) => {
-		let observer = new IntersectionObserver(callback, intersectOptions);
 		observer.observe(group)
 	})
 }

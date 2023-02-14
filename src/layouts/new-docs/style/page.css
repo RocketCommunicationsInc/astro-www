@@ -85,6 +85,11 @@
 		/* Text */
 		font-size: 36--rpx;
 		line-height: calc(40 / 36);
+
+		@media (width < 800px) {
+			/* Text */
+			font-size: 24--rpx;
+		}
 	}
 
 	& p {
@@ -174,12 +179,14 @@
 		flex-basis: 60--step;
 	}
 
+	@media (width < 1024px) {
+		/* Layout */
+		flex-basis: 0;
+	}
+
 	@media (width >= 1200px) {
 		/* Layout */
 		flex-basis: 80--step;
-
-		/* Layout */
-		//width: 30%;
 	}
 
 	& .-content {

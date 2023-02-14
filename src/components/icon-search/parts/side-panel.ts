@@ -204,22 +204,22 @@ class IconPanelInternals {
 	}
 
 	/** Resizes the heading of the icon panel to prevent it from requiring more than one line. */
-	resizeHeading(headingText: string) {
-		const headingStyle = getComputedStyle(this.heading)
+	setHeading(headingText: string) {
+		// const headingStyle = getComputedStyle(this.heading)
 
 		/** Size of the font, starting with a maximum size of 36. */
-		let headingFontSize = 36
+		// let headingFontSize = 36
 
 		this.heading.textContent = headingText
 
-		do {
-			this.heading.style.setProperty('font-size', headingFontSize + 'px', 'important')
-			this.heading.style.setProperty('line-height', String(40 / headingFontSize + 0.0001), 'important')
+		// do {
+		// 	this.heading.style.setProperty('font-size', headingFontSize + 'px', 'important')
+		// 	this.heading.style.setProperty('line-height', String(40 / headingFontSize + 0.0001), 'important')
 
-			--headingFontSize
-		} while (
-			parseFloat(headingStyle.height) > 40
-		)
+		// 	--headingFontSize
+		// } while (
+		// 	parseFloat(headingStyle.height) > 40
+		// )
 	}
 
 	useSymbolElement(symbolElement: SVGSymbolElement) {
@@ -258,7 +258,7 @@ class IconPanelInternals {
 		// replace the contents of the preview to the cloned content of the current icon
 		this.preview.replaceChildren(content.cloneNode(true))
 
-		this.resizeHeading(symbolElement.firstElementChild!.textContent!)
+		this.setHeading(symbolElement.firstElementChild!.textContent!)
 	}
 }
 
@@ -299,3 +299,29 @@ const awaitAnimationFinishOf = async (element: HTMLElement) => {
 		}
 	}
 }
+
+// const icons = document.querySelectorAll('.icon')
+// const nav = document.querySelector('.p-navigation') as HTMLElement
+
+// const navHeight = nav.offsetHeight
+// const pageHeader = document.querySelector('.page-header') as HTMLElement
+// const pageHeaderHeight = pageHeader.offsetHeight
+// const iconSearch = document.querySelector('.p-icon-search') as HTMLElement
+
+// const heightToBottomOfSearchPanel = navHeight + pageHeaderHeight
+
+// const sidePanel = document.querySelector('.page-content-side-col .-content') as HTMLElement
+
+// icons.forEach(icon => {
+// 	icon.addEventListener('click', () => {
+// 		console.log(sidePanel)
+// 		const searchRect = iconSearch?.getBoundingClientRect()
+// 		let searchRectY = searchRect?.top as number
+// 		console.log(searchRect)
+// 		console.log('search rect', searchRectY)
+// 		if (searchRectY! > 0) {
+// 			console.log('I am greater than 0')
+// 			window.scrollTo(0, heightToBottomOfSearchPanel)
+// 		}
+// 	})
+// })

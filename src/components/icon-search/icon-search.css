@@ -22,6 +22,21 @@
 		padding-inline-start: 28--step;
 	}
 
+	@media (width < 1200px) {
+		/* Layout */
+		margin-inline-end: -80--step;
+	}
+
+	@media (width < 1024px) {
+		/* Layout */
+		margin-inline-end: -15--step;
+	}
+
+	@media (width >= 1200px) {
+		/* Layout */
+		margin-inline-end: -95--step;
+	}
+
 	@media (width < 800px) {
 		/* Layout */
 		//flex-direction: column-reverse;
