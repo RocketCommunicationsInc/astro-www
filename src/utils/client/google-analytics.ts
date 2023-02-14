@@ -1,7 +1,7 @@
 // initialize the GTag data layer
 if (!globalThis.dataLayer) {
 	globalThis.dataLayer = [
-		<IArguments><any>[ 'js', new Date() ],
+
 	]
 }
 
@@ -22,6 +22,7 @@ const initializeGTagScript = (id: string) => {
 	if (!scriptElement.isConnected) {
 		document.head.append(scriptElement)
 
+		gtag('js', new Date())
 		gtag('config', id)
 	}
 }
