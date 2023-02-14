@@ -32,6 +32,12 @@ export const fetchGoogleCalendarEvents = async () => {
 	return items
 }
 
+// rearrange date
+export const getDate = (startDate) => {
+	const orderedDate = startDate.split('-')
+	return `${orderedDate[1]}/${orderedDate[2]}/${orderedDate[0]}`;
+}
+
 export interface EventOrganizer {
 	email: string
 	displayName: string
