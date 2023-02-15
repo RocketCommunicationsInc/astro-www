@@ -71,7 +71,6 @@ const withCalendarInteractiveBehavior = (/** @type {HTMLElement} */ calendarEven
 
 		gtag('event', 'open_community_event_details')
 	})
-	console.log(calendarEventFragment)
 	return calendarEventFragment
 }
 
