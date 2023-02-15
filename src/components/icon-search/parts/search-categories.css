@@ -20,11 +20,11 @@
 
 	& select {
 		/* Layout */
-		max-width: 400px;
+		max-width: 100--step;
 		padding-block: .75rem;
 
 		/* Layout */
-		width: 200--rpx;
+		width: 50--step;
 
 		/* Text */
 		font-size: 24--rpx;
@@ -39,7 +39,7 @@
 
 		@media (width < 800px) {
 			/* Layout */
-			width: 160--rpx;
+			width: 40--step;
 
 			/* Text */
 			font-size: 16--rpx;

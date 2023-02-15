@@ -2,7 +2,7 @@
 	display: flex;
 
 	/* Layout */
-	border-block-end: 1px solid var(--Grey200Color);
+	border-block-end: 1--rpx solid var(--Grey200Color);
 
 	/* Layout */
 	inset-block-start: 0;
@@ -42,13 +42,13 @@
 		//flex-direction: column-reverse;
 
 		/* Layout */
-		margin-inline-end: -32px;
+		margin-inline-end: -8--step;
 	}
 
 	@media (width < 480px) {
 		/* Layout */
-		margin-inline: -16--rpx;
-		margin-inline-end: -16--rpx;
+		margin-inline: -1--step;
+		margin-inline-end: -1--step;
 
 		/* Layout */
 		padding-inline: 4--step;

@@ -299,29 +299,3 @@ const awaitAnimationFinishOf = async (element: HTMLElement) => {
 		}
 	}
 }
-
-// const icons = document.querySelectorAll('.icon')
-// const nav = document.querySelector('.p-navigation') as HTMLElement
-
-// const navHeight = nav.offsetHeight
-// const pageHeader = document.querySelector('.page-header') as HTMLElement
-// const pageHeaderHeight = pageHeader.offsetHeight
-// const iconSearch = document.querySelector('.p-icon-search') as HTMLElement
-
-// const heightToBottomOfSearchPanel = navHeight + pageHeaderHeight
-
-// const sidePanel = document.querySelector('.page-content-side-col .-content') as HTMLElement
-
-// icons.forEach(icon => {
-// 	icon.addEventListener('click', () => {
-// 		console.log(sidePanel)
-// 		const searchRect = iconSearch?.getBoundingClientRect()
-// 		let searchRectY = searchRect?.top as number
-// 		console.log(searchRect)
-// 		console.log('search rect', searchRectY)
-// 		if (searchRectY! > 0) {
-// 			console.log('I am greater than 0')
-// 			window.scrollTo(0, heightToBottomOfSearchPanel)
-// 		}
-// 	})
-// })

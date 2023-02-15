@@ -61,19 +61,28 @@ h2 {
 	align-items: center;
 	block-size: 100dvh;
 	flex-flow: column;
+	inset-block-start: 93px;
+	inset-inline-end: 0;
 	overflow: hidden scroll;
 	padding-block: 15--step;
 	padding-inline: 9--step;
-	width: 360--rpx;
+	position: fixed;
+	width: 90--step;
+
+	/* Appearance */
+	background-color: var(--DarkBlue800Color);
+	color: var(--PrimaryColor);
+	scrollbar-color: transparent transparent;
+	scrollbar-width: none;
 
 	@media (width < 1440px) {
 		/* Layout */
-		width: 300--rpx;
+		width: 75--step;
 	}
 
 	@media (width < 1200px) {
 		/* Layout */
-		width: 280--rpx;
+		width: 70--step;
 	}
 
 	@media (width < 800px) {
@@ -84,14 +93,8 @@ h2 {
 
 	@media (width >= 1440px) {
 		/* Layout */
-		width: 360--rpx;
+		width: 90--step;
 	}
-
-	/* Appearance */
-	background-color: var(--DarkBlue800Color);
-	color: var(--PrimaryColor);
-	scrollbar-color: transparent transparent;
-	scrollbar-width: none;
 
 	/* Reference */
 	--icon-size: 50--step;
@@ -130,7 +133,7 @@ h2 {
 		@media (width < 800px) {
 			/* Text */
 			font-size: 16--rpx;
-			line-height: 24px;
+			line-height: 24--rpx;
 			text-align: start;
 		}
 	}
