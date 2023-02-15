@@ -1,7 +1,8 @@
 ---
 layout: project:layouts/docs/docs-layout.astro
-title: "Getting Started for Designers"
+title: 'Getting Started for Designers'
 ---
+
 # Getting Started For Designers
 
 Astro UXDS design assets include files for creating Astro application mockups and wireframes in Figma.
@@ -17,6 +18,8 @@ Before reading any further, we recommend you review available Astro components o
 - [Glossary](/design-guidelines/glossary/)
 
 ## Figma
+
+The Astro Figma files use fonts that are free to download from Google and linked below. Astro 6 Figma files use a combination of [Roboto](https://fonts.google.com/specimen/Roboto) and [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono). Astro 7 Figma files use [Roboto](https://fonts.google.com/specimen/Roboto). To see the latest recommended fonts for Astro applications, go to our [Typography](/design-guidelines/typography/) page.
 
 - [Astro 7 UXDS - Dark Theme](https://www.figma.com/community/file/1157371532469023309)
 - [Astro UXDS 6.0 - Dark Theme](https://www.figma.com/community/file/1014254163928270411)
@@ -53,7 +56,7 @@ Astro strives to achieve compliance with applicable DOD design standards. Astro 
 
 Each page on astrouxds.com has a support button at the bottom of the page for technical support.
 
-## Additional resources
+## Additional Resources
 
 **Web Design**
 
