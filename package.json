@@ -18,7 +18,7 @@
 		"@astropub/doc": "0.1.4",
 		"@astropub/flow": "0.3.6",
 		"@astropub/md": "0.1.4",
-		"@astrouxds/tokens": "1.4.1",
+		"@astrouxds/tokens": "1.5.0",
 		"@csstools/custom-units": "0.1.1",
 		"@typescript-eslint/eslint-plugin": "5.51.0",
 		"@typescript-eslint/parser": "5.51.0",
