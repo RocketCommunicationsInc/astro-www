@@ -53,7 +53,7 @@
 		--icon-search-margin-inline-end: -64--rpx;
 	}
 
-	@media (width >= 1408px) {
+	@media (width >= 1480px) {
 		--header-block-size: 430--rpx;
 		--header-nav-gap: 9--step;
 		--header-nav-text-size: 24--rpx;
@@ -131,7 +131,7 @@
 		--gap: 8--step;
 	}
 
-	@media (width >= 1408px) {
+	@media (width >= 1480px) {
 		/* Layout */
 		padding-inline-start: 28--step;
 	}
@@ -174,6 +174,11 @@
 		position: fixed;
 	}
 
+	@media (width < 1440px) {
+		/* Layout */
+		flex-basis: 70--step;
+	}
+
 	@media (width < 1200px) {
 		/* Layout */
 		flex-basis: 60--step;
@@ -184,7 +189,7 @@
 		flex-basis: 0;
 	}
 
-	@media (width >= 1200px) {
+	@media (width >= 1440px) {
 		/* Layout */
 		flex-basis: 80--step;
 	}
