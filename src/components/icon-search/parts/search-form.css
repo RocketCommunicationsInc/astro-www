@@ -32,7 +32,7 @@
 
 		/* Appearance */
 		background-color: var(--PrimaryColor);
-		border-radius: 12--rpx;
+		border-radius: 6--rpx;
 		box-shadow: var(--border-color) 0 0 0 2px inset;
 
 		& > * {
@@ -43,7 +43,7 @@
 			grid-area: 1 / 1 / 2 / 2;
 
 			/* Appearance */
-			border-radius: 12--rpx;
+			border-radius: 6--rpx;
 		}
 	}
 

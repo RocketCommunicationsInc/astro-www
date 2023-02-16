@@ -47,11 +47,16 @@
 }
 
 .p-icon-groups {
-	--icon-size: 50--rpx;
+	--icon-size: 40--rpx;
 
 	& .-group {
 		&.nomatch {
 			display: none;
+		}
+
+		& .-group-heading {
+			/* Text */
+			font-size: 24--rpx;
 		}
 	}
 
