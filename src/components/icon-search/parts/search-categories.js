@@ -13,9 +13,7 @@
 	})
 
 	const changeLocation = (event) => {
-		const offset = stickySearch.getBoundingClientRect().height
 		const scrollTarget = document.getElementById(event.target.value)
-		// scrollTarget.style.scrollMarginBlockStart = offset + 'px'
 		scrollTarget.style.scrollMarginBlockStart = '50px'
 		location.hash = `#${event.target.value}`
 	}

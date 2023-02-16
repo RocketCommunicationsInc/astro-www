@@ -203,23 +203,8 @@ class IconPanelInternals {
 		}
 	}
 
-	/** Resizes the heading of the icon panel to prevent it from requiring more than one line. */
 	setHeading(headingText: string) {
-		// const headingStyle = getComputedStyle(this.heading)
-
-		/** Size of the font, starting with a maximum size of 36. */
-		// let headingFontSize = 36
-
 		this.heading.textContent = headingText
-
-		// do {
-		// 	this.heading.style.setProperty('font-size', headingFontSize + 'px', 'important')
-		// 	this.heading.style.setProperty('line-height', String(40 / headingFontSize + 0.0001), 'important')
-
-		// 	--headingFontSize
-		// } while (
-		// 	parseFloat(headingStyle.height) > 40
-		// )
 	}
 
 	useSymbolElement(symbolElement: SVGSymbolElement) {

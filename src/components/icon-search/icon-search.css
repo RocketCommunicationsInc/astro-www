@@ -28,6 +28,24 @@
 	}
 }
 
+.p-icon-results {
+	/* Text */
+	font-size: 36--rpx;
+
+	p {
+		/* Text */
+		font-size: 24--rpx;
+	}
+
+	a {
+		/* Text */
+		text-decoration: none;
+
+		/* Appearance */
+		color: var(--DarkBlue500Color);
+	}
+}
+
 .p-icon-groups {
 	--icon-size: 50--rpx;
 

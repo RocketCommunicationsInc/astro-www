@@ -106,7 +106,8 @@
 				)
 					? ``
 				: ``
-			: `No matching icons. Please contact <a href="mailto:support@astrouxds.com">support@astrouxds.com</a>.`
+			: `
+			<strong>No results for "${value}".</strong> <p>Not finding what you want? <a href="mailto:support@astrouxds.com">Contact us</a> and suggest a new icon.</p>`
 		)
 	}
 }
