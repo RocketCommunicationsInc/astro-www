@@ -5,106 +5,31 @@
 	border-block-end: 1--rpx solid var(--Grey200Color);
 
 	/* Layout */
-	inset-block-start: 0;
-	margin-inline: var(--icon-search-margin-inline);
-	margin-inline-end: var(--icon-search-margin-inline-end);
 	padding-block: 4--step;
-	padding-inline-end: 16--step;
-	padding-inline-start: 8--step;
-	position: sticky;
+	padding-inline: 8--step;
 
 	/* Appearance */
 	background-color: var(--PrimaryColor);
-	//filter: drop-shadow(0 3px 2px rgba(0, 0, 0, .25));
+	//box-shadow: -2px 2px 4px #00000040;
+
+	@media (width < 375px) {
+		/* Layout */
+		flex-direction: column-reverse;
+	}
 
 	@media (width < 480px) {
-		/* Layout */
-		margin-inline: -4--step;
-		margin-inline-end: -4--step;
-
 		/* Layout */
 		padding-inline: 4--step;
 	}
 
-	@media (480px <= width < 800px) {
-		/* Layout */
-		//flex-direction: column-reverse;
-
-		/* Layout */
-		margin-inline-end: -8--step;
-		padding-inline-end: 8--step;
-	}
-
-	@media (800px <= width < 1024px) {
-		/* Layout */
-		margin-inline-end: -16--step;
-		padding-inline-end: 8--step;
-	}
-
-	@media (1024px <= width < 1200px) {
-		/* Layout */
-		margin-inline-end: -76--step;
-	}
-
-	@media (1200px <= width < 1440px) {
-		/* Layout */
-		margin-inline-end: -86--step;
-	}
-
 	@media (width >= 1440px) {
-		/* Layout */
-		margin-inline-end: -116--step;
-
 		/* Layout */
 		padding-inline: 28--step;
 	}
 }
 
 .p-icon-groups {
-	@media (width < 360px) {
-		--grid-size: 2;
-		--icon-size: 50--rpx;
-	}
-
-	@media (360px <= width < 600px) {
-		--grid-size: 3;
-		--icon-size: 50--rpx;
-	}
-
-	@media (600px <= width < 800px) {
-		--grid-size: 4;
-		--icon-size: 50--rpx;
-	}
-
-	@media (800px <= width < 960px) {
-		--grid-size: 4;
-		--icon-size: 50--rpx;
-	}
-
-	@media (960px <= width < 1024px) {
-		--grid-size: 4;
-		--icon-size: 50--rpx;
-	}
-
-	@media (1024px <= width < 1160px) {
-		--grid-size: 5;
-		--icon-size: 50--rpx;
-	}
-
-	@media (1160px <= width < 1480px) {
-		--grid-size: 5;
-		--icon-size: 50--rpx;
-	}
-
-	@media (1480px <= width < 1600px) {
-		--grid-size: 6;
-		--icon-size: 50--rpx;
-	}
-
-	@media (width >= 1600px) {
-		--grid-size: 8;
-		--icon-size: 50--rpx;
-	}
+	--icon-size: 50--rpx;
 
 	& .-group {
 		&.nomatch {

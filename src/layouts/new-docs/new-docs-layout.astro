@@ -17,6 +17,9 @@ const {
 	<SiteSkipTo slot="top" />
 	<main class="page" id="content">
 		<slot name="header" />
+		<div class="page-toolbar">
+			<slot name="toolbar" />
+		</div>
 		<div class="page-content">
 			<div class="page-content-main-col">
 				<slot />
