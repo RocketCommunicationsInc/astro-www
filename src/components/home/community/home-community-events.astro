@@ -1,13 +1,14 @@
 ---
 import { Sanitizer } from 'project:utils/sanitizer.js'
 import { For, When } from '@astropub/flow';
-import { fetchGoogleCalendarEvents } from './home-community-events.constants.js'
+import { fetchGoogleCalendarEvents, getDate } from './home-community-events.constants.js'
 import eventToggleHandler from './home-community-events.eventToggleHandler.js?url'
 
 /** Google Calendar Events. */
 const calendarEvents = await fetchGoogleCalendarEvents()
 
 const sanitizer = new Sanitizer()
+
 ---
 <section class="p-community-events">
 	<h4>Upcoming Events</h4>
@@ -15,11 +16,13 @@ const sanitizer = new Sanitizer()
 		<For of={calendarEvents}>{calendarEvent => (
 			<article class="p-community-event">
 				<small class="p-community-event-date">
-					<span class="-date">{
-						new Date(calendarEvent.start.date || calendarEvent.start.dateTime).toLocaleString('en-US', {
+					<span class="-date">{calendarEvent.start.date ? getDate(calendarEvent.start.date)
+
+						: new Date( calendarEvent.start.dateTime).toLocaleString('en-US', {
 							day: '2-digit',
 							month: '2-digit',
 							year: 'numeric',
+							timeZone: 'PST'
 						})
 					}</span>
 					{
@@ -33,9 +36,8 @@ const sanitizer = new Sanitizer()
 									})
 								}</span>
 							)
-						: calendarEvent.start.date
-							? <span class="-time">All Day!</span>
-						: <Fragment />
+						: <span class="-time">All Day!</span>
+						<Fragment />
 					}
 				</small>
 				<hgroup class="p-community-event-heading">
