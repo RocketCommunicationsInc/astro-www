@@ -13,7 +13,10 @@ icons.forEach(icon => {
 
 		let searchRectY: number = iconSearch?.getBoundingClientRect().top
 
-		if (searchRectY! > 0) window.scrollTo(0, heightToBottomOfSearchPanel)
+		if (searchRectY! > 0) {
+			setIconPanelPosition()
+			window.scrollTo(0, heightToBottomOfSearchPanel)
+		}
 	})
 })
 
