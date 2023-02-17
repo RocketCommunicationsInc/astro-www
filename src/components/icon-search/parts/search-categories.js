@@ -28,7 +28,7 @@
 
 	let intersectOptions = {
 		root: null,
-		rootMargin: `0px 0px -${intersectionOffset}px 0px`,
+		rootMargin: `-50px 0px -${intersectionOffset}px 0px`,
 		threshold: 0,
 	}
 
