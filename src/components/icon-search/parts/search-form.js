@@ -80,12 +80,14 @@
 
 		let searchResultCount = 0
 
+		let lowerCaseValue = value.toLowerCase()
+
 		for (let iconGroup of groups) {
 			let nomatches = true
-			let earlymatch = !value || iconGroup.name.includes(value)
+			let earlymatch = !lowerCaseValue || iconGroup.name.includes(lowerCaseValue)
 
 			for (let icon of iconGroup.icons) {
-				const nomatch = !earlymatch && Boolean(value) && !icon.name.includes(value)
+				const nomatch = !earlymatch && Boolean(lowerCaseValue) && !icon.name.includes(lowerCaseValue)
 
 				nomatches = nomatches && nomatch
 
