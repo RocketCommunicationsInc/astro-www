@@ -15,28 +15,29 @@ const createCalendarEventFragment = (
 	</hgroup>
 	<span class="p-community-event-info"> 
 		<small class="p-community-event-date">
-		<span class="-date">${event.start.date
-			? getDate(event.start.date)
-			: new Date(event.start.dateTime).toLocaleString('en-US', {
-				day: '2-digit',
-				month: '2-digit',
-				year: 'numeric'
-			})
-		}</span>
-		${
-			event.start.dateTime
-				? `<span class="-time">${
-					new Date(event.start.dateTime).toLocaleString('en-US', {
-						hour: 'numeric',
-						minute: '2-digit',
-						timeZoneName: 'short'
-					})
-			}</span>`
-			: toString(event.start.date && `<span class="-time">All Day!</span>`)
-		}
-	</small>
-	<span class='-second-col'>
-		${toString(event.location && `<span class="p-community-event-subheading">${event.location}</span>`)}
+			<span class="-date">${event.start.date
+				? getDate(event.start.date)
+				: new Date(event.start.dateTime).toLocaleString('en-US', {
+					day: '2-digit',
+					month: '2-digit',
+					year: 'numeric'
+				})
+			}</span>
+			${
+				event.start.dateTime
+					? `<span class="-time">${
+						new Date(event.start.dateTime).toLocaleString('en-US', {
+							hour: 'numeric',
+							minute: '2-digit',
+							timeZoneName: 'short'
+						})
+				}</span>`
+				: toString(event.start.date && `<span class="-time">All Day!</span>`)
+			}
+		</small>
+		<span class='-second-col'>
+			${toString(event.location && `<span class="p-community-event-subheading">${event.location}</span>`)}
+		</span>
 	</span>
 		
 	<span class="p-community-event-actions">
