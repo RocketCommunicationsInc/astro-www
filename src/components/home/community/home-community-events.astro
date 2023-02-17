@@ -15,37 +15,41 @@ const sanitizer = new Sanitizer()
 	<div class="p-community-events-content">
 		<For of={calendarEvents}>{calendarEvent => (
 			<article class="p-community-event">
-				<small class="p-community-event-date">
-					<span class="-date">{calendarEvent.start.date ? getDate(calendarEvent.start.date)
-
-						: new Date( calendarEvent.start.dateTime).toLocaleString('en-US', {
-							day: '2-digit',
-							month: '2-digit',
-							year: 'numeric',
-							timeZone: 'PST'
-						})
-					}</span>
-					{
-						calendarEvent.start.dateTime
-							? (
-								<span class="-time">{
-									new Date(calendarEvent.start.dateTime).toLocaleString('en-US', {
-										hour: 'numeric',
-										minute: '2-digit',
-										timeZoneName: 'short'
-									})
-								}</span>
-							)
-						: <span class="-time">All Day!</span>
-						<Fragment />
-					}
-				</small>
 				<hgroup class="p-community-event-heading">
 					<h5>{calendarEvent.summary}</h5>
-					<When test={calendarEvent.location}>
-						<small class="p-community-event-subheading">{calendarEvent.location}</small>
-					</When>
 				</hgroup>
+				<span class="p-community-event-info"> 
+					<small class="p-community-event-date">
+						<span class="-date">{calendarEvent.start.date ? getDate(calendarEvent.start.date)
+
+							: new Date( calendarEvent.start.dateTime).toLocaleString('en-US', {
+								day: '2-digit',
+								month: '2-digit',
+								year: 'numeric',
+								timeZone: 'PST'
+							})
+						}</span>
+						{
+							calendarEvent.start.dateTime
+								? (
+									<span class="-time">{
+										new Date(calendarEvent.start.dateTime).toLocaleString('en-US', {
+											hour: 'numeric',
+											minute: '2-digit',
+											timeZoneName: 'short'
+										})
+									}</span>
+								)
+							: <span class="-time">All Day!</span>
+							<Fragment />
+						}
+					</small>
+					<When test={calendarEvent.location}>
+						<span class='-second-col'>
+							<span class="p-community-event-subheading">{calendarEvent.location}</span>
+						</span>
+					</When>
+				</span>
 				<span class="p-community-event-actions">
 					<button>View Details</button>
 				</span>
