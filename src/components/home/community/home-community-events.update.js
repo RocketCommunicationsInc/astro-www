@@ -32,7 +32,7 @@ const createCalendarEventFragment = (
 							timeZoneName: 'short'
 						})
 				}</span>`
-				: toString(getDateRange(event.start.date, event.end.date).singleDay && `<span class="-time">All Day!</span>`)
+				: toString(getDateRange(event.start.date, event.end.date).singleDay ? `<span class="-time">All Day!</span>` : '')
 			}
 		</small>
 		<span class='-second-col'>
