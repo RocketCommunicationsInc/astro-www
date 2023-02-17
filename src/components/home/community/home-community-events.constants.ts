@@ -32,10 +32,31 @@ export const fetchGoogleCalendarEvents = async () => {
 	return items
 }
 
-// rearrange date
-export const getDate = (startDate) => {
-	const orderedDate = startDate.split('-')
-	return `${orderedDate[1]}/${orderedDate[2]}/${orderedDate[0]}`;
+// rearrange date - Only triggers if the event is a google calendar All Day event.
+export const getDateRange = (startDate, endDate) => {
+	// get time difference in seconds
+	const eventLengthSec = (new Date(endDate).getTime() - new Date(startDate).getTime()) / 1000;
+	// convert day to seconds
+	const dayLength = 60 * 60 * 24;
+	// find event Lenth in days
+	const eventLength = eventLengthSec / dayLength
+
+	const orderedDateStart = startDate.split('-')
+
+	// if the event is more than one day long send back both dates
+	if (eventLength > 1) {
+		const orderedDateEnd = endDate.split('-')
+		return {
+			dateRange: `${orderedDateStart[1]}/${orderedDateStart[2]}/${orderedDateStart[0]} - ${orderedDateEnd[1]}/${orderedDateEnd[2]}/${orderedDateEnd[0]}`,
+			singleDay: false
+		}
+	} else {
+		// otherwise it is only one day so return just that date
+		return {
+			dateRange: `${orderedDateStart[1]}/${orderedDateStart[2]}/${orderedDateStart[0]}`,
+			singleDay: true
+		}
+	}
 }
 
 export interface EventOrganizer {

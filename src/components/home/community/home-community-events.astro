@@ -1,7 +1,7 @@
 ---
 import { Sanitizer } from 'project:utils/sanitizer.js'
 import { For, When } from '@astropub/flow';
-import { fetchGoogleCalendarEvents, getDate } from './home-community-events.constants.js'
+import { fetchGoogleCalendarEvents, getDateRange } from './home-community-events.constants.js'
 import eventToggleHandler from './home-community-events.eventToggleHandler.js?url'
 
 /** Google Calendar Events. */
@@ -20,7 +20,7 @@ const sanitizer = new Sanitizer()
 				</hgroup>
 				<span class="p-community-event-info"> 
 					<small class="p-community-event-date">
-						<span class="-date">{calendarEvent.start.date ? getDate(calendarEvent.start.date)
+						<span class="-date">{calendarEvent.start.date ? getDateRange(calendarEvent.start.date, calendarEvent.end.date).dateRange
 
 							: new Date( calendarEvent.start.dateTime).toLocaleString('en-US', {
 								day: '2-digit',
@@ -40,7 +40,7 @@ const sanitizer = new Sanitizer()
 										})
 									}</span>
 								)
-							: <span class="-time">All Day!</span>
+							: getDateRange(calendarEvent.start.date, calendarEvent.end.date).singleDay ? <span class="-time">All Day!</span> : 
 							<Fragment />
 						}
 					</small>

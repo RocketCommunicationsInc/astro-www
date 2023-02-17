@@ -1,5 +1,5 @@
 import { h } from 'project:utils/html.ts'
-import { fetchGoogleCalendarEvents, getDate } from './home-community-events.constants.ts'
+import { fetchGoogleCalendarEvents, getDateRange } from './home-community-events.constants.ts'
 import { gtag } from 'project:utils/client/google-analytics.ts'
 
 /** Returns a string, empty if the value is nullish. */
@@ -16,7 +16,7 @@ const createCalendarEventFragment = (
 	<span class="p-community-event-info"> 
 		<small class="p-community-event-date">
 			<span class="-date">${event.start.date
-				? getDate(event.start.date)
+				? getDateRange(event.start.date, event.end.date).dateRange
 				: new Date(event.start.dateTime).toLocaleString('en-US', {
 					day: '2-digit',
 					month: '2-digit',
@@ -32,7 +32,7 @@ const createCalendarEventFragment = (
 							timeZoneName: 'short'
 						})
 				}</span>`
-				: toString(event.start.date && `<span class="-time">All Day!</span>`)
+				: toString(getDateRange(event.start.date, event.end.date).singleDay && `<span class="-time">All Day!</span>`)
 			}
 		</small>
 		<span class='-second-col'>
