@@ -14,7 +14,7 @@
 
 	const changeLocation = (event) => {
 		const scrollTarget = document.getElementById(event.target.value)
-		scrollTarget.style.scrollMarginBlockStart = '50px'
+		scrollTarget.style.scrollMarginBlockStart = '25px'
 		location.hash = `#${event.target.value}`
 	}
 

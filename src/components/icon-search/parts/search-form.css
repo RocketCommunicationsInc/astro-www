@@ -4,7 +4,7 @@
 	width: 100%;
 
 	/* Reference */
-	--border-color: var(--Grey700Color);
+	--border-color: var(--Grey400Color);
 	--clear-color: var(--PlaceholderColor);
 	--label-color: var(--PlaceholderColor);
 	--search-color: var(--Grey700Color);
@@ -27,13 +27,13 @@
 
 		/* Layout */
 		align-items: center;
-		block-size: 15--step;
+		block-size: 9--step;
 		inline-size: 100%;
 
 		/* Appearance */
 		background-color: var(--PrimaryColor);
 		border-radius: 6--rpx;
-		box-shadow: var(--border-color) 0 0 0 2px inset;
+		box-shadow: var(--border-color) 0 0 0 1px inset;
 
 		& > * {
 			display: flex;
@@ -52,6 +52,11 @@
 		align-self: stretch;
 		padding-inline: 12--step;
 		width: 100%;
+
+		@media (width < 800px) {
+			/* Layout */
+			padding-inline: 9--step;
+		}
 	}
 
 	& .-control {
@@ -74,6 +79,11 @@
 
 		/* Appearance */
 		color: var(--search-color);
+
+		@media (width < 800px) {
+			/* Layout */
+			margin-inline-start: 3--step;
+		}
 	}
 
 	& .-clear {
@@ -88,6 +98,11 @@
 
 		/* Animation */
 		transition: opacity 300ms;
+
+		@media (width < 800px) {
+			/* Layout */
+			margin-inline-end: 0;
+		}
 
 		&:focus-within, &:hover {
 			--clear-color: var(--InverseColor);
@@ -105,6 +120,10 @@
 	}
 
 	& .-label {
+		/* Text */
+		font-weight: 300;
+		line-height: 20--rpx;
+
 		/* Appearance */
 		color: var(--label-color);
 

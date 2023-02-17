@@ -99,8 +99,12 @@
 			}
 			iconGroup.element.classList.toggle('nomatch', nomatches)
 
-			document.body.scrollTop = 0; // For Safari
-			document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+			const pageHeaderHeight = document.querySelector('.page-header').offsetHeight
+			const navHeight = document.querySelector('.p-navigation').offsetHeight
+
+			// on successful search, scroll to top of search results minus header
+			const scrollBackTo = window.visualViewport.width < 800 ? pageHeaderHeight + navHeight : pageHeaderHeight
+			document.documentElement.scrollTo(0, scrollBackTo)
 		}
 
 		searchResultCountEl.innerHTML = (

@@ -21,13 +21,14 @@
 	& select {
 		/* Layout */
 		max-width: 100--step;
-		padding-block: .75rem;
+		padding-block: 2--step;
 
 		/* Layout */
 		width: 50--step;
 
 		/* Text */
-		font-size: 24--rpx;
+		font-size: 16--rpx;
+		line-height: 20--rpx;
 
 		/* Arrow */
 		appearance: none;

@@ -5,7 +5,7 @@
 	border-block-end: 1--rpx solid var(--Grey200Color);
 
 	/* Layout */
-	padding-block: 4--step;
+	padding-block: 7--step;
 	padding-inline: 8--step;
 
 	/* Appearance */
@@ -18,6 +18,9 @@
 	}
 
 	@media (width < 480px) {
+		/* Layout */
+		padding-block: 4--step;
+
 		/* Layout */
 		padding-inline: 4--step;
 	}
@@ -55,6 +58,9 @@
 		}
 
 		& .-group-heading {
+			/* Layout */
+			margin-block-start: 10--step;
+
 			/* Text */
 			font-size: 24--rpx;
 		}
