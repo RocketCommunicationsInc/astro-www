@@ -270,7 +270,13 @@
 	grid-area: 3 / 1 / 4 / 5;
 	overflow: hidden;
 
+	/* Animation */
+	transition: margin 150ms;
+
 	@nest .p-community-event.--open & {
+		/* Layout */
+		margin-block-start: 5--step;
+
 		/* Animation */
 		animation: slideDown 150ms ease-out;
 	}
