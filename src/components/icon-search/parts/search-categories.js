@@ -25,10 +25,13 @@
 	const viewportHeight = window.innerHeight
 	const intersectionOffset = viewportHeight - iconSearchHeight
 	const iconGroups = document.querySelectorAll('.-group')
+	const iconHeaders = document.querySelectorAll('.-group-heading')
+	const iconHeaderFirst = iconHeaders[0]
+	const iconHeaderMarginTop = getComputedStyle(iconHeaderFirst).marginTop
 
 	let intersectOptions = {
 		root: null,
-		rootMargin: `-50px 0px -${intersectionOffset}px 0px`,
+		rootMargin: `-${iconHeaderMarginTop} 0px -${intersectionOffset}px 0px`,
 		threshold: 0,
 	}
 
