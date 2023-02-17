@@ -97,8 +97,10 @@
 					++searchResultCount
 				}
 			}
-
 			iconGroup.element.classList.toggle('nomatch', nomatches)
+
+			document.body.scrollTop = 0; // For Safari
+			document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 		}
 
 		searchResultCountEl.innerHTML = (
