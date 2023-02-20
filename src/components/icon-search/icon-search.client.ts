@@ -29,7 +29,7 @@ const setIconPanelPosition = () => {
 	let pageHeaderPlusNavHeight: number = pageHeaderHeight + navHeight
 	let searchRect: number = iconSearch?.getBoundingClientRect().y
 	let offset: number = searchRect + iconSearchHeight
-  if (document.body.scrollTop > pageHeaderPlusNavHeight || document.documentElement.scrollTop > pageHeaderPlusNavHeight) {
+  if (window.visualViewport.pageTop > pageHeaderPlusNavHeight) {
 	sidePanel.style.insetBlockStart = `${iconSearchHeight}px`
   } else {
     sidePanel.style.insetBlockStart = `${offset}px`
@@ -55,6 +55,8 @@ const callback = (entries: any[]) => {
 const observer = new IntersectionObserver(callback, intersectionOptions)
 
 observer.observe(pageHeader)
+
+window.addEventListener('resize', setIconPanelPosition)
 
 // const iconPanel = document.querySelector<HTMLElement>('icon-panel')!
 
