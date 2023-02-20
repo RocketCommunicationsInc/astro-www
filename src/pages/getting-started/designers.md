@@ -19,6 +19,8 @@ Before reading any further, we recommend you review available Astro components o
 ## Figma
 
 - [Astro 7 UXDS - Dark Theme](https://www.figma.com/community/file/1157371532469023309)
+- [Astro 7 UXDS - Light Theme](https://www.figma.com/community/file/1203068683334364243)
+- [Astro 7 UXDS - Wireframe Theme](https://www.figma.com/community/file/1203487593021750781)
 - [Astro UXDS 6.0 - Dark Theme](https://www.figma.com/community/file/1014254163928270411)
 - [Astro UXDS 6.0 - Light Theme](https://www.figma.com/community/file/1157352889822768689)
 - [Astro UXDS 6.0 - Wireframe Theme](https://www.figma.com/community/file/1101538528179386032)
