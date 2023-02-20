@@ -5,13 +5,17 @@ import globalData from 'project:data/global.json'
 const title = 'Releases'
 ---
 <DocsLayout content={{ title }} file={import.meta.url}>
-	<a href="#releases" class="h h1">
-		<h1 id="releases">
+	<a href="#content" class="h h1">
+		<h1>
 			Releases
 		</h1>
 	</a>
+
 	<p>
-		Astro represents a collection of artifacts including, but not limited to, guidance, compliance, design assets/tools, coded components, third-party themes, and related samples. The major version of Astro as indicated in the website footer and below is the version that should be included in contracts. The associated asset versions should not be referenced in contract language.
+		Astro represents a collection of artifacts including, but not limited to, guidance, compliance, design assets/tools,
+		coded components, third-party themes, and related samples. The major version of Astro as indicated in the website
+		footer and below is the version that should be included in contracts. The associated asset versions should not be
+		referenced in contract language.
 	</p>
 
 	<a href="#current-version" class="h h2">
@@ -19,48 +23,57 @@ const title = 'Releases'
 			Current Version ({globalData.designSystem.version})
 		</h2>
 	</a>
+
 	<table class="release-table release-table--current-version">
 		<thead>
 			<tr>
-			<th colspan="3">Astro { globalData.designSystem.version } - Updated <time>February, 02 2023</time></th>
+				<th colspan="3">
+					Astro { globalData.designSystem.version } - Updated
+					<time>February, 16 2023</time>
+				</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
-			<td>Design Language</td>
-			<td class="tabular"><b>{ globalData.designSystem.version }</b></td>
-			<td></td>
-			</tr>
-			<tr>
-				<td>Design Tokens</td>
-				<td class="tabular">1.4.1</td>
+				<td>Design Language</td>
+				<td class="tabular"><b>{ globalData.designSystem.version }</b></td>
 				<td></td>
 			</tr>
 			<tr>
-			<td>Figma Dark Theme Library</td>
-			<td class="tabular">7.2.0 -&gt; <b>7.3.0</b></td>
-			<td><a href="https://www.figma.com/community/file/1157371532469023309">Release Notes</a></td>
+				<td>Design Tokens</td>
+				<td class="tabular">1.4.1 -&gt; <b>1.5.0</b></td>
+				<td><a href="https://github.com/RocketCommunicationsInc/astro-design-tokens/releases/tag/v1.5.0">Release Notes</a></td>
 			</tr>
 			<tr>
-			<td>Figma Light Theme Library</td>
-			<td class="tabular"><b>7.0.0</b></td>
-			<td><a href="https://www.figma.com/community/file/1203068683334364243">Release Notes</a></td>
-			</tr>	
-			<tr>
-			<td>Figma Icon Library</td>
-			<td class="tabular">1.0.1</td>
-			<td>
-			</td>
+				<td>Figma Dark Theme Library</td>
+				<td class="tabular">7.3.0 -&gt; <b>7.3.1</b></td>
+				<td><a href="https://www.figma.com/community/file/1157371532469023309">Release Notes</a></td>
 			</tr>
 			<tr>
-			<td>Web Components</td>
-			<td class="tabular">7.6.0 -&gt; <b>7.7.0</b></td>
-			<td><a href="https://github.com/RocketCommunicationsInc/astro/releases/tag/v7.7.0">Release Notes</a></td>
+				<td>Figma Light Theme Library</td>
+				<td class="tabular">7.0.0 -&gt; <b>7.0.1</b></td>
+				<td><a href="https://www.figma.com/community/file/1203068683334364243">Release Notes</a></td>
 			</tr>
 			<tr>
-			<td>EGS Design Compliance</td>
-			<td class="tabular">4.1.0 -&gt; <b>4.2.0</b></td>
-			<td>Added breadcrumbs</td>
+				<td>Figma Wireframe Theme Library</td>
+				<td class="tabular">7.0.0 -&gt; <b>7.0.1</b></td>
+				<td><a href="https://www.figma.com/community/file/1203487593021750781">Release Notes</a></td>
+			</tr>
+			<tr>
+				<td>Figma Icon Library</td>
+				<td class="tabular">1.0.1</td>
+				<td>
+				</td>
+			</tr>
+			<tr>
+				<td>Web Components</td>
+				<td class="tabular">7.7.0 -&gt; <b>7.8.0</b></td>
+				<td><a href="https://github.com/RocketCommunicationsInc/astro/releases/tag/v7.8.0">Release Notes</a></td>
+			</tr>
+			<tr>
+				<td>EGS Design Compliance</td>
+				<td class="tabular">4.2.0</td>
+				<td></td>
 			</tr>
 		</tbody>
 	</table>
@@ -70,9 +83,12 @@ const title = 'Releases'
 			Previous Major Versions
 		</h2>
 	</a>
+
 	<p>
-		Visit our <a href="https://v6.astrouxds.com/" target="_blank">Legacy Documentation</a> for more information about Astro V6.
+		Visit our <a href="https://v6.astrouxds.com/" target="_blank">Legacy Documentation</a> for more information about
+		Astro V6.
 	</p>
+
 	<table class="release-table releast-table--previous-versions">
 		<thead>
 			<tr>
@@ -133,8 +149,11 @@ const title = 'Releases'
 			Release Schedule
 		</h2>
 	</a>
+
 	<p>
-		During 2023, Astro will publish minor and patch updates on a bi-weekly basis on Thursday and major updates on a bi-annual cadence. Astro patch/minor releases may include updates to design assets, compliance, components, design tokens and documentation.
+		During 2023, Astro will publish minor and patch updates on a bi-weekly basis on Thursday and major updates on a
+		bi-annual cadence. Astro patch/minor releases may include updates to design assets, compliance, components, design
+		tokens and documentation.
 	</p>
 
 	<a href="#semantic-versioning" class="h h3">
@@ -142,18 +161,25 @@ const title = 'Releases'
 			Semantic Versioning
 		</h3>
 	</a>
+
 	<p>
-		Astro uses Semantic Versioning or <a href="https://semver.org/" target="_blank">SemVer</a>, a widely adopted method of conveying meaning about the change. SemVer is expressed as three numbers delimited by a decimal point (1.4.3). While SemVer has quite a lot of nuance, for Astro we are adopting the basic patch, minor, and major nomenclature.
+		Astro uses Semantic Versioning or <a href="https://semver.org/" target="_blank">SemVer</a>, a widely adopted method
+		of conveying meaning about the change. SemVer is expressed as three numbers delimited by a decimal point (1.4.3).
+		While SemVer has quite a lot of nuance, for Astro we are adopting the basic patch, minor, and major nomenclature.
 	</p>
+
 	<div class="note">
 		<p>
-			Unlike standard decimals, each numeral is separated by a full-stop, increments numerically, and resets the numbers to the right. E.g., making a minor change to version 1.9.3 would result in a new version number of 1.10.0. There is no limit to how high each number can go, but practically speaking anything beyond 999 becomes unwieldy.
+			Unlike standard decimals, each numeral is separated by a full-stop, increments numerically, and resets the
+			numbers to the right. E.g., making a minor change to version 1.9.3 would result in a new version number of
+			1.10.0. There is no limit to how high each number can go, but practically speaking anything beyond 999 becomes
+			unwieldy.
 		</p>
 	</div>
-	
+
 	<a href="#web-component-breaking-changes" class="h h2">
 		<h2 id="web-component-breaking-changes">
-			Web Component Breaking Changes 
+			Web Component Breaking Changes
 		</h2>
 	</a>
 
@@ -162,20 +188,27 @@ const title = 'Releases'
 			What to expect
 		</h3>
 	</a>
+
 	<p>
-		“What is a breaking change?” can be subjective, so we have outlined below explicitly what we are calling breaking changes and what you can expect in each release.
+		“What is a breaking change?” can be subjective, so we have outlined below explicitly what we are calling breaking
+		changes and what you can expect in each release.
 	</p>
 
 	<p>
-		Any changes to this document will be announced in the Astro UXDS Working Group and in our <a href="https://github.com/RocketCommunicationsInc/astro/discussions/categories/announcements">Github Announcements</a> in advance.
+		Any changes to this document will be announced in the Astro UXDS Working Group and in our <a
+			href="https://github.com/RocketCommunicationsInc/astro/discussions/categories/announcements">Github
+			Announcements</a> in advance.
 	</p>
-	
+
 	<a href="#our-public-api" class="h h3">
 		<h3 id="our-public-api">
 			Our public API
 		</h3>
 	</a>
-	<p>A component's API includes: </p>
+
+	<p>
+		A component's API includes:
+	</p>
 
 	<ul>
 		<li>Properties</li>
@@ -190,7 +223,10 @@ const title = 'Releases'
 	<a href="#major" class="h h3">
 		<h3 id="major">Major</h3>
 	</a>
-	<p>Major releases contain breaking changes.</p>
+
+	<p>
+		Major releases contain breaking changes.
+	</p>
 	<ul>
 		<li>We may remove a deprecated component API.</li>
 		<li>We may remove a deprecated design token.</li>
@@ -205,16 +241,20 @@ const title = 'Releases'
 		</h3>
 	</a>
 
-	<p>Minor releases include new features and are always backwards compatible. 
-		Minor releases may include deprecation warnings where we signal in advance that a particular feature is scheduled to be removed in the next upcoming major release. At your convenience, before the next major release, review the migration steps and upgrade your application accordingly.
+	<p>
+		Minor releases include new features and are always backwards compatible.
+		Minor releases may include deprecation warnings where we signal in advance that a particular feature is scheduled to
+		be removed in the next upcoming major release. At your convenience, before the next major release, review the
+		migration steps and upgrade your application accordingly.
 		Minor releases may also include patch features.
 	</p>
+
 	<ul>
 		<li>We may add new components.</li>
 		<li>We may add a new component API.</li>
 		<li>We may add a new design token.</li>
 		<li>
-			We may change CSS properties on internal elements that are exposed publicly as shadow parts. 
+			We may change CSS properties on internal elements that are exposed publicly as shadow parts.
 			<ul>
 				<li>For example, changing border to use box-shadow instead.</li>
 			</ul>
@@ -226,13 +266,17 @@ const title = 'Releases'
 			</ul>
 		</li>
 	</ul>
+
 	<a href="#patch" class="h h3">
 		<h3 id="patch">Patch</h3>
 	</a>
-	<p>Patch releases include bug fixes and should not require you to change your code.</p>
+
+	<p>
+		Patch releases include bug fixes and should not require you to change your code.
+	</p>
+
 	<ul>
 		<li>We can change the internals of the Shadow DOM.</li>
 		<li>We will not change a component's width or height.</li>
 	</ul>
-
 </DocsLayout>

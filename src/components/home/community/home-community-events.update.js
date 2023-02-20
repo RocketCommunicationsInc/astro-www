@@ -1,5 +1,6 @@
 import { h } from 'project:utils/html.ts'
-import { fetchGoogleCalendarEvents } from './home-community-events.constants.ts'
+import { fetchGoogleCalendarEvents, getDate } from './home-community-events.constants.ts'
+import { gtag } from 'project:utils/client/google-analytics.ts'
 
 /** Returns a string, empty if the value is nullish. */
 const toString = (value) => value == null ? '' : String(value)
@@ -10,24 +11,25 @@ const createCalendarEventFragment = (
 	event
 ) => withCalendarInteractiveBehavior(h(`<article class="p-community-event --closed">
 	<small class="p-community-event-date">
-		<span class="-date">${
-			new Date(event.start.date || event.start.dateTime).toLocaleString('en-US', {
-				day: '2-digit',
-				month: '2-digit',
-				year: 'numeric',
-			})
-		}</span>
-		${
-			event.start.dateTime
-				? `<span class="-time">${
-					new Date(event.start.dateTime).toLocaleString('en-US', {
-						hour: 'numeric',
-						minute: '2-digit',
-						timeZoneName: 'short'
-					})
-			}</span>`
-			: toString(event.start.date && `<span class="-time">All Day!</span>`)
-		}
+	<span class="-date">${event.start.date
+		? getDate(event.start.date)
+		: new Date(event.start.dateTime).toLocaleString('en-US', {
+			day: '2-digit',
+			month: '2-digit',
+			year: 'numeric'
+		})
+	}</span>
+	${
+		event.start.dateTime
+			? `<span class="-time">${
+				new Date(event.start.dateTime).toLocaleString('en-US', {
+					hour: 'numeric',
+					minute: '2-digit',
+					timeZoneName: 'short'
+				})
+		}</span>`
+		: toString(event.start.date && `<span class="-time">All Day!</span>`)
+	}
 	</small>
 	<hgroup class="p-community-event-heading">
 		<h5>${event.summary}</h5>
@@ -63,6 +65,12 @@ const withCalendarInteractiveBehavior = (/** @type {HTMLElement} */ calendarEven
 		articleElement.classList.contains('--open') ? actionsElement.textContent = 'Hide Details' : actionsElement.textContent = 'View Details'
 	})
 
+	// telemetry: user opens the community event details
+	actionsElement.addEventListener('click', () => {
+		if (!articleElement.classList.contains('--open')) return
+
+		gtag('event', 'open_community_event_details')
+	})
 	return calendarEventFragment
 }
 

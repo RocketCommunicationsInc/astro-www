@@ -2,11 +2,43 @@
 /* ========================================================================== */
 
 .table-overflow {
+	/* Layout */
 	overflow-x: auto;
 
 	& table {
+		/* Layout */
 		min-width: auto;
 		width: 100%;
+	}
+}
+
+/* Table for Status System page */
+/* ========================================================================== */
+
+.status-system-colors {
+	/* Layout */
+	overflow-x: auto;
+
+	& table {
+		/* Layout */
+		min-width: auto;
+		width: 100%;
+
+		& td {
+			/* Text */
+			line-height: 1.5rem;
+		}
+	}
+
+	& .status-color {
+		/* Layout */
+		box-sizing: border-box;
+		height: 16--step;
+		width: 16--step;
+
+		/* Appearance */
+		background: transparent;
+		border: 1--step solid transparent;
 	}
 }
 
@@ -26,10 +58,11 @@
 
 	/* Appearance */
 	background: var(--BrightBlue850);
-	color: var(--PrimaryColor);
 	border-radius: var(--EdgeRadius);
+	color: var(--PrimaryColor);
 
 	& > code {
+		/* Text */
 		white-space: pre;
 	}
 }
@@ -55,6 +88,7 @@
 	box-shadow: var(--note-border-color, transparent) 0 0 0 1px inset;
 
 	& > :nth-child(1) {
+		/* Layout */
 		margin-block-start: 0;
 	}
 }
@@ -124,12 +158,12 @@
 	overflow-x: scroll;
 
 	& th, & td {
-		/* Layout */
-		vertical-align: text-top;
-
 		/* Text */
 		font-size: 16--rpx;
 		line-height: calc(20 / 16);
+
+		/* Layout */
+		vertical-align: text-top;
 		white-space: normal;
 	}
 

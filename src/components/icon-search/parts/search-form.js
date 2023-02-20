@@ -1,93 +1,120 @@
 {
-	let form = document.currentScript.previousSibling
+	// eslint-disable-next-line no-undef-init
+	let any = /** @type {any} */ (undefined)
 
-	let element = {
-		form,
-		control: form.querySelector('.-control'),
-		clear: form.querySelector('.-clear'),
-	}
+	/** Search Form. */
+	let formElement = /** @type {HTMLFormElement} */ (document.currentScript.previousSibling)
 
-	let state = {
+	/** Search Terms Control. */
+	let formControl = /** @type {HTMLInputElement} */ (formElement.querySelector('.-control'))
+
+	/** Search Terms Clear Button. */
+	let formClear = /** @type {HTMLInputElement} */ (formElement.querySelector('.-clear'))
+
+	let formState = {
 		focused: false,
 		filled: false,
 	}
 
-	element.form.addEventListener('focus', () => {
-		if (state.focused !== true) element.form.classList.toggle('-focused', state.focused = true)
+	formElement.addEventListener('focus', () => {
+		if (formState.focused !== true) formElement.classList.toggle('-focused', formState.focused = true)
 	})
 
-	element.form.addEventListener('blur', () => {
-		if (state.focused !== false) element.form.classList.toggle('-focused', false)
+	formElement.addEventListener('blur', () => {
+		if (formState.focused !== false) formElement.classList.toggle('-focused', false)
 	})
 
-	element.form.addEventListener('submit', event => {
+	formElement.addEventListener('submit', event => {
 		event.preventDefault()
 	})
 
-	element.control.addEventListener('input', () => {
-		let isFilled = Boolean(element.control.value)
+	formControl.addEventListener('input', () => {
+		let isFilled = Boolean(formControl.value)
 
-		if (state.filled !== isFilled) element.form.classList.toggle('-filled', state.filled = isFilled)
-
-		cancelAnimationFrame(onInputQueue)
-		onInputQueue = requestAnimationFrame(() => onInput(element.control.value))
-	})
-
-	element.clear.addEventListener('click', () => {
-		element.control.focus()
-
-		element.form.classList.toggle('-filled', state.filled = false)
+		if (formState.filled !== isFilled) formElement.classList.toggle('-filled', formState.filled = isFilled)
 
 		cancelAnimationFrame(onInputQueue)
-		onInputQueue = requestAnimationFrame(() => onInput(element.control.value))
+		onInputQueue = requestAnimationFrame(() => onInput(formControl.value))
 	})
 
-	let groups
+	formClear.addEventListener('click', () => {
+		formControl.focus()
 
-	let searchResultCountEl
+		formElement.classList.toggle('-filled', formState.filled = false)
 
-	let onInputQueue
+		cancelAnimationFrame(onInputQueue)
+		onInputQueue = requestAnimationFrame(() => onInput(formControl.value))
+	})
 
-	let onInput = (value) => {
-		groups = groups || [
+	/** Array of icon categories. */
+	let iconCategoryArray = /** @type {IconCategoryObject[]} */ (any)
+
+	/** Search result text (only currently used when there are no results). */
+	let noResultsElement = /** @type {HTMLParagraphElement} */ (any)
+
+	/** Number representing an awaited animation frame. */
+	let onInputQueue = 0
+
+	let onInput = (/** @type {string} */ value) => {
+		// value, trimmed and converted to lower case
+		value = value.trim().toLowerCase()
+
+		iconCategoryArray = iconCategoryArray || [
 			...document.querySelectorAll('.p-icon-groups .-group')
 		].map(
-			element => {
-				const name = element.querySelector('.-group-heading')?.textContent.toLowerCase()
+			(/** @type {HTMLElement} */ element) => {
+				/** Category name. */
+				const name = element.querySelector('.-group-heading').textContent.toLowerCase()
 
+				/** Icons as a normalized object. */
 				const icons = [
 					...element.querySelectorAll('.icon')
 				].map(
-					element => {
-						const name = element.querySelector('figcaption')?.textContent.toLowerCase()
+					(/** @type {HTMLElement} */ element) => {
+						const use = element.querySelector('use')
+						const name = element.querySelector('figcaption').textContent.toLowerCase()
+						const tags = document.querySelector(use.getAttribute('href') + ' metadata').textContent.split(', ')
 
 						return {
+							/** Icon name. */
 							name,
+							/** Icon (`<figure>`) element. */
 							element,
+							/** Icon tags. */
+							tags,
 						}
 					}
 				)
 
 				return {
+					/** Category Name */
 					name,
 					element,
-					icons
+					icons,
 				}
 			}
 		)
 
-		searchResultCountEl = searchResultCountEl || document.querySelector('.p-icon-results')
+		noResultsElement = noResultsElement || document.querySelector('.p-icon-results')
 
 		let searchResultCount = 0
 
-		let lowerCaseValue = value.toLowerCase()
-
-		for (let iconGroup of groups) {
+		for (let iconGroup of iconCategoryArray) {
 			let nomatches = true
-			let earlymatch = !lowerCaseValue || iconGroup.name.includes(lowerCaseValue)
+
+			/** Whether the icon is matched early because it is empty or matches the category name. */
+			let earlymatch = !value || iconGroup.name.toLowerCase().includes(value)
 
 			for (let icon of iconGroup.icons) {
-				const nomatch = !earlymatch && Boolean(lowerCaseValue) && !icon.name.includes(lowerCaseValue)
+				/** Whether the icon is not matching the search term. */
+				const nomatch = (
+					// whether the icon is
+					!earlymatch &&
+					!icon.name.includes(value) &&
+					!icon.tags.some(
+						tag => tag.includes(value)
+					)
+				)
 
 				nomatches = nomatches && nomatch
 
@@ -106,7 +133,7 @@
 			const scrollBackTo = window.visualViewport.width < 800 ? pageHeaderHeight + navHeight : pageHeaderHeight
 			document.documentElement.scrollTo(0, scrollBackTo)
 		}
-
+        
 		searchResultCountEl.innerHTML = (
 			searchResultCount
 				? (
@@ -119,3 +146,6 @@
 		)
 	}
 }
+
+/** @typedef {import('./search-form.d').IconObject} IconObject */
+/** @typedef {import('./search-form.d').IconCategoryObject} IconCategoryObject */

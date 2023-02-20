@@ -15,6 +15,7 @@ a.icon {
 	}
 
 	&:hover {
+		/* Appearance */
 		color: var(--DarkBlue500Color);
 	}
 }
