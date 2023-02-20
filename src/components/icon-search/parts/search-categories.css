@@ -20,10 +20,15 @@
 
 	& select {
 		/* Layout */
-		max-width: 100--step;
-		padding-block: 2--step;
+		margin-inline-end: 2--step;
 
 		/* Layout */
+		margin-inline-start: calc(-1 * 2--step);
+
+		/* Layout */
+		max-width: 100--step;
+		padding-block: 2--step;
+		padding-inline: 2--step;
 		width: 50--step;
 
 		/* Text */
