@@ -133,11 +133,10 @@
 			const scrollBackTo = window.visualViewport.width < 800 ? pageHeaderHeight + navHeight : pageHeaderHeight
 			document.documentElement.scrollTo(0, scrollBackTo)
 		}
-        
-		searchResultCountEl.innerHTML = (
+		noResultsElement.innerHTML = (
 			searchResultCount
 				? (
-					searchResultCount === Number(searchResultCountEl.dataset.maxSize)
+					searchResultCount === Number(noResultsElement.dataset.maxSize)
 				)
 					? ``
 				: ``
