@@ -53,7 +53,7 @@
 		--icon-search-margin-inline-end: -64--rpx;
 	}
 
-	@media (width >= 1480px) {
+	@media (width >= 1440px) {
 		--header-block-size: 430--rpx;
 		--header-nav-gap: 9--step;
 		--header-nav-text-size: 24--rpx;
