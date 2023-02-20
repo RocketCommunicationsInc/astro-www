@@ -21,7 +21,6 @@ const createTableOfContentsNavigation = (headings: NodeListOf<HTMLHeadingElement
 		asideLinkMap.set(heading, linkElement)
 	}
 
-	// navElement.append(listElement)
 	aside.append(navElement)
 
 	const visualViewport = globalThis.visualViewport!

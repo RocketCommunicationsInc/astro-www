@@ -174,20 +174,6 @@
 	/* Layout */
 	flex-shrink: 0;
 
-	/* @media (width < 800px) {
-		inset-block: 42--step auto;
-		inset-inline: 2--step 10--step;
-		position: fixed;
-	}
-
-	@media (800px <= width < 1024px) {
-		flex-basis: 0;
-	}
-
-	@media (1024px <= width < 1200px) {
-		flex-basis: 60--step;
-	} */
-
 	@media (width < 1330px) {
 		display: none;
 
