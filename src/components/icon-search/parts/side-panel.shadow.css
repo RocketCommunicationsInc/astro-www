@@ -65,7 +65,7 @@ h2 {
 	inset-inline-end: 0;
 	overflow: hidden scroll;
 	padding-block: 15--step;
-	padding-inline: 9--step;
+	padding-inline: 6--step;
 	position: fixed;
 	width: 90--step;
 
@@ -218,6 +218,53 @@ h2 {
 		color: var(--Grey800Color);
 	}
 
+	&::part(tag-label), &::part(group-label) {
+		/* Layout */
+		border-block-start: 1px solid var(--Grey600Color);
+		margin-block-end: 0;
+		margin-block-start: 3--step;
+
+		/* Layout */
+		margin-inline-end: auto;
+		padding-block-start: 3--step;
+
+		/* Layout */
+		width: 100%;
+
+		/* Text */
+		font-weight: 800;
+
+		/* Text */
+		text-align: start;
+	}
+
+	&::part(group-label) {
+		/* Layout */
+		border-block-start: none;
+		margin-block-start: 0;
+		padding-block-start: 0;
+	}
+
+	&::part(tags), &::part(group-name) {
+		/* Layout */
+		margin-block-start: 0;
+
+		/* Layout */
+		margin-inline-end: auto;
+
+		/* Text */
+		letter-spacing: .25%;
+
+		/* Text */
+		line-height: 5--step;
+
+		/* Text */
+		text-align: start;
+
+		/* Appearance */
+		color: var(--BrightBlue400Color);
+	}
+
 	&::part(button-group) {
 		display: flex;
 
@@ -226,6 +273,11 @@ h2 {
 		flex-flow: column;
 		gap: 3--step;
 		margin-block-start: 11--step;
+
+		@media (width < 800px) {
+			/* Layout */
+			margin-block-start: 4--step;
+		}
 	}
 
 	&::part(button) {
@@ -263,15 +315,15 @@ h2 {
 		/* Layout */
 		inline-size: 100%;
 		justify-content: center;
-		margin-block-start: 10--step;
+		margin-block: 7--step;
 
 		/* Appearance */
-		background-color: var(--BrightBlue500Color);
+		background-color: var(--BrightBlue400Color);
 		color: var(--DarkBlue950Color);
 
 		&:hover, &:focus {
 			/* Appearance */
-			background-color: var(--BrightBlue400Color);
+			background-color: var(--BrightBlue500Color);
 		}
 	}
 
@@ -286,7 +338,7 @@ h2 {
 		block-size: 6--step;
 		inline-size: 6--step;
 		margin-block-start: -13--step;
-		margin-inline-end: -7--step;
+		margin-inline-end: -5--step;
 
 		/* Appearance */
 		color: var(--Grey500Color);

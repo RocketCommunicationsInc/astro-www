@@ -70,6 +70,9 @@ class IconPanelInternals {
 
 	downloadVgButton: HTMLButtonElement
 	tagsParagraph: HTMLParagraphElement
+	tagsLabel: HTMLParagraphElement
+	groupNameParagraph: HTMLParagraphElement
+	groupNameLabel: HTMLParagraphElement
 	emitClipboardStatus: HTMLDialogElement
 	emitClipboardStatusContent: HTMLSpanElement
 	emitClipboardActiveButton: HTMLButtonElement | null
@@ -89,6 +92,9 @@ class IconPanelInternals {
 
 		this.downloadVgButton = root.querySelector('[value="download:svg"]')!
 		this.tagsParagraph = root.querySelector('[part~="tags"]')!
+		this.tagsLabel = root.querySelector('[part~="tag-label"]')!
+		this.groupNameParagraph = root.querySelector('[part~="group-name"]')!
+		this.groupNameLabel = root.querySelector('[part~="group-label"]')!
 		this.emitClipboardStatus = root.querySelector('[part~="status"]')!
 		this.emitClipboardStatusContent = root.querySelector('[part~="status-content"]')!
 		this.emitClipboardWriteVgButton = root.querySelector('[value="clipboard:write:vg"]')!
@@ -230,11 +236,17 @@ class IconPanelInternals {
 		/** Serialized markup representing the current icon web component. */
 		const serializedWCContent = `<rux-icon size="normal" icon=${JSON.stringify(id)}></rux-icon>`
 
+		const groupName = <string>symbolElement.parentElement?.getAttribute('data-name')
+
 		// update the download button
 		this.downloadVgButton.dataset.name = fileName
 		this.downloadVgButton.dataset.text = serializedVGContent
 
+		this.groupNameLabel.textContent = 'Category'
+		this.groupNameParagraph.textContent = groupName
+
 		this.tagsParagraph.textContent = content.querySelector('metadata')!.textContent
+		this.tagsLabel.textContent = 'Keywords'
 
 		// update the emit buttons
 		this.emitClipboardWriteIdButton.dataset.text = id
