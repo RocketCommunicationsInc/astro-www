@@ -10,11 +10,12 @@ export interface Props {
 import './site-skipto.css'
 
 const {
+	slot,
 	url,
 	...attributes
 } = {
 	url: '#content',
 	...Astro.props
-}
+} as Props
 ---
 <a class="p-skip" {...attributes} href={url}><slot>Skip to main content</slot></a>

@@ -1,6 +1,8 @@
 ---
 import Layout from 'project:layouts/home/home-layout.astro'
 
+import Version from 'project:components/home/version/home-version.astro'
+
 import Banner from 'project:components/home/banner/home-banner.astro'
 import banner from 'project:data/home-banner.json'
 
@@ -17,7 +19,8 @@ import Signup from 'project:components/home/signup/home-signup.astro'
 import signup from 'project:data/home-signup.json'
 ---
 <Layout>
-	<Banner data={banner.data} />
+	<Version />
+	<Banner {...banner.data} />
 	<Explainer data={explainer.data} />
 	<Community data={community.data} />
 	<Articles data={articles.data} />

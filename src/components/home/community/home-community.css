@@ -5,6 +5,7 @@
 
 	/* Layout */
 	flex-flow: column;
+	gap: 4--step;
 	inline-size: 100%;
 
 	& .p-community-heading {
@@ -36,7 +37,6 @@
 
 .p-community-content {
 	/* Layout */
-	margin-block-start: 5--step;
 	padding-block: 5--step 7--step;
 	padding-inline: 5--step;
 
@@ -65,18 +65,17 @@
 	font-size: 24--rpx;
 	font-weight: 600;
 	line-height: calc(28 / 24);
-
-	& + * {
-		/* Layout */
-		margin-block-start: 4--step;
-	}
 }
 
 /* Community: Content: Events */
 
 .p-community-events {
+	display: flex;
+
 	/* Layout */
+	flex-flow: column;
 	flex-grow: 1;
+	gap: 4--step;
 }
 
 .p-community-events-content {
@@ -278,7 +277,11 @@
 /* Community: Content: Links */
 
 .p-community-links {
+	display: flex;
+
 	/* Layout */
+	flex-flow: column;
+	gap: 4--step;
 	margin-block-start: 10--step;
 
 	@media (width >= 1200px) {

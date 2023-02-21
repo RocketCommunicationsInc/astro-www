@@ -6,11 +6,10 @@
 	/* Layout */
 	align-items: center;
 	flex-flow: column;
+	inset-block-start: 0;
 	padding-block: 6--step;
-	z-index: 10;
-
-	/* Appearance */
-	background: var(--SurfaceColor);
+	position: sticky;
+	z-index: 1;
 
 	/* Animation */
 	transition: inline-size 200ms;
@@ -24,6 +23,38 @@
 		grid-template-rows: min-content 1fr; /* stylelint-disable-line */
 		padding-block: 2--step;
 		padding-inline: 9--step;
+	}
+
+	@media (width >= 800px) {
+		/* Layout */
+		block-size: min(100%, 100vh);
+		inline-size: 78--step;
+		overflow-x: hidden;
+		overflow-y: auto;
+		overflow-y: overlay;
+		scrollbar-width: none;
+
+		/* Masking */
+		mask-image: var(--mask);
+		mask-position: bottom;
+		mask-size: 100% 100%;
+
+		/* Behavior */
+		scroll-behavior: smooth;
+		scrollbar-gutter: stable;
+
+		/* Masking Reference */
+		--mask: linear-gradient(0deg, hsl(0 0% 0% / 0%) 0%, hsl(0 0% 0% / 100%) 12--step);
+
+		&::-webkit-scrollbar {
+			/* Layout */
+			width: 0;
+		}
+
+		&.-has-results {
+			/* Layout */
+			inline-size: min(50vw, 140--step);
+		}
 	}
 }
 
@@ -43,39 +74,6 @@
 	}
 }
 
-@media (width >= 800px) {
-	.p-navigation {
-		/* Layout */
-		block-size: min(100%, 100vh);
-		inline-size: 79--step;
-		inset-block-start: 0;
-		overflow-x: hidden;
-		overflow-y: auto;
-		overflow-y: overlay;
-		position: sticky;
-		scrollbar-width: none;
-
-		/* Masking */
-		mask-image: var(--mask);
-		mask-position: bottom;
-		mask-size: 100% 100%;
-
-		/* Behavior */
-		scroll-behavior: smooth;
-		scrollbar-gutter: stable;
-
-		&::-webkit-scrollbar {
-			/* Layout */
-			width: 0;
-		}
-
-		&.-has-results {
-			/* Layout */
-			inline-size: min(50vw, 140--step);
-		}
-	}
-}
-
 /* Navigation: Heading */
 
 .p-navigation-heading {
@@ -83,7 +81,11 @@
 		opacity: .75;
 	}
 
-	& :hover, :focus {
+	&:hover, &:focus {
+		@media (width >= 800px) {
+			outline-offset: 2--step;
+		}
+
 		& .logo-text {
 			opacity: 1;
 		}
@@ -118,6 +120,14 @@
 
 h-navigation-list {
 	display: contents;
+
+	&:not(:defined) {
+		display: block;
+
+		/* Layout */
+		grid-area: navigation;
+		margin-inline: -8--step;
+	}
 }
 
 .p-navigation ul {

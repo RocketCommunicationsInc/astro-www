@@ -17,13 +17,13 @@ const props = {
 	<slot slot="head" name="head" />
 	<meta slot="head" name="theme-color" content="#101923" />
 	<slot name="top" />
-	<div class="-side">
+	<div class="x-menu">
 		<SiteNavigation />
 	</div>
-	<div class="-main">
+	<div class="x-main" id="content">
 		<slot />
 	</div>
-	<div class="-foot">
+	<div class="x-foot">
 		<SiteFooter />
 	</div>
 </Document>
