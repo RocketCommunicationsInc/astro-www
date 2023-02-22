@@ -2,6 +2,8 @@
 import Layout from 'project:layouts/new-docs/new-docs-layout.astro'
 import IconSearch from 'project:components/icon-search/icon-search'
 import PageHeader from 'project:components/page-header/page-header.js'
+import IconSearchForm from 'project:components/icon-search/parts/search-form.astro'
+import IconCategories from 'project:components/icon-search/parts/search-categories.astro'
 ---
 <Layout content={{ title: 'Icon Library' }} file={import.meta.url}>
 	<PageHeader slot="header">
@@ -14,6 +16,10 @@ import PageHeader from 'project:components/page-header/page-header.js'
 		<PageHeader.Nav></PageHeader.Nav>
 	</PageHeader>
 
+	<Fragment slot="toolbar">
+		<section class="p-icon-search"><IconCategories /><IconSearchForm label="Search icons" /></section>
+	</Fragment>
+
 	<IconSearch />
 
 	<p>
@@ -25,6 +31,5 @@ import PageHeader from 'project:components/page-header/page-header.js'
 	</p>
 
 	<Fragment slot="aside">
-		<IconSearch.SidePanel />
 	</Fragment>
 </Layout>

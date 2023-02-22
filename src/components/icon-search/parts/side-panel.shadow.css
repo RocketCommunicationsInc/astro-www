@@ -61,15 +61,43 @@ h2 {
 	align-items: center;
 	block-size: 100dvh;
 	flex-flow: column;
+	inset-block-start: 93px;
+	inset-inline-end: 0;
 	overflow: hidden scroll;
 	padding-block: 15--step;
 	padding-inline: 9--step;
+	position: fixed;
+	width: 90--step;
 
 	/* Appearance */
 	background-color: var(--DarkBlue800Color);
 	color: var(--PrimaryColor);
 	scrollbar-color: transparent transparent;
 	scrollbar-width: none;
+
+	@media (width < 1440px) {
+		/* Layout */
+		width: 75--step;
+	}
+
+	@media (width < 1200px) {
+		/* Layout */
+		width: 70--step;
+
+		/* Appearance */
+		box-shadow: -2px 2px 4px rgba(0, 0, 0, .25);
+	}
+
+	@media (width < 800px) {
+		/* Layout */
+		padding-block: 5--step;
+		padding-inline: 5--step;
+	}
+
+	@media (width >= 1440px) {
+		/* Layout */
+		width: 90--step;
+	}
 
 	/* Reference */
 	--icon-size: 50--step;
@@ -79,6 +107,24 @@ h2 {
 		width: 0;
 	}
 
+	&::part(heading-wrapper) {
+		display: flex;
+
+		/* Layout */
+		align-items: center;
+		flex-direction: column;
+
+		@media (width < 800px) {
+			/* Layout */
+			flex-direction: row-reverse;
+			justify-content: flex-end;
+
+			/* Layout */
+			margin-inline-end: auto;
+			width: 80%;
+		}
+	}
+
 	&::part(label) {
 		/* Text */
 		font-size: 36--rpx;
@@ -86,6 +132,13 @@ h2 {
 		letter-spacing: .0025em;
 		line-height: calc(40 / 36);
 		text-align: center;
+
+		@media (width < 800px) {
+			/* Text */
+			font-size: 16--rpx;
+			line-height: 24--rpx;
+			text-align: start;
+		}
 	}
 
 	&::part(icon) {
@@ -97,6 +150,14 @@ h2 {
 
 		/* Appearance */
 		border-radius: 12--rpx;
+
+		@media (width < 800px) {
+			/* Layout */
+			block-size: 50--rpx;
+			inline-size: 50--rpx;
+			margin-block-start: 0;
+			margin-inline-end: 12--rpx;
+		}
 	}
 
 	&::part(status) {
@@ -230,6 +291,19 @@ h2 {
 		/* Appearance */
 		color: var(--Grey500Color);
 		cursor: pointer;
+
+		@media (width < 800px) {
+			/* Layout */
+			block-size: 30--rpx;
+			inline-size: 30--rpx;
+			margin-block-start: 0;
+
+			/* Layout */
+			margin-inline-end: 0;
+
+			/* Layout */
+			position: absolute;
+		}
 	}
 }
 
