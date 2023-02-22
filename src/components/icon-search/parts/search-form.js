@@ -124,14 +124,24 @@
 					++searchResultCount
 				}
 			}
-
 			iconGroup.element.classList.toggle('nomatch', nomatches)
-		}
 
+			const pageHeaderHeight = document.querySelector('.page-header').offsetHeight
+			const navHeight = document.querySelector('.p-navigation').offsetHeight
+
+			// on successful search, scroll to top of search results minus header
+			const scrollBackTo = window.visualViewport.width < 800 ? pageHeaderHeight + navHeight : pageHeaderHeight
+			document.documentElement.scrollTo(0, scrollBackTo)
+		}
 		noResultsElement.innerHTML = (
-			searchResultCount === 0
-				? `No matching icons. Please contact <a href="mailto:support@astrouxds.com">support@astrouxds.com</a>.`
-			: ``
+			searchResultCount
+				? (
+					searchResultCount === Number(noResultsElement.dataset.maxSize)
+				)
+					? ``
+				: ``
+			: `
+			<strong>No results for "${value}".</strong> <p>Not finding what you want? <a href="mailto:support@astrouxds.com">Contact us</a> and suggest a new icon.</p>`
 		)
 	}
 }

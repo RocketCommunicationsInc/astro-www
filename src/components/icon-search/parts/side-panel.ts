@@ -205,23 +205,8 @@ class IconPanelInternals {
 		}
 	}
 
-	/** Resizes the heading of the icon panel to prevent it from requiring more than one line. */
-	resizeHeading(headingText: string) {
-		const headingStyle = getComputedStyle(this.heading)
-
-		/** Size of the font, starting with a maximum size of 36. */
-		let headingFontSize = 36
-
+	setHeading(headingText: string) {
 		this.heading.textContent = headingText
-
-		do {
-			this.heading.style.setProperty('font-size', headingFontSize + 'px', 'important')
-			this.heading.style.setProperty('line-height', String(40 / headingFontSize + 0.0001), 'important')
-
-			--headingFontSize
-		} while (
-			parseFloat(headingStyle.height) > 40
-		)
 	}
 
 	useSymbolElement(symbolElement: SVGSymbolElement) {
@@ -262,7 +247,7 @@ class IconPanelInternals {
 		// replace the contents of the preview to the cloned content of the current icon
 		this.preview.replaceChildren(content.cloneNode(true))
 
-		this.resizeHeading(symbolElement.firstElementChild!.textContent!)
+		this.setHeading(symbolElement.firstElementChild!.textContent!)
 	}
 }
 
