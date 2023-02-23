@@ -1,0 +1,8 @@
+.p-version {
+	/* Layout */
+	align-self: end;
+
+	/* Text */
+	font-size: 14--rpx;
+	line-height: calc(20 / 14);
+}

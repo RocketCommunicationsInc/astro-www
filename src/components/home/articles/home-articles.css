@@ -1,9 +1,10 @@
 .p-articles {
-	/* Layout */
-	inline-size: 100%;
+	display: flex;
 
 	/* Layout */
-	max-inline-size: 100%;
+	flex-flow: column;
+	gap: 4--step;
+	inline-size: 100%;
 
 	& .p-articles-content {
 		/* Layout */

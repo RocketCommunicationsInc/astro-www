@@ -22,7 +22,6 @@
 
 	@media (width < 1520px) {
 		/* Layout */
-		margin-block-start: 8--step;
 		padding-block: 5--step;
 		padding-inline: 5--step;
 	}
@@ -30,7 +29,6 @@
 	@media (width >= 1520px) {
 		/* Layout */
 		gap: 20--step;
-		margin-block-start: 8--step;
 		padding-block: 9--step;
 		padding-inline: 17--step;
 	}

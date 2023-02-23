@@ -61,7 +61,7 @@ svg {
 	}
 }
 
-::slotted(:is(a, span)) {
+:defined ::slotted(:is(a, span)) {
 	/* stylelint-disable-next-line declaration-no-important */
 	display: contents !important;
 }
