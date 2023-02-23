@@ -59,7 +59,7 @@ h2 {
 
 	/* Layout */
 	align-items: center;
-	block-size: 100dvh;
+	block-size: calc(100dvh - 93px);
 	flex-flow: column;
 	inset-block-start: 93px;
 	inset-inline-end: 0;
