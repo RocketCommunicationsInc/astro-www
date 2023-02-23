@@ -1,5 +1,7 @@
-.-main {
-	/** Appearance */
-	background-color: var(--PrimaryColor);
-	color: var(--TextColor);
+.p-grid {
+	& > .x-main {
+		/** Appearance */
+		background-color: var(--PrimaryColor);
+		color: var(--TextColor);
+	}
 }

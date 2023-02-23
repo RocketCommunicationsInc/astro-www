@@ -2,10 +2,6 @@
 	"$schema": "./schema.json",
 	"type": "object",
 	"data": {
-		"version": {
-			"type": "text",
-			"data": "Current version: 7.0"
-		},
 		"heading": {
 			"type": "text",
 			"data": "Astro"

@@ -5,17 +5,15 @@
 	align-items: center;
 	flex-flow: column;
 	inline-size: min(100% - 4--step, 154--step);
-	padding-block: 7--step;
 
-	& .x-heading-group {
-		display: flex;
-
-		/* Layout */
-		align-items: center;
-		flex-flow: column;
+	& .x-heading-group,
+	& .x-heading {
+		display: contents;
 	}
 
 	& .x-heading-image {
+		display: inline-block;
+
 		/* Layout */
 		block-size: auto;
 		inline-size: min(100%, 72.5--step);
@@ -46,14 +44,4 @@
 		--text-shadow-blur: 6px;
 		--text-shadow-color: hsl(0 0% 0% / max(100% / 3));
 	}
-}
-
-.p-version {
-	/* Layout */
-	margin-block-end: 4--step;
-	margin-block-start: 4--step;
-	margin-inline-start: auto;
-
-	/* Text */
-	font-size: 14--rpx;
 }
