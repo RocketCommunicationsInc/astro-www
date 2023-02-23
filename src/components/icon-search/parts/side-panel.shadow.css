@@ -55,13 +55,15 @@ h2 {
 }
 
 :host {
+	--block-size-offset: 93px;
+
 	display: flex;
 
 	/* Layout */
 	align-items: center;
-	block-size: 100dvh;
+	block-size: calc(100dvh - var(--block-size-offset));
 	flex-flow: column;
-	inset-block-start: 93px;
+	inset-block-start: var(--block-size-offset);
 	inset-inline-end: 0;
 	overflow: hidden scroll;
 	padding-block: 15--step;
@@ -236,6 +238,11 @@ h2 {
 
 		/* Text */
 		text-align: start;
+	}
+
+	&::part(category-keyword-group) {
+		/* Layout */
+		width: 100%;
 	}
 
 	&::part(group-label) {
