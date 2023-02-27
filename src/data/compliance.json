@@ -336,7 +336,7 @@
 						{
 							"numeral": 2,
 							"rule": "Checkboxes shall act independently of others in a group.",
-							"status": "curent",
+							"status": "current",
 							"tier": 3
 						},
 						{
@@ -553,7 +553,7 @@
 						},
 						{
 							"numeral": 2,
-							"rule": "Input Fields shall use the mimimum text size defined in the CSS.",
+							"rule": "Input Fields shall use the minimum text size defined in the CSS.",
 							"status": "under-review",
 							"tier": 2
 						},
@@ -710,7 +710,7 @@
 						},
 						{
 							"numeral": 3,
-							"rule": "A Progress indicator shall be displayed when a operation takes longer than one second to complete.",
+							"rule": "A Progress indicator shall be displayed when an operation takes longer than one second to complete.",
 							"status": "under-review",
 							"tier": 3
 						}
