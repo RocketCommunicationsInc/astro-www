@@ -244,7 +244,7 @@
 						{
 							"numeral": 2,
 							"rule": "Breadcrumbs shall not extend past seven items.",
-							"status": "new",
+							"status": "deprecated",
 							"tier": 3
 						}
 					]
