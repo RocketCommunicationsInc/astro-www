@@ -304,7 +304,7 @@
 						},
 						{
 							"numeral": 8,
-							"rule": "Outline Button style shall indicate the less preferred option in grouped Buttons.",
+							"rule": "Secondary Button style shall indicate the less preferred option in grouped Buttons.",
 							"status": "under-review",
 							"tier": 2
 						},
