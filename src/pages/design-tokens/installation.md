@@ -117,3 +117,31 @@ A few utility classes for applying Astro typography.
 ```css
 @import "node_modules/@astrouxds/tokens/dist/scss-map-flat/base.component.scss";
 ```
+
+### JSON
+
+```js
+import reference from '@astrouxds/tokens/dist/json/base.reference.json';
+```
+
+```js
+import system from '@astrouxds/tokens/dist/json/base.system.json';
+```
+
+```js
+import component from '@astrouxds/tokens/dist/json/base.component.json';
+```
+
+### Nested JSON
+
+```js
+import reference from '@astrouxds/tokens/dist/json-nested/base.reference.json';
+```
+
+```js
+import system from '@astrouxds/tokens/dist/json-nested/base.system.json';
+```
+
+```js
+import component from '@astrouxds/tokens/dist/json-nested/base.component.json';
+```
