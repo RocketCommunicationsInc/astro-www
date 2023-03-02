@@ -36,13 +36,19 @@ color-swab::before {
 
 # Color
 
-Maintaining color consistency across applications is an essential part of what makes an application an Astro Application. Astro uses [Design Tokens](/design-tokens/getting-started/), which answers questions like “what color should be used for XYZ”? They define UI elements and their states within the Astro Design System. There are three types of Design Tokens based on how the color will be used: [Reference Tokens](/design-tokens/reference/), [System Tokens](/design-tokens/system), and [Component Tokens](/design-tokens/component).
+Maintaining color consistency across applications is an essential part of what makes an application an Astro Application. In Astro, a variety of color palettes combine to form various themes. Each color has been carefully chosen to create a cohesive design system. In order to remain Astro-compliant, you should avoid creating your own colors or values.
+
+## Design Tokens and Colors
+
+Astro uses [Design Tokens](/design-tokens/getting-started/), which answers questions like “what color should be used for XYZ?” They define UI elements and their states within the Astro Design System. There are three types of Design Tokens based on how the color will be used: [Reference Tokens](/design-tokens/reference/), [System Tokens](/design-tokens/system), and [Component Tokens](/design-tokens/component).
 
 [Reference Tokens](/design-tokens/reference) are all the possible colors within the Astro Design System. There is no specific meaning attached to these colors, and they are organized according to thematic palettes. An example of a reference token is: "color.palette.brightblue.500".
 
 [System Tokens](/design-tokens/system) are the high-level uses for each color. System tokens have specific names like “color.text.error” to describe a particular use case and its state. The token previously mentioned would only be used for error message text, while a token like “color.border.interactive.default” would be used as the border color of an interactive element in its default state. It is recommended to use System Tokens as much as possible to add meaning to the colors within your designs.
 
 [Component Tokens](/design-tokens/component) refer to colors used only for specific components. For example, a Status Symbol with a normal status has a Component token: ”status-symbol.color.fill.normal.on-dark”. These colors should not be used outside of their specific component and are not found in System Tokens.
+
+## WCAG Compliance
 
 All color pairings should follow the latest WCAG AA contrast rules. Astro components are pre-built to include appropriate color contrasts. In order to remain compliant, it is advised that users avoid creating new colors or values outside of the Astro design system palette.
 
