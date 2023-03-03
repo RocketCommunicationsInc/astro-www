@@ -16,7 +16,7 @@ A Pop Up Menu provides users with an ordered list of available actions for a int
 
 While rules governing the Pop Up Menu appearance and behavior generally mirror that of the generic Pop Up component, the width of its container will automatically adjust based on the width of the text content, which may be comprised of anything from a single menu item to a list of multiple items (up to a limit of 25 items).
 
-## Rules of Thumb for Pop Up Menus
+## Rules of Thumb
 
 - Select menu item names that are accurate and informative allowing user to predict the result of choosing an item.
 - Use separators to indicate groups of related items.
