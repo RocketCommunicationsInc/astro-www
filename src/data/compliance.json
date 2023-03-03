@@ -26,12 +26,6 @@
 							"rule": "Components and backgrounds shall conform to the colors specified in Astro's [color palettes](/design-guidelines/color/).",
 							"status": "updated",
 							"tier": 2
-						},
-						{
-							"numeral": 2,
-							"rule": "The colors specified in the [Tag 1](/design-guidelines/color/#tag-1), [Tag 2](/design-guidelines/color/#tag-2), [Tag 3](/design-guidelines/color/#tag-3), and [Tag 4](/design-guidelines/color/#tag-4) palettes shall be used when distinct colors are needed to indicate data categories or groups.",
-							"status": "current",
-							"tier": 2
 						}
 					]
 				},
