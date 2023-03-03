@@ -25,7 +25,7 @@ While rules governing the Pop Up Menu appearance and behavior generally mirror t
 - Choose menu names that are short and precise. Do not use an ellipsis to truncate overflow text as this indicates that further action or another dialog or window is required before the action takes place.
 - Avoid combining actions and attributes in the same group. Users tend to view choosing an action (e.g. “Delete item”) differently from choosing an attribute (e.g. “Rating”).
 - When using an ellipsis (…), don’t use sentence fragments or leading commands. 
-- It is recommend that actions should not be truncated with an ellipsis (…).  However, if you must use ellipses for both truncation and to indicate further action is needed, add additional space after the ellipsis for those that require further action in order to clarify that they are not truncated.
+- It is recommended that actions should not be truncated with an ellipsis (…). However, if you must use ellipses for both truncation and to indicate further action is needed, add additional space after the ellipsis for those that require further action in order to clarify that they are not truncated.
 
 ## Examples
 :::two-col
