@@ -17,7 +17,6 @@ Action Buttons allow users to trigger actions by clicking, tapping, or pressing 
 - Use only predefined Button colors, sizes and fonts — don’t customize or alter them.
 - Don’t design elements which look similar to Buttons but act differently. Buttons are actionable elements.
 - Don’t activate Pop Up Menus from Buttons.
-- Buttons within the same group should be the same size. Use the width of the widest Button.
 - Space Buttons evenly.
 - Clearly title Buttons by choosing a verb that describes the action the user performs at precisely the moment the Button is clicked: “Save, Close, Print, \* Delete, Change Password,” etc.
 - Resize Button width to accommodate the title; do not abbreviate or truncate Button titles.
