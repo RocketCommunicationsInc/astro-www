@@ -5,23 +5,23 @@ import './home-articles.css'
 
 const { data } = Astro.props as typeof articles
 ---
-<article class="p-articles">
+<section class="p-articles" aria-label={data.heading.data}>
 	<h3 class="-heading">{data.heading.data}</h3>
 	<div class="-articles-content">
 		<h-slideshow class="p-article-slideshow">
 			<For of={data.content.data}>{item => (
-				<section class="p-article">
+				<article class="p-article">
 					<img class="-image" src={item.image.data.url} alt={item.image.data.description} width="296" height="222" aria-hidden="true" loading="lazy" />
 					<h4 class="-heading">
 						<a href={item.action.data.url} target="_blank">{item.heading.data}</a>
 					</h4>
 					<p class="-content">{item.content.data}</p>
-				</section>
+				</article>
 			)}</For>
 		</h-slideshow>
 		<a href={data.mainlink.data.url} class="-link" target="_blank">{data.mainlink.data.description}</a>
 	</div>
-</article>
+</section>
 <script>
 import 'project:components/slideshow/slideshow.js'
 </script>

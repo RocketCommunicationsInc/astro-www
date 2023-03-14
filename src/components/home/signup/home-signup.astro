@@ -8,7 +8,7 @@ import { For } from '@astropub/flow'
 
 const { data } = Astro.props as typeof signup
 ---
-<section class="p-signup">
+<section class="p-signup" aria-label={data.heading.data}>
 	<h3 class="p-signup-heading">{data.heading.data}</h3>
 	<p class="p-signup-content">{data.summary.data}</p>
 	<form class="p-signup-form" action={data.form.data.action.data} method={data.form.data.method.data} target="_blank">

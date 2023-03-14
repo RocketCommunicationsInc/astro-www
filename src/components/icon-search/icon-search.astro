@@ -4,13 +4,6 @@ import IconGroups from 'project:components/icon-search/parts/icon-groups.astro'
 import SidePanel from './parts/side-panel.astro'
 import icons from 'project:data/icons.json'
 import './icon-search.css'
-
-const countOfIcons = Object.keys(icons).reduce(
-	(acc, key) => (
-		acc += Object.keys(icons[key]).length
-	),
-	0
-)
 ---
 <SidePanel />
 

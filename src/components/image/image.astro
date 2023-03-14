@@ -7,4 +7,4 @@ const { url, src, description, alt, ...props } = Astro.props as Props & {
 	src: string
 }
 ---
-<svg role="none" aria-label={description || alt} {...props}><use href={url || src} /></svg>
+<svg role="img" aria-label={description || alt} {...props}><use href={url || src} /></svg>
