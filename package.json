@@ -25,6 +25,7 @@
 		"eslint": "8.36.0",
 		"eslint-config-dev": "3.2.0",
 		"eslint-plugin-astro": "0.24.0",
+		"eslint-plugin-jsx-a11y": "6.7.1",
 		"isomorphic-dompurify": "1.2.0",
 		"lightningcss": "1.19.0",
 		"parse-yaml": "0.1.0",
@@ -41,37 +42,10 @@
 	},
 	"eslintConfig": {
 		"extends": [
-			"dev"
-		],
-		"parser": "@typescript-eslint/parser",
-		"plugins": [
-			"eslint-plugin-astro"
+			"dev/astro"
 		],
 		"ignorePatterns": [
 			"src/components/site-search/site-search-engine.js"
-		],
-		"rules": {
-			"no-new": "off"
-		},
-		"overrides": [
-			{
-				"files": [
-					"*.astro"
-				],
-				"parser": "astro-eslint-parser",
-				"parserOptions": {
-					"parser": "@typescript-eslint/parser",
-					"extraFileExtensions": [
-						".astro"
-					]
-				},
-				"rules": {
-					"eol-last": [
-						"error",
-						"never"
-					]
-				}
-			}
 		]
 	},
 	"postcss": {
