@@ -6,8 +6,7 @@
 	flex-flow: column;
 	inline-size: min(100% - 4--step, 154--step);
 
-	& .x-heading-group,
-	& .x-heading {
+	& .x-heading-group {
 		display: contents;
 	}
 

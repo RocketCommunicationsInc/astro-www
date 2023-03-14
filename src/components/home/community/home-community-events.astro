@@ -18,11 +18,12 @@ const sanitizer = new Sanitizer()
 				<hgroup class="p-community-event-heading">
 					<h5>{calendarEvent.summary}</h5>
 				</hgroup>
-				<span class="p-community-event-info"> 
+				<span class="p-community-event-info">
 					<small class="p-community-event-date">
-						<span class="-date">{calendarEvent.start.date ? getDateRange(calendarEvent.start.date, calendarEvent.end.date).dateRange
-
-							: new Date( calendarEvent.start.dateTime).toLocaleString('en-US', {
+						<span class="-date">{
+							calendarEvent.start.date
+								? getDateRange(calendarEvent.start.date, calendarEvent.end.date).dateRange
+							: new Date(calendarEvent.start.dateTime).toLocaleString('en-US', {
 								day: '2-digit',
 								month: '2-digit',
 								year: 'numeric',
@@ -40,8 +41,9 @@ const sanitizer = new Sanitizer()
 										})
 									}</span>
 								)
-							: getDateRange(calendarEvent.start.date, calendarEvent.end.date).singleDay ? <span class="-time">All Day!</span> : 
-							<Fragment />
+							: getDateRange(calendarEvent.start.date, calendarEvent.end.date).singleDay
+								? <span class="-time">All Day!</span>
+							: <Fragment />
 						}
 					</small>
 					<When test={calendarEvent.location}>

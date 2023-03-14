@@ -8,12 +8,12 @@ const { data } = Astro.props as typeof explainer
 
 // const slugify = (value) => value.replace(/[^\w]/g, '-').toLowerCase()
 ---
-<article class="p-explainer" id="explainer" aria-label="getting started">
+<section class="p-explainer" id="explainer" aria-label="getting started">
 	<For of={data}>{(item) => (
-		<section class="x-card">
+		<article class="x-card">
 			<Image {...item.image.data} aria-hidden="true" />
 			<h3><a href={item.action.data.url}>{item.heading.data}</a></h3>
 			<p>{item.content.data}</p>
-		</section>
+		</article>
 	)}</For>
-</article>
+</section>
