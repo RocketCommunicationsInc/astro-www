@@ -271,6 +271,9 @@
 	grid-area: 3 / 1 / 4 / 5;
 	overflow: hidden;
 
+	/* Appearance */
+	cursor: initial;
+
 	/* Animation */
 	transition: margin 150ms;
 

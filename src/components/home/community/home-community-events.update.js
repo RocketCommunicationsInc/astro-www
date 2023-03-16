@@ -62,8 +62,6 @@ const withCalendarInteractiveBehavior = (/** @type {HTMLElement} */ calendarEven
 
 	// handle toggle events on the button
 	articleElement.addEventListener('click', event => {
-		//don't activate if the target is a link
-		if(event.target.nodeName === 'A') return;
 
 		detailsElement.style.setProperty('--content-height', detailsElement.scrollHeight + 'px')
 
@@ -75,8 +73,6 @@ const withCalendarInteractiveBehavior = (/** @type {HTMLElement} */ calendarEven
 
 	// telemetry: user opens the community event details
 	articleElement.addEventListener('click', (event) => {
-		//don't activate if the target is a link
-		if(event.target.nodeName === 'A') return;
 		if (!articleElement.classList.contains('--open')) return
 
 		gtag('event', 'open_community_event_details')
