@@ -62,6 +62,8 @@ const withCalendarInteractiveBehavior = (/** @type {HTMLElement} */ calendarEven
 
 	// handle toggle events on the button
 	articleElement.addEventListener('click', event => {
+		//if you're clicking inside the event details don't activate close
+		if(event.target.closest('.p-community-event-details') !== null) return;
 
 		detailsElement.style.setProperty('--content-height', detailsElement.scrollHeight + 'px')
 
@@ -73,6 +75,8 @@ const withCalendarInteractiveBehavior = (/** @type {HTMLElement} */ calendarEven
 
 	// telemetry: user opens the community event details
 	articleElement.addEventListener('click', (event) => {
+		//if you're clicking inside the event details don't activate close
+		if(event.target.closest('.p-community-event-details') !== null) return;
 		if (!articleElement.classList.contains('--open')) return
 
 		gtag('event', 'open_community_event_details')
