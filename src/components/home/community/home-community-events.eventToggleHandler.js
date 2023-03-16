@@ -15,6 +15,8 @@
 
 	// handle toggle events
 	eventElement.addEventListener('click', event => {
+		if(event.target.nodeName === 'A') return;
+
 		eventDetailsElement.style.setProperty('--content-height', eventDetailsElement.scrollHeight + 'px')
 
 		eventElement.classList.toggle('--closed')
@@ -24,7 +26,9 @@
 	})
 
 	// telemetry: user opens the community event details
-	eventElement.addEventListener('click', () => {
+	eventElement.addEventListener('click', (event) => {
+		//don't activate if the target is a link
+		if(event.target.nodeName === 'A') return;
 		if (!eventElement.classList.contains('--open')) return
 
 		gtag('event', 'open_community_event_details')
