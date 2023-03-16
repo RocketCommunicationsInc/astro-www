@@ -6,7 +6,7 @@ layout: project:layouts/docs/docs-layout.astro
 title: Application Feedback
 ---
 
-# Feedback Patterns
+# Application Feedback
 
 Feedback patterns are mechanisms used to collect usability or content-related concerns and suggestions from users of a website or application. Gathering this feedback is critical to building a valuable application and providing a pleasant user experience.
 
@@ -22,7 +22,7 @@ Close-ended questions provide data that can be directly compared between partici
 
 ### Yes/No Questions
 
-Use yes/no questions to capture both positive and negative sentiments about an experience in an application, such as Was this page helpful? These question types require little interaction cost from the user and help to gain a snapshot of a user’s experience; however, they do not offer further explanation.
+Use yes/no questions to capture both positive and negative sentiments about an experience in an application, such as <em>Was this page helpful?</em> These question types require little interaction cost from the user and help to gain a snapshot of a user’s experience; however, they do not offer further explanation.
 
 ![Example of yes/no questions](/img/patterns/feedback-yes-no.png)
 
@@ -111,3 +111,11 @@ Use a [Pop Up](/components/pop-up/) or [Non-modal Dialog](/components/dialog/) f
 - The more questions you ask users, the lower the completion rate, so limit surveys to ten questions.
 - Survey completion rates tend to decrease if there is more than one open-text question, so aim for just one comment box (open-text) question.
 - Ensure feedback requests never appear unexpectedly or hinder user progress.
+
+## References
+
+ [Collecting User Feedback: 10 Best Practices | Adobe XD Ideas](https://xd.adobe.com/ideas/process/user-research/collecting-user-feedback/)
+
+ [In App Feedback Patterns - Lightning Design System](https://www.lightningdesignsystem.com/guidelines/in-app-feedback/patterns/)
+
+ [The ultimate guide to running a customer feedback program | SurveyMonkey](https://www.surveymonkey.com/mp/customer-feedback-guide/)
