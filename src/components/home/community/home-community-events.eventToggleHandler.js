@@ -18,7 +18,7 @@
 		//if you're clicking inside the event details don't activate close
 		if(event.target.closest('.p-community-event-details') !== null) return;
 
-		eventDetailsElement.style.setProperty('--content-height', eventDetailsElement.scrollHeight + 'px')
+		if(eventElement.classList.contains('--closed')) eventDetailsElement.style.setProperty('--content-height', eventDetailsElement.scrollHeight + 32 + 'px')
 
 		eventElement.classList.toggle('--closed')
 		eventElement.classList.toggle('--open')

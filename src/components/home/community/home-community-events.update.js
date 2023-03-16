@@ -65,7 +65,7 @@ const withCalendarInteractiveBehavior = (/** @type {HTMLElement} */ calendarEven
 		//if you're clicking inside the event details don't activate close
 		if(event.target.closest('.p-community-event-details') !== null) return;
 
-		detailsElement.style.setProperty('--content-height', detailsElement.scrollHeight + 'px')
+		if(articleElement.classList.contains('--closed')) detailsElement.style.setProperty('--content-height', detailsElement.scrollHeight + 32 + 'px')
 
 		articleElement.classList.toggle('--closed')
 		articleElement.classList.toggle('--open')
