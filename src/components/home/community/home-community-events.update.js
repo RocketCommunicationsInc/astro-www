@@ -61,7 +61,7 @@ const withCalendarInteractiveBehavior = (/** @type {HTMLElement} */ calendarEven
 	const actionsElement = /** @type {HTMLElement} */ (calendarEventFragment.querySelector('.p-community-event-actions button'))
 
 	// handle toggle events on the button
-	actionsElement.addEventListener('click', event => {
+	articleElement.addEventListener('click', event => {
 		detailsElement.style.setProperty('--content-height', detailsElement.scrollHeight + 'px')
 
 		articleElement.classList.toggle('--closed')
@@ -71,7 +71,7 @@ const withCalendarInteractiveBehavior = (/** @type {HTMLElement} */ calendarEven
 	})
 
 	// telemetry: user opens the community event details
-	actionsElement.addEventListener('click', () => {
+	articleElement.addEventListener('click', () => {
 		if (!articleElement.classList.contains('--open')) return
 
 		gtag('event', 'open_community_event_details')
