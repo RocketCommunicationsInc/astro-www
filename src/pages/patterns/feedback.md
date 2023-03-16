@@ -30,13 +30,13 @@ Use yes/no questions to capture both positive and negative sentiments about an e
 
 Use multiple-choice questions when the kinds of answers you will receive are already known, such as demographic questions like age ranges, industry, or location. These question types are often presented after submission of information, such as a checkout.
 
-![Example of rating questions](/img/patterns/feedback-ratings.png)
+![Example of multiple-choice questions](/img/patterns/feedback-multiple-choice.png)
 
 ### Ratings
 
 Use numeric rating scales to measure ease of use, satisfaction, likelihood to recommend, and feature importance. Rating scales are often displayed at the end of an experience and prompt the user to indicate how helpful a feature was or how difficult or easy the task was to complete.
 
-![Example of multiple-choice questions](/img/patterns/feedback-multiple-choice.png)
+![Example of rating questions](/img/patterns/feedback-ratings.png)
 
 ### Open-text questions
 
