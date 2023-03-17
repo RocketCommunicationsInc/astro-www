@@ -14,8 +14,11 @@
 	const eventDetailsToggle = eventElement.querySelector('.p-community-event-actions button')
 
 	// handle toggle events
-	eventDetailsToggle.addEventListener('click', event => {
-		eventDetailsElement.style.setProperty('--content-height', eventDetailsElement.scrollHeight + 'px')
+	eventElement.addEventListener('click', event => {
+		//if you're clicking inside the event details don't activate close
+		if(event.target.closest('.p-community-event-details') !== null) return;
+
+		if(eventElement.classList.contains('--closed')) eventDetailsElement.style.setProperty('--content-height', eventDetailsElement.scrollHeight + 32 + 'px')
 
 		eventElement.classList.toggle('--closed')
 		eventElement.classList.toggle('--open')
@@ -24,7 +27,9 @@
 	})
 
 	// telemetry: user opens the community event details
-	eventDetailsToggle.addEventListener('click', () => {
+	eventElement.addEventListener('click', (event) => {
+		//if you're clicking inside the event details don't activate close
+		if(event.target.closest('.p-community-event-details') !== null) return;
 		if (!eventElement.classList.contains('--open')) return
 
 		gtag('event', 'open_community_event_details')
