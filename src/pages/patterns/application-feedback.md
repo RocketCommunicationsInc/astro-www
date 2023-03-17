@@ -1,6 +1,6 @@
 ---
 tags: resources
-path: /patterns/feedback
+path: /patterns/application-feedback
 date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
 title: Application Feedback
