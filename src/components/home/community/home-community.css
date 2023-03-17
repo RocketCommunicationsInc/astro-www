@@ -285,14 +285,21 @@
 		padding-block-end: 3--step;
 		padding-block-start: 5--step;
 
+		/* Appearance */
+		opacity: 1;
+
 		/* Animation */
 		animation: slideDown 150ms ease-out;
+		transition: visibility 0s linear 0s, opacity 300ms;
 	}
 
 	@nest .p-community-event.--closed & {
 		/* Layout */
 		height: 0;
 		visibility: hidden;
+
+		/* Appearance */
+		opacity: 0;
 
 		/* Animation */
 		animation: slideUp 150ms ease-out;
