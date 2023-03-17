@@ -92,7 +92,7 @@
 
 	/* Layout */
 	padding-block: 3--step;
-	padding-inline: 5--step;
+	position: relative;
 
 	/* Appearance */
 	background: var(--SurfaceSelectedColor);
@@ -105,6 +105,7 @@
 	&:is(:hover, :focus-visible) {
 		/* Appearance */
 		background: var(--InteractiveMutedColor);
+		cursor: pointer;
 	}
 
 	&.--closed {
@@ -113,6 +114,9 @@
 	}
 
 	&.--open {
+		/* Layout */
+		padding-block-end: 0--step;
+
 		/* Animation */
 		transition: gap 150ms;
 	}
@@ -146,6 +150,9 @@
 }
 
 .p-community-event-heading {
+	/* Layout */
+	padding-inline-start: 5--step;
+
 	/* Text */
 	font-size: 20--rpx;
 	font-weight: 500;
@@ -189,6 +196,7 @@
 
 	/* Layout */
 	grid-area: 2/1/3/5;
+	margin-inline-start: 5--step;
 
 	& .-second-col {
 		display: inline-flex;
@@ -233,11 +241,7 @@
 	/* Layout */
 	align-self: stretch;
 	grid-area: 1 / 5 / 3 / 6;
-
-	@media (width < 1000px) {
-		/* Layout */
-		grid-area: 1 / 5 / 2 / 6;
-	}
+	padding-inline-end: 5--step;
 
 	& button {
 		display: flex;
@@ -266,33 +270,39 @@
 
 .p-community-event-details {
 	/* Layout */
-	grid-area: 3 / 1 / 4 / 5;
+	grid-area: 3 / 1 / 4 / 6;
 	overflow: hidden;
+	padding-inline: 5--step;
+
+	/* Appearance */
+	cursor: initial;
 
 	/* Animation */
-	transition: margin 150ms;
+	transition: padding 150ms;
 
 	@nest .p-community-event.--open & {
 		/* Layout */
-		margin-block-start: 5--step;
+		padding-block-end: 3--step;
+		padding-block-start: 5--step;
+
+		/* Appearance */
+		opacity: 1;
 
 		/* Animation */
 		animation: slideDown 150ms ease-out;
+		transition: visibility 0s linear 0s, opacity 300ms;
 	}
 
 	@nest .p-community-event.--closed & {
 		/* Layout */
 		height: 0;
-		visibility: none;
+		visibility: hidden;
+
+		/* Appearance */
+		opacity: 0;
 
 		/* Animation */
 		animation: slideUp 150ms ease-out;
-	}
-
-	@media (width < 1000px) {
-		/* Layout */
-		grid-area: 3 / 1 / 4 / 6;
-		overflow: hidden;
 	}
 }
 
