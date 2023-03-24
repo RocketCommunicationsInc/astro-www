@@ -19,6 +19,9 @@
 /* ========================================================================== */
 
 .page-content-side-col {
+	/* Layout */
+	padding-inline-start: 8--step;
+
 	& ul {
 		display: flex;
 
@@ -39,7 +42,7 @@
 		line-height: calc(20 / 14);
 
 		/* Appearance */
-		color: var(--Grey700Color);
+		color: #7b8089;
 
 		&.current {
 			/* Text */

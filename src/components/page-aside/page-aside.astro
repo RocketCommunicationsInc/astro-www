@@ -1,6 +1,9 @@
 ---
 import IconLink from 'project:components/icon/icon-link.astro'
 import './page-aside.css'
+
+const {content} = Astro.props
+const storybookUrl = `https://astro-components.netlify.app/?path=/story/${content.storybook}`
 ---
 <nav class="p-quicklinks-navigation" aria-label="Quick Links">
 	<ul>
@@ -8,7 +11,7 @@ import './page-aside.css'
 			<IconLink type="figma" href="https://www.figma.com/@astrouxds">Figma</IconLink>
 		</li>
 		<li>
-			<IconLink type="storybook" href="https://astro-components.netlify.app/">Storybook</IconLink>
+			<IconLink type="storybook" href={storybookUrl}>Storybook</IconLink>
 		</li>
 		<li>
 			<IconLink type="github" href="https://github.com/RocketCommunicationsInc/astro">GitHub</IconLink>

@@ -1,5 +1,6 @@
 ---
 title: Accordion
+subtitle: An Accordion is a component comprised of one or more vertically stacked sections or items, which can be expanded and collapsed to hide or reveal content.
 layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-accordion--default-story
 height: 216px

@@ -1,6 +1,9 @@
 ---
-import Layout from 'project:layouts/docs/docs-layout.astro'
+import Layout from 'project:layouts/new-docs/new-docs-layout.astro'
+import PageHeader from 'project:components/page-header/page-header.js'
+// import Layout from 'project:layouts/docs/docs-layout.astro'
 import globalData from 'project:data/global.json'
+import PageAside from 'project:components/page-aside/page-aside.astro'
 import './component-docs-layout.css'
 
 const {
@@ -19,12 +22,44 @@ const {
 	storybook: StorybookId,
 } = Object(Astro.props.content)
 
+const {content} = Astro.props;
+const {headings} = Astro.props;
+console.log(Astro.props)
+
+const menu = () => {
+	if (content.config){
+	} return 'has config!'
+	return 'Hi!!'
+}
+
 const html = `<style>:root{--StorybookPreviewHeight:${StorybookPreviewHeight};}</style>`
 ---
-<Layout {...Astro.props}>
+
+<Layout content={{ title: content.title }} {...Astro.props}>
+	<PageHeader slot="header">
+		<PageHeader.Heading>
+			{content.title}
+		</PageHeader.Heading>
+		<PageHeader.Subheading>
+			{content.subtitle ? content.subtitle : null}
+		</PageHeader.Subheading>
+		<PageHeader.Nav>{menu}</PageHeader.Nav>
+	</PageHeader>
+
+	<Fragment slot="toolbar">
+	</Fragment>
+
 	<Fragment set:html={html} />
 	<slot />
+
+	<Fragment slot="aside">
+		<PageAside {...Astro.props} />
+	</Fragment>
 </Layout>
+<!-- <Layout {...Astro.props}>
+	<Fragment set:html={html} />
+	<slot />
+</Layout> -->
 <script define:vars={{ GitHubId, GitHubRepoURL, GitHubRepoBranch, StorybookId, storybookURL }}>
 const template = document.createElement('template')
 
@@ -39,6 +74,16 @@ template.innerHTML = [
 ].join('')
 
 for (const el of document.querySelectorAll('.storybook-demo')) {
+	const content = template.content.cloneNode(true)
+
+	content.querySelector('[src="#preview"]').src = `${storybookURL}iframe.html?id=${StorybookId}&viewMode=story`
+	content.querySelector('[href="#storybook"]').href = `${storybookURL}?path=/story/${StorybookId}`
+	content.querySelector('[href="#github"]').href = `${GitHubRepoURL}/tree/${GitHubRepoBranch}/packages/web-components/src/components/${GitHubId}`
+
+	el.append(content)
+}
+
+for (const el of document.querySelectorAll('.tab-content')) {
 	const content = template.content.cloneNode(true)
 
 	content.querySelector('[src="#preview"]').src = `${storybookURL}iframe.html?id=${StorybookId}&viewMode=story`
