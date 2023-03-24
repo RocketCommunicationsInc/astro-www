@@ -24,13 +24,23 @@ const {
 
 const {content} = Astro.props;
 const {headings} = Astro.props;
-console.log(Astro.props)
 
-const menu = () => {
-	if (content.config){
-	} return 'has config!'
-	return 'Hi!!'
+const secondaryNavigationConfig = 'secondary-navigation-config'
+const secondaryNavigationTitle = 'secondary-navigation-title'
+const getSecondaryNavigation = async () => {
+	if (content[secondaryNavigationConfig]) {
+		return await import(content.file.replace(/[^/]+$/, content[secondaryNavigationConfig])).then(
+			module => {
+				console.log(module.default)
+				return module.default}
+		)
+	}
+	return null
 }
+
+const secondaryNavigation = await getSecondaryNavigation()
+
+console.log('secondaryNavigation:', secondaryNavigation)
 
 const html = `<style>:root{--StorybookPreviewHeight:${StorybookPreviewHeight};}</style>`
 ---
@@ -43,7 +53,22 @@ const html = `<style>:root{--StorybookPreviewHeight:${StorybookPreviewHeight};}<
 		<PageHeader.Subheading>
 			{content.subtitle ? content.subtitle : null}
 		</PageHeader.Subheading>
-		<PageHeader.Nav>{menu}</PageHeader.Nav>
+		{
+			secondaryNavigation
+				? <PageHeader.Nav>{
+					secondaryNavigation.map(
+						navigationItem => {
+							let navigationTitle = navigationItem[secondaryNavigationTitle]
+							if(!navigationTitle){
+
+								navigationTitle = 'None Yet'
+							}
+							return <Fragment><a class={navigationItem.url === content.url ? 'current' : null} href={navigationItem.url}>{navigationTitle}</a></Fragment>
+						}
+					)
+				}</PageHeader.Nav>
+			: null
+		}
 	</PageHeader>
 
 	<Fragment slot="toolbar">

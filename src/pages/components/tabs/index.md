@@ -5,11 +5,15 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-tabs--default-story
 height: 160px
 git: rux-tabs
-menuTitle: Overview
+secondary-navigation-title: Overview
+secondary-navigation-config: '_config.ts'
 ---
+
 # Tabs
 
 ::storybook-demo
+
+Hello world.
 
 ## Rules of Thumb
 
@@ -38,15 +42,11 @@ For use outside of main navigation, a more compact Tab component can be used.
 - Tab labels should not be more than two words and should accurately reflect what the user can expect to see.
 - Use sentence case capitalization for labels.
 
-
-
 ## Examples
 
 :::two-col
-![Do: To guide users through a process, correctly place and label Tabs to reflect a step-by-step process.](/img/components/nav-tabs-do-1.png "Do: To guide users through a process, correctly place and label Tabs to reflect a step-by-step process.")
+![Do: To guide users through a process, correctly place and label Tabs to reflect a step-by-step process.](/img/components/nav-tabs-do-1.png 'Do: To guide users through a process, correctly place and label Tabs to reflect a step-by-step process.')
 
-![Don’t: Stack or improperly nest Tabs.](/img/components/nav-tabs-dont-1.png "Don’t: Stack or improperly nest Tabs.")
+![Don’t: Stack or improperly nest Tabs.](/img/components/nav-tabs-dont-1.png 'Don’t: Stack or improperly nest Tabs.')
 
 :::
-
-
