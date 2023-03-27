@@ -28,19 +28,16 @@ const {headings} = Astro.props;
 const secondaryNavigationConfig = 'secondary-navigation-config'
 const secondaryNavigationTitle = 'secondary-navigation-title'
 const getSecondaryNavigation = async () => {
+	//grab the config file for any component page with secondary navigation
 	if (content[secondaryNavigationConfig]) {
 		return await import(content.file.replace(/[^/]+$/, content[secondaryNavigationConfig])).then(
-			module => {
-				console.log(module.default)
-				return module.default}
+			module => module.default
 		)
 	}
 	return null
 }
 
 const secondaryNavigation = await getSecondaryNavigation()
-
-console.log('secondaryNavigation:', secondaryNavigation)
 
 const html = `<style>:root{--StorybookPreviewHeight:${StorybookPreviewHeight};}</style>`
 ---
@@ -56,12 +53,15 @@ const html = `<style>:root{--StorybookPreviewHeight:${StorybookPreviewHeight};}<
 		{
 			secondaryNavigation
 				? <PageHeader.Nav>{
+					//this lays out the navigation links at the top of the component page if they exist
 					secondaryNavigation.map(
 						navigationItem => {
 							let navigationTitle = navigationItem[secondaryNavigationTitle]
+							//if no navigation title is specified for an item, make one based on url
 							if(!navigationTitle){
-
-								navigationTitle = 'None Yet'
+								const segments = navigationItem.url.split('/').filter((segment)=> segment != '')
+								const title = segments.pop()
+								navigationTitle = title
 							}
 							return <Fragment><a class={navigationItem.url === content.url ? 'current' : null} href={navigationItem.url}>{navigationTitle}</a></Fragment>
 						}
