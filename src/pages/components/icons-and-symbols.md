@@ -1,18 +1,17 @@
 ---
 title: Icons and Symbols
+description: Astro includes a library of common Icons, Symbols, and Notification Symbols. Persistent use of these will help ensure users are presented with consistent and meaningful information across applications.
 layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-monitoring-icon--all-variants
 height: 160px
 git: rux-monitoring-icon
 ---
 
-# Icons and Symbols
-
 ::storybook-demo
 
-Astro includes a library of common Icons, Symbols, and Notification Symbols. Persistent use of these will help ensure users are presented with consistent and meaningful information across applications.
+<!-- Astro includes a library of common Icons, Symbols, and Notification Symbols. Persistent use of these will help ensure users are presented with consistent and meaningful information across applications. -->
 
-Each of these must be easily identifiable by users and also be immediately distinguishable from each other, eliminating confusion and mistakes.
+Each icon, symbol, or notification symbol must be easily identifiable by users and also be immediately distinguishable from each other, eliminating confusion and mistakes.
 
 Astro’s icons have been designed to utilize the Astro Status System.
 

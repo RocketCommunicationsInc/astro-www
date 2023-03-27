@@ -1,16 +1,15 @@
 ---
 title: Tag
+description: A Tag is a component made up of a text label, container, and color. Tags help users quickly identify important information related to an item and categorize items by keywords.
 layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-tag--all-variants
 height: 180px
 git: rux-tag
 ---
 
-# Tag
-
 ::storybook-demo
 
-A Tag is a component made up of a text label, container, and color. Tags help users quickly identify important information related to an item and categorize items by keywords. Tags can be static, used to provide additional information on an item, or interactive, with the abilities such as editing or clearing them from data sets or linking to other similarly tagged elements.
+Tags can be static, used to provide additional information on an item, or interactive, with the abilities such as editing or clearing them from data sets or linking to other similarly tagged elements.
 
 ## Appearance & Behavior
 

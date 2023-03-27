@@ -1,16 +1,15 @@
 ---
 title: Tooltip
+description: A Tooltip is a message box that provides a concise amount of relevant contextual information about an associated UI element. Tooltips are activated by hovering over or focusing on an element.
 layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-tooltip--default-story
 height: 216px
 git: rux-tooltip
 ---
 
-# Tooltip
-
 ::storybook-demo
 
-A Tooltip is a message box that provides a concise amount of relevant contextual information about an associated UI element. Tooltips are activated by hovering over or focusing on an element.
+<!-- A Tooltip is a message box that provides a concise amount of relevant contextual information about an associated UI element. Tooltips are activated by hovering over or focusing on an element. -->
 
 ## Rules of Thumb
 

@@ -1,11 +1,11 @@
 ---
 title: Notification Banner
+description: Events that deserve user attention but don’t require a response, may be displayed in a Notification Banner.
 layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-notification--all-variants
 height: 600px
 git: rux-notification
 ---
-# Notification Banner
 
 ::storybook-demo
 

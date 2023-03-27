@@ -1,5 +1,6 @@
 ---
 import type { MarkdownContent } from 'astro'
+import type { Props } from '@astropub/doc'
 
 import Layout from 'project:layouts/default/default-layout.astro';
 import SiteSkipTo from 'project:components/site-skipto/site-skipto.astro'
@@ -7,23 +8,28 @@ import SiteSkipTo from 'project:components/site-skipto/site-skipto.astro'
 
 import './new-docs-layout.css'
 
-const {
-	title,
-} = Object<MarkdownContent<{
-	title: string
-}>>(Astro.props.content)
+export { Props }
+
+const attrs = Astro.props.content
+
+const title = attrs.subtitle ? `${attrs.title} ${attrs.subtitle}` : attrs.title
+const tabTitle = attrs.title
 ---
-<Layout title={title} tabtitle={title}>
+<Layout title={title} tabtitle={tabTitle}>
 	<SiteSkipTo slot="top" />
+
 	<main class="page" id="content">
 		<slot name="header" />
+
 		<div class="page-toolbar">
 			<slot name="toolbar" />
 		</div>
+
 		<div class="page-content">
 			<div class="page-content-main-col">
 				<slot />
 			</div>
+
 			<aside class="page-content-side-col" id="aside">
 				<div class="-content">
 					<slot name="aside">

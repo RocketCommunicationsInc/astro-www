@@ -36,7 +36,10 @@
 	}
 
 	& .-navigation {
+		display: flex;
+
 		/* Layout */
+		align-items: flex-end;
 		margin-block-start: var(--header-nav-block-start);
 		min-block-size: 20--step;
 		overflow-x: auto;
@@ -77,7 +80,7 @@
 
 		& [aria-current="page"] {
 			/* Text */
-			font-weight: 700;
+			text-shadow: 0 0 .375px var(--DarkBlue500Color),  0 0 .5px var(--DarkBlue500Color);
 
 			/* Appearance */
 			box-shadow: 0 -4px 0 0 inset;

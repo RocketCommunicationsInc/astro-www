@@ -1,16 +1,15 @@
 ---
 title: Global Status Bar
+description: The Global Status Bar is a full width view across the top of an application — an area commonly reserved for global status, global command and top-level navigation.
 layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-global-status-bar--default-story
 height: 140px
 git: rux-global-status-bar
 ---
 
-# Global Status Bar
-
 ::storybook-demo
 
-The Global Status Bar is a full width view across the top of an application — an area commonly reserved for global status, global command and top-level navigation.
+<!-- The Global Status Bar is a full width view across the top of an application — an area commonly reserved for global status, global command and top-level navigation. -->
 
 ## Appearance and Behavior
 

@@ -1,16 +1,15 @@
 ---
 title: Status Symbol
+description: The Status Symbol combines color and shape to create a standard and consistent way to indicate the status of a device or feature. When shown in Light theme, the Status Symbols include an additional inner border.
 layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-status--all-variants
 height: 112px
 git: rux-status
 ---
 
-# Status Symbol
-
 ::storybook-demo
 
-The Status Symbol combines color and shape to create a standard and consistent way to indicate the status of a device or feature. When shown in Light theme, the Status Symbols include an additional inner border.
+<!-- The Status Symbol combines color and shape to create a standard and consistent way to indicate the status of a device or feature. When shown in Light theme, the Status Symbols include an additional inner border. -->
 
 ![Astro Status Symbols in context of a modem list layout.](/img/components/icons-symbols-modems.png "Astro Status Symbols in context of a modem list layout.")
 

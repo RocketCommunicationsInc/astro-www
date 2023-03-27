@@ -1,10 +1,15 @@
 ---
+import { For } from '@astropub/flow'
 import Layout from 'project:layouts/new-docs/new-docs-layout.astro'
 import PageHeader from 'project:components/page-header/page-header.js'
 // import Layout from 'project:layouts/docs/docs-layout.astro'
 import globalData from 'project:data/global.json'
 import PageAside from 'project:components/page-aside/page-aside.astro'
 import './component-docs-layout.css'
+import ComplianceAside from 'project:components/compliance/compliance-aside.astro'
+import ContributionFooter from 'project:components/contribution-footer/contribution-footer.astro'
+
+import complianceData from 'project:data/compliance.json'
 
 const {
 	components: {
@@ -22,53 +27,70 @@ const {
 	storybook: StorybookId,
 } = Object(Astro.props.content)
 
-const {content} = Astro.props;
-const {headings} = Astro.props;
+const { content } = Astro.props;
+const { headings } = Astro.props;
 
-const secondaryNavigationConfig = 'secondary-navigation-config'
-const secondaryNavigationTitle = 'secondary-navigation-title'
-const getSecondaryNavigation = async () => {
-	//grab the config file for any component page with secondary navigation
-	if (content[secondaryNavigationConfig]) {
-		return await import(content.file.replace(/[^/]+$/, content[secondaryNavigationConfig])).then(
-			module => module.default
-		)
-	}
-	return null
+interface NavigationData {
+	frontmatter: Record<string, string>
+	compiledContent: string
+	file: string
+	rawContent: string
+	url: string
 }
+
+const getSecondaryNavigation = async (): Promise<NavigationData[]> => {
+	// grab the config file for any component page with secondary navigation
+	if (content.config) {
+		try {
+			return await import(content.file.replace(/[^/]+$/, content.config)).then(
+				module => module.default
+			) as NavigationData[]
+		} catch {
+			// do nothing and continue
+		}
+	}
+
+	return []
+}
+
+/** RegEx to match a slash (/) at the end ($) of a string. */
+const matchTrailingSlash = /\/$/
+
+/** Removes the trailing slash from a string. */
+const withoutTrailingSlash = (value: string) => value.replace(matchTrailingSlash, '')
+
+/* grab the source file url and then get the extension */
+const fileName = new URL(Astro.props.file, 'file:').toString()
+const fileExt = fileName.split('.').at(-1)
 
 const secondaryNavigation = await getSecondaryNavigation()
 
 const html = `<style>:root{--StorybookPreviewHeight:${StorybookPreviewHeight};}</style>`
----
 
+/** URL to the current source for this page. */
+const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData.designSystem.repositoryBranch}/src/pages${withoutTrailingSlash(Astro.url.pathname)}.${fileExt}`
+---
 <Layout content={{ title: content.title }} {...Astro.props}>
 	<PageHeader slot="header">
 		<PageHeader.Heading>
 			{content.title}
 		</PageHeader.Heading>
 		<PageHeader.Subheading>
-			{content.subtitle ? content.subtitle : null}
+			{content.description ? content.description : null}
 		</PageHeader.Subheading>
-		{
-			secondaryNavigation
-				? <PageHeader.Nav>{
-					//this lays out the navigation links at the top of the component page if they exist
-					secondaryNavigation.map(
-						navigationItem => {
-							let navigationTitle = navigationItem[secondaryNavigationTitle]
-							//if no navigation title is specified for an item, make one based on url
-							if(!navigationTitle){
-								const segments = navigationItem.url.split('/').filter((segment)=> segment != '')
-								const title = segments.pop()
-								navigationTitle = title
-							}
-							return <Fragment><a class={navigationItem.url === content.url ? 'current' : null} href={navigationItem.url}>{navigationTitle}</a></Fragment>
-						}
-					)
-				}</PageHeader.Nav>
-			: null
-		}
+		<PageHeader.Nav>
+			<For each={secondaryNavigation}>{navigationItem => {
+				// this lays out the navigation links at the top of the component page if they exist
+				const name = navigationItem.frontmatter.subtitle
+				const isCurrent = navigationItem.url === Astro.url.pathname
+				const ariaCurrentAttr = isCurrent ? 'page' : null
+				const hrefAttr = navigationItem.url
+
+				return (
+					<a aria-current={ariaCurrentAttr} href={hrefAttr}>{name}</a>
+				)
+			}}</For>
+		</PageHeader.Nav>
 	</PageHeader>
 
 	<Fragment slot="toolbar">
@@ -76,6 +98,8 @@ const html = `<style>:root{--StorybookPreviewHeight:${StorybookPreviewHeight};}<
 
 	<Fragment set:html={html} />
 	<slot />
+	<ComplianceAside compliance={complianceData} />
+	<ContributionFooter sourceurl={githubSourceURL} />
 
 	<Fragment slot="aside">
 		<PageAside {...Astro.props} />

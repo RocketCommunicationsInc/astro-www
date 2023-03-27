@@ -1,15 +1,15 @@
 ---
 title: Progress
+description: A Progress indicator signals that an application is busy performing an operation.
 layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-progress
 height: 220px
 git: rux-progress
 ---
-# Progress
 
 ::storybook-demo
 
-A Progress indicator signals that an application is busy performing an operation.
+<!-- A Progress indicator signals that an application is busy performing an operation. -->
 
 :::note
 When operations take one second or longer to complete, add a Progress feedback element to your design.
