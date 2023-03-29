@@ -9,6 +9,8 @@ secondary-navigation-title: Overview
 secondary-navigation-config: '_config.ts'
 ---
 
+## Interactive Example
+
 ::storybook-demo
 
 ## Rules of Thumb

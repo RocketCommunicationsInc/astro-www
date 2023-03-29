@@ -7,6 +7,8 @@ height: 112px
 git: rux-status
 ---
 
+## Interactive Example
+
 ::storybook-demo
 
 <!-- The Status Symbol combines color and shape to create a standard and consistent way to indicate the status of a device or feature. When shown in Light theme, the Status Symbols include an additional inner border. -->

@@ -77,11 +77,6 @@ const createHeadingObserver = (headings: NodeListOf<HTMLHeadingElement>) => {
 	let currentHeading: HTMLHeadingElement | null
 
 	let headingObserver: IntersectionObserver | undefined
-
-	const asideLinkMap = new WeakMap<HTMLHeadingElement, HTMLAnchorElement>()
-	const navElement = h<HTMLElement>('<nav class="p-inpage-navigation">')
-	const listElement = h<HTMLUListElement>('<ul class="section-links">')
-
 	const visualViewport = globalThis.visualViewport!
 
 	const onresize = () => {
@@ -101,27 +96,11 @@ const createHeadingObserver = (headings: NodeListOf<HTMLHeadingElement>) => {
 			}
 
 			if (currentHeading) {
-				let currentListItem
 				const listElements = document.querySelectorAll('.section-links li a')
 
 				for (const listItem of listElements) {
 					listItem.classList.contains(currentHeading.id) ? listItem.classList.add('-highlighted') : listItem.classList.remove('-highlighted')
 				}
-
-				// const { y } = listElement.getBoundingClientRect()
-
-				// for (let heading of headings) {
-				// 	const link = asideLinkMap.get(heading as HTMLHeadingElement)!
-
-				// 	if (heading === currentHeading) {
-				// 		const linkBox = link.getBoundingClientRect()
-
-				// 		navElement.style.setProperty('--height', `${linkBox.height}px`)
-				// 		navElement.style.setProperty('--offset', `${linkBox.y - y}px`)
-				// 	}
-
-				// 	link.classList.toggle('current', heading === currentHeading)
-				// }
 			}
 		}, {
 			rootMargin: `0% 0px -${visualViewport.height - 60}px`,

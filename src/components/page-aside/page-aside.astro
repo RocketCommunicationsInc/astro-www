@@ -4,6 +4,7 @@ import './page-aside.css'
 
 const {content} = Astro.props
 const {headings} = Astro.props
+console.log(headings[0])
 
 const storybookUrl = `https://astro-components.netlify.app/?path=/story/${content.storybook}`
 ---
@@ -20,11 +21,17 @@ const storybookUrl = `https://astro-components.netlify.app/?path=/story/${conten
 		</li>
 	</ul>
 	<hr />
-	<ul class='section-links'>
-		{headings.map((heading: { slug: string; text: string }) => {
-			return <li><a class={heading.slug} href={`#${heading.slug}`}>{heading.text}</a></li>
-		})}
-	</ul>
+	<div class='section-links-wrapper'>
+		<ul class='section-links'>
+			{headings.map((heading: { slug: string; text: string }, index: number) =>
+				(
+					<li>
+						<a class={ index=== 0 ? `${heading.slug} -highlighted` : `${heading.slug}`} href={`#${heading.slug}`}>{heading.text}</a>
+					</li>
+				)
+			)}
+		</ul>
+	</div>
 </nav>
 <script>
 import './page-aside.client.js'

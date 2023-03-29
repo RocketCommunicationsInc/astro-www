@@ -7,6 +7,8 @@ height: 152px
 git: rux-switch
 ---
 
+## Interactive Example
+
 ::storybook-demo
 
 <!-- A Switch toggles between two mutually exclusive states such as "On" or "Off." Unlike a Checkbox, a Switch initiates an action with immediate effect without requiring a "Save" or "Submit" action. -->

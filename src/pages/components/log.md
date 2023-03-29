@@ -7,6 +7,8 @@ height: 380px
 git: rux-log
 ---
 
+## Interactive Example
+
 ::storybook-demo
 
 <!-- A Log is a tabular representation of application events and may include username, priority, equipment type, signal type, etc. As part of the Notification System, Logs provide sorting and filtering function for examining events. -->

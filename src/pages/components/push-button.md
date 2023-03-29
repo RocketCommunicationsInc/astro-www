@@ -7,6 +7,8 @@ height: 240px
 git: rux-push-button
 ---
 
+## Interactive Example
+
 ::storybook-demo
 
 <!-- Push Buttons are a variant of the Switch that incorporate label and action into a single user interface element. Push Buttons may provide a useful interface element where screen real-estate is at a premium. -->

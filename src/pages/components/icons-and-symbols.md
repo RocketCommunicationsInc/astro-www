@@ -7,6 +7,8 @@ height: 160px
 git: rux-monitoring-icon
 ---
 
+## Interactive Example
+
 ::storybook-demo
 
 <!-- Astro includes a library of common Icons, Symbols, and Notification Symbols. Persistent use of these will help ensure users are presented with consistent and meaningful information across applications. -->

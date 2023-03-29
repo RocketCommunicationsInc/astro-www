@@ -3,9 +3,11 @@ title: Classification & Control Markings
 description: Classification and Control Markings are required for digital products created for government clients who interact with classified or controlled information.
 layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-classification-markings--all-banner-variants
-height: 500px
+height: 435px
 git: rux-classification-marking
 ---
+
+## Interactive Example
 
 ::storybook-demo
 

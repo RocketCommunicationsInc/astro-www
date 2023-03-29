@@ -43,6 +43,7 @@
 		--heading-1-text-line: calc(64 / 48);
 		--subheading-1-text-size: 20--rpx;
 		--subheading-1-text-line: calc(24 / 20);
+		--main-content-width: 254--step;
 		--layout-inline-gap: 8--step;
 		--icon-search-margin-inline: -32--rpx;
 		--icon-search-margin-inline-end: -64--rpx;
@@ -64,6 +65,7 @@
 		--heading-1-text-line: calc(48 / 42);
 		--subheading-1-text-size: 18--rpx;
 		--subheading-1-text-line: calc(24 / 18);
+		--main-content-width: 100%;
 		--layout-inline-gap: 8--step;
 		--icon-search-margin-inline: -32--rpx;
 		--icon-search-margin-inline-end: -64--rpx;
@@ -85,6 +87,7 @@
 		--heading-1-text-line: calc(36 / 32);
 		--subheading-1-text-size: 16--rpx;
 		--subheading-1-text-line: calc(24 / 16);
+		--main-content-width: 100%;
 		--layout-inline-gap: 4--step;
 		--icon-search-margin-inline: -16--rpx;
 		--icon-search-margin-inline-end: -16--rpx;
@@ -106,6 +109,7 @@
 		--heading-1-text-line: calc(36 / 32);
 		--subheading-1-text-size: 16--rpx;
 		--subheading-1-text-line: calc(24 / 16);
+		--main-content-width: 100%;
 		--layout-inline-gap: 4--step;
 		--icon-search-margin-inline: -16--rpx;
 		--page-padding-block: 5--step;
@@ -126,6 +130,7 @@
 		--heading-1-text-line: calc(36 / 32);
 		--subheading-1-text-size: 16--rpx;
 		--subheading-1-text-line: calc(24 / 16);
+		--main-content-width: 100%;
 		--layout-inline-gap: 4--step;
 		--icon-search-margin-inline: -16--rpx;
 		--page-padding-block: 5--step;
@@ -159,6 +164,11 @@
 			/* Text */
 			font-size: 24--rpx;
 		}
+	}
+
+	& a h2#interactive-example {
+		/* Layout */
+		margin-block-start: 0;
 	}
 
 	& p {
@@ -207,10 +217,12 @@
 
 .page-content-main-col {
 	/* Layout */
-	flex-grow: 1;
+	//flex-grow: 1;
 
 	/* Layout */
-	max-width: 254--step;
+	/* max-width: 254--step;
+	width: 100%; */
+	width: var(--main-content-width);
 
 	& :is(li, p) a:not([class]) {
 		&:focus-visible {
@@ -243,7 +255,7 @@
 
 	& :is(h3, h4, h5):where(:not([class])) {
 		/* Layout */
-		margin-block: 15--step 9--step;
+		margin-block: 9--step 4--step;
 
 		/* Typography */
 		font-size: 24--rpx;
@@ -439,23 +451,18 @@
 
 .page-content-side-col {
 	/* Layout */
-	flex-shrink: 0;
+	//flex-shrink: 0;
 
-	@media (width < 1330px) {
+	@media (width < 1728px) {
 		display: none;
 
 		/* Layout */
 		flex-basis: 0;
 	}
 
-	@media (1330px <= width < 1440px) {
+	@media (width >= 1728px) {
 		/* Layout */
-		flex-basis: 70--step;
-	}
-
-	@media (width >= 1440px) {
-		/* Layout */
-		flex-basis: 92--step;
+		flex-basis: 74--step;
 	}
 
 	& .-content {

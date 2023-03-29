@@ -7,6 +7,8 @@ height: 140px
 git: rux-container
 ---
 
+## Interactive Example
+
 ::storybook-demo
 
 Containers can be used to help effectively manage lists, tables, dialogs, modals, slide out panels, content containers (top and bottom), and other components.

@@ -7,6 +7,8 @@ height: 320px
 git: rux-card
 ---
 
+## Interactive Example
+
 ::storybook-demo
 
 <!-- A “card” is a UI design pattern that groups related information in a flexible-size container visually resembling a playing card. Within the Astro system, card sits on top of a container. -->

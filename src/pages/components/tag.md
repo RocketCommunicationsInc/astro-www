@@ -7,6 +7,8 @@ height: 180px
 git: rux-tag
 ---
 
+## Interactive Example
+
 ::storybook-demo
 
 Tags can be static, used to provide additional information on an item, or interactive, with the abilities such as editing or clearing them from data sets or linking to other similarly tagged elements.

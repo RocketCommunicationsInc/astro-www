@@ -7,6 +7,8 @@ height: 140px
 git: rux-global-status-bar
 ---
 
+## Interactive Example
+
 ::storybook-demo
 
 <!-- The Global Status Bar is a full width view across the top of an application — an area commonly reserved for global status, global command and top-level navigation. -->

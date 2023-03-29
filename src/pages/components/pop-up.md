@@ -7,6 +7,8 @@ height: 250px
 git: rux-pop-up
 ---
 
+## Interactive Example
+
 ::storybook-demo
 
 <!-- Typically invoked upon clicking an identifiable interactive element, a Pop Up contains a curated set of common actions, display controls, rich data, or imagery associated with the interactive element. -->

@@ -7,6 +7,8 @@ height: 600px
 git: rux-notification
 ---
 
+## Interactive Example
+
 ::storybook-demo
 
 ## Appearance and Behavior

@@ -7,6 +7,8 @@ height: 220px
 git: rux-progress
 ---
 
+## Interactive Example
+
 ::storybook-demo
 
 <!-- A Progress indicator signals that an application is busy performing an operation. -->

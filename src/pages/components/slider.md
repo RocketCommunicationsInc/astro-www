@@ -7,6 +7,8 @@ height: 116px
 git: rux-slider
 ---
 
+## Interactive Example
+
 ::storybook-demo
 
 <!-- A Slider allows users to choose from a range of continuous and discrete values arranged from minimum to maximum. -->
