@@ -92,6 +92,54 @@
 			--icon: var(--StorybookLinkIcon);
 		}
 	}
+
+	& .section-links {
+		/* Layout */
+		block-size: 72vh;
+		border-inline-start: 1px solid #7b8089;
+		overflow-y: auto;
+		overflow-y: overlay;
+
+		/* Behavior */
+		scroll-behavior: smooth;
+		scrollbar-width: none;
+		scrollbar-gutter: stable;
+
+		/* Masking Reference */
+		--mask: linear-gradient(0deg, hsl(0 0% 0% / 0%) 0%, hsl(0 0% 0% / 100%) 12--step);
+
+		& li a {
+			&.-highlighted {
+				/* Text */
+				font-weight: 700;
+
+				/* Appearance */
+				color: var(--DarkBlue500Color);
+
+				&::before {
+					/* Layout */
+					height: 28px;
+
+					/* inset-block-end: 0; */
+					inset-inline-start: -1px;
+					position: absolute;
+					width: 3px;
+
+					/* Appearance */
+					background-color: var(--DarkBlue500Color);
+
+					/* Appearance */
+					color: var(--DarkBlue500Color);
+
+					/* Animation */
+					transition: .2s;
+
+					/* Layout */
+					content: "";
+				}
+			}
+		}
+	}
 }
 
 /* In-Page Navigation */

@@ -3,7 +3,7 @@
 
 .table-overflow {
 	/* Layout */
-	overflow-x: auto;
+	overflow-x: scroll;
 
 	& table {
 		/* Layout */
@@ -103,27 +103,6 @@
 	--note-border-color: var(--CautionBorderColor);
 	--note-color: var(--CautionColor);
 	--note-icon: var(--CautionIcon);
-}
-
-/* Columns */
-/* ========================================================================== */
-
-.two-col, .three-col {
-	display: grid;
-
-	/* Layout */
-	gap: 8--step 4--step;
-	margin-block-start: 4--step;
-}
-
-.two-col {
-	/* Layout */
-	grid-template-columns: repeat(2, [col-start] 1fr);
-}
-
-.three-col {
-	/* Layout */
-	grid-template-columns: repeat(3, [col-start] 1fr);
 }
 
 /* Example */

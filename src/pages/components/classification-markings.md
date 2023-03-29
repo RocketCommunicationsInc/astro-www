@@ -52,7 +52,7 @@ Applications used on government workstations with access to classified networks 
 
 ### Overall Marking Text
 
-Text in the Overall Marking Banner should be as specific as possible to the highest level of classified information contained in that system or view. The banner message should follow the standard marking structure (placeholder text example: CLASSIFICATION//SCI//SAP//AEA//FGI//CUI//DISSEM) with bold, centered text in all capital letters. The classification level itself (excepting CUI) must be spelled out completely (example: UNCLASSIFIED instead of just U), but later caveats or Control Markings in the classification text can be abbreviated in their traditional formats or spelled out completely (example: SP-EXPT or SP-EXPORT CONTROLLED). CUI level marking banners can use CUI or the word CONTROLLED as the classification text. Only classification and/or control information in the standard format should be present in this banner. Supplemental administrative markings such as Draft should not be commingled into the Overall Marking Banner.
+Text in the Overall Marking Banner should be as specific as possible to the highest level of classified information contained in that system or view. The banner message should follow the standard marking structure (placeholder text example: CLASSIFICATION// SCI// SAP// AEA// FGI// CUI// DISSEM) with bold, centered text in all capital letters. The classification level itself (excepting CUI) must be spelled out completely (example: UNCLASSIFIED instead of just U), but later caveats or Control Markings in the classification text can be abbreviated in their traditional formats or spelled out completely (example: SP-EXPT or SP-EXPORT CONTROLLED). CUI level marking banners can use CUI or the word CONTROLLED as the classification text. Only classification and/or control information in the standard format should be present in this banner. Supplemental administrative markings such as Draft should not be commingled into the Overall Marking Banner.
 
 ### Overall Marking Placement
 
@@ -132,10 +132,12 @@ The colors used in the Tag components are the same as those in the Overall Banne
 
 Whenever classified or controlled information is present, use an Authority Block, to trace the source of the designation and any necessary clarifications about declassification dates or classification reasons. The Authority Block is typically in the bottom left of a document page, but can be placed elsewhere according to layout needs. Similarly, if necessary in the layout, the authority information for electronic material may appear as a single line of text instead of the typical three-line approach. Note that there is a slightly different structure for CUI, originally classified documents, and documents with a classification derived from another document. Authority Blocks are most often displayed as lines of text and do not currently require a component to satisfy this marking requirement. To learn more about this element, go to our [Additional Resources](#additional-resources).
 
+:::table-overflow
 | **Do**                                                                                                           |
 | ---------------------------------------------------------------------------------------------------------------- |
 | Show the source of classified or controlled information on a page with relevant contact information.             |
 | Clarify if the classified information is originally classified or derivatively classified from another document. |
+::::
 
 ## Additional Resources
 

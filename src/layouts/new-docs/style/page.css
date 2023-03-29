@@ -336,6 +336,10 @@
 	& .two-col {
 		/* Layout */
 		grid-template-columns: repeat(2, [col-start] 1fr);
+
+		@media (max-width: 767px) {
+			display: block;
+		}
 	}
 
 	& .three-col {
@@ -456,37 +460,16 @@
 
 	& .-content {
 		/* Layout */
-		@media (width >= 1200px) {
-			/* Layout */
-			inset-block-start: 92--rpx;
-			inset-inline-end: 0;
-			position: sticky;
+		inset-block-start: 9--step;
+		inset-inline-end: 0;
+		position: sticky;
 
+		& hr {
 			/* Layout */
-			/* inset-block-start: 0; */
-			//margin-block-start: -25--step;
-
-			/* Layout */
-			/* margin-inline-end: -8--step;
-			position: sticky; */
-		}
-
-		@media (width < 1200px) {
-			/* Layout */
-			inset-block-start: 92--rpx;
-			inset-inline-end: 0;
-			position: sticky;
+			height: 18--step;
 
 			/* Appearance */
-			box-shadow: -2px 2px 4px rgba(0, 0, 0, .25);
+			background: linear-gradient(0deg, transparent calc(50% - .5px), #7b8089 calc(50% - .5px), #7b8089 calc(50% + .5px), transparent calc(50% + .5px)) 50% 0;
 		}
-	}
-
-	& hr {
-		/* Layout */
-		height: 18--step;
-
-		/* Appearance */
-		background: linear-gradient(0deg, transparent calc(50% - .5px), #7b8089 calc(50% - .5px), #7b8089 calc(50% + .5px), transparent calc(50% + .5px)) 50% 0;
 	}
 }

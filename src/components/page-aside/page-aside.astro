@@ -3,10 +3,12 @@ import IconLink from 'project:components/icon/icon-link.astro'
 import './page-aside.css'
 
 const {content} = Astro.props
+const {headings} = Astro.props
+
 const storybookUrl = `https://astro-components.netlify.app/?path=/story/${content.storybook}`
 ---
 <nav class="p-quicklinks-navigation" aria-label="Quick Links">
-	<ul>
+	<ul id='top-links'>
 		<li>
 			<IconLink type="figma" href="https://www.figma.com/@astrouxds">Figma</IconLink>
 		</li>
@@ -17,8 +19,13 @@ const storybookUrl = `https://astro-components.netlify.app/?path=/story/${conten
 			<IconLink type="github" href="https://github.com/RocketCommunicationsInc/astro">GitHub</IconLink>
 		</li>
 	</ul>
+	<hr />
+	<ul class='section-links'>
+		{headings.map((heading: { slug: string; text: string }) => {
+			return <li><a class={heading.slug} href={`#${heading.slug}`}>{heading.text}</a></li>
+		})}
+	</ul>
 </nav>
-<hr />
 <script>
 import './page-aside.client.js'
 </script>
