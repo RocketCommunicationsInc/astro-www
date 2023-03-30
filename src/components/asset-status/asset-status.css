@@ -37,5 +37,18 @@
 				border-radius: 0 2--step 0 0;
 			}
 		}
+
+		& a {
+			/* Text */
+			text-decoration: underline;
+
+			/* Appearance */
+			color: var(--DarkBlue500Color);
+
+			&:hover, &:active {
+				/* Appearance */
+				color: var(--DarkBlue300Color);
+			}
+		}
 	}
 }
