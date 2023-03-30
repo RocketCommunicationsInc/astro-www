@@ -195,19 +195,21 @@ body {
 			box-shadow: var(--EdgeColor) -1px 0 0 0 inset;
 
 			/* Animation */
-			transition: background-color 80ms;
+			transition: background-color 80ms, color 80ms;
 
 			/* Reference */
 			--EdgeColor: var(--Grey200Color);
 
 			@nest :root.dark-theme & {
 				/* Reference */
-				--BackColor: var(--BrightBlue900Color);
+				background-color: var(--BrightBlue900Color);
+				color: var(--Neutral000Color);
 			}
 
 			@nest :root.light-theme & {
 				/* Reference */
-				--BackColor: var(--Neutral000Color);
+				background-color: var(--Neutral000Color);
+				color: var(--Grey900Color);
 			}
 		}
 	}
