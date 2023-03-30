@@ -4,7 +4,7 @@
 	/* Layout */
 	flex-flow: column;
 	justify-content: end;
-	//min-height: var(--header-block-size);
+	min-block-size: var(--header-block-size);
 
 	/* Layout */
 	padding-block-start: var(--header-padding-block-start);
@@ -27,7 +27,7 @@
 		margin-block-start: 5--step;
 
 		/* Layout */
-		max-width: max(175 * var(--step));
+		max-inline-size: max(175 * var(--step));
 
 		/* Layout */
 		padding-block-end: var(--header-padding-block-end);
@@ -45,7 +45,6 @@
 
 		/* Layout */
 		align-items: flex-end;
-		//min-block-size: 20--step;
 
 		/* Layout */
 		overflow-x: auto;

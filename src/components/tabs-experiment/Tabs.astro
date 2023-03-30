@@ -1,6 +1,5 @@
 ---
 import { For } from '@astropub/flow'
-import NavItem from './page-header.nav-item.astro'
 
 export interface Props {
 	file: string
@@ -26,19 +25,16 @@ const filteredMdImports = configImportsArray.find(
 	)
 )!
 ---
-<nav class="-navigation" {...Astro.props}>
-	<ul>
-		<For of={filteredMdImports}>{
-			md => {
-				// this lays out the navigation links at the top of the component page if they exist
-				const isCurrent = md.url === Astro.url.pathname
+<For of={filteredMdImports}>{
+	md => {
+		// this lays out the navigation links at the top of the component page if they exist
+		const name = md.frontmatter.subtitle
+		const isCurrent = md.url === Astro.url.pathname
+		const ariaCurrentAttr = isCurrent ? 'page' : null
+		const hrefAttr = md.url
 
-				return (
-					<NavItem href={md.url} aria-current={isCurrent ? 'page' : null}>{
-						md.frontmatter.subtitle
-					}</NavItem>
-				)
-			}
-		}</For>
-	</ul>
-</nav>
+		return (
+			<a href={hrefAttr} aria-current={ariaCurrentAttr}>{name}</a>
+		)
+	}
+}</For>

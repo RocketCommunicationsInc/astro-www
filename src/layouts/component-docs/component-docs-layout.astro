@@ -8,6 +8,7 @@ import PageAside from 'project:components/page-aside/page-aside.astro'
 import './component-docs-layout.css'
 import ComplianceAside from 'project:components/compliance/compliance-aside.astro'
 import ContributionFooter from 'project:components/contribution-footer/contribution-footer.astro'
+import Tabs from 'project:components/tabs-experiment/Tabs.astro'
 
 import complianceData from 'project:data/compliance.json'
 
@@ -27,31 +28,7 @@ const {
 	storybook: StorybookId,
 } = Object(Astro.props.content)
 
-const { content } = Astro.props;
-const { headings } = Astro.props;
-
-interface NavigationData {
-	frontmatter: Record<string, string>
-	compiledContent: string
-	file: string
-	rawContent: string
-	url: string
-}
-
-const getSecondaryNavigation = async (): Promise<NavigationData[]> => {
-	// grab the config file for any component page with secondary navigation
-	if (content.config) {
-		try {
-			return await import(content.file.replace(/[^/]+$/, content.config)).then(
-				module => module.default
-			) as NavigationData[]
-		} catch {
-			// do nothing and continue
-		}
-	}
-
-	return []
-}
+const { content } = Astro.props
 
 /** RegEx to match a slash (/) at the end ($) of a string. */
 const matchTrailingSlash = /\/$/
@@ -62,8 +39,6 @@ const withoutTrailingSlash = (value: string) => value.replace(matchTrailingSlash
 /* grab the source file url and then get the extension */
 const fileName = new URL(Astro.props.file, 'file:').toString()
 const fileExt = fileName.split('.').at(-1)
-
-const secondaryNavigation = await getSecondaryNavigation()
 
 const html = `<style>:root{--StorybookPreviewHeight:${StorybookPreviewHeight};}</style>`
 
@@ -78,23 +53,15 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 		<PageHeader.Subheading>
 			{content.description ? content.description : null}
 		</PageHeader.Subheading>
-		{content.config ?
-			<PageHeader.Nav>
-				<For of={secondaryNavigation}>{navigationItem => {
-					
-					// this lays out the navigation links at the top of the component page if they exist
-					const name = navigationItem.frontmatter.subtitle
-					const isCurrent = navigationItem.url === Astro.url.pathname
-					const ariaCurrentAttr = isCurrent ? 'page' : null
-					const hrefAttr = navigationItem.url
-
-					return (
-						<a aria-current={ariaCurrentAttr} href={hrefAttr}>{name}</a>
-					)
-				}}</For>
-			</PageHeader.Nav>
+		<div class="nav-holder">
+		{
+			content.config
+				? (
+					<PageHeader.Nav file={Astro.props.file} />
+				)
 			: null
 		}
+		</div>
 	</PageHeader>
 
 	<Fragment slot="toolbar">
