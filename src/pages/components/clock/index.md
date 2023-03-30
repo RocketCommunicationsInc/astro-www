@@ -11,7 +11,7 @@ assets:
 
 ## Interactive Example
 
-::storybook-demo
+<iframe class="sandbox" src="./sandbox/" style="height:320px"></iframe>
 
 <!-- Clock shows the current time and optional date, AOS, and LOS timers. It will typically be positioned on the Global Status Bar. -->
 

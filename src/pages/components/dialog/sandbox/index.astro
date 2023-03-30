@@ -1,0 +1,18 @@
+---
+import { Field, Root, Sandbox } from 'project:components/component-playground/ComponentPlayground'
+---
+<Root>
+	<Sandbox is:tag="rux-button" is:constructor="RuxButton" />
+	<Sandbox is:tag="rux-button-group" is:constructor="RuxButtonGroup" />
+	<Sandbox is:tag="rux-dialog" is:constructor="RuxDialog">
+		<rux-dialog message="Dialog message" header="Dialog header" confirm-text="Release" deny-text="Cancel" />
+	</Sandbox>
+	<Fragment slot="controls">
+		<Field type="text" name="header" value="Dialog header" />
+		<Field type="text" name="message" value="Dialog message" />
+		<Field type="toggle" name="open" />
+		<Field type="text" name="confirmText" value="Release" />
+		<Field type="text" name="denyText" value="Cancel" />
+		<Field type="toggle" name="clickToClose" />
+	</Fragment>
+</Root>

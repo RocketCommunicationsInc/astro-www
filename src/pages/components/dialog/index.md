@@ -11,7 +11,7 @@ assets:
 
 ## Interactive Example
 
-::storybook-demo
+<iframe class="sandbox" src="./sandbox/" style="height:300px"></iframe>
 
 <!-- A Dialog is a visual overlay that is presented on top of existing screen content to prompt the user to perform an immediate action or acknowledge the receipt of a piece of information. -->
 

@@ -1,0 +1,19 @@
+---
+import { Field, Root, Sandbox } from 'project:components/component-playground/ComponentPlayground'
+---
+<Root>
+	<Sandbox is:tag="rux-clock" is:constructor="RuxClock">
+		<rux-clock />
+	</Sandbox>
+	<Fragment slot="controls">
+		<Field type="text" name="dateIn" value="" />
+		<Field type="text" name="timezone" value="" />
+		<Field type="text" name="aos" value="" />
+		<Field type="text" name="los" value="" />
+		<Field type="toggle" name="hideDate" />
+		<Field type="toggle" name="hideLabels" />
+		<Field type="toggle" name="hideTimezone" />
+		<Field type="toggle" name="small" />
+		<Field type="toggle" name="static" />
+	</Fragment>
+</Root>
