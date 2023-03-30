@@ -51,6 +51,7 @@
 		--page-padding-block: 15--step;
 		--page-padding-inline: 8--step;
 		--page-padding-inline-end: 20--step;
+		--font-size-h2: 36--rpx;
 	}
 
 	@media (768px < width < 1440px) {
@@ -74,6 +75,7 @@
 		--page-padding-block: 15--step;
 		--page-padding-inline: 8--step;
 		--page-padding-inline-end: 8--step;
+		--font-size-h2: 36--rpx;
 	}
 
 	@media (width <= 768px) {
@@ -97,6 +99,7 @@
 		--page-padding-block: 5--step;
 		--page-padding-inline: 4--step;
 		--page-padding-inline-end: 4--step;
+		--font-size-h2: 24--rpx;
 	}
 
 	@media (width <= 375px) {
@@ -119,6 +122,7 @@
 		--page-padding-block: 5--step;
 		--page-padding-inline: 4--step;
 		--page-padding-inline-end: 4--step;
+		--font-size-h2: 24--rpx;
 	}
 
 	@media (width <= 320px) {
@@ -141,6 +145,7 @@
 		--page-padding-block: 5--step;
 		--page-padding-inline: 4--step;
 		--page-padding-inline-end: 4--step;
+		--font-size-h2: 24--rpx;
 	}
 }
 
@@ -162,13 +167,8 @@
 		margin-block-start: 20--step;
 
 		/* Text */
-		font-size: 36--rpx;
+		font-size: var(--font-size-h2);
 		line-height: calc(40 / 36);
-
-		@media (width < 1024px) {
-			/* Text */
-			font-size: 24--rpx;
-		}
 	}
 
 	& a h2#interactive-example {
@@ -184,6 +184,9 @@
 	& figure {
 		/* Layout */
 		margin-block-start: 4--step;
+
+		/* Layout */
+		width: fit-content;
 
 		& > img {
 			display: block;
@@ -248,7 +251,7 @@
 		margin-block: 20--step 9--step;
 
 		/* Typography */
-		font-size: 36--rpx;
+		font-size: var(--font-size-h2);
 		font-weight: 400;
 		line-height: calc(24 / 22);
 	}
