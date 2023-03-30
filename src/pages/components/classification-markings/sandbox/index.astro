@@ -1,7 +1,405 @@
-<rux-classification-marking classification="unclassified" label=" customlabel"></rux-classification-marking>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@astrouxds/tokens@1.5.0/dist/css/index.css" />
-<script type="module">
-import { RuxClassificationMarking } from 'https://cdn.jsdelivr.net/npm/@astrouxds/astro-web-components@7.7.0/dist/components/rux-classification-marking.js/+esm'
+<html class="dark-theme">
+	<body class="app">
+		<section class="sandbox-area">
+			<div class="-heading">
+				<div class="theme-toggle">
+					<svg class="light" width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M11 0.550003H11.01C11.56 0.550003 12 0.990003 12 1.54V2.51C12 3.06 11.56 3.5 11 3.49H10.99C10.44 3.49 10 3.05 10 2.5V1.54C10 0.990003 10.44 0.550003 11 0.550003ZM5.05 4.14L4.66 3.75C4.27 3.36 3.64 3.37 3.26 3.75L3.25 3.76C2.86 4.15 2.86 4.78 3.25 5.16L3.64 5.55C4.03 5.94 4.65 5.94 5.04 5.55L5.05 5.54C5.44 5.16 5.44 4.52 5.05 4.14ZM2.01 10.5H0.99C0.44 10.5 0 10.94 0 11.49V11.5C0 12.05 0.44 12.49 0.99 12.49H2C2.56 12.5 3 12.06 3 11.51V11.5C3 10.94 2.56 10.5 2.01 10.5ZM18.75 3.76C18.36 3.37 17.73 3.37 17.34 3.75L16.95 4.14C16.56 4.53 16.56 5.16 16.95 5.54L16.96 5.55C17.35 5.94 17.98 5.94 18.36 5.55L18.75 5.16C19.14 4.77 19.14 4.15 18.75 3.76ZM17.33 19.25L16.94 18.86C16.55 18.47 16.55 17.85 16.95 17.45C17.33 17.07 17.96 17.06 18.35 17.45L18.74 17.84C19.13 18.23 19.13 18.86 18.74 19.25C18.35 19.64 17.72 19.64 17.33 19.25ZM19 11.49V11.5C19 12.05 19.44 12.49 19.99 12.49H21C21.55 12.49 21.99 12.05 21.99 11.5V11.49C21.99 10.94 21.55 10.5 21 10.5H19.99C19.44 10.5 19 10.94 19 11.49ZM5 11.5C5 8.19 7.69 5.5 11 5.5C14.31 5.5 17 8.19 17 11.5C17 14.81 14.31 17.5 11 17.5C7.69 17.5 5 14.81 5 11.5ZM10.99 22.45H11C11.55 22.45 11.99 22.01 11.99 21.46V20.5C11.99 19.95 11.55 19.51 11 19.51H10.99C10.44 19.51 10 19.95 10 20.5V21.46C10 22.01 10.44 22.45 10.99 22.45ZM4.66 19.24C4.27 19.63 3.64 19.63 3.25 19.24C2.86 18.85 2.86 18.23 3.24 17.83L3.63 17.44C4.02 17.05 4.65 17.05 5.04 17.44L5.05 17.45C5.43 17.83 5.44 18.46 5.05 18.85L4.66 19.24Z" fill="current"/>
+					</svg>
+					<span class="field"><input id="theme-toggle" type="checkbox" class="-control -is-toggle" checked /></span>
+					<svg class="dark" width="15" height="20" viewBox="0 0 15 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M7.43001 0.299997C5.05001 -0.290003 2.75001 0.0299965 0.800014 0.939997C0.450014 1.1 0.390014 1.58 0.700014 1.8C3.30001 3.6 5.00001 6.6 5.00001 10C5.00001 13.4 3.30001 16.4 0.700014 18.2C0.380014 18.42 0.440014 18.9 0.790014 19.06C2.07001 19.66 3.50001 20 5.00001 20C11.05 20 15.85 14.62 14.87 8.4C14.26 4.48 11.28 1.24 7.43001 0.299997Z" fill="current"/>
+					</svg>
+				</div>
+			</div>
 
-customElements.define('rux-classification-marking', RuxClassificationMarking)
+			<div class="-content">
+				<!-- @TODO: all this content will need to be generated -->
+				<rux-classification-marking classification="top-secret"></rux-classification-marking>
+
+				<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@astrouxds/tokens@1.5.0/dist/css/index.css" />
+				<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@astrouxds/tokens@1.5.0/dist/css/theme.light.css" />
+				<script type="module">
+				import { RuxClassificationMarking } from 'https://cdn.jsdelivr.net/npm/@astrouxds/astro-web-components@7.7.0/dist/components/rux-classification-marking.js/+esm'
+
+				customElements.define('rux-classification-marking', RuxClassificationMarking)
+				</script>
+				<!-- / -->
+			</div>
+		</section>
+
+		<section class="control-area">
+			<div class="-heading">
+				<svg width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M16 5.03499C16 5.58017 15.4857 6.02624 14.8571 6.02624C14.2286 6.02624 13.7143 5.58017 13.7143 5.03499V1.06999C13.7143 0.524798 14.2286 0.0787354 14.8571 0.0787354C15.4857 0.0787354 16 0.524798 16 1.06999V2.06124H19.4286C20.0571 2.06124 20.5714 2.5073 20.5714 3.05249C20.5714 3.59767 20.0571 4.04374 19.4286 4.04374H16V5.03499ZM1.14286 4.04374C0.514286 4.04374 0 3.59767 0 3.05249C0 2.5073 0.514286 2.06124 1.14286 2.06124H11.4286V4.04374H1.14286ZM1.14286 15.9387C0.514286 15.9387 0 15.4927 0 14.9475C0 14.4023 0.514286 13.9562 1.14286 13.9562H6.85714V15.9387H1.14286ZM11.4286 16.93V15.9387H19.4286C20.0571 15.9387 20.5714 15.4927 20.5714 14.9475C20.5714 14.4023 20.0571 13.9562 19.4286 13.9562H11.4286V12.965C11.4286 12.4198 10.9143 11.9737 10.2857 11.9737C9.65714 11.9737 9.14286 12.4198 9.14286 12.965V16.93C9.14286 17.4752 9.65714 17.9212 10.2857 17.9212C10.9143 17.9212 11.4286 17.4752 11.4286 16.93ZM4.57143 8.00874V7.01749C4.57143 6.4723 5.08571 6.02624 5.71429 6.02624C6.34286 6.02624 6.85714 6.4723 6.85714 7.01749V10.9825C6.85714 11.5277 6.34286 11.9737 5.71429 11.9737C5.08571 11.9737 4.57143 11.5277 4.57143 10.9825V9.99124H1.14286C0.514286 9.99124 0 9.54517 0 8.99999C0 8.4548 0.514286 8.00874 1.14286 8.00874H4.57143ZM20.5714 8.99999C20.5714 8.4548 20.0571 8.00874 19.4286 8.00874H9.14286V9.99124H19.4286C20.0571 9.99124 20.5714 9.54517 20.5714 8.99999Z" fill="current"/>
+				</svg>
+				Properties
+			</div>
+			<form class="-content">
+				<p class="field">
+					<label class="-label">Classification</label>
+					<select class="-control -is-menu" name="classification">
+						<option selected>confidential</option>
+						<option>controlled</option>
+						<option>cui</option>
+						<option>secret</option>
+						<option>top-secret</option>
+						<option>top-secret-sci</option>
+						<option>unclassified</option>
+					</select>
+				</p>
+				<p class="field">
+					<label class="-label">Label</label>
+					<input class="-control -is-text" type="text" name="label" />
+				</p>
+				<p class="field">
+					<label class="-label">Tag</label>
+					<input class="-control -is-toggle" type="checkbox" name="tag" />
+				</p>
+			</form>
+		</section>
+	</body>
+</html>
+<style is:global>
+
+/* Resets */
+
+* {
+	box-sizing: border-box;
+}
+
+:where(body) {
+	margin: 0;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+	font-size: inherit;
+	font-weight: inherit;
+	margin-block: 0;
+}
+
+:where(input) {
+	background-color: transparent;
+	border-width: 0;
+	color: inherit;
+	font: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+:where(select) {
+	/* Layout */
+	margin: 0;
+
+	/* Text */
+	font: inherit;
+	letter-spacing: inherit;
+	text-align: inherit;
+	text-transform: inherit;
+	white-space: inherit;
+	word-spacing: inherit;
+
+	/* Appearance */
+	appearance: none;
+	background-color: transparent;
+	border-style: none;
+	color: inherit;
+}
+</style>
+<style is:global>
+
+@import "/src/layouts/default/style/variables.css";
+
+:where(:root) {
+	--BackColor: Canvas;
+	--FillColor: CanvasText;
+	--TextColor: var(--FillColor);
+	--EdgeColor: var(--FillColor);
+	--EdgeSize: 1px;
+
+	/* Radius Reference */
+	--EdgeRadius: 3px;
+	--RoundRadius: 999999px;
+}
+
+:where(svg) {
+	fill: var(--FillColor);
+}
+
+/* Styles */
+
+html {
+	/* Layout */
+	block-size: 100%;
+	overflow: hidden;
+	padding: 1px;
+}
+
+body {
+	block-size: calc(100% - 2px);
+}
+
+.app {
+	display: grid;
+
+	/* Layout */
+	grid-template-columns: 2fr 1fr;
+	margin: 1px;
+
+	/* Text */
+	font: 100%/1.5 system-ui;
+
+	/* Appearance */
+	border-radius: var(--EdgeRadius);
+	box-shadow: var(--EdgeColor) 0 0 0 var(--EdgeSize);
+
+	/* Reference */
+	--EdgeColor: var(--Grey400Color);
+	--EdgeRadius: 6px;
+
+	& .sandbox-area,
+	& .control-area {
+		display: grid;
+
+		/* Layout */
+		grid-template-rows: 44--rpx auto;
+		overflow: hidden;
+
+		& .-heading {
+			display: flex;
+
+			/* Layout */
+			padding-block: 10--rpx;
+			padding-inline: 12--rpx;
+			align-items: center;
+			gap: 3--step;
+
+			/* Text */
+			font-size: 18--rpx;
+			line-height: calc(24 / 18);
+
+			/* Appearance */
+			background-color: var(--BackColor);
+			color: var(--FillColor);
+
+			/* Reference */
+			--BackColor: var(--Grey200Color);
+			--FillColor: var(--DarkBlue500Color);
+		}
+
+		& .-content {
+			/* Layout */
+			block-size: 100%;
+			overflow: auto;
+			padding: 12--rpx;
+		}
+	}
+
+	& .sandbox-area {
+		& .-heading {
+			border-start-start-radius: var(--EdgeRadius);
+		}
+
+		& .-content {
+			/* Appearance */
+			background-color: var(--BackColor);
+			border-end-start-radius: var(--EdgeRadius);
+			box-shadow: var(--EdgeColor) var(--EdgeX) 0 0 var(--EdgeSize) inset;
+
+			/* Animation */
+			transition: background-color 80ms;
+
+			--EdgeColor: var(--Grey200Color);
+			--EdgeX: -1px;
+
+			@nest :root.dark-theme & {
+				--BackColor: var(--BrightBlue900Color);
+			}
+
+			@nest :root.light-theme & {
+				--BackColor: var(--Neutral000Color);
+			}
+		}
+	}
+
+	& .control-area {
+		& .-heading {
+			border-start-end-radius: var(--EdgeRadius);
+		}
+
+		& .-content {
+			display: flex;
+
+			/* Layout */
+			flex-flow: column;
+			gap: 20--rpx;
+
+			/* Appearance */
+			border-end-end-radius: var(--EdgeRadius);
+		}
+	}
+}
+
+.field {
+	display: flex;
+
+	/* Layout */
+	flex-flow: column;
+
+	&:where(p) {
+		margin-block: 0;
+	}
+
+	& .-label {
+		font-weight: 500;
+
+		color: var(--Grey600Color);
+
+		& + * {
+			margin-block-start: 4--rpx;
+		}
+	}
+
+	& .-control {
+		&.-is-menu {
+			width: stretch;
+			padding: .5em 1em;
+
+			border-radius: .25em;
+			border-radius: var(--EdgeRadius);
+			box-shadow: var(--EdgeColor) 0 0 0 var(--EdgeSize) inset;
+
+			/* Reference */
+			--EdgeColor: var(--Grey300Color);
+		}
+
+		&.-is-text {
+			width: stretch;
+			padding: .5em 1em;
+
+			border-radius: .25em;
+			border-radius: var(--EdgeRadius);
+			box-shadow: var(--EdgeColor) 0 0 0 var(--EdgeSize) inset;
+
+			/* Reference */
+			--EdgeColor: var(--Grey300Color);
+		}
+
+		&.-is-toggle {
+			display: grid;
+
+			/* Layout */
+			align-items: center;
+
+			/* Appearance */
+			appearance: none;
+			cursor: pointer;
+			inline-width: min-content;
+
+			/* Reference */
+			--BackColor: var(--Grey200Color);
+			--EdgeColor: var(--DarkBlue500Color);
+			--EdgeRadius: var(--RoundRadius);
+
+			&::before {
+				display: inline-block;
+				content: "";
+
+				/* Layout */
+				grid-area: 1 / 1;
+				width: 32--rpx;
+				height: 12--rpx;
+
+				/* Appearance */
+				background-color: var(--BackColor);
+				border-radius: var(--EdgeRadius);
+				box-shadow: var(--EdgeColor) 0 0 0 var(--EdgeSize) inset;
+
+				/* Animation */
+				transition: background-color 80ms;
+			}
+
+			&:checked::before {
+				--BackColor: var(--DarkBlue500Color);
+			}
+
+			&::after {
+				display: block;
+				content: "";
+
+				/* Layout */
+				grid-area: 1 / 1;
+				width: 20px;
+				height: 20px;
+
+				/* Appearance */
+				background-color: var(--BackColor);
+				border-radius: var(--EdgeRadius);
+				box-shadow: var(--EdgeColor) 0 0 0 var(--EdgeSize) inset;
+
+				/* Animation */
+				transition: translate 80ms;
+			}
+
+			&:checked::after {
+				translate: 12--rpx 0;
+			}
+		}
+	}
+}
+
+.theme-toggle {
+	display: flex;
+
+	/* Layout */
+	align-items: center;
+	gap: 3--step;
+
+	& .light,
+	& .dark {
+		transition: fill 80ms;
+	}
+
+	&:has(:checked) .light,
+	&:not(:has(:checked)) .dark {
+		--FillColor: var(--Grey600Color);
+	}
+}
+</style>
+<script>
+let theme: 'dark' | 'light' = 'dark'
+let $html = document.documentElement
+
+function switchTheme() {
+	theme = $html.classList.contains('dark-theme') ? 'light' : 'dark'
+
+	$html.classList.toggle('dark-theme', theme === 'dark')
+	$html.classList.toggle('light-theme', theme === 'light')
+}
+
+window.addEventListener('input', ({ target }: InputEvent & { target: HTMLElement }) => {
+	const control = target.closest<HTMLInputElement>('#theme-toggle')
+
+	if (control === null) return
+
+	switchTheme()
+}, { capture: true })
+</script>
+<script>
+const element = document.querySelector<HTMLElement>('rux-classification-marking')!
+
+window.addEventListener('input', ({ target }: InputEvent & { target: HTMLElement }) => {
+	const control = target.closest<HTMLInputElement>('.field .-control[name]')
+
+	if (control === null) return
+
+	const isToggle = control.type === 'checkbox'
+
+	const label = control.name
+	const value = isToggle ? control.checked : control.value
+
+	element[label] = value
+
+	console.log({ [label]: value })
+}, { capture: true })
 </script>
