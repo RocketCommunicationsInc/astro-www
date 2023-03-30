@@ -119,9 +119,9 @@
 		scrollbar-width: none;
 
 		/* Masking */
-		mask-image: var(--mask);
+		/* mask-image: var(--mask);
 		mask-position: bottom;
-		mask-size: 100% 100%;
+		mask-size: 100% 100%; */
 
 		/* Behavior */
 		scroll-behavior: smooth;
@@ -164,6 +164,13 @@
 				&.-last {
 					/* Layout */
 					padding-block-end: 0;
+
+					/* Appearance */
+					background:
+						linear-gradient(currentColor, currentColor)
+						no-repeat 1px 0 / 1px 100%,
+						linear-gradient(var(--ActiveColor), var(--ActiveColor))
+						no-repeat 0 0 / 3px 100%;
 				}
 
 				--ActiveColor: transparent;
