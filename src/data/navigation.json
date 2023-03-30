@@ -118,6 +118,19 @@
 	{
 		"items": [
 			{
+				"label": "Astro for Apple",
+				"url": "/platforms/astro-for-apple/"
+			},
+			{
+				"label": "Astro for Grafana",
+				"url": "/platforms/astro-for-grafana/"
+			}
+		],
+		"label": "Platforms"
+	},
+	{
+		"items": [
+			{
 				"label": "Getting Started",
 				"url": "/components/getting-started/"
 			},
