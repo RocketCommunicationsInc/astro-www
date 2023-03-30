@@ -11,7 +11,7 @@ assets:
 
 ## Interactive Example
 
-::storybook-demo
+<iframe class="sandbox" src="./sandbox/" style="height:200px"></iframe>
 
 <!-- A “card” is a UI design pattern that groups related information in a flexible-size container visually resembling a playing card. Within the Astro system, card sits on top of a container. -->
 

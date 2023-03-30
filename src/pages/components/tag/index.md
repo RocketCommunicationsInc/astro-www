@@ -11,7 +11,7 @@ assets:
 
 ## Interactive Example
 
-::storybook-demo
+<iframe class="sandbox" src="./sandbox/" style="height:160px"></iframe>
 
 Tags can be static, used to provide additional information on an item, or interactive, with the abilities such as editing or clearing them from data sets or linking to other similarly tagged elements.
 

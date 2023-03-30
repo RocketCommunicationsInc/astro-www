@@ -1,0 +1,15 @@
+---
+import { Field, Root, Sandbox } from 'project:components/component-playground/ComponentPlayground'
+---
+<Root>
+	<Sandbox is:tag="rux-tag" is:constructor="RuxTag">
+		<rux-tag status="pass">Tag</rux-tag>
+	</Sandbox>
+	<Fragment slot="controls">
+		<Field type="menu" name="status">
+			<option selected>pass</option>
+			<option>fail</option>
+			<option>unknown</option>
+		</Field>
+	</Fragment>
+</Root>

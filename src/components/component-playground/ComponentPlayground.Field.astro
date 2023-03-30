@@ -1,0 +1,24 @@
+---
+export type Props = (
+	{ type: 'menu', name: string } |
+	{ type: 'toggle', name: string, checked?: boolean } |
+	{ type: 'text', name: string, value: string } |
+	{ type: 'number', name: string, value: string }
+)
+
+const { type, ...attrs } = Astro.props
+---
+<p class="field">
+	<label class="-label">{attrs.name}</label>
+	{
+		type === 'menu'
+			? (
+				<select class="-control -is-menu" {...attrs}>
+					<slot />
+				</select>
+			)
+		: type === 'toggle'
+			? <input class="-control -is-toggle" type="checkbox" {...attrs} />
+		: <input class="-control -is-text" type={type} {...attrs} />
+	}
+</p>

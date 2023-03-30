@@ -11,7 +11,7 @@ assets:
 
 ## Interactive Example
 
-::storybook-demo
+<iframe class="sandbox" src="./sandbox/" style="height:320px"></iframe>
 
 <!-- A Progress indicator signals that an application is busy performing an operation. -->
 

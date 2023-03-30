@@ -11,7 +11,7 @@ assets:
 
 ## Interactive Example
 
-<iframe class="sandbox" src="./sandbox/" style="height:528px"></iframe>
+<iframe class="sandbox" src="./sandbox/" style="height:320px"></iframe>
 
 In your digital product, such as a desktop or web application, there should be an [Overall Marking](#overall-marking), [Portion Markings](#portion-marking) if possible, and an [Authority Block](#authority-block). Each of these features will be described in more detail below.
 

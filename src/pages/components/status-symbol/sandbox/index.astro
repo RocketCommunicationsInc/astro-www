@@ -1,0 +1,18 @@
+---
+import { Field, Root, Sandbox } from 'project:components/component-playground/ComponentPlayground'
+---
+<Root>
+	<Sandbox is:tag="rux-status" is:constructor="RuxStatus">
+		<rux-status status="critical" />
+	</Sandbox>
+	<Fragment slot="controls">
+		<Field type="menu" name="status">
+			<option>caution</option>
+			<option selected>critical</option>
+			<option>normal</option>
+			<option>off</option>
+			<option>serious</option>
+			<option>standby</option>
+		</Field>
+	</Fragment>
+</Root>

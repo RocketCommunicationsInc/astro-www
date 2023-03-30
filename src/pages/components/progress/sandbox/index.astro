@@ -1,0 +1,13 @@
+---
+import { Field, Root, Sandbox } from 'project:components/component-playground/ComponentPlayground'
+---
+<Root>
+	<Sandbox is:tag="rux-progress" is:constructor="RuxProgress">
+		<rux-progress value="1" />
+	</Sandbox>
+	<Fragment slot="controls">
+		<Field type="number" name="value" value="1" />
+		<Field type="toggle" name="hideLabel" />
+		<Field type="number" name="max" value="100" />
+	</Fragment>
+</Root>
