@@ -4,7 +4,9 @@
 	/* Layout */
 	flex-flow: column;
 	justify-content: end;
-	min-height: var(--header-block-size);
+	//min-height: var(--header-block-size);
+
+	/* Layout */
 	padding-block-start: var(--header-padding-block-start);
 	padding-inline: var(--layout-inline-gap-start) var(--layout-inline-gap-end);
 
@@ -27,6 +29,9 @@
 		/* Layout */
 		max-width: max(175 * var(--step));
 
+		/* Layout */
+		padding-block-end: var(--header-padding-block-end);
+
 		/* Text */
 		font-size: var(--subheading-1-text-size);
 
@@ -40,8 +45,9 @@
 
 		/* Layout */
 		align-items: flex-end;
-		margin-block-start: var(--header-nav-block-start);
-		min-block-size: 20--step;
+		//min-block-size: 20--step;
+
+		/* Layout */
 		overflow-x: auto;
 
 		@media (width <= 400px) {

@@ -78,19 +78,22 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 		<PageHeader.Subheading>
 			{content.description ? content.description : null}
 		</PageHeader.Subheading>
-		<PageHeader.Nav>
-			<For each={secondaryNavigation}>{navigationItem => {
-				// this lays out the navigation links at the top of the component page if they exist
-				const name = navigationItem.frontmatter.subtitle
-				const isCurrent = navigationItem.url === Astro.url.pathname
-				const ariaCurrentAttr = isCurrent ? 'page' : null
-				const hrefAttr = navigationItem.url
+		{content.config ?
+			<PageHeader.Nav>
+				<For each={secondaryNavigation}>{navigationItem => {
+					// this lays out the navigation links at the top of the component page if they exist
+					const name = navigationItem.frontmatter.subtitle
+					const isCurrent = navigationItem.url === Astro.url.pathname
+					const ariaCurrentAttr = isCurrent ? 'page' : null
+					const hrefAttr = navigationItem.url
 
-				return (
-					<a aria-current={ariaCurrentAttr} href={hrefAttr}>{name}</a>
-				)
-			}}</For>
-		</PageHeader.Nav>
+					return (
+						<a aria-current={ariaCurrentAttr} href={hrefAttr}>{name}</a>
+					)
+				}}</For>
+			</PageHeader.Nav>
+			: null
+		}
 	</PageHeader>
 
 	<Fragment slot="toolbar">
