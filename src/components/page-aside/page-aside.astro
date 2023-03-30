@@ -4,19 +4,18 @@ import './page-aside.css'
 
 const {content} = Astro.props
 const {headings} = Astro.props
-console.log(headings[0])
 
 const storybookUrl = `https://astro-components.netlify.app/?path=/story/${content.storybook}`
 ---
 <nav class="p-quicklinks-navigation" aria-label="Quick Links">
 	<ul id='top-links'>
-		<li>
+		<li class="-first">
 			<IconLink type="figma" href="https://www.figma.com/@astrouxds">Figma</IconLink>
 		</li>
 		<li>
 			<IconLink type="storybook" href={storybookUrl}>Storybook</IconLink>
 		</li>
-		<li>
+		<li class="-last">
 			<IconLink type="github" href="https://github.com/RocketCommunicationsInc/astro">GitHub</IconLink>
 		</li>
 	</ul>
@@ -26,7 +25,7 @@ const storybookUrl = `https://astro-components.netlify.app/?path=/story/${conten
 			{headings.map((heading: { slug: string; text: string }, index: number) =>
 				(
 					<li>
-						<a class={ index=== 0 ? `${heading.slug} -highlighted` : `${heading.slug}`} href={`#${heading.slug}`}>{heading.text}</a>
+						<a class={ index === 0 ? `${heading.slug} -highlighted -first` : index === (headings.length - 1) ? `${heading.slug} -last` : `${heading.slug}`} href={`#${heading.slug}`}>{heading.text}</a>
 					</li>
 				)
 			)}

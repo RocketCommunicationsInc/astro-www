@@ -156,7 +156,7 @@
 	& li,
 	& p {
 		/* Layout */
-		max-width: 160--step;
+		max-width: 175--step;
 	}
 
 	& h2 {
@@ -226,6 +226,11 @@
 .page-content-main-col {
 	/* Layout */
 	width: var(--main-content-width);
+
+	& > *:not(.table-overflow, table, .storybook-demo) {
+		/* Layout */
+		max-width: 175--step;
+	}
 
 	& :is(li, p) a:not([class]) {
 		&:focus-visible {
