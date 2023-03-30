@@ -80,7 +80,8 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 		</PageHeader.Subheading>
 		{content.config ?
 			<PageHeader.Nav>
-				<For each={secondaryNavigation}>{navigationItem => {
+				<For of={secondaryNavigation}>{navigationItem => {
+					
 					// this lays out the navigation links at the top of the component page if they exist
 					const name = navigationItem.frontmatter.subtitle
 					const isCurrent = navigationItem.url === Astro.url.pathname
