@@ -35,7 +35,6 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 	<SiteSkipTo slot="top" />
 	<main>
 		<slot />
-		<AssetStatus {...Astro.props}/>
 		<ComplianceAside compliance={complianceData} />
 		<ContributionFooter sourceurl={githubSourceURL} />
 	</main>
