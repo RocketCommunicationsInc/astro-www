@@ -28,17 +28,17 @@ const filteredMdImports = configImportsArray.find(
 ---
 <nav class="-navigation" {...Astro.props}>
 	<ul>
-		<For of={filteredMdImports}>{
-			md => {
-				// this lays out the navigation links at the top of the component page if they exist
-				const isCurrent = md.url === Astro.url.pathname
+			<For of={filteredMdImports}>{
+				md => {
+					// this lays out the navigation links at the top of the component page if they exist
+					const isCurrent = md.url === Astro.url.pathname
 
-				return (
-					<NavItem href={md.url} aria-current={isCurrent ? 'page' : null}>{
-						md.frontmatter.subtitle
-					}</NavItem>
-				)
-			}
-		}</For>
+					return (
+						<NavItem href={md.url} aria-current={isCurrent ? 'page' : null}>{
+							md.frontmatter.subtitle
+						}</NavItem>
+					)
+				}
+			}</For>
 	</ul>
 </nav>
