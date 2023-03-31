@@ -342,6 +342,19 @@
 	{
 		"items": [
 			{
+				"label": "Astro for Apple",
+				"url": "/platforms/astro-for-apple/"
+			},
+			{
+				"label": "Astro for Grafana",
+				"url": "/platforms/astro-for-grafana/"
+			}
+		],
+		"label": "Platforms"
+	},
+	{
+		"items": [
+			{
 				"label": "Propose a Change",
 				"url": "/community/propose-a-change/"
 			},
