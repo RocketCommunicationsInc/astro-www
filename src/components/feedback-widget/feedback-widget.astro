@@ -1,0 +1,40 @@
+---
+import './feedback-widget.css'
+---
+<div class='widget_wrapper'>
+	<div class="widget_top-tab">
+		Feedback
+		<svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M2.12 6.70998L6 2.82998L9.88 6.70998C10.27 7.09998 10.9 7.09998 11.29 6.70998C11.68 6.31998 11.68 5.68998 11.29 5.29998L6.7 0.70998C6.31 0.31998 5.68 0.31998 5.29 0.70998L0.700001 5.29998C0.310001 5.68998 0.310001 6.31998 0.700001 6.70998C1.09 7.08998 1.73 7.09998 2.12 6.70998Z" fill="#005A8F"/>
+		</svg>
+	</div>
+	<div class="widget_content">
+		<h3>Help us improve Astro</h3>
+		<p>Please rate your present experience with Astro:</p>
+		<form>
+			<div class="widget_rate-group">
+				<button  type="button" class="widget_vote-button">
+					<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M6.31683 6.33339L10.9335 1.71672C11.4168 1.22506 12.2002 1.22506 12.6918 1.70839C12.9918 2.00839 13.1168 2.43339 13.0335 2.85006L12.2418 6.66672H16.9502C18.7418 6.66672 19.9502 8.50006 19.2502 10.1501L16.5335 16.4917C16.2668 17.1001 15.6668 17.5001 15.0002 17.5001H7.50016C6.5835 17.5001 5.8335 16.7501 5.8335 15.8334V7.50839C5.8335 7.06672 6.0085 6.64172 6.31683 6.33339ZM4.16683 15.8334C4.16683 16.7501 3.41683 17.5001 2.50016 17.5001C1.5835 17.5001 0.833496 16.7501 0.833496 15.8334V9.16672C0.833496 8.25006 1.5835 7.50006 2.50016 7.50006C3.41683 7.50006 4.16683 8.25006 4.16683 9.16672V15.8334Z" fill="#005A8F"/>
+					</svg>
+				</button>
+				<button  type="button" class="widget_vote-button">
+					<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M13.6751 13.6667L9.06675 18.2833C8.58341 18.775 7.80008 18.775 7.30841 18.2917C7.00841 17.9917 6.88341 17.5667 6.96675 17.15L7.75841 13.3333H3.05008C1.25841 13.3333 0.050079 11.5 0.758412 9.85L3.47508 3.50833C3.73341 2.9 4.33341 2.5 5.00008 2.5H12.4917C13.4084 2.5 14.1584 3.25 14.1584 4.16667V12.4917C14.1584 12.9333 13.9834 13.3583 13.6751 13.6667ZM15.8334 4.16667C15.8334 3.25 16.5834 2.5 17.5001 2.5C18.4167 2.5 19.1667 3.25 19.1667 4.16667V10.8333C19.1667 11.75 18.4167 12.5 17.5001 12.5C16.5834 12.5 15.8334 11.75 15.8334 10.8333V4.16667Z" fill="#005A8F"/>
+					</svg>
+				</button>
+			</div>
+			<input type="radio" id="thumbs-up" name="user-feedback-radio" value="thumbs-up">
+			<input type="radio" id="thumbs-down" name="user-feedback-radio" value="thumbs-down">
+			<textarea name="user-feedback" placeholder="Tell us why you gave that rating (optional)"></textarea>
+			<input name="user-feedback" type="email" placeholder="Email Address (optional)" />
+			<div class="widget_button-group">
+				<button  type="button" class="widget_secondary-button">Cancel</button>
+				<button class="widget_primary-button" type="submit" value="Submit" disabled>Submit</button>
+			</div>
+		</form>
+	</div>
+</div>
+<script>
+import './feedback-widget.client.js'
+</script>
