@@ -36,8 +36,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "inprogress"
 				}
 			]
 		},
@@ -76,7 +76,7 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
+					"version": "7.0.0",
 					"status": "available"
 				}
 			]
@@ -116,7 +116,7 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
+					"version": "7.0.0",
 					"status": "available"
 				}
 			]
@@ -156,7 +156,7 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
+					"version": "7.0.0",
 					"status": "available"
 				}
 			]
@@ -201,7 +201,367 @@
 				}
 			]
 		},
+		"Classification Markings": {
+			"assets": [
+				{
+					"name": "Documentation",
+					"type": "documentation",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Dark",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Light",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Wireframe",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "Web Component",
+					"type": "component",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "Design Tokens",
+					"type": "token",
+					"version": "7.7.0",
+					"status": "available"
+				}
+			]
+		},
 		"Clock": {
+			"assets": [
+				{
+					"name": "Documentation",
+					"type": "documentation",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Dark",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Light",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Wireframe",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "Web Component",
+					"type": "component",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "Design Tokens",
+					"type": "token",
+					"version": "7.7.0",
+					"status": "available"
+				}
+			]
+		},
+		"Container": {
+			"assets": [
+				{
+					"name": "Documentation",
+					"type": "documentation",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Dark",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Light",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Wireframe",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "Web Component",
+					"type": "component",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "Design Tokens",
+					"type": "token",
+					"version": "7.7.0",
+					"status": "available"
+				}
+			]
+		},
+		"Data Visualization": {
+			"assets": [
+				{
+					"name": "Documentation",
+					"type": "documentation",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Dark",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Light",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Wireframe",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "Web Component",
+					"type": "component",
+					"version": "7.0.0",
+					"status": "unavailable"
+				},
+				{
+					"name": "Design Tokens",
+					"type": "token",
+					"version": "7.7.0",
+					"status": "inprogress"
+				}
+			]
+		},
+		"Dialog": {
+			"assets": [
+				{
+					"name": "Documentation",
+					"type": "documentation",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Dark",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Light",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Wireframe",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "Web Component",
+					"type": "component",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "Design Tokens",
+					"type": "token",
+					"version": "7.7.0",
+					"status": "available"
+				}
+			]
+		},
+		"Focus State": {
+			"assets": [
+				{
+					"name": "Documentation",
+					"type": "documentation",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Dark",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Light",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Wireframe",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "Web Component",
+					"type": "component",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "Design Tokens",
+					"type": "token",
+					"version": "7.7.0",
+					"status": "available"
+				}
+			]
+		},
+		"Global Status Bar": {
+			"assets": [
+				{
+					"name": "Documentation",
+					"type": "documentation",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Dark",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Light",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Wireframe",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "Web Component",
+					"type": "component",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "Design Tokens",
+					"type": "token",
+					"version": "7.7.0",
+					"status": "available"
+				}
+			]
+		},
+		"Icons and Symbols": {
+			"assets": [
+				{
+					"name": "Documentation",
+					"type": "documentation",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Dark",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Light",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Wireframe",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "Web Component",
+					"type": "component",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "Design Tokens",
+					"type": "token",
+					"version": "7.7.0",
+					"status": "available"
+				}
+			]
+		},
+		"Input Field": {
+			"assets": [
+				{
+					"name": "Documentation",
+					"type": "documentation",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Dark",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Light",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Wireframe",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "Web Component",
+					"type": "component",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "Design Tokens",
+					"type": "token",
+					"version": "7.7.0",
+					"status": "available"
+				}
+			]
+		},
+		"All Options": {
 			"assets": [
 				{
 					"name": "Documentation",
