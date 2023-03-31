@@ -14,6 +14,14 @@
 		& td {
 			/* Layout */
 			padding: 2--step 5--step;
+
+			& span {
+				display: flex;
+
+				/* Layout */
+				align-items: center;
+				gap: 2--step;
+			}
 		}
 
 		& thead th {
@@ -47,7 +55,7 @@
 
 			&:hover, &:active {
 				/* Appearance */
-				color: var(--DarkBlue300Color);
+				color: var(--DarkBlue500Color);
 			}
 		}
 	}
