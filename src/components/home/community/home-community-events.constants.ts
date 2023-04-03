@@ -7,7 +7,7 @@ export const fetchGoogleCalendarEvents = async () => {
 	/** Search Parameters attached to the Request URL */
 	const searchParams = new URLSearchParams({
 		key: googleCalendarEventsApiKey,
-		maxResults: '8',
+		maxResults: '6',
 		orderBy: 'startTime',
 		singleEvents: 'true',
 		timeMin: new Date().toISOString(),
