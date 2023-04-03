@@ -208,11 +208,28 @@
 
 			/* Layout */
 			margin-block-start: 6--step;
+
+			&:focus {
+				/* Appearance */
+				outline: 1px solid #2f7aa7;
+			}
 		}
 
 		& input {
 			/* Layout */
 			margin-block-start: 3--step;
+
+			&:focus {
+				&:valid {
+					/* Appearance */
+					outline: 1px solid #2f7aa7;
+				}
+			}
+
+			&:invalid {
+				/* Appearance */
+				outline: 1px solid #ff3838;
+			}
 
 			&[type="radio"] {
 				display: none;
