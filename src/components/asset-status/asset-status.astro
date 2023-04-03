@@ -4,6 +4,7 @@ import './asset-status.css'
 import { data } from "project:data/asset-status.json"
 
 const { frontmatter } = Astro.props
+console.log(frontmatter)
 
 const status = {
 	available: `<svg width="24" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.29506 15.8749L5.82506 12.4049C5.43506 12.0149 4.80506 12.0149 4.41506 12.4049C4.02506 12.7949 4.02506 13.4249 4.41506 13.8149L8.59506 17.9949C8.98506 18.3849 9.61506 18.3849 10.0051 17.9949L20.5851 7.4149C20.9751 7.0249 20.9751 6.3949 20.5851 6.0049C20.1951 5.6149 19.5651 5.6149 19.1751 6.0049L9.29506 15.8749Z" fill="#00942C"/></svg>Available`,
