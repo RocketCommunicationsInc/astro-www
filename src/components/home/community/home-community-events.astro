@@ -6,6 +6,7 @@ import eventToggleHandler from './home-community-events.eventToggleHandler.js?ur
 
 /** Google Calendar Events. */
 const calendarEvents = await fetchGoogleCalendarEvents()
+console.log(calendarEvents)
 
 const sanitizer = new Sanitizer()
 

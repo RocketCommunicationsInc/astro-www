@@ -7,7 +7,7 @@ export const fetchGoogleCalendarEvents = async () => {
 	/** Search Parameters attached to the Request URL */
 	const searchParams = new URLSearchParams({
 		key: googleCalendarEventsApiKey,
-		maxResults: '6',
+		maxResults: '8',
 		orderBy: 'startTime',
 		singleEvents: 'true',
 		timeMin: new Date().toISOString(),
@@ -36,18 +36,20 @@ export const fetchGoogleCalendarEvents = async () => {
 export const getDateRange = (startDate, endDate) => {
 	// get time difference in seconds
 	const eventLengthSec = (new Date(endDate).getTime() - new Date(startDate).getTime()) / 1000;
+
 	// convert day to seconds
 	const dayLength = 60 * 60 * 24;
 	// find event Lenth in days
 	const eventLength = eventLengthSec / dayLength
 
 	const orderedDateStart = startDate.split('-')
-
-	// if the event is more than one day long send back both dates
 	if (eventLength > 1) {
-		const orderedDateEnd = endDate.split('-')
+		// if the event is more than 24 hours, we need to get the appropriate end date. Google sends the day after.
+		const newEnd = new Date(startDate) // get the start date
+		newEnd.setUTCDate(newEnd.getUTCDate() + eventLength) // set the startdate to UTC and add the event length to it (UTC for consistent math)
+		// return the start date and the end date formatted to internation date time en-US
 		return {
-			dateRange: `${orderedDateStart[1]}/${orderedDateStart[2]}/${orderedDateStart[0]} - ${orderedDateEnd[1]}/${orderedDateEnd[2]}/${orderedDateEnd[0]}`,
+			dateRange: `${orderedDateStart[1]}/${orderedDateStart[2]}/${orderedDateStart[0]} - ${new Intl.DateTimeFormat('en-US').format(newEnd)}`,
 			singleDay: false
 		}
 	} else {
