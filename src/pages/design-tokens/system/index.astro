@@ -96,6 +96,20 @@ const title = 'System Tokens'
 					/>
 				))
 			}
+			<h2>
+				Data Visualization
+			</h2>
+			{
+				system('dark', 'color', 'data-visualization').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="background"
+					/>
+				))
+			}
 		</sl-tab-panel>
 
 		<sl-tab-panel name="light">
@@ -181,6 +195,21 @@ const title = 'System Tokens'
 					/>
 				))
 			}
+
+		<h2>
+			Data Visualization
+		</h2>
+		{
+			system('light', 'color', 'data-visualization').map((token) => (
+				<rux-design-token-preview
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type="background"
+				/>
+			))
+		}
 		</sl-tab-panel>
 	</sl-tab-group>
 </DocsLayout>

@@ -60,5 +60,9 @@ export const lookupProperty = (category, property?: string) => {
 		return 'border-width';
 	}
 
+	if (property === 'footer' || property === 'header') {
+		return 'background';
+	}
+
 	return property;
 }
