@@ -46,7 +46,7 @@
 		line-height: calc(20 / 14);
 
 		/* Appearance */
-		color: #7b8089;
+		color: #3c3e42;
 
 		&.current {
 			/* Text */
@@ -151,7 +151,7 @@
 
 				/* Appearance */
 				background:
-					linear-gradient(currentColor, currentColor)
+					linear-gradient(#3c3e42, #3c3e42)
 					no-repeat 1px 0 / 1px 100%,
 					linear-gradient(var(--ActiveColor), var(--ActiveColor))
 					no-repeat 0 -24px / 3px 100%;
@@ -167,7 +167,7 @@
 
 					/* Appearance */
 					background:
-						linear-gradient(currentColor, currentColor)
+						linear-gradient(#3c3e42, #3c3e42)
 						no-repeat 1px 0 / 1px 100%,
 						linear-gradient(var(--ActiveColor), var(--ActiveColor))
 						no-repeat 0 0 / 3px 100%;
@@ -178,40 +178,11 @@
 				&.-highlighted {
 					--ActiveColor: var(--DarkBlue500Color);
 
-					/* Layout */
-					//margin-inline-start: -1px;
-
 					/* Text */
 					font-weight: 700;
 
 					/* Appearance */
-					//background-image: linear-gradient(var(--DarkBlue500Color), var(--DarkBlue500Color) no-repeat 0 0 / 1px 100%);
-
-					/* Appearance */
 					color: var(--DarkBlue500Color);
-
-					/* Layout */
-					//border-inline-start: 3px solid var(--DarkBlue500Color);
-
-					/* &::before {
-
-					height: 28px;
-
-
-					inset-inline-start: -1px;
-					position: absolute;
-					width: 3px;
-
-
-					background-color: var(--DarkBlue500Color);
-					color: var(--DarkBlue500Color);
-
-
-					transition: .2s;
-
-
-					content: "";
-				} */
 				}
 			}
 		}

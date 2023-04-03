@@ -484,7 +484,7 @@
 			height: 18--step;
 
 			/* Appearance */
-			background: linear-gradient(0deg, transparent calc(50% - .5px), #7b8089 calc(50% - .5px), #7b8089 calc(50% + .5px), transparent calc(50% + .5px)) 50% 0;
+			background: linear-gradient(0deg, transparent calc(50% - .5px), #3c3e42 calc(50% - .5px), #3c3e42 calc(50% + .5px), transparent calc(50% + .5px)) 50% 0;
 		}
 	}
 }
