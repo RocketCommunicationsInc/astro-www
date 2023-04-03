@@ -40,7 +40,7 @@
 					"name": "Design Tokens",
 					"type": "token",
 					"version": "7.0.0",
-					"status": "inprogress"
+					"status": "planned"
 				}
 			]
 		},
@@ -83,7 +83,7 @@
 					"name": "Design Tokens",
 					"type": "token",
 					"version": "7.0.0",
-					"status": "available"
+					"status": "inprogress"
 				}
 			]
 		},
@@ -126,7 +126,7 @@
 					"name": "Design Tokens",
 					"type": "token",
 					"version": "7.0.0",
-					"status": "available"
+					"status": "planned"
 				}
 			]
 		},
@@ -169,7 +169,7 @@
 					"name": "Design Tokens",
 					"type": "token",
 					"version": "7.0.0",
-					"status": "available"
+					"status": "planned"
 				}
 			]
 		},
@@ -211,8 +211,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
@@ -254,8 +254,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
@@ -297,8 +297,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
@@ -340,8 +340,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
@@ -426,8 +426,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
@@ -469,8 +469,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
@@ -512,8 +512,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
@@ -555,8 +555,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
@@ -598,8 +598,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "inprogress"
 				}
 			]
 		},
@@ -641,8 +641,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
@@ -684,8 +684,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
@@ -727,8 +727,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
@@ -770,8 +770,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
@@ -856,8 +856,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
@@ -899,8 +899,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
@@ -942,8 +942,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
@@ -985,8 +985,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
@@ -1028,8 +1028,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
@@ -1071,8 +1071,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
@@ -1114,8 +1114,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "inprogress"
 				}
 			]
 		},
@@ -1152,13 +1152,13 @@
 					"name": "Web Component",
 					"type": "component",
 					"version": "7.0.0",
-					"status": "available"
+					"status": "unavailable"
 				},
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
@@ -1200,8 +1200,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "inprogress"
 				}
 			]
 		},
@@ -1243,8 +1243,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
@@ -1286,8 +1286,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
@@ -1329,8 +1329,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
@@ -1372,8 +1372,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
@@ -1415,8 +1415,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
@@ -1458,8 +1458,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "inprogress"
 				}
 			]
 		},
@@ -1496,13 +1496,13 @@
 					"name": "Web Component",
 					"type": "component",
 					"version": "7.0.0",
-					"status": "available"
+					"status": "inprogress"
 				},
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
@@ -1544,8 +1544,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
@@ -1587,8 +1587,8 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "available"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
