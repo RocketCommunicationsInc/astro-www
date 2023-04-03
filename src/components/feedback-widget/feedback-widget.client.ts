@@ -11,6 +11,9 @@ let textareaPopulated: boolean = false
 let rateButtonSelected: boolean = false
 
 const handleRateButtonUncheckAll = () => {
+	// set boolean to false
+	rateButtonSelected = false
+
 	// deselect UI buttons
 	for (const button of rateButtons) {
 		button.classList.remove('selected')
@@ -22,9 +25,13 @@ const handleRateButtonUncheckAll = () => {
 }
 
 const handleRateButtonCheck = (button: HTMLButtonElement) => {
+	//set boolean to true
+	rateButtonSelected = true
+
+	// select UI button
 	button.classList.add('selected')
-	// map selected button state to hidden radios for form submit
-	// add checked state to selected radio
+
+	// map selected button state to checked state of hidden radios
 	if (button.id === 'button_thumbs-up') {
 		button.classList.contains('selected') ? hiddenThumbsUpRadio.setAttribute('checked', '') : hiddenThumbsUpRadio.removeAttribute('checked')
 	}
@@ -44,51 +51,58 @@ const toggleWidget = () => {
 	})
 	cancelButton.addEventListener('click', () => {
 		widgetWrapper?.classList.toggle('-active');
+		emailPopulated = false
+		textareaPopulated = false
+
+		//makes sure rate buttons are deselected when form clears
 		handleRateButtonUncheckAll();
+
+		// deselct submit button
+		handleSubmitButtonEnable()
 	})
+}
+
+const handleSubmitButtonEnable = () => {
+	if (!emailPopulated && !textareaPopulated && !rateButtonSelected ) {
+		submitButton.disabled = true;
+	} else if (emailPopulated && !textareaPopulated && !rateButtonSelected) {
+		submitButton.disabled = true;
+	} else {
+		submitButton.disabled = false;
+	}
 }
 
 const isFormPopulated = () => {
 	emailInput.addEventListener('input', (event) => {
 		const target =  event.currentTarget as HTMLInputElement
-		if (target.value) {
-			emailPopulated = true;
-			(!rateButtonSelected && !textareaPopulated) ? submitButton.disabled = true : submitButton.disabled = false
-		} else {
-			emailPopulated = false
-			if (!rateButtonSelected && !textareaPopulated) submitButton.disabled = true
-		}
+		target.value ? emailPopulated = true : emailPopulated = false
+
+		handleSubmitButtonEnable()
 	})
 	textarea.addEventListener('input', (event) => {
 		const target =  event.currentTarget as HTMLInputElement
-		if (target.value) {
-			textareaPopulated = true
-			submitButton.disabled = false
-		} else {
-			textareaPopulated = false
-			if (!rateButtonSelected) submitButton.disabled = true
-		}
+		target.value ? textareaPopulated = true : textareaPopulated = false
+
+		handleSubmitButtonEnable()
 	})
 }
 
 const handleRateButtonSelected = (button: HTMLButtonElement) => {
-	// if it's selected already only deselect itself (which will mean both will be deselected), disable form submit
+	// if any selected, deselect all, disable form submit
 	if (button.classList.contains('selected')) {
 		handleRateButtonUncheckAll()
-		rateButtonSelected = false
-		if(!textareaPopulated) {
-			submitButton.disabled = true
-		}
+
+		handleSubmitButtonEnable()
 	} else {
 		// Remove selected from all, then add it to clicked button, enable form submit
 		handleRateButtonUncheckAll()
 		handleRateButtonCheck(button)
-		rateButtonSelected = true
-		submitButton.disabled = false
+
+		handleSubmitButtonEnable()
 	}
 }
 
-const handleRateButtonsClick = () => {
+const handleRateButtonClick = () => {
 	// handle toggling the thumbs up/down buttons on and off, making sure they are mutually exclusive
 	for (const button of rateButtons) {
 		button.addEventListener('click', () => {
@@ -102,6 +116,7 @@ const handleForm = () => {
 	const form = document.querySelector('form')
 }
 
+// Setting up all event listeners
 toggleWidget()
-handleRateButtonsClick()
+handleRateButtonClick()
 isFormPopulated()
