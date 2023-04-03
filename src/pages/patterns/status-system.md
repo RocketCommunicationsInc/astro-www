@@ -2,7 +2,7 @@
 tags: resources
 path: /patterns/status-system
 date: Last Modified
-layout: project:layouts/docs/docs-layout.astro
+layout: project:layouts/component-docs/component-docs-layout.astro
 title: Status System
 class: color
 ---
