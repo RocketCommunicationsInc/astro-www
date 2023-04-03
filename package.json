@@ -12,6 +12,7 @@
 		"serve": "astro preview"
 	},
 	"devDependencies": {
+		"@astrojs/mdx": "0.18.2",
 		"@astrojs/sitemap": "1.2.1",
 		"@astropub/contentful": "0.1.0",
 		"@astropub/doc": "0.1.4",
@@ -21,7 +22,7 @@
 		"@csstools/custom-units": "0.1.1",
 		"@typescript-eslint/eslint-plugin": "5.55.0",
 		"@typescript-eslint/parser": "5.55.0",
-		"astro": "2.1.3",
+		"astro": "2.1.5",
 		"eslint": "8.36.0",
 		"eslint-config-dev": "3.2.0",
 		"eslint-plugin-astro": "0.24.0",
