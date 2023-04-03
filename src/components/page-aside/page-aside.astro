@@ -5,7 +5,15 @@ import './page-aside.css'
 const {content} = Astro.props
 const {headings} = Astro.props
 
-const storybookUrl = `https://astro-components.netlify.app/?path=/story/${content.storybook}`
+let h2Headings: object[] = []
+
+headings.map((heading: object) => {
+	if (heading['depth'] === 2 ) h2Headings.push(heading)
+})
+
+console.log(h2Headings)
+
+const storybookUrl: string = `https://astro-components.netlify.app/?path=/story/${content.storybook}`
 ---
 <nav class="p-quicklinks-navigation" aria-label="Quick Links">
 	<ul id='top-links'>
@@ -22,12 +30,14 @@ const storybookUrl = `https://astro-components.netlify.app/?path=/story/${conten
 	<hr />
 	<div class='section-links-wrapper'>
 		<ul class='section-links'>
-			{headings.map((heading: { slug: string; text: string }, index: number) =>
+			{h2Headings.map((heading: { slug: string; text: string }, index: number) =>
+
 				(
 					<li>
-						<a class={ index === 0 ? `${heading.slug} -highlighted -first` : index === (headings.length - 1) ? `${heading.slug} -last` : `${heading.slug}`} href={`#${heading.slug}`}>{heading.text}</a>
+						<a class={ index === 0 ? `${heading.slug} -highlighted -first` : index === (h2Headings.length - 1) ? `${heading.slug}  -last` : `${heading.slug}`} href={`#${heading.slug}`}>{heading.text}</a>
 					</li>
 				)
+
 			)}
 		</ul>
 	</div>
