@@ -4,7 +4,7 @@ import { GOOGLE_CALENDAR_EVENTS_API_URL, GOOGLE_CALENDAR_EVENTS_API_KEY } from '
 /** Search Parameters attached to the Request URL */
 const searchParams = new URLSearchParams({
 	key: GOOGLE_CALENDAR_EVENTS_API_KEY,
-	maxResults: '8',
+	maxResults: '6',
 	orderBy: 'startTime',
 	singleEvents: 'true',
 	timeMin: new Date().toISOString(),
