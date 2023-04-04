@@ -1,15 +1,12 @@
 {
 	"$schema": "https://json.schemastore.org/tsconfig",
 	"compilerOptions": {
-		// checking
+		/* Type Checking */
 		"strict": true,
 		"strictPropertyInitialization": false,
 		"exactOptionalPropertyTypes": true,
 
-		// environment
-		"target": "ESNext",
-
-		// modules
+		/* Modules */
 		"allowArbitraryExtensions": true,
 		"allowImportingTsExtensions": true,
 		"module": "ESNext",
@@ -20,18 +17,23 @@
 		],
 		"baseUrl": ".",
 		"paths": {
-			"project:*": ["src/*"]
+			"project:*": [
+				"src/*"
+			]
 		},
 
-		// interop
+		/* Emit */
+		"noEmit": true,
+
+		/* Interop Constraints */
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
 		"isolatedModules": true,
 
-		// completeness
+		/* Completeness */
 		"skipLibCheck": true,
 
-		// emit
-		"noEmit": true
+		/* Language and Environment */
+		"target": "ESNext"
 	}
 }
