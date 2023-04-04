@@ -73,6 +73,31 @@ import { h } from 'project:utils/html.js'
 // }
 
 
+const addComplianceFooterToNav = () => {
+	const sideNav = document.querySelector('ul.section-links')!
+	const linkItems = sideNav.querySelectorAll('li a')!
+	const complianceHeader: HTMLElement | null = document.querySelector('.p-compliance-aside h2.-heading')
+	let complianceTitle: string
+	const listItemElement = h<HTMLLIElement>('<li>')
+
+	if (complianceHeader) {
+		// if compliance section exists, get header text, create additional link in side nav
+		complianceTitle = complianceHeader.innerText
+		const complianceTitleKebab: string = complianceTitle.toLowerCase().replace(' ', '-')
+		const linkElement = h<HTMLAnchorElement>(`<a href="#${complianceTitleKebab}" class="${complianceTitleKebab}">${complianceTitle}`)
+
+		// remove currently identified last item's class
+		for (const link of linkItems) {
+			if (link.classList.contains('-last')) link.classList.remove('-last')
+		}
+
+		// add in last item class to new final item (compliance footer), append to nav
+		linkElement.classList.add('-last')
+		listItemElement.append(linkElement)
+		sideNav.append(listItemElement)
+	}
+}
+
 const createHeadingObserver = (headings: NodeListOf<HTMLHeadingElement>) => {
 	let currentHeading: HTMLHeadingElement | null
 
@@ -117,5 +142,6 @@ const createHeadingObserver = (headings: NodeListOf<HTMLHeadingElement>) => {
 	onresize()
 }
 
+addComplianceFooterToNav()
 createHeadingObserver(document.querySelectorAll('main [id]:is(h2)'))
 // createTableOfContentsNavigation(document.querySelectorAll('main [id]:is(h1,h2,h3,h4,h5,h6)'))
