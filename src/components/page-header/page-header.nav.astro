@@ -14,9 +14,10 @@ interface MarkdownImport {
 	rawContent: string
 }
 
+
 const targetDir = Astro.props.file.replace(/[^/]+$/, '')
 
-const configImportsArray: MarkdownImport[][] = await Astro.glob('project:pages/components/**/_config.ts').then(
+const configImportsArray: MarkdownImport[][] = await Astro.glob('project:pages/**/**/_config.ts').then(
 	imports => imports.map(({ default: module }) => module)
 )
 
