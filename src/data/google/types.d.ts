@@ -1,22 +1,3 @@
-interface StandardParameters {
-	/** Auth client or API Key for the request */
-	auth: string | object;
-	/** Data format for the response. */
-	alt: string;
-	/** Selector specifying which fields to include in a partial response. */
-	fields: string;
-	/** API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token. */
-	key: string;
-	/** OAuth 2.0 token for the current user. */
-	oauth_token: string;
-	/** Returns response with indentations and line breaks. */
-	prettyPrint: boolean;
-	/** An opaque string that represents a user for quota purposes. Must not exceed 40 characters. */
-	quotaUser: string;
-	/** Deprecated. Please use quotaUser instead. */
-	userIp: string;
-}
-
 export interface Schema$Acl {
 	/** ETag of the collection. */
 	etag: string;
@@ -45,7 +26,7 @@ export interface Schema$AclRule {
 	 * - "writer" - Provides read and write access to the calendar. Private events will appear to users with writer access, and event details will be visible.
 	 * - "owner" - Provides ownership of the calendar. This role has all of the permissions of the writer role with the additional ability to see and manipulate ACLs.
 	 */
-	role?: string;
+	role: string;
 	/** The extent to which calendar access is granted by this ACL rule. */
 	scope: {
 		type?: string;
@@ -93,7 +74,7 @@ export interface Schema$CalendarListEntry {
 	 * - "writer" - Provides read and write access to the calendar. Private events will appear to users with writer access, and event details will be visible.
 	 * - "owner" - Provides ownership of the calendar. This role has all of the permissions of the writer role with the additional ability to see and manipulate ACLs.
 	 */
-	accessRole?: string;
+	accessRole: string;
 	/** The main color of the calendar in the hexadecimal format "#0088aa". This property supersedes the index-based colorId property. To set or change this property, you need to specify colorRgbFormat=true in the parameters of the insert, update and patch methods. Optional. */
 	backgroundColor?: string;
 	/** The color of the calendar. This is an ID referring to an entry in the calendar section of the colors definition (see the colors endpoint). This property is superseded by the backgroundColor and foregroundColor properties and can be ignored when using these properties. Optional. */
@@ -271,7 +252,7 @@ export interface Schema$ConferenceRequestStatus {
 	 * - "success": the conference create request succeeded, the entry points are populated.
 	 * - "failure": the conference create request failed, there are no entry points.
 	 */
-	statusCode?: string;
+	statusCode: string;
 }
 
 export interface Schema$ConferenceSolution {
@@ -293,7 +274,7 @@ export interface Schema$ConferenceSolutionKey {
 	 * - "hangoutsMeet" for Google Meet (http://meet.google.com)
 	 * - "addOn" for 3P conference providers
 	 */
-	type?: string;
+	type: string;
 }
 
 export interface Schema$CreateConferenceRequest {
@@ -303,7 +284,7 @@ export interface Schema$CreateConferenceRequest {
 	 * The client-generated unique ID for this request.
 	 * Clients should regenerate this ID for every new request. If an ID provided is the same as for the previous request, the request is ignored.
 	 */
-	requestId?: string;
+	requestId: string;
 	/** The status of the conference create request. */
 	status: Schema$ConferenceRequestStatus;
 }
@@ -385,7 +366,7 @@ export interface Schema$Error {
 	 * - "notFound" - The requested resource was not found.
 	 * - "internalError" - The API service has encountered an internal error.  Additional error types may be added in the future, so clients should gracefully handle additional error statuses not included in this list.
 	 */
-	reason?: string;
+	reason: string;
 }
 
 export interface Schema$Event {
@@ -398,13 +379,13 @@ export interface Schema$Event {
 	 */
 	attachments?: Schema$EventAttachment[];
 	/** The attendees of the event. See the Events with attendees guide for more information on scheduling events with other calendar users. Service accounts need to use domain-wide delegation of authority to populate the attendee list. */
-	attendees: Schema$EventAttendee[];
+	attendees?: Schema$EventAttendee[];
 	/** Whether attendees may have been omitted from the event's representation. When retrieving an event, this may be due to a restriction specified by the maxAttendee query parameter. When updating an event, this can be used to only update the participant's response. Optional. The default is False. */
 	attendeesOmitted?: boolean;
 	/** The color of the event. This is an ID referring to an entry in the event section of the colors definition (see the  colors endpoint). Optional. */
 	colorId?: string;
 	/** The conference-related information, such as details of a Google Meet conference. To create new conference details use the createRequest field. To persist your changes, remember to set the conferenceDataVersion request parameter to 1 for all event modification requests. */
-	conferenceData: Schema$ConferenceData;
+	conferenceData?: Schema$ConferenceData;
 	/** Creation time of the event (as a RFC3339 timestamp). Read-only. */
 	created: string;
 	/** The creator of the event. Read-only. */
@@ -429,7 +410,7 @@ export interface Schema$Event {
 	 * - "focusTime" - A focus-time event.
 	 * - "workingLocation" - A working location event.
 	 */
-	eventType?: string;
+	eventType: string;
 	/** Extended properties of the event. */
 	extendedProperties: {
 		private?: {
@@ -466,7 +447,7 @@ export interface Schema$Event {
 	 * Event unique identifier as defined in RFC5545. It is used to uniquely identify events accross calendaring systems and must be supplied when importing events via the import method.
 	 * Note that the iCalUID and the id are not identical and only one of them should be supplied at event creation time. One difference in their semantics is that in recurring events, all occurrences of one event have different ids while they all share the same iCalUIDs. To retrieve an event using its iCalUID, call the events.list method using the iCalUID parameter. To retrieve an event using its id, call the events.get method.
 	 */
-	iCalUID?: string;
+	iCalUID: string;
 	/**
 	 * Opaque identifier of the event. When creating new single or recurring events, you can specify their IDs. Provided IDs must follow these rules:
 	 * - characters allowed in the ID are those used in base32hex encoding, i.e. lowercase letters a-v and digits 0-9, see section 3.1.2 in RFC2938
@@ -475,7 +456,7 @@ export interface Schema$Event {
 	 * If you do not specify an ID, it will be automatically generated by the server.
 	 * Note that the icalUID and the id are not identical and only one of them should be supplied at event creation time. One difference in their semantics is that in recurring events, all occurrences of one event have different ids while they all share the same icalUIDs.
 	 */
-	id?: string;
+	id: string;
 	/** Type of the resource ("calendar#event"). */
 	kind: string;
 	/** Geographic location of the event as free-form text. Optional. */
@@ -531,7 +512,7 @@ export interface Schema$Event {
 	 * - "opaque" - Default value. The event does block time on the calendar. This is equivalent to setting Show me as to Busy in the Calendar UI.
 	 * - "transparent" - The event does not block time on the calendar. This is equivalent to setting Show me as to Available in the Calendar UI.
 	 */
-	transparency?: string;
+	transparency: string;
 	/** Last modification time of the event (as a RFC3339 timestamp). Read-only. */
 	updated: string;
 	/**
@@ -593,7 +574,7 @@ export interface Schema$EventAttendee {
 	 * - "tentative" - The attendee has tentatively accepted the invitation.
 	 * - "accepted" - The attendee has accepted the invitation.  Warning: If you add an event using the values declined, tentative, or accepted, attendees with the "Add invitations to my calendar" setting set to "When I respond to invitation in email" won't see an event on their calendar unless they choose to change their invitation response in the event invitation email.
 	 */
-	responseStatus?: string;
+	responseStatus: string;
 	/** Whether this entry represents the calendar on which this copy of the event appears. Read-only. The default is False. */
 	self: boolean;
 }
@@ -614,12 +595,12 @@ export interface Schema$EventReminder {
 	 * - "popup" - Reminders are sent via a UI popup.
 	 * Required when adding a reminder.
 	 */
-	method?: string;
+	method: string;
 	/**
 	 * Number of minutes before the start of the event when the reminder should trigger. Valid values are between 0 and 40320 (4 weeks in minutes).
 	 * Required when adding a reminder.
 	 */
-	minutes?: number;
+	minutes: number;
 }
 
 export interface Schema$Events {
@@ -631,7 +612,7 @@ export interface Schema$Events {
 	 * - "writer" - The user has read and write access to the calendar. Private events will appear to users with writer access, and event details will be visible.
 	 * - "owner" - The user has ownership of the calendar. This role has all of the permissions of the writer role with the additional ability to see and manipulate ACLs.
 	 */
-	accessRole?: string;
+	accessRole: string;
 	/** The default reminders on the calendar for the authenticated user. These reminders apply to all events on this calendar that do not explicitly override them (i.e. do not have reminders.useDefault set to True). */
 	defaultReminders: Schema$EventReminder[];
 	/** Description of the calendar. Read-only. */
@@ -751,529 +732,4 @@ export interface Schema$TimePeriod {
 	end: string;
 	/** The (inclusive) start of the time period. */
 	start: string;
-}
-
-export interface Params$Resource$Acl$Delete extends StandardParameters {
-	/** Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword. */
-	calendarId: string;
-	/** ACL rule identifier. */
-	ruleId: string;
-}
-
-export interface Params$Resource$Acl$Get extends StandardParameters {
-	/** Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword. */
-	calendarId: string;
-	/** ACL rule identifier. */
-	ruleId: string;
-}
-
-export interface Params$Resource$Acl$Insert extends StandardParameters {
-	/** Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword. */
-	calendarId: string;
-	/** Whether to send notifications about the calendar sharing change. Optional. The default is True. */
-	sendNotifications?: boolean;
-	/** Request body metadata */
-	requestBody: Schema$AclRule;
-}
-
-export interface Params$Resource$Acl$List extends StandardParameters {
-	/** Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword. */
-	calendarId: string;
-	/** Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional. */
-	maxResults?: number;
-	/** Token specifying which result page to return. Optional. */
-	pageToken?: string;
-	/** Whether to include deleted ACLs in the result. Deleted ACLs are represented by role equal to "none". Deleted ACLs will always be included if syncToken is provided. Optional. The default is False. */
-	showDeleted?: boolean;
-	/**
-	 * Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. All entries deleted since the previous list request will always be in the result set and it is not allowed to set showDeleted to False.
-	 * If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.
-	 * Learn more about incremental synchronization.
-	 * Optional. The default is to return all entries.
-	 */
-	syncToken?: string;
-}
-
-export interface Params$Resource$Acl$Patch extends StandardParameters {
-	/** Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword. */
-	calendarId: string;
-	/** ACL rule identifier. */
-	ruleId: string;
-	/** Whether to send notifications about the calendar sharing change. Note that there are no notifications on access removal. Optional. The default is True. */
-	sendNotifications?: boolean;
-	/** Request body metadata */
-	requestBody: Schema$AclRule;
-}
-
-export interface Params$Resource$Acl$Update extends StandardParameters {
-	/** Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword. */
-	calendarId: string;
-	/** ACL rule identifier. */
-	ruleId: string;
-	/** Whether to send notifications about the calendar sharing change. Note that there are no notifications on access removal. Optional. The default is True. */
-	sendNotifications?: boolean;
-	/** Request body metadata */
-	requestBody: Schema$AclRule;
-}
-
-export interface Params$Resource$Acl$Watch extends StandardParameters {
-	/** Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword. */
-	calendarId: string;
-	/** Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional. */
-	maxResults?: number;
-	/** Token specifying which result page to return. Optional. */
-	pageToken?: string;
-	/** Whether to include deleted ACLs in the result. Deleted ACLs are represented by role equal to "none". Deleted ACLs will always be included if syncToken is provided. Optional. The default is False. */
-	showDeleted?: boolean;
-	/**
-	 * Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. All entries deleted since the previous list request will always be in the result set and it is not allowed to set showDeleted to False.
-	 * If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.
-	 * Learn more about incremental synchronization.
-	 * Optional. The default is to return all entries.
-	 */
-	syncToken?: string;
-	/** Request body metadata */
-	requestBody: Schema$Channel;
-}
-
-export interface Params$Resource$Calendarlist$Delete extends StandardParameters {
-	/** Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword. */
-	calendarId: string;
-}
-
-export interface Params$Resource$Calendarlist$Get extends StandardParameters {
-	/** Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword. */
-	calendarId: string;
-}
-
-export interface Params$Resource$Calendarlist$Insert extends StandardParameters {
-	/** Whether to use the foregroundColor and backgroundColor fields to write the calendar colors (RGB). If this feature is used, the index-based colorId field will be set to the best matching option automatically. Optional. The default is False. */
-	colorRgbFormat?: boolean;
-	/** Request body metadata */
-	requestBody: Schema$CalendarListEntry;
-}
-
-export interface Params$Resource$Calendarlist$List extends StandardParameters {
-	/** Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional. */
-	maxResults?: number;
-	/** The minimum access role for the user in the returned entries. Optional. The default is no restriction. */
-	minAccessRole?: string;
-	/** Token specifying which result page to return. Optional. */
-	pageToken?: string;
-	/** Whether to include deleted calendar list entries in the result. Optional. The default is False. */
-	showDeleted?: boolean;
-	/** Whether to show hidden entries. Optional. The default is False. */
-	showHidden?: boolean;
-	/**
-	 * Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. If only read-only fields such as calendar properties or ACLs have changed, the entry won't be returned. All entries deleted and hidden since the previous list request will always be in the result set and it is not allowed to set showDeleted neither showHidden to False.
-	 * To ensure client state consistency minAccessRole query parameter cannot be specified together with nextSyncToken.
-	 * If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.
-	 * Learn more about incremental synchronization.
-	 * Optional. The default is to return all entries.
-	 */
-	syncToken?: string;
-}
-
-export interface Params$Resource$Calendarlist$Patch extends StandardParameters {
-	/** Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword. */
-	calendarId: string;
-	/** Whether to use the foregroundColor and backgroundColor fields to write the calendar colors (RGB). If this feature is used, the index-based colorId field will be set to the best matching option automatically. Optional. The default is False. */
-	colorRgbFormat?: boolean;
-	/** Request body metadata */
-	requestBody: Schema$CalendarListEntry;
-}
-
-export interface Params$Resource$Calendarlist$Update extends StandardParameters {
-	/** Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword. */
-	calendarId: string;
-	/** Whether to use the foregroundColor and backgroundColor fields to write the calendar colors (RGB). If this feature is used, the index-based colorId field will be set to the best matching option automatically. Optional. The default is False. */
-	colorRgbFormat?: boolean;
-	/** Request body metadata */
-	requestBody: Schema$CalendarListEntry;
-}
-
-export interface Params$Resource$Calendarlist$Watch extends StandardParameters {
-	/** Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional. */
-	maxResults?: number;
-	/** The minimum access role for the user in the returned entries. Optional. The default is no restriction. */
-	minAccessRole?: string;
-	/** Token specifying which result page to return. Optional. */
-	pageToken?: string;
-	/** Whether to include deleted calendar list entries in the result. Optional. The default is False. */
-	showDeleted?: boolean;
-	/** Whether to show hidden entries. Optional. The default is False. */
-	showHidden?: boolean;
-	/**
-	 * Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. If only read-only fields such as calendar properties or ACLs have changed, the entry won't be returned. All entries deleted and hidden since the previous list request will always be in the result set and it is not allowed to set showDeleted neither showHidden to False.
-	 * To ensure client state consistency minAccessRole query parameter cannot be specified together with nextSyncToken.
-	 * If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.
-	 * Learn more about incremental synchronization.
-	 * Optional. The default is to return all entries.
-	 */
-	syncToken?: string;
-	/** Request body metadata */
-	requestBody: Schema$Channel;
-}
-
-export interface Params$Resource$Calendars$Clear extends StandardParameters {
-	/** Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword. */
-	calendarId: string;
-}
-
-export interface Params$Resource$Calendars$Delete extends StandardParameters {
-	/** Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword. */
-	calendarId: string;
-}
-
-export interface Params$Resource$Calendars$Get extends StandardParameters {
-	/** Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword. */
-	calendarId: string;
-}
-
-export interface Params$Resource$Calendars$Insert extends StandardParameters {
-	/** Request body metadata */
-	requestBody: Schema$Calendar;
-}
-
-export interface Params$Resource$Calendars$Patch extends StandardParameters {
-	/** Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword. */
-	calendarId: string;
-	/** Request body metadata */
-	requestBody: Schema$Calendar;
-}
-
-export interface Params$Resource$Calendars$Update extends StandardParameters {
-	/** Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword. */
-	calendarId: string;
-	/** Request body metadata */
-	requestBody: Schema$Calendar;
-}
-
-export interface Params$Resource$Channels$Stop extends StandardParameters {
-	/** Request body metadata */
-	requestBody: Schema$Channel;
-}
-
-export interface Params$Resource$Colors$Get extends StandardParameters {
-}
-
-export interface Params$Resource$Events$Delete extends StandardParameters {
-	/** Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword. */
-	calendarId: string;
-	/** Event identifier. */
-	eventId: string;
-	/**
-	 * Deprecated. Please use sendUpdates instead.
-	 *
-	 * Whether to send notifications about the deletion of the event. Note that some emails might still be sent even if you set the value to false. The default is false.
-	 */
-	sendNotifications?: boolean;
-	/** Guests who should receive notifications about the deletion of the event. */
-	sendUpdates: string;
-}
-
-export interface Params$Resource$Events$Get extends StandardParameters {
-	/** Deprecated and ignored. A value will always be returned in the email field for the organizer, creator and attendees, even if no real email address is available (i.e. a generated, non-working value will be provided). */
-	alwaysIncludeEmail: boolean;
-	/** Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword. */
-	calendarId: string;
-	/** Event identifier. */
-	eventId: string;
-	/** The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional. */
-	maxAttendees?: number;
-	/** Time zone used in the response. Optional. The default is the time zone of the calendar. */
-	timeZone?: string;
-}
-
-export interface Params$Resource$Events$Import extends StandardParameters {
-	/** Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword. */
-	calendarId: string;
-	/** Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0. */
-	conferenceDataVersion: number;
-	/** Whether API client performing operation supports event attachments. Optional. The default is False. */
-	supportsAttachments?: boolean;
-	/** Request body metadata */
-	requestBody: Schema$Event;
-}
-
-export interface Params$Resource$Events$Insert extends StandardParameters {
-	/** Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword. */
-	calendarId: string;
-	/** Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0. */
-	conferenceDataVersion: number;
-	/** The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional. */
-	maxAttendees?: number;
-	/**
-	 * Deprecated. Please use sendUpdates instead.
-	 *
-	 * Whether to send notifications about the creation of the new event. Note that some emails might still be sent even if you set the value to false. The default is false.
-	 */
-	sendNotifications?: boolean;
-	/** Whether to send notifications about the creation of the new event. Note that some emails might still be sent. The default is false. */
-	sendUpdates: string;
-	/** Whether API client performing operation supports event attachments. Optional. The default is False. */
-	supportsAttachments?: boolean;
-	/** Request body metadata */
-	requestBody: Schema$Event;
-}
-
-export interface Params$Resource$Events$Instances extends StandardParameters {
-	/** Deprecated and ignored. A value will always be returned in the email field for the organizer, creator and attendees, even if no real email address is available (i.e. a generated, non-working value will be provided). */
-	alwaysIncludeEmail: boolean;
-	/** Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword. */
-	calendarId: string;
-	/** Recurring event identifier. */
-	eventId: string;
-	/** The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional. */
-	maxAttendees?: number;
-	/** Maximum number of events returned on one result page. By default the value is 250 events. The page size can never be larger than 2500 events. Optional. */
-	maxResults?: number;
-	/** The original start time of the instance in the result. Optional. */
-	originalStart?: string;
-	/** Token specifying which result page to return. Optional. */
-	pageToken?: string;
-	/** Whether to include deleted events (with status equals "cancelled") in the result. Cancelled instances of recurring events will still be included if singleEvents is False. Optional. The default is False. */
-	showDeleted?: boolean;
-	/** Upper bound (exclusive) for an event's start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset. */
-	timeMax?: string;
-	/** Lower bound (inclusive) for an event's end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset. */
-	timeMin?: string;
-	/** Time zone used in the response. Optional. The default is the time zone of the calendar. */
-	timeZone?: string;
-}
-
-export interface Params$Resource$Events$List extends StandardParameters {
-	/** Deprecated and ignored. A value will always be returned in the email field for the organizer, creator and attendees, even if no real email address is available (i.e. a generated, non-working value will be provided). */
-	alwaysIncludeEmail: boolean;
-	/** Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword. */
-	calendarId: string;
-	/** Event types to return. Optional. The default is ["default", "outOfOffice", "focusTime"]. This is used by the Working Location developer preview and only the default value is allowed for non-opted-in users. */
-	eventTypes?: string[];
-	/** Specifies an event ID in the iCalendar format to be provided in the response. Optional. Use this if you want to search for an event by its iCalendar ID. */
-	iCalUID?: string;
-	/** The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional. */
-	maxAttendees?: number;
-	/** Maximum number of events returned on one result page. The number of events in the resulting page may be less than this value, or none at all, even if there are more events matching the query. Incomplete pages can be detected by a non-empty nextPageToken field in the response. By default the value is 250 events. The page size can never be larger than 2500 events. Optional. */
-	maxResults?: number;
-	/** The order of the events returned in the result. Optional. The default is an unspecified, stable order. */
-	orderBy?: string;
-	/** Token specifying which result page to return. Optional. */
-	pageToken?: string;
-	/** Extended properties constraint specified as propertyName=value. Matches only private properties. This parameter might be repeated multiple times to return events that match all given constraints. */
-	privateExtendedProperty: string[];
-	/** Free text search terms to find events that match these terms in the following fields: summary, description, location, attendee's displayName, attendee's email. Optional. */
-	q?: string;
-	/** Extended properties constraint specified as propertyName=value. Matches only shared properties. This parameter might be repeated multiple times to return events that match all given constraints. */
-	sharedExtendedProperty: string[];
-	/** Whether to include deleted events (with status equals "cancelled") in the result. Cancelled instances of recurring events (but not the underlying recurring event) will still be included if showDeleted and singleEvents are both False. If showDeleted and singleEvents are both True, only single instances of deleted events (but not the underlying recurring events) are returned. Optional. The default is False. */
-	showDeleted?: boolean;
-	/** Whether to include hidden invitations in the result. Optional. The default is False. */
-	showHiddenInvitations?: boolean;
-	/** Whether to expand recurring events into instances and only return single one-off events and instances of recurring events, but not the underlying recurring events themselves. Optional. The default is False. */
-	singleEvents?: boolean;
-	/**
-	 * Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. All events deleted since the previous list request will always be in the result set and it is not allowed to set showDeleted to False.
-	 * There are several query parameters that cannot be specified together with nextSyncToken to ensure consistency of the client state.
-	 *
-	 * These are:
-	 * - iCalUID
-	 * - orderBy
-	 * - privateExtendedProperty
-	 * - q
-	 * - sharedExtendedProperty
-	 * - timeMin
-	 * - timeMax
-	 * - updatedMin If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.
-	 * Learn more about incremental synchronization.
-	 * Optional. The default is to return all entries.
-	 */
-	syncToken?: string;
-	/** Upper bound (exclusive) for an event's start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset, for example, 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but are ignored. If timeMin is set, timeMax must be greater than timeMin. */
-	timeMax?: string;
-	/** Lower bound (exclusive) for an event's end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset, for example, 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but are ignored. If timeMax is set, timeMin must be smaller than timeMax. */
-	timeMin?: string;
-	/** Time zone used in the response. Optional. The default is the time zone of the calendar. */
-	timeZone?: string;
-	/** Lower bound for an event's last modification time (as a RFC3339 timestamp) to filter by. When specified, entries deleted since this time will always be included regardless of showDeleted. Optional. The default is not to filter by last modification time. */
-	updatedMin?: string;
-}
-
-export interface Params$Resource$Events$Move extends StandardParameters {
-	/** Calendar identifier of the source calendar where the event currently is on. */
-	calendarId: string;
-	/** Calendar identifier of the target calendar where the event is to be moved to. */
-	destination: string;
-	/** Event identifier. */
-	eventId: string;
-	/**
-	 * Deprecated. Please use sendUpdates instead.
-	 *
-	 * Whether to send notifications about the change of the event's organizer. Note that some emails might still be sent even if you set the value to false. The default is false.
-	 */
-	sendNotifications?: boolean;
-	/** Guests who should receive notifications about the change of the event's organizer. */
-	sendUpdates: string;
-}
-
-export interface Params$Resource$Events$Patch extends StandardParameters {
-	/** Deprecated and ignored. A value will always be returned in the email field for the organizer, creator and attendees, even if no real email address is available (i.e. a generated, non-working value will be provided). */
-	alwaysIncludeEmail: boolean;
-	/** Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword. */
-	calendarId: string;
-	/** Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0. */
-	conferenceDataVersion: number;
-	/** Event identifier. */
-	eventId: string;
-	/** The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional. */
-	maxAttendees?: number;
-	/**
-	 * Deprecated. Please use sendUpdates instead.
-	 *
-	 * Whether to send notifications about the event update (for example, description changes, etc.). Note that some emails might still be sent even if you set the value to false. The default is false.
-	 */
-	sendNotifications?: boolean;
-	/** Guests who should receive notifications about the event update (for example, title changes, etc.). */
-	sendUpdates: string;
-	/** Whether API client performing operation supports event attachments. Optional. The default is False. */
-	supportsAttachments?: boolean;
-	/** Request body metadata */
-	requestBody: Schema$Event;
-}
-
-export interface Params$Resource$Events$Quickadd extends StandardParameters {
-	/** Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword. */
-	calendarId: string;
-	/**
-	 * Deprecated. Please use sendUpdates instead.
-	 *
-	 * Whether to send notifications about the creation of the event. Note that some emails might still be sent even if you set the value to false. The default is false.
-	 */
-	sendNotifications?: boolean;
-	/** Guests who should receive notifications about the creation of the new event. */
-	sendUpdates: string;
-	/** The text describing the event to be created. */
-	text: string;
-}
-
-export interface Params$Resource$Events$Update extends StandardParameters {
-	/** Deprecated and ignored. A value will always be returned in the email field for the organizer, creator and attendees, even if no real email address is available (i.e. a generated, non-working value will be provided). */
-	alwaysIncludeEmail: boolean;
-	/** Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword. */
-	calendarId: string;
-	/** Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0. */
-	conferenceDataVersion: number;
-	/** Event identifier. */
-	eventId: string;
-	/** The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional. */
-	maxAttendees?: number;
-	/**
-	 * Deprecated. Please use sendUpdates instead.
-	 *
-	 * Whether to send notifications about the event update (for example, description changes, etc.). Note that some emails might still be sent even if you set the value to false. The default is false.
-	 */
-	sendNotifications?: boolean;
-	/** Guests who should receive notifications about the event update (for example, title changes, etc.). */
-	sendUpdates: string;
-	/** Whether API client performing operation supports event attachments. Optional. The default is False. */
-	supportsAttachments?: boolean;
-	/** Request body metadata */
-	requestBody: Schema$Event;
-}
-
-export interface Params$Resource$Events$Watch extends StandardParameters {
-	/** Deprecated and ignored. A value will always be returned in the email field for the organizer, creator and attendees, even if no real email address is available (i.e. a generated, non-working value will be provided). */
-	alwaysIncludeEmail: boolean;
-	/** Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword. */
-	calendarId: string;
-	/** Event types to return. Optional. The default is ["default", "outOfOffice", "focusTime"]. This is used by the Working Location developer preview and only the default value is allowed for non-opted-in users. */
-	eventTypes?: string[];
-	/** Specifies an event ID in the iCalendar format to be provided in the response. Optional. Use this if you want to search for an event by its iCalendar ID. */
-	iCalUID?: string;
-	/** The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional. */
-	maxAttendees?: number;
-	/** Maximum number of events returned on one result page. The number of events in the resulting page may be less than this value, or none at all, even if there are more events matching the query. Incomplete pages can be detected by a non-empty nextPageToken field in the response. By default the value is 250 events. The page size can never be larger than 2500 events. Optional. */
-	maxResults?: number;
-	/** The order of the events returned in the result. Optional. The default is an unspecified, stable order. */
-	orderBy?: string;
-	/** Token specifying which result page to return. Optional. */
-	pageToken?: string;
-	/** Extended properties constraint specified as propertyName=value. Matches only private properties. This parameter might be repeated multiple times to return events that match all given constraints. */
-	privateExtendedProperty: string[];
-	/** Free text search terms to find events that match these terms in the following fields: summary, description, location, attendee's displayName, attendee's email. Optional. */
-	q?: string;
-	/** Extended properties constraint specified as propertyName=value. Matches only shared properties. This parameter might be repeated multiple times to return events that match all given constraints. */
-	sharedExtendedProperty: string[];
-	/** Whether to include deleted events (with status equals "cancelled") in the result. Cancelled instances of recurring events (but not the underlying recurring event) will still be included if showDeleted and singleEvents are both False. If showDeleted and singleEvents are both True, only single instances of deleted events (but not the underlying recurring events) are returned. Optional. The default is False. */
-	showDeleted?: boolean;
-	/** Whether to include hidden invitations in the result. Optional. The default is False. */
-	showHiddenInvitations?: boolean;
-	/** Whether to expand recurring events into instances and only return single one-off events and instances of recurring events, but not the underlying recurring events themselves. Optional. The default is False. */
-	singleEvents?: boolean;
-	/**
-	 * Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. All events deleted since the previous list request will always be in the result set and it is not allowed to set showDeleted to False.
-	 * There are several query parameters that cannot be specified together with nextSyncToken to ensure consistency of the client state.
-	 *
-	 * These are:
-	 * - iCalUID
-	 * - orderBy
-	 * - privateExtendedProperty
-	 * - q
-	 * - sharedExtendedProperty
-	 * - timeMin
-	 * - timeMax
-	 * - updatedMin If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.
-	 * Learn more about incremental synchronization.
-	 * Optional. The default is to return all entries.
-	 */
-	syncToken?: string;
-	/** Upper bound (exclusive) for an event's start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset, for example, 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but are ignored. If timeMin is set, timeMax must be greater than timeMin. */
-	timeMax?: string;
-	/** Lower bound (exclusive) for an event's end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset, for example, 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but are ignored. If timeMax is set, timeMin must be smaller than timeMax. */
-	timeMin?: string;
-	/** Time zone used in the response. Optional. The default is the time zone of the calendar. */
-	timeZone?: string;
-	/** Lower bound for an event's last modification time (as a RFC3339 timestamp) to filter by. When specified, entries deleted since this time will always be included regardless of showDeleted. Optional. The default is not to filter by last modification time. */
-	updatedMin?: string;
-	/** Request body metadata */
-	requestBody: Schema$Channel;
-}
-
-export interface Params$Resource$Freebusy$Query extends StandardParameters {
-	/** Request body metadata */
-	requestBody: Schema$FreeBusyRequest;
-}
-
-export interface Params$Resource$Settings$Get extends StandardParameters {
-	/** The id of the user setting. */
-	setting: string;
-}
-
-export interface Params$Resource$Settings$List extends StandardParameters {
-	/** Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional. */
-	maxResults?: number;
-	/** Token specifying which result page to return. Optional. */
-	pageToken?: string;
-	/**
-	 * Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then.
-	 * If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.
-	 * Learn more about incremental synchronization.
-	 * Optional. The default is to return all entries.
-	 */
-	syncToken?: string;
-}
-
-export interface Params$Resource$Settings$Watch extends StandardParameters {
-	/** Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional. */
-	maxResults?: number;
-	/** Token specifying which result page to return. Optional. */
-	pageToken?: string;
-	/**
-	 * Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then.
-	 * If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.
-	 * Learn more about incremental synchronization.
-	 * Optional. The default is to return all entries.
-	 */
-	syncToken?: string;
-	/** Request body metadata */
-	requestBody: Schema$Channel;
 }
