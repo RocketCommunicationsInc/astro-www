@@ -2,6 +2,7 @@
 	"editor.codeActionsOnSave": {
 		"source.fixAll": true
 	},
+	"editor.renderWhitespace": "boundary",
 	"editor.useTabStops": true,
 	"files.exclude": {
 		"**/.vscode": true,

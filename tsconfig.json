@@ -1,17 +1,37 @@
 {
+	"$schema": "https://json.schemastore.org/tsconfig",
 	"compilerOptions": {
-		"target": "ESNext",
-		"module": "ESNext",
-		"moduleResolution": "node",
-		"resolveJsonModule": true,
-		"allowSyntheticDefaultImports": true,
-		"types": ["astro/client", "types-object", "./.vscode/tsconfig"],
-		"skipLibCheck": true,
-		"strictNullChecks": true,
+		// checking
+		"strict": true,
+		"strictPropertyInitialization": false,
 		"exactOptionalPropertyTypes": true,
+
+		// environment
+		"target": "ESNext",
+
+		// modules
+		"allowArbitraryExtensions": true,
+		"allowImportingTsExtensions": true,
+		"module": "ESNext",
+		"moduleResolution": "bundler",
+		"types": [
+			"types-object",
+			"./.vscode/tsconfig"
+		],
 		"baseUrl": ".",
 		"paths": {
 			"project:*": ["src/*"]
-		}
+		},
+
+		// interop
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"isolatedModules": true,
+
+		// completeness
+		"skipLibCheck": true,
+
+		// emit
+		"noEmit": true
 	}
 }
