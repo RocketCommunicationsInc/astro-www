@@ -391,7 +391,7 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
+					"version": "7.0.0",
 					"status": "inprogress"
 				}
 			]
@@ -561,7 +561,7 @@
 					"type": "component",
 					"version": "7.0.0",
 					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-icons--default-story"
+					"link": "https://astro-components.netlify.app/?path=/story/components-monitoring-icon--default-story"
 				},
 				{
 					"name": "Design Tokens",
@@ -823,17 +823,61 @@
 					"name": "Web Component",
 					"type": "component",
 					"version": "7.0.0",
-					"status": "unavailable"
+					"status": "planned"
 				},
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
-					"status": "unavailable"
+					"version": "7.0.0",
+					"status": "planned"
 				}
 			]
 		},
 		"Pop Up": {
+			"assets": [
+				{
+					"name": "Documentation",
+					"type": "documentation",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Dark",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available",
+					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
+				},
+				{
+					"name": "UI Kit - Light",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available",
+					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
+				},
+				{
+					"name": "UI Kit - Wireframe",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available",
+					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
+				},
+				{
+					"name": "Web Component",
+					"type": "component",
+					"version": "7.0.0",
+					"status": "available",
+					"link": "https://astro-components.netlify.app/?path=/story/components-pop-up--default-story"
+				},
+				{
+					"name": "Design Tokens",
+					"type": "token",
+					"version": "7.0.0",
+					"status": "planned"
+				}
+			]
+		},
+		"Pop Up Menu": {
 			"assets": [
 				{
 					"name": "Documentation",
@@ -1005,7 +1049,7 @@
 					"name": "Design Tokens",
 					"type": "token",
 					"version": "7.0.0",
-					"status": "planned"
+					"status": "inprogress"
 				}
 			]
 		},
@@ -1049,7 +1093,7 @@
 					"name": "Design Tokens",
 					"type": "token",
 					"version": "7.0.0",
-					"status": "planned"
+					"status": "inprogress"
 				}
 			]
 		},
@@ -1268,7 +1312,7 @@
 					"name": "Design Tokens",
 					"type": "token",
 					"version": "7.0.0",
-					"status": "planned"
+					"status": "inprogress"
 				}
 			]
 		},
@@ -1624,6 +1668,100 @@
 				}
 			]
 		},
+		"Navigation": {
+			"assets": [
+				{
+					"name": "Documentation",
+					"type": "documentation",
+					"version": "7.0.0",
+					"status": "available"
+				}
+			]
+		},
+		"Status System": {
+			"assets": [
+				{
+					"name": "Documentation",
+					"type": "documentation",
+					"version": "7.0.0",
+					"status": "available"
+				},
+				{
+					"name": "UI Kit - Dark",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available",
+					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
+				},
+				{
+					"name": "UI Kit - Light",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available",
+					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
+				},
+				{
+					"name": "UI Kit - Wireframe",
+					"type": "ui",
+					"version": "7.0.0",
+					"status": "available",
+					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
+				},
+				{
+					"name": "Web Component",
+					"type": "component",
+					"version": "7.0.0",
+					"status": "available",
+					"link": "https://astro-components.netlify.app/?path=/story/components-status--all-variants"
+				},
+				{
+					"name": "Design Tokens",
+					"type": "token",
+					"version": "7.0.0",
+					"status": "inprogress"
+				}
+			]
+		},
+		"Application Feedback": {
+			"assets": [
+				{
+					"name": "Documentation",
+					"type": "documentation",
+					"version": "7.0.0",
+					"status": "available"
+				}
+			]
+		},
+		"Notifications": {
+			"assets": [
+				{
+					"name": "Documentation",
+					"type": "documentation",
+					"version": "7.0.0",
+					"status": "available"
+				}
+			]
+		},
+		"Modeless Panes": {
+			"assets": [
+				{
+					"name": "Documentation",
+					"type": "documentation",
+					"version": "7.0.0",
+					"status": "available"
+				}
+			]
+		},
+		"Forms and Validation": {
+			"assets": [
+				{
+					"name": "Documentation",
+					"type": "documentation",
+					"version": "7.0.0",
+					"status": "available"
+				}
+			]
+		},
 		"All Options": {
 			"assets": [
 				{
@@ -1653,7 +1791,7 @@
 				{
 					"name": "Design Tokens",
 					"type": "token",
-					"version": "7.7.0",
+					"version": "7.0.0",
 					"status": "deprecated"
 				}
 			]

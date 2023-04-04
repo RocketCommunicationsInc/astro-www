@@ -3,6 +3,7 @@
 
 	/* Layout */
 	inline-size: 100%;
+	margin-block-end: 14--step;
 	overflow-y: overlay;
 
 	& table {
