@@ -20,30 +20,30 @@
 		"@astropub/md": "0.2.0",
 		"@astrouxds/tokens": "1.5.0",
 		"@csstools/custom-units": "0.1.1",
-		"@typescript-eslint/eslint-plugin": "5.55.0",
-		"@typescript-eslint/parser": "5.55.0",
-		"astro": "2.1.5",
-		"eslint": "8.36.0",
+		"@typescript-eslint/eslint-plugin": "5.57.0",
+		"@typescript-eslint/parser": "5.57.0",
+		"astro": "2.1.9",
+		"eslint": "8.37.0",
 		"eslint-config-dev": "3.2.0",
-		"eslint-plugin-astro": "0.24.0",
+		"eslint-plugin-astro": "0.26.1",
 		"eslint-plugin-jsx-a11y": "6.7.1",
 		"isomorphic-dompurify": "1.2.0",
 		"lightningcss": "1.19.0",
 		"parse-yaml": "0.1.0",
 		"postcss-load-config": "^4.0.1",
-		"postcss-preset-env": "8.0.1",
+		"postcss-preset-env": "8.3.0",
 		"remark-directive": "2.0.1",
-		"stylelint": "15.2.0",
+		"stylelint": "15.4.0",
 		"stylelint-config-dev": "4.0.0",
 		"stylelint-order": "6.0.3",
 		"stylelint-use-logical": "2.1.0",
 		"stylelint-use-nesting": "4.1.0",
 		"types-object": "0.3.0",
-		"typescript": "4.9.5"
+		"typescript": "5.0.3"
 	},
 	"eslintConfig": {
 		"extends": [
-			"dev/astro"
+			"dev/astro-strict"
 		],
 		"ignorePatterns": [
 			"src/components/site-search/site-search-engine.js"
@@ -52,7 +52,7 @@
 	"postcss": {
 		"plugins": {
 			"postcss-preset-env": {
-				"browsers": "last 2 chrome version, last 2 firefox version, last 1 safari version",
+				"browsers": "last 2 chrome versions, last 2 safari versions, last 1 firefox version",
 				"stage": 3,
 				"features": {
 					"nesting-rules": true
