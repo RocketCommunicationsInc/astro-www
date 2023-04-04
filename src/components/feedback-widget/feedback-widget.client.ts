@@ -1,5 +1,6 @@
 const widgetWrapper: HTMLElement = document.querySelector('.widget_wrapper')!
 const topTab: HTMLElement = document.querySelector('.widget_top-tab')!
+const widgetContent: HTMLElement = document.querySelector('.widget_content')!
 const cancelButton: HTMLButtonElement = document.querySelector('.widget_secondary-button')!
 const rateButtons: NodeListOf<HTMLButtonElement> = document.querySelectorAll('.widget_rate-group button')!
 const submitButton: HTMLButtonElement = document.querySelector('.widget_primary-button')!
@@ -44,6 +45,42 @@ const handleRateButtonCheck = (button: HTMLButtonElement) => {
 	if (button.id === 'button_thumbs-down') {
 		button.classList.contains('selected') ? hiddenThumbsDownRadio.setAttribute('checked', '') : hiddenThumbsDownRadio.removeAttribute('checked')
 	}
+}
+
+const showHideWidget = () => {
+	let toggle = false
+
+	topTab.addEventListener('click', () => {
+		toggle = !toggle
+
+		if (toggle) {
+			widgetContent.toggleAttribute('data-collapsible-active', toggle)
+		}
+
+		let min = { height: `0px` }
+		let max = { height: `${widgetContent.getBoundingClientRect().height}px` }
+
+		if (window.visualViewport.width < 800) {
+			min = { width: `0px` }
+			max = { width: `${widgetContent.getBoundingClientRect().width}px` }
+		}
+
+		console.log(widgetContent.getBoundingClientRect())
+
+		if (!toggle) {
+			widgetContent.toggleAttribute('data-collapsible-active', toggle)
+		}
+
+		const keyframes = toggle ? [ min, max ] : [ max, min ]
+
+		widgetContent.animate(
+			keyframes,
+			{
+				duration: 200,
+				iterations: 1,
+			}
+		)
+	})
 }
 
 const toggleWidget = () => {
@@ -144,43 +181,44 @@ const handleRateButtonClick = () => {
 
 // sets icon panel distance from top dynamically so it always sits underneath the icon search even though it is position: fixed
 // to be run on scroll
-const setWidgetPositionOnFooter = () => {
-	let footerHeight: number = pageFooter.offsetHeight;
-	console.log(pageFooter.getBoundingClientRect())
-	let footerRect: number = pageFooter.getBoundingClientRect().y;
-	let widgetOffset: number  = 473;
-	let offset: number = footerRect - widgetOffset;
-    widgetWrapper.style.insetBlockEnd = `-${offset}px`;
-}
+// const setWidgetPositionOnFooter = () => {
+// 	let footerHeight: number = pageFooter.offsetHeight;
+// 	console.log(pageFooter.getBoundingClientRect())
+// 	let footerRect: number = pageFooter.getBoundingClientRect().y;
+// 	let widgetOffset: number  = -473;
+// 	let offset: number = widgetOffset + footerRect;
+//     //widgetWrapper.style.insetBlockEnd = `${offset}px`;
+// }
 
-// set intersection observer on header so the onscroll event listener is only running for the length of the header scroll
-const options = {
-	rootMargin: '0px',
-	threshold: 0,
-}
+// // set intersection observer on header so the onscroll event listener is only running for the length of the header scroll
+// const options = {
+// 	rootMargin: '0px',
+// 	threshold: 0,
+// }
 
-const intersectCallback = (entries: any[]) => {
-	entries.forEach(entry => {
-		if (entry.isIntersecting) {
-			window.addEventListener('scroll', setWidgetPositionOnFooter)
-		} else {
-			window.removeEventListener('scroll', setWidgetPositionOnFooter)
-		}
-	})
-}
+// const intersectCallback = (entries: any[]) => {
+// 	entries.forEach(entry => {
+// 		if (entry.isIntersecting) {
+// 			window.addEventListener('scroll', setWidgetPositionOnFooter)
+// 		} else {
+// 			window.removeEventListener('scroll', setWidgetPositionOnFooter)
+// 		}
+// 	})
+// }
 
-footerObserver = new IntersectionObserver(intersectCallback, options)
+// footerObserver = new IntersectionObserver(intersectCallback, options)
 
-footerObserver.observe(pageFooter)
+// footerObserver.observe(pageFooter)
 
-//////
+// //////
 
-const handleFormSubmit = () => {
-	const form = document.querySelector('form')
-}
+// const handleFormSubmit = () => {
+// 	const form = document.querySelector('form')
+// }
 
 // Setting up all event listeners
-toggleWidget()
+// toggleWidget()
+showHideWidget()
 handleRateButtonClick()
 isFormPopulated()
 

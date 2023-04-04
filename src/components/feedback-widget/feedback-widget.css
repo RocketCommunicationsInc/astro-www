@@ -2,48 +2,30 @@
 	display: flex;
 
 	/* Layout */
+	align-items: flex-end;
 	flex-direction: column;
 
 	/* Layout */
-	inset-block-end: -473px;
+	inset-block-end: 0;
 	inset-inline-end: 0;
 
 	/* Layout */
 	margin-inline-end: 4--step;
 
-	/* Layout */
-	max-width: 75--step;
-
 	/* Appearance */
-	position: fixed;
+	position: sticky;
 
-	/* Animation */
-	transition: all 200ms cubic-bezier(.66, .11, .33, .98);
-
-	&.-active {
+	& .widget_interior-wrapper {
 		/* Layout */
 		inset-block-end: 0;
-
-		& .widget_top-tab svg {
-			/* Transform */
-			transform: rotate(180deg);
-
-			& path {
-				fill: #4dacff;
-			}
-		}
+		position: absolute;
 	}
 
 	@media (width < 800px) {
 		/* Layout */
 		inset-block-end: 0;
-		inset-inline-end: -300px;
+		inset-inline-end: 0;
 		margin-inline-end: 0;
-
-		&.-active {
-			/* Layout */
-			inset-inline-end: 0;
-		}
 	}
 
 	& .widget_top-tab {
@@ -59,9 +41,6 @@
 		border-start-end-radius: 1--step;
 		border-end-start-radius: 0;
 		border-end-end-radius: 0;
-
-		/* Layout */
-		margin-block-end: -2px;
 
 		/* Layout */
 		margin-inline-end: 4--step;
@@ -101,18 +80,55 @@
 
 	& .widget_content {
 		/* Layout */
+		max-width: 75--step;
 
 		/* Layout */
-		padding-block: 5--step;
-		padding-inline: 3--step;
+		overflow: hidden;
 
 		/* Appearance */
 		background-color: #eaeef4;
-		border: 1px solid #2f7aa7;
-
-		/* Appearance */
 		border-radius: 3px;
 		color: #292a2d;
+
+		/* Animation */
+		transition: height 200ms cubic-bezier(.66, .11, .33, .98);
+
+		&:not([data-collapsible-active]) {
+			/* Layout */
+			height: 0;
+			padding-block: 0;
+			padding-inline: 0;
+
+			/* Appearance */
+			border: none;
+		}
+
+		&:is([data-collapsible-active]) {
+			/* Layout */
+			height: auto;
+			padding-block: 5--step;
+			padding-inline: 3--step;
+
+			/* Appearance */
+			border: 1px solid #2f7aa7;
+		}
+
+		@media (width < 800px) {
+			/* Animation */
+			transition: width 200ms cubic-bezier(.66, .11, .33, .98);
+
+			&:not([data-collapsible-active]) {
+				/* Layout */
+				height: auto;
+				width: 0;
+			}
+
+			&:is([data-collapsible-active]) {
+				/* Layout */
+				height: auto;
+				width: auto;
+			}
+		}
 
 		& h3 {
 			/* Layout */
