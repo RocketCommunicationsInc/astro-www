@@ -50,7 +50,7 @@
 	"postcss": {
 		"plugins": {
 			"postcss-preset-env": {
-				"browsers": "last 2 chrome version, last 2 firefox version, last 1 safari version",
+				"browsers": "last 2 chrome versions, last 2 safari versions, last 1 firefox version",
 				"stage": 3,
 				"features": {
 					"nesting-rules": true
