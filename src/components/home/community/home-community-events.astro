@@ -1,70 +1,80 @@
 ---
-import { Sanitizer } from 'project:utils/sanitizer.js'
-import { For, When } from '@astropub/flow';
-import { fetchGoogleCalendarEvents, getDateRange } from './home-community-events.constants.js'
-import eventToggleHandler from './home-community-events.eventToggleHandler.js?url'
+import type { Type } from 'project:data/types.d.ts'
 
-/** Google Calendar Events. */
-const calendarEvents = await fetchGoogleCalendarEvents()
-console.log(calendarEvents)
+import { Sanitizer } from 'project:utils/sanitizer.js'
+import { For } from '@astropub/flow'
+import { when } from 'project:utils/when'
+import * as utils from './home-community-events.utils.ts'
+import eventToggleHandler from './home-community-events.eventToggleHandler.js?url'
+import calendarEvents from 'project:data/google/google-calendar-events'
+
+export type Props = Type<'HomeCommmunityEvents'>
+
+const attrs = Astro.props
 
 const sanitizer = new Sanitizer()
-
 ---
 <section class="p-community-events">
-	<h4>Upcoming Events</h4>
+	<h4>{
+		attrs.heading.data
+	}</h4>
 	<div class="p-community-events-content">
 		<For of={calendarEvents}>{calendarEvent => (
 			<article class="p-community-event">
 				<hgroup class="p-community-event-heading">
-					<h5>{calendarEvent.summary}</h5>
+					<h5>{
+						calendarEvent.summary
+					}</h5>
 				</hgroup>
+
 				<span class="p-community-event-info">
 					<small class="p-community-event-date">
-						<span class="-date">{
-							calendarEvent.start.date
-								? getDateRange(calendarEvent.start.date, calendarEvent.end.date).dateRange
-							: new Date(calendarEvent.start.dateTime).toLocaleString('en-US', {
-								day: '2-digit',
-								month: '2-digit',
-								year: 'numeric',
-								timeZone: 'PST'
-							})
-						}</span>
 						{
-							calendarEvent.start.dateTime
+							calendarEvent.start.date && calendarEvent.end.date
 								? (
-									<span class="-time">{
-										new Date(calendarEvent.start.dateTime).toLocaleString('en-US', {
-											hour: 'numeric',
-											minute: '2-digit',
-											timeZoneName: 'short'
-										})
-									}</span>
+									<Fragment>
+										<span class="-date">{
+											utils.getDateRange(calendarEvent.start.date, calendarEvent.end.date)
+										}</span>
+
+										{when(utils.isAllDay(calendarEvent.start.date, calendarEvent.end.date), () => (
+											<span class="-time">{
+												attrs.allday.data
+											}</span>
+										))}
+									</Fragment>
 								)
-							: getDateRange(calendarEvent.start.date, calendarEvent.end.date).singleDay
-								? <span class="-time">All Day!</span>
-							: <Fragment />
+							: (
+								<span class="-date">{
+									utils.getDate(calendarEvent.start.dateTime!)
+								}</span>
+								
+								<span class="-time"> {
+									utils.getTime(calendarEvent.start.dateTime!)
+								}</span>
+							)
 						}
 					</small>
-					<When test={calendarEvent.location}>
+
+					{when(calendarEvent.location, location => (
 						<span class='-second-col'>
-							<span class="p-community-event-subheading">{calendarEvent.location}</span>
+							<span class="p-community-event-subheading">{
+								location
+							}</span>
 						</span>
-					</When>
+					))}
 				</span>
-				<span class="p-community-event-actions">
-					<button>View Details</button>
-				</span>
-				{
-					calendarEvent.description
-						? <span class="p-community-event-details" set:html={sanitizer.sanitizeFor('div', calendarEvent.description)} />
-					: <Fragment />
-				}
+
+				{when(calendarEvent.description, description => (
+					<span class="p-community-event-actions">
+						<button>{
+							attrs.action.data
+						}</button>
+					</span>
+
+					<span class="p-community-event-details" set:html={sanitizer.sanitizeFor('div', description)} />
+				))}
 			</article><script src={eventToggleHandler} defer />
 		)}</For>
 	</div>
 </section>
-<script>
-import './home-community-events.update.js'
-</script>
