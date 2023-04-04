@@ -1765,7 +1765,7 @@
 		"All Options": {
 			"assets": [
 				{
-					"name": "Documentation",
+					"name": "Documentations",
 					"type": "documentation",
 					"version": "7.0.0",
 					"status": "available"
