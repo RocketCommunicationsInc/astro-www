@@ -8,9 +8,11 @@ import HomeCommunityLinks from './home-community-links.astro'
 const { data } = Astro.props as typeof community
 ---
 <section id="community" class="p-community" aria-label={data.heading.data}>
-	<h3 class="p-community-heading">{data.heading.data}</h3>
+	<h3 class="p-community-heading">{
+		data.heading.data
+	}</h3>
 	<div class="p-community-content">
-		<HomeCommunityEvents data={data.events.data} />
-		<HomeCommunityLinks data={data.links.data} />
+		<HomeCommunityEvents {...data.events.data} />
+		<HomeCommunityLinks {...data.links.data} />
 	</div>
 </section>
