@@ -65,8 +65,6 @@ const showHideWidget = () => {
 			max = { width: `${widgetContent.getBoundingClientRect().width}px` }
 		}
 
-		console.log(widgetContent.getBoundingClientRect())
-
 		if (!toggle) {
 			widgetContent.toggleAttribute('data-collapsible-active', toggle)
 		}

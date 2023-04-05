@@ -119,13 +119,13 @@
 
 			&:not([data-collapsible-active]) {
 				/* Layout */
-				height: auto;
+				height: 472.5px;
 				width: 0;
 			}
 
 			&:is([data-collapsible-active]) {
 				/* Layout */
-				height: auto;
+				height: 472.5px;
 				width: auto;
 			}
 		}
