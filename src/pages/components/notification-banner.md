@@ -5,6 +5,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-notification--all-variants
 height: 600px
 git: rux-notification
+assets:
+    name: Notification Banner
 ---
 
 ## Interactive Example

@@ -5,6 +5,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-clock--default-story
 height: 220px
 git: rux-clock
+assets:
+    name: Clock
 ---
 
 ## Interactive Example

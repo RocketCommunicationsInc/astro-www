@@ -5,6 +5,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: forms-radio-group--default-story
 height: 180px
 git: rux-radio
+assets:
+    name: Radio Button
 ---
 
 ## Interactive Example

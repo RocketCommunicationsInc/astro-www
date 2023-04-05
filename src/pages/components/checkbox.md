@@ -5,6 +5,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: forms-checkbox-group--default-story
 height: 188px
 git: rux-checkbox
+assets:
+    name: Checkbox
 ---
 
 ## Interactive Example

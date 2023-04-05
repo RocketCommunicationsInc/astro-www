@@ -1,14 +1,13 @@
 ---
+title: Status System
 tags: resources
 path: /patterns/status-system
 date: Last Modified
 layout: project:layouts/component-docs/component-docs-layout.astro
-title: Status System
 class: color
+assets:
+    name: Status System
 ---
-
-# Status System
-
 Consistent use of colors and symbols to convey status is critical for user success.
 
 Astro's user research, conducted on a wide variety of space applications, showed that inconsistent and unconstrained use of colors and symbols left users confused and even dismissive of color systems. The research further showed that wide overuse of red to indicate both "off" and "emergency" stripped the color of its attention-getting power.
@@ -60,6 +59,6 @@ For the Astro UXDS Light Theme, and on light backgrounds, the following Status C
 | <div class="status-color" style="background: #7B8089; border-color: #3C3E42"></div> | HEX: #7B8089 <br />RGB: 123,128,137 <br />Token: status-symbol-color-fill-off <br />CSS: --status-symbol-color-fill-off        | HEX: #3C3E42 <br />RGB: 60,62,66 <br />Token: status-symbol-color-border-off <br />CSS: --status-symbol-color-border-off           |
 :::
 
-:::caution
+:::note
 Avoid adding additional colors if possible. Creating additional colors greatly reduces the user’s ability to learn and properly use the application.
 :::

@@ -5,6 +5,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-accordion--default-story
 height: 216px
 git: rux-accordion
+assets:
+    name: Accordion
 ---
 
 ## Interactive Example

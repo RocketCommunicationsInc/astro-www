@@ -5,6 +5,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: forms-select-menu--with-option-groups
 height: 120px
 git: rux-select
+assets:
+    name: Select
 ---
 
 ## Interactive Example

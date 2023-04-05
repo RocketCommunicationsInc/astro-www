@@ -5,6 +5,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-global-status-bar--default-story
 height: 140px
 git: rux-global-status-bar
+assets:
+    name: Global Status Bar
 ---
 
 ## Interactive Example

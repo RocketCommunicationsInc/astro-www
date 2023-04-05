@@ -1,13 +1,12 @@
 ---
+title: Modeless Panes
 tags: resources
 path: /patterns/modeless-panes
 date: Last Modified
 layout: project:layouts/component-docs/component-docs-layout.astro
-title: Modeless Panes
+assets:
+    name: Modeless Panes
 ---
-
-# Modeless Panes
-
 Every application needs to present screens temporarily to collect user input or to display transient details. Desktop and mobile platforms use Dialogs, Alerts, or whole screens for these temporary interactions. A goal of Astro is to present temporary interactions inline and modelessly whenever possible, we call this a **Modeless Pane**.
 
 Modeless Panes allow Web applications to flow with less user interruption and to behave in a more Web-like fashion (overlapping and modal windows are not part of the core Web programming model).

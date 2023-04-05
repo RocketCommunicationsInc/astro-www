@@ -159,7 +159,7 @@
 	& li,
 	& p {
 		/* Layout */
-		max-width: 175--step;
+		max-inline-size: 175--step;
 	}
 
 	& h2 {
@@ -183,10 +183,10 @@
 
 	& figure {
 		/* Layout */
-		margin-block-start: 4--step;
+		inline-size: fit-content;
 
 		/* Layout */
-		width: fit-content;
+		margin-block-start: 4--step;
 
 		& > img {
 			display: block;
@@ -225,11 +225,17 @@
 
 .page-content-main-col {
 	/* Layout */
-	width: var(--main-content-width);
+	inline-size: var(--main-content-width);
 
 	& > *:not(.table-overflow, table, .storybook-demo) {
 		/* Layout */
-		max-width: 175--step;
+		max-inline-size: 175--step;
+	}
+
+	& img {
+		/* Layout */
+		inline-size: 175--step;
+		max-inline-size: 100%;
 	}
 
 	& :is(li, p) a:not([class]) {
@@ -298,7 +304,7 @@
 		/* max-width: 700px; */
 
 		/* Layout */
-		min-width: 100%;
+		min-inline-size: 100%;
 
 		/* Text */
 		font-size: 15--rpx;
@@ -378,7 +384,7 @@
 		flex-flow: column;
 		justify-content: center;
 		margin-block-start: 4--step;
-		min-height: 18--step;
+		min-block-size: 18--step;
 		padding-block: 7--step;
 		padding-inline: 16--step 4--step;
 
@@ -481,7 +487,7 @@
 
 		& hr {
 			/* Layout */
-			height: 18--step;
+			block-size: 18--step;
 
 			/* Appearance */
 			background:

@@ -5,6 +5,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-container--default-story
 height: 140px
 git: rux-container
+assets:
+    name: Container
 ---
 
 ## Interactive Example

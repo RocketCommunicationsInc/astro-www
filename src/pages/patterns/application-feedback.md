@@ -1,12 +1,12 @@
 ---
+title: Application Feedback
 tags: resources
 path: /patterns/application-feedback
 date: Last Modified
 layout: project:layouts/component-docs/component-docs-layout.astro
-title: Application Feedback
+assets:
+    name: Application Feedback
 ---
-
-# Application Feedback
 
 Feedback patterns are mechanisms used to collect usability or content-related concerns and suggestions from users of a website or application. Gathering this feedback is critical to building a valuable application and providing a pleasant user experience.
 

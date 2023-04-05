@@ -6,6 +6,9 @@
 		"$schema": {
 			"type": "string"
 		},
+		"general": {
+			"type": "object"
+		},
 		"data": {
 			"title": "Components",
 			"type": "object",

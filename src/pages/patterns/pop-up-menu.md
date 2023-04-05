@@ -4,10 +4,9 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-pop-up--default-story
 height: 250px
 git: rux-pop-up-menu
+assets:
+    name: Pop Up Menu
 ---
-
-# Pop Up Menu
-
 ::storybook-demo
  
 A Pop Up Menu provides users with an ordered list of available actions for a interactable item, contained within a Pop Up container component.

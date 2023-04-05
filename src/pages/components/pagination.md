@@ -1,6 +1,8 @@
 ---
 title: Pagination
 layout: project:layouts/component-docs/component-docs-layout.astro
+assets:
+    name: Pagination
 ---
 
 # Pagination

@@ -1,5 +1,9 @@
 {
 	"$schema": "./asset-status.schema.json",
+	"general": {
+		"title": "Asset Status",
+		"id": "asset-status"
+	},
 	"data": {
 		"Accordion": {
 			"assets": [

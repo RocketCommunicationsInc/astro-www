@@ -5,6 +5,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-log--log
 height: 380px
 git: rux-log
+assets:
+    name: Log
 ---
 
 ## Interactive Example

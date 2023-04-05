@@ -1,36 +1,43 @@
 ---
 import { For } from '@astropub/flow'
 import './asset-status.css'
-import { data } from "project:data/asset-status.json"
+import { data, general } from "project:data/asset-status.json"
 import { assetIcon, status } from 'project:components/asset-status/asset-status-images.js'
 
 const { frontmatter } = Astro.props
+
 ---
 {
 //if there is an asset status list for the component in the json file, read it
-data[frontmatter.title] ?
-<h2>Asset Status</h2>
-<article class="asset-status">
-	<table>
-		<thead>
-			<tr>
-				<th>Asset</th>
-				<th>Version</th>
-				<th>Status</th>
-			</tr>
-		</thead>
-		<tbody>
-			<For of={data[frontmatter.title].assets}>{
-				asset => (
-					<tr>
-						<td><span set:html={assetIcon[asset.type]+asset.name}></span></td>
-						<td><a href={asset.link }>{asset.version}</a></td>
-						<td><span set:html={status[asset.status]}></span></td>
-					</tr>
-				)}
-			</For>
-		</tbody>
-	</table>
-</article>
+data[frontmatter.assets?.name] ?
+<Fragment>
+	<a href={`#${general.id}`} class="h h2">
+		<h2 id={general.id} class="-heading">{
+			general.title
+		}</h2>
+	</a>
+	<article class="asset-status-container">
+		<table>
+			<thead>
+				<tr>
+					<th>Asset</th>
+					<th>Version</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+			<tbody>
+				<For of={data[frontmatter.assets.name].assets}>{
+					asset => (
+						<tr>
+							<td><span set:html={assetIcon[asset.type]+asset.name}></span></td>
+							<td><a href={asset.link }>{asset.version}</a></td>
+							<td><span set:html={status[asset.status]}></span></td>
+						</tr>
+					)}
+				</For>
+			</tbody>
+		</table>
+	</article>
+</Fragment>
 : null
 }

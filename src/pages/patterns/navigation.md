@@ -1,13 +1,12 @@
 ---
+title: Navigation
 tags: resources
 path: /patterns/navigation
 date: Last Modified
 layout: project:layouts/component-docs/component-docs-layout.astro
-title: Navigation
+assets:
+    name: Navigation
 ---
-
-# Navigation
-
 An application is fundamentally shaped by its navigation. Navigation defines how the user moves through the application and establishes their mental model of the object hierarchy.
 
 It’s best to start with a consideration of the primary objects your application will display. How are those objects divided or grouped? Is there a hierarchy of objects or a flat organization? Are there a small number of primary objects or many?
@@ -38,7 +37,7 @@ Tree Navigation resembles List-Detail, but uses a hierarchal tree rather than a 
 
 Use Tree Navigation only with a set of objects that fall into a natural single hierarchy, such as sections, chapters, and paragraphs.
 
-:::caution
+:::note
 Avoid mixing unrelated object types in a single tree. Although this usage is commonly seen in desktop productivity applications, it often leads users on a frustrating hunt for objects or features.
 :::
 
