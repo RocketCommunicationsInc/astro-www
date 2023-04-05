@@ -1,7 +1,6 @@
 ---
 import { For } from '@astropub/flow'
 import Layout from 'project:layouts/new-docs/new-docs-layout.astro'
-import PageHeader from 'project:components/page-header/page-header.js'
 // import Layout from 'project:layouts/docs/docs-layout.astro'
 import globalData from 'project:data/global.json'
 import PageAside from 'project:components/page-aside/page-aside.astro'
@@ -45,23 +44,6 @@ const html = `<style>:root{--StorybookPreviewHeight:${StorybookPreviewHeight};}<
 const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData.designSystem.repositoryBranch}/src/pages${withoutTrailingSlash(Astro.url.pathname)}.${fileExt}`
 ---
 <Layout content={{ title: content.title }} {...Astro.props}>
-	<PageHeader slot="header">
-		<PageHeader.Heading>
-			{content.title}
-		</PageHeader.Heading>
-		<PageHeader.Subheading>
-			{content.description ? content.description : null}
-		</PageHeader.Subheading>
-		<div class="nav-holder">
-		{
-			content.config
-				? (
-					<PageHeader.Nav file={Astro.props.file} />
-				)
-			: null
-		}
-		</div>
-	</PageHeader>
 
 	<Fragment slot="toolbar">
 	</Fragment>
