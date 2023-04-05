@@ -4,7 +4,8 @@
 	/* Layout */
 	flex-flow: column;
 	justify-content: end;
-	min-block-size: var(--header-block-size);
+
+	/* min-block-size: var(--header-block-size); */
 
 	/* Layout */
 	padding-block-start: var(--header-padding-block-start);

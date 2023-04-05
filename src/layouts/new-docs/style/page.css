@@ -2,48 +2,21 @@
 	--layout-inline-gap-start: var(--layout-inline-gap, 0);
 	--layout-inline-gap-end: var(--layout-inline-gap, 0);
 
-	@media (width >= 1920px) {
-		--header-block-size: 430--rpx;
-		--header-nav-gap: 9--step;
-		--header-nav-text-size: 24--rpx;
-		--header-nav-text-line: calc(28 / 24);
-		--header-nav-padding-block: 6--step 7--step;
-		--header-nav-padding-inline: 3--step;
-		--heading-1-text-size: 64--rpx;
-		--heading-1-text-line: calc(70 / 64);
-		--layout-inline-gap-start: 8--step;
-		--icon-search-margin-inline: -112--rpx;
-		--icon-search-margin-inline-end: -64--rpx;
-	}
-
-	@media (width >= 1728px) {
-		--header-block-size: 430--rpx;
-		--header-nav-gap: 9--step;
-		--header-nav-text-size: 24--rpx;
-		--header-nav-text-line: calc(28 / 24);
-		--header-nav-padding-block: 6--step 7--step;
-		--header-nav-padding-inline: 3--step;
-		--heading-1-text-size: 64--rpx;
-		--heading-1-text-line: calc(70 / 64);
-		--layout-inline-gap-start: 8--step;
-		--icon-search-margin-inline: -112--rpx;
-		--icon-search-margin-inline-end: -64--rpx;
-	}
-
 	@media (width >= 1440px) {
 		--header-block-size: 380--rpx;
 		--header-padding-block-start: 33.5--step;
 		--header-padding-block-end: 15--step;
 		--header-nav-block-start: 15--step;
 		--header-nav-gap: 4--step 5--step;
-		--header-nav-text-size: 18--rpx;
-		--header-nav-text-line: calc(20 / 18);
+		--header-nav-text-size: 24--rpx;
+		--header-nav-text-line: calc(28 / 24);
 		--header-nav-padding-block: 6--step 7--step;
 		--header-nav-padding-inline: 3--step;
-		--heading-1-text-size: 48--rpx;
-		--heading-1-text-line: calc(64 / 48);
+		--heading-1-text-size: 64--rpx;
+		--heading-1-text-line: calc(72 / 64);
 		--subheading-1-text-size: 20--rpx;
 		--subheading-1-text-line: calc(24 / 20);
+		--heading-2-margin: 15--step 5--step;
 		--main-content-width: 254--step;
 		--layout-inline-gap: 8--step;
 		--icon-search-margin-inline: -32--rpx;
@@ -54,20 +27,50 @@
 		--font-size-h2: 36--rpx;
 	}
 
+	@media (width >= 1728px) {
+		--header-block-size: 430--rpx;
+		--header-nav-gap: 9--step;
+		--header-nav-text-size: 24--rpx;
+		--header-nav-text-line: calc(28 / 24);
+		--header-nav-padding-block: 6--step 7--step;
+		--header-nav-padding-inline: 3--step;
+		--heading-1-text-size: 64--rpx;
+		--heading-1-text-line: calc(72 / 64);
+		--layout-inline-gap-start: 8--step;
+		--icon-search-margin-inline: -112--rpx;
+		--page-padding-inline-end: 8--step;
+		--icon-search-margin-inline-end: -64--rpx;
+	}
+
+	@media (width >= 1920px) {
+		--header-block-size: 430--rpx;
+		--header-nav-gap: 9--step;
+		--header-nav-text-size: 24--rpx;
+		--header-nav-text-line: calc(28 / 24);
+		--header-nav-padding-block: 6--step 7--step;
+		--header-nav-padding-inline: 3--step;
+		--heading-1-text-size: 64--rpx;
+		--heading-1-text-line: calc(72 / 64);
+		--layout-inline-gap-start: 8--step;
+		--icon-search-margin-inline: -112--rpx;
+		--icon-search-margin-inline-end: -64--rpx;
+	}
+
 	@media (768px < width < 1440px) {
 		--header-block-size: 280--rpx;
 		--header-padding-block-start: 15--step;
 		--header-padding-block-end: 15--step;
 		--header-nav-block-start: 15--step;
 		--header-nav-gap: 2--step;
-		--header-nav-text-size: 16--rpx;
-		--header-nav-text-line: calc(20 / 16);
-		--header-nav-padding-block: 4--step 5--step;
+		--header-nav-text-size: 24--rpx;
+		--header-nav-text-line: calc(28 / 24);
+		--header-nav-padding-block: 6--step 7--step;
 		--header-nav-padding-inline: 3--step;
-		--heading-1-text-size: 42--rpx;
-		--heading-1-text-line: calc(48 / 42);
+		--heading-1-text-size: 60--rpx;
+		--heading-1-text-line: 65--rpx;
 		--subheading-1-text-size: 18--rpx;
 		--subheading-1-text-line: calc(24 / 18);
+		--heading-2-margin: 15--step 5--step;
 		--main-content-width: 100%;
 		--layout-inline-gap: 8--step;
 		--icon-search-margin-inline: -32--rpx;
@@ -84,14 +87,15 @@
 		--header-padding-block-end: 5--step;
 		--header-nav-block-start: 5--step;
 		--header-nav-gap: 0;
-		--header-nav-text-size: 14--rpx;
-		--header-nav-text-line: calc(20 / 14);
-		--header-nav-padding-block: 4--step 5--step;
+		--header-nav-text-size: 16--rpx;
+		--header-nav-text-line: calc(24 / 16);
+		--header-nav-padding-block: 6--step 7--step;
 		--header-nav-padding-inline: 3--step;
-		--heading-1-text-size: 32--rpx;
-		--heading-1-text-line: calc(36 / 32);
+		--heading-1-text-size: 24--rpx;
+		--heading-1-text-line: 28--rpx;
 		--subheading-1-text-size: 16--rpx;
 		--subheading-1-text-line: calc(24 / 16);
+		--heading-2-margin: 5--step 5--step;
 		--main-content-width: 100%;
 		--layout-inline-gap: 4--step;
 		--icon-search-margin-inline: -16--rpx;
@@ -108,14 +112,15 @@
 		--header-padding-block-end: 5--step;
 		--header-nav-block-start: 5--step;
 		--header-nav-gap: 0;
-		--header-nav-text-size: 14--rpx;
-		--header-nav-text-line: calc(20 / 14);
+		--header-nav-text-size: 16--rpx;
+		--header-nav-text-line: calc(24 / 16);
 		--header-nav-padding-block: 4--step 5--step;
 		--header-nav-padding-inline: 3--step;
-		--heading-1-text-size: 32--rpx;
-		--heading-1-text-line: calc(36 / 32);
+		--heading-1-text-size: 24--rpx;
+		--heading-1-text-line: 28--rpx;
 		--subheading-1-text-size: 16--rpx;
 		--subheading-1-text-line: calc(24 / 16);
+		--heading-2-margin: 5--step 5--step;
 		--main-content-width: 100%;
 		--layout-inline-gap: 4--step;
 		--icon-search-margin-inline: -16--rpx;
@@ -131,14 +136,15 @@
 		--header-padding-block-end: 5--step;
 		--header-nav-block-start: 5--step 6--step;
 		--header-nav-gap: 0;
-		--header-nav-text-size: 14--rpx;
-		--header-nav-text-line: calc(20 / 14);
-		--header-nav-padding-block: 4--step 5--step;
+		--header-nav-text-size: 16--rpx;
+		--header-nav-text-line: calc(24 / 16);
+		--header-nav-padding-block: 6--step 7--step;
 		--header-nav-padding-inline: 3--step;
-		--heading-1-text-size: 32--rpx;
-		--heading-1-text-line: calc(36 / 32);
+		--heading-1-text-size: 24--rpx;
+		--heading-1-text-line: 28--rpx;
 		--subheading-1-text-size: 16--rpx;
 		--subheading-1-text-line: calc(24 / 16);
+		--heading-2-margin: 5--step 5--step;
 		--main-content-width: 100%;
 		--layout-inline-gap: 4--step;
 		--icon-search-margin-inline: -16--rpx;
@@ -150,9 +156,6 @@
 }
 
 .page {
-	/* Layout */
-	padding-block-end: 25--step;
-
 	& li,
 	& p {
 		/* Layout */
@@ -161,10 +164,7 @@
 
 	& h2 {
 		/* Layout */
-		margin-block-end: 5--step;
-
-		/* Layout */
-		margin-block-start: 20--step;
+		margin-block: var(--heading-2-margin);
 
 		/* Text */
 		font-size: var(--font-size-h2);
@@ -253,7 +253,7 @@
 
 	& h2:where(:not([class])) {
 		/* Layout */
-		margin-block: 20--step 9--step;
+		margin-block: var(--heading-2-margin);
 
 		/* Typography */
 		font-size: var(--font-size-h2);
@@ -422,7 +422,7 @@
 		border-block-start: 1px solid var(--TableHeadingBorderColor);
 
 		/* Layout */
-		margin-block-start: 50--step;
+		margin-block-start: 15--step;
 
 		& h3 {
 			/* Typography */
@@ -484,7 +484,10 @@
 			height: 18--step;
 
 			/* Appearance */
-			background: linear-gradient(0deg, transparent calc(50% - .5px), #3c3e42 calc(50% - .5px), #3c3e42 calc(50% + .5px), transparent calc(50% + .5px)) 50% 0;
+			background:
+				linear-gradient(0deg,transparent calc(50% - .5px),#7b8089
+				calc(50% - .5px),#7b8089
+				calc(50% + .5px),transparent calc(50% + .5px)) 50% 0;
 		}
 	}
 }

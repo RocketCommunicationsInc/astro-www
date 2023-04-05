@@ -65,6 +65,7 @@
 	& li {
 		/* Layout */
 		padding: calc(3--step + 2px) 6--step;
+		padding-inline-start: 0;
 
 		&.-first {
 			/* Layout */
@@ -151,7 +152,7 @@
 
 				/* Appearance */
 				background:
-					linear-gradient(#3c3e42, #3c3e42)
+					linear-gradient(#7b8089, #7b8089)
 					no-repeat 1px 0 / 1px 100%,
 					linear-gradient(var(--ActiveColor), var(--ActiveColor))
 					no-repeat 0 -24px / 3px 100%;
@@ -167,7 +168,7 @@
 
 					/* Appearance */
 					background:
-						linear-gradient(#3c3e42, #3c3e42)
+						linear-gradient(#7b8089, #7b8089)
 						no-repeat 1px 0 / 1px 100%,
 						linear-gradient(var(--ActiveColor), var(--ActiveColor))
 						no-repeat 0 0 / 3px 100%;
