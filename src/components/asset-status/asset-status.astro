@@ -31,7 +31,7 @@ data[frontmatter.assets?.name] ?
 						<tr>
 							<td><span set:html={assetIcon[asset.type]+asset.name}></span></td>
 							<td><a href={asset.link }>{asset.version}</a></td>
-							<td><span set:html={status[asset.status]}></span></td>
+							<td><span set:html={status[asset.status]} class="x-status"></span></td>
 						</tr>
 					)}
 				</For>
