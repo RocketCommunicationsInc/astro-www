@@ -9,6 +9,7 @@
 *,
 ::before,
 ::after {
+	/* Layout */
 	box-sizing: border-box; /* 1 */
 	background-repeat: no-repeat; /* 2 */
 }
@@ -20,6 +21,7 @@
 
 ::before,
 ::after {
+	/* Text */
 	text-decoration: inherit; /* 1 */
 	vertical-align: inherit; /* 2 */
 }
@@ -34,13 +36,13 @@
  */
 
 :where(:root) {
-	cursor: default; /* 1 */
-	line-height: 1.5; /* 2 */
-	overflow-wrap: break-word; /* 3 */
-	-moz-tab-size: 4; /* 4 */
+	/* Text */
+	line-height: 1.5; /* 2 */ /* 4 */
 	tab-size: 4; /* 4 */
+	text-size-adjust: 100%; /* 6 */
+	cursor: default; /* 1 */
 	-webkit-tap-highlight-color: transparent; /* 5 */
-	-webkit-text-size-adjust: 100%; /* 6 */
+	overflow-wrap: break-word; /* 3 */
 }
 
 /* Sections
@@ -51,6 +53,7 @@
  */
 
 :where(body) {
+	/* Layout */
 	margin: 0;
 }
 
@@ -60,8 +63,11 @@
  */
 
 :where(h1) {
+	/* Layout */
+	margin: .67em 0;
+
+	/* Text */
 	font-size: 2em;
-	margin: 0.67em 0;
 }
 
 /* Grouping content
@@ -72,6 +78,7 @@
  */
 
 :where(dl, ol, ul) :where(dl, ol, ul) {
+	/* Layout */
 	margin: 0;
 }
 
@@ -81,8 +88,9 @@
  */
 
 :where(hr) {
-	color: inherit; /* 1 */
+	/* Layout */
 	height: 0; /* 2 */
+	color: inherit; /* 1 */
 }
 
 /**
@@ -91,6 +99,8 @@
 
 :where(nav) :where(ol, ul) {
 	list-style-type: none;
+
+	/* Layout */
 	padding: 0;
 }
 
@@ -101,9 +111,10 @@
  */
 
 :where(pre) {
+	/* Layout */
+	overflow: auto; /* 3 */
 	font-family: monospace, monospace; /* 1 */
 	font-size: 1em; /* 2 */
-	overflow: auto; /* 3 */
 }
 
 /* Text-level semantics
@@ -114,6 +125,7 @@
  */
 
 :where(abbr[title]) {
+	/* Text */
 	text-decoration: underline;
 	text-decoration: underline dotted;
 }
@@ -123,6 +135,7 @@
  */
 
 :where(b, strong) {
+	/* Text */
 	font-weight: bolder;
 }
 
@@ -132,6 +145,7 @@
  */
 
 :where(code, kbd, samp) {
+	/* Text */
 	font-family: monospace, monospace; /* 1 */
 	font-size: 1em; /* 2 */
 }
@@ -141,6 +155,7 @@
  */
 
 :where(small) {
+	/* Text */
 	font-size: 80%;
 }
 
@@ -152,6 +167,7 @@
  */
 
 :where(audio, canvas, iframe, img, svg, video) {
+	/* Text */
 	vertical-align: middle;
 }
 
@@ -169,6 +185,7 @@
 
 :where(svg:not([fill])) {
 	fill: currentColor;
+	stroke: currentColor;
 }
 
 /* Tabular data
@@ -181,9 +198,10 @@
  */
 
 :where(table) {
+	/* Text */
+	text-indent: 0; /* 3 */
 	border-collapse: collapse; /* 1 */
 	border-color: inherit; /* 2 */
-	text-indent: 0; /* 3 */
 }
 
 /* Forms
@@ -194,6 +212,7 @@
  */
 
 :where(button, input, select) {
+	/* Layout */
 	margin: 0;
 }
 
@@ -202,7 +221,8 @@
  */
 
 :where(button, [type="button" i], [type="reset" i], [type="submit" i]) {
-	-webkit-appearance: button;
+	/* Appearance */
+	appearance: button;
 }
 
 /**
@@ -210,6 +230,7 @@
  */
 
 :where(fieldset) {
+	/* Appearance */
 	border: 1px solid #a0a0a0;
 }
 
@@ -218,6 +239,7 @@
  */
 
 :where(progress) {
+	/* Text */
 	vertical-align: baseline;
 }
 
@@ -227,6 +249,7 @@
  */
 
 :where(textarea) {
+	/* Layout */
 	margin: 0; /* 1 */
 	resize: vertical; /* 3 */
 }
@@ -237,7 +260,8 @@
  */
 
 :where([type="search" i]) {
-	-webkit-appearance: textfield; /* 1 */
+	/* Appearance */
+	appearance: textfield; /* 1 */
 	outline-offset: -2px; /* 2 */
 }
 
@@ -247,6 +271,7 @@
 
 ::-webkit-inner-spin-button,
 ::-webkit-outer-spin-button {
+	/* Layout */
 	height: auto;
 }
 
@@ -254,9 +279,10 @@
  * Correct the text style of placeholders in Chrome, Edge, and Safari.
  */
 
-::-webkit-input-placeholder {
+::input-placeholder {
+	/* Appearance */
 	color: inherit;
-	opacity: 0.54;
+	opacity: .54;
 }
 
 /**
@@ -264,7 +290,8 @@
  */
 
 ::-webkit-search-decoration {
-	-webkit-appearance: none;
+	/* Appearance */
+	appearance: none;
 }
 
 /**
@@ -273,8 +300,9 @@
  */
 
 ::-webkit-file-upload-button {
-	-webkit-appearance: button; /* 1 */
+	/* Text */
 	font: inherit; /* 2 */
+	appearance: button; /* 1 */
 }
 
 /* Interactive
@@ -285,18 +313,18 @@
  */
 
 :where(dialog) {
-	background-color: white;
-	border: solid;
-	color: black;
-	height: -moz-fit-content;
+	/* Layout */
 	height: fit-content;
-	left: 0;
+	inset-inline: 0;
 	margin: auto;
 	padding: 1em;
 	position: absolute;
-	right: 0;
-	width: -moz-fit-content;
 	width: fit-content;
+
+	/* Appearance */
+	background-color: white;
+	border: solid;
+	color: black;
 }
 
 :where(dialog:not([open])) {
@@ -319,6 +347,7 @@
  */
 
 :where([aria-busy="true" i]) {
+	/* Appearance */
 	cursor: progress;
 }
 
@@ -327,6 +356,7 @@
  */
 
 :where([aria-controls]) {
+	/* Appearance */
 	cursor: pointer;
 }
 
@@ -336,6 +366,7 @@
  */
 
 :where([aria-disabled="true" i], [disabled]) {
+	/* Appearance */
 	cursor: not-allowed;
 }
 
@@ -349,6 +380,7 @@
 }
 
 :where([aria-hidden="false" i][hidden]:not(:focus)) {
+	/* Layout */
 	clip: rect(0, 0, 0, 0);
 	position: absolute;
 }
