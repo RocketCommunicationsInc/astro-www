@@ -1,17 +1,28 @@
 ---
-import type community from 'project:data/home-community.json'
+import type { Type } from 'project:data/types.d.ts'
 import { For } from '@astropub/flow'
 
-const { data } = Astro.props as typeof community['data']['links']
+export type Props = Type<'HomeCommunityLinks'>
+
+const attrs = Astro.props
 ---
 <section class="p-community-links">
-	<h4 class="p-community-links-heading">{data.heading.data}</h4>
+	<h4 class="p-community-links-heading">{
+		attrs.heading.data
+	}</h4>
+
 	<div class="p-community-links-content">
-		<For of={data.content.data}>{item => (
+		<For of={attrs.content.data}>{item => (
 			<article class="p-community-link">
 				<img class="p-community-link-image" src={item.image.data.url} alt="" width={item.image.data.width} height={item.image.data.height} loading="lazy" aria-hidden="true" />
-				<div class="p-community-link-heading"><a href={item.website.data.url} target="_blank">{item.heading.data}</a></div>
-				<div class="p-community-link-content">{item.content.data}</div>
+				<div class="p-community-link-heading">
+					<a href={item.website.data.url} target="_blank">{
+						item.heading.data
+					}</a>
+				</div>
+				<div class="p-community-link-content">{
+					item.content.data
+				}</div>
 			</article>
 		)}</For>
 	</div>
