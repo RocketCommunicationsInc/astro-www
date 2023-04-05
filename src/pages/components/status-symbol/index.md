@@ -6,12 +6,10 @@ storybook: components-status--all-variants
 height: 112px
 git: rux-status
 assets:
-    name: Status Symbol
+  name: Status Symbol
+sandbox:
+  style: "height: 220px;"
 ---
-
-## Interactive Example
-
-<iframe class="sandbox" src="./sandbox/" style="height:160px"></iframe>
 
 <!-- The Status Symbol combines color and shape to create a standard and consistent way to indicate the status of a device or feature. When shown in Light theme, the Status Symbols include an additional inner border. -->
 

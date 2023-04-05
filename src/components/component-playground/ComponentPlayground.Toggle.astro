@@ -1,0 +1,54 @@
+<div class="c-theme-toggle">
+	<span class="field">
+		<input id="theme-toggle" type="checkbox" class="-control -is-toggle" checked />
+	</span>
+	<span>Dark Mode</span>
+</div>
+<style is:global>
+
+/* Theme Toggle */
+
+.c-theme-toggle {
+	display: flex;
+
+	/* Layout */
+	align-items: center;
+	gap: 3--step;
+
+	& .light,
+	& .dark {
+		/* Animation */
+		transition: fill 80ms;
+	}
+
+	&:has(:checked) .light,
+	&:not(:has(:checked)) .dark {
+		/* Reference */
+		--FillColor: var(--Grey600Color);
+	}
+}
+
+</style>
+<script>
+
+/* Theme Toggle */
+
+let theme: 'dark' | 'light' = 'dark'
+let $html = document.documentElement
+
+function switchTheme() {
+	theme = $html.classList.contains('dark-theme') ? 'light' : 'dark'
+
+	$html.classList.toggle('dark-theme', theme === 'dark')
+	$html.classList.toggle('light-theme', theme === 'light')
+}
+
+addEventListener('input', ({ target }) => {
+	const control = (target as Element).closest<HTMLInputElement>('#theme-toggle')
+
+	if (control === null) return
+
+	switchTheme()
+}, { capture: true })
+
+</script>

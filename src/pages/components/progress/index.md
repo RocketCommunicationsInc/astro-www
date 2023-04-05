@@ -6,12 +6,10 @@ storybook: components-progress
 height: 220px
 git: rux-progress
 assets:
-    name: Progress
+  name: Progress
+sandbox:
+  style: "height: 400px;"
 ---
-
-## Interactive Example
-
-<iframe class="sandbox" src="./sandbox/" style="height:320px"></iframe>
 
 <!-- A Progress indicator signals that an application is busy performing an operation. -->
 

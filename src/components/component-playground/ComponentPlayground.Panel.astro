@@ -5,7 +5,7 @@ export interface Props {
 
 const attrs = Astro.props
 ---
-<div class="panel">
+<div class="c-panel">
 	<div class="-heading">{
 		attrs.label
 	}</div>
@@ -14,7 +14,7 @@ const attrs = Astro.props
 	</form>
 </div>
 <style is:global>
-.panel {
+.c-panel {
 	display: grid;
 
 	/* Layout */
@@ -50,7 +50,11 @@ const attrs = Astro.props
 	}
 
 	& .-content {
+		display: flex;
+
 		/* Layout */
+		flex-flow: column;
+		gap: 20--rpx;
 		overflow-y: scroll;
 		padding: 12--rpx;
 	}

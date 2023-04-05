@@ -41,7 +41,7 @@ const { type, ...attrs } = Astro.props
 		font-weight: 500;
 
 		/* Appearance */
-		color: var(--Grey600Color);
+		color: var(--Grey800Color);
 
 		& + * {
 			/* Layout */
@@ -145,3 +145,55 @@ const { type, ...attrs } = Astro.props
 	}
 }
 </style>
+<script>
+
+const global = globalThis as any as {
+	$target: HTMLElement
+}
+
+type IsEqualConsideringWritability<OriginalType, WritableType> = (
+	<Type>() => Type extends OriginalType
+		? 1
+	: 2
+) extends <Type>() => Type extends WritableType
+	? 1
+: 2
+	? true
+: false
+
+type Writable<Type> = {
+	-readonly [Key in keyof Type]: Type[Key]
+}
+
+type IsFullyWritable<Type extends object> = IsEqualConsideringWritability<
+	{
+		[Key in keyof Type]: Type[Key]
+	},
+	Writable<{
+		[Key in keyof Type]: Type[Key]
+	}>
+>
+
+type WritableKeys<Type extends {}> = {
+	[Key in keyof Type]-?: IsFullyWritable<Pick<Type, Key>> extends true ? Key : never;
+}[keyof Type]
+
+/* Field */
+
+window.addEventListener('input', ({ target }) => {
+	const element = target as HTMLElement
+	const control = element.closest<HTMLInputElement>('.field .-control[name]')
+
+	if (control === null) return
+
+	const $target = global.$target
+
+	const isToggle = control.type === 'checkbox'
+
+	const label = control.name as WritableKeys<HTMLElement>
+	const value = isToggle ? control.checked : control.value
+
+	$target[label] = value as never
+}, { capture: true })
+
+</script>

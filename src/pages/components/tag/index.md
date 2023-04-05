@@ -6,12 +6,10 @@ storybook: components-tag--all-variants
 height: 180px
 git: rux-tag
 assets:
-    name: Tag
+  name: Tag
+sandbox:
+  style: "height: 220px;"
 ---
-
-## Interactive Example
-
-<iframe class="sandbox" src="./sandbox/" style="height:160px"></iframe>
 
 Tags can be static, used to provide additional information on an item, or interactive, with the abilities such as editing or clearing them from data sets or linking to other similarly tagged elements.
 

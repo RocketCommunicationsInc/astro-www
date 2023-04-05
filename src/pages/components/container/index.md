@@ -3,15 +3,12 @@ title: Container
 description: Containers are used to group multiple components into a specific area that allows them to flow in a flexible/responsive manner.
 layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-container--default-story
-height: 140px
 git: rux-container
 assets:
-    name: Container
+  name: Container
+sandbox:
+  style: "height: 180px;"
 ---
-
-## Interactive Example
-
-<iframe class="sandbox" src="./sandbox/" style="height:180px"></iframe>
 
 Containers can be used to help effectively manage lists, tables, dialogs, modals, slide out panels, content containers (top and bottom), and other components.
 
