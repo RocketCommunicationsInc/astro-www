@@ -22,7 +22,7 @@
 		padding-inline: 8--step;
 	}
 
-	@media (width >= 800px) {
+	@media (width >= 1024px) {
 		/* Layout */
 		inline-size: min(100% - 4--step, 225--step);
 
@@ -189,7 +189,7 @@
 		padding-inline: 8--step;
 	}
 
-	@media (width >= 800px) {
+	@media (width >= 1024px) {
 		/* Layout */
 		padding-inline: 12--step;
 	}

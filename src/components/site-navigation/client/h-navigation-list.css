@@ -50,13 +50,13 @@ svg {
 	margin-inline: -8--step;
 }
 
-@media (width < 800px) {
+@media (width < 1024px) {
 	.content:not(.open) {
 		display: none;
 	}
 }
 
-@media (width >= 800px) {
+@media (width >= 1024px) {
 	.control {
 		display: none;
 	}

@@ -46,7 +46,7 @@
 		background-size: 24--rpx auto;
 		border: unset;
 
-		@media (width < 800px) {
+		@media (width < 1024px) {
 			/* Layout */
 			width: 40--step;
 
@@ -59,7 +59,7 @@
 		display: none;
 	}
 
-	@media (width < 800px) {
+	@media (width < 1024px) {
 		/* Text */
 		font-size: 4--step;
 	}

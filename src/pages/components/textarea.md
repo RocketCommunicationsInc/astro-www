@@ -1,16 +1,17 @@
 ---
 title: Textarea
+description: Textareas are multi-line text inputs that allow for entering text in a larger area than a single-line text input would allow. They are typically used for multi-line input use cases like comments or feedback.
 layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: forms-textarea--default-story
 height: 128px
 git: rux-textarea
 ---
 
-# Textarea
+## Interactive Example
 
 ::storybook-demo
 
-Textareas are multi-line text inputs that allow for entering text in a larger area than a single-line text input would allow. They are typically used for multi-line input use cases like comments or feedback.
+<!-- Textareas are multi-line text inputs that allow for entering text in a larger area than a single-line text input would allow. They are typically used for multi-line input use cases like comments or feedback. -->
 
 ## Rules of Thumb
 
