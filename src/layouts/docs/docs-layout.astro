@@ -1,42 +1,58 @@
 ---
 import type { MarkdownContent } from 'astro'
-import Layout from 'project:layouts/default/default-layout.astro'
-import ContributionFooter from 'project:components/contribution-footer/contribution-footer.astro'
-import ComplianceAside from 'project:components/compliance/compliance-aside.astro'
+import type { Props } from '@astropub/doc'
+import PageHeader from 'project:components/page-header/page-header.js'
+import Layout from 'project:layouts/default/default-layout.astro';
 import SiteSkipTo from 'project:components/site-skipto/site-skipto.astro'
-
-import complianceData from 'project:data/compliance.json'
-import globalData from 'project:data/global.json'
+// import PageAside from 'project:components/page-aside/page-aside.astro'
 
 import './docs-layout.css'
 
-const {
-	title,
-} = Object<MarkdownContent<{
-	title: string
-}>>(Astro.props.content)
+export { Props }
 
-/* Create github link to source file */
+const content = Astro.props.content
 
-/** RegEx to match a slash (/) at the end ($) of a string. */
-const matchTrailingSlash = /\/$/
-
-/** Removes the trailing slash from a string. */
-const withoutTrailingSlash = (value: string) => value.replace(matchTrailingSlash, '')
-
-/* grab the source file url and then get the extension */
-const fileName = new URL(Astro.props.file, 'file:').toString()
-const fileExt = fileName.split('.').at(-1)
-
-/** URL to the current source for this page. */
-const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData.designSystem.repositoryBranch}/src/pages${withoutTrailingSlash(Astro.url.pathname)}.${fileExt}`
+const title = content.subtitle ? `${content.title} ${content.subtitle}` : content.title
+const tabTitle = content.title
 ---
-<Layout title={title} tabtitle={title}>
+<Layout title={title} tabtitle={tabTitle}>
 	<SiteSkipTo slot="top" />
-	<main>
-		<slot />
-		<ComplianceAside compliance={complianceData} />
-		<ContributionFooter sourceurl={githubSourceURL} />
+	<main class="page" id="content">
+		<PageHeader>
+			<PageHeader.Heading>
+				{content.title}
+			</PageHeader.Heading>
+			<PageHeader.Subheading>
+				{content.description ? content.description : null}
+			</PageHeader.Subheading>
+			<div class="nav-holder">
+			{
+				content.config
+					? (
+						<PageHeader.Nav file={Astro.props.file} />
+					)
+				: null
+			}
+			</div>
+		</PageHeader>
+
+		<div class="page-toolbar">
+			<slot name="toolbar" />
+		</div>
+
+		<div class="page-content">
+			<div class="page-content-main-col">
+				<slot />
+			</div>
+
+			<aside class="page-content-side-col" id="aside">
+				<div class="-content">
+					<slot name="aside">
+						<!-- <PageAside /> -->
+					</slot>
+				</div>
+			</aside>
+		</div>
 	</main>
 </Layout>
 <script>

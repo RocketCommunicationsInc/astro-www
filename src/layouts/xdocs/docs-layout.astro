@@ -1,0 +1,44 @@
+---
+import type { MarkdownContent } from 'astro'
+import Layout from 'project:layouts/default/default-layout.astro'
+import ContributionFooter from 'project:components/contribution-footer/contribution-footer.astro'
+import ComplianceAside from 'project:components/compliance/compliance-aside.astro'
+import SiteSkipTo from 'project:components/site-skipto/site-skipto.astro'
+
+import complianceData from 'project:data/compliance.json'
+import globalData from 'project:data/global.json'
+
+import './docs-layout.css'
+
+const {
+	title,
+} = Object<MarkdownContent<{
+	title: string
+}>>(Astro.props.content)
+
+/* Create github link to source file */
+
+/** RegEx to match a slash (/) at the end ($) of a string. */
+const matchTrailingSlash = /\/$/
+
+/** Removes the trailing slash from a string. */
+const withoutTrailingSlash = (value: string) => value.replace(matchTrailingSlash, '')
+
+/* grab the source file url and then get the extension */
+const fileName = new URL(Astro.props.file, 'file:').toString()
+const fileExt = fileName.split('.').at(-1)
+
+/** URL to the current source for this page. */
+const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData.designSystem.repositoryBranch}/src/pages${withoutTrailingSlash(Astro.url.pathname)}.${fileExt}`
+---
+<Layout title={title} tabtitle={title}>
+	<SiteSkipTo slot="top" />
+	<main>
+		<slot />
+		<ComplianceAside compliance={complianceData} />
+		<ContributionFooter sourceurl={githubSourceURL} />
+	</main>
+</Layout>
+<script>
+import './docs-layout.client'
+</script>
