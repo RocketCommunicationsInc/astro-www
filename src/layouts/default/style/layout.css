@@ -31,7 +31,7 @@
 	/* Layout */
 	min-block-size: calc(100 * var(--vph));
 
-	@media (width >= 800px) {
+	@media (width >= 1024px) {
 		display: grid;
 
 		/* Layout */
@@ -46,6 +46,12 @@
 		/* Appearance */
 		background: var(--SurfaceColor);
 		color: var(--PrimaryColor);
+
+		@media (width < 1024px) {
+			/* Layout */
+			inset-block-start: 0;
+			position: sticky;
+		}
 	}
 
 	& .x-main {

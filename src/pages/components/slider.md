@@ -1,16 +1,17 @@
 ---
 title: Slider
+description: A Slider allows users to choose from a range of continuous and discrete values arranged from minimum to maximum.
 layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: forms-slider--default-story
 height: 116px
 git: rux-slider
 ---
 
-# Slider
+## Interactive Example
 
 ::storybook-demo
 
-A Slider allows users to choose from a range of continuous and discrete values arranged from minimum to maximum.
+<!-- A Slider allows users to choose from a range of continuous and discrete values arranged from minimum to maximum. -->
 
 :::note
 To achieve the split color element in the slider, a small amount of JavaScript is needed. Refer to Slider documentation in the Git repository for more information.

@@ -12,6 +12,7 @@
 		"serve": "astro preview"
 	},
 	"devDependencies": {
+		"@astrojs/mdx": "0.18.2",
 		"@astrojs/sitemap": "1.2.1",
 		"@astropub/contentful": "0.1.0",
 		"@astropub/doc": "0.1.4",

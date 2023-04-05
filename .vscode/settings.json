@@ -4,7 +4,7 @@
 	},
 	"editor.useTabStops": true,
 	"files.exclude": {
-		"**/.vscode": true,
+		"**/.vscode": false,
 		"**/*.lock": true,
 		"**/dist": true,
 		"**/node_modules": true,

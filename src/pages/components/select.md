@@ -1,17 +1,17 @@
 ---
 title: Select Menu
+description: When activated, Select Menus allow users to select a value from a list. Once a value is selected, the Select Menu displays the selected value.
 layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: forms-select-menu--with-option-groups
 height: 120px
 git: rux-select
 ---
 
-
-# Select Menu
+## Interactive Example
 
 ::storybook-demo
 
-When activated, Select Menus allow users to select a value from a list. Once a value is selected, the Select Menu displays the selected value.
+<!-- When activated, Select Menus allow users to select a value from a list. Once a value is selected, the Select Menu displays the selected value. -->
 
 ## Rules of Thumb
 
