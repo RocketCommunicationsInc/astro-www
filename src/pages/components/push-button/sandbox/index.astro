@@ -1,0 +1,11 @@
+---
+import { Field, Root, Sandbox } from 'project:components/component-playground/ComponentPlayground'
+---
+<Root>
+	<Sandbox is:tag="rux-push-button" is:constructor="RuxPushButton">
+		<rux-push-button label="Push Button"></rux-push-button>
+	</Sandbox>
+	<Fragment slot="controls">
+		<Field type="text" name="label" value="Push Button" />
+	</Fragment>
+</Root>

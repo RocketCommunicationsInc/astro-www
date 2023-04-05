@@ -3,15 +3,12 @@ title: Push Button
 description: Push Buttons are a variant of the Switch that incorporate label and action into a single user interface element. Push Buttons may provide a useful interface element where screen real-estate is at a premium.
 layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-push-button--all-variants
-height: 240px
 git: rux-push-button
 assets:
-    name: Push Button
+  name: Push Button
+sandbox:
+  style: "height: 240px;"
 ---
-
-## Interactive Example
-
-::storybook-demo
 
 <!-- Push Buttons are a variant of the Switch that incorporate label and action into a single user interface element. Push Buttons may provide a useful interface element where screen real-estate is at a premium. -->
 
