@@ -83,6 +83,10 @@ const html = `<style>:root{--StorybookPreviewHeight:${StorybookPreviewHeight};}<
 	</Fragment>
 
 </Layout>
+<!-- <Layout {...Astro.props}>
+	<Fragment set:html={html} />
+	<slot />
+</Layout> -->
 <script define:vars={{ GitHubId, GitHubRepoURL, GitHubRepoBranch, StorybookId, storybookURL }}>
 const template = document.createElement('template')
 
