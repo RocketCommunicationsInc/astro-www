@@ -17,5 +17,9 @@ a.icon {
 	&:hover {
 		/* Appearance */
 		color: var(--DarkBlue500Color);
+
+		& svg path {
+			stroke: var(--DarkBlue500Color);
+		}
 	}
 }
