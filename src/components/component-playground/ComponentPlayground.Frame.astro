@@ -16,8 +16,19 @@ const attrs = Astro.props
 						{headingText}
 					</h2>
 				</a>
-				<iframe class="sandbox" src="sandbox/" style={attrs.sandbox.style} />
+				<iframe class="c-sandbox" src="sandbox/" style={attrs.sandbox.style} />
 			</Fragment>
 		)
 	: null
 }
+<style is:global>
+:root .c-sandbox {
+	/* Layout */
+	inline-size: stretch;
+	max-inline-size: 100%;
+}
+
+.c-sandbox {
+	height: var(--y);
+}
+</style>

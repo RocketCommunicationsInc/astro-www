@@ -7,7 +7,7 @@ git: rux-container
 assets:
   name: Container
 sandbox:
-  style: "height: 180px;"
+  style: "--y: 180px;"
 ---
 
 Containers can be used to help effectively manage lists, tables, dialogs, modals, slide out panels, content containers (top and bottom), and other components.

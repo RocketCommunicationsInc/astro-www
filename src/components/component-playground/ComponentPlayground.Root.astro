@@ -16,10 +16,12 @@ import Main from './ComponentPlayground.Main.astro'
 		</section>
 
 		<section class="control-area">
-			<Panel label="Variants"></Panel>
-			<Panel label="Properties">
-				<slot name="controls" />
-			</Panel>
+			{Astro.slots.has('variants')
+				? <Panel label="Variants"><slot name="variants" /></Panel>
+			: null}
+			{Astro.slots.has('controls')
+				? <Panel label="Properties"><slot name="controls" /></Panel>
+			: null}
 		</section>
 	</body>
 </html>

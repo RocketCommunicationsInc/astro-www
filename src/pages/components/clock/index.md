@@ -8,7 +8,7 @@ git: rux-clock
 assets:
   name: Clock
 sandbox:
-  style: "height: 480px"
+  style: "--y: 520px"
 ---
 
 ## Appearance and Behavior

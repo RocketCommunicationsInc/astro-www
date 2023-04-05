@@ -7,7 +7,7 @@ git: rux-push-button
 assets:
   name: Push Button
 sandbox:
-  style: "height: 240px;"
+  style: "--y: 260px;"
 ---
 
 <!-- Push Buttons are a variant of the Switch that incorporate label and action into a single user interface element. Push Buttons may provide a useful interface element where screen real-estate is at a premium. -->

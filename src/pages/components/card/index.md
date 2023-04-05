@@ -7,7 +7,7 @@ git: rux-card
 assets:
   name: Card
 sandbox:
-  style: "height: 520px;"
+  style: "--y: 200px;"
 ---
 
 A card is a container for a few short, related pieces of information. It roughly resembles a playing card in size and shape, and is intended as a linked, short representation of a conceptual unit.

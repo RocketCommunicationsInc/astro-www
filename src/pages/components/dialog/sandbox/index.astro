@@ -7,6 +7,11 @@ import { Field, Root, Sandbox } from 'project:components/component-playground/Co
 	<Sandbox is:tag="rux-dialog" is:constructor="RuxDialog">
 		<rux-dialog message="Dialog message" header="Dialog header" confirm-text="Release" deny-text="Cancel" />
 	</Sandbox>
+	<Fragment slot="variants">
+		<Field type="menu" name="example:variant" implicitlabel>
+			<option>Default</option>
+		</Field>
+	</Fragment>
 	<Fragment slot="controls">
 		<Field type="text" name="header" value="Dialog header" />
 		<Field type="text" name="message" value="Dialog message" />

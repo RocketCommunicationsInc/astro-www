@@ -8,7 +8,7 @@ git: rux-progress
 assets:
   name: Progress
 sandbox:
-  style: "height: 400px;"
+  style: "--y: 420px;"
 ---
 
 <!-- A Progress indicator signals that an application is busy performing an operation. -->

@@ -5,7 +5,13 @@ import { Field, Root, Sandbox } from 'project:components/component-playground/Co
 	<Sandbox is:tag="rux-tag" is:constructor="RuxTag">
 		<rux-tag status="pass">Tag</rux-tag>
 	</Sandbox>
+	<Fragment slot="variants">
+		<Field type="menu" name="example:variant" implicitlabel>
+			<option>Default</option>
+		</Field>
+	</Fragment>
 	<Fragment slot="controls">
+		<Field type="text" name="Content" value="Tag" />
 		<Field type="menu" name="status">
 			<option selected>pass</option>
 			<option>fail</option>

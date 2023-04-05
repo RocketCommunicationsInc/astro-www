@@ -1,5 +1,5 @@
 ---
-import { Root, Sandbox } from 'project:components/component-playground/ComponentPlayground'
+import { Field, Root, Sandbox } from 'project:components/component-playground/ComponentPlayground'
 ---
 <Root>
 	<Sandbox is:tag="rux-card" is:constructor="RuxCard">
@@ -8,4 +8,9 @@ import { Root, Sandbox } from 'project:components/component-playground/Component
 			It roughly resembles a playing card in size and shape, and is intended as a linked, short representation of a conceptual unit.
 		</rux-card>
 	</Sandbox>
+	<Fragment slot="variants">
+		<Field type="menu" name="example:variant" implicitlabel>
+			<option>Default</option>
+		</Field>
+	</Fragment>
 </Root>

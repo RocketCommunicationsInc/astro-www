@@ -8,7 +8,7 @@ git: rux-tag
 assets:
   name: Tag
 sandbox:
-  style: "height: 220px;"
+  style: "--y: 360px;"
 ---
 
 Tags can be static, used to provide additional information on an item, or interactive, with the abilities such as editing or clearing them from data sets or linking to other similarly tagged elements.

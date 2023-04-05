@@ -1,15 +1,25 @@
 ---
 export type Props = (
-	{ type: 'menu', name: string } |
-	{ type: 'toggle', name: string, checked?: boolean } |
-	{ type: 'text', name: string, value: string } |
-	{ type: 'number', name: string, value: string }
+	{
+		implicitlabel?: boolean
+	} & (
+		{ type: 'menu', name: string } |
+		{ type: 'toggle', name: string, checked?: boolean } |
+		{ type: 'text', name: string, value: string } |
+		{ type: 'number', name: string, value: string }
+	)
 )
 
-const { type, ...attrs } = Astro.props
+const { type, 'implicitlabel': implicitLabel, ...attrs } = Astro.props
 ---
 <p class="field">
-	<label class="-label">{attrs.name}</label>
+	{
+		implicitLabel
+			? null
+		: (
+			<label class="-label">{attrs.name}</label>
+		)
+	}
 	{
 		type === 'menu'
 			? (
