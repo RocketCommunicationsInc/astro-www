@@ -53,7 +53,7 @@
 		padding-inline: 12--step;
 		width: 100%;
 
-		@media (width < 800px) {
+		@media (width < 1024px) {
 			/* Layout */
 			padding-inline: 9--step;
 		}
@@ -80,7 +80,7 @@
 		/* Appearance */
 		color: var(--search-color);
 
-		@media (width < 800px) {
+		@media (width < 1024px) {
 			/* Layout */
 			margin-inline-start: 3--step;
 		}
@@ -99,7 +99,7 @@
 		/* Animation */
 		transition: opacity 300ms;
 
-		@media (width < 800px) {
+		@media (width < 1024px) {
 			/* Layout */
 			margin-inline-end: 0;
 		}

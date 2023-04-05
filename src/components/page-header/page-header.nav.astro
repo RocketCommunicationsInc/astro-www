@@ -1,5 +1,44 @@
+---
+import { For } from '@astropub/flow'
+import NavItem from './page-header.nav-item.astro'
+
+export interface Props {
+	file: string
+}
+
+interface MarkdownImport {
+	file: string
+	url: string
+	frontmatter: Record<string, string>
+	compiledContent: string
+	rawContent: string
+}
+
+const targetDir = Astro.props.file.replace(/[^/]+$/, '')
+
+const configImportsArray: MarkdownImport[][] = await Astro.glob('/src/pages/components/**/_config.ts').then(
+	imports => imports.map(({ default: module }) => module)
+)
+
+const filteredMdImports = configImportsArray.find(
+	(configImports) => configImports.some(
+		configImport => configImport.file.startsWith(targetDir)
+	)
+)!
+---
 <nav class="-navigation" {...Astro.props}>
 	<ul>
-		<slot />
+			<For of={filteredMdImports}>{
+				md => {
+					// this lays out the navigation links at the top of the component page if they exist
+					const isCurrent = md.url === Astro.url.pathname
+
+					return (
+						<NavItem href={md.url} aria-current={isCurrent ? 'page' : null}>{
+							md.frontmatter.subtitle
+						}</NavItem>
+					)
+				}
+			}</For>
 	</ul>
 </nav>

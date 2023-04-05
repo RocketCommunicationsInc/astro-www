@@ -117,7 +117,7 @@
 }
 
 .p-footer-navigation, .p-footer-social {
-	@media (width < 800px) {
+	@media (width < 1024px) {
 		/* Layout */
 		margin-block-start: 5--step;
 	}

@@ -24,7 +24,7 @@
 		align-self: start;
 	}
 
-	@media (width >= 800px) {
+	@media (width >= 1024px) {
 		--articles-size: max(1 * var(--article-size) + 0 * var(--article-gap));
 	}
 

@@ -1,16 +1,17 @@
 ---
 title: Tree
+description: Trees present a hierarchical set of related items and allow users to explore and select items within that hierarchy.
 layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-tree--default-story
 height: 428px
 git: rux-tree
 ---
 
-# Tree
+## Interactive Example
 
 ::storybook-demo
 
-Trees present a hierarchical set of related items and allow users to explore and select items within that hierarchy.
+<!-- Trees present a hierarchical set of related items and allow users to explore and select items within that hierarchy. -->
 
 :::note
 Accordions are closely related to Trees, but are specialized to automatically display only a single branch. A Tree is managed by the users, opening and closing branches as necessary.
