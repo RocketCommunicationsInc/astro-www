@@ -1,0 +1,23 @@
+---
+export interface Props {
+	sandbox: any
+}
+
+const headingText = 'Interactive Example'
+
+const attrs = Astro.props
+---
+{
+	attrs.sandbox
+		? (
+			<Fragment>
+				<a href="#interactive-example" class="h h2">
+					<h2 id="interactive-example">
+						{headingText}
+					</h2>
+				</a>
+				<iframe class="sandbox" src="sandbox/" style={attrs.sandbox.style} />
+			</Fragment>
+		)
+	: null
+}

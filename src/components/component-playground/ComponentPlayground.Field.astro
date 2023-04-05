@@ -22,3 +22,126 @@ const { type, ...attrs } = Astro.props
 		: <input class="-control -is-text" type={type} {...attrs} />
 	}
 </p>
+<style is:global>
+/* Field */
+
+.field {
+	display: flex;
+
+	/* Layout */
+	flex-flow: column;
+
+	&:where(p) {
+		/* Layout */
+		margin-block: 0;
+	}
+
+	& .-label {
+		/* Text */
+		font-weight: 500;
+
+		/* Appearance */
+		color: var(--Grey600Color);
+
+		& + * {
+			/* Layout */
+			margin-block-start: 4--rpx;
+		}
+	}
+
+	& .-control {
+		&.-is-menu {
+			/* Layout */
+			inline-size: stretch;
+			max-inline-size: calc(100% - 1rem);
+			padding: .5em 1em;
+
+			/* Appearance */
+			border-radius: .25em;
+			border-radius: var(--EdgeRadius);
+			box-shadow: var(--EdgeColor) 0 0 0 var(--EdgeSize) inset;
+
+			/* Reference */
+			--EdgeColor: var(--Grey300Color);
+		}
+
+		&.-is-text {
+			/* Layout */
+			inline-size: stretch;
+			max-inline-size: calc(100% - 1rem);
+			padding: .5em 1em;
+
+			/* Appearance */
+			border-radius: .25em;
+			border-radius: var(--EdgeRadius);
+			box-shadow: var(--EdgeColor) 0 0 0 var(--EdgeSize) inset;
+
+			/* Reference */
+			--EdgeColor: var(--Grey300Color);
+		}
+
+		&.-is-toggle {
+			display: grid;
+
+			/* Layout */
+			align-items: center;
+
+			/* Appearance */
+			appearance: none;
+			cursor: pointer;
+			inline-width: min-content;
+
+			/* Reference */
+			--BackColor: var(--Grey200Color);
+			--EdgeColor: var(--DarkBlue500Color);
+			--EdgeRadius: var(--RoundRadius);
+
+			&::before {
+				display: inline-block;
+				content: "";
+
+				/* Layout */
+				grid-area: 1 / 1;
+				width: 32--rpx;
+				height: 12--rpx;
+
+				/* Appearance */
+				background-color: var(--BackColor);
+				border-radius: var(--EdgeRadius);
+				box-shadow: var(--EdgeColor) 0 0 0 var(--EdgeSize) inset;
+
+				/* Animation */
+				transition: background-color 80ms;
+			}
+
+			&:checked::before {
+				/* Reference */
+				--BackColor: var(--DarkBlue500Color);
+			}
+
+			&::after {
+				display: block;
+				content: "";
+
+				/* Layout */
+				grid-area: 1 / 1;
+				width: 20px;
+				height: 20px;
+
+				/* Appearance */
+				background-color: var(--BackColor);
+				border-radius: var(--EdgeRadius);
+				box-shadow: var(--EdgeColor) 0 0 0 var(--EdgeSize) inset;
+
+				/* Animation */
+				transition: translate 80ms;
+			}
+
+			&:checked::after {
+				/* Animation */
+				translate: 12--rpx 0;
+			}
+		}
+	}
+}
+</style>

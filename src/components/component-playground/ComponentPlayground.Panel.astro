@@ -1,0 +1,58 @@
+---
+export interface Props {
+	label: string
+}
+
+const attrs = Astro.props
+---
+<div class="panel">
+	<div class="-heading">{
+		attrs.label
+	}</div>
+	<form class="-content">
+		<slot />
+	</form>
+</div>
+<style is:global>
+.panel {
+	display: grid;
+
+	/* Layout */
+	grid-template-rows: 44--rpx auto;
+	overflow: hidden;
+	padding-bottom: 1px;
+
+	/* Appearance */
+	box-shadow: var(--EdgeColor) 0 -1px 0 0;
+
+	& .-heading {
+		display: flex;
+
+		/* Layout */
+		padding-block: 10--rpx;
+		padding-inline: 12--rpx;
+		align-items: center;
+		gap: 3--step;
+
+		/* Text */
+		font-size: 18--rpx;
+		line-height: calc(24 / 18);
+
+		/* Appearance */
+		background-color: var(--BackColor);
+		color: var(--FillColor);
+		cursor: default;
+		user-select: none;
+
+		/* Reference */
+		--BackColor: var(--Grey200Color);
+		--FillColor: var(--Grey800Color);
+	}
+
+	& .-content {
+		/* Layout */
+		overflow-y: scroll;
+		padding: 12--rpx;
+	}
+}
+</style>
