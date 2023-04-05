@@ -34,6 +34,20 @@ const url = content.url
 
 		<div class="page-content">
 			<div class="page-content-main-col">
+				{
+					attrs.sandbox
+						? (
+							<Fragment>
+								<a href="#interactive-example" class="h h2">
+									<h2 id="interactive-example">
+										Interactive Example
+									</h2>
+								</a>
+								<iframe class="sandbox" src="sandbox/" style={attrs.sandbox.style} />
+							</Fragment>
+						)
+					: null
+				}
 				<slot />
 				<FeedbackWidgetStatic currentURL={url} />
 			</div>

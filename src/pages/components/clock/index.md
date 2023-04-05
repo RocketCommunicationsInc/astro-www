@@ -6,14 +6,10 @@ storybook: components-clock--default-story
 height: 220px
 git: rux-clock
 assets:
-    name: Clock
+  name: Clock
+sandbox:
+  style: "height: 320px"
 ---
-
-## Interactive Example
-
-<iframe class="sandbox" src="./sandbox/" style="height:320px"></iframe>
-
-<!-- Clock shows the current time and optional date, AOS, and LOS timers. It will typically be positioned on the Global Status Bar. -->
 
 ## Appearance and Behavior
 
