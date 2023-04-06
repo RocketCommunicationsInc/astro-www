@@ -59,6 +59,6 @@ For the Astro UXDS Light Theme, and on light backgrounds, the following Status C
 | <div class="status-color" style="background: #7B8089; border-color: #3C3E42"></div> | HEX: #7B8089 <br />RGB: 123,128,137 <br />Token: status-symbol-color-fill-off <br />CSS: --status-symbol-color-fill-off        | HEX: #3C3E42 <br />RGB: 60,62,66 <br />Token: status-symbol-color-border-off <br />CSS: --status-symbol-color-border-off           |
 :::
 
-:::note
+:::caution
 Avoid adding additional colors if possible. Creating additional colors greatly reduces the user’s ability to learn and properly use the application.
 :::

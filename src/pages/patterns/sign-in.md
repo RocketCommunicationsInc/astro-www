@@ -10,7 +10,7 @@ assets:
 The Sign In page is often the first interaction a user has with your product. This entry point experience is an important moment in establishing your product’s brand and experience and sets the tone for their overall experience with the product.
 “Signing in” provides an authentication method to validate a user’s unique identification and allow them access to protected areas of an application. A user provides their required identification and, if correct, they are provided access to the product.
 
-:::note
+:::caution
 When implementing validation and security measures Astro users should consult with their organization's IT/Security departments and adapt these patterns to suit the requirements of their organization’s best practices and security needs.
 :::
 

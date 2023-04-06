@@ -37,7 +37,7 @@ Tree Navigation resembles List-Detail, but uses a hierarchal tree rather than a 
 
 Use Tree Navigation only with a set of objects that fall into a natural single hierarchy, such as sections, chapters, and paragraphs.
 
-:::note
+:::caution
 Avoid mixing unrelated object types in a single tree. Although this usage is commonly seen in desktop productivity applications, it often leads users on a frustrating hunt for objects or features.
 :::
 

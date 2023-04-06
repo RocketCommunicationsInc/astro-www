@@ -171,7 +171,7 @@ The following sample color set is provided for the specified number of data poin
 
 The following sample color sets were created from the non-status color palettes:
 
-:::note
+:::caution
 Status colors are reserved for their respected statuses. Do not apply them to Visualizations unless they reflect the defined status, e.g. Critical.
 :::
 

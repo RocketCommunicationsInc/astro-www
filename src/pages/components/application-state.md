@@ -29,7 +29,7 @@ The Application State component indicates the state the entire application is in
 
 - It is suggested that the background color for the application state component uses Astro 7.0 palettes Purple, Hot Orange, Pink, and Teal (commonly used for Tags).
 
-:::note
+:::caution
 Only use Tag colors when necessary as overuse of colors may reduce efficacy of monitoring icon, classification marking, and notification banner component colors.
 :::
 
