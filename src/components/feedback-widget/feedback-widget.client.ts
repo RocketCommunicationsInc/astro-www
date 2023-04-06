@@ -17,6 +17,7 @@ let textareaPopulated: boolean = false
 let rateButtonSelected: boolean = false
 let footerObserver: IntersectionObserver | undefined
 let toggle: boolean = false
+let formSubmitted: boolean = false;
 
 const handleRateButtonUncheckAll = () => {
 	// set boolean to false
@@ -33,7 +34,7 @@ const handleRateButtonUncheckAll = () => {
 }
 
 const handleRateButtonCheck = (button: HTMLButtonElement) => {
-	//set boolean to true
+	// set boolean to true
 	rateButtonSelected = true
 
 	// select UI button
@@ -90,7 +91,7 @@ const toggleWidget = () => {
 		emailPopulated = false
 		textareaPopulated = false
 
-		//makes sure rate buttons are deselected when form clears
+		// makes sure rate buttons are deselected when form clears
 		handleRateButtonUncheckAll();
 
 		// deselct submit button
@@ -99,7 +100,7 @@ const toggleWidget = () => {
 }
 
 const handleSubmitButtonEnable = () => {
-	if (!emailPopulated && !textareaPopulated && !rateButtonSelected ) {
+	if (!emailPopulated && !textareaPopulated && !rateButtonSelected) {
 		submitButton.disabled = true;
 	} else if (emailPopulated && !textareaPopulated && !rateButtonSelected) {
 		submitButton.disabled = true;
@@ -110,13 +111,13 @@ const handleSubmitButtonEnable = () => {
 
 const isFormPopulated = () => {
 	emailInput.addEventListener('input', (event) => {
-		const target =  event.currentTarget as HTMLInputElement
+		const target = event.currentTarget as HTMLInputElement
 		target.value ? emailPopulated = true : emailPopulated = false
 
 		handleSubmitButtonEnable()
 	})
 	textarea.addEventListener('input', (event) => {
-		const target =  event.currentTarget as HTMLInputElement
+		const target = event.currentTarget as HTMLInputElement
 		target.value ? textareaPopulated = true : textareaPopulated = false
 
 		handleSubmitButtonEnable()
@@ -175,7 +176,7 @@ const handleRateButtonClick = () => {
 // }
 
 
-/////
+/// //
 
 // sets icon panel distance from top dynamically so it always sits underneath the icon search even though it is position: fixed
 // to be run on scroll
@@ -210,14 +211,39 @@ const handleRateButtonClick = () => {
 
 // //////
 
+// const handleSuccessAnimation = () => {
+// 	const antennaCircleOne: HTMLDivElement = document.querySelector('.widget_success-orange-circle.circle-1')!
+// 	const antennaPathOne = document.querySelector('.widget_success svg path:last-child')!
+// 	console.log(antennaPathOne)
+// 	const keyframesUp = [{ opacity: 0 }, { opacity: 1 }]
+// 	const keyframesDown = [{ opacity: 1 }, { opacity: 0 }]
+
+// 	antennaCircleOne.animate(
+// 		keyframesUp,
+// 		{
+// 			duration: 1000,
+// 			endDelay: 2000,
+// 			iterations: 10,
+// 		}
+// 	)
+
+// 	// antennaPathOne.animate(
+// 	// 	keyframesDown,
+// 	// 	{
+// 	// 		duration: 500,
+// 	// 		iterations: 10,
+// 	// 	}
+// 	// )
+// }
+
 const handleFormSubmit = (event: MouseEvent) => {
-	event.preventDefault()
+	event.preventDefault();
 	widgetSuccess.classList.add('-active');
+	// handleSuccessAnimation();
 	const form = document.querySelector('form')
 }
 
 // Setting up all event listeners
-// toggleWidget()
 toggleWidget()
 handleRateButtonClick()
 isFormPopulated()

@@ -37,10 +37,7 @@
 
 		/* Layout */
 		border-inline-start: 2px solid var(--DarkBlue500Color);
-		border-start-start-radius: 1--step;
-		border-start-end-radius: 1--step;
-		border-end-start-radius: 0;
-		border-end-end-radius: 0;
+		inline-size: fit-content;
 
 		/* Layout */
 		margin-inline-end: 4--step;
@@ -48,7 +45,6 @@
 		padding-block: 2--step;
 		padding-inline-end: 5--step;
 		padding-inline-start: 5--step;
-		width: fit-content;
 
 		/* Appearance */
 		background-color: #ffffff;
@@ -56,6 +52,10 @@
 
 		/* Appearance */
 		cursor: pointer;
+		border-start-start-radius: 1--step;
+		border-start-end-radius: 1--step;
+		border-end-start-radius: 0;
+		border-end-end-radius: 0;
 
 		& svg {
 			/* Layout */
@@ -89,7 +89,7 @@
 
 	& .widget_content {
 		/* Layout */
-		max-width: 75--step;
+		max-inline-size: 75--step;
 
 		/* Layout */
 		overflow: hidden;
@@ -105,7 +105,7 @@
 
 		&:not([data-collapsible-active]) {
 			/* Layout */
-			height: 0;
+			block-size: 0;
 			padding-block: 0;
 			padding-inline: 0;
 
@@ -115,7 +115,7 @@
 
 		&:is([data-collapsible-active]) {
 			/* Layout */
-			height: auto;
+			block-size: auto;
 			padding-block: 5--step;
 			padding-inline: 3--step;
 
@@ -132,7 +132,7 @@
 				display: none;
 
 				/* Layout */
-				height: 472.5px;
+				block-size: 472.5px;
 			}
 
 			&:is([data-collapsible-active]) {
@@ -140,7 +140,7 @@
 				display: block;
 
 				/* Layout */
-				height: 472.5px;
+				block-size: 472.5px;
 			}
 		}
 
@@ -216,10 +216,10 @@
 
 		& textarea, input {
 			/* Layout */
-			padding: 2--step;
+			inline-size: 100%;
 
 			/* Layout */
-			width: 100%;
+			padding: 2--step;
 
 			/* Text */
 			font: inherit;
@@ -234,7 +234,7 @@
 
 		& textarea {
 			/* Layout */
-			height: 31--step;
+			block-size: 31--step;
 
 			/* Layout */
 			margin-block-start: 6--step;
@@ -286,16 +286,16 @@
 
 			/* Layout */
 			align-items: center;
+			block-size: 100%;
+			block-size: 0;
 			flex-direction: column;
-			height: 100%;
-			height: 0;
+			inline-size: 100%;
 
 			/* Layout */
 			inset-block-start: 0;
 			inset-inline-end: 0;
 			justify-content: center;
 			position: absolute;
-			width: 100%;
 
 			/* Appearance */
 			background-color: #eaeef4;
@@ -308,53 +308,95 @@
 				display: flex;
 
 				/* Layout */
-				height: 100%;
+				block-size: 100%;
 
 				/* Appearance */
 				opacity: 1;
 			}
 
-			& svg path:last-child {
-				/* Layout */
+			& svg {
+				fill: #005a8f;
+
+				&.success {
+					fill: #f68e1e;
+
+					/* Animation */
+					transition: fill 400ms ease-in;
+				}
 			}
 
 			& .widget_success-orange-circle {
-				display: block;
+				display: flex;
 
 				/* Layout */
-				height: 4--step;
+				align-items: center;
+
+				/* Layout */
+				block-size: calc(5--step - 1px);
+				box-sizing: content-box;
+				inline-size: calc(5--step - 1px);
+				justify-content: center;
 				position: absolute;
-				width: 4--step;
 
-				/* Appearance */
-				background-color: #f68e1e;
-				border-radius: 100%;
+				& span {
+					/* Appearance */
+					display: block;
 
-				/* Animation */
-				transition: opacity 200ms ease-in;
+					/* Layout */
+					block-size: 2--step;
+
+					/* Layout */
+					box-sizing: content-box;
+					inline-size: 2--step;
+
+					/* Appearance */
+					background-color: #005a8f;
+					border-radius: 100%;
+					opacity: 1;
+
+					/* Animation */
+					animation-duration: 3s;
+
+					/* Animation */
+					animation-iteration-count: infinite;
+					animation-name: antennaDot;
+					//transition: opacity 200ms ease-in;
+				}
 
 				&.circle-1 {
 					/* Layout */
 					inset-block-start: 146px;
 					inset-inline-start: 174px;
+
+					& span {
+						/* Layout */
+						display: block;
+
+						/* Animation */
+						animation-delay: 0s;
+					}
 				}
 
 				&.circle-2 {
 					/* Layout */
 					inset-block-start: 158px;
-					inset-inline-start: 162px;
+					inset-inline-start: 161px;
 
-					/* Appearance */
-					opacity: 0;
+					& span {
+						/* Animation */
+						animation-delay: 1s;
+					}
 				}
 
 				&.circle-3 {
 					/* Layout */
 					inset-block-start: 170px;
-					inset-inline-start: 150px;
+					inset-inline-start: 148px;
 
-					/* Appearance */
-					opacity: 0;
+					& span {
+						/* Animation */
+						animation-delay: 2s;
+					}
 				}
 			}
 
@@ -371,5 +413,43 @@
 				color: #292a2d;
 			}
 		}
+	}
+}
+
+@keyframes antennaDot {
+	from {
+		/* Appearance */
+		background-color: #005a8f;
+		border-color: #005a8f;
+
+		/* Appearance */
+		border: 1px solid #005a8f;
+	}
+
+	20% {
+		/* Appearance */
+		background-color: #005a8f;
+		border-color: #005a8f;
+
+		/* Appearance */
+		border: 1px solid #005a8f;
+	}
+
+	40% {
+		/* Appearance */
+		background-color: #f68e1e;
+		border-color: #f68e1e;
+
+		/* Appearance */
+		border: 2px solid #f68e1e;
+	}
+
+	to {
+		/* Appearance */
+		background-color: #005a8f;
+		border-color: #005a8f;
+
+		/* Appearance */
+		border: 1px solid #005a8f;
 	}
 }
