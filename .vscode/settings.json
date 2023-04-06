@@ -33,4 +33,5 @@
 	"typescript.preferences.quoteStyle": "single",
 	"typescript.tsdk": "./node_modules/typescript/lib",
 	"typescript.updateImportsOnFileMove.enabled": "always",
+	"typescript.tsdk": "node_modules/typescript/lib",
 }
