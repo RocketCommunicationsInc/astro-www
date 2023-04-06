@@ -22,7 +22,7 @@ if (!globalThis.ClipboardItem) {
 }
 
 // intercept clipboard writes to copy values to the clipboard
-addEventListener('clipboard:write', (event: ClipboardWriteEvent) => {
+addEventListener('clipboard:write', event => {
 	const { href, type = typeOfTextPlain, text = '' } = event.detail
 	const target = event.composedPath().shift()!
 
@@ -57,10 +57,16 @@ const toClipboardItem = (blob: Blob) => new ClipboardItem(
 const typeOfTextHTML = 'text/html'
 const typeOfTextPlain = 'text/plain'
 
-interface ClipboardWriteEvent extends Event {
-	detail: {
-		href?: string
-		type?: string
-		text?: string
+declare global {
+	export interface WindowEventMap extends GlobalEventHandlersEventMap, WindowEventHandlersEventMap {
+		'clipboard:write': ClipboardWriteEvent
+	}
+
+	interface ClipboardWriteEvent extends Event {
+		detail: {
+			href?: string
+			type?: string
+			text?: string
+		}
 	}
 }

@@ -48,6 +48,7 @@ searchElement.addEventListener('focus', (event) => {
 
 searchElement.addEventListener('input', (event: InputEvent & { target: HTMLInputElement }) => {
 	cancelAnimationFrame(searchFrame)
+
 	search.then(searchUtils => {
 		searchFrame = requestAnimationFrame(async () => {
 			const results = await searchUtils.search(event.target.value)

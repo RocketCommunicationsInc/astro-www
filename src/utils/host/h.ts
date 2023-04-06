@@ -18,7 +18,7 @@ export const h = new Proxy(
 		}`
 	)
 ), {
-	get(target, name) {
+	get(target, name: H.ElementName) {
 		return target.bind(null, name)
 	}
 }) as H.SerializeElement & Record<H.ElementName, {
