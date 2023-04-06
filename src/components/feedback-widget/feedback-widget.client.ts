@@ -10,11 +10,13 @@ const buttonThumbsUpRadio: HTMLInputElement = document.querySelector('#button_th
 const buttonThumbsDownRadio: HTMLInputElement = document.querySelector('#button_thumbs-down')!
 const hiddenThumbsUpRadio: HTMLInputElement = document.querySelector('#radio_thumbs-up')!
 const hiddenThumbsDownRadio: HTMLInputElement = document.querySelector('#radio_thumbs-down')!
+const widgetSuccess: HTMLDivElement = document.querySelector('.widget_success')!
 const pageFooter: HTMLElement = document.querySelector('.p-footer')!
 let emailPopulated: boolean = false
 let textareaPopulated: boolean = false
 let rateButtonSelected: boolean = false
 let footerObserver: IntersectionObserver | undefined
+let toggle: boolean = false
 
 const handleRateButtonUncheckAll = () => {
 	// set boolean to false
@@ -48,45 +50,43 @@ const handleRateButtonCheck = (button: HTMLButtonElement) => {
 }
 
 const showHideWidget = () => {
-	let toggle = false
+	toggle = !toggle
 
-	topTab.addEventListener('click', () => {
-		toggle = !toggle
+	if (toggle) {
+		widgetContent.toggleAttribute('data-collapsible-active', toggle)
+		topTab.toggleAttribute('data-collapsible-trigger-active', toggle)
+	}
 
-		if (toggle) {
-			widgetContent.toggleAttribute('data-collapsible-active', toggle)
+	let min = { height: `0px` }
+	let max = { height: `${widgetContent.getBoundingClientRect().height}px` }
+
+	if (window.visualViewport.width < 800) {
+		min = { height: `${widgetContent.getBoundingClientRect().height}px` }
+		max = { height: `${widgetContent.getBoundingClientRect().height}px` }
+	}
+
+	if (!toggle) {
+		widgetContent.toggleAttribute('data-collapsible-active', toggle)
+		topTab.toggleAttribute('data-collapsible-trigger-active', toggle)
+	}
+
+	const keyframes = toggle ? [ min, max ] : [ max, min ]
+
+	widgetContent.animate(
+		keyframes,
+		{
+			duration: 200,
+			iterations: 1,
 		}
-
-		let min = { height: `0px` }
-		let max = { height: `${widgetContent.getBoundingClientRect().height}px` }
-
-		if (window.visualViewport.width < 800) {
-			min = { height: `${widgetContent.getBoundingClientRect().height}px` }
-			max = { height: `${widgetContent.getBoundingClientRect().height}px` }
-		}
-
-		if (!toggle) {
-			widgetContent.toggleAttribute('data-collapsible-active', toggle)
-		}
-
-		const keyframes = toggle ? [ min, max ] : [ max, min ]
-
-		widgetContent.animate(
-			keyframes,
-			{
-				duration: 200,
-				iterations: 1,
-			}
-		)
-	})
+	)
 }
 
 const toggleWidget = () => {
 	topTab.addEventListener('click', () => {
-		widgetWrapper?.classList.toggle('-active');
+		showHideWidget()
 	})
 	cancelButton.addEventListener('click', () => {
-		widgetWrapper?.classList.toggle('-active');
+		showHideWidget()
 		emailPopulated = false
 		textareaPopulated = false
 
@@ -210,14 +210,19 @@ const handleRateButtonClick = () => {
 
 // //////
 
-// const handleFormSubmit = () => {
-// 	const form = document.querySelector('form')
-// }
+const handleFormSubmit = (event: MouseEvent) => {
+	event.preventDefault()
+	widgetSuccess.classList.add('-active');
+	const form = document.querySelector('form')
+}
 
 // Setting up all event listeners
 // toggleWidget()
-showHideWidget()
+toggleWidget()
 handleRateButtonClick()
 isFormPopulated()
+submitButton.addEventListener('click', (event) => {
+	handleFormSubmit(event)
+})
 
 // footerIntersectionObserver()
