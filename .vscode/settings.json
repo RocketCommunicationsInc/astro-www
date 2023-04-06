@@ -21,4 +21,5 @@
 	"typescript.preferences.importModuleSpecifier": "non-relative",
 	"typescript.preferences.importModuleSpecifierEnding": "js",
 	"typescript.updateImportsOnFileMove.enabled": "always",
+	"typescript.tsdk": "node_modules/typescript/lib",
 }

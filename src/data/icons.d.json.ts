@@ -10,6 +10,6 @@ interface Icons {
 	}
 }
 
-declare const icons: Icons
+declare const _default: Icons
 
-export default icons
+export default _default

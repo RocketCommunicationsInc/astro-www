@@ -27,7 +27,7 @@ export interface Compliance {
 	contents: Content[]
 }
 
-export const version: Compliance['version']
-export const contents: Compliance['contents']
+export declare const version: Compliance['version']
+export declare const contents: Compliance['contents']
 
 export default null as Compliance
