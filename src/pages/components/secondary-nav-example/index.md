@@ -7,6 +7,8 @@ config: '_config.ts'
 storybook: components-tabs--default-story
 height: 160px
 git: rux-tabs
+assets:
+    name: All Options
 ---
 
 ## Interactive Example

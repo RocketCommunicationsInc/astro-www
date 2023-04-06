@@ -5,6 +5,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: forms-textarea--default-story
 height: 128px
 git: rux-textarea
+assets:
+    name: Textarea
 ---
 
 ## Interactive Example

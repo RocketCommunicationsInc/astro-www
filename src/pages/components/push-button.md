@@ -5,6 +5,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-push-button--all-variants
 height: 240px
 git: rux-push-button
+assets:
+    name: Push Button
 ---
 
 ## Interactive Example

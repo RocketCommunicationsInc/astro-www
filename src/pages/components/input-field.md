@@ -5,6 +5,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: forms-input--types
 height: 400px
 git: rux-input
+assets:
+    name: Input Field
 ---
 
 ## Interactive Example

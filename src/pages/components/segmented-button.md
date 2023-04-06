@@ -5,6 +5,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-segmented-button--default-story
 height: 80px
 git: rux-segmented-button
+assets:
+    name: Segmented Button
 ---
 
 ## Interactive Example

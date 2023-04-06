@@ -5,6 +5,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-monitoring-icon--all-variants
 height: 160px
 git: rux-monitoring-icon
+assets:
+    name: Icons and Symbols
 ---
 
 ## Interactive Example

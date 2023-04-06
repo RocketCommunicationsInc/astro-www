@@ -5,6 +5,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: beta-timeline-beta--default-story
 height: 488px
 git: rux-timeline
+assets:
+    name: Timeline
 ---
 
 ## Interactive Example

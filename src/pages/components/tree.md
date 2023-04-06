@@ -5,6 +5,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-tree--default-story
 height: 428px
 git: rux-tree
+assets:
+    name: Tree
 ---
 
 ## Interactive Example
