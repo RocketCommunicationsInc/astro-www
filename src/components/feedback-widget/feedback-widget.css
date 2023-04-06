@@ -355,7 +355,7 @@
 					opacity: 1;
 
 					/* Animation */
-					animation-duration: 3s;
+					animation-duration: 1200ms;
 
 					/* Animation */
 					animation-iteration-count: infinite;
@@ -384,7 +384,7 @@
 
 					& span {
 						/* Animation */
-						animation-delay: 1s;
+						animation-delay: 400ms;
 					}
 				}
 
@@ -395,7 +395,7 @@
 
 					& span {
 						/* Animation */
-						animation-delay: 2s;
+						animation-delay: 800ms;
 					}
 				}
 			}
@@ -420,36 +420,26 @@
 	from {
 		/* Appearance */
 		background-color: #005a8f;
-		border-color: #005a8f;
-
-		/* Appearance */
-		border: 1px solid #005a8f;
 	}
 
-	20% {
+	30% {
 		/* Appearance */
 		background-color: #005a8f;
-		border-color: #005a8f;
 
-		/* Appearance */
-		border: 1px solid #005a8f;
+		/* Transform */
+		transform: scale(1);
 	}
 
-	40% {
+	50% {
 		/* Appearance */
 		background-color: #f68e1e;
-		border-color: #f68e1e;
 
-		/* Appearance */
-		border: 2px solid #f68e1e;
+		/* Transform */
+		transform: scale(1.5);
 	}
 
 	to {
 		/* Appearance */
 		background-color: #005a8f;
-		border-color: #005a8f;
-
-		/* Appearance */
-		border: 1px solid #005a8f;
 	}
 }
