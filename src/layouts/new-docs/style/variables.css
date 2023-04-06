@@ -20,7 +20,7 @@
 	/* Note References */
 
 	--CautionBorderColor: var(--HotOrange600Color);
-	--CautionColor: var(--Red800Color);
+	--CautionColor: var(--HotOrange600Color);
 	--NoteBorderColor: var(--DarkBlue500Color);
 	--NoteColor: var(--DarkBlue500Color);
 
