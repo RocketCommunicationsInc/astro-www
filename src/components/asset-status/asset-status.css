@@ -25,12 +25,22 @@
 			}
 		}
 
-		@media (width < 768px) {
+		@media (width < 450px) {
 			& td, & thead th {/* Layout */
 				padding-inline: 2--step;
 
-				& .x-status > span {
-					display: none;
+				&.-version, &.-status {
+					/* Text */
+					text-align: center;
+				}
+
+				& .x-status {
+					/* Layout */
+					justify-content: center;
+
+					& span {
+						display: none;
+					}
 				}
 			}
 		}

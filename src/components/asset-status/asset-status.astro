@@ -20,18 +20,18 @@ data[frontmatter.assets?.name] ?
 		<table>
 			<thead>
 				<tr>
-					<th>Asset</th>
-					<th>Version</th>
-					<th>Status</th>
+					<th class="-asset">Asset</th>
+					<th class="-version">Version</th>
+					<th class="-status">Status</th>
 				</tr>
 			</thead>
 			<tbody>
 				<For of={data[frontmatter.assets.name].assets}>{
 					asset => (
 						<tr>
-							<td><span set:html={assetIcon[asset.type]+asset.name}></span></td>
-							<td><a href={asset.link }>{asset.version}</a></td>
-							<td><span set:html={status[asset.status]} class="x-status"></span></td>
+							<td class="-asset"><span set:html={assetIcon[asset.type]+asset.name}></span></td>
+							<td class="-version"><a href={asset.link }>{asset.version}</a></td>
+							<td class="-status"><span set:html={status[asset.status]} class="x-status"></span></td>
 						</tr>
 					)}
 				</For>
