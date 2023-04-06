@@ -33,7 +33,7 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 ---
 <Layout title={title} tabtitle={title}>
 	<SiteSkipTo slot="top" />
-	<main>
+	<main id="content">
 		<slot />
 		<ComplianceAside compliance={complianceData} />
 		<ContributionFooter sourceurl={githubSourceURL} />
