@@ -234,7 +234,6 @@
 
 	& img {
 		/* Layout */
-		inline-size: 175--step;
 		max-inline-size: 100%;
 	}
 
