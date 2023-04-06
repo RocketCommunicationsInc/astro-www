@@ -416,7 +416,7 @@
 	}
 
 	& .note {
-		--note-border-color: var(--CautionBorderColor);
+		--note-border-color: var(--NoteBorderColor);
 		--note-color: var(--NoteColor);
 		--note-icon: var(--NoteIcon);
 	}
