@@ -32,6 +32,33 @@ interface Response<T extends Partial<ResponseData> = ResponseData> extends Omit<
 	text(): Promise<T['text']>
 }
 
+interface GlobalEventHandlersEventMap {
+	"click": PointerEvent
+	"input": InputEvent
+}
+
+interface HTMLElement extends Element, ElementCSSInlineStyle, ElementContentEditable, GlobalEventHandlers, HTMLOrSVGElement {
+	addEventListener<K extends keyof HTMLElementEventMap>(
+		type: K,
+		listener: (
+			this: HTMLElement,
+			event: HTMLElementEventMap[K] & { target: this }
+		) => any,
+		options?: boolean | AddEventListenerOptions
+	): void
+}
+
+interface HTMLInputElement extends HTMLElement {
+	addEventListener<K extends keyof HTMLElementEventMap>(
+		type: K,
+		listener: (
+			this: HTMLInputElement,
+			event: HTMLElementEventMap[K] & { target: this }
+		) => any,
+		options?: boolean | AddEventListenerOptions
+	): void
+}
+
 declare function fetch<T extends Partial<ResponseData> = ResponseData>(input: RequestInfo | URL, init?: RequestInit): Promise<Response<T>>
 
 declare var visualViewport: VisualViewport
