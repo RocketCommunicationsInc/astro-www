@@ -403,6 +403,16 @@
 			margin-block-start: 0;
 			padding-inline-start: 2--step;
 		}
+
+		& ul {
+			/* Layout */
+			margin-inline-start: 4--step;
+
+			& li {
+				/* Layout */
+				margin-block-start: 1--step;
+			}
+		}
 	}
 
 	& .note {
