@@ -13,7 +13,7 @@
 	},
 	"devDependencies": {
 		"@astrojs/mdx": "0.18.2",
-		"@astrojs/sitemap": "1.2.1",
+		"@astrojs/sitemap": "1.2.2",
 		"@astropub/contentful": "0.1.0",
 		"@astropub/doc": "0.1.4",
 		"@astropub/flow": "0.4.0",
@@ -22,7 +22,7 @@
 		"@csstools/custom-units": "0.1.1",
 		"@typescript-eslint/eslint-plugin": "5.57.1",
 		"@typescript-eslint/parser": "5.57.1",
-		"astro": "2.1.9",
+		"astro": "2.2.0",
 		"eslint": "8.37.0",
 		"eslint-config-dev": "3.2.0",
 		"eslint-plugin-astro": "0.26.1",
