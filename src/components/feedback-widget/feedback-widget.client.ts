@@ -61,8 +61,8 @@ const showHideWidget = () => {
 		let max = { height: `${widgetContent.getBoundingClientRect().height}px` }
 
 		if (window.visualViewport.width < 800) {
-			min = { width: `0px` }
-			max = { width: `${widgetContent.getBoundingClientRect().width}px` }
+			min = { height: `${widgetContent.getBoundingClientRect().height}px` }
+			max = { height: `${widgetContent.getBoundingClientRect().height}px` }
 		}
 
 		if (!toggle) {
