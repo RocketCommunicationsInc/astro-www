@@ -5,6 +5,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-tag--all-variants
 height: 180px
 git: rux-tag
+assets:
+    name: Tag
 ---
 
 ## Interactive Example

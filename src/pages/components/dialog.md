@@ -5,6 +5,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-dialog--dialog
 height: 240px
 git: rux-dialog
+assets:
+    name: Dialog
 ---
 
 ## Interactive Example

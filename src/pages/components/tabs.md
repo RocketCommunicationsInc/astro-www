@@ -5,6 +5,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-tabs--default-story
 height: 160px
 git: rux-tabs
+assets:
+    name: Tabs
 secondary-navigation-title: Overview
 secondary-navigation-config: '_config.ts'
 ---

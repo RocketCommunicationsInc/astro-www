@@ -5,6 +5,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-button--all-variants
 height: 300px
 git: rux-button
+assets:
+    name: Button
 ---
 ## Interactive Example
 

@@ -5,6 +5,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-progress
 height: 220px
 git: rux-progress
+assets:
+    name: Progress
 ---
 
 ## Interactive Example

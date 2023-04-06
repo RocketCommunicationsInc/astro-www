@@ -5,6 +5,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: forms-slider--default-story
 height: 116px
 git: rux-slider
+assets:
+    name: Slider
 ---
 
 ## Interactive Example

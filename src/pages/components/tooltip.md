@@ -5,6 +5,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-tooltip--default-story
 height: 216px
 git: rux-tooltip
+assets:
+    name: Tooltip
 ---
 
 ## Interactive Example

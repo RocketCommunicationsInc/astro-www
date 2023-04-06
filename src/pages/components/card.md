@@ -5,6 +5,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-card--full-example
 height: 320px
 git: rux-card
+assets:
+    name: Card
 ---
 
 ## Interactive Example

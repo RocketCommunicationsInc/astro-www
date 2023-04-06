@@ -5,6 +5,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-classification-markings--all-banner-variants
 height: 435px
 git: rux-classification-marking
+assets:
+    name: Classification & Control Markings
 ---
 
 ## Interactive Example
@@ -39,7 +41,7 @@ The guidance on this page is focused on the use of, and rules for, Classificatio
 
 :::table-overflow
 |                                                                              | State            | Hex Value | RGB Value    | CSS                                                     | Font Color |
-| ---------------------------------------------------------------------------- | ---------------- | --------- | ------------ | ------------------------------------------------------- | ---------- |
+|------------------------------------------------------------------------------|------------------|-----------|--------------|---------------------------------------------------------|------------|
 | ![Marking Unclassified Swatch](/img/swatches/marking__unclassified.svg)      | Unclassified     | #007a33   | 0, 122, 51   | `--classification-banner-color-background-unclassified` | white      |
 | ![Marking Controlled Swatch](/img/swatches/marking__controlled.svg)          | Controlled (CUI) | #502b85   | 80, 43, 133  | `--classification-banner-color-background-cui`          | white      |
 | ![Marking Confidential Swatch](/img/swatches/marking__confidential.svg)      | Confidential     | #0033a0   | 0, 51, 160   | `--classification-banner-color-background-confidential` | white      |
@@ -136,7 +138,7 @@ Whenever classified or controlled information is present, use an Authority Block
 
 :::table-overflow
 | **Do**                                                                                                           |
-| ---------------------------------------------------------------------------------------------------------------- |
+|------------------------------------------------------------------------------------------------------------------|
 | Show the source of classified or controlled information on a page with relevant contact information.             |
 | Clarify if the classified information is originally classified or derivatively classified from another document. |
 ::::

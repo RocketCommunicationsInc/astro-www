@@ -1,14 +1,13 @@
 ---
+title: Status System
 tags: resources
 path: /patterns/status-system
 date: Last Modified
-layout: project:layouts/docs/docs-layout.astro
-title: Status System
+layout: project:layouts/component-docs/component-docs-layout.astro
 class: color
+assets:
+    name: Status System
 ---
-
-# Status System
-
 Consistent use of colors and symbols to convey status is critical for user success.
 
 Astro's user research, conducted on a wide variety of space applications, showed that inconsistent and unconstrained use of colors and symbols left users confused and even dismissive of color systems. The research further showed that wide overuse of red to indicate both "off" and "emergency" stripped the color of its attention-getting power.

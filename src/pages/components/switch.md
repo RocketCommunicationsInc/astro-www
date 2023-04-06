@@ -5,6 +5,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-switch--switch
 height: 152px
 git: rux-switch
+assets:
+    name: Switch
 ---
 
 ## Interactive Example

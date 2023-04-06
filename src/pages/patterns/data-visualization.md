@@ -1,12 +1,12 @@
 ---
+title: Data Visualization
 tags: resources
 path: /patterns/data-visualization
 date: Last Modified
-layout: project:layouts/docs/docs-layout.astro
-title: Data Visualization
+layout: project:layouts/component-docs/component-docs-layout.astro
+assets:
+    name: Data Visualization
 ---
-
-# Data Visualization
 
 The Data Visualization section covers best practices, principles, and references tailored to Astro. A core objective of a Data Visualization is to make complex information accessible and easy to digest. Therefore, the interface presenting the data should be clean and straightforward in order to minimize users’ cognitive load and time spent searching.
 
