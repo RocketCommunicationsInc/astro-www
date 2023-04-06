@@ -1,13 +1,7 @@
-/// <reference lib="dom" />
-
 /*
  * Corrects mistakes in the built-in TypeScript definitions.
  * =============================================================================
  */
-
-interface ScrollToOptions {
-	behavior: string
-}
 
 interface Element {
 	insertAdjacentElement<T extends Element>(where: InsertPosition, element: T): T
@@ -20,16 +14,6 @@ interface CSSStyleDeclaration {
 declare namespace NodeJS {
 	type Timeout = number
 	type Timer = number
-}
-
-declare global {
-	/** GTag Data Layer. */
-	// eslint-disable-next-line no-unused-vars,no-var
-	var dataLayer: IArguments[]
-
-	/** GTag Command Queue function. */
-	// eslint-disable-next-line no-unused-vars,no-var
-	var gtag: Gtag
 }
 
 interface ResponseData {
@@ -49,3 +33,5 @@ interface Response<T extends Partial<ResponseData> = ResponseData> extends Omit<
 }
 
 declare function fetch<T extends Partial<ResponseData> = ResponseData>(input: RequestInfo | URL, init?: RequestInit): Promise<Response<T>>
+
+declare var visualViewport: VisualViewport

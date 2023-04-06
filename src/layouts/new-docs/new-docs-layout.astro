@@ -1,17 +1,22 @@
 ---
-import type { Props } from '@astropub/doc'
+import type { Props as DocProps } from '@astropub/doc'
 
 import Layout from 'project:layouts/default/default-layout.astro'
 import SiteSkipTo from 'project:components/site-skipto/site-skipto.astro'
 
 import './new-docs-layout.css'
 
-export { Props }
+export interface Props extends DocProps {
+	content: {
+		title: string
+		subtitle?: string
+	}
+	file?: string
+}
 
-const attrs = Astro.props.content
-
-const title = attrs.subtitle ? `${attrs.title} ${attrs.subtitle}` : attrs.title
-const tabTitle = attrs.title
+const { content } = Astro.props
+const title = content.subtitle ? `${content.title} ${content.subtitle}` : content.title
+const tabTitle = content.title
 ---
 <Layout title={title} tabtitle={tabTitle}>
 	<SiteSkipTo slot="top" />

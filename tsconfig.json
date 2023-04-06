@@ -10,10 +10,13 @@
 		"allowArbitraryExtensions": true,
 		"allowImportingTsExtensions": true,
 		"module": "ESNext",
+		"moduleDetection": "force",
 		"moduleResolution": "bundler",
+		"lib": [
+			"ESNext"
+		],
 		"types": [
-			"types-object",
-			"./.vscode/tsconfig"
+			"./src/env.d.ts"
 		],
 		"baseUrl": ".",
 		"paths": {
@@ -28,12 +31,21 @@
 		/* Interop Constraints */
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
-		"isolatedModules": true,
+		"verbatimModuleSyntax": true,
 
 		/* Completeness */
 		"skipLibCheck": true,
 
 		/* Language and Environment */
-		"target": "ESNext"
-	}
+		"target": "ESNext",
+
+		"plugins": [
+			{
+				"name": "@astrojs/ts-plugin"
+			}
+		]
+	},
+	"include": [
+		"src/**/*.ts"
+	]
 }
