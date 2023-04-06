@@ -1,7 +1,7 @@
 import tokens from '@astrouxds/tokens/dist/json/docs.json'
 import lightTokens from '@astrouxds/tokens/dist/json/docs-light.json'
 
-export const reference = (theme, category) => {
+export const reference = (theme: string, category: string) => {
 	let themeTokens = tokens
 	if (theme === 'light') {
 		themeTokens = lightTokens
@@ -12,38 +12,41 @@ export const reference = (theme, category) => {
 	)
 	if (category === 'spacing') {
 		themeTokens = themeTokens.sort((a, b) => {
-			return a.value.replace('rem', '') - b.value.replace('rem', '')
+			return parseFloat(String(a.value)) - parseFloat(String(b.value))
 		})
 	}
 	return themeTokens
 }
 
-export const component = (theme, componentName) => {
-    let themeTokens = tokens
-    if (theme === 'light') {
-      themeTokens = lightTokens
-    }
-    return themeTokens.filter((token) => token.component === componentName)
+export const component = (theme: string, componentName: string) => {
+	let themeTokens = tokens
+	if (theme === 'light') {
+		themeTokens = lightTokens
+	}
+	return themeTokens.filter((token) => token.component === componentName)
 }
 
-export const system = (theme, category, property) => {
+export const system = (theme: string, category: string, property: string) => {
 	let themeTokens = tokens
-    if (theme === 'light') {
-      themeTokens = lightTokens
-    }
-    return themeTokens.filter((token) => {
-      return (
-        token.tokenLevel === 'system' &&
-        token.category === category &&
-        token.property === property
-      )
-    })
+
+	if (theme === 'light') {
+		themeTokens = lightTokens
+	}
+
+	return themeTokens.filter((token) => {
+		return (
+			token.tokenLevel === 'system' &&
+			token.category === category &&
+			token.property === property
+		)
+	})
 }
-export const findByName = (name) => {
+
+export const findByName = (name: string) => {
 	return tokens.find((token) => token.name === name)
 }
 
-export const lookupProperty = (category, property?: string) => {
+export const lookupProperty = (category: string, property?: string) => {
 	if (category === 'boxShadow') {
 		return 'shadow'
 	}
