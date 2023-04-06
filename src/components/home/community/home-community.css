@@ -84,7 +84,7 @@
 	/* Layout */
 	flex-flow: column;
 	gap: 3--step;
-	max-width: 220--step;
+	max-inline-size: 220--step;
 }
 
 .p-community-event {
@@ -168,7 +168,7 @@
 	display: inline-block;
 
 	/* Layout */
-	min-width: 45--step;
+	min-inline-size: 45--step;
 
 	/* Text */
 	font-size: 14--rpx;
@@ -295,7 +295,7 @@
 
 	@nest .p-community-event.--closed & {
 		/* Layout */
-		height: 0;
+		block-size: 0;
 		visibility: hidden;
 
 		/* Appearance */
@@ -439,23 +439,23 @@
 @keyframes slideDown {
 	from {
 		/* Layout */
-		height: 0;
+		block-size: 0;
 	}
 
 	to {
 		/* Layout */
-		height: var(--content-height, 0);
+		block-size: var(--content-height, 0);
 	}
 }
 
 @keyframes slideUp {
 	from {
 		/* Layout */
-		height: var(--content-height, 0);
+		block-size: var(--content-height, 0);
 	}
 
 	to {
 		/* Layout */
-		height: 0;
+		block-size: 0;
 	}
 }

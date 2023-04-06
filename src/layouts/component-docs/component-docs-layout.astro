@@ -1,15 +1,14 @@
 ---
-import { For } from '@astropub/flow'
 import Layout from 'project:layouts/new-docs/new-docs-layout.astro'
+
+import './component-docs-layout.css'
+
 import PageHeader from 'project:components/page-header/page-header.js'
-// import Layout from 'project:layouts/docs/docs-layout.astro'
 import globalData from 'project:data/global.json'
 import PageAside from 'project:components/page-aside/page-aside.astro'
 import AssetStatus from 'project:components/asset-status/asset-status.astro'
-import './component-docs-layout.css'
 import ComplianceAside from 'project:components/compliance/compliance-aside.astro'
 import ContributionFooter from 'project:components/contribution-footer/contribution-footer.astro'
-
 import complianceData from 'project:data/compliance.json'
 
 const {
@@ -76,7 +75,7 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 	<Fragment slot="aside">
 		<PageAside {...Astro.props} />
 	</Fragment>
-	
+
 </Layout>
 <!-- <Layout {...Astro.props}>
 	<Fragment set:html={html} />

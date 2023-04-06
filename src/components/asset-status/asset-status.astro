@@ -1,43 +1,49 @@
 ---
 import { For } from '@astropub/flow'
 import './asset-status.css'
-import { data, general } from "project:data/asset-status.json"
+import { data, general } from 'project:data/asset-status.json'
 import { assetIcon, status } from 'project:components/asset-status/asset-status-images.js'
 
-const { frontmatter } = Astro.props
+export interface Props {
+	frontmatter?: any
+}
+
+const {
+	frontmatter
+} = Astro.props
 
 ---
 {
-//if there is an asset status list for the component in the json file, read it
-data[frontmatter.assets?.name] ?
-<Fragment>
-	<a href={`#${general.id}`} class="h h2">
-		<h2 id={general.id} class="-heading">{
-			general.title
-		}</h2>
-	</a>
-	<article class="asset-status-container">
-		<table>
-			<thead>
-				<tr>
-					<th class="-asset">Asset</th>
-					<th class="-version">Version</th>
-					<th class="-status">Status</th>
-				</tr>
-			</thead>
-			<tbody>
-				<For of={data[frontmatter.assets.name].assets}>{
-					asset => (
+	// if there is an asset status list for the component in the json file, read it
+	data[frontmatter.assets?.name as keyof typeof data]
+		? <Fragment>
+			<a href={`#${general.id}`} class="h h2">
+				<h2 id={general.id} class="-heading">{
+					general.title
+				}</h2>
+			</a>
+			<article class="asset-status-container">
+				<table>
+					<thead>
 						<tr>
-							<td class="-asset"><span set:html={assetIcon[asset.type]+asset.name}></span></td>
-							<td class="-version"><a href={asset.link }>{asset.version}</a></td>
-							<td class="-status"><span set:html={status[asset.status]} class="x-status"></span></td>
+							<th class="-asset">Asset</th>
+							<th class="-version">Version</th>
+							<th class="-status">Status</th>
 						</tr>
-					)}
-				</For>
-			</tbody>
-		</table>
-	</article>
-</Fragment>
-: null
+					</thead>
+					<tbody>
+						<For of={data[frontmatter.assets.name as keyof typeof data].assets}>{
+							asset => (
+								<tr>
+									<td class="-asset"><span set:html={assetIcon[asset.type] + asset.name}></span></td>
+									<td class="-version"><a href={asset.link}>{asset.version}</a></td>
+									<td class="-status"><span set:html={status[asset.status]} class="x-status"></span></td>
+								</tr>
+							)}
+						</For>
+					</tbody>
+				</table>
+			</article>
+		</Fragment>
+	: null
 }

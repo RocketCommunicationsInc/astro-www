@@ -2,16 +2,37 @@
 import IconLink from 'project:components/icon/icon-link.astro'
 import './page-aside.css'
 
-const {content} = Astro.props
-const {headings} = Astro.props
+interface MarkdownHeading {
+	slug: string
+	text: string
+	depth: number
+}
 
-let h2Headings: object[] = []
+export interface Props {
+	headings?: MarkdownHeading[]
+	content?: any
+}
 
-headings.map((heading: object) => {
-	if (heading['depth'] === 2 ) h2Headings.push(heading)
-})
-//after headings runs through, add asset status if it exists
-if(content.assets?.name) h2Headings.push({depth:2, slug:'asset-status', text:'Asset Status'})
+const { content } = Astro.props
+const { headings } = {
+	headings: [],
+	...Astro.props
+}
+
+let h2Headings: MarkdownHeading[] = []
+
+for (const heading of headings) {
+	if (heading.depth === 2) {
+		h2Headings.push(heading)
+	}
+}
+
+// after headings runs through, add asset status if it exists
+if (content.assets?.name) {
+	h2Headings.push({
+		depth: 2, slug: 'asset-status', text: 'Asset Status'
+	})
+}
 
 const storybookUrl: string = `https://astro-components.netlify.app/?path=/story/${content.storybook}`
 ---
@@ -20,24 +41,36 @@ const storybookUrl: string = `https://astro-components.netlify.app/?path=/story/
 		<li class="-first">
 			<IconLink type="figma" href="https://www.figma.com/@astrouxds">Figma</IconLink>
 		</li>
+
 		<li>
 			<IconLink type="storybook" href={storybookUrl}>Storybook</IconLink>
 		</li>
+
 		<li class="-last">
 			<IconLink type="github" href="https://github.com/RocketCommunicationsInc/astro">GitHub</IconLink>
 		</li>
 	</ul>
+
 	<hr />
+
 	<div class='section-links-wrapper'>
-		<ul class='section-links'>
-			{h2Headings.map((heading: { slug: string; text: string }, index: number) =>
-				(
-					<li>
-						<a class={ index === 0 ? `${heading.slug} -highlighted -first` : index === (h2Headings.length - 1) ? `${heading.slug}  -last` : `${heading.slug}`} href={`#${heading.slug}`}>{heading.text}</a>
-					</li>
-				)
-			)}
-		</ul>
+		<ul class='section-links'>{
+			h2Headings.map((heading, index) => (
+				<li>
+					<a class={
+						index === 0
+							? `${heading.slug} -highlighted -first`
+						: index === (h2Headings.length - 1)
+							? `${heading.slug} -last`
+						: `${heading.slug}`
+					} href={
+						`#${heading.slug}`
+					}>{
+						heading.text
+					}</a>
+				</li>
+			))
+		}</ul>
 	</div>
 </nav>
 <script>

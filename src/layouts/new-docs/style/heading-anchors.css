@@ -12,9 +12,9 @@ a.h {
 			display: inline-block;
 
 			/* Layout */
-			height: 1--icon-size;
+			block-size: 1--icon-size;
+			inline-size: 1--icon-size;
 			margin-inline: -1.25--icon-size .25--icon-size;
-			width: 1--icon-size;
 
 			/* Appearance */
 			opacity: 0;

@@ -132,8 +132,8 @@
 
 			/* Layout */
 			aspect-ratio: 1 / 1;
-			height: var(--icon-size);
-			width: var(--icon-size);
+			block-size: var(--icon-size);
+			inline-size: var(--icon-size);
 		}
 	}
 }

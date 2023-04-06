@@ -17,6 +17,7 @@ import './icon-search.css'
 			<For of={Object.entries(icons)}>{([ id, { name, path, tags }]) => (
 				<symbol id={`icon-${id}`} viewBox="0 0 24 24">
 					<title>{name}</title>
+					{/** @ts-expect-error */}
 					<path {...path} />
 					<metadata set:text={tags.join(', ')} />
 				</symbol>
