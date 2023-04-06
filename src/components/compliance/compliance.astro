@@ -1,19 +1,20 @@
 ---
+import type { Compliance } from 'project:data/compliance.d.json.ts'
 import { For, When } from '@astropub/flow'
 import { markdown } from '@astropub/md'
-import { toNumeral, toStatusClassNames, toTierClassNames } from './compliance-utils'
+import { toNumeral, toStatusClassNames, toTierClassNames } from './compliance-utils.ts'
 import './compliance.css'
 
 export interface Props {
-	title: string,
-	compliance: typeof import('project:data/compliance.json')
+	title: string
+	compliance: Compliance
 }
 
-const { props } = Astro as { props: Props }
+const attrs = Astro.props
 ---
 <hgroup>
-	<h1>{props.title}</h1>
-	<p>Version {props.compliance.version}</p>
+	<h1>{attrs.title}</h1>
+	<p>Version {attrs.compliance.version}</p>
 </hgroup>
 <section class="p-compliance">
 	<h2>Design Compliance</h2>
@@ -59,7 +60,7 @@ const { props } = Astro as { props: Props }
 
 <hr class="p-compliance-divider" />
 
-<For of={props.compliance.contents}>{content => (
+<For of={attrs.compliance.contents}>{content => (
 	<section class="p-compliance">
 		<header class="-header">
 			<span class="-numeral">{content.numeral}.0</span>
@@ -80,6 +81,7 @@ const { props } = Astro as { props: Props }
 					<span class="-numeral">{content.numeral}.{ruleset.numeral}.0</span>
 
 					<h3 class="-heading">{ruleset.name}</h3>
+
 					<When test={ruleset.link}>
 						<a class="-link" href={ruleset.link}>View {ruleset.name} Page</a>
 					</When>

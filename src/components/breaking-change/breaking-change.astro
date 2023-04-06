@@ -2,8 +2,8 @@
 import './breaking-change.css'
 
 export interface Props {
-	title: string,
-	impact: string;
+	title: string
+	impact: 'Low' | 'Medium' | 'High'
 }
 
 const badgeVariant = {
@@ -12,16 +12,20 @@ const badgeVariant = {
 	High: 'danger',
 }
 
-const {
-	...props
-} = Astro.props as Props
+const attrs = Astro.props
 ---
 <article class="breaking-change">
 	<header>
-		<h3>{props.title}</h3>
-		<sl-badge class="breaking-change__impact" variant={badgeVariant[props.impact]}>{props.impact} Impact</sl-badge>
+		<h3>{
+			attrs.title
+		}</h3>
+
+		<sl-badge class="breaking-change__impact" variant={badgeVariant[attrs.impact]}>{
+			attrs.impact
+		} Impact</sl-badge>
 	</header>
+
 	<div class="breaking-change__content">
-		<slot></slot>
+		<slot />
 	</div>
 </article>

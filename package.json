@@ -3,9 +3,9 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"check": "astro check",
+		"check": "npx astro check",
 		"check:astro": "npx eslint 'src/**/*.astro'",
-		"check:css": "stylelint 'src/**/*.css'",
+		"check:css": "npx stylelint 'src/**/*.css'",
 		"check:js": "npx eslint 'src/**/*{.js,.ts}'",
 		"start": "astro dev",
 		"build": "astro build",
@@ -204,7 +204,17 @@
 			"selector-max-attribute": null,
 			"selector-max-combinators": null,
 			"selector-max-compound-selectors": null,
-			"selector-max-id": 0,
+			"selector-max-id": [
+				0,
+				{
+					"ignoreContextFunctionalPseudoClasses": [
+						":has",
+						":is",
+						":not",
+						":where"
+					]
+				}
+			],
 			"selector-max-specificity": null,
 			"selector-max-type": null,
 			"selector-max-universal": null,

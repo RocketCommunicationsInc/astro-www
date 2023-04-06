@@ -1,7 +1,9 @@
 .p-searchform {
 	/* Layout */
-	max-width: 125--step;
-	width: 100%;
+	inline-size: 100%;
+
+	/* Layout */
+	max-inline-size: 125--step;
 
 	/* Reference */
 	--border-color: var(--Grey400Color);
@@ -50,8 +52,8 @@
 	& .-control, & .-label {
 		/* Layout */
 		align-self: stretch;
+		inline-size: 100%;
 		padding-inline: 12--step;
-		width: 100%;
 
 		@media (width < 1024px) {
 			/* Layout */

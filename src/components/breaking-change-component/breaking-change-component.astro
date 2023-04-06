@@ -3,9 +3,9 @@ export interface Props {
 	name: string;
 }
 
-const { props } = Astro as { props: Props };
+const attrs = Astro.props
 ---
 <sl-details class="breaking-change-details">
-	<summary slot="summary">{props.name}</summary>
+	<summary slot="summary">{attrs.name}</summary>
 	<slot />
 </sl-details>

@@ -1,7 +1,7 @@
 :where(html) {
 	/* Layout */
-	height: calc(100 * var(--vph));
-	width: calc(100 * var(--vpw));
+	block-size: calc(100 * var(--vph));
+	inline-size: calc(100 * var(--vpw));
 
 	/* Text */
 	font-family: "Helvetica", var(--SystemType);
