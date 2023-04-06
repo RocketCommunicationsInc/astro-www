@@ -4,6 +4,7 @@
 	--BrightBlue200Color: hsl(205 88% 90%);
 	--DarkBlue500Color: hsl(202 100% 28%);
 	--DarkBlue800Color: hsl(209 39% 17%);
+	--HotOrange600Color: hsl(20, 89%, 36%);
 	--Grey200Color: hsl(216 31% 94%);
 	--Grey400Color: hsl(214, 11%, 76%);
 	--Grey700Color: hsl(216 6% 34%);
@@ -18,7 +19,7 @@
 
 	/* Note References */
 
-	--CautionBorderColor: var(--Red800Color);
+	--CautionBorderColor: var(--HotOrange600Color);
 	--CautionColor: var(--Red800Color);
 	--NoteBorderColor: var(--DarkBlue500Color);
 	--NoteColor: var(--DarkBlue500Color);
