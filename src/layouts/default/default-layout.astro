@@ -1,19 +1,22 @@
 ---
-import { Document, Props } from '@astropub/doc'
+import type { Props } from '@astropub/doc'
+
+import Document from '@astropub/doc'
+import './default-layout.css'
+
 import globalData from 'project:data/global.json'
 import SiteNavigation from 'project:components/site-navigation/site-navigation.astro'
 import SiteFooter from 'project:components/site-footer/site-footer.astro'
-import './default-layout.css'
 
-export type { Props } from '@astropub/doc'
+export type { Props }
 
-const props = {
-	...globalData.siteMeta,
+const attrs = {
 	url: Astro.url.href,
+	...globalData.siteMeta,
 	...Astro.props,
-} as Props
+}
 ---
-<Document body-class="p-grid" {...props}>
+<Document body-class="p-grid" {...attrs}>
 	<slot slot="head" name="head" />
 	<meta slot="head" name="theme-color" content="#101923" />
 	<slot name="top" />
