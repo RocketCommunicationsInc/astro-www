@@ -4,6 +4,7 @@ import type { Props as DocProps } from '@astropub/doc'
 import Layout from 'project:layouts/default/default-layout.astro'
 import SiteSkipTo from 'project:components/site-skipto/site-skipto.astro'
 import FeedbackWidget from 'project:components/feedback-widget/feedback-widget.astro'
+import FeedbackWidgetStatic from 'project:components/feedback-widget-static/feedback-widget-static.astro'
 
 import './new-docs-layout.css'
 
@@ -34,6 +35,7 @@ const url = content.url
 		<div class="page-content">
 			<div class="page-content-main-col">
 				<slot />
+				<FeedbackWidgetStatic currentURL={url} />
 			</div>
 
 			<aside class="page-content-side-col" id="aside">
