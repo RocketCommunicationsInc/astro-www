@@ -155,6 +155,8 @@
 	}
 }
 
+
+
 .page {
 	& li,
 	& p {
@@ -254,6 +256,13 @@
 				text-decoration-thickness: 1.5px;
 			}
 		}
+	}
+
+	& ol {
+		list-style-type: decimal;
+		padding-inline-start: 5--step;
+
+
 	}
 
 	& h2:where(:not([class])) {
