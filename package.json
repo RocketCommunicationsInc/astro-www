@@ -14,7 +14,8 @@
 		"check:ts": "npx tsc --project tsconfig.json",
 		"start": "astro dev",
 		"build": "astro build",
-		"serve": "astro preview"
+		"serve": "astro preview",
+		"prepare": "git config core.hooksPath .vscode/pre-commit"
 	},
 	"devDependencies": {
 		"@astrojs/image": "0.16.6",
