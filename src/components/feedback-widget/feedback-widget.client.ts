@@ -1,4 +1,4 @@
-const widgetWrapper: HTMLElement = document.querySelector('.widget_wrapper')!
+// const widgetWrapper: HTMLElement = document.querySelector('.widget_wrapper')!
 const widgetInteriorWrapper: HTMLElement = document.querySelector('.widget_interior-wrapper')!
 const topTab: HTMLElement = document.querySelector('.widget_top-tab')!
 const widgetContent: HTMLElement = document.querySelector('.widget_content')!
@@ -7,18 +7,16 @@ const rateButtons: NodeListOf<HTMLButtonElement> = document.querySelectorAll('.w
 const submitButton: HTMLButtonElement = document.querySelector('.widget_primary-button')!
 const emailInput: HTMLInputElement = document.querySelector('input[type="email"]')!
 const textarea: HTMLTextAreaElement = document.querySelector('textarea')!
-const buttonThumbsUpRadio: HTMLInputElement = document.querySelector('#button_thumbs-up')!
-const buttonThumbsDownRadio: HTMLInputElement = document.querySelector('#button_thumbs-down')!
+// const buttonThumbsUpRadio: HTMLInputElement = document.querySelector('#button_thumbs-up')!
+// const buttonThumbsDownRadio: HTMLInputElement = document.querySelector('#button_thumbs-down')!
 const hiddenThumbsUpRadio: HTMLInputElement = document.querySelector('#radio_thumbs-up')!
 const hiddenThumbsDownRadio: HTMLInputElement = document.querySelector('#radio_thumbs-down')!
 const widgetSuccess: HTMLDivElement = document.querySelector('.widget_success')!
-const pageFooter: HTMLElement = document.querySelector('.p-footer')!
 let emailPopulated: boolean = false
 let textareaPopulated: boolean = false
 let rateButtonSelected: boolean = false
-let footerObserver: IntersectionObserver | undefined
 let toggle: boolean = false
-let formSubmitted: boolean = false
+// let formSubmitted: boolean = false
 
 const handleRateButtonUncheckAll = () => {
 	// set boolean to false
@@ -174,98 +172,10 @@ const handleRateButtonClick = () => {
 	}
 }
 
-// handles widget sitting behind, and sticking to the top of footer instead of the bottom of the viewport
-// const footerIntersectionObserver = () => {
-// 	if (footerObserver) {
-// 		footerObserver.disconnect()
-// 	}
-
-// 	footerObserver = new IntersectionObserver((entries) => {
-
-// 		for (const entry of entries) {
-// 			console.log(entry)
-// 			if (entry.isIntersecting) {
-// 				console.log(entry)
-// 				widgetWrapper.style.insetBlockEnd = '-309px';
-// 				pageFooter.style.position = 'relative';
-// 			} else {
-// 				widgetWrapper.style.removeProperty('inset-block-end')
-// 			}
-// 		}
-// 	}, {
-// 		// rootMargin: `0% 0px -${visualViewport.height - 60}px`,
-// 		threshold: 0,
-// 	})
-
-// 	footerObserver.observe(pageFooter)
-// }
-
-
-/// //
-
-// sets icon panel distance from top dynamically so it always sits underneath the icon search even though it is position: fixed
-// to be run on scroll
-// const setWidgetPositionOnFooter = () => {
-// 	let footerHeight: number = pageFooter.offsetHeight;
-// 	console.log(pageFooter.getBoundingClientRect())
-// 	let footerRect: number = pageFooter.getBoundingClientRect().y;
-// 	let widgetOffset: number  = -473;
-// 	let offset: number = widgetOffset + footerRect;
-//     //widgetWrapper.style.insetBlockEnd = `${offset}px`;
-// }
-
-// // set intersection observer on header so the onscroll event listener is only running for the length of the header scroll
-// const options = {
-// 	rootMargin: '0px',
-// 	threshold: 0,
-// }
-
-// const intersectCallback = (entries: any[]) => {
-// 	entries.forEach(entry => {
-// 		if (entry.isIntersecting) {
-// 			window.addEventListener('scroll', setWidgetPositionOnFooter)
-// 		} else {
-// 			window.removeEventListener('scroll', setWidgetPositionOnFooter)
-// 		}
-// 	})
-// }
-
-// footerObserver = new IntersectionObserver(intersectCallback, options)
-
-// footerObserver.observe(pageFooter)
-
-// //////
-
-// const handleSuccessAnimation = () => {
-// 	const antennaCircleOne: HTMLDivElement = document.querySelector('.widget_success-orange-circle.circle-1')!
-// 	const antennaPathOne = document.querySelector('.widget_success svg path:last-child')!
-// 	console.log(antennaPathOne)
-// 	const keyframesUp = [{ opacity: 0 }, { opacity: 1 }]
-// 	const keyframesDown = [{ opacity: 1 }, { opacity: 0 }]
-
-// 	antennaCircleOne.animate(
-// 		keyframesUp,
-// 		{
-// 			duration: 1000,
-// 			endDelay: 2000,
-// 			iterations: 10,
-// 		}
-// 	)
-
-// 	// antennaPathOne.animate(
-// 	// 	keyframesDown,
-// 	// 	{
-// 	// 		duration: 500,
-// 	// 		iterations: 10,
-// 	// 	}
-// 	// )
-// }
-
 const handleFormSubmit = (event: MouseEvent) => {
 	event.preventDefault()
 	widgetSuccess.classList.add('-active')
-	// handleSuccessAnimation();
-	const form = document.querySelector('form')
+	// const form = document.querySelector('form')
 }
 
 // Setting up all event listeners
