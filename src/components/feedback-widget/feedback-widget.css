@@ -89,7 +89,7 @@
 
 	& .widget_content {
 		/* Layout */
-		max-inline-size: 75--step;
+		inline-size: 75--step;
 
 		/* Layout */
 		overflow: hidden;

@@ -1,4 +1,5 @@
 const widgetWrapper: HTMLElement = document.querySelector('.widget_wrapper')!
+const widgetInteriorWrapper: HTMLElement = document.querySelector('.widget_interior-wrapper')!
 const topTab: HTMLElement = document.querySelector('.widget_top-tab')!
 const widgetContent: HTMLElement = document.querySelector('.widget_content')!
 const cancelButton: HTMLButtonElement = document.querySelector('.widget_secondary-button')!
@@ -17,7 +18,7 @@ let textareaPopulated: boolean = false
 let rateButtonSelected: boolean = false
 let footerObserver: IntersectionObserver | undefined
 let toggle: boolean = false
-let formSubmitted: boolean = false;
+let formSubmitted: boolean = false
 
 const handleRateButtonUncheckAll = () => {
 	// set boolean to false
@@ -29,8 +30,8 @@ const handleRateButtonUncheckAll = () => {
 	}
 
 	// pull checked state from both hidden radios
-	hiddenThumbsUpRadio.removeAttribute('checked');
-	hiddenThumbsDownRadio.removeAttribute('checked');
+	hiddenThumbsUpRadio.removeAttribute('checked')
+	hiddenThumbsDownRadio.removeAttribute('checked')
 }
 
 const handleRateButtonCheck = (button: HTMLButtonElement) => {
@@ -53,25 +54,46 @@ const handleRateButtonCheck = (button: HTMLButtonElement) => {
 const showHideWidget = () => {
 	toggle = !toggle
 
-	if (toggle) {
+	const toggleAttributes = (toggle: boolean) => {
 		widgetContent.toggleAttribute('data-collapsible-active', toggle)
 		topTab.toggleAttribute('data-collapsible-trigger-active', toggle)
 	}
 
-	let min = { height: `0px` }
-	let max = { height: `${widgetContent.getBoundingClientRect().height}px` }
+	toggleAttributes(true)
+	const tabSize = topTab.getBoundingClientRect()[visualViewport.width < 800 ? 'width' : 'height']
+	let keyframeInteriorMin: Record<string, string> = {
+		translate: visualViewport.width < 800 ? `calc(100% - ${tabSize}px) 0%` : `0% calc(100% - ${tabSize}px)`,
+	}
+	let keyframeInteriorMax: Record<string, string> = {
+		translate: `0% 0%`,
+	}
+
+	let min: Record<string, string> = {
+		height: `${widgetContent.getBoundingClientRect().height}px`,
+	}
+	let max: Record<string, string> = {
+		height: `${widgetContent.getBoundingClientRect().height}px`,
+	}
 
 	if (window.visualViewport.width < 800) {
-		min = { height: `${widgetContent.getBoundingClientRect().height}px` }
-		max = { height: `${widgetContent.getBoundingClientRect().height}px` }
-	}
-
-	if (!toggle) {
-		widgetContent.toggleAttribute('data-collapsible-active', toggle)
-		topTab.toggleAttribute('data-collapsible-trigger-active', toggle)
+		min = {
+			width: `${widgetContent.getBoundingClientRect().width}px`,
+		}
+		max = {
+			width: `${widgetContent.getBoundingClientRect().width}px`,
+		}
 	}
 
 	const keyframes = toggle ? [ min, max ] : [ max, min ]
+	const keyframesInterior = toggle ? [ keyframeInteriorMin, keyframeInteriorMax ] : [ keyframeInteriorMax, keyframeInteriorMin ]
+
+	widgetInteriorWrapper.animate(
+		keyframesInterior,
+		{
+			duration: 200,
+			iterations: 1,
+		}
+	)
 
 	widgetContent.animate(
 		keyframes,
@@ -79,7 +101,10 @@ const showHideWidget = () => {
 			duration: 200,
 			iterations: 1,
 		}
-	)
+	).finished.then(() => {
+		console.log('finished')
+		toggleAttributes(toggle)
+	})
 }
 
 const toggleWidget = () => {
@@ -92,7 +117,7 @@ const toggleWidget = () => {
 		textareaPopulated = false
 
 		// makes sure rate buttons are deselected when form clears
-		handleRateButtonUncheckAll();
+		handleRateButtonUncheckAll()
 
 		// deselct submit button
 		handleSubmitButtonEnable()
@@ -101,11 +126,11 @@ const toggleWidget = () => {
 
 const handleSubmitButtonEnable = () => {
 	if (!emailPopulated && !textareaPopulated && !rateButtonSelected) {
-		submitButton.disabled = true;
+		submitButton.disabled = true
 	} else if (emailPopulated && !textareaPopulated && !rateButtonSelected) {
-		submitButton.disabled = true;
+		submitButton.disabled = true
 	} else {
-		submitButton.disabled = false;
+		submitButton.disabled = false
 	}
 }
 
@@ -237,8 +262,8 @@ const handleRateButtonClick = () => {
 // }
 
 const handleFormSubmit = (event: MouseEvent) => {
-	event.preventDefault();
-	widgetSuccess.classList.add('-active');
+	event.preventDefault()
+	widgetSuccess.classList.add('-active')
 	// handleSuccessAnimation();
 	const form = document.querySelector('form')
 }
