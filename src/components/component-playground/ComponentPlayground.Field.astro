@@ -192,7 +192,7 @@ type WritableKeys<Type extends {}> = {
 
 window.addEventListener('input', ({ target }) => {
 	const element = target as HTMLElement
-	const control = element.closest<HTMLInputElement>('.field .-control[name]')
+	const control = element.closest < HTMLInputElement > ('.field .-control[name]')
 
 	if (control === null) return
 

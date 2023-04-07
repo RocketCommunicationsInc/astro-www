@@ -43,8 +43,8 @@ function switchTheme() {
 	$html.classList.toggle('light-theme', theme === 'light')
 }
 
-addEventListener('input', ({ target }) => {
-	const control = (target as Element).closest<HTMLInputElement>('#theme-toggle')
+addEventListener('input', (event) => {
+	const control = (event.target as HTMLElement).closest('#theme-toggle') as HTMLInputElement
 
 	if (control === null) return
 
