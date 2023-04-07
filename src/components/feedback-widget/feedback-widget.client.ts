@@ -2,6 +2,7 @@
 const widgetInteriorWrapper: HTMLElement = document.querySelector('.widget_interior-wrapper')!
 const topTab: HTMLElement = document.querySelector('.widget_top-tab')!
 const widgetContent: HTMLElement = document.querySelector('.widget_content')!
+const form: HTMLFormElement = document.querySelector('form')!
 const cancelButton: HTMLButtonElement = document.querySelector('.widget_secondary-button')!
 const rateButtons: NodeListOf<HTMLButtonElement> = document.querySelectorAll('.widget_rate-group button')!
 const submitButton: HTMLButtonElement = document.querySelector('.widget_primary-button')!
@@ -172,18 +173,17 @@ const handleRateButtonClick = () => {
 	}
 }
 
-const handleFormSubmit = (event: MouseEvent) => {
-	event.preventDefault()
+const handleFormSubmit = () => {
 	widgetSuccess.classList.add('-active')
-	// const form = document.querySelector('form')
 }
 
 // Setting up all event listeners
 toggleWidget()
 handleRateButtonClick()
 isFormPopulated()
-submitButton.addEventListener('click', (event) => {
-	handleFormSubmit(event)
-})
 
-// footerIntersectionObserver()
+form.addEventListener('submit', (event: SubmitEvent) => {
+	event.preventDefault()
+	console.log(event)
+	handleFormSubmit()
+})
