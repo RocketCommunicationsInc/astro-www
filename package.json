@@ -15,7 +15,7 @@
 		"start": "astro dev",
 		"build": "astro build",
 		"serve": "astro preview",
-		"prepare": "git config core.hooksPath .vscode/pre-commit"
+		"prepare": "git config core.hooksPath .vscode"
 	},
 	"devDependencies": {
 		"@astrojs/image": "0.16.6",
