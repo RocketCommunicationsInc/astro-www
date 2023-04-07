@@ -10,7 +10,8 @@
 		"check:ts": "npx tsc --project tsconfig.json",
 		"start": "astro dev",
 		"build": "astro build",
-		"serve": "astro preview"
+		"serve": "astro preview",
+		"prepare": "git config core.hooksPath .vscode/pre-commit"
 	},
 	"devDependencies": {
 		"@astrojs/mdx": "0.18.2",
@@ -30,6 +31,7 @@
 		"eslint": "8.37.0",
 		"eslint-config-dev": "3.2.0",
 		"eslint-plugin-astro": "0.26.1",
+		"eslint-plugin-json": "3.1.0",
 		"eslint-plugin-jsx-a11y": "6.7.1",
 		"isomorphic-dompurify": "1.2.0",
 		"lightningcss": "1.19.0",
@@ -49,6 +51,9 @@
 	"eslintConfig": {
 		"extends": [
 			"dev/astro-strict"
+		],
+		"plugins": [
+			"json"
 		],
 		"ignorePatterns": [
 			"src/components/site-search/site-search-engine.js"
