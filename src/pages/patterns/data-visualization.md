@@ -220,4 +220,15 @@ A data visualization is useless if not designed to communicate clearly with the 
 
 :::
 
-There are many dedicated visualization tools such as [Tableau](https://www.tableau.com/), [QlikView](https://www.qlik.com/us), [HighCharts](https://www.highcharts.com/) and [d3.js](https://d3js.org/). Nothing can replace a modeling and statistic tool with good visualization capability. It helps tremendously in doing any exploratory data analysis as well as feature engineering. Always review the product licensing options before use.
+## Implementation
+
+Astro recommends 2 third-party libraries for data visualization: [Apex Charts](https://apexcharts.com/) and [ChartJS](https://www.chartjs.org/docs/latest/). Which one to use will depend on your own use cases. For the majority of applications, Apex Charts is preferred due to its ease of use and theme support. However, if your application is data intensive, ChartJS will be more performant.
+
+### Apex Charts
+
+* Supports theming via CSS Custom Properties so you can toggle between light and dark mode easily.
+* Renders in SVG so visualizations look crisp when zoomed in.
+
+### ChartJS
+
+* Renders in Canvas which is more performant when dealing with large datasets.
