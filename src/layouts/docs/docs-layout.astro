@@ -6,6 +6,7 @@ import ComplianceAside from 'project:components/compliance/compliance-aside.astr
 import SiteSkipTo from 'project:components/site-skipto/site-skipto.astro'
 import complianceData from 'project:data/compliance.json'
 import globalData from 'project:data/global.json'
+import FeedbackWidget from 'project:components/feedback-widget/feedback-widget.astro'
 
 import './docs-layout.css'
 
@@ -37,6 +38,7 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 		<ComplianceAside compliance={complianceData} />
 		<ContributionFooter sourceurl={githubSourceURL} />
 	</main>
+	<FeedbackWidget currentURL={Astro.url} />
 </Layout>
 <script>
 import './docs-layout.client'

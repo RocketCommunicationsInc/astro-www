@@ -169,6 +169,8 @@ const handleRateButtonClick = () => {
 		button.addEventListener('click', () => {
 			// handle UI selection of button
 			handleRateButtonSelected(button)
+			const currentURL: HTMLInputElement = document.querySelector('#current-url')!
+console.log(currentURL.value)
 		})
 	}
 }

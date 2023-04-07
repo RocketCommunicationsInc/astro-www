@@ -3,6 +3,7 @@ import type { Props as DocProps } from '@astropub/doc'
 
 import Layout from 'project:layouts/default/default-layout.astro'
 import SiteSkipTo from 'project:components/site-skipto/site-skipto.astro'
+import FeedbackWidget from 'project:components/feedback-widget/feedback-widget.astro'
 
 import './new-docs-layout.css'
 
@@ -10,6 +11,7 @@ export interface Props extends DocProps {
 	content: {
 		title: string
 		subtitle?: string
+		url: string
 	}
 	file?: string
 }
@@ -17,6 +19,7 @@ export interface Props extends DocProps {
 const { content } = Astro.props
 const title = content.subtitle ? `${content.title} ${content.subtitle}` : content.title
 const tabTitle = content.title
+const url = content.url
 ---
 <Layout title={title} tabtitle={tabTitle}>
 	<SiteSkipTo slot="top" />
@@ -40,6 +43,7 @@ const tabTitle = content.title
 			</aside>
 		</div>
 	</main>
+	<FeedbackWidget currentURL={url} />
 </Layout>
 <script>
 import './new-docs-layout.client'
