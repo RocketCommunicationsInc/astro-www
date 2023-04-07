@@ -24,9 +24,7 @@ export interface AssetStatus {
 	data: Data
 }
 
-const _default: AssetStatus
+export declare const general: General
+export declare const data: Data
 
-export const general: General
-export const data: Data
-
-export default _default
+export default null as AssetStatus
