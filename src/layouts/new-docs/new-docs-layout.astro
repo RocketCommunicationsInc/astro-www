@@ -35,7 +35,7 @@ const url = content.url
 
 		<div class="page-content">
 			<div class="page-content-main-col">
-				<SandboxFrame sandbox={attrs.sandbox} />
+				<SandboxFrame sandbox={content.sandbox} />
 				<slot />
 				<FeedbackWidgetStatic currentURL={url} />
 			</div>
