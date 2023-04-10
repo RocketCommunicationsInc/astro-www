@@ -4,23 +4,27 @@
 	/* Layout */
 	flex-flow: column;
 	gap: 10--rpx;
+	min-block-size: 81--step;
 	padding: 5--step;
 
 	/* Appearance */
 	background-color: var(--DarkBlue800Color);
-
-	& figure {
-		/* Layout */
-		max-inline-size: 300px;
-	}
 
 	&.-anatomy {
 		& figure {
 			display: flex;
 
 			/* Layout */
+			flex-grow: 1;
 			justify-content: center;
 			margin: 0 auto;
+
+			& img {
+				/* Layout */
+				align-self: center;
+				justify-self: center;
+				max-inline-size: 100%;
+			}
 		}
 
 		& ol {
@@ -30,6 +34,25 @@
 			& li {
 				/* Layout */
 				margin-block-start: 0--step;
+			}
+		}
+	}
+
+	&.-examples {
+		/* Layout */
+		align-content: space-evenly;
+		flex-flow: row wrap;
+		justify-content: space-evenly;
+
+		@media (width <= 375px) {
+			& figure {
+				/* Layout */
+				inline-size: 100%;
+
+				& img {
+					/* Layout */
+					margin: 0 auto;
+				}
 			}
 		}
 	}
