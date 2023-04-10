@@ -1,0 +1,36 @@
+.spec-container {
+	display: flex;
+
+	/* Layout */
+	flex-flow: column;
+	gap: 10--rpx;
+	padding: 5--step;
+
+	/* Appearance */
+	background-color: var(--DarkBlue800Color);
+
+	& figure {
+		/* Layout */
+		max-inline-size: 300px;
+	}
+
+	&.-anatomy {
+		& figure {
+			display: flex;
+
+			/* Layout */
+			justify-content: center;
+			margin: 0 auto;
+		}
+
+		& ol {
+			/* Appearance */
+			color: var(--PrimaryColor);
+
+			& li {
+				/* Layout */
+				margin-block-start: 0--step;
+			}
+		}
+	}
+}

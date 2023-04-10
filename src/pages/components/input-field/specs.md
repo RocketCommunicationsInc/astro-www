@@ -9,101 +9,33 @@ git: rux-input
 ---
 
 ## Anatomy
-:::anatomy-container
-
-1. Container
-2. Label (using “default text”)
-3. Suffix Slot(optional)
-4. Prefix Slot(optional)
-:::
+<div class="spec-container -anatomy">
+    <figure><img src="/img/components/input-field/input-anatomy.png" alt="Anatomy Image"/></figure>
+    <ol>
+        <li>Container</li>
+        <li>Label (using “default text”)</li>
+        <li>Suffix Slot(optional)</li>
+        <li>Prefix Slot(optional)</li>
+    </ol>
+</div>
 
 ## Default Values
 
 :::table-overflow
-<table>
-    <thead>
-        <tr>
-            <th>Element</th>
-            <th>Attribute</th>
-            <th>Token</th>
-            <th>Value</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Container</td>
-            <td>Padding (Left and Right)</td>
-            <td>input-padding-y-medium</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>Padding (top and bottom)</td>
-            <td>input-padding-x-medium</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>Border width</td>
-            <td>input-border-width</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>Border radius</td>
-            <td>input-radius</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>Border color</td>
-            <td>input-color-border-default</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>Background color</td>
-            <td>input-color-background-default</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Label</td>
-            <td>font family</td>
-            <td>font-control-body-1-font-family</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>font size</td>
-            <td>font-control-body-1-font-size</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>font weight</td>
-            <td>font-control-body-1-font-weight</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>line height</td>
-            <td>font-control-body-1-line-height</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>letter spacing</td>
-            <td>font-control-body-1-letter-spacing</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>text color</td>
-            <td>input-color-text-default</td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
+| Element   | Attribute                | Token                              | Value |
+|:----------|:-------------------------|:-----------------------------------|:------|
+| Container | Padding (Left and Right) | input-padding-y-medium             |       |
+|           | Padding (top and bottom) | input-padding-x-medium             |       |
+|           | Border width             | input-border-width                 |       |
+|           | Border radius            | input-radius                       |       |
+|           | Border color             | input-color-border-default         |       |
+|           | Background color         | input-color-background-default     |       |
+| Label     | font family              | font-control-body-1-font-family    |       |
+|           | font size                | font-control-body-1-font-size      |       |
+|           | font weight              | font-control-body-1-font-weight    |       |
+|           | line height              | font-control-body-1-line-height    |       |
+|           | letter spacing           | font-control-body-1-letter-spacing |       |
+|           | text color               | input-color-text-default           |       |
 :::
 
 ## States
@@ -111,64 +43,26 @@ git: rux-input
 ### Hover
 
 :::table-overflow
-<table>
-    <thead>
-        <tr>
-            <th>Element</th>
-            <th>Attribute</th>
-            <th>Token</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Container</td>
-            <td>border color</td>
-            <td>input-color-border-hover</td>
-        </tr>
-    </tbody>
-</table>
+| Element   | Attribute    | Token                    |
+|:----------|:-------------|:-------------------------|
+| Container | border color | input-color-border-hover |
+
 :::
 
 ### Invalid
 
 :::table-overflow
-<table>
-    <thead>
-        <tr>
-            <th>Element</th>
-            <th>Attribute</th>
-            <th>Token</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Container</td>
-            <td>border color</td>
-            <td>input-color-border-invalid</td>
-        </tr>
-    </tbody>
-</table>
+| Element   | Attribute    | Token                      |
+|:----------|:-------------|:---------------------------|
+| Container | border color | input-color-border-invalid |
 :::
 
 ### Disabled
 
 :::table-overflow
-<table>
-    <thead>
-        <tr>
-            <th>Element</th>
-            <th>Attribute</th>
-            <th>Token</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Container</td>
-            <td>opacity</td>
-            <td>opacity-disabled</td>
-        </tr>
-    </tbody>
-</table>
+| Element   | Attribute | Token            |
+|:----------|:----------|:-----------------|
+| Container | opacity   | opacity-disabled |
 :::
 
 ## Sizes
@@ -176,43 +70,19 @@ git: rux-input
 ### Small
 
 :::table-overflow
-<table>
-    <thead>
-        <tr>
-            <th>Element</th>
-            <th>Attribute</th>
-            <th>Token</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Container</td>
-            <td>border color</td>
-            <td>input-color-border-hover</td>
-        </tr>
-    </tbody>
-</table>
+| Element   | ATtr                 | Token                 |
+|:----------|:---------------------|:----------------------|
+| Container | Padding (left/right) | input-padding-y-small |
+|           | Padding (top/bottom) | input-padding-x-small |
 :::
 
 ### Large
 
 :::table-overflow
-<table>
-    <thead>
-        <tr>
-            <th>Element</th>
-            <th>Attribute</th>
-            <th>Token</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Container</td>
-            <td>border color</td>
-            <td>input-color-border-hover</td>
-        </tr>
-    </tbody>
-</table>
+| Element   | ATtr                 | Token                 |
+|:----------|:---------------------|:----------------------|
+| Container | Padding (left/right) | input-padding-y-large |
+|           | Padding (top/bottom) | input-padding-x-large |
 :::
 
 ## Variants
@@ -220,82 +90,27 @@ git: rux-input
 ### Placeholder Text
 
 :::table-overflow
-<table>
-    <thead>
-        <tr>
-            <th>Element</th>
-            <th>Attribute</th>
-            <th>Token</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Container</td>
-            <td>border color</td>
-            <td>input-color-border-hover</td>
-        </tr>
-    </tbody>
-</table>
+| Element   | Attribute  | Token                        |
+|:----------|:-----------|:-----------------------------|
+| Container | text color | input-color-text-placeholder |
 :::
 
 ### With Prefix
 
 :::table-overflow
-<table>
-    <thead>
-        <tr>
-            <th>El</th>
-            <th>Attr</th>
-            <th>Token</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Prefix</td>
-            <td>Dimension</td>
-            <td>input-icon-dimension</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>Margin right</td>
-            <td>input-prefix-margin-right</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>Fill color</td>
-            <td>input-icon-color-fill-default</td>
-        </tr>
-    </tbody>
-</table>
+| El     | Attr         | Token                         |
+|:-------|:-------------|:------------------------------|
+| Prefix | Dimension    | input-icon-dimension          |
+|        | Margin right | input-prefix-margin-right     |
+|        | Fill color   | input-icon-color-fill-default |
 :::
 
 ### With Suffix
 
 :::table-overflow
-<table>
-    <thead>
-        <tr>
-            <th>El</th>
-            <th>Attr</th>
-            <th>Token</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Suffix</td>
-            <td>Dimension</td>
-            <td>input-icon-dimension</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>Margin left</td>
-            <td>input-suffix-margin-left</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>Fill color</td>
-            <td>input-icon-color-fill-default</td>
-        </tr>
-    </tbody>
-</table>
+| El     | Attr        | Token                         |
+|:-------|:------------|:------------------------------|
+| Suffix | Dimension   | input-icon-dimension          |
+|        | Margin left | input-suffix-margin-left      |
+|        | Fill color  | input-icon-color-fill-default |
 :::
