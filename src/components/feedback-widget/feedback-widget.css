@@ -419,6 +419,58 @@
 				color: #292a2d;
 			}
 		}
+
+		& .widget_fail {
+			display: flex;
+			display: none;
+
+			/* Layout */
+			align-items: center;
+			block-size: 100%;
+			block-size: 0;
+			flex-direction: column;
+			inline-size: 100%;
+
+			/* Layout */
+			inset-block-start: 0;
+			inset-inline-end: 0;
+			justify-content: center;
+			position: absolute;
+
+			/* Appearance */
+			background-color: #eaeef4;
+			opacity: 0;
+
+			/* Animation */
+			transition: opacity 200ms ease-in;
+
+			&.-active {
+				display: flex;
+
+				/* Layout */
+				block-size: 100%;
+
+				/* Appearance */
+				opacity: 1;
+			}
+
+			& svg path {
+				fill: #c8102e;
+			}
+
+			& .widget_fail-text {
+				/* Layout */
+				padding-block-start: 10--step;
+
+				/* Text */
+				font-size: 24--rpx;
+				line-height: 28--rpx;
+				text-align: center;
+
+				/* Appearance */
+				color: #292a2d;
+			}
+		}
 	}
 }
 

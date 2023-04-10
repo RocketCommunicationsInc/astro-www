@@ -310,6 +310,55 @@
 				color: #292a2d;
 			}
 		}
+
+		& .widget-static_fail {
+			display: flex;
+			display: none;
+
+			/* Layout */
+			align-items: center;
+			block-size: 100%;
+			block-size: 0;
+			flex-direction: column;
+			inline-size: 100%;
+
+			/* Layout */
+			inset-block-start: 50--rpx;
+			justify-content: center;
+			position: absolute;
+
+			/* Appearance */
+			background-color: #ffffff;
+
+			/* Appearance */
+			opacity: 0;
+
+			&.-active {
+				display: flex;
+
+				/* Layout */
+				block-size: 100%;
+
+				/* Appearance */
+				opacity: 1;
+			}
+
+			& .widget-static_fail-text {
+				/* Layout */
+				margin-block-start: 0;
+
+				/* Layout */
+				padding-block-start: 10--step;
+
+				/* Text */
+				font-size: 24--rpx;
+				line-height: 28--rpx;
+				text-align: center;
+
+				/* Appearance */
+				color: #292a2d;
+			}
+		}
 	}
 }
 

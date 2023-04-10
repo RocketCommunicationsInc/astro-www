@@ -4,8 +4,6 @@ const clearButton: HTMLButtonElement = document.querySelector('.widget-static_se
 const staticSubmitButton: HTMLButtonElement = document.querySelector('.widget-static_primary-button')!
 const staticEmailInput: HTMLInputElement = document.querySelector('input[type="email"]#static-user-email')!
 const staticTextarea: HTMLTextAreaElement = document.querySelector('textarea#static-user-input')!
-// const buttonThumbsUpRadio: HTMLInputElement = document.querySelector('#button_thumbs-up')!
-// const buttonThumbsDownRadio: HTMLInputElement = document.querySelector('#button_thumbs-down')!
 const staticHiddenThumbsUpRadio: HTMLInputElement = document.querySelector('#static-radio_thumbs-up')!
 const staticHiddenThumbsDownRadio: HTMLInputElement = document.querySelector('#static-radio_thumbs-down')!
 const staticWidgetSuccess: HTMLDivElement = document.querySelector('.widget-static_success')!
@@ -13,7 +11,6 @@ let staticEmailPopulated: boolean = false
 let staticTextareaPopulated: boolean = false
 let staticRateButtonSelected: boolean = false
 let staticFormSubmittable: boolean = false
-// let staticFormSubmitted: boolean = false
 
 const handleRateButtonUncheckAll = () => {
 	// set boolean to false

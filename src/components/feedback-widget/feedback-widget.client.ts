@@ -1,4 +1,3 @@
-// const widgetWrapper: HTMLElement = document.querySelector('.widget_wrapper')!
 const widgetInteriorWrapper: HTMLElement = document.querySelector('.widget_interior-wrapper')!
 const topTab: HTMLElement = document.querySelector('.widget_top-tab')!
 const widgetContent: HTMLElement = document.querySelector('.widget_content')!
@@ -8,17 +7,15 @@ const rateButtons: NodeListOf<HTMLButtonElement> = document.querySelectorAll('.w
 const submitButton: HTMLButtonElement = document.querySelector('.widget_primary-button')!
 const emailInput: HTMLInputElement = document.querySelector('input[type="email"]#user-email')!
 const textarea: HTMLTextAreaElement = document.querySelector('textarea#user-input')!
-// const buttonThumbsUpRadio: HTMLInputElement = document.querySelector('#button_thumbs-up')!
-// const buttonThumbsDownRadio: HTMLInputElement = document.querySelector('#button_thumbs-down')!
 const hiddenThumbsUpRadio: HTMLInputElement = document.querySelector('#radio_thumbs-up')!
 const hiddenThumbsDownRadio: HTMLInputElement = document.querySelector('#radio_thumbs-down')!
 const widgetSuccess: HTMLDivElement = document.querySelector('.widget_success')!
+// const widgetFail: HTMLDivElement = document.querySelector('.widget_fail')!
 let emailPopulated: boolean = false
 let textareaPopulated: boolean = false
 let rateButtonSelected: boolean = false
 let formSubmittable: boolean = false
 let toggle: boolean = false
-// let formSubmitted: boolean = false
 
 const handleRateButtonUncheckAll = () => {
 	// set boolean to false
@@ -174,9 +171,57 @@ const handleRateButtonClick = () => {
 	}
 }
 
-const handleFormSubmit = () => {
+const handleFormSubmit = (event: Event) => {
+	const antenna: SVGElement = widgetSuccess.querySelector('svg')!
+	const successText: HTMLParagraphElement = widgetSuccess.querySelector('.widget_success-text')!
+	const animatingElement: NodeListOf<HTMLSpanElement> = widgetSuccess.querySelectorAll('.widget_success-orange-circle span')!
+
 	if (formSubmittable) {
+		// put receiving animation in place, dots animating into antenna
 		widgetSuccess.classList.add('-active')
+
+		// this part below simulates the success animation
+		setTimeout(() => {
+			antenna.classList.add('success')
+			for (const span of animatingElement) {
+				span.style.animationPlayState = 'paused'
+			}
+			successText.innerText = 'We\'ve received your feedback - thank you!'
+		}, 1800)
+
+		// submit form data
+
+		// const target = event.target as HTMLFormElement
+		// const data = new FormData(form)
+		// const action = target.action
+		// fetch(action, {
+		// method: 'POST',
+		// body: data,
+		// })
+		// .then(() => {
+			// on success, make antenna success color, stop receiving animation, add in success text.
+		// 	antenna.classList.add('success')
+		//	for (const span of animatingElement) {
+		//		span.style.animationPlayState = 'paused'
+		//	}
+		//	successText.innerText = 'We\'ve received your feedback - thank you!'
+
+			// after timeout, remove all success panels and close widget.
+		//	setTimeout(() => {
+		// 		widgetSuccess.classList.remove('-active')
+		//		antenna.classList.remove('selected')
+		//		showHideWidget()
+		// 	}, 2500)
+		// }).catch(() => {
+			// on failure display failure panel, remove all panels.
+		// 	widgetFail.classList.add('-active')
+		// 	setTimeout(() => {
+		//		widgetSuccess.classList.remove('-active')
+		// 		widgetFail.classList.remove('-active')
+		// 	}, 2500)
+		// })
+
+		// might not need to do this
 		// staticForm.submit()
 	}
 }
@@ -188,5 +233,5 @@ isFormPopulated()
 
 form.addEventListener('submit', (event: SubmitEvent) => {
 	event.preventDefault()
-	handleFormSubmit()
+	handleFormSubmit(event)
 })

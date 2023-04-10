@@ -26,7 +26,7 @@ const { currentURL } = Astro.props
 					</svg>
 				</button>
 			</div>
-			<form method="post" id="feedback-form">
+			<form method="post" id="feedback-form" action="">
 				<input type="radio" id="radio_thumbs-up" name="user-feedback-radio" value="thumbs-up">
 				<input type="radio" id="radio_thumbs-down" name="user-feedback-radio" value="thumbs-down">
 				<input type="text" id="current-url" class="current-url" name="current-url" value={currentURL}>
@@ -46,6 +46,12 @@ const { currentURL } = Astro.props
 				<div class="widget_success-orange-circle circle-2"><span /></div>
 				<div class="widget_success-orange-circle circle-3"><span /></div>
 				<p class='widget_success-text'>Thank you for your feedback!</p>
+			</div>
+			<div class='widget_fail'>
+				<svg width="129" height="128" viewBox="0 0 129 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M24.7088 109.003H105.291C113.531 109.003 118.668 100.067 114.548 92.9506L74.2568 23.3374C70.1367 16.2209 59.8633 16.2209 55.7432 23.3374L15.452 92.9506C11.332 100.067 16.4687 109.003 24.7088 109.003ZM64.9994 71.5477C62.0564 71.5477 59.6486 69.1399 59.6486 66.1969V55.4954C59.6486 52.5525 62.0564 50.1447 64.9994 50.1447C67.9423 50.1447 70.3501 52.5525 70.3501 55.4954V66.1969C70.3501 69.1399 67.9423 71.5477 64.9994 71.5477ZM59.6486 92.9507H70.3501V82.2492H59.6486V92.9507Z" fill="#C8102E"/>
+				</svg>
+				<p class='widget_fail-text'>Submission failed. <br /> Please try again later.</p>
 			</div>
 		</div>
 	</div>
