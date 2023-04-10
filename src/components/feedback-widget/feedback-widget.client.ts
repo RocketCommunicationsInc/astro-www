@@ -173,7 +173,6 @@ const handleRateButtonClick = () => {
 
 const handleFormSubmit = (event: Event) => {
 	const antenna: SVGElement = widgetSuccess.querySelector('svg')!
-	const successText: HTMLParagraphElement = widgetSuccess.querySelector('.widget_success-text')!
 	const animatingElement: NodeListOf<HTMLSpanElement> = widgetSuccess.querySelectorAll('.widget_success-orange-circle span')!
 
 	if (formSubmittable) {
@@ -186,8 +185,7 @@ const handleFormSubmit = (event: Event) => {
 			for (const span of animatingElement) {
 				span.style.animationPlayState = 'paused'
 			}
-			successText.innerText = 'We\'ve received your feedback - thank you!'
-		}, 1800)
+		}, 2600)
 
 		// submit form data
 
@@ -204,7 +202,6 @@ const handleFormSubmit = (event: Event) => {
 		//	for (const span of animatingElement) {
 		//		span.style.animationPlayState = 'paused'
 		//	}
-		//	successText.innerText = 'We\'ve received your feedback - thank you!'
 
 			// after timeout, remove all success panels and close widget.
 		//	setTimeout(() => {
