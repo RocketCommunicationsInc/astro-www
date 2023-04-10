@@ -12,6 +12,9 @@
 	margin-inline-end: 4--step;
 
 	& .widget-static_content {
+		/* Layout */
+		position: relative;
+
 		/* Appearance */
 		color: #292a2d;
 
@@ -182,13 +185,14 @@
 			inline-size: 100%;
 
 			/* Layout */
-			inset-block-start: 0;
-			inset-inline-end: 0;
+			inset-block-start: 50--rpx;
 			justify-content: center;
 			position: absolute;
 
 			/* Appearance */
-			background-color: #eaeef4;
+			background-color: #ffffff;
+
+			/* Appearance */
 			opacity: 0;
 
 			/* Animation */
@@ -255,8 +259,8 @@
 
 				&.circle-1 {
 					/* Layout */
-					inset-block-start: 146px;
-					inset-inline-start: 174px;
+					inset-block-start: 109px;
+					inset-inline-end: 304px;
 
 					& span {
 						/* Layout */
@@ -269,8 +273,8 @@
 
 				&.circle-2 {
 					/* Layout */
-					inset-block-start: 158px;
-					inset-inline-start: 161px;
+					inset-block-start: 121px;
+					inset-inline-end: 315px;
 
 					& span {
 						/* Animation */
@@ -280,8 +284,8 @@
 
 				&.circle-3 {
 					/* Layout */
-					inset-block-start: 170px;
-					inset-inline-start: 148px;
+					inset-block-start: 134px;
+					inset-inline-end: 328px;
 
 					& span {
 						/* Animation */
@@ -291,6 +295,9 @@
 			}
 
 			& .widget-static_success-text {
+				/* Layout */
+				margin-block-start: 0;
+
 				/* Layout */
 				padding-block-start: 10--step;
 

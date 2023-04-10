@@ -1,191 +1,123 @@
-// const widgetWrapper: HTMLElement = document.querySelector('.widget_wrapper')!
-const widgetInteriorWrapper: HTMLElement = document.querySelector('.widget_interior-wrapper')!
-const topTab: HTMLElement = document.querySelector('.widget_top-tab')!
-const widgetContent: HTMLElement = document.querySelector('.widget_content')!
-const form: HTMLFormElement = document.querySelector('form')!
-const cancelButton: HTMLButtonElement = document.querySelector('.widget_secondary-button')!
-const rateButtons: NodeListOf<HTMLButtonElement> = document.querySelectorAll('.widget_rate-group button')!
-const submitButton: HTMLButtonElement = document.querySelector('.widget_primary-button')!
-const emailInput: HTMLInputElement = document.querySelector('input[type="email"]')!
-const textarea: HTMLTextAreaElement = document.querySelector('textarea')!
+const staticForm: HTMLFormElement = document.querySelector('form#static-feedback-form')!
+const staticRateButtons: NodeListOf<HTMLButtonElement> = document.querySelectorAll('.widget-static_rate-group button')!
+const clearButton: HTMLButtonElement = document.querySelector('.widget-static_secondary-button')!
+const staticSubmitButton: HTMLButtonElement = document.querySelector('.widget-static_primary-button')!
+const staticEmailInput: HTMLInputElement = document.querySelector('input[type="email"]#static-user-email')!
+const staticTextarea: HTMLTextAreaElement = document.querySelector('textarea#static-user-input')!
 // const buttonThumbsUpRadio: HTMLInputElement = document.querySelector('#button_thumbs-up')!
 // const buttonThumbsDownRadio: HTMLInputElement = document.querySelector('#button_thumbs-down')!
-const hiddenThumbsUpRadio: HTMLInputElement = document.querySelector('#radio_thumbs-up')!
-const hiddenThumbsDownRadio: HTMLInputElement = document.querySelector('#radio_thumbs-down')!
-const widgetSuccess: HTMLDivElement = document.querySelector('.widget_success')!
-let emailPopulated: boolean = false
-let textareaPopulated: boolean = false
-let rateButtonSelected: boolean = false
-let toggle: boolean = false
-// let formSubmitted: boolean = false
+const staticHiddenThumbsUpRadio: HTMLInputElement = document.querySelector('#static-radio_thumbs-up')!
+const staticHiddenThumbsDownRadio: HTMLInputElement = document.querySelector('#static-radio_thumbs-down')!
+const staticWidgetSuccess: HTMLDivElement = document.querySelector('.widget-static_success')!
+let staticEmailPopulated: boolean = false
+let staticTextareaPopulated: boolean = false
+let staticRateButtonSelected: boolean = false
+// let staticFormSubmitted: boolean = false
 
 const handleRateButtonUncheckAll = () => {
 	// set boolean to false
-	rateButtonSelected = false
+	staticRateButtonSelected = false
 
 	// deselect UI buttons
-	for (const button of rateButtons) {
+	for (const button of staticRateButtons) {
 		button.classList.remove('selected')
 	}
 
 	// pull checked state from both hidden radios
-	hiddenThumbsUpRadio.removeAttribute('checked')
-	hiddenThumbsDownRadio.removeAttribute('checked')
+	staticHiddenThumbsUpRadio.removeAttribute('checked')
+	staticHiddenThumbsDownRadio.removeAttribute('checked')
 }
 
 const handleRateButtonCheck = (button: HTMLButtonElement) => {
 	// set boolean to true
-	rateButtonSelected = true
+	staticRateButtonSelected = true
 
 	// select UI button
 	button.classList.add('selected')
 
 	// map selected button state to checked state of hidden radios
 	if (button.id === 'button_thumbs-up') {
-		button.classList.contains('selected') ? hiddenThumbsUpRadio.setAttribute('checked', '') : hiddenThumbsUpRadio.removeAttribute('checked')
+		button.classList.contains('selected') ? staticHiddenThumbsUpRadio.setAttribute('checked', '') : staticHiddenThumbsUpRadio.removeAttribute('checked')
 	}
 
 	if (button.id === 'button_thumbs-down') {
-		button.classList.contains('selected') ? hiddenThumbsDownRadio.setAttribute('checked', '') : hiddenThumbsDownRadio.removeAttribute('checked')
+		button.classList.contains('selected') ? staticHiddenThumbsDownRadio.setAttribute('checked', '') : staticHiddenThumbsDownRadio.removeAttribute('checked')
 	}
 }
 
-const showHideWidget = () => {
-	toggle = !toggle
-
-	const toggleAttributes = (toggle: boolean) => {
-		widgetContent.toggleAttribute('data-collapsible-active', toggle)
-		topTab.toggleAttribute('data-collapsible-trigger-active', toggle)
+const handleStaticSubmitButtonEnable = () => {
+	if (!staticEmailPopulated && !staticTextareaPopulated && !staticRateButtonSelected) {
+		staticSubmitButton.disabled = true
+	} else if (staticEmailPopulated && !staticTextareaPopulated && !staticRateButtonSelected) {
+		staticSubmitButton.disabled = true
+	} else {
+		staticSubmitButton.disabled = false
 	}
-
-	toggleAttributes(true)
-	const tabSize = topTab.getBoundingClientRect()[visualViewport.width < 800 ? 'width' : 'height']
-	let keyframeInteriorMin: Record<string, string> = {
-		translate: visualViewport.width < 800 ? `calc(100% - ${tabSize}px) 0%` : `0% calc(100% - ${tabSize}px)`,
-	}
-	let keyframeInteriorMax: Record<string, string> = {
-		translate: `0% 0%`,
-	}
-
-	let min: Record<string, string> = {
-		height: `${widgetContent.getBoundingClientRect().height}px`,
-	}
-	let max: Record<string, string> = {
-		height: `${widgetContent.getBoundingClientRect().height}px`,
-	}
-
-	if (window.visualViewport.width < 800) {
-		min = {
-			width: `${widgetContent.getBoundingClientRect().width}px`,
-		}
-		max = {
-			width: `${widgetContent.getBoundingClientRect().width}px`,
-		}
-	}
-
-	const keyframes = toggle ? [ min, max ] : [ max, min ]
-	const keyframesInterior = toggle ? [ keyframeInteriorMin, keyframeInteriorMax ] : [ keyframeInteriorMax, keyframeInteriorMin ]
-
-	widgetInteriorWrapper.animate(
-		keyframesInterior,
-		{
-			duration: 200,
-			iterations: 1,
-		}
-	)
-
-	widgetContent.animate(
-		keyframes,
-		{
-			duration: 200,
-			iterations: 1,
-		}
-	).finished.then(() => {
-		console.log('finished')
-		toggleAttributes(toggle)
-	})
 }
 
-const toggleWidget = () => {
-	topTab.addEventListener('click', () => {
-		showHideWidget()
-	})
-	cancelButton.addEventListener('click', () => {
-		showHideWidget()
-		emailPopulated = false
-		textareaPopulated = false
+const handleClearButton = () => {
+	clearButton.addEventListener('click', () => {
+		staticEmailPopulated = false
+		staticTextareaPopulated = false
 
 		// makes sure rate buttons are deselected when form clears
 		handleRateButtonUncheckAll()
-
 		// deselct submit button
-		handleSubmitButtonEnable()
+		handleStaticSubmitButtonEnable()
 	})
 }
 
-const handleSubmitButtonEnable = () => {
-	if (!emailPopulated && !textareaPopulated && !rateButtonSelected) {
-		submitButton.disabled = true
-	} else if (emailPopulated && !textareaPopulated && !rateButtonSelected) {
-		submitButton.disabled = true
-	} else {
-		submitButton.disabled = false
-	}
-}
-
-const isFormPopulated = () => {
-	emailInput.addEventListener('input', (event) => {
+const isStaticFormPopulated = () => {
+	staticEmailInput.addEventListener('input', (event) => {
 		const target = event.currentTarget as HTMLInputElement
-		target.value ? emailPopulated = true : emailPopulated = false
+		target.value ? staticEmailPopulated = true : staticEmailPopulated = false
 
-		handleSubmitButtonEnable()
+		handleStaticSubmitButtonEnable()
 	})
-	textarea.addEventListener('input', (event) => {
+	staticTextarea.addEventListener('input', (event) => {
 		const target = event.currentTarget as HTMLInputElement
-		target.value ? textareaPopulated = true : textareaPopulated = false
+		target.value ? staticTextareaPopulated = true : staticTextareaPopulated = false
 
-		handleSubmitButtonEnable()
+		handleStaticSubmitButtonEnable()
 	})
 }
 
-const handleRateButtonSelected = (button: HTMLButtonElement) => {
-	// if any selected, deselect all, disable form submit
+const handlestaticRateButtonSelected = (button: HTMLButtonElement) => {
+	// if any selected, deselect all, disable staticForm submit
 	if (button.classList.contains('selected')) {
 		handleRateButtonUncheckAll()
 
-		handleSubmitButtonEnable()
+		handleStaticSubmitButtonEnable()
 	} else {
-		// Remove selected from all, then add it to clicked button, enable form submit
+		// Remove selected from all, then add it to clicked button, enable staticForm submit
 		handleRateButtonUncheckAll()
 		handleRateButtonCheck(button)
 
-		handleSubmitButtonEnable()
+		handleStaticSubmitButtonEnable()
 	}
 }
 
 const handleRateButtonClick = () => {
 	// handle toggling the thumbs up/down buttons on and off, making sure they are mutually exclusive
-	for (const button of rateButtons) {
+	for (const button of staticRateButtons) {
 		button.addEventListener('click', () => {
 			// handle UI selection of button
-			handleRateButtonSelected(button)
-			const currentURL: HTMLInputElement = document.querySelector('#current-url')!
-console.log(currentURL.value)
+			handlestaticRateButtonSelected(button)
 		})
 	}
 }
 
-const handleFormSubmit = () => {
-	widgetSuccess.classList.add('-active')
+const handlestaticFormSubmit = () => {
+	staticWidgetSuccess.classList.add('-active')
 }
 
 // Setting up all event listeners
-toggleWidget()
 handleRateButtonClick()
-isFormPopulated()
+isStaticFormPopulated()
+handleClearButton()
 
-form.addEventListener('submit', (event: SubmitEvent) => {
+staticForm.addEventListener('submit', (event: SubmitEvent) => {
 	event.preventDefault()
 	console.log(event)
-	handleFormSubmit()
+	handlestaticFormSubmit()
 })

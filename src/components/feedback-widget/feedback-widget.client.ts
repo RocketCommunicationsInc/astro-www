@@ -2,12 +2,12 @@
 const widgetInteriorWrapper: HTMLElement = document.querySelector('.widget_interior-wrapper')!
 const topTab: HTMLElement = document.querySelector('.widget_top-tab')!
 const widgetContent: HTMLElement = document.querySelector('.widget_content')!
-const form: HTMLFormElement = document.querySelector('form')!
+const form: HTMLFormElement = document.querySelector('form#feedback-form')!
 const cancelButton: HTMLButtonElement = document.querySelector('.widget_secondary-button')!
 const rateButtons: NodeListOf<HTMLButtonElement> = document.querySelectorAll('.widget_rate-group button')!
 const submitButton: HTMLButtonElement = document.querySelector('.widget_primary-button')!
-const emailInput: HTMLInputElement = document.querySelector('input[type="email"]')!
-const textarea: HTMLTextAreaElement = document.querySelector('textarea')!
+const emailInput: HTMLInputElement = document.querySelector('input[type="email"]#user-email')!
+const textarea: HTMLTextAreaElement = document.querySelector('textarea#user-input')!
 // const buttonThumbsUpRadio: HTMLInputElement = document.querySelector('#button_thumbs-up')!
 // const buttonThumbsDownRadio: HTMLInputElement = document.querySelector('#button_thumbs-down')!
 const hiddenThumbsUpRadio: HTMLInputElement = document.querySelector('#radio_thumbs-up')!
@@ -169,8 +169,6 @@ const handleRateButtonClick = () => {
 		button.addEventListener('click', () => {
 			// handle UI selection of button
 			handleRateButtonSelected(button)
-			const currentURL: HTMLInputElement = document.querySelector('#current-url')!
-console.log(currentURL.value)
 		})
 	}
 }
