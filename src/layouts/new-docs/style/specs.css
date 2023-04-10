@@ -57,3 +57,18 @@
 		}
 	}
 }
+
+tr:has(td > span.attr-title) {
+	/* Appearance */
+	border-block-end: 1px solid var(--Grey700Color);
+}
+
+td:has(span.attr-title) {
+	/* Layout */
+	padding-block-start: 6--step;
+}
+
+.attr-title {
+	/* Text */
+	font-weight: 700;
+}

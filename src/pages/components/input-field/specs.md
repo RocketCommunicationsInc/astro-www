@@ -22,22 +22,22 @@ git: rux-input
 ## Default Values 
 
 :::table-overflow
-| Element   | Attribute                | Token                              | Value                                                                                                                 |
-|:----------|:-------------------------|:-----------------------------------|:----------------------------------------------------------------------------------------------------------------------|
-| Container |                          |                                    |                                                                                                                       |
-|           | Padding (Left and Right) | input-padding-y-medium             | 0.5rem                                                                                                                |
-|           | Padding (top and bottom) | input-padding-x-medium             | 0.5rem                                                                                                                |
-|           | Border width             | input-border-width                 | 1px                                                                                                                   |
-|           | Border radius            | input-radius                       | 3px                                                                                                                   |
-|           | Border color             | input-color-border-default         | #2b659b                                                                                                               |
-|           | Background color         | input-color-background-default     | #101923                                                                                                               |
-| Label     |                          |                                    |                                                                                                                       |
-|           | font family              | font-control-body-1-font-family    | 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif |
-|           | font size                | font-control-body-1-font-size      | 1rem                                                                                                                  |
-|           | font weight              | font-control-body-1-font-weight    | 400                                                                                                                   |
-|           | line height              | font-control-body-1-line-height    | calc(20 / 16)                                                                                                         |
-|           | letter spacing           | font-control-body-1-letter-spacing | 0.005em                                                                                                               |
-|           | text color               | input-color-text-default           | #ffffff                                                                                                               |
+| Attribute                                 | Token                              | Value                                                                                                                 |
+|:------------------------------------------|:-----------------------------------|:----------------------------------------------------------------------------------------------------------------------|
+| <span class="attr-title">Container</span> |                                    |                                                                                                                       |
+| Padding (Left and Right)                  | input-padding-y-medium             | 0.5rem                                                                                                                |
+| Padding (top and bottom)                  | input-padding-x-medium             | 0.5rem                                                                                                                |
+| Border width                              | input-border-width                 | 1px                                                                                                                   |
+| Border radius                             | input-radius                       | 3px                                                                                                                   |
+| Border color                              | input-color-border-default         | #2b659b                                                                                                               |
+| Background color                          | input-color-background-default     | #101923                                                                                                               |
+| <span class="attr-title">Label</span>     |                                    |                                                                                                                       |
+| font family                               | font-control-body-1-font-family    | 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif |
+| font size                                 | font-control-body-1-font-size      | 1rem                                                                                                                  |
+| font weight                               | font-control-body-1-font-weight    | 400                                                                                                                   |
+| line height                               | font-control-body-1-line-height    | calc(20 / 16)                                                                                                         |
+| letter spacing                            | font-control-body-1-letter-spacing | 0.005em                                                                                                               |
+| text color                                | input-color-text-default           | #ffffff                                                                                                               |
 :::
 
 ## States
@@ -53,25 +53,28 @@ git: rux-input
 ### Hover
 
 :::table-overflow
-| Element   | Attribute    | Token                    | Value   |
-|:----------|:-------------|:-------------------------|:--------|
-| Container | border color | input-color-border-hover | #92cbff |
+| Attribute                                 | Token                    | Value   |
+|:------------------------------------------|:-------------------------|:--------|
+| <span class="attr-title">Container</span> |                          |         |
+| border color                              | input-color-border-hover | #92cbff |
 :::
 
 ### Invalid
 
 :::table-overflow
-| Element   | Attribute    | Token                      | Value   |
-|:----------|:-------------|:---------------------------|:--------|
-| Container | border color | input-color-border-invalid | #ff3838 |
+| Attribute                                 | Token                      | Value   |
+|:------------------------------------------|:---------------------------|:--------|
+| <span class="attr-title">Container</span> |                            |         |
+| border color                              | input-color-border-invalid | #ff3838 |
 :::
 
 ### Disabled
 
 :::table-overflow
-| Element   | Attribute | Token            | Value |
-|:----------|:----------|:-----------------|:------|
-| Container | opacity   | opacity-disabled | 40%   |
+| Attribute                                 | Token            | Value |
+|:------------------------------------------|:-----------------|:------|
+| <span class="attr-title">Container</span> |                  |       |
+| opacity                                   | opacity-disabled | 40%   |
 :::
 
 ## Sizes
@@ -85,19 +88,21 @@ git: rux-input
 ### Small
 
 :::table-overflow
-| Element   | Attribute            | Token                 | Value   |
-|:----------|:---------------------|:----------------------|:--------|
-| Container | Padding (left/right) | input-padding-y-small | 0.5rem  |
-|           | Padding (top/bottom) | input-padding-x-small | 0.25rem |
+| Attribute                                 | Token                 | Value   |
+|:------------------------------------------|:----------------------|:--------|
+| <span class="attr-title">Container</span> |                       |         |
+| Padding (left/right)                      | input-padding-y-small | 0.5rem  |
+| Padding (top/bottom)                      | input-padding-x-small | 0.25rem |
 :::
 
 ### Large
 
 :::table-overflow
-| Element   | Attribute            | Token                 | Value   |
-|:----------|:---------------------|:----------------------|:--------|
-| Container | Padding (left/right) | input-padding-y-large | 0.5rem  |
-|           | Padding (top/bottom) | input-padding-x-large | 0.75rem |
+| Attribute                                 | Token                 | Value   |
+|:------------------------------------------|:----------------------|:--------|
+| <span class="attr-title">Container</span> |                       |         |
+| Padding (left/right)                      | input-padding-y-large | 0.5rem  |
+| Padding (top/bottom)                      | input-padding-x-large | 0.75rem |
 :::
 
 ## Variants
@@ -108,9 +113,10 @@ git: rux-input
 ### Placeholder Text
 
 :::table-overflow
-| Element   | Attribute  | Token                        | Value   |
-|:----------|:-----------|:-----------------------------|:--------|
-| Container | text color | input-color-text-placeholder | #a4abb6 |
+| Attribute                                 | Token                        | Value   |
+|:------------------------------------------|:-----------------------------|:--------|
+| <span class="attr-title">Container</span> |                              |         |
+| text color                                | input-color-text-placeholder | #a4abb6 |
 :::
 
 <div class="spec-container -examples">
@@ -120,11 +126,12 @@ git: rux-input
 ### With Prefix
 
 :::table-overflow
-| Element | Attribute    | Token                         | Value   |
-|:--------|:-------------|:------------------------------|:--------|
-| Prefix  | Dimension    | input-icon-dimension          | 20px    |
-|         | Margin right | input-prefix-margin-right     | 0.25rem |
-|         | Fill color   | input-icon-color-fill-default | #4dacff |
+| Attribute                              | Token                         | Value   |
+|:---------------------------------------|:------------------------------|:--------|
+| <span class="attr-title">Prefix</span> |                               |         |
+| Dimension                              | input-icon-dimension          | 20px    |
+| Margin right                           | input-prefix-margin-right     | 0.25rem |
+| Fill color                             | input-icon-color-fill-default | #4dacff |
 :::
 
 <div class="spec-container -examples">
@@ -135,9 +142,10 @@ git: rux-input
 ### With Suffix
 
 :::table-overflow
-| Element | Attribute   | Token                         | Value   |
-|:--------|:------------|:------------------------------|:--------|
-| Suffix  | Dimension   | input-icon-dimension          | 20px    |
-|         | Margin left | input-suffix-margin-left      | 0.25rem |
-|         | Fill color  | input-icon-color-fill-default | #4dacff |
+| Attribute                              | Token                         | Value   |
+|:---------------------------------------|:------------------------------|:--------|
+| <span class="attr-title">Suffix</span> |                               |         |
+| Dimension                              | input-icon-dimension          | 20px    |
+| Margin left                            | input-suffix-margin-left      | 0.25rem |
+| Fill color                             | input-icon-color-fill-default | #4dacff |
 :::
