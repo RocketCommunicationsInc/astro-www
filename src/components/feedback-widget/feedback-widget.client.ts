@@ -16,6 +16,7 @@ const widgetSuccess: HTMLDivElement = document.querySelector('.widget_success')!
 let emailPopulated: boolean = false
 let textareaPopulated: boolean = false
 let rateButtonSelected: boolean = false
+let formSubmittable: boolean = false
 let toggle: boolean = false
 // let formSubmitted: boolean = false
 
@@ -101,7 +102,6 @@ const showHideWidget = () => {
 			iterations: 1,
 		}
 	).finished.then(() => {
-		console.log('finished')
 		toggleAttributes(toggle)
 	})
 }
@@ -130,6 +130,7 @@ const handleSubmitButtonEnable = () => {
 		submitButton.disabled = true
 	} else {
 		submitButton.disabled = false
+		formSubmittable = true
 	}
 }
 
@@ -174,7 +175,10 @@ const handleRateButtonClick = () => {
 }
 
 const handleFormSubmit = () => {
-	widgetSuccess.classList.add('-active')
+	if (formSubmittable) {
+		widgetSuccess.classList.add('-active')
+		// staticForm.submit()
+	}
 }
 
 // Setting up all event listeners
@@ -184,6 +188,5 @@ isFormPopulated()
 
 form.addEventListener('submit', (event: SubmitEvent) => {
 	event.preventDefault()
-	console.log(event)
 	handleFormSubmit()
 })

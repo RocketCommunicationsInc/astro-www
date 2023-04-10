@@ -12,6 +12,7 @@ const staticWidgetSuccess: HTMLDivElement = document.querySelector('.widget-stat
 let staticEmailPopulated: boolean = false
 let staticTextareaPopulated: boolean = false
 let staticRateButtonSelected: boolean = false
+let staticFormSubmittable: boolean = false
 // let staticFormSubmitted: boolean = false
 
 const handleRateButtonUncheckAll = () => {
@@ -52,6 +53,7 @@ const handleStaticSubmitButtonEnable = () => {
 		staticSubmitButton.disabled = true
 	} else {
 		staticSubmitButton.disabled = false
+		staticFormSubmittable = true
 	}
 }
 
@@ -108,7 +110,10 @@ const handleRateButtonClick = () => {
 }
 
 const handlestaticFormSubmit = () => {
-	staticWidgetSuccess.classList.add('-active')
+	if (staticFormSubmittable) {
+		staticWidgetSuccess.classList.add('-active')
+		// staticForm.submit()
+	}
 }
 
 // Setting up all event listeners
@@ -118,6 +123,5 @@ handleClearButton()
 
 staticForm.addEventListener('submit', (event: SubmitEvent) => {
 	event.preventDefault()
-	console.log(event)
 	handlestaticFormSubmit()
 })
