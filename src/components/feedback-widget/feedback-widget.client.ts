@@ -183,9 +183,10 @@ const handleFormSubmit = (event: Event) => {
 		setTimeout(() => {
 			antenna.classList.add('success')
 			for (const span of animatingElement) {
-				span.style.animationPlayState = 'paused'
+				// span.style.animationPlayState = 'paused'
+				span.style.animationIterationCount = '1'
 			}
-		}, 2600)
+		}, 2800)
 
 		// submit form data
 
