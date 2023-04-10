@@ -1,0 +1,47 @@
+:host {
+	display: grid;
+
+	/* Layout */
+	grid-template-rows: 44--rpx auto;
+	overflow: hidden;
+	padding-block-end: 1px;
+
+	/* Appearance */
+	box-shadow: var(--EdgeColor) 0 -1px 0 0;
+
+	&::part(heading) {
+		display: flex;
+
+		/* Layout */
+		align-items: center;
+		gap: 3--step;
+
+		/* Layout */
+		padding-block: 10--rpx;
+		padding-inline: 12--rpx;
+
+		/* Text */
+		font-size: 18--rpx;
+		line-height: calc(24 / 18);
+
+		/* Appearance */
+		background-color: var(--BackColor);
+		color: var(--FillColor);
+		cursor: default;
+		user-select: none;
+
+		/* Reference */
+		--BackColor: var(--Grey200Color);
+		--FillColor: var(--Grey800Color);
+	}
+
+	&::part(content) {
+		display: flex;
+
+		/* Layout */
+		flex-flow: column;
+		gap: 20--rpx;
+		overflow-y: scroll;
+		padding: 12--rpx;
+	}
+}

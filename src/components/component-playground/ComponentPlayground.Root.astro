@@ -1,4 +1,5 @@
 ---
+import Panelset from './ComponentPlayground.Panelset.astro'
 import Panel from './ComponentPlayground.Panel.astro'
 import Main from './ComponentPlayground.Main.astro'
 ---
@@ -10,18 +11,20 @@ import Main from './ComponentPlayground.Main.astro'
 	</head>
 	<body class="app">
 		<section class="sandbox-area">
-			<Main>
+			<Main class="dark-theme">
 				<slot />
 			</Main>
 		</section>
 
 		<section class="control-area">
-			{Astro.slots.has('variants')
-				? <Panel label="Variants"><slot name="variants" /></Panel>
-			: null}
-			{Astro.slots.has('controls')
-				? <Panel label="Properties"><slot name="controls" /></Panel>
-			: null}
+			<Panelset>
+				{Astro.slots.has('variants')
+					? <Panel label="Variants"><slot name="variants" /></Panel>
+				: null}
+				{Astro.slots.has('controls')
+					? <Panel label="Properties"><slot name="controls" /></Panel>
+				: null}
+			</Panelset>
 		</section>
 	</body>
 </html>

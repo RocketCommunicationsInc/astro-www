@@ -1,0 +1,19 @@
+:host {
+	display: flex;
+
+	/* Layout */
+	align-items: center;
+	gap: 3--step;
+
+	& .light,
+	& .dark {
+		/* Animation */
+		transition: fill 80ms;
+	}
+
+	&:has(:checked) .light,
+	&:not(:has(:checked)) .dark {
+		/* Reference */
+		--FillColor: var(--Grey600Color);
+	}
+}

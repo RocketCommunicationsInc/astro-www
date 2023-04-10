@@ -56,7 +56,11 @@
 		],
 		"ignorePatterns": [
 			"src/components/site-search/site-search-engine.js"
-		]
+		],
+		"rules": {
+			"no-sequences": "off",
+			"no-mixed-operators": "off"
+		}
 	},
 	"postcss": {
 		"plugins": {
