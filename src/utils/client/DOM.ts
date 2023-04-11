@@ -41,9 +41,29 @@ export let set = <T>(
 		}
 	}
 
-	element.append(...children)
+	return append(element, ...children)
+}
 
-	return element
+let map = new WeakMap()
+
+export let internals = <Internals, Host = object>(host: Host & object, create: { (host: Host): Internals }): Internals => (
+	map.has(host)
+		? map.get(host)
+	: (
+		map.set(
+			host,
+			// @ts-ignore re-use `create` variable
+			create = create(host)
+		),
+		create
+	)
+)
+
+export let withEvents = <T>(target: T & EventTarget, events: { [type: string]: { (this: T, event: Event): void } }): T => {
+	for (let type in events) {
+		target.addEventListener(type, events[type].bind(target))
+	}
+	return target
 }
 
 let __isAppendable = (value: unknown): value is bigint | boolean | null | number | string | symbol => value instanceof Node || typeof value !== 'object' && value !== undefined
@@ -54,9 +74,13 @@ let __createElementClass = <T extends Element>(Super: abstract new () => T, xmln
 	(name: ReflectConfig): ReflectElement<T>
 
 	new (): T
+	new <Name extends keyof HTMLElementTagNameMap>(name: Name): HTMLElementTagNameMap[Name]
 	new (name: string): T
+	new <Name extends keyof HTMLElementTagNameMap>(name: Name, attrs: Attrs): HTMLElementTagNameMap[Name]
 	new (name: string, attrs: Attrs): T
+	new <Name extends keyof HTMLElementTagNameMap>(name: Name, ...children: ChildNode[]): HTMLElementTagNameMap[Name]
 	new (name: string, ...children: ChildNode[]): T
+	new <Name extends keyof HTMLElementTagNameMap>(name: Name, attrs: Attrs, ...children: ChildNode[]): HTMLElementTagNameMap[Name]
 	new (name: string, attrs: Attrs, ...children: ChildNode[]): T
 } => {
 	function Element(opts: ReflectConfig, ...args: any[]) {
@@ -104,6 +128,11 @@ export let HTML = __createElementClass(HTMLElement, '1999/xhtml')
 export let MathML = __createElementClass(MathMLElement, '1998/Math/MathML')
 export let SVG = __createElementClass(SVGElement, '2000/svg')
 
+export let append = <T>(parentNode: T & ParentNode, ...children: ChildNode[]): T => (
+	parentNode.append(...children),
+	parentNode
+)
+
 export let define = <T>(name: string, constructor: T & CustomElementConstructor, options?: ElementDefinitionOptions): T => (
 	customElements.define(name, constructor, options),
 	constructor
@@ -118,7 +147,7 @@ export let elementOf = (opts: ReflectConfig) => {
 				const root = host.attachShadow(opts.shadow)
 
 				if (__isAppendable(opts.append)) {
-					root.append(opts.append.cloneNode(true))
+					append(root, opts.append.cloneNode(true))
 				}
 
 				if (Array.isArray(opts.styles)) {
@@ -173,7 +202,7 @@ export const Text = globalThis.Text
 
 export class Fragment extends DocumentFragment {
 	constructor(...children: ChildNode[]) {
-		(super()! as this).append(...children)
+		append(super()! as this, ...children)
 	}
 }
 

@@ -110,12 +110,12 @@ import Main from './ComponentPlayground.Main.astro'
 :root {
 	@media (width <= 700px) {
 		/* Reference */
-		--max-height: 500px;
+		--max-height: 400px;
 	}
 
 	@media (width > 700px) {
 		/* Reference */
-		--max-height: 400px;
+		--max-height: 512px;
 	}
 }
 
@@ -188,14 +188,15 @@ body {
 
 </style>
 <script>
-const resize = () => requestAnimationFrame(() => {
+const resize = (event: Event) => {
+	console.log('attempted resize', event?.constructor)
 	const { height } = document.body.getBoundingClientRect()
 	const newIframeHeight = `${height + 2}px`
 
 	if (iframeHeight !== newIframeHeight) {
 		iframe.style.setProperty('--y', iframeHeight = newIframeHeight)
 	}
-})
+}
 
 const iframe = window.parent.document.querySelector('.c-sandbox')! as HTMLIFrameElement
 

@@ -1,3 +1,9 @@
 :host {
 	display: contents;
+
+	&::part(tablist) {
+		@media (width >= 700px) {
+			display: none;
+		}
+	}
 }
