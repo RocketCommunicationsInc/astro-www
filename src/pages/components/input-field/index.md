@@ -1,9 +1,7 @@
 ---
 title: Input Field
-subtitle: Usage
 description: Input Fields allow users to enter freeform text. Variations on this field often provide specific data entry formats such as masked data (e.g. passwords or phone numbers), date and time, and numeric data entry.
 layout: project:layouts/component-docs/component-docs-layout.astro
-config: '_config.ts'
 storybook: forms-input--types
 height: 400px
 git: rux-input

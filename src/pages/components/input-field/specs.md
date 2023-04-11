@@ -1,16 +1,14 @@
 ---
 title: Input Field
-subtitle: Specification
 description: Input Fields allow users to enter freeform text. Variations on this field often provide specific data entry formats such as masked data (e.g. passwords or phone numbers), date and time, and numeric data entry.
 layout: project:layouts/component-docs/component-docs-layout.astro
-config: '_config.ts'
 storybook: forms-input--types
 git: rux-input
 ---
 
 ## Anatomy
 <div class="spec-container -anatomy">
-    <figure><img width="350px" src="/img/components/input-field/input-anatomy.png" alt="Anatomy Image"/></figure>
+    <figure><img width="270px" src="/img/components/input-field/input-anatomy.png" alt="Anatomy Image"/></figure>
     <ol>
         <li>Container</li>
         <li>Label (using “default text”)</li>
