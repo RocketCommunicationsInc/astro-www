@@ -10,7 +10,7 @@ const textarea: HTMLTextAreaElement = document.querySelector('textarea#user-inpu
 const hiddenThumbsUpRadio: HTMLInputElement = document.querySelector('#radio_thumbs-up')!
 const hiddenThumbsDownRadio: HTMLInputElement = document.querySelector('#radio_thumbs-down')!
 const widgetSuccess: HTMLDivElement = document.querySelector('.widget_success')!
-// const widgetFail: HTMLDivElement = document.querySelector('.widget_fail')!
+const widgetFail: HTMLDivElement = document.querySelector('.widget_fail')!
 let emailPopulated: boolean = false
 let textareaPopulated: boolean = false
 let rateButtonSelected: boolean = false
@@ -180,44 +180,46 @@ const handleFormSubmit = (event: Event) => {
 		widgetSuccess.classList.add('-active')
 
 		// this part below simulates the success animation
-		setTimeout(() => {
-			antenna.classList.add('success')
-			for (const span of animatingElement) {
-				// span.style.animationPlayState = 'paused'
-				span.style.animationIterationCount = '1'
-			}
-		}, 2800)
+		// setTimeout(() => {
+		// 	antenna.classList.add('success')
+		// 	for (const span of animatingElement) {
+		// 		span.style.animationIterationCount = '1'
+		// 	}
+		// }, 2800)
 
 		// submit form data
 
-		// const target = event.target as HTMLFormElement
-		// const data = new FormData(form)
-		// const action = target.action
-		// fetch(action, {
-		// method: 'POST',
-		// body: data,
-		// })
-		// .then(() => {
+		const target = event.target as HTMLFormElement
+		const data = new FormData(form)
+		const action = target.action
+		fetch(action, {
+			method: 'POST',
+			body: data,
+			headers: {
+				'Access-Control-Allow-Origin': 'https://astrouxds-feedback.herokuapp.com/',
+			},
+		})
+		.then(() => {
 			// on success, make antenna success color, stop receiving animation, add in success text.
-		// 	antenna.classList.add('success')
-		//	for (const span of animatingElement) {
-		//		span.style.animationPlayState = 'paused'
-		//	}
+			antenna.classList.add('success')
+			for (const span of animatingElement) {
+				span.style.animationPlayState = 'paused'
+			}
 
 			// after timeout, remove all success panels and close widget.
-		//	setTimeout(() => {
-		// 		widgetSuccess.classList.remove('-active')
-		//		antenna.classList.remove('selected')
-		//		showHideWidget()
-		// 	}, 2500)
-		// }).catch(() => {
+			setTimeout(() => {
+				widgetSuccess.classList.remove('-active')
+				antenna.classList.remove('selected')
+				showHideWidget()
+			}, 2500)
+		}).catch(() => {
 			// on failure display failure panel, remove all panels.
-		// 	widgetFail.classList.add('-active')
-		// 	setTimeout(() => {
-		//		widgetSuccess.classList.remove('-active')
-		// 		widgetFail.classList.remove('-active')
-		// 	}, 2500)
-		// })
+			widgetFail.classList.add('-active')
+			setTimeout(() => {
+				widgetSuccess.classList.remove('-active')
+				widgetFail.classList.remove('-active')
+			}, 2500)
+		})
 
 		// might not need to do this
 		// staticForm.submit()
