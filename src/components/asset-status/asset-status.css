@@ -149,4 +149,8 @@
 		/* Transform */
 		transform: rotate(180deg);
 	}
+
+	@media (width >= 450px) {
+		display: none;
+	}
 }
