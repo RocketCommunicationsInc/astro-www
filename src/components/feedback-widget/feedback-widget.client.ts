@@ -232,7 +232,7 @@ const handleFormSubmit = (event: Event) => {
 		})
 
 		// might not need to do this
-		form.submit()
+		// form.submit()
 	}
 }
 
