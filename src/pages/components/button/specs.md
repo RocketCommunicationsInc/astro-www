@@ -21,22 +21,22 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 |:------------------------------------------|:----------------------------------------|:----------------------------------------------------------------------------------------------------------------------|
 | <span class="attr-title">Container</span> |                                         |                                                                                                                       |
 | Padding (left and right)                  | button-padding-y-medium                 | 0.5rem                                                                                                                |
-| Padding (top and bottom)                  | button-padding-x-medium                 | 0.5rem                                                                                                                |
+| Padding (top and bottom)                  | button-padding-x-medium                 | 1rem                                                                                                                  |
 | Border width                              | button-border-width                     | 1px                                                                                                                   |
 | Border radius                             | button-radius                           | 3px                                                                                                                   |
-| Border color                              | button-color-border-primary-default     | #2b659b                                                                                                               |
-| Background color                          | button-color-background-primary-default | #101923                                                                                                               |
+| Border color                              | button-color-border-primary-default     | #4dacff                                                                                                               |
+| Background color                          | button-color-background-primary-default | #4dacff                                                                                                               |
 | <span class="attr-title">Label</span>     |                                         |                                                                                                                       |
 | Font family                               | font-control-body-1-font-family         | 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif |
 | Font size                                 | font-control-body-1-font-size           | 1rem                                                                                                                  |
 | Font weight                               | font-control-body-1-font-weight         | 400                                                                                                                   |
 | Line height                               | font-control-body-1-line-height         | calc(20 / 16)                                                                                                         |
 | Letter spacing                            | font-control-body-1-letter-spacing      | 0.005em                                                                                                               |
-| Text color                                | button-color-text-primary               | #ffffff                                                                                                               |
+| Text color                                | button-color-text-primary               | #080c11;                                                                                                              |
 | <span class="attr-title">Left icon</span> |                                         |                                                                                                                       |
-| Dimension                                 | button-icon-dimension                   | #ffffff                                                                                                               |
-| Margin (right)                            | button-icon-margin-right                | #ffffff                                                                                                               |
-| Fill color                                | button-icon-color-fill-primary          | #ffffff                                                                                                               |
+| Dimension                                 | button-icon-dimension                   | 20px                                                                                                                  |
+| Margin (right)                            | button-icon-margin-right                | 0.25rem                                                                                                               |
+| Fill color                                | button-icon-color-fill-primary          | #080c11                                                                                                               |
 :::
 
 ## Kinds
@@ -56,11 +56,11 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Attribute                                 | Token                                   | Value   |
 |:------------------------------------------|:----------------------------------------|:--------|
 | <span class="attr-title">Container</span> |                                         |         |
-| Background color                          | button-color-background-primary-default | #92cbff |
+| Background color                          | button-color-background-primary-default | #4dacff |
 | <span class="attr-title">Label</span>     |                                         |         |
-| Text color                                | button-color-text-primary               | #92cbff |
+| Text color                                | button-color-text-primary               | #080c11 |
 | <span class="attr-title">Left icon</span> |                                         |         |
-| Fill color                                | button-icon-color-fill-primary          | #92cbff |
+| Fill color                                | button-icon-color-fill-primary          | #080c11 |
 
 :::
 
@@ -94,28 +94,28 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 :::table-overflow
 
-| Attribute                                 | Token                                     | Value   |
-|:------------------------------------------|:------------------------------------------|:--------|
-| <span class="attr-title">Container</span> |                                           |         |
-| Background color                          | button-color-background-secondary-default | #92cbff |
-| <span class="attr-title">Label</span>     |                                           |         |
-| Text color                                | button-color-text-secondary-default       | #92cbff |
-| <span class="attr-title">Left icon</span> |                                           |         |
-| Fill color                                | button-icon-color-fill-secondary-default  | #92cbff |
+| Attribute                                 | Token                                    | Value     |
+|:------------------------------------------|:-----------------------------------------|:----------|
+| <span class="attr-title">Container</span> |                                          |           |
+| Background color                          | button-color-background-secondary        | #ffffff00 |
+| <span class="attr-title">Label</span>     |                                          |           |
+| Text color                                | button-color-text-secondary-default      | #4dacff   |
+| <span class="attr-title">Left icon</span> |                                          |           |
+| Fill color                                | button-icon-color-fill-secondary-default | #4dacff   |
 
 :::
 
 #### Hover
 
 :::table-overflow
-| Attribute                                 | Token                                   | Value   |
-|:------------------------------------------|:----------------------------------------|:--------|
-| <span class="attr-title">Container</span> |                                         |         |
-| Background color                          | button-color-background-secondary-hover | #92cbff |
-| <span class="attr-title">Label</span>     |                                         |         |
-| Text color                                | button-color-text-secondary-hover       | #92cbff |
-| <span class="attr-title">Left icon</span> |                                         |         |
-| Fill color                                | button-icon-color-fill-secondary-hover  | #92cbff |
+| Attribute                                 | Token                                  | Value     |
+|:------------------------------------------|:---------------------------------------|:----------|
+| <span class="attr-title">Container</span> |                                        |           |
+| Background color                          | button-color-background-secondary      | #ffffff00 |
+| <span class="attr-title">Label</span>     |                                        |           |
+| Text color                                | button-color-text-secondary-hover      | #92cbff   |
+| <span class="attr-title">Left icon</span> |                                        |           |
+| Fill color                                | button-icon-color-fill-secondary-hover | #92cbff   |
 :::
 
 ### Disabled
@@ -138,15 +138,15 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 #### Default
 
 :::table-overflow
-| Attribute                                 | Token                                     | Value   |
-|:------------------------------------------|:------------------------------------------|:--------|
-| <span class="attr-title">Container</span> |                                           |         |
-| Background color                          | button-color-background-borderless        | #92cbff |
-| Border color                              | button-color-border-borderless            | #92cbff |
-| <span class="attr-title">Label</span>     |                                           |         |
-| Text color                                | button-color-text-borderless-default      | #92cbff |
-| <span class="attr-title">Left icon</span> |                                           |         |
-| Fill color                                | button-icon-color-fill-borderless-default | #92cbff |
+| Attribute                                 | Token                                     | Value     |
+|:------------------------------------------|:------------------------------------------|:----------|
+| <span class="attr-title">Container</span> |                                           |           |
+| Background color                          | button-color-background-borderless        | #ffffff00 |
+| Border color                              | button-color-border-borderless            | #ffffff00 |
+| <span class="attr-title">Label</span>     |                                           |           |
+| Text color                                | button-color-text-borderless-default      | #4dacff   |
+| <span class="attr-title">Left icon</span> |                                           |           |
+| Fill color                                | button-icon-color-fill-borderless-default | #4dacff   |
 :::
 
 #### Hover
@@ -183,18 +183,18 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Attribute                                 | Token                  | Value   |
 |:------------------------------------------|:-----------------------|:--------|
 | <span class="attr-title">Container</span> |                        |         |
-| Padding (left and right)                  | button-padding-y-small | 0.5rem  |
-| Padding (top and bottom)                  | button-padding-x-small | 0.25rem |
+| Padding (left and right)                  | button-padding-y-small | 0.25rem |
+| Padding (top and bottom)                  | button-padding-x-small | 1rem    |
 :::
 
 ### Medium
 
 :::table-overflow
-| Attribute                                 | Token                   | Value   |
-|:------------------------------------------|:------------------------|:--------|
-| <span class="attr-title">Container</span> |                         |         |
-| Padding (left and right)                  | button-padding-y-medium | 0.5rem  |
-| Padding (top and bottom)                  | button-padding-x-medium | 0.25rem |
+| Attribute                                 | Token                   | Value  |
+|:------------------------------------------|:------------------------|:-------|
+| <span class="attr-title">Container</span> |                         |        |
+| Padding (left and right)                  | button-padding-y-medium | 0.5rem |
+| Padding (top and bottom)                  | button-padding-x-medium | 1rem   |
 :::
 
 ### Large
@@ -203,8 +203,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Attribute                                 | Token                  | Value   |
 |:------------------------------------------|:-----------------------|:--------|
 | <span class="attr-title">Container</span> |                        |         |
-| Padding (left and right)                  | button-padding-y-large | 0.5rem  |
-| Padding (top and bottom)                  | button-padding-x-large | 0.75rem |
+| Padding (left and right)                  | button-padding-y-large | 0.75rem |
+| Padding (top and bottom)                  | button-padding-x-large | 1rem    |
 :::
 
 ## Icon Only
@@ -221,18 +221,18 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Attribute                                 | Token                            | Value   |
 |:------------------------------------------|:---------------------------------|:--------|
 | <span class="attr-title">Container</span> |                                  |         |
-| Padding (left and right)                  | button-padding-y-small-icon-only | 0.5rem  |
+| Padding (left and right)                  | button-padding-y-small-icon-only | 0.25rem |
 | Padding (top and bottom)                  | button-padding-x-small-icon-only | 0.25rem |
 :::
 
 ### Medium
 
 :::table-overflow
-| Attribute                                 | Token                             | Value   |
-|:------------------------------------------|:----------------------------------|:--------|
-| <span class="attr-title">Container</span> |                                   |         |
-| Padding (left and right)                  | button-padding-y-medium-icon-only | 0.5rem  |
-| Padding (top and bottom)                  | button-padding-x-medium-icon-only | 0.25rem |
+| Attribute                                 | Token                             | Value  |
+|:------------------------------------------|:----------------------------------|:-------|
+| <span class="attr-title">Container</span> |                                   |        |
+| Padding (left and right)                  | button-padding-y-medium-icon-only | 0.5rem |
+| Padding (top and bottom)                  | button-padding-x-medium-icon-only | 0.5rem |
 :::
 
 ### Large
@@ -241,7 +241,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Attribute                                 | Token                            | Value   |
 |:------------------------------------------|:---------------------------------|:--------|
 | <span class="attr-title">Container</span> |                                  |         |
-| Padding (left and right)                  | button-padding-y-large-icon-only | 0.5rem  |
+| Padding (left and right)                  | button-padding-y-large-icon-only | 0.75rem |
 | Padding (top and bottom)                  | button-padding-x-large-icon-only | 0.75rem |
 :::
 
@@ -252,9 +252,9 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 </div>
 
 :::table-overflow
-| Attribute                                 | Token         | Value   |
-|:------------------------------------------|:--------------|:--------|
-| <span class="attr-title">Container</span> |               |         |
-| Outline                                   | focus-outline | 0.5rem  |
-| Outline Offset                            | focus-offset  | 0.75rem |
+| Attribute                                 | Token         | Value             |
+|:------------------------------------------|:--------------|:------------------|
+| <span class="attr-title">Container</span> |               |                   |
+| Outline                                   | focus-outline | 1px solid #da9ce7 |
+| Outline Offset                            | focus-offset  | 0.125rem          |
 :::
