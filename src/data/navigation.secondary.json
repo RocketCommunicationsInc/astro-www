@@ -1,44 +1,58 @@
 [
-	{
-		"heading": "Input Field",
-		"description": "Input Fields allow users to enter freeform text. Variations on this field often provide specific data entry formats such as masked data (e.g. passwords or phone numbers), date and time, and numeric data entry.",
-		"items": [
-			{
-				"label": "Usage",
-				"url": "/components/input-field/"
-			},
-			{
-				"label": "Specification",
-				"url": "/components/input-field/specs/"
-			}
-		]
-	},
-	{
-		"heading": "Button",
-		"description": "Action Buttons allow users to trigger actions by clicking, tapping, or pressing a corresponding key on a keyboard, such as the “Enter” key.",
-		"items": [
-			{
-				"label": "Usage",
-				"url": "/components/button/"
-			},
-			{
-				"label": "Specification",
-				"url": "/components/button/specs/"
-			}
-		]
-	},
-	{
-		"heading": "Secondary Nav Example",
-		"description": "This is the nav for the nav example",
-		"items": [
-			{
-				"label": "Usage",
-				"url": "/components/secondary-nav-example/"
-			},
-			{
-				"label": "Specification",
-				"url": "/components/secondary-nav-example/specs/"
-			}
-		]
-	}
+    {
+        "description": "Input Fields allow users to enter freeform text. Variations on this field often provide specific data entry formats such as masked data (e.g. passwords or phone numbers), date and time, and numeric data entry.",
+        "heading": "Input Field",
+        "items": [
+            {
+                "label": "Usage",
+                "url": "/components/input-field/"
+            },
+            {
+                "label": "Specification",
+                "url": "/components/input-field/specs/"
+            }
+        ]
+    },
+    {
+        "description": "Action Buttons allow users to trigger actions by clicking, tapping, or pressing a corresponding key on a keyboard, such as the “Enter” key.",
+        "heading": "Button",
+        "items": [
+            {
+                "label": "Usage",
+                "url": "/components/button/"
+            },
+            {
+                "label": "Specification",
+                "url": "/components/button/specs/"
+            }
+        ]
+    },
+    {
+        "description": "A Slider allows users to choose from a range of continuous and discrete values arranged from minimum to maximum.",
+        "heading": "Slider",
+        "items": [
+            {
+                "label": "Usage",
+                "url": "/components/slider/"
+            },
+            {
+                "label": "Specification",
+                "url": "/components/slider/specs/"
+            }
+        ]
+    },
+    {
+        "description": "This is the nav for the nav example",
+        "heading": "Secondary Nav Example",
+        "items": [
+            {
+                "label": "Usage",
+                "url": "/components/secondary-nav-example/"
+            },
+            {
+                "label": "Specification",
+                "url": "/components/secondary-nav-example/specs/"
+            }
+        ]
+    }
 ]
