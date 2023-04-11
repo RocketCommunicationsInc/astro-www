@@ -23,10 +23,10 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Attribute                                 | Token                                   | Value                                                                                                                 |
 |:------------------------------------------|:----------------------------------------|:----------------------------------------------------------------------------------------------------------------------|
 | <span class="attr-title">Track (active)</span> |                                         |                                                                                                                       |
-| Border radius                  | slider-radius                 | 3px                                                                                                                |
+| Border radius                  | slider-track-radius                 | 3px                                                                                                                |
 | Height               | slider-track-height-active                 | 4px                                                                                                                |
 | <span class="attr-title">Track (inactive)</span> |                                         |                                                                                                                       |
-| Border radius                  | slider-radius                 | 3px                                                                                                                |
+| Border radius                  | slider-track-radius                 | 3px                                                                                                                |
 | Height               | slider-track-height-inactive                 | 1px                                                                                                                |
 | <span class="attr-title">Tick</span> |                                         |                                                                                                                       |
 | Border radius               | slider-tick-radius                 | 50%                                                                                                                |
@@ -36,7 +36,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Border radius                  | slider-thumb-radius                 | 50%                                                                                                                |
 | Background color               | slider-thumb-color-background                 |  #101923                                                                                                                |
 | Border width               | slider-thumb-border-width                 |  2px                                                                                                                |
-| Border color               | slider-thumb-color-border-default                 |  2px                                                                                                                |
+| Border color               | slider-thumb-color-border-default                 |  #4dacff                                                                                                                |
 :::
 
 ## States
@@ -83,6 +83,6 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Attribute                                 | Token         | Value   |
 |:------------------------------------------|:--------------|:--------|
 | <span class="attr-title">Container</span> |               |         |
-| Outline                                   | focus-outline | 0.5rem  |
-| Outline Offset                            | focus-offset  | 0.75rem |
+| Outline                                   | focus-outline | 1px solid #da9ce7  |
+| Outline Offset                            | focus-offset  | 0.125rem |
 :::
