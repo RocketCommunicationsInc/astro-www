@@ -11,6 +11,11 @@
 	/* Layout */
 	margin-inline-end: 4--step;
 
+	@media (width < 1024px) {
+		/* Layout */
+		margin-inline-end: 0;
+	}
+
 	& .widget-static_content {
 		/* Layout */
 		position: relative;

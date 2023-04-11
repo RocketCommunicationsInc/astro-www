@@ -21,7 +21,7 @@
 		position: absolute;
 	}
 
-	@media (width < 800px) {
+	@media (width < 1024px) {
 		/* Layout */
 		inset-block-end: 0;
 		inset-inline-end: 0;
@@ -71,7 +71,7 @@
 			}
 		}
 
-		@media (width < 800px) {
+		@media (width < 1024px) {
 			/* Layout */
 			inset-block-end: 80px;
 			inset-inline-start: -78px;
@@ -123,7 +123,7 @@
 			border: 1px solid #2f7aa7;
 		}
 
-		@media (width < 800px) {
+		@media (width < 1024px) {
 			/* Animation */
 			transition: width 200ms cubic-bezier(.66, .11, .33, .98);
 

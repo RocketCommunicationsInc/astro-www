@@ -6,7 +6,9 @@ const staticEmailInput: HTMLInputElement = document.querySelector('input[type="e
 const staticTextarea: HTMLTextAreaElement = document.querySelector('textarea#static-user-input')!
 const staticHiddenThumbsUpRadio: HTMLInputElement = document.querySelector('#static-radio_thumbs-up')!
 const staticHiddenThumbsDownRadio: HTMLInputElement = document.querySelector('#static-radio_thumbs-down')!
+const staticUrlInput: HTMLInputElement = document.querySelector('input[type="text"]#static-current-url')!
 const staticWidgetSuccess: HTMLDivElement = document.querySelector('.widget-static_success')!
+const staticWidgetFail: HTMLDivElement = document.querySelector('.widget-static_fail')!
 let staticEmailPopulated: boolean = false
 let staticTextareaPopulated: boolean = false
 let staticRateButtonSelected: boolean = false
@@ -54,15 +56,21 @@ const handleStaticSubmitButtonEnable = () => {
 	}
 }
 
+const handleResetForm = () => {
+	staticTextarea.value = ''
+	staticEmailInput.value = ''
+	staticEmailPopulated = false
+	staticTextareaPopulated = false
+
+	// makes sure rate buttons are deselected when form clears
+	handleRateButtonUncheckAll()
+	// deselct submit button
+	handleStaticSubmitButtonEnable()
+}
+
 const handleClearButton = () => {
 	clearButton.addEventListener('click', () => {
-		staticEmailPopulated = false
-		staticTextareaPopulated = false
-
-		// makes sure rate buttons are deselected when form clears
-		handleRateButtonUncheckAll()
-		// deselct submit button
-		handleStaticSubmitButtonEnable()
+		handleResetForm()
 	})
 }
 
@@ -96,7 +104,7 @@ const handlestaticRateButtonSelected = (button: HTMLButtonElement) => {
 	}
 }
 
-const handleRateButtonClick = () => {
+const handleStaticRateButtonClick = () => {
 	// handle toggling the thumbs up/down buttons on and off, making sure they are mutually exclusive
 	for (const button of staticRateButtons) {
 		button.addEventListener('click', () => {
@@ -106,19 +114,62 @@ const handleRateButtonClick = () => {
 	}
 }
 
-const handlestaticFormSubmit = () => {
+const handleStaticFormSubmit = (event: Event) => {
+	const antenna: SVGElement = staticWidgetSuccess.querySelector('svg')!
+	const animatingElement: NodeListOf<HTMLSpanElement> = staticWidgetSuccess.querySelectorAll('.widget_success-orange-circle span')!
+
 	if (staticFormSubmittable) {
+		// put receiving animation in place, dots animating into antenna
 		staticWidgetSuccess.classList.add('-active')
-		// staticForm.submit()
+
+		const target = event.target as HTMLFormElement
+		let data = {
+			'feedback': staticTextarea.value,
+			'thumbUp': staticHiddenThumbsUpRadio.checked,
+			'thumbDown': staticHiddenThumbsDownRadio.checked,
+			'email': staticEmailInput.value,
+			'pageURL': staticUrlInput.value,
+		}
+		const action = target.action
+		fetch(action, {
+			headers: { 'Content-Type': 'application/json' },
+			method: 'POST',
+			body: JSON.stringify(data),
+		})
+		.then(() => {
+			// on success, make antenna success color, stop receiving animation after brief timeout.
+			setTimeout(() => {
+				antenna.classList.add('success')
+				for (const span of animatingElement) {
+					span.style.animationPlayState = 'paused'
+				}
+			}, 2300)
+
+			// after timeout, remove all success panels and close widget.
+			setTimeout(() => {
+				staticWidgetSuccess.classList.remove('-active')
+				antenna.classList.remove('selected')
+			}, 3200)
+
+			// reset form
+			handleResetForm()
+		}).catch(() => {
+			// on failure display failure panel, remove all panels.
+			staticWidgetFail.classList.add('-active')
+			setTimeout(() => {
+				staticWidgetSuccess.classList.remove('-active')
+				staticWidgetFail.classList.remove('-active')
+			}, 2500)
+		})
 	}
 }
 
 // Setting up all event listeners
-handleRateButtonClick()
+handleStaticRateButtonClick()
 isStaticFormPopulated()
 handleClearButton()
 
 staticForm.addEventListener('submit', (event: SubmitEvent) => {
 	event.preventDefault()
-	handlestaticFormSubmit()
+	handleStaticFormSubmit(event)
 })

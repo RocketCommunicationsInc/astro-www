@@ -172,6 +172,18 @@ const handleRateButtonClick = () => {
 	}
 }
 
+const handleResetForm = () => {
+	textarea.value = ''
+	emailInput.value = ''
+	emailPopulated = false
+	textareaPopulated = false
+
+	// makes sure rate buttons are deselected when form clears
+	handleRateButtonUncheckAll()
+	// deselct submit button
+	handleSubmitButtonEnable()
+}
+
 const handleFormSubmit = (event: Event) => {
 	const antenna: SVGElement = widgetSuccess.querySelector('svg')!
 	const animatingElement: NodeListOf<HTMLSpanElement> = widgetSuccess.querySelectorAll('.widget_success-orange-circle span')!
@@ -179,16 +191,6 @@ const handleFormSubmit = (event: Event) => {
 	if (formSubmittable) {
 		// put receiving animation in place, dots animating into antenna
 		widgetSuccess.classList.add('-active')
-
-		// this part below simulates the success animation
-		// setTimeout(() => {
-		// 	antenna.classList.add('success')
-		// 	for (const span of animatingElement) {
-		// 		span.style.animationIterationCount = '1'
-		// 	}
-		// }, 2800)
-
-		// submit form data
 
 		const target = event.target as HTMLFormElement
 		let data = {
@@ -200,26 +202,27 @@ const handleFormSubmit = (event: Event) => {
 		}
 		const action = target.action
 		fetch(action, {
+			headers: { 'Content-Type': 'application/json' },
 			method: 'POST',
 			body: JSON.stringify(data),
-			mode: 'no-cors',
 		})
-		.then((response) => {
-			// on success, make antenna success color, stop receiving animation.
-			console.log('Request succeeded with JSON response', response)
-			antenna.classList.add('success')
-			for (const span of animatingElement) {
-				span.style.animationPlayState = 'paused'
-			}
+		.then(() => {
+			// on success, make antenna success color, stop receiving animation after brief timeout.
+			setTimeout(() => {
+				antenna.classList.add('success')
+				for (const span of animatingElement) {
+					span.style.animationPlayState = 'paused'
+				}
+			}, 2300)
 
 			// after timeout, remove all success panels and close widget.
 			setTimeout(() => {
 				widgetSuccess.classList.remove('-active')
 				antenna.classList.remove('selected')
+				handleResetForm()
 				showHideWidget()
-			}, 2500)
-		}).catch((error) => {
-			console.log('Request failed', error)
+			}, 3200)
+		}).catch(() => {
 			// on failure display failure panel, remove all panels.
 			widgetFail.classList.add('-active')
 			setTimeout(() => {

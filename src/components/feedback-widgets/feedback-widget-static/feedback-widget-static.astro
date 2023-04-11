@@ -22,10 +22,10 @@ const { currentURL } = Astro.props
 			</div>
 		</div>
 
-		<form method="post" id="static-feedback-form">
+		<form method="post" id="static-feedback-form" action="https://astrouxds-feedback.herokuapp.com/">
 			<input type="radio" id="static-radio_thumbs-up" name="user-feedback-radio" value="thumbs-up">
 			<input type="radio" id="static-radio_thumbs-down" name="user-feedback-radio" value="thumbs-down">
-			<input type="text" id="current-url" class="current-url" name="current-url" value={currentURL}>
+			<input type="text" id="static-current-url" class="current-url" name="static-current-url" value={currentURL}>
 			<textarea id="static-user-input" name="user-feedback" placeholder="Tell us why you gave that rating (optional)"></textarea>
 			<input id="static-user-email" name="user-feedback" type="email" placeholder="Email Address (optional)" />
 			<div class="widget-static_button-group">
