@@ -8,7 +8,7 @@ git: rux-input
 
 ## Anatomy
 <div class="spec-container -anatomy">
-    <figure><img width="270px" src="/img/components/input-field/input-anatomy.png" alt="Anatomy Image"/></figure>
+    <figure><img loading="lazy" width="270px" src="/img/components/input-field/input-anatomy.png" alt="Anatomy Image"/></figure>
     <ol>
         <li>Container</li>
         <li>Label (using “default text”)</li>
@@ -41,11 +41,11 @@ git: rux-input
 ## States
 
 <div class="spec-container -examples">
-    <figure><img width="170" src="/img/components/input-field/input-global-default.png" alt="Default Input Field"/></figure>
-    <figure><img width="170" src="/img/components/input-field/input-global-hover.png" alt="Hover Input Field"/></figure>
-    <figure><img width="170" src="/img/components/input-field/input-global-invalid.png" alt="Invalid Input Field"/></figure>
-    <figure><img width="170" src="/img/components/input-field/input-global-disabled.png" alt="Disabled Input Field"/></figure>
-    <figure><img width="170" src="/img/components/input-field/input-global-focus.png" alt="Focus Input Field"/></figure>
+    <figure><img loading="lazy" width="170" src="/img/components/input-field/input-global-default.png" alt="Default Input Field"/></figure>
+    <figure><img loading="lazy" width="170" src="/img/components/input-field/input-global-hover.png" alt="Hover Input Field"/></figure>
+    <figure><img loading="lazy" width="170" src="/img/components/input-field/input-global-invalid.png" alt="Invalid Input Field"/></figure>
+    <figure><img loading="lazy" width="170" src="/img/components/input-field/input-global-disabled.png" alt="Disabled Input Field"/></figure>
+    <figure><img loading="lazy" width="170" src="/img/components/input-field/input-global-focus.png" alt="Focus Input Field"/></figure>
 </div>
 
 ### Hover
@@ -78,9 +78,9 @@ git: rux-input
 ## Sizes
 
 <div class="spec-container -examples">
-    <figure><img width="170" src="/img/components/input-field/input-size-small.png" alt="Input Size Small"/></figure>
-    <figure><img width="170" src="/img/components/input-field/input-size-medium.png" alt="Input Size Medium"/></figure>
-    <figure><img width="170" src="/img/components/input-field/input-size-large.png" alt="Input Size Large"/></figure>
+    <figure><img loading="lazy" width="170" src="/img/components/input-field/input-size-small.png" alt="Input Size Small"/></figure>
+    <figure><img loading="lazy" width="170" src="/img/components/input-field/input-size-medium.png" alt="Input Size Medium"/></figure>
+    <figure><img loading="lazy" width="170" src="/img/components/input-field/input-size-large.png" alt="Input Size Large"/></figure>
 </div>
 
 ### Small
@@ -105,7 +105,7 @@ git: rux-input
 
 ## Variants
 <div class="spec-container -examples">
-    <figure><img width="170" src="/img/components/input-field/input-placeholder.png" alt="Input Placeholder"/></figure>
+    <figure><img loading="lazy" width="170" src="/img/components/input-field/input-placeholder.png" alt="Input Placeholder"/></figure>
 </div>
 
 ### Placeholder Text
@@ -118,7 +118,7 @@ git: rux-input
 :::
 
 <div class="spec-container -examples">
-    <figure><img width="170" src="/img/components/input-field/input-type-search.png" alt="Search Input"/></figure>
+    <figure><img loading="lazy" width="170" src="/img/components/input-field/input-type-search.png" alt="Search Input"/></figure>
 </div>
 
 ### With Prefix
@@ -133,8 +133,8 @@ git: rux-input
 :::
 
 <div class="spec-container -examples">
-    <figure><img width="170" src="/img/components/input-field/input-type-password.png" alt="Password Input"/></figure>
-    <figure><img width="170" src="/img/components/input-field/input-type-number.png" alt="Number Input"/></figure>
+    <figure><img loading="lazy" width="170" src="/img/components/input-field/input-type-password.png" alt="Password Input"/></figure>
+    <figure><img loading="lazy" width="170" src="/img/components/input-field/input-type-number.png" alt="Number Input"/></figure>
 </div>
 
 ### With Suffix

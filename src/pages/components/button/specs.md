@@ -6,7 +6,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 ## Anatomy
 
 <div class="spec-container -anatomy">
-    <figure><img width="350px" src="/img/components/button/button-anatomy.png" alt="Anatomy Image"/></figure>
+    <figure><img loading="lazy" width="350px" src="/img/components/button/button-anatomy.png" alt="Anatomy Image"/></figure>
     <ol>
         <li>Container</li>
         <li>Left icon (optional)</li>
@@ -44,9 +44,9 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 ### Primary
 
 <div class="spec-container -examples">
-    <figure><img width="139" src="/img/components/button/button-primary-medium-default.png" alt="Default Primary Button"/></figure>
-    <figure><img width="139" src="/img/components/button/button-primary-medium-hover.png" alt="Primary Button with Hover State"/></figure>
-    <figure><img width="139" src="/img/components/button/button-primary-medium-disabled.png" alt="Disabled Primary Button"/></figure>
+    <figure><img loading="lazy" width="139" src="/img/components/button/button-primary-medium-default.png" alt="Default Primary Button"/></figure>
+    <figure><img loading="lazy" width="139" src="/img/components/button/button-primary-medium-hover.png" alt="Primary Button with Hover State"/></figure>
+    <figure><img loading="lazy" width="139" src="/img/components/button/button-primary-medium-disabled.png" alt="Disabled Primary Button"/></figure>
 </div>
 
 #### Default
@@ -85,9 +85,9 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 ### Secondary
 
 <div class="spec-container -examples">
-    <figure><img width="139" src="/img/components/button/button-secondary-medium-default.png" alt="Default Secondary Button"/></figure>
-    <figure><img width="139" src="/img/components/button/button-secondary-medium-hover.png" alt="Secondary Button with Hover State"/></figure>
-    <figure><img width="139" src="/img/components/button/button-secondary-medium-disabled.png" alt="Disabled Secondary Button"/></figure>
+    <figure><img loading="lazy" width="139" src="/img/components/button/button-secondary-medium-default.png" alt="Default Secondary Button"/></figure>
+    <figure><img loading="lazy" width="139" src="/img/components/button/button-secondary-medium-hover.png" alt="Secondary Button with Hover State"/></figure>
+    <figure><img loading="lazy" width="139" src="/img/components/button/button-secondary-medium-disabled.png" alt="Disabled Secondary Button"/></figure>
 </div>
 
 #### Default
@@ -130,9 +130,9 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 ### Borderless
 
 <div class="spec-container -examples">
-    <figure><img width="139" src="/img/components/button/button-borderless-medium-default.png" alt="Default Borderless Button"/></figure>
-    <figure><img width="139" src="/img/components/button/button-borderless-medium-hover.png" alt="Borderless Button with Hover State"/></figure>
-    <figure><img width="139" src="/img/components/button/button-borderless-medium-disabled.png" alt="Disabled Borderless Button"/></figure>
+    <figure><img loading="lazy" width="139" src="/img/components/button/button-borderless-medium-default.png" alt="Default Borderless Button"/></figure>
+    <figure><img loading="lazy" width="139" src="/img/components/button/button-borderless-medium-hover.png" alt="Borderless Button with Hover State"/></figure>
+    <figure><img loading="lazy" width="139" src="/img/components/button/button-borderless-medium-disabled.png" alt="Disabled Borderless Button"/></figure>
 </div>
 
 #### Default
@@ -172,9 +172,9 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 ## Sizes
 
 <div class="spec-container -examples">
-    <figure><img width="170" src="/img/components/button/button-primary-small-default.png" alt="Small Primary Button"/></figure>
-    <figure><img width="170" src="/img/components/button/button-primary-medium-default.png" alt="Medium Primary Button"/></figure>
-    <figure><img width="170" src="/img/components/button/button-primary-large-default.png" alt="Large Primary Button"/></figure>
+    <figure><img loading="lazy" width="170" src="/img/components/button/button-primary-small-default.png" alt="Small Primary Button"/></figure>
+    <figure><img loading="lazy" width="170" src="/img/components/button/button-primary-medium-default.png" alt="Medium Primary Button"/></figure>
+    <figure><img loading="lazy" width="170" src="/img/components/button/button-primary-large-default.png" alt="Large Primary Button"/></figure>
 </div>
 
 ### Small
@@ -210,9 +210,9 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 ## Icon Only
 
 <div class="spec-container -examples">
-    <figure><img width="42" src="/img/components/button/button-primary-small-default-icon-only.png" alt="Small Icon Only Primary Button"/></figure>
-    <figure><img width="60" src="/img/components/button/button-primary-medium-default-icon-only.png" alt="Medium Icon Only Primary Button"/></figure>
-    <figure><img width="44" src="/img/components/button/button-primary-large-default-icon-only.png" alt="Large Icon Only Primary Button"/></figure>
+    <figure><img loading="lazy" width="42" src="/img/components/button/button-primary-small-default-icon-only.png" alt="Small Icon Only Primary Button"/></figure>
+    <figure><img loading="lazy" width="60" src="/img/components/button/button-primary-medium-default-icon-only.png" alt="Medium Icon Only Primary Button"/></figure>
+    <figure><img loading="lazy" width="44" src="/img/components/button/button-primary-large-default-icon-only.png" alt="Large Icon Only Primary Button"/></figure>
 </div>
 
 ### Small
@@ -248,7 +248,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 ### Focus
 
 <div class="spec-container -examples">
-    <figure><img width="139" src="/img/components/button/button-primary-medium-focus.png" alt="Primary Button with Focus State"/></figure>
+    <figure><img loading="lazy" width="139" src="/img/components/button/button-primary-medium-focus.png" alt="Primary Button with Focus State"/></figure>
 </div>
 
 :::table-overflow
