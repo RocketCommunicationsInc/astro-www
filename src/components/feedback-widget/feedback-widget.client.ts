@@ -9,6 +9,7 @@ const emailInput: HTMLInputElement = document.querySelector('input[type="email"]
 const textarea: HTMLTextAreaElement = document.querySelector('textarea#user-input')!
 const hiddenThumbsUpRadio: HTMLInputElement = document.querySelector('#radio_thumbs-up')!
 const hiddenThumbsDownRadio: HTMLInputElement = document.querySelector('#radio_thumbs-down')!
+const urlInput: HTMLInputElement = document.querySelector('input[type="text"]#current-url')!
 const widgetSuccess: HTMLDivElement = document.querySelector('.widget_success')!
 const widgetFail: HTMLDivElement = document.querySelector('.widget_fail')!
 let emailPopulated: boolean = false
@@ -190,17 +191,22 @@ const handleFormSubmit = (event: Event) => {
 		// submit form data
 
 		const target = event.target as HTMLFormElement
-		const data = new FormData(form)
+		let data = {
+			'feedback': textarea.value,
+			'thumbUp': hiddenThumbsUpRadio.checked,
+			'thumbDown': hiddenThumbsDownRadio.checked,
+			'email': emailInput.value,
+			'pageURL': urlInput.value,
+		}
 		const action = target.action
 		fetch(action, {
 			method: 'POST',
-			body: data,
-			headers: {
-				'Access-Control-Allow-Origin': 'https://astrouxds-feedback.herokuapp.com/',
-			},
+			body: JSON.stringify(data),
+			mode: 'no-cors',
 		})
-		.then(() => {
-			// on success, make antenna success color, stop receiving animation, add in success text.
+		.then((response) => {
+			// on success, make antenna success color, stop receiving animation.
+			console.log('Request succeeded with JSON response', response)
 			antenna.classList.add('success')
 			for (const span of animatingElement) {
 				span.style.animationPlayState = 'paused'
@@ -212,7 +218,11 @@ const handleFormSubmit = (event: Event) => {
 				antenna.classList.remove('selected')
 				showHideWidget()
 			}, 2500)
-		}).catch(() => {
+			return response.json()
+		}).then((data) => {
+			console.log(data)
+		}).catch((error) => {
+			console.log('Request failed', error)
 			// on failure display failure panel, remove all panels.
 			widgetFail.classList.add('-active')
 			setTimeout(() => {
@@ -222,7 +232,7 @@ const handleFormSubmit = (event: Event) => {
 		})
 
 		// might not need to do this
-		// staticForm.submit()
+		form.submit()
 	}
 }
 
