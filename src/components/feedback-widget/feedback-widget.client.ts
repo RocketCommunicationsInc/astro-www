@@ -218,9 +218,6 @@ const handleFormSubmit = (event: Event) => {
 				antenna.classList.remove('selected')
 				showHideWidget()
 			}, 2500)
-			return response.json()
-		}).then((data) => {
-			console.log(data)
 		}).catch((error) => {
 			console.log('Request failed', error)
 			// on failure display failure panel, remove all panels.
