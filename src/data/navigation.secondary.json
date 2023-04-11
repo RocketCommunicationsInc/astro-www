@@ -26,5 +26,19 @@
 				"url": "/components/button/specs/"
 			}
 		]
+	},
+	{
+		"heading": "Secondary Nav Example",
+		"description": "This is the nav for the nav example",
+		"items": [
+			{
+				"label": "Usage",
+				"url": "/components/secondary-nav-example/"
+			},
+			{
+				"label": "Specification",
+				"url": "/components/secondary-nav-example/specs/"
+			}
+		]
 	}
 ]
