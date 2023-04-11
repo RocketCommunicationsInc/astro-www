@@ -1,16 +1,18 @@
 ---
 title: Button
+description: Action Buttons allow users to trigger actions by clicking, tapping, or pressing a corresponding key on a keyboard, such as the “Enter” key.
 layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-button--all-variants
 height: 300px
 git: rux-button
+assets:
+    name: Button
 ---
-
-# Button
+## Interactive Example
 
 ::storybook-demo
 
-Action Buttons allow users to trigger actions by clicking, tapping, or pressing a corresponding key on a keyboard, such as the “Enter” key.
+<!-- Action Buttons allow users to trigger actions by clicking, tapping, or pressing a corresponding key on a keyboard, such as the “Enter” key. -->
 
 ## Rules of Thumb
 
@@ -22,7 +24,7 @@ Action Buttons allow users to trigger actions by clicking, tapping, or pressing 
 - Resize Button width to accommodate the title; do not abbreviate or truncate Button titles.
 - Don’t use an outside label to introduce a Button. Instead, clearly title the Button.
 - Add an ellipsis (…) to the Button title if it opens another window, Dialog, or app.
-- When using an ellipsis (…), don’t use sentence fragments or leading commands. 
+- When using an ellipsis (…), don’t use sentence fragments or leading commands.
 - It is recommended that actions should not be truncated with an ellipsis (…). However, if you must use ellipses for both truncation and to indicate further action is needed, add additional space after the ellipsis for those that require further action in order to clarify that they are not truncated.
 - In Button groups, the primary Button with the preferred user action shall be placed on the right and all Buttons with secondary actions to the left of the preferred action Button.
 - Position Buttons consistently across the application. Unless there is a good reason not to, right-align Buttons in Astro applications.

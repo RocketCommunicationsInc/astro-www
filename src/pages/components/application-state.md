@@ -1,6 +1,8 @@
 ---
 title: Application State
 layout: project:layouts/docs/docs-layout.astro
+assets:
+    name: Application State
 ---
 
 # Application State

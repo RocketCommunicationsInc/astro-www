@@ -1,7 +1,7 @@
 ---
 import { For, When } from '@astropub/flow'
 import SiteSearch from 'project:components/site-search/site-search.astro'
-import * as navigation from './server/createCurrentPage'
+import * as navigation from './server/currentPath.ts'
 import './site-navigation.css'
 
 const current = navigation.intialize(Astro.url.pathname.replace(/\/?$/, '/'))
@@ -36,7 +36,7 @@ import './client/h-navigation-list.js'
 							<span>{item.label}</span>
 
 							<ul>
-								<For of={item.items!}>{subitem => (
+								<For of={item.items}>{subitem => (
 									<When test={subitem.label === 'separator'}>
 										<hr />
 

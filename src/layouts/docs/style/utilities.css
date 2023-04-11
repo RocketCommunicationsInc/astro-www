@@ -7,8 +7,10 @@
 
 	& table {
 		/* Layout */
-		min-width: auto;
-		width: 100%;
+		inline-size: 100%;
+
+		/* Layout */
+		min-inline-size: auto;
 	}
 }
 
@@ -21,8 +23,10 @@
 
 	& table {
 		/* Layout */
-		min-width: auto;
-		width: 100%;
+		inline-size: 100%;
+
+		/* Layout */
+		min-inline-size: auto;
 
 		& td {
 			/* Text */
@@ -32,9 +36,11 @@
 
 	& .status-color {
 		/* Layout */
+		block-size: 16--step;
+
+		/* Layout */
 		box-sizing: border-box;
-		height: 16--step;
-		width: 16--step;
+		inline-size: 16--step;
 
 		/* Appearance */
 		background: transparent;
@@ -78,7 +84,7 @@
 	flex-flow: column;
 	justify-content: center;
 	margin-block-start: 4--step;
-	min-height: 18--step;
+	min-block-size: 18--step;
 	padding-block: 4--step;
 	padding-inline: 16--step 4--step;
 

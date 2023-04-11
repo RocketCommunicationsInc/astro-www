@@ -14,7 +14,7 @@
 	/* Animation */
 	transition: inline-size 200ms;
 
-	@media (width < 800px) {
+	@media (width < 1024px) {
 		display: grid;
 
 		/* Layout */
@@ -25,7 +25,7 @@
 		padding-inline: 9--step;
 	}
 
-	@media (width >= 800px) {
+	@media (width >= 1024px) {
 		/* Layout */
 		block-size: min(100%, 100vh);
 		inline-size: 78--step;
@@ -48,7 +48,7 @@
 
 		&::-webkit-scrollbar {
 			/* Layout */
-			width: 0;
+			inline-size: 0;
 		}
 
 		&.-has-results {
@@ -58,7 +58,7 @@
 	}
 }
 
-@media (width < 800px) {
+@media (width < 1024px) {
 	.p-navigation-heading {
 		display: flex;
 
@@ -82,7 +82,7 @@
 	}
 
 	&:hover, &:focus {
-		@media (width >= 800px) {
+		@media (width >= 1024px) {
 			outline-offset: 2--step;
 		}
 
@@ -97,7 +97,7 @@
 	aspect-ratio: 134 / 56;
 	block-size: 14--step;
 
-	@media (width < 800px) {
+	@media (width < 1024px) {
 		/* Layout */
 		block-size: 11--step;
 	}
@@ -111,7 +111,7 @@
 	margin-block-start: 7--step;
 	padding-inline: 11--step;
 
-	@media (width < 800px) {
+	@media (width < 1024px) {
 		display: none;
 	}
 }

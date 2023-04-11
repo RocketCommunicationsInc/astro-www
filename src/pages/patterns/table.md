@@ -1,12 +1,12 @@
 ---
+title: Table
 tags: components
 path: /patterns/table
 date: Last Modified
-layout: project:layouts/docs/docs-layout.astro
-title: Table
+layout: project:layouts/component-docs/component-docs-layout.astro
+assets:
+    name: Table
 ---
-
-# Tables
 
 ## Appearance and Behavior
 

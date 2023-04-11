@@ -58,7 +58,7 @@
 	}
 
 	& .x-card {
-		@media (width < 800px) {
+		@media (width < 1024px) {
 			--padding-block: 6--step;
 			--padding-inline: 5--step;
 		}

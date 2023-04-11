@@ -10,6 +10,4 @@ interface Icons {
 	}
 }
 
-declare const icons: Icons
-
-export default icons
+export default null as Icons

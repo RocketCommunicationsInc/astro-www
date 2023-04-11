@@ -1,16 +1,19 @@
 ---
 title: Input Field
+description: Input Fields allow users to enter freeform text. Variations on this field often provide specific data entry formats such as masked data (e.g. passwords or phone numbers), date and time, and numeric data entry.
 layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: forms-input--types
 height: 400px
 git: rux-input
+assets:
+    name: Input Field
 ---
 
-# Input Field
+## Interactive Example
 
 ::storybook-demo
 
-Input Fields allow users to enter freeform text. Variations on this field often provide specific data entry formats such as masked data (e.g. passwords or phone numbers), date and time, and numeric data entry.
+<!-- Input Fields allow users to enter freeform text. Variations on this field often provide specific data entry formats such as masked data (e.g. passwords or phone numbers), date and time, and numeric data entry. -->
 
 ## Rules of Thumb
 
@@ -41,8 +44,8 @@ Input Fields have a smaller variant which may be beneficial in layouts where spa
 ## Examples
 
 :::two-col
-![Do: Design a well organized Form with logical, clearly labeled groupings.](/img/components/input-fields-do-1.png "Do: Design a well organized Form with logical, clearly labeled groupings.")
+![Do: Design a well organized Form with logical, clearly labeled groupings.](/img/components/input-field/input-fields-do-1.png "Do: Design a well organized Form with logical, clearly labeled groupings.")
 
-![Don’t: Design a long Form without labels, splits, or groupings.](/img/components/input-fields-dont-1.png "Don’t: Design a long Form without labels, splits, or groupings.")
+![Don’t: Design a long Form without labels, splits, or groupings.](/img/components/input-field/input-fields-dont-1.png "Don’t: Design a long Form without labels, splits, or groupings.")
 
 :::

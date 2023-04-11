@@ -69,12 +69,12 @@ svg {
 .content {
 	&.open {
 		/* Layout */
-		height: auto;
+		block-size: auto;
 	}
 
 	&:not(.open) {
 		/* Layout */
-		height: 0;
+		block-size: 0;
 		overflow: hidden;
 
 		/* Animation */

@@ -1,16 +1,19 @@
 ---
 title: Pop Up
+description: Typically invoked upon clicking an identifiable interactive element, a Pop Up contains a curated set of common actions, display controls, rich data, or imagery associated with the interactive element.
 layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-pop-up--default-story
 height: 250px
 git: rux-pop-up
+assets:
+    name: Pop Up
 ---
 
-# Pop Up
+## Interactive Example
 
 ::storybook-demo
 
-Typically invoked upon clicking an identifiable interactive element, a Pop Up contains a curated set of common actions, display controls, rich data, or imagery associated with the interactive element.
+<!-- Typically invoked upon clicking an identifiable interactive element, a Pop Up contains a curated set of common actions, display controls, rich data, or imagery associated with the interactive element. -->
 
 
 ## Appearance and Behavior
@@ -25,10 +28,10 @@ All interactable items (e.g. menu items, links, buttons, checkboxes) appearing w
 
 ## Rules of Thumb
 
-- Avoid loading the container with too many interactions or data. 
+- Avoid loading the container with too many interactions or data.
 - Aim to provide the user with a quick, easy to operate mechanism for executing focused, contextual actions.
-- Keep explanatory text to a minimum. If more extensive instruction is required, consider providing a link to a dedicated help page. 
-- Use when you need to display information with formatting that a tooltip cannot provide. 
+- Keep explanatory text to a minimum. If more extensive instruction is required, consider providing a link to a dedicated help page.
+- Use when you need to display information with formatting that a tooltip cannot provide.
 
 ## Examples
 

@@ -1,6 +1,8 @@
 ---
 title: Link
-layout: project:layouts/docs/docs-layout.astro
+layout: project:layouts/component-docs/component-docs-layout.astro
+assets:
+    name: Link
 ---
 # Link
 

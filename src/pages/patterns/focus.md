@@ -1,12 +1,12 @@
 ---
+title: Focus State
 tags: resources
 path: /patterns/focus
 date: Last Modified
-layout: project:layouts/docs/docs-layout.astro
-title: Focus State
+layout: project:layouts/component-docs/component-docs-layout.astro
+assets:
+    name: Focus State
 ---
-
-# Focus State
 
 Focus State communicates when a user has engaged or highlighted an interactive component by using a keyboard or voice command. Focus States enable a better experience for users with visual or motor impairments and those who prefer keyboard and voice control to navigate through an application.
 

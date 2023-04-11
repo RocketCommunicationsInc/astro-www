@@ -1,12 +1,12 @@
 ---
+title: Forms and Validation
 tags: components
 path: /patterns/forms-and-validation
 date: Last Modified
-layout: project:layouts/docs/docs-layout.astro
-title: Forms and Validation
+layout: project:layouts/component-docs/component-docs-layout.astro
+assets:
+    name: Forms and Validation
 ---
-
-## Forms
 
 Forms are used to collect, validate, and submit user input. They usually contains form elements including [Checkbox](/components/checkbox), [Dialog](/components/dialog), [Select Menu](/components/select), [Input Field](/components/input-field), [Radio Button](/components/radio-button) and [Switch](/components/switch).
 

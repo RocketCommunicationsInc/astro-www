@@ -1,16 +1,19 @@
 ---
 title: Log
+description: A Log is a tabular representation of application events and may include username, priority, equipment type, signal type, etc. As part of the Notification System, Logs provide sorting and filtering function for examining events.
 layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-log--log
 height: 380px
 git: rux-log
+assets:
+    name: Log
 ---
 
-# Log
+## Interactive Example
 
 ::storybook-demo
 
-A Log is a tabular representation of application events and may include username, priority, equipment type, signal type, etc. As part of the Notification System, Logs provide sorting and filtering function for examining events.
+<!-- A Log is a tabular representation of application events and may include username, priority, equipment type, signal type, etc. As part of the Notification System, Logs provide sorting and filtering function for examining events. -->
 
 ## Rules of Thumb
 

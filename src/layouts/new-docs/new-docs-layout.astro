@@ -1,34 +1,41 @@
 ---
-import type { MarkdownContent } from 'astro'
+import type { Props as DocProps } from '@astropub/doc'
 
-import Layout from 'project:layouts/default/default-layout.astro';
+import Layout from 'project:layouts/default/default-layout.astro'
 import SiteSkipTo from 'project:components/site-skipto/site-skipto.astro'
-import PageAside from 'project:components/page-aside/page-aside.astro'
 
 import './new-docs-layout.css'
 
-const {
-	title,
-} = Object<MarkdownContent<{
-	title: string
-}>>(Astro.props.content)
+export interface Props extends DocProps {
+	content: {
+		title: string
+		subtitle?: string
+	}
+	file?: string
+}
+
+const { content } = Astro.props
+const title = content.subtitle ? `${content.title} ${content.subtitle}` : content.title
+const tabTitle = content.title
 ---
-<Layout title={title} tabtitle={title}>
+<Layout title={title} tabtitle={tabTitle}>
 	<SiteSkipTo slot="top" />
+
 	<main class="page" id="content">
 		<slot name="header" />
+
 		<div class="page-toolbar">
 			<slot name="toolbar" />
 		</div>
+
 		<div class="page-content">
 			<div class="page-content-main-col">
 				<slot />
 			</div>
+
 			<aside class="page-content-side-col" id="aside">
 				<div class="-content">
-					<slot name="aside">
-						<PageAside />
-					</slot>
+					<slot name="aside" />
 				</div>
 			</aside>
 		</div>

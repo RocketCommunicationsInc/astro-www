@@ -8,7 +8,7 @@ export default defineConfig({
 	site: 'https://www.astrouxds.com/',
 	trailingSlash: 'always',
 	markdown: {
-		remarkPlugins: remarkPlugins()
+		remarkPlugins: remarkPlugins(),
 	},
 	server: {
 		host: true,
