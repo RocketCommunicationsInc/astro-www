@@ -1,30 +1,16 @@
 import * as DOM from 'project:utils/client/DOM.ts'
-import cssText from './ComponentPlayground.Main.css?raw'
+import styling from './ComponentPlayground.Main.css?withtype=style'
+import content from './ComponentPlayground.Main.html?withtype=fragment'
 
-import PlaygroundThemeToggle from './ComponentPlayground.Toggle.ts'
+import './ComponentPlayground.Toggle.ts'
 
-console.log(
-	new DOM.Fragment(
-		new DOM.HTML('span', { part: 'heading' },
-			new PlaygroundThemeToggle()
-		),
-		new DOM.HTML('slot', { part: 'content' })
-	)
-)
-
-export default class Playground extends DOM.HTML({
+export default DOM.elementOf({
+	define: 'a-playground',
 	shadow: {
 		mode: 'open',
-		root: new DOM.Fragment(
-			new DOM.HTML('span', { part: 'heading' },
-				new PlaygroundThemeToggle()
-			),
-			new DOM.HTML('slot', { part: 'content' })
-		),
 	},
 	styles: [
-		new DOM.CSS(cssText),
+		styling,
 	],
-}) {}
-
-customElements.define('a-playground', Playground)
+	append: content,
+})

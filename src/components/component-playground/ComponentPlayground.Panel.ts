@@ -1,29 +1,25 @@
 import * as DOM from 'project:utils/client/DOM.ts'
-import cssText from './ComponentPlayground.Panel.css?raw'
+import styling from './ComponentPlayground.Panel.css?withtype=style'
+import content from './ComponentPlayground.Panel.html?withtype=fragment'
 
-export default class PlaygroundPanel extends DOM.HTML({
+export default DOM.elementOf({
+	define: 'a-playground-panel',
 	shadow: {
 		mode: 'open',
-		root: new DOM.Fragment(
-			new DOM.HTML('slot', { part: 'heading', name: 'heading' }),
-			new DOM.HTML('slot', { part: 'content' })
-		)
 	},
 	styles: [
-		new DOM.CSS(cssText),
+		styling,
 	],
-}) {
-	connectedCallback() {
-		const slot = this.shadowRoot.querySelector<HTMLSlotElement>(DOM.getTokenSelector('part', 'heading'))!
+	append: content,
+	mutate: {
+		attributes: true,
+		callback() {
+			const slot = DOM.part<HTMLSlotElement>(this.shadowRoot, 'heading')!
+			const label = DOM.attr(this, 'label')
 
-		slot.append(
-			new DOM.Text(
-				DOM.getAttr(this, 'label') as string
-			)
-		)
-	}
-
-	declare shadowRoot: ShadowRoot
-}
-
-customElements.define('a-playground-panel', PlaygroundPanel)
+			if (label !== null) {
+				slot.replaceChildren(label)
+			}
+		},
+	},
+})

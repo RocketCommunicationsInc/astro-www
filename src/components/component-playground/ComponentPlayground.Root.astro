@@ -16,16 +16,15 @@ import Main from './ComponentPlayground.Main.astro'
 			</Main>
 		</section>
 
-		<section class="control-area">
-			<Panelset>
-				{Astro.slots.has('variants')
-					? <Panel label="Variants"><slot name="variants" /></Panel>
-				: null}
-				{Astro.slots.has('controls')
-					? <Panel label="Properties"><slot name="controls" /></Panel>
-				: null}
-			</Panelset>
-		</section>
+		<section class="control-area"><Panelset>{
+			Astro.slots.has('variants')
+				? <Panel label="Variants"><slot name="variants" /></Panel>
+			: null
+		}{
+			Astro.slots.has('controls')
+				? <Panel label="Properties"><slot name="controls" /></Panel>
+			: null
+		}</Panelset></section>
 	</body>
 </html>
 
@@ -108,14 +107,19 @@ import Main from './ComponentPlayground.Main.astro'
 
 /* Application */
 
-html {
-	/* Layout */
-	block-size: 100%;
-	overflow: hidden;
+:root {
+	@media (width <= 700px) {
+		/* Reference */
+		--max-height: 500px;
+	}
+
+	@media (width > 700px) {
+		/* Reference */
+		--max-height: 400px;
+	}
 }
 
 body {
-	block-size: calc(100% - 2px);
 	margin: 1px;
 }
 
@@ -123,7 +127,7 @@ body {
 	display: grid;
 
 	/* Layout */
-	grid-template-columns: 1fr 54--step;
+	overflow: hidden;
 
 	/* Text */
 	font: 100%/1.5 system-ui;
@@ -136,39 +140,77 @@ body {
 	--EdgeColor: var(--Grey600Color);
 	--EdgeRadius: 6px;
 
+	@media (width <= 700px) {
+		/* Layout */
+		grid-template-rows: 68--step auto;
+	}
+
+	@media (width > 700px) {
+		/* Layout */
+		grid-template-columns: auto 54--step;
+	}
+
 	& .sandbox-area,
 	& .control-area {
+		display: grid;
+
+		/* Layout */
+		block-size: 100%;
+		grid-auto-rows: auto;
 		overflow: hidden;
+		padding-inline-start: 1px;
 	}
 
 	& .sandbox-area {
-		display: grid;
-
-		/* Layout */
-		block-size: 100%;
-		grid-auto-rows: auto;
-		overflow: hidden;
-		padding-inline-start: 1px;
-
-		/* Appearance */
-		border-end-start-radius: var(--EdgeRadius);
-		border-start-start-radius: var(--EdgeRadius);
+		@media (width >= 700px) {
+			/* Appearance */
+			border-end-start-radius: var(--EdgeRadius);
+			border-start-start-radius: var(--EdgeRadius);
+		}
 	}
 
 	& .control-area {
-		display: grid;
+		max-block-size: var(--max-height);
 
-		/* Layout */
-		block-size: 100%;
-		grid-auto-rows: auto;
-		overflow: hidden;
-		padding-inline-start: 1px;
+		@media (width >= 700px) {
+			/* Appearance */
+			box-shadow: var(--EdgeColor) var(--EdgeSize) 0 0 0 inset;
+		}
 
-		/* Appearance */
-		border-end-end-radius: var(--EdgeRadius);
-		border-start-end-radius: var(--EdgeRadius);
-		box-shadow: var(--EdgeColor) var(--EdgeSize) 0 0 0 inset;
+		@media (width >= 700px) {
+			/* Appearance */
+			border-end-end-radius: var(--EdgeRadius);
+			border-start-end-radius: var(--EdgeRadius);
+			box-shadow: var(--EdgeColor) var(--EdgeSize) 0 0 0 inset;
+		}
 	}
 }
 
 </style>
+<script>
+const resize = () => requestAnimationFrame(() => {
+	const { height } = document.body.getBoundingClientRect()
+	const newIframeHeight = `${height + 2}px`
+
+	if (iframeHeight !== newIframeHeight) {
+		iframe.style.setProperty('--y', iframeHeight = newIframeHeight)
+	}
+})
+
+const iframe = window.parent.document.querySelector('.c-sandbox')! as HTMLIFrameElement
+
+let iframeHeight = ''
+
+visualViewport.addEventListener('resize', resize, { capture: true })
+
+addEventListener('load', resize)
+
+const { define } = CustomElementRegistry.prototype
+
+Object.assign(CustomElementRegistry.prototype, {
+	define(name: string, constructor: CustomElementConstructor) {
+		define.call(this, name, constructor)
+		resize()
+	}
+})
+</script>

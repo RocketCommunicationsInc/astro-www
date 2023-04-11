@@ -1,10 +1,10 @@
 import * as DOM from 'project:utils/client/DOM.ts'
+import styling from './ComponentPlayground.Panelset.css?withtype=style'
+import content from './ComponentPlayground.Panelset.html?withtype=fragment'
 
-export default class PlaygroundPanelSet extends DOM.HTML({
-	shadow: {
-		mode: 'open',
-		root: new DOM.HTML('slot'),
-	},
-}) {}
-
-customElements.define('a-playground-panelset', PlaygroundPanelSet)
+export default DOM.elementOf({
+	define: 'a-playground-panelset',
+	shadow: { mode: 'open' },
+	styles: [ styling ],
+	append: content,
+})

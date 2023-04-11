@@ -1,4 +1,3 @@
-let changeMap: Record<string, string> = { attributes: 'dom:attribute', childList: 'dom:children' }
 let __proto__ = '__proto__'
 let prototype = 'prototype'
 
@@ -7,10 +6,9 @@ export let getTokenSelector = (
 	parts: string
 ) => parts.trim().split(/\s+/).map(part => `[${token}~="${part}"]`).join(',')
 
-export let getAttr = (element: Element, name: string) => (
-	name = element.getAttribute(name) as string,
-	name === null ? false : name === '' ? true : name
-)
+export let attr = (element: Element, name: string) => element.getAttribute(name)
+export let token = <T extends Element>(parent: ParentNode, type: string, name: string) => parent.querySelector<T>(getTokenSelector(type, name))
+export let part = <T extends Element>(parent: ParentNode, name: string) => token<T>(parent, 'part', name)
 
 export let setAttr = <T>(
 	element: T & Element,
@@ -85,35 +83,7 @@ let __createElementClass = <T extends Element>(Super: abstract new () => T, xmln
 
 			return Reflect.construct(HTMLElement, arguments, new.target)
 		} else {
-			return class extends HTMLElement {
-				constructor() {
-					const host: this = super()!
-
-					if (opts.shadow !== undefined) {
-						const root = host.attachShadow(opts.shadow)
-
-						if (__isAppendable(opts.shadow.root)) {
-							root.append(opts.shadow.root.cloneNode(true))
-						}
-
-						if (Array.isArray(opts.styles)) {
-							root.adoptedStyleSheets = opts.styles
-						}
-					}
-
-					if (opts.observe !== undefined) {
-						new MutationObserver(records => {
-							for (const { target, type, ...record } of records) {
-								target.dispatchEvent(
-									Object.assign(
-										new Event(changeMap[type]), record
-									)
-								)
-							}
-						}).observe(host, opts.observe)
-					}
-				}
-			}
+			return elementOf(opts)
 		}
 	}
 
@@ -134,7 +104,70 @@ export let HTML = __createElementClass(HTMLElement, '1999/xhtml')
 export let MathML = __createElementClass(MathMLElement, '1998/Math/MathML')
 export let SVG = __createElementClass(SVGElement, '2000/svg')
 
+export let define = <T>(name: string, constructor: T & CustomElementConstructor, options?: ElementDefinitionOptions): T => (
+	customElements.define(name, constructor, options),
+	constructor
+)
+
+export let elementOf = (opts: ReflectConfig) => {
+	class Element extends HTMLElement {
+		constructor() {
+			const host: this = super()!
+
+			if (opts.shadow !== undefined) {
+				const root = host.attachShadow(opts.shadow)
+
+				if (__isAppendable(opts.append)) {
+					root.append(opts.append.cloneNode(true))
+				}
+
+				if (Array.isArray(opts.styles)) {
+					root.adoptedStyleSheets = opts.styles
+				}
+			}
+
+			if (opts.mutate !== undefined) {
+				const callback = opts.mutate.callback.bind(host as CustomElement)
+				new MutationObserver(callback).observe(host, opts.mutate)
+
+				const { attributes: [ ...attributes ], childNodes } = host
+
+				callback([
+					...attributes.map(
+						attr => ({
+							type: 'attributes',
+							addedNodes: nodes,
+							attributeName: attr.name,
+							attributeNamespace: attr.namespaceURI,
+							nextSibling: null,
+							oldValue: null,
+							previousSibling: null,
+							removedNodes: nodes,
+							target: host
+						}) as MutationRecord
+					),
+					{
+						type: 'childList',
+						addedNodes: childNodes,
+						attributeName: null,
+						attributeNamespace: null,
+						nextSibling: null,
+						oldValue: null,
+						previousSibling: null,
+						removedNodes: nodes,
+						target: host
+					} as MutationRecord
+				])
+			}
+		}
+	}
+
+	return opts.define ? define(opts.define, Element) : Element
+}
+
 type ElementClass = (opts: ReflectConfig, ...args: any[]) => Element
+
+const nodes = new DocumentFragment().childNodes
 
 export const Text = globalThis.Text
 
@@ -156,21 +189,29 @@ export interface ReflectElement<T> {
 }
 
 export interface ReflectConfig {
-	observe?: ReflectObserveConfig
+	define?: string
 	shadow?: ReflectShadowConfig
 	styles?: CSSStyleSheet[]
+	append?: Node
+	mutate?: ReflectMutationConfig
 }
 
-export interface ReflectShadowConfig extends ShadowRootInit {
-	root: Node
+export interface ReflectShadowConfig extends ShadowRootInit {}
+
+export interface ReflectMutationConfig extends MutationObserverInit {
+	callback(this: CustomElement, records: MutationRecord[]): void
 }
 
-export interface ReflectObserveConfig extends MutationObserverInit {
-	state: EventTarget
+export interface CustomElementConnectedCallback {
+	(this: CustomElement): void
 }
 
 export interface Attrs {
 	[name: string]: primitive
+}
+
+export interface CustomElement extends HTMLElement {
+	shadowRoot: ShadowRoot
 }
 
 export type ChildNode = Node | string

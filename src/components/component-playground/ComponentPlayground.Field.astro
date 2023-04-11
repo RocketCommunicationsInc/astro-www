@@ -63,7 +63,7 @@ const { type, 'implicitlabel': implicitLabel, ...attrs } = Astro.props
 		&.-is-menu {
 			/* Layout */
 			inline-size: stretch;
-			max-inline-size: calc(100% - 1rem);
+			max-inline-size: calc(100% - 2rem);
 			padding: .5em 1em;
 
 			/* Appearance */
@@ -78,11 +78,10 @@ const { type, 'implicitlabel': implicitLabel, ...attrs } = Astro.props
 		&.-is-text {
 			/* Layout */
 			inline-size: stretch;
-			max-inline-size: calc(100% - 1rem);
+			max-inline-size: calc(100% - 2rem);
 			padding: .5em 1em;
 
 			/* Appearance */
-			border-radius: .25em;
 			border-radius: var(--EdgeRadius);
 			box-shadow: var(--EdgeColor) 0 0 0 var(--EdgeSize) inset;
 

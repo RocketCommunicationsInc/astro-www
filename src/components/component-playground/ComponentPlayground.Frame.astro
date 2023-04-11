@@ -29,6 +29,16 @@ const attrs = Astro.props
 }
 
 .c-sandbox {
-	height: var(--y);
+	height: min(var(--max-height) + 2px, var(--y));
+
+	@media (width <= 700px) {
+		/* Reference */
+		--max-height: calc(Infinity * 1px);
+	}
+
+	@media (width > 700px) {
+		/* Reference */
+		--max-height: 400px;
+	}
 }
 </style>

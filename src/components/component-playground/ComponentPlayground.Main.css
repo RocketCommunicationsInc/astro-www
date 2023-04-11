@@ -3,7 +3,8 @@
 
 	/* Layout */
 	grid-template-rows: 44--rpx auto;
-	overflow: hidden;
+
+	/* overflow: hidden; */
 	padding-block-end: 1px;
 
 	/* Appearance */
@@ -46,9 +47,6 @@
 
 		/* Appearance */
 		background-color: var(--BackColor);
-		border-end-start-radius: var(--EdgeRadius);
-
-		/* Appearance */
 		box-shadow: var(--EdgeColor) -1px 0 0 0 inset;
 
 		/* Animation */
