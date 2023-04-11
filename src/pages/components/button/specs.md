@@ -1,6 +1,5 @@
 ---
 title: Button
-subtitle: Specification
 description: Action Buttons allow users to trigger actions by clicking, tapping, or pressing a corresponding key on a keyboard, such as the “Enter” key.
 layout: project:layouts/component-docs/component-docs-layout.astro
 ---
