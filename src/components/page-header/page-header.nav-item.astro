@@ -1,3 +1,8 @@
+---
+import { type HTMLAttributes } from 'astro/types'
+
+export interface Props extends HTMLAttributes<'a'> {}
+---
 <li>
-	<a {...Astro.props}><slot /></a>
+	<a aria-current={Astro.props.href === Astro.url.pathname ? 'page' : null} {...Astro.props}><slot /></a>
 </li>

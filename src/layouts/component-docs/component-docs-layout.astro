@@ -1,5 +1,6 @@
 ---
 import Layout from 'project:layouts/new-docs/new-docs-layout.astro'
+import { getSecondaryNavGroup } from 'project:components/site-navigation/server/currentPath.ts'
 
 import './component-docs-layout.css'
 
@@ -54,7 +55,7 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 		</PageHeader.Subheading>
 		<div class="nav-holder">
 		{
-			content.config
+			getSecondaryNavGroup(Astro.url.pathname)
 				? (
 					<PageHeader.Nav file={Astro.props.file} />
 				)
