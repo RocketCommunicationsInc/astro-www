@@ -88,6 +88,20 @@ td:has(span.attr-title) {
 		/* Layout */
 		min-inline-size: auto;
 
+		& thead {
+			& th {
+				&:first-child {
+					/* Appearance */
+					border-radius: 2--step 0 0 0;
+				}
+
+				&:last-child {
+					/* Appearance */
+					border-radius: 0 2--step 0 0;
+				}
+			}
+		}
+
 		& th:nth-child(1) {
 			/* Layout */
 			inline-size: 30%;
