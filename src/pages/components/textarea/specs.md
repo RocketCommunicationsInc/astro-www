@@ -16,7 +16,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ## Default Values
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token                              | Value                                                                                                                 |
 |:------------------------------------------|:-----------------------------------|:----------------------------------------------------------------------------------------------------------------------|
 | <span class="attr-title">Container</span> |                                    |                                                                                                                       |
@@ -47,7 +47,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ### Default
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token                    | Value   |
 |:------------------------------------------|:-------------------------|:--------|
 | <span class="attr-title">Container</span> |                          |         |
@@ -56,7 +56,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ### Hover
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token                    | Value   |
 |:------------------------------------------|:-------------------------|:--------|
 | <span class="attr-title">Container</span> |                          |         |
@@ -65,7 +65,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ### Invalid
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token                      | Value   |
 |:------------------------------------------|:---------------------------|:--------|
 | <span class="attr-title">Container</span> |                            |         |
@@ -74,7 +74,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ### Disabled
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token            | Value |
 |:------------------------------------------|:-----------------|:------|
 | <span class="attr-title">Container</span> |                  |       |
@@ -83,7 +83,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ### Focus
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token         | Value             |
 |:------------------------------------------|:--------------|:------------------|
 | <span class="attr-title">Container</span> |               |                   |
@@ -101,7 +101,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ### Small
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token                 | Value   |
 |:------------------------------------------|:----------------------|:--------|
 | <span class="attr-title">Container</span> |                       |         |
@@ -111,7 +111,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ### Medium
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token                 | Value   |
 |:------------------------------------------|:----------------------|:--------|
 | <span class="attr-title">Container</span> |                       |         |
@@ -121,7 +121,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ### Large
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token                 | Value   |
 |:------------------------------------------|:----------------------|:--------|
 | <span class="attr-title">Container</span> |                       |         |
@@ -137,7 +137,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ### Placeholder Text
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token                        | Value   |
 |:------------------------------------------|:-----------------------------|:--------|
 | <span class="attr-title">Container</span> |                              |         |
