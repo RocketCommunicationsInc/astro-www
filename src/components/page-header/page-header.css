@@ -5,8 +5,6 @@
 	flex-flow: column;
 	justify-content: end;
 
-	/* min-block-size: var(--header-block-size); */
-
 	/* Layout */
 	padding-block-start: var(--header-padding-block-start);
 	padding-inline: var(--layout-inline-gap-start) var(--layout-inline-gap-end);

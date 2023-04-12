@@ -4,6 +4,7 @@
 	/* Layout */
 	flex-flow: column;
 	gap: 10--rpx;
+	margin-block-end: 5--step;
 	min-block-size: 81--step;
 	padding: 5--step;
 
