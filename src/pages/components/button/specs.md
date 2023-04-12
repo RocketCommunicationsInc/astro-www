@@ -73,7 +73,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Background color                          | button-color-background-primary-hover | #92cbff |
 :::
 
-### Disabled
+#### Disabled
 
 :::specs-table-container
 | Attribute                                 | Token            | Value |
@@ -118,7 +118,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Fill color                                           | button-icon-color-fill-secondary-hover | #92cbff   |
 :::
 
-### Disabled
+#### Disabled
 
 :::specs-table-container
 | Attribute                                 | Token            | Value |
@@ -160,7 +160,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Fill color                                           | button-icon-color-fill-borderless-hover | #92cbff |
 :::
 
-### Disabled
+#### Disabled
 
 :::specs-table-container
 | Attribute                                 | Token            | Value |
