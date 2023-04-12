@@ -298,8 +298,8 @@
 		margin-block-end: 5--step;
 
 		/* Typography */
-		font-size: 22--rpx;
-		font-weight: 500;
+		font-size: 24--rpx;
+		font-weight: 400;
 		line-height: calc(20 / 18);
 	}
 
