@@ -62,10 +62,11 @@ export const lookupProperty = (category: string, property?: string) => {
 	if (property === 'on-dark' || property === 'on-light') {
 		return 'border-width'
 	}
-
-	if (property === 'footer' || property === 'header') {
-		return 'background'
+	
+	if (!property) {
+		return category
 	}
+
 
 	return property
 }
