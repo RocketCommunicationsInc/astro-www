@@ -116,7 +116,7 @@ const handleStaticRateButtonClick = () => {
 
 const handleStaticFormSubmit = (event: Event) => {
 	const antenna: SVGElement = staticWidgetSuccess.querySelector('svg')!
-	const animatingElement: NodeListOf<HTMLSpanElement> = staticWidgetSuccess.querySelectorAll('.widget_success-orange-circle span')!
+	const animatingElement: NodeListOf<HTMLSpanElement> = staticWidgetSuccess.querySelectorAll('.widget-static_success-orange-circle span')!
 
 	if (staticFormSubmittable) {
 		// put receiving animation in place, dots animating into antenna
@@ -141,15 +141,15 @@ const handleStaticFormSubmit = (event: Event) => {
 			setTimeout(() => {
 				antenna.classList.add('success')
 				for (const span of animatingElement) {
-					span.style.animationPlayState = 'paused'
+					span.style.animationIterationCount = '1'
 				}
-			}, 2300)
+			}, 900)
 
 			// after timeout, remove all success panels and close widget.
 			setTimeout(() => {
 				staticWidgetSuccess.classList.remove('-active')
 				antenna.classList.remove('selected')
-			}, 3200)
+			}, 2600)
 
 			// reset form
 			handleResetForm()

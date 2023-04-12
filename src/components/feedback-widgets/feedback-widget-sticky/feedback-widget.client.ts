@@ -211,9 +211,9 @@ const handleFormSubmit = (event: Event) => {
 			setTimeout(() => {
 				antenna.classList.add('success')
 				for (const span of animatingElement) {
-					span.style.animationPlayState = 'paused'
+					span.style.animationIterationCount = '1'
 				}
-			}, 2300)
+			}, 1000)
 
 			// after timeout, remove all success panels and close widget.
 			setTimeout(() => {
@@ -221,7 +221,7 @@ const handleFormSubmit = (event: Event) => {
 				antenna.classList.remove('selected')
 				handleResetForm()
 				showHideWidget()
-			}, 3200)
+			}, 2500)
 		}).catch(() => {
 			// on failure display failure panel, remove all panels.
 			widgetFail.classList.add('-active')
