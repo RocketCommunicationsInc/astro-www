@@ -1,6 +1,5 @@
 ---
 import type { Props as DocProps } from '@astropub/doc'
-import SandboxFrame from 'project:components/component-playground/ComponentPlayground.Frame.astro'
 
 import Layout from 'project:layouts/default/default-layout.astro'
 import SiteSkipTo from 'project:components/site-skipto/site-skipto.astro'
@@ -35,7 +34,6 @@ const url = content.url
 
 		<div class="page-content">
 			<div class="page-content-main-col">
-				<SandboxFrame sandbox={content.sandbox} />
 				<slot />
 				<FeedbackWidgetStatic currentURL={url} />
 			</div>

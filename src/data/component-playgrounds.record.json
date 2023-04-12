@@ -1,0 +1,241 @@
+{
+	"$schema": "./component-playgrounds.schema.json",
+	"records": [
+		{
+			"tag": "rux-button",
+			"route": "/components/button/",
+			"constructor": "RuxButton",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-button />"
+				}
+			],
+			"fields": []
+		},
+		{
+			"tag": "rux-card",
+			"route": "/components/card/",
+			"constructor": "RuxCard",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-card />"
+				}
+			],
+			"fields": []
+		},
+		{
+			"tag": "rux-checkbox",
+			"route": "/components/checkbox/",
+			"constructor": "RuxCheckbox",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-checkbox name=\"checkbox\" label=\"Checkbox Label\">Checkbox Label</rux-checkbox>"
+				}
+			],
+			"fields": [
+				{
+					"kind": "text",
+					"name": "checked",
+					"property": "checked",
+					"value": ""
+				},
+				{
+					"kind": "text",
+					"name": "disabled",
+					"property": "disabled",
+					"value": ""
+				},
+				{
+					"kind": "text",
+					"name": "help-text",
+					"property": "helpText",
+					"value": ""
+				}
+			]
+		},
+		{
+			"tag": "rux-classification-marking",
+			"route": "/components/classification-markings/",
+			"constructor": "RuxClassificationMarking",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-classification-marking classification=\"top-secret\" />"
+				}
+			],
+			"fields": [
+				{
+					"kind": "menu",
+					"name": "classification",
+					"property": "classification",
+					"options": [
+						"unclassified",
+						"controlled",
+						"cui",
+						"confidential",
+						"secret",
+						"top-secret",
+						"top-secret-sci"
+					]
+				},
+				{
+					"kind": "text",
+					"name": "label",
+					"property": "label",
+					"value": ""
+				}
+			]
+		},
+		{
+			"tag": "rux-clock",
+			"route": "/components/clock/",
+			"constructor": "RuxClock",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-clock />"
+				}
+			],
+			"fields": []
+		},
+		{
+			"tag": "rux-container",
+			"route": "/components/container/",
+			"constructor": "RuxContainer",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-container>\n\tContainers are used to group multiple components into a specific area that allows them to flow in a flexible/responsive manner.\n</rux-container>"
+				}
+			],
+			"fields": []
+		},
+		{
+			"tag": "rux-datetime",
+			"route": "/components/datetime/",
+			"constructor": "RuxDatetime",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-datetime />"
+				}
+			],
+			"fields": []
+		},
+		{
+			"tag": "rux-datetime",
+			"route": "/components/datetime/",
+			"constructor": "RuxDatetime",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-datetime />"
+				}
+			],
+			"fields": []
+		},
+		{
+			"tag": "rux-dialog",
+			"route": "/components/dialog/",
+			"constructor": "RuxDialog",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-dialog />"
+				}
+			],
+			"fields": []
+		},
+		{
+			"tag": "rux-icon",
+			"route": "/components/icon/",
+			"constructor": "RuxIcon",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-icon />"
+				}
+			],
+			"fields": []
+		},
+		{
+			"tag": "rux-indeterminate-progress",
+			"route": "/components/indeterminate-progress/",
+			"constructor": "RuxIndeterminateProgress",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-indeterminate-progress />"
+				}
+			],
+			"fields": []
+		},
+		{
+			"tag": "rux-progress",
+			"route": "/components/progress/",
+			"constructor": "RuxProgress",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-progress />"
+				}
+			],
+			"fields": []
+		},
+		{
+			"tag": "rux-push-button",
+			"route": "/components/push-button/",
+			"constructor": "RuxPushButton",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-push-button />"
+				}
+			],
+			"fields": []
+		},
+		{
+			"tag": "rux-tag",
+			"route": "/components/tag/",
+			"constructor": "RuxTag",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-tag status=\"pass\">Tag</rux-textarea>"
+				}
+			],
+			"fields": [
+				{
+					"kind": "menu",
+					"name": "status",
+					"options": [
+						"pass",
+						"fail",
+						"unknown"
+					]
+				}
+			]
+		},
+		{
+			"tag": "rux-textarea",
+			"route": "/components/textarea/",
+			"constructor": "RuxTextarea",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-textarea label=\"Textarea label\"></rux-textarea>"
+				}
+			],
+			"fields": [
+				{
+					"kind": "text",
+					"name": "label",
+					"property": "label"
+				}
+			]
+		}
+	]
+}

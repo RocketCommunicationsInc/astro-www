@@ -1,0 +1,203 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"$defs": {
+		"Example": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"code": {
+					"type": "string"
+				}
+			},
+			"additionalProperties": false
+		},
+		"Record": {
+			"title": "Record",
+			"type": "object",
+			"properties": {
+				"tag": {
+					"title": "HTML tag name",
+					"type": "string",
+					"$ref": "./formats.json#/$defs/html-tag"
+				},
+				"route": {
+					"title": "Route",
+					"type": "string",
+					"format": "uri-reference"
+				},
+				"constructor": {
+					"title": "JavaScript class",
+					"type": "string",
+					"$ref": "./formats.json#/$defs/js-identifier"
+				},
+				"examples": {
+					"title": "Examples",
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/Example"
+					}
+				},
+				"fields": {
+					"title": "Fields",
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/Field",
+						"defaultSnippets": [
+							{
+								"label": "Field",
+								"description": "Adds a Field",
+								"body": {
+									"label": "$1",
+									"name": "${1/(.*)/${1:/downcase}/}",
+									"implicitlabel": false
+								}
+							}
+						]
+					}
+				}
+			},
+			"additionalProperties": false,
+			"required": [
+				"tag",
+				"route",
+				"constructor"
+			]
+		},
+		"Field": {
+			"allOf": [
+				{
+					"if": {
+						"properties": {
+							"kind": {
+								"const": "menu"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/$defs/FieldMenu"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"kind": {
+								"const": "text"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/$defs/FieldText"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"kind": {
+								"const": "toggle"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/$defs/FieldToggle"
+					}
+				}
+			]
+		},
+		"FieldBase": {
+			"type": "object",
+			"properties": {
+				"label": {
+					"title": "Field Label",
+					"type": "string"
+				},
+				"name": {
+					"$ref": "./formats.json#/$defs",
+					"title": "Field Name",
+					"type": "string"
+				},
+				"implicitlabel": {
+					"type": "boolean"
+				}
+			}
+		},
+		"FieldMenu": {
+			"title": "Menu Field",
+			"$ref": "#/$defs/FieldBase",
+			"properties": {
+				"kind": {
+					"title": "Menu Field",
+					"const": "menu"
+				},
+				"options": {
+					"title": "Options",
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				}
+			}
+		},
+		"FieldText": {
+			"title": "Text Field",
+			"$ref": "#/$defs/FieldBase",
+			"properties": {
+				"kind": {
+					"title": "Text Field",
+					"const": "text"
+				},
+				"value": {
+					"title": "Value",
+					"type": "string"
+				}
+			}
+		},
+		"FieldToggle": {
+			"title": "Toggle Field",
+			"$ref": "#/$defs/FieldBase",
+			"properties": {
+				"kind": {
+					"title": "Toggle Field",
+					"const": "toggle"
+				},
+				"checked": {
+					"title": "Checked",
+					"type": "boolean"
+				}
+			}
+		}
+	},
+	"properties": {
+		"$schema": {
+			"type": "string"
+		},
+		"records": {
+			"title": "Records",
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/Record",
+				"defaultSnippets": [
+					{
+						"label": "Record",
+						"description": "Adds a Record",
+						"body": {
+							"tag": "rux-${1/([^ ]*)( ?)/${1:/downcase}${2:+-}/g}",
+							"route": "/${2:${1/(.*)/${1:/downcase}/}}/",
+							"constructor": "Rux${3:${1/([^-]*)(-?)/${1:/capitalize}/g}}",
+							"examples": [
+								{
+									"name": "Default",
+									"code": "<rux-${4:${1/([^ ]*)( ?)/${1:/downcase}${2:+-}/g}} />"
+								}
+							],
+							"fields": "^[${5}]"
+						}
+					}
+				]
+			}
+		}
+	},
+	"additionalProperties": false
+}

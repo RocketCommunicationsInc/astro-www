@@ -1,0 +1,59 @@
+{
+	"$schema": "https://json-schema.org/draft-07/schema",
+	"$defs": {
+		"upper-alpha": {
+			"type": "string",
+			"pattern": "^[\\x0041-x005A]+$",
+			"errorMessage": "String is not an upper alpha."
+		},
+		"lower-alpha": {
+			"type": "string",
+			"pattern": "^[\\x0061-x007A]+$",
+			"errorMessage": "String is not a lower alpha."
+		},
+		"alpha": {
+			"type": "string",
+			"pattern": "^[\\x0041-x005A\\x0061-x007A]+$",
+			"errorMessage": "String is not an alpha."
+		},
+		"digit": {
+			"type": "string",
+			"pattern": "^[\\x0030-x0039]+$",
+			"errorMessage": "String is not a digit."
+		},
+		"alphanumeric": {
+			"type": "string",
+			"pattern": "^[\\x0030-x0039\\x0041-x005A\\x0061-x007A]+$",
+			"errorMessage": "String is not an alphanumeric."
+		},
+		"upper-hex": {
+			"type": "string",
+			"pattern": "^[\\x0041-x0046]+$",
+			"errorMessage": "String is not an upper hex."
+		},
+		"lower-hex": {
+			"type": "string",
+			"pattern": "^[\\x0061-x0066]+$",
+			"errorMessage": "String is not a lower hex."
+		},
+		"hex": {
+			"type": "string",
+			"pattern": "^[\\x0041-x0046\\x0061-x0066]+$",
+			"errorMessage": "String is not a hex."
+		},
+		"js-identifier": {
+			"type": "string",
+			"pattern": "^[\\p{XID_Start}_]\\p{XID_Continue}*$",
+			"errorMessage": "String is not a JavaScript identifier."
+		},
+		"html-tag": {
+			"pattern": "^[\\x0041-x005A\\x0061-x007A][^\\0000\\x0009\\x000A\\x000C\\x0020\\x002F\\x003E]*$",
+			"errorMessage": "String is not an HTML tag name."
+		},
+		"xml-tag": {
+			"type": "string",
+			"pattern": "^[^\\x0009\\x000A\\x0020\\x003E\\x002F]+$",
+			"errorMessage": "String is not an XML tag name."
+		}
+	}
+}

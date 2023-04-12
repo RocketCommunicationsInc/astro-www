@@ -7,10 +7,9 @@ height: 300px
 git: rux-button
 assets:
     name: Button
+sandbox:
+  style: "--y: 200px;"
 ---
-## Interactive Example
-
-::storybook-demo
 
 <!-- Action Buttons allow users to trigger actions by clicking, tapping, or pressing a corresponding key on a keyboard, such as the “Enter” key. -->
 

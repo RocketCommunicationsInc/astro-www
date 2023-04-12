@@ -34,6 +34,7 @@
 		"eslint-plugin-json": "3.1.0",
 		"eslint-plugin-jsx-a11y": "6.7.1",
 		"isomorphic-dompurify": "1.2.0",
+		"json-schema-to-ts": "2.7.2",
 		"lightningcss": "1.19.0",
 		"parse-yaml": "0.1.0",
 		"postcss-load-config": "4.0.1",
@@ -329,7 +330,8 @@
 			"stylistic/string-quotes": "double"
 		},
 		"ignoreFiles": [
-			"**/sanitize.css"
+			"**/sanitize.css",
+			"**/dist/**"
 		]
 	}
 }

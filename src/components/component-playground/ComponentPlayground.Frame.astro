@@ -1,23 +1,23 @@
 ---
+import { records } from 'project:data/component-playgrounds.record.json'
+
 export interface Props {
-	sandbox: any
+	for: string
+	src: string
 }
 
-const headingText = 'Interactive Example'
-
 const attrs = Astro.props
+
+const record = records.find(
+	record => (
+		record.route === attrs.for
+	)
+)
 ---
 {
-	attrs.sandbox
+	record !== undefined
 		? (
-			<Fragment>
-				<a href="#interactive-example" class="h h2">
-					<h2 id="interactive-example">
-						{headingText}
-					</h2>
-				</a>
-				<iframe class="c-sandbox" src="sandbox/" style={attrs.sandbox.style} />
-			</Fragment>
+			<iframe class="c-sandbox" src={attrs.src} />
 		)
 	: null
 }

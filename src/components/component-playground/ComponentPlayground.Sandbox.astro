@@ -2,7 +2,6 @@
 export interface Props {
 	'is:tag': string
 	'is:constructor': string
-	[name: string]: string
 }
 
 const {
@@ -11,7 +10,7 @@ const {
 } = Astro.props
 
 const scriptContent = [
-	`import{${Constructor}}from'https://cdn.jsdelivr.net/npm/@astrouxds/astro-web-components@7.7.0/dist/components/${Tag}.js/+esm'`,
+	`import{${Constructor}}from'https://cdn.jsdelivr.net/npm/@astrouxds/astro-web-components@7.9.2/dist/components/${Tag}.js/+esm'`,
 	`customElements.define('${Tag}',${Constructor})`,
 	`globalThis.$target=document.querySelector('${Tag}')`,
 ].join(';')

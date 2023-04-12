@@ -4,6 +4,11 @@ import './ComponentPlayground.Root.css'
 import Panelset from './ComponentPlayground.Panelset.astro'
 import Panel from './ComponentPlayground.Panel.astro'
 import Main from './ComponentPlayground.Main.astro'
+
+const content = {
+	examples: await Astro.slots.render('variants'),
+	fields: await Astro.slots.render('fields'),
+}
 ---
 <html class="dark-theme" lang="en-US">
 	<head>
@@ -19,12 +24,12 @@ import Main from './ComponentPlayground.Main.astro'
 		</section>
 
 		<section class="control-area"><Panelset>{
-			Astro.slots.has('variants')
-				? <Panel label="Variants"><slot name="variants" /></Panel>
+			content.examples !== ''
+				? <Panel label="Variants" set:html={content.examples} />
 			: null
 		}{
-			Astro.slots.has('controls')
-				? <Panel label="Properties"><slot name="controls" /></Panel>
+			content.fields !== ''
+				? <Panel label="Properties" set:html={content.fields} />
 			: null
 		}</Panelset></section>
 	</body>
