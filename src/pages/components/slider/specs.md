@@ -14,6 +14,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
         <li>Track (inactive)</li>
         <li>Axis Label</li>
         <li>Tick (optional)</li>
+        <li>Container</li>
     </ol>
 </div>
 
