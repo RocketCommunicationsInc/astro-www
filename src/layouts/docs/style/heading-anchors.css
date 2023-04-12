@@ -8,20 +8,6 @@ a.h {
 	& > * {
 		display: flex;
 
-		--border-color: var(--Heading1BorderColor);
-		--border-size: 1px;
-
-		@nest :focus-visible > &, :active > & {
-			--border-color: var(--Orange700Color);
-			--border-size: max(2px, .25em);
-		}
-
-		/* Appearance */
-		box-shadow: var(--border-color) 0 -1--border-size 0 0 inset;
-
-		/* Animation */
-		transition: box-shadow 60ms;
-
 		&::before {
 			display: inline-block;
 

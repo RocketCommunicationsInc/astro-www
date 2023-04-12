@@ -1,10 +1,6 @@
 ---
-import Layout from 'project:layouts/new-docs/new-docs-layout.astro'
-import { getSecondaryNavGroup } from 'project:components/site-navigation/server/currentPath.ts'
-
+import Layout from 'project:layouts/docs/docs-layout.astro'
 import './component-docs-layout.css'
-
-import PageHeader from 'project:components/page-header/page-header.js'
 import globalData from 'project:data/global.json'
 import PageAside from 'project:components/page-aside/page-aside.astro'
 import AssetStatus from 'project:components/asset-status/asset-status.astro'
@@ -45,24 +41,7 @@ const html = `<style>:root{--StorybookPreviewHeight:${StorybookPreviewHeight};}<
 /** URL to the current source for this page. */
 const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData.designSystem.repositoryBranch}/src/pages${withoutTrailingSlash(Astro.url.pathname)}.${fileExt}`
 ---
-<Layout content={{ title: content.title }} {...Astro.props}>
-	<PageHeader slot="header">
-		<PageHeader.Heading>
-			{content.title}
-		</PageHeader.Heading>
-		<PageHeader.Subheading>
-			{content.description ? content.description : null}
-		</PageHeader.Subheading>
-		<div class="nav-holder">
-		{
-			getSecondaryNavGroup(Astro.url.pathname)
-				? (
-					<PageHeader.Nav file={Astro.props.file} />
-				)
-			: null
-		}
-		</div>
-	</PageHeader>
+<Layout content={ content } {...Astro.props}>
 
 	<Fragment slot="toolbar">
 	</Fragment>

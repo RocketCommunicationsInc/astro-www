@@ -1,41 +1,63 @@
 ---
-import type { MarkdownContent } from 'astro'
+import type { Props as DocProps } from '@astropub/doc'
+
 import Layout from 'project:layouts/default/default-layout.astro'
-import ContributionFooter from 'project:components/contribution-footer/contribution-footer.astro'
-import ComplianceAside from 'project:components/compliance/compliance-aside.astro'
 import SiteSkipTo from 'project:components/site-skipto/site-skipto.astro'
-import complianceData from 'project:data/compliance.json'
-import globalData from 'project:data/global.json'
 
 import './docs-layout.css'
+import { getSecondaryNavGroup } from 'project:components/site-navigation/server/currentPath.ts'
+import PageHeader from 'project:components/page-header/page-header.js'
 
-const {
-	title,
-} = Object<MarkdownContent<{
-	title: string
-}>>(Astro.props.content)
+export interface Props extends DocProps {
+	content: {
+		title: string
+		subtitle?: string
+		description?: string
+	}
+	file?: string
+}
 
-/* Create github link to source file */
-
-/** RegEx to match a slash (/) at the end ($) of a string. */
-const matchTrailingSlash = /\/$/
-
-/** Removes the trailing slash from a string. */
-const withoutTrailingSlash = (value: string) => value.replace(matchTrailingSlash, '')
-
-/* grab the source file url and then get the extension */
-const fileName = new URL(Astro.props.file, 'file:').toString()
-const fileExt = fileName.split('.').at(-1)
-
-/** URL to the current source for this page. */
-const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData.designSystem.repositoryBranch}/src/pages${withoutTrailingSlash(Astro.url.pathname)}.${fileExt}`
+const { content } = Astro.props
+const title = content.subtitle ? `${content.title} ${content.subtitle}` : content.title
+const tabTitle = content.title
 ---
-<Layout title={title} tabtitle={title}>
+<Layout title={title} tabtitle={tabTitle}>
 	<SiteSkipTo slot="top" />
-	<main id="content">
-		<slot />
-		<ComplianceAside compliance={complianceData} />
-		<ContributionFooter sourceurl={githubSourceURL} />
+
+	<main class="page" id="content">
+		<PageHeader slot="header">
+			<PageHeader.Heading>
+				{content.title}
+			</PageHeader.Heading>
+			<PageHeader.Subheading>
+				{content.description ? content.description : null}
+			</PageHeader.Subheading>
+			<div class="nav-holder">
+			{
+				getSecondaryNavGroup(Astro.url.pathname)
+					? (
+						<PageHeader.Nav file={Astro.props.file} />
+					)
+				: null
+			}
+			</div>
+		</PageHeader>
+
+		<div class="page-toolbar">
+			<slot name="toolbar" />
+		</div>
+
+		<div class="page-content">
+			<div class="page-content-main-col">
+				<slot />
+			</div>
+
+			<aside class="page-content-side-col" id="aside">
+				<div class="-content">
+					<slot name="aside" />
+				</div>
+			</aside>
+		</div>
 	</main>
 </Layout>
 <script>

@@ -5,13 +5,10 @@ import BreakingChange from 'project:components/breaking-change/breaking-change.a
 import { Code } from 'astro/components'
 
 const title = 'Migration'
+const description = 'Astro 7.0 introduces a number of breaking changes that require developers to update their application code.'
 ---
-<DocsLayout content={{ title }} file={import.meta.url}>
-	<h1>
-		7.0 Migration Guide
-	</h1>
+<DocsLayout content={{ title, description }} file={import.meta.url}>
 	<p>
-		Astro 7.0 introduces a number of breaking changes that require developers to update their application code.
 		We've compiled a list of every breaking change below.
 		Since the migration process will vary on an application-by-application basis, we've broken down changes per component based on the likelihood of impact.
 	</p>
