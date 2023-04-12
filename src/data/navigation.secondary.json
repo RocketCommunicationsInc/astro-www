@@ -42,6 +42,20 @@
         ]
     },
     {
+        "description": "Textareas are multi-line text inputs that allow for entering text in a larger area than a single-line text input would allow. They are typically used for multi-line input use cases like comments or feedback.",
+        "heading": "Textarea",
+        "items": [
+            {
+                "label": "Usage",
+                "url": "/components/textarea/"
+            },
+            {
+                "label": "Specification",
+                "url": "/components/textarea/specs/"
+            }
+        ]
+    },
+    {
         "description": "This is the nav for the nav example",
         "heading": "Secondary Nav Example",
         "items": [
