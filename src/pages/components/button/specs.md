@@ -245,7 +245,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Padding (top and bottom)                  | button-padding-x-large-icon-only | 0.75rem |
 :::
 
-### Focus
+## Focus
 
 <div class="spec-container -examples">
     <figure><img loading="lazy" width="139" src="/img/components/button/button-primary-medium-focus.png" alt="Primary Button with Focus State"/></figure>

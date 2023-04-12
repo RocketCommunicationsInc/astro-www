@@ -283,13 +283,23 @@
 		line-height: calc(24 / 22);
 	}
 
-	& :is(h3, h4, h5):where(:not([class])) {
+	& h3:where(:not([class])) {
 		/* Layout */
 		margin-block-end: 5--step;
 
 		/* Typography */
 		font-size: 24--rpx;
 		font-weight: 400;
+		line-height: calc(20 / 18);
+	}
+
+	& :is(h4, h5):where(:not([class])) {
+		/* Layout */
+		margin-block-end: 5--step;
+
+		/* Typography */
+		font-size: 22--rpx;
+		font-weight: 500;
 		line-height: calc(20 / 18);
 	}
 
