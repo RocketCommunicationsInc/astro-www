@@ -56,7 +56,7 @@ All color pairings should follow the latest WCAG AA contrast rules. Astro compon
 
 ### Primary Palette
 
-:::table-overflow
+:::specs-table-container
 | 6.0 Hex Code | 6.0 CSS Name             | 7.0 Hex Code | 7.0 Design Token               |
 |--------------|--------------------------|--------------|--------------------------------|
 | #CBDEE9      | `--colorPrimaryLighten4` | #CBDEE9      | `--color-palette-darkblue-100` |
@@ -73,7 +73,7 @@ All color pairings should follow the latest WCAG AA contrast rules. Astro compon
 
 ### Secondary Palette
 
-:::table-overflow
+:::specs-table-container
 | 6.0 Hex Code | 6.0 CSS Name                | 7.0 Hex Code | 7.0 Design Token                 |
 |--------------|-----------------------------|--------------|----------------------------------|
 | #DAEEFF      | `--colorSecondaryLighten4`  | #DAEEFF      | `--color-palette-brightblue-100` |
@@ -90,7 +90,7 @@ All color pairings should follow the latest WCAG AA contrast rules. Astro compon
 
 ### Tertiary Palette
 
-:::table-overflow
+:::specs-table-container
 | 6.0 Hex Code | 6.0 CSS Name               | 7.0 Hex Code | 7.0 Design Token           |
 |--------------|----------------------------|--------------|----------------------------|
 | #D4D8DD      | `--colorTertiaryLighten4`  | #F5F6F9      | `--color-palette-grey-100` |
@@ -111,7 +111,7 @@ The Quaternary Palette has been removed entirely.
 
 ### Tag 1 Palette
 
-:::table-overflow
+:::specs-table-container
 | 6.0 Hex Code | 6.0 CSS Name          | 7.0 Hex Code | 7.0 Design Token           |
 |--------------|-----------------------|--------------|----------------------------|
 | #D0F4F4      | `--colorTag1Lighten4` | #D0F4F4      | `--color-palette-teal-100` |
@@ -127,7 +127,7 @@ The Quaternary Palette has been removed entirely.
 
 ### Tag 2 Palette
 
-:::table-overflow
+:::specs-table-container
 | 6.0 Hex Code | 6.0 CSS Name          | 7.0 Hex Code | 7.0 Design Token             |
 |--------------|-----------------------|--------------|------------------------------|
 | #E4E2F7      | `--colorTag2Lighten4` | #E4E2F7      | `--color-palette-purple-100` |
@@ -143,7 +143,7 @@ The Quaternary Palette has been removed entirely.
 
 ### Tag 3 Palette
 
-:::table-overflow
+:::specs-table-container
 | 6.0 Hex Code | 6.0 CSS Name          | 7.0 Hex Code | 7.0 Design Token           |
 |--------------|-----------------------|--------------|----------------------------|
 | #EDCEF3      | `--colorTag3Lighten4` | #EDCEF3      | `--color-palette-pink-100` |
@@ -159,7 +159,7 @@ The Quaternary Palette has been removed entirely.
 
 ### Tag 4 Palette
 
-:::table-overflow
+:::specs-table-container
 | 6.0 Hex Code | 6.0 CSS Name          | 7.0 Hex Code | 7.0 Design Token                |
 |--------------|-----------------------|--------------|---------------------------------|
 | #F8DDD1      | `--colorTag4Lighten4` | #F8DDD1      | `--color-palette-hotorange-100` |

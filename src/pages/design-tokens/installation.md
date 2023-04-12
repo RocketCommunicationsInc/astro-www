@@ -67,27 +67,27 @@ A `light-theme` class that includes Astro's light theme.
 
 A few utility classes for applying Astro typography.
 
-:::table-overflow
-| Style | Class |
-| ----- | ----- |
-| Body 1 | `.rux-body-1` |
-| Body 1 Bold | `.rux-body-1-bold` |
-| Body 2 | `.rux-body-2` |
-| Body 2 Bold | `.rux-body-2-bold` |
-| Body 3 | `.rux-body-3` |
-| Body 3 Bold | `.rux-body-3-bold` |
-| Control Body 1 | `.rux-control-body-1` |
+:::specs-table-container
+| Style               | Class                      |
+|---------------------|----------------------------|
+| Body 1              | `.rux-body-1`              |
+| Body 1 Bold         | `.rux-body-1-bold`         |
+| Body 2              | `.rux-body-2`              |
+| Body 2 Bold         | `.rux-body-2-bold`         |
+| Body 3              | `.rux-body-3`              |
+| Body 3 Bold         | `.rux-body-3-bold`         |
+| Control Body 1      | `.rux-control-body-1`      |
 | Control Body 1 Bold | `.rux-control-body-1-bold` |
-| Heading 1 | `.rux-heading-1` |
-| Heading 1 Bold | `.rux-heading-1-bold` |
-| Heading 2 | `.rux-heading-2` |
-| Heading 3 | `.rux-heading-3` |
-| Heading 4 | `.rux-heading-4` |
-| Heading 5 | `.rux-heading-5` |
-| Heading 6 | `.rux-heading-6` |
-| Display 1 | `.rux-display-1` |
-| Display 2 | `.rux-display-2` |
-| Monospace 1 | `.rux-monospace-1` |
+| Heading 1           | `.rux-heading-1`           |
+| Heading 1 Bold      | `.rux-heading-1-bold`      |
+| Heading 2           | `.rux-heading-2`           |
+| Heading 3           | `.rux-heading-3`           |
+| Heading 4           | `.rux-heading-4`           |
+| Heading 5           | `.rux-heading-5`           |
+| Heading 6           | `.rux-heading-6`           |
+| Display 1           | `.rux-display-1`           |
+| Display 2           | `.rux-display-2`           |
+| Monospace 1         | `.rux-monospace-1`         |
 :::
 
 ### SASS

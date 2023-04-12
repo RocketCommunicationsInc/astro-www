@@ -4,6 +4,7 @@
 	/* Layout */
 	flex-flow: column;
 	gap: 10--rpx;
+	margin-block-end: 5--step;
 	min-block-size: 81--step;
 	padding: 5--step;
 
@@ -71,4 +72,54 @@ td:has(span.attr-title) {
 .attr-title {
 	/* Text */
 	font-weight: 700;
+}
+
+.specs-table-container {
+	/* Layout */
+	margin-block-end: 5--step;
+
+	/* Layout */
+	overflow-x: auto;
+
+	& table {
+		/* Layout */
+		inline-size: 100%;
+
+		/* Layout */
+		min-inline-size: auto;
+
+		& thead {
+			& th {
+				&:first-child {
+					/* Appearance */
+					border-radius: 2--step 0 0 0;
+				}
+
+				&:last-child {
+					/* Appearance */
+					border-radius: 0 2--step 0 0;
+				}
+			}
+		}
+
+		& th:nth-child(1) {
+			/* Layout */
+			inline-size: 30%;
+		}
+
+		& th:nth-child(2) {
+			/* Layout */
+			inline-size: 40%;
+		}
+
+		& th:nth-child(3) {
+			/* Layout */
+			inline-size: 30%;
+		}
+	}
+
+	@nest .page-content-main-col & {
+		/* Layout */
+		max-inline-size: 212--step;
+	}
 }

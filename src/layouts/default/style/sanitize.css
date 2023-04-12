@@ -185,7 +185,6 @@
 
 :where(svg:not([fill])) {
 	fill: currentColor;
-	stroke: currentColor;
 }
 
 /* Tabular data
