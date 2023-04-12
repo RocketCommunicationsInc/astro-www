@@ -149,7 +149,7 @@ const handleStaticFormSubmit = (event: Event) => {
 			setTimeout(() => {
 				staticWidgetSuccess.classList.remove('-active')
 				antenna.classList.remove('selected')
-			}, 2600)
+			}, 2500)
 
 			// reset form
 			handleResetForm()

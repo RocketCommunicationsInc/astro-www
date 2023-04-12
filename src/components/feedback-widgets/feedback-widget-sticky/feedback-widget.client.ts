@@ -213,7 +213,7 @@ const handleFormSubmit = (event: Event) => {
 				for (const span of animatingElement) {
 					span.style.animationIterationCount = '1'
 				}
-			}, 1000)
+			}, 900)
 
 			// after timeout, remove all success panels and close widget.
 			setTimeout(() => {
