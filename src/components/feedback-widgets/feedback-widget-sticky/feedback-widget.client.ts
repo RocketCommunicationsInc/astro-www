@@ -1,3 +1,5 @@
+import { handleRemoveSelected, handleUncheckedRadios, handleRateButtonCheck, handleSubmitButton } from 'project:components/feedback-widgets/utils/feedback-widget-utils.client.ts'
+
 const widgetInteriorWrapper: HTMLElement = document.querySelector('.widget_interior-wrapper')!
 const topTab: HTMLElement = document.querySelector('.widget_top-tab')!
 const widgetContent: HTMLElement = document.querySelector('.widget_content')!
@@ -17,37 +19,6 @@ let textareaPopulated: boolean = false
 let rateButtonSelected: boolean = false
 let formSubmittable: boolean = false
 let toggle: boolean = false
-
-const handleRateButtonUncheckAll = () => {
-	// set boolean to false
-	rateButtonSelected = false
-
-	// deselect UI buttons
-	for (const button of rateButtons) {
-		button.classList.remove('selected')
-	}
-
-	// pull checked state from both hidden radios
-	hiddenThumbsUpRadio.removeAttribute('checked')
-	hiddenThumbsDownRadio.removeAttribute('checked')
-}
-
-const handleRateButtonCheck = (button: HTMLButtonElement) => {
-	// set boolean to true
-	rateButtonSelected = true
-
-	// select UI button
-	button.classList.add('selected')
-
-	// map selected button state to checked state of hidden radios
-	if (button.id === 'button_thumbs-up') {
-		button.classList.contains('selected') ? hiddenThumbsUpRadio.setAttribute('checked', '') : hiddenThumbsUpRadio.removeAttribute('checked')
-	}
-
-	if (button.id === 'button_thumbs-down') {
-		button.classList.contains('selected') ? hiddenThumbsDownRadio.setAttribute('checked', '') : hiddenThumbsDownRadio.removeAttribute('checked')
-	}
-}
 
 const showHideWidget = () => {
 	toggle = !toggle
@@ -104,84 +75,46 @@ const showHideWidget = () => {
 	})
 }
 
-const toggleWidget = () => {
-	topTab.addEventListener('click', () => {
-		showHideWidget()
-	})
-	cancelButton.addEventListener('click', () => {
-		showHideWidget()
-		emailPopulated = false
-		textareaPopulated = false
+const handleRateButtonSelected = (button: HTMLButtonElement) => {
+	// if any selected, deselect all, disable form submit
+	if (button.classList.contains('selected')) {
+		handleRemoveSelected(rateButtons)
+		handleUncheckedRadios(hiddenThumbsUpRadio, hiddenThumbsDownRadio)
+		// set boolean to false
+		rateButtonSelected = false
 
-		// makes sure rate buttons are deselected when form clears
-		handleRateButtonUncheckAll()
-
-		// deselct submit button
-		handleSubmitButtonEnable()
-	})
-}
-
-const handleSubmitButtonEnable = () => {
-	if (!emailPopulated && !textareaPopulated && !rateButtonSelected) {
-		submitButton.disabled = true
-	} else if (emailPopulated && !textareaPopulated && !rateButtonSelected) {
-		submitButton.disabled = true
+		handleSubmitButton(submitButton, emailPopulated, textareaPopulated, rateButtonSelected)
 	} else {
-		submitButton.disabled = false
+		// Remove selected from all, then add it to clicked button
+		handleRemoveSelected(rateButtons)
+		handleUncheckedRadios(hiddenThumbsUpRadio, hiddenThumbsDownRadio)
+
+
+		handleRateButtonCheck(button, hiddenThumbsUpRadio, hiddenThumbsDownRadio)
+		// set boolean to true
+		rateButtonSelected = true
+
+		handleSubmitButton(submitButton, emailPopulated, textareaPopulated, rateButtonSelected)
+		// set form boolean to true
 		formSubmittable = true
 	}
 }
 
-const isFormPopulated = () => {
-	emailInput.addEventListener('input', (event) => {
-		const target = event.currentTarget as HTMLInputElement
-		target.value ? emailPopulated = true : emailPopulated = false
-
-		handleSubmitButtonEnable()
-	})
-	textarea.addEventListener('input', (event) => {
-		const target = event.currentTarget as HTMLInputElement
-		target.value ? textareaPopulated = true : textareaPopulated = false
-
-		handleSubmitButtonEnable()
-	})
-}
-
-const handleRateButtonSelected = (button: HTMLButtonElement) => {
-	// if any selected, deselect all, disable form submit
-	if (button.classList.contains('selected')) {
-		handleRateButtonUncheckAll()
-
-		handleSubmitButtonEnable()
-	} else {
-		// Remove selected from all, then add it to clicked button, enable form submit
-		handleRateButtonUncheckAll()
-		handleRateButtonCheck(button)
-
-		handleSubmitButtonEnable()
-	}
-}
-
-const handleRateButtonClick = () => {
-	// handle toggling the thumbs up/down buttons on and off, making sure they are mutually exclusive
-	for (const button of rateButtons) {
-		button.addEventListener('click', () => {
-			// handle UI selection of button
-			handleRateButtonSelected(button)
-		})
-	}
-}
-
-const handleResetForm = () => {
+const handleFormReset = () => {
 	textarea.value = ''
 	emailInput.value = ''
 	emailPopulated = false
 	textareaPopulated = false
 
 	// makes sure rate buttons are deselected when form clears
-	handleRateButtonUncheckAll()
+	handleRemoveSelected(rateButtons)
+	handleUncheckedRadios(hiddenThumbsUpRadio, hiddenThumbsDownRadio)
+	// set boolean to false
+	rateButtonSelected = false
 	// deselct submit button
-	handleSubmitButtonEnable()
+	handleSubmitButton(submitButton, emailPopulated, textareaPopulated, rateButtonSelected)
+	// set form boolean to false
+	formSubmittable = false
 }
 
 const handleFormSubmit = (event: Event) => {
@@ -219,7 +152,7 @@ const handleFormSubmit = (event: Event) => {
 			setTimeout(() => {
 				widgetSuccess.classList.remove('-active')
 				antenna.classList.remove('selected')
-				handleResetForm()
+				handleFormReset()
 				showHideWidget()
 			}, 2500)
 		}).catch(() => {
@@ -230,18 +163,74 @@ const handleFormSubmit = (event: Event) => {
 				widgetFail.classList.remove('-active')
 			}, 2500)
 		})
+	}
+}
 
-		// might not need to do this
-		// form.submit()
+/** ** SETTING UP EVENT LISTENERS ** **/
+
+const handleWidgetToggleListeners = () => {
+	topTab.addEventListener('click', () => {
+		showHideWidget()
+	})
+	cancelButton.addEventListener('click', () => {
+		showHideWidget()
+		emailPopulated = false
+		textareaPopulated = false
+
+		// makes sure rate buttons are deselected when form clears
+		handleRemoveSelected(rateButtons)
+		handleUncheckedRadios(hiddenThumbsUpRadio, hiddenThumbsDownRadio)
+		// set boolean to false
+		rateButtonSelected = false
+
+		// deselct submit button
+		handleSubmitButton(submitButton, emailPopulated, textareaPopulated, rateButtonSelected)
+		// set form boolean to false
+		formSubmittable = false
+	})
+}
+
+
+const handleTextareaListener = () => {
+	textarea.addEventListener('input', (event) => {
+		const target = event.currentTarget as HTMLInputElement
+		target.value ? textareaPopulated = true : textareaPopulated = false
+
+		handleSubmitButton(submitButton, emailPopulated, textareaPopulated, rateButtonSelected)
+		// set form boolean to true
+		formSubmittable = true
+	})
+}
+
+const handleEmailListener = () => {
+	emailInput.addEventListener('input', (event) => {
+		const target = event.currentTarget as HTMLInputElement
+		target.value ? emailPopulated = true : emailPopulated = false
+
+		handleSubmitButton(submitButton, emailPopulated, textareaPopulated, rateButtonSelected)
+	})
+}
+
+const handleFormListener = () => {
+	form.addEventListener('submit', (event: SubmitEvent) => {
+		event.preventDefault()
+		handleFormSubmit(event)
+	})
+}
+
+const handleRateButtonListener = () => {
+	// handle toggling the thumbs up/down buttons on and off, making sure they are mutually exclusive
+	for (const button of rateButtons) {
+		button.addEventListener('click', () => {
+			// handle UI selection of button
+			handleRateButtonSelected(button)
+		})
 	}
 }
 
 // Setting up all event listeners
-toggleWidget()
-handleRateButtonClick()
-isFormPopulated()
-
-form.addEventListener('submit', (event: SubmitEvent) => {
-	event.preventDefault()
-	handleFormSubmit(event)
-})
+handleWidgetToggleListeners()
+handleRateButtonListener()
+handleTextareaListener()
+handleEmailListener()
+handleFormListener()
