@@ -78,7 +78,7 @@ git: rux-input
 
 ### Focus
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token         | Value             |
 |:------------------------------------------|:--------------|:------------------|
 | <span class="attr-title">Container</span> |               |                   |
@@ -106,7 +106,7 @@ git: rux-input
 
 ### Medium
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token                  | Value   |
 |:------------------------------------------|:-----------------------|:--------|
 | <span class="attr-title">Container</span> |                        |         |
