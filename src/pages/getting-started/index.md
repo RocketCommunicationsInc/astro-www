@@ -37,7 +37,7 @@ Learn more about designing with Astro development assets, and why the Astro team
 
 Astro is tested & supported in major 'evergreen' web browsers (the latest browser version from each vendor -1). Please submit an issue for problems with the browsers listed below. Mobile browsers are not yet fully supported in Astro.
 
-:::table-overflow
+:::specs-table-container
 |       | Chrome  | Firefox |  Edge   | Safari  | Chrome (Android) | Safari (iOS) |
 |:------|:-------:|:-------:|:-------:|:-------:|:----------------:|:------------:|
 | Astro | &check; | &check; | &check; | &check; |   unsupported    | unsupported  |
