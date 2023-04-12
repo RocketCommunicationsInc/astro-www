@@ -21,6 +21,7 @@
 		/* Appearance */
 		box-shadow: var(--EdgeColor) 0 -2px 0 0 inset;
 		color: var(--DarkBlue500Color);
+		cursor: pointer;
 	}
 
 	&::part(current-tab) {
