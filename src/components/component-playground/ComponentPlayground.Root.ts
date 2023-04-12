@@ -1,11 +1,13 @@
 let __animationId = 0
 
+let __iframeHeight = ''
+
 const __resize = () => {
 	const { height } = document.body.getBoundingClientRect()
-	const newIframeHeight = `${height + 2}px`
+	const iframeHeight = `${height + 2}px`
 
-	if (iframe !== null && iframeHeight !== newIframeHeight) {
-		iframe.style.setProperty('--y', iframeHeight = newIframeHeight)
+	if (iframe !== null && __iframeHeight !== iframeHeight) {
+		iframe.style.setProperty('--y', __iframeHeight = iframeHeight)
 	}
 }
 
@@ -20,8 +22,6 @@ const iframe = window.parent?.document.querySelector('.c-sandbox')! as HTMLIFram
 if (iframe !== null) {
 	iframe.addEventListener('load', resize)
 }
-
-let iframeHeight = ''
 
 visualViewport.addEventListener('resize', resize, { capture: true })
 
