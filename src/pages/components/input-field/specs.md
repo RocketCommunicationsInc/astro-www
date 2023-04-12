@@ -7,6 +7,7 @@ git: rux-input
 ---
 
 ## Anatomy
+
 <div class="spec-container -anatomy">
     <figure><img loading="lazy" width="270px" src="/img/components/input-field/input-anatomy.png" alt="Anatomy Image"/></figure>
     <ol>
@@ -17,25 +18,25 @@ git: rux-input
     </ol>
 </div>
 
-## Default Values 
+## Default Values
 
 :::table-overflow
 | Attribute                                 | Token                              | Value                                                                                                                 |
 |:------------------------------------------|:-----------------------------------|:----------------------------------------------------------------------------------------------------------------------|
 | <span class="attr-title">Container</span> |                                    |                                                                                                                       |
-| Padding (Left and Right)                  | input-padding-y-medium             | 0.5rem                                                                                                                |
+| Padding (left and right)                  | input-padding-y-medium             | 0.5rem                                                                                                                |
 | Padding (top and bottom)                  | input-padding-x-medium             | 0.5rem                                                                                                                |
 | Border width                              | input-border-width                 | 1px                                                                                                                   |
 | Border radius                             | input-radius                       | 3px                                                                                                                   |
 | Border color                              | input-color-border-default         | #2b659b                                                                                                               |
 | Background color                          | input-color-background-default     | #101923                                                                                                               |
 | <span class="attr-title">Label</span>     |                                    |                                                                                                                       |
-| font family                               | font-control-body-1-font-family    | 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif |
-| font size                                 | font-control-body-1-font-size      | 1rem                                                                                                                  |
-| font weight                               | font-control-body-1-font-weight    | 400                                                                                                                   |
-| line height                               | font-control-body-1-line-height    | calc(20 / 16)                                                                                                         |
-| letter spacing                            | font-control-body-1-letter-spacing | 0.005em                                                                                                               |
-| text color                                | input-color-text-default           | #ffffff                                                                                                               |
+| Font family                               | font-control-body-1-font-family    | 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif |
+| Font size                                 | font-control-body-1-font-size      | 1rem                                                                                                                  |
+| Font weight                               | font-control-body-1-font-weight    | 400                                                                                                                   |
+| Line height                               | font-control-body-1-line-height    | calc(20 / 16)                                                                                                         |
+| Letter spacing                            | font-control-body-1-letter-spacing | 0.005em                                                                                                               |
+| Text color                                | input-color-text-default           | #ffffff                                                                                                               |
 :::
 
 ## States
@@ -54,7 +55,7 @@ git: rux-input
 | Attribute                                 | Token                    | Value   |
 |:------------------------------------------|:-------------------------|:--------|
 | <span class="attr-title">Container</span> |                          |         |
-| border color                              | input-color-border-hover | #92cbff |
+| Border color                              | input-color-border-hover | #92cbff |
 :::
 
 ### Invalid
@@ -63,7 +64,7 @@ git: rux-input
 | Attribute                                 | Token                      | Value   |
 |:------------------------------------------|:---------------------------|:--------|
 | <span class="attr-title">Container</span> |                            |         |
-| border color                              | input-color-border-invalid | #ff3838 |
+| Border color                              | input-color-border-invalid | #ff3838 |
 :::
 
 ### Disabled
@@ -72,7 +73,17 @@ git: rux-input
 | Attribute                                 | Token            | Value |
 |:------------------------------------------|:-----------------|:------|
 | <span class="attr-title">Container</span> |                  |       |
-| opacity                                   | opacity-disabled | 40%   |
+| Opacity                                   | opacity-disabled | 40%   |
+:::
+
+### Focus
+
+:::table-overflow
+| Attribute                                 | Token         | Value             |
+|:------------------------------------------|:--------------|:------------------|
+| <span class="attr-title">Container</span> |               |                   |
+| Outline                                   | focus-outline | 1px solid #da9ce7 |
+| Outline Offset                            | focus-offset  | 0.125rem          |
 :::
 
 ## Sizes
@@ -89,8 +100,18 @@ git: rux-input
 | Attribute                                 | Token                 | Value   |
 |:------------------------------------------|:----------------------|:--------|
 | <span class="attr-title">Container</span> |                       |         |
-| Padding (left/right)                      | input-padding-y-small | 0.5rem  |
-| Padding (top/bottom)                      | input-padding-x-small | 0.25rem |
+| Padding (left and right)                      | input-padding-y-small | 0.5rem  |
+| Padding (top and bottom)                      | input-padding-x-small | 0.25rem |
+:::
+
+### Medium
+
+:::table-overflow
+| Attribute                                 | Token                 | Value   |
+|:------------------------------------------|:----------------------|:--------|
+| <span class="attr-title">Container</span> |                       |         |
+| Padding (left and right)                      | input-padding-y-medium | 0.5rem  |
+| Padding (top and bottom)                      | input-padding-x-medium | 0.25rem |
 :::
 
 ### Large
@@ -99,11 +120,12 @@ git: rux-input
 | Attribute                                 | Token                 | Value   |
 |:------------------------------------------|:----------------------|:--------|
 | <span class="attr-title">Container</span> |                       |         |
-| Padding (left/right)                      | input-padding-y-large | 0.5rem  |
-| Padding (top/bottom)                      | input-padding-x-large | 0.75rem |
+| Padding (left and right)                      | input-padding-y-large | 0.5rem  |
+| Padding (top and bottom)                      | input-padding-x-large | 0.75rem |
 :::
 
 ## Variants
+
 <div class="spec-container -examples">
     <figure><img loading="lazy" width="170" src="/img/components/input-field/input-placeholder.png" alt="Input Placeholder"/></figure>
 </div>
@@ -114,7 +136,7 @@ git: rux-input
 | Attribute                                 | Token                        | Value   |
 |:------------------------------------------|:-----------------------------|:--------|
 | <span class="attr-title">Container</span> |                              |         |
-| text color                                | input-color-text-placeholder | #a4abb6 |
+| Text color                                | input-color-text-placeholder | #a4abb6 |
 :::
 
 <div class="spec-container -examples">
