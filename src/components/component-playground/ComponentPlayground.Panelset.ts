@@ -11,30 +11,24 @@ export default DOM.elementOf({
 	mutate: {
 		childList: true,
 		callback() {
-			const internals = DOM.internals(this, () => ({
-				tablistElement: DOM.part<HTMLSpanElement>(this.shadowRoot, 'tablist')!,
-				labelElements: [] as HTMLElement[],
-				tabElements: [] as HTMLButtonElement[],
-				currentLabelElement: null as any as HTMLElement,
-				style: this.shadowRoot.adoptedStyleSheets[this.shadowRoot.adoptedStyleSheets.push(new DOM.CSS(liveCSS)) - 1],
-				viewport: this.ownerDocument?.defaultView!.visualViewport
-			}))
+			const internals = DOM.ref<Internals>(this)
 
-			internals.labelElements = [ ...this.querySelectorAll<HTMLElement>(':scope > [label]') ]
+			internals.labels = [ ...this.querySelectorAll<HTMLElement>(':scope > [label]') ]
 
-			internals.currentLabelElement = internals.labelElements.find(labelElement => labelElement === internals.currentLabelElement)! || internals.labelElements[0]!
+			internals.currentLabel = internals.labels.find(labelElement => labelElement === internals.currentLabel)! || internals.labels[0]!
 
 			const styleRule = (internals.style.cssRules[0] as CSSGroupingRule).cssRules[0] as CSSStyleRule
-			const updateTabs = () => {
-				styleRule.selectorText = `::slotted(:not([label=${JSON.stringify(DOM.attr(internals.currentLabelElement, 'label')!)}]))`
 
-				internals.tabElements = internals.labelElements.map(labelElement => {
-					const labelInternals = DOM.internals(labelElement, () => ({
+			const updateTabs = () => {
+				styleRule.selectorText = `::slotted(:not([label=${JSON.stringify(DOM.attr(internals.currentLabel, 'label')!)}]))`
+
+				internals.tabElements = internals.labels.map(labelElement => {
+					const labelInternals = internals.labelRef<LabelInternals>(labelElement, () => ({
 						tabElement: DOM.withEvents(
 							new DOM.HTML('button', { part: 'tab' }, DOM.attr(labelElement, 'label')!),
 							{
 								click() {
-									internals.currentLabelElement = labelElement
+									internals.currentLabel = labelElement
 
 									updateTabs()
 
@@ -46,12 +40,12 @@ export default DOM.elementOf({
 						),
 					}))
 
-					const isCurrentTab = labelElement === internals.currentLabelElement
+					const isCurrentTab = labelElement === internals.currentLabel
 
 					labelInternals.tabElement.part.toggle('current-tab', isCurrentTab)
 
 					labelInternals.tabElement.addEventListener('click', () => {
-						internals.currentLabelElement = labelElement
+						internals.currentLabel = labelElement
 					})
 
 					return labelInternals.tabElement
@@ -62,5 +56,30 @@ export default DOM.elementOf({
 
 			internals.tablistElement.replaceChildren(...internals.tabElements)
 		},
-	}
+	},
+	setref(): Internals {
+		return {
+			tablistElement: DOM.part<HTMLSpanElement>(this.shadowRoot, 'tablist')!,
+			labels: [] as HTMLElement[],
+			tabElements: [] as HTMLButtonElement[],
+			currentLabel: null as any as HTMLElement,
+			style: this.shadowRoot.adoptedStyleSheets[this.shadowRoot.adoptedStyleSheets.push(new DOM.CSS(liveCSS)) - 1],
+			viewport: this.ownerDocument?.defaultView!.visualViewport,
+			labelRef: DOM.createRef(),
+		}
+	},
 })
+
+interface Internals {
+	tablistElement: HTMLSpanElement
+	labels: HTMLElement[]
+	tabElements: HTMLButtonElement[]
+	currentLabel: HTMLElement,
+	style: CSSStyleSheet,
+	viewport: VisualViewport
+	labelRef: DOM.Referencer
+}
+
+interface LabelInternals {
+	tabElement: HTMLButtonElement
+}

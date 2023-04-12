@@ -1,0 +1,153 @@
+@import "project:layouts/default/style/ui-monospace.css";
+@import "project:layouts/default/style/sanitize.css";
+@import "project:layouts/default/style/variables.css";
+
+/* Baseline */
+
+:where(:root) {
+	/* Layout */
+	overflow: hidden;
+
+	/* Text */
+	font-family: "Helvetica", var(--SystemType);
+}
+
+:where(body) {
+	/* Layout */
+	margin: 1px;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+	/* Layout */
+	margin-block: 0;
+
+	/* Text */
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+:where(input) {
+	/* Layout */
+	margin: 0;
+	padding: 0;
+
+	/* Text */
+	font: inherit;
+
+	/* Appearance */
+	background-color: transparent;
+	color: inherit;
+	border-width: 0;
+}
+
+:where(select) {
+	/* Layout */
+	margin: 0;
+
+	/* Text */
+	font: inherit;
+	letter-spacing: inherit;
+	text-align: inherit;
+	text-transform: inherit;
+	white-space: inherit;
+	word-spacing: inherit;
+
+	/* Appearance */
+	appearance: none;
+	background-color: transparent;
+	border-style: none;
+
+	/* Appearance */
+	color: inherit;
+}
+
+/* Patterns */
+
+:where(:root) {
+	--BackColor: Canvas;
+	--FillColor: CanvasText;
+	--TextColor: var(--FillColor);
+	--EdgeColor: var(--FillColor);
+	--EdgeSize: 1px;
+
+	/* Radius Reference */
+	--EdgeRadius: 3px;
+	--RoundRadius: 999999px;
+}
+
+:where(svg) {
+	fill: var(--FillColor);
+}
+
+/* Application */
+
+.app {
+	display: grid;
+
+	/* Layout */
+	overflow: hidden;
+
+	/* Appearance */
+	border-radius: var(--EdgeRadius);
+	box-shadow: var(--EdgeColor) 0 0 0 var(--EdgeSize);
+
+	/* Reference */
+	--EdgeColor: var(--Grey600Color);
+	--EdgeRadius: 6px;
+
+	@media (width <= 700px) {
+		/* Layout */
+		grid-template-rows: 68--step auto;
+
+		/* Reference */
+		--max-height: 400px;
+	}
+
+	@media (width > 700px) {
+		/* Layout */
+		grid-template-columns: auto 54--step;
+
+		/* Reference */
+		--max-height: 512px;
+	}
+
+	& .sandbox-area,
+	& .control-area {
+		display: grid;
+
+		/* Layout */
+		block-size: 100%;
+		grid-auto-rows: auto;
+
+		/* Layout */
+		overflow: hidden;
+		padding-inline-start: 1px;
+	}
+
+	& .sandbox-area {
+		@media (width >= 700px) {
+			/* Appearance */
+			border-end-start-radius: var(--EdgeRadius);
+			border-start-start-radius: var(--EdgeRadius);
+		}
+	}
+
+	& .control-area {
+		/* Layout */
+		max-block-size: var(--max-height);
+
+		@media (width >= 700px) {
+			/* Appearance */
+			box-shadow: var(--EdgeColor) var(--EdgeSize) 0 0 0 inset;
+		}
+
+		@media (width >= 700px) {
+			/* Appearance */
+			border-end-end-radius: var(--EdgeRadius);
+			border-start-end-radius: var(--EdgeRadius);
+
+			/* Appearance */
+			box-shadow: var(--EdgeColor) var(--EdgeSize) 0 0 0 inset;
+		}
+	}
+}

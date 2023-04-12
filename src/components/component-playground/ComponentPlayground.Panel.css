@@ -8,9 +8,6 @@
 	overflow: hidden;
 	padding-block-end: 1px;
 
-	/* Appearance */
-	box-shadow: var(--EdgeColor) 0 -1px 0 0;
-
 	@media (width < 700px) {
 		/* Layout */
 		grid-template-rows: auto;
@@ -19,6 +16,9 @@
 	@media (width >= 700px) {
 		/* Layout */
 		grid-template-rows: 44--rpx auto;
+
+		/* Appearance */
+		box-shadow: var(--EdgeColor) 0 -1px 0 0;
 	}
 
 	&::part(heading) {

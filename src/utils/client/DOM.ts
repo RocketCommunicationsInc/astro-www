@@ -44,20 +44,42 @@ export let set = <T>(
 	return append(element, ...children)
 }
 
-let map = new WeakMap()
-
-export let internals = <Internals, Host = object>(host: Host & object, create: { (host: Host): Internals }): Internals => (
+export let createRef: CreateRef = (map = new WeakMap()): Referencer => (
+	host,
+	create = null as any
+) => (
 	map.has(host)
 		? map.get(host)
 	: (
 		map.set(
 			host,
 			// @ts-ignore re-use `create` variable
-			create = create(host)
+			create = create.call(host, host)
 		),
 		create
 	)
 )
+
+export interface CreateRef {
+	(): Referencer
+}
+
+export interface Referencer {
+	<Internals extends object = object, Host extends object = object>(
+		host: Host,
+		create?: ReferenceCreator<Internals, Host>
+	): Internals
+}
+
+export interface ReferenceCreator<Internals extends object = object, Host extends object = object> {
+	(this: Host, host: Host): Internals
+}
+
+export interface Reference {
+	[name: PropertyKey]: unknown
+}
+
+export let ref = createRef()
 
 export let withEvents = <T>(target: T & EventTarget, events: { [type: string]: { (this: T, event: Event): void } }): T => {
 	for (let type in events) {
@@ -71,7 +93,7 @@ let __isAppendable = (value: unknown): value is bigint | boolean | null | number
 let __createElementClass = <T extends Element>(Super: abstract new () => T, xmlns: string): {
 	prototype: T
 
-	(name: ReflectConfig): ReflectElement<T>
+	(config: ReflectConfig): Element
 
 	new (): T
 	new <Name extends keyof HTMLElementTagNameMap>(name: Name): HTMLElementTagNameMap[Name]
@@ -155,6 +177,10 @@ export let elementOf = (opts: ReflectConfig) => {
 				}
 			}
 
+			if (opts.setref !== undefined) {
+				ref(host as any, opts.setref)
+			}
+
 			if (opts.mutate !== undefined) {
 				const callback = opts.mutate.callback.bind(host as CustomElement)
 				new MutationObserver(callback).observe(host, opts.mutate)
@@ -212,17 +238,29 @@ export class CSS extends CSSStyleSheet {
 	}
 }
 
-export interface ReflectElement<T> {
+export interface ReflectElement<T extends Element = Element> {
 	prototype: T
 	new(): T
 }
 
-export interface ReflectConfig {
+interface GenericConfig {
+	define?: unknown
+	shadow?: unknown
+	styles?: unknown
+	append?: unknown
+	mutate?: unknown
+	setref?: unknown
+}
+
+export interface ReflectConfig extends GenericConfig {
 	define?: string
 	shadow?: ReflectShadowConfig
 	styles?: CSSStyleSheet[]
 	append?: Node
 	mutate?: ReflectMutationConfig
+	setref?: {
+		(this: CustomElement, host: CustomElement): object
+	}
 }
 
 export interface ReflectShadowConfig extends ShadowRootInit {}

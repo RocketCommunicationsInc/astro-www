@@ -13,21 +13,22 @@
 		"serve": "astro preview"
 	},
 	"devDependencies": {
-		"@astrojs/mdx": "0.18.2",
+		"@astrojs/mdx": "0.18.3",
 		"@astrojs/sitemap": "1.2.2",
 		"@astrojs/ts-plugin": "0.4.4",
+		"@astropub/config-to-alias": "1.0.1",
 		"@astropub/contentful": "0.1.0",
 		"@astropub/doc": "0.1.4",
 		"@astropub/flow": "0.4.0",
 		"@astropub/md": "0.2.0",
 		"@astrouxds/tokens": "1.7.0",
 		"@csstools/custom-units": "0.1.1",
-		"@typescript-eslint/eslint-plugin": "5.57.1",
-		"@typescript-eslint/parser": "5.57.1",
+		"@typescript-eslint/eslint-plugin": "5.58.0",
+		"@typescript-eslint/parser": "5.58.0",
 		"@typescript/dom": "npm:@types/web",
 		"@typescript/lib-dom": "npm:@types/web@^0.0.99",
-		"astro": "2.2.0",
-		"eslint": "8.37.0",
+		"astro": "2.2.2",
+		"eslint": "8.38.0",
 		"eslint-config-dev": "3.2.0",
 		"eslint-plugin-astro": "0.26.1",
 		"eslint-plugin-json": "3.1.0",
@@ -35,8 +36,8 @@
 		"isomorphic-dompurify": "1.2.0",
 		"lightningcss": "1.19.0",
 		"parse-yaml": "0.1.0",
-		"postcss-load-config": "^4.0.1",
-		"postcss-preset-env": "8.3.0",
+		"postcss-load-config": "4.0.1",
+		"postcss-preset-env": "8.3.1",
 		"remark-directive": "2.0.1",
 		"stylelint": "15.4.0",
 		"stylelint-config-dev": "4.0.0",
@@ -45,7 +46,7 @@
 		"stylelint-use-logical": "2.1.0",
 		"stylelint-use-nesting": "4.1.0",
 		"types-object": "0.3.0",
-		"typescript": "5.0.3"
+		"typescript": "5.0.4"
 	},
 	"eslintConfig": {
 		"extends": [
