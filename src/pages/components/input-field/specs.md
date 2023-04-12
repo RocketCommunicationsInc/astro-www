@@ -100,18 +100,18 @@ git: rux-input
 | Attribute                                 | Token                 | Value   |
 |:------------------------------------------|:----------------------|:--------|
 | <span class="attr-title">Container</span> |                       |         |
-| Padding (left and right)                      | input-padding-y-small | 0.5rem  |
-| Padding (top and bottom)                      | input-padding-x-small | 0.25rem |
+| Padding (left and right)                  | input-padding-y-small | 0.5rem  |
+| Padding (top and bottom)                  | input-padding-x-small | 0.25rem |
 :::
 
 ### Medium
 
 :::table-overflow
-| Attribute                                 | Token                 | Value   |
-|:------------------------------------------|:----------------------|:--------|
-| <span class="attr-title">Container</span> |                       |         |
-| Padding (left and right)                      | input-padding-y-medium | 0.5rem  |
-| Padding (top and bottom)                      | input-padding-x-medium | 0.25rem |
+| Attribute                                 | Token                  | Value   |
+|:------------------------------------------|:-----------------------|:--------|
+| <span class="attr-title">Container</span> |                        |         |
+| Padding (left and right)                  | input-padding-y-medium | 0.5rem  |
+| Padding (top and bottom)                  | input-padding-x-medium | 0.25rem |
 :::
 
 ### Large
@@ -120,8 +120,8 @@ git: rux-input
 | Attribute                                 | Token                 | Value   |
 |:------------------------------------------|:----------------------|:--------|
 | <span class="attr-title">Container</span> |                       |         |
-| Padding (left and right)                      | input-padding-y-large | 0.5rem  |
-| Padding (top and bottom)                      | input-padding-x-large | 0.75rem |
+| Padding (left and right)                  | input-padding-y-large | 0.5rem  |
+| Padding (top and bottom)                  | input-padding-x-large | 0.75rem |
 :::
 
 ## Variants
