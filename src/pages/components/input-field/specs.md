@@ -19,7 +19,7 @@ git: rux-input
 
 ## Default Values 
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token                              | Value                                                                                                                 |
 |:------------------------------------------|:-----------------------------------|:----------------------------------------------------------------------------------------------------------------------|
 | <span class="attr-title">Container</span> |                                    |                                                                                                                       |
@@ -50,7 +50,7 @@ git: rux-input
 
 ### Hover
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token                    | Value   |
 |:------------------------------------------|:-------------------------|:--------|
 | <span class="attr-title">Container</span> |                          |         |
@@ -59,7 +59,7 @@ git: rux-input
 
 ### Invalid
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token                      | Value   |
 |:------------------------------------------|:---------------------------|:--------|
 | <span class="attr-title">Container</span> |                            |         |
@@ -68,7 +68,7 @@ git: rux-input
 
 ### Disabled
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token            | Value |
 |:------------------------------------------|:-----------------|:------|
 | <span class="attr-title">Container</span> |                  |       |
@@ -85,7 +85,7 @@ git: rux-input
 
 ### Small
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token                 | Value   |
 |:------------------------------------------|:----------------------|:--------|
 | <span class="attr-title">Container</span> |                       |         |
@@ -95,7 +95,7 @@ git: rux-input
 
 ### Large
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token                 | Value   |
 |:------------------------------------------|:----------------------|:--------|
 | <span class="attr-title">Container</span> |                       |         |
@@ -110,7 +110,7 @@ git: rux-input
 
 ### Placeholder Text
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token                        | Value   |
 |:------------------------------------------|:-----------------------------|:--------|
 | <span class="attr-title">Container</span> |                              |         |
@@ -123,7 +123,7 @@ git: rux-input
 
 ### With Prefix
 
-:::table-overflow
+:::specs-table-container
 | Attribute                              | Token                         | Value   |
 |:---------------------------------------|:------------------------------|:--------|
 | <span class="attr-title">Prefix</span> |                               |         |
@@ -139,7 +139,7 @@ git: rux-input
 
 ### With Suffix
 
-:::table-overflow
+:::specs-table-container
 | Attribute                              | Token                         | Value   |
 |:---------------------------------------|:------------------------------|:--------|
 | <span class="attr-title">Suffix</span> |                               |         |

@@ -19,7 +19,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ## Default Values
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                        | Token                             | Value   |
 |:-------------------------------------------------|:----------------------------------|:--------|
 | <span class="attr-title">Track (active)</span>   |                                   |         |
@@ -50,7 +50,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ### Default
 
-:::table-overflow
+:::specs-table-container
 
 | Attribute                             | Token                             | Value   |
 |:--------------------------------------|:----------------------------------|:--------|
@@ -61,7 +61,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ### Hover
 
-:::table-overflow
+:::specs-table-container
 | Attribute                             | Token                           | Value   |
 |:--------------------------------------|:--------------------------------|:--------|
 | <span class="attr-title">Thumb</span> |                                 |         |
@@ -70,7 +70,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ### Disabled
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token            | Value |
 |:------------------------------------------|:-----------------|:------|
 | <span class="attr-title">Container</span> |                  |       |
@@ -79,7 +79,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ### Focus
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token         | Value             |
 |:------------------------------------------|:--------------|:------------------|
 | <span class="attr-title">Container</span> |               |                   |

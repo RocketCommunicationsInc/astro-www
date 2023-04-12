@@ -16,7 +16,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ## Default Values
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token                                   | Value                                                                                                                 |
 |:------------------------------------------|:----------------------------------------|:----------------------------------------------------------------------------------------------------------------------|
 | <span class="attr-title">Container</span> |                                         |                                                                                                                       |
@@ -51,7 +51,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 #### Default
 
-:::table-overflow
+:::specs-table-container
 
 | Attribute                                 | Token                                   | Value   |
 |:------------------------------------------|:----------------------------------------|:--------|
@@ -66,7 +66,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 #### Hover
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token                                 | Value   |
 |:------------------------------------------|:--------------------------------------|:--------|
 | <span class="attr-title">Container</span> |                                       |         |
@@ -75,7 +75,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ### Disabled
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token            | Value |
 |:------------------------------------------|:-----------------|:------|
 | <span class="attr-title">Container</span> |                  |       |
@@ -92,7 +92,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 #### Default
 
-:::table-overflow
+:::specs-table-container
 
 | Attribute                                 | Token                                    | Value     |
 |:------------------------------------------|:-----------------------------------------|:----------|
@@ -107,7 +107,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 #### Hover
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token                                  | Value     |
 |:------------------------------------------|:---------------------------------------|:----------|
 | <span class="attr-title">Container</span> |                                        |           |
@@ -120,7 +120,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ### Disabled
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token            | Value |
 |:------------------------------------------|:-----------------|:------|
 | <span class="attr-title">Container</span> |                  |       |
@@ -137,7 +137,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 #### Default
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token                                     | Value     |
 |:------------------------------------------|:------------------------------------------|:----------|
 | <span class="attr-title">Container</span> |                                           |           |
@@ -151,7 +151,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 #### Hover
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token                                   | Value   |
 |:------------------------------------------|:----------------------------------------|:--------|
 | <span class="attr-title">Label</span>     |                                         |         |
@@ -162,7 +162,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ### Disabled
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token            | Value |
 |:------------------------------------------|:-----------------|:------|
 | <span class="attr-title">Container</span> |                  |       |
@@ -179,7 +179,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ### Small
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token                  | Value   |
 |:------------------------------------------|:-----------------------|:--------|
 | <span class="attr-title">Container</span> |                        |         |
@@ -189,7 +189,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ### Medium
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token                   | Value  |
 |:------------------------------------------|:------------------------|:-------|
 | <span class="attr-title">Container</span> |                         |        |
@@ -199,7 +199,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ### Large
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token                  | Value   |
 |:------------------------------------------|:-----------------------|:--------|
 | <span class="attr-title">Container</span> |                        |         |
@@ -217,7 +217,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ### Small
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token                            | Value   |
 |:------------------------------------------|:---------------------------------|:--------|
 | <span class="attr-title">Container</span> |                                  |         |
@@ -227,7 +227,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ### Medium
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token                             | Value  |
 |:------------------------------------------|:----------------------------------|:-------|
 | <span class="attr-title">Container</span> |                                   |        |
@@ -237,7 +237,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ### Large
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token                            | Value   |
 |:------------------------------------------|:---------------------------------|:--------|
 | <span class="attr-title">Container</span> |                                  |         |
@@ -251,7 +251,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
     <figure><img loading="lazy" width="139" src="/img/components/button/button-primary-medium-focus.png" alt="Primary Button with Focus State"/></figure>
 </div>
 
-:::table-overflow
+:::specs-table-container
 | Attribute                                 | Token         | Value             |
 |:------------------------------------------|:--------------|:------------------|
 | <span class="attr-title">Container</span> |               |                   |

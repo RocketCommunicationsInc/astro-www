@@ -12,6 +12,11 @@
 			border-block-end: 1px solid var(--Grey300Color);
 		}
 
+		& th {
+			/* Text */
+			text-align: start;
+		}
+
 		& td {
 			/* Layout */
 			padding: 2--step 5--step;
