@@ -27,6 +27,7 @@ export default DOM.elementOf({
 				if (checked !== this.checked) {
 					this.checked = checked
 
+					DOM.dispatchEvent(element, 'input', { bubbles: true, composed: true })
 					DOM.dispatchEvent(element, 'change', { bubbles: true, composed: true })
 
 					shadowTrack.part.toggle('checked', checked)
