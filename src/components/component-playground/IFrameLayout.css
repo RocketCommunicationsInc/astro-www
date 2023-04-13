@@ -72,7 +72,8 @@
 
 	/* Radius Reference */
 	--EdgeRadius: 3px;
-	--RoundRadius: 999999px;
+	--RadiusBase: 3px;
+	--RadiusRound: 9e9px;
 }
 
 :where(svg) {

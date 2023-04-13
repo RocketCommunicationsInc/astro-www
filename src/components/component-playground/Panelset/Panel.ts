@@ -1,9 +1,9 @@
 import * as DOM from 'project:utils/client/DOM.ts'
-import styling from './ComponentPlayground.Panel.css?withtype=style'
-import content from './ComponentPlayground.Panel.html?withtype=fragment'
+import styling from './Panel.css?withtype=style'
+import content from './Panel.html?withtype=fragment'
 
 export default DOM.elementOf({
-	define: 'a-playground-panel',
+	define: 'a-panel',
 	shadow: {
 		mode: 'open',
 	},

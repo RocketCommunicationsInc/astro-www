@@ -30,10 +30,6 @@
 		padding-block: 10--rpx;
 		padding-inline: 12--rpx;
 
-		/* Text */
-		font-size: 18--rpx;
-		line-height: calc(24 / 18);
-
 		/* Appearance */
 		background-color: var(--BackColor);
 		color: var(--FillColor);

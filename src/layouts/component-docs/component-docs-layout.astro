@@ -2,7 +2,7 @@
 import Layout from 'project:layouts/new-docs/new-docs-layout.astro'
 import './component-docs-layout.css'
 
-import SandboxFrame from 'project:components/component-playground/ComponentPlayground.Frame.astro'
+import PlaygroundIFrame from 'project:components/component-playground/IFrame.astro'
 import { getSecondaryNavGroup } from 'project:components/site-navigation/server/currentPath.ts'
 
 import PageHeader from 'project:components/page-header/page-header.js'
@@ -67,7 +67,7 @@ const html = `<style>:root{--StorybookPreviewHeight:${StorybookPreviewHeight};}<
 
 	<Fragment slot="toolbar" />
 
-	<SandboxFrame for={Astro.url.pathname} src={Astro.url.pathname + 'sandbox/'} />
+	<PlaygroundIFrame for={Astro.url.pathname} src={Astro.url.pathname + 'sandbox/'} />
 
 	<Fragment set:html={html} />
 

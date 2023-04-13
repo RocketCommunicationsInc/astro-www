@@ -10,6 +10,29 @@ export let attr = (element: Element, name: string) => element.getAttribute(name)
 export let token = <T extends Element>(parent: ParentNode, type: string, name: string) => parent.querySelector<T>(getTokenSelector(type, name))
 export let part = <T extends Element>(parent: ParentNode, name: string) => token<T>(parent, 'part', name)
 
+const __simulatedClickListener = {
+	handleEvent(event: KeyboardEvent & { target: HTMLElement }) {
+		switch (event.key) {
+			case event.type === 'keydown' && 'Enter':
+				event.target.click()
+
+			case ' ':
+				event.preventDefault()
+
+				if (!event.altKey && event.type === 'keyup') {
+					event.target.click()
+				}
+		}
+	}
+}
+
+export const withClick = <T>(element: T & HTMLElement): T => (
+	element.tabIndex = 0,
+	element.addEventListener('keydown', __simulatedClickListener),
+	element.addEventListener('keyup', __simulatedClickListener),
+	element
+)
+
 export let setAttr = <T>(
 	element: T & Element,
 	name: string,
@@ -217,6 +240,10 @@ export let elementOf = (opts: ReflectConfig) => {
 		}
 	}
 
+	if (opts.protos) {
+		Object.defineProperties(Element.prototype, Object.getOwnPropertyDescriptors(opts.protos))
+	}
+
 	return opts.define ? define(opts.define, Element) : Element
 }
 
@@ -258,6 +285,7 @@ export interface ReflectConfig extends GenericConfig {
 	styles?: CSSStyleSheet[]
 	append?: Node
 	mutate?: ReflectMutationConfig
+	protos?: any
 	setref?: {
 		(this: CustomElement, host: CustomElement): object
 	}

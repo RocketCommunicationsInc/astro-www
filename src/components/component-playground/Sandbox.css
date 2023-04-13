@@ -22,10 +22,6 @@
 		padding-block: 10--rpx;
 		padding-inline: 12--rpx;
 
-		/* Text */
-		font-size: 18--rpx;
-		line-height: calc(24 / 18);
-
 		/* Appearance */
 		background-color: var(--BackColor);
 		color: var(--FillColor);
@@ -54,6 +50,18 @@
 
 		/* Reference */
 		--EdgeColor: var(--Grey200Color);
+		--EdgeSize: 0px;
+	}
+
+	&::part(theme-switch) {
+		/* Layout */
+		flex-flow: row;
+
+		/* Text */
+		text-indent: 8--rpx;
+
+		/* Appearance */
+		color: var(--Grey800Color);
 	}
 }
 

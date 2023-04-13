@@ -26,7 +26,7 @@
 				"route": {
 					"title": "Route",
 					"type": "string",
-					"format": "uri-reference"
+					"$ref": "./formats.json#/$defs/uri-reference"
 				},
 				"constructor": {
 					"title": "JavaScript class",
@@ -50,9 +50,9 @@
 								"label": "Field",
 								"description": "Adds a Field",
 								"body": {
+									"type": "${2:text}",
 									"label": "$1",
-									"name": "${1/(.*)/${1:/downcase}/}",
-									"implicitlabel": false
+									"name": "${1/(.*)/${1:/downcase}/}"
 								}
 							}
 						]
@@ -109,19 +109,21 @@
 		"FieldBase": {
 			"type": "object",
 			"properties": {
-				"label": {
+				"attribute": {
 					"title": "Field Label",
-					"type": "string"
+					"type": "string",
+					"$ref": "./formats.json#/$defs/html-attribute"
 				},
-				"name": {
-					"$ref": "./formats.json#/$defs",
+				"property": {
 					"title": "Field Name",
-					"type": "string"
-				},
-				"implicitlabel": {
-					"type": "boolean"
+					"type": "string",
+					"$ref": "./formats.json#/$defs/js-identifier"
 				}
-			}
+			},
+			"required": [
+				"attribute",
+				"property"
+			]
 		},
 		"FieldMenu": {
 			"title": "Menu Field",
@@ -138,7 +140,11 @@
 						"type": "string"
 					}
 				}
-			}
+			},
+			"required": [
+				"kind",
+				"options"
+			]
 		},
 		"FieldText": {
 			"title": "Text Field",
@@ -152,7 +158,11 @@
 					"title": "Value",
 					"type": "string"
 				}
-			}
+			},
+			"required": [
+				"kind",
+				"value"
+			]
 		},
 		"FieldToggle": {
 			"title": "Toggle Field",
@@ -166,7 +176,11 @@
 					"title": "Checked",
 					"type": "boolean"
 				}
-			}
+			},
+			"required": [
+				"kind",
+				"checked"
+			]
 		}
 	},
 	"properties": {

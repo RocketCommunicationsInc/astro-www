@@ -2,28 +2,59 @@
 	"$schema": "./component-playgrounds.schema.json",
 	"records": [
 		{
+			"tag": "rux-breadcrumb",
+			"route": "/components/breadcrumbs/",
+			"constructor": "RuxBreadcrumb",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-breadcrumb>\n\t<rux-breadcrumb-item href=\"#\">Home</rux-breadcrumb-item>\n\t<rux-breadcrumb-item href=\"#\">Second Item</rux-breadcrumb-item>\n\t<rux-breadcrumb-item>Current Item</rux-breadcrumb-item>\n</rux-breadcrumb>"
+				}
+			],
+			"fields": []
+		},
+		{
 			"tag": "rux-button",
 			"route": "/components/button/",
 			"constructor": "RuxButton",
 			"examples": [
 				{
 					"name": "Default",
-					"code": "<rux-button />"
-				}
-			],
-			"fields": []
-		},
-		{
-			"tag": "rux-card",
-			"route": "/components/card/",
-			"constructor": "RuxCard",
-			"examples": [
+					"code": "<rux-button>Button</rux-button>"
+				},
 				{
-					"name": "Default",
-					"code": "<rux-card />"
+					"name": "Secondary",
+					"code": "<rux-button secondary>Button</rux-button>"
+				},
+				{
+					"name": "Borderless",
+					"code": "<rux-button borderless>Button</rux-button>"
 				}
 			],
-			"fields": []
+			"fields": [
+				{
+					"kind": "menu",
+					"attribute": "size",
+					"property": "size",
+					"options": [
+						"large",
+						"medium",
+						"small"
+					]
+				},
+				{
+					"kind": "switch",
+					"attribute": "disabled",
+					"property": "disabled",
+					"checked": false
+				},
+				{
+					"kind": "text",
+					"attribute": "icon",
+					"property": "icon",
+					"value": ""
+				}
+			]
 		},
 		{
 			"tag": "rux-checkbox",
@@ -38,19 +69,19 @@
 			"fields": [
 				{
 					"kind": "text",
-					"name": "checked",
+					"attribute": "checked",
 					"property": "checked",
 					"value": ""
 				},
 				{
 					"kind": "text",
-					"name": "disabled",
+					"attribute": "disabled",
 					"property": "disabled",
 					"value": ""
 				},
 				{
 					"kind": "text",
-					"name": "help-text",
+					"attribute": "help-text",
 					"property": "helpText",
 					"value": ""
 				}
@@ -63,13 +94,13 @@
 			"examples": [
 				{
 					"name": "Default",
-					"code": "<rux-classification-marking classification=\"top-secret\" />"
+					"code": "<rux-classification-marking classification=\"top-secret\"></rux-classification-marking>"
 				}
 			],
 			"fields": [
 				{
 					"kind": "menu",
-					"name": "classification",
+					"attribute": "classification",
 					"property": "classification",
 					"options": [
 						"unclassified",
@@ -83,35 +114,11 @@
 				},
 				{
 					"kind": "text",
-					"name": "label",
+					"attribute": "label",
 					"property": "label",
 					"value": ""
 				}
 			]
-		},
-		{
-			"tag": "rux-clock",
-			"route": "/components/clock/",
-			"constructor": "RuxClock",
-			"examples": [
-				{
-					"name": "Default",
-					"code": "<rux-clock />"
-				}
-			],
-			"fields": []
-		},
-		{
-			"tag": "rux-container",
-			"route": "/components/container/",
-			"constructor": "RuxContainer",
-			"examples": [
-				{
-					"name": "Default",
-					"code": "<rux-container>\n\tContainers are used to group multiple components into a specific area that allows them to flow in a flexible/responsive manner.\n</rux-container>"
-				}
-			],
-			"fields": []
 		},
 		{
 			"tag": "rux-datetime",
@@ -120,10 +127,76 @@
 			"examples": [
 				{
 					"name": "Default",
-					"code": "<rux-datetime />"
+					"code": "<rux-datetime date=\"Wed Apr 12 2023 13:59:57 GMT-0400 (Eastern Daylight Time)\" day=\"2-digit\" hour=\"2-digit\" minute=\"2-digit\" month=\"2-digit\" second=\"2-digit\" time-zone=\"America/Los_Angeles\" year=\"2-digit\" hour-12=\"true\"></rux-datetime>"
 				}
 			],
-			"fields": []
+			"fields": [
+				{
+					"type": "text",
+					"attribute": "date",
+					"property": "date"
+				},
+				{
+					"type": "text",
+					"attribute": "day",
+					"property": "day"
+				},
+				{
+					"type": "text",
+					"attribute": "era",
+					"property": "era"
+				},
+				{
+					"type": "text",
+					"attribute": "hour",
+					"property": "hour"
+				},
+				{
+					"type": "text",
+					"attribute": "hour-12",
+					"property": "hour12"
+				},
+				{
+					"type": "text",
+					"attribute": "locale",
+					"property": "locale"
+				},
+				{
+					"type": "text",
+					"attribute": "minute",
+					"property": "minute"
+				},
+				{
+					"type": "text",
+					"attribute": "month",
+					"property": "month"
+				},
+				{
+					"type": "text",
+					"attribute": "second",
+					"property": "second"
+				},
+				{
+					"type": "text",
+					"attribute": "time-zone",
+					"property": "timeZone"
+				},
+				{
+					"type": "text",
+					"attribute": "time-zone-name",
+					"property": "timeZoneName"
+				},
+				{
+					"type": "text",
+					"attribute": "weekday",
+					"property": "weekday"
+				},
+				{
+					"type": "text",
+					"attribute": "year",
+					"property": "year"
+				}
+			]
 		},
 		{
 			"tag": "rux-datetime",
@@ -205,12 +278,17 @@
 				{
 					"name": "Default",
 					"code": "<rux-tag status=\"pass\">Tag</rux-textarea>"
+				},
+				{
+					"name": "Pass",
+					"code": "<rux-tag status=\"pass\">Pass</rux-textarea>"
 				}
 			],
 			"fields": [
 				{
 					"kind": "menu",
-					"name": "status",
+					"attribute": "status",
+					"property": "status",
 					"options": [
 						"pass",
 						"fail",
@@ -232,7 +310,7 @@
 			"fields": [
 				{
 					"kind": "text",
-					"name": "label",
+					"attribute": "label",
 					"property": "label"
 				}
 			]

@@ -1,0 +1,17 @@
+:host {
+	display: flex;
+
+	/* Layout */
+	flex-flow: column;
+
+	&::part(label) {
+		/* Layout */
+		margin-block-end: 4--rpx;
+
+		/* Text */
+		font-weight: 700;
+
+		/* Appearance */
+		color: var(--Grey800Color);
+	}
+}

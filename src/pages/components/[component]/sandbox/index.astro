@@ -1,7 +1,6 @@
 ---
 import { type PlaygroundRecord } from 'project:data/component-playgrounds.record.json'
-import { Field, Root, Sandbox } from 'project:components/component-playground/ComponentPlayground'
-import { For } from '@astropub/flow'
+import Layout from 'project:components/component-playground/IFrameLayout.astro'
 
 export async function getStaticPaths() {
 	const { records } = await import('project:data/component-playgrounds.record.json')
@@ -21,44 +20,5 @@ export async function getStaticPaths() {
 }
 
 export type Props = PlaygroundRecord
-
-const attrs = Astro.props
-const defaultExample = attrs.examples[0]
-
-const hasExamples = attrs.examples.length > 1
-const hasFields = Array.isArray(attrs.fields) && attrs.fields.length > 0
 ---
-<Root>
-	<Sandbox is:tag={attrs.tag} is:constructor={attrs.constructor} set:html={defaultExample.code} />
-	{
-		hasExamples
-			? (
-				<Fragment slot="variants">
-					<Field type="menu" label="variant" property="example:variant" implicitlabel>
-						<option>Default</option>
-					</Field>
-				</Fragment>
-			)
-		: null
-	}{
-		hasFields
-			? (
-				<Fragment slot="fields">
-					<For of={attrs.fields!}>{(field) => (
-						field.kind === 'text'
-							? <Field type="text" label={field.name} property={field.property} value={field.value} />
-						: field.kind === 'menu'
-							? (
-								<Field type="menu" label={field.name} property={field.property}>{
-									<For of={field.options}>{(option) => (
-										<option set:text={option} />
-									)}</For>
-								}</Field>
-							)
-						: null
-					)}</For>
-				</Fragment>
-			)
-		: null
-	}
-</Root>
+<Layout {...Astro.props} />

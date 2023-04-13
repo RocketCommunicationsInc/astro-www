@@ -1,0 +1,14 @@
+input {
+	/* Layout */
+	margin: 0;
+	padding: 0;
+
+	/* Text */
+	font: inherit;
+
+	/* Appearance */
+	background-color: transparent;
+	color: inherit;
+	outline: none;
+	border-width: 0;
+}

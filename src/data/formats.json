@@ -3,42 +3,42 @@
 	"$defs": {
 		"upper-alpha": {
 			"type": "string",
-			"pattern": "^[\\x0041-x005A]+$",
+			"pattern": "^[A-Z]+$",
 			"errorMessage": "String is not an upper alpha."
 		},
 		"lower-alpha": {
 			"type": "string",
-			"pattern": "^[\\x0061-x007A]+$",
+			"pattern": "^[a-z]+$",
 			"errorMessage": "String is not a lower alpha."
 		},
 		"alpha": {
 			"type": "string",
-			"pattern": "^[\\x0041-x005A\\x0061-x007A]+$",
+			"pattern": "^[A-Za-z]+$",
 			"errorMessage": "String is not an alpha."
 		},
 		"digit": {
 			"type": "string",
-			"pattern": "^[\\x0030-x0039]+$",
+			"pattern": "^[0-9]+$",
 			"errorMessage": "String is not a digit."
 		},
 		"alphanumeric": {
 			"type": "string",
-			"pattern": "^[\\x0030-x0039\\x0041-x005A\\x0061-x007A]+$",
+			"pattern": "^[0-9A-Za-z]+$",
 			"errorMessage": "String is not an alphanumeric."
 		},
 		"upper-hex": {
 			"type": "string",
-			"pattern": "^[\\x0041-x0046]+$",
+			"pattern": "^[0-9A-F]+$",
 			"errorMessage": "String is not an upper hex."
 		},
 		"lower-hex": {
 			"type": "string",
-			"pattern": "^[\\x0061-x0066]+$",
+			"pattern": "^[0-9a-f]+$",
 			"errorMessage": "String is not a lower hex."
 		},
 		"hex": {
 			"type": "string",
-			"pattern": "^[\\x0041-x0046\\x0061-x0066]+$",
+			"pattern": "^[0-9A-Fa-f]+$",
 			"errorMessage": "String is not a hex."
 		},
 		"js-identifier": {
@@ -46,14 +46,24 @@
 			"pattern": "^[\\p{XID_Start}_]\\p{XID_Continue}*$",
 			"errorMessage": "String is not a JavaScript identifier."
 		},
+		"html-attribute": {
+			"pattern": "^[A-Za-z][^\\t\\n\\f />=\\x00\"'<]*$",
+			"errorMessage": "String is not an HTML attribute."
+		},
 		"html-tag": {
-			"pattern": "^[\\x0041-x005A\\x0061-x007A][^\\0000\\x0009\\x000A\\x000C\\x0020\\x002F\\x003E]*$",
-			"errorMessage": "String is not an HTML tag name."
+			"pattern": "^[A-Za-z][^\\t\\n\\f />\\x00]*$",
+			"errorMessage": "String is not an HTML tag."
 		},
 		"xml-tag": {
 			"type": "string",
 			"pattern": "^[^\\x0009\\x000A\\x0020\\x003E\\x002F]+$",
-			"errorMessage": "String is not an XML tag name."
+			"errorMessage": "String is not an XML tag."
+		},
+		"uri": {
+			"format": "uri"
+		},
+		"uri-reference": {
+			"format": "uri-reference"
 		}
 	}
 }

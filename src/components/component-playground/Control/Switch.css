@@ -1,0 +1,76 @@
+:host {
+	display: grid;
+
+	/* Layout */
+	align-items: center;
+	inline-size: min-content;
+
+	/* Appearance */
+	cursor: pointer;
+
+	/** Reference */
+	--BackColor: var(--Grey200Color);
+	--EdgeColor: var(--DarkBlue500Color);
+	--EdgeRadius: var(--RadiusRound);
+
+	&::part(track) {
+		display: inline-block;
+
+		/* Layout */
+		block-size: .75rem;
+		grid-area: 1 / 1;
+		inline-size: 2rem;
+
+		/* Appearance */
+		background-color: var(--BackColor);
+		border-radius: var(--EdgeRadius);
+		box-shadow: var(--EdgeColor) 0 0 0 var(--EdgeSize) inset;
+
+		/* Animation */
+		transition: background-color 80ms;
+	}
+
+	&::part(track checked) {
+		/* Reference */
+		--BackColor: var(--DarkBlue500Color);
+	}
+
+	&::part(thumb) {
+		display: block;
+
+		/* Layout */
+		block-size: 1.25rem;
+		grid-area: 1 / 1;
+		inline-size: 1.25rem;
+
+		/* Appearance */
+		background-color: var(--BackColor);
+		border-radius: var(--EdgeRadius);
+		box-shadow: var(--EdgeColor) 0 0 0 var(--EdgeSize) inset;
+
+		/* Animation */
+		transition: translate 80ms;
+	}
+
+	&::part(thumb checked) {
+		/* Animation */
+		translate: .75rem 0;
+	}
+}
+
+/* Contextual Styles */
+
+:host(:focus-visible) {
+	/* Appearance */
+	outline: none;
+
+	&::part(thumb) {
+		/* Appearance */
+		outline: auto 1px;
+	}
+}
+
+:host(:where(:hover, :focus-visible)) {
+	/* Reference */
+	--EdgeColor: var(--DarkBlue600Color);
+}

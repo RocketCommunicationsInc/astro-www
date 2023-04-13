@@ -24,7 +24,7 @@
 		cursor: pointer;
 	}
 
-	&::part(current-tab) {
+	&::part(active) {
 		/* Appearance */
 		color: var(--Grey800Color);
 

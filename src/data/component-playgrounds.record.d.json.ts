@@ -1,6 +1,6 @@
 interface __PlaygroundFieldBase {
 	kind: string
-	name: string
+	attribute: string
 	property: string
 }
 
@@ -14,7 +14,12 @@ export interface PlaygroundFieldText extends __PlaygroundFieldBase {
 	value: string
 }
 
-export type PlaygroundField = PlaygroundFieldMenu | PlaygroundFieldText
+export interface PlaygroundFieldSwitch extends __PlaygroundFieldBase {
+	kind: 'switch'
+	checked: boolean
+}
+
+export type PlaygroundField = PlaygroundFieldMenu | PlaygroundFieldText | PlaygroundFieldSwitch
 
 export interface PlaygroundExample {
 	name: string
