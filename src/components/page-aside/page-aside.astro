@@ -34,7 +34,7 @@ if (content.assets?.name) {
 	})
 }
 
-const storybookUrl: string = `https://astro-components.netlify.app/?path=/story/${content.storybook}`
+const storybookUrl: string = content.storybook ? `https://astro-components.netlify.app/?path=/story/${content.storybook}` : 'https://astro-components.netlify.app'
 ---
 <nav class="p-quicklinks-navigation" aria-label="Quick Links">
 	<ul id='top-links'>
