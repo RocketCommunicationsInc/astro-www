@@ -16,9 +16,7 @@ import ControlMenu from './Control/Menu.astro'
 import ControlText from './Control/Text.astro'
 import ControlSwitch from './Control/Switch.astro'
 
-export type Props = PlaygroundRecord
-
-const attrs = Astro.props
+const attrs = Astro.props as PlaygroundRecord
 const defaultExample = attrs.examples[0]
 
 const getNPMURL = (path: string) => `https://cdn.jsdelivr.net/npm/${path}`

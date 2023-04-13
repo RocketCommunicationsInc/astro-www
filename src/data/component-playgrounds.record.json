@@ -279,8 +279,9 @@
 			"fields": [
 				{
 					"kind": "text",
+					"property": "label",
 					"attribute": "label",
-					"property": "label"
+					"value": "Push Button"
 				},
 				{
 					"kind": "switch",

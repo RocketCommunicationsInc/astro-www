@@ -25,6 +25,8 @@ export default DOM.elementOf({
 				if (value !== this.value) {
 					this.value = value
 
+					shadowContent.value = value
+
 					DOM.dispatchEvent(element, 'change', { bubbles: true, composed: true })
 				}
 			},
