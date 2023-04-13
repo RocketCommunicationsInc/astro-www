@@ -171,7 +171,7 @@
                 },
                 {
                     "name": "Design Tokens",
-                    "status": "inprogress",
+                    "status": "available",
                     "type": "token",
                     "version": "7.0.0"
                 }
@@ -663,7 +663,7 @@
                 },
                 {
                     "name": "Design Tokens",
-                    "status": "inprogress",
+                    "status": "available",
                     "type": "token",
                     "version": "7.0.0"
                 }
@@ -1658,7 +1658,7 @@
                 },
                 {
                     "name": "Design Tokens",
-                    "status": "inprogress",
+                    "status": "available",
                     "type": "token",
                     "version": "7.0.0"
                 }
