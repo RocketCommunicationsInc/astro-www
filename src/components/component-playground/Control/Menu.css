@@ -50,8 +50,11 @@ svg {
 	}
 
 	&::part(content) {
-		line-height: calc(20 / 16);
+		/* Layout */
 		margin-inline-end: 36--rpx;
+
+		/* Text */
+		line-height: calc(20 / 16);
 	}
 
 	&::part(indicator) {
