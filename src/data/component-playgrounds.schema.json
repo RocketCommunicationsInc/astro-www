@@ -51,8 +51,8 @@
 								"description": "Adds a Field",
 								"body": {
 									"type": "${2:text}",
-									"label": "$1",
-									"name": "${1/(.*)/${1:/downcase}/}"
+									"property": "${1/(.*)/${1:/downcase}/}",
+									"attribute": "$1"
 								}
 							}
 						]

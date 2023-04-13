@@ -140,67 +140,67 @@
 			],
 			"fields": [
 				{
-					"type": "text",
+					"kind": "text",
 					"attribute": "date",
 					"property": "date"
 				},
 				{
-					"type": "text",
+					"kind": "text",
 					"attribute": "day",
 					"property": "day"
 				},
 				{
-					"type": "text",
+					"kind": "text",
 					"attribute": "era",
 					"property": "era"
 				},
 				{
-					"type": "text",
+					"kind": "text",
 					"attribute": "hour",
 					"property": "hour"
 				},
 				{
-					"type": "text",
+					"kind": "text",
 					"attribute": "hour-12",
 					"property": "hour12"
 				},
 				{
-					"type": "text",
+					"kind": "text",
 					"attribute": "locale",
 					"property": "locale"
 				},
 				{
-					"type": "text",
+					"kind": "text",
 					"attribute": "minute",
 					"property": "minute"
 				},
 				{
-					"type": "text",
+					"kind": "text",
 					"attribute": "month",
 					"property": "month"
 				},
 				{
-					"type": "text",
+					"kind": "text",
 					"attribute": "second",
 					"property": "second"
 				},
 				{
-					"type": "text",
+					"kind": "text",
 					"attribute": "time-zone",
 					"property": "timeZone"
 				},
 				{
-					"type": "text",
+					"kind": "text",
 					"attribute": "time-zone-name",
 					"property": "timeZoneName"
 				},
 				{
-					"type": "text",
+					"kind": "text",
 					"attribute": "weekday",
 					"property": "weekday"
 				},
 				{
-					"type": "text",
+					"kind": "text",
 					"attribute": "year",
 					"property": "year"
 				}
@@ -273,10 +273,37 @@
 			"examples": [
 				{
 					"name": "Default",
-					"code": "<rux-push-button />"
+					"code": "<rux-push-button label=\"Push Button\"></rux-push-button>"
 				}
 			],
-			"fields": []
+			"fields": [
+				{
+					"kind": "text",
+					"attribute": "label",
+					"property": "label"
+				},
+				{
+					"kind": "switch",
+					"property": "checked",
+					"attribute": "checked"
+				},
+				{
+					"kind": "switch",
+					"property": "disabled",
+					"attribute": "disabled"
+				},
+				{
+					"kind": "menu",
+					"attribute": "size",
+					"property": "size",
+					"options": [
+						"large",
+						"medium",
+						"small"
+					],
+					"value": "medium"
+				}
+			]
 		},
 		{
 			"tag": "rux-tag",
