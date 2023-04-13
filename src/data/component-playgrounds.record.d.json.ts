@@ -10,8 +10,15 @@ export interface PlaygroundFieldMenu extends __PlaygroundFieldBase {
 	value: string
 }
 
-export interface PlaygroundFieldText extends __PlaygroundFieldBase {
-	kind: 'text'
+export interface PlaygroundFieldRadio extends __PlaygroundFieldBase {
+	kind: 'radio'
+	label: string
+	value: string
+}
+
+export interface PlaygroundFieldRadioGroup extends __PlaygroundFieldBase {
+	kind: 'radio-group'
+	options: PlaygroundFieldRadio[]
 	value: string
 }
 
@@ -20,7 +27,12 @@ export interface PlaygroundFieldSwitch extends __PlaygroundFieldBase {
 	checked: boolean
 }
 
-export type PlaygroundField = PlaygroundFieldMenu | PlaygroundFieldText | PlaygroundFieldSwitch
+export interface PlaygroundFieldText extends __PlaygroundFieldBase {
+	kind: 'text'
+	value: string
+}
+
+export type PlaygroundField = PlaygroundFieldMenu | PlaygroundFieldRadioGroup | PlaygroundFieldSwitch | PlaygroundFieldText
 
 export interface PlaygroundExample {
 	name: string

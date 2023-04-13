@@ -14,6 +14,8 @@ import Field from './Field/Field.astro'
 
 import ControlMenu from './Control/Menu.astro'
 import ControlText from './Control/Text.astro'
+import ControlRadio from './Control/Radio.astro'
+import ControlRadioGroup from './Control/RadioGroup.astro'
 import ControlSwitch from './Control/Switch.astro'
 
 const attrs = Astro.props as PlaygroundRecord
@@ -54,11 +56,11 @@ const scriptContent = [
 					? (
 						<Panel label="Variants">
 							<Field type="menu" label="variant" property="example:variant" hiddenlabel>
-								<ControlMenu for="sandbox:example">
+								<ControlRadioGroup for="sandbox:example">{
 									<For of={attrs.examples!}>{(example) => (
-										<option value={example.code}>{example.name}</option>
+										<ControlRadio value={example.code} set:text={example.name} />
 									)}</For>
-								</ControlMenu>
+								}</ControlRadioGroup>
 							</Field>
 						</Panel>
 					)
@@ -77,13 +79,21 @@ const scriptContent = [
 											)}</For>
 										}</ControlMenu>
 
-									// Text Control
-									: field.kind === 'text'
-										? <ControlText for={field.property} value={field.value} />
+									// Radio Group Control
+									: field.kind === 'radio-group'
+										? <ControlRadioGroup for={field.property}>{
+											<For of={field.options}>{(option) => (
+												<ControlRadio value={option.value} selected={option.value === field.value ? '' : null} set:text={option.label} />
+											)}</For>
+										}</ControlRadioGroup>
 
 									// Switch Control
 									: field.kind === 'switch'
 										? <ControlSwitch for={field.property} checked={field.checked} />
+
+									// Text Control
+									: field.kind === 'text'
+										? <ControlText for={field.property} value={field.value} />
 
 									// display nothing and continue
 									: null

@@ -34,7 +34,7 @@ export default DOM.elementOf({
 				if (hiddenLabel !== this.hiddenLabel) {
 					this.hiddenLabel = hiddenLabel
 
-					shadowLabel.hidden = hiddenLabel
+					shadowLabel.part.toggle('hidden-label', this.hiddenLabel)
 				}
 			},
 		}))

@@ -46,16 +46,18 @@
 	}
 
 	&::part(content) {
-		display: flex;
+		display: grid;
 
 		/* Layout */
 		flex-flow: column;
-		gap: 20--rpx;
+		gap: 24--rpx 28--rpx;
+		justify-content: space-between;
 		overflow-y: scroll;
 		padding: 12--rpx;
 
 		@media (width < 700px) {
 			/* Layout */
+			grid-template-columns: repeat(auto-fill, 164--rpx);
 			padding-block: 24px;
 		}
 

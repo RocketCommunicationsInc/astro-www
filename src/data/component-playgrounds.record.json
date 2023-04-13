@@ -37,9 +37,9 @@
 					"attribute": "size",
 					"property": "size",
 					"options": [
-						"large",
+						"small",
 						"medium",
-						"small"
+						"large"
 					],
 					"value": "medium"
 				},
@@ -276,13 +276,25 @@
 					"attribute": "disabled"
 				},
 				{
-					"kind": "menu",
+					"kind": "radio-group",
 					"attribute": "size",
 					"property": "size",
 					"options": [
-						"large",
-						"medium",
-						"small"
+						{
+							"kind": "radio",
+							"label": "Small",
+							"value": "small"
+						},
+						{
+							"kind": "radio",
+							"label": "Medium",
+							"value": "medium"
+						},
+						{
+							"kind": "radio",
+							"label": "Large",
+							"value": "large"
+						}
 					],
 					"value": "medium"
 				}

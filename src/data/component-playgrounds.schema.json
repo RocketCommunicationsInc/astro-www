@@ -96,12 +96,12 @@
 					"if": {
 						"properties": {
 							"kind": {
-								"const": "toggle"
+								"const": "switch"
 							}
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/FieldToggle"
+						"$ref": "#/$defs/FieldSwitch"
 					}
 				}
 			]
@@ -150,6 +150,71 @@
 				"options"
 			]
 		},
+		"FieldRadio": {
+			"title": "Radio Field",
+			"$ref": "#/$defs/FieldBase",
+			"properties": {
+				"kind": {
+					"title": "Radio Field",
+					"const": "radio"
+				},
+				"label": {
+					"title": "Radio Label",
+					"type": "string"
+				},
+				"value": {
+					"title": "Radio Value",
+					"type": "string"
+				}
+			},
+			"required": [
+				"kind",
+				"options"
+			]
+		},
+		"FieldRadioGroup": {
+			"title": "Radio Group Field",
+			"$ref": "#/$defs/FieldBase",
+			"properties": {
+				"kind": {
+					"title": "Radio Group Field",
+					"const": "radio-group"
+				},
+				"options": {
+					"title": "Radio Group Options",
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/FieldRadio"
+					}
+				},
+				"value": {
+					"title": "Radio Group Value",
+					"type": "string"
+				}
+			},
+			"required": [
+				"kind",
+				"options"
+			]
+		},
+		"FieldSwitch": {
+			"title": "Switch Field",
+			"$ref": "#/$defs/FieldBase",
+			"properties": {
+				"kind": {
+					"title": "Switch Field",
+					"const": "switch"
+				},
+				"checked": {
+					"title": "Switch Checked State",
+					"type": "boolean"
+				}
+			},
+			"required": [
+				"kind",
+				"checked"
+			]
+		},
 		"FieldText": {
 			"title": "Text Field",
 			"$ref": "#/$defs/FieldBase",
@@ -159,31 +224,13 @@
 					"const": "text"
 				},
 				"value": {
-					"title": "Value",
+					"title": "Text Value",
 					"type": "string"
 				}
 			},
 			"required": [
 				"kind",
 				"value"
-			]
-		},
-		"FieldToggle": {
-			"title": "Toggle Field",
-			"$ref": "#/$defs/FieldBase",
-			"properties": {
-				"kind": {
-					"title": "Toggle Field",
-					"const": "toggle"
-				},
-				"checked": {
-					"title": "Checked",
-					"type": "boolean"
-				}
-			},
-			"required": [
-				"kind",
-				"checked"
 			]
 		}
 	},
