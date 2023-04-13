@@ -307,11 +307,11 @@
 			"examples": [
 				{
 					"name": "Default",
-					"code": "<rux-tag status=\"pass\">Tag</rux-textarea>"
+					"code": "<rux-tag status=\"pass\">Tag</rux-tag>"
 				},
 				{
 					"name": "Pass",
-					"code": "<rux-tag status=\"pass\">Pass</rux-textarea>"
+					"code": "<rux-tag status=\"pass\">Pass</rux-tag>"
 				}
 			],
 			"fields": [
@@ -342,7 +342,8 @@
 				{
 					"kind": "text",
 					"attribute": "label",
-					"property": "label"
+					"property": "label",
+					"value": "Textarea label"
 				}
 			]
 		}
