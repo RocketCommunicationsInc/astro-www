@@ -4,9 +4,8 @@ path: /design-guidelines/theme
 date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
 title: Theme
+description: Astro supports dark and light themes
 ---
-
-# Theme
 
 Astro supports a light theme along with the original, default dark theme.
 

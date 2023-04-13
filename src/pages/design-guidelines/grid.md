@@ -4,11 +4,10 @@ path: /design-guidelines/grid
 date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
 title: Grid
+description: A grid system is a defined set of vertical columns and optionally horizontal rows based on time-tested principles of graphic design and layout.
 ---
 
-# Grid
-
-A [grid system](https://www.creativebloq.com/web-design/grid-theory-41411345) is a defined set of vertical columns and optionally horizontal rows based on time-tested principles of graphic design and layout. Ensuring a consistent grid system within your application and across all Astro applications creates a sense of continuity and relationship from screen to screen and app to app, even when the layouts between those screens may have dramatically different requirements.
+ Ensuring a consistent [grid system](https://www.creativebloq.com/web-design/grid-theory-41411345) within your application and across all Astro applications creates a sense of continuity and relationship from screen to screen and app to app, even when the layouts between those screens may have dramatically different requirements.
 
 ## Columns, Gutters and Margins
 
@@ -22,7 +21,7 @@ The Astro Grid is a standard 12 [column](https://developer.mozilla.org/en-US/doc
 
 At certain screen sizes, Astro optimizes for display on narrow devices by reducing the number of columns and rearranging the layout of your application via [responsive design](https://developers.google.com/web/fundamentals/design-and-ux/responsive/) practices.
 
-:::specs-table-container
+:::table-overflow
 | Breakpoint                       | Columns | Margin | Gap  | Gap (compact) |
 |----------------------------------|---------|--------|------|---------------|
 | 0-360px                          | 4       | 16px   | 16px | 8px           |

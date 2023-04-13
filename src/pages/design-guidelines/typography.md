@@ -4,9 +4,8 @@ path: /design-guidelines/typography
 date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
 title: Typography
+description: Astro uses the open source typeface Roboto for all elements but system fonts can also be used.
 ---
-
-# Typography
 
 Astro uses the open source typeface [Roboto](https://fonts.google.com/specimen/Roboto?query=roboto&sidebar.open=true&selection.family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700) for all elements, but [system fonts](https://drafts.csswg.org/css-fonts-4/#system-ui-def) can also be used. As with all Astro elements, sizing is rendered in rem units. For those working with systems that don’t support rem, the corollary size is provided in points. Unless explicitly mentioned otherwise in a component, Astro recommends using sentence case capitalization throughout your applications.
 
@@ -14,7 +13,7 @@ Astro uses the open source typeface [Roboto](https://fonts.google.com/specimen/R
 
 Astro supports two levels of display text.
 
-:::specs-table-container
+:::table-overflow
 | Style     | Weight        | Font Size        | Letter Spacing | Line Height       | Class            | Design Token Identifier |
 |-----------|---------------|------------------|----------------|-------------------|------------------|-------------------------|
 | Display 1 | Light (300)   | 3.75 rem (60 px) | -0.50          | 4.375 rem (70 px) | `.rux-display-1` | `display-1`             |
@@ -25,7 +24,7 @@ Astro supports two levels of display text.
 
 Astro supports six levels of headline text.
 
-:::specs-table-container
+:::table-overflow
 | Style          | Weight        | Font Size         | Letter Spacing | Line Height      | Class                 | Design Token Identifier |
 |----------------|---------------|-------------------|----------------|------------------|-----------------------|-------------------------|
 | Heading 1      | Regular (400) | 2.125 rem (34 px) | 0.25           | 2.5 rem (40 px)  | `.rux-heading-1`      | `heading-1`             |
@@ -41,7 +40,7 @@ Astro supports six levels of headline text.
 
 The default font size in Astro is 1 rem/16 px. Astro supports three additional font sizes for body copy.
 
-:::specs-table-container
+:::table-overflow
 | Style               | Weight        | Font Size         | Letter Spacing | Line Height      | Class                      | Design Token Identifier |
 |---------------------|---------------|-------------------|----------------|------------------|----------------------------|-------------------------|
 | Body 1              | Regular (400) | 1 rem (16 px)     | 0.50           | 1.5 rem (24 px)  | `.rux-body-1`              | `body-1`                |

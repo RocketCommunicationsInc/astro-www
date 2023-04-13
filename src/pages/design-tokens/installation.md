@@ -62,7 +62,7 @@ A `light-theme` class that includes Astro's light theme.
 
 A few utility classes for applying Astro typography.
 
-:::specs-table-container
+:::table-overflow
 | Style               | Class                      |
 |---------------------|----------------------------|
 | Body 1              | `.rux-body-1`              |

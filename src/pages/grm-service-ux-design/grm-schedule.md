@@ -96,7 +96,7 @@ Below is an animated walkthrough of a representative task flow using the GRM Sch
 
 Below are design and development resources to get you started on an app that supports GRM equipment management. Note that there are some discrepancies between the design documents and the [GRM Schedule Sample App](https://grm-equipment.astrouxds.com/) due to design improvements that were introduced late in the app development cycle.
 
-:::specs-table-container
+:::table-overflow
 | Resources                                                                                                                                       | Description                                                                                                                                                |
 |-------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [GRM Design Specifications (pdf)](http://com.rocketcom.astrouxds.s3.amazonaws.com/attachments/cjx3r384i2gbihmqnxcwrq25d-grm-specifications.pdf) | The GRM Design Specification contains information on use cases, task flows, UX research and wireframes for key features of the GRM App Suite.              |

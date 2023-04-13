@@ -1,5 +1,6 @@
 ---
 title: Color
+description: Maintaining color consistency across applications is an essential part of what makes an application an Astro Application.
 layout: project:layouts/docs/docs-layout.astro
 ---
 <style>
@@ -34,9 +35,7 @@ color-swab::before {
 }
 </style>
 
-# Color
-
-Maintaining color consistency across applications is an essential part of what makes an application an Astro Application. In Astro, a variety of color palettes combine to form various themes. Each color has been carefully chosen to create a cohesive design system. In order to remain Astro-compliant, you should avoid creating your own colors or values.
+In Astro, a variety of color palettes combine to form various themes. Each color has been carefully chosen to create a cohesive design system. In order to remain Astro-compliant, you should avoid creating your own colors or values.
 
 ## Design Tokens and Colors
 
@@ -56,7 +55,7 @@ All color pairings should follow the latest WCAG AA contrast rules. Astro compon
 
 ### Primary Palette
 
-:::specs-table-container
+:::table-overflow
 | 6.0 Hex Code | 6.0 CSS Name             | 7.0 Hex Code | 7.0 Design Token               |
 |--------------|--------------------------|--------------|--------------------------------|
 | #CBDEE9      | `--colorPrimaryLighten4` | #CBDEE9      | `--color-palette-darkblue-100` |
@@ -73,7 +72,7 @@ All color pairings should follow the latest WCAG AA contrast rules. Astro compon
 
 ### Secondary Palette
 
-:::specs-table-container
+:::table-overflow
 | 6.0 Hex Code | 6.0 CSS Name                | 7.0 Hex Code | 7.0 Design Token                 |
 |--------------|-----------------------------|--------------|----------------------------------|
 | #DAEEFF      | `--colorSecondaryLighten4`  | #DAEEFF      | `--color-palette-brightblue-100` |
@@ -90,7 +89,7 @@ All color pairings should follow the latest WCAG AA contrast rules. Astro compon
 
 ### Tertiary Palette
 
-:::specs-table-container
+:::table-overflow
 | 6.0 Hex Code | 6.0 CSS Name               | 7.0 Hex Code | 7.0 Design Token           |
 |--------------|----------------------------|--------------|----------------------------|
 | #D4D8DD      | `--colorTertiaryLighten4`  | #F5F6F9      | `--color-palette-grey-100` |
@@ -111,7 +110,7 @@ The Quaternary Palette has been removed entirely.
 
 ### Tag 1 Palette
 
-:::specs-table-container
+:::table-overflow
 | 6.0 Hex Code | 6.0 CSS Name          | 7.0 Hex Code | 7.0 Design Token           |
 |--------------|-----------------------|--------------|----------------------------|
 | #D0F4F4      | `--colorTag1Lighten4` | #D0F4F4      | `--color-palette-teal-100` |
@@ -127,7 +126,7 @@ The Quaternary Palette has been removed entirely.
 
 ### Tag 2 Palette
 
-:::specs-table-container
+:::table-overflow
 | 6.0 Hex Code | 6.0 CSS Name          | 7.0 Hex Code | 7.0 Design Token             |
 |--------------|-----------------------|--------------|------------------------------|
 | #E4E2F7      | `--colorTag2Lighten4` | #E4E2F7      | `--color-palette-purple-100` |
@@ -143,7 +142,7 @@ The Quaternary Palette has been removed entirely.
 
 ### Tag 3 Palette
 
-:::specs-table-container
+:::table-overflow
 | 6.0 Hex Code | 6.0 CSS Name          | 7.0 Hex Code | 7.0 Design Token           |
 |--------------|-----------------------|--------------|----------------------------|
 | #EDCEF3      | `--colorTag3Lighten4` | #EDCEF3      | `--color-palette-pink-100` |
@@ -159,7 +158,7 @@ The Quaternary Palette has been removed entirely.
 
 ### Tag 4 Palette
 
-:::specs-table-container
+:::table-overflow
 | 6.0 Hex Code | 6.0 CSS Name          | 7.0 Hex Code | 7.0 Design Token                |
 |--------------|-----------------------|--------------|---------------------------------|
 | #F8DDD1      | `--colorTag4Lighten4` | #F8DDD1      | `--color-palette-hotorange-100` |
