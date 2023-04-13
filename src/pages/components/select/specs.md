@@ -22,8 +22,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Attribute                                      | Token                                  | Value                                                                                                                 |
 |:-----------------------------------------------|:---------------------------------------|:----------------------------------------------------------------------------------------------------------------------|
 | <span class="attr-title">Container</span>      |                                        |                                                                                                                       |
-| Padding (left and right)                       | select-padding-y-medium                | 0.5rem                                                                                                                |
-| Padding (top and bottom)                       | select-padding-x-medium                | 0.5rem                                                                                                                |
+| Padding (left and right)                       | select-padding-x-medium                | 0.5rem                                                                                                                |
+| Padding (top and bottom)                       | select-padding-y-medium                | 0.5rem                                                                                                                |
 | Border width                                   | select-border-width                    | 1px                                                                                                                   |
 | Border radius                                  | select-radius                          | 3px                                                                                                                   |
 | Border color                                   | select-color-border-default            | #2b659b                                                                                                               |
@@ -113,8 +113,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Attribute                                 | Token                  | Value   |
 |:------------------------------------------|:-----------------------|:--------|
 | <span class="attr-title">Container</span> |                        |         |
-| Padding (left and right)                  | select-padding-y-small | 1rem    |
-| Padding (top and bottom)                  | select-padding-x-small | 0.25rem |
+| Padding (left and right)                  | select-padding-x-small | 1rem    |
+| Padding (top and bottom)                  | select-padding-y-small | 0.25rem |
 :::
 
 ### Medium
@@ -123,8 +123,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Attribute                                 | Token                   | Value  |
 |:------------------------------------------|:------------------------|:-------|
 | <span class="attr-title">Container</span> |                         |        |
-| Padding (left and right)                  | select-padding-y-medium | 0.5rem |
-| Padding (top and bottom)                  | select-padding-x-medium | 0.5rem |
+| Padding (left and right)                  | select-padding-x-medium | 0.5rem |
+| Padding (top and bottom)                  | select-padding-y-medium | 0.5rem |
 :::
 
 ### Large
@@ -133,6 +133,6 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Attribute                                 | Token                  | Value   |
 |:------------------------------------------|:-----------------------|:--------|
 | <span class="attr-title">Container</span> |                        |         |
-| Padding (left and right)                  | select-padding-y-large | 0.25rem |
-| Padding (top and bottom)                  | select-padding-x-large | 0.75rem |
+| Padding (left and right)                  | select-padding-x-large | 0.25rem |
+| Padding (top and bottom)                  | select-padding-y-large | 0.75rem |
 :::
