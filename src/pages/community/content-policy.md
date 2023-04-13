@@ -1,10 +1,8 @@
 ---
-title: Content Policy
+title: Content Policy v0.2
+description: How we create, maintain and version our content
 layout: project:layouts/docs/docs-layout.astro
 ---
-
-
-# AstroUXDS<nolink>.com Content Policy v0.2
 
 ## Policy Principles
 

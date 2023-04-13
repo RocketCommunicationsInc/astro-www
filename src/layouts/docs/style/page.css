@@ -247,6 +247,11 @@
 		max-inline-size: 100%;
 	}
 
+	& pre {
+		/* Layout */
+		margin-block-end: 5--step;
+	}
+
 	& :is(li, p) a:not([class]) {
 		&:focus-visible {
 			/* Appearance */
