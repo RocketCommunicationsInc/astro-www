@@ -1,5 +1,6 @@
 ---
 title: Forms and Validation
+description: Forms are used to collect, validate, and submit user input.
 tags: components
 path: /patterns/forms-and-validation
 date: Last Modified
@@ -8,7 +9,7 @@ assets:
     name: Forms and Validation
 ---
 
-Forms are used to collect, validate, and submit user input. They usually contains form elements including [Checkbox](/components/checkbox), [Dialog](/components/dialog), [Select Menu](/components/select), [Input Field](/components/input-field), [Radio Button](/components/radio-button) and [Switch](/components/switch).
+Forms usually contains form elements including [Checkbox](/components/checkbox), [Dialog](/components/dialog), [Select Menu](/components/select), [Input Field](/components/input-field), [Radio Button](/components/radio-button) and [Switch](/components/switch).
 
 ### Form Layout
 

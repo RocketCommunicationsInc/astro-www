@@ -1,5 +1,6 @@
 ---
 title: Application Feedback
+description: Feedback patterns are mechanisms used to collect usability or content-related concerns and suggestions from users of a website or application.
 tags: resources
 path: /patterns/application-feedback
 date: Last Modified
@@ -8,7 +9,7 @@ assets:
     name: Application Feedback
 ---
 
-Feedback patterns are mechanisms used to collect usability or content-related concerns and suggestions from users of a website or application. Gathering this feedback is critical to building a valuable application and providing a pleasant user experience.
+Gathering feedback is critical to building a valuable application and providing a pleasant user experience.
 
 For Astro applications, feedback mechanisms should be deployable from anywhere and at any time. Whenever possible, they should never obscure content, intrude on interactive spaces, or disrupt workflow.
 
