@@ -1,4 +1,8 @@
 select {
+	display: block;
+
+	inline-size: 100%;
+
 	/* Text */
 	font: inherit;
 
@@ -7,4 +11,70 @@ select {
 	background-color: transparent;
 	border: 0;
 	color: inherit;
+	outline: none;
+}
+
+svg {
+	fill: CurrentColor;
+}
+
+:host {
+	display: inline-grid;
+
+	/* Layout */
+	inline-size: max-content;
+	min-inline-size: 128--rpx;
+	padding: 1px;
+
+	/* Appearance */
+	background-color: var(--Grey200Color);
+	border-radius: var(--RadiusBase);
+	box-shadow: var(--EdgeColor) 0 0 0 var(--EdgeSize) inset;
+	color: var(--DarkBlue500Color);
+
+	/* Reference */
+	--EdgeColor: var(--DarkBlue400Color);
+	--EdgeSize: 1px;
+
+	&::part(content),
+	&::part(indicator) {
+		display: block;
+
+		/* Layout */
+		grid-area: 1 / 1 / 3 / 3;
+		padding: 8--rpx;
+	}
+
+	&::part(content) {
+		margin-inline-end: 36--rpx;
+	}
+
+	&::part(indicator) {
+		/* Layout */
+		justify-self: end;
+
+		/* Appearance */
+		background-color: var(--BrightBlue200Color);
+		border-start-end-radius: var(--RadiusBase);
+		border-end-end-radius: var(--RadiusBase);
+		pointer-events: none;
+	}
+
+	&::part(indicator-icon) {
+		display: block;
+
+		block-size: 24--rpx;
+		inline-size: 24--rpx;
+	}
+}
+
+/* Contextual Styles */
+
+:host(:where(:hover, :focus)) {
+	--EdgeColor: var(--DarkBlue600Color);
+}
+
+:host(:focus) {
+	/* Appearance */
+	outline: auto 1px;
 }

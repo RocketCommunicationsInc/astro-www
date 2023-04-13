@@ -1,6 +1,6 @@
 import * as DOM from 'project:utils/client/ZOM.ts'
-import styling from './Switch.css?withtype=style'
 import content from './Switch.html?withtype=fragment'
+import styling from './Switch.css?withtype=style'
 
 export default DOM.elementOf({
 	name: 'a-control-switch',

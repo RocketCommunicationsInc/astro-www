@@ -1,4 +1,5 @@
 import * as DOM from 'project:utils/client/ZOM.ts'
+import content from './Menu.html?withtype=fragment'
 import styling from './Menu.css?withtype=style'
 
 export default DOM.elementOf({
@@ -7,31 +8,34 @@ export default DOM.elementOf({
 	constructor() {
 		const element = this
 		const shadowRoot = element.attachShadow({ mode: 'open' })
-		const shadowControl = new DOM.HTMLElement('select', { type: 'text' })
 
 		shadowRoot.adoptedStyleSheets = [ styling ]
-		shadowRoot.replaceChildren(shadowControl)
+		shadowRoot.replaceChildren(content.cloneNode(true))
+
+		const shadowContent = DOM.queryPart<HTMLSelectElement>(shadowRoot, 'content')!
+		const shadowIndicator = DOM.queryPart<HTMLSpanElement>(shadowRoot, 'indicator')!
 
 		DOM.internals<Internals, DOM.CustomElement>(element, () => ({
 			shadowRoot,
-			shadowControl,
+			shadowContent,
+			shadowIndicator,
 		}))
 
-		shadowControl.addEventListener('change', event => {
+		shadowRoot.addEventListener('change', () => {
 			DOM.dispatchEvent(element, 'change', { bubbles: true, composed: true })
 		})
 	},
 
 	prototype: {
 		get value(): string {
-			return DOM.internals<Internals>(this).shadowControl.value
+			return DOM.internals<Internals>(this).shadowContent.value
 		},
 	},
 
 	observeChildren(...childNodes) {
 		const internals = DOM.internals<Internals, DOM.CustomElement>(this)
 
-		internals.shadowControl.replaceChildren(
+		internals.shadowContent.replaceChildren(
 			...childNodes.filter(
 				childNode => childNode instanceof HTMLOptionElement
 			).map(
@@ -43,5 +47,6 @@ export default DOM.elementOf({
 
 interface Internals {
 	shadowRoot: ShadowRoot
-	shadowControl: HTMLSelectElement
+	shadowContent: HTMLSelectElement
+	shadowIndicator: HTMLSpanElement
 }

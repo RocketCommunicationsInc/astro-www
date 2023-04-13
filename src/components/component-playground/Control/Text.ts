@@ -1,4 +1,5 @@
 import * as DOM from 'project:utils/client/ZOM.ts'
+import content from './Text.html?withtype=fragment'
 import styling from './Text.css?withtype=style'
 
 export default DOM.elementOf({
@@ -7,14 +8,15 @@ export default DOM.elementOf({
 	constructor() {
 		const element = this
 		const shadowRoot = element.attachShadow({ mode: 'open' })
-		const shadowInput = new DOM.HTMLElement('input', { type: 'text' })
 
 		shadowRoot.adoptedStyleSheets = [ styling ]
-		shadowRoot.replaceChildren(shadowInput)
+		shadowRoot.replaceChildren(content)
+
+		const shadowContent = DOM.queryPart<HTMLInputElement>(shadowRoot, 'content')!
 
 		const internals = DOM.internals<Internals, DOM.CustomElement>(element, () => ({
 			shadowRoot,
-			shadowInput,
+			shadowContent,
 
 			value: '',
 			defaultValue: '',
@@ -28,8 +30,8 @@ export default DOM.elementOf({
 			},
 		}))
 
-		shadowInput.addEventListener('input', () => {
-			internals.setValue(shadowInput.value)
+		shadowContent.addEventListener('input', () => {
+			internals.setValue(shadowContent.value)
 		})
 	},
 
@@ -62,7 +64,7 @@ export default DOM.elementOf({
 
 interface Internals {
 	shadowRoot: ShadowRoot
-	shadowInput: HTMLInputElement
+	shadowContent: HTMLInputElement
 
 	value: string
 	defaultValue: string
