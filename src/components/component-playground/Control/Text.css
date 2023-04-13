@@ -30,7 +30,6 @@ input {
 	background-color: var(--Grey200Color);
 	border-radius: var(--RadiusBase);
 	box-shadow: var(--EdgeColor) 0 0 0 var(--EdgeSize) inset;
-	color: var(--Grey900Color);
 
 	/* Reference */
 	--EdgeColor: var(--DarkBlue400Color);

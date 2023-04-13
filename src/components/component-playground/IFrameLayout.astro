@@ -43,67 +43,69 @@ const scriptContent = [
 		<script type="module" set:html={scriptContent}></script>
 	</head>
 
-	<body class="app">
-		<section class="sandbox-area">
-			<Sandbox class="dark-theme" set:html={
-				defaultExample.code
-			} />
-		</section>
+	<body>
+		<main class="app">
+			<section class="sandbox-area">
+				<Sandbox class="dark-theme" set:html={
+					defaultExample.code
+				} />
+			</section>
 
-		<section class="control-area">
-			<Panelset>{
-				attrs.examples.length > 1
-					? (
-						<Panel label="Variants">
-							<Field type="menu" label="variant" property="example:variant" hiddenlabel>
-								<ControlRadioGroup for="sandbox:example">{
-									<For of={attrs.examples!}>{(example) => (
-										<ControlRadio value={example.code} set:text={example.name} />
-									)}</For>
-								}</ControlRadioGroup>
-							</Field>
-						</Panel>
-					)
-				: null
-			}{
-				Array.isArray(attrs.fields) && attrs.fields.length > 0
-					? (
-						<Panel label="Properties">
-							<For of={attrs.fields!}>{(field) => (
-								<Field label={field.attribute}>{
-									// Select Menu Control
-									field.kind === 'menu'
-										? <ControlMenu for={field.property}>{
-											<For of={field.options}>{(option) => (
-												<option selected={option === field.value} set:text={option} />
-											)}</For>
-										}</ControlMenu>
+			<section class="control-area">
+				<Panelset>{
+					attrs.examples.length > 1
+						? (
+							<Panel label="Variants">
+								<Field type="menu" label="variant" property="example:variant" hiddenlabel>
+									<ControlRadioGroup for="sandbox:example">{
+										<For of={attrs.examples!}>{(example) => (
+											<ControlRadio value={example.code} set:text={example.name} />
+										)}</For>
+									}</ControlRadioGroup>
+								</Field>
+							</Panel>
+						)
+					: null
+				}{
+					Array.isArray(attrs.fields) && attrs.fields.length > 0
+						? (
+							<Panel label="Properties">
+								<For of={attrs.fields!}>{(field) => (
+									<Field label={field.attribute}>{
+										// Select Menu Control
+										field.kind === 'menu'
+											? <ControlMenu for={field.property}>{
+												<For of={field.options}>{(option) => (
+													<option selected={option === field.value} set:text={option} />
+												)}</For>
+											}</ControlMenu>
 
-									// Radio Group Control
-									: field.kind === 'radio-group'
-										? <ControlRadioGroup for={field.property}>{
-											<For of={field.options}>{(option) => (
-												<ControlRadio value={option.value} selected={option.value === field.value ? '' : null} set:text={option.label} />
-											)}</For>
-										}</ControlRadioGroup>
+										// Radio Group Control
+										: field.kind === 'radio-group'
+											? <ControlRadioGroup for={field.property}>{
+												<For of={field.options}>{(option) => (
+													<ControlRadio value={option.value} selected={option.value === field.value ? '' : null} set:text={option.label} />
+												)}</For>
+											}</ControlRadioGroup>
 
-									// Switch Control
-									: field.kind === 'switch'
-										? <ControlSwitch for={field.property} checked={field.checked} />
+										// Switch Control
+										: field.kind === 'switch'
+											? <ControlSwitch for={field.property} checked={field.checked} />
 
-									// Text Control
-									: field.kind === 'text'
-										? <ControlText for={field.property} value={field.value} />
+										// Text Control
+										: field.kind === 'text'
+											? <ControlText for={field.property} value={field.value} />
 
-									// display nothing and continue
-									: null
-								}</Field>
-							)}</For>
-						</Panel>
-					)
-				: null
-			}</Panelset>
-		</section>
+										// display nothing and continue
+										: null
+									}</Field>
+								)}</For>
+							</Panel>
+						)
+					: null
+				}</Panelset>
+			</section>
+		</main>
 	</body>
 </html>
 <script>
