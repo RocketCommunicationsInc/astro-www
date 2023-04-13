@@ -171,9 +171,10 @@
                 },
                 {
                     "name": "Design Tokens",
-                    "status": "inprogress",
+                    "status": "available",
                     "type": "token",
-                    "version": "v1"
+                    "version": "v1",
+                    "link": "/components/button/specs/"
                 }
             ]
         },
@@ -663,9 +664,10 @@
                 },
                 {
                     "name": "Design Tokens",
-                    "status": "inprogress",
+                    "status": "available",
                     "type": "token",
-                    "version": "v1"
+                    "version": "v1",
+                    "link": "/components/input-field/specs/"
                 }
             ]
         },
@@ -1265,7 +1267,8 @@
                     "name": "Design Tokens",
                     "status": "available",
                     "type": "token",
-                    "version": "v7"
+                    "version": "v1",
+                    "link": "/components/select/specs/"
                 }
             ]
         },
@@ -1352,7 +1355,8 @@
                     "name": "Design Tokens",
                     "status": "available",
                     "type": "token",
-                    "version": "v7"
+                    "version": "v1",
+                    "link": "/components/slider/specs/"
                 }
             ]
         },
@@ -1658,9 +1662,10 @@
                 },
                 {
                     "name": "Design Tokens",
-                    "status": "inprogress",
+                    "status": "available",
                     "type": "token",
-                    "version": "v1"
+                    "version": "v1",
+                    "link": "/components/textarea/specs/"
                 }
             ]
         },
