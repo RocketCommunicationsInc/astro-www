@@ -1,3 +1,7 @@
+* {
+	box-sizing: border-box;
+}
+
 select {
 	display: block;
 
@@ -25,7 +29,7 @@ svg {
 	/* Layout */
 	inline-size: max-content;
 	min-inline-size: 128--rpx;
-	padding: 1px;
+	padding: 8--rpx;
 
 	/* Appearance */
 	background-color: var(--Grey200Color);
@@ -39,23 +43,26 @@ svg {
 
 	&::part(content),
 	&::part(indicator) {
-		display: block;
+		display: flex;
 
 		/* Layout */
 		grid-area: 1 / 1 / 3 / 3;
-		padding: 8--rpx;
 	}
 
 	&::part(content) {
+		line-height: calc(20 / 16);
 		margin-inline-end: 36--rpx;
 	}
 
 	&::part(indicator) {
 		/* Layout */
+		align-items: center;
 		justify-self: end;
+		margin: -8--rpx;
 
 		/* Appearance */
 		background-color: var(--BrightBlue200Color);
+		box-shadow: var(--EdgeColor) -1px 0 0 inset, var(--EdgeColor) 0 -1px 0 inset, var(--EdgeColor) 0 1px 0 inset;
 		border-start-end-radius: var(--RadiusBase);
 		border-end-end-radius: var(--RadiusBase);
 
@@ -69,6 +76,7 @@ svg {
 		/* Layout */
 		block-size: 24--rpx;
 		inline-size: 24--rpx;
+		margin: 4--rpx;
 	}
 }
 
