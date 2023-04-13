@@ -151,3 +151,10 @@
 		}
 	}
 }
+
+a-panel + a-panel {
+	@media (width >= 700px) {
+		/* Layout */
+		box-shadow: var(--Grey600Color) 0 -1px 0 0;
+	}
+}
