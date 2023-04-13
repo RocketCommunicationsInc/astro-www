@@ -1,5 +1,6 @@
 ---
 title: Component Sandbox
+description: The Astro Storybook site presents all Astro Components in an interactive sandbox.
 layout: project:layouts/docs/docs-layout.astro
 ---
 
