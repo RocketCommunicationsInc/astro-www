@@ -55,7 +55,7 @@ const scriptContent = [
 					? (
 						<Panel label="Variants">
 							<Field type="menu" label="variant" property="example:variant" hiddenlabel>
-								<ControlMenu>
+								<ControlMenu for="sandbox:example">
 									<For of={attrs.examples!}>{(example) => (
 										<option value={example.code}>{example.name}</option>
 									)}</For>

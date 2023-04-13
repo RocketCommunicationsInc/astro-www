@@ -46,18 +46,27 @@ if (iframe !== null) {
 }
 
 // @ts-ignore
-const $target = globalThis.$target
+const $target = globalThis.$target as any
+
+// @ts-ignore
+const $canvas = $target.parentNode as HTMLElement
 
 addEventListener('input', (event) => {
-	const { target } = event
-
-	if (!(target instanceof HTMLElement)) return
+	const { target } = event as any as { target: HTMLInputElement }
 
 	const property = target.getAttribute('for')!
 
-	if ('checked' in target) {
-		$target[property] = target.checked
-	} else if ('value' in target) {
-		$target[property] = target.value
+	if (typeof property === 'string') {
+		if (property === 'sandbox:example') {
+			$canvas.innerHTML = target.value
+		} else {
+			if ('value' in target) {
+				$target[property] = target.value
+			}
+
+			if ('checked' in target) {
+				$target[property] = target.checked
+			}
+		}
 	}
 })
