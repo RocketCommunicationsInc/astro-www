@@ -4,9 +4,8 @@ path: /grm-service-ux-design/grm-schedule
 date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
 title: GRM Schedule
+description: The GRM Schedule app allows operators to view and interact with the full schedule of contacts via a Timeline or List View
 ---
-
-# GRM Schedule
 
 :::note
 The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.

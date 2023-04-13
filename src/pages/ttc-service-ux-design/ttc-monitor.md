@@ -4,9 +4,8 @@ path: /ttc-service-ux-design/ttc-monitor
 date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
 title: TT&C Monitor
+description: The TT&C Monitor app monitors system and constellation health, upcoming contacts and system trends
 ---
-
-# TT&C Monitor
 
 :::note
 The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
