@@ -48,12 +48,6 @@
 					"attribute": "disabled",
 					"property": "disabled",
 					"checked": false
-				},
-				{
-					"kind": "text",
-					"attribute": "icon",
-					"property": "icon",
-					"value": ""
 				}
 			]
 		},
