@@ -1,9 +1,8 @@
 ---
 layout: project:layouts/docs/docs-layout.astro
 title: Research
+description: Research creates better experiences, focuses attention on root issues instead of symptoms, and reduces development risk
 ---
-
-# Research
 
 Research is essential to a project’s success. It reveals, clarifies, and establishes the foundation on which the application resides. Overlooked needs and requirements in this critical phase greatly diminish the quality and overall usability of the design. Take time to thoroughly understand the app’s UX requirements by learning more about:
 

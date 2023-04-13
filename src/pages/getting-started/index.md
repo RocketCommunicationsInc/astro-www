@@ -1,11 +1,10 @@
 ---
 title: Getting Started
+description: The Astro design system brings together UX guidelines, HTML/CSS framework, and web components to design and develop a modern, consistent user experience.
 layout: project:layouts/docs/docs-layout.astro
 ---
 
-# Getting Started with Astro
-
-The Astro design system brings together UX guidelines, [HTML/CSS](/components/readme/) framework, and web components to design and develop a modern, consistent user experience. Astro was commissioned by the United States Space Force and Missile System Center (SMC) for designing Enterprise Ground Services (EGS) and Satellite Operations (SATOPS) web applications.
+Astro was commissioned by the United States Space Force and Missile System Center (SMC) for designing Enterprise Ground Services (EGS) and Satellite Operations (SATOPS) web applications.
 
 Astro’s designs are based on user-centered research into the functions and capabilities required for applications used in space operations. This approach involves SMC and commercial space systems operators in all phases of research and design validation. Their direct participation ensures that applications developed with these guidelines will meet user needs. To learn about incorporating a user-centered approach in your application designs, leverage guidance provided in Astro’s [Research](/design-process/research/) section. Astro is a living design system for government and commercial space-based applications, created and stewarded by [Rocket Communications Inc.](https://rocketcom.com/), for the United States Space Force and Missile System Center (SMC). For questions, contact Rocket at: [UXsupport@rocketcom.com](mailto:UXsupport@rocketcom.com).
 
