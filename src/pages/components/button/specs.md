@@ -73,7 +73,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Background color                          | button-color-background-primary-hover | #92cbff |
 :::
 
-### Disabled
+#### Disabled
 
 :::specs-table-container
 | Attribute                                 | Token            | Value |
@@ -118,7 +118,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Fill color                                           | button-icon-color-fill-secondary-hover | #92cbff   |
 :::
 
-### Disabled
+#### Disabled
 
 :::specs-table-container
 | Attribute                                 | Token            | Value |
@@ -130,9 +130,9 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 ### Borderless
 
 <div class="spec-container -examples">
-    <figure><img loading="lazy" width="139" src="/img/components/button/button-borderless-medium-default.png" alt="Default Borderless Button"/></figure>
-    <figure><img loading="lazy" width="139" src="/img/components/button/button-borderless-medium-hover.png" alt="Borderless Button with Hover State"/></figure>
-    <figure><img loading="lazy" width="139" src="/img/components/button/button-borderless-medium-disabled.png" alt="Disabled Borderless Button"/></figure>
+    <figure><img loading="lazy" width="145" src="/img/components/button/button-borderless-default.png" alt="Default Borderless Button"/></figure>
+    <figure><img loading="lazy" width="145" src="/img/components/button/button-borderless-hover.png" alt="Borderless Button with Hover State"/></figure>
+    <figure><img loading="lazy" width="145" src="/img/components/button/button-borderless-disabled.png" alt="Disabled Borderless Button"/></figure>
 </div>
 
 #### Default
@@ -160,7 +160,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Fill color                                           | button-icon-color-fill-borderless-hover | #92cbff |
 :::
 
-### Disabled
+#### Disabled
 
 :::specs-table-container
 | Attribute                                 | Token            | Value |
@@ -172,9 +172,9 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 ## Sizes
 
 <div class="spec-container -examples">
-    <figure><img loading="lazy" width="170" src="/img/components/button/button-primary-small-default.png" alt="Small Primary Button"/></figure>
-    <figure><img loading="lazy" width="170" src="/img/components/button/button-primary-medium-default.png" alt="Medium Primary Button"/></figure>
-    <figure><img loading="lazy" width="170" src="/img/components/button/button-primary-large-default.png" alt="Large Primary Button"/></figure>
+    <figure><img loading="lazy" width="140" src="/img/components/button/button-primary-small-default.png" alt="Small Primary Button"/></figure>
+    <figure><img loading="lazy" width="140" src="/img/components/button/button-primary-medium-default.png" alt="Medium Primary Button"/></figure>
+    <figure><img loading="lazy" width="140" src="/img/components/button/button-primary-large-default.png" alt="Large Primary Button"/></figure>
 </div>
 
 ### Small
