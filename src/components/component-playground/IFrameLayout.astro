@@ -26,6 +26,7 @@ const getNPMURL = (path: string) => `https://cdn.jsdelivr.net/npm/${path}`
 const scriptContent = [
 	`import{${attrs.constructor}}from'${getNPMURL(`@astrouxds/astro-web-components@7.9.2/dist/components/${attrs.tag}.js/+esm`)}'`,
 	`customElements.define('${attrs.tag}',${attrs.constructor})`,
+	`globalThis.$tag=${JSON.stringify(attrs.tag)}`,
 	`globalThis.$target=document.querySelector('${attrs.tag}')`,
 ].join(';')
 ---

@@ -46,10 +46,13 @@ if (iframe !== null) {
 }
 
 // @ts-ignore
-const $target = globalThis.$target as any
+let $tag = globalThis.$tag as any
 
 // @ts-ignore
-const $canvas = $target.parentNode as HTMLElement
+let $target = globalThis.$target as any
+
+// @ts-ignore
+let $canvas = $target.parentNode as HTMLElement
 
 addEventListener('input', (event) => {
 	const { target } = event as any as { target: HTMLInputElement }
@@ -59,6 +62,10 @@ addEventListener('input', (event) => {
 	if (typeof property === 'string') {
 		if (property === 'sandbox:example') {
 			$canvas.innerHTML = target.value
+
+			$target = $canvas.querySelector($tag)
+
+			$canvas.dispatchEvent(new Event('reset', { bubbles: true }))
 		} else {
 			if ('value' in target) {
 				$target[property] = target.value
