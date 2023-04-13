@@ -10,7 +10,7 @@ export default DOM.elementOf({
 		const shadowRoot = element.attachShadow({ mode: 'open' })
 
 		shadowRoot.adoptedStyleSheets = [ styling ]
-		shadowRoot.replaceChildren(content)
+		shadowRoot.replaceChildren(content.cloneNode(true))
 
 		const shadowContent = DOM.queryPart<HTMLInputElement>(shadowRoot, 'content')!
 

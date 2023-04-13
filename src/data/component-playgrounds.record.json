@@ -64,21 +64,27 @@
 			"examples": [
 				{
 					"name": "Default",
-					"code": "<rux-checkbox name=\"checkbox\" label=\"Checkbox Label\">Checkbox Label</rux-checkbox>"
+					"code": "<rux-checkbox name=\"checkbox\" label=\"Checkbox Label\"></rux-checkbox>"
 				}
 			],
 			"fields": [
 				{
-					"kind": "text",
+					"kind": "switch",
 					"attribute": "checked",
 					"property": "checked",
-					"value": ""
+					"value": false
+				},
+				{
+					"kind": "switch",
+					"attribute": "disabled",
+					"property": "disabled",
+					"value": false
 				},
 				{
 					"kind": "text",
-					"attribute": "disabled",
-					"property": "disabled",
-					"value": ""
+					"attribute": "label",
+					"property": "label",
+					"value": "Checkbox Label"
 				},
 				{
 					"kind": "text",
