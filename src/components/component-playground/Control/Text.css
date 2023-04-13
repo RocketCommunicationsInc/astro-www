@@ -18,8 +18,8 @@ input {
 
 	/* Layout */
 	inline-size: max-content;
-	min-inline-size: 128--rpx;
 	max-inline-size: 100%;
+	min-inline-size: 128--rpx;
 	overflow: hidden;
 	padding: 1px;
 

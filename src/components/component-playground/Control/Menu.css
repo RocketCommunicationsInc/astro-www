@@ -1,6 +1,7 @@
 select {
 	display: block;
 
+	/* Layout */
 	inline-size: 100%;
 
 	/* Text */
@@ -57,12 +58,15 @@ svg {
 		background-color: var(--BrightBlue200Color);
 		border-start-end-radius: var(--RadiusBase);
 		border-end-end-radius: var(--RadiusBase);
+
+		/* Behavior */
 		pointer-events: none;
 	}
 
 	&::part(indicator-icon) {
 		display: block;
 
+		/* Layout */
 		block-size: 24--rpx;
 		inline-size: 24--rpx;
 	}
