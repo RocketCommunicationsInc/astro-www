@@ -9,8 +9,6 @@ assets:
     name: Tree
 ---
 
-## Interactive Example
-
 ::storybook-demo
 
 <!-- Trees present a hierarchical set of related items and allow users to explore and select items within that hierarchy. -->

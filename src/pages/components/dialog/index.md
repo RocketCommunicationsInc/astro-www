@@ -3,12 +3,15 @@ title: Dialog
 description: A Dialog is a visual overlay that is presented on top of existing screen content to prompt the user to perform an immediate action or acknowledge the receipt of a piece of information.
 layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-dialog--dialog
+height: 240px
 git: rux-dialog
 assets:
   name: Dialog
 sandbox:
   style: "--y: 580px;"
 ---
+
+::storybook-demo
 
 There are two types of Dialogs, modal and non-modal. A Modal Dialog blocks the user from interacting with any content in the background as long as it remains open. A Non-modal Dialog, however, does not impose such restrictions. In general, users will encounter Modal Dialogs when dealing with critical tasks or information that requires action or acknowledgement, while Non-modal Dialogs are more typically tied to optional tasks requiring no user acknowledgement or validation.
 

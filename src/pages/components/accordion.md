@@ -9,8 +9,6 @@ assets:
     name: Accordion
 ---
 
-## Interactive Example
-
 ::storybook-demo
 
 <!-- An Accordion is a component comprised of one or more vertically stacked sections or items, which can be expanded and collapsed to hide or reveal content. -->

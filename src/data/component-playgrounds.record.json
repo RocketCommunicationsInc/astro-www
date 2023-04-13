@@ -213,18 +213,6 @@
 			"fields": []
 		},
 		{
-			"tag": "rux-dialog",
-			"route": "/components/dialog/",
-			"constructor": "RuxDialog",
-			"examples": [
-				{
-					"name": "Default",
-					"code": "<rux-dialog />"
-				}
-			],
-			"fields": []
-		},
-		{
 			"tag": "rux-icon",
 			"route": "/components/icon/",
 			"constructor": "RuxIcon",

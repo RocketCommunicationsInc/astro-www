@@ -11,8 +11,6 @@ assets:
 # to get tabs you need to add them to project:data/navigation.secondary.json
 ---
 
-## Interactive Example
-
 ::storybook-demo
 
 ## Rules of Thumb
