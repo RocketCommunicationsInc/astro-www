@@ -65,7 +65,7 @@ addEventListener('input', (event) => {
 
 			$target = $canvas.querySelector($tag)
 
-			$canvas.dispatchEvent(new Event('reset', { bubbles: true }))
+			target.dispatchEvent(new Event('reset', { bubbles: true }))
 		} else {
 			if ('value' in target) {
 				$target[property] = target.value
@@ -73,6 +73,20 @@ addEventListener('input', (event) => {
 
 			if ('checked' in target) {
 				$target[property] = target.checked
+			}
+		}
+	}
+})
+
+addEventListener('reset', (event) => {
+	for (const control of document.querySelectorAll<HTMLInputElement>('[for]')) {
+		if (control !== event.target) {
+			if ('checked' in control) {
+				control.checked = control.defaultChecked
+			}
+
+			if ('value' in control) {
+				control.value = control.defaultValue
 			}
 		}
 	}

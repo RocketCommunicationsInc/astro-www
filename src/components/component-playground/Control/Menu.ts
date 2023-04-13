@@ -27,8 +27,31 @@ export default DOM.elementOf({
 	},
 
 	prototype: {
+		get defaultValue(): string {
+			const element = this as any as HTMLElement
+
+			return (
+				element.querySelector<HTMLOptionElement>('[selected]')?.value ||
+				this.value
+			)
+		},
+
 		get value(): string {
 			return DOM.internals<Internals>(this).shadowContent.value
+		},
+
+		set value(value) {
+			const { shadowContent } = DOM.internals<Internals>(this)
+
+			const shadowOption = [
+				...shadowContent.options
+			].find(
+				option => option.value === value
+			)
+
+			if (shadowOption) {
+				shadowOption.selected = true
+			}
 		},
 	},
 

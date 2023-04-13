@@ -75,7 +75,7 @@ const scriptContent = [
 									field.kind === 'menu'
 										? <ControlMenu for={field.property}>{
 											<For of={field.options}>{(option) => (
-												<option set:text={option} />
+												<option selected={option === field.value} set:text={option} />
 											)}</For>
 										}</ControlMenu>
 

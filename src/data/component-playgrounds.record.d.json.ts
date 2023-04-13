@@ -7,6 +7,7 @@ interface __PlaygroundFieldBase {
 export interface PlaygroundFieldMenu extends __PlaygroundFieldBase {
 	kind: 'menu'
 	options: string[]
+	value: string
 }
 
 export interface PlaygroundFieldText extends __PlaygroundFieldBase {

@@ -40,7 +40,8 @@
 						"large",
 						"medium",
 						"small"
-					]
+					],
+					"value": "medium"
 				},
 				{
 					"kind": "switch",
@@ -110,7 +111,8 @@
 						"secret",
 						"top-secret",
 						"top-secret-sci"
-					]
+					],
+					"value": "top-secret"
 				},
 				{
 					"kind": "text",
@@ -293,7 +295,8 @@
 						"pass",
 						"fail",
 						"unknown"
-					]
+					],
+					"value": "pass"
 				}
 			]
 		},

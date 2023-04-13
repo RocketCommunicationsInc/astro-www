@@ -139,6 +139,10 @@
 					"items": {
 						"type": "string"
 					}
+				},
+				"value": {
+					"title": "Value",
+					"type": "string"
 				}
 			},
 			"required": [
