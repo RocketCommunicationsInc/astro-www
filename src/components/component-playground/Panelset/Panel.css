@@ -53,5 +53,15 @@
 		gap: 20--rpx;
 		overflow-y: scroll;
 		padding: 12--rpx;
+
+		@media (width < 700px) {
+			/* Layout */
+			padding-block: 24px;
+		}
+
+		@media (width >= 700px) {
+			/* Layout */
+			padding-block: 8px 16px;
+		}
 	}
 }

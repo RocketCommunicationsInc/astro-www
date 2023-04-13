@@ -5,8 +5,10 @@
 	flex-flow: column;
 
 	&::part(label) {
+		display: block;
+
 		/* Layout */
-		margin-block-end: 4--rpx;
+		margin-block-end: 16--rpx;
 
 		/* Text */
 		font-weight: 700;

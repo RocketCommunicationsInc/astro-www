@@ -5,6 +5,9 @@
 	--EdgeColor: transparent;
 
 	&::part(tablist) {
+		/* Layout */
+		padding-inline: 24--rpx;
+
 		/* Appearance */
 		background-color: var(--Grey200Color);
 
@@ -19,7 +22,7 @@
 		padding-inline: 12--rpx;
 
 		/* Appearance */
-		box-shadow: var(--EdgeColor) 0 -2px 0 0 inset;
+		box-shadow: var(--EdgeColor) 0 -4px 0 0 inset;
 		color: var(--DarkBlue500Color);
 		cursor: pointer;
 	}
