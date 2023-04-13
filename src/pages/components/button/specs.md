@@ -57,6 +57,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 |:-----------------------------------------------------|:----------------------------------------|:--------|
 | <span class="attr-title">Container</span>            |                                         |         |
 | Background color                                     | button-color-background-primary-default | #4dacff |
+| Border color                                         | button-color-border-primary-default | #4dacff |
 | <span class="attr-title">Label</span>                |                                         |         |
 | Text color                                           | button-color-text-primary               | #080c11 |
 | <span class="attr-title">Left icon (optional)</span> |                                         |         |
@@ -71,6 +72,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 |:------------------------------------------|:--------------------------------------|:--------|
 | <span class="attr-title">Container</span> |                                       |         |
 | Background color                          | button-color-background-primary-hover | #92cbff |
+| Border color                          | button-color-border-primary-hover | #92cbff |
 :::
 
 #### Disabled
@@ -98,6 +100,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 |:-----------------------------------------------------|:-----------------------------------------|:----------|
 | <span class="attr-title">Container</span>            |                                          |           |
 | Background color                                     | button-color-background-secondary        | #ffffff00 |
+| Border color                                     | button-color-border-secondary-default        | #ffffff00 |
 | <span class="attr-title">Label</span>                |                                          |           |
 | Text color                                           | button-color-text-secondary-default      | #4dacff   |
 | <span class="attr-title">Left icon (optional)</span> |                                          |           |
@@ -112,6 +115,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 |:-----------------------------------------------------|:---------------------------------------|:----------|
 | <span class="attr-title">Container</span>            |                                        |           |
 | Background color                                     | button-color-background-secondary      | #ffffff00 |
+| Border color                                     | button-color-border-secondary-hover      | #ffffff00 |
 | <span class="attr-title">Label</span>                |                                        |           |
 | Text color                                           | button-color-text-secondary-hover      | #92cbff   |
 | <span class="attr-title">Left icon (optional)</span> |                                        |           |
