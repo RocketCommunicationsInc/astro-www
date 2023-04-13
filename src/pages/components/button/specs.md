@@ -20,8 +20,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Attribute                                            | Token                                   | Value                                                                                                                 |
 |:-----------------------------------------------------|:----------------------------------------|:----------------------------------------------------------------------------------------------------------------------|
 | <span class="attr-title">Container</span>            |                                         |                                                                                                                       |
-| Padding (left and right)                             | button-padding-y-medium                 | 0.5rem                                                                                                                |
-| Padding (top and bottom)                             | button-padding-x-medium                 | 1rem                                                                                                                  |
+| Padding (left and right)                             | button-padding-x-medium                 | 0.5rem                                                                                                                |
+| Padding (top and bottom)                             | button-padding-y-medium                 | 1rem                                                                                                                  |
 | Border width                                         | button-border-width                     | 1px                                                                                                                   |
 | Border radius                                        | button-radius                           | 3px                                                                                                                   |
 | Border color                                         | button-color-border-primary-default     | #4dacff                                                                                                               |
@@ -183,8 +183,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Attribute                                 | Token                  | Value   |
 |:------------------------------------------|:-----------------------|:--------|
 | <span class="attr-title">Container</span> |                        |         |
-| Padding (left and right)                  | button-padding-y-small | 0.25rem |
-| Padding (top and bottom)                  | button-padding-x-small | 1rem    |
+| Padding (left and right)                  | button-padding-x-small | 0.25rem |
+| Padding (top and bottom)                  | button-padding-y-small | 1rem    |
 :::
 
 ### Medium
@@ -193,8 +193,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Attribute                                 | Token                   | Value  |
 |:------------------------------------------|:------------------------|:-------|
 | <span class="attr-title">Container</span> |                         |        |
-| Padding (left and right)                  | button-padding-y-medium | 0.5rem |
-| Padding (top and bottom)                  | button-padding-x-medium | 1rem   |
+| Padding (left and right)                  | button-padding-x-medium | 0.5rem |
+| Padding (top and bottom)                  | button-padding-y-medium | 1rem   |
 :::
 
 ### Large
@@ -203,8 +203,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Attribute                                 | Token                  | Value   |
 |:------------------------------------------|:-----------------------|:--------|
 | <span class="attr-title">Container</span> |                        |         |
-| Padding (left and right)                  | button-padding-y-large | 0.75rem |
-| Padding (top and bottom)                  | button-padding-x-large | 1rem    |
+| Padding (left and right)                  | button-padding-x-large | 0.75rem |
+| Padding (top and bottom)                  | button-padding-y-large | 1rem    |
 :::
 
 ## Icon Only
@@ -221,8 +221,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Attribute                                 | Token                            | Value   |
 |:------------------------------------------|:---------------------------------|:--------|
 | <span class="attr-title">Container</span> |                                  |         |
-| Padding (left and right)                  | button-padding-y-small-icon-only | 0.25rem |
-| Padding (top and bottom)                  | button-padding-x-small-icon-only | 0.25rem |
+| Padding (left and right)                  | button-padding-x-small-icon-only | 0.25rem |
+| Padding (top and bottom)                  | button-padding-y-small-icon-only | 0.25rem |
 :::
 
 ### Medium
@@ -231,8 +231,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Attribute                                 | Token                             | Value  |
 |:------------------------------------------|:----------------------------------|:-------|
 | <span class="attr-title">Container</span> |                                   |        |
-| Padding (left and right)                  | button-padding-y-medium-icon-only | 0.5rem |
-| Padding (top and bottom)                  | button-padding-x-medium-icon-only | 0.5rem |
+| Padding (left and right)                  | button-padding-x-medium-icon-only | 0.5rem |
+| Padding (top and bottom)                  | button-padding-y-medium-icon-only | 0.5rem |
 :::
 
 ### Large
@@ -241,8 +241,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Attribute                                 | Token                            | Value   |
 |:------------------------------------------|:---------------------------------|:--------|
 | <span class="attr-title">Container</span> |                                  |         |
-| Padding (left and right)                  | button-padding-y-large-icon-only | 0.75rem |
-| Padding (top and bottom)                  | button-padding-x-large-icon-only | 0.75rem |
+| Padding (left and right)                  | button-padding-x-large-icon-only | 0.75rem |
+| Padding (top and bottom)                  | button-padding-y-large-icon-only | 0.75rem |
 :::
 
 ## Focus
