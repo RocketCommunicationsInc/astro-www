@@ -126,7 +126,7 @@
 		--heading-1-text-line: 28--rpx;
 		--subheading-1-text-size: 16--rpx;
 		--subheading-1-text-line: calc(24 / 16);
-		--heading-2-margin: 5--step 5--step;
+		--heading-2-margin: 10--step 5--step;
 		--main-content-width: 100%;
 		--layout-inline-gap: 4--step;
 		--icon-search-margin-inline: -16--rpx;
@@ -152,7 +152,7 @@
 		--heading-1-text-line: 28--rpx;
 		--subheading-1-text-size: 16--rpx;
 		--subheading-1-text-line: calc(24 / 16);
-		--heading-2-margin: 5--step 5--step;
+		--heading-2-margin: 10--step 5--step;
 		--main-content-width: 100%;
 		--layout-inline-gap: 4--step;
 		--icon-search-margin-inline: -16--rpx;
