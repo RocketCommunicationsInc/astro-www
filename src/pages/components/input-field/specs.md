@@ -12,9 +12,9 @@ git: rux-input
     <figure><img loading="lazy" width="270px" src="/img/components/input-field/input-anatomy.png" alt="Anatomy Image"/></figure>
     <ol>
         <li>Container</li>
+        <li>Prefix Slot (optional)</li>
         <li>Label (using “default text”)</li>
-        <li>Suffix Slot(optional)</li>
-        <li>Prefix Slot(optional)</li>
+        <li>Suffix Slot (optional)</li>
     </ol>
 </div>
 
