@@ -20,8 +20,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Attribute                                 | Token                              | Value                                                                                                                 |
 |:------------------------------------------|:-----------------------------------|:----------------------------------------------------------------------------------------------------------------------|
 | <span class="attr-title">Container</span> |                                    |                                                                                                                       |
-| Padding (left and right)                  | textarea-padding-y-medium             | 0.5rem                                                                                                                |
-| Padding (top and bottom)                  | textarea-padding-x-medium             | 0.5rem                                                                                                                |
+| Padding (left and right)                  | textarea-padding-x-medium             | 0.5rem                                                                                                                |
+| Padding (top and bottom)                  | textarea-padding-y-medium             | 0.5rem                                                                                                                |
 | Border width                              | textarea-border-width                 | 1px                                                                                                                   |
 | Border radius                             | textarea-radius                       | 3px                                                                                                                   |
 | Border color                              | textarea-color-border-default         | #2b659b                                                                                                               |
@@ -105,8 +105,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Attribute                                 | Token                 | Value   |
 |:------------------------------------------|:----------------------|:--------|
 | <span class="attr-title">Container</span> |                       |         |
-| Padding (left and right)                      | textarea-padding-y-small | 0.5rem  |
-| Padding (top and bottom)                      | textarea-padding-x-small | 0.25rem |
+| Padding (left and right)                      | textarea-padding-x-small | 0.5rem  |
+| Padding (top and bottom)                      | textarea-padding-y-small | 0.25rem |
 :::
 
 ### Medium
@@ -115,8 +115,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Attribute                                 | Token                 | Value   |
 |:------------------------------------------|:----------------------|:--------|
 | <span class="attr-title">Container</span> |                       |         |
-| Padding (left and right)                      | textarea-padding-y-medium | 0.5rem  |
-| Padding (top and bottom)                      | textarea-padding-x-medium | 0.5rem |
+| Padding (left and right)                      | textarea-padding-x-medium | 0.5rem  |
+| Padding (top and bottom)                      | textarea-padding-y-medium | 0.5rem |
 :::
 
 ### Large
@@ -125,8 +125,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Attribute                                 | Token                 | Value   |
 |:------------------------------------------|:----------------------|:--------|
 | <span class="attr-title">Container</span> |                       |         |
-| Padding (left and right)                      | textarea-padding-y-large | 0.5rem  |
-| Padding (top and bottom)                      | textarea-padding-x-large | 0.75rem |
+| Padding (left and right)                      | textarea-padding-x-large | 0.5rem  |
+| Padding (top and bottom)                      | textarea-padding-y-large | 0.75rem |
 :::
 
 ## Variants
