@@ -50,7 +50,7 @@
 
 		/* Reference */
 		--EdgeColor: var(--Grey200Color);
-		--EdgeSize: 0px;
+		--EdgeSize: 0;
 	}
 
 	&::part(theme-switch) {

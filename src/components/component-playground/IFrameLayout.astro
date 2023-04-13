@@ -72,24 +72,22 @@ const scriptContent = [
 								<Field label={field.attribute}>{
 									// Select Menu Control
 									field.kind === 'menu'
-										? (
-											<ControlMenu for={field.property}>{
-												<For of={field.options}>{(option) => (
-													<option set:text={option} />
-												)}</For>
-											}</ControlMenu>
-										) :
+										? <ControlMenu for={field.property}>{
+											<For of={field.options}>{(option) => (
+												<option set:text={option} />
+											)}</For>
+										}</ControlMenu>
 
 									// Text Control
-									field.kind === 'text' ?
-										<ControlText for={field.property} value={field.value} /> :
+									: field.kind === 'text'
+										? <ControlText for={field.property} value={field.value} />
 
 									// Switch Control
-									field.kind === 'switch' ?
-										<ControlSwitch for={field.property} checked={field.checked} /> :
+									: field.kind === 'switch'
+										? <ControlSwitch for={field.property} checked={field.checked} />
 
 									// display nothing and continue
-									null
+									: null
 								}</Field>
 							)}</For>
 						</Panel>
