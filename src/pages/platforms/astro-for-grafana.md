@@ -30,6 +30,12 @@ The plugin is based on Astro 7 and Astro Design Tokens and requires Grafana 9.1.
 * Optional [Clock](https://www.astrouxds.com/components/clock/)
 
 ## Sample Apps
-
-![A [sample dashboard](https://rocketcom.grafana.net/goto/Al3vE4-4k?orgId=1) shows the plugin in action, along with some Astro themed data visualizations.](/img/platforms/grafana-sample-dashboard.png)
+<style>
+    figcaption a{
+        text-decoration: underline;
+        text-decoration-color:var(--LinkColor);
+    }
+</style>
+![](/img/platforms/grafana-sample-dashboard.png)
+<figcaption>A <a href="https://rocketcom.grafana.net/public-dashboards/2fb84c7af5064b51a2c13578e5567980?orgId=1">sample dashboard</a> shows the plugin in action, along with some Astro themed data visualizations.</figcaption>
 
