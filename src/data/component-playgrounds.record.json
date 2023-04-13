@@ -63,6 +63,12 @@
 			],
 			"fields": [
 				{
+					"kind": "text",
+					"attribute": "label",
+					"property": "label",
+					"value": "Checkbox Label"
+				},
+				{
 					"kind": "switch",
 					"attribute": "checked",
 					"property": "checked",
@@ -73,12 +79,6 @@
 					"attribute": "disabled",
 					"property": "disabled",
 					"value": false
-				},
-				{
-					"kind": "text",
-					"attribute": "label",
-					"property": "label",
-					"value": "Checkbox Label"
 				},
 				{
 					"kind": "text",

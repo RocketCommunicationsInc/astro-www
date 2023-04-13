@@ -11,6 +11,8 @@ sandbox:
   style: "--y: 520px"
 ---
 
+::storybook-demo
+
 ## Appearance and Behavior
 
 The Clock is not an interactive component. Time is always present. Date, AOS and LOS are optional. The time is UTC by default but can be configured for any time zone.
