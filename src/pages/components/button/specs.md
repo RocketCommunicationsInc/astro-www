@@ -87,9 +87,9 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 ### Secondary
 
 <div class="spec-container -examples">
-    <figure><img loading="lazy" width="139" src="/img/components/button/button-secondary-medium-default.png" alt="Default Secondary Button"/></figure>
-    <figure><img loading="lazy" width="139" src="/img/components/button/button-secondary-medium-hover.png" alt="Secondary Button with Hover State"/></figure>
-    <figure><img loading="lazy" width="139" src="/img/components/button/button-secondary-medium-disabled.png" alt="Disabled Secondary Button"/></figure>
+    <figure><img loading="lazy" width="163" src="/img/components/button/button-secondary-medium-default.png" alt="Default Secondary Button"/></figure>
+    <figure><img loading="lazy" width="163" src="/img/components/button/button-secondary-medium-hover.png" alt="Secondary Button with Hover State"/></figure>
+    <figure><img loading="lazy" width="163" src="/img/components/button/button-secondary-medium-disabled.png" alt="Disabled Secondary Button"/></figure>
 </div>
 
 #### Default
