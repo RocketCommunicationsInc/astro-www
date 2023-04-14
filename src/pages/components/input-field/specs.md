@@ -9,7 +9,7 @@ git: rux-input
 ## Anatomy
 
 <div class="spec-container -anatomy">
-    <figure><img loading="lazy" width="270px" src="/img/components/input-field/input-anatomy.png" alt="Anatomy Image"/></figure>
+    <figure><img loading="lazy" width="252px" src="/img/components/input-field/input-anatomy.png" alt="Anatomy Image"/></figure>
     <ol>
         <li>Container</li>
         <li>Prefix Slot (optional)</li>
