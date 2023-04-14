@@ -6,7 +6,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 ## Anatomy
 
 <div class="spec-container -anatomy">
-    <figure><img loading="lazy" width="350px" src="/img/components/button/button-anatomy.png" alt="Anatomy Image"/></figure>
+    <figure><img loading="lazy" width="260px" src="/img/components/button/button-anatomy.png" alt="Anatomy Image"/></figure>
     <ol>
         <li>Container</li>
         <li>Left icon (optional) (optional)</li>
@@ -20,8 +20,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Attribute                                            | Token                                   | Value                                                                                                                 |
 |:-----------------------------------------------------|:----------------------------------------|:----------------------------------------------------------------------------------------------------------------------|
 | <span class="attr-title">Container</span>            |                                         |                                                                                                                       |
-| Padding (left and right)                             | button-padding-x-medium                 | 1rem                                                                                                                |
-| Padding (top and bottom)                             | button-padding-y-medium                 | 0.5rem                                                                                                                  |
+| Padding (left and right)                             | button-padding-x-medium                 | 1rem                                                                                                                  |
+| Padding (top and bottom)                             | button-padding-y-medium                 | 0.5rem                                                                                                                |
 | Border width                                         | button-border-width                     | 1px                                                                                                                   |
 | Border radius                                        | button-radius                           | 3px                                                                                                                   |
 | Border color                                         | button-color-border-primary-default     | #4dacff                                                                                                               |
@@ -57,7 +57,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 |:-----------------------------------------------------|:----------------------------------------|:--------|
 | <span class="attr-title">Container</span>            |                                         |         |
 | Background color                                     | button-color-background-primary-default | #4dacff |
-| Border color                                         | button-color-border-primary-default | #4dacff |
+| Border color                                         | button-color-border-primary-default     | #4dacff |
 | <span class="attr-title">Label</span>                |                                         |         |
 | Text color                                           | button-color-text-primary               | #080c11 |
 | <span class="attr-title">Left icon (optional)</span> |                                         |         |
@@ -72,7 +72,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 |:------------------------------------------|:--------------------------------------|:--------|
 | <span class="attr-title">Container</span> |                                       |         |
 | Background color                          | button-color-background-primary-hover | #92cbff |
-| Border color                          | button-color-border-primary-hover | #92cbff |
+| Border color                              | button-color-border-primary-hover     | #92cbff |
 :::
 
 #### Disabled
@@ -87,9 +87,9 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 ### Secondary
 
 <div class="spec-container -examples">
-    <figure><img loading="lazy" width="139" src="/img/components/button/button-secondary-medium-default.png" alt="Default Secondary Button"/></figure>
-    <figure><img loading="lazy" width="139" src="/img/components/button/button-secondary-medium-hover.png" alt="Secondary Button with Hover State"/></figure>
-    <figure><img loading="lazy" width="139" src="/img/components/button/button-secondary-medium-disabled.png" alt="Disabled Secondary Button"/></figure>
+    <figure><img loading="lazy" width="163" src="/img/components/button/button-secondary-medium-default.png" alt="Default Secondary Button"/></figure>
+    <figure><img loading="lazy" width="163" src="/img/components/button/button-secondary-medium-hover.png" alt="Secondary Button with Hover State"/></figure>
+    <figure><img loading="lazy" width="163" src="/img/components/button/button-secondary-medium-disabled.png" alt="Disabled Secondary Button"/></figure>
 </div>
 
 #### Default
@@ -100,7 +100,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 |:-----------------------------------------------------|:-----------------------------------------|:----------|
 | <span class="attr-title">Container</span>            |                                          |           |
 | Background color                                     | button-color-background-secondary        | #ffffff00 |
-| Border color                                     | button-color-border-secondary-default        | #ffffff00 |
+| Border color                                         | button-color-border-secondary-default    | #ffffff00 |
 | <span class="attr-title">Label</span>                |                                          |           |
 | Text color                                           | button-color-text-secondary-default      | #4dacff   |
 | <span class="attr-title">Left icon (optional)</span> |                                          |           |
@@ -115,7 +115,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 |:-----------------------------------------------------|:---------------------------------------|:----------|
 | <span class="attr-title">Container</span>            |                                        |           |
 | Background color                                     | button-color-background-secondary      | #ffffff00 |
-| Border color                                     | button-color-border-secondary-hover      | #ffffff00 |
+| Border color                                         | button-color-border-secondary-hover    | #ffffff00 |
 | <span class="attr-title">Label</span>                |                                        |           |
 | Text color                                           | button-color-text-secondary-hover      | #92cbff   |
 | <span class="attr-title">Left icon (optional)</span> |                                        |           |
@@ -134,9 +134,9 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 ### Borderless
 
 <div class="spec-container -examples">
-    <figure><img loading="lazy" width="145" src="/img/components/button/button-borderless-default.png" alt="Default Borderless Button"/></figure>
-    <figure><img loading="lazy" width="145" src="/img/components/button/button-borderless-hover.png" alt="Borderless Button with Hover State"/></figure>
-    <figure><img loading="lazy" width="145" src="/img/components/button/button-borderless-disabled.png" alt="Disabled Borderless Button"/></figure>
+    <figure><img loading="lazy" width="161" src="/img/components/button/button-borderless-default.png" alt="Default Borderless Button"/></figure>
+    <figure><img loading="lazy" width="161" src="/img/components/button/button-borderless-hover.png" alt="Borderless Button with Hover State"/></figure>
+    <figure><img loading="lazy" width="161" src="/img/components/button/button-borderless-disabled.png" alt="Disabled Borderless Button"/></figure>
 </div>
 
 #### Default
@@ -187,8 +187,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Attribute                                 | Token                  | Value   |
 |:------------------------------------------|:-----------------------|:--------|
 | <span class="attr-title">Container</span> |                        |         |
-| Padding (left and right)                  | button-padding-x-small | 1rem |
-| Padding (top and bottom)                  | button-padding-y-small | 0.25rem    |
+| Padding (left and right)                  | button-padding-x-small | 1rem    |
+| Padding (top and bottom)                  | button-padding-y-small | 0.25rem |
 :::
 
 ### Medium
@@ -197,8 +197,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Attribute                                 | Token                   | Value  |
 |:------------------------------------------|:------------------------|:-------|
 | <span class="attr-title">Container</span> |                         |        |
-| Padding (left and right)                  | button-padding-x-medium | 1rem |
-| Padding (top and bottom)                  | button-padding-y-medium | 0.5rem   |
+| Padding (left and right)                  | button-padding-x-medium | 1rem   |
+| Padding (top and bottom)                  | button-padding-y-medium | 0.5rem |
 :::
 
 ### Large
@@ -207,8 +207,8 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Attribute                                 | Token                  | Value   |
 |:------------------------------------------|:-----------------------|:--------|
 | <span class="attr-title">Container</span> |                        |         |
-| Padding (left and right)                  | button-padding-x-large | 1rem |
-| Padding (top and bottom)                  | button-padding-y-large | 0.75rem    |
+| Padding (left and right)                  | button-padding-x-large | 1rem    |
+| Padding (top and bottom)                  | button-padding-y-large | 0.75rem |
 :::
 
 ## Icon Only

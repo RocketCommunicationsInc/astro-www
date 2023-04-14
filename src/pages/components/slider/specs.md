@@ -7,7 +7,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 ## Anatomy
 
 <div class="spec-container -anatomy">
-    <figure><img loading="lazy" width="350px" src="/img/components/slider/slider-anatomy.png" alt="Anatomy Image"/></figure>
+    <figure><img loading="lazy" width="384px" src="/img/components/slider/slider-anatomy.png" alt="Anatomy Image"/></figure>
     <ol>
         <li>Thumb</li>
         <li>Track (active)</li>
