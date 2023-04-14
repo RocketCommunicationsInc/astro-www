@@ -48,6 +48,11 @@
 		justify-content: space-evenly;
 		min-block-size: 81--step;
 
+		@media (width < 768px) {
+			/* Layout */
+			padding-inline: 0;
+		}
+
 		& figure {
 			/* Layout */
 			margin-block-end: 0;
