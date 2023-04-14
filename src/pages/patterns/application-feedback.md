@@ -1,5 +1,6 @@
 ---
 title: Application Feedback
+description: Feedback patterns are mechanisms used to collect usability or content-related concerns and suggestions from users of a website or application.
 tags: resources
 path: /patterns/application-feedback
 date: Last Modified

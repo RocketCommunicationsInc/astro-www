@@ -1,5 +1,6 @@
 ---
 title: Modeless Panes
+description: Every application needs to present screens temporarily to collect user input or to display transient details.
 tags: resources
 path: /patterns/modeless-panes
 date: Last Modified

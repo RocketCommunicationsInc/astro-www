@@ -1,5 +1,6 @@
 ---
 title: Breadcrumbs
+description: Breadcrumbs are a secondary navigation pattern that provides users with an ordered list of links that helps visualize locational awareness within a site’s hierarchy.
 layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-breadcrumb--default-story
 height: 120px
@@ -10,7 +11,7 @@ assets:
 
 ::storybook-demo
 
-Breadcrumbs are a secondary navigation pattern that provides users with an ordered list of links that helps visualize locational awareness within a site’s hierarchy. Breadcrumbs provide a user with their current site location and allows them to quickly navigate to a parent page or previous step.
+Breadcrumbs provide a user with their current site location and allows them to quickly navigate to a parent page or previous step.
 
 ## Rules of Thumb
 

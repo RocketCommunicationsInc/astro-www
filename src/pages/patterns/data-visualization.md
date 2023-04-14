@@ -1,5 +1,6 @@
 ---
 title: Data Visualization
+description: Data Visualization makes complex information accessible and easy to digest.
 tags: resources
 path: /patterns/data-visualization
 date: Last Modified
