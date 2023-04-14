@@ -1,6 +1,6 @@
 ---
 title: Status System
-description: Consistent use of colors and symbols to convey status is critical for user success.
+description: Consistent use of colors and symbols to convey status is critical for user success. 
 tags: resources
 path: /patterns/status-system
 date: Last Modified
@@ -9,6 +9,8 @@ class: color
 assets:
     name: Status System
 ---
+Consistent use of colors and symbols to convey status is critical for user success.
+
 Astro's user research, conducted on a wide variety of space applications, showed that inconsistent and unconstrained use of colors and symbols left users confused and even dismissive of color systems. The research further showed that wide overuse of red to indicate both "off" and "emergency" stripped the color of its attention-getting power.
 
 The Astro Status System is a standard to consistently indicate the state of an object or concept (typically represented by an Icon). The Status System consists of Status Symbols and Status Colors.

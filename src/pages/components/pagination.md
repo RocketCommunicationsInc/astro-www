@@ -5,8 +5,6 @@ assets:
     name: Pagination
 ---
 
-# Pagination
-
 ## Rules of Thumb
 
 - Do not use underlined text except for in hovered elements.

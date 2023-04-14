@@ -9,7 +9,7 @@ git: rux-input
 ## Anatomy
 
 <div class="spec-container -anatomy">
-    <figure><img loading="lazy" width="270px" src="/img/components/input-field/input-anatomy.png" alt="Anatomy Image"/></figure>
+    <figure><img loading="lazy" width="252px" src="/img/components/input-field/input-anatomy.png" alt="Anatomy Image"/></figure>
     <ol>
         <li>Container</li>
         <li>Prefix Slot (optional)</li>
@@ -24,8 +24,8 @@ git: rux-input
 | Attribute                                 | Token                              | Value                                                                                                                 |
 |:------------------------------------------|:-----------------------------------|:----------------------------------------------------------------------------------------------------------------------|
 | <span class="attr-title">Container</span> |                                    |                                                                                                                       |
-| Padding (left and right)                  | input-padding-y-medium             | 0.5rem                                                                                                                |
-| Padding (top and bottom)                  | input-padding-x-medium             | 0.5rem                                                                                                                |
+| Padding (left and right)                  | input-padding-x-medium             | 0.5rem                                                                                                                |
+| Padding (top and bottom)                  | input-padding-y-medium             | 0.5rem                                                                                                                |
 | Border width                              | input-border-width                 | 1px                                                                                                                   |
 | Border radius                             | input-radius                       | 3px                                                                                                                   |
 | Border color                              | input-color-border-default         | #2b659b                                                                                                               |
@@ -100,8 +100,8 @@ git: rux-input
 | Attribute                                 | Token                 | Value   |
 |:------------------------------------------|:----------------------|:--------|
 | <span class="attr-title">Container</span> |                       |         |
-| Padding (left and right)                  | input-padding-y-small | 0.5rem  |
-| Padding (top and bottom)                  | input-padding-x-small | 0.25rem |
+| Padding (left and right)                  | input-padding-x-small | 0.5rem  |
+| Padding (top and bottom)                  | input-padding-y-small | 0.25rem |
 :::
 
 ### Medium
@@ -110,8 +110,8 @@ git: rux-input
 | Attribute                                 | Token                  | Value   |
 |:------------------------------------------|:-----------------------|:--------|
 | <span class="attr-title">Container</span> |                        |         |
-| Padding (left and right)                  | input-padding-y-medium | 0.5rem  |
-| Padding (top and bottom)                  | input-padding-x-medium | 0.25rem |
+| Padding (left and right)                  | input-padding-x-medium | 0.5rem  |
+| Padding (top and bottom)                  | input-padding-y-medium | 0.25rem |
 :::
 
 ### Large
@@ -120,8 +120,8 @@ git: rux-input
 | Attribute                                 | Token                 | Value   |
 |:------------------------------------------|:----------------------|:--------|
 | <span class="attr-title">Container</span> |                       |         |
-| Padding (left and right)                  | input-padding-y-large | 0.5rem  |
-| Padding (top and bottom)                  | input-padding-x-large | 0.75rem |
+| Padding (left and right)                  | input-padding-x-large | 0.5rem  |
+| Padding (top and bottom)                  | input-padding-y-large | 0.75rem |
 :::
 
 ## Variants

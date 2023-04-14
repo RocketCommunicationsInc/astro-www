@@ -11,7 +11,7 @@ assets:
 
 ::storybook-demo
 
- Breadcrumbs provide a user with their current site location and allows them to quickly navigate to a parent page or previous step.
+Breadcrumbs provide a user with their current site location and allows them to quickly navigate to a parent page or previous step.
 
 ## Rules of Thumb
 
