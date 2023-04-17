@@ -59,7 +59,7 @@ const scriptContent = [
 								<Field type="menu" label="variant" property="example:variant" hiddenlabel>
 									<ControlRadioGroup for="sandbox:example">{
 										<For of={attrs.examples!}>{(example) => (
-											<ControlRadio value={example.code} set:text={example.name} />
+											<ControlRadio for="sandbox:example" value={example.code} selected={example === defaultExample ? '' : null} set:text={example.name} />
 										)}</For>
 									}</ControlRadioGroup>
 								</Field>
@@ -84,7 +84,7 @@ const scriptContent = [
 										: field.kind === 'radio-group'
 											? <ControlRadioGroup for={field.property}>{
 												<For of={field.options}>{(option) => (
-													<ControlRadio value={option.value} selected={option.value === field.value ? '' : null} set:text={option.label} />
+													<ControlRadio for={field.property} value={option.value} selected={option.value === field.value ? '' : null} set:text={option.label} />
 												)}</For>
 											}</ControlRadioGroup>
 

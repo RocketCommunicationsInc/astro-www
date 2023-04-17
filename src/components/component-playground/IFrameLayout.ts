@@ -1,4 +1,7 @@
-const iframe = window.parent?.document.querySelector('.c-sandbox')! as HTMLIFrameElement
+import type PlaygroundElement from './Playground/Playground.ts'
+import type RadioElement from './Control/Radio.ts'
+
+const iframe = window.parent?.document.querySelector('a-playground')! as PlaygroundElement
 
 if (iframe !== null) {
 	let iframeHeight = 0
@@ -67,27 +70,21 @@ addEventListener('input', (event) => {
 
 			target.dispatchEvent(new Event('reset', { bubbles: true }))
 		} else {
-			if ('value' in target) {
+			if ('type' in target && target.type === 'switch') {
+				// @ts-expect-error
+				$target[property] = target.selected
+			} else {
 				$target[property] = target.value
-			}
-
-			if ('checked' in target) {
-				$target[property] = target.checked
 			}
 		}
 	}
 })
 
 addEventListener('reset', (event) => {
-	for (const control of document.querySelectorAll<HTMLInputElement>('[for]')) {
+	for (const control of document.querySelectorAll<RadioElement>('[for]')) {
 		if (control !== event.target) {
-			if ('checked' in control) {
-				control.checked = control.defaultChecked
-			}
-
-			if ('value' in control) {
-				control.value = control.defaultValue
-			}
+			control.value = control.defaultValue
+			control.selected = control.defaultSelected
 		}
 	}
 })

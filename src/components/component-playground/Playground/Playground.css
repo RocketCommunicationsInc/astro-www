@@ -1,0 +1,22 @@
+:host {
+	display: flex;
+
+	/* Layout */
+	inline-size: stretch;
+	max-inline-size: 100%;
+}
+
+:host {
+	/* Layout */
+	block-size: var(--y);
+	margin-block-end: 5--step;
+}
+
+iframe {
+	/* Layout */
+	block-size: 100%;
+	inline-size: 100%;
+
+	/* Appearance */
+	border-style: none;
+}

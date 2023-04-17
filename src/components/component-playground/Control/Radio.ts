@@ -2,125 +2,129 @@ import * as DOM from 'project:utils/client/ZOM.ts'
 import content from './Radio.html?withtype=fragment'
 import styling from './Radio.css?withtype=style'
 
-export default DOM.elementOf({
-	name: 'a-control-radio',
-
+export default class extends DOM.define('a-control-radio', class RadioElement extends HTMLElement {
 	constructor() {
-		const element = this
-		const shadowRoot = element.attachShadow({ mode: 'open' })
+		super()
 
-		shadowRoot.adoptedStyleSheets = [ styling ]
-		shadowRoot.replaceChildren(content.cloneNode(true))
-
-		const shadowRadio = DOM.queryPart<HTMLSpanElement>(shadowRoot, 'indicator')!
-		const shadowIndicator = DOM.queryPart<HTMLSlotElement>(shadowRoot, 'checked-indicator')!
+		const shadowRoot = DOM.attachShadow(this, { mode: 'open' }, content.cloneNode(true), styling)
+		const shadowIndicator = DOM.queryPart<HTMLSlotElement>(shadowRoot, 'indicator')!
+		const shadowCheckedIndicator = DOM.queryPart<HTMLSlotElement>(shadowRoot, 'checked-indicator')!
 		const shadowLabel = DOM.queryPart<HTMLSlotElement>(shadowRoot, 'label')!
 
-		const internals = DOM.internals<Internals, DOM.CustomElement>(element, () => ({
+		DOM.internals<Internals>(this, () => ({
 			shadowRoot,
-			shadowRadio,
 			shadowIndicator,
+			shadowCheckedIndicator,
 			shadowLabel,
-
-			selected: false,
-			defaultSelected: false,
-			isSelectedSet: false,
-			setSelected(selected) {
-				if (selected !== this.selected) {
-					this.selected = selected
-
-					shadowRadio.part.toggle('selected', selected)
-					shadowIndicator.part.toggle('selected', selected)
-					shadowLabel.part.toggle('selected', selected)
-
-					DOM.dispatchEvent(element, 'input', { bubbles: true, composed: true })
-					DOM.dispatchEvent(element, 'change', { bubbles: true, composed: true })
-				}
-			},
-
-			value: '',
-			defaultValue: '',
-			isValueSet: false,
-			setValue(value) {
-				if (value !== this.value) {
-					this.value = value
-
-					DOM.dispatchEvent(element, 'input', { bubbles: true, composed: true })
-					DOM.dispatchEvent(element, 'change', { bubbles: true, composed: true })
-				}
-			},
 		}))
 
-		DOM.supportKeyClick(element)
+		DOM.supportKeyClick(this)
 
-		element.addEventListener('click', event => {
-			event.preventDefault()
+		this.addEventListener('click', event => {
+			if (this.selected === false) {
+				this.selected = true
 
-			internals.isSelectedSet = true
-
-			internals.setSelected(!internals.selected)
+				DOM.dispatchEvent(this, 'input', { bubbles: true, composed: true })
+				DOM.dispatchEvent(this, 'change', { bubbles: true, composed: true })
+			}
 		})
 
-		element.tabIndex = 0
+		this.tabIndex = 0
+	}
+
+	get type() {
+		return 'radio'
+	}
+
+	declare defaultSelected: boolean
+	declare defaultValue: string
+	declare label: string
+	declare selected: boolean
+	declare value: string
+}, {
+	label: {
+		defaultValue() {
+			return ''
+		},
+		setValue(value) {
+			return value == null ? '' : String(value)
+		},
+		useChildList() {
+			return this.textContent
+		},
+		onValueChange(value) {
+			this.textContent = value
+		},
 	},
 
-	prototype: {
-		get defaultSelected(): boolean {
-			return DOM.internals<Internals>(this).defaultSelected
+	selected: {
+		defaultValue() {
+			return this.defaultSelected
 		},
-
-		get selected(): boolean {
-			return DOM.internals<Internals>(this).selected
+		setValue(value) {
+			return Boolean(value)
 		},
-
-		set selected(selected) {
-			DOM.internals<Internals>(this).setSelected(selected)
+		useAttributes: {
+			selected() {
+				return this.selected
+			},
 		},
-
-		get value(): string {
-			return DOM.internals<Internals>(this).value
-		},
-
-		set value(value) {
-			DOM.internals<Internals>(this).setValue(value)
-		},
-	},
-
-	observeAttributes: {
-		selected(attributeChecked) {
+		onValueChange() {
 			const internals = DOM.internals<Internals>(this)
 
-			internals.defaultSelected = attributeChecked !== null
-
-			if (internals.isSelectedSet === false) {
-				internals.setSelected(internals.defaultSelected)
-			}
-		},
-		value(attributeValue) {
-			const internals = DOM.internals<Internals>(this)
-
-			internals.defaultValue = attributeValue || ''
-
-			if (internals.isValueSet === false) {
-				internals.setValue(internals.defaultValue)
-			}
+			internals.shadowIndicator.part.toggle('selected', this.selected)
+			internals.shadowCheckedIndicator.part.toggle('selected', this.selected)
+			internals.shadowLabel.part.toggle('selected', this.selected)
 		},
 	},
-})
+
+	defaultSelected: {
+		defaultValue() {
+			return this.getAttribute('selected') !== null
+		},
+		setValue(value) {
+			return Boolean(value)
+		},
+		useAttributes: {
+			selected() {
+				return this.hasAttribute('selected')
+			},
+		},
+		onValueChange(value) {
+			this.toggleAttribute('selected', value)
+		},
+	},
+
+	value: {
+		defaultValue() {
+			return this.defaultValue
+		},
+		setValue(value) {
+			return value == null ? '' : String(value)
+		},
+	},
+
+	defaultValue: {
+		defaultValue() {
+			return this.getAttribute('value') || ''
+		},
+		setValue(value) {
+			return value == null ? '' : String(value)
+		},
+		useAttributes: {
+			value() {
+				return this.getAttribute('value')
+			},
+		},
+		onValueChange(value) {
+			this.setAttribute('value', value)
+		},
+	},
+}) {}
 
 interface Internals {
 	shadowRoot: ShadowRoot
-	shadowRadio: HTMLSpanElement
 	shadowIndicator: HTMLSlotElement
+	shadowCheckedIndicator: HTMLSlotElement
 	shadowLabel: HTMLSlotElement
-
-	selected: boolean
-	defaultSelected: boolean
-	isSelectedSet: boolean
-	setSelected(value: boolean): void
-
-	value: string
-	defaultValue: string
-	isValueSet: boolean
-	setValue(value: string): void
 }

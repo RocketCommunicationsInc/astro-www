@@ -68,7 +68,7 @@
 ::part(content) {
 	@nest :host(.dark-theme)& {
 		/* Reference */
-		background-color: var(--BrightBlue900Color);
+		background-color: var(--DarkBlue800Color);
 		color: var(--Neutral000Color);
 	}
 

@@ -17,11 +17,11 @@ export default DOM.elementOf({
 
 		shadowRoot.addEventListener('change', (event) => {
 			if (!(event.target instanceof HTMLElement)) return
-			if (!('checked' in event.target)) return
-			if (typeof event.target.checked !== 'boolean') return
+			if (!('selected' in event.target)) return
+			if (typeof event.target.selected !== 'boolean') return
 
-			this.classList.toggle('dark-theme', event.target.checked)
-			this.classList.toggle('light-theme', !event.target.checked)
+			this.classList.toggle('dark-theme', event.target.selected)
+			this.classList.toggle('light-theme', !event.target.selected)
 		}, { capture: true })
 	}
 })

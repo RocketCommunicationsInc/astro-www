@@ -1,5 +1,5 @@
 {
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$schema": "https://json-schema.org/draft-07/schema",
 	"type": "object",
 	"$defs": {
 		"Example": {
@@ -12,7 +12,17 @@
 					"type": "string"
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": false,
+			"defaultSnippets": [
+				{
+					"label": "Example",
+					"description": "Adds an Example",
+					"body": {
+						"name": "$2",
+						"code": "<rux-$1></rux-$1>"
+					}
+				}
+			]
 		},
 		"Record": {
 			"title": "Record",
@@ -51,8 +61,8 @@
 								"description": "Adds a Field",
 								"body": {
 									"type": "${2:text}",
-									"property": "${1/(.*)/${1:/downcase}/}",
-									"attribute": "$1"
+									"property": "$1",
+									"attribute": "${1/([A-Z])/-${1:/downcase}/g}"
 								}
 							}
 						]
@@ -110,12 +120,14 @@
 			"type": "object",
 			"properties": {
 				"attribute": {
-					"title": "Field Label",
+					"title": "Attribute Name",
+					"description": "This value is unique from the property name.",
 					"type": "string",
 					"$ref": "./formats.json#/$defs/html-attribute"
 				},
 				"property": {
-					"title": "Field Name",
+					"title": "Property Name",
+					"description": "This value is unique from the attribute name.",
 					"type": "string",
 					"$ref": "./formats.json#/$defs/js-identifier"
 				}

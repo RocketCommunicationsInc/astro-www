@@ -2,88 +2,80 @@ import * as DOM from 'project:utils/client/ZOM.ts'
 import content from './Switch.html?withtype=fragment'
 import styling from './Switch.css?withtype=style'
 
-export default DOM.elementOf({
-	name: 'a-control-switch',
-
+export default class extends DOM.define('a-control-switch', class SwitchElement extends HTMLElement {
 	constructor() {
-		const element = this
-		const shadowRoot = element.attachShadow({ mode: 'open' })
+		super()
 
-		shadowRoot.adoptedStyleSheets = [ styling ]
-		shadowRoot.replaceChildren(content.cloneNode(true))
+		const shadowRoot = DOM.attachShadow(this, { mode: 'open' }, content.cloneNode(true), styling)
 
 		const shadowTrack = DOM.queryPart<HTMLSpanElement>(shadowRoot, 'track')!
 		const shadowThumb = DOM.queryPart<HTMLSpanElement>(shadowRoot, 'thumb')!
 
-		const internals = DOM.internals<Internals, DOM.CustomElement>(element, () => ({
+		DOM.internals<Internals>(this, () => ({
 			shadowRoot,
 			shadowTrack,
 			shadowThumb,
-
-			checked: false,
-			defaultChecked: false,
-			isCheckedSet: false,
-			setChecked(checked) {
-				if (checked !== this.checked) {
-					this.checked = checked
-
-					DOM.dispatchEvent(element, 'input', { bubbles: true, composed: true })
-					DOM.dispatchEvent(element, 'change', { bubbles: true, composed: true })
-
-					shadowTrack.part.toggle('checked', checked)
-					shadowThumb.part.toggle('checked', checked)
-				}
-			},
 		}))
 
-		DOM.supportKeyClick(element)
+		DOM.supportKeyClick(this)
 
-		element.addEventListener('click', event => {
-			event.preventDefault()
+		this.addEventListener('click', event => {
+			this.selected = !this.selected
 
-			internals.isCheckedSet = true
-
-			internals.setChecked(!internals.checked)
+			DOM.dispatchEvent(this, 'input', { bubbles: true, composed: true })
+			DOM.dispatchEvent(this, 'change', { bubbles: true, composed: true })
 		})
 
-		element.tabIndex = 0
-	},
+		this.tabIndex = 0
+	}
 
-	prototype: {
-		get defaultChecked(): boolean {
-			return DOM.internals<Internals>(this).defaultChecked
+	get type() {
+		return 'switch'
+	}
+
+	declare defaultSelected: boolean
+	declare selected: boolean
+}, {
+	selected: {
+		defaultValue() {
+			return this.defaultSelected
 		},
-
-		get checked(): boolean {
-			return DOM.internals<Internals>(this).checked
+		setValue(value) {
+			return Boolean(value)
 		},
-
-		set checked(checked) {
-			DOM.internals<Internals>(this).setChecked(checked)
+		useAttributes: {
+			selected() {
+				return this.selected
+			},
 		},
-	},
-
-	observeAttributes: {
-		checked(attributeChecked) {
+		onValueChange() {
 			const internals = DOM.internals<Internals>(this)
 
-			internals.defaultChecked = attributeChecked !== null
-
-			if (internals.isCheckedSet === false) {
-				internals.setChecked(internals.defaultChecked)
-			}
+			internals.shadowThumb.part.toggle('selected', this.selected)
+			internals.shadowTrack.part.toggle('selected', this.selected)
 		},
 	},
-})
+
+	defaultSelected: {
+		defaultValue() {
+			return this.getAttribute('selected') !== null
+		},
+		setValue(value) {
+			return Boolean(value)
+		},
+		useAttributes: {
+			selected() {
+				return this.hasAttribute('selected')
+			},
+		},
+		onValueChange(value) {
+			this.toggleAttribute('selected', value)
+		},
+	},
+}) {}
 
 interface Internals {
 	shadowRoot: ShadowRoot
 	shadowTrack: HTMLSpanElement
 	shadowThumb: HTMLSpanElement
-
-	checked: boolean
-	defaultChecked: boolean
-
-	isCheckedSet: boolean
-	setChecked(value: boolean): void
 }

@@ -3,7 +3,7 @@
 	"records": [
 		{
 			"tag": "rux-breadcrumb",
-			"route": "/components/breadcrumbs/",
+			"route": "/patterns/breadcrumbz/",
 			"constructor": "RuxBreadcrumb",
 			"examples": [
 				{
@@ -33,13 +33,25 @@
 			],
 			"fields": [
 				{
-					"kind": "menu",
+					"kind": "radio-group",
 					"attribute": "size",
 					"property": "size",
 					"options": [
-						"small",
-						"medium",
-						"large"
+						{
+							"kind": "radio",
+							"label": "Small",
+							"value": "small"
+						},
+						{
+							"kind": "radio",
+							"label": "Medium",
+							"value": "medium"
+						},
+						{
+							"kind": "radio",
+							"label": "Large",
+							"value": "large"
+						}
 					],
 					"value": "medium"
 				},
@@ -47,6 +59,12 @@
 					"kind": "switch",
 					"attribute": "disabled",
 					"property": "disabled",
+					"checked": false
+				},
+				{
+					"kind": "switch",
+					"attribute": "borderless",
+					"property": "borderless",
 					"checked": false
 				}
 			]
@@ -297,6 +315,53 @@
 						}
 					],
 					"value": "medium"
+				}
+			]
+		},
+		{
+			"tag": "rux-radio-group",
+			"constructor": "RuxRadioGroup",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-radio-group name=\"radios\" label=\"Radio group\">\n\t<rux-radio value=\"one\" name=\"radios\">One</rux-radio>\n\t<rux-radio value=\"two\" name=\"radios\">Two</rux-radio>\n\t<rux-radio value=\"three\" name=\"radios\">Three</rux-radio>\n</rux-radio-group>"
+				}
+			],
+			"fields": []
+		},
+		{
+			"tag": "rux-slider",
+			"constructor": "RuxSlider",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-slider max=\"100\" min=\"0\" step=\"1\" value=\"50\"></rux-slider>"
+				}
+			],
+			"fields": [
+				{
+					"kind": "text",
+					"attribute": "max",
+					"property": "max",
+					"value": "100"
+				},
+				{
+					"kind": "text",
+					"attribute": "min",
+					"property": "min",
+					"value": "0"
+				},
+				{
+					"kind": "text",
+					"attribute": "step",
+					"property": "step",
+					"value": "1"
+				},
+				{
+					"kind": "text",
+					"attribute": "value",
+					"property": "value",
+					"value": "50"
 				}
 			]
 		},

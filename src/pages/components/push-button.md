@@ -10,6 +10,8 @@ sandbox:
   style: "--y: 260px;"
 ---
 
+::tag{ is=a-playground tag=rux-push-button }
+
 <!-- Push Buttons are a variant of the Switch that incorporate label and action into a single user interface element. Push Buttons may provide a useful interface element where screen real-estate is at a premium. -->
 
 ## Appearance and Behavior

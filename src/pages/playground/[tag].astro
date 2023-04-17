@@ -1,0 +1,20 @@
+---
+import { type PlaygroundRecord } from 'project:data/component-playgrounds.record.json'
+import Layout from 'project:components/component-playground/IFrameLayout.astro'
+
+export async function getStaticPaths() {
+	const { records } = await import('project:data/component-playgrounds.record.json')
+
+	return records.map(
+		(record) => ({
+			params: {
+				tag: record.tag,
+			},
+			props: record,
+		})
+	)
+}
+
+export type Props = PlaygroundRecord
+---
+<Layout {...Astro.props} />

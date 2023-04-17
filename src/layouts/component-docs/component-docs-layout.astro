@@ -2,7 +2,6 @@
 import Layout from 'project:layouts/new-docs/new-docs-layout.astro'
 import './component-docs-layout.css'
 
-import PlaygroundIFrame from 'project:components/component-playground/IFrame.astro'
 import { getSecondaryNavGroup } from 'project:components/site-navigation/server/currentPath.ts'
 
 import PageHeader from 'project:components/page-header/page-header.js'
@@ -67,8 +66,6 @@ const html = `<style>:root{--StorybookPreviewHeight:${StorybookPreviewHeight};}<
 
 	<Fragment slot="toolbar" />
 
-	<PlaygroundIFrame for={Astro.url.pathname} src={Astro.url.pathname + 'sandbox/'} />
-
 	<Fragment set:html={html} />
 
 	<slot />
@@ -82,6 +79,9 @@ const html = `<style>:root{--StorybookPreviewHeight:${StorybookPreviewHeight};}<
 		<PageAside {...Astro.props} />
 	</Fragment>
 </Layout>
+<script>
+import 'project:components/component-playground/Playground/Playground.ts'
+</script>
 <script define:vars={{ GitHubId, GitHubRepoURL, GitHubRepoBranch, StorybookId, storybookURL }}>
 const template = document.createElement('template')
 

@@ -52,7 +52,7 @@
 		flex-flow: column;
 		gap: 24--rpx 28--rpx;
 		justify-content: space-between;
-		overflow-y: scroll;
+		overflow-y: auto;
 		padding: 12--rpx;
 
 		@media (width < 700px) {

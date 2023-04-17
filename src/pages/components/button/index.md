@@ -11,6 +11,8 @@ sandbox:
   style: "--y: 200px;"
 ---
 
+::tag{ is=a-playground tag=rux-button }
+
 <!-- Action Buttons allow users to trigger actions by clicking, tapping, or pressing a corresponding key on a keyboard, such as the “Enter” key. -->
 
 ## Rules of Thumb

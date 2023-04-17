@@ -1,42 +1,6 @@
-const {
-	HTMLElement: GlobalHTMLElement,
-	MathMLElement: GlobalMathMLElement,
-	SVGElement: GlobalSVGElement
-} = globalThis
+export * from './ZOM.DOM.ts'
 
 // internals
-
-let __createElementClass = <T extends Element>(Super: abstract new () => T, xmlns: string): {
-	prototype: T
-
-	new <Name extends keyof HTMLElementTagNameMap>(name: Name): HTMLElementTagNameMap[Name]
-	new (name: string): T
-	new <Name extends keyof HTMLElementTagNameMap>(name: Name, attrs: Attrs): HTMLElementTagNameMap[Name]
-	new (name: string, attrs: Attrs): T
-	new <Name extends keyof HTMLElementTagNameMap>(name: Name, ...children: Appendable[]): HTMLElementTagNameMap[Name]
-	new (name: string, ...children: Appendable[]): T
-	new <Name extends keyof HTMLElementTagNameMap>(name: Name, attrs: Attrs, ...children: Appendable[]): HTMLElementTagNameMap[Name]
-	new (name: string, attrs: Attrs, ...children: Appendable[]): T
-} => {
-	function Element(name: string, ...args: any[]) {
-		return set(
-			document.createElementNS(
-				'http://www.w3.org/' + xmlns,
-				name,
-				...args
-			),
-			...args
-		)
-	}
-
-	// @ts-ignore
-	Element[prototype] = Super[prototype]
-
-	// @ts-ignore
-	Element[__proto__] = Super[__proto__]
-
-	return Element as any
-}
 
 let __handleKeyClickEvent = (event: KeyboardEvent & { target: HTMLElement }) => {
 	switch (event.key) {
@@ -52,12 +16,7 @@ let __handleKeyClickEvent = (event: KeyboardEvent & { target: HTMLElement }) => 
 	}
 }
 
-const __proto__ = '__proto__'
-const prototype = 'prototype'
-
 // exports
-
-export const isAppendable = (value: unknown): value is bigint | boolean | null | number | string | symbol => value instanceof Node || typeof value !== 'object' && value !== undefined
 
 export const getTokenSelector = (token: string, parts: string) => parts.trim().split(/\s+/).map(part => `[${token}~="${part}"]`).join(',')
 
@@ -99,7 +58,7 @@ export const supportKeyClick = <T>(element: T & HTMLElement): T => (
 export function elementOf<T extends object>(init: ElementOfInit & {
 	prototype?: T
 }) {
-	class Element extends GlobalHTMLElement {
+	class Element extends HTMLElement {
 		constructor() {
 			const host: this = super()!
 
@@ -134,18 +93,159 @@ export function elementOf<T extends object>(init: ElementOfInit & {
 	}
 }
 
-export let setAttr = <T extends Element>(element: T, name: string, value: primitive): T => (
-	element[
-		value === null || value === undefined || value === true || value === false
-			? 'toggleAttribute'
-		: 'setAttribute'
-	](
-		name,
-		// @ts-expect-error
-		value
-	),
-	element
-)
+export const define = <
+	Properties extends ObjectOf<Properties>,
+	Element extends HTMLElement
+>(
+	name: string,
+	Class: {
+		prototype: Element
+		new (): Element
+	},
+	properties: {
+		[K in keyof Element]?: PropertyDescriptor<Element,
+			K extends keyof Element
+				? Element[K]
+			: Properties[K]
+		>
+	}
+): {
+	prototype: Element
+	new (): Element
+} => {
+	const withPropertyInternals = createInternals()
+
+	// @ts-expect-error
+	class CustomElement extends Class {
+		constructor() {
+			const host: Element = super()!
+
+			const propertyInternals = withPropertyInternals<PropertyInternals>(host, () => ({}))
+
+			for (const name in properties) {
+				const descriptor = properties[name]!
+
+				propertyInternals[name] = {
+					value: undefined,
+					hasSetValue: !('setValue' in descriptor),
+					setValue(value) {
+						if (typeof descriptor.setValue === 'function') {
+							value = descriptor.setValue.call(host, value)
+						}
+
+						if (value !== this.value) {
+							this.value = value
+
+							if (typeof descriptor.onValueChange === 'function') {
+								descriptor.onValueChange.call(host, value)
+							}
+						}
+					},
+				}
+			}
+
+			for (const name in properties) {
+				const descriptor = properties[name]!
+				const internals = propertyInternals[name]
+
+				for (const attributeName in descriptor.useAttributes) {
+					const callback = descriptor.useAttributes[attributeName]
+
+					observeAttributes(host, () => {
+						internals.setValue(callback.call(host))
+					}, attributeName)
+				}
+
+				if (typeof descriptor.useChildList === 'function') {
+					const callback = descriptor.useChildList
+
+					observeChildren(host, () => {
+						const returnValue = callback.call(host)
+
+						internals.setValue(returnValue)
+					})
+				}
+			}
+		}
+	}
+
+	for (const name in properties) {
+		const descriptor = properties[name]!
+
+		Object.defineProperty(CustomElement.prototype, name, {
+			get(this: Element) {
+				const internals = withPropertyInternals<PropertyInternals>(this)[name]
+
+				return (
+					internals.hasSetValue
+						? internals.value
+					: descriptor.defaultValue.call(this)
+				)
+			},
+			set(this: Element, value) {
+				const internals = withPropertyInternals<PropertyInternals>(this)[name]
+
+				internals.hasSetValue = true
+
+				internals.setValue(value)
+			},
+		})
+	}
+
+	customElements.define(name, CustomElement)
+
+	return CustomElement as any
+}
+
+interface PropertyInternals {
+	[name: PropertyKey]: {
+		value: any
+		hasSetValue: boolean
+		setValue(value: any): void
+	}
+}
+
+type PropertyDescriptor<Element, Value> = {
+	/** Returns the value when it has not been set by the user. */
+	defaultValue(this: Element): Value
+
+	/** Returns the value when it is requested. */
+	getValue?(this: Element): Value
+
+	/** Attempts to set the value. */
+	setValue?(this: Element, value: any): Value
+
+	/** Sets the property value on childlist mutations. */
+	useChildList?(this: Element): any
+
+	/** Sets the property value on attribute mutations. */
+	useAttributes?: {
+		[attributeName: string]: {
+			(this: Element): any
+		}
+	}
+
+	/** Called whenever the value has been changed. */
+	onValueChange?(this: Element, value: Value): void
+}
+
+type ObjectOf<T> = {
+	[K in keyof T]: T[K]
+}
+
+export const attachShadow = <T extends Element>(element: T, options: ShadowRootInit, content?: Node, styling?: CSSStyleSheet) => {
+	const shadowRoot = element.attachShadow(options)
+
+	if (styling) {
+		shadowRoot.adoptedStyleSheets = [ styling ]
+	}
+
+	if (content) {
+		shadowRoot.append(content)
+	}
+
+	return shadowRoot
+}
 
 export let createInternals: CreateRef = (map = new WeakMap()): Referencer => (
 	host,
@@ -164,36 +264,9 @@ export let createInternals: CreateRef = (map = new WeakMap()): Referencer => (
 )
 
 export let internals = createInternals()
-
-export const dispatchEvent = (
-	element: EventTarget,
-	type: string,
-	options?: EventInit & Record<PropertyKey, unknown>
-): boolean => element.dispatchEvent(
-	new Event(type, options)
+export let setInternals = <Internals extends object>(target: object, value: Internals): Internals => (
+	internals(target, () => value)
 )
-
-export const set = <T extends Element>(
-	element: T,
-	attrs?: Attrs | primitive,
-	...children: Appendable[]
-): T => {
-	if (isAppendable(attrs)) {
-		children.unshift(attrs as string)
-	} else {
-		for (const name in attrs) {
-			setAttr(element, name, attrs[name])
-		}
-	}
-
-	element.append(...children)
-
-	return element
-}
-
-export const HTMLElement = __createElementClass(GlobalHTMLElement, '1999/xhtml')
-export const MathMLElement = __createElementClass(GlobalMathMLElement, '1998/Math/MathML')
-export const SVGElement = __createElementClass(GlobalSVGElement, '2000/svg')
 
 // Types
 
@@ -241,11 +314,3 @@ export interface ReferenceCreator<Internals extends object = object, Host extend
 export interface Reference {
 	[name: PropertyKey]: unknown
 }
-
-export interface Attrs {
-	[name: string]: primitive
-}
-
-export type Appendable = Node | string
-
-export type primitive = bigint | boolean | null | number | string | symbol | undefined
