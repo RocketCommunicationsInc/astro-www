@@ -1,0 +1,47 @@
+<div class="widget_content">
+	<slot name="title">Help us improve Astro</slot>
+	<div class="widget_rating-group-wrapper">
+		<slot name="description">Please rate your present experience with Astro:</slot>
+		<div class="widget_rate-group">
+			<button id='button_thumbs-up' type="button" class="widget_vote-button">
+				<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M6.31683 6.33339L10.9335 1.71672C11.4168 1.22506 12.2002 1.22506 12.6918 1.70839C12.9918 2.00839 13.1168 2.43339 13.0335 2.85006L12.2418 6.66672H16.9502C18.7418 6.66672 19.9502 8.50006 19.2502 10.1501L16.5335 16.4917C16.2668 17.1001 15.6668 17.5001 15.0002 17.5001H7.50016C6.5835 17.5001 5.8335 16.7501 5.8335 15.8334V7.50839C5.8335 7.06672 6.0085 6.64172 6.31683 6.33339ZM4.16683 15.8334C4.16683 16.7501 3.41683 17.5001 2.50016 17.5001C1.5835 17.5001 0.833496 16.7501 0.833496 15.8334V9.16672C0.833496 8.25006 1.5835 7.50006 2.50016 7.50006C3.41683 7.50006 4.16683 8.25006 4.16683 9.16672V15.8334Z" fill="#005A8F"/>
+				</svg>
+			</button>
+			<button id='button_thumbs-down' type="button" class="widget_vote-button">
+				<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M13.6751 13.6667L9.06675 18.2833C8.58341 18.775 7.80008 18.775 7.30841 18.2917C7.00841 17.9917 6.88341 17.5667 6.96675 17.15L7.75841 13.3333H3.05008C1.25841 13.3333 0.050079 11.5 0.758412 9.85L3.47508 3.50833C3.73341 2.9 4.33341 2.5 5.00008 2.5H12.4917C13.4084 2.5 14.1584 3.25 14.1584 4.16667V12.4917C14.1584 12.9333 13.9834 13.3583 13.6751 13.6667ZM15.8334 4.16667C15.8334 3.25 16.5834 2.5 17.5001 2.5C18.4167 2.5 19.1667 3.25 19.1667 4.16667V10.8333C19.1667 11.75 18.4167 12.5 17.5001 12.5C16.5834 12.5 15.8334 11.75 15.8334 10.8333V4.16667Z" fill="#005A8F"/>
+				</svg>
+			</button>
+		</div>
+	</div>
+	<form method="post" id="feedback-form" action="https://astrouxds-feedback.herokuapp.com/">
+		<input type="radio" id="radio_thumbs-up" name="user-feedback-radio" value="thumbs-up">
+		<input type="radio" id="radio_thumbs-down" name="user-feedback-radio" value="thumbs-down">
+		<input type="text" id="current-url" class="current-url" name="pageURL" value="">
+		<textarea id="user-input" name="user-feedback" placeholder="Tell us why you gave that rating (optional)"></textarea>
+		<input id="user-email" name="user-feedback" type="email" placeholder="Email Address (optional)" />
+		<div class="widget_button-group">
+			<button type="reset" class="widget_secondary-button"><slot name="secondary-button-name">Clear</slot></button>
+			<button class="widget_primary-button" type="submit" value="Submit" disabled>Submit</button>
+		</div>
+	</form>
+	<div class='widget_success'>
+		<div class='widget_success-interior'>
+			<svg width="129" height="128" viewBox="0 0 129 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M29.9996 95.1398L35.6439 100.409L48.1013 99.2109L52.9322 108.94C53.2982 109.677 53.4887 110.489 53.4887 111.312C53.4887 114.047 51.4298 116.301 48.7773 116.609L48.1553 116.645H22.9267C21.6341 116.645 20.3854 116.176 19.413 115.324C17.3675 113.533 17.02 110.524 18.5049 108.329L18.9144 107.798L29.9996 95.1398Z" fill="current"></path>
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M38.3539 53.5694C39.6137 53.6726 40.7958 54.2199 41.6896 55.1137L54.0573 67.4827L64.5002 64L61.0173 74.4427L70.9779 84.402C73.0607 86.4848 73.0607 89.8617 70.9779 91.9445C70.0841 92.8382 68.902 93.3855 67.6422 93.4888L39.4566 95.7984C37.8956 95.9263 36.3573 95.3616 35.2498 94.2541L31.8375 90.8418C30.73 89.7343 30.1653 88.196 30.2932 86.635L32.6028 58.4493C32.8434 55.5137 35.4182 53.3288 38.3539 53.5694Z" fill="current"></path>
+			</svg>
+			<div class="widget_success-orange-circle circle-1"><span /></div>
+			<div class="widget_success-orange-circle circle-2"><span /></div>
+			<div class="widget_success-orange-circle circle-3"><span /></div>
+		</div>
+		<p class='widget_success-text'>Thank you for your feedback!</p>
+	</div>
+	<div class='widget_fail'>
+		<svg width="129" height="128" viewBox="0 0 129 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M24.7088 109.003H105.291C113.531 109.003 118.668 100.067 114.548 92.9506L74.2568 23.3374C70.1367 16.2209 59.8633 16.2209 55.7432 23.3374L15.452 92.9506C11.332 100.067 16.4687 109.003 24.7088 109.003ZM64.9994 71.5477C62.0564 71.5477 59.6486 69.1399 59.6486 66.1969V55.4954C59.6486 52.5525 62.0564 50.1447 64.9994 50.1447C67.9423 50.1447 70.3501 52.5525 70.3501 55.4954V66.1969C70.3501 69.1399 67.9423 71.5477 64.9994 71.5477ZM59.6486 92.9507H70.3501V82.2492H59.6486V92.9507Z" fill="#C8102E"/>
+		</svg>
+		<p class='widget_fail-text'>Submission failed. <br /> Please try again later.</p>
+	</div>
+</div>

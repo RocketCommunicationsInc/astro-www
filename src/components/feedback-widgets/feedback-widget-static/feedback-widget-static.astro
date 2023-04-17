@@ -1,10 +1,16 @@
 ---
 import './feedback-widget-static.css'
+import FeedbackWidgetCustomElement from '../feedback-widget-custom-element.astro'
 
 const { currentURL } = Astro.props
+const title = 'Help improve this page'
+const description = 'Was this page helpful?'
 ---
 <div class='widget-static_wrapper'>
-	<div data-collapsible-content class="widget-static_content">
+	<FeedbackWidgetCustomElement currentURL={currentURL} title={title} description={description} collapsible={false}>
+		<slot />
+	</FeedbackWidgetCustomElement>
+	<!-- <div class="widget-static_content">
 		<h3 class="-heading">Help improve this page</h3>
 		<div class="widget-static_rating-group-wrapper">
 			<p>Was this page helpful?</p>
@@ -49,8 +55,8 @@ const { currentURL } = Astro.props
 			</svg>
 			<p class='widget-static_fail-text'>Submission failed. <br /> Please try again later.</p>
 		</div>
-	</div>
+	</div> -->
 </div>
 <script>
-import './feedback-widget-static.client.js'
+// import './feedback-widget-static.client.js'
 </script>

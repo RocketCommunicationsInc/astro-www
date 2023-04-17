@@ -74,11 +74,16 @@
 		@media (width < 1024px) {
 			/* Layout */
 			inset-block-end: 80px;
-			inset-inline-start: -78px;
+			inset-inline-end: -52px;
 			position: absolute;
 
 			/* Transform */
 			transform: rotate(-90deg);
+
+			&:is([data-collapsible-trigger-active]) {
+				/* Layout */
+				inset-inline-end: 247px;
+			}
 
 			& svg {
 				/* Layout */
@@ -87,16 +92,24 @@
 		}
 	}
 
-	& .widget_content {
+	& .widget_content-wrapper {
+		/* Layout */
+		block-size: auto;
+
 		/* Layout */
 		inline-size: 75--step;
 
 		/* Layout */
 		overflow: hidden;
+		padding-block: 5--step;
+		padding-inline: 3--step;
 		position: relative;
 
 		/* Appearance */
 		background-color: #eaeef4;
+
+		/* Appearance */
+		border: 1px solid #2f7aa7;
 		border-radius: 3px;
 		color: #292a2d;
 
@@ -123,27 +136,6 @@
 			border: 1px solid #2f7aa7;
 		}
 
-		@media (width < 1024px) {
-			/* Animation */
-			transition: width 200ms cubic-bezier(.66, .11, .33, .98);
-
-			&:not([data-collapsible-active]) {
-				/* Layout */
-				display: none;
-
-				/* Layout */
-				block-size: 472.5px;
-			}
-
-			&:is([data-collapsible-active]) {
-				/* Layout */
-				display: block;
-
-				/* Layout */
-				block-size: 472.5px;
-			}
-		}
-
 		& h3 {
 			/* Layout */
 			margin-block-end: 5--step;
@@ -157,347 +149,5 @@
 			/* Text */
 			font-size: 16--rpx;
 		}
-
-		& button {
-			/* Layout */
-			margin-block-start: 6--step;
-
-			/* Layout */
-			padding-block: 1--step;
-			padding-inline: 4--step;
-
-			/* Appearance */
-			border: 1px solid #005a8f;
-
-			/* Appearance */
-			border-radius: 3px;
-			cursor: pointer;
-
-			&.widget_vote-button {
-				/* Layout */
-				padding: 2--step;
-
-				&:first-child {
-					/* Layout */
-					margin-inline-end: 2--step;
-				}
-
-				&.selected {
-					/* Appearance */
-					background-color: #2f7aa7;
-					border: 1px solid #005a8f;
-
-					& svg path {
-						fill: #ffffff;
-					}
-				}
-			}
-
-			&.widget_primary-button {
-				/* Appearance */
-				background-color: #005a8f;
-				color: #ffffff;
-
-				&:disabled {
-					/* Appearance */
-					cursor: not-allowed;
-					opacity: .4;
-				}
-			}
-
-			&.widget_secondary-button {
-				/* Layout */
-				margin-inline-end: 3--step;
-
-				/* Appearance */
-				color: #005a8f;
-			}
-		}
-
-		/* stylelint-disable-next-line selector-max-id */
-
-		& .current-url {
-			display: none;
-		}
-
-		& textarea, input {
-			/* Layout */
-			inline-size: 100%;
-
-			/* Layout */
-			padding: 2--step;
-
-			/* Text */
-			font: inherit;
-
-			/* Appearance */
-			background-color: #fafafa;
-			border: 1px solid #2f7aa7;
-
-			/* Appearance */
-			border-radius: 3px;
-		}
-
-		& textarea {
-			/* Layout */
-			block-size: 31--step;
-
-			/* Layout */
-			margin-block-start: 6--step;
-
-			&:focus {
-				/* Appearance */
-				outline: 1px solid #2f7aa7;
-			}
-		}
-
-		& input {
-			/* Layout */
-			margin-block-start: 3--step;
-
-			&:focus {
-				&:valid {
-					/* Appearance */
-					outline: 1px solid #2f7aa7;
-				}
-			}
-
-			&:invalid {
-				/* Appearance */
-				outline: 1px solid #ff3838;
-			}
-
-			&[type="radio"] {
-				display: none;
-			}
-		}
-
-		& .widget_rate-group {
-			display: flex;
-
-			/* Layout */
-			justify-content: center;
-		}
-
-		& .widget_button-group {
-			display: flex;
-
-			/* Layout */
-			justify-content: flex-end;
-		}
-
-		& .widget_success {
-			display: flex;
-			display: none;
-
-			/* Layout */
-			align-items: center;
-			block-size: 100%;
-			block-size: 0;
-			flex-direction: column;
-			inline-size: 100%;
-
-			/* Layout */
-			inset-block-start: 0;
-			inset-inline-end: 0;
-			justify-content: center;
-			position: absolute;
-
-			/* Appearance */
-			background-color: #eaeef4;
-			opacity: 0;
-
-			/* Animation */
-			transition: opacity 200ms ease-in;
-
-			&.-active {
-				display: flex;
-
-				/* Layout */
-				block-size: 100%;
-
-				/* Appearance */
-				opacity: 1;
-			}
-
-			& svg {
-				fill: #005a8f;
-
-				&.success {
-					fill: #f68e1e;
-
-					/* Animation */
-					transition: fill 400ms ease-in;
-				}
-			}
-
-			& .widget_success-orange-circle {
-				display: flex;
-
-				/* Layout */
-				align-items: center;
-
-				/* Layout */
-				block-size: calc(5--step - 1px);
-				box-sizing: content-box;
-				inline-size: calc(5--step - 1px);
-				justify-content: center;
-				position: absolute;
-
-				& span {
-					/* Appearance */
-					display: block;
-
-					/* Layout */
-					block-size: 2--step;
-
-					/* Layout */
-					box-sizing: content-box;
-					inline-size: 2--step;
-
-					/* Appearance */
-					background-color: #005a8f;
-					border-radius: 100%;
-					opacity: 1;
-
-					/* Animation */
-					animation-duration: 1200ms;
-
-					/* Animation */
-					animation-iteration-count: infinite;
-					animation-name: antennaDot;
-					//transition: opacity 200ms ease-in;
-				}
-
-				&.circle-1 {
-					/* Layout */
-					inset-block-start: 146px;
-					inset-inline-start: 174px;
-
-					& span {
-						/* Layout */
-						display: block;
-
-						/* Animation */
-						animation-delay: 0s;
-					}
-				}
-
-				&.circle-2 {
-					/* Layout */
-					inset-block-start: 158px;
-					inset-inline-start: 161px;
-
-					& span {
-						/* Animation */
-						animation-delay: 400ms;
-					}
-				}
-
-				&.circle-3 {
-					/* Layout */
-					inset-block-start: 170px;
-					inset-inline-start: 148px;
-
-					& span {
-						/* Animation */
-						animation-delay: 800ms;
-					}
-				}
-			}
-
-			& .widget_success-text {
-				/* Layout */
-				padding-block-start: 10--step;
-
-				/* Text */
-				font-size: 24--rpx;
-				line-height: 28--rpx;
-				text-align: center;
-
-				/* Appearance */
-				color: #292a2d;
-			}
-		}
-
-		& .widget_fail {
-			display: flex;
-			display: none;
-
-			/* Layout */
-			align-items: center;
-			block-size: 100%;
-			block-size: 0;
-			flex-direction: column;
-			inline-size: 100%;
-
-			/* Layout */
-			inset-block-start: 0;
-			inset-inline-end: 0;
-			justify-content: center;
-			position: absolute;
-
-			/* Appearance */
-			background-color: #eaeef4;
-			opacity: 0;
-
-			/* Animation */
-			transition: opacity 200ms ease-in;
-
-			&.-active {
-				display: flex;
-
-				/* Layout */
-				block-size: 100%;
-
-				/* Appearance */
-				opacity: 1;
-			}
-
-			& svg path {
-				fill: #c8102e;
-			}
-
-			& .widget_fail-text {
-				/* Layout */
-				padding-block-start: 10--step;
-
-				/* Text */
-				font-size: 24--rpx;
-				line-height: 28--rpx;
-				text-align: center;
-
-				/* Appearance */
-				color: #292a2d;
-			}
-		}
-	}
-}
-
-@keyframes antennaDot {
-	from {
-		/* Appearance */
-		background-color: #005a8f;
-	}
-
-	30% {
-		/* Appearance */
-		background-color: #005a8f;
-
-		/* Transform */
-		transform: scale(1);
-	}
-
-	50% {
-		/* Appearance */
-		background-color: #f68e1e;
-
-		/* Transform */
-		transform: scale(1.5);
-	}
-
-	to {
-		/* Appearance */
-		background-color: #005a8f;
 	}
 }

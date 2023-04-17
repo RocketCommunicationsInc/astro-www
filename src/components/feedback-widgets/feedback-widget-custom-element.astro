@@ -1,0 +1,14 @@
+---
+const { currentURL } = Astro.props
+const { title } = Astro.props
+const { description } = Astro.props
+const { collapsible } = Astro.props
+---
+<a-feedback-widget current-url={currentURL} collapsible={collapsible}>
+	<h3 slot='title'>{title}</h3>
+	<p slot='description'>{description}</p>
+</a-feedback-widget>
+
+<script>
+	import './feedback-widget-custom-element.ts'
+</script>
