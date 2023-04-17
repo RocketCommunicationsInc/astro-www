@@ -5,6 +5,7 @@ import FeedbackWidgetCustomElement from '../feedback-widget-custom-element.astro
 const { currentURL } = Astro.props
 const title = 'Help us improve Astro'
 const description = 'Please rate your present experience with Astro:'
+const secondaryButtonName = 'Cancel'
 ---
 <div class='widget_wrapper'>
 	<div class='widget_interior-wrapper'>
@@ -15,7 +16,7 @@ const description = 'Please rate your present experience with Astro:'
 			</svg>
 		</div>
 		<div class="widget_content-wrapper">
-			<FeedbackWidgetCustomElement collapsible={true} currentURL={currentURL} title={title} description={description}>
+			<FeedbackWidgetCustomElement collapsible={true} currentURL={currentURL} title={title} description={description} secondaryButtonName={secondaryButtonName}>
 				<slot />
 			</FeedbackWidgetCustomElement>
 		</div>

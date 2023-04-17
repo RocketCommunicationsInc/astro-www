@@ -2,11 +2,13 @@
 const { currentURL } = Astro.props
 const { title } = Astro.props
 const { description } = Astro.props
+const { secondaryButtonName } = Astro.props
 const { collapsible } = Astro.props
 ---
 <a-feedback-widget current-url={currentURL} collapsible={collapsible}>
 	<h3 class='widget-title' slot='title'>{title}</h3>
 	<p class='widget-description' slot='description'>{description}</p>
+	<div slot='secondaryButtonName'>{secondaryButtonName}</div>
 </a-feedback-widget>
 
 <script>
