@@ -9,7 +9,7 @@ assets:
     name: Slider
 ---
 
-::tag{ is=a-playground tag=rux-slider }
+::storybook-demo
 
 <!-- A Slider allows users to choose from a range of continuous and discrete values arranged from minimum to maximum. -->
 
