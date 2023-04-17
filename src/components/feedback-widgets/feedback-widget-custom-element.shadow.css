@@ -1,5 +1,12 @@
 :host {
 	& slot[name="title"] {
+		/* Layout */
+		margin-block-end: 5--step;
+
+		/* Text */
+		font-size: 20--rpx;
+		font-weight: 500;
+
 		@media (width < 1024px) {
 			display: none;
 		}
@@ -24,9 +31,6 @@
 		}
 
 		& button {
-			/* Layout */
-			margin-block-start: 6--step;
-
 			/* Layout */
 			padding-block: 1--step;
 			padding-inline: 4--step;
@@ -100,6 +104,22 @@
 
 			/* Layout */
 			align-items: center;
+
+			/* Layout */
+			margin-block-start: 6--step;
+
+			& .widget_rate-group {
+				display: flex;
+
+				/* Layout */
+				justify-content: center;
+				padding-inline-start: 8--step;
+
+				& .button {
+					/* Layout */
+					margin-block-start: 0;
+				}
+			}
 		}
 
 		& .current-url {
@@ -161,19 +181,12 @@
 			}
 		}
 
-		& .widget_rate-group {
-			display: flex;
-
-			/* Layout */
-			justify-content: center;
-			padding-inline-start: 8--step;
-		}
-
 		& .widget_button-group {
 			display: flex;
 
 			/* Layout */
 			justify-content: flex-end;
+			margin-block-start: 6--step;
 		}
 
 		& .widget_success {
@@ -399,8 +412,12 @@
 	& .widget_rating-group-wrapper {
 		/* Layout */
 		flex-direction: column;
+		margin-block-start: 0;
 
 		& .widget_rate-group {
+			/* Layout */
+			margin-block-start: 6--step;
+
 			/* Layout */
 			padding-inline-start: 0;
 		}

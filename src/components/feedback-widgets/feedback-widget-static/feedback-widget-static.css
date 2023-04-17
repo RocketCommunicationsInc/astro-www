@@ -16,3 +16,20 @@
 		margin-inline-end: 0;
 	}
 }
+
+/* Styling the exposed slots */
+
+.widget-title {
+	/* Layout */
+	margin-block-start: 5--step;
+
+	/* Text */
+	font-size: 28--rpx;
+}
+
+.page {
+	& p.widget-description {
+		/* Layout */
+		margin-block-end: 0;
+	}
+}
