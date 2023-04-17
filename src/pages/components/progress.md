@@ -7,9 +7,9 @@ height: 220px
 git: rux-progress
 assets:
   name: Progress
-sandbox:
-  style: "--y: 420px;"
 ---
+
+::storybook-demo
 
 <!-- A Progress indicator signals that an application is busy performing an operation. -->
 

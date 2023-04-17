@@ -1,13 +1,15 @@
-import { createReadStream, fstatSync, openSync, readSync, statSync } from 'node:fs'
 import { visit } from 'unist-util-visit'
-import { getSizeFromUint8Array } from '@astropub/get-size'
+import getSizeFromFileSync from '@astropub/get-size/getSizeFromFileSync'
+import { pathToFileURL } from 'node:url'
+import { cwd } from 'node:process'
 
-/** @typedef {{ publicDir: URL }} Options */
+// @ts-check
 
-function remarkLazyImages(/** @type {Options} */ opts) {
-	opts = Object(opts)
+/** @typedef {{ publicDir: URL }} Configuration */
+/** @typedef {{ width: number, height: number }} ISize */
 
-	const getImageSize = createGetImageSize()
+function remarkLazyImages(/** @type {Configuration} */ opts) {
+	const getImageSize = createGetImageSize(Object(opts))
 
 	return () => (tree, _vfile) => {
 		visit(tree, (node, _parent) => {
@@ -15,9 +17,7 @@ function remarkLazyImages(/** @type {Options} */ opts) {
 			if (node.type !== 'image') return
 			if (typeof node.url !== 'string' && node.url[0] !== '/') return
 
-			const pathName = node.url.slice(1)
-			const pathURL = new URL(pathName, opts.publicDir)
-			const { width, height } = getImageSize(pathURL)
+			const { width, height } = getImageSize(node.url.slice(1))
 
 			node.data = {
 				hName: 'img',
@@ -31,30 +31,24 @@ function remarkLazyImages(/** @type {Options} */ opts) {
 	}
 }
 
-function createGetImageSize() {
-	const cache = new Map()
+function createGetImageSize(/** @type {Configuration} */ { publicDir = defaultPublicDir }) {
+	const sizeCache = /** @type {Map<string, ISize>} */ (new Map())
 
-	return (pathURL) => {
-		if (cache.has(pathURL.href)) {
-			return cache.get(pathURL.href)
+	return (/** @type {string} */ pathname) => {
+		const pathURL = new URL(pathname, publicDir)
+
+		if (sizeCache.has(pathURL.href)) {
+			return sizeCache.get(pathURL.href)
 		}
 
-		const fileDescriptor = openSync(pathURL, 'r')
-		const { size } = fstatSync(fileDescriptor)
-		const maxBufferSize = 512 * 1024
-		const bufferSize = Math.min(size, maxBufferSize)
-		const buffer = Buffer.alloc(bufferSize)
+		const result = getSizeFromFileSync(pathURL)
 
-		readSync(fileDescriptor, buffer, 0, bufferSize, 0)
-
-		const array = new Uint8Array(buffer.buffer)
-
-		const results = getSizeFromUint8Array(array)
-
-		cache.set(pathURL.href, results)
-
-		return results
+		return result
 	}
 }
+
+const defaultPublicDir = pathToFileURL(cwd())
+
+defaultPublicDir.pathname += '/'
 
 export default remarkLazyImages

@@ -7,11 +7,9 @@ height: 220px
 git: rux-clock
 assets:
   name: Clock
-sandbox:
-  style: "--y: 520px"
 ---
 
-::storybook-demo
+::tag{ is=a-playground tag=rux-clock }
 
 ## Appearance and Behavior
 

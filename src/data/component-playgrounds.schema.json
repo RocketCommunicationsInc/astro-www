@@ -2,6 +2,35 @@
 	"$schema": "https://json-schema.org/draft-07/schema",
 	"type": "object",
 	"$defs": {
+		"Dependency": {
+			"type": "object",
+			"properties": {
+				"tag": {
+					"title": "HTML tag name",
+					"type": "string"
+				},
+				"constructor": {
+					"title": "JavaScript constructor",
+					"type": "string",
+					"$ref": "./formats.json#/$defs/js-identifier"
+				}
+			},
+			"required": [
+				"tag",
+				"constructor"
+			],
+			"additionalProperties": false,
+			"defaultSnippets": [
+				{
+					"label": "Example",
+					"description": "Adds an Example",
+					"body": {
+						"name": "$2",
+						"code": "<rux-$1></rux-$1>"
+					}
+				}
+			]
+		},
 		"Example": {
 			"type": "object",
 			"properties": {
@@ -33,13 +62,8 @@
 					"type": "string",
 					"$ref": "./formats.json#/$defs/html-tag"
 				},
-				"route": {
-					"title": "Route",
-					"type": "string",
-					"$ref": "./formats.json#/$defs/uri-reference"
-				},
 				"constructor": {
-					"title": "JavaScript class",
+					"title": "JavaScript constructor",
 					"type": "string",
 					"$ref": "./formats.json#/$defs/js-identifier"
 				},
@@ -67,12 +91,18 @@
 							}
 						]
 					}
+				},
+				"dependencies": {
+					"title": "Dependencies",
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/Dependency"
+					}
 				}
 			},
 			"additionalProperties": false,
 			"required": [
 				"tag",
-				"route",
 				"constructor"
 			]
 		},

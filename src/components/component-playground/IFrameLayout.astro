@@ -23,9 +23,16 @@ const defaultExample = attrs.examples[0]
 
 const getNPMURL = (path: string) => `https://cdn.jsdelivr.net/npm/${path}`
 
+const addDependency = (tag: string, constructor: string) => [
+	`import{${constructor}}from'${getNPMURL(`@astrouxds/astro-web-components@7.9.2/dist/components/${tag}.js/+esm`)}'`,
+	`customElements.get('${tag}')||customElements.define('${tag}',${constructor})`,
+].join(';')
+
 const scriptContent = [
-	`import{${attrs.constructor}}from'${getNPMURL(`@astrouxds/astro-web-components@7.9.2/dist/components/${attrs.tag}.js/+esm`)}'`,
-	`customElements.define('${attrs.tag}',${attrs.constructor})`,
+	addDependency(attrs.tag, attrs.constructor),
+	...(attrs.dependencies || []).map(
+		dependency => addDependency(dependency.tag, dependency.constructor)
+	),
 	`globalThis.$tag=${JSON.stringify(attrs.tag)}`,
 	`globalThis.$target=document.querySelector('${attrs.tag}')`,
 ].join(';')

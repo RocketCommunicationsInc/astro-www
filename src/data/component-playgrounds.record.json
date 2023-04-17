@@ -3,7 +3,6 @@
 	"records": [
 		{
 			"tag": "rux-breadcrumb",
-			"route": "/patterns/breadcrumbz/",
 			"constructor": "RuxBreadcrumb",
 			"examples": [
 				{
@@ -15,7 +14,6 @@
 		},
 		{
 			"tag": "rux-button",
-			"route": "/components/button/",
 			"constructor": "RuxButton",
 			"examples": [
 				{
@@ -71,7 +69,6 @@
 		},
 		{
 			"tag": "rux-checkbox",
-			"route": "/components/checkbox/",
 			"constructor": "RuxCheckbox",
 			"examples": [
 				{
@@ -108,7 +105,6 @@
 		},
 		{
 			"tag": "rux-classification-marking",
-			"route": "/components/classification-markings/",
 			"constructor": "RuxClassificationMarking",
 			"examples": [
 				{
@@ -141,8 +137,49 @@
 			]
 		},
 		{
+			"tag": "rux-clock",
+			"constructor": "RuxClock",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-clock></rux-clock>"
+				}
+			],
+			"fields": [
+				{
+					"kind": "switch",
+					"attribute": "hide-date",
+					"property": "hideDate",
+					"checked": false
+				},
+				{
+					"kind": "switch",
+					"attribute": "hide-labels",
+					"property": "hideLabels",
+					"checked": false
+				},
+				{
+					"kind": "switch",
+					"attribute": "hide-timezone",
+					"property": "hideTimezone",
+					"checked": false
+				},
+				{
+					"kind": "switch",
+					"attribute": "small",
+					"property": "small",
+					"checked": false
+				},
+				{
+					"kind": "text",
+					"attribute": "timezone",
+					"property": "timezone",
+					"value": "UTC"
+				}
+			]
+		},
+		{
 			"tag": "rux-datetime",
-			"route": "/components/datetime/",
 			"constructor": "RuxDatetime",
 			"examples": [
 				{
@@ -220,7 +257,6 @@
 		},
 		{
 			"tag": "rux-datetime",
-			"route": "/components/datetime/",
 			"constructor": "RuxDatetime",
 			"examples": [
 				{
@@ -232,7 +268,6 @@
 		},
 		{
 			"tag": "rux-icon",
-			"route": "/components/icon/",
 			"constructor": "RuxIcon",
 			"examples": [
 				{
@@ -244,7 +279,6 @@
 		},
 		{
 			"tag": "rux-indeterminate-progress",
-			"route": "/components/indeterminate-progress/",
 			"constructor": "RuxIndeterminateProgress",
 			"examples": [
 				{
@@ -256,7 +290,6 @@
 		},
 		{
 			"tag": "rux-progress",
-			"route": "/components/progress/",
 			"constructor": "RuxProgress",
 			"examples": [
 				{
@@ -268,7 +301,6 @@
 		},
 		{
 			"tag": "rux-push-button",
-			"route": "/components/push-button/",
 			"constructor": "RuxPushButton",
 			"examples": [
 				{
@@ -321,6 +353,23 @@
 			]
 		},
 		{
+			"tag": "rux-radio",
+			"constructor": "RuxRadio",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-radio-group name=\"radios\" label=\"Radio group\">\n\t<rux-radio value=\"one\" name=\"radios\">One</rux-radio>\n\t<rux-radio value=\"two\" name=\"radios\">Two</rux-radio>\n\t<rux-radio value=\"three\" name=\"radios\">Three</rux-radio>\n</rux-radio-group>"
+				}
+			],
+			"fields": [],
+			"dependencies": [
+				{
+					"tag": "rux-radio-group",
+					"constructor": "RuxRadioGroup"
+				}
+			]
+		},
+		{
 			"tag": "rux-radio-group",
 			"constructor": "RuxRadioGroup",
 			"examples": [
@@ -329,7 +378,44 @@
 					"code": "<rux-radio-group name=\"radios\" label=\"Radio group\">\n\t<rux-radio value=\"one\" name=\"radios\">One</rux-radio>\n\t<rux-radio value=\"two\" name=\"radios\">Two</rux-radio>\n\t<rux-radio value=\"three\" name=\"radios\">Three</rux-radio>\n</rux-radio-group>"
 				}
 			],
-			"fields": []
+			"fields": [
+				{
+					"kind": "text",
+					"property": "label",
+					"attribute": "label",
+					"value": "Radio group"
+				},
+				{
+					"kind": "switch",
+					"property": "required",
+					"attribute": "required",
+					"checked": false
+				},
+				{
+					"kind": "switch",
+					"property": "invalid",
+					"attribute": "invalid",
+					"checked": false
+				},
+				{
+					"kind": "text",
+					"attribute": "error-text",
+					"property": "errorText",
+					"value": ""
+				},
+				{
+					"kind": "text",
+					"attribute": "help-text",
+					"property": "helpText",
+					"value": ""
+				}
+			],
+			"dependencies": [
+				{
+					"tag": "rux-radio",
+					"constructor": "RuxRadio"
+				}
+			]
 		},
 		{
 			"tag": "rux-slider",
@@ -404,17 +490,44 @@
 			]
 		},
 		{
+			"tag": "rux-tabs",
+			"constructor": "RuxTabs",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-tabs id=\"tab-set-id-1\">\n\t<rux-tab id=\"tab-id-1\">Tab 1 title</rux-tab>\n\t<rux-tab id=\"tab-id-2\">Tab 2 title</rux-tab>\n\t<rux-tab id=\"tab-id-3\">Tab 3 title</rux-tab>\n</rux-tabs>\n\n<rux-tab-panels aria-labelledby=\"tab-set-id-1\">\n\t<rux-tab-panel aria-labelledby=\"tab-id-1\">Tab 1 HTML content</rux-tab-panel>\n\t<rux-tab-panel aria-labelledby=\"tab-id-2\">Tab 2 HTML content</rux-tab-panel>\n\t<rux-tab-panel aria-labelledby=\"tab-id-3\">Tab 3 HTML content</rux-tab-panel>\n</rux-tab-panels>"
+				}
+			],
+			"fields": [
+				{
+					"kind": "switch",
+					"property": "small",
+					"attribute": "small",
+					"checked": false
+				}
+			],
+			"dependencies": [
+				{
+					"tag": "rux-tab",
+					"constructor": "RuxTab"
+				},
+				{
+					"tag": "rux-tab-panels",
+					"constructor": "RuxTabPanels"
+				},
+				{
+					"tag": "rux-tab-panel",
+					"constructor": "RuxTabPanel"
+				}
+			]
+		},
+		{
 			"tag": "rux-tag",
-			"route": "/components/tag/",
 			"constructor": "RuxTag",
 			"examples": [
 				{
 					"name": "Default",
 					"code": "<rux-tag status=\"pass\">Tag</rux-tag>"
-				},
-				{
-					"name": "Pass",
-					"code": "<rux-tag status=\"pass\">Pass</rux-tag>"
 				}
 			],
 			"fields": [
@@ -433,7 +546,6 @@
 		},
 		{
 			"tag": "rux-textarea",
-			"route": "/components/textarea/",
 			"constructor": "RuxTextarea",
 			"examples": [
 				{
@@ -447,6 +559,81 @@
 					"attribute": "label",
 					"property": "label",
 					"value": "Textarea label"
+				},
+				{
+					"kind": "switch",
+					"attribute": "disabled",
+					"property": "disabled",
+					"checked": false
+				},
+				{
+					"kind": "text",
+					"attribute": "error-text",
+					"property": "errorText",
+					"value": ""
+				},
+				{
+					"kind": "text",
+					"attribute": "help-text",
+					"property": "helpText",
+					"value": ""
+				}
+			]
+		},
+		{
+			"tag": "rux-tooltip",
+			"constructor": "RuxTooltip",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-tooltip message=\"Tooltip\" delay=\"400\">\n\t<rux-button>Trigger</rux-button>\n</rux-tooltip>"
+				}
+			],
+			"fields": [
+				{
+					"kind": "switch",
+					"attribute": "open",
+					"property": "open",
+					"value": false
+				},
+				{
+					"kind": "text",
+					"attribute": "message",
+					"property": "message",
+					"value": "Tooltip"
+				},
+				{
+					"kind": "text",
+					"attribute": "delay",
+					"property": "delay",
+					"value": "400"
+				},
+				{
+					"kind": "menu",
+					"attribute": "placement",
+					"property": "placement",
+					"options": [
+						"auto",
+						"top",
+						"top-start",
+						"top-end",
+						"right",
+						"right-start",
+						"right-end",
+						"bottom",
+						"bottom-start",
+						"bottom-end",
+						"left",
+						"left-start",
+						"left-end"
+					],
+					"value": "auto"
+				}
+			],
+			"dependencies": [
+				{
+					"tag": "rux-button",
+					"constructor": "RuxButton"
 				}
 			]
 		}

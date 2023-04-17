@@ -37,6 +37,7 @@
 
 		/* Layout */
 		align-items: center;
+		flex-flow: column;
 		justify-content: center;
 		padding: 1rem;
 

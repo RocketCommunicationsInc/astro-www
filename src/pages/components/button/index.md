@@ -7,8 +7,6 @@ height: 300px
 git: rux-button
 assets:
     name: Button
-sandbox:
-  style: "--y: 200px;"
 ---
 
 ::tag{ is=a-playground tag=rux-button }

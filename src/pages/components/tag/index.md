@@ -7,9 +7,9 @@ height: 180px
 git: rux-tag
 assets:
   name: Tag
-sandbox:
-  style: "--y: 360px;"
 ---
+
+::tag{ is=a-playground tag=rux-tag }
 
 Tags can be static, used to provide additional information on an item, or interactive, with the abilities such as editing or clearing them from data sets or linking to other similarly tagged elements.
 

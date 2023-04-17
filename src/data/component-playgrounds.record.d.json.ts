@@ -34,6 +34,11 @@ export interface PlaygroundFieldText extends __PlaygroundFieldBase {
 
 export type PlaygroundField = PlaygroundFieldMenu | PlaygroundFieldRadioGroup | PlaygroundFieldSwitch | PlaygroundFieldText
 
+export interface PlaygroundDependency {
+	tag: string
+	constructor: string
+}
+
 export interface PlaygroundExample {
 	name: string
 	code: string
@@ -45,6 +50,7 @@ export interface PlaygroundRecord {
 	constructor: string
 	examples: PlaygroundExample[]
 	fields?: PlaygroundField[]
+	dependencies?: PlaygroundDependency[]
 }
 
 export interface PlaygroundSchema {
