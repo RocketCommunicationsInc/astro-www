@@ -90,13 +90,13 @@
 					"kind": "switch",
 					"attribute": "checked",
 					"property": "checked",
-					"value": false
+					"checked": false
 				},
 				{
 					"kind": "switch",
 					"attribute": "disabled",
 					"property": "disabled",
-					"value": false
+					"checked": false
 				},
 				{
 					"kind": "text",
@@ -285,13 +285,15 @@
 				},
 				{
 					"kind": "switch",
+					"attribute": "checked",
 					"property": "checked",
-					"attribute": "checked"
+					"checked": false
 				},
 				{
 					"kind": "switch",
+					"attribute": "disabled",
 					"property": "disabled",
-					"attribute": "disabled"
+					"checked": false
 				},
 				{
 					"kind": "radio-group",
@@ -362,6 +364,42 @@
 					"attribute": "value",
 					"property": "value",
 					"value": "50"
+				},
+				{
+					"kind": "switch",
+					"attribute": "disabled",
+					"property": "disabled",
+					"checked": false
+				}
+			]
+		},
+		{
+			"tag": "rux-switch",
+			"constructor": "RuxSwitch",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-switch label=\"\" name=\"\" value=\"\"></rux-switch>"
+				}
+			],
+			"fields": [
+				{
+					"kind": "switch",
+					"attribute": "checked",
+					"property": "checked",
+					"value": false
+				},
+				{
+					"kind": "switch",
+					"attribute": "disabled",
+					"property": "disabled",
+					"value": false
+				},
+				{
+					"kind": "text",
+					"attribute": "label",
+					"property": "label",
+					"value": ""
 				}
 			]
 		},
