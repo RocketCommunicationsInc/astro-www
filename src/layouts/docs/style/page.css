@@ -345,11 +345,6 @@
 		margin-block-start: 2--step;
 	}
 
-	& .table-overflow {
-		/* Layout */
-		margin-block-end: 15--step;
-	}
-
 	& table {
 		/* Layout */
 		inline-size: 100%;
@@ -384,10 +379,21 @@
 
 				/* Text */
 				font-weight: 700;
+				text-align: start;
 
 				/* Appearance */
 				background: var(--Grey200Color);
 				color: var(--Grey700Color);
+
+				&:first-child {
+					/* Appearance */
+					border-radius: 2--step 0 0 0;
+				}
+
+				&:last-child {
+					/* Appearance */
+					border-radius: 0 2--step 0 0;
+				}
 			}
 		}
 	}

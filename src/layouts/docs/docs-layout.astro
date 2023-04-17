@@ -55,7 +55,7 @@ const tabTitle = content.title
 
 			<aside class="page-content-side-col" id="aside">
 				<div class="-content">
-					<PageAside {...Astro.props} />
+					<slot name="aside"><PageAside {...Astro.props} /></slot>
 				</div>
 			</aside>
 		</div>
