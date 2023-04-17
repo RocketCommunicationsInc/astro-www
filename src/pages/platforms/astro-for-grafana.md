@@ -31,5 +31,9 @@ The plugin is based on Astro 7 and Astro Design Tokens and requires Grafana 9.1.
 
 ## Sample Apps
 
-![A [sample dashboard](https://rocketcom.grafana.net/goto/Al3vE4-4k?orgId=1) shows the plugin in action, along with some Astro themed data visualizations.](/img/platforms/grafana-sample-dashboard.png)
+![ ](/img/platforms/grafana-sample-dashboard.png)
+<figcaption>A <a href="https://rocketcom.grafana.net/goto/Al3vE4-4k?orgId=1" style="
+text-decoration: underline;
+text-decoration-thickness: 1.25px;
+text-decoration-color: var(--LinkColor);">sample dashboard</a> shows the plugin in action, along with some Astro themed data visualizations.</figcaption>
 

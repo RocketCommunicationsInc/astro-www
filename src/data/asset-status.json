@@ -1,1804 +1,1809 @@
 {
-	"$schema": "./asset-status.schema.json",
-	"general": {
-		"title": "Asset Status",
-		"id": "asset-status"
-	},
-	"data": {
-		"Accordion": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-accordion--default-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Button": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-button--default-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "inprogress"
-				}
-			]
-		},
-		"Breadcrumbs": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-breadcrumb--default-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Card": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-card--default-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Checkbox": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/forms-checkbox-group--default-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Classification & Control Markings": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-classification-markings--default-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Clock": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-clock--default-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Container": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-container--default-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Data Visualization": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "unavailable"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "inprogress"
-				}
-			]
-		},
-		"Dialog": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-dialog--dialog"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Focus State": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Global Status Bar": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-global-status-bar--default-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Icons and Symbols": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-monitoring-icon--default-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Input Field": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/forms-input--default-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "inprogress"
-				}
-			]
-		},
-		"Link": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "unavailable"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Log": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-log--log"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Monitoring Icon": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-monitoring-icon--default-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Notification Banner": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-notification--default-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Pagination": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "planned"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Pop Up": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-pop-up--default-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Pop Up Menu": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-pop-up--default-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Progress": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-progress--default-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Push Button": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-push-button--push-button"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Radio Button": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/forms-radio-group--default-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "inprogress"
-				}
-			]
-		},
-		"Search": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/forms-input--types"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "inprogress"
-				}
-			]
-		},
-		"Segmented Button": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-segmented-button--default-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Select Menu": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/forms-select-menu--select-menu"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "inprogress"
-				}
-			]
-		},
-		"Sign In": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "unavailable"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Slider": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/forms-slider--default-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "inprogress"
-				}
-			]
-		},
-		"Status Symbol": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-status--default-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "inprogress"
-				}
-			]
-		},
-		"Switch": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-switch--switch-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Tabs": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-tabs--default-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Table": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-table--default-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Tag": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-tag--rux-tag"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Textarea": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/forms-textarea--default-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "inprogress"
-				}
-			]
-		},
-		"Timeline": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "inprogress",
-					"link": "https://astro-components.netlify.app/?path=/story/beta-timeline-beta--default-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Tooltip": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-tooltip--default-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Tree": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-tree--default-story"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "planned"
-				}
-			]
-		},
-		"Navigation": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				}
-			]
-		},
-		"Status System": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme"
-				},
-				{
-					"name": "UI Kit - Wireframe",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "available",
-					"link": "https://astro-components.netlify.app/?path=/story/components-status--all-variants"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "inprogress"
-				}
-			]
-		},
-		"Application Feedback": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				}
-			]
-		},
-		"Notifications": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				}
-			]
-		},
-		"Modeless Panes": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				}
-			]
-		},
-		"Forms and Validation": {
-			"assets": [
-				{
-					"name": "Documentation",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				}
-			]
-		},
-		"All Options": {
-			"assets": [
-				{
-					"name": "Documentations",
-					"type": "documentation",
-					"version": "7.0.0",
-					"status": "available"
-				},
-				{
-					"name": "UI Kit - Dark",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "inprogress"
-				},
-				{
-					"name": "UI Kit - Light",
-					"type": "ui",
-					"version": "7.0.0",
-					"status": "planned"
-				},
-				{
-					"name": "Web Component",
-					"type": "component",
-					"version": "7.0.0",
-					"status": "unavailable"
-				},
-				{
-					"name": "Design Tokens",
-					"type": "token",
-					"version": "7.0.0",
-					"status": "deprecated"
-				}
-			]
-		}
-	}
+    "$schema": "./asset-status.schema.json",
+    "data": {
+        "Accordion": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/components-accordion--default-story",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "All Options": {
+            "assets": [
+                {
+                    "name": "Documentations",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "v7"
+                },
+                {
+                    "name": "UI Kit - Dark",
+                    "status": "inprogress",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "name": "UI Kit - Light",
+                    "status": "planned",
+                    "type": "ui",
+                    "version": "N/A"
+                },
+                {
+                    "name": "Web Component",
+                    "status": "unavailable",
+                    "type": "component",
+                    "version": "N/A"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "deprecated",
+                    "type": "token",
+                    "version": "v7"
+                }
+            ]
+        },
+        "Application Feedback": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "planned",
+                    "type": "documentation",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Breadcrumbs": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/components-breadcrumb--default-story",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Button": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/components-button--default-story",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "available",
+                    "type": "token",
+                    "version": "v1",
+                    "link": "/components/button/specs/"
+                }
+            ]
+        },
+        "Card": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/components-card--default-story",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Checkbox": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/forms-checkbox-group--default-story",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Classification & Control Markings": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/components-classification-markings--default-story",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Clock": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/components-clock--default-story",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Container": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/components-container--default-story",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Data Visualization": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "name": "Web Component",
+                    "status": "unavailable",
+                    "type": "component",
+                    "version": "N/A"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "inprogress",
+                    "type": "token",
+                    "version": "v1"
+                }
+            ]
+        },
+        "Dialog": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/components-dialog--dialog",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Focus State": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Forms and Validation": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "planned",
+                    "type": "documentation",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Global Status Bar": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/components-global-status-bar--default-story",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Icons and Symbols": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/components-monitoring-icon--default-story",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Input Field": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/forms-input--default-story",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "available",
+                    "type": "token",
+                    "version": "v1",
+                    "link": "/components/input-field/specs/"
+                }
+            ]
+        },
+        "Link": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "name": "Web Component",
+                    "status": "unavailable",
+                    "type": "component",
+                    "version": "N/A"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Log": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/components-log--log",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Modeless Panes": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "planned",
+                    "type": "documentation",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Monitoring Icon": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/components-monitoring-icon--default-story",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Navigation": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "planned",
+                    "type": "documentation",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Notification Banner": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/components-notification--default-story",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Notifications": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "planned",
+                    "type": "documentation",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Pagination": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "name": "Web Component",
+                    "status": "planned",
+                    "type": "component",
+                    "version": "N/A"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Pop Up": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/components-pop-up--default-story",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Pop Up Menu": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/components-pop-up--default-story",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Progress": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/components-progress--default-story",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Push Button": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/components-push-button--push-button",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Radio Button": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/forms-radio-group--default-story",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "inprogress",
+                    "type": "token",
+                    "version": "v1"
+                }
+            ]
+        },
+        "Search": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/forms-input--types",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "inprogress",
+                    "type": "token",
+                    "version": "v1"
+                }
+            ]
+        },
+        "Segmented Button": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/components-segmented-button--default-story",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Select Menu": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/forms-select-menu--select-menu",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "available",
+                    "type": "token",
+                    "version": "v1",
+                    "link": "/components/select/specs/"
+                }
+            ]
+        },
+        "Sign In": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "name": "Web Component",
+                    "status": "unavailable",
+                    "type": "component",
+                    "version": "N/A"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Slider": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/forms-slider--default-story",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "available",
+                    "type": "token",
+                    "version": "v1",
+                    "link": "/components/slider/specs/"
+                }
+            ]
+        },
+        "Status Symbol": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/components-status--default-story",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "inprogress",
+                    "type": "token",
+                    "version": "v1"
+                }
+            ]
+        },
+        "Status System": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/components-status--all-variants",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "inprogress",
+                    "type": "token",
+                    "version": "v1"
+                }
+            ]
+        },
+        "Switch": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/components-switch--switch-story",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Table": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/components-table--default-story",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Tabs": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/components-tabs--default-story",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Tag": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/components-tag--rux-tag",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Textarea": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/forms-textarea--default-story",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "available",
+                    "type": "token",
+                    "version": "v1",
+                    "link": "/components/textarea/specs/"
+                }
+            ]
+        },
+        "Timeline": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/beta-timeline-beta--default-story",
+                    "name": "Web Component",
+                    "status": "inprogress",
+                    "type": "component",
+                    "version": "v6"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Tooltip": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/components-tooltip--default-story",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
+        "Tree": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
+                    "status": "available",
+                    "type": "ui",
+                    "version": "v7"
+                },
+                {
+                    "link": "https://astro-components.netlify.app/?path=/story/components-tree--default-story",
+                    "name": "Web Component",
+                    "status": "available",
+                    "type": "component",
+                    "version": "v7"
+                },
+                {
+                    "name": "Design Tokens",
+                    "status": "planned",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        }
+    },
+    "general": {
+        "id": "asset-status",
+        "title": "Asset Status"
+    }
 }

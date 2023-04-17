@@ -1,5 +1,6 @@
 ---
 title: Table
+description: Tables are a fundamental UX design tool for organizing and displaying data.
 tags: components
 path: /patterns/table
 date: Last Modified

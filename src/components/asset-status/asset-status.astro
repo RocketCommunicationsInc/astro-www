@@ -3,6 +3,7 @@ import { For } from '@astropub/flow'
 import './asset-status.css'
 import { data, general } from 'project:data/asset-status.json'
 import { assetIcon, status } from 'project:components/asset-status/asset-status-images.js'
+import eventToggleHandler from './asset-status.keyToggleHandler.js?url'
 
 export interface Props {
 	frontmatter?: any
@@ -43,6 +44,20 @@ const {
 						</For>
 					</tbody>
 				</table>
+				<div class="status-key-container">
+					<div class="-toggle"><span>Status Key</span>
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="-carret">
+						<path d="M4.28217 8.99756L12 15.5975L19.7178 8.99756L15.6616 8.99756L12 12.1289L8.33835 8.99756L4.28217 8.99756Z" fill="#005A8F"/>
+					</svg></div>
+					<div class="-key">
+						<For of={status}>{
+							stat =>(
+								<span set:html={stat}></span>
+							)
+						}</For>
+
+					</div>
+				</div><script src={eventToggleHandler} defer />
 			</article>
 		</Fragment>
 	: null

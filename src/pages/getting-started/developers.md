@@ -25,9 +25,9 @@ You can review the latest versions of the web components at the [Astro Storybook
 
 For online examples of full Astro app experiences, check out these EGS Service-Specific sample experiences:
 
-:::table-overflow
+:::specs-table-container
 | Ground Resources Management                                                                                                                               | Telemetry, Tracking, and Control                                                                                                     |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
 | [Dashboard](/grm-service-ux-design/grm-dashboard/) - [Source code](https://bitbucket.org/rocketcom/grm-sample-apps-dashboard/src/master/)                 | [Monitor](/ttc-service-ux-design/ttc-monitor/) - [Source code](https://bitbucket.org/rocketcom/tt-c-monitor/src/master/)             |
 | [Equipment Manager](/grm-service-ux-design/grm-equipment-manager/) - [Source code](https://bitbucket.org/rocketcom/grm-sample-apps-equipment/src/master/) | [Command](/ttc-service-ux-design/ttc-command/) - [Source code](https://bitbucket.org/rocketcom/tt-c-command/src/master/)             |
 | [Schedule](/grm-service-ux-design/grm-schedule/) - [Source code](https://bitbucket.org/rocketcom/grm-sample-apps-schedule/src/master/)                    | [Investigate](/ttc-service-ux-design/ttc-investigate/) - [Source code](https://bitbucket.org/rocketcom/tt-c-investigate/src/master/) |
