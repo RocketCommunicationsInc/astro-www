@@ -135,6 +135,11 @@
 			block-size: var(--icon-size);
 			inline-size: var(--icon-size);
 		}
+
+		& figcaption {
+			/* Layout */
+			margin-block-start: 4--step;
+		}
 	}
 }
 

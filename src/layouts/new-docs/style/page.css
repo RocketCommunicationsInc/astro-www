@@ -209,7 +209,6 @@
 
 	& figcaption {
 		/* Layout */
-		margin-block-start: 4--step;
 		padding-block: max(2 * var(--step));
 
 		/* Text */
@@ -237,7 +236,7 @@
 	/* Layout */
 	inline-size: var(--main-content-width);
 
-	& > *:not(a-playground, .table-overflow, table, .storybook-demo, .p-icon-groups) {
+	& > *:not(a-playground, .table-overflow, table, .storybook-demo, .p-icon-groups, .status-system-colors) {
 		/* Layout */
 		max-inline-size: 175--step;
 	}
@@ -380,6 +379,7 @@
 
 				/* Text */
 				font-weight: 700;
+				text-align: start;
 
 				/* Appearance */
 				background: var(--Grey200Color);
