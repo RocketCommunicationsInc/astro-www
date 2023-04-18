@@ -2,6 +2,7 @@
 	/* Layout */
 	padding-block: 7.5--step;
 	padding-inline: 11--step;
+	position: relative;
 
 	/* Text */
 	font-size: 14--rpx;
