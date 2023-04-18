@@ -10,13 +10,10 @@
 	NODE_VERSION = "18.16.0"
 
 [context.production]
-	environment = { NODE_VERSION = "18.16.0" }
+	NODE_VERSION = "18.16.0"
 
-[context.deploy-preview]
-	environment = { NODE_VERSION = "18.16.0" }
-
-[context.branch-deploy]
-	environment = { NODE_VERSION = "18.16.0" }
+[context.deploy-preview.environment]
+	NODE_VERSION = "18.16.0"
 
 [[redirects]]
 	from = "/ui-components/*"
