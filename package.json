@@ -2,6 +2,10 @@
 	"name": "astro-www",
 	"private": true,
 	"type": "module",
+	"engines": {
+		"node": ">=18",
+		"npm": ">=8"
+	},
 	"scripts": {
 		"check": "npx astro check",
 		"check:astro": "npx eslint 'src/**/*.astro'",
