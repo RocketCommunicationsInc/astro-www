@@ -7,6 +7,8 @@ import complianceData from 'project:data/compliance.json'
 
 import { getSecondaryNavGroup } from 'project:components/site-navigation/server/currentPath.ts'
 
+import { getSecondaryNavGroup } from 'project:components/site-navigation/server/currentPath.ts'
+
 import PageHeader from 'project:components/page-header/page-header.js'
 import globalData from 'project:data/global.json'
 import PageAside from 'project:components/page-aside/page-aside.astro'
@@ -81,7 +83,6 @@ const html = `<style>:root{--StorybookPreviewHeight:${StorybookPreviewHeight};}<
 	<Fragment slot="aside">
 		<PageAside {...Astro.props} />
 	</Fragment>
-
 </Layout>
 <script define:vars={{ GitHubId, GitHubRepoURL, GitHubRepoBranch, StorybookId, storybookURL }}>
 const template = document.createElement('template')
