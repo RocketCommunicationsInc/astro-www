@@ -50,6 +50,8 @@
 			cursor: pointer;
 
 			&.widget_vote-button {
+				display: flex;
+
 				/* Layout */
 				padding: 2--step;
 
