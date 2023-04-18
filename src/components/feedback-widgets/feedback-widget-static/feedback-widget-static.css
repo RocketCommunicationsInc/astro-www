@@ -1,0 +1,35 @@
+.widget-static_wrapper {
+	display: flex;
+
+	/* Layout */
+	border-block-start: 1px solid #7b8089;
+
+	/* Layout */
+	flex-direction: column;
+	margin-block-start: 15--step;
+
+	/* Layout */
+	margin-inline-end: 4--step;
+
+	@media (width < 1024px) {
+		/* Layout */
+		margin-inline-end: 0;
+	}
+}
+
+/* Styling the exposed slots */
+
+.widget-title {
+	/* Layout */
+	margin-block-start: 5--step;
+
+	/* Text */
+	font-size: 28--rpx;
+}
+
+.page {
+	& p.widget-description {
+		/* Layout */
+		margin-block-end: 0;
+	}
+}

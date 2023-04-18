@@ -186,6 +186,11 @@ h-navigation-list {
 		margin-block-start: -2--step;
 		margin-inline-start: 5--step;
 	}
+
+	@media (width < 1024px) {
+		block-size: 100vh;
+		overflow: scroll;
+	}
 }
 
 .p-navigation ul :is(a, span) {
