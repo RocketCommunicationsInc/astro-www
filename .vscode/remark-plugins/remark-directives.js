@@ -9,12 +9,32 @@ function remarkDirectives() {
 				node.type === 'leafDirective' ||
 				node.type === 'containerDirective'
 			) {
-				const data = node.data || (node.data = {})
-				const attrs = { ...node.attributes, class: node.name }
-				const hast = h('div', attrs)
+				if (node.name === 'tag' && 'is' in Object(node.attributes)) {
+					const { is, ...attributes } = node.attributes
 
-				data.hName = hast.tagName
-				data.hProperties = hast.properties
+					const hast = h(is, attributes)
+
+					const data = node.data || (node.data = {})
+
+					data.hName = hast.tagName
+					data.hProperties = hast.properties
+				} else {
+					const attrs = {
+						...node.attributes,
+						class: [
+							...new Set([
+								node.name,
+								...(node.attributes.class || '').trim().split(/\s+/).filter(Boolean)
+							])
+						],
+					}
+					const hast = h('div', attrs)
+
+					const data = node.data || (node.data = {})
+
+					data.hName = hast.tagName
+					data.hProperties = hast.properties
+				}
 			}
 		})
 	}

@@ -94,3 +94,8 @@
 		}
 	}
 }
+
+iframe {
+	/* Layout */
+	inline-size: 100%;
+}

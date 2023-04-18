@@ -9,8 +9,6 @@ assets:
     name: Timeline
 ---
 
-## Interactive Example
-
 ::storybook-demo
 
 <!-- Timeline displays a sequence of realtime events during a fixed time span. The Playhead indicates the current time of day. Time Regions represent events. -->

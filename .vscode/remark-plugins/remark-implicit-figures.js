@@ -13,18 +13,20 @@ function remarkImplicitFigures() {
 
 			if (!image || image.type !== 'image' || !image.alt) return
 
+			const imageData = Object(image.data)
+
 			node.data = {
 				hName: 'figure',
 				hProperties: {},
 				hChildren: [
 					{
 						type: 'element',
-						tagName: 'img',
+						tagName: imageData.hName || 'img',
 						properties: {
 							src: image.url,
 							alt: image.alt,
-							loading: 'lazy',
-						},
+							...Object(imageData.hProperties)
+						}
 					},
 					{
 						type: 'element',

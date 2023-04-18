@@ -62,3 +62,13 @@ interface HTMLInputElement extends HTMLElement {
 declare function fetch<T extends Partial<ResponseData> = ResponseData>(input: RequestInfo | URL, init?: RequestInit): Promise<Response<T>>
 
 declare var visualViewport: VisualViewport
+
+// constructable stylesheet import
+declare module '*?withtype=style' {
+	export default Object as CSSStyleSheet
+}
+
+// constructable fragment import
+declare module '*?withtype=fragment' {
+	export default Object as DocumentFragment
+}

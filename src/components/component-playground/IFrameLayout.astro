@@ -1,0 +1,120 @@
+---
+import { type PlaygroundRecord } from 'project:data/component-playgrounds.record.json'
+
+import './IFrameLayout.css'
+
+import { For } from '@astropub/flow'
+
+import Panelset from './Panelset/Panelset.astro'
+import Panel from './Panelset/Panel.astro'
+
+import Sandbox from './Sandbox.astro'
+
+import Field from './Field/Field.astro'
+
+import ControlMenu from './Control/Menu.astro'
+import ControlText from './Control/Text.astro'
+import ControlRadio from './Control/Radio.astro'
+import ControlRadioGroup from './Control/RadioGroup.astro'
+import ControlSwitch from './Control/Switch.astro'
+
+const attrs = Astro.props as PlaygroundRecord
+const defaultExample = attrs.examples[0]
+
+const getNPMURL = (path: string) => `https://cdn.jsdelivr.net/npm/${path}`
+
+const addDependency = (tag: string, constructor: string) => [
+	`import{${constructor}}from'${getNPMURL(`@astrouxds/astro-web-components@7.9.2/dist/components/${tag}.js/+esm`)}'`,
+	`customElements.get('${tag}')||customElements.define('${tag}',${constructor})`,
+].join(';')
+
+const scriptContent = [
+	addDependency(attrs.tag, attrs.constructor),
+	...(attrs.dependencies || []).map(
+		dependency => addDependency(dependency.tag, dependency.constructor)
+	),
+	`globalThis.$tag=${JSON.stringify(attrs.tag)}`,
+	`globalThis.$target=document.querySelector('${attrs.tag}')`,
+].join(';')
+---
+<html class="dark-theme" lang="en-US">
+	<head>
+		<title>Playground</title>
+
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+
+		<link rel="stylesheet" href={getNPMURL('@astrouxds/tokens@1.5.0/dist/css/index.css')} />
+		<link rel="stylesheet" href={getNPMURL('@astrouxds/tokens@1.5.0/dist/css/theme.light.css')} />
+
+		<script type="module" set:html={scriptContent}></script>
+	</head>
+
+	<body>
+		<main class="app">
+			<section class="sandbox-area">
+				<Sandbox class="dark-theme" set:html={
+					defaultExample.code
+				} />
+			</section>
+
+			<section class="control-area">
+				<Panelset>{
+					attrs.examples.length > 1
+						? (
+							<Panel label="Variants">
+								<Field type="menu" label="variant" property="example:variant" hiddenlabel>
+									<ControlRadioGroup for="sandbox:example">{
+										<For of={attrs.examples!}>{(example) => (
+											<ControlRadio for="sandbox:example" value={example.code} selected={example === defaultExample ? '' : null} set:text={example.name} />
+										)}</For>
+									}</ControlRadioGroup>
+								</Field>
+							</Panel>
+						)
+					: null
+				}{
+					Array.isArray(attrs.fields) && attrs.fields.length > 0
+						? (
+							<Panel label="Properties">
+								<For of={attrs.fields!}>{(field) => (
+									<Field label={field.attribute}>{
+										// Select Menu Control
+										field.kind === 'menu'
+											? <ControlMenu for={field.property}>{
+												<For of={field.options}>{(option) => (
+													<option selected={option === field.value} set:text={option} />
+												)}</For>
+											}</ControlMenu>
+
+										// Radio Group Control
+										: field.kind === 'radio-group'
+											? <ControlRadioGroup for={field.property}>{
+												<For of={field.options}>{(option) => (
+													<ControlRadio for={field.property} value={option.value} selected={option.value === field.value ? '' : null} set:text={option.label} />
+												)}</For>
+											}</ControlRadioGroup>
+
+										// Switch Control
+										: field.kind === 'switch'
+											? <ControlSwitch for={field.property} checked={field.checked} />
+
+										// Text Control
+										: field.kind === 'text'
+											? <ControlText for={field.property} value={field.value} />
+
+										// display nothing and continue
+										: null
+									}</Field>
+								)}</For>
+							</Panel>
+						)
+					: null
+				}</Panelset>
+			</section>
+		</main>
+	</body>
+</html>
+<script>
+import './IFrameLayout.ts'
+</script>

@@ -6,10 +6,8 @@ storybook: components-progress
 height: 220px
 git: rux-progress
 assets:
-    name: Progress
+  name: Progress
 ---
-
-## Interactive Example
 
 ::storybook-demo
 

@@ -6,10 +6,8 @@ storybook: components-tag--all-variants
 height: 180px
 git: rux-tag
 assets:
-    name: Tag
+  name: Tag
 ---
-
-## Interactive Example
 
 ::storybook-demo
 

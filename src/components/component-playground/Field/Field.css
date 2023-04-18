@@ -1,0 +1,21 @@
+:host {
+	display: flex;
+
+	/* Layout */
+	flex-flow: column;
+	gap: 16--rpx;
+
+	&::part(label) {
+		display: block;
+
+		/* Text */
+		font-weight: 700;
+
+		/* Appearance */
+		color: var(--Grey800Color);
+	}
+
+	&::part(hidden-label) {
+		display: none;
+	}
+}

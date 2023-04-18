@@ -1,0 +1,69 @@
+:host {
+	display: grid;
+
+	/* Layout */
+	block-size: 100%;
+	grid-template-rows: 44--rpx auto;
+	max-block-size: var(--max-height);
+	overflow: hidden;
+	padding-block-end: 1px;
+
+	@media (width < 700px) {
+		/* Layout */
+		grid-template-rows: auto;
+	}
+
+	@media (width >= 700px) {
+		/* Layout */
+		grid-template-rows: 44--rpx auto;
+
+		/* Appearance */
+		box-shadow: var(--EdgeColor) 0 -1px 0 0;
+	}
+
+	&::part(heading) {
+		display: flex;
+
+		/* Layout */
+		align-items: center;
+		gap: 3--step;
+		padding-block: 10--rpx;
+		padding-inline: 12--rpx;
+
+		/* Appearance */
+		background-color: var(--BackColor);
+		color: var(--FillColor);
+		cursor: default;
+		user-select: none;
+
+		/* Reference */
+		--BackColor: var(--Grey200Color);
+		--FillColor: var(--Grey800Color);
+
+		@media (width < 700px) {
+			display: none;
+		}
+	}
+
+	&::part(content) {
+		display: grid;
+
+		/* Layout */
+		flex-flow: column;
+		gap: 24--rpx 28--rpx;
+		justify-content: space-between;
+		overflow-y: auto;
+		padding: 12--rpx;
+
+		@media (width < 700px) {
+			/* Layout */
+			grid-template-columns: repeat(auto-fill, 164--rpx);
+			padding-block: 24px;
+		}
+
+		@media (width >= 700px) {
+			/* Layout */
+			padding-block: 8px 16px;
+		}
+	}
+}
