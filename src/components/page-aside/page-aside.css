@@ -158,7 +158,7 @@
 					no-repeat 0 -24px / 3px 100%;
 
 				/* Animation */
-				transition: text-shadow 120ms;
+				transition: text-shadow 80ms;
 
 				/* Reference */
 				--ActiveColor: transparent;
