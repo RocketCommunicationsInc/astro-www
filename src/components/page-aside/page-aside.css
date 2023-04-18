@@ -157,6 +157,12 @@
 					linear-gradient(var(--ActiveColor), var(--ActiveColor))
 					no-repeat 0 -24px / 3px 100%;
 
+				/* Animation */
+				transition: text-shadow 120ms;
+
+				/* Reference */
+				--ActiveColor: transparent;
+
 				&.-first {
 					/* Layout */
 					padding-block-start: 0;
@@ -174,16 +180,15 @@
 						no-repeat 0 0 / 3px 100%;
 				}
 
-				--ActiveColor: transparent;
-
 				&.-highlighted {
 					--ActiveColor: var(--DarkBlue500Color);
 
 					/* Text */
-					font-weight: 700;
+					text-shadow: -.25px 0 .25px CurrentColor, 0 .25px 0 CurrentColor, 0 -.125px 0 CurrentColor;
 
 					/* Appearance */
 					color: var(--DarkBlue500Color);
+					filter: drop-shadow(5px);
 				}
 			}
 		}
