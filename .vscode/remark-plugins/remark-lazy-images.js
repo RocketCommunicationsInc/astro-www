@@ -1,12 +1,12 @@
 import { visit } from 'unist-util-visit'
-import getSizeFromFileSync from '@astropub/get-size/getSizeFromFileSync'
+import getSizeFromFileSync from '@astropub/get-size/from/FileSync'
 import { pathToFileURL } from 'node:url'
 import { cwd } from 'node:process'
 
 // @ts-check
 
-/** @typedef {{ publicDir: URL }} Configuration */
-/** @typedef {{ width: number, height: number }} ISize */
+/** @typedef {{ command: 'dev' | 'build' | 'preview', publicDir: URL }} Configuration */
+/** @typedef {{ type: string, width: number, height: number }} ISize */
 
 function remarkLazyImages(/** @type {Configuration} */ opts) {
 	const getImageSize = createGetImageSize(Object(opts))
@@ -17,7 +17,9 @@ function remarkLazyImages(/** @type {Configuration} */ opts) {
 			if (node.type !== 'image') return
 			if (typeof node.url !== 'string' && node.url[0] !== '/') return
 
-			const { width, height } = getImageSize(node.url.slice(1))
+			const url = node.url.slice(1)
+
+			const { width, height } = getImageSize(url)
 
 			node.data = {
 				hName: 'img',
@@ -34,7 +36,7 @@ function remarkLazyImages(/** @type {Configuration} */ opts) {
 function createGetImageSize(/** @type {Configuration} */ { publicDir = defaultPublicDir }) {
 	const sizeCache = /** @type {Map<string, ISize>} */ (new Map())
 
-	return (/** @type {string} */ pathname) => {
+	return /** @type {{ (pathname: string): ISize }} */ (pathname) => {
 		const pathURL = new URL(pathname, publicDir)
 
 		if (sizeCache.has(pathURL.href)) {
