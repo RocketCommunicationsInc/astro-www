@@ -6,14 +6,12 @@ storybook: components-card--full-example
 height: 320px
 git: rux-card
 assets:
-    name: Card
+  name: Card
+sandbox:
+  style: "--y: 200px;"
 ---
 
-## Interactive Example
-
 ::storybook-demo
-
-<!-- A “card” is a UI design pattern that groups related information in a flexible-size container visually resembling a playing card. Within the Astro system, card sits on top of a container. -->
 
 A card is a container for a few short, related pieces of information. It roughly resembles a playing card in size and shape, and is intended as a linked, short representation of a conceptual unit.
 

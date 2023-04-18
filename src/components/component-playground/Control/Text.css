@@ -1,0 +1,60 @@
+* {
+	/* Layout */
+	box-sizing: border-box;
+}
+
+input {
+	/* Layout */
+	margin: 0;
+	padding: 0;
+
+	/* Text */
+	font: inherit;
+
+	/* Appearance */
+	background-color: transparent;
+	color: inherit;
+	outline: none;
+	border-width: 0;
+}
+
+:host {
+	display: inline-grid;
+
+	/* Layout */
+	max-inline-size: 100%;
+	min-inline-size: 128--rpx;
+	overflow: hidden;
+
+	/* Appearance */
+	background-color: var(--Grey200Color);
+	border-radius: var(--RadiusBase);
+	box-shadow: var(--EdgeColor) 0 0 0 var(--EdgeSize) inset;
+
+	/* Reference */
+	--EdgeColor: var(--DarkBlue400Color);
+	--EdgeSize: 1px;
+
+	&::part(content) {
+		display: block;
+
+		/* Layout */
+		grid-area: 1 / 1 / 3 / 3;
+		inline-size: 100%;
+		padding: 8--rpx;
+
+		/* Text */
+		line-height: calc(20 / 16);
+	}
+}
+
+/* Contextual Styles */
+
+:host(:where(:hover, :focus)) {
+	--EdgeColor: var(--DarkBlue600Color);
+}
+
+:host(:focus) {
+	/* Appearance */
+	outline: auto 1px;
+}

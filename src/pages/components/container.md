@@ -6,10 +6,10 @@ storybook: components-container--default-story
 height: 140px
 git: rux-container
 assets:
-    name: Container
+  name: Container
+sandbox:
+  style: "--y: 180px;"
 ---
-
-## Interactive Example
 
 ::storybook-demo
 

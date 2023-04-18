@@ -9,8 +9,6 @@ assets:
     name: Tooltip
 ---
 
-## Interactive Example
-
 ::storybook-demo
 
 <!-- A Tooltip is a message box that provides a concise amount of relevant contextual information about an associated UI element. Tooltips are activated by hovering over or focusing on an element. -->

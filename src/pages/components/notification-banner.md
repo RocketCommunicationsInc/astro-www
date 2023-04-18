@@ -9,8 +9,6 @@ assets:
     name: Notification Banner
 ---
 
-## Interactive Example
-
 ::storybook-demo
 
 ## Appearance and Behavior

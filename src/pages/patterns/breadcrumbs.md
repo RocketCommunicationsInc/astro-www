@@ -20,7 +20,7 @@ Breadcrumbs provide a user with their current site location and allows them to q
 
 ## Appearance and Behavior
 
-Breadcrumbs should be positioned in the top portion of a page, ideally below the application bar and primary navigation and above the page title (if present). 
+Breadcrumbs should be positioned in the top portion of a page, ideally below the application bar and primary navigation and above the page title (if present).
 
 Each Breadcrumb item is comprised of a clickable page link followed by a dividing icon. However, the final Breadcrumb, representing the current page, has a static text label and no divider.
 

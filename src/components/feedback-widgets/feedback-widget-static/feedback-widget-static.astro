@@ -1,0 +1,26 @@
+---
+import './feedback-widget-static.css'
+import FeedbackWidgetCustomElement from '../feedback-widget-custom-element.astro'
+
+const { currentURL } = Astro.props
+const title = 'Help improve this page'
+const description = 'Was this page helpful?'
+const secondaryButtonName = 'Clear'
+---
+<style>
+	h3 {
+		/* Layout */
+		margin-block-end: 5--step;
+		margin-block-start: 5--step;
+
+		/* Text */
+		font-size: 20--rpx;
+		font-weight: 500;
+	}
+
+</style>
+<div class='widget-static_wrapper'>
+	<FeedbackWidgetCustomElement currentURL={currentURL} title={title} description={description} collapsible={false} secondaryButtonName={secondaryButtonName}>
+		<slot />
+	</FeedbackWidgetCustomElement>
+</div>

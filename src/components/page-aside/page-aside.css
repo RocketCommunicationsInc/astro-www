@@ -145,7 +145,7 @@
 				padding-block: 0 7--step;
 
 				/* Layout */
-				padding-inline: 6--step;
+				padding-inline: 6--step 0;
 
 				/* Layout */
 				position: relative;

@@ -1,0 +1,36 @@
+---
+import { records } from 'project:data/component-playgrounds.record.json'
+
+export interface Props {
+	for: string
+	src: string
+}
+
+const attrs = Astro.props
+
+const record = records.find(
+	record => (
+		record.route === attrs.for
+	)
+)
+---
+{
+	record !== undefined
+		? (
+			<iframe class="c-sandbox" src={attrs.src} />
+		)
+	: null
+}
+<style is:global>
+:root:root .c-sandbox {
+	/* Layout */
+	inline-size: stretch;
+	max-inline-size: 100%;
+}
+
+.c-sandbox {
+	/* Layout */
+	block-size: var(--y);
+	margin-block-end: 5--step;
+}
+</style>

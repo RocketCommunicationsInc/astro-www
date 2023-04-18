@@ -52,26 +52,28 @@ const storybookUrl: string = `https://astro-components.netlify.app/?path=/story/
 	</ul>
 
 	<hr />
-
-	<div class='section-links-wrapper'>
-		<ul class='section-links'>{
-			h2Headings.map((heading, index) => (
-				<li>
-					<a class={
-						index === 0
-							? `${heading.slug} -highlighted -first`
-						: index === (h2Headings.length - 1)
-							? `${heading.slug} -last`
-						: `${heading.slug}`
-					} href={
-						`#${heading.slug}`
-					}>{
-						heading.text
-					}</a>
-				</li>
-			))
-		}</ul>
-	</div>
+	{ h2Headings.length > 1
+		? <div class='section-links-wrapper'>
+			<ul class='section-links'>{
+				h2Headings.map((heading, index) => (
+					<li>
+						<a class={
+							index === 0
+								? `${heading.slug} -highlighted -first`
+							: index === (h2Headings.length - 1)
+								? `${heading.slug} -last`
+							: `${heading.slug}`
+						} href={
+							`#${heading.slug}`
+						}>{
+							heading.text
+						}</a>
+					</li>
+				))
+			}</ul>
+		</div>
+		: null
+	}
 </nav>
 <script>
 import './page-aside.client.js'

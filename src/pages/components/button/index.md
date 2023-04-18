@@ -8,7 +8,6 @@ git: rux-button
 assets:
     name: Button
 ---
-## Interactive Example
 
 ::storybook-demo
 

@@ -9,9 +9,9 @@ assets:
     name: Forms and Validation
 ---
 
-They usually contains form elements including [Checkbox](/components/checkbox), [Dialog](/components/dialog), [Select Menu](/components/select), [Input Field](/components/input-field), [Radio Button](/components/radio-button) and [Switch](/components/switch).
+Forms usually contain form elements including [Checkbox](/components/checkbox), [Dialog](/components/dialog), [Select Menu](/components/select), [Input Field](/components/input-field), [Radio Button](/components/radio-button) and [Switch](/components/switch).
 
-### Form Layout
+## Form Layout
 
 Forms should be designed in columns as this improves scanability. When there are not a lot of fields, a form should be one column. Information can be presented in multiple columns if they are grouped together.
 
@@ -51,26 +51,26 @@ When positioning labels and form elements horizontally to the left and right of 
 - When indicating required fields, an asterisk should be placed to the right of the label.
 - When indicating optional fields, add the word _"Optional"_ in parentheses after the label.
 
-### Help Text
+## Help Text
 
 Help Text is an optional component addition used to provide contextual or instructional information for a form element. Help Text content should be as concise as possible while still providing valuable information to the user.
 
 Use Help Text instead of placeholder text when the user needs to refer to the instructional text after the field is filled in. Placeholder text should be used sparingly because the text disappears once the field is in focus, but can be used for generic information that is not required to complete the task. For example, including “Search…” in a [Search](/components/search) field is acceptable since there are other cues about the functionality of the field outside of the placeholder text.
 
-#### Rules of Thumb
+### Rules of Thumb
 
 - Be as concise as possible in Help Text content.
 - Help Text goes below form elements.
 - Use Help Text instead of placeholder text for important information.
 - Use Pop Over instead of Help Text if the content overflows one line's width for that form element.
 
-#### Appearance and Behavior
+### Appearance and Behavior
 
 Help Text uses a smaller font size with the secondary text color so that it doesn’t take away too much focus from the main form element that the user should focus on. As usual, sentence case capitalization is used for Help Text for readability. Help Text is placed 8 px below the form element and is left-aligned with the beginning of that form element to make sure that it is clear which element the help content is related to. For Forms using labels above fields, this means that the Help Text would align with the start of the field’s label as well. For Forms with labels to the left of the field, the Help Text would only start with the form element, not the label, to make it easier to scan down the list of element labels without distraction. Two exceptions to this rule are [Radio Button](/components/radio-button) and [Checkbox](/components/checkbox) list items. In these cases, Help Text for a particular item in the list will be left-aligned to the start of the item text and not the Radio Button or Checkbox icon. This improves readability of the list. If the Help Text is relevant to a group of controls, like a group of Checkboxes that requires one selection, then the Help Text can go below the full grouping, left-aligned with the element’s label.
 
 Like labels, in general, Help Text should only have one line of text below a field. If the text would need to wrap to a second line, use an icon that triggers a Pop Over on-click that contains the help content instead. This reduces scrolling and user distraction from the main content, the form elements themselves.
 
-#### Examples
+### Examples
 
 :::two-col
 ![Do: Use Help Text for important, concise instructions.](/img/patterns/val-help-text-do-1.png "Do: Use Help Text for important, concise instructions.")

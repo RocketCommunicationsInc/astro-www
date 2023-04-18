@@ -1,15 +1,15 @@
 ---
 import Layout from 'project:layouts/new-docs/new-docs-layout.astro'
-import { getSecondaryNavGroup } from 'project:components/site-navigation/server/currentPath.ts'
-
 import './component-docs-layout.css'
+
+import { getSecondaryNavGroup } from 'project:components/site-navigation/server/currentPath.ts'
 
 import PageHeader from 'project:components/page-header/page-header.js'
 import globalData from 'project:data/global.json'
 import PageAside from 'project:components/page-aside/page-aside.astro'
 import AssetStatus from 'project:components/asset-status/asset-status.astro'
 import ComplianceAside from 'project:components/compliance/compliance-aside.astro'
-import ContributionFooter from 'project:components/contribution-footer/contribution-footer.astro'
+// import ContributionFooter from 'project:components/contribution-footer/contribution-footer.astro'
 import complianceData from 'project:data/compliance.json'
 
 const {
@@ -31,19 +31,19 @@ const {
 const { content } = Astro.props
 
 /** RegEx to match a slash (/) at the end ($) of a string. */
-const matchTrailingSlash = /\/$/
+// const matchTrailingSlash = /\/$/
 
 /** Removes the trailing slash from a string. */
-const withoutTrailingSlash = (value: string) => value.replace(matchTrailingSlash, '')
+// const withoutTrailingSlash = (value: string) => value.replace(matchTrailingSlash, '')
 
 /* grab the source file url and then get the extension */
-const fileName = new URL(Astro.props.file, 'file:').toString()
-const fileExt = fileName.split('.').at(-1)
+// const fileName = new URL(Astro.props.file, 'file:').toString()
+// const fileExt = fileName.split('.').at(-1)
 
 const html = `<style>:root{--StorybookPreviewHeight:${StorybookPreviewHeight};}</style>`
 
 /** URL to the current source for this page. */
-const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData.designSystem.repositoryBranch}/src/pages${withoutTrailingSlash(Astro.url.pathname)}.${fileExt}`
+// const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData.designSystem.repositoryBranch}/src/pages${withoutTrailingSlash(Astro.url.pathname)}.${fileExt}`
 ---
 <Layout content={{ title: content.title }} {...Astro.props}>
 	<PageHeader slot="header">
@@ -64,19 +64,20 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 		</div>
 	</PageHeader>
 
-	<Fragment slot="toolbar">
-	</Fragment>
+	<Fragment slot="toolbar" />
 
 	<Fragment set:html={html} />
+
 	<slot />
+
 	<AssetStatus {...Astro.props}/>
+
 	<ComplianceAside compliance={complianceData} />
-	<ContributionFooter sourceurl={githubSourceURL} />
+	<!-- <ContributionFooter sourceurl={githubSourceURL} /> -->
 
 	<Fragment slot="aside">
 		<PageAside {...Astro.props} />
 	</Fragment>
-
 </Layout>
 <script define:vars={{ GitHubId, GitHubRepoURL, GitHubRepoBranch, StorybookId, storybookURL }}>
 const template = document.createElement('template')

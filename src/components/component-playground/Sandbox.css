@@ -1,0 +1,80 @@
+* {
+	/* Layout */
+	box-sizing: border-box;
+}
+
+:host {
+	display: grid;
+
+	/* Layout */
+	grid-template-rows: 44--rpx auto;
+
+	&::part(heading) {
+		display: flex;
+
+		/* Layout */
+		align-items: center;
+
+		/* Layout */
+		flex-flow: row;
+		gap: 3--step;
+		padding-block: 10--rpx;
+		padding-inline: 12--rpx;
+
+		/* Appearance */
+		background-color: var(--BackColor);
+		color: var(--FillColor);
+		cursor: default;
+		user-select: none;
+
+		/* Reference */
+		--BackColor: var(--Grey200Color);
+		--FillColor: var(--Grey800Color);
+	}
+
+	&::part(content) {
+		display: flex;
+
+		/* Layout */
+		align-items: center;
+		flex-flow: column;
+		justify-content: center;
+		padding: 1rem;
+
+		/* Appearance */
+		background-color: var(--BackColor);
+
+		/* Animation */
+		transition: background-color 80ms, color 80ms;
+
+		/* Reference */
+		--EdgeColor: var(--Grey200Color);
+		--EdgeSize: 0;
+	}
+
+	&::part(theme-switch) {
+		/* Layout */
+		flex-flow: row;
+
+		/* Text */
+		text-indent: 8--rpx;
+
+		/* Appearance */
+		color: var(--Grey800Color);
+	}
+}
+
+/* Separator */
+
+::part(content) {
+	@nest :host(.dark-theme)& {
+		/* Reference */
+		background-color: var(--DarkBlue800Color);
+		color: var(--Neutral000Color);
+	}
+
+	@nest :host(.light-theme)& {
+		/* Reference */
+		background-color: var(--Neutral000Color);
+	}
+}

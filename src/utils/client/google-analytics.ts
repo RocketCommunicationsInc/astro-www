@@ -27,8 +27,12 @@ const initializeGTagScript = (id: string) => {
 	}
 }
 
-initializeGTagScript('UA-114182957-1')
-initializeGTagScript('G-ZHMMGPG3B3')
+if (import.meta.env.PROD) {
+	initializeGTagScript('UA-114182957-1')
+	initializeGTagScript('G-ZHMMGPG3B3')
+}
+
+/* Interfaces */
 
 export interface Gtag {
 	(command: 'config', targetId: string, config?: ControlParams | EventParams | CustomParams): void;

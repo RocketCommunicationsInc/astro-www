@@ -1,9 +1,8 @@
 ---
 title: Getting Started
-layout: project:layouts/docs/docs-layout.astro
+description: All Astro components are built using Stencil to deliver standards-compliant web components.
+layout: project:layouts/component-docs/component-docs-layout.astro
 ---
-
-# Getting Started
 
 ## Getting Started with Astro Web Components
 
