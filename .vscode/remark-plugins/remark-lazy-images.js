@@ -2,6 +2,8 @@ import { visit } from 'unist-util-visit'
 import getSizeFromFileSync from '@astropub/get-size/from/FileSync'
 import { pathToFileURL } from 'node:url'
 import { cwd } from 'node:process'
+import * as codecs from '@astropub/codecs'
+import * as fs from 'node:fs/promises'
 
 // @ts-check
 
@@ -10,6 +12,7 @@ import { cwd } from 'node:process'
 
 function remarkLazyImages(/** @type {Configuration} */ opts) {
 	const getImageSize = createGetImageSize(Object(opts))
+	const getWebPImage = createGetWebPImage(Object(opts))
 
 	return () => (tree, _vfile) => {
 		visit(tree, (node, _parent) => {
@@ -19,7 +22,11 @@ function remarkLazyImages(/** @type {Configuration} */ opts) {
 
 			const url = node.url.slice(1)
 
-			const { width, height } = getImageSize(url)
+			const { type, width, height } = getImageSize(url)
+
+			if (type === 'png') {
+				node.url = getWebPImage(node.url)
+			}
 
 			node.data = {
 				hName: 'img',
@@ -46,6 +53,38 @@ function createGetImageSize(/** @type {Configuration} */ { publicDir = defaultPu
 		const result = getSizeFromFileSync(pathURL)
 
 		return result
+	}
+}
+
+function createGetWebPImage(/** @type {Configuration} */ { command, publicDir = defaultPublicDir }) {
+	const writeCache = /** @type {Map<string, ISize>} */ (new Map())
+
+	const compress = /** @type {{ (pathname: string, webppathname: string): Promise<void> }} */ async (pngPath, webpPath) => {
+		if (writeCache.has(pngPath)) {
+			return
+		}
+
+		writeCache.set(pngPath, true)
+
+		const pngURL = new URL(pngPath.slice(1), publicDir)
+		const webpURL = new URL(webpPath.slice(1), publicDir)
+
+		const pngImage = await codecs.png.decode(await fs.readFile(pngURL))
+		const webpImage = await pngImage.encode('image/webp', { quality: 50 })
+
+		await fs.writeFile(webpURL, webpImage.data)
+	}
+
+	return /** @type {{ (pathname: string): string }} */ (pathname) => {
+		if (command !== 'build') {
+			return pathname
+		}
+
+		const webppathname = pathname.replace(/\.png$/, '.webp')
+
+		compress(pathname, webppathname)
+
+		return webppathname
 	}
 }
 
