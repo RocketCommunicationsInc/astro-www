@@ -1,7 +1,7 @@
 [build]
 
 	publish = "dist/"
-	command = "rm -rf node_modules; npm install && npm run build"
+	command = "rm -rf package-lock.json; npm install && npm run build"
 
 [context.production]
 	NODE_VERSION = "18.16.0"
