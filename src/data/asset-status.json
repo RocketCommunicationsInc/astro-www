@@ -38,7 +38,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -72,7 +72,7 @@
                     "version": "N/A"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "deprecated",
                     "type": "token",
                     "version": "v7"
@@ -126,7 +126,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -170,7 +170,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "available",
                     "type": "token",
                     "version": "v1",
@@ -215,7 +215,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -259,7 +259,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -303,7 +303,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -347,7 +347,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -391,7 +391,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -434,7 +434,7 @@
                     "version": "N/A"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "inprogress",
                     "type": "token",
                     "version": "v1"
@@ -478,7 +478,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -521,7 +521,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -575,7 +575,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -619,7 +619,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -663,7 +663,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "available",
                     "type": "token",
                     "version": "v1",
@@ -707,7 +707,7 @@
                     "version": "N/A"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -751,7 +751,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -805,7 +805,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -859,7 +859,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -912,7 +912,7 @@
                     "version": "N/A"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -956,7 +956,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -1000,7 +1000,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -1044,7 +1044,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -1088,7 +1088,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -1132,7 +1132,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "inprogress",
                     "type": "token",
                     "version": "v1"
@@ -1176,7 +1176,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "inprogress",
                     "type": "token",
                     "version": "v1"
@@ -1220,7 +1220,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -1264,7 +1264,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "available",
                     "type": "token",
                     "version": "v1",
@@ -1308,7 +1308,7 @@
                     "version": "N/A"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -1352,7 +1352,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "available",
                     "type": "token",
                     "version": "v1",
@@ -1397,7 +1397,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "inprogress",
                     "type": "token",
                     "version": "v1"
@@ -1441,7 +1441,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "inprogress",
                     "type": "token",
                     "version": "v1"
@@ -1485,7 +1485,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -1529,7 +1529,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -1573,7 +1573,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -1617,7 +1617,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -1661,7 +1661,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "available",
                     "type": "token",
                     "version": "v1",
@@ -1706,7 +1706,7 @@
                     "version": "v6"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -1750,7 +1750,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
@@ -1794,7 +1794,7 @@
                     "version": "v7"
                 },
                 {
-                    "name": "Design Tokens",
+                    "name": "Component Tokens",
                     "status": "planned",
                     "type": "token",
                     "version": "N/A"
