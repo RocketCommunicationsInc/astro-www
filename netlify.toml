@@ -1,7 +1,7 @@
 [build]
 
 	publish = "dist/"
-	command = "npm cache clear --force && npm run build"
+	command = "rm -rf node_modules; npm install && npm run build"
 
 [context.production]
 	NODE_VERSION = "18.16.0"
