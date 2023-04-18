@@ -44,7 +44,7 @@
 									"link": {
 										"type": "string",
 										"title": "Asset Link",
-										"format": "uri"
+										"format": "uri-reference"
 									},
 									"version": {
 										"type": "string",
