@@ -109,6 +109,9 @@
 
 			&:is(figure) {
 				/* Layout */
+				inline-size: 100%;
+
+				/* Layout */
 				margin-block: 1--step;
 			}
 
