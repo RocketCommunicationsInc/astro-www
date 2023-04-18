@@ -1,13 +1,13 @@
 ---
 import type { MarkdownContent } from 'astro'
 import Layout from 'project:layouts/default/default-layout.astro'
-// import ContributionFooter from 'project:components/contribution-footer/contribution-footer.astro'
+import ContributionFooter from 'project:components/contribution-footer/contribution-footer.astro'
 import ComplianceAside from 'project:components/compliance/compliance-aside.astro'
 import SiteSkipTo from 'project:components/site-skipto/site-skipto.astro'
 import complianceData from 'project:data/compliance.json'
-// import globalData from 'project:data/global.json'
+import globalData from 'project:data/global.json'
 import FeedbackWidget from 'project:components/feedback-widgets/feedback-widget-sticky/feedback-widget.astro'
-import FeedbackWidgetStatic from 'project:components/feedback-widgets/feedback-widget-static/feedback-widget-static.astro'
+// import FeedbackWidgetStatic from 'project:components/feedback-widgets/feedback-widget-static/feedback-widget-static.astro'
 
 import './docs-layout.css'
 
@@ -20,25 +20,25 @@ const {
 /* Create github link to source file */
 
 /** RegEx to match a slash (/) at the end ($) of a string. */
-// const matchTrailingSlash = /\/$/
+const matchTrailingSlash = /\/$/
 
 /** Removes the trailing slash from a string. */
-// const withoutTrailingSlash = (value: string) => value.replace(matchTrailingSlash, '')
+const withoutTrailingSlash = (value: string) => value.replace(matchTrailingSlash, '')
 
 /* grab the source file url and then get the extension */
-// const fileName = new URL(Astro.props.file, 'file:').toString()
-// const fileExt = fileName.split('.').at(-1)
+const fileName = new URL(Astro.props.file, 'file:').toString()
+const fileExt = fileName.split('.').at(-1)
 
 /** URL to the current source for this page. */
-// const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData.designSystem.repositoryBranch}/src/pages${withoutTrailingSlash(Astro.url.pathname)}.${fileExt}`
+const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData.designSystem.repositoryBranch}/src/pages${withoutTrailingSlash(Astro.url.pathname)}.${fileExt}`
 ---
 <Layout title={title} tabtitle={title}>
 	<SiteSkipTo slot="top" />
 	<main id="content">
 		<slot />
 		<ComplianceAside compliance={complianceData} />
-		<!-- <ContributionFooter sourceurl={githubSourceURL} /> -->
-		<FeedbackWidgetStatic currentURL={Astro.url} />
+		<ContributionFooter sourceurl={githubSourceURL} />
+		<!-- <FeedbackWidgetStatic currentURL={Astro.url} /> -->
 	</main>
 	<FeedbackWidget currentURL={Astro.url} />
 </Layout>

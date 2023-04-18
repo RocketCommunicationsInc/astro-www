@@ -3,8 +3,10 @@ import type { Props as DocProps } from '@astropub/doc'
 
 import Layout from 'project:layouts/default/default-layout.astro'
 import SiteSkipTo from 'project:components/site-skipto/site-skipto.astro'
+import ContributionFooter from 'project:components/contribution-footer/contribution-footer.astro'
 import FeedbackWidget from 'project:components/feedback-widgets/feedback-widget-sticky/feedback-widget.astro'
-import FeedbackWidgetStatic from 'project:components/feedback-widgets/feedback-widget-static/feedback-widget-static.astro'
+import globalData from 'project:data/global.json'
+// import FeedbackWidgetStatic from 'project:components/feedback-widgets/feedback-widget-static/feedback-widget-static.astro'
 
 import './new-docs-layout.css'
 
@@ -21,6 +23,21 @@ const { content } = Astro.props
 const title = content.subtitle ? `${content.title} ${content.subtitle}` : content.title
 const tabTitle = content.title
 const url = content.url
+
+/* Create github link to source file */
+
+/** RegEx to match a slash (/) at the end ($) of a string. */
+const matchTrailingSlash = /\/$/
+
+/** Removes the trailing slash from a string. */
+const withoutTrailingSlash = (value: string) => value.replace(matchTrailingSlash, '')
+
+/* grab the source file url and then get the extension */
+const fileName = new URL(Astro.props.file!, 'file:').toString()
+const fileExt = fileName.split('.').at(-1)
+
+/** URL to the current source for this page. */
+const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData.designSystem.repositoryBranch}/src/pages${withoutTrailingSlash(Astro.url.pathname)}.${fileExt}`
 ---
 <Layout title={title} tabtitle={tabTitle}>
 	<SiteSkipTo slot="top" />
@@ -35,7 +52,8 @@ const url = content.url
 		<div class="page-content">
 			<div class="page-content-main-col">
 				<slot />
-				<FeedbackWidgetStatic currentURL={url} />
+				<ContributionFooter sourceurl={githubSourceURL} />
+				<!-- <FeedbackWidgetStatic currentURL={url} /> -->
 			</div>
 
 			<aside class="page-content-side-col" id="aside">
