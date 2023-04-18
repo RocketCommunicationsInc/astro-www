@@ -221,6 +221,11 @@
 	/* Layout */
 	inset-block-start: 0;
 	position: sticky;
+
+	@media (width < 1024px) {
+		/* Layout */
+		inset-block-start: 60--rpx;
+	}
 }
 
 .page-content {
