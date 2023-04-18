@@ -13,7 +13,7 @@
 		"check:js": "npx eslint 'src/**/*{.js,.ts}'",
 		"check:ts": "npx tsc --project tsconfig.json",
 		"start": "astro dev",
-		"build": "astro build",
+		"build": "NODE_OPTIONS='--max-old-space-size=4096' astro build",
 		"serve": "astro preview"
 	},
 	"devDependencies": {
