@@ -2,7 +2,7 @@ import { visit } from 'unist-util-visit'
 import getSizeFromFileSync from '@astropub/get-size/from/FileSync'
 import { pathToFileURL } from 'node:url'
 import { cwd } from 'node:process'
-import * as codecs from '@astropub/codecs'
+import loader from '@astrojs/image/squoosh'
 import * as fs from 'node:fs/promises'
 
 // @ts-check
@@ -11,10 +11,11 @@ import * as fs from 'node:fs/promises'
 /** @typedef {{ type: string, width: number, height: number }} ISize */
 
 function remarkLazyImages(/** @type {Configuration} */ opts) {
+	const promises = []
 	const getImageSize = createGetImageSize(Object(opts))
-	const getWebPImage = createGetWebPImage(Object(opts))
+	const getWebPImage = createGetWebPImage(Object(opts), promises)
 
-	return () => (tree, _vfile) => {
+	return () => async (tree, _vfile) => {
 		visit(tree, (node, _parent) => {
 			if (node === undefined) return
 			if (node.type !== 'image') return
@@ -37,6 +38,8 @@ function remarkLazyImages(/** @type {Configuration} */ opts) {
 				},
 			}
 		})
+
+		await Promise.all(promises)
 	}
 }
 
@@ -56,7 +59,7 @@ function createGetImageSize(/** @type {Configuration} */ { publicDir = defaultPu
 	}
 }
 
-function createGetWebPImage(/** @type {Configuration} */ { command, publicDir = defaultPublicDir }) {
+function createGetWebPImage(/** @type {Configuration} */ { command, publicDir = defaultPublicDir }, promises = []) {
 	const writeCache = /** @type {Map<string, ISize>} */ (new Map())
 
 	const compress = /** @type {{ (pathname: string, webppathname: string): Promise<void> }} */ async (pngPath, webpPath) => {
@@ -69,8 +72,10 @@ function createGetWebPImage(/** @type {Configuration} */ { command, publicDir = 
 		const pngURL = new URL(pngPath.slice(1), publicDir)
 		const webpURL = new URL(webpPath.slice(1), publicDir)
 
-		const pngImage = await codecs.png.decode(await fs.readFile(pngURL))
-		const webpImage = await pngImage.encode('image/webp', { quality: 50 })
+		const webpImage = await loader.transform(await fs.readFile(pngURL), {
+			format: 'webp',
+			quality: 50,
+		})
 
 		await fs.writeFile(webpURL, webpImage.data)
 	}
@@ -82,7 +87,9 @@ function createGetWebPImage(/** @type {Configuration} */ { command, publicDir = 
 
 		const webppathname = pathname.replace(/\.png$/, '.webp')
 
-		compress(pathname, webppathname)
+		promises.push(
+			compress(pathname, webppathname)
+		)
 
 		return webppathname
 	}

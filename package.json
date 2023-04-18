@@ -13,10 +13,11 @@
 		"check:js": "npx eslint 'src/**/*{.js,.ts}'",
 		"check:ts": "npx tsc --project tsconfig.json",
 		"start": "astro dev",
-		"build": "NODE_OPTIONS='--max-old-space-size=4096' astro build",
+		"build": "astro build",
 		"serve": "astro preview"
 	},
 	"devDependencies": {
+		"@astrojs/image": "0.16.6",
 		"@astrojs/mdx": "0.19.0",
 		"@astrojs/sitemap": "1.2.2",
 		"@astrojs/ts-plugin": "0.4.4",
