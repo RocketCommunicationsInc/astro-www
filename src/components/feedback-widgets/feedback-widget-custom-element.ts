@@ -213,7 +213,16 @@ class FeedbackWidget extends HTMLElement {
 					method: 'POST',
 					body: JSON.stringify(data),
 				})
-				.then(() => {
+				.then((response) => {
+					if (response.status === 400) {
+						widgetFail.classList.add('-active')
+						setTimeout(() => {
+							widgetSuccess.classList.remove('-active')
+							widgetFail.classList.remove('-active')
+						}, 2500)
+
+					return
+					}
 					// on success, make antenna success color, stop receiving animation after brief timeout.
 					setTimeout(() => {
 						antenna.classList.add('success')
