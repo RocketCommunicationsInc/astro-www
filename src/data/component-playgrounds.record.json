@@ -10,7 +10,13 @@
 					"code": "<rux-breadcrumb>\n\t<rux-breadcrumb-item href=\"#\">Home</rux-breadcrumb-item>\n\t<rux-breadcrumb-item href=\"#\">Second Item</rux-breadcrumb-item>\n\t<rux-breadcrumb-item>Current Item</rux-breadcrumb-item>\n</rux-breadcrumb>"
 				}
 			],
-			"fields": []
+			"fields": [],
+			"dependencies": [
+				{
+					"tag": "rux-breadcrumb-item",
+					"constructor": "RuxBreadcrumbItem"
+				}
+			]
 		},
 		{
 			"tag": "rux-button",
@@ -64,12 +70,6 @@
 					"attribute": "borderless",
 					"property": "borderless",
 					"checked": false
-				}
-			],
-			"dependencies": [
-				{
-					"tag": "rux-breadcrumb-item",
-					"constructor": "RuxBreadcrumbItem"
 				}
 			]
 		},
