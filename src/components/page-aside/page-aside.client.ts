@@ -75,6 +75,7 @@ import { h } from 'project:utils/html.js'
 
 const addComplianceFooterToNav = () => {
 	const sideNav = document.querySelector('ul.section-links')!
+	if (!sideNav) return
 	const linkItems = sideNav.querySelectorAll('li a')!
 	const complianceHeader: HTMLElement | null = document.querySelector('.p-compliance-aside h2.-heading')
 	let complianceTitle: string
