@@ -38,7 +38,7 @@ The guidance on this page is focused on the use of, and rules for, Classificatio
 
 ### Banner Examples
 
-:::specs-table-container
+:::table-overflow
 |                                                                              | State            | Hex Value | RGB Value    | CSS                                                     | Font Color |
 |------------------------------------------------------------------------------|------------------|-----------|--------------|---------------------------------------------------------|------------|
 | ![Marking Unclassified Swatch](/img/swatches/marking__unclassified.svg)      | Unclassified     | #007a33   | 0, 122, 51   | `--classification-banner-color-background-unclassified` | white      |
@@ -135,7 +135,7 @@ The colors used in the Tag components are the same as those in the Overall Banne
 
 Whenever classified or controlled information is present, use an Authority Block, to trace the source of the designation and any necessary clarifications about declassification dates or classification reasons. The Authority Block is typically in the bottom left of a document page, but can be placed elsewhere according to layout needs. Similarly, if necessary in the layout, the authority information for electronic material may appear as a single line of text instead of the typical three-line approach. Note that there is a slightly different structure for CUI, originally classified documents, and documents with a classification derived from another document. Authority Blocks are most often displayed as lines of text and do not currently require a component to satisfy this marking requirement. To learn more about this element, go to our [Additional Resources](#additional-resources).
 
-:::specs-table-container
+:::table-overflow
 | **Do**                                                                                                           |
 |------------------------------------------------------------------------------------------------------------------|
 | Show the source of classified or controlled information on a page with relevant contact information.             |
