@@ -9,12 +9,6 @@
 [context.deploy-preview.environment]
 	NODE_VERSION = "18.16.0"
 
-[context.production]
-	NODE_VERSION = "18.16.0"
-
-[context.deploy-preview.environment]
-	NODE_VERSION = "18.16.0"
-
 [[redirects]]
 	from = "/ui-components/*"
 	to = "/components/:splat"
