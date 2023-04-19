@@ -1,11 +1,6 @@
 ---
 import Layout from 'project:layouts/new-docs/new-docs-layout.astro'
 import './component-docs-layout.css'
-import ComplianceAside from 'project:components/compliance/compliance-aside.astro'
-import ContributionFooter from 'project:components/contribution-footer/contribution-footer.astro'
-import complianceData from 'project:data/compliance.json'
-
-import { getSecondaryNavGroup } from 'project:components/site-navigation/server/currentPath.ts'
 
 import { getSecondaryNavGroup } from 'project:components/site-navigation/server/currentPath.ts'
 
@@ -84,9 +79,6 @@ const html = `<style>:root{--StorybookPreviewHeight:${StorybookPreviewHeight};}<
 		<PageAside {...Astro.props} />
 	</Fragment>
 </Layout>
-<script>
-import 'project:components/component-playground/Playground/Playground.ts'
-</script>
 <script define:vars={{ GitHubId, GitHubRepoURL, GitHubRepoBranch, StorybookId, storybookURL }}>
 const template = document.createElement('template')
 
