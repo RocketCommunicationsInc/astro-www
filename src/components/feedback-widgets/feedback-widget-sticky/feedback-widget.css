@@ -13,19 +13,22 @@
 	margin-inline-end: 4--step;
 
 	/* Appearance */
-	position: fixed;
-
-	& .widget_interior-wrapper {
-		/* Layout */
-		inset-block-end: 0;
-		position: absolute;
-	}
+	position: sticky;
 
 	@media (width < 1024px) {
 		/* Layout */
 		inset-block-end: 0;
 		inset-inline-end: 0;
 		margin-inline-end: 0;
+
+		/* Layout */
+		position: fixed;
+	}
+
+	& .widget_interior-wrapper {
+		/* Layout */
+		inset-block-end: 0;
+		position: absolute;
 	}
 
 	& .widget_top-tab {

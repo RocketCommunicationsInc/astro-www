@@ -23,6 +23,7 @@ class FeedbackWidget extends HTMLElement {
 		const widgetInteriorWrapper: HTMLElement | null = document.querySelector('.widget_interior-wrapper')
 		const topTab: HTMLElement | null = document.querySelector('.widget_top-tab')
 		const widgetContent: HTMLElement | null = document.querySelector('.widget_content-wrapper')
+		const pageFooter: HTMLElement = document.querySelector('.p-footer')!
 
 		// shadow elements
 		const form: HTMLFormElement = root.querySelector('form#feedback-form')!
@@ -43,6 +44,9 @@ class FeedbackWidget extends HTMLElement {
 		let rateButtonSelected: boolean = false
 		let formSubmittable: boolean = false
 		let toggle: boolean = false
+
+		// intersection observer
+		let observer: IntersectionObserver | undefined
 
 		const handleRemoveSelected = () => {
 			// deselect UI buttons
@@ -82,18 +86,22 @@ class FeedbackWidget extends HTMLElement {
 			}
 		}
 
+		const watchFooterScroll = () => {
+			let footerBottom: number = pageFooter.getBoundingClientRect().top
+			let viewportHeight: number = visualViewport.height
+			let difference: number = (footerBottom - viewportHeight) * -1
+
+			if (widgetWrapper !== null) widgetWrapper.style.insetBlockEnd = `${difference}px`
+			console.log('difference', difference)
+		}
+
 		const watchForFooter = () => {
-			const pageFooter: HTMLElement = document.querySelector('.p-footer')!
-
-			const watchFooterScroll = () => {
-				let footerBottom: number = pageFooter.getBoundingClientRect().top
-				let viewportHeight: number = visualViewport.height
-				let difference: number = (footerBottom - viewportHeight) * -1
-
-				if (widgetWrapper !== null) widgetWrapper.style.insetBlockEnd = `${difference}px`
-				console.log('difference', difference)
+			if (observer) observer.disconnect()
+			if (visualViewport.width > 1024) {
+				return
 			}
-			function handleIntersect(entries: any[], observer: any) {
+
+			const handleIntersect = (entries: any[]) => {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
 						document.addEventListener('scroll', watchFooterScroll)
@@ -103,9 +111,6 @@ class FeedbackWidget extends HTMLElement {
 					}
 				})
 			}
-
-			let observer
-
 
 			let options = {
 				root: null,
@@ -337,6 +342,10 @@ class FeedbackWidget extends HTMLElement {
 		handleEmailListener()
 		handleFormListener()
 		watchForFooter()
+		window.addEventListener('resize', () => {
+			document.removeEventListener('scroll', watchFooterScroll)
+			watchForFooter()
+		})
 	}
 }
 
