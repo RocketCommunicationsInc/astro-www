@@ -49,5 +49,5 @@
 
 .breaking-change__code__block {
 	/* Layout */
-	width: 45%;
+	inline-size: 45%;
 }

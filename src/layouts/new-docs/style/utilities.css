@@ -1,0 +1,187 @@
+/* Table */
+/* ========================================================================== */
+
+.table-overflow {
+	/* Layout */
+	margin-block-end: 5--step;
+	max-inline-size: 230--step;
+
+	/* Layout */
+	overflow-x: auto;
+	overflow-x: overlay;
+
+	& table {
+		/* Layout */
+		inline-size: 100%;
+
+		/* Layout */
+
+		/* Layout */
+		min-inline-size: auto;
+	}
+}
+
+/* Table for Status System page */
+/* ========================================================================== */
+
+.status-system-colors {
+	/* Layout */
+	margin-block-end: 5--step;
+	max-inline-size: 230--step;
+	overflow-x: auto;
+
+	& table {
+		/* Layout */
+		inline-size: 100%;
+
+		/* Layout */
+		min-inline-size: auto;
+
+		& td {
+			/* Text */
+			line-height: 1.5rem;
+		}
+	}
+
+	& .status-color {
+		/* Layout */
+		block-size: 16--step;
+
+		/* Layout */
+		box-sizing: border-box;
+		inline-size: 16--step;
+
+		/* Appearance */
+		background: transparent;
+		border: 1--step solid transparent;
+	}
+}
+
+/* Code */
+/* ========================================================================== */
+
+.astro-code,
+.code-block {
+	/* Layout */
+	overflow-x: auto;
+	padding: 4--step;
+
+	/* Text */
+	font-family: var(--SystemMonoType);
+	font-size: 14--rpx;
+	line-height: calc(20 / 14);
+
+	/* Appearance */
+	background: var(--BrightBlue850);
+	border-radius: var(--EdgeRadius);
+	color: var(--PrimaryColor);
+
+	& > code {
+		/* Text */
+		white-space: pre;
+	}
+}
+
+/* Note */
+/* ========================================================================== */
+
+.caution,
+.note {
+	display: flex;
+
+	/* Layout */
+	flex-flow: column;
+	justify-content: center;
+	margin-block-start: 4--step;
+	min-block-size: 18--step;
+	padding-block: 4--step;
+	padding-inline: 16--step 4--step;
+
+	/* Appearance */
+	background: var(--note-color) var(--note-icon) no-repeat 4--step 5--step / 8--step;
+	border-radius: var(--EdgeRadius);
+	box-shadow: var(--note-border-color, transparent) 0 0 0 1px inset;
+
+	& > :nth-child(1) {
+		/* Layout */
+		margin-block-start: 0;
+	}
+}
+
+.note {
+	--note-border-color: var(--CautionBorderColor);
+	--note-color: var(--NoteColor);
+	--note-icon: var(--NoteIcon);
+}
+
+.caution {
+	--note-border-color: var(--CautionBorderColor);
+	--note-color: var(--CautionColor);
+	--note-icon: var(--CautionIcon);
+}
+
+/* Example */
+/* ========================================================================== */
+
+.example-do, .example-dont {
+	& > figcaption {
+		/* Layout */
+		margin-block-start: 2--step;
+
+		/* Appearance */
+		box-shadow: var(--border-color) 0 1--step 0 0 inset;
+
+		--border-color: currentColor;
+	}
+}
+
+.example-do > figcaption {
+	--border-color: var(--ExampleDoColor);
+}
+
+.example-dont > figcaption {
+	--border-color: var(--ExampleDontColor);
+}
+
+/* Release Table */
+/* ========================================================================== */
+
+.release-table {
+	/* Layout */
+	margin-block-start: 4--step;
+	overflow-x: scroll;
+
+	& th, & td {
+		/* Text */
+		font-size: 16--rpx;
+		line-height: calc(20 / 16);
+
+		/* Layout */
+		vertical-align: text-top;
+		white-space: normal;
+	}
+
+	& th {
+		/* Layout */
+		padding: 2--step;
+
+		/* Text */
+		font-weight: 700;
+
+		/* Appearance */
+		background-color: #efefef;
+	}
+
+	& td {
+		/* Layout */
+		padding: 2--step;
+
+		/* Appearance */
+		box-shadow: #efefef 0 -1px 0 0 inset;
+	}
+}
+
+.breaking-change-details {
+	/* Layout */
+	margin-block-start: 4--step;
+}

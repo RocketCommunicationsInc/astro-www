@@ -15,10 +15,10 @@ slot {
 
 	&::-webkit-scrollbar, &::-webkit-scrollbar {
 		/* Layout */
-		height: 0;
+		block-size: 0;
 
 		/* Layout */
-		width: 0;
+		inline-size: 0;
 	}
 }
 

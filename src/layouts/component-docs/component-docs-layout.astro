@@ -1,7 +1,16 @@
 ---
-import Layout from 'project:layouts/docs/docs-layout.astro'
-import globalData from 'project:data/global.json'
+import Layout from 'project:layouts/new-docs/new-docs-layout.astro'
 import './component-docs-layout.css'
+
+import { getSecondaryNavGroup } from 'project:components/site-navigation/server/currentPath.ts'
+
+import PageHeader from 'project:components/page-header/page-header.js'
+import globalData from 'project:data/global.json'
+import PageAside from 'project:components/page-aside/page-aside.astro'
+import AssetStatus from 'project:components/asset-status/asset-status.astro'
+import ComplianceAside from 'project:components/compliance/compliance-aside.astro'
+// import ContributionFooter from 'project:components/contribution-footer/contribution-footer.astro'
+import complianceData from 'project:data/compliance.json'
 
 const {
 	components: {
@@ -19,11 +28,56 @@ const {
 	storybook: StorybookId,
 } = Object(Astro.props.content)
 
+const { content } = Astro.props
+
+/** RegEx to match a slash (/) at the end ($) of a string. */
+// const matchTrailingSlash = /\/$/
+
+/** Removes the trailing slash from a string. */
+// const withoutTrailingSlash = (value: string) => value.replace(matchTrailingSlash, '')
+
+/* grab the source file url and then get the extension */
+// const fileName = new URL(Astro.props.file, 'file:').toString()
+// const fileExt = fileName.split('.').at(-1)
+
 const html = `<style>:root{--StorybookPreviewHeight:${StorybookPreviewHeight};}</style>`
+
+/** URL to the current source for this page. */
+// const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData.designSystem.repositoryBranch}/src/pages${withoutTrailingSlash(Astro.url.pathname)}.${fileExt}`
 ---
-<Layout {...Astro.props}>
+<Layout content={{ title: content.title }} {...Astro.props}>
+	<PageHeader slot="header">
+		<PageHeader.Heading>
+			{content.title}
+		</PageHeader.Heading>
+		<PageHeader.Subheading>
+			{content.description ? content.description : null}
+		</PageHeader.Subheading>
+		<div class="nav-holder">
+		{
+			getSecondaryNavGroup(Astro.url.pathname)
+				? (
+					<PageHeader.Nav file={Astro.props.file} />
+				)
+			: null
+		}
+		</div>
+	</PageHeader>
+
+	<Fragment slot="toolbar" />
+
 	<Fragment set:html={html} />
+
 	<slot />
+
+	<AssetStatus {...Astro.props}/>
+
+	<ComplianceAside compliance={complianceData} />
+	<!-- <ContributionFooter sourceurl={githubSourceURL} /> -->
+
+	<Fragment slot="aside">
+		<PageAside {...Astro.props} />
+	</Fragment>
 </Layout>
 <script define:vars={{ GitHubId, GitHubRepoURL, GitHubRepoBranch, StorybookId, storybookURL }}>
 const template = document.createElement('template')
@@ -39,6 +93,16 @@ template.innerHTML = [
 ].join('')
 
 for (const el of document.querySelectorAll('.storybook-demo')) {
+	const content = template.content.cloneNode(true)
+
+	content.querySelector('[src="#preview"]').src = `${storybookURL}iframe.html?id=${StorybookId}&viewMode=story`
+	content.querySelector('[href="#storybook"]').href = `${storybookURL}?path=/story/${StorybookId}`
+	content.querySelector('[href="#github"]').href = `${GitHubRepoURL}/tree/${GitHubRepoBranch}/packages/web-components/src/components/${GitHubId}`
+
+	el.append(content)
+}
+
+for (const el of document.querySelectorAll('.tab-content')) {
 	const content = template.content.cloneNode(true)
 
 	content.querySelector('[src="#preview"]').src = `${storybookURL}iframe.html?id=${StorybookId}&viewMode=story`

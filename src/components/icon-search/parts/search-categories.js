@@ -40,10 +40,10 @@
 				const headingName = entry.target.querySelector('.-group-heading').getAttribute('id')
 				select.value = headingName
 			}
-		});
-	};
+		})
+	}
 
-	let observer = new IntersectionObserver(callback, intersectOptions);
+	let observer = new IntersectionObserver(callback, intersectOptions)
 
 	iconGroups.forEach((group) => {
 		observer.observe(group)

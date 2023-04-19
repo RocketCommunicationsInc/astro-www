@@ -1,0 +1,86 @@
+{
+	"$schema": "https://json-schema.org/draft-07/schema",
+	"type": "object",
+	"title": "Asset Status",
+	"properties": {
+		"$schema": {
+			"type": "string"
+		},
+		"general": {
+			"type": "object"
+		},
+		"data": {
+			"title": "Components",
+			"type": "object",
+			"patternProperties": {
+				"^.+$": {
+					"type": "object",
+					"title": "Component ID",
+					"properties": {
+						"id": {
+							"type": "string"
+						},
+						"assets": {
+							"type": "array",
+							"title": "Assets",
+							"items": {
+								"type": "object",
+								"title": "Asset",
+								"properties": {
+									"name": {
+										"type": "string",
+										"title": "Asset Name"
+									},
+									"type": {
+										"type": "string",
+										"title": "Asset Type",
+										"enum": [
+											"documentation",
+											"ui",
+											"component",
+											"token"
+										]
+									},
+									"link": {
+										"type": "string",
+										"title": "Asset Link",
+										"format": "uri-reference"
+									},
+									"version": {
+										"type": "string",
+										"title": "Asset Version"
+									},
+									"status": {
+										"type": "string",
+										"title": "Asset Status",
+										"enum": [
+											"available",
+											"unavailable",
+											"planned",
+											"inprogress",
+											"deprecated"
+										]
+									}
+								},
+								"additionalProperties": false,
+								"required": [
+									"name",
+									"type",
+									"version",
+									"status"
+								]
+							}
+						}
+					},
+					"additionalProperties": false
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"$schema",
+		"data"
+	]
+}

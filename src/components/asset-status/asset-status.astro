@@ -1,0 +1,64 @@
+---
+import { For } from '@astropub/flow'
+import './asset-status.css'
+import { data, general } from 'project:data/asset-status.json'
+import { assetIcon, status } from 'project:components/asset-status/asset-status-images.js'
+import eventToggleHandler from './asset-status.keyToggleHandler.js?url'
+
+export interface Props {
+	frontmatter?: any
+}
+
+const {
+	frontmatter
+} = Astro.props
+
+---
+{
+	// if there is an asset status list for the component in the json file, read it
+	data[frontmatter.assets?.name as keyof typeof data]
+		? <Fragment>
+			<a href={`#${general.id}`} class="h h2">
+				<h2 id={general.id} class="-heading">{
+					general.title
+				}</h2>
+			</a>
+			<article class="asset-status-container">
+				<table>
+					<thead>
+						<tr>
+							<th class="-asset">Asset</th>
+							<th class="-version">Version</th>
+							<th class="-status">Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						<For of={data[frontmatter.assets.name as keyof typeof data].assets}>{
+							asset => (
+								<tr>
+									<td class="-asset"><span set:html={assetIcon[asset.type] + asset.name}></span></td>
+									<td class="-version"><a href={asset.link}>{asset.version}</a></td>
+									<td class="-status"><span set:html={status[asset.status]} class="x-status"></span></td>
+								</tr>
+							)}
+						</For>
+					</tbody>
+				</table>
+				<div class="status-key-container">
+					<div class="-toggle"><span>Status Key</span>
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="-carret">
+						<path d="M4.28217 8.99756L12 15.5975L19.7178 8.99756L15.6616 8.99756L12 12.1289L8.33835 8.99756L4.28217 8.99756Z" fill="#005A8F"/>
+					</svg></div>
+					<div class="-key">
+						<For of={status}>{
+							stat =>(
+								<span set:html={stat}></span>
+							)
+						}</For>
+
+					</div>
+				</div><script src={eventToggleHandler} defer />
+			</article>
+		</Fragment>
+	: null
+}

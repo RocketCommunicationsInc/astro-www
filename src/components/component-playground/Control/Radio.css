@@ -1,0 +1,54 @@
+* {
+	/* Layout */
+	box-sizing: border-box;
+}
+
+:host {
+	display: flex;
+
+	/* Layout */
+	align-items: center;
+	gap: 8--rpx;
+	padding-block: 2--rpx;
+
+	/* Appearance */
+	cursor: pointer;
+
+	/* Reference */
+	--EdgeColor: var(--DarkBlue500Color);
+
+	&::part(indicator) {
+		display: flex;
+
+		/* Layout */
+		align-items: center;
+		block-size: 1.25rem;
+		inline-size: 1.25rem;
+		justify-content: center;
+
+		/* Appearance */
+		background-color: var(--Grey200Color);
+		border-radius: var(--RadiusRound);
+		box-shadow: var(--EdgeColor) 0 0 0 var(--EdgeSize) inset;
+
+		/* Animation */
+		transition: translate 80ms;
+	}
+
+	&::part(checked-indicator) {
+		display: none;
+
+		/* Layout */
+		block-size: .5rem;
+		inline-size: .5rem;
+
+		/* Appearance */
+		background-color: CurrentColor;
+		border-radius: var(--RadiusRound);
+		color: var(--DarkBlue500Color);
+	}
+
+	&::part(checked-indicator selected) {
+		display: block;
+	}
+}

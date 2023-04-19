@@ -1,0 +1,161 @@
+.asset-status-container {
+	display: block;
+
+	/* Layout */
+	inline-size: 100%;
+	margin-block-end: 15--step;
+	overflow-y: overlay;
+
+	& table {
+		& tr {
+			/* Layout */
+			border-block-end: 1px solid var(--Grey300Color);
+		}
+
+		& th {
+			/* Text */
+			text-align: start;
+		}
+
+		& td {
+			/* Layout */
+			padding: 2--step 5--step;
+
+			& span {
+				display: flex;
+
+				/* Layout */
+				align-items: center;
+				gap: 2--step;
+			}
+		}
+
+		@media (width < 450px) {
+			& td, & thead th {/* Layout */
+				padding-inline: 2--step;
+
+				&.-version, &.-status {
+					/* Text */
+					text-align: center;
+				}
+
+				& .x-status {
+					/* Layout */
+					justify-content: center;
+
+					& span {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	& thead {
+		& tr {
+			/* Layout */
+			border-block-start: none;
+		}
+
+		& th {
+			/* Layout */
+			padding: 2--step 5--step;
+
+			/* Text */
+			font-weight: 700;
+
+			/* Appearance */
+			background: var(--Grey200Color);
+			color: var(--Grey700Color);
+
+			&:first-child {
+				/* Appearance */
+				border-radius: 2--step 0 0 0;
+			}
+
+			&:last-child {
+				/* Appearance */
+				border-radius: 0 2--step 0 0;
+			}
+		}
+	}
+
+	& a[href] {
+		/* Text */
+		text-decoration: underline;
+
+		/* Appearance */
+		color: var(--DarkBlue500Color);
+
+		&:hover, &:active {
+			/* Appearance */
+			color: var(--DarkBlue700Color);
+		}
+	}
+}
+
+.status-key-container {
+	display: flex;
+
+	/* Layout */
+	flex-direction: column;
+
+	/* position: relative; */
+
+	& .-toggle {
+		display: inline-flex;
+
+		/* Layout */
+		gap: 2--step;
+		margin-inline-start: auto;
+		padding: 2--step 6--step;
+
+		/* Appearance */
+		cursor: pointer;
+	}
+
+	& .-key {
+		display: none;
+
+		/* Layout */
+		align-self: flex-end;
+		flex-direction: column;
+		gap: 4--step;
+
+		/* inset-block-start: 10--step;
+		inset-inline-end: 0; */
+		padding: 4--step;
+
+		/* position: absolute; */
+
+		/* Appearance */
+		background: var(--Neutral000Color);
+		border: 1px solid var(--Grey300Color);
+		border-radius: 8--rpx;
+
+		& > span {
+			display: flex;
+
+			/* Layout */
+			align-items: center;
+		}
+
+		& svg {
+			/* Layout */
+			margin-inline-end: 2--step;
+		}
+	}
+
+	&.--open .-key {
+		display: flex;
+	}
+
+	&.--open .-carret {
+		/* Transform */
+		transform: rotate(180deg);
+	}
+
+	@media (width >= 450px) {
+		display: none;
+	}
+}

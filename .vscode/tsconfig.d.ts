@@ -1,13 +1,7 @@
-/// <reference lib="dom" />
-
 /*
  * Corrects mistakes in the built-in TypeScript definitions.
  * =============================================================================
  */
-
-interface ScrollToOptions {
-	behavior: string
-}
 
 interface Element {
 	insertAdjacentElement<T extends Element>(where: InsertPosition, element: T): T
@@ -20,16 +14,6 @@ interface CSSStyleDeclaration {
 declare namespace NodeJS {
 	type Timeout = number
 	type Timer = number
-}
-
-declare global {
-	/** GTag Data Layer. */
-	// eslint-disable-next-line no-unused-vars,no-var
-	var dataLayer: IArguments[]
-
-	/** GTag Command Queue function. */
-	// eslint-disable-next-line no-unused-vars,no-var
-	var gtag: Gtag
 }
 
 interface ResponseData {
@@ -48,4 +32,43 @@ interface Response<T extends Partial<ResponseData> = ResponseData> extends Omit<
 	text(): Promise<T['text']>
 }
 
+interface GlobalEventHandlersEventMap {
+	"click": PointerEvent
+	"input": InputEvent
+}
+
+interface HTMLElement extends Element, ElementCSSInlineStyle, ElementContentEditable, GlobalEventHandlers, HTMLOrSVGElement {
+	addEventListener<K extends keyof HTMLElementEventMap>(
+		type: K,
+		listener: (
+			this: HTMLElement,
+			event: HTMLElementEventMap[K] & { target: this }
+		) => any,
+		options?: boolean | AddEventListenerOptions
+	): void
+}
+
+interface HTMLInputElement extends HTMLElement {
+	addEventListener<K extends keyof HTMLElementEventMap>(
+		type: K,
+		listener: (
+			this: HTMLInputElement,
+			event: HTMLElementEventMap[K] & { target: this }
+		) => any,
+		options?: boolean | AddEventListenerOptions
+	): void
+}
+
 declare function fetch<T extends Partial<ResponseData> = ResponseData>(input: RequestInfo | URL, init?: RequestInit): Promise<Response<T>>
+
+declare var visualViewport: VisualViewport
+
+// constructable stylesheet import
+declare module '*?withtype=style' {
+	export default Object as CSSStyleSheet
+}
+
+// constructable fragment import
+declare module '*?withtype=fragment' {
+	export default Object as DocumentFragment
+}

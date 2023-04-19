@@ -1,0 +1,12 @@
+* {
+	/* Layout */
+	box-sizing: border-box;
+}
+
+:host {
+	display: flex;
+
+	/* Layout */
+	flex-flow: column;
+	gap: 4--rpx;
+}

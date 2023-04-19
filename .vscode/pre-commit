@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+
+PREFIX="pre-commit:"
+
+fileList=$(git diff --diff-filter=d --cached --name-only)
+
+jsFileList=$(echo "$fileList" | grep -E '\.(astro|js|json|ts)$')
+
+if [ ${#jsFileList} -gt 0 ]; then
+	if ! npx eslint ${jsFileList[*]} "$@"; then
+		echo "$PREFIX Commit aborted via eslint."
+		echo "$PREFIX Please lint manually. Check commands using 'npm run'."
+		exit 1
+	fi
+fi
+
+cssFileList=$(echo "$fileList" | grep -E '\.(css|scss)$')
+
+if [ ${#cssFileList} -gt 0 ]; then
+	if ! npx stylelint ${cssFileList[*]} "$@"; then
+		echo "$PREFIX Commit aborted due via stylelint."
+		echo "$PREFIX Please lint manually. Check commands using 'npm run'."
+		exit 1
+	fi
+fi
+

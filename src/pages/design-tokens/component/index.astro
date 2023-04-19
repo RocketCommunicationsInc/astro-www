@@ -3,7 +3,7 @@ import DocsLayout from 'project:layouts/docs/docs-layout.astro'
 import { component, lookupProperty } from 'project:utils/tokens.js'
 import '../shared.css'
 
-const title = 'Component Tokens';
+const title = 'Component Tokens'
 ---
 <DocsLayout content={{ title }} file={import.meta.url}>
 	<h1>
@@ -14,6 +14,57 @@ const title = 'Component Tokens';
 		<sl-tab slot="nav" panel="light">Light Theme</sl-tab>
 
 		<sl-tab-panel name="dark">
+			<h2>
+				Button
+			</h2>
+			{
+				component('dark', 'button').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2>
+				Card
+			</h2>
+			{
+				component('dark', 'card').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2>
+				Checkbox
+			</h2>
+			{
+				component('dark', 'checkbox').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
 			<h2>
 				Classification Banner
 			</h2>
@@ -42,6 +93,73 @@ const title = 'Component Tokens';
 						alias={token.referenceToken}
 						description={token.description}
 						type="background"
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2>
+				Container
+			</h2>
+			{
+				component('dark', 'container').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+			<hr />
+
+			<h2>
+				Global Status Bar
+			</h2>
+			{
+				component('dark', 'gsb').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+
+			<hr />
+			<h2>
+				Indeterminate Progress
+			</h2>
+			{
+				component('dark', 'indeterminate-progress').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2>
+				Input
+			</h2>
+			{
+				component('dark', 'input').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
 					/>
 				))
 			}
@@ -83,6 +201,22 @@ const title = 'Component Tokens';
 			<hr />
 
 			<h2>
+				Menu
+			</h2>
+			{
+				component('dark', 'menu').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="background"
+					/>
+				))
+			}
+
+			<hr />
+			<h2>
 				Monitoring Icon
 			</h2>
 			{
@@ -116,9 +250,63 @@ const title = 'Component Tokens';
 
 			<hr />
 
-			<h2>Status Symbol</h2>
+			<h2>
+				Progress
+			</h2>
 			{
-				component('dark', 'status-symbol').map((token) => (
+				component('dark', 'progress').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+
+			<h2>
+				Radio
+			</h2>
+			{
+				component('dark', 'radio').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2>
+				Scrollbar
+			</h2>
+			{
+				component('dark', 'scrollbar').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2>
+				Select
+			</h2>
+			{
+				component('dark', 'select').map((token) => (
 					<rux-design-token-preview
 						name={token.name}
 						value={token.value}
@@ -148,11 +336,9 @@ const title = 'Component Tokens';
 
 			<hr />
 
-			<h2>
-				Global Status Bar
-			</h2>
+			<h2>Status Symbol</h2>
 			{
-				component('dark', 'gsb').map((token) => (
+				component('dark', 'status-symbol').map((token) => (
 					<rux-design-token-preview
 						name={token.name}
 						value={token.value}
@@ -183,40 +369,6 @@ const title = 'Component Tokens';
 			<hr />
 
 			<h2>
-				Radio
-			</h2>
-			{
-				component('dark', 'radio').map((token) => (
-					<rux-design-token-preview
-						name={token.name}
-						value={token.value}
-						alias={token.referenceToken}
-						description={token.description}
-						type={lookupProperty(token.category, token.property)}
-					/>
-				))
-			}
-
-			<hr />
-
-			<h2>
-				Checkbox
-			</h2>
-			{
-				component('dark', 'checkbox').map((token) => (
-					<rux-design-token-preview
-						name={token.name}
-						value={token.value}
-						alias={token.referenceToken}
-						description={token.description}
-						type={lookupProperty(token.category, token.property)}
-					/>
-				))
-			}
-
-			<hr />
-
-			<h2>
 				Tag
 			</h2>
 			{
@@ -233,10 +385,10 @@ const title = 'Component Tokens';
 			<hr />
 
 			<h2>
-				Scrollbar
+				Textarea
 			</h2>
 			{
-				component('dark', 'scrollbar').map((token) => (
+				component('dark', 'textarea').map((token) => (
 					<rux-design-token-preview
 						name={token.name}
 						value={token.value}
@@ -246,65 +398,13 @@ const title = 'Component Tokens';
 					/>
 				))
 			}
-
 			<hr />
 
 			<h2>
-				Progress
+				Timeline
 			</h2>
 			{
-				component('dark', 'progress').map((token) => (
-					<rux-design-token-preview
-						name={token.name}
-						value={token.value}
-						alias={token.referenceToken}
-						description={token.description}
-						type={lookupProperty(token.category, token.property)}
-					/>
-				))
-			}
-
-			<hr />
-
-			<h2>
-				Indeterminate Progress
-			</h2>
-			{
-				component('dark', 'indeterminate-progress').map((token) => (
-					<rux-design-token-preview
-						name={token.name}
-						value={token.value}
-						alias={token.referenceToken}
-						description={token.description}
-						type={lookupProperty(token.category, token.property)}
-					/>
-				))
-			}
-
-			<hr />
-
-			<h2>
-				Card
-			</h2>
-			{
-				component('dark', 'card').map((token) => (
-					<rux-design-token-preview
-						name={token.name}
-						value={token.value}
-						alias={token.referenceToken}
-						description={token.description}
-						type={lookupProperty(token.category, token.property)}
-					/>
-				))
-			}
-
-			<hr />
-
-			<h2>
-				Container
-			</h2>
-			{
-				component('dark', 'container').map((token) => (
+				component('dark', 'timeline').map((token) => (
 					<rux-design-token-preview
 						name={token.name}
 						value={token.value}
@@ -315,7 +415,6 @@ const title = 'Component Tokens';
 				))
 			}
 			<hr />
-
 			<h2>
 				Tooltip
 			</h2>
@@ -333,6 +432,57 @@ const title = 'Component Tokens';
 		</sl-tab-panel>
 
 		<sl-tab-panel name="light">
+			<h2>
+				Button
+			</h2>
+			{
+				component('light', 'button').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2>
+				Card
+			</h2>
+			{
+				component('light', 'card').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2>
+				Checkbox
+			</h2>
+			{
+				component('light', 'checkbox').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
 			<h2>
 				Classification Banner
 			</h2>
@@ -361,6 +511,73 @@ const title = 'Component Tokens';
 						alias={token.referenceToken}
 						description={token.description}
 						type="background"
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2>
+				Container
+			</h2>
+			{
+				component('light', 'container').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+			<hr />
+
+			<h2>
+				Global Status Bar
+			</h2>
+			{
+				component('light', 'gsb').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+
+			<hr />
+			<h2>
+				Indeterminate Progress
+			</h2>
+			{
+				component('light', 'indeterminate-progress').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2>
+				Input
+			</h2>
+			{
+				component('light', 'input').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
 					/>
 				))
 			}
@@ -402,6 +619,22 @@ const title = 'Component Tokens';
 			<hr />
 
 			<h2>
+				Menu
+			</h2>
+			{
+				component('light', 'menu').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="background"
+					/>
+				))
+			}
+
+			<hr />
+			<h2>
 				Monitoring Icon
 			</h2>
 			{
@@ -436,10 +669,62 @@ const title = 'Component Tokens';
 			<hr />
 
 			<h2>
-				Status Symbol
+				Progress
 			</h2>
 			{
-				component('light', 'status-symbol').map((token) => (
+				component('light', 'progress').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+
+			<h2>
+				Radio
+			</h2>
+			{
+				component('light', 'radio').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2>
+				Scrollbar
+			</h2>
+			{
+				component('light', 'scrollbar').map((token) => (
+					<rux-design-token-preview
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2>
+				Select
+			</h2>
+			{
+				component('light', 'select').map((token) => (
 					<rux-design-token-preview
 						name={token.name}
 						value={token.value}
@@ -469,11 +754,9 @@ const title = 'Component Tokens';
 
 			<hr />
 
-			<h2>
-				Global Status Bar
-			</h2>
+			<h2>Status Symbol</h2>
 			{
-				component('light', 'gsb').map((token) => (
+				component('light', 'status-symbol').map((token) => (
 					<rux-design-token-preview
 						name={token.name}
 						value={token.value}
@@ -504,40 +787,6 @@ const title = 'Component Tokens';
 			<hr />
 
 			<h2>
-				Radio
-			</h2>
-			{
-				component('light', 'radio').map((token) => (
-					<rux-design-token-preview
-						name={token.name}
-						value={token.value}
-						alias={token.referenceToken}
-						description={token.description}
-						type={lookupProperty(token.category, token.property)}
-					/>
-				))
-			}
-
-			<hr />
-
-			<h2>
-				Checkbox
-			</h2>
-			{
-				component('light', 'checkbox').map((token) => (
-					<rux-design-token-preview
-						name={token.name}
-						value={token.value}
-						alias={token.referenceToken}
-						description={token.description}
-						type={lookupProperty(token.category, token.property)}
-					/>
-				))
-			}
-
-			<hr />
-
-			<h2>
 				Tag
 			</h2>
 			{
@@ -554,10 +803,10 @@ const title = 'Component Tokens';
 			<hr />
 
 			<h2>
-				Scrollbar
+				Textarea
 			</h2>
 			{
-				component('light', 'scrollbar').map((token) => (
+				component('light', 'textarea').map((token) => (
 					<rux-design-token-preview
 						name={token.name}
 						value={token.value}
@@ -567,14 +816,13 @@ const title = 'Component Tokens';
 					/>
 				))
 			}
-
 			<hr />
 
 			<h2>
-				Progress
+				Timeline
 			</h2>
 			{
-				component('light', 'progress').map((token) => (
+				component('light', 'timeline').map((token) => (
 					<rux-design-token-preview
 						name={token.name}
 						value={token.value}
@@ -584,57 +832,7 @@ const title = 'Component Tokens';
 					/>
 				))
 			}
-
 			<hr />
-
-			<h2>
-				Indeterminate Progress
-			</h2>
-			{
-				component('light', 'indeterminate-progress').map((token) => (
-					<rux-design-token-preview
-						name={token.name}
-						value={token.value}
-						alias={token.referenceToken}
-						description={token.description}
-						type={lookupProperty(token.category, token.property)}
-					/>
-				))
-			}
-
-			<hr />
-
-			<h2>
-				Card
-			</h2>
-			{
-				component('light', 'card').map((token) => (
-					<rux-design-token-preview
-						name={token.name}
-						value={token.value}
-						alias={token.referenceToken}
-						description={token.description}
-						type={lookupProperty(token.category, token.property)}
-					/>
-				))
-			}
-
-			<hr />
-
-			<h2>
-				Container
-			</h2>
-			{
-				component('light', 'container').map((token) => (
-					<rux-design-token-preview
-						name={token.name}
-						value={token.value}
-						alias={token.referenceToken}
-						description={token.description}
-						type={lookupProperty(token.category, token.property)}
-					/>
-				))
-			}
 			<h2>
 				Tooltip
 			</h2>
@@ -654,7 +852,7 @@ const title = 'Component Tokens';
 </DocsLayout>
 <script>
 	import 'https://cdn.jsdelivr.net/npm/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.esm.js'
-	import 'https://cdn.jsdelivr.net/npm/@astrouxds/documentation-components@0.0.13/+esm'
+	import 'https://cdn.jsdelivr.net/npm/@astrouxds/documentation-components@0.0.14/+esm'
 	import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0/dist/shoelace.js'
 </script>
 <style is:global>

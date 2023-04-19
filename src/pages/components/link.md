@@ -1,10 +1,10 @@
 ---
 title: Link
-layout: project:layouts/docs/docs-layout.astro
+description: A Link (also known as a Hyperlink) is a clickable text element. It may be used for navigation and to trigger an event. Links are visualized to stand out from standard (non-clickable) text.
+layout: project:layouts/component-docs/component-docs-layout.astro
+assets:
+    name: Link
 ---
-# Link
-
-A Link (also known as a Hyperlink) is a clickable text element. It may be used for navigation and to trigger an event. Links are visualized to stand out from standard (non-clickable) text.
 
 ## Rules of Thumb
 

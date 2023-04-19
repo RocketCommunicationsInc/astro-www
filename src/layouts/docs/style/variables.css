@@ -1,6 +1,6 @@
 :root {
 	/* Color References */
-
+	--DarkBlue500Color: hsl(202 100% 28%);
 	--BrightBlue850: hsl(208 49% 21%);
 	--Heading1BorderColor: hsl(0 0% 87%);
 	--Heading3BorderColor: hsl(0 0% 93%);

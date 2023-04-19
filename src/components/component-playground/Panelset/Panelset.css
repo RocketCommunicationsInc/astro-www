@@ -1,0 +1,53 @@
+:host {
+	display: contents;
+
+	/* Reference */
+	--EdgeColor: transparent;
+
+	&::part(tablist) {
+		/* Layout */
+		padding-inline: 24--rpx;
+
+		/* Appearance */
+		background-color: var(--Grey200Color);
+
+		@media (width >= 700px) {
+			display: none;
+		}
+	}
+
+	&::part(tab) {
+		/* Layout */
+		padding-block: 16--rpx;
+		padding-inline: 12--rpx;
+
+		/* Appearance */
+		box-shadow: var(--EdgeColor) 0 -4px 0 0 inset;
+		color: var(--DarkBlue500Color);
+		cursor: pointer;
+	}
+
+	&::part(active) {
+		/* Appearance */
+		color: var(--Grey800Color);
+
+		/* Reference */
+		--EdgeColor: var(--DarkBlue500Color);
+	}
+}
+
+button {
+	/* Layout */
+	margin: 0;
+	padding: 0;
+
+	/* Text */
+	font: inherit;
+	line-height: inherit;
+
+	/* Appearance */
+	appearance: none;
+	background-color: transparent;
+	color: inherit;
+	border-width: 0;
+}

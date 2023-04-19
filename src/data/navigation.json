@@ -1,5 +1,6 @@
 [
 	{
+		"label": "Getting Started",
 		"items": [
 			{
 				"label": "Getting Started",
@@ -13,8 +14,7 @@
 				"label": "Developers",
 				"url": "/getting-started/developers/"
 			}
-		],
-		"label": "Getting Started"
+		]
 	},
 	{
 		"items": [

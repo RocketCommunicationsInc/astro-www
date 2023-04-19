@@ -1,27 +1,15 @@
 import { defineConfig } from 'astro/config'
 
-import remarkPlugins from './.vscode/remark-plugins.js'
-import vitePlugins from './.vscode/vite-plugins.js'
-import sitemapIntegration from '@astrojs/sitemap'
+import astroPlugins from './.vscode/astro-plugins.js'
 
 export default defineConfig({
 	site: 'https://www.astrouxds.com/',
 	trailingSlash: 'always',
-	markdown: {
-		remarkPlugins: remarkPlugins()
-	},
 	server: {
 		host: true,
 		port: 3000,
 	},
-	vite: {
-		plugins: vitePlugins(),
-		logLevel: 'error',
-		build: {
-			assetsInlineLimit: 0,
-		},
-	},
 	integrations: [
-		sitemapIntegration(),
+		astroPlugins(),
 	],
 })

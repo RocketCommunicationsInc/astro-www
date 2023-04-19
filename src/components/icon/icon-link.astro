@@ -7,7 +7,7 @@ const {
 	...attrs
 } = Astro.props
 ---
-<a class="icon" {...attrs}>
+<a class={Astro.props.class ? `${Astro.props.class} icon` : 'icon'} {...attrs}>
 	<Icon type={type} />
 	<slot />
 </a>

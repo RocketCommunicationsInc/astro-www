@@ -1,7 +1,9 @@
 .p-searchform {
 	/* Layout */
-	max-width: 125--step;
-	width: 100%;
+	inline-size: 100%;
+
+	/* Layout */
+	max-inline-size: 125--step;
 
 	/* Reference */
 	--border-color: var(--Grey400Color);
@@ -50,10 +52,10 @@
 	& .-control, & .-label {
 		/* Layout */
 		align-self: stretch;
+		inline-size: 100%;
 		padding-inline: 12--step;
-		width: 100%;
 
-		@media (width < 800px) {
+		@media (width < 1024px) {
 			/* Layout */
 			padding-inline: 9--step;
 		}
@@ -80,7 +82,7 @@
 		/* Appearance */
 		color: var(--search-color);
 
-		@media (width < 800px) {
+		@media (width < 1024px) {
 			/* Layout */
 			margin-inline-start: 3--step;
 		}
@@ -99,7 +101,7 @@
 		/* Animation */
 		transition: opacity 300ms;
 
-		@media (width < 800px) {
+		@media (width < 1024px) {
 			/* Layout */
 			margin-inline-end: 0;
 		}

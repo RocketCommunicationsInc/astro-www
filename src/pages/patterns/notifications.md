@@ -1,14 +1,14 @@
 ---
+title: Notifications
+description: Notifications of application events have varying levels of urgency or interruption.
 tags: resources
 path: /patterns/notifications
 date: Last Modified
-layout: project:layouts/docs/docs-layout.astro
-title: Notifications
+layout: project:layouts/component-docs/component-docs-layout.astro
+assets:
+    name: Notifications
 ---
-
-# Notifications
-
-Notifications of application events have varying levels of urgency or interruption. An event may be as inconsequential as a download completing or as important as equipment unexpectedly going offline. Astro provides a variety of situationally appropriate mechanisms to notify users of events with varying levels of urgency.
+An event may be as inconsequential as a download completing or as important as equipment unexpectedly going offline. Astro provides a variety of situationally appropriate mechanisms to notify users of events with varying levels of urgency.
 
 Below are examples of Astro Notifications from least urgency to highest priority:
 
