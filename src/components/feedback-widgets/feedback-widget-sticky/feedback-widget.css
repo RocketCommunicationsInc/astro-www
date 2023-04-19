@@ -97,7 +97,9 @@
 		block-size: auto;
 		inline-size: 75--step;
 		max-block-size: calc(100dvh - 15--step);
-		overflow-y: auto;
+
+		/* Layout */
+		overflow-y: hidden;
 		padding-block: 5--step;
 		padding-inline: 3--step;
 		position: relative;

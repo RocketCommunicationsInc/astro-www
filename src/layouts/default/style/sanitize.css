@@ -11,6 +11,8 @@
 ::after {
 	/* Layout */
 	box-sizing: border-box; /* 1 */
+
+	/* Layout */
 	background-repeat: no-repeat; /* 2 */
 }
 
@@ -36,10 +38,15 @@
  */
 
 :where(:root) {
+	/* Layout */
+	overflow-x: hidden;
+
 	/* Text */
 	line-height: 1.5; /* 2 */ /* 4 */
 	tab-size: 4; /* 4 */
 	text-size-adjust: 100%; /* 6 */
+
+	/* Text */
 	cursor: default; /* 1 */
 	-webkit-tap-highlight-color: transparent; /* 5 */
 	overflow-wrap: break-word; /* 3 */
@@ -89,7 +96,9 @@
 
 :where(hr) {
 	/* Layout */
-	height: 0; /* 2 */
+	block-size: 0; /* 2 */
+
+	/* Layout */
 	color: inherit; /* 1 */
 }
 
@@ -113,6 +122,7 @@
 :where(pre) {
 	/* Layout */
 	overflow: auto; /* 3 */
+	/* stylelint-disable-next-line font-family-no-duplicate-names */
 	font-family: monospace, monospace; /* 1 */
 	font-size: 1em; /* 2 */
 }
@@ -136,6 +146,7 @@
 
 :where(b, strong) {
 	/* Text */
+	/* stylelint-disable-next-line font-weight-notation */
 	font-weight: bolder;
 }
 
@@ -146,6 +157,7 @@
 
 :where(code, kbd, samp) {
 	/* Text */
+	/* stylelint-disable-next-line font-family-no-duplicate-names */
 	font-family: monospace, monospace; /* 1 */
 	font-size: 1em; /* 2 */
 }
@@ -199,6 +211,8 @@
 :where(table) {
 	/* Text */
 	text-indent: 0; /* 3 */
+
+	/* Text */
 	border-collapse: collapse; /* 1 */
 	border-color: inherit; /* 2 */
 }
@@ -271,7 +285,7 @@
 ::-webkit-inner-spin-button,
 ::-webkit-outer-spin-button {
 	/* Layout */
-	height: auto;
+	block-size: auto;
 }
 
 /**
@@ -313,17 +327,17 @@
 
 :where(dialog) {
 	/* Layout */
-	height: fit-content;
+	block-size: fit-content;
+	inline-size: fit-content;
 	inset-inline: 0;
 	margin: auto;
 	padding: 1em;
 	position: absolute;
-	width: fit-content;
 
 	/* Appearance */
-	background-color: white;
+	background-color: #ffffff;
 	border: solid;
-	color: black;
+	color: #000000;
 }
 
 :where(dialog:not([open])) {
