@@ -8,7 +8,7 @@
                 "url": "/components/input-field/"
             },
             {
-                "label": "Specification",
+                "label": "Specifications",
                 "url": "/components/input-field/specs/"
             }
         ]
@@ -22,7 +22,7 @@
                 "url": "/components/button/"
             },
             {
-                "label": "Specification",
+                "label": "Specifications",
                 "url": "/components/button/specs/"
             }
         ]
@@ -36,7 +36,7 @@
                 "url": "/components/slider/"
             },
             {
-                "label": "Specification",
+                "label": "Specifications",
                 "url": "/components/slider/specs/"
             }
         ]
@@ -50,7 +50,7 @@
                 "url": "/components/select/"
             },
             {
-                "label": "Specification",
+                "label": "Specifications",
                 "url": "/components/select/specs/"
             }
         ]
@@ -64,7 +64,7 @@
                 "url": "/components/textarea/"
             },
             {
-                "label": "Specification",
+                "label": "Specifications",
                 "url": "/components/textarea/specs/"
             }
         ]
@@ -78,7 +78,7 @@
                 "url": "/components/secondary-nav-example/"
             },
             {
-                "label": "Specification",
+                "label": "Specifications",
                 "url": "/components/secondary-nav-example/specs/"
             }
         ]
