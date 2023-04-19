@@ -13,7 +13,7 @@
 	margin-inline-end: 4--step;
 
 	/* Appearance */
-	position: sticky;
+	position: fixed;
 
 	& .widget_interior-wrapper {
 		/* Layout */
