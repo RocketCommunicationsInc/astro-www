@@ -104,7 +104,7 @@
 
 	@media (width > 700px) {
 		/* Layout */
-		grid-template-columns: auto 54--step;
+		grid-template-columns: auto max-content;
 
 		/* Reference */
 		--max-height: 512px;

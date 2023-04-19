@@ -5,6 +5,7 @@
 	block-size: 100%;
 	grid-template-rows: 44--rpx auto;
 	max-block-size: var(--max-height);
+	min-inline-size: 54--step;
 	overflow: hidden;
 	padding-block-end: 1px;
 

@@ -36,6 +36,12 @@
 	}
 }
 
+/* Contextual Styling */
+
+:host(:empty) {
+	display: none;
+}
+
 button {
 	/* Layout */
 	margin: 0;
