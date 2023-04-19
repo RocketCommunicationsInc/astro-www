@@ -65,6 +65,12 @@
 					"property": "borderless",
 					"checked": false
 				}
+			],
+			"dependencies": [
+				{
+					"tag": "rux-breadcrumb-item",
+					"constructor": "RuxBreadcrumbItem"
+				}
 			]
 		},
 		{
