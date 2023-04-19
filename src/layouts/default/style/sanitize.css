@@ -38,9 +38,6 @@
  */
 
 :where(:root) {
-	/* Layout */
-	overflow-x: hidden;
-
 	/* Text */
 	line-height: 1.5; /* 2 */ /* 4 */
 	tab-size: 4; /* 4 */

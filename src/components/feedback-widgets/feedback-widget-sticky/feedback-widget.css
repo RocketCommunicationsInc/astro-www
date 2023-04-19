@@ -95,6 +95,8 @@
 	& .widget_content-wrapper {
 		/* Layout */
 		block-size: auto;
+
+		/* Layout */
 		inline-size: 75--step;
 		max-block-size: calc(100dvh - 15--step);
 
@@ -123,6 +125,12 @@
 
 			/* Appearance */
 			border: none;
+
+			@media (width < 1024px) {
+				/* Layout */
+				block-size: auto;
+				inline-size: 0;
+			}
 		}
 
 		&:is([data-collapsible-active]) {
@@ -133,6 +141,11 @@
 
 			/* Appearance */
 			border: 1px solid #2f7aa7;
+
+			@media (width < 1024px) {
+				/* Layout */
+				inline-size: 75--step;
+			}
 		}
 
 		& h3 {
