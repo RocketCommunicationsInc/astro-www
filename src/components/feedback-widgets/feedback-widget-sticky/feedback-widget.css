@@ -95,12 +95,9 @@
 	& .widget_content-wrapper {
 		/* Layout */
 		block-size: auto;
-
-		/* Layout */
 		inline-size: 75--step;
-
-		/* Layout */
-		overflow: hidden;
+		max-block-size: calc(100dvh - 15--step);
+		overflow-y: auto;
 		padding-block: 5--step;
 		padding-inline: 3--step;
 		position: relative;
