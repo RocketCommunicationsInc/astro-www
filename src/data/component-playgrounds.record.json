@@ -489,7 +489,8 @@
 					"property": "disabled",
 					"checked": false
 				}
-			]
+			],
+			"style": "rux-slider { flex-grow: revert; }"
 		},
 		{
 			"tag": "rux-switch",
