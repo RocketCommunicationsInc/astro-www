@@ -3,6 +3,7 @@ import lightTokens from '@astrouxds/tokens/dist/json/docs-light.json'
 
 export const reference = (theme: string, category: string) => {
 	let themeTokens = tokens
+
 	if (theme === 'light') {
 		themeTokens = lightTokens
 	}
@@ -10,19 +11,23 @@ export const reference = (theme: string, category: string) => {
 	themeTokens = themeTokens.filter(
 		(token) => token.tokenLevel === 'reference' && token.category === category
 	)
+
 	if (category === 'spacing') {
 		themeTokens = themeTokens.sort((a, b) => {
 			return parseFloat(String(a.value)) - parseFloat(String(b.value))
 		})
 	}
+
 	return themeTokens
 }
 
 export const component = (theme: string, componentName: string) => {
 	let themeTokens = tokens
+
 	if (theme === 'light') {
 		themeTokens = lightTokens
 	}
+
 	return themeTokens.filter((token) => token.component === componentName)
 }
 
@@ -62,7 +67,7 @@ export const lookupProperty = (category: string, property?: string) => {
 	if (property === 'on-dark' || property === 'on-light') {
 		return 'border-width'
 	}
-	
+
 	if (!property) {
 		return category
 	}
