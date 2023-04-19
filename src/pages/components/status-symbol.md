@@ -36,7 +36,7 @@ Status colors are provided for both light and dark theme versions of Astro in He
 
 ### Dark Theme Status Colors
 
-:::specs-table-container
+:::table-overflow
 |                                                              | Hex     | RGB         | CSS                                           | Synonyms                                       |  |
 |--------------------------------------------------------------|---------|-------------|-----------------------------------------------|------------------------------------------------|--|
 | ![Status Color: Critical ](/img/swatches/critical__dark.svg) | #ff3838 | 255,56,56   | `--status-symbol-color-fill-critical-on-dark` | Critical, form error, alert, emergency, urgent |  |
@@ -49,7 +49,7 @@ Status colors are provided for both light and dark theme versions of Astro in He
 
 ### Light Theme Status Colors
 
-:::specs-table-container
+:::table-overflow
 |                                                               | Hex     | RGB         | CSS                                            | Synonyms                                       |  |
 |---------------------------------------------------------------|---------|-------------|------------------------------------------------|------------------------------------------------|--|
 | ![Status Color: Critical ](/img/swatches/critical__light.svg) | #ff2a04 | 255,42,4    | `--status-symbol-color-fill-critical-on-light` | Critical, form error, alert, emergency, urgent |  |
@@ -64,7 +64,7 @@ Status colors are provided for both light and dark theme versions of Astro in He
 
 - In light theme Status Symbols should have a 1px border set to the inside of the symbol.
 
-:::specs-table-container
+:::table-overflow
 |                                                                      | Hex     | RGB       | CSS                                     | Synonyms                                 |  |
 |----------------------------------------------------------------------|---------|-----------|-----------------------------------------|------------------------------------------|--|
 | ![Status Color: Critical ](/img/swatches/critical-border__light.svg) | #661102 | 102,17,2  | `--status-symbol-color-border-critical` | Critical, alert, emergency, urgent       |  |
