@@ -4,9 +4,6 @@
 	/** Asset Status Mobile Status Key */
 	const eventElement = scriptEl.previousSibling
 
-	// @TODO remove this?
-	// const toggle = eventElement.querySelector('.-toggle')
-
 	/* closed by default */
 	eventElement.classList.add('--closed')
 
