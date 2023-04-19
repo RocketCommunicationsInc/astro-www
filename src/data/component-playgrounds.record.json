@@ -133,8 +133,15 @@
 					"attribute": "label",
 					"property": "label",
 					"value": ""
+				},
+				{
+					"kind": "switch",
+					"attribute": "tag",
+					"property": "tag",
+					"value": false
 				}
-			]
+			],
+			"style": "rux-classification-marking:not([tag]) { width: 100%; } rux-classification-marking::part(header) { padding-inline: .75em; width: auto; }"
 		},
 		{
 			"tag": "rux-clock",
@@ -297,7 +304,26 @@
 					"code": "<rux-progress />"
 				}
 			],
-			"fields": []
+			"fields": [
+				{
+					"kind": "text",
+					"property": "value",
+					"attribute": "value",
+					"value": "0"
+				},
+				{
+					"kind": "switch",
+					"property": "hideLabel",
+					"attribute": "hide-label"
+				},
+				{
+					"kind": "text",
+					"property": "max",
+					"attribute": "max",
+					"value": "100"
+				}
+			],
+			"style": "rux-progress::part(progress) { min-width: 8em; }"
 		},
 		{
 			"tag": "rux-push-button",
