@@ -2,6 +2,8 @@ import { visit } from 'unist-util-visit'
 import getSizeFromFileSync from '@astropub/get-size/from/FileSync'
 import { pathToFileURL } from 'node:url'
 import { cwd } from 'node:process'
+import loader from '@astrojs/image/squoosh'
+import * as fs from 'node:fs/promises'
 
 // @ts-check
 
@@ -9,9 +11,11 @@ import { cwd } from 'node:process'
 /** @typedef {{ type: string, width: number, height: number }} ISize */
 
 function remarkLazyImages(/** @type {Configuration} */ opts) {
+	const promises = []
 	const getImageSize = createGetImageSize(Object(opts))
+	const getWebPImage = createGetWebPImage(Object(opts), promises)
 
-	return () => (tree, _vfile) => {
+	return () => async (tree, _vfile) => {
 		visit(tree, (node, _parent) => {
 			if (node === undefined) return
 			if (node.type !== 'image') return
@@ -19,7 +23,11 @@ function remarkLazyImages(/** @type {Configuration} */ opts) {
 
 			const url = node.url.slice(1)
 
-			const { width, height } = getImageSize(url)
+			const { type, width, height } = getImageSize(url)
+
+			if (type === 'png') {
+				node.url = getWebPImage(node.url)
+			}
 
 			node.data = {
 				hName: 'img',
@@ -30,6 +38,8 @@ function remarkLazyImages(/** @type {Configuration} */ opts) {
 				},
 			}
 		})
+
+		await Promise.all(promises)
 	}
 }
 
@@ -46,6 +56,42 @@ function createGetImageSize(/** @type {Configuration} */ { publicDir = defaultPu
 		const result = getSizeFromFileSync(pathURL)
 
 		return result
+	}
+}
+
+function createGetWebPImage(/** @type {Configuration} */ { command, publicDir = defaultPublicDir }, promises = []) {
+	const writeCache = /** @type {Map<string, ISize>} */ (new Map())
+
+	const compress = /** @type {{ (pathname: string, webppathname: string): Promise<void> }} */ async (pngPath, webpPath) => {
+		if (writeCache.has(pngPath)) {
+			return
+		}
+
+		writeCache.set(pngPath, true)
+
+		const pngURL = new URL(pngPath.slice(1), publicDir)
+		const webpURL = new URL(webpPath.slice(1), publicDir)
+
+		const webpImage = await loader.transform(await fs.readFile(pngURL), {
+			format: 'webp',
+			quality: 50,
+		})
+
+		await fs.writeFile(webpURL, webpImage.data)
+	}
+
+	return /** @type {{ (pathname: string): string }} */ (pathname) => {
+		if (command !== 'build') {
+			return pathname
+		}
+
+		const webppathname = pathname.replace(/\.png$/, '.webp')
+
+		promises.push(
+			compress(pathname, webppathname)
+		)
+
+		return webppathname
 	}
 }
 

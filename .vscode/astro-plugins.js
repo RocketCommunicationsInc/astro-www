@@ -30,7 +30,7 @@ function astroWWWIntegration() {
 	const integration = {
 		name: 'Astro WWW Integrations',
 		hooks: {
-			'astro:config:setup'({ config, updateConfig }) {
+			'astro:config:setup'({ config, updateConfig, command }) {
 				updateConfig({
 					markdown: {
 						remarkPlugins: [
@@ -38,7 +38,10 @@ function astroWWWIntegration() {
 							remarkSmartyPants,
 							remarkDirective,
 							remarkDirectives,
-							remarkLazyImages({ publicDir: config.publicDir }),
+							remarkLazyImages({
+								publicDir: config.publicDir,
+								command,
+							}),
 							remarkImplicitFigures,
 							remarkDoDontFigures,
 							remarkLists,
