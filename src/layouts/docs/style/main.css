@@ -1,11 +1,11 @@
 
 main {
 	/** Layout */
-	max-width: 180--step;
+	max-inline-size: 180--step;
 	padding-block: 8--step;
 	padding-inline: 4--step;
 
-	@media (width > 800px) {
+	@media (width > 1024px) {
 		/* Layout */
 		padding-inline: 8--step;
 	}
@@ -77,7 +77,7 @@ main {
 
 	& table {
 		/* Layout */
-		min-width: 100%;
+		min-inline-size: 100%;
 
 		/* Text */
 		font-size: 15--rpx;
@@ -158,13 +158,15 @@ main {
 				display: inline-block;
 
 				/* Layout */
+				block-size: var(--size);
+
+				/* Layout */
 				float: inline-start;
-				height: var(--size);
+				inline-size: var(--size);
 
 				/* Layout */
 				margin-block-start: -.25--step;
 				margin-inline: -8--step 1--step;
-				width: var(--size);
 
 				/* Text */
 				font-weight: 700;

@@ -1,16 +1,17 @@
 ---
 title: Breadcrumbs
+description: Breadcrumbs are a secondary navigation pattern that provides users with an ordered list of links that helps visualize locational awareness within a site’s hierarchy.
 layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-breadcrumb--default-story
 height: 120px
 git: rux-breadcrumb
+assets:
+    name: Breadcrumbs
 ---
-
-# Breadcrumbs
 
 ::storybook-demo
 
-Breadcrumbs are a secondary navigation pattern that provides users with an ordered list of links that helps visualize locational awareness within a site’s hierarchy. Breadcrumbs provide a user with their current site location and allows them to quickly navigate to a parent page or previous step.
+Breadcrumbs provide a user with their current site location and allows them to quickly navigate to a parent page or previous step.
 
 ## Rules of Thumb
 
@@ -19,7 +20,7 @@ Breadcrumbs are a secondary navigation pattern that provides users with an order
 
 ## Appearance and Behavior
 
-Breadcrumbs should be positioned in the top portion of a page, ideally below the application bar and primary navigation and above the page title (if present). 
+Breadcrumbs should be positioned in the top portion of a page, ideally below the application bar and primary navigation and above the page title (if present).
 
 Each Breadcrumb item is comprised of a clickable page link followed by a dividing icon. However, the final Breadcrumb, representing the current page, has a static text label and no divider.
 

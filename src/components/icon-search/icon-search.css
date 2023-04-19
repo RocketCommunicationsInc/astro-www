@@ -109,6 +109,9 @@
 
 			&:is(figure) {
 				/* Layout */
+				inline-size: 100%;
+
+				/* Layout */
 				margin-block: 1--step;
 			}
 
@@ -132,8 +135,13 @@
 
 			/* Layout */
 			aspect-ratio: 1 / 1;
-			height: var(--icon-size);
-			width: var(--icon-size);
+			block-size: var(--icon-size);
+			inline-size: var(--icon-size);
+		}
+
+		& figcaption {
+			/* Layout */
+			margin-block-start: 4--step;
 		}
 	}
 }

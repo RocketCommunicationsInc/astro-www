@@ -2,6 +2,7 @@
 	/* Layout */
 	padding-block: 7.5--step;
 	padding-inline: 11--step;
+	position: relative;
 
 	/* Text */
 	font-size: 14--rpx;
@@ -117,7 +118,7 @@
 }
 
 .p-footer-navigation, .p-footer-social {
-	@media (width < 800px) {
+	@media (width < 1024px) {
 		/* Layout */
 		margin-block-start: 5--step;
 	}

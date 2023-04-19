@@ -1,9 +1,10 @@
 ---
 title: Pagination
-layout: project:layouts/docs/docs-layout.astro
+description: Pagination is used to split a large amount of data or records into discrete pages for quicker viewing.
+layout: project:layouts/component-docs/component-docs-layout.astro
+assets:
+    name: Pagination
 ---
-
-# Pagination
 
 ## Rules of Thumb
 

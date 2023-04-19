@@ -1,16 +1,15 @@
 ---
 title: Clock
+description: Clock shows the current time and optional date, AOS, and LOS timers. It will typically be positioned on the Global Status Bar.
 layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: components-clock--default-story
 height: 220px
 git: rux-clock
+assets:
+  name: Clock
 ---
 
-# Clock
-
 ::storybook-demo
-
-Clock shows the current time and optional date, AOS, and LOS timers. It will typically be positioned on the Global Status Bar.
 
 ## Appearance and Behavior
 

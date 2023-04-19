@@ -1,14 +1,14 @@
 ---
+title: Navigation
+description: Navigation defines how the user moves through the application and establishes their mental model of the object hierarchy.
 tags: resources
 path: /patterns/navigation
 date: Last Modified
-layout: project:layouts/docs/docs-layout.astro
-title: Navigation
+layout: project:layouts/component-docs/component-docs-layout.astro
+assets:
+    name: Navigation
 ---
-
-# Navigation
-
-An application is fundamentally shaped by its navigation. Navigation defines how the user moves through the application and establishes their mental model of the object hierarchy.
+An application is fundamentally shaped by its navigation.
 
 It’s best to start with a consideration of the primary objects your application will display. How are those objects divided or grouped? Is there a hierarchy of objects or a flat organization? Are there a small number of primary objects or many?
 

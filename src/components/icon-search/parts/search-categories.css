@@ -6,13 +6,13 @@
 	align-items: center;
 
 	/* Layout */
+	inline-size: fit-content;
+
+	/* Layout */
 	margin-inline-end: 4--step;
 
 	/* Layout */
 	position: relative;
-
-	/* Layout */
-	width: fit-content;
 
 	/* Text */
 	font-family: var(--SystemType);
@@ -20,16 +20,18 @@
 
 	& select {
 		/* Layout */
+		inline-size: 50--step;
+
+		/* Layout */
 		margin-inline-end: 2--step;
 
 		/* Layout */
 		margin-inline-start: calc(-1 * 2--step);
 
 		/* Layout */
-		max-width: 100--step;
+		max-inline-size: 100--step;
 		padding-block: 2--step;
 		padding-inline: 2--step;
-		width: 50--step;
 
 		/* Text */
 		font-size: 16--rpx;
@@ -46,9 +48,9 @@
 		background-size: 24--rpx auto;
 		border: unset;
 
-		@media (width < 800px) {
+		@media (width < 1024px) {
 			/* Layout */
-			width: 40--step;
+			inline-size: 40--step;
 
 			/* Text */
 			font-size: 16--rpx;
@@ -59,7 +61,7 @@
 		display: none;
 	}
 
-	@media (width < 800px) {
+	@media (width < 1024px) {
 		/* Text */
 		font-size: 4--step;
 	}

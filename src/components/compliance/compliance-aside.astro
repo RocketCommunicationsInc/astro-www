@@ -1,12 +1,13 @@
 ---
+import type { Compliance } from 'project:data/compliance.d.json.ts'
 import { For, When } from '@astropub/flow'
 import { markdown } from '@astropub/md'
-import { toNumeral, toStatusClassNames } from './compliance-utils'
+import { toNumeral, toStatusClassNames } from './compliance-utils.ts'
 import complianceFooter from 'project:data/compliance-footer.json'
 import './compliance-aside.css'
 
 export interface Props {
-	compliance: typeof import('project:data/compliance.json')
+	compliance: Compliance
 }
 
 const { props, url } = Astro as { props: Props, url: URL }
@@ -14,9 +15,9 @@ const { contents, version } = props.compliance
 
 /** Compliance contents, filtered by the given url. */
 const filteredContents = contents.reduce(
-	(filteredContents: typeof contents, content) => {
+	(filteredContents, content) => {
 		const rulesets = content.rulesets?.filter(
-			ruleset => ruleset.link === url.pathname
+			(ruleset: any) => ruleset.link === url.pathname
 		)!
 
 		if (rulesets && rulesets.length) {
@@ -25,15 +26,19 @@ const filteredContents = contents.reduce(
 
 		return filteredContents
 	},
-	[]
+	[] as Compliance['contents']
 )
+
+const complianceTitleKebabCase = complianceFooter.data.title.data.toLowerCase().replace(' ', '-')
 ---
-<When match={filteredContents.length}>
+<When test={filteredContents.length}>
 	<aside class="p-compliance-aside">
 		<header class="-header">
-			<h2 class="-heading">{
-				complianceFooter.data.title.data
-			}</h2>
+			<a href={`#${complianceTitleKebabCase}`} class="h h2">
+				<h2 id={complianceTitleKebabCase} class="-heading">{
+					complianceFooter.data.title.data
+				}</h2>
+			</a>
 			<p class="-version">(v{
 				version
 			})</p>
@@ -41,7 +46,7 @@ const filteredContents = contents.reduce(
 		<For of={filteredContents}>{content => (
 			<section class="p-compliance">
 				<For of={content.rulesets!}>{ruleset => (
-					<When a={ruleset.note}><p class="-note"><strong>Note:</strong> {ruleset.note}</p></When>
+					<When test={ruleset.note}><p class="-note"><strong>Note:</strong> {ruleset.note}</p></When>
 					<dl class="-ruleset">
 						<For of={ruleset.rules!}>{rule => (
 							<dt class="-numeral">{
@@ -53,7 +58,7 @@ const filteredContents = contents.reduce(
 									markdown.inline(rule.rule)
 								}</span>
 
-								<When a={rule.status !== 'current'} b={rule.status !== 'updated'} c={rule.status !== 'under-review'}>
+								<When test1={rule.status !== 'current'} test2={rule.status !== 'updated'} test3={rule.status !== 'under-review'}>
 									<span class={toStatusClassNames(rule)}>{
 										rule.status
 									}</span>

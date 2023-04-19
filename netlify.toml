@@ -1,7 +1,13 @@
 [build]
 
-publish = "dist/"
-command = "npm run build"
+	publish = "dist/"
+	command = "npm run build"
+
+[context.production]
+	NODE_VERSION = "18.16.0"
+
+[context.deploy-preview.environment]
+	NODE_VERSION = "18.16.0"
 
 [[redirects]]
 	from = "/ui-components/*"

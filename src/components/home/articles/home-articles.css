@@ -24,7 +24,7 @@
 		align-self: start;
 	}
 
-	@media (width >= 800px) {
+	@media (width >= 1024px) {
 		--articles-size: max(1 * var(--article-size) + 0 * var(--article-gap));
 	}
 
@@ -185,8 +185,10 @@
 		display: block;
 
 		/* Layout */
+		inline-size: min(100%, calc(1--articlesize * 1--articlecount + 1--gap * (1--articlecount - 1)));
+
+		/* Layout */
 		margin: 2--step auto;
-		width: min(100%, calc(1--articlesize * 1--articlecount + 1--gap * (1--articlecount - 1)));
 
 		/* Text */
 		text-align: end;
@@ -222,10 +224,10 @@
 
 	&::-webkit-scrollbar, &::-webkit-scrollbar {
 		/* Layout */
-		height: 0;
+		block-size: 0;
 
 		/* Layout */
-		width: 0;
+		inline-size: 0;
 	}
 
 	& .p-article {

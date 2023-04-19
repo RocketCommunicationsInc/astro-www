@@ -4,8 +4,9 @@
 	/* Layout */
 	flex-flow: column;
 	justify-content: end;
-	min-height: var(--header-block-size);
-	padding-block-start: 4--step;
+
+	/* Layout */
+	padding-block-start: var(--header-padding-block-start);
 	padding-inline: var(--layout-inline-gap-start) var(--layout-inline-gap-end);
 
 	/* Appearance */
@@ -22,7 +23,13 @@
 
 	& .-subheading {
 		/* Layout */
-		margin-block-start: 6--step;
+		margin-block-start: 5--step;
+
+		/* Layout */
+		max-inline-size: max(175 * var(--step));
+
+		/* Layout */
+		padding-block-end: var(--header-padding-block-end);
 
 		/* Text */
 		font-size: var(--subheading-1-text-size);
@@ -33,9 +40,12 @@
 	}
 
 	& .-navigation {
+		display: flex;
+
 		/* Layout */
-		margin-block-start: var(--header-nav-block-start);
-		min-block-size: 20--step;
+		align-items: flex-end;
+
+		/* Layout */
 		overflow-x: auto;
 
 		@media (width <= 400px) {
@@ -74,7 +84,7 @@
 
 		& [aria-current="page"] {
 			/* Text */
-			font-weight: 700;
+			text-shadow: 0 0 .375px var(--DarkBlue500Color),  0 0 .5px var(--DarkBlue500Color);
 
 			/* Appearance */
 			box-shadow: 0 -4px 0 0 inset;

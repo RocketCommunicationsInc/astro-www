@@ -2,7 +2,8 @@ import { parseAsYaml } from 'parse-yaml'
 
 export function viteImportYaml() {
 	const name = 'vite:import-yaml'
-	let plugin = {
+
+	const plugin = {
 		name,
 		transform(code, importee) {
 			if (importee.endsWith('yml')) {

@@ -1,11 +1,10 @@
 ---
 title: Search
-layout: project:layouts/docs/docs-layout.astro
+description: Search is a specialized text field for entering Search terms.
+layout: project:layouts/component-docs/component-docs-layout.astro
+assets:
+    name: Search
 ---
-
-# Search
-
-Search is a specialized text field for entering Search terms.
 
 :::note
 

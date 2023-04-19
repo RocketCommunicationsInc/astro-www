@@ -1,0 +1,310 @@
+{
+	"$schema": "https://json-schema.org/draft-07/schema",
+	"type": "object",
+	"$defs": {
+		"Dependency": {
+			"type": "object",
+			"properties": {
+				"tag": {
+					"title": "HTML tag name",
+					"type": "string"
+				},
+				"constructor": {
+					"title": "JavaScript constructor",
+					"type": "string",
+					"$ref": "./formats.json#/$defs/js-identifier"
+				}
+			},
+			"required": [
+				"tag",
+				"constructor"
+			],
+			"additionalProperties": false,
+			"defaultSnippets": [
+				{
+					"label": "Example",
+					"description": "Adds an Example",
+					"body": {
+						"name": "$2",
+						"code": "<rux-$1></rux-$1>"
+					}
+				}
+			]
+		},
+		"Example": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"code": {
+					"type": "string"
+				}
+			},
+			"additionalProperties": false,
+			"defaultSnippets": [
+				{
+					"label": "Example",
+					"description": "Adds an Example",
+					"body": {
+						"name": "$2",
+						"code": "<rux-$1></rux-$1>"
+					}
+				}
+			]
+		},
+		"Record": {
+			"title": "Record",
+			"type": "object",
+			"properties": {
+				"tag": {
+					"title": "HTML tag name",
+					"type": "string",
+					"$ref": "./formats.json#/$defs/html-tag"
+				},
+				"constructor": {
+					"title": "JavaScript constructor",
+					"type": "string",
+					"$ref": "./formats.json#/$defs/js-identifier"
+				},
+				"examples": {
+					"title": "Examples",
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/Example"
+					}
+				},
+				"fields": {
+					"title": "Fields",
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/Field",
+						"defaultSnippets": [
+							{
+								"label": "Field",
+								"description": "Adds a Field",
+								"body": {
+									"type": "${2:text}",
+									"property": "$1",
+									"attribute": "${1/([A-Z])/-${1:/downcase}/g}"
+								}
+							}
+						]
+					}
+				},
+				"dependencies": {
+					"title": "Dependencies",
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/Dependency"
+					}
+				}
+			},
+			"additionalProperties": false,
+			"required": [
+				"tag",
+				"constructor"
+			]
+		},
+		"Field": {
+			"allOf": [
+				{
+					"if": {
+						"properties": {
+							"kind": {
+								"const": "menu"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/$defs/FieldMenu"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"kind": {
+								"const": "text"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/$defs/FieldText"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"kind": {
+								"const": "switch"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/$defs/FieldSwitch"
+					}
+				}
+			]
+		},
+		"FieldBase": {
+			"type": "object",
+			"properties": {
+				"attribute": {
+					"title": "Attribute Name",
+					"description": "This value is unique from the property name.",
+					"type": "string",
+					"$ref": "./formats.json#/$defs/html-attribute"
+				},
+				"property": {
+					"title": "Property Name",
+					"description": "This value is unique from the attribute name.",
+					"type": "string",
+					"$ref": "./formats.json#/$defs/js-identifier"
+				}
+			},
+			"required": [
+				"attribute",
+				"property"
+			]
+		},
+		"FieldMenu": {
+			"title": "Menu Field",
+			"$ref": "#/$defs/FieldBase",
+			"properties": {
+				"kind": {
+					"title": "Menu Field",
+					"const": "menu"
+				},
+				"options": {
+					"title": "Options",
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"value": {
+					"title": "Value",
+					"type": "string"
+				}
+			},
+			"required": [
+				"kind",
+				"options"
+			]
+		},
+		"FieldRadio": {
+			"title": "Radio Field",
+			"$ref": "#/$defs/FieldBase",
+			"properties": {
+				"kind": {
+					"title": "Radio Field",
+					"const": "radio"
+				},
+				"label": {
+					"title": "Radio Label",
+					"type": "string"
+				},
+				"value": {
+					"title": "Radio Value",
+					"type": "string"
+				}
+			},
+			"required": [
+				"kind",
+				"options"
+			]
+		},
+		"FieldRadioGroup": {
+			"title": "Radio Group Field",
+			"$ref": "#/$defs/FieldBase",
+			"properties": {
+				"kind": {
+					"title": "Radio Group Field",
+					"const": "radio-group"
+				},
+				"options": {
+					"title": "Radio Group Options",
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/FieldRadio"
+					}
+				},
+				"value": {
+					"title": "Radio Group Value",
+					"type": "string"
+				}
+			},
+			"required": [
+				"kind",
+				"options"
+			]
+		},
+		"FieldSwitch": {
+			"title": "Switch Field",
+			"$ref": "#/$defs/FieldBase",
+			"properties": {
+				"kind": {
+					"title": "Switch Field",
+					"const": "switch"
+				},
+				"checked": {
+					"title": "Switch Checked State",
+					"type": "boolean"
+				}
+			},
+			"required": [
+				"kind",
+				"checked"
+			]
+		},
+		"FieldText": {
+			"title": "Text Field",
+			"$ref": "#/$defs/FieldBase",
+			"properties": {
+				"kind": {
+					"title": "Text Field",
+					"const": "text"
+				},
+				"value": {
+					"title": "Text Value",
+					"type": "string"
+				}
+			},
+			"required": [
+				"kind",
+				"value"
+			]
+		}
+	},
+	"properties": {
+		"$schema": {
+			"type": "string"
+		},
+		"records": {
+			"title": "Records",
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/Record",
+				"defaultSnippets": [
+					{
+						"label": "Record",
+						"description": "Adds a Record",
+						"body": {
+							"tag": "rux-${1/([^ ]*)( ?)/${1:/downcase}${2:+-}/g}",
+							"route": "/${2:${1/(.*)/${1:/downcase}/}}/",
+							"constructor": "Rux${3:${1/([^-]*)(-?)/${1:/capitalize}/g}}",
+							"examples": [
+								{
+									"name": "Default",
+									"code": "<rux-${4:${1/([^ ]*)( ?)/${1:/downcase}${2:+-}/g}} />"
+								}
+							],
+							"fields": "^[${5}]"
+						}
+					}
+				]
+			}
+		}
+	},
+	"additionalProperties": false
+}

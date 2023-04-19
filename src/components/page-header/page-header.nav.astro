@@ -1,5 +1,22 @@
+---
+import { For, When } from '@astropub/flow'
+import { getSecondaryNavGroup } from 'project:components/site-navigation/server/currentPath.ts'
+import NavItem from './page-header.nav-item.astro'
+
+export interface Props {
+	file: string
+}
+
+const secondaryNavGroup = getSecondaryNavGroup(Astro.url.pathname)
+---
 <nav class="-navigation" {...Astro.props}>
 	<ul>
-		<slot />
+		<When test={secondaryNavGroup}>
+			<For of={secondaryNavGroup!.items}>{item => (
+				<NavItem href={item.url}>{
+					item.label
+				}</NavItem>
+			)}</For>
+		</When>
 	</ul>
 </nav>

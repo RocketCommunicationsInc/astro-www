@@ -1,11 +1,8 @@
 ---
 title: Application State
-layout: project:layouts/docs/docs-layout.astro
+description: The Application State component indicates the state the entire application is in (such as Live, Exercise, Training, or Development), so that the user does not execute a command on a live asset unintentionally.
+layout: project:layouts/component-docs/component-docs-layout.astro
 ---
-
-# Application State
-
-The Application State component indicates the state the entire application is in (such as Live, Exercise, Training, or Development), so that the user does not execute a command on a live asset unintentionally.
 
 ## Rules of Thumb
 
