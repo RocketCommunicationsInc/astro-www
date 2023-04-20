@@ -30,8 +30,8 @@ const setIconPanelPosition = () => {
 	let searchRect: number = iconSearch?.getBoundingClientRect().y
 	let offset: number = searchRect + iconSearchHeight
   if (window.visualViewport.pageTop > pageHeaderPlusNavHeight) {
-	sidePanel.style.insetBlockStart = `${iconSearchHeight}px`
-	sidePanel.style.blockSize = `calc(100dvh - ${iconSearchHeight}px)`
+	sidePanel.style.insetBlockStart = `${iconSearchHeight + navHeight}px`
+	sidePanel.style.blockSize = `calc(100dvh - ${iconSearchHeight + navHeight}px)`
   } else {
     sidePanel.style.insetBlockStart = `${offset}px`
 	sidePanel.style.blockSize = `calc(100dvh - ${offset}px)`
