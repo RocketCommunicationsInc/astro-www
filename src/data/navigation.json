@@ -126,16 +126,16 @@
 				"url": "/components/component-sandbox/"
 			},
 			{
-				"label": "Application State",
-				"url": "/components/application-state/"
-			},
-			{
 				"label": "separator",
 				"url": "/separator"
 			},
 			{
 				"label": "Accordion",
 				"url": "/components/accordion/"
+			},
+			{
+				"label": "Application State",
+				"url": "/components/application-state/"
 			},
 			{
 				"label": "Button",
