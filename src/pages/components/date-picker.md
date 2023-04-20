@@ -8,7 +8,7 @@ assets:
 
 ---
 
- The date picker is implemented by using an input field, which includes a text field and a calendar icon that triggers a pop-up calendar.
+ The Date Picker is implemented by using an input field, which includes a text field and a calendar icon that triggers a pop-up calendar.
 
 ## Rules of Thumb
 
