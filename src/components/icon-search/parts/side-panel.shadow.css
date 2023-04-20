@@ -71,6 +71,9 @@ h2 {
 	padding-inline: 6--step;
 	position: fixed;
 
+	/* Accounting for being a higher z than the feedback widget tab */
+	z-index: 2;
+
 	/* Appearance */
 	background-color: var(--DarkBlue800Color);
 	color: var(--PrimaryColor);
