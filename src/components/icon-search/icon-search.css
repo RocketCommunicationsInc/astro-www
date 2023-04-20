@@ -8,6 +8,9 @@
 	padding-block: 7--step;
 	padding-inline: 8--step;
 
+	/* Accounting for being a higher z than the feedback widget tab */
+	z-index: 2;
+
 	/* Appearance */
 	background-color: var(--PrimaryColor);
 	//box-shadow: -2px 2px 4px #00000040;
