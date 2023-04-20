@@ -395,16 +395,14 @@
 	font-size: 20--rpx;
 	line-height: calc(24 / 20);
 
-	@media (hover: hover) {
-		& a::before {
-			/* Layout */
-			inset: 0;
-			position: absolute;
-			z-index: 1;
+	& a::before {
+		/* Layout */
+		inset: 0;
+		position: absolute;
+		z-index: 1;
 
-			/* Generated */
-			content: "";
-		}
+		/* Generated */
+		content: "";
 	}
 
 	@media (width >= 1024px) and (width < 1200px) {
