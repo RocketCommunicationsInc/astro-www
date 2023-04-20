@@ -64,12 +64,6 @@
 					"attribute": "disabled",
 					"property": "disabled",
 					"checked": false
-				},
-				{
-					"kind": "switch",
-					"attribute": "borderless",
-					"property": "borderless",
-					"checked": false
 				}
 			]
 		},
