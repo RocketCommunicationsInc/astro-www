@@ -27,7 +27,7 @@
 
 	@media (width >= 1024px) {
 		/* Layout */
-		block-size: min(100%, 100vh);
+		block-size: 100vh;
 		inline-size: 78--step;
 		overflow-x: hidden;
 		overflow-y: auto;
