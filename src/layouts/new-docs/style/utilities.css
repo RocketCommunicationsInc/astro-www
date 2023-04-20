@@ -57,6 +57,52 @@
 	}
 }
 
+/* Table for Heat Map page */
+/* ========================================================================== */
+
+.heat-map-table {
+	/* Layout */
+	margin-block-end: 20px;
+
+	& table {
+		/* Layout */
+		inline-size: auto;
+
+		& th, & td {
+			/* Appearance */
+			border: 1px solid var(--Grey300Color);
+		}
+
+		& tr {
+			/* Layout */
+			border-block-end: 0;
+		}
+
+		& thead th {
+			/* Text */
+			font-weight: 400;
+			text-align: center;
+
+			/* Appearance */
+			background: transparent;
+			color: inherit;
+		}
+
+		& td {
+			/* Text */
+			line-height: 1.5rem;
+			text-align: center;
+
+			& span {
+				display: flex;
+
+				/* Layout */
+				justify-content: center;
+			}
+		}
+	}
+}
+
 /* Code */
 /* ========================================================================== */
 
