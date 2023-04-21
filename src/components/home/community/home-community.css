@@ -395,7 +395,7 @@
 	font-size: 20--rpx;
 	line-height: calc(24 / 20);
 
-	@media (hover: hover) {
+	@media (hover: hover), (pointer: coarse) {
 		& a::before {
 			/* Layout */
 			inset: 0;
