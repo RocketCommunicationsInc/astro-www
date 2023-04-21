@@ -4,9 +4,8 @@ path: /grm-service-ux-design/grm-equipment-manager
 date: Last Modified
 layout: project:layouts/new-docs/new-docs-layout.astro
 title: GRM Equipment Manager
+description: The GRM Equipment Manager app is designed to operators by consolidating information related to all ground equipment in one place
 ---
-
-# GRM Equipment Manager
 
 :::note
 The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.

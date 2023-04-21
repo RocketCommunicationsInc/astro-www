@@ -3,19 +3,12 @@ import DocsLayout from 'project:layouts/new-docs/new-docs-layout.astro'
 import globalData from 'project:data/global.json'
 
 const title = 'Releases'
+const description = `Astro represents a collection of artifacts including, but not limited to, guidance, compliance, design assets/tools,
+		coded components, third-party themes, and related samples.`
 ---
-<DocsLayout content={{ title }} file={import.meta.url}>
-	<a href="#content" class="h h1">
-		<h1>
-			Releases
-		</h1>
-	</a>
-
+<DocsLayout content={{ title, description }} file={import.meta.url}>
 	<p>
-		Astro represents a collection of artifacts including, but not limited to, guidance, compliance, design assets/tools,
-		coded components, third-party themes, and related samples. The major version of Astro as indicated in the website
-		footer and below is the version that should be included in contracts. The associated asset versions should not be
-		referenced in contract language.
+		The major version of Astro as indicated in the website footer and below is the version that should be included in contracts. The associated asset versions should not be referenced in contract language.
 	</p>
 
 	<a href="#current-version" class="h h2">
