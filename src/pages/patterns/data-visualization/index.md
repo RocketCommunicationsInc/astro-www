@@ -74,6 +74,8 @@ The standard way to show a statistical distribution - keep the gaps between colu
 
 ![Heat Map](/img/patterns/data-viz-heat-map.png)
 Heat maps enable you to do exploratory data analysis with two dimensions on the axes and the third dimension shown by intensity of color.
+<br />[Learn more about Heat Map guidance](/patterns/data-visualization/heat-map/)
+
 
 :::
 

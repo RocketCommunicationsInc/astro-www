@@ -6,6 +6,7 @@ export interface Item {
 export interface Group {
 	heading: string
 	description: string
+	hide?: boolean
 	items: Item[]
 }
 
