@@ -16,7 +16,7 @@ export default DOM.elementOf({
 			shadowCSS,
 		]
 
-		shadowRoot.replaceChildren(content.cloneNode(true))
+		shadowRoot.append(content.cloneNode(true))
 
 		const shadowTablist = DOM.queryPart<HTMLSpanElement>(shadowRoot, 'tablist')!
 

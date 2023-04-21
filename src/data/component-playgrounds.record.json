@@ -65,7 +65,8 @@
 					"property": "disabled",
 					"checked": false
 				}
-			]
+			],
+			"style": "rux-button[borderless]::part(container) { background-color: transparent; }"
 		},
 		{
 			"tag": "rux-checkbox",

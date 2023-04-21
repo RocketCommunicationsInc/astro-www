@@ -10,7 +10,7 @@ export default DOM.elementOf({
 		const shadowRoot = element.attachShadow({ mode: 'open' })
 
 		shadowRoot.adoptedStyleSheets = [ styling ]
-		shadowRoot.replaceChildren(content.cloneNode(true))
+		shadowRoot.append(content.cloneNode(true))
 
 		const shadowLabel = DOM.queryPart<HTMLSpanElement>(shadowRoot, 'label')!
 

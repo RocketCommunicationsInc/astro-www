@@ -13,7 +13,7 @@ export default DOM.elementOf({
 
 		shadowRoot.adoptedStyleSheets = [ styling ]
 
-		shadowRoot.replaceChildren(content.cloneNode(true))
+		shadowRoot.append(content.cloneNode(true))
 
 		shadowRoot.addEventListener('change', (event) => {
 			if (!(event.target instanceof HTMLElement)) return
