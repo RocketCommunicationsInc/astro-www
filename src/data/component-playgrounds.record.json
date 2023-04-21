@@ -485,7 +485,7 @@
 					"checked": false
 				}
 			],
-			"style": "rux-slider { flex-grow: revert; }"
+			"style": "rux-slider { flex-grow: revert; } rux-slider::part(input){background-color: transparent;}"
 		},
 		{
 			"tag": "rux-switch",
