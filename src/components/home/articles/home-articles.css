@@ -123,14 +123,16 @@
 		-webkit-box-orient: vertical;
 
 		& > a {
-			&::before {
-				/* Layout */
-				inset: 0;
-				position: absolute;
-				z-index: 1;
+			@media (hover: hover), (pointer: coarse) {
+				&::before {
+					/* Layout */
+					inset: 0;
+					position: absolute;
+					z-index: 1;
 
-				/* Generated */
-				content: "";
+					/* Generated */
+					content: "";
+				}
 			}
 		}
 	}
