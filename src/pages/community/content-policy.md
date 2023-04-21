@@ -1,6 +1,6 @@
 ---
 title: Content Policy
-layout: project:layouts/docs/docs-layout.astro
+layout: project:layouts/new-docs/new-docs-layout.astro
 ---
 
 

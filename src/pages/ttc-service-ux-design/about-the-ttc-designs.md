@@ -2,7 +2,7 @@
 tags: ["ttc", "egs"]
 path: /ttc-service-ux-design/about-the-ttc-designs
 date: Last Modified
-layout: project:layouts/docs/docs-layout.astro
+layout: project:layouts/new-docs/new-docs-layout.astro
 title: About the TT&C Designs
 ---
 

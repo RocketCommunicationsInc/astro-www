@@ -2,7 +2,7 @@
 tags: ["grm", "egs"]
 path: /grm-service-ux-design/about-the-grm-designs
 date: Last Modified
-layout: project:layouts/docs/docs-layout.astro
+layout: project:layouts/new-docs/new-docs-layout.astro
 title: About the GRM Designs
 ---
 

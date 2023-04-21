@@ -1,6 +1,6 @@
 ---
 title: MIL-STD-1472 Compliance
-layout: project:layouts/docs/docs-layout.astro
+layout: project:layouts/new-docs/new-docs-layout.astro
 ---
 
 # MIL-STD-1472 Compliance

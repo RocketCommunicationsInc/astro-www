@@ -1,7 +1,7 @@
 ---
 path: /platforms/astro-for-grafana
 date: Last Modified
-layout: project:layouts/docs/docs-layout.astro
+layout: project:layouts/new-docs/new-docs-layout.astro
 title: Astro for Grafana
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Color
-layout: project:layouts/docs/docs-layout.astro
+layout: project:layouts/new-docs/new-docs-layout.astro
 ---
 <style>
 td:not(.processed):nth-child(1),

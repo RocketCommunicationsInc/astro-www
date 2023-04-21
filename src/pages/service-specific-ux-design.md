@@ -1,6 +1,6 @@
 ---
 title: Service Specific UX Design
-layout: project:layouts/docs/docs-layout.astro
+layout: project:layouts/new-docs/new-docs-layout.astro
 ---
 
 # Service Specific UX Design

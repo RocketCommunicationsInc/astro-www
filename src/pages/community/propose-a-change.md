@@ -1,6 +1,6 @@
 ---
 title: Propose a Change
-layout: project:layouts/docs/docs-layout.astro
+layout: project:layouts/new-docs/new-docs-layout.astro
 ---
 
 # How to Propose a Change

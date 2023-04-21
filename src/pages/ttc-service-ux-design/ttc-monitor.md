@@ -2,7 +2,7 @@
 tags: ["ttc", "egs"]
 path: /ttc-service-ux-design/ttc-monitor
 date: Last Modified
-layout: project:layouts/docs/docs-layout.astro
+layout: project:layouts/new-docs/new-docs-layout.astro
 title: TT&C Monitor
 ---
 

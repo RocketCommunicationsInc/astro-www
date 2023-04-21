@@ -2,7 +2,7 @@
 tags: ["flight dynamics", "egs"]
 path: /fd-service-ux-design/about-the-fd-designs
 date: Last Modified
-layout: project:layouts/docs/docs-layout.astro
+layout: project:layouts/new-docs/new-docs-layout.astro
 title: Flight Dynamics Service
 class: fds
 ---
