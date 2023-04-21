@@ -4,19 +4,18 @@ path: /design-guidelines/grid
 date: Last Modified
 layout: project:layouts/new-docs/new-docs-layout.astro
 title: Grid
+description: A grid system is a defined set of vertical columns and optionally horizontal rows based on time-tested principles of graphic design and layout.
 ---
 
-# Grid
-
-A [grid system](https://www.creativebloq.com/web-design/grid-theory-41411345) is a defined set of vertical columns and optionally horizontal rows based on time-tested principles of graphic design and layout. Ensuring a consistent grid system within your application and across all Astro applications creates a sense of continuity and relationship from screen to screen and app to app, even when the layouts between those screens may have dramatically different requirements.
+ Ensuring a consistent [grid system](https://www.creativebloq.com/web-design/grid-theory-41411345) within your application and across all Astro applications creates a sense of continuity and relationship from screen to screen and app to app, even when the layouts between those screens may have dramatically different requirements.
 
 ## Columns, Gutters and Margins
 
 The Astro Grid is a standard 12 [column](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column) grid with column widths that expand or contract in relation to the width of the display. Columns are separated by a fixed-width [gutter](https://developer.mozilla.org/en-US/docs/Web/CSS/column-gap). Astro-compliant applications may use gutters of either 24 pixels (default) or 12 pixels (compact). The grid is enclosed by a fixed-width margin of 24 pixels. These specifications are for screen resolutions of 769px to 1920px max width.
 
-![Sample grid 20px gutter.](/img/design-guidelines/grid-lg-20px-gutter.png "Sample grid 20px gutter.")
+![Sample grid 20px gutter.](/img/design-guidelines/grid-lg-gutter.png "Sample grid 20px gutter.")
 
-![Sample grid 10px gutter.](/img/design-guidelines/grid-compact-10px-gutter.png "Sample grid 10px gutter.")
+![Sample grid 10px gutter.](/img/design-guidelines/grid-compact-gutter.png "Sample grid 10px gutter.")
 
 ## Breakpoints
 

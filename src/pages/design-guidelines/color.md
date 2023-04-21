@@ -1,5 +1,6 @@
 ---
 title: Color
+description: Maintaining color consistency across applications is an essential part of what makes an application an Astro Application.
 layout: project:layouts/new-docs/new-docs-layout.astro
 ---
 <style>
@@ -34,9 +35,7 @@ color-swab::before {
 }
 </style>
 
-# Color
-
-Maintaining color consistency across applications is an essential part of what makes an application an Astro Application. In Astro, a variety of color palettes combine to form various themes. Each color has been carefully chosen to create a cohesive design system. In order to remain Astro-compliant, you should avoid creating your own colors or values.
+In Astro, a variety of color palettes combine to form various themes. Each color has been carefully chosen to create a cohesive design system. In order to remain Astro-compliant, you should avoid creating your own colors or values.
 
 ## Design Tokens and Colors
 

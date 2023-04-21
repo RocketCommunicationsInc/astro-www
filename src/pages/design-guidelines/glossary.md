@@ -4,6 +4,7 @@ path: /design-guidelines/glossary
 date: Last Modified
 layout: project:layouts/new-docs/new-docs-layout.astro
 title: Glossary
+description: A list of commonly used terms and definitions
 ---
 
 ### A

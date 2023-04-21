@@ -4,9 +4,8 @@ path: /design-guidelines/typography
 date: Last Modified
 layout: project:layouts/new-docs/new-docs-layout.astro
 title: Typography
+description: Astro uses the open source typeface Roboto for all elements but system fonts can also be used.
 ---
-
-# Typography
 
 Astro uses the open source typeface [Roboto](https://fonts.google.com/specimen/Roboto?query=roboto&sidebar.open=true&selection.family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700) for all elements, but [system fonts](https://drafts.csswg.org/css-fonts-4/#system-ui-def) can also be used. As with all Astro elements, sizing is rendered in rem units. For those working with systems that don’t support rem, the corollary size is provided in points. Unless explicitly mentioned otherwise in a component, Astro recommends using sentence case capitalization throughout your applications.
 

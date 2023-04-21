@@ -1,8 +1,8 @@
 ---
-import type { Compliance } from 'project:data/compliance.d.json.ts'
+import type { Compliance } from 'project:data/compliance.d.json.js'
 import { For, When } from '@astropub/flow'
 import { markdown } from '@astropub/md'
-import { toNumeral, toStatusClassNames, toTierClassNames } from './compliance-utils.ts'
+import { toNumeral, toStatusClassNames, toTierClassNames } from './compliance-utils.js'
 import './compliance.css'
 
 export interface Props {
@@ -12,12 +12,9 @@ export interface Props {
 
 const attrs = Astro.props
 ---
-<hgroup>
-	<h1>{attrs.title}</h1>
-	<p>Version {attrs.compliance.version}</p>
-</hgroup>
+
+<h2>Design Compliance</h2>
 <section class="p-compliance">
-	<h2>Design Compliance</h2>
 	<p class="beginning-headline">Applications adopted by EGS are required to meet the Design Compliance set forth by
 		Astro UXDS. Design Compliance improves operator efficiency, engagement and reduces training time. When
 		applications across the Enterprise have a common and consistent user interface Guardians can focus learning the

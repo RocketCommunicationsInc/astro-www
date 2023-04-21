@@ -3,14 +3,9 @@ import DocsLayout from 'project:layouts/new-docs/new-docs-layout.astro'
 import { reference, findByName } from 'project:utils/tokens.js'
 
 const title = 'Reference'
+const description = 'Full catalog of Astro design tokens'
 ---
-<DocsLayout content={{ title }} file={import.meta.url}>
-	<a href="#reference-tokens" class="h h1">
-		<h1 id="reference-tokens">
-			Reference Tokens
-		</h1>
-	</a>
-
+<DocsLayout content={{ title, description }} file={import.meta.url}>
 	<h2 id="colors">
 		Colors
 	</h2>

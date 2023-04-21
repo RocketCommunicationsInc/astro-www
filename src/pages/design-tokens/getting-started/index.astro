@@ -1,14 +1,10 @@
 ---
 import DocsLayout from 'project:layouts/new-docs/new-docs-layout.astro'
 
-const title = 'Getting Started'
+const title = 'Astro Design Tokens'
+const description = 'Design Tokens empower designer and developer workflows by providing answers to common questions like "what color should I use for XYZ?"'
 ---
-<DocsLayout content={{ title }} file={import.meta.url}>
-	<a href="#astro-design-tokens" class="h h1">
-		<h1 id="astro-design-tokens">
-			Astro Design Tokens
-		</h1>
-	</a>
+<DocsLayout content={{ title, description }} file={import.meta.url}>
 	<a href="#what-are-design-tokens" class="h h2">
 		<h2 id="what-are-design-tokens">
 			What are Design Tokens?
@@ -21,33 +17,35 @@ const title = 'Getting Started'
 		Most importantly, they are platform-agnostic.
 	</p>
 	<table>
-		<tr>
-			<th>Design Specifications</th>
-			<th>Translated into Design Tokens</th>
-		</tr>
+		<thead>
+			<tr>
+				<th>Design Specifications</th>
+				<th>Translated into Design Tokens</th>
+			</tr>
+		</thead>
 		<tbody>
 			<tr>
-				<td>	The <span class="font-bold text-blue-600">text</span> <span class="font-bold text-blue-800">color</span> of a <span class="font-bold text-green-500">button</span> is #fffff.
+				<td><span>The <span class="font-bold text-blue-600">text</span> <span class="font-bold text-blue-800">color</span> of a <span class="font-bold text-green-500">button</span> is #fffff.</span>
 				</td>
-				<td>	<span class="font-bold text-green-500">button</span>-<span class="font-bold text-blue-800">color</span>-<span class="font-bold text-blue-600">text</span>
-				</td>
-			</tr>
-			<tr>
-				<td>	The <span class="font-bold text-blue-600">background</span> <span class="font-bold text-blue-800">color</span> for all <span class="font-bold text-blue-400">surface elements</span> is #fff.
-				</td>
-				<td>	<span class="font-bold text-blue-800">color</span>-<span class="font-bold text-blue-600">background</span>-<span class="font-bold text-blue-400">surface</span>
+				<td><span><span class="font-bold text-green-500">button</span>-<span class="font-bold text-blue-800">color</span>-<span class="font-bold text-blue-600">text</span></span>
 				</td>
 			</tr>
 			<tr>
-				<td>	Our <span class="font-bold text-blue-400">base</span> <span class="font-bold text-blue-800">border radii</span> is 3px.
+				<td><span>The <span class="font-bold text-blue-600">background</span> <span class="font-bold text-blue-800">color</span> for all <span class="font-bold text-blue-400">surface elements</span> is #fff.</span>
 				</td>
-				<td>	<span class="font-bold text-blue-800">radius</span>-<span class="font-bold text-blue-400">base</span>
+				<td><span><span class="font-bold text-blue-800">color</span>-<span class="font-bold text-blue-600">background</span>-<span class="font-bold text-blue-400">surface</span></span>
 				</td>
 			</tr>
 			<tr>
-				<td>	The <span class="font-bold text-blue-600">border</span> <span class="font-bold text-blue-800">color</span> for a <span class="font-bold text-green-500">text input</span>when it is <span class="font-bold text-red-400">invalid</span> is #fff.
+				<td><span>Our <span class="font-bold text-blue-400">base</span> <span class="font-bold text-blue-800">border radii</span> is 3px.</span>
 				</td>
-				<td>	<span class="font-bold text-green-500">input</span>-<span class="font-bold text-blue-800">color</span>-<span class="font-bold text-blue-600">border</span>-<span class="font-bold text-red-400">invalid</span>
+				<td><span><span class="font-bold text-blue-800">radius</span>-<span class="font-bold text-blue-400">base</span></span>
+				</td>
+			</tr>
+			<tr>
+				<td><span>The <span class="font-bold text-blue-600">border</span> <span class="font-bold text-blue-800">color</span> for a <span class="font-bold text-green-500">text input</span>when it is <span class="font-bold text-red-400">invalid</span> is #fff.</span>
+				</td>
+				<td><span><span class="font-bold text-green-500">input</span>-<span class="font-bold text-blue-800">color</span>-<span class="font-bold text-blue-600">border</span>-<span class="font-bold text-red-400">invalid</span></span>
 				</td>
 			</tr>
 		</tbody>
@@ -61,7 +59,7 @@ const title = 'Getting Started'
 	<p>
 		Astro Design Tokens are broken down into three tiers based on their usage:
 	</p>
-	<span class="token token__reference">Reference</span> &gt; <span class="token token__system">System</span> &gt; <span class="token token__component">Component</span>
+	<p><span class="token token__reference">Reference</span> &gt; <span class="token token__system">System</span> &gt; <span class="token token__component">Component</span></p>
 
 	<a href="#reference-tokens" class="h h3">
 		<h3>
