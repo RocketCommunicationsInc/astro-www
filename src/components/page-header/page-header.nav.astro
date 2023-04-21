@@ -9,6 +9,7 @@ export interface Props {
 
 const secondaryNavGroup = getSecondaryNavGroup(Astro.url.pathname)
 ---
+{!secondaryNavGroup?.hide ?
 <nav class="-navigation" {...Astro.props}>
 	<ul>
 		<When test={secondaryNavGroup}>
@@ -20,3 +21,6 @@ const secondaryNavGroup = getSecondaryNavGroup(Astro.url.pathname)
 		</When>
 	</ul>
 </nav>
+:
+null
+}
