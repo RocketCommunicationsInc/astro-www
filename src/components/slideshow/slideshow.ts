@@ -32,8 +32,8 @@ export class SlideshowElement extends HTMLElement {
 			}
 		}
 
-		const handleScrollButtonClick = (event: PointerEvent & { target: HTMLButtonElement }) => {
-			let button = event.target
+		const handleScrollButtonClick = (event: Event) => {
+			let button = event.target as HTMLElement
 
 			switch (true) {
 				case prev.contains(button): {
@@ -49,7 +49,8 @@ export class SlideshowElement extends HTMLElement {
 		}
 
 		slot.addEventListener('scroll', updateScrollButtons, { passive: true })
-		host.addEventListener('click', handleScrollButtonClick, { passive: true })
+		next.addEventListener('click', handleScrollButtonClick, { passive: true })
+		prev.addEventListener('click', handleScrollButtonClick, { passive: true })
 
 		updateScrollButtons()
 	}
