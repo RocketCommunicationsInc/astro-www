@@ -251,7 +251,7 @@
 		margin-block-end: 5--step;
 	}
 
-	& a:first-child h2, & style:first-child + a h2 {
+	& a:first-child h2, & style:first-child + a h2, & > h2:first-child {
 		/* Layout */
 		margin-block-start: 0;
 	}
