@@ -189,6 +189,7 @@
 	/* Layout */
 	block-size: 1--step;
 	margin-block: 16--step;
+	margin-inline: 0;
 
 	/* Appearance */
 	box-shadow: var(--Grey800Color) 0 1--rpx 0 0 inset;

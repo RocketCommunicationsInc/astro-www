@@ -70,12 +70,12 @@
 
 			&:first-child {
 				/* Appearance */
-				border-radius: 2--step 0 0 0;
+				border-start-start-radius: 2--step;
 			}
 
 			&:last-child {
 				/* Appearance */
-				border-radius: 0 2--step 0 0;
+				border-start-end-radius: 2--step;
 			}
 		}
 	}
