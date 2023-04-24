@@ -63,16 +63,11 @@
 
 				&:not(:focus-visible) {
 					/* Text */
-					text-decoration: underline;
-					text-decoration-thickness: 1.25px;
-
-					/* Text */
-					text-decoration-color: var(--LinkColor);
+					color: var(--DarkBlue500Color);
 
 					&:hover {
 						/* Text */
-						text-decoration-style: double;
-						text-decoration-thickness: 1.5px;
+						color: var(--DarkBlue700Color);
 					}
 				}
 

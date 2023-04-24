@@ -32,6 +32,9 @@
 
 .breaking-change__content {
 	/* Layout */
+	overflow-x: auto;
+
+	/* Layout */
 	padding: 1rem;
 }
 

@@ -281,8 +281,7 @@
 
 			&:hover {
 				/* Text */
-				text-decoration-style: double;
-				text-decoration-thickness: 1.5px;
+				color: var(--DarkBlue700Color);
 			}
 		}
 	}
