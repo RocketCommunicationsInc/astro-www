@@ -162,6 +162,10 @@
 				"url": "/components/container/"
 			},
 			{
+				"label": "Date Picker",
+				"url": "/components/date-picker/"
+			},
+			{
 				"label": "Dialog",
 				"url": "/components/dialog/"
 			},
