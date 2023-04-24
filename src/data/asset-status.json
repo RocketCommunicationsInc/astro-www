@@ -441,6 +441,46 @@
                 }
             ]
         },
+        "Date Picker": {
+            "assets": [
+                {
+                    "name": "Documentation",
+                    "status": "available",
+                    "type": "documentation",
+                    "version": "N/A"
+                },
+                {
+                    "name": "UI Kit - Dark",
+                    "status": "inprogress",
+                    "type": "ui",
+                    "version": "N/A"
+                },
+                {
+                    "name": "UI Kit - Light",
+                    "status": "inprogress",
+                    "type": "ui",
+                    "version": "N/A"
+                },
+                {
+                    "name": "UI Kit - Wireframe",
+                    "status": "inprogress",
+                    "type": "ui",
+                    "version": "N/A"
+                },
+                {
+                    "name": "Web Component",
+                    "status": "unavailable",
+                    "type": "component",
+                    "version": "N/A"
+                },
+                {
+                    "name": "Component Tokens",
+                    "status": "unavailable",
+                    "type": "token",
+                    "version": "N/A"
+                }
+            ]
+        },
         "Dialog": {
             "assets": [
                 {
