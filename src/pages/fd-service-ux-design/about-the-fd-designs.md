@@ -119,7 +119,7 @@ The [Global Status Bar](../../components/global-status-bar) of the FDS App conta
 
 :::two-col
 ![Scenarios wireframe](/img/service-specific-ux-design/fds-scenarios.png)
-::: col
+:::col
 
 The scenarios panel is where a task begins. Depending on common mission tasks, operators may create, edit, or delete scenarios that best fit their workflows. For example, if an operator performs orbit determinations on Mondays for each satellite they are responsible for, they might create a “Nominal OD” scenario. Clicking a satellite in this scenario would load its last state, its last input files, and pre-select all the necessary products and reports needed for this task.
 

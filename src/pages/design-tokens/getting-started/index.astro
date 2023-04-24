@@ -16,41 +16,43 @@ const description = 'Design Tokens empower designer and developer workflows by p
 		They can describe everything from color to border radii to typography and follow a consistent naming convention.
 		Most importantly, they are platform-agnostic.
 	</p>
-	<table>
-		<thead>
-			<tr>
-				<th>Design Specifications</th>
-				<th>Translated into Design Tokens</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td><span>The <span class="font-bold text-blue-600">text</span> <span class="font-bold text-blue-800">color</span> of a <span class="font-bold text-green-500">button</span> is #fffff.</span>
-				</td>
-				<td><span><span class="font-bold text-green-500">button</span>-<span class="font-bold text-blue-800">color</span>-<span class="font-bold text-blue-600">text</span></span>
-				</td>
-			</tr>
-			<tr>
-				<td><span>The <span class="font-bold text-blue-600">background</span> <span class="font-bold text-blue-800">color</span> for all <span class="font-bold text-blue-400">surface elements</span> is #fff.</span>
-				</td>
-				<td><span><span class="font-bold text-blue-800">color</span>-<span class="font-bold text-blue-600">background</span>-<span class="font-bold text-blue-400">surface</span></span>
-				</td>
-			</tr>
-			<tr>
-				<td><span>Our <span class="font-bold text-blue-400">base</span> <span class="font-bold text-blue-800">border radii</span> is 3px.</span>
-				</td>
-				<td><span><span class="font-bold text-blue-800">radius</span>-<span class="font-bold text-blue-400">base</span></span>
-				</td>
-			</tr>
-			<tr>
-				<td><span>The <span class="font-bold text-blue-600">border</span> <span class="font-bold text-blue-800">color</span> for a <span class="font-bold text-green-500">text input</span>when it is <span class="font-bold text-red-400">invalid</span> is #fff.</span>
-				</td>
-				<td><span><span class="font-bold text-green-500">input</span>-<span class="font-bold text-blue-800">color</span>-<span class="font-bold text-blue-600">border</span>-<span class="font-bold text-red-400">invalid</span></span>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-
+	<div class='table-overflow'>
+		<table>
+			<thead>
+				<tr>
+					<th>Design Specifications</th>
+					<th>Translated into Design Tokens</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><span>The <span class="font-bold text-blue-600">text</span> <span class="font-bold text-blue-800">color</span> of a <span class="font-bold text-green-500">button</span> is #fffff.</span>
+					</td>
+					<td><span><span class="font-bold text-green-500">button</span>-<span class="font-bold text-blue-800">color</span>-<span class="font-bold text-blue-600">text</span></span>
+					</td>
+				</tr>
+				<tr>
+					<td><span>The <span class="font-bold text-blue-600">background</span> <span class="font-bold text-blue-800">color</span> for all <span class="font-bold text-blue-400">surface elements</span> is #fff.</span>
+					</td>
+					<td><span><span class="font-bold text-blue-800">color</span>-<span class="font-bold text-blue-600">background</span>-<span class="font-bold text-blue-400">surface</span></span>
+					</td>
+				</tr>
+				<tr>
+					<td><span>Our <span class="font-bold text-blue-400">base</span> <span class="font-bold text-blue-800">border radii</span> is 3px.</span>
+					</td>
+					<td><span><span class="font-bold text-blue-800">radius</span>-<span class="font-bold text-blue-400">base</span></span>
+					</td>
+				</tr>
+				<tr>
+					<td><span>The <span class="font-bold text-blue-600">border</span> <span class="font-bold text-blue-800">color</span> for a <span class="font-bold text-green-500">text input</span>when it is <span class="font-bold text-red-400">invalid</span> is #fff.</span>
+					</td>
+					<td><span><span class="font-bold text-green-500">input</span>-<span class="font-bold text-blue-800">color</span>-<span class="font-bold text-blue-600">border</span>-<span class="font-bold text-red-400">invalid</span></span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
 	<a href="#types-of-design-tokens" class="h h2">
 		<h2 id="types-of-design-tokens">
 			Types of Design Tokens
@@ -122,11 +124,11 @@ const description = 'Design Tokens empower designer and developer workflows by p
 		</h2>
 	</a>
 
-	<h3>
-		I'm a designer creating a new component or piece of UI
+	<h4>
+		I'm a designer creating a new component or piece of UI<br />
 		<span class="token token__system">System (Preferred)</span>
 		<span class="token token__reference">Reference</span>
-	</h3>
+	</h4>
 	<p>
 		Start with System Tokens wherever possible.
 		If you can't find what you're looking for, drop down and use the Reference Tokens.
@@ -135,19 +137,20 @@ const description = 'Design Tokens empower designer and developer workflows by p
 		If you find yourself wanting to copy an existing Component's Token value for your new component, look up what that component token is referencing and use that instead.
 	</p>
 
-	<h3>
-		I'm a designer working in something that isn't Figma <span class="token token__component">Component</span>
-	</h3>
+	<h4>
+		I'm a designer working in something that isn't Figma<br />
+		<span class="token token__component">Component</span>
+	</h4>
 	<p>
 		Since you won't have access to our Figma component library, you'll need to create your own Astro components.
 		You can do this using just our Component Tokens: <code>button-color-background</code>, <code>button-color-text</code>.
 	</p>
 
-	<h3>
-		I'm a single developer working on some new UI
+	<h4>
+		I'm a single developer working on some new UI<br />
 		<span class="token token__system">System (Preferred)</span>
 		<span class="token token__reference">Reference</span>
-	</h3>
+	</h4>
 	<p>
 		Start with System Tokens wherever possible.
 		If you can't find what you're looking for, drop down and use the Reference Tokens.
@@ -156,10 +159,10 @@ const description = 'Design Tokens empower designer and developer workflows by p
 		If you find yourself wanting to copy an existing component's token value for your new component, look up what that Component Token is referencing and use that instead.
 	</p>
 
-	<h3>
-		I'm a developer who can't use Astro Web Components
+	<h4>
+		I'm a developer who can't use Astro Web Components<br />
 		<span class="token token__component">Component</span>
-	</h3>
+	</h4>
 	<p>
 		Since you won't have access to our web component library, you'll need to create your own Astro components.
 		You can do this using just our Component Tokens:

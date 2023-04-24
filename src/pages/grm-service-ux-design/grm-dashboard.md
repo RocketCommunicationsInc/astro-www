@@ -4,7 +4,7 @@ path: /grm-service-ux-design/grm-dashboard
 date: Last Modified
 layout: project:layouts/new-docs/new-docs-layout.astro
 title: GRM Dashboard
-description: Helps operators maintain situational awareness
+description: Helps operators maintain situational awareness.
 ---
 
 :::note

@@ -61,7 +61,7 @@ const attrs = Astro.props
 	<section class="p-compliance">
 		<header class="-header">
 			<span class="-numeral">{content.numeral}.0</span>
-			<a href={`#${content.name}`} class="h h2"><h2 id={`${content.name}`} class="-heading">{content.name}</h2></a>
+			<a href={`#${content.name.replace(/ /g,'')}`} class="h h2"><h2 id={`${content.name.replace(/ /g,'')}`} class="-heading">{content.name}</h2></a>
 		</header>
 
 		<For of={content.rules!}>{rule => (

@@ -1,6 +1,6 @@
 ---
 title: Content Policy v0.2
-description: How we create, maintain and version our content
+description: How we create, maintain and version our content.
 layout: project:layouts/new-docs/new-docs-layout.astro
 ---
 

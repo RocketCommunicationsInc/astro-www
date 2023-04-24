@@ -1,6 +1,6 @@
 ---
 title: MIL-STD-1472 Compliance
-description: Our assessment of Astro compliance with MIL-STD-1472
+description: Our assessment of Astro compliance with MIL-STD-1472.
 layout: project:layouts/new-docs/new-docs-layout.astro
 ---
 

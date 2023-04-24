@@ -34,7 +34,7 @@ The animated graphic below depicts a much simplified version of a TT&C task flow
 	</a>
 </div>
 
-### UX Research Findings
+## UX Research Findings
 
 UX research conducted in collaboration with users and domain experts on existing TT&C workflows and systems found that:
 
