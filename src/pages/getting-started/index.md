@@ -26,6 +26,7 @@ Astro UXDS design assets include files for creating Astro application wireframes
 Learn more about designing with Astro design assets with Astro's guide to getting started [For Designers](/getting-started/designers).
 
 **Development Assets**
+
 Astro includes standard HTML and CSS sample code as a starting point for development. Astro's UI Components are provided as Web Components, a platform-neutral technology.
 
 Learn more about designing with Astro development assets, and why the Astro team chose to build web components with our guide to getting started [For Developers](/getting-started/developers).
