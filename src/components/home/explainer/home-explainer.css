@@ -115,7 +115,7 @@
 				/* Appearance */
 			}
 
-			@media (hover: hover) {
+			@media (hover: hover), (pointer: coarse) {
 				&::before {
 					/* Layout */
 					inset: 0;

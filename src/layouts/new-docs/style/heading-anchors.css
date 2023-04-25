@@ -8,13 +8,14 @@ a.h {
 	& > * {
 		display: flex;
 
-		&::before {
+		&::after {
 			display: inline-block;
 
 			/* Layout */
 			block-size: 1--icon-size;
 			inline-size: 1--icon-size;
-			margin-inline: -1.25--icon-size .25--icon-size;
+			margin-block-start: .1rem;
+			margin-inline: .25--icon-size;
 
 			/* Appearance */
 			opacity: 0;
@@ -29,7 +30,7 @@ a.h {
 
 	&:hover:not(:focus-visible) {
 		& > * {
-			&::before {
+			&::after {
 				/* Appearance */
 				opacity: 60%;
 			}

@@ -65,52 +65,52 @@
 	{
 		"items": [
 			{
-				"label": "Navigation",
-				"url": "/patterns/navigation/"
-			},
-			{
-				"label": "Status System",
-				"url": "/patterns/status-system/"
-			},
-			{
-				"label": "Notifications",
-				"url": "/patterns/notifications/"
-			},
-			{
-				"label": "Data Visualization",
-				"url": "/patterns/data-visualization/"
-			},
-			{
-				"label": "Modeless Panes",
-				"url": "/patterns/modeless-panes/"
-			},
-			{
-				"label": "Table",
-				"url": "/patterns/table/"
-			},
-			{
-				"label": "Forms and Validation",
-				"url": "/patterns/forms-and-validation/"
-			},
-			{
-				"label": "Sign In",
-				"url": "/patterns/sign-in/"
-			},
-			{
-				"label": "Focus State",
-				"url": "/patterns/focus/"
-			},
-			{
-				"label": "Pop Up Menu",
-				"url": "/patterns/pop-up-menu/"
+				"label": "Application Feedback",
+				"url": "/patterns/application-feedback/"
 			},
 			{
 				"label": "Breadcrumbs",
 				"url": "/patterns/breadcrumbs/"
 			},
 			{
-				"label": "Application Feedback",
-				"url": "/patterns/application-feedback/"
+				"label": "Data Visualization",
+				"url": "/patterns/data-visualization/"
+			},
+			{
+				"label": "Focus State",
+				"url": "/patterns/focus/"
+			},
+			{
+				"label": "Forms and Validation",
+				"url": "/patterns/forms-and-validation/"
+			},
+			{
+				"label": "Modeless Panes",
+				"url": "/patterns/modeless-panes/"
+			},
+			{
+				"label": "Navigation",
+				"url": "/patterns/navigation/"
+			},
+			{
+				"label": "Notifications",
+				"url": "/patterns/notifications/"
+			},
+			{
+				"label": "Pop Up Menu",
+				"url": "/patterns/pop-up-menu/"
+			},
+			{
+				"label": "Sign In",
+				"url": "/patterns/sign-in/"
+			},
+			{
+				"label": "Status System",
+				"url": "/patterns/status-system/"
+			},
+			{
+				"label": "Table",
+				"url": "/patterns/table/"
 			}
 		],
 		"label": "Patterns"
@@ -126,16 +126,16 @@
 				"url": "/components/component-sandbox/"
 			},
 			{
-				"label": "Application State",
-				"url": "/components/application-state/"
-			},
-			{
 				"label": "separator",
 				"url": "/separator"
 			},
 			{
 				"label": "Accordion",
 				"url": "/components/accordion/"
+			},
+			{
+				"label": "Application State",
+				"url": "/components/application-state/"
 			},
 			{
 				"label": "Button",
@@ -160,6 +160,10 @@
 			{
 				"label": "Container",
 				"url": "/components/container/"
+			},
+			{
+				"label": "Date Picker",
+				"url": "/components/date-picker/"
 			},
 			{
 				"label": "Dialog",

@@ -28,6 +28,21 @@
         ]
     },
     {
+        "description": "Action Buttons allow users to trigger actions by clicking, tapping, or pressing a corresponding key on a keyboard, such as the “Enter” key.",
+        "heading": "Data Visualization",
+        "hide": true,
+        "items": [
+            {
+                "label": "Data Visualization",
+                "url": "/patterns/data-visualization/"
+            },
+            {
+                "label": "Heat Map",
+                "url": "/patterns/data-visualization/heat-map/"
+            }
+        ]
+    },
+    {
         "description": "A Slider allows users to choose from a range of continuous and discrete values arranged from minimum to maximum.",
         "heading": "Slider",
         "items": [
