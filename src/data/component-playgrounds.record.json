@@ -873,7 +873,7 @@
 			"examples": [
 				{
 					"name": "Default",
-					"code": "<rux-tabs id=\"tab-set-id-1\">\n\t<rux-tab id=\"tab-id-1\">Tab 1</rux-tab>\n\t<rux-tab id=\"tab-id-2\">Tab 2</rux-tab>\n\t<rux-tab id=\"tab-id-3\">Tab 3</rux-tab>\n</rux-tabs>"
+					"code": "<rux-tabs id=\"tab-set-id-1\">\n\t<rux-tab id=\"tab-id-1\" selected>Tab 1</rux-tab>\n\t<rux-tab id=\"tab-id-2\">Tab 2</rux-tab>\n\t<rux-tab id=\"tab-id-3\">Tab 3</rux-tab>\n</rux-tabs>"
 				}
 			],
 			"fields": [
