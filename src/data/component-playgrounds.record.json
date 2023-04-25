@@ -897,7 +897,8 @@
 					"tag": "rux-tab-panel",
 					"constructor": "RuxTabPanel"
 				}
-			]
+			],
+			"style": "rux-tabs { width: 100%; }"
 		},
 		{
 			"tag": "rux-tag",
