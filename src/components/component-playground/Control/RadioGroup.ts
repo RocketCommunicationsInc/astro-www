@@ -1,50 +1,66 @@
-import * as DOM from 'project:utils/client/ZOM.ts'
+import * as DOM from 'project:utils/client/DOM.ts'
+import ReflectedElement from 'project:utils/client/ReflectedElement.ts'
 import RadioElement from './Radio.ts'
 import content from './RadioGroup.html?withtype=fragment'
 import styling from './RadioGroup.css?withtype=style'
 
-export default class extends DOM.define('a-control-radiogroup', class RadioGroupElement extends HTMLElement {
+export default class RadioGroupElement extends ReflectedElement(
+	HTMLElement as typeof RadioGroupElementInterface,
+	{
+		options: {
+			defaultValue() {
+				return []
+			},
+			useChildList() {
+				const options: RadioElement[] = []
+
+				for (const childNode of this.childNodes) {
+					if ('value' in childNode) {
+						options.push(childNode as RadioElement)
+					}
+				}
+
+				return options
+			},
+		},
+	}
+) {
 	constructor() {
-		super()
+		const element: RadioGroupElement = super()!
 
-		const shadowRoot = DOM.attachShadow(this, { mode: 'open' }, content.cloneNode(true), styling)
-		const shadowContent = DOM.queryPart<HTMLSelectElement>(shadowRoot, 'content')!
+		const shadowRoot = DOM.withShadow(element, {
+			mode: 'open',
+			content,
+			styling,
+		})
 
-		DOM.internals<Internals>(this, () => ({
+		DOM.withClickability(element)
+
+		DOM.withInternals<Internals>(element, () => ({
 			shadowRoot,
-			shadowContent,
+			shadowContent: DOM.queryPart<HTMLSelectElement>(shadowRoot, 'content')!,
 		}))
 
-		shadowRoot.addEventListener('click', (event) => {
-			const targetOption = event.target as RadioElement
+		DOM.observe(element, {
+			click(event) {
+				const targetOption = event.target as RadioElement
 
-			if (targetOption.selected === true) {
-				for (const option of this.options) {
-					option.selected = option === targetOption
+				if (targetOption.selected === true) {
+					for (const option of element.options) {
+						option.selected = option === targetOption
+					}
 				}
-			}
+			},
 		})
 	}
+}
 
-	declare options: RadioElement[]
-}, {
-	options: {
-		defaultValue() {
-			return []
-		},
-		useChildList() {
-			const options: RadioElement[] = []
+customElements.define('a-radiogroup', RadioGroupElement)
 
-			for (const childNode of this.childNodes) {
-				if ('value' in childNode) {
-					options.push(childNode as RadioElement)
-				}
-			}
-
-			return options
-		},
-	},
-}) {}
+declare class RadioGroupElementInterface extends HTMLElement {
+	/** List of RadioElements contained by the RadioGroupElement. */
+	options: RadioElement[]
+}
 
 interface Internals {
 	shadowRoot: ShadowRoot

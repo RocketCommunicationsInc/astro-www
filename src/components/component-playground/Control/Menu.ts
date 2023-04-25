@@ -1,75 +1,75 @@
-import * as DOM from 'project:utils/client/ZOM.ts'
+import * as DOM from 'project:utils/client/DOM'
+import ReflectedElement from 'project:utils/client/ReflectedElement.ts'
 import content from './Menu.html?withtype=fragment'
 import styling from './Menu.css?withtype=style'
 
-export default DOM.elementOf({
-	name: 'a-control-menu',
+export default class MenuElement extends ReflectedElement(
+	HTMLElement as typeof MenuElementInterface,
+	{
+		options: {
+			defaultValue() {
+				return this.querySelectorAll(':scope > option')
+			},
+			useChildList() {
+				return this.querySelectorAll(':scope > option')
+			},
+			onValueChange(value) {
+				const internals = DOM.withInternals<Internals>(this)
 
+				internals.shadowContent.replaceChildren(
+					...Array.from(value, option => option.cloneNode(true))
+				)
+			},
+		},
+
+		value: {
+			defaultValue() {
+				return DOM.withInternals<Internals>(this).shadowContent.value
+			},
+			setValue(value) {
+				return value
+			},
+		},
+	}
+) {
 	constructor() {
-		const element = this
-		const shadowRoot = element.attachShadow({ mode: 'open' })
+		const element: MenuElement = super()!
 
-		shadowRoot.adoptedStyleSheets = [ styling ]
-		shadowRoot.append(content.cloneNode(true))
+		const shadowRoot = DOM.withShadow(element, {
+			mode: 'open',
+			content,
+			styling,
+		})
 
-		const shadowContent = DOM.queryPart<HTMLSelectElement>(shadowRoot, 'content')!
-		const shadowIndicator = DOM.queryPart<HTMLSpanElement>(shadowRoot, 'indicator')!
-
-		DOM.internals<Internals, DOM.CustomElement>(element, () => ({
-			shadowRoot,
-			shadowContent,
-			shadowIndicator,
+		DOM.withInternals<Internals>(element, () => ({
+			shadowContent: DOM.queryPart<HTMLSelectElement>(shadowRoot, 'content')!,
+			shadowIndicator: DOM.queryPart<HTMLSpanElement>(shadowRoot, 'indicator')!,
 		}))
 
-		shadowRoot.addEventListener('change', () => {
-			DOM.dispatchEvent(element, 'change', { bubbles: true, composed: true })
+		DOM.observe(shadowRoot, {
+			change() {
+				DOM.trigger(element, {
+					change: { bubbles: true, composed: true },
+				})
+			},
 		})
-	},
+	}
+}
 
-	prototype: {
-		get defaultValue(): string {
-			const element = this as any as HTMLElement
+customElements.define('a-menu', MenuElement)
 
-			return (
-				element.querySelector<HTMLOptionElement>('[selected]')?.value ||
-				this.value
-			)
-		},
+declare class MenuElementInterface extends HTMLElement {
+	/** List of RadioElements contained by the RadioGroupElement. */
+	options: NodeList
 
-		get value(): string {
-			return DOM.internals<Internals>(this).shadowContent.value
-		},
+	/** String representing the value of the Menu. */
+	value: string
 
-		set value(value) {
-			const { shadowContent } = DOM.internals<Internals>(this)
-
-			const shadowOption = [
-				...shadowContent.options
-			].find(
-				option => option.value === value
-			)
-
-			if (shadowOption) {
-				shadowOption.selected = true
-			}
-		},
-	},
-
-	observeChildren(...childNodes) {
-		const internals = DOM.internals<Internals, DOM.CustomElement>(this)
-
-		internals.shadowContent.replaceChildren(
-			...childNodes.filter(
-				childNode => childNode instanceof HTMLOptionElement
-			).map(
-				option => option.cloneNode(true)
-			)
-		)
-	},
-})
+	/** String representing the initial value of the Menu. */
+	defaultValue: string
+}
 
 interface Internals {
-	shadowRoot: ShadowRoot
 	shadowContent: HTMLSelectElement
 	shadowIndicator: HTMLSpanElement
 }

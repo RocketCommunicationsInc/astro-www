@@ -1,132 +1,125 @@
-import * as DOM from 'project:utils/client/ZOM.ts'
+import * as DOM from 'project:utils/client/DOM.ts'
+import ReflectedElement from 'project:utils/client/ReflectedElement.ts'
 import content from './Panelset.html?withtype=fragment'
 import styling from './Panelset.css?withtype=style'
 import stylingDynamic from './Panelset.dynamic.css?raw'
 
-export default DOM.elementOf({
-	name: 'a-panelset',
+import PanelElement from './Panel.ts'
 
+export default class PanelSetElement extends ReflectedElement(
+	HTMLElement as typeof PanelSetElementInterface,
+	{
+		panels: {
+			defaultValue() {
+				return this.querySelectorAll<PanelElement>(':scope > a-panel')
+			},
+			useChildList() {
+				const panels: PanelElement[] = []
+
+				for (const childNode of this.childNodes) {
+					if (childNode instanceof PanelElement) {
+						panels.push(childNode)
+					}
+				}
+
+				return panels
+			},
+			onValueChange(panels) {
+				const element = this
+				const internals = DOM.withInternals<Internals>(element)
+				const shadowTabs: HTMLButtonElement[] = []
+
+				for (const panel of panels) {
+					const internalsForPanel = internals.internalsForPanel(panel, () => {
+						const shadowTab = new DOM.HTMLElement('button', { part: 'tab' }, DOM.attr(panel, 'label') || '')
+
+						DOM.observe(shadowTab, {
+							click() {
+								element.activePanel = panel
+							}
+						})
+
+						return { shadowTab }
+					})
+
+					shadowTabs.push(internalsForPanel.shadowTab)
+				}
+
+				internals.shadowTablist.replaceChildren(...shadowTabs)
+			},
+		},
+		activePanel: {
+			defaultValue() {
+				return [ ...this.panels ].find(panel => panel.active) || this.panels[0] || null
+			},
+			setValue(activePanel) {
+				return activePanel instanceof PanelElement ? activePanel : null
+			},
+			useChildList() {
+				return [ ...this.panels ].find(panel => panel.active) || this.panels[0] || null
+			},
+			onValueChange(activePanel) {
+				const internals = DOM.withInternals<Internals>(this)
+
+				for (const panel of this.panels) {
+					const panelInternals = internals.internalsForPanel(panel)
+
+					panelInternals.shadowTab.part.toggle('active', panel === activePanel)
+				}
+
+				const cssMediaRule = (
+					internals.shadowCSS.cssRules[0]! ||
+					internals.shadowCSS.cssRules[internals.shadowCSS.insertRule(stylingDynamic)]
+				) as CSSMediaRule
+
+				const cssStyleRule = cssMediaRule.cssRules[0] as CSSStyleRule
+
+				cssStyleRule.selectorText = (
+					activePanel !== null
+						? `::slotted(:not(${
+							DOM.getAttributeSelector(
+								'label',
+								DOM.attr(activePanel, 'label')!
+							)
+						}))`
+					: `:not(*)`
+				)
+			}
+		}
+	}
+) {
 	constructor() {
-		const element = this
-		const shadowRoot = element.attachShadow({ mode: 'open' })
+		const element: PanelSetElement = super()!
+
+		const shadowRoot = DOM.withShadow(element, {
+			mode: 'open',
+			content,
+			styling,
+		})
+
 		const shadowCSS = new CSSStyleSheet()
 
-		shadowRoot.adoptedStyleSheets = [
-			styling,
+		shadowRoot.adoptedStyleSheets.push(shadowCSS)
+
+		DOM.withInternals<Internals>(element, () => ({
 			shadowCSS,
-		]
-
-		shadowRoot.append(content.cloneNode(true))
-
-		const shadowTablist = DOM.queryPart<HTMLSpanElement>(shadowRoot, 'tablist')!
-
-		const panelsInternals = DOM.createInternals()
-
-		DOM.internals<Internals, DOM.CustomElement>(element, () => ({
-			shadowRoot,
-			shadowCSS,
-
-			shadowTablist,
-
-			panels: [],
-			activePanel: null,
-			setActivePanel(activePanel) {
-				if (activePanel !== this.activePanel) {
-					if (this.activePanel !== null) {
-						const panelInternals = this.panelsInternals<InternalsForPanel>(this.activePanel)
-
-						panelInternals.shadowTab.part.remove('active')
-					}
-
-					this.activePanel = activePanel
-
-					if (this.activePanel !== null) {
-						const panelInternals = this.panelsInternals<InternalsForPanel>(this.activePanel)
-
-						panelInternals.shadowTab.part.add('active')
-					}
-
-					const cssMediaRule = (
-						shadowCSS.cssRules[0]! ||
-						shadowCSS.cssRules[shadowCSS.insertRule(stylingDynamic)]
-					) as CSSMediaRule
-
-					const cssStyleRule = cssMediaRule.cssRules[0] as CSSStyleRule
-
-					cssStyleRule.selectorText = (
-						activePanel !== null
-							? `::slotted(:not([label=${
-								JSON.stringify(
-									DOM.attr(activePanel, 'label')!
-								)
-							}]))`
-						: `:not(*)`
-					)
-
-					DOM.dispatchEvent(this.visualViewport, 'resize')
-					DOM.dispatchEvent(element, 'panelchange', { bubbles: true, composed: true })
-				}
-			},
-			panelsInternals,
-
-			visualViewport: element.ownerDocument?.defaultView!.visualViewport,
+			shadowTablist: DOM.queryPart<HTMLSpanElement>(shadowRoot, 'tablist')!,
+			internalsForPanel: DOM.createInternals(),
 		}))
-	},
+	}
+}
 
-	observeChildren(...childNodes) {
-		const internals = DOM.internals<Internals>(this)
+customElements.define('a-panelset', PanelSetElement)
 
-		const shadowTabs: HTMLButtonElement[] = []
-		const panels: Internals['panels'] = []
-
-		for (const panel of childNodes) {
-			if (!(panel instanceof HTMLElement)) continue
-			if (!panel.matches('[label]')) continue
-
-			const panelInternals = internals.panelsInternals<InternalsForPanel, HTMLElement>(panel, () => {
-				const shadowTab = new DOM.HTMLElement('button', { part: 'tab' })
-
-				shadowTab.addEventListener('click', () => {
-					internals.setActivePanel(panel)
-				})
-
-				DOM.observeAttributes(panel, (attributeValue) => {
-					shadowTab.textContent = attributeValue || ''
-				}, 'label')
-
-				return {
-					shadowTab,
-				}
-			})
-
-			shadowTabs.push(panelInternals.shadowTab)
-
-			panels.push(panel)
-		}
-
-		internals.shadowTablist.replaceChildren(...shadowTabs)
-
-		const activePanel = panels.find(
-			panel => panel === internals.activePanel
-		) || panels[0] || null
-
-		internals.panels = panels
-		internals.setActivePanel(activePanel)
-	},
-})
+declare class PanelSetElementInterface extends HTMLElement {
+	panels: NodeListOf<PanelElement>
+	activePanel: PanelElement | null
+}
 
 interface Internals {
-	shadowRoot: ShadowRoot
 	shadowCSS: CSSStyleSheet
-
 	shadowTablist: HTMLSpanElement
-
-	panels: HTMLElement[]
-	activePanel: HTMLElement | null
-	setActivePanel(panel: HTMLElement | null): void
-	panelsInternals: DOM.Referencer
-
-	visualViewport: VisualViewport
+	internalsForPanel: DOM.Referencer<PanelElement, InternalsForPanel>
 }
 
 interface InternalsForPanel {
