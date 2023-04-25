@@ -115,7 +115,7 @@ declare class TextElementInterface extends HTMLElement {
 	defaultValue: string
 
 	/** String representing the type of text control to display. */
-	type: string
+	type: 'text' | 'password' | 'number' | 'email' | string
 
 	/** String representing the initial type of text control to display. */
 	defaultType: string

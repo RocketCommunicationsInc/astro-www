@@ -119,7 +119,11 @@ export default class RadioElement extends ReflectedElement(
 			},
 		})
 	}
+
+	declare type: 'radio'
 }
+
+RadioElement.prototype.type = 'radio'
 
 customElements.define('a-radio', RadioElement)
 

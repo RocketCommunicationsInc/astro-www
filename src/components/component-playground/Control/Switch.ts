@@ -21,8 +21,8 @@ export default class SwitchElement extends ReflectedElement(
 			onValueChange(selected) {
 				const internals = DOM.withInternals<Internals>(this)
 
-				internals.shadowThumb.part.toggle('selected', this.selected)
-				internals.shadowTrack.part.toggle('selected', this.selected)
+				internals.shadowThumb.part.toggle('selected', selected)
+				internals.shadowTrack.part.toggle('selected', selected)
 			},
 		},
 
@@ -98,7 +98,11 @@ export default class SwitchElement extends ReflectedElement(
 			},
 		})
 	}
+
+	declare type: 'switch'
 }
+
+SwitchElement.prototype.type = 'switch'
 
 customElements.define('a-switch', SwitchElement)
 

@@ -54,7 +54,11 @@ export default class MenuElement extends ReflectedElement(
 			},
 		})
 	}
+
+	declare type: 'menu'
 }
+
+MenuElement.prototype.type = 'menu'
 
 customElements.define('a-menu', MenuElement)
 
