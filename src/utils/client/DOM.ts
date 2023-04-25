@@ -8,7 +8,7 @@ export const observe = (element: Node, handlers: Record<string, { (event: Event 
 }
 
 /** Triggers events on the given element. */
-export const trigger = (element: HTMLElement, triggers: Record<string, EventInit>) => {
+export const trigger = (element: EventTarget, triggers: Record<string, EventInit>) => {
 	for (let type in triggers) {
 		element.dispatchEvent(
 			new Event(type, triggers[type])

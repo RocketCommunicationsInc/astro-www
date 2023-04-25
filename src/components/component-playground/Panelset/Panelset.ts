@@ -84,6 +84,10 @@ export default class PanelSetElement extends ReflectedElement(
 						}))`
 					: `:not(*)`
 				)
+
+				DOM.trigger(this.ownerDocument.defaultView!.visualViewport, {
+					resize: {}
+				})
 			}
 		}
 	}
