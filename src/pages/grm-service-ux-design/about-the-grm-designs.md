@@ -35,7 +35,7 @@ A GRM system that enables efficient coordination of ground resources would allow
 
 Based on this initial research and follow-up design iterations with operators and stakeholders, the resulting design effort focused on an integrated suite of three GRM Sample Apps, each designed to support key functionality and task flows. Each of the apps is designed to occupy its own browser window, allowing operators to focus on the task at hand, but by virtue of being integrated into a suite, the apps share functionality and support common task flows.
 
-## GRM App Suite
+### GRM App Suite
 
 :::two-col
 ![GRM Application Suite](/img/service-specific-ux-design/grm-suite-apps.png)
