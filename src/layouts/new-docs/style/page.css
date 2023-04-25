@@ -355,11 +355,6 @@
 		margin-block-start: 2--step;
 	}
 
-	& .table-overflow {
-		/* Layout */
-		margin-block-end: 15--step;
-	}
-
 	& table {
 		/* Layout */
 		inline-size: 100%;
