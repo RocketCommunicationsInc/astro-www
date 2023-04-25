@@ -560,13 +560,25 @@
 			],
 			"fields": [
 				{
-					"kind": "menu",
+					"kind": "radio-group",
 					"attribute": "status",
 					"property": "status",
 					"options": [
-						"pass",
-						"fail",
-						"unknown"
+						{
+							"kind": "radio",
+							"label": "pass",
+							"value": "pass"
+						},
+						{
+							"kind": "radio",
+							"label": "fail",
+							"value": "fail"
+						},
+						{
+							"kind": "radio",
+							"label": "unknown",
+							"value": "unknown"
+						}
 					],
 					"value": "pass"
 				}
