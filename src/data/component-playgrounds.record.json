@@ -889,7 +889,8 @@
 					"tag": "rux-tab",
 					"constructor": "RuxTab"
 				}
-			]
+			],
+			"style": "rux-tabs { height: auto; }"
 		},
 		{
 			"tag": "rux-tag",
