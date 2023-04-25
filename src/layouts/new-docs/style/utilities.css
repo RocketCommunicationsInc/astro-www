@@ -21,6 +21,17 @@
 	}
 }
 
+.table-typography {
+	& table {
+		& thead {
+			& th {
+				/* Layout */
+				min-inline-size: 29--step;
+			}
+		}
+	}
+}
+
 /* Table for Status System / Status Symbol page */
 /* ========================================================================== */
 
