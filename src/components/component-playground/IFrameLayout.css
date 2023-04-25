@@ -82,6 +82,7 @@
 
 	/* Layout */
 	gap: 1px;
+	min-block-size: 68--step;
 	overflow: hidden;
 	padding: 1px;
 
