@@ -1,5 +1,5 @@
 {
-	"version": "4.2.0",
+	"version": "4.2.1",
 	"contents": [
 		{
 			"name": "General",
@@ -1141,7 +1141,7 @@
 						},
 						{
 							"numeral": 3,
-							"rule": "Pop Ups shall never obscure screen items that require persistent visibility (such as Classification Banners or Application States).",
+							"rule": "Pop Ups shall not be activated by Buttons.",
 							"status": "new",
 							"tier": 3
 						}
