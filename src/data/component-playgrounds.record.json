@@ -873,7 +873,7 @@
 			"examples": [
 				{
 					"name": "Default",
-					"code": "<rux-tabs id=\"tab-set-id-1\">\n\t<rux-tab id=\"tab-id-1\">Tab 1 title</rux-tab>\n\t<rux-tab id=\"tab-id-2\">Tab 2 title</rux-tab>\n\t<rux-tab id=\"tab-id-3\">Tab 3 title</rux-tab>\n</rux-tabs>\n\n<rux-tab-panels aria-labelledby=\"tab-set-id-1\">\n\t<rux-tab-panel aria-labelledby=\"tab-id-1\">Tab 1 HTML content</rux-tab-panel>\n\t<rux-tab-panel aria-labelledby=\"tab-id-2\">Tab 2 HTML content</rux-tab-panel>\n\t<rux-tab-panel aria-labelledby=\"tab-id-3\">Tab 3 HTML content</rux-tab-panel>\n</rux-tab-panels>"
+					"code": "<rux-tabs id=\"tab-set-id-1\">\n\t<rux-tab id=\"tab-id-1\">Tab 1 title</rux-tab>\n\t<rux-tab id=\"tab-id-2\">Tab 2 title</rux-tab>\n\t<rux-tab id=\"tab-id-3\">Tab 3 title</rux-tab>\n</rux-tabs>"
 				}
 			],
 			"fields": [
@@ -888,14 +888,6 @@
 				{
 					"tag": "rux-tab",
 					"constructor": "RuxTab"
-				},
-				{
-					"tag": "rux-tab-panels",
-					"constructor": "RuxTabPanels"
-				},
-				{
-					"tag": "rux-tab-panel",
-					"constructor": "RuxTabPanel"
 				}
 			],
 			"style": "rux-tabs { width: 100%; }"
