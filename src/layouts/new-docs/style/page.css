@@ -268,7 +268,7 @@
 		max-inline-size: 100%;
 	}
 
-	& :is(li, p, td) a[href]:not([class]) {
+	& a[href]:not([class]) {
 		&:focus-visible {
 			/* Appearance */
 			background-color: var(--InverseColor);
