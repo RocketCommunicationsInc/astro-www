@@ -590,7 +590,7 @@
 			"examples": [
 				{
 					"name": "Default",
-					"code": "<rux-textarea label=\"Textarea label\"></rux-textarea>"
+					"code": "<rux-textarea label=\"Textarea label\" placeholder=\"Text goes here...\"></rux-textarea>"
 				}
 			],
 			"fields": [
@@ -599,6 +599,12 @@
 					"attribute": "label",
 					"property": "label",
 					"value": "Textarea label"
+				},
+				{
+					"kind": "text",
+					"attribute": "placeholder",
+					"property": "placeholder",
+					"value": "Text goes here..."
 				},
 				{
 					"kind": "text",
