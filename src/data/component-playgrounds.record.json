@@ -601,6 +601,12 @@
 					"value": "Textarea label"
 				},
 				{
+					"kind": "text",
+					"attribute": "value",
+					"property": "value",
+					"value": ""
+				},
+				{
 					"kind": "switch",
 					"attribute": "disabled",
 					"property": "disabled",
