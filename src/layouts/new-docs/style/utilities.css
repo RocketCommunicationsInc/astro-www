@@ -52,6 +52,13 @@
 			/* Text */
 			line-height: 1.5rem;
 		}
+
+		& th:not(:first-of-type) {
+			@media (width < 768px) {
+				/* Layout */
+				min-inline-size: 350px;
+			}
+		}
 	}
 
 	& .status-color {
