@@ -79,19 +79,6 @@
 			}
 		}
 	}
-
-	& a[href] {
-		/* Text */
-		text-decoration: underline;
-
-		/* Appearance */
-		color: var(--DarkBlue500Color);
-
-		&:hover, &:active {
-			/* Appearance */
-			color: var(--DarkBlue700Color);
-		}
-	}
 }
 
 .status-key-container {
