@@ -79,8 +79,6 @@ If operators choose to drill into an alert via the Investigate button in the Ale
 6. **Event Log** - displays the events leading up to the alert, which could be useful in troubleshooting.
 7. **Modify Button** - puts the contact in an editable mode to allow operators to resolve the issue, in this case by modifying the Equipment String.
 
-### UX Research Findings
-
 ## Task Flow Example - Modify Equipment String
 
 Below is an animated walkthrough of a representative task flow using the GRM Dashboard app. In this flow, the operator notices a critical alert for an upcoming contact, investigates it via the Contact Alert Details page and then resolves the issue by selecting an alternative piece of equipment to use for the contact.
