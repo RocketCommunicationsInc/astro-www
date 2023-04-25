@@ -10,6 +10,7 @@ import remarkDirectives from './remark-plugins/remark-directives.js'
 import remarkDoDontFigures from './remark-plugins/remark-do-dont-figures.js'
 import remarkGfm from 'remark-gfm'
 import remarkHeadingLinks from './remark-plugins/remark-heading-links.js'
+import remarkImageTitleAsAlt from './remark-plugins/remark-image-title-as-alt.js'
 import remarkImplicitFigures from './remark-plugins/remark-implicit-figures.js'
 import remarkLazyImages from './remark-plugins/remark-lazy-images.js'
 import remarkLists from './remark-plugins/remark-lists.js'
@@ -43,6 +44,7 @@ function astroWWWIntegration() {
 								command,
 							}),
 							remarkImplicitFigures,
+							remarkImageTitleAsAlt,
 							remarkDoDontFigures,
 							remarkLists,
 							remarkHeadingLinks,
