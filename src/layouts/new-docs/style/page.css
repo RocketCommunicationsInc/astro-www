@@ -214,11 +214,16 @@
 
 	& figcaption {
 		/* Layout */
-		padding-block: max(2 * var(--step));
+		padding-block-start: max(2 * var(--step));
 
 		/* Text */
 		font-size: max(14 * var(--rpx));
 		line-height: calc(20 / 14);
+	}
+
+	& video {
+		/* Layout */
+		margin-block-end: 5--step;
 	}
 }
 
