@@ -53,7 +53,11 @@ export default class RadioGroupElement extends ReflectedElement(
 			},
 		})
 	}
+
+	declare type: 'radiogroup'
 }
+
+RadioGroupElement.prototype.type = 'radiogroup'
 
 customElements.define('a-radiogroup', RadioGroupElement)
 
