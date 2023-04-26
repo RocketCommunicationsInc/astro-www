@@ -28,6 +28,7 @@ All interactable items (e.g. menu items, links, buttons, checkboxes) appearing w
 
 - Avoid loading the container with too many interactions or data.
 - Aim to provide the user with a quick, easy to operate mechanism for executing focused, contextual actions.
+- Don’t activate Pop Ups from Buttons.
 - Keep explanatory text to a minimum. If more extensive instruction is required, consider providing a link to a dedicated help page.
 - Use when you need to display information with formatting that a tooltip cannot provide.
 
