@@ -11,7 +11,7 @@ layout: project:layouts/new-docs/new-docs-layout.astro
 3. The Astro UXDS content management process should not seem opaque, untimely, reactive, or inconsistent to designers, developers, and other primary users.
 4. Due to the nature of our work, Astro UXDS content has a much longer shelf-life than typical web guidelines or frameworks. Wherever possible, we will be transparent about previous versions of Astro, which users may be working with well into the future.
 
-## Content states
+## Content States
 
 Ultimately, all Astro UXDS documentation content exists in one of 4 states:
 
