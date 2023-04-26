@@ -938,6 +938,29 @@
 			],
 			"fields": [
 				{
+					"kind": "radio-group",
+					"attribute": "size",
+					"property": "size",
+					"options": [
+						{
+							"kind": "radio",
+							"label": "Small",
+							"value": "small"
+						},
+						{
+							"kind": "radio",
+							"label": "Medium",
+							"value": "medium"
+						},
+						{
+							"kind": "radio",
+							"label": "Large",
+							"value": "large"
+						}
+					],
+					"value": "medium"
+				},
+				{
 					"kind": "text",
 					"attribute": "label",
 					"property": "label",
@@ -957,8 +980,20 @@
 				},
 				{
 					"kind": "switch",
+					"attribute": "required",
+					"property": "required",
+					"checked": false
+				},
+				{
+					"kind": "switch",
 					"attribute": "disabled",
 					"property": "disabled",
+					"checked": false
+				},
+				{
+					"kind": "switch",
+					"attribute": "invalid",
+					"property": "invalid",
 					"checked": false
 				},
 				{
@@ -971,6 +1006,18 @@
 					"kind": "text",
 					"attribute": "help-text",
 					"property": "helpText",
+					"value": ""
+				},
+				{
+					"kind": "text",
+					"attribute": "rows",
+					"property": "rows",
+					"value": ""
+				},
+				{
+					"kind": "text",
+					"attribute": "rows",
+					"property": "rows",
 					"value": ""
 				}
 			]
