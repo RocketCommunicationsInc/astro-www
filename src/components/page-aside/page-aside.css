@@ -129,7 +129,7 @@
 		overflow-x: hidden;
 		overflow-y: auto;
 		overflow-y: overlay;
-		padding-block-end: 6--step;
+		padding-block-end: 12--step;
 		scrollbar-width: none;
 
 		&::-webkit-scrollbar {
