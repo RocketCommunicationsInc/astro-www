@@ -13,10 +13,6 @@ assets:
 
 <!-- A Slider allows users to choose from a range of continuous and discrete values arranged from minimum to maximum. -->
 
-:::note
-To achieve the split color element in the slider, a small amount of JavaScript is needed. Refer to Slider documentation in the Git repository for more information.
-:::
-
 ## Rules of Thumb
 
 - It is not recommended to use a Slider when a very large value range exists. A range of 1,000, or fractional increments such as 4.35, may be too specific to use a Slider. Consider using a numeric [Input Field](/components/input-field) instead.
