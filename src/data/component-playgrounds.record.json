@@ -835,7 +835,7 @@
 					"checked": false
 				}
 			],
-			"style": "rux-slider { flex-grow: revert; } rux-slider::part(input){background-color: transparent;}"
+			"style": "rux-slider { flex-grow: revert; } rux-slider::part(input) { background-color: transparent; }"
 		},
 		{
 			"tag": "rux-switch",
@@ -1014,7 +1014,8 @@
 					"property": "rows",
 					"value": ""
 				}
-			]
+			],
+			"style": "rux-textarea::part(textarea) { height: auto }"
 		},
 		{
 			"tag": "rux-tooltip",
