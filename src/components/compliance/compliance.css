@@ -20,7 +20,7 @@
 
 	& .-heading {
 		/* Layout */
-		margin-block-start: 0;
+		margin-block: 0;
 
 		/* Text */
 		font: inherit;
@@ -31,7 +31,7 @@
 
 	& > .-header {
 		/* Layout */
-		margin-block-start: 10--step;
+		margin-block-start: 15--step;
 
 		/* Text */
 		font-size: 24--rpx;
@@ -43,7 +43,7 @@
 
 	& .-ruleset {
 		/* Layout */
-		margin-block-start: 10--step;
+		margin-block-start: 5--step;
 
 		& .-header {
 			/* Layout */
