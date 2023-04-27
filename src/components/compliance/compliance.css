@@ -46,6 +46,9 @@
 		margin-block-start: 10--step;
 
 		& .-header {
+			/* Layout */
+			margin-block-end: 5--step;
+
 			/* Text */
 			font-size: 18--rpx;
 			line-height: calc(20 / 18);
