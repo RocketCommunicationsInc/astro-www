@@ -1013,12 +1013,6 @@
 					"attribute": "rows",
 					"property": "rows",
 					"value": ""
-				},
-				{
-					"kind": "text",
-					"attribute": "rows",
-					"property": "rows",
-					"value": ""
 				}
 			]
 		},
