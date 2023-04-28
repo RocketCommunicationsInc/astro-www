@@ -63,7 +63,7 @@
 	line-height: calc(20 / 14);
 
 	/* Appearance */
-	background: var(--BrightBlue850);
+	background: var(--BrightBlue850Color);
 	border-radius: var(--EdgeRadius);
 	color: var(--PrimaryColor);
 

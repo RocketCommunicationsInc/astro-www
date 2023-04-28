@@ -99,8 +99,36 @@ const addComplianceFooterToNav = () => {
 	}
 }
 
+const createNav = (headings: any) => {
+	const linksNav = document.querySelector('.p-quicklinks-navigation')
+	const separator = h('<hr />')
+	const navigation = h('<div class="section-links-wrapper">')
+	const ul = h('<ul class="section-links">')
+	headings.map((heading: HTMLElement, index: number) => {
+			const li = h('<li>')
+			const link = h(`<a href="#${heading.id}" class="${heading.id}">${heading.textContent}`)
+			if (index === 0) {
+				link.classList.add('-highlighted')
+				link.classList.add('-first')
+			}
+			if (index === headings.length - 1) link.classList.add('-last')
+			li.append(link)
+			ul.append(li)
+			return null
+	})
+	navigation.append(ul)
+	linksNav?.append(separator)
+	linksNav?.append(navigation)
+}
+
 const createHeadingObserver = (headings: NodeListOf<HTMLHeadingElement>) => {
 	let currentHeading: HTMLHeadingElement | null
+
+	// check to see if there is a nav, if not, make one.
+	const nav = document.querySelector('.section-links-wrapper')
+	if (!nav && headings.length > 1) {
+		createNav(Array.from(headings))
+	}
 
 	let headingObserver: IntersectionObserver | undefined
 	const visualViewport = globalThis.visualViewport!

@@ -1,9 +1,8 @@
 ---
 title: Downloads
-layout: project:layouts/docs/docs-layout.astro
+description: Associated Astro Design System downloads and documentation.
+layout: project:layouts/new-docs/new-docs-layout.astro
 ---
-
-# Downloads
 
 ## Astro Design System
 

@@ -2,11 +2,10 @@
 tags: ["ttc", "egs"]
 path: /ttc-service-ux-design/ttc-monitor
 date: Last Modified
-layout: project:layouts/docs/docs-layout.astro
+layout: project:layouts/new-docs/new-docs-layout.astro
 title: TT&C Monitor
+description: The TT&C Monitor app monitors system and constellation health, upcoming contacts and system trends.
 ---
-
-# TT&C Monitor
 
 :::note
 The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
@@ -73,7 +72,12 @@ The Constellation panel shows the contacts for the satellites in the constellati
 
 The Contact Details Modeless Pane opens on the right side of the browser window. It allows operators to view contact details for a spacecraft — including information such as next pass time, AOS/LOS, and state of contact as well as ground station details like name, azimuth, and elevation. Operators can also toggle the view to display the Pass Plan for the spacecraft’s current/upcoming pass, which includes details like AOS commands, steps, and run lengths.
 
+:::two-col
 ![TT&C Contact Details Pane](/img/service-specific-ux-design/ttc-monitor-contact-details.png)
+
+![](/img/service-specific-ux-design/ttc-monitor-contact-details2.png)
+
+:::
 
 1. **Command Quick Launch** - Launches TT&C Command App for the contact.
 2. **View Switch** - Switches between Contact Details and Pass Plan views.

@@ -1,11 +1,8 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
+layout: project:layouts/new-docs/new-docs-layout.astro
 title: 'Getting Started for Designers'
+description: Astro UXDS design assets include files for creating Astro application mockups and wireframes in Figma.
 ---
-
-# Getting Started For Designers
-
-Astro UXDS design assets include files for creating Astro application mockups and wireframes in Figma.
 
 Before reading any further, we recommend you review available Astro components on the [Astro Storybook](https://astro-components.netlify.app/?path=/story/astro-uxds-welcome-start-here--page) site. Examples of Astro in-use can be seen within the Astro [Service Specific](/service-specific-ux-design/) Design pages.
 

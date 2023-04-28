@@ -1,9 +1,8 @@
 ---
 title: Service Specific UX Design
-layout: project:layouts/docs/docs-layout.astro
+description: Service Specific UX Design promotes the development of consistent, robust applications to support Enterprise Ground Services (EGS) by applying UX design process and the Astro Space UX Design System.
+layout: project:layouts/new-docs/new-docs-layout.astro
 ---
-
-# Service Specific UX Design
 
 :::note
 The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.

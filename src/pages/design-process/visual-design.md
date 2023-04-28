@@ -1,11 +1,10 @@
 ---
-layout: project:layouts/docs/docs-layout.astro
+layout: project:layouts/new-docs/new-docs-layout.astro
 title: Visual Design
+description: The visual language for Astro applications is designed to reinforce usability and provide a professional appearance.
 ---
 
-# Visual Design
-
-The visual language for Astro applications is designed to reinforce usability and provide a professional appearance. The visual design supports key functionality such as monitoring the health and status of systems, logically grouping common tasks and related data, and rapid identification of different equipment. The Astro visual language is comprised of specific colors, fonts, icons, widgets and controls.
+ The visual design supports key functionality such as monitoring the health and status of systems, logically grouping common tasks and related data, and rapid identification of different equipment. The Astro visual language is comprised of specific colors, fonts, icons, widgets and controls.
 
 ![Low fidelity wireframe juxtaposed against a final visual design](/img/visual-design/visual-design.png)
 

@@ -63,7 +63,7 @@ The Sign In UI elements can be added in 3 possible placement areas.
 
 1. Modal dialog
 
-   <img src="/img/components/signin-dialog-simple.png" alt="Example of a sign in screen hosted within a modal dialog" title="Example of a sign in screen hosted within a modal dialog" style="width: 75%">
+   <p><img src="/img/components/signin-dialog-simple.png" alt="Example of a sign in screen hosted within a modal dialog" title="Example of a sign in screen hosted within a modal dialog" style="width: 75%"></p>
 
    - Draws user attention to Sign In process
    - Can allow application to be running in the background when signed out
@@ -71,7 +71,7 @@ The Sign In UI elements can be added in 3 possible placement areas.
 
 2. Sidebar
 
-   <img src="/img/components/signin-sidebar-simple-full.png" alt="Example of a sign in screen located within a sidebar" title="Example of a sign in screen located within a sidebar" style="width: 75%">
+   <p><img src="/img/components/signin-sidebar-simple-full.png" alt="Example of a sign in screen located within a sidebar" title="Example of a sign in screen located within a sidebar" style="width: 75%"></p>
 
    - Generally placed on left side of page
    - Allows imagery/branding on opposite side of page to differentiate application
@@ -79,7 +79,7 @@ The Sign In UI elements can be added in 3 possible placement areas.
 
 3. Full page
 
-   <img src="/img/components/signin-simple-full.png" alt="Example of a full-page sign in screen" title="Example of a full-page sign in screen" style="width: 75%">
+   <p><img src="/img/components/signin-simple-full.png" alt="Example of a full-page sign in screen" title="Example of a full-page sign in screen" style="width: 75%"></p>
 
    - Draws user attention to the Sign In process, without the need for a modal dialog to be placed over an essentially blank page
    - Ideal for initial entry points and when the user does not have access until after authentication

@@ -1,11 +1,12 @@
 ---
 title: Propose a Change
-layout: project:layouts/docs/docs-layout.astro
+description: Any user of Astro can propose changes in a safe, trackable and relatively easy manner.
+layout: project:layouts/new-docs/new-docs-layout.astro
 ---
 
-# How to Propose a Change
+## How to Propose a Change
 
-The Astro User Experience Design System is hosted on [GitHub](https://github.com) as an open source project and uses [Markdown](https://guides.github.com/features/mastering-markdown/) for content. This enables any user of Astro to proposes changes in a safe, trackable and relatively easy manner.
+The Astro User Experience Design System is hosted on [GitHub](https://github.com) as an open source project and uses [Markdown](https://guides.github.com/features/mastering-markdown/) for content.
 
 You will need a free GitHub account to propose changes to Astro.
 

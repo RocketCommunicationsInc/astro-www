@@ -1,16 +1,11 @@
 ---
-import DocsLayout from 'project:layouts/docs/docs-layout.astro'
+import DocsLayout from 'project:layouts/new-docs/new-docs-layout.astro'
 import { reference, findByName } from 'project:utils/tokens.js'
 
 const title = 'Reference'
+const description = 'Full catalog of Astro design tokens.'
 ---
-<DocsLayout content={{ title }} file={import.meta.url}>
-	<a href="#reference-tokens" class="h h1">
-		<h1 id="reference-tokens">
-			Reference Tokens
-		</h1>
-	</a>
-
+<DocsLayout content={{ title, description }} file={import.meta.url}>
 	<h2 id="colors">
 		Colors
 	</h2>
@@ -29,7 +24,7 @@ const title = 'Reference'
 
 	<hr />
 
-	<h2>
+	<h2 id="font-size">
 		Font Size
 	</h2>
 	<p>
@@ -51,7 +46,7 @@ const title = 'Reference'
 
 	<hr />
 
-	<h2>
+	<h2 id="font-weight">
 		Font Weight
 	</h2>
 	{
@@ -68,7 +63,7 @@ const title = 'Reference'
 
 	<hr />
 
-	<h2>
+	<h2 id="radii">
 		Radii
 	</h2>
 	{
@@ -85,7 +80,7 @@ const title = 'Reference'
 
 	<hr />
 
-	<h2>
+	<h2 id="opacity">
 		Opacity
 	</h2>
 	{
@@ -102,7 +97,7 @@ const title = 'Reference'
 
 	<hr />
 
-	<h2>
+	<h2 id="border-width">
 		Border Width
 	</h2>
 	{
@@ -119,7 +114,7 @@ const title = 'Reference'
 
 	<hr />
 
-	<h2>
+	<h2 id="spacing">
 		Spacing
 	</h2>
 	<p>
@@ -146,7 +141,7 @@ const title = 'Reference'
 
 	<hr />
 
-	<h2>
+	<h2 id="line-height">
 		Line Height
 	</h2>
 	<p>
@@ -166,7 +161,7 @@ const title = 'Reference'
 		))
 	}
 
-	<h2>
+	<h2 id="typography">
 		Typography
 	</h2>
 	<div class="note">

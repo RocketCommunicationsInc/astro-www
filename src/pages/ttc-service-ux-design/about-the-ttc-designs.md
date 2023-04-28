@@ -2,11 +2,10 @@
 tags: ["ttc", "egs"]
 path: /ttc-service-ux-design/about-the-ttc-designs
 date: Last Modified
-layout: project:layouts/docs/docs-layout.astro
+layout: project:layouts/new-docs/new-docs-layout.astro
 title: About the TT&C Designs
+description: The purpose of a Telemetry, Tracking, and Command (TT&C) system is to support missions requiring communication between satellites and ground systems.
 ---
-
-# About the TT&C Designs
 
 :::note
 The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
@@ -35,7 +34,7 @@ The animated graphic below depicts a much simplified version of a TT&C task flow
 	</a>
 </div>
 
-### UX Research Findings
+## UX Research Findings
 
 UX research conducted in collaboration with users and domain experts on existing TT&C workflows and systems found that:
 

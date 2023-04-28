@@ -28,7 +28,7 @@ a.h {
 		}
 	}
 
-	&:hover:not(:focus-visible) {
+	&:hover, &:focus-visible {
 		& > * {
 			&::after {
 				/* Appearance */
