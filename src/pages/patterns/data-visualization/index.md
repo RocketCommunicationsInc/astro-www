@@ -234,6 +234,14 @@ A data visualization is useless if not designed to communicate clearly with the 
 
 :::
 
+## Color Ordering
+
+Astro Data Visualizations have their own color palette subset. Current Data Visualization colors follow a categorical or qualitative order where the hues differ but the intensity and saturation are similar.
+
+The Data Visualization colors use design tokens ordered from 1-8. The color order is not required to start at 1, but could instead start in the middle of the order. However, from that point, the ordering should increase numerically. For example, if the color order started at 5, it would follow with 6, 7, 8, 1, 2, 3, 4. This color order has its own token set and can be found in the system tokens as [color data visualizations](/design-tokens/system/#data-viz).
+
+Because the color contrast of neighboring colors does not meet WCAG contrast requirements, we recommend adding a divider between each section.
+
 ## Implementation
 
 Astro recommends 2 third-party libraries for data visualization: [Apex Charts](https://apexcharts.com/) and [ChartJS](https://www.chartjs.org/docs/latest/). Which one to use will depend on your own use cases. For the majority of applications, Apex Charts is preferred due to its ease of use and theme support. However, if your application is data intensive, ChartJS will be more performant.
