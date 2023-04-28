@@ -101,6 +101,7 @@ const addComplianceFooterToNav = () => {
 
 const createNav = (headings: any) => {
 	const linksNav = document.querySelector('.p-quicklinks-navigation')
+	const separator = h('<hr />')
 	const navigation = h('<div class="section-links-wrapper">')
 	const ul = h('<ul class="section-links">')
 	headings.map((heading: HTMLElement, index: number) => {
@@ -116,6 +117,7 @@ const createNav = (headings: any) => {
 			return null
 	})
 	navigation.append(ul)
+	linksNav?.append(separator)
 	linksNav?.append(navigation)
 }
 
