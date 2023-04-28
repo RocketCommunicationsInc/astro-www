@@ -355,6 +355,11 @@
 		margin-block-start: 2--step;
 	}
 
+	& .support-table table thead th {
+		/* Text */
+		text-align: center;
+	}
+
 	& table {
 		/* Layout */
 		inline-size: 100%;
