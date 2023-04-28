@@ -74,7 +74,7 @@ The standard way to show a statistical distribution - keep the gaps between colu
 
 ![Heat Map](/img/patterns/data-viz-heat-map.png)
 Heat maps enable you to do exploratory data analysis with two dimensions on the axes and the third dimension shown by intensity of color.
-<br />[Learn more about Heat Map guidance](/patterns/data-visualization/heat-map/)
+<br />[Learn more...](/patterns/data-visualization/heat-map/)
 
 
 :::
@@ -222,6 +222,14 @@ A data visualization is useless if not designed to communicate clearly with the 
 ![Don’t: Use more than 8 categories. Beyond that, mapping colors to categories will become burdensome and reduce their usefulness.](/img/patterns/data-viz-dont-2.png "Don’t: Use more than 8 categories. Beyond that, mapping colors to categories will become burdensome and reduce their usefulness.")
 
 :::
+
+## Color Ordering
+
+Astro Data Visualizations have their own color palette subset. Current Data Visualization colors follow a categorical or qualitative order where the hues differ but the intensity and saturation are similar.
+
+The Data Visualization colors use design tokens ordered from 1-8. The color order is not required to start at 1, but could instead start in the middle of the order. However, from that point, the ordering should increase numerically. For example, if the color order started at 5, it would follow with 6, 7, 8, 1, 2, 3, 4. This color order has its own token set and can be found in the system tokens as [color data visualizations](/design-tokens/system/#data-viz).
+
+Because the color contrast of neighboring colors does not meet WCAG contrast requirements, we recommend adding a divider between each section.
 
 ## Implementation
 
