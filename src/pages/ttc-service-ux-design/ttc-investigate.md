@@ -2,11 +2,10 @@
 tags: ["ttc", "egs"]
 path: /ttc-service-ux-design/ttc-investigate
 date: Last Modified
-layout: project:layouts/docs/docs-layout.astro
+layout: project:layouts/new-docs/new-docs-layout.astro
 title: TT&C Investigate
+description: The Investigate App displays system schematics and status data for a selected satellite.
 ---
-
-# TT&C Investigate
 
 :::note
 The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.

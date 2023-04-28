@@ -85,6 +85,34 @@
         ]
     },
     {
+        "description": "Component specific tokens to be used only when rebuilding components",
+        "heading": "Component Tokens",
+        "items": [
+            {
+                "label": "Dark Theme",
+                "url": "/design-tokens/component/"
+            },
+            {
+                "label": "Light Theme",
+                "url": "/design-tokens/component/light/"
+            }
+        ]
+    },
+    {
+        "description": "Tokens representing Astro semantic design decisions",
+        "heading": "System Tokens",
+        "items": [
+            {
+                "label": "Dark Theme",
+                "url": "/design-tokens/system/"
+            },
+            {
+                "label": "Light Theme",
+                "url": "/design-tokens/system/light/"
+            }
+        ]
+    },
+    {
         "description": "This is the nav for the nav example",
         "heading": "Secondary Nav Example",
         "items": [

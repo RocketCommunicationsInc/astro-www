@@ -12,18 +12,15 @@ export interface Props {
 
 const attrs = Astro.props
 ---
-<hgroup>
-	<h1>{attrs.title}</h1>
-	<p>Version {attrs.compliance.version}</p>
-</hgroup>
+
+<a href="#design-compliance" class="h h2"><h2 id="design-compliance">Design Compliance</h2></a>
 <section class="p-compliance">
-	<h2>Design Compliance</h2>
 	<p class="beginning-headline">Applications adopted by EGS are required to meet the Design Compliance set forth by
 		Astro UXDS. Design Compliance improves operator efficiency, engagement and reduces training time. When
 		applications across the Enterprise have a common and consistent user interface Guardians can focus learning the
 		mission unique needs rather than learning new interface paradigms.</p>
 	<article class="compliancy-headline">
-		<h2>Tiered Compliance</h2>
+		<a href="#tiered-compliance" class="h h2"><h2 id="tiered-compliance">Tiered Compliance</h2></a>
 		<p>
 			Astro can be adopted incrementally though the tiered compliance system outlined below. Projects can achieve
 			progressively higher levels of compliance with each iterative release. It is important to note that
@@ -64,8 +61,7 @@ const attrs = Astro.props
 	<section class="p-compliance">
 		<header class="-header">
 			<span class="-numeral">{content.numeral}.0</span>
-
-			<h2 class="-heading">{content.name}</h2>
+			<a href={`#${content.name.replace(/ /g,'')}`} class="h h2"><h2 id={`${content.name.replace(/ /g,'')}`} class="-heading">{content.name}</h2></a>
 		</header>
 
 		<For of={content.rules!}>{rule => (

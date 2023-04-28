@@ -5,7 +5,7 @@ import './home-banner.css'
 
 const { ...props } = Astro.props as typeof banner['data']
 ---
-<header class="p-banner" role="banner">
+<header class="p-banner" role="banner" id="content">
 	<hgroup class="x-heading-group" role="group" aria-roledescription="Heading group">
 		<h2 class="x-heading" aria-label={props.heading.data}>
 			<Image class="x-heading-image" aria-hidden="true" {...props.image.data} />

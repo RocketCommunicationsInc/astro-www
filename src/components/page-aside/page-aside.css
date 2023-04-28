@@ -109,20 +109,11 @@
 		}
 	}
 
-	& .section-links {
-		/* Layout */
-		max-block-size: 72vh;
-
-		/* Layout */
-		overflow-x: hidden;
-		overflow-y: auto;
-		overflow-y: overlay;
-		scrollbar-width: none;
-
+	& .section-links-wrapper {
 		/* Masking */
-		/* mask-image: var(--mask);
+		mask-image: var(--mask);
 		mask-position: bottom;
-		mask-size: 100% 100%; */
+		mask-size: 100% 100%;
 
 		/* Behavior */
 		scroll-behavior: smooth;
@@ -130,6 +121,16 @@
 
 		/* Masking Reference */
 		--mask: linear-gradient(0deg, hsl(0 0% 0% / 0%) 0%, hsl(0 0% 0% / 100%) 12--step);
+	}
+
+	& .section-links {
+		/* Layout */
+		max-block-size: 72vh;
+		overflow-x: hidden;
+		overflow-y: auto;
+		overflow-y: overlay;
+		padding-block-end: 12--step;
+		scrollbar-width: none;
 
 		&::-webkit-scrollbar {
 			/* Layout */

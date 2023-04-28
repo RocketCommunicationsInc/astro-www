@@ -2,11 +2,10 @@
 tags: ["grm", "egs"]
 path: /grm-service-ux-design/grm-dashboard
 date: Last Modified
-layout: project:layouts/docs/docs-layout.astro
+layout: project:layouts/new-docs/new-docs-layout.astro
 title: GRM Dashboard
+description: Helps operators maintain situational awareness.
 ---
-
-# GRM Dashboard
 
 :::note
 The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
@@ -79,8 +78,6 @@ If operators choose to drill into an alert via the Investigate button in the Ale
 5. **Status Information** - in this example, the equipment string indicates that an antenna is in a critical status for this contact.
 6. **Event Log** - displays the events leading up to the alert, which could be useful in troubleshooting.
 7. **Modify Button** - puts the contact in an editable mode to allow operators to resolve the issue, in this case by modifying the Equipment String.
-
-### UX Research Findings
 
 ## Task Flow Example - Modify Equipment String
 
