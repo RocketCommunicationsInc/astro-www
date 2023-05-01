@@ -40,7 +40,7 @@ To create a heat map that clearly and effectively communicates the presented dat
 
 ## Common Heat Maps
 
-**Matrix Heat Map**
+### Matrix Heat Map
 
 A matrix heat map, also known as a correlation matrix heat map, is a visual representation of data that uses color to indicate the relationship between different elements. It is commonly used to display the correlation between multiple variables in large and complex datasets, making it easy to identify patterns and relationships. The different color shades provide an easy way to understand the correlation strength between variables represented by the corresponding row and column, which aids in analyzing user behavior and making data-driven design decisions.
 
@@ -60,7 +60,7 @@ For example, a matrix heat map is used to display the data transmission capacity
 | Satellite 4 |             |                                      |                                      |                                      |
 :::
 
-**Clustered Heat Map**
+### Clustered Heat Map
 
 A clustered heat map groups similar rows or columns based on the similarity of their values. This allows for patterns and trends within the data to be more easily identified. This type of heat map also identifies patterns and relationships that may not be immediately obvious.
 
@@ -68,7 +68,7 @@ For example, a clustered heat map is used to analyze data from multiple satellit
 
 A more detailed real-world example of a clustered heat map used for an aerospace application is in the analysis of satellite imagery. In this scenario, a satellite captures images of a certain area of the Earth's surface and the image data is then processed to extract information (e.g., land use, vegetation cover, and land surface temperature). A clustered heat map would then be used to visualize this information and identify patterns and trends in the data. The map would show different clusters of land use, vegetation cover, and land surface temperature; these clusters could then be color-coded to indicate each type, which would help to identify areas of land use patterns, high vegetation density, and land surface temperature.
 
-**2D Density Plot**
+### 2D Density Plot
 
 A 2D density plot uses the visual language of color to associate values with positions, like grid-based heat maps, but without the constraint of a grid structure. It is frequently used in website tracking tools to study user interactions, such as clicks and scroll depth. Each tracking event is associated with a position and a numeric value, which is accumulated across all events and plotted with an associated color scale.
 
@@ -76,7 +76,7 @@ An example of using a 2D density plot to visualize data is showing mouse click d
 
 ## Related Visualization
 
-**Choropleth**
+### Choropleth
 
 A choropleth is a type of data visualization that uses shading or patterns to indicate the relative density of a particular variable within a given area. It associates numeric values with colored areas on a map. Like a heat map, choropleths use color to encode values. These values, however, are associated with a geographic region rather than a strict grid.
 
