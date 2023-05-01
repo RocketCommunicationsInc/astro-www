@@ -7,13 +7,13 @@ date: Last Modified
 layout: project:layouts/component-docs/component-docs-layout.astro
 ---
 
-A heat map is called a heat map because it relies on a color scale to categorize the variables, such as red for hot and blue for cold. These colors can be narrowed into shades, such as bright red for low.
+A heat map is a graphical representation of the relationship between two variables based on a third. It is called a heat map because it relies on a color scale to categorize the variables, such as red for hot and blue for cold. These colors can be narrowed into shades, such as bright red for low.
 
-UX developers use heat maps to easily identify patterns and trends in large datasets. Additionally, they use them to visualize categorical or numerical data of any type and to represent a range of metrics, such as frequency counts and summary statistics (e.g., mean or median).
+Operators use heat maps to easily identify patterns and trends in large datasets. Additionally, they use them to visualize categorical or numerical data of any type and to represent a range of metrics, such as frequency counts and summary statistics (e.g., mean or median).
 
 For example, a heat map of aircraft performance data could show the correlation between flight altitude and fuel consumption, using a color scale to indicate engine temperature over time.
 
-Ultimately, a heat map allows UX developers to make data-informed design decisions.
+Ultimately, a heat map allows Operators to make data-informed decisions.
 
 ## Constructing a Heat Map
 
@@ -27,16 +27,16 @@ A good way to begin is to visualize a table with color encoding on top of the ce
 
 To create a heat map that clearly and effectively communicates the presented data:
 
-- Consider the audience and design the heat map accordingly. For example, experts will be able to interpret a complex heat map more so than amateurs.
-- Choose the appropriate size and resolution to ensure the heat map is easy to read and interpret.
-- Select a color scale suitable for the represented data. For example, data representing temperature should range from blue (cold) to red (hot).
-- Use a consistent color scale so the viewer can easily compare data points.
-- Pick a limited number of colors to ensure the heat map is easy to interpret.
-- Provide a legend that explains the meaning of the color scale.
-- Clearly label and annotate data so the viewer knows what it represents and can easily interpret it.
-- Sort levels by similarity or value to clearly grasp patterns in data, such as sorting categories by average cell value or by grouping and clustering similar values.
-- Experiment with tick marks and cell sizes to aid in reading the data and to prevent overcrowding.
-- Include tools that allow for interactivity so the viewer can easily explore the data, such as a zoom control, filters, and type-ahead search.
+- *Consider the audience* and design the heat map accordingly. For example, experts will be able to interpret a complex heat map more so than amateurs.
+- *Choose the appropriate size and resolution* to ensure the heat map is easy to read and interpret.
+- *Select a color scale suitable* for the represented data. For example, data representing temperature should range from blue (cold) to red (hot).
+- *Use a consistent color scale* within a heat map so the viewer can easily compare data points.
+- *Pick a limited number of colors* to ensure the heat map is easy to interpret.
+- *Provide a legend* that explains the meaning of the color scale.
+- *Clearly label and annotate data* so the viewer knows what it represents and can easily interpret it.
+- *Sort levels by similarity or value* to clearly grasp patterns in data, such as sorting categories by average cell value or by grouping and clustering similar values.
+- *Experiment with tick marks for label association and cell sizes* to aid in reading the data and to prevent overcrowding.
+- *Include tools that allow for interactivity* so the viewer can easily explore the data, such as a zoom control, filters, and type-ahead search.
 
 ## Common Heat Maps
 
