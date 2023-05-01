@@ -27,16 +27,16 @@ A good way to begin is to visualize a table with color encoding on top of the ce
 
 To create a heat map that clearly and effectively communicates the presented data:
 
-- *Consider the audience* and design the heat map accordingly. For example, experts will be able to interpret a complex heat map more so than amateurs.
-- *Choose the appropriate size and resolution* to ensure the heat map is easy to read and interpret.
-- *Select a color scale suitable* for the represented data. For example, data representing temperature should range from blue (cold) to red (hot).
-- *Use a consistent color scale* within a heat map so the viewer can easily compare data points.
-- *Pick a limited number of colors* to ensure the heat map is easy to interpret.
-- *Provide a legend* that explains the meaning of the color scale.
-- *Clearly label and annotate data* so the viewer knows what it represents and can easily interpret it.
-- *Sort levels by similarity or value* to clearly grasp patterns in data, such as sorting categories by average cell value or by grouping and clustering similar values.
-- *Experiment with tick marks for label association and cell sizes* to aid in reading the data and to prevent overcrowding.
-- *Include tools that allow for interactivity* so the viewer can easily explore the data, such as a zoom control, filters, and type-ahead search.
+- **Consider the audience** and design the heat map accordingly. For example, experts will be able to interpret a complex heat map more so than amateurs.
+- **Choose the appropriate size and resolution** to ensure the heat map is easy to read and interpret.
+- **Select a color scale suitable** for the represented data. For example, data representing temperature should range from blue (cold) to red (hot).
+- **Use a consistent color scale** within a heat map so the viewer can easily compare data points.
+- **Pick a limited number of colors** to ensure the heat map is easy to interpret.
+- **Provide a legend** that explains the meaning of the color scale.
+- **Clearly label and annotate data** so the viewer knows what it represents and can easily interpret it.
+- **Sort levels by similarity or value** to clearly grasp patterns in data, such as sorting categories by average cell value or by grouping and clustering similar values.
+- **Experiment with tick marks for label association and cell sizes** to aid in reading the data and to prevent overcrowding.
+- **Include tools that allow for interactivity** so the viewer can easily explore the data, such as a zoom control, filters, and type-ahead search.
 
 ## Common Heat Maps
 
