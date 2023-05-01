@@ -124,8 +124,10 @@
 	}
 
 	& .section-links {
+		display: block;
+
 		/* Layout */
-		max-block-size: 72vh;
+		max-block-size: 40vh; /* prev 72 */
 		overflow-x: hidden;
 		overflow-y: auto;
 		overflow-y: overlay;

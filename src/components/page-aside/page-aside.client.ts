@@ -121,21 +121,32 @@ const createNav = (headings: any) => {
 	linksNav?.append(navigation)
 }
 
+const isVisible = (currentLink : HTMLElement) => {
+	const wrapper = document.querySelector('.section-links-wrapper')
+	console.log(wrapper?.getBoundingClientRect())
+	console.log(currentLink.getBoundingClientRect())
+}
+
 const createHeadingObserver = (headings: NodeListOf<HTMLHeadingElement>) => {
 	let currentHeading: HTMLHeadingElement | null
 
 	// check to see if there is a nav, if not, make one.
-	const nav = document.querySelector('.section-links-wrapper')
+	const nav: HTMLELement = document.querySelector('.section-links-wrapper')
 	if (!nav && headings.length > 1) {
 		createNav(Array.from(headings))
 	}
 
 	let headingObserver: IntersectionObserver | undefined
+	let listObserver: IntersectionObserver | undefined
 	const visualViewport = globalThis.visualViewport!
 
 	const onresize = () => {
 		if (headingObserver) {
 			headingObserver.disconnect()
+		}
+
+		if (listObserver) {
+			listObserver.disconnect()
 		}
 
 		headingObserver = new IntersectionObserver((entries) => {
@@ -152,9 +163,45 @@ const createHeadingObserver = (headings: NodeListOf<HTMLHeadingElement>) => {
 			if (currentHeading) {
 				const listElements = document.querySelectorAll('.section-links li a')
 
+				/// ////
+
+				listObserver = new IntersectionObserver((entries) => {
+					let navRect = nav.getBoundingClientRect()!
+					console.log('navRect', navRect)
+					for (const entry of entries) {
+						let newTarget = entry.target as HTMLElement
+						if (entry.isIntersecting) {
+							console.log('target', entry.target)
+							console.log('entry intersecting', entry)
+
+							newTarget.style.backgroundColor = entry.target.classList.contains('-highlighted') ? 'hotpink' : 'transparent'
+						}
+
+						if (entry.target.classList.contains('-highlighted') && !entry.isIntersecting) {
+							const scrollEl = newTarget.offsetTop
+							console.log(scrollEl)
+							console.log(newTarget)
+							newTarget.scrollIntoView({ block: 'center', behavior: 'smooth' })
+						}
+					}
+				}, {
+					root: nav,
+					rootMargin: '-50% 0%',
+					threshold: 0,
+				})
+
+				/// ///
+
 				for (const listItem of listElements) {
-					listItem.classList.contains(currentHeading.id) ? listItem.classList.add('-highlighted') : listItem.classList.remove('-highlighted')
+					if (listItem.classList.contains(currentHeading.id)) {
+							listItem.classList.add('-highlighted')
+					} else { listItem.classList.remove('-highlighted') }
+
+					listObserver.observe(listItem)
 				}
+
+				// check to see if the currentLink is visible
+				// isVisible(currentLink)
 			}
 		}, {
 			rootMargin: `0% 0px -${visualViewport.height - 60}px`,
