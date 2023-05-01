@@ -2,12 +2,11 @@
 tags: ["flight dynamics", "egs"]
 path: /fd-service-ux-design/about-the-fd-designs
 date: Last Modified
-layout: project:layouts/docs/docs-layout.astro
-title: Flight Dynamics Service
+layout: project:layouts/new-docs/new-docs-layout.astro
+title: Flight Dynamics Service (FDS)
+description: The FDS system supports missions that require communication between satellites and ground systems.
 class: fds
 ---
-
-# Flight Dynamics Service (FDS)
 
 :::note
 While the Maneuvering and Reporting tools have not been researched, tested, and designed to the same depth as the Orbit Determination Tool, they have been considered throughout the research and design process from the broader perspective of the application.
@@ -120,7 +119,7 @@ The [Global Status Bar](../../components/global-status-bar) of the FDS App conta
 
 :::two-col
 ![Scenarios wireframe](/img/service-specific-ux-design/fds-scenarios.png)
-::: col
+:::col
 
 The scenarios panel is where a task begins. Depending on common mission tasks, operators may create, edit, or delete scenarios that best fit their workflows. For example, if an operator performs orbit determinations on Mondays for each satellite they are responsible for, they might create a “Nominal OD” scenario. Clicking a satellite in this scenario would load its last state, its last input files, and pre-select all the necessary products and reports needed for this task.
 

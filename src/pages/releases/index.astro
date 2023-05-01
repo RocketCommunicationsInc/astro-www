@@ -1,21 +1,14 @@
 ---
-import DocsLayout from 'project:layouts/docs/docs-layout.astro'
+import DocsLayout from 'project:layouts/new-docs/new-docs-layout.astro'
 import globalData from 'project:data/global.json'
 
 const title = 'Releases'
+const description = `Astro represents a collection of artifacts including, but not limited to, guidance, compliance, design assets/tools,
+		coded components, third-party themes, and related samples.`
 ---
-<DocsLayout content={{ title }} file={import.meta.url}>
-	<a href="#content" class="h h1">
-		<h1>
-			Releases
-		</h1>
-	</a>
-
+<DocsLayout content={{ title, description }} file={import.meta.url}>
 	<p>
-		Astro represents a collection of artifacts including, but not limited to, guidance, compliance, design assets/tools,
-		coded components, third-party themes, and related samples. The major version of Astro as indicated in the website
-		footer and below is the version that should be included in contracts. The associated asset versions should not be
-		referenced in contract language.
+		The major version of Astro as indicated in the website footer and below is the version that should be included in contracts. The associated asset versions should not be referenced in contract language.
 	</p>
 
 	<a href="#current-version" class="h h2">
@@ -24,58 +17,60 @@ const title = 'Releases'
 		</h2>
 	</a>
 
-	<table class="release-table release-table--current-version">
-		<thead>
-			<tr>
-				<th colspan="3">
-					Astro { globalData.designSystem.version } - Updated
-					<time>March, 30 2023</time>
-				</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>Design Language</td>
-				<td class="tabular"><b>{ globalData.designSystem.version }</b></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Design Tokens</td>
-				<td class="tabular">1.5.0</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Figma Dark Theme Library</td>
-				<td class="tabular">7.3.1 -&gt; <b>7.4.0</b></td>
-				<td><a href="https://www.figma.com/community/file/1157371532469023309">Release Notes</a></td>
-			</tr>
-			<tr>
-				<td>Figma Light Theme Library</td>
-				<td class="tabular">7.0.1 -&gt; <b>7.1.0</b></td>
-				<td><a href="https://www.figma.com/community/file/1203068683334364243">Release Notes</a></td>
-			</tr>
-			<tr>
-				<td>Figma Wireframe Theme Library</td>
-				<td class="tabular">7.0.1 -&gt; <b>7.1.0</b></td>
-				<td><a href="https://www.figma.com/community/file/1203487593021750781">Release Notes</a></td>
-			</tr>
-			<tr>
-				<td>Figma Icon Library</td>
-				<td class="tabular">1.0.1</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Web Components</td>
-				<td class="tabular">7.9.1 -&gt; <b>7.9.2</b></td>
-				<td><a href="https://github.com/RocketCommunicationsInc/astro/releases/tag/v7.9.2">Release Notes</a></td>
-			</tr>
-			<tr>
-				<td>EGS Design Compliance</td>
-				<td class="tabular">4.2.0</td>
-				<td></td>
-			</tr>
-		</tbody>
-	</table>
+	<div class="table-overflow">
+		<table class="release-table release-table--current-version">
+			<thead>
+				<tr>
+					<th colspan="3">
+						Astro { globalData.designSystem.version } - Updated
+						<time>March, 30 2023</time>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Design Language</td>
+					<td class="tabular"><b>{ globalData.designSystem.version }</b></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Design Tokens</td>
+					<td class="tabular">1.5.0</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Figma Dark Theme Library</td>
+					<td class="tabular">7.3.1 -&gt; <b>7.4.0</b></td>
+					<td><a href="https://www.figma.com/community/file/1157371532469023309">Release Notes</a></td>
+				</tr>
+				<tr>
+					<td>Figma Light Theme Library</td>
+					<td class="tabular">7.0.1 -&gt; <b>7.1.0</b></td>
+					<td><a href="https://www.figma.com/community/file/1203068683334364243">Release Notes</a></td>
+				</tr>
+				<tr>
+					<td>Figma Wireframe Theme Library</td>
+					<td class="tabular">7.0.1 -&gt; <b>7.1.0</b></td>
+					<td><a href="https://www.figma.com/community/file/1203487593021750781">Release Notes</a></td>
+				</tr>
+				<tr>
+					<td>Figma Icon Library</td>
+					<td class="tabular">1.0.1</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Web Components</td>
+					<td class="tabular">7.9.1 -&gt; <b>7.9.2</b></td>
+					<td><a href="https://github.com/RocketCommunicationsInc/astro/releases/tag/v7.9.2">Release Notes</a></td>
+				</tr>
+				<tr>
+					<td>EGS Design Compliance</td>
+					<td class="tabular">4.2.0</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 
 	<a href="#previous-major-versions" class="h h2">
 		<h2 id="previous-major-versions">
@@ -88,60 +83,62 @@ const title = 'Releases'
 		Astro V6.
 	</p>
 
-	<table class="release-table releast-table--previous-versions">
-		<thead>
-			<tr>
-				<th class="release-table__version">Version</th>
-				<th>Status</th>
-				<th>Released</th>
-				<th>End of Support</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>1.0</td>
-				<td>Unsupported</td>
-				<td>Sep 1, 2015</td>
-				<td>Dec 15, 2016</td>
-			</tr>
-			<tr>
-				<td>2.0</td>
-				<td>Unsupported</td>
-				<td>Dec 15, 2016</td>
-				<td>April 16, 2018</td>
-			</tr>
-			<tr>
-				<td>3.0</td>
-				<td>Unsupported</td>
-				<td>Apr 16, 2018</td>
-				<td>Apr 8, 2019</td>
-			</tr>
-			<tr>
-				<td>4.0</td>
-				<td>Unsupported</td>
-				<td>Apr 8, 2019</td>
-				<td>Jan 27, 2021</td>
-			</tr>
-			<tr>
-				<td><a href="https://github.com/RocketCommunicationsInc/astro-uxds/tree/v5.0">5.0</a></td>
-				<td>Unsupported</td>
-				<td>Jan 27, 2021</td>
-				<td>Jul 7, 2022</td>
-			</tr>
-			<tr>
-				<td><a href="https://github.com/RocketCommunicationsInc/astro/tree/v6.0.0">6.0</a></td>
-				<td>Unsupported</td>
-				<td>Oct 27, 2021</td>
-				<td>Jan 12, 2023</td>
-			</tr>
-			<tr>
-				<td><a href="https://github.com/RocketCommunicationsInc/astro/tree/v7.0.0">7.0</a></td>
-				<td>Supported</td>
-				<td>September 29, 2022</td>
-				<td>TBD</td>
-			</tr>
-		</tbody>
-	</table>
+	<div class="table-overflow">
+		<table class="release-table releast-table--previous-versions">
+			<thead>
+				<tr>
+					<th class="release-table__version">Version</th>
+					<th>Status</th>
+					<th>Released</th>
+					<th>End of Support</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1.0</td>
+					<td>Unsupported</td>
+					<td>Sep 1, 2015</td>
+					<td>Dec 15, 2016</td>
+				</tr>
+				<tr>
+					<td>2.0</td>
+					<td>Unsupported</td>
+					<td>Dec 15, 2016</td>
+					<td>April 16, 2018</td>
+				</tr>
+				<tr>
+					<td>3.0</td>
+					<td>Unsupported</td>
+					<td>Apr 16, 2018</td>
+					<td>Apr 8, 2019</td>
+				</tr>
+				<tr>
+					<td>4.0</td>
+					<td>Unsupported</td>
+					<td>Apr 8, 2019</td>
+					<td>Jan 27, 2021</td>
+				</tr>
+				<tr>
+					<td><a href="https://github.com/RocketCommunicationsInc/astro-uxds/tree/v5.0">5.0</a></td>
+					<td>Unsupported</td>
+					<td>Jan 27, 2021</td>
+					<td>Jul 7, 2022</td>
+				</tr>
+				<tr>
+					<td><a href="https://github.com/RocketCommunicationsInc/astro/tree/v6.0.0">6.0</a></td>
+					<td>Unsupported</td>
+					<td>Oct 27, 2021</td>
+					<td>Jan 12, 2023</td>
+				</tr>
+				<tr>
+					<td><a href="https://github.com/RocketCommunicationsInc/astro/tree/v7.0.0">7.0</a></td>
+					<td>Supported</td>
+					<td>Sep 29, 2022</td>
+					<td>TBD</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 
 	<a href="#release-schedule" class="h h2">
 		<h2 id="release-schedule">

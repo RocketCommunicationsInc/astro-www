@@ -2,23 +2,20 @@
 tags: resources
 path: /design-guidelines/theme
 date: Last Modified
-layout: project:layouts/docs/docs-layout.astro
+layout: project:layouts/new-docs/new-docs-layout.astro
 title: Theme
+description: Astro supports dark and light themes.
 ---
 
-# Theme
+## When to Use Light vs Dark
 
-Astro supports a light theme along with the original, default dark theme.
+It is important to determine the users’ environment and select the appropriate theme. In low-light operating environments where users’ pupils expand to allow more light to enter the cornea, a light-themed UI can be glaring and cause eye strain. Conversely, in a bright operating environment where the pupil contracts, letting less light in, dark-themed UIs can lose distinction and readability.
 
 ![Example of a light theme Astro application.](/img/design-guidelines/theme-lightui.png "Example of a light theme Astro application.")
 
 :::note
 By convention, the Global Status Bar and its enclosed elements will always use the dark theme styling.
 :::
-
-## When to Use Light vs Dark
-
-It is important to determine the users’ environment and select the appropriate theme. In low-light operating environments where users’ pupils expand to allow more light to enter the cornea, a light-themed UI can be glaring and cause eye strain. Conversely, in a bright operating environment where the pupil contracts, letting less light in, dark-themed UIs can lose distinction and readability.
 
 ## Light Theme Use Cases
 

@@ -37,7 +37,8 @@ There are a large number of charting visualizations. The following subset is rel
 
 #### Pie Chart
 
-![Pie Chart](/img/patterns/data-viz-pie.png)
+![Pie Chart](/img/patterns/data-viz-pie.png)<br/>
+
 Conveys part-to-whole data. Pie charts are very common, but research has shown that it may be difficult to accurately compare the size of the segments without supporting data points.
 :::
 
@@ -45,7 +46,8 @@ Conveys part-to-whole data. Pie charts are very common, but research has shown t
 
 #### Donut Chart
 
-![Donut Chart](/img/patterns/data-viz-donut.png)
+![Donut Chart](/img/patterns/data-viz-donut.png)<br/>
+
 Similar to a pie chart – but the center can be useful for additional information about the data (e.g. total). Example: [GRM Sample app](https://grm-dashboard.astrouxds.com/) - Equipment tab
 
 :::
@@ -54,7 +56,8 @@ Similar to a pie chart – but the center can be useful for additional informati
 
 #### Bar Chart
 
-![Bar/Column Chart](/img/patterns/data-viz-bar-column.png)
+![Bar/Column Chart](/img/patterns/data-viz-bar-column.png)<br/>
+
 Standard bar charts display the ranks of values more easily when sorted in order.
 
 :::
@@ -63,7 +66,8 @@ Standard bar charts display the ranks of values more easily when sorted in order
 
 #### Stack Bar Chart
 
-![Stack Bar Chart](/img/patterns/data-viz-stacked-bar.png)
+![Stack Bar Chart](/img/patterns/data-viz-stacked-bar.png)<br/>
+
 The standard way to show a statistical distribution - keep the gaps between columns small to highlight the ‘shape’ of the data. Example: [GRM Sample app](https://grm-dashboard.astrouxds.com/) - Contacts tab
 
 :::
@@ -72,9 +76,10 @@ The standard way to show a statistical distribution - keep the gaps between colu
 
 #### Heat Map
 
-![Heat Map](/img/patterns/data-viz-heat-map.png)
+![Heat Map](/img/patterns/data-viz-heat-map.png)<br/>
+
 Heat maps enable you to do exploratory data analysis with two dimensions on the axes and the third dimension shown by intensity of color.
-<br />[Learn more about Heat Map guidance](/patterns/data-visualization/heat-map/)
+<br />[Learn more...](/patterns/data-visualization/heat-map/)
 
 
 :::
@@ -83,7 +88,8 @@ Heat maps enable you to do exploratory data analysis with two dimensions on the 
 
 #### Area Chart
 
-![Area Chart](/img/patterns/data-viz-area.png)
+![Area Chart](/img/patterns/data-viz-area.png)<br/>
+
 This chart type excels at showing changes to total, but seeing change in components can be difficult.
 
 :::
@@ -92,7 +98,8 @@ This chart type excels at showing changes to total, but seeing change in compone
 
 #### Fill Gauge
 
-![Fill Gauge](/img/patterns/data-viz-fill-gauge.png)
+![Fill Gauge](/img/patterns/data-viz-fill-gauge.png)<br/>
+
 A circular shape that represents a percentage value of a whole. May also be depicted as a dial.
 
 :::
@@ -101,7 +108,8 @@ A circular shape that represents a percentage value of a whole. May also be depi
 
 #### Bubble Chart
 
-![Bubble Chart](/img/patterns/data-viz-bubble.png)
+![Bubble Chart](/img/patterns/data-viz-bubble.png)<br/>
+
 Bubble charts are used to visualize a data set with two to four dimensions. The first two dimensions are visualized as coordinates, the third as color, and the fourth as size.
 
 :::
@@ -110,7 +118,8 @@ Bubble charts are used to visualize a data set with two to four dimensions. The 
 
 #### Histogram
 
-![Histogram](/img/patterns/data-viz-histogram.png)
+![Histogram](/img/patterns/data-viz-histogram.png)<br/>
+
 Conveys an accurate representation of the distribution of numerical data. It is an estimate of the probability distribution of a continuous variable.
 
 :::
@@ -119,7 +128,8 @@ Conveys an accurate representation of the distribution of numerical data. It is 
 
 #### Gantt Chart
 
-![Gantt Chart](/img/patterns/data-viz-gantt.png)
+![Gantt Chart](/img/patterns/data-viz-gantt.png)<br/>
+
 A chart that depicts how a set of resources are used over time. Gantt charts illustrate the start, end, and duration of tasks (e.g. timeline or schedule). Example: [TT&C Sample app](https://ttc-monitor.astrouxds.com/) - Timeline view
 
 :::
@@ -128,7 +138,8 @@ A chart that depicts how a set of resources are used over time. Gantt charts ill
 
 #### Scatter Chart
 
-![Scatter Chart](/img/patterns/data-viz-scatter-plot.png)
+![Scatter Chart](/img/patterns/data-viz-scatter-plot.png)<br/>
+
 Scatter charts plot points on a graph. When the user hovers over the points, tooltips are displayed with more information.
 
 :::
@@ -222,6 +233,14 @@ A data visualization is useless if not designed to communicate clearly with the 
 ![Don’t: Use more than 8 categories. Beyond that, mapping colors to categories will become burdensome and reduce their usefulness.](/img/patterns/data-viz-dont-2.png "Don’t: Use more than 8 categories. Beyond that, mapping colors to categories will become burdensome and reduce their usefulness.")
 
 :::
+
+## Color Ordering
+
+Astro Data Visualizations have their own color palette subset. Current Data Visualization colors follow a categorical or qualitative order where the hues differ but the intensity and saturation are similar.
+
+The Data Visualization colors use design tokens ordered from 1-8. The color order is not required to start at 1, but could instead start in the middle of the order. However, from that point, the ordering should increase numerically. For example, if the color order started at 5, it would follow with 6, 7, 8, 1, 2, 3, 4. This color order has its own token set and can be found in the system tokens as [color data visualizations](/design-tokens/system/#data-viz).
+
+Because the color contrast of neighboring colors does not meet WCAG contrast requirements, we recommend adding a divider between each section.
 
 ## Implementation
 

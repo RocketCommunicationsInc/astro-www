@@ -23,6 +23,9 @@
 
 	& .-subheading {
 		/* Layout */
+		margin-block-end: 0;
+
+		/* Layout */
 		margin-block-start: 5--step;
 
 		/* Layout */

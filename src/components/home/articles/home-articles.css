@@ -164,7 +164,7 @@
 		border-start-end-radius: 1--step;
 	}
 
-	&:is(:hover, :focus-visible) {
+	&:is(:hover, :focus-visible, :focus-within) {
 		/* Appearance */
 		background: var(--InteractiveMutedColor);
 	}
