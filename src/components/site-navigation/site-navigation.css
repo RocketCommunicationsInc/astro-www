@@ -110,10 +110,6 @@
 	inline-size: 100%;
 	margin-block-start: 7--step;
 	padding-inline: 11--step;
-
-	@media (width < 1024px) {
-		display: none;
-	}
 }
 
 /* Navigation: List */
