@@ -45,9 +45,9 @@ Astro is tested & supported in major 'evergreen' web browsers (the latest browse
 :::
 :::
 
-## Versioning
+<!-- ## Versioning
 
-Current version: 7.0
+Current version: 7.0 -->
 
 ## Astro Licensing
 
