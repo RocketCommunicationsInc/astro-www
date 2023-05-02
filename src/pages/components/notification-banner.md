@@ -9,7 +9,7 @@ assets:
     name: Notification Banner
 ---
 
-::storybook-demo
+::tag{ is=a-playground tag=rux-notification }
 
 ## Appearance and Behavior
 

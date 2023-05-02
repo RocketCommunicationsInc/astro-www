@@ -24,7 +24,7 @@ export interface PlaygroundFieldRadioGroup extends __PlaygroundFieldBase {
 
 export interface PlaygroundFieldSwitch extends __PlaygroundFieldBase {
 	kind: 'switch'
-	checked: boolean
+	selected: boolean
 }
 
 export interface PlaygroundFieldText extends __PlaygroundFieldBase {

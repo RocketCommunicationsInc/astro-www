@@ -2,6 +2,55 @@
 	"$schema": "./component-playgrounds.schema.json",
 	"records": [
 		{
+			"tag": "rux-notification",
+			"constructor": "RuxNotification",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-notification open=\"\" status=\"standby\" message=\"This is a notification banner. It won’t disappear until the user dismisses it.\"></rux-notification>"
+				}
+			],
+			"fields": [
+				{
+					"kind": "switch",
+					"attribute": "open",
+					"property": "open",
+					"selected": true
+				}
+			],
+			"dependencies": [
+				{
+					"tag": "rux-icon",
+					"constructor": "RuxIcon"
+				},
+				{
+					"tag": "rux-icon-clear",
+					"constructor": "RuxIconClear"
+				}
+			]
+		},
+		{
+			"tag": "rux-card",
+			"constructor": "RuxCard",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-card>\n\tSuscipit potenti habitant penatibus praesent quam class erat purus nisl ligula arcu accumsan risus, interdum phasellus lorem leo libero maecenas dictumst donec dis cras ante finibus.\n</rux-card>"
+				},
+				{
+					"name": "With Footer",
+					"code": "<rux-card>\n\tSuscipit potenti habitant penatibus praesent quam class erat purus nisl ligula arcu accumsan risus, interdum phasellus lorem leo libero maecenas dictumst donec dis cras ante finibus.\n\t<div slot='footer'>\n\t\t<rux-button size='small' style='width: 100%;'>Primary button</rux-button>\n\t</div>\n</rux-card>"
+				}
+			],
+			"dependencies": [
+				{
+					"tag": "rux-button",
+					"constructor": "RuxButton"
+				}
+			],
+			"style": "rux-card{width: 300px;}"
+		},
+		{
 			"tag": "rux-accordion",
 			"constructor": "RuxAccordion",
 			"examples": [
@@ -39,6 +88,23 @@
 				{
 					"name": "Default",
 					"code": "<rux-breadcrumb>\n\t<rux-breadcrumb-item href=\"#\">Home</rux-breadcrumb-item>\n\t<rux-breadcrumb-item href=\"#\">Second Item</rux-breadcrumb-item>\n\t<rux-breadcrumb-item>Current Item</rux-breadcrumb-item>\n</rux-breadcrumb>"
+				}
+			],
+			"fields": [],
+			"dependencies": [
+				{
+					"tag": "rux-breadcrumb-item",
+					"constructor": "RuxBreadcrumbItem"
+				}
+			]
+		},
+		{
+			"tag": "rux-breadcrumb2",
+			"constructor": "RuxBreadcrumb",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-breadcrumb>\n\t<rux-breadcrumb-item href=\"#\">Stuff</rux-breadcrumb-item>\n\t<rux-breadcrumb-item href=\"#\">Second Item</rux-breadcrumb-item>\n\t<rux-breadcrumb-item>Current Item</rux-breadcrumb-item>\n</rux-breadcrumb>"
 				}
 			],
 			"fields": [],
