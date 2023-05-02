@@ -51,6 +51,7 @@ export interface PlaygroundRecord {
 	examples: PlaygroundExample[]
 	fields?: PlaygroundField[]
 	dependencies?: PlaygroundDependency[]
+	style?: string
 }
 
 export interface PlaygroundSchema {

@@ -1,9 +1,6 @@
 /** @typedef {import('astro').AstroIntegration} AstroIntegration */
 /** @typedef {import('astro').AstroConfig} AstroConfig */
 
-// astro integrations
-import astroSitemapIntegration from '@astrojs/sitemap'
-
 // remark plugins
 import remarkDirective from 'remark-directive'
 import remarkDirectives from './remark-plugins/remark-directives.js'
@@ -48,9 +45,6 @@ function astroWWWIntegration() {
 							remarkHeadingLinks,
 						],
 					},
-					integrations: [
-						astroSitemapIntegration(),
-					],
 					vite: {
 						build: {
 							assetsInlineLimit: 0,

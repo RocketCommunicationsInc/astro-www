@@ -83,11 +83,3 @@ export let setAttr = <T extends Element>(element: T, name: string, value: primit
 	),
 	element
 )
-
-export const dispatchEvent = (
-	element: EventTarget,
-	type: string,
-	options?: EventInit
-): boolean => element.dispatchEvent(
-	new Event(type, options)
-)

@@ -9,7 +9,7 @@ assets:
   name: Clock
 ---
 
-::storybook-demo
+::tag{ is=a-playground tag=rux-clock }
 
 ## Appearance and Behavior
 

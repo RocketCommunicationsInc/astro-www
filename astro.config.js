@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config'
 
 import astroPlugins from './.vscode/astro-plugins.js'
+import astroSitemapIntegration from '@astrojs/sitemap'
+import astroWebComponentPolyfills from '@astropub/webcomponent-polyfills'
 
 export default defineConfig({
 	site: 'https://www.astrouxds.com/',
@@ -11,5 +13,7 @@ export default defineConfig({
 	},
 	integrations: [
 		astroPlugins(),
+		astroSitemapIntegration(),
+		astroWebComponentPolyfills(),
 	],
 })

@@ -98,6 +98,10 @@
 					"items": {
 						"$ref": "#/$defs/Dependency"
 					}
+				},
+				"style": {
+					"title": "Additional styling",
+					"type": "string"
 				}
 			},
 			"additionalProperties": false,

@@ -11,7 +11,7 @@ secondary-navigation-title: Overview
 secondary-navigation-config: '_config.ts'
 ---
 
-::storybook-demo
+::tag{ is=a-playground tag=rux-tabs }
 
 ## Rules of Thumb
 
