@@ -11,13 +11,17 @@ sandbox:
   style: "--y: 200px;"
 ---
 
-::storybook-demo
+::tag{ is=a-playground tag=rux-card }
 
 A card is a container for a few short, related pieces of information. It roughly resembles a playing card in size and shape, and is intended as a linked, short representation of a conceptual unit.
 
 ## Rules of Thumb
 
 Limit actions on a card. Actions should be simple, direct, and predictable. Actions should clearly indicate what will happen when selected.
+
+:::tag{ is=a-codesample tag=rux-breadcrumb}
+<rux-button>hi</rux-button>
+:::
 
 Display content with a logical hierarchy, setting clear prioritization of content.
 
