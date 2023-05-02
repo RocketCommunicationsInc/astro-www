@@ -9,7 +9,7 @@ assets:
     name: Checkbox
 ---
 
-::storybook-demo
+::tag{ is=a-playground tag=rux-checkbox }
 
 <!-- A Checkbox describes a state or value that can be either “On" or "Off.” Checkboxes are not mutually exclusive. More than one Checkbox may be checked at the same time. -->
 

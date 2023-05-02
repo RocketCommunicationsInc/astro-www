@@ -82,6 +82,7 @@
 
 	/* Layout */
 	gap: 1px;
+	min-block-size: 68--step;
 	overflow: hidden;
 	padding: 1px;
 
@@ -104,7 +105,7 @@
 
 	@media (width > 700px) {
 		/* Layout */
-		grid-template-columns: auto 54--step;
+		grid-template-columns: auto max-content;
 
 		/* Reference */
 		--max-height: 512px;

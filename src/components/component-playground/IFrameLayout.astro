@@ -56,6 +56,11 @@ const scriptContent = [
 				<Sandbox class="dark-theme" set:html={
 					defaultExample.code
 				} />
+				{
+					attrs.style
+						? <style set:html={attrs.style} />
+					: null
+				}
 			</section>
 
 			<section class="control-area">

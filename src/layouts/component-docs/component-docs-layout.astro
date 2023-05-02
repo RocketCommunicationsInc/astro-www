@@ -74,6 +74,9 @@ const html = `<style>:root{--StorybookPreviewHeight:${StorybookPreviewHeight};}<
 	<ComplianceAside compliance={complianceData} />
 	<!-- <ContributionFooter sourceurl={githubSourceURL} /> -->
 </Layout>
+<script>
+import 'project:components/component-playground/Playground/Playground.ts'
+</script>
 <script define:vars={{ GitHubId, GitHubRepoURL, GitHubRepoBranch, StorybookId, storybookURL }}>
 const template = document.createElement('template')
 

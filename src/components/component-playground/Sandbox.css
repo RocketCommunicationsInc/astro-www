@@ -54,10 +54,8 @@
 
 	&::part(theme-switch) {
 		/* Layout */
-		flex-flow: row;
-
-		/* Text */
-		text-indent: 8--rpx;
+		flex-flow: row-reverse;
+		gap: 8--rpx;
 
 		/* Appearance */
 		color: var(--Grey800Color);

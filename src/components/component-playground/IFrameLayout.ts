@@ -1,5 +1,4 @@
 import type PlaygroundElement from './Playground/Playground.ts'
-import type RadioElement from './Control/Radio.ts'
 
 const iframe = window.parent?.document.querySelector('a-playground')! as PlaygroundElement
 
@@ -71,8 +70,7 @@ addEventListener('input', (event) => {
 			target.dispatchEvent(new Event('reset', { bubbles: true }))
 		} else {
 			if ('type' in target && target.type === 'switch') {
-				// @ts-expect-error
-				$target[property] = target.selected
+				$target[property] = target.checked
 			} else {
 				$target[property] = target.value
 			}
@@ -81,10 +79,11 @@ addEventListener('input', (event) => {
 })
 
 addEventListener('reset', (event) => {
-	for (const control of document.querySelectorAll<RadioElement>('[for]')) {
+	for (const control of document.querySelectorAll<HTMLFormElement>('[for]')) {
 		if (control !== event.target) {
 			control.value = control.defaultValue
 			control.selected = control.defaultSelected
+			control.checked = control.defaultChecked
 		}
 	}
 })
