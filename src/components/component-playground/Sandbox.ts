@@ -16,11 +16,11 @@ export default class SandboxElement extends HTMLElement {
 		})
 
 		DOM.observe(shadowRoot, {
-			change(event: Event & { target: HTMLElement & { selected: boolean } }) {
-				if (typeof event.target.selected !== 'boolean') return
+			change(event: Event & { target: HTMLElement & { checked: boolean } }) {
+				if (typeof event.target.checked !== 'boolean') return
 
-				element.classList.toggle('dark-theme', event.target.selected)
-				element.classList.toggle('light-theme', !event.target.selected)
+				element.classList.toggle('dark-theme', event.target.checked)
+				element.classList.toggle('light-theme', !event.target.checked)
 			}
 		})
 	}

@@ -6,40 +6,40 @@ import styling from './Switch.css?withtype=style'
 export default class SwitchElement extends ReflectedElement(
 	HTMLElement as typeof SwitchElementInterface,
 	{
-		selected: {
+		checked: {
 			defaultValue() {
-				return this.defaultSelected
+				return this.defaultChecked
 			},
 			setValue(value) {
 				return Boolean(value)
 			},
 			useAttributes: {
-				selected() {
-					return this.selected
+				checked() {
+					return this.checked
 				},
 			},
-			onValueChange(selected) {
+			onValueChange(checked) {
 				const internals = DOM.withInternals<Internals>(this)
 
-				internals.shadowThumb.part.toggle('selected', selected)
-				internals.shadowTrack.part.toggle('selected', selected)
+				internals.shadowThumb.part.toggle('checked', checked)
+				internals.shadowTrack.part.toggle('checked', checked)
 			},
 		},
 
-		defaultSelected: {
+		defaultChecked: {
 			defaultValue() {
-				return this.getAttribute('selected') !== null
+				return this.getAttribute('checked') !== null
 			},
 			setValue(value) {
 				return Boolean(value)
 			},
 			useAttributes: {
-				selected() {
-					return this.hasAttribute('selected')
+				checked() {
+					return this.hasAttribute('checked')
 				},
 			},
 			onValueChange(value) {
-				this.toggleAttribute('selected', value)
+				this.toggleAttribute('checked', value)
 			},
 		},
 
@@ -89,7 +89,7 @@ export default class SwitchElement extends ReflectedElement(
 
 		DOM.observe(element, {
 			click() {
-				element.selected = !element.selected
+				element.checked = !element.checked
 
 				DOM.trigger(element, {
 					input: { bubbles: true, composed: true },
@@ -107,14 +107,14 @@ SwitchElement.prototype.type = 'switch'
 customElements.define('a-switch', SwitchElement)
 
 declare class SwitchElementInterface extends HTMLElement {
-	/** Boolean indicating whether the switch is selected. */
-	selected: boolean
+	/** Boolean indicating whether the switch is checked. */
+	checked: boolean
 
 	/** String representing the value of the Switch. */
 	value: string
 
-	/** Boolean indicating whether the switch is initially selected. */
-	defaultSelected: boolean
+	/** Boolean indicating whether the switch is initially checked. */
+	defaultChecked: boolean
 
 	/** String representing the initial value of the Switch. */
 	defaultValue: string
