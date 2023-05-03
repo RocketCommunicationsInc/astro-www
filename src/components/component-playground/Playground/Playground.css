@@ -4,12 +4,22 @@
 	/* Layout */
 	inline-size: stretch;
 	max-inline-size: 100%;
+	overflow: hidden;
 }
 
 :host {
 	/* Layout */
-	block-size: var(--y);
+	/* block-size: var(--y); */
+	block-size: 50vh;
 	margin-block-end: 5--step;
+	/* stylelint-disable-next-line csstools/use-logical */
+	min-height: 100--step;
+
+	@media (width = < 700px) {
+		/* Layout */
+		/* stylelint-disable-next-line csstools/use-logical */
+		min-height: 120--step;
+	}
 }
 
 iframe {

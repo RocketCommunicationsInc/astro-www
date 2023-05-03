@@ -8,6 +8,7 @@
 
 	/* Layout */
 	grid-template-rows: 44--rpx auto;
+	overflow: hidden;
 
 	&::part(heading) {
 		display: flex;
@@ -36,9 +37,9 @@
 		display: flex;
 
 		/* Layout */
-		align-items: center;
+		block-size: 100%;
 		flex-flow: column;
-		justify-content: center;
+		overflow: overlay;
 		padding: 1rem;
 
 		/* Appearance */
@@ -50,6 +51,23 @@
 		/* Reference */
 		--EdgeColor: var(--Grey200Color);
 		--EdgeSize: 0;
+	}
+
+	& slot {
+		display: flex;
+
+		/* Layout */
+		/* align-items: center; */
+		block-size: 100%;
+		flex-flow: column;
+		inline-size: 100%;
+
+		/* justify-content: center; */
+	}
+
+	&::slotted(*) {
+		/* Layout */
+		justify-content: center;
 	}
 
 	&::part(theme-switch) {

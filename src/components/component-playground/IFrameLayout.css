@@ -12,6 +12,11 @@
 	font-family: "Helvetica", var(--SystemType);
 }
 
+:where(:root, html, body, main.app) {
+	/* Layout */
+	block-size: 100%;
+}
+
 :where(h1, h2, h3, h4, h5, h6) {
 	/* Layout */
 	margin-block: 0;
@@ -108,7 +113,7 @@
 		grid-template-columns: auto max-content;
 
 		/* Reference */
-		--max-height: 512px;
+		--max-height: 100%;
 	}
 
 	& .sandbox-area,
@@ -117,7 +122,7 @@
 
 		/* Layout */
 		block-size: 100%;
-		grid-auto-rows: auto;
+		grid-auto-rows: auto 1fr;
 		overflow: hidden;
 
 		/* Appearance */
