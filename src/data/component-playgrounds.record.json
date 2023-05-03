@@ -139,7 +139,7 @@
 					"kind": "switch",
 					"attribute": "tag",
 					"property": "tag",
-					"value": false
+					"checked": false
 				}
 			],
 			"style": "rux-classification-marking:not([tag]) { width: 100%; } rux-classification-marking::part(header) { padding-inline: .75em; width: auto; }"
@@ -665,7 +665,8 @@
 				{
 					"kind": "switch",
 					"property": "hideLabel",
-					"attribute": "hide-label"
+					"attribute": "hide-label",
+					"checked": false
 				},
 				{
 					"kind": "text",
@@ -851,13 +852,13 @@
 					"kind": "switch",
 					"attribute": "checked",
 					"property": "checked",
-					"value": false
+					"checked": false
 				},
 				{
 					"kind": "switch",
 					"attribute": "disabled",
 					"property": "disabled",
-					"value": false
+					"checked": false
 				},
 				{
 					"kind": "text",
@@ -1031,7 +1032,7 @@
 					"kind": "switch",
 					"attribute": "open",
 					"property": "open",
-					"value": false
+					"checked": false
 				},
 				{
 					"kind": "text",
@@ -1073,6 +1074,31 @@
 					"constructor": "RuxButton"
 				}
 			]
+		},
+		{
+			"tag": "rux-tree",
+			"constructor": "RuxTree",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-tree>\n\t<rux-tree-node expanded selected>\n\t\tTree item 1\n\t\t<rux-tree-node expanded slot='node'>\n\t\t\tTree item 1.1\n\t\t\t\t\t<rux-tree-node slot='node'>\n\t\t\t\t\tTree item 1.1.1\n\t\t\t\t\t</rux-tree-node>\n\t\t\t\t\t<rux-tree-node slot='node'>\n\t\t\t\t\tTree item 1.1.2\n\t\t\t\t\t</rux-tree-node>\n\t\t\t\t\t<rux-tree-node slot='node'>\n\t\t\t\t\tTree item 1.1.3\n\t\t\t\t\t</rux-tree-node>\n\t\t\t\t\t</rux-tree-node>\n\t\t\t<rux-tree-node>\n\t\t<rux-tree>"
+				},
+				{
+					"name": "Status",
+					"code": "<rux-tree>\n\t<rux-tree-node>\n\t\t<rux-status slot='prefix' status='normal'></rux-status>\nTree item 1\n\t\t<rux-tree-node slot='node'>\n\t\t\t<rux-status slot='prefix' status='normal'></rux-status>\n\t\t\t\tTree item 1.1\n\t\t\t\t</rux-tree-node>\n\t\t\t<rux-tree-node slot='node'>\n\t\t\t<rux-status slot='prefix' status='normal'></rux-status>\n\t\t\t\tTree item 1.2\n\t\t\t</rux-tree-node>\n\t\t\t<rux-tree-node slot='node'>\n\t\t\t<rux-status slot='prefix' status='normal'></rux-status>\n\t\t\t\tTree item 1.3\n\t\t\t</rux-tree-node>\n\t\t\t</rux-tree-node>\n\t\t<rux-tree-node>\n\t\t<rux-status slot='prefix' status='standby'></rux-status>\n\t\t\tTree item 2\n\t\t\t</rux-tree-node>\n\t\t<rux-tree-node>\n\t\t<rux-status slot='prefix' status='normal'></rux-status>\n\t\t\tTree item 3\n\t\t\t<rux-tree-node slot='node'>\n\t\t\t\t<rux-status slot='prefix' status='off'></rux-status>\n\t\t\t\t\tTree item 3.1\n\t\t\t\t\t</rux-tree-node>\n\t\t\t\t<rux-tree-node slot='node'>\n\t\t\t\t<rux-status slot='prefix' status='critical'></rux-status>\n\t\t\t\t\tTree item 3.2\n\t\t\t\t\t</rux-tree-node>\n\t\t\t\t<rux-tree-node slot='node'>\n\t\t\t\t<rux-status slot='prefix' status='normal'></rux-status>\n\t\t\t\t\tTree item 3.3\n\t\t\t\t\t</rux-tree-node>\n\t\t\t\t</rux-tree-node>\n\t\t<rux-tree-node>\n\t\t<rux-status slot='prefix' status='caution'></rux-status>\n\t\t\tTree item 4\n\t\t\t<rux-tree-node slot='node'>\n\t\t\t\t<rux-status slot='prefix' status='caution'></rux-status>\n\t\t\t\t\tTree item 4.1\n\t\t\t\t\t</rux-tree-node>\n\t\t\t\t<rux-tree-node slot='node'>\n\t\t\t\t<rux-status slot='prefix' status='normal'></rux-status>\n\t\t\t\t\tTree item 4.2\n\t\t\t\t\t</rux-tree-node>\n\t\t\t\t</rux-tree-node>\n\t\t</rux-tree>"
+				}
+			],
+			"dependencies": [
+				{
+					"tag": "rux-tree-node",
+					"constructor": "RuxTreeNode"
+				},
+				{
+					"tag": "rux-status",
+					"constructor": "RuxStatus"
+				}
+			],
+			"style": "rux-tree { --normal-fill: #56f000; --standby-fill: #2dccff; --standby-border: #2dccff; --standby-fill-opacity: 0; --off-fill: #a4abb6; --off-border: #a4abb6; --critical-fill: #ff3838; --critical-border: #ff3838; --caution-fill: #fce83a; --caution-border: #fce83a;}"
 		}
 	]
 }
