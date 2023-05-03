@@ -1,7 +1,7 @@
 ---
 title: Service Specific UX Design
 description: Service Specific UX Design promotes the development of consistent, robust applications to support Enterprise Ground Services (EGS) by applying UX design process and the Astro Space UX Design System.
-layout: project:layouts/new-docs/new-docs-layout.astro
+layout: project:layouts/docs/docs-layout.astro
 ---
 
 :::note

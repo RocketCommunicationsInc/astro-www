@@ -1,7 +1,7 @@
 ---
 path: /platforms/astro-for-apple
 date: Last Modified
-layout: project:layouts/new-docs/new-docs-layout.astro
+layout: project:layouts/docs/docs-layout.astro
 title: Astro for Apple
 description: Astro for Apple extends the Astro Space UX Design System to iPhone, iPad, Mac, AppleTV, and Apple Watch.
 ---

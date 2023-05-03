@@ -1,5 +1,5 @@
 ---
-layout: project:layouts/new-docs/new-docs-layout.astro
+layout: project:layouts/docs/docs-layout.astro
 title: Research
 description: Research creates better experiences, focuses attention on root issues instead of symptoms, and reduces development risk.
 ---
