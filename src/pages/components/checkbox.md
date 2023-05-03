@@ -8,6 +8,7 @@ git: rux-checkbox
 assets:
     name: Checkbox
 ---
+## Interactive Example
 
 ::tag{ is=a-playground tag=rux-checkbox }
 

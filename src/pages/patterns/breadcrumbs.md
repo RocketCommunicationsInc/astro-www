@@ -8,6 +8,7 @@ git: rux-breadcrumb
 assets:
     name: Breadcrumbs
 ---
+## Interactive Example
 
 ::tag{ is=a-playground tag=rux-breadcrumb }
 
