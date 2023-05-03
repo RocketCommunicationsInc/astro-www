@@ -647,6 +647,104 @@
 			"fields": []
 		},
 		{
+			"tag": "rux-monitoring-icon",
+			"constructor": "RuxMonitoringIcon",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<div style='margin: 3rem auto; max-width: 5rem; text-align: center;'>\n\t<rux-monitoring-icon icon='altitude' label='Monitoring' status='normal' notifications='1' sublabel=''></rux-monitoring-icon>\n</div>"
+				}
+			],
+			"fields": [
+				{
+					"kind": "menu",
+					"attribute": "icon",
+					"property": "icon",
+					"options": [
+						"altitude",
+						"mission",
+						"processor",
+						"equipment",
+						"antenna",
+						"antenna-transmit",
+						"antenna-receive"
+					],
+					"value": "altitude"
+				},
+				{
+					"kind": "text",
+					"property": "label",
+					"attribute": "label",
+					"value": "Monitoring"
+				},
+				{
+					"kind": "text",
+					"property": "notifications",
+					"attribute": "notifications",
+					"value": "1"
+				},
+				{
+					"kind": "menu",
+					"attribute": "status",
+					"property": "status",
+					"options": [
+						"off",
+						"standby",
+						"normal",
+						"caution",
+						"serious",
+						"critical"
+					],
+					"value": "normal"
+				},
+				{
+					"kind": "text",
+					"property": "sublabel",
+					"attribute": "sublabel",
+					"value": ""
+				}
+			],
+			"dependencies": [
+				{
+					"tag": "rux-icon",
+					"constructor": "RuxIcon"
+				},
+				{
+					"tag": "rux-icon-altitude",
+					"constructor": "RuxIconAltitude"
+				},
+				{
+					"tag": "rux-icon-mission",
+					"constructor": "RuxIconMission"
+				},
+				{
+					"tag": "rux-icon-processor",
+					"constructor": "RuxIconProcessor"
+				},
+				{
+					"tag": "rux-icon-equipment",
+					"constructor": "RuxIconEquipment"
+				},
+				{
+					"tag": "rux-icon-antenna",
+					"constructor": "RuxIconAntenna"
+				},
+				{
+					"tag": "rux-icon-antenna-transmit",
+					"constructor": "RuxIconAntennaTransmit"
+				},
+				{
+					"tag": "rux-icon-antenna-receive",
+					"constructor": "RuxIconAntennaReceive"
+				},
+				{
+					"tag": "rux-status",
+					"constructor": "RuxStatus"
+				}
+			],
+			"style": "rux-monitoring-icon { --normal-fill: #56f000; --standby-fill: #2dccff; --standby-border: #2dccff; --standby-fill-opacity: 0; --off-fill: #a4abb6; --off-border: #a4abb6; --critical-fill: #ff3838; --critical-border: #ff3838; --caution-fill: #fce83a; --caution-border: #fce83a; --serious-fill: #ffb302; --serious-border: #ffb302;}"
+		},
+		{
 			"tag": "rux-progress",
 			"constructor": "RuxProgress",
 			"examples": [
