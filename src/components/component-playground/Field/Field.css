@@ -8,7 +8,7 @@
 	gap: 16--rpx;
 
 	/* Layout */
-	max-inline-size: 44--step;
+	max-inline-size: 46--step;
 
 	&::part(label) {
 		display: block;

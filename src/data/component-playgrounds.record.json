@@ -777,6 +777,101 @@
 			"style": "rux-monitoring-icon { --normal-fill: #56f000; --standby-fill: #2dccff; --standby-border: #2dccff; --standby-fill-opacity: 0; --off-fill: #a4abb6; --off-border: #a4abb6; --critical-fill: #ff3838; --critical-border: #ff3838; --caution-fill: #fce83a; --caution-border: #fce83a; --serious-fill: #ffb302; --serious-border: #ffb302;}"
 		},
 		{
+			"tag": "rux-pop-up",
+			"constructor": "RuxPopUp",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-pop-up open=\"true\">\n\t<rux-icon icon=\"apps\" slot=\"trigger\"></rux-icon>\n\t<rux-menu>\n\t\t<rux-menu-item href=\"#\">Menu Item 1</rux-menu-item>\n\t\t\t<rux-menu-item href=\"#\">Menu Item 2</rux-menu-item>\n\t\t\t<rux-menu-item href=\"#\">Menu Item 3</rux-menu-item>\n\t\t</rux-menu>\n\t</rux-pop-up>"
+				}
+			],
+			"fields": [
+				{
+					"kind": "switch",
+					"attribute": "open",
+					"property": "open",
+					"checked": true
+				},
+				{
+					"kind": "menu",
+					"attribute": "placement",
+					"property": "placement",
+					"note": "The placement of the pop up relative to it's slotted trigger element.",
+					"options": [
+						"auto",
+						"top",
+						"top-start",
+						"top-end",
+						"right",
+						"right-start",
+						"right-end",
+						"bottom",
+						"bottom-start",
+						"bottom-end",
+						"left",
+						"left-start",
+						"left-end"
+					],
+					"value": "auto"
+				},
+				{
+					"kind": "switch",
+					"attribute": "close-on-select",
+					"property": "closeOnSelect",
+					"note":"Closes the pop-up when a single selection is made.",
+					"checked": false
+				},
+				{
+					"kind": "switch",
+					"attribute": "disable-auto-update",
+					"property": "disableAutoUpdate",
+					"note": "Turns autoUpdate on or off which makes the pop-up move to stay in view based on scroll.",
+					"checked": false
+				},
+				{
+					"kind": "switch",
+					"attribute": "enable-animation-frame",
+					"property": "enableAnimationFrame",
+					"note": "Watches for trigger movements and replaces the pop-up if movement is detected.",
+					"checked": false
+				},
+				{
+					"kind": "menu",
+					"attribute": "strategy",
+					"property": "strategy",
+					"note": "The position strategy of the popup, either absolute or fixed.",
+					"options": [
+						"absolute",
+						"fixed"
+					],
+					"value": "absolute"
+				}
+			],
+			"dependencies": [
+				{
+					"tag": "rux-icon",
+					"constructor": "RuxIcon"
+				},
+				{
+					"tag": "rux-icon-apps",
+					"constructor": "RuxIconApps"
+				},
+				{
+					"tag": "rux-menu",
+					"constructor": "RuxMenu"
+				},
+				{
+					"tag": "rux-menu-item",
+					"constructor": "RuxMenuItem"
+				},
+				{
+					"tag": "rux-menu-item-divider",
+					"constructor": "RuxMenuItemDivider"
+				}
+			],
+			"style": ""
+		},
+		{
 			"tag": "rux-progress",
 			"constructor": "RuxProgress",
 			"examples": [
@@ -936,6 +1031,12 @@
 			],
 			"fields": [
 				{
+					"kind": "text",
+					"attribute": "selected",
+					"property": "selected",
+					"value": "Second item"
+				},
+				{
 					"kind": "menu",
 					"attribute": "size",
 					"property": "size",
@@ -945,12 +1046,6 @@
 						"large"
 					],
 					"value": "medium"
-				},
-				{
-					"kind": "text",
-					"attribute": "selected",
-					"property": "selected",
-					"value": "Second item"
 				},
 				{
 					"kind": "switch",

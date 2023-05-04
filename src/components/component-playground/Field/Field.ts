@@ -76,7 +76,7 @@ export default class FieldElement extends ReflectedElement(
 			onValueChange(note) {
 				const internals = DOM.withInternals<Internals>(this)
 
-				internals.shadowNote.innerHTML = `<div style="margin-block-start: -8px;">${note}</div>`
+				internals.shadowNote.innerHTML = `<div style="margin-block-start: -14px;">${note}</div>`
 			},
 		},
 
