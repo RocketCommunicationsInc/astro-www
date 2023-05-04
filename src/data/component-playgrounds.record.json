@@ -683,7 +683,7 @@
 			"examples": [
 				{
 					"name": "Default",
-					"code": "<div style='margin: 3rem auto; max-width: 5rem; text-align: center;'>\n\t<rux-monitoring-icon icon='altitude' label='Monitoring' status='normal' notifications='1' sublabel=''></rux-monitoring-icon>\n</div>"
+					"code": "<rux-monitoring-icon icon='altitude' label='Monitoring' status='normal' notifications='1' sublabel='Sub-label'></rux-monitoring-icon>"
 				}
 			],
 			"fields": [
@@ -924,6 +924,102 @@
 					"constructor": "RuxRadio"
 				}
 			]
+		},
+		{
+			"tag": "rux-select",
+			"constructor": "RuxSelect",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-select label=\"Select Menu\" input-id=\"1\" label-id=\"1\" name=\"default\" size=\"medium\">\n\t<rux-option value=\"\" selected=\"\" label=\"Select an option\"></rux-option>\n\t<rux-option value=\"1.1\" label=\"Option 1.1\"></rux-option>\n\t<rux-option value=\"1.2\" label=\"Option 1.2\"></rux-option>\n\t<rux-option value=\"1.3\" label=\"Option 1.3\"></rux-option>\n\t<rux-option value=\"1.4\" disabled=\"\" label=\"Option 1.4 (disabled)\"></rux-option>\n\t</rux-select>"
+				}
+			],
+			"fields": [
+				{
+					"kind": "menu",
+					"attribute": "size",
+					"property": "size",
+					"options": [
+						"small",
+						"medium",
+						"large"
+					],
+					"value": "medium"
+				},
+				{
+					"kind": "text",
+					"attribute": "label",
+					"property": "label",
+					"value": "Select Menu"
+				},
+				{
+					"kind": "text",
+					"attribute": "name",
+					"property": "name",
+					"value": "default"
+				},
+				{
+					"kind": "text",
+					"attribute": "value",
+					"property": "value",
+					"value": ""
+				},
+				{
+					"kind": "text",
+					"attribute": "input-id",
+					"property": "inputId",
+					"value": "1"
+				},
+				{
+					"kind": "text",
+					"attribute": "label-id",
+					"property": "labelId",
+					"value": "1"
+				},
+				{
+					"kind": "text",
+					"attribute": "help-text",
+					"property": "helpText",
+					"value": ""
+				},
+				{
+					"kind": "text",
+					"attribute": "error-text",
+					"property": "errorText",
+					"value": ""
+				},
+				{
+					"kind": "switch",
+					"attribute": "required",
+					"property": "required",
+					"checked": false
+				},
+				{
+					"kind": "switch",
+					"attribute": "multiple",
+					"property": "multiple",
+					"checked": false
+				},
+				{
+					"kind": "switch",
+					"attribute": "invalid",
+					"property": "invalid",
+					"checked": false
+				},
+				{
+					"kind": "switch",
+					"attribute": "disabled",
+					"property": "disabled",
+					"checked": false
+				}
+			],
+			"dependencies": [
+				{
+					"tag": "rux-option",
+					"constructor": "RuxOption"
+				}
+			],
+			"style": ""
 		},
 		{
 			"tag": "rux-slider",
