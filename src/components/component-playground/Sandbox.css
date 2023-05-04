@@ -45,6 +45,10 @@
 		/* Appearance */
 		background-color: var(--BackColor);
 
+		/* background-image: radial-gradient(circle, var(--GridBack) 1px, transparent 1px);
+		background-position: top left;
+		background-size: 4--step 4--step; */
+
 		/* Animation */
 		transition: background-color 80ms, color 80ms;
 
@@ -84,10 +88,14 @@
 		/* Reference */
 		background-color: var(--DarkBlue800Color);
 		color: var(--Neutral000Color);
+
+		--GridBack: #ffffff30;
 	}
 
 	@nest :host(.light-theme)& {
 		/* Reference */
 		background-color: var(--Neutral000Color);
+
+		--GridBack: #00000030;
 	}
 }

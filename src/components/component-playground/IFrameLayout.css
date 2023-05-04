@@ -109,7 +109,7 @@
 
 	@media (width <= 700px) {
 		/* Layout */
-		grid-template-rows: 68--step auto;
+		grid-template-rows: 80--step auto;
 
 		/* Reference */
 		--max-height: 400px;
