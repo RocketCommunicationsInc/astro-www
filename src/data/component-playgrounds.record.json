@@ -658,6 +658,7 @@
 			"fields": [
 				{
 					"kind": "menu",
+					"note": "*Icons are examples, any icon can be used.",
 					"attribute": "icon",
 					"property": "icon",
 					"options": [

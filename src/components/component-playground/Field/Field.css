@@ -3,7 +3,12 @@
 
 	/* Layout */
 	flex-flow: column;
+
+	/* Layout */
 	gap: 16--rpx;
+
+	/* Layout */
+	max-inline-size: 44--step;
 
 	&::part(label) {
 		display: block;
@@ -17,5 +22,11 @@
 
 	&::part(hidden-label) {
 		display: none;
+	}
+
+	&::part(note) {
+		/* Text */
+		font-size: 14--rpx;
+		line-height: 1.25;
 	}
 }
