@@ -782,7 +782,7 @@
 			"examples": [
 				{
 					"name": "Default",
-					"code": "<rux-pop-up open=\"true\">\n\t<rux-icon icon=\"apps\" slot=\"trigger\"></rux-icon>\n\t<rux-menu>\n\t\t<rux-menu-item href=\"#\">Menu Item 1</rux-menu-item>\n\t\t\t<rux-menu-item href=\"#\">Menu Item 2</rux-menu-item>\n\t\t\t<rux-menu-item href=\"#\">Menu Item 3</rux-menu-item>\n\t\t</rux-menu>\n\t</rux-pop-up>"
+					"code": "<rux-pop-up open=\"true\">\n\t<rux-icon icon=\"apps\" slot=\"trigger\"></rux-icon>\n\t<rux-menu>\n\t\t<rux-menu-item href=\"#\">Menu Item 1</rux-menu-item>\n\t\t\t<rux-menu-item href=\"#\">Menu Item 2</rux-menu-item>\n\t\t\t<rux-menu-item-divider></rux-menu-item-divider>\n\t\t\t<rux-menu-item href=\"#\">Menu Item 3</rux-menu-item>\n\t\t</rux-menu>\n\t</rux-pop-up>"
 				}
 			],
 			"fields": [
