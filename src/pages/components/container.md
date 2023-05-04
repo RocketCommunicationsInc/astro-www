@@ -11,7 +11,9 @@ sandbox:
   style: "--y: 180px;"
 ---
 
-::storybook-demo
+## Interactive Example
+
+::tag{ is=a-playground tag=rux-container }
 
 Containers can be used to help effectively manage lists, tables, dialogs, modals, slide out panels, content containers (top and bottom), and other components.
 
