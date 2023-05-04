@@ -16,7 +16,7 @@
 
 	@media (width >= 700px) {
 		/* Layout */
-		grid-template-rows: 44--rpx max-content;
+		grid-template-rows: 44--rpx auto;
 
 		/* Appearance */
 		box-shadow: var(--EdgeColor) 0 -1px 0 0;
@@ -64,6 +64,7 @@
 
 		@media (width >= 700px) {
 			/* Layout */
+			grid-template-rows: max-content;
 			padding-block: 8px 16px;
 		}
 	}
