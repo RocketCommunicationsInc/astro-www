@@ -926,6 +926,42 @@
 			]
 		},
 		{
+			"tag": "rux-segmented-button",
+			"constructor": "RuxSegmentedButton",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-segmented-button></rux-segmented-button>\n<script type=\"module\">\nconst segmented = document.querySelector('rux-segmented-button')\nconst data = [\n{ label: 'First item' },\n{ label: 'Second item', selected: true },\n{ label: 'Third item' },\n]\nsegmented.data = data\n</script>"
+				}
+			],
+			"fields": [
+				{
+					"kind": "menu",
+					"attribute": "size",
+					"property": "size",
+					"options": [
+						"small",
+						"medium",
+						"large"
+					],
+					"value": "medium"
+				},
+				{
+					"kind": "text",
+					"attribute": "selected",
+					"property": "selected",
+					"value": "Second item"
+				},
+				{
+					"kind": "switch",
+					"attribute": "disabled",
+					"property": "disabled",
+					"checked": false
+				}
+			],
+			"style": ""
+		},
+		{
 			"tag": "rux-select",
 			"constructor": "RuxSelect",
 			"examples": [
@@ -1021,6 +1057,10 @@
 				{
 					"tag": "rux-option",
 					"constructor": "RuxOption"
+				},
+				{
+					"tag": "rux-option-group",
+					"constructor": "RuxOptionGroup"
 				}
 			],
 			"style": ""
