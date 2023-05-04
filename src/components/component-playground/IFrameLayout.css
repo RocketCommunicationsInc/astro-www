@@ -13,8 +13,15 @@
 }
 
 :where(:root, html, body, main.app) {
-	/* Layout */
-	block-size: 100%;
+	@media (width > 700px) {
+		/* Layout */
+		block-size: 100%;
+	}
+
+	@media (width <= 700px) {
+		/* Layout */
+		block-size: auto;
+	}
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
@@ -111,6 +118,7 @@
 	@media (width > 700px) {
 		/* Layout */
 		grid-template-columns: auto max-content;
+		overflow: initial;
 
 		/* Reference */
 		--max-height: 100%;
@@ -149,6 +157,9 @@
 		@media (width < 700px) {
 			border-end-start-radius: var(--EdgeSizeInner);
 			border-end-end-radius: var(--EdgeSizeInner);
+
+			/* Layout */
+			overflow: initial;
 		}
 
 		@media (width >= 700px) {

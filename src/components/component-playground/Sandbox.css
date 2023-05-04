@@ -57,12 +57,9 @@
 		display: flex;
 
 		/* Layout */
-		/* align-items: center; */
 		block-size: 100%;
 		flex-flow: column;
 		inline-size: 100%;
-
-		/* justify-content: center; */
 	}
 
 	&::slotted(*) {

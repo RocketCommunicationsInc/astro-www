@@ -9,16 +9,16 @@
 
 :host {
 	/* Layout */
-	/* block-size: var(--y); */
-	block-size: 50vh;
 	margin-block-end: 5--step;
-	/* stylelint-disable-next-line csstools/use-logical */
-	min-height: 100--step;
 
-	@media (width = < 700px) {
+	@media (width > 700px) {
 		/* Layout */
-		/* stylelint-disable-next-line csstools/use-logical */
-		min-height: 120--step;
+		block-size: 133--step;
+	}
+
+	@media (width <= 700px) {
+		/* Layout */
+		block-size: var(--y);
 	}
 }
 
