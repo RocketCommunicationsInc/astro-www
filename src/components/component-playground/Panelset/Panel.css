@@ -64,7 +64,10 @@
 
 		@media (width >= 700px) {
 			/* Layout */
-			grid-template-rows: max-content;
+			display: flex;
+
+			/* Layout */
+			justify-content: flex-start;
 			padding-block: 8px 16px;
 		}
 	}
