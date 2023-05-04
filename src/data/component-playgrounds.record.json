@@ -777,6 +777,98 @@
 			"style": "rux-monitoring-icon { --normal-fill: #56f000; --standby-fill: #2dccff; --standby-border: #2dccff; --standby-fill-opacity: 0; --off-fill: #a4abb6; --off-border: #a4abb6; --critical-fill: #ff3838; --critical-border: #ff3838; --caution-fill: #fce83a; --caution-border: #fce83a; --serious-fill: #ffb302; --serious-border: #ffb302;}"
 		},
 		{
+			"tag": "rux-notification",
+			"constructor": "RuxNotification",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-notification open=\"\" status=\"standby\" message=\"This is a notification banner. It won’t disappear until the user dismisses it.\"></rux-notification>"
+				},
+				{
+					"name": "Default Slot",
+					"code": "<rux-notification open=\"\" status=\"standby\" message=\"This is a notification banner. It won’t disappear until the user dismisses it.\">\nNotification banner\n<a href=\"#\" style=\"margin-left: 8px; text-decoration: none; color: var(--color-background-interactive-default);\">Link</a>\n</rux-notification>"
+				},
+				{
+					"name": "Prefix Slot",
+					"code": "<rux-notification open=\"\" status=\"standby\" message=\"This is a notification banner. It won’t disappear until the user dismisses it.\">\n\t<rux-classification-marking classification=\"unclassified\" tag=\"\" slot=\"prefix\"></rux-classification-marking>\n\tNotification banner\n</rux-notification>"
+				},
+				{
+					"name": "Actions Slot",
+					"code": "<rux-notification open=\"\" status=\"standby\" message=\"This is a notification banner. It won’t disappear until the user dismisses it.\">\nNotification banner\n\t<rux-button slot=\"actions\">Acknowledge</rux-button>\n</rux-notification>"
+				}
+			],
+			"fields": [
+				{
+					"kind": "switch",
+					"attribute": "open",
+					"property": "open",
+					"checked": true
+				},
+				{
+					"kind": "text",
+					"property": "message",
+					"attribute": "message",
+					"value": "This is a notification banner. It won’t disappear until the user dismisses it."
+				},
+				{
+					"kind": "menu",
+					"attribute": "status",
+					"property": "status",
+					"options": [
+						"off",
+						"standby",
+						"normal",
+						"caution",
+						"serious",
+						"critical"
+					],
+					"value": "standby"
+				},
+				{
+					"kind": "text",
+					"property": "closeAfter",
+					"attribute": "close-after",
+					"value": ""
+				},
+				{
+					"kind": "switch",
+					"attribute": "hide-close",
+					"property": "hideClose",
+					"note":"Prevents the user from dismissing the notification",
+					"checked": false
+				},
+				{
+					"kind": "switch",
+					"attribute": "small",
+					"property": "small",
+					"checked": false
+				}
+			],
+			"dependencies": [
+				{
+					"tag": "rux-icon",
+					"constructor": "RuxIcon"
+				},
+				{
+					"tag": "rux-icon-clear",
+					"constructor": "RuxIconClear"
+				},
+				{
+					"tag": "rux-button",
+					"constructor": "RuxButton"
+				},
+				{
+					"tag": "rux-status",
+					"constructor": "RuxStatus"
+				},
+				{
+					"tag": "rux-classification-marking",
+					"constructor": "RuxClassificationMarking"
+				}
+			],
+			"style": "rux-notification { --normal-fill: #56f000; --standby-fill: #2dccff; --standby-border: #2dccff; --standby-fill-opacity: 0; --off-fill: #a4abb6; --off-border: #a4abb6; --critical-fill: #ff3838; --critical-border: #ff3838; --caution-fill: #fce83a; --caution-border: #fce83a; --serious-fill: #ffb302; --serious-border: #ffb302;}"
+		},
+		{
 			"tag": "rux-pop-up",
 			"constructor": "RuxPopUp",
 			"examples": [
