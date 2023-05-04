@@ -2,6 +2,37 @@
 	"$schema": "./component-playgrounds.schema.json",
 	"records": [
 		{
+			"tag": "rux-accordion",
+			"constructor": "RuxAccordion",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-accordion>\n\t<rux-accordion-item><div slot='label'>Title 1</div><p>Content 1</p></rux-accordion-item>\n<rux-accordion-item><div slot='label'>Title 2</div><p>Content 2</p></rux-accordion-item>\n\t<rux-accordion-item><div slot=\"label\">Title 3</div><p>Content 3</p></rux-accordion-item>\n</rux-accordion>"
+				}
+			],
+			"fields": [
+				{
+					"kind": "switch",
+					"attribute": "disabled",
+					"property": "disabled",
+					"checked": false
+				},
+				{
+					"kind": "switch",
+					"attribute": "disallow-multiple",
+					"property": "disallowMultiple",
+					"checked": false
+				}
+			],
+			"dependencies": [
+				{
+					"tag": "rux-accordion-item",
+					"constructor": "RuxAccordionItem"
+				}
+			],
+			"style": "rux-accordion{min-width:70%;margin-bottom:auto;}"
+		},
+		{
 			"tag": "rux-breadcrumb",
 			"constructor": "RuxBreadcrumb",
 			"examples": [

@@ -16,7 +16,7 @@
 
 	@media (width >= 700px) {
 		/* Layout */
-		grid-template-rows: 44--rpx auto;
+		grid-template-rows: 44--rpx max-content;
 
 		/* Appearance */
 		box-shadow: var(--EdgeColor) 0 -1px 0 0;

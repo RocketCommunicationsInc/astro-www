@@ -12,6 +12,18 @@
 	font-family: "Helvetica", var(--SystemType);
 }
 
+:where(:root, html, body, main.app) {
+	@media (width > 700px) {
+		/* Layout */
+		block-size: 100%;
+	}
+
+	@media (width <= 700px) {
+		/* Layout */
+		block-size: auto;
+	}
+}
+
 :where(h1, h2, h3, h4, h5, h6) {
 	/* Layout */
 	margin-block: 0;
@@ -106,9 +118,10 @@
 	@media (width > 700px) {
 		/* Layout */
 		grid-template-columns: auto max-content;
+		overflow: initial;
 
 		/* Reference */
-		--max-height: 512px;
+		--max-height: 100%;
 	}
 
 	& .sandbox-area,
@@ -117,7 +130,7 @@
 
 		/* Layout */
 		block-size: 100%;
-		grid-auto-rows: auto;
+		grid-auto-rows: auto 1fr;
 		overflow: hidden;
 
 		/* Appearance */
@@ -144,6 +157,9 @@
 		@media (width < 700px) {
 			border-end-start-radius: var(--EdgeSizeInner);
 			border-end-end-radius: var(--EdgeSizeInner);
+
+			/* Layout */
+			overflow: initial;
 		}
 
 		@media (width >= 700px) {

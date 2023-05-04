@@ -6,9 +6,10 @@ if (iframe !== null) {
 	let iframeHeight = 0
 
 	const updateIframeHeight = () => {
-		const contentHeight = document.body.getBoundingClientRect().height + 2
+		const contentHeight = document.body.scrollHeight + 2
+		console.log(contentHeight, iframeHeight)
 
-		if (contentHeight !== iframeHeight) {
+		if (contentHeight !== iframeHeight && iframeHeight !== (contentHeight - 2)) {
 			iframeHeight = contentHeight
 
 			iframe.style.setProperty('--y', `${iframeHeight}px`)

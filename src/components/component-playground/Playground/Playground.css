@@ -4,12 +4,22 @@
 	/* Layout */
 	inline-size: stretch;
 	max-inline-size: 100%;
+	overflow: hidden;
 }
 
 :host {
 	/* Layout */
-	block-size: var(--y);
 	margin-block-end: 5--step;
+
+	@media (width > 700px) {
+		/* Layout */
+		block-size: 133--step;
+	}
+
+	@media (width <= 700px) {
+		/* Layout */
+		block-size: var(--y);
+	}
 }
 
 iframe {
