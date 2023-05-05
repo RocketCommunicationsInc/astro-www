@@ -793,6 +793,69 @@
 			"fields": []
 		},
 		{
+			"tag": "rux-dialog",
+			"constructor": "RuxDialog",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<div style=\"display: flex; flex-direction: column; justify-content: center;\">\n\t<rux-dialog open=\"true\" header=\"Header\" message=\"Content goes here\" confirmText=\"Confirm\" denyText=\"Cancel\">\n\t</rux-dialog>\n</div>"
+				},
+				{
+					"name": "With Slotted Content",
+					"code": "<div style=\"display: flex; flex-direction: column; justify-content: center;\">\n\t<rux-dialog id=\"dialog-with-slot\" open=\"true\">\n\t\t<span slot=\"header\">Slot Header</span>\n\t\t<div style=\"display: flex; flex-direction: column;\">\n\t\t\t<span style=\"margin-bottom: 1rem;\">Default Slot Content</span>\n\t\t\t<rux-input label=\"Input Label\" placeholder=\"Dialog Input\"></rux-input>\n\t\t</div>\n\t\t<div slot=\"footer\" style=\"display: flex; justify-content: space-between; align-items: center;\">\n\t\t\t<a href=\"astrouxds.com\" style=\"text-decoration: none; color: var(--color-background-interactive-default);\">Link</a>\n\t\t\t<rux-button-group h-align=\"right\">\n\t\t\t\t<rux-button id=\"cancel\" secondary=\"\">Cancel</rux-button>\n\t\t\t\t<rux-button id=\"confirm\">Confirm</rux-button>\n\t\t\t</rux-button-group>\n\t\t</div>\n\t</rux-dialog>\n</div>\n<script type=\"module\">\nconsole.log('yo')\nconst dialog = document.querySelector('#dialog-with-slot');\nconst confirm = dialog.getElementById('confirm')\nconst cancel = dialog.getElementById('cancel')\nconfirm.addEventListener('click', () => {dialog.open = false; })\ncancel.addEventListener('click', () => {dialog.open = false; })</script>"
+				}
+			],
+			"fields": [
+				{
+					"kind": "switch",
+					"attribute": "open",
+					"property": "open",
+					"checked": true
+				},
+				{
+					"kind": "switch",
+					"attribute": "click-to-close",
+					"property": "clickToClose",
+					"checked": false
+				},
+				{
+					"kind": "text",
+					"property": "confirmText",
+					"attribute": "confirm-text",
+					"value": "Confirm"
+				},
+				{
+					"kind": "text",
+					"property": "denyText",
+					"attribute": "deny-text",
+					"value": "Cancel"
+				},
+				{
+					"kind": "text",
+					"property": "header",
+					"attribute": "header",
+					"value": "Header"
+				},
+				{
+					"kind": "text",
+					"property": "message",
+					"attribute": "message",
+					"value": "Content goes here"
+				}
+			],
+			"dependencies": [
+				{
+					"tag": "rux-button",
+					"constructor": "RuxButton"
+				},
+				{
+					"tag": "rux-button-group",
+					"constructor": "RuxButtonGroup"
+				}
+			],
+			"style": "rux-dialog::part(container) { position: absolute; height: 100%; width: 100%; } a-sandbox::part(content) { position: relative; }"
+		},
+		{
 			"tag": "rux-global-status-bar",
 			"constructor": "RuxGlobalStatusBar",
 			"examples": [
