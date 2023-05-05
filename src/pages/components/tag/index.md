@@ -8,6 +8,7 @@ git: rux-tag
 assets:
   name: Tag
 ---
+## Interactive Example
 
 ::tag{ is=a-playground tag=rux-tag }
 

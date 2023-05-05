@@ -6,9 +6,8 @@ storybook: components-classification-markings--all-banner-variants
 git: rux-classification-marking
 assets:
   name: Classification & Control Markings
-sandbox:
-  style: "--y: 420px;"
 ---
+## Interactive Example
 
 ::tag{ is=a-playground tag=rux-classification-marking }
 

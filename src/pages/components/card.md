@@ -10,6 +10,7 @@ assets:
 sandbox:
   style: "--y: 200px;"
 ---
+## Interactive Example
 
 ::storybook-demo
 

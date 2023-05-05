@@ -2,7 +2,7 @@
 tags: ["ttc", "egs"]
 path: /ttc-service-ux-design/ttc-command
 date: Last Modified
-layout: project:layouts/new-docs/new-docs-layout.astro
+layout: project:layouts/docs/docs-layout.astro
 title: TT&C Command
 description: The TT&C Command App is designed to be used for sending and receiving communications with a satellite during a contact.
 ---

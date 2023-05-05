@@ -2,7 +2,7 @@
 tags: resources
 path: /design-guidelines/typography
 date: Last Modified
-layout: project:layouts/new-docs/new-docs-layout.astro
+layout: project:layouts/docs/docs-layout.astro
 title: Typography
 description: Astro uses the open source typeface Roboto for all elements but system fonts can also be used.
 ---
@@ -16,8 +16,8 @@ Astro supports two levels of display text.
 :::table-overflow
 
 :::table-typography
-| Style     | Weight        | Font Size        | Letter Spacing | Line Height       | Class            | Design Token Identifier |
-|-----------|---------------|------------------|----------------|-------------------|------------------|-------------------------|
+| Style     | Weight        | Font Size            | Letter Spacing | Line Height           | Class            | Design Token Identifier |
+|-----------|---------------|----------------------|----------------|-----------------------|------------------|-------------------------|
 | Display 1 | Light (300)   | 3.75 rem<br> (60 px) | -0.50          | 4.375 rem<br> (70 px) | `.rux-display-1` | `display-1`             |
 | Display 2 | Regular (400) | 3 rem<br> (48 px)    | 0.00           | 3.5 rem<br> (56 px)   | `.rux-display-2` | `display-2`             |
 :::
@@ -29,8 +29,8 @@ Astro supports six levels of headline text.
 :::table-overflow
 
 :::table-typography
-| Style          | Weight        | Font Size         | Letter Spacing | Line Height      | Class                 | Design Token Identifier |
-|----------------|---------------|-------------------|----------------|------------------|-----------------------|-------------------------|
+| Style          | Weight        | Font Size             | Letter Spacing | Line Height          | Class                 | Design Token Identifier |
+|----------------|---------------|-----------------------|----------------|----------------------|-----------------------|-------------------------|
 | Heading 1      | Regular (400) | 2.125 rem<br> (34 px) | 0.25           | 2.5 rem<br> (40 px)  | `.rux-heading-1`      | `heading-1`             |
 | Heading 1 Bold | Bold (700)    | 2.125 rem<br> (34 px) | 0.25           | 2 rem<br> (32 px)    | `.rux-heading-1-bold` | `heading-1-bold`        |
 | Heading 2      | Regular (400) | 1.5 rem<br> (24 px)   | 0.00           | 1.75 rem<br> (28 px) | `.rux-heading-2`      | `heading-2`             |
@@ -47,8 +47,8 @@ The default font size in Astro is 1 rem/16 px. Astro supports three additional f
 :::table-overflow
 
 :::table-typography
-| Style               | Weight        | Font Size         | Letter Spacing | Line Height      | Class                      | Design Token Identifier |
-|---------------------|---------------|-------------------|----------------|------------------|----------------------------|-------------------------|
+| Style               | Weight        | Font Size             | Letter Spacing | Line Height          | Class                      | Design Token Identifier |
+|---------------------|---------------|-----------------------|----------------|----------------------|----------------------------|-------------------------|
 | Body 1              | Regular (400) | 1 rem<br> (16 px)     | 0.50           | 1.5 rem<br> (24 px)  | `.rux-body-1`              | `body-1`                |
 | Body 1 Bold         | Bold (700)    | 1 rem<br> (16 px)     | 0.50           | 1.5 rem<br> (24 px)  | `.rux-body-1-bold`         | `body-1-bold`           |
 | Body 2              | Regular (400) | 0.875 rem<br> (14 px) | 0.50           | 1.25 rem<br> (20 px) | `.rux-body-2`              | `body-2`                |

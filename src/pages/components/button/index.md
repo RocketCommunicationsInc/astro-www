@@ -8,6 +8,7 @@ git: rux-button
 assets:
     name: Button
 ---
+## Interactive Example
 
 ::tag{ is=a-playground tag=rux-button }
 

@@ -2,7 +2,7 @@
 tags: ["grm", "egs"]
 path: /grm-service-ux-design/grm-schedule
 date: Last Modified
-layout: project:layouts/new-docs/new-docs-layout.astro
+layout: project:layouts/docs/docs-layout.astro
 title: GRM Schedule
 description: The GRM Schedule app allows operators to view and interact with the full schedule of contacts via a Timeline or List View.
 ---
