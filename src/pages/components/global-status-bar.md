@@ -9,9 +9,9 @@ assets:
     name: Global Status Bar
 ---
 
-::storybook-demo
+## Interactive Example
 
-<!-- The Global Status Bar is a full width view across the top of an application — an area commonly reserved for global status, global command and top-level navigation. -->
+::tag{ is=a-playground tag=rux-global-status-bar }
 
 ## Appearance and Behavior
 

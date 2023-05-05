@@ -793,6 +793,117 @@
 			"fields": []
 		},
 		{
+			"tag": "rux-global-status-bar",
+			"constructor": "RuxGlobalStatusBar",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<div style=\"display: flex; justify-content: center;\">\n\t<rux-global-status-bar include-icon=\"true\" app-domain=\"Astro\" app-name=\"Dashboard\" app-version=\"4.0 Alpha\" menu-icon=\"apps\" username=\"\" app-state-color=\"\" app-state=\"\"></rux-global-status-bar>\n</div>"
+				},
+				{
+					"name": "With App State",
+					"code": ""
+				},
+				{
+					"name": "With Slot Content",
+					"code": ""
+				},
+				{
+					"name": "With Tabs",
+					"code": ""
+				},
+				{
+					"name": "No Icon",
+					"code": ""
+				},
+				{
+					"name": "No App Name",
+					"code": ""
+				},
+				{
+					"name": "No App Domain",
+					"code": ""
+				},
+				{
+					"name": "No App Version",
+					"code": ""
+				}
+			],
+			"fields": [
+				{
+					"kind": "text",
+					"property": "appName",
+					"attribute": "app-name",
+					"value": "Dashboard"
+				},
+				{
+					"kind": "text",
+					"property": "appDomain",
+					"attribute": "app-domain",
+					"value": "Astro"
+				},
+				{
+					"kind": "text",
+					"property": "appState",
+					"attribute": "app-state",
+					"value": ""
+				},
+				{
+					"kind": "menu",
+					"attribute": "app-state-color",
+					"property": "AppStateColor",
+					"options": [
+						"tag1",
+						"tag2",
+						"tag3",
+						"tag4"
+					],
+					"value": ""
+				},
+				{
+					"kind": "text",
+					"property": "appVersion",
+					"attribute": "app-version",
+					"value": "4.0 Alpha"
+				},
+				{
+					"kind": "switch",
+					"attribute": "include-icon",
+					"checked": true
+				},
+				{
+					"kind": "menu",
+					"attribute": "menu-icon",
+					"property": "menuIcon",
+					"options": [
+						"apps"
+					],
+					"value": "apps"
+				},
+				{
+					"kind": "text",
+					"property": "username",
+					"attribute": "username",
+					"value": ""
+				}
+			],
+			"dependencies": [
+				{
+					"tag": "rux-button",
+					"constructor": "RuxButton"
+				},
+				{
+					"tag": "rux-icon",
+					"constructor": "RuxIcon"
+				},
+				{
+					"tag": "rux-icon-apps",
+					"constructor": "RuxIconApps"
+				}
+			],
+			"style": ""
+		},
+		{
 			"tag": "rux-icon",
 			"constructor": "RuxIcon",
 			"examples": [
