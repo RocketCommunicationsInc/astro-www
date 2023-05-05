@@ -1,7 +1,7 @@
 ---
 title: Installation
 description: If you're using our Web Components, our Design Tokens are already accessible to you in the form of CSS Custom Properties as part of the package when you import `astro-web-components.css`.
-layout: project:layouts/new-docs/new-docs-layout.astro
+layout: project:layouts/docs/docs-layout.astro
 ---
 
 ### Manual Installation

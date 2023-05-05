@@ -8,6 +8,7 @@ git: rux-log
 assets:
     name: Log
 ---
+## Interactive Example
 
 ::storybook-demo
 

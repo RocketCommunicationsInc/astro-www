@@ -8,6 +8,7 @@ git: rux-segmented-button
 assets:
     name: Segmented Button
 ---
+## Interactive Example
 
 ::storybook-demo
 
