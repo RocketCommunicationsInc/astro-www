@@ -8,6 +8,7 @@ git: rux-accordion
 assets:
     name: Accordion
 ---
+
 ## Interactive Example
 
 ::tag{ is=a-playground tag=rux-accordion }
