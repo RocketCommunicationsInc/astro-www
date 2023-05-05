@@ -8,6 +8,7 @@ git: rux-accordion
 assets:
     name: Accordion
 ---
+## Interactive Example
 
 ::storybook-demo
 

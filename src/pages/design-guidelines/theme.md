@@ -2,7 +2,7 @@
 tags: resources
 path: /design-guidelines/theme
 date: Last Modified
-layout: project:layouts/new-docs/new-docs-layout.astro
+layout: project:layouts/docs/docs-layout.astro
 title: Theme
 description: Astro supports dark and light themes.
 ---

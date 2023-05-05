@@ -2,7 +2,7 @@
 tags: ["ttc", "egs"]
 path: /ttc-service-ux-design/ttc-investigate
 date: Last Modified
-layout: project:layouts/new-docs/new-docs-layout.astro
+layout: project:layouts/docs/docs-layout.astro
 title: TT&C Investigate
 description: The Investigate App displays system schematics and status data for a selected satellite.
 ---

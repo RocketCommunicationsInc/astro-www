@@ -1,5 +1,5 @@
 ---
-layout: project:layouts/new-docs/new-docs-layout.astro
+layout: project:layouts/docs/docs-layout.astro
 title: UI Design
 description: The most successful application designs are built upon in-depth knowledge of the user’s needs, wants, and expectations.
 ---

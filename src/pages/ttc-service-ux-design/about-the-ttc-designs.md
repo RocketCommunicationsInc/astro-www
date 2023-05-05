@@ -2,7 +2,7 @@
 tags: ["ttc", "egs"]
 path: /ttc-service-ux-design/about-the-ttc-designs
 date: Last Modified
-layout: project:layouts/new-docs/new-docs-layout.astro
+layout: project:layouts/docs/docs-layout.astro
 title: About the TT&C Designs
 description: The purpose of a Telemetry, Tracking, and Command (TT&C) system is to support missions requiring communication between satellites and ground systems.
 ---

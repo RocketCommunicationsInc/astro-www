@@ -1,5 +1,5 @@
 ---
-layout: project:layouts/new-docs/new-docs-layout.astro
+layout: project:layouts/docs/docs-layout.astro
 title: Design Resources
 description: A collection of helpful links and tools.
 ---

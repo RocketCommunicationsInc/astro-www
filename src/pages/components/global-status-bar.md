@@ -8,6 +8,7 @@ git: rux-global-status-bar
 assets:
     name: Global Status Bar
 ---
+## Interactive Example
 
 ::storybook-demo
 

@@ -9,6 +9,7 @@ assets:
 sandbox:
   style: "--y: 260px;"
 ---
+## Interactive Example
 
 ::tag{ is=a-playground tag=rux-textarea }
 
