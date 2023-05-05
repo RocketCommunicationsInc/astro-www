@@ -1,4 +1,5 @@
 import type PlaygroundElement from './Playground/Playground.ts'
+import 'project:utils/client/google-analytics'
 
 const iframe = window.parent?.document.querySelector('a-playground')! as PlaygroundElement
 
@@ -85,5 +86,27 @@ addEventListener('reset', (event) => {
 			control.selected = control.defaultSelected
 			control.checked = control.defaultChecked
 		}
+	}
+	sendTagToParent('gtag', 'hi there I am from the frame!')
+})
+
+// google tag events
+// -----------------------------------------------------------------------------
+
+// send gtag event to parent window
+function sendTagToParent(messageType: string, messageData: Object) {
+	const data = {
+		messageType,
+		messageData,
+	}
+
+	window.parent.postMessage(data, '*')
+}
+// send gtag data to parent add when someone clicks in the preview window
+addEventListener('click', (event) => {
+	const { target } = event as any as { target: HTMLElement }
+
+	if (target.localName !== 'a-sandbox' && target.closest('a-sandbox')) {
+		sendTagToParent('gtag', JSON.stringify(event))
 	}
 })
