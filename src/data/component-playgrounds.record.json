@@ -1381,9 +1381,14 @@
 			],
 			"fields": [
 				{
-					"kind": "text",
+					"kind": "menu",
 					"attribute": "selected",
 					"property": "selected",
+					"options": [
+						"First item",
+						"Second item",
+						"Third item"
+					],
 					"value": "Second item"
 				},
 				{
