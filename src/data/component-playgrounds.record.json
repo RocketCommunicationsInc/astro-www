@@ -991,7 +991,7 @@
 					"kind": "text",
 					"property": "sublabel",
 					"attribute": "sublabel",
-					"value": ""
+					"value": "Sub-label"
 				}
 			],
 			"dependencies": [
