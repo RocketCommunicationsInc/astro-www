@@ -9,9 +9,9 @@ assets:
   name: Progress
 ---
 
-::tag{ is=a-playground tag=rux-progress }
+## Interactive Example
 
-<!-- A Progress indicator signals that an application is busy performing an operation. -->
+::tag{ is=a-playground tag=rux-progress }
 
 :::note
 When operations take one second or longer to complete, add a Progress feedback element to your design.

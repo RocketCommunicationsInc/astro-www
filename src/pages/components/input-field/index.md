@@ -9,9 +9,9 @@ assets:
     name: Input Field
 ---
 
-::storybook-demo
+## Interactive Example
 
-<!-- Input Fields allow users to enter freeform text. Variations on this field often provide specific data entry formats such as masked data (e.g. passwords or phone numbers), date and time, and numeric data entry. -->
+::storybook-demo
 
 ## Rules of Thumb
 

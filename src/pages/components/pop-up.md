@@ -13,7 +13,6 @@ assets:
 
 ::tag{ is=a-playground tag=rux-pop-up }
 
-
 ## Appearance and Behavior
 
 Usually hidden on load, a Pop Up is invoked by clicking an interactable element with a defined target area. To close a Pop Up, the user may click outside its bounds, click a dedicated close button, or select an option within.

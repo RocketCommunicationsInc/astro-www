@@ -9,9 +9,9 @@ assets:
     name: Button
 ---
 
-::tag{ is=a-playground tag=rux-button }
+## Interactive Example
 
-<!-- Action Buttons allow users to trigger actions by clicking, tapping, or pressing a corresponding key on a keyboard, such as the “Enter” key. -->
+::tag{ is=a-playground tag=rux-button }
 
 ## Rules of Thumb
 

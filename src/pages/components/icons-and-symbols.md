@@ -9,6 +9,8 @@ assets:
     name: Icons and Symbols
 ---
 
+## Interactive Example
+
 ::tag{ is=a-playground tag=rux-monitoring-icon }
 
 Each icon, symbol, or notification symbol must be easily identifiable by users and also be immediately distinguishable from each other, eliminating confusion and mistakes.

@@ -9,6 +9,8 @@ assets:
     name: Select Menu
 ---
 
+## Interactive Example
+
 ::tag{ is=a-playground tag=rux-select }
 
 ## Rules of Thumb

@@ -10,9 +10,9 @@ sandbox:
   style: "--y: 260px;"
 ---
 
-::tag{ is=a-playground tag=rux-textarea }
+## Interactive Example
 
-<!-- Textareas are multi-line text inputs that allow for entering text in a larger area than a single-line text input would allow. They are typically used for multi-line input use cases like comments or feedback. -->
+::tag{ is=a-playground tag=rux-textarea }
 
 ## Rules of Thumb
 
