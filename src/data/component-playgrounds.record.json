@@ -30,7 +30,7 @@
 					"constructor": "RuxAccordionItem"
 				}
 			],
-			"style": "rux-accordion{min-width:70%;margin-bottom:auto;}"
+			"style": "rux-accordion{min-width:70%;margin-bottom:auto;} rux-accordion [slot] { position:relative; } rux-accordion [slot=label]:after {position: absolute;top: 0px;bottom: 0px;left: 0px;right: 0px;content: '';display: block;z-index: 99999;border-radius: 4px;border: 2px solid rgb(164, 102, 175);background: repeating-linear-gradient(-28deg,rgba(164, 102, 175, 0.6), rgba(164, 102, 175, 0.6) 12px,rgba(164, 102, 175, 0.7) 12px,rgba(164, 102, 175, 0.7) 24px);}"
 		},
 		{
 			"tag": "rux-breadcrumb",
@@ -100,6 +100,40 @@
 				}
 			],
 			"style": "rux-button[borderless]::part(container) { background-color: transparent; }"
+		},
+		{
+			"tag": "rux-card",
+			"constructor": "RuxCard",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-card style=\"width: 300px;\">\n\t<div slot=\"header\">Card Title</div>\n\tSuscipit potenti habitant penatibus praesent quam class erat purus nisl ligula arcu accumsan risus, interdum phasellus lorem leo libero maecenas dictumst donec dis cras ante finibus.\n</rux-card>"
+				},
+				{
+					"name": "With Footer",
+					"code": "<rux-card style=\"width: 300px;\">\n\tSuscipit potenti habitant penatibus praesent quam class erat purus nisl ligula arcu accumsan risus, interdum phasellus lorem leo libero maecenas dictumst donec dis cras ante finibus.\n\t<div slot=\"footer\">\n\t\t<rux-button size=\"small\" style=\"width: 100%;\">Primary button</rux-button>\n\t</div>\n</rux-card>"
+				},
+				{
+					"name": "Full Example",
+					"code": "<rux-card style=\"width: 300px;\">\n\t<div slot=\"header\" style=\"display: flex; align-items: center;\">\n\t\t<rux-icon icon=\"star\" size=\"26px\" style=\"margin-right: 10px;\"></rux-icon>\n\t\t\tCard Title\n\t\t</div>\n\t<div style=\"padding-top: 20px; padding-bottom: 20px; display: flex; justify-content: center;\">\n\t\t<svg width=\"140\" height=\"140\" viewBox=\"0 0 140 140\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n\t\t\t<path d=\"M139.65 70C139.65 108.467 108.467 139.65 70 139.65C31.5334 139.65 0.35 108.467 0.35 70C0.35 31.5334 31.5334 0.35 70 0.35C108.467 0.35 139.65 31.5334 139.65 70Z\"stroke=\"black\" stroke-width=\"0.7\"></path>\n\t\t\t<circle cx=\"70\" cy=\"70\" r=\"41.65\" stroke=\"black\" stroke-width=\"0.7\"></circle>\n\t\t\t<path d=\"M69.3044 28L69.3044 0.700024C109.605 0.700026 139.3 32.2 139.3 70.7L112.002 70.7C112.002 45.5 92.4029 28 69.3044 28Z\" fill=\"#AEA8E5\"></path>\n\t\t\t<path d=\"M69.3044 112L69.3044 139.3C109.605 139.3 139.3 107.45 139.3 70.7L112.002 70.7C111.302 93.45 92.7529 112 69.3044 112Z\" fill=\"#938BDB\"></path>\n\t\t\t<path d=\"M69.3044 28L69.3044 0.702855C30.8085 0.349326 0.00881784 33.6 0.711748 70.7L27.9982 70.7C27.9982 45.85 47.597 28.35 69.3044 28Z\" fill=\"#302C54\"><path>\n\t\t\t<path d=\"M69.3044 112L69.3044 139.3C30.1086 139.3 0.361846 106.75 0.711796 70.7L27.9982 70.7C28.6963 94.15 47.247 111.65 69.3044 112Z\" fill=\"#6058A8\"></path>\n\t\t\t</svg>\n\t\t</div>\n\t<div slot=\"footer\" style=\"justify-content: center; display: flex;\">\n\t\t<rux-button size=\"small\">Primary button</rux-button>\n\t</div>\n</rux-card>"
+				}
+			],
+			"fields": [],
+			"dependencies": [
+				{
+					"tag": "rux-button",
+					"constructor": "RuxButton"
+				},
+				{
+					"tag": "rux-icon",
+					"constructor": "RuxIcon"
+				},
+				{
+					"tag": "rux-icon-star",
+					"constructor": "RuxIconStar"
+				}
+			],
+			"style": ""
 		},
 		{
 			"tag": "rux-checkbox",

@@ -163,6 +163,8 @@
 		}
 
 		@media (width >= 700px) {
+			/* Layout */
+			grid-auto-rows: minmax(0, 1fr);
 			border-start-end-radius: var(--EdgeSizeInner);
 			border-end-end-radius: var(--EdgeSizeInner);
 		}

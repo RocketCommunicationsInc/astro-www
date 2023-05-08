@@ -78,7 +78,8 @@ const scriptContent = [
 							</Panel>
 						)
 					: null
-				}{
+				}
+				{
 					Array.isArray(attrs.fields) && attrs.fields.length > 0
 						? (
 							<Panel label="Properties">
@@ -115,7 +116,11 @@ const scriptContent = [
 							</Panel>
 						)
 					: null
-				}</Panelset>
+				}
+
+					<Panel label="Slots"></Panel>
+
+				</Panelset>
 			</section>
 		</main>
 	</body>

@@ -1,4 +1,10 @@
 import type PlaygroundElement from './Playground/Playground.ts'
+import { h } from 'project:utils/html.js'
+
+const getSlots = () => {
+	const slots: HTMLSlotElement[] = Array.from($target.shadowRoot.querySelectorAll('slot'))
+	return slots.filter(slot => slot.name !== '')
+}
 
 const iframe = window.parent?.document.querySelector('a-playground')! as PlaygroundElement
 
@@ -52,6 +58,114 @@ let $tag = globalThis.$tag as any
 
 // @ts-ignore
 let $target = globalThis.$target as any
+
+/**
+ * Utility function to add CSS in multiple passes.
+ * @param {string} styleString
+ */
+function toggleStyle(slotName: string, styleString: string) {
+	const styleSheet = document.querySelector(`[data-slot-highlight-${slotName}]`)
+	if (styleSheet) {
+		styleSheet.remove()
+	} else {
+		const style = document.createElement('style')
+		style.setAttribute(`data-slot-highlight-${slotName}`, '')
+		style.textContent = styleString
+		document.head.append(style)
+	}
+}
+
+const handleSlotToggleClick = (target: HTMLButtonElement) => {
+	if (target.style.backgroundColor) {
+		target.style.backgroundColor = ''
+	} else {
+		target.style.backgroundColor = 'lightblue'
+	}
+	const slotName = target.getAttribute('data-slot-name')
+	const slots = $target.shadowRoot.querySelectorAll('slot')
+
+	slots.forEach((slot) => {
+		if (slot.name === slotName) {
+			// if innerText then it is a text node and needs different styling
+			if (slot.innerText !== '') {
+				console.log(slot.innerText)
+				const span: HTMLElement = h(`<span class="slotHighlight">${slot.innerText}`)
+				slot.innerHTML = span
+
+				toggleStyle(slot.name, `
+				.slotHighlight{position:relative}
+				.slotHighlight::after {
+					display: block;
+
+					/* Layout */
+					inset: 0;
+					position: absolute;
+					z-index: 99999;
+
+					/* Appearance */
+					background: repeating-linear-gradient(-28deg,rgba(164, 102, 175, 0.6), rgba(164, 102, 175, 0.6) 12px,rgba(164, 102, 175, 0.7) 12px,rgba(164, 102, 175, 0.7) 24px);
+					border: 2px solid rgb(164, 102, 175);
+					border-radius: 4px;
+
+					/* Generated */
+					content: "";
+				}
+			`)
+			} else {
+				toggleStyle(slot.name, `
+				${$tag as any} [slot] {
+					position: relative;
+				}
+				${$tag} [slot="${slot.name}"]::after {
+					display: block;
+
+					/* Layout */
+					inset: 0;
+					position: absolute;
+					z-index: 99999;
+
+					/* Appearance */
+					background: repeating-linear-gradient(-28deg,rgba(164, 102, 175, 0.6), rgba(164, 102, 175, 0.6) 12px,rgba(164, 102, 175, 0.7) 12px,rgba(164, 102, 175, 0.7) 24px);
+					border: 2px solid rgb(164, 102, 175);
+					border-radius: 4px;
+
+					/* Generated */
+					content: "";
+				}
+			`)
+			}
+		}
+	})
+}
+
+// Priming named slots
+window.addEventListener('load', () => {
+	const slots = getSlots()
+	const slotPanel = document.querySelector('[label="Slots"]')
+	const icon = `
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20px" height="20px"><title>Flare</title><path fill-rule="evenodd" d="M11 2c0-.55.44-1 1-1 .55 0 1 .45 1 1v4c0 .55-.45 1-1 1s-1-.45-1-1V2ZM8.47 7.06l-.72-.72a.996.996 0 1 0-1.41 1.41l.71.71c.39.39 1.02.39 1.41 0 .39-.38.39-1.02.01-1.4ZM6 11H2c-.55 0-1 .45-1 1s.45 1 1 1h4c.55 0 1-.45 1-1s-.45-1-1-1Zm11.66-4.65a.996.996 0 0 0-1.41 0l-.71.71a.996.996 0 1 0 1.41 1.41l.71-.71c.38-.39.38-1.03 0-1.41ZM18 13c-.55 0-1-.44-1-1 0-.55.45-1 1-1h4c.55 0 1 .45 1 1s-.45 1-1 1h-4Zm-6-4c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3Zm4.24 8.65-.71-.71c-.38-.38-.38-1.02 0-1.41a.996.996 0 0 1 1.41 0l.71.71a.996.996 0 1 1-1.41 1.41Zm-9.9 0c.39.39 1.02.39 1.41 0l.71-.71a.996.996 0 1 0-1.41-1.41l-.71.71c-.38.39-.38 1.03 0 1.41ZM13 22c0 .55-.44 1-1 1-.55 0-1-.45-1-1v-4c0-.55.45-1 1-1s1 .45 1 1v4Z"></path><metadata>bright, edit, editing, effect, flare, image, images, light, photography, picture, pictures, sparkle, sun</metadata></svg>`
+
+	if (slots.length > 0) {
+		const ul = h('<ul>')
+		slots.map(slot => {
+			const slotLi = h(`<li>${slot.name} <button data-slot-name='${slot.name}' class='toggle-slot-highlight'>${icon}</button> `)
+			ul.appendChild(slotLi)
+			return null
+		})
+
+		slotPanel?.appendChild(ul)
+	} else {
+		slotPanel?.setAttribute('hidden', '')
+	}
+
+	const slotToggleButtons: HTMLButtonElement[] = Array.from(document.querySelectorAll('.toggle-slot-highlight'))
+	slotToggleButtons.forEach(button => {
+		button.addEventListener('click', () => {
+			handleSlotToggleClick(button)
+		})
+	})
+})
+
 
 // @ts-ignore
 let $canvas = $target.parentNode as HTMLElement
