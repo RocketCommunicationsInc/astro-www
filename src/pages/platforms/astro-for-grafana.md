@@ -1,7 +1,7 @@
 ---
 path: /platforms/astro-for-grafana
 date: Last Modified
-layout: project:layouts/new-docs/new-docs-layout.astro
+layout: project:layouts/docs/docs-layout.astro
 title: Astro for Grafana
 description: Astro for Grafana extends the Astro Space UX Design System to the Grafana dashboard environment, offering select Astro colors and components.
 ---

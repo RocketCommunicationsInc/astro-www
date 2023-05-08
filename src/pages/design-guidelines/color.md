@@ -1,7 +1,7 @@
 ---
 title: Color
 description: Maintaining color consistency across applications is an essential part of what makes an application an Astro Application.
-layout: project:layouts/new-docs/new-docs-layout.astro
+layout: project:layouts/docs/docs-layout.astro
 ---
 <style>
 td:not(.processed):nth-child(1),

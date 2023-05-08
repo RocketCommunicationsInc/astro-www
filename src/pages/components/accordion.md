@@ -8,10 +8,9 @@ git: rux-accordion
 assets:
     name: Accordion
 ---
+## Interactive Example
 
-::storybook-demo
-
-<!-- An Accordion is a component comprised of one or more vertically stacked sections or items, which can be expanded and collapsed to hide or reveal content. -->
+::tag{ is=a-playground tag=rux-accordion }
 
 While Accordions are often used to present information hierarchy or hide lengthy descriptive text, they may also be used to display controls, input fields, and data visualizations.
 

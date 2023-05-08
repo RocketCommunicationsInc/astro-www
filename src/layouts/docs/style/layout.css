@@ -1,6 +1,6 @@
 .p-grid {
 	& > .x-main {
-		/** Appearance */
+		/* Appearance */
 		background-color: var(--PrimaryColor);
 		color: var(--TextColor);
 	}

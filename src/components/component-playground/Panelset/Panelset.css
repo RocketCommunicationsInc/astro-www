@@ -6,6 +6,9 @@
 
 	&::part(tablist) {
 		/* Layout */
+		block-size: max-content;
+
+		/* Layout */
 		padding-inline: 24--rpx;
 
 		/* Appearance */
