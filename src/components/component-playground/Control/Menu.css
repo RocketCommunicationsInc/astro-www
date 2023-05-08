@@ -8,6 +8,7 @@ select {
 
 	/* Layout */
 	inline-size: 100%;
+	max-inline-size: 90%;
 
 	/* Text */
 	font: inherit;

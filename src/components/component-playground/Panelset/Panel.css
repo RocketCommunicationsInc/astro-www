@@ -64,6 +64,10 @@
 
 		@media (width >= 700px) {
 			/* Layout */
+			display: flex;
+
+			/* Layout */
+			justify-content: flex-start;
 			padding-block: 8px 16px;
 		}
 	}
