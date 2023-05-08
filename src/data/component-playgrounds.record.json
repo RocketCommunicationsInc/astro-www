@@ -634,8 +634,7 @@
 					"code": "<rux-container style=\"--body-padding: 0;\">\n\t<div slot=\"header\">Parent container title</div>\n\t<div slot=\"tab-bar\">\n\t\t<rux-tabs id=\"tab-set-id-2\" small=\"\">\n\t\t<rux-tab id=\"tab-id-4\">Tab 1</rux-tab>\n\t\t\t<rux-tab id=\"tab-id-5\">Tab 2</rux-tab>\n\t\t\t<rux-tab id=\"tab-id-6\" disabled=\"\">Tab 3 (disabled)</rux-tab>\n\t\t</rux-tabs>\n\t\t</div>\n\t<div slot=\"toolbar\">\n\t\t<rux-slider></rux-slider>\n\t</div>\n\t<div>\n\t\t<rux-tab-panels aria-labelledby=\"tab-set-id-2\">\n\t\t<rux-tab-panel aria-labelledby=\"tab-id-4\">\n\t\t\t<rux-table>\n\t\t\t\t<rux-table-header>\n\t\t\t\t\t<rux-table-header-row>\n\t\t\t\t\t\t<rux-table-header-cell>Header text</rux-table-header-cell>\n\t\t\t\t\t\t<rux-table-header-cell>Header text</rux-table-header-cell>\n\t\t\t\t\t\t<rux-table-header-cell>Header text</rux-table-header-cell>\n\t\t\t\t\t\t<rux-table-header-cell>Header text</rux-table-header-cell>\n\t\t\t\t\t</rux-table-header-row>\n\t\t\t\t</rux-table-header>\n\t\t\t<rux-table-body>\n\t\t\t\t\t<rux-table-row>\n\t\t\t\t\t<rux-table-cell>Table text</rux-table-cell>\n\t\t\t\t\t\t<rux-table-cell>Table text</rux-table-cell>\n\t\t\t\t\t\t<rux-table-cell>Table text</rux-table-cell>\n\t\t\t\t\t\t<rux-table-cell>Table text</rux-table-cell>\n\t\t\t\t\t\t</rux-table-row>\n\t\t\t\t<rux-table-row>\n\t\t\t\t\t<rux-table-cell>Table text</rux-table-cell>\n\t\t\t\t\t\t<rux-table-cell>Table text</rux-table-cell>\n\t\t\t\t\t\t<rux-table-cell>Table text</rux-table-cell>\n\t\t\t\t\t\t<rux-table-cell>Table text</rux-table-cell>\n\t\t\t\t\t\t</rux-table-row>\n\t\t\t\t<rux-table-row>\n\t\t\t\t\t<rux-table-cell>Table text</rux-table-cell>\n\t\t\t\t\t\t<rux-table-cell>Table text</rux-table-cell>\n\t\t\t\t\t\t<rux-table-cell>Table text</rux-table-cell>\n\t\t\t\t\t\t<rux-table-cell>Table text</rux-table-cell>\n\t\t\t\t\t\t</rux-table-row>\n\t\t\t\t<rux-table-row>\n\t\t\t\t\t<rux-table-cell>Table text</rux-table-cell>\n\t\t\t\t\t\t<rux-table-cell>Table text</rux-table-cell>\n\t\t\t\t\t\t<rux-table-cell>Table text</rux-table-cell>\n\t\t\t\t\t\t<rux-table-cell>Table text</rux-table-cell>\n\t\t\t\t\t\t</rux-table-row>\n\t\t\t\t</rux-table-body>\n\t\t\t\t</rux-table>\n\t\t\t</rux-tab-panel>\n\t\t\t<rux-tab-panel aria-labelledby=\"tab-id-5\">\n\t\t\t\t<div style=\"padding: 1.25rem;\">Tab 2 HTML content</div>\n\t\t\t</rux-tab-panel>\n\t\t\t<rux-tab-panel aria-labelledby=\"tab-id-6\">Tab 3 HTML content</rux-tab-panel>\n\t\t\t</rux-tab-panels>\n\t\t</div>\n\t<div slot=\"footer\">\n\t\t<rux-button style=\"width: 100%;\">Primary Button</rux-button>\n\t</div>\n</rux-container>"
 				}
 			],
-			"fields": [
-			],
+			"fields": [],
 			"dependencies": [
 				{
 					"tag": "rux-icon",
@@ -1572,7 +1571,7 @@
 					"kind": "switch",
 					"attribute": "hide-close",
 					"property": "hideClose",
-					"note":"Prevents the user from dismissing the notification",
+					"note": "Prevents the user from dismissing the notification",
 					"checked": false
 				},
 				{
@@ -1648,7 +1647,7 @@
 					"kind": "switch",
 					"attribute": "close-on-select",
 					"property": "closeOnSelect",
-					"note":"Closes the pop-up when a single selection is made.",
+					"note": "Closes the pop-up when a single selection is made.",
 					"checked": false
 				},
 				{
@@ -1856,29 +1855,53 @@
 			"examples": [
 				{
 					"name": "Default",
-					"code": "<rux-segmented-button></rux-segmented-button>\n<script type=\"module\">\nconst segmented = document.querySelector('rux-segmented-button')\nconst data = [\n{ label: 'First item' },\n{ label: 'Second item', selected: true },\n{ label: 'Third item' },\n]\nsegmented.data = data\n</script>"
+					"code": "<rux-segmented-button></rux-segmented-button>\n<script type=\"module\">\nconst segmented = document.querySelector('rux-segmented-button')\nconst data = [\n{ label: 'First item' },\n{ label: 'Second item'},\n{ label: 'Third item' },\n]\nsegmented.data = data\n</script>"
 				}
 			],
 			"fields": [
 				{
-					"kind": "menu",
+					"kind": "radio-group",
 					"attribute": "selected",
 					"property": "selected",
 					"options": [
-						"First item",
-						"Second item",
-						"Third item"
+						{
+							"kind": "radio",
+							"label": "First item",
+							"value": "First item"
+						},
+						{
+							"kind": "radio",
+							"label": "Second item",
+							"value": "Second item"
+						},
+						{
+							"kind": "radio",
+							"label": "Third item",
+							"value": "Third item"
+						}
 					],
-					"value": "Second item"
+					"value": ""
 				},
 				{
-					"kind": "menu",
+					"kind": "radio-group",
 					"attribute": "size",
 					"property": "size",
 					"options": [
-						"small",
-						"medium",
-						"large"
+						{
+							"kind": "radio",
+							"label": "Small",
+							"value": "small"
+						},
+						{
+							"kind": "radio",
+							"label": "Medium",
+							"value": "medium"
+						},
+						{
+							"kind": "radio",
+							"label": "Large",
+							"value": "large"
+						}
 					],
 					"value": "medium"
 				},
