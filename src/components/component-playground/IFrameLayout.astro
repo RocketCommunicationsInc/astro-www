@@ -17,6 +17,7 @@ import ControlText from './Control/Text.astro'
 import ControlRadio from './Control/Radio.astro'
 import ControlRadioGroup from './Control/RadioGroup.astro'
 import ControlSwitch from './Control/Switch.astro'
+import ControlSlots from './Control/Slots.astro'
 
 const attrs = Astro.props as PlaygroundRecord
 const defaultExample = attrs.examples[0]
@@ -117,8 +118,11 @@ const scriptContent = [
 						)
 					: null
 				}
-
-					<Panel label="Slots"></Panel>
+					<Panel label="Slots">
+						<Field type="slots" label="slots" property="slots:example" hiddenlabel>
+							<ControlSlots for="slots:examples" />
+						</Field>
+					</Panel>
 
 				</Panelset>
 			</section>

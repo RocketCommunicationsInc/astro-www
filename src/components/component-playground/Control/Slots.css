@@ -1,0 +1,76 @@
+a-slots-control {
+	& ul {
+		/* Layout */
+		margin: 0;
+
+		/* Layout */
+		padding: 0;
+		list-style: none;
+
+		& li {
+			display: flex;
+
+			/* Layout */
+			align-items: center;
+			padding-block: 1--step;
+
+			&[disabled] {
+				/* Appearance */
+				color: var(--Grey500Color);
+
+				& button {
+					display: none;
+				}
+			}
+
+			& button {
+				/* Layout */
+				padding: 2--step;
+
+				/* Appearance */
+				background-color: var(--Grey200Color);
+
+				/* Appearance */
+				border: none;
+
+				/* Appearance */
+				border: 1px solid transparent;
+				border-radius: 3px;
+				cursor: pointer;
+
+				&[data-slot-name] {
+					/* Layout */
+					margin-inline-start: auto;
+				}
+
+				&[data-slot-hide] {
+					/* Layout */
+					margin-inline-end: 2--step;
+				}
+
+				& svg {
+					/* Layout */
+					block-size: 5--step;
+					inline-size: 5--step;
+					fill: var(--Grey500Color);
+				}
+
+				&:hover {
+					& svg {
+						fill: var(--Grey600Color);
+					}
+				}
+
+				&[aria-selected="true"][data-slot-name] {
+					& svg {
+						/* Appearance */
+						fill: var(--DarkBlue500Color);
+					}
+
+					/* Appearance */
+					border: 1px solid var(--DarkBlue500Color);
+				}
+			}
+		}
+	}
+}
