@@ -179,10 +179,12 @@ a-panel + a-panel {
 }
 
 a-panel ul {
-	list-style: none;
+	/* Layout */
+	margin: 0;
 
 	/* Layout */
 	padding: 0;
+	list-style: none;
 }
 
 li {
@@ -190,8 +192,12 @@ li {
 
 	/* Layout */
 	align-items: center;
-	justify-content: space-between;
-	padding-block: 2--step;
+	padding-block: 1--step;
+
+	&[disabled] {
+		/* Appearance */
+		color: var(--Grey500Color);
+	}
 
 	& button {
 		/* Layout */
@@ -208,7 +214,25 @@ li {
 		border-radius: 3px;
 		cursor: pointer;
 
+		&[data-slot-name] {
+			/* Layout */
+			margin-inline-start: auto;
+		}
+
+		&[data-slot-hide] {
+			/* Layout */
+			margin-inline-end: 2--step;
+		}
+
+		&:disabled {
+			/* Layout */
+			visibility: hidden;
+		}
+
 		& svg {
+			/* Layout */
+			block-size: 5--step;
+			inline-size: 5--step;
 			fill: var(--Grey500Color);
 		}
 
@@ -218,14 +242,14 @@ li {
 			}
 		}
 
-		&[aria-selected="true"] {
+		&[aria-selected="true"][data-slot-name] {
 			& svg {
 				/* Appearance */
-				fill: var(--color-border-interactive-default);
+				fill: var(--DarkBlue500Color);
 			}
 
 			/* Appearance */
-			border: 1px solid var(--color-border-interactive-default);
+			border: 1px solid var(--DarkBlue500Color);
 		}
 	}
 }

@@ -827,6 +827,18 @@
 				{
 					"name": "Default",
 					"code": "<rux-radio-group name=\"radios\" label=\"Radio group\">\n\t<rux-radio value=\"one\" name=\"radios\">One</rux-radio>\n\t<rux-radio value=\"two\" name=\"radios\">Two</rux-radio>\n\t<rux-radio value=\"three\" name=\"radios\">Three</rux-radio>\n</rux-radio-group>"
+				},
+				{
+					"name": "With Help Slot",
+					"code": "<rux-radio-group name=\"radios\" label=\"Radio group\">\n\t<rux-radio value=\"one\" name=\"radios\">One</rux-radio>\n\t<rux-radio value=\"two\" name=\"radios\">Two</rux-radio>\n\t<rux-radio value=\"three\" name=\"radios\">Three</rux-radio>\n\t<span slot=\"help-text\">This is helpful information</span>\n</rux-radio-group>"
+				},
+				{
+					"name": "With Error Slot",
+					"code": "<rux-radio-group name=\"radios\" label=\"Radio group\">\n\t<rux-radio value=\"one\" name=\"radios\">One</rux-radio>\n\t<rux-radio value=\"two\" name=\"radios\">Two</rux-radio>\n\t<rux-radio value=\"three\" name=\"radios\">Three</rux-radio>\n\t<span slot=\"error-text\">This is error information</span>\n</rux-radio-group>"
+				},
+				{
+					"name": "With Label Slot",
+					"code": "<rux-radio-group name=\"radios\">\n\t<span slot=\"label\">Radio Label Slotted</span>\n\t<rux-radio value=\"one\" name=\"radios\">One</rux-radio>\n\t<rux-radio value=\"two\" name=\"radios\">Two</rux-radio>\n\t<rux-radio value=\"three\" name=\"radios\">Three</rux-radio>\n\t<span slot=\"help-text\">This is helpful information</span>\n</rux-radio-group>"
 				}
 			],
 			"fields": [
