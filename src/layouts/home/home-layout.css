@@ -1,14 +1,4 @@
 .p-grid > .x-main {
-	display: flex;
-
-	/* Layout */
-	align-items: center;
-	flex-flow: column;
-	gap: 14--step;
-	overflow: hidden;
-	padding-block: 4--step 18--step;
-	padding-inline: max(4--step, 50% - 190--step);
-
 	/* Appearance */
 	background:
 		url("/images/header-bg-gradient.svg") no-repeat 50% 0% / 100% auto,
@@ -17,4 +7,29 @@
 		url("/images/footer-bg-gradient.svg") no-repeat 50% 100% / 100% auto,
 		url("/images/footer-bg-noise.svg") no-repeat 50% 100% / 100% auto,
 		url("/images/footer-bg.webp") no-repeat 50% 100% / 100% auto;
+
+	& > main {
+		display: flex;
+
+		/* Layout */
+		align-items: center;
+		box-sizing: border-box;
+
+		/* Layout */
+		flex-flow: column;
+		gap: 14--step;
+		padding-block: 4--step 18--step;
+
+		/* Layout */
+		padding-inline: max(4--step, 50% - 190--step);
+
+		@media (width > 1024px) {
+			/* Layout */
+			inline-size: max-content;
+			margin-inline: auto;
+
+			/* extras */
+			max-inline-size: calc(100vw - 82--step);
+		}
+	}
 }
