@@ -177,3 +177,55 @@ a-panel + a-panel {
 		box-shadow: var(--Grey600Color) 0 -1px 0 0;
 	}
 }
+
+a-panel ul {
+	list-style: none;
+
+	/* Layout */
+	padding: 0;
+}
+
+li {
+	display: flex;
+
+	/* Layout */
+	align-items: center;
+	justify-content: space-between;
+	padding-block: 2--step;
+
+	& button {
+		/* Layout */
+		padding: 2--step;
+
+		/* Appearance */
+		background-color: var(--Grey200Color);
+
+		/* Appearance */
+		border: none;
+
+		/* Appearance */
+		border: 1px solid transparent;
+		border-radius: 3px;
+		cursor: pointer;
+
+		& svg {
+			fill: var(--Grey500Color);
+		}
+
+		&:hover {
+			& svg {
+				fill: var(--Grey600Color);
+			}
+		}
+
+		&[aria-selected="true"] {
+			& svg {
+				/* Appearance */
+				fill: var(--color-border-interactive-default);
+			}
+
+			/* Appearance */
+			border: 1px solid var(--color-border-interactive-default);
+		}
+	}
+}

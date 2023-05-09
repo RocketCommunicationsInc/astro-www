@@ -30,7 +30,7 @@
 					"constructor": "RuxAccordionItem"
 				}
 			],
-			"style": "rux-accordion{min-width:70%;margin-bottom:auto;} rux-accordion [slot] { position:relative; } rux-accordion [slot=label]:after {position: absolute;top: 0px;bottom: 0px;left: 0px;right: 0px;content: '';display: block;z-index: 99999;border-radius: 4px;border: 2px solid rgb(164, 102, 175);background: repeating-linear-gradient(-28deg,rgba(164, 102, 175, 0.6), rgba(164, 102, 175, 0.6) 12px,rgba(164, 102, 175, 0.7) 12px,rgba(164, 102, 175, 0.7) 24px);}"
+			"style": ""
 		},
 		{
 			"tag": "rux-breadcrumb",

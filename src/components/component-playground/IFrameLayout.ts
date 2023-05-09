@@ -76,42 +76,22 @@ function toggleStyle(slotName: string, styleString: string) {
 }
 
 const handleSlotToggleClick = (target: HTMLButtonElement) => {
-	if (target.style.backgroundColor) {
-		target.style.backgroundColor = ''
+	if (target.ariaSelected === 'true') {
+		target.setAttribute('aria-selected', 'false')
 	} else {
-		target.style.backgroundColor = 'lightblue'
+		target.setAttribute('aria-selected', 'true')
 	}
 	const slotName = target.getAttribute('data-slot-name')
 	const slots = $target.shadowRoot.querySelectorAll('slot')
 
 	slots.forEach((slot) => {
 		if (slot.name === slotName) {
-			// if innerText then it is a text node and needs different styling
-			if (slot.innerText !== '') {
-				console.log(slot.innerText)
-				const span: HTMLElement = h(`<span class="slotHighlight">${slot.innerText}`)
-				slot.innerHTML = span
+			const textNodeSlot = $target.querySelector('.slot-highlight_text-node')
 
-				toggleStyle(slot.name, `
-				.slotHighlight{position:relative}
-				.slotHighlight::after {
-					display: block;
+			// if textNodeSlot that was added on button select exists, remove it, remove stylesheet, exit function
+			if (textNodeSlot && target.ariaSelected === 'false') {
+				textNodeSlot.remove()
 
-					/* Layout */
-					inset: 0;
-					position: absolute;
-					z-index: 99999;
-
-					/* Appearance */
-					background: repeating-linear-gradient(-28deg,rgba(164, 102, 175, 0.6), rgba(164, 102, 175, 0.6) 12px,rgba(164, 102, 175, 0.7) 12px,rgba(164, 102, 175, 0.7) 24px);
-					border: 2px solid rgb(164, 102, 175);
-					border-radius: 4px;
-
-					/* Generated */
-					content: "";
-				}
-			`)
-			} else {
 				toggleStyle(slot.name, `
 				${$tag as any} [slot] {
 					position: relative;
@@ -133,7 +113,35 @@ const handleSlotToggleClick = (target: HTMLButtonElement) => {
 					content: "";
 				}
 			`)
+				return
 			}
+
+			// if innerText then it is a text node and needs a generated DOM Element to exist in the light DOM for styling
+			if (slot.innerText !== '') {
+				const span: HTMLElement = h(`<span slot="${slot.name}" class="slot-highlight_text-node">${slot.innerText}`)
+				$target.appendChild(span)
+			}
+				toggleStyle(slot.name, `
+				${$tag as any} [slot] {
+					position: relative;
+				}
+				${$tag} [slot="${slot.name}"]::after {
+					display: block;
+
+					/* Layout */
+					inset: 0;
+					position: absolute;
+					z-index: 99999;
+
+					/* Appearance */
+					background: repeating-linear-gradient(-28deg,rgba(164, 102, 175, 0.6), rgba(164, 102, 175, 0.6) 12px,rgba(164, 102, 175, 0.7) 12px,rgba(164, 102, 175, 0.7) 24px);
+					border: 2px solid rgb(164, 102, 175);
+					border-radius: 4px;
+
+					/* Generated */
+					content: "";
+				}
+			`)
 		}
 	})
 }
@@ -148,7 +156,7 @@ window.addEventListener('load', () => {
 	if (slots.length > 0) {
 		const ul = h('<ul>')
 		slots.map(slot => {
-			const slotLi = h(`<li>${slot.name} <button data-slot-name='${slot.name}' class='toggle-slot-highlight'>${icon}</button> `)
+			const slotLi = h(`<li>${slot.name} <button data-slot-name='${slot.name}' class='toggle-slot-highlight' aria-selected="false">${icon}</button> `)
 			ul.appendChild(slotLi)
 			return null
 		})
