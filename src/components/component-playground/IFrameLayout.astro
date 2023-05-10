@@ -7,8 +7,8 @@ import { For } from '@astropub/flow'
 
 import Panelset from './Panelset/Panelset.astro'
 import Panel from './Panelset/Panel.astro'
-// import PanelNav from './PanelNav/PanelNav.astro'
-// import PanelNavItem from './PanelNav/PanelNavItem.astro'
+import PanelNav from './PanelNav/PanelNav.astro'
+import PanelNavItem from './PanelNav/PanelNavItem.astro'
 
 import Sandbox from './Sandbox.astro'
 
@@ -126,22 +126,22 @@ const scriptContent = [
 					</Panel>
 				</Panelset>
 			</section>
-			<!-- <section class="panel-nav-area">
-				Panel Activation Buttons
+			<section class="panel-nav-area">
+				<!--Panel Activation Buttons-->
 				<PanelNav>
 					{ // examples panel icon
-						attrs.examples.length > 1 ?
-						<PanelNavItem data-nav-item="Variants" />
+						attrs.examples.length > 1
+						? <PanelNavItem data-nav-item="Variants" active />
 						: null
 					}
 					{ // properties panel icon
-					attrs.examples.length > 1 ?
-						<PanelNavItem data-nav-item="Properties" />
+					attrs.examples.length > 1
+						? <PanelNavItem data-nav-item="Properties" />
 						: null
 					}
 					<PanelNavItem data-nav-item="Slots" />
 				</PanelNav>
-			</section> -->
+			</section>
 		</main>
 	</body>
 </html>

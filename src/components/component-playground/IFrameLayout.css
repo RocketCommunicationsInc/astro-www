@@ -121,7 +121,7 @@
 
 	@media (width > 700px) {
 		/* Layout */
-		grid-template-columns: auto max-content;
+		grid-template-columns: auto max-content max-content;
 		overflow: initial;
 
 		/* Reference */

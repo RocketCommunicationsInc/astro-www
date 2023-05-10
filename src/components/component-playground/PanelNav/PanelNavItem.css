@@ -6,14 +6,27 @@
 		/* Appearance */
 		background-color: transparent;
 		border: none;
+		fill: var(--Grey700Color);
 
 		& svg {
 			/* Layout */
 			display: block;
+			fill: inherit;
 
 			/* Layout */
 			block-size: 6--step;
 			inline-size: 6--step;
 		}
+
+		&:hover {
+			fill: #000000;
+		}
 	}
+}
+
+/* Context Styles */
+
+:host([active]) {
+	/* Appearance */
+	background-color: var(--Grey200Color);
 }
