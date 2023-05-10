@@ -1,6 +1,7 @@
 @import "project:layouts/default/style/ui-monospace.css";
 @import "project:layouts/default/style/sanitize.css";
 @import "project:layouts/default/style/variables.css";
+@import "project:components/component-playground/Control/Slots.css";
 
 /* Baseline */
 
