@@ -124,7 +124,6 @@ const handleSlotHideClick = (target: HTMLButtonElement) => {
 		target.innerHTML = slotHideIconOpen
 		slotHideButton!.disabled = false
 
-		// @ts-ignore
 		const slotNode = $actualSlots.find((item: { slot: string | null }) => item.slot === slotName)
 		$target.appendChild(slotNode)
 	}
