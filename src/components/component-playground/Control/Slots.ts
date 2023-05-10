@@ -14,6 +14,11 @@ const getSlots = () => {
 	return slots.filter(slot => slot.name !== '')
 }
 
+/**
+ * Utility function to add CSS in multiple passes.
+ * @param {string} styleString
+ */
+
 function toggleStyle(slotName: string, styleString: string) {
 	const styleSheet = document.querySelector(`[data-slot-highlight-${slotName}]`)
 	if (styleSheet) {
@@ -68,10 +73,10 @@ const handleSlotToggleClick = (target: HTMLButtonElement) => {
 			}
 
 			// if innerText then it is a text node and needs a generated DOM Element to exist in the light DOM for styling
-			if (slot.innerText !== '') {
-				const span: HTMLElement = h(`<span slot="${slot.name}" class="slot-highlight_text-node">${slot.innerText}`)
-				$target.appendChild(span)
-			}
+			// if (slot.innerText !== '') {
+			// 	const span: HTMLElement = h(`<span slot="${slot.name}" class="slot-highlight_text-node">${slot.innerText}`)
+			// 	$target.appendChild(span)
+			// }
 				toggleStyle(slot.name, `
 				${$tag as any} [slot] {
 					position: relative;
@@ -131,7 +136,7 @@ const handleSlotQuestionClick = (target: HTMLButtonElement, direction: string) =
 
 	if (direction === 'enter') {
 		target.setAttribute('aria-selected', 'true')
-		const description = h('<p class="slot-hide_question-description">*slot not used in example</p>')
+		const description = h('<p class="slot-hide_question-description">*slot not used in example')
 		target.parentElement?.appendChild(description)
 	} else {
 		target.setAttribute('aria-selected', 'false')
@@ -141,7 +146,7 @@ const handleSlotQuestionClick = (target: HTMLButtonElement, direction: string) =
 }
 
 // this tells which slots are currently in the element
-function getEnabledSlots() {
+const getEnabledSlots = () => {
 	const slotPanel = document.querySelector('[label="Slots"]')
 	const slotsControl = document.querySelector('a-slots-control')
 	const slotHighlightIcon = `
