@@ -1,0 +1,10 @@
+:host {
+	display: flex;
+
+	/* Layout */
+	block-size: 100%;
+	flex-flow: column;
+
+	/* Appearance */
+	background-color: var(--Neutral000Color);
+}

@@ -1,0 +1,19 @@
+:host {
+	& button {
+		/* Layout */
+		padding: 4--step;
+
+		/* Appearance */
+		background-color: transparent;
+		border: none;
+
+		& svg {
+			/* Layout */
+			display: block;
+
+			/* Layout */
+			block-size: 6--step;
+			inline-size: 6--step;
+		}
+	}
+}

@@ -113,6 +113,10 @@
 
 		/* Reference */
 		--max-height: 400px;
+
+		& .panel-nav-area {
+			display: none;
+		}
 	}
 
 	@media (width > 700px) {

@@ -208,7 +208,7 @@
 					"kind": "switch",
 					"attribute": "tag",
 					"property": "tag",
-					"value": false
+					"checked": false
 				}
 			],
 			"style": "rux-classification-marking:not([tag]) { width: 100%; } rux-classification-marking::part(header) { padding-inline: .75em; width: auto; }"
@@ -619,67 +619,80 @@
 				{
 					"kind": "text",
 					"attribute": "date",
-					"property": "date"
+					"property": "date",
+					"value":""
 				},
 				{
 					"kind": "text",
 					"attribute": "day",
-					"property": "day"
+					"property": "day",
+					"value":""
 				},
 				{
 					"kind": "text",
 					"attribute": "era",
-					"property": "era"
+					"property": "era",
+					"value":""
 				},
 				{
 					"kind": "text",
 					"attribute": "hour",
-					"property": "hour"
+					"property": "hour",
+					"value":""
 				},
 				{
 					"kind": "text",
 					"attribute": "hour-12",
-					"property": "hour12"
+					"property": "hour12",
+					"value":""
 				},
 				{
 					"kind": "text",
 					"attribute": "locale",
-					"property": "locale"
+					"property": "locale",
+					"value":""
 				},
 				{
 					"kind": "text",
 					"attribute": "minute",
-					"property": "minute"
+					"property": "minute",
+					"value": ""
 				},
 				{
 					"kind": "text",
 					"attribute": "month",
-					"property": "month"
+					"property": "month",
+					"value": ""
 				},
 				{
 					"kind": "text",
 					"attribute": "second",
-					"property": "second"
+					"property": "second",
+					"value": ""
 				},
 				{
 					"kind": "text",
 					"attribute": "time-zone",
-					"property": "timeZone"
+					"property": "timeZone",
+					"value": ""
 				},
 				{
 					"kind": "text",
 					"attribute": "time-zone-name",
-					"property": "timeZoneName"
+					"property": "timeZoneName",
+					"value": ""
 				},
 				{
 					"kind": "text",
 					"attribute": "weekday",
-					"property": "weekday"
+					"property": "weekday",
+					"value": ""
 				},
 				{
 					"kind": "text",
 					"attribute": "year",
-					"property": "year"
+					"property": "year",
+					"value": ""
 				}
 			]
 		},
@@ -738,7 +751,8 @@
 				{
 					"kind": "switch",
 					"property": "hideLabel",
-					"attribute": "hide-label"
+					"attribute": "hide-label",
+					"checked": false
 				},
 				{
 					"kind": "text",
@@ -938,13 +952,13 @@
 					"kind": "switch",
 					"attribute": "checked",
 					"property": "checked",
-					"value": false
+					"checked": false
 				},
 				{
 					"kind": "switch",
 					"attribute": "disabled",
 					"property": "disabled",
-					"value": false
+					"checked": false
 				},
 				{
 					"kind": "text",
@@ -1120,7 +1134,7 @@
 					"kind": "switch",
 					"attribute": "open",
 					"property": "open",
-					"value": false
+					"checked": false
 				},
 				{
 					"kind": "text",

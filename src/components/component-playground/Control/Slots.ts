@@ -105,23 +105,38 @@ const slotHideIconClosed = `
 
 const handleSlotHideClick = (target: HTMLButtonElement) => {
 	const slotName = target.getAttribute('data-slot-hide')
-	const slotHighlightButton = document.querySelector(`[data-slot-name=${slotName}]`) as HTMLButtonElement
+	const slotHideButton = document.querySelector(`[data-slot-name=${slotName}]`) as HTMLButtonElement
 
 	if (target.ariaSelected === 'false') {
 		target.setAttribute('aria-selected', 'true')
 		target.innerHTML = slotHideIconClosed
-		slotHighlightButton!.disabled = true
+		slotHideButton!.disabled = true
 
 		const targetSlot = $target.querySelector(`[slot=${slotName}]`)
 		targetSlot.remove()
 	} else {
 		target.setAttribute('aria-selected', 'false')
 		target.innerHTML = slotHideIconOpen
-		slotHighlightButton!.disabled = false
+		slotHideButton!.disabled = false
 
 		// @ts-ignore
 		const slotNode = $actualSlots.find((item: { slot: string | null }) => item.slot === slotName)
 		$target.appendChild(slotNode)
+	}
+}
+
+const handleSlotQuestionClick = (target: HTMLButtonElement, direction: string) => {
+	// const slotName = target.getAttribute('data-slot-hide')
+	// const slotQuestionButton = document.querySelector(`[data-slot-name=${slotName}]`) as HTMLButtonElement
+
+	if (direction === 'enter') {
+		target.setAttribute('aria-selected', 'true')
+		const description = h('<p class="slot-hide_question-description">*slot not used in example</p>')
+		target.parentElement?.appendChild(description)
+	} else {
+		target.setAttribute('aria-selected', 'false')
+		const description = document.querySelector('.slot-hide_question-description')
+		description?.remove()
 	}
 }
 
@@ -131,11 +146,10 @@ function getEnabledSlots() {
 	const slotsControl = document.querySelector('a-slots-control')
 	const slotHighlightIcon = `
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Flare</title><path fill-rule="evenodd" d="M11 2c0-.55.44-1 1-1 .55 0 1 .45 1 1v4c0 .55-.45 1-1 1s-1-.45-1-1V2ZM8.47 7.06l-.72-.72a.996.996 0 1 0-1.41 1.41l.71.71c.39.39 1.02.39 1.41 0 .39-.38.39-1.02.01-1.4ZM6 11H2c-.55 0-1 .45-1 1s.45 1 1 1h4c.55 0 1-.45 1-1s-.45-1-1-1Zm11.66-4.65a.996.996 0 0 0-1.41 0l-.71.71a.996.996 0 1 0 1.41 1.41l.71-.71c.38-.39.38-1.03 0-1.41ZM18 13c-.55 0-1-.44-1-1 0-.55.45-1 1-1h4c.55 0 1 .45 1 1s-.45 1-1 1h-4Zm-6-4c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3Zm4.24 8.65-.71-.71c-.38-.38-.38-1.02 0-1.41a.996.996 0 0 1 1.41 0l.71.71a.996.996 0 1 1-1.41 1.41Zm-9.9 0c.39.39 1.02.39 1.41 0l.71-.71a.996.996 0 1 0-1.41-1.41l-.71.71c-.38.39-.38 1.03 0 1.41ZM13 22c0 .55-.44 1-1 1-.55 0-1-.45-1-1v-4c0-.55.45-1 1-1s1 .45 1 1v4Z"></path></svg>`
+	const slotQuestionIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Help Outline</title><path d="M2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10S2 17.52 2 12Zm2 0c0 4.41 3.59 8 8 8s8-3.59 8-8-3.59-8-8-8-8 3.59-8 8Zm9 4v2h-2v-2h2ZM8.18 8.83a4.002 4.002 0 0 1 4.43-2.79c1.74.26 3.11 1.73 3.35 3.47.228 1.614-.664 2.392-1.526 3.143-.158.139-.315.276-.464.417a3.514 3.514 0 0 0-.345.36l-.015.02a2.758 2.758 0 0 0-.33.48c-.17.3-.28.65-.28 1.07h-2c0-.5.08-.91.2-1.25l.01-.034a.144.144 0 0 1 .01-.036.187.187 0 0 1 .02-.04.187.187 0 0 0 .02-.04 3.331 3.331 0 0 1 .265-.525l.015-.025c0-.005.003-.008.005-.01s.005-.005.005-.01c.34-.513.797-.864 1.224-1.193.614-.472 1.167-.897 1.226-1.687.08-.97-.62-1.9-1.57-2.1-1.03-.22-1.98.39-2.3 1.28-.14.38-.47.67-.88.67h-.2a.907.907 0 0 1-.87-1.17Z"></path><metadata>?, assistance, circle, help, info, information, outline, punctuation, question mark, recent, restore, shape, support, symbol</metadata></svg>`
 
 	// getting the actual slots set by the user, filling array with just slot names
 	const actualSlots: HTMLElement[] = Array.from($target.querySelectorAll('[slot]'))
-	console.log('target', $target)
-	console.log(actualSlots)
 
 	$actualSlots = actualSlots
 
@@ -156,7 +170,7 @@ function getEnabledSlots() {
 			if (actualSlotNames.includes(slot.name)) {
 				slotLi = h(`<li><button data-slot-hide='${slot.name}' aria-selected="false">${slotHideIconOpen}</button>${slot.name}<button data-slot-name='${slot.name}' class='toggle-slot-highlight' aria-selected="false">${slotHighlightIcon}</button> `)
 			} else {
-				slotLi = h(`<li disabled>${slot.name} <button disabled data-slot-name='${slot.name}' class='toggle-slot-highlight' aria-selected="false">${slotHighlightIcon}</button> `)
+				slotLi = h(`<li><button data-slot-question='${slot.name}' aria-selected="false">${slotQuestionIcon}</button><span data-inactive-slot-name='='${slot.name}'>${slot.name}</span>`)
 			}
 
 			ul.appendChild(slotLi)
@@ -183,11 +197,25 @@ function getEnabledSlots() {
 			handleSlotHideClick(button)
 		})
 	})
+
+	// question slot buttons
+	const slotQuestionButtons: HTMLButtonElement[] = Array.from(document.querySelectorAll('[data-slot-question]'))
+	slotQuestionButtons.forEach(button => {
+		button.addEventListener('mouseenter', () => {
+			handleSlotQuestionClick(button, 'enter')
+		})
+	})
+
+	slotQuestionButtons.forEach(button => {
+		button.addEventListener('mouseleave', () => {
+			handleSlotQuestionClick(button, 'leave')
+		})
+	})
 }
 
 
 // Priming named slots
-addEventListener('load', () => {
+window.addEventListener('load', () => {
 	const slots = getSlots()
 	$slots = [ ...slots ] as any[]
 	getEnabledSlots()

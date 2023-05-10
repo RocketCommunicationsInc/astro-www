@@ -13,6 +13,7 @@ a-slots-control {
 			/* Layout */
 			align-items: center;
 			padding-block: 1--step;
+			position: relative;
 
 			&[disabled] {
 				/* Appearance */
@@ -41,11 +42,21 @@ a-slots-control {
 				&[data-slot-name] {
 					/* Layout */
 					margin-inline-start: auto;
+
+					&:disabled {
+						/* Appearance */
+						cursor: not-allowed;
+						opacity: .3;
+					}
 				}
 
-				&[data-slot-hide] {
+				&[data-slot-hide], &[data-slot-question] {
 					/* Layout */
 					margin-inline-end: 2--step;
+					padding: 0;
+
+					/* Appearance */
+					background-color: transparent;
 				}
 
 				& svg {
@@ -70,6 +81,28 @@ a-slots-control {
 					/* Appearance */
 					border: 1px solid var(--DarkBlue500Color);
 				}
+			}
+
+			& span[data-inactive-slot-name] {
+				/* Appearance */
+				opacity: .3;
+			}
+
+			& .slot-hide_question-description {
+				/* Layout */
+				inset-block-end: 8--step;
+				margin: 0;
+				padding: 2--step;
+				position: absolute;
+				z-index: 2;
+
+				/* Text */
+				font-size: 14--rpx;
+
+				/* Appearance */
+				background-color: var(--Grey200Color);
+				border-radius: 3--rpx;
+				box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
 			}
 		}
 	}
