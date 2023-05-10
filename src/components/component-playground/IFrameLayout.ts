@@ -53,11 +53,6 @@ let $tag = globalThis.$tag as any
 // @ts-ignore
 let $target = globalThis.$target as any
 
-/**
- * Utility function to add CSS in multiple passes.
- * @param {string} styleString
- */
-
 let $canvas = $target.parentNode as HTMLElement
 
 addEventListener('input', (event) => {
