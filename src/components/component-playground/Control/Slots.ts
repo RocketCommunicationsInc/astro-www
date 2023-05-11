@@ -219,16 +219,14 @@ const getEnabledSlots = () => {
 
 
 // Priming named slots
-addEventListener('load', () => {
+addEventListener('appload', () => {
 	const slots = getSlots()
 	$slots = [ ...slots ] as any[]
 	getEnabledSlots()
-	console.log('load!', $tag, $target, $canvas, $actualSlots, $slots)
 })
 
 // get new variant and change slot disabled/enabled when variant changes
 addEventListener('reset', () => {
 	$target = $canvas.querySelector($tag)
 	getEnabledSlots()
-	console.log('reset!', $tag, $target, $canvas, $actualSlots, $slots)
 })
