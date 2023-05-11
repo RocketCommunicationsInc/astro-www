@@ -54,15 +54,6 @@ export default class PanelNavItem extends HTMLElement {
 				element.setAttribute('data-active', 'true')
 				matchingPanel.removeAttribute('hidden')
 			}
-
-			// // if button is inactive, hide active state on all buttons and panels
-			// for (const panel of allPanels) {
-			// 	panel.setAttribute('hidden', '')
-			// }
-
-			// for (const navItem of allPanelNavItems) {
-			// 	navItem.setAttribute('data-active', 'false')
-			// }
 		}
 
 		const matchButtonStateToPanel = (e: Event) => {
@@ -74,10 +65,19 @@ export default class PanelNavItem extends HTMLElement {
 			}
 		}
 
+		const updatePanelVisibility = () => {
+			if (visualViewport.width >= 700) return
+			element.setAttribute('data-active', 'true')
+			matchingPanel.removeAttribute('hidden')
+		}
+
 		element.addEventListener('click', (e) => toggleActive(e))
 
 		// listener to handle setting button to inactive if panel is closed via the x on the panel
 		addEventListener('closePanel', (e) => matchButtonStateToPanel(e))
+
+		// make panels visible if viewport is under 700
+		visualViewport.addEventListener('resize', updatePanelVisibility, { capture: true })
 	}
 }
 
