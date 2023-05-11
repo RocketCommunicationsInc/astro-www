@@ -46,6 +46,13 @@ export default class PanelNav extends ReflectedElement(
 			content,
 			styling,
 		})
+
+		// placeholder event since slots populate after the fact and panel isn't conditionally rendered
+		addEventListener('noSlotsFound', () => {
+			const slotsButton: HTMLElement = element.querySelector('[data-nav-item="Slots"]')!
+			// @ts-ignore
+			slotsButton.shadowRoot.querySelector('button')!.setAttribute('disabled', '')
+		})
 	}
 }
 

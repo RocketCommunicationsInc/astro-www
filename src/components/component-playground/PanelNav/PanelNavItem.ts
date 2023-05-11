@@ -6,7 +6,6 @@ import styling from './PanelNavItem.css?withtype=style'
 export default class PanelNavItem extends HTMLElement {
  constructor() {
 		let element = super() as any as this
-		let active = false
 
 		const svg: {[key:string]: string} = {
 			'Variants': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Examples</title><path d="M4 9c.55 0 1-.45 1-1s-.45-1-1-1-1 .45-1 1 .45 1 1 1Zm1 3c0 .55-.45 1-1 1s-1-.45-1-1 .45-1 1-1 1 .45 1 1Zm0 4c0 .55-.45 1-1 1s-1-.45-1-1 .45-1 1-1 1 .45 1 1Zm15-3H8c-.55 0-1-.45-1-1s.45-1 1-1h12c.55 0 1 .45 1 1s-.45 1-1 1ZM8 17h12c.55 0 1-.45 1-1s-.45-1-1-1H8c-.55 0-1 .45-1 1s.45 1 1 1Zm0-8c-.55 0-1-.45-1-1s.45-1 1-1h12c.55 0 1 .45 1 1s-.45 1-1 1H8Z"></path></svg>>`,
@@ -23,27 +22,66 @@ export default class PanelNavItem extends HTMLElement {
 		DOM.withInternals<Internals>(element, () => ({
 			shadowContent: DOM.queryPart<HTMLButtonElement>(shadowRoot, 'button')!,
 		}))
-		const button = shadowRoot.querySelector('button')
+		const button = shadowRoot.querySelector('button')! as HTMLButtonElement
 		const NavItem = element.getAttribute('data-nav-item') as string
+		const matchingPanel = document.querySelector(`[label="${NavItem}"]`) as HTMLElement
+		// const allPanels: HTMLElement[] = Array.from(document.querySelectorAll('a-panel'))
+		// const allPanelNavItems: HTMLElement[] = Array.from(document.querySelectorAll('a-panel-nav-item'))
+
 		button?.appendChild(h(`${svg[NavItem]}`))
 
-		const toggleActive = (e: Event) => {
-			const panelMatch = document.querySelector(`[label="${NavItem}"]`) as HTMLElement
-			active = !active
-			if (active) {
-				element.setAttribute('active', '')
-				panelMatch.style.display = 'grid'
+		// if panel doesn't exist, disable the corresponding nav button, otherwise set the none hidden panel button
+		if (matchingPanel === null) {
+			button.disabled = true
+		} else {
+			if (matchingPanel.hasAttribute('hidden')) {
+				element.setAttribute('data-active', 'false')
 			} else {
-				element.removeAttribute('active')
-				panelMatch.style.display = 'none'
+				element.setAttribute('data-active', 'true')
 			}
 		}
+
+		const toggleActive = (e: Event) => {
+			// if button is disabled, do nothing
+			if (button.disabled === true) return
+
+			// if button is active, remove active state and hide matching panel
+			if (element.getAttribute('data-active') === 'true') {
+				element.setAttribute('data-active', 'false')
+				matchingPanel.setAttribute('hidden', '')
+			} else {
+				// set active state on clicked button and unhide matching panel
+				element.setAttribute('data-active', 'true')
+				matchingPanel.removeAttribute('hidden')
+			}
+
+			// // if button is inactive, hide active state on all buttons and panels
+			// for (const panel of allPanels) {
+			// 	panel.setAttribute('hidden', '')
+			// }
+
+			// for (const navItem of allPanelNavItems) {
+			// 	navItem.setAttribute('data-active', 'false')
+			// }
+		}
+
+		const matchButtonStateToPanel = (e: Event) => {
+			const target = e.target as HTMLElement
+			const label = target.getAttribute('label')
+
+			if (label === NavItem) {
+				element.setAttribute('data-active', 'false')
+			}
+		}
+
 		element.addEventListener('click', (e) => toggleActive(e))
+
+		// listener to handle setting button to inactive if panel is closed via the x on the panel
+		addEventListener('closePanel', (e) => matchButtonStateToPanel(e))
 	}
 }
 
 customElements.define('a-panel-nav-item', PanelNavItem)
-
 
 interface Internals {
 	shadowContent: HTMLButtonElement

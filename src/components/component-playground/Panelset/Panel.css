@@ -28,6 +28,7 @@
 		/* Layout */
 		align-items: center;
 		gap: 3--step;
+		justify-content: space-between;
 		padding-block: 10--rpx;
 		padding-inline: 12--rpx;
 
@@ -69,6 +70,32 @@
 			/* Layout */
 			justify-content: flex-start;
 			padding-block: 8px 16px;
+		}
+	}
+
+	& button {
+		/* Layout */
+		padding: 0;
+
+		/* Appearance */
+		background-color: transparent;
+		border: none;
+
+		/* Appearance */
+		cursor: pointer;
+		fill: var(--Grey700Color);
+
+		& svg {
+			/* Layout */
+			display: block;
+
+			/* Layout */
+			block-size: 5--step;
+			inline-size: 5--step;
+		}
+
+		&:hover {
+			fill: #000000;
 		}
 	}
 }

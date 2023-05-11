@@ -130,7 +130,8 @@
 	}
 
 	& .sandbox-area,
-	& .control-area {
+	& .control-area,
+	& .panel-nav-area {
 		display: grid;
 
 		/* Layout */
@@ -170,6 +171,12 @@
 		@media (width >= 700px) {
 			/* Layout */
 			grid-auto-rows: minmax(0, 1fr);
+		}
+	}
+
+	& .panel-nav-area {
+		@media (width >= 700px) {
+			/* Layout */
 			border-start-end-radius: var(--EdgeSizeInner);
 			border-end-end-radius: var(--EdgeSizeInner);
 		}

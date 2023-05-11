@@ -1,4 +1,5 @@
 import * as DOM from 'project:utils/client/DOM'
+import { h } from 'project:utils/html.ts'
 import ReflectedElement from 'project:utils/client/ReflectedElement.ts'
 import styling from './Panel.css?withtype=style'
 import content from './Panel.html?withtype=fragment'
@@ -65,9 +66,22 @@ export default class PanelElement extends ReflectedElement(
 			content,
 			styling,
 		})
+		const closeButton = DOM.queryPart<HTMLButtonElement>(shadowRoot, 'closeButton')!
+		closeButton.appendChild(h('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Close</title><path d="M18.3 5.71a.996.996 0 0 0-1.41 0L12 10.59 7.11 5.7A.996.996 0 1 0 5.7 7.11L10.59 12 5.7 16.89a.996.996 0 1 0 1.41 1.41L12 13.41l4.89 4.89a.996.996 0 1 0 1.41-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4Z"></path></svg>'))
+		// trigger a closePanel event
+		DOM.observe(closeButton, {
+			click() {
+				element.setAttribute('hidden', '')
+				DOM.trigger(element, {
+					closePanel: { bubbles: true, composed: true },
+				})
+			}
+		})
+
+		const shadowHeading = DOM.queryPart<HTMLSlotElement>(shadowRoot, 'headingTitle')!
 
 		DOM.withInternals<Internals>(element, () => ({
-			shadowHeading: DOM.queryPart<HTMLSlotElement>(shadowRoot, 'heading')!,
+			shadowHeading,
 			shadowContent: DOM.queryPart<HTMLSlotElement>(shadowRoot, 'content')!,
 		}))
 	}

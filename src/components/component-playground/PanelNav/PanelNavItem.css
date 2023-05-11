@@ -1,12 +1,21 @@
 :host {
 	& button {
 		/* Layout */
-		padding: 4--step;
+		padding: 10--rpx;
 
 		/* Appearance */
 		background-color: transparent;
 		border: none;
+
+		/* Appearance */
+		cursor: pointer;
 		fill: var(--Grey700Color);
+
+		&:disabled {
+			/* Appearance */
+			cursor: not-allowed;
+			opacity: .3;
+		}
 
 		& svg {
 			/* Layout */
@@ -26,7 +35,7 @@
 
 /* Context Styles */
 
-:host([active]) {
+:host([data-active="true"]) {
 	/* Appearance */
 	background-color: var(--Grey200Color);
 }

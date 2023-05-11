@@ -1,3 +1,4 @@
+import * as DOM from 'project:utils/client/DOM'
 import { h } from 'project:utils/html.js'
 
 // @ts-ignore
@@ -11,6 +12,12 @@ let $slots: HTMLSlotElement[]
 
 const getSlots = () => {
 	const slots: HTMLSlotElement[] = Array.from($target.shadowRoot.querySelectorAll('slot'))
+	const namedSlots : HTMLSlotElement[] = slots.filter(slot => slot.name !== '')
+	// if no slots then trigger an event that PanelNavItem can pick up to disable slots button.
+	// this is a special case because slots populate after everything else
+	if (namedSlots.length < 1) {
+		DOM.trigger(window, { noSlotsFound: { bubbles: true, composed: true } })
+	}
 	return slots.filter(slot => slot.name !== '')
 }
 
@@ -61,9 +68,9 @@ const handleSlotToggleClick = (target: HTMLButtonElement) => {
 					z-index: 99999;
 
 					/* Appearance */
-					background: repeating-linear-gradient(-28deg,rgba(164, 102, 175, 0.6), rgba(164, 102, 175, 0.6) 12px,rgba(164, 102, 175, 0.7) 12px,rgba(164, 102, 175, 0.7) 24px);
-					border: 2px solid rgb(164, 102, 175);
-					border-radius: 4px;
+					background: rgba(164, 102, 175, 0.6);
+					border: 1px solid rgb(164, 102, 175);
+					border-radius: 3px;
 
 					/* Generated */
 					content: "";
@@ -90,9 +97,9 @@ const handleSlotToggleClick = (target: HTMLButtonElement) => {
 					z-index: 99999;
 
 					/* Appearance */
-					background: repeating-linear-gradient(-28deg,rgba(164, 102, 175, 0.6), rgba(164, 102, 175, 0.6) 12px,rgba(164, 102, 175, 0.7) 12px,rgba(164, 102, 175, 0.7) 24px);
-					border: 2px solid rgb(164, 102, 175);
-					border-radius: 4px;
+					background: rgba(164, 102, 175, 0.6);
+					border: 1px solid rgb(164, 102, 175);
+					border-radius: 3px;
 
 					/* Generated */
 					content: "";
