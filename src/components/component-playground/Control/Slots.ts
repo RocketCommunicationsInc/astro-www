@@ -27,7 +27,28 @@ const getSlots = () => {
  * @param {string} styleString
  */
 
-function toggleStyle(slotName: string, styleString: string) {
+function toggleStyle(slotName: string, style?: string) {
+	const styleString = style || `
+									${$tag as any} [slot] {
+										position: relative;
+									}
+									${$tag} [slot="${slotName}"]::after {
+										display: block;
+
+										/* Layout */
+										inset: -.25rem;
+										position: absolute;
+										z-index: 99999;
+
+										/* Appearance */
+										background: rgba(164, 102, 175, 0.6);
+										border: 1px solid rgb(164, 102, 175);
+										border-radius: 3px;
+
+										/* Generated */
+										content: "";
+									}
+								`
 	const styleSheet = document.querySelector(`[data-slot-highlight-${slotName}]`)
 	if (styleSheet) {
 		styleSheet.remove()
@@ -55,57 +76,11 @@ const handleSlotToggleClick = (target: HTMLButtonElement) => {
 			// if textNodeSlot that was added on button select exists, remove it, remove stylesheet, exit function
 			if (textNodeSlot && target.ariaSelected === 'false') {
 				textNodeSlot.remove()
-
-				toggleStyle(slot.name, `
-				${$tag as any} [slot] {
-					position: relative;
-				}
-				${$tag} [slot="${slot.name}"]::after {
-					display: block;
-
-					/* Layout */
-					inset: 0;
-					position: absolute;
-					z-index: 99999;
-
-					/* Appearance */
-					background: rgba(164, 102, 175, 0.6);
-					border: 1px solid rgb(164, 102, 175);
-					border-radius: 3px;
-
-					/* Generated */
-					content: "";
-				}
-			`)
+				toggleStyle(slot.name)
 				return
 			}
 
-			// if innerText then it is a text node and needs a generated DOM Element to exist in the light DOM for styling
-			// if (slot.innerText !== '') {
-			// 	const span: HTMLElement = h(`<span slot="${slot.name}" class="slot-highlight_text-node">${slot.innerText}`)
-			// 	$target.appendChild(span)
-			// }
-				toggleStyle(slot.name, `
-				${$tag as any} [slot] {
-					position: relative;
-				}
-				${$tag} [slot="${slot.name}"]::after {
-					display: block;
-
-					/* Layout */
-					inset: 0;
-					position: absolute;
-					z-index: 99999;
-
-					/* Appearance */
-					background: rgba(164, 102, 175, 0.6);
-					border: 1px solid rgb(164, 102, 175);
-					border-radius: 3px;
-
-					/* Generated */
-					content: "";
-				}
-			`)
+			toggleStyle(slot.name)
 		}
 	})
 }
