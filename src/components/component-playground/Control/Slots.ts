@@ -16,6 +16,7 @@ const getSlots = () => {
 	// if no slots then trigger an event that PanelNavItem can pick up to disable slots button.
 	// this is a special case because slots populate after everything else
 	if (namedSlots.length < 1) {
+		document.querySelector('a-panel[label="Slots"]')?.remove()
 		DOM.trigger(window, { noSlotsFound: { bubbles: true, composed: true } })
 	}
 	return slots.filter(slot => slot.name !== '')
