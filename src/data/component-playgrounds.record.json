@@ -610,7 +610,6 @@
 		{
 			"tag": "rux-container",
 			"constructor": "RuxContainer",
-			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
