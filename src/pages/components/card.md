@@ -12,7 +12,7 @@ sandbox:
 ---
 ## Interactive Example
 
-::storybook-demo
+::tag{ is=a-playground tag=rux-card }
 
 A card is a container for a few short, related pieces of information. It roughly resembles a playing card in size and shape, and is intended as a linked, short representation of a conceptual unit.
 

@@ -10,6 +10,7 @@ assets:
 ---
 ## Interactive Example
 
+<!-- ::tag{ is=a-playground tag=rux-notification } -->
 ::storybook-demo
 
 ## Appearance and Behavior

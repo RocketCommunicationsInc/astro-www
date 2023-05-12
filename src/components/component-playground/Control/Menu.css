@@ -30,6 +30,7 @@ svg {
 
 	/* Layout */
 	inline-size: max-content;
+	max-inline-size: 192--rpx;
 	min-inline-size: 128--rpx;
 	padding: 8--rpx;
 

@@ -12,8 +12,6 @@ assets:
 
 ::tag{ is=a-playground tag=rux-progress }
 
-<!-- A Progress indicator signals that an application is busy performing an operation. -->
-
 :::note
 When operations take one second or longer to complete, add a Progress feedback element to your design.
 :::

@@ -10,9 +10,7 @@ assets:
 ---
 ## Interactive Example
 
-::storybook-demo
-
-<!-- Trees present a hierarchical set of related items and allow users to explore and select items within that hierarchy. -->
+::tag{ is=a-playground tag=rux-tree }
 
 :::note
 Accordions are closely related to Trees, but are specialized to automatically display only a single branch. A Tree is managed by the users, opening and closing branches as necessary.
