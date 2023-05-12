@@ -10,9 +10,8 @@ assets:
 ---
 ## Interactive Example
 
+<!-- ::tag{ is=a-playground tag=rux-global-status-bar } -->
 ::storybook-demo
-
-<!-- The Global Status Bar is a full width view across the top of an application — an area commonly reserved for global status, global command and top-level navigation. -->
 
 ## Appearance and Behavior
 

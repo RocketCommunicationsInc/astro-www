@@ -86,7 +86,7 @@ const scriptContent = [
 						? (
 							<Panel label="Properties">
 								<For of={attrs.fields!}>{(field) => (
-									<Field label={field.attribute}>{
+									<Field label={field.attribute} note={field.note}>{
 										// Select Menu Control
 										field.kind === 'menu'
 											? <ControlMenu for={field.property}>{
