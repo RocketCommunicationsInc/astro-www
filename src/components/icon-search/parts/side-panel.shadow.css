@@ -272,7 +272,7 @@ h2 {
 		text-align: start;
 
 		/* Appearance */
-		color: var(--InteractiveColor);
+		color: var(--Grey300Color);
 	}
 
 	&::part(button-group) {
