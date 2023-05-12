@@ -104,6 +104,7 @@
 		{
 			"tag": "rux-card",
 			"constructor": "RuxCard",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -609,6 +610,7 @@
 		{
 			"tag": "rux-container",
 			"constructor": "RuxContainer",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -1424,6 +1426,7 @@
 		{
 			"tag": "rux-monitoring-icon",
 			"constructor": "RuxMonitoringIcon",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -1615,10 +1618,11 @@
 		{
 			"tag": "rux-pop-up",
 			"constructor": "RuxPopUp",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
-					"code": "<rux-pop-up open=\"true\">\n\t<rux-icon icon=\"apps\" slot=\"trigger\"></rux-icon>\n\t<rux-menu>\n\t\t<rux-menu-item href=\"#\">Menu Item 1</rux-menu-item>\n\t\t\t<rux-menu-item href=\"#\">Menu Item 2</rux-menu-item>\n\t\t\t<rux-menu-item-divider></rux-menu-item-divider>\n\t\t\t<rux-menu-item href=\"#\">Menu Item 3</rux-menu-item>\n\t\t</rux-menu>\n\t</rux-pop-up>"
+					"code": "<rux-pop-up open=\"true\" placement=\"bottom-end\" enable-animation-frame>\n\t<rux-icon icon=\"apps\" slot=\"trigger\"></rux-icon>\n\t<rux-menu>\n\t\t<rux-menu-item href=\"#\">Menu Item 1</rux-menu-item>\n\t\t\t<rux-menu-item href=\"#\">Menu Item 2</rux-menu-item>\n\t\t\t<rux-menu-item-divider></rux-menu-item-divider>\n\t\t\t<rux-menu-item href=\"#\">Menu Item 3</rux-menu-item>\n\t\t</rux-menu>\n\t</rux-pop-up>"
 				}
 			],
 			"fields": [
@@ -1648,7 +1652,7 @@
 						"left-start",
 						"left-end"
 					],
-					"value": "auto"
+					"value": "bottom-end"
 				},
 				{
 					"kind": "switch",
@@ -1669,7 +1673,7 @@
 					"attribute": "enable-animation-frame",
 					"property": "enableAnimationFrame",
 					"note": "Watches for trigger movements and replaces the pop-up if movement is detected.",
-					"checked": false
+					"checked": true
 				},
 				{
 					"kind": "menu",
@@ -2259,7 +2263,7 @@
 			"examples": [
 				{
 					"name": "Default",
-					"code": "<rux-tooltip message=\"Tooltip\" delay=\"400\" open>\n\t<rux-button>Trigger</rux-button>\n</rux-tooltip>"
+					"code": "<rux-tooltip message=\"Tooltip\" delay=\"400\">\n\t<rux-button>Trigger</rux-button>\n</rux-tooltip>"
 				}
 			],
 			"fields": [
@@ -2267,7 +2271,7 @@
 					"kind": "switch",
 					"attribute": "open",
 					"property": "open",
-					"checked": true
+					"checked": false
 				},
 				{
 					"kind": "text",
