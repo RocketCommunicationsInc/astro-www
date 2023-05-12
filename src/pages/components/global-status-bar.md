@@ -11,7 +11,8 @@ assets:
 
 ## Interactive Example
 
-::tag{ is=a-playground tag=rux-global-status-bar }
+<!-- ::tag{ is=a-playground tag=rux-global-status-bar } -->
+::storybook-demo
 
 ## Appearance and Behavior
 

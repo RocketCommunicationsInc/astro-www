@@ -11,7 +11,8 @@ assets:
 
 ## Interactive Demo
 
-::tag{ is=a-playground tag=rux-notification }
+<!-- ::tag{ is=a-playground tag=rux-notification } -->
+::storybook-demo
 
 ## Appearance and Behavior
 

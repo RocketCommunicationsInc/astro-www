@@ -11,7 +11,8 @@ assets:
 
 ## Interactive Example
 
-::tag{ is=a-playground tag=rux-select }
+<!-- ::tag{ is=a-playground tag=rux-select } -->
+::storybook-demo
 
 ## Rules of Thumb
 
