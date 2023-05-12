@@ -10,8 +10,6 @@ assets:
 ---
 ## Interactive Example
 
-## Interactive Example
-
 ::storybook-demo
 
 ## Rules of Thumb

@@ -10,8 +10,6 @@ assets:
 ---
 ## Interactive Example
 
-## Interactive Example
-
 ::tag{ is=a-playground tag=rux-tooltip }
 
 ## Rules of Thumb

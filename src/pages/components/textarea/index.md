@@ -11,8 +11,6 @@ sandbox:
 ---
 ## Interactive Example
 
-## Interactive Example
-
 ::tag{ is=a-playground tag=rux-textarea }
 
 ## Rules of Thumb

@@ -12,8 +12,6 @@ sandbox:
 ---
 ## Interactive Example
 
-## Interactive Example
-
 <!-- ::tag{ is=a-playground tag=rux-dialog } -->
 ::storybook-demo
 

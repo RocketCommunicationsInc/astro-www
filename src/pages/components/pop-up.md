@@ -10,8 +10,6 @@ assets:
 ---
 ## Interactive Example
 
-## Interactive Demo
-
 ::tag{ is=a-playground tag=rux-pop-up }
 
 ## Appearance and Behavior
