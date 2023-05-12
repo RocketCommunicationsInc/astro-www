@@ -8,6 +8,7 @@ git: rux-monitoring-icon
 assets:
     name: Icons and Symbols
 ---
+## Interactive Example
 
 ## Interactive Example
 

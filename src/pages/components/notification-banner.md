@@ -8,6 +8,7 @@ git: rux-notification
 assets:
     name: Notification Banner
 ---
+## Interactive Example
 
 ## Interactive Demo
 

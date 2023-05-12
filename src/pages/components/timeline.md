@@ -8,6 +8,7 @@ git: rux-timeline
 assets:
     name: Timeline
 ---
+## Interactive Example
 
 ## Interactive Example
 

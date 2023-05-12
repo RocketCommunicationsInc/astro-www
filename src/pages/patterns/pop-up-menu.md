@@ -8,6 +8,8 @@ git: rux-pop-up-menu
 assets:
     name: Pop Up Menu
 ---
+## Interactive Example
+
 ::storybook-demo
 
 ## Appearance and Behavior

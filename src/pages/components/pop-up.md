@@ -8,6 +8,7 @@ git: rux-pop-up
 assets:
     name: Pop Up
 ---
+## Interactive Example
 
 ## Interactive Demo
 

@@ -35,6 +35,7 @@
 		{
 			"tag": "rux-breadcrumb",
 			"constructor": "RuxBreadcrumb",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -52,6 +53,7 @@
 		{
 			"tag": "rux-button",
 			"constructor": "RuxButton",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -136,6 +138,7 @@
 		{
 			"tag": "rux-checkbox",
 			"constructor": "RuxCheckbox",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -172,6 +175,7 @@
 		{
 			"tag": "rux-classification-marking",
 			"constructor": "RuxClassificationMarking",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -212,6 +216,7 @@
 		{
 			"tag": "rux-clock",
 			"constructor": "RuxClock",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -978,6 +983,7 @@
 		{
 			"tag": "rux-icon",
 			"constructor": "RuxIcon",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -989,6 +995,7 @@
 		{
 			"tag": "rux-indeterminate-progress",
 			"constructor": "RuxIndeterminateProgress",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -1703,6 +1710,7 @@
 		{
 			"tag": "rux-progress",
 			"constructor": "RuxProgress",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -1734,6 +1742,7 @@
 		{
 			"tag": "rux-push-button",
 			"constructor": "RuxPushButton",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -2064,6 +2073,7 @@
 		{
 			"tag": "rux-switch",
 			"constructor": "RuxSwitch",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -2094,6 +2104,7 @@
 		{
 			"tag": "rux-tabs",
 			"constructor": "RuxTabs",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -2244,6 +2255,7 @@
 		{
 			"tag": "rux-tooltip",
 			"constructor": "RuxTooltip",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",

@@ -8,6 +8,7 @@ git: rux-switch
 assets:
     name: Switch
 ---
+## Interactive Example
 
 ## Interactive Example
 

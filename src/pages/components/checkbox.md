@@ -8,6 +8,7 @@ git: rux-checkbox
 assets:
     name: Checkbox
 ---
+## Interactive Example
 
 ## Interactive Example
 

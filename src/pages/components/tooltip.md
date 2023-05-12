@@ -8,6 +8,7 @@ git: rux-tooltip
 assets:
     name: Tooltip
 ---
+## Interactive Example
 
 ## Interactive Example
 

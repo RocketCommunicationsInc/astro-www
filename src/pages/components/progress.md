@@ -8,6 +8,7 @@ git: rux-progress
 assets:
   name: Progress
 ---
+## Interactive Example
 
 ## Interactive Example
 
