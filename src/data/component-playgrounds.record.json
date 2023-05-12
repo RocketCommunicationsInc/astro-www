@@ -864,11 +864,15 @@
 				},
 				{
 					"name": "With Slot Content",
-					"code": "<div style=\"display: flex; justify-content: center;\">\n\t<rux-global-status-bar include-icon=\"true\" app-state=\"Production\" app-state-color=\"tag1\" username=\"Joan Smith\" app-domain=\"Astro\" app-name=\"Dashboard\" app-version=\"4.0 Alpha\" menu-icon=\"apps\">\n\t\t<rux-clock></rux-clock>\n\t\t<rux-button slot=\"right-side\">Emergency shut off</rux-button>\n\t</rux-global-status-bar>\n</div>"
+					"code": "<div style=\"display: flex; justify-content: center;\">\n\t<rux-global-status-bar include-icon=\"true\" app-state=\"Production\" app-state-color=\"tag1\" username=\"Joan Smith\" app-domain=\"Astro\" app-name=\"Dashboard\" app-version=\"4.0 Alpha\" menu-icon=\"apps\">\n\t\t<rux-clock></rux-clock>\n\t</rux-global-status-bar>\n</div>"
+				},
+				{
+					"name": "With Right Side Slot",
+					"code": "<div style=\"display: flex; justify-content: center;\">\n\t<rux-global-status-bar include-icon=\"true\" app-state=\"Production\" app-state-color=\"tag1\" username=\"Joan Smith\" app-domain=\"Astro\" app-name=\"Dashboard\" app-version=\"4.0 Alpha\" menu-icon=\"apps\">\n\t\t<rux-button slot=\"right-side\">Emergency shut off</rux-button>\n\t</rux-global-status-bar>\n</div>"
 				},
 				{
 					"name": "With Tabs",
-					"code": "<div style=\"display: flex; justify-content: center; flex-direction: column;\"><rux-global-status-bar include-icon=\"true\" app-state=\"Production\" app-state-color=\"tag1\" username=\"Joan Smith\" app-domain=\"Astro\" app-name=\"Dashboard\" app-version=\"4.0 Alpha\" menu-icon=\"apps\">\n\t<rux-tabs id=\"tab-set-id-1\">\n\t\t<rux-tab id=\"tab-id-1\">Tab 1</rux-tab>\n\t\t<rux-tab id=\"tab-id-2\">Tab 2</rux-tab>\n\t\t<rux-tab id=\"tab-id-3\">Tab 3</rux-tab>\n\t</rux-tabs>\n\t\t<rux-button slot=\"right-side\">Emergency shut off</rux-button>\n\t\t\t</rux-global-status-bar>\n<rux-tab-panels aria-labelledby=\"tab-set-id-1\">\n\t<rux-tab-panel aria-labelledby=\"tab-id-1\">\n\t\t<div style=\"padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; font-family: monospace;\"><pre>&lt;<span>!-- Tab 1 HTML content --</span>&gt;</pre></div>\n\t\t</rux-tab-panel>\n\t<rux-tab-panel aria-labelledby=\"tab-id-2\">\n\t\t<div style=\"padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; font-family: monospace;\"><pre>&lt;<span>!-- Tab 2 HTML content --</span>&gt;</pre></div>\n\t\t</rux-tab-panel>\n\t<rux-tab-panel aria-labelledby=\"tab-id-3\">\n\t\t<div style=\"padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; font-family: monospace;\"><pre>&lt;<span>!-- Tab 3 HTML content --</span>&gt;</pre></div>\n\t\t</rux-tab-panel\n</rux-tab-panels></div>"
+					"code": "<div style=\"display: flex; justify-content: center; flex-direction: column;\"><rux-global-status-bar include-icon=\"true\" app-state=\"Production\" app-state-color=\"tag1\" username=\"Joan Smith\" app-domain=\"Astro\" app-name=\"Dashboard\" app-version=\"4.0 Alpha\" menu-icon=\"apps\">\n\t<rux-tabs id=\"tab-set-id-1\">\n\t\t<rux-tab id=\"tab-id-1\">Tab 1</rux-tab>\n\t\t<rux-tab id=\"tab-id-2\">Tab 2</rux-tab>\n\t\t<rux-tab id=\"tab-id-3\">Tab 3</rux-tab>\n\t</rux-tabs>\n\t\t\t</rux-global-status-bar>\n<rux-tab-panels aria-labelledby=\"tab-set-id-1\">\n\t<rux-tab-panel aria-labelledby=\"tab-id-1\">\n\t\t<div style=\"padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; font-family: monospace;\"><pre>&lt;<span>!-- Tab 1 HTML content --</span>&gt;</pre></div>\n\t\t</rux-tab-panel>\n\t<rux-tab-panel aria-labelledby=\"tab-id-2\">\n\t\t<div style=\"padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; font-family: monospace;\"><pre>&lt;<span>!-- Tab 2 HTML content --</span>&gt;</pre></div>\n\t\t</rux-tab-panel>\n\t<rux-tab-panel aria-labelledby=\"tab-id-3\">\n\t\t<div style=\"padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; font-family: monospace;\"><pre>&lt;<span>!-- Tab 3 HTML content --</span>&gt;</pre></div>\n\t\t</rux-tab-panel\n</rux-tab-panels></div>"
 				}
 			],
 			"fields": [
@@ -1880,7 +1884,7 @@
 							"value": "Third item"
 						}
 					],
-					"value": ""
+					"value": "First item"
 				},
 				{
 					"kind": "radio-group",
