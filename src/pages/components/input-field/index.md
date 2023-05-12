@@ -12,8 +12,6 @@ assets:
 
 ::storybook-demo
 
-<!-- Input Fields allow users to enter freeform text. Variations on this field often provide specific data entry formats such as masked data (e.g. passwords or phone numbers), date and time, and numeric data entry. -->
-
 ## Rules of Thumb
 
 - Stacked Input Fields are left justified to one another.

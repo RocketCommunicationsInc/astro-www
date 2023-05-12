@@ -31,7 +31,7 @@ const addDependency = (tag: string, constructor: string) => [
 const scriptContent = [
 	addDependency(attrs.tag, attrs.constructor),
 	...(attrs.dependencies || []).map(
-		dependency => addDependency(dependency.tag, dependency.constructor)
+		(dependency: { tag: string; constructor: string }) => addDependency(dependency.tag, dependency.constructor)
 	),
 	`globalThis.$tag=${JSON.stringify(attrs.tag)}`,
 	`globalThis.$target=document.querySelector('${attrs.tag}')`,
@@ -83,7 +83,7 @@ const scriptContent = [
 						? (
 							<Panel label="Properties">
 								<For of={attrs.fields!}>{(field) => (
-									<Field label={field.attribute}>{
+									<Field label={field.attribute} note={field.note}>{
 										// Select Menu Control
 										field.kind === 'menu'
 											? <ControlMenu for={field.property}>{

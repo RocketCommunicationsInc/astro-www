@@ -10,9 +10,8 @@ assets:
 ---
 ## Interactive Example
 
+<!-- ::tag{ is=a-playground tag=rux-select } -->
 ::storybook-demo
-
-<!-- When activated, Select Menus allow users to select a value from a list. Once a value is selected, the Select Menu displays the selected value. -->
 
 ## Rules of Thumb
 

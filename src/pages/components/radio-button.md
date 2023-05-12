@@ -12,8 +12,6 @@ assets:
 
 ::tag{ is=a-playground tag=rux-radio-group }
 
-<!-- Radio Buttons allow users to select a mutually exclusive option from a predefined set of options. When one selection is made, the previous selection becomes deselected. One option should always be selected. -->
-
 ## Rules of Thumb
 
 - Use Radio Buttons for mutually exclusive choices. If the user can make more than one choice, use [Checkboxes](/components/checkbox) instead.

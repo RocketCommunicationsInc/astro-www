@@ -13,8 +13,6 @@ sandbox:
 
 ::tag{ is=a-playground tag=rux-textarea }
 
-<!-- Textareas are multi-line text inputs that allow for entering text in a larger area than a single-line text input would allow. They are typically used for multi-line input use cases like comments or feedback. -->
-
 ## Rules of Thumb
 
 - Use when there is a wide variability in a user’s responses to a prompt and that input is longer than a single line

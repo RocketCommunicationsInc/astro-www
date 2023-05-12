@@ -8,11 +8,10 @@ git: rux-slider
 assets:
     name: Slider
 ---
+
 ## Interactive Example
 
 ::tag{ is=a-playground tag=rux-slider }
-
-<!-- A Slider allows users to choose from a range of continuous and discrete values arranged from minimum to maximum. -->
 
 ## Rules of Thumb
 

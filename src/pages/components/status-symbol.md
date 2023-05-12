@@ -11,8 +11,6 @@ sandbox:
   style: "--y: 260px;"
 ---
 
-<!-- The Status Symbol combines color and shape to create a standard and consistent way to indicate the status of a device or feature. When shown in Light theme, the Status Symbols include an additional inner border. -->
-
 ![Astro Status Symbols in context of a modem list layout.](/img/components/icons-symbols-modems.png "Astro Status Symbols in context of a modem list layout.")
 
 ## Rules of Thumb
@@ -64,7 +62,7 @@ Status colors are provided for both light and dark theme versions of Astro in He
 
 - In light theme Status Symbols should have a 1px border set to the inside of the symbol.
 
-:::table-overflow 
+:::table-overflow
 |                                                                                                      | Hex     | RGB       | CSS                                     | Synonyms                                 |  |
 |------------------------------------------------------------------------------------------------------|---------|-----------|-----------------------------------------|------------------------------------------|--|
 | <div class="status-color">![Status Color: Critical ](/img/swatches/critical-border__light.svg)</div> | #661102 | 102,17,2  | `--status-symbol-color-border-critical` | Critical, alert, emergency, urgent       |  |

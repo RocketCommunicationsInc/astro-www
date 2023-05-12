@@ -60,6 +60,26 @@ export default class FieldElement extends ReflectedElement(
 				this.toggleAttribute('labelhidden', labelHidden)
 			},
 		},
+
+		note: {
+			defaultValue() {
+				return ''
+			},
+			setValue(note) {
+				return note == null ? '' : String(note)
+			},
+			useAttributes: {
+				note() {
+					return this.getAttribute('note') || ''
+				},
+			},
+			onValueChange(note) {
+				const internals = DOM.withInternals<Internals>(this)
+
+				internals.shadowNote.innerHTML = `<div style="margin-block-start: -14px;">${note}</div>`
+			},
+		},
+
 	}
 ) {
 	constructor() {
@@ -73,6 +93,7 @@ export default class FieldElement extends ReflectedElement(
 
 		DOM.withInternals<Internals>(element, () => ({
 			shadowLabel: DOM.queryPart<HTMLSpanElement>(shadowRoot, 'label')!,
+			shadowNote: DOM.queryPart<HTMLParagraphElement>(shadowRoot, 'note')!,
 		}))
 	}
 }
@@ -94,8 +115,12 @@ declare class FieldElementInterface extends HTMLElement {
 
 	/** String representing the initial value of the Radio. */
 	defaultValue: string
+
+	/** String representing a note. */
+	note: string
 }
 
 interface Internals {
-	shadowLabel: HTMLSpanElement
+	shadowLabel: HTMLSpanElement,
+	shadowNote: HTMLParagraphElement
 }
