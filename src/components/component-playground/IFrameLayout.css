@@ -171,12 +171,17 @@
 		@media (width >= 700px) {
 			/* Layout */
 			grid-auto-rows: minmax(0, 1fr);
+
+			/* HIDE NAV ITEMS */
+			border-start-end-radius: var(--EdgeSizeInner);
+			border-end-end-radius: var(--EdgeSizeInner);
 		}
 	}
 
+	/*
+	 HIDE NAV ITEMS
 	& .panel-nav-area {
 		@media (width >= 700px) {
-			/* Layout */
 			border-start-end-radius: var(--EdgeSizeInner);
 			border-end-end-radius: var(--EdgeSizeInner);
 		}
@@ -184,7 +189,7 @@
 		@media (width < 700px) {
 			display: none;
 		}
-	}
+	} */
 }
 
 a-panel + a-panel {
