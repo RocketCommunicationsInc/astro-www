@@ -1636,7 +1636,6 @@
 					"kind": "menu",
 					"attribute": "placement",
 					"property": "placement",
-					"note": "The placement of the pop up relative to it's slotted trigger element.",
 					"options": [
 						"auto",
 						"top",
@@ -1658,28 +1657,24 @@
 					"kind": "switch",
 					"attribute": "close-on-select",
 					"property": "closeOnSelect",
-					"note": "Closes the pop-up when a single selection is made.",
 					"checked": false
 				},
 				{
 					"kind": "switch",
 					"attribute": "disable-auto-update",
 					"property": "disableAutoUpdate",
-					"note": "Turns autoUpdate on or off which makes the pop-up move to stay in view based on scroll.",
 					"checked": false
 				},
 				{
 					"kind": "switch",
 					"attribute": "enable-animation-frame",
 					"property": "enableAnimationFrame",
-					"note": "Watches for trigger movements and replaces the pop-up if movement is detected.",
 					"checked": true
 				},
 				{
 					"kind": "menu",
 					"attribute": "strategy",
 					"property": "strategy",
-					"note": "The position strategy of the popup, either absolute or fixed.",
 					"options": [
 						"absolute",
 						"fixed"
