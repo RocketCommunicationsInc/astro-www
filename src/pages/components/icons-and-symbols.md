@@ -10,9 +10,7 @@ assets:
 ---
 ## Interactive Example
 
-::storybook-demo
-
-<!-- Astro includes a library of common Icons, Symbols, and Notification Symbols. Persistent use of these will help ensure users are presented with consistent and meaningful information across applications. -->
+::tag{ is=a-playground tag=rux-monitoring-icon }
 
 Each icon, symbol, or notification symbol must be easily identifiable by users and also be immediately distinguishable from each other, eliminating confusion and mistakes.
 

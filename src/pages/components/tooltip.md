@@ -12,8 +12,6 @@ assets:
 
 ::tag{ is=a-playground tag=rux-tooltip }
 
-<!-- A Tooltip is a message box that provides a concise amount of relevant contextual information about an associated UI element. Tooltips are activated by hovering over or focusing on an element. -->
-
 ## Rules of Thumb
 
 - Important information should always be visible on the page.
