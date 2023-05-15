@@ -8,7 +8,6 @@ git: rux-timeline
 assets:
     name: Timeline
 ---
-
 ## Interactive Example
 
 ::storybook-demo

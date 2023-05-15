@@ -8,7 +8,6 @@ git: rux-input
 assets:
     name: Input Field
 ---
-
 ## Interactive Example
 
 ::storybook-demo

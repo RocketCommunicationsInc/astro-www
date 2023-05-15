@@ -102,6 +102,10 @@
 				"style": {
 					"title": "Additional styling",
 					"type": "string"
+				},
+				"align": {
+					"title": "Override top left alignment",
+					"type": "string"
 				}
 			},
 			"additionalProperties": false,

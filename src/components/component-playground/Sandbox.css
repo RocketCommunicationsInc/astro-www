@@ -81,6 +81,14 @@
 	}
 }
 
+/* Alignment */
+
+:host(.align-center) slot {
+	/* Layout */
+	align-items: center;
+	justify-content: center;
+}
+
 /* Separator */
 
 ::part(content) {

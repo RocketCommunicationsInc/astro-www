@@ -7,7 +7,6 @@ if (iframe !== null) {
 
 	const updateIframeHeight = () => {
 		const contentHeight = document.body.scrollHeight + 2
-		console.log(contentHeight, iframeHeight)
 
 		if (contentHeight !== iframeHeight && iframeHeight !== (contentHeight - 2)) {
 			iframeHeight = contentHeight

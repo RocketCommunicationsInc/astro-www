@@ -2,7 +2,7 @@
 tags: ["grm", "egs"]
 path: /grm-service-ux-design/grm-equipment-manager
 date: Last Modified
-layout: project:layouts/new-docs/new-docs-layout.astro
+layout: project:layouts/docs/docs-layout.astro
 title: GRM Equipment Manager
 description: The GRM Equipment Manager app is designed to operators by consolidating information related to all ground equipment in one place.
 ---

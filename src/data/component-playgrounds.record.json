@@ -35,6 +35,7 @@
 		{
 			"tag": "rux-breadcrumb",
 			"constructor": "RuxBreadcrumb",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -52,6 +53,7 @@
 		{
 			"tag": "rux-button",
 			"constructor": "RuxButton",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -102,6 +104,7 @@
 		{
 			"tag": "rux-card",
 			"constructor": "RuxCard",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -136,6 +139,7 @@
 		{
 			"tag": "rux-checkbox",
 			"constructor": "RuxCheckbox",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -172,6 +176,7 @@
 		{
 			"tag": "rux-classification-marking",
 			"constructor": "RuxClassificationMarking",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -212,6 +217,7 @@
 		{
 			"tag": "rux-clock",
 			"constructor": "RuxClock",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -982,6 +988,7 @@
 		{
 			"tag": "rux-icon",
 			"constructor": "RuxIcon",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -993,6 +1000,7 @@
 		{
 			"tag": "rux-indeterminate-progress",
 			"constructor": "RuxIndeterminateProgress",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -1421,6 +1429,7 @@
 		{
 			"tag": "rux-monitoring-icon",
 			"constructor": "RuxMonitoringIcon",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -1612,10 +1621,11 @@
 		{
 			"tag": "rux-pop-up",
 			"constructor": "RuxPopUp",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
-					"code": "<rux-pop-up open=\"true\">\n\t<rux-icon icon=\"apps\" slot=\"trigger\"></rux-icon>\n\t<rux-menu>\n\t\t<rux-menu-item href=\"#\">Menu Item 1</rux-menu-item>\n\t\t\t<rux-menu-item href=\"#\">Menu Item 2</rux-menu-item>\n\t\t\t<rux-menu-item-divider></rux-menu-item-divider>\n\t\t\t<rux-menu-item href=\"#\">Menu Item 3</rux-menu-item>\n\t\t</rux-menu>\n\t</rux-pop-up>"
+					"code": "<rux-pop-up open=\"true\" placement=\"bottom-end\" enable-animation-frame>\n\t<rux-icon icon=\"apps\" slot=\"trigger\"></rux-icon>\n\t<rux-menu>\n\t\t<rux-menu-item href=\"#\">Menu Item 1</rux-menu-item>\n\t\t\t<rux-menu-item href=\"#\">Menu Item 2</rux-menu-item>\n\t\t\t<rux-menu-item-divider></rux-menu-item-divider>\n\t\t\t<rux-menu-item href=\"#\">Menu Item 3</rux-menu-item>\n\t\t</rux-menu>\n\t</rux-pop-up>"
 				}
 			],
 			"fields": [
@@ -1629,7 +1639,6 @@
 					"kind": "menu",
 					"attribute": "placement",
 					"property": "placement",
-					"note": "The placement of the pop up relative to it's slotted trigger element.",
 					"options": [
 						"auto",
 						"top",
@@ -1645,34 +1654,30 @@
 						"left-start",
 						"left-end"
 					],
-					"value": "auto"
+					"value": "bottom-end"
 				},
 				{
 					"kind": "switch",
 					"attribute": "close-on-select",
 					"property": "closeOnSelect",
-					"note": "Closes the pop-up when a single selection is made.",
 					"checked": false
 				},
 				{
 					"kind": "switch",
 					"attribute": "disable-auto-update",
 					"property": "disableAutoUpdate",
-					"note": "Turns autoUpdate on or off which makes the pop-up move to stay in view based on scroll.",
 					"checked": false
 				},
 				{
 					"kind": "switch",
 					"attribute": "enable-animation-frame",
 					"property": "enableAnimationFrame",
-					"note": "Watches for trigger movements and replaces the pop-up if movement is detected.",
-					"checked": false
+					"checked": true
 				},
 				{
 					"kind": "menu",
 					"attribute": "strategy",
 					"property": "strategy",
-					"note": "The position strategy of the popup, either absolute or fixed.",
 					"options": [
 						"absolute",
 						"fixed"
@@ -1707,6 +1712,7 @@
 		{
 			"tag": "rux-progress",
 			"constructor": "RuxProgress",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -1738,6 +1744,7 @@
 		{
 			"tag": "rux-push-button",
 			"constructor": "RuxPushButton",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -2080,6 +2087,7 @@
 		{
 			"tag": "rux-switch",
 			"constructor": "RuxSwitch",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -2110,6 +2118,7 @@
 		{
 			"tag": "rux-tabs",
 			"constructor": "RuxTabs",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -2260,6 +2269,7 @@
 		{
 			"tag": "rux-tooltip",
 			"constructor": "RuxTooltip",
+			"align": "center",
 			"examples": [
 				{
 					"name": "Default",
@@ -2271,7 +2281,7 @@
 					"kind": "switch",
 					"attribute": "open",
 					"property": "open",
-					"checked": true
+					"checked": false
 				},
 				{
 					"kind": "text",

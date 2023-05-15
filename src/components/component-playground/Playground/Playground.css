@@ -13,7 +13,7 @@
 
 	@media (width > 700px) {
 		/* Layout */
-		block-size: 133--step;
+		block-size: 115--step;
 	}
 
 	@media (width <= 700px) {

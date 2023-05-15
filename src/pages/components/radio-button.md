@@ -8,7 +8,6 @@ git: rux-radio
 assets:
     name: Radio Button
 ---
-
 ## Interactive Example
 
 ::tag{ is=a-playground tag=rux-radio-group }

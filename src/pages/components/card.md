@@ -10,7 +10,6 @@ assets:
 sandbox:
   style: "--y: 200px;"
 ---
-
 ## Interactive Example
 
 ::tag{ is=a-playground tag=rux-card }

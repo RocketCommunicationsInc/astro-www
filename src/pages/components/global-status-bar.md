@@ -8,7 +8,6 @@ git: rux-global-status-bar
 assets:
     name: Global Status Bar
 ---
-
 ## Interactive Example
 
 ::tag{ is=a-playground tag=rux-global-status-bar }

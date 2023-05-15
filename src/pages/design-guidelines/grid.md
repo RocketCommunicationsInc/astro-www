@@ -2,7 +2,7 @@
 tags: resources
 path: /design-guidelines/grid
 date: Last Modified
-layout: project:layouts/new-docs/new-docs-layout.astro
+layout: project:layouts/docs/docs-layout.astro
 title: Grid
 description: A grid system is a defined set of vertical columns and optionally horizontal rows based on time-tested principles of graphic design and layout.
 ---

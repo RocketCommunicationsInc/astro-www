@@ -10,7 +10,6 @@ assets:
 sandbox:
   style: "--y: 580px;"
 ---
-
 ## Interactive Example
 
 <!-- ::tag{ is=a-playground tag=rux-dialog } -->

@@ -8,7 +8,6 @@ git: rux-tooltip
 assets:
     name: Tooltip
 ---
-
 ## Interactive Example
 
 ::tag{ is=a-playground tag=rux-tooltip }
