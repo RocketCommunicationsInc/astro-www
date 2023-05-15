@@ -29,10 +29,10 @@ const getSlots = () => {
 
 function toggleStyle(slotName: string, style?: string) {
 	const styleString = style || `
-									${$tag as any} [slot] {
+									${$tag as any} > [slot] {
 										position: relative;
 									}
-									${$tag} [slot="${slotName}"]::after {
+									${$tag} > [slot="${slotName}"]::after {
 										display: block;
 
 										/* Layout */
@@ -70,18 +70,7 @@ const handleSlotToggleClick = (target: HTMLButtonElement) => {
 	const slots = $target.shadowRoot.querySelectorAll('slot') as HTMLSlotElement[]
 
 	slots.forEach((slot) => {
-		if (slot.name === slotName) {
-			const textNodeSlot = $target.querySelector('.slot-highlight_text-node')
-
-			// if textNodeSlot that was added on button select exists, remove it, remove stylesheet, exit function
-			if (textNodeSlot && target.ariaSelected === 'false') {
-				textNodeSlot.remove()
-				toggleStyle(slot.name)
-				return
-			}
-
-			toggleStyle(slot.name)
-		}
+		if (slot.name === slotName) toggleStyle(slot.name)
 	})
 }
 
@@ -95,20 +84,28 @@ const handleSlotHideClick = (target: HTMLButtonElement) => {
 	const slotName = target.getAttribute('data-slot-hide')
 	const slotHideButton = document.querySelector(`[data-slot-name=${slotName}]`) as HTMLButtonElement
 
-	if (target.ariaSelected === 'false') {
-		target.setAttribute('aria-selected', 'true')
-		target.innerHTML = slotHideIconClosed
-		slotHideButton!.disabled = true
-
-		const targetSlot = $target.querySelector(`[slot=${slotName}]`)
-		targetSlot.remove()
-	} else {
+	const disableSlotButton = () => {
 		target.setAttribute('aria-selected', 'false')
 		target.innerHTML = slotHideIconOpen
 		slotHideButton!.disabled = false
 
 		const slotNode = $actualSlots.find((item: { slot: string | null }) => item.slot === slotName)
 		$target.appendChild(slotNode)
+	}
+
+	if (target.ariaSelected === 'false') {
+		target.setAttribute('aria-selected', 'true')
+		target.innerHTML = slotHideIconClosed
+		slotHideButton!.disabled = true
+
+		// getting all first level children from the target element, filtering to named slot
+		// this prevents the function from digging into the grandchildren and getting inappropriate slots
+		const targetChildren: HTMLElement[] = Array.from($target.children)
+		const targetSlot: HTMLElement[] = targetChildren.filter(child => child.getAttribute('slot') === slotName)
+
+		targetSlot[0].remove()
+	} else {
+		disableSlotButton()
 	}
 }
 
@@ -136,13 +133,12 @@ const getEnabledSlots = () => {
 	const slotQuestionIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Help Outline</title><path d="M2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10S2 17.52 2 12Zm2 0c0 4.41 3.59 8 8 8s8-3.59 8-8-3.59-8-8-8-8 3.59-8 8Zm9 4v2h-2v-2h2ZM8.18 8.83a4.002 4.002 0 0 1 4.43-2.79c1.74.26 3.11 1.73 3.35 3.47.228 1.614-.664 2.392-1.526 3.143-.158.139-.315.276-.464.417a3.514 3.514 0 0 0-.345.36l-.015.02a2.758 2.758 0 0 0-.33.48c-.17.3-.28.65-.28 1.07h-2c0-.5.08-.91.2-1.25l.01-.034a.144.144 0 0 1 .01-.036.187.187 0 0 1 .02-.04.187.187 0 0 0 .02-.04 3.331 3.331 0 0 1 .265-.525l.015-.025c0-.005.003-.008.005-.01s.005-.005.005-.01c.34-.513.797-.864 1.224-1.193.614-.472 1.167-.897 1.226-1.687.08-.97-.62-1.9-1.57-2.1-1.03-.22-1.98.39-2.3 1.28-.14.38-.47.67-.88.67h-.2a.907.907 0 0 1-.87-1.17Z"></path><metadata>?, assistance, circle, help, info, information, outline, punctuation, question mark, recent, restore, shape, support, symbol</metadata></svg>`
 
 	// getting the actual slots set by the user, filling array with just slot names
-	const actualSlots: HTMLElement[] = Array.from($target.querySelectorAll('[slot]'))
-
-	$actualSlots = actualSlots
+	const allChildren: HTMLElement[] = Array.from($target.children)
+	$actualSlots = allChildren.filter(child => child.hasAttribute('slot'))
 
 	const actualSlotNames: String[] = []
 
-	actualSlots.forEach(item => {
+	$actualSlots.forEach(item => {
 		actualSlotNames.push(item.slot)
 	})
 
