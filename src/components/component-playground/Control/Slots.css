@@ -29,7 +29,7 @@ a-slots-control {
 				padding: 2--step;
 
 				/* Appearance */
-				background-color: var(--Grey200Color);
+				background-color: transparent;
 
 				/* Appearance */
 				border: none;
@@ -63,12 +63,12 @@ a-slots-control {
 					/* Layout */
 					block-size: 5--step;
 					inline-size: 5--step;
-					fill: var(--Grey500Color);
+					fill: var(--DarkBlue500Color);
 				}
 
 				&:hover {
 					& svg {
-						fill: var(--Grey600Color);
+						fill: var(--DarkBlue600Color);
 					}
 				}
 
@@ -79,7 +79,7 @@ a-slots-control {
 					}
 
 					/* Appearance */
-					border: 1px solid var(--DarkBlue500Color);
+					background-color: var(--Grey200Color);
 				}
 			}
 

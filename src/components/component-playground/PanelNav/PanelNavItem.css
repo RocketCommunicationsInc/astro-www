@@ -9,7 +9,7 @@
 
 		/* Appearance */
 		cursor: pointer;
-		fill: var(--Grey700Color);
+		fill: var(--DarkBlue500Color);
 
 		&:disabled {
 			/* Appearance */
@@ -28,7 +28,7 @@
 		}
 
 		&:hover {
-			fill: #000000;
+			fill: var(--DarkBlue600Color);
 		}
 	}
 }

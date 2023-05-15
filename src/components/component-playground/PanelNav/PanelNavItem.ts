@@ -41,6 +41,24 @@ export default class PanelNavItem extends HTMLElement {
 			}
 		}
 
+		// checks to see if all panels are hidden, adjust border styles on main element to adjust
+		const checkAllPanelsHidden = () => {
+			const allPanels: HTMLElement[] = Array.from(document.querySelectorAll('a-panel'))
+			const app: HTMLElement = document.querySelector('.app')!
+			const hiddenPanels: number[] = []
+
+			allPanels.map((panel, index) => {
+				if (panel.hasAttribute('hidden')) hiddenPanels.push(index)
+				return null
+			})
+
+			if (allPanels.length === hiddenPanels.length) {
+				app.style.gap = '0.5px'
+			} else {
+				app.style.gap = ''
+			}
+		}
+
 		const toggleActive = (e: Event) => {
 			// if button is disabled, do nothing
 			if (button.disabled === true) return
@@ -54,6 +72,8 @@ export default class PanelNavItem extends HTMLElement {
 				element.setAttribute('data-active', 'true')
 				matchingPanel.removeAttribute('hidden')
 			}
+
+			checkAllPanelsHidden()
 		}
 
 		const matchButtonStateToPanel = (e: Event) => {
@@ -74,7 +94,10 @@ export default class PanelNavItem extends HTMLElement {
 		element.addEventListener('click', (e) => toggleActive(e))
 
 		// listener to handle setting button to inactive if panel is closed via the x on the panel
-		addEventListener('closePanel', (e) => matchButtonStateToPanel(e))
+		addEventListener('closePanel', (e) => {
+			matchButtonStateToPanel(e)
+			checkAllPanelsHidden()
+		})
 
 		// make panels visible if viewport is under 700
 		visualViewport.addEventListener('resize', updatePanelVisibility, { capture: true })
