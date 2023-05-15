@@ -1,5 +1,6 @@
 import * as DOM from 'project:utils/client/DOM'
 import { h } from 'project:utils/html.ts'
+import { playgroundSvgs } from 'project:utils/component-playground-svg.ts'
 import ReflectedElement from 'project:utils/client/ReflectedElement.ts'
 import styling from './Panel.css?withtype=style'
 import content from './Panel.html?withtype=fragment'
@@ -60,14 +61,16 @@ export default class PanelElement extends ReflectedElement(
 ) {
 	constructor() {
 		const element: PanelElement = super()!
+		const elementName = element.getAttribute('label')!
 
 		const shadowRoot = DOM.withShadow(element, {
 			mode: 'open',
 			content,
 			styling,
 		})
+
 		const closeButton = DOM.queryPart<HTMLButtonElement>(shadowRoot, 'closeButton')!
-		closeButton.appendChild(h('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Close</title><path d="M18.3 5.71a.996.996 0 0 0-1.41 0L12 10.59 7.11 5.7A.996.996 0 1 0 5.7 7.11L10.59 12 5.7 16.89a.996.996 0 1 0 1.41 1.41L12 13.41l4.89 4.89a.996.996 0 1 0 1.41-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4Z"></path></svg>'))
+		closeButton.appendChild(h(`${playgroundSvgs.closeIcon}`))
 		// trigger a closePanel event
 		DOM.observe(closeButton, {
 			click() {
@@ -79,6 +82,9 @@ export default class PanelElement extends ReflectedElement(
 		})
 
 		const shadowHeading = DOM.queryPart<HTMLSlotElement>(shadowRoot, 'headingTitle')!
+
+		const headingIcon = DOM.queryPart<HTMLSlotElement>(shadowRoot, 'headingIcon')!
+		headingIcon.appendChild(h(`${playgroundSvgs[elementName]}`))
 
 		DOM.withInternals<Internals>(element, () => ({
 			shadowHeading,
