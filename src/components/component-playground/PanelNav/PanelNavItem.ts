@@ -28,6 +28,7 @@ export default class PanelNavItem extends HTMLElement {
 		// if panel doesn't exist, disable the corresponding nav button, otherwise set the none hidden panel button
 		if (matchingPanel === null) {
 			button.disabled = true
+			button.hidden = true
 		} else {
 			if (matchingPanel.hasAttribute('hidden')) {
 				element.setAttribute('data-active', 'false')
@@ -82,8 +83,11 @@ export default class PanelNavItem extends HTMLElement {
 
 		const updatePanelVisibility = () => {
 			if (visualViewport.width >= 700) return
-			element.setAttribute('data-active', 'true')
-			matchingPanel.removeAttribute('hidden')
+
+			if (matchingPanel) {
+				element.setAttribute('data-active', 'true')
+				matchingPanel.removeAttribute('hidden')
+			}
 		}
 
 		element.addEventListener('click', (e) => toggleActive(e))

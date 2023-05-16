@@ -204,7 +204,7 @@ addEventListener('appload', () => {
 	getEnabledSlots()
 })
 
-// get new variant and change slot disabled/enabled when variant changes
+// get new example and change slot disabled/enabled when example changes
 addEventListener('reset', () => {
 	$target = $canvas.querySelector($tag)
 	getEnabledSlots()

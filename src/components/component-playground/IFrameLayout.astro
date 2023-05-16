@@ -69,8 +69,8 @@ const scriptContent = [
 					// examples panel
 					attrs.examples.length > 1
 						? (
-							<Panel label="Variants">
-								<Field type="menu" label="variant" property="example:variant" hiddenlabel>
+							<Panel label="Examples">
+								<Field type="menu" label="example" property="example:variant" hiddenlabel>
 									<ControlRadioGroup for="sandbox:example">{
 										<For of={attrs.examples!}>{(example) => (
 											<ControlRadio for="sandbox:example" value={example.code} selected={example === defaultExample ? '' : null} set:text={example.name} />
@@ -133,7 +133,7 @@ const scriptContent = [
 			<section class="panel-nav-area">
 				<!--Panel Activation Buttons-->
 				<PanelNav>
-					<PanelNavItem data-nav-item="Variants" />
+					<PanelNavItem data-nav-item="Examples" />
 					<PanelNavItem data-nav-item="Properties" />
 					<PanelNavItem data-nav-item="Slots" />
 				</PanelNav>
