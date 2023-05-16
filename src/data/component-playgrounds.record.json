@@ -901,14 +901,30 @@
 					"value": "Production"
 				},
 				{
-					"kind": "menu",
+					"kind": "radio-group",
 					"attribute": "app-state-color",
-					"property": "AppStateColor",
+					"property": "appStateColor",
 					"options": [
-						"tag1",
-						"tag2",
-						"tag3",
-						"tag4"
+						{
+							"kind": "radio",
+							"label": "tag1",
+							"value": "tag1"
+						},
+						{
+							"kind": "radio",
+							"label": "tag2",
+							"value": "tag2"
+						},
+						{
+							"kind": "radio",
+							"label": "tag3",
+							"value": "tag3"
+						},
+						{
+							"kind": "radio",
+							"label": "tag4",
+							"value": "tag4"
+						}
 					],
 					"value": "tag1"
 				},
@@ -925,12 +941,25 @@
 					"checked": true
 				},
 				{
-					"kind": "menu",
+					"kind": "radio-group",
 					"attribute": "menu-icon",
 					"property": "menuIcon",
 					"options": [
-						"apps",
-						"antenna"
+						{
+							"kind": "radio",
+							"label": "apps",
+							"value": "apps"
+						},
+						{
+							"kind": "radio",
+							"label": "antenna",
+							"value": "antenna"
+						},
+						{
+							"kind": "radio",
+							"label": "antenna transmit",
+							"value": "antenna-transmit"
+						}
 					],
 					"value": "apps"
 				},
@@ -957,6 +986,10 @@
 				{
 					"tag": "rux-icon-antenna",
 					"constructor": "RuxIconAntenna"
+				},
+				{
+					"tag": "rux-icon-antenna-transmit",
+					"constructor": "RuxIconAntennaTransmit"
 				},
 				{
 					"tag": "rux-tag",
