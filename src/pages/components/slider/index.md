@@ -8,7 +8,6 @@ git: rux-slider
 assets:
     name: Slider
 ---
-
 ## Interactive Example
 
 ::tag{ is=a-playground tag=rux-slider }
