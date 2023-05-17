@@ -8,7 +8,6 @@ git: rux-monitoring-icon
 assets:
     name: Icons and Symbols
 ---
-
 ## Interactive Example
 
 ::tag{ is=a-playground tag=rux-monitoring-icon }

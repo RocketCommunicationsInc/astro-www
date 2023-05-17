@@ -7,9 +7,10 @@ height: 160px
 git: rux-tabs
 assets:
     name: Tabs
-secondary-navigation-title: Overview
-secondary-navigation-config: '_config.ts'
 ---
+## Interactive Example
+
+## Interactive Example
 
 ## Interactive Example
 

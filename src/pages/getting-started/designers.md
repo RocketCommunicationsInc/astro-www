@@ -1,5 +1,5 @@
 ---
-layout: project:layouts/new-docs/new-docs-layout.astro
+layout: project:layouts/docs/docs-layout.astro
 title: 'Getting Started for Designers'
 description: Astro UXDS design assets include files for creating Astro application mockups and wireframes in Figma.
 ---

@@ -8,8 +8,7 @@ git: rux-pop-up
 assets:
     name: Pop Up
 ---
-
-## Interactive Demo
+## Interactive Example
 
 ::tag{ is=a-playground tag=rux-pop-up }
 

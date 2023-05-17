@@ -8,10 +8,10 @@ git: rux-segmented-button
 assets:
     name: Segmented Button
 ---
-
 ## Interactive Example
 
-::tag{ is=a-playground tag=rux-segmented-button }
+<!-- ::tag{ is=a-playground tag=rux-segmented-button } -->
+::storybook-demo
 
 ## Rules of Thumb
 

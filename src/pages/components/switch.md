@@ -8,7 +8,6 @@ git: rux-switch
 assets:
     name: Switch
 ---
-
 ## Interactive Example
 
 ::tag{ is=a-playground tag=rux-switch }

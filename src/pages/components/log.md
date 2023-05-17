@@ -8,7 +8,6 @@ git: rux-log
 assets:
     name: Log
 ---
-
 ## Interactive Example
 
 ::tag{ is=a-playground tag=rux-log }
