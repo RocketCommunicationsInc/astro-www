@@ -1,0 +1,41 @@
+:host {
+	& button {
+		/* Layout */
+		padding: 10--rpx;
+
+		/* Appearance */
+		background-color: transparent;
+		border: none;
+
+		/* Appearance */
+		cursor: pointer;
+		fill: var(--DarkBlue500Color);
+
+		&:disabled {
+			/* Appearance */
+			cursor: not-allowed;
+			opacity: .3;
+		}
+
+		& svg {
+			/* Layout */
+			display: block;
+			fill: inherit;
+
+			/* Layout */
+			block-size: 6--step;
+			inline-size: 6--step;
+		}
+
+		&:hover {
+			fill: var(--DarkBlue600Color);
+		}
+	}
+}
+
+/* Context Styles */
+
+:host([data-active="true"]) {
+	/* Appearance */
+	background-color: var(--Grey200Color);
+}

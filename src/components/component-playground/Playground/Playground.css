@@ -9,17 +9,10 @@
 
 :host {
 	/* Layout */
+	block-size: var(--y);
+
+	/* Layout */
 	margin-block-end: 5--step;
-
-	@media (width > 700px) {
-		/* Layout */
-		block-size: 115--step;
-	}
-
-	@media (width <= 700px) {
-		/* Layout */
-		block-size: var(--y);
-	}
 }
 
 iframe {
