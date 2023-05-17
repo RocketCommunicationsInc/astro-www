@@ -10,8 +10,7 @@ assets:
 ---
 ## Interactive Example
 
-<!-- ::tag{ is=a-playground tag=rux-log } -->
-::storybook-demo
+::tag{ is=a-playground tag=rux-log }
 
 ## Rules of Thumb
 
