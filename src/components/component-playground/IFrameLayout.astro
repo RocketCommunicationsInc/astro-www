@@ -70,7 +70,7 @@ const scriptContent = [
 					attrs.examples.length > 1
 						? (
 							<Panel label="Examples">
-								<Field type="menu" label="example" property="example:variant" hiddenlabel>
+								<Field type="menu" property="example:variant" hiddenlabel>
 									<ControlRadioGroup for="sandbox:example">{
 										<For of={attrs.examples!}>{(example) => (
 											<ControlRadio for="sandbox:example" value={example.code} selected={example === defaultExample ? '' : null} set:text={example.name} />
