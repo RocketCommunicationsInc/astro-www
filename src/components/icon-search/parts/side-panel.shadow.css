@@ -272,7 +272,7 @@ h2 {
 		text-align: start;
 
 		/* Appearance */
-		color: var(--BrightBlue400Color);
+		color: var(--Grey300Color);
 	}
 
 	&::part(button-group) {
@@ -328,12 +328,12 @@ h2 {
 		margin-block: 7--step;
 
 		/* Appearance */
-		background-color: var(--BrightBlue400Color);
-		color: var(--DarkBlue950Color);
+		background-color: var(--InteractiveColor);
+		color: var(--InverseColor);
 
 		&:hover, &:focus {
 			/* Appearance */
-			background-color: var(--BrightBlue500Color);
+			background-color: var(--InteractiveHoverColor);
 		}
 	}
 
