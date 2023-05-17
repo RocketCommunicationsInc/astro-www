@@ -95,6 +95,15 @@ export default class PanelSetElement extends ReflectedElement(
 	constructor() {
 		const element: PanelSetElement = super()!
 
+		// whichever panel inside a panelset is first should not be hidden
+		const panels = Array.from(element.querySelectorAll('a-panel'))
+		panels.map((panel, index) => {
+			if (index !== 0 && visualViewport.width > 700) {
+				panel.setAttribute('hidden', '')
+			}
+			return null
+		})
+
 		const shadowRoot = DOM.withShadow(element, {
 			mode: 'open',
 			content,

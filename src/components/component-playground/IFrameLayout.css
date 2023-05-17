@@ -1,6 +1,7 @@
 @import "project:layouts/default/style/ui-monospace.css";
 @import "project:layouts/default/style/sanitize.css";
 @import "project:layouts/default/style/variables.css";
+@import "project:components/component-playground/Control/Slots.css";
 
 /* Baseline */
 
@@ -113,11 +114,15 @@
 
 		/* Reference */
 		--max-height: 400px;
+
+		& .panel-nav-area {
+			display: none;
+		}
 	}
 
 	@media (width > 700px) {
 		/* Layout */
-		grid-template-columns: auto max-content;
+		grid-template-columns: auto max-content max-content;
 		overflow: initial;
 
 		/* Reference */
@@ -125,7 +130,8 @@
 	}
 
 	& .sandbox-area,
-	& .control-area {
+	& .control-area,
+	& .panel-nav-area {
 		display: grid;
 
 		/* Layout */
@@ -163,8 +169,20 @@
 		}
 
 		@media (width >= 700px) {
+			/* Layout */
+			grid-auto-rows: minmax(0, 1fr);
+		}
+	}
+
+	& .panel-nav-area {
+		@media (width >= 700px) {
+			/* Layout */
 			border-start-end-radius: var(--EdgeSizeInner);
 			border-end-end-radius: var(--EdgeSizeInner);
+		}
+
+		@media (width < 700px) {
+			display: none;
 		}
 	}
 }
