@@ -121,7 +121,7 @@ const createNav = (headings: any) => {
 	linksNav?.append(navigation)
 }
 
-const createHeadingObserver = (headings: NodeListOf<HTMLHeadingElement>) => {
+const createObservers = (headings: NodeListOf<HTMLHeadingElement>, footer: HTMLElement | null) => {
 	let currentHeading: HTMLHeadingElement | null
 
 	// check to see if there is a nav, if not, make one.
@@ -131,11 +131,16 @@ const createHeadingObserver = (headings: NodeListOf<HTMLHeadingElement>) => {
 	}
 
 	let headingObserver: IntersectionObserver | undefined
+	let footerObserver: IntersectionObserver | undefined
 	const visualViewport = globalThis.visualViewport!
 
 	const onresize = () => {
 		if (headingObserver) {
 			headingObserver.disconnect()
+		}
+
+		if (footerObserver) {
+			footerObserver.disconnect()
 		}
 
 		headingObserver = new IntersectionObserver((entries) => {
@@ -161,6 +166,23 @@ const createHeadingObserver = (headings: NodeListOf<HTMLHeadingElement>) => {
 			threshold: 0,
 		})
 
+		footerObserver = new IntersectionObserver((footer) => {
+				if (footer[0].isIntersecting) {
+					console.log('intersecting!!')
+					const listElements = Array.from(document.querySelectorAll('.section-links li a'))
+
+					listElements.map((listItem, index) => {
+						index === listElements.length - 1 ? listItem.classList.add('-highlighted') : listItem.classList.remove('-highlighted')
+						return null
+					})
+				}
+		}, {
+			rootMargin: `0% 0px 0px`,
+			threshold: 0.99,
+		})
+
+		if (footer) footerObserver.observe(footer)
+
 		for (const heading of headings) {
 			headingObserver.observe(heading)
 		}
@@ -172,5 +194,6 @@ const createHeadingObserver = (headings: NodeListOf<HTMLHeadingElement>) => {
 }
 
 addComplianceFooterToNav()
-createHeadingObserver(document.querySelectorAll('main [id]:is(h2)'))
+// make h2 observers and one for the footer
+createObservers(document.querySelectorAll('main [id]:is(h2)'), document.querySelector('footer.p-footer'))
 // createTableOfContentsNavigation(document.querySelectorAll('main [id]:is(h1,h2,h3,h4,h5,h6)'))
