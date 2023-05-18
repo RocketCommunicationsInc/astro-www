@@ -168,7 +168,6 @@ const createObservers = (headings: NodeListOf<HTMLHeadingElement>, footer: HTMLE
 
 		footerObserver = new IntersectionObserver((footer) => {
 				if (footer[0].isIntersecting) {
-					console.log('intersecting!!')
 					const listElements = Array.from(document.querySelectorAll('.section-links li a'))
 
 					listElements.map((listItem, index) => {
