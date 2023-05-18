@@ -1045,6 +1045,142 @@
 			"fields": []
 		},
 		{
+			"tag": "rux-input",
+			"constructor": "RuxInput",
+			"align": "center",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-input label=\"Input label\" type=\"text\" autocomplete=\"\" size=\"medium\"></rux-input>"
+				}
+			],
+			"fields": [
+				{
+					"kind": "text",
+					"property": "label",
+					"attribute": "label",
+					"value": "Input label"
+				},
+				{
+					"kind": "text",
+					"property": "value",
+					"attribute": "value",
+					"value": ""
+				},
+				{
+					"kind": "text",
+					"property": "name",
+					"attribute": "name",
+					"value": ""
+				},
+				{
+					"kind": "text",
+					"property": "placeholder",
+					"attribute": "placeholder",
+					"value": ""
+				},
+				{
+					"kind": "switch",
+					"attribute": "disabled",
+					"property": "disabled",
+					"checked": false
+				},
+				{
+					"kind": "switch",
+					"attribute": "required",
+					"property": "required",
+					"checked": false
+				},
+				{
+					"kind": "switch",
+					"attribute": "readonly",
+					"property": "readonly",
+					"checked": false
+				},
+				{
+					"kind": "text",
+					"property": "errorText",
+					"attribute": "error-text",
+					"value": ""
+				},
+				{
+					"kind": "text",
+					"property": "helpText",
+					"attribute": "help-text",
+					"value": ""
+				},
+				{
+					"kind": "text",
+					"property": "max",
+					"attribute": "max",
+					"value": ""
+				},
+				{
+					"kind": "text",
+					"property": "min",
+					"attribute": "min",
+					"value": ""
+				},
+				{
+					"kind": "radio-group",
+					"attribute": "size",
+					"property": "size",
+					"options": [
+						{
+							"kind": "radio",
+							"label": "Small",
+							"value": "small"
+						},
+						{
+							"kind": "radio",
+							"label": "Medium",
+							"value": "medium"
+						},
+						{
+							"kind": "radio",
+							"label": "Large",
+							"value": "large"
+						}
+					],
+					"value": "medium"
+				},
+				{
+					"kind": "switch",
+					"attribute": "spellcheck",
+					"property": "spellcheck",
+					"checked": false
+				},
+				{
+					"kind": "text",
+					"property": "step",
+					"attribute": "step",
+					"value": ""
+				},
+				{
+					"kind": "menu",
+					"attribute": "type",
+					"property": "type",
+					"options": [
+						"date",
+						"datetime-local",
+						"email",
+						"number",
+						"password",
+						"search",
+						"tel",
+						"text"
+					],
+					"value": "text"
+				}
+			],
+			"dependencies": [
+				{
+					"tag": "rux-icon",
+					"constructor": "RuxIcon"
+				}
+			]
+		},
+		{
 			"tag": "rux-indeterminate-progress",
 			"constructor": "RuxIndeterminateProgress",
 			"align": "center",
