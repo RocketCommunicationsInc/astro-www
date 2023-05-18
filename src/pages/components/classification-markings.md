@@ -9,10 +9,6 @@ assets:
 ---
 ## Interactive Example
 
-## Interactive Example
-
-## Interactive Example
-
 ::tag{ is=a-playground tag=rux-classification-marking }
 
 In your digital product, such as a desktop or web application, there should be an [Overall Marking](#overall-marking), [Portion Markings](#portion-marking) if possible, and an [Authority Block](#authority-block). Each of these features will be described in more detail below.
