@@ -820,7 +820,8 @@
 				},
 				{
 					"name": "With Slotted Content",
-					"code": "<div style=\"display: flex; flex-direction: column; justify-content: center;\">\n\t<rux-dialog id=\"dialog-with-slot\" open=\"true\">\n\t\t<span slot=\"header\">Slot Header</span>\n\t\t<div style=\"display: flex; flex-direction: column;\">\n\t\t\t<span style=\"margin-bottom: 1rem;\">Default Slot Content</span>\n\t\t\t<rux-input label=\"Input Label\" placeholder=\"Dialog Input\"></rux-input>\n\t\t</div>\n\t\t<div slot=\"footer\" style=\"display: flex; justify-content: space-between; align-items: center;\">\n\t\t\t<a href=\"astrouxds.com\" style=\"text-decoration: none; color: var(--color-background-interactive-default);\">Link</a>\n\t\t\t<rux-button-group h-align=\"right\">\n\t\t\t\t<rux-button id=\"cancel\" secondary=\"\">Cancel</rux-button>\n\t\t\t\t<rux-button id=\"confirm\">Confirm</rux-button>\n\t\t\t</rux-button-group>\n\t\t</div>\n\t</rux-dialog>\n</div>\n<script type=\"module\">\nconsole.log('yo')\nconst dialog = document.getElementById('dialog-with-slot');\nconst confirm = document.getElementById('confirm')\nconst cancel = document.getElementById('cancel')\nconfirm.addEventListener('click', () => {dialog.open = false; })\ncancel.addEventListener('click', () => {dialog.open = false; })</script>"
+					"code": "<div style=\"display: flex; flex-direction: column; justify-content: center;\">\n\t<rux-dialog id=\"dialog-with-slot\" open=\"true\">\n\t\t<span slot=\"header\">Slot Header</span>\n\t\t<div style=\"display: flex; flex-direction: column;\">\n\t\t\t<span style=\"margin-bottom: 1rem;\">Default Slot Content</span>\n\t\t\t<rux-input label=\"Input Label\" placeholder=\"Dialog Input\"></rux-input>\n\t\t</div>\n\t\t<div slot=\"footer\" style=\"display: flex; justify-content: space-between; align-items: center;\">\n\t\t\t<a href=\"\" style=\"text-decoration: none; color: var(--color-background-interactive-default);\">Link</a>\n\t\t\t<rux-button-group h-align=\"right\">\n\t\t\t\t<rux-button id=\"cancel\" secondary=\"\">Cancel</rux-button>\n\t\t\t\t<rux-button id=\"confirm\">Confirm</rux-button>\n\t\t\t</rux-button-group>\n\t\t</div>\n\t</rux-dialog>\n</div>",
+					"script": "\nwindow.addEventListener('click', (e) => {\n\tif(e.target !== document.querySelector('#confirm') && e.target !== document.querySelector('#cancel')) return\n\tconst dialog = document.getElementById('dialog-with-slot')\n\tdialog.open = false;\n}, { passive: true, capture: true })"
 				}
 			],
 			"fields": [
@@ -1061,7 +1062,8 @@
 			"examples": [
 				{
 					"name": "Default",
-					"code": "<div style=\"display: flex; flex-flow: column; justify-content: center;\">\n\t<rux-log filter=\"\"></rux-log>\n</div>\n<script type=\"module\">\nconst log = document.querySelector('rux-log')\nconst data = [\n\t{\n\t\ttimestamp: new Date(),\n\t\t\tstatus: 'off',\n\t\t\tmessage: 'Antenna DGS 1 went offline.',\n\t\t},{\n\t\ttimestamp: new Date(),\n\t\t\tstatus: 'serious',\n\t\t\tmessage: 'USA-177 experienced solar panel misalignment.',\n\t\t},{\n\t\ttimestamp: new Date(),\n\t\t\tstatus: 'caution',\n\t\t\tmessage: 'USA-168 suffered power degradation.',\n\t\t},{\n\t\ttimestamp: new Date(),\n\t\t\tstatus: 'standby',\n\t\t\tmessage: 'Antenna DGS 2 has weak signal.',\n\t\t},{\n\t\ttimestamp: new Date(),\n\t\t\tstatus: 'off',\n\t\t\tmessage: 'Antenna DGS 1 went offline.',\n\t\t},{\n\t\ttimestamp: new Date(),\n\t\t\tstatus: 'serious',\n\t\t\tmessage: 'USA-177 experienced solar panel misalignment.',\n\t\t},{\n\t\ttimestamp: new Date(),\n\t\t\tstatus: 'caution',\n\t\t\tmessage: 'USA-168 suffered power degradation.',\n\t\t},{\n\t\ttimestamp: new Date(),\n\t\t\tstatus: 'standby',\n\t\t\tmessage: 'Antenna DGS 2 has weak signal.',\n\t\t}\n\t]\nlog.data = data\n</script>"
+					"code": "<div style=\"display: flex; flex-flow: column; justify-content: center;\">\n\t<rux-log filter=\"\"></rux-log>\n</div>",
+					"script": "window.addEventListener(\"DOMContentLoaded\", () => {addLog()})\nwindow.addEventListener(\"reset\", () => {addLog()})\nfunction addLog(){\nconst log = document.querySelector('rux-log')\nif(!log) return\nconst data = [\n\t{\n\t\ttimestamp: new Date(),\n\t\t\tstatus: 'off',\n\t\t\tmessage: 'Antenna DGS 1 went offline.',\n\t\t},{\n\t\ttimestamp: new Date(),\n\t\t\tstatus: 'serious',\n\t\t\tmessage: 'USA-177 experienced solar panel misalignment.',\n\t\t},{\n\t\ttimestamp: new Date(),\n\t\t\tstatus: 'caution',\n\t\t\tmessage: 'USA-168 suffered power degradation.',\n\t\t},{\n\t\ttimestamp: new Date(),\n\t\t\tstatus: 'standby',\n\t\t\tmessage: 'Antenna DGS 2 has weak signal.',\n\t\t},{\n\t\ttimestamp: new Date(),\n\t\t\tstatus: 'off',\n\t\t\tmessage: 'Antenna DGS 1 went offline.',\n\t\t},{\n\t\ttimestamp: new Date(),\n\t\t\tstatus: 'serious',\n\t\t\tmessage: 'USA-177 experienced solar panel misalignment.',\n\t\t},{\n\t\ttimestamp: new Date(),\n\t\t\tstatus: 'caution',\n\t\t\tmessage: 'USA-168 suffered power degradation.',\n\t\t},{\n\t\ttimestamp: new Date(),\n\t\t\tstatus: 'standby',\n\t\t\tmessage: 'Antenna DGS 2 has weak signal.',\n\t\t}\n\t]\nlog.data = data}"
 				}
 			],
 			"fields": [
@@ -1924,7 +1926,8 @@
 			"examples": [
 				{
 					"name": "Default",
-					"code": "<rux-segmented-button></rux-segmented-button>\n<script type=\"module\">\nconst segmented = document.querySelector('rux-segmented-button')\nconst data = [\n{ label: 'First item' },\n{ label: 'Second item'},\n{ label: 'Third item' },\n]\nsegmented.data = data\n</script>"
+					"code": "<rux-segmented-button></rux-segmented-button>\n",
+					"script": "window.addEventListener(\"DOMContentLoaded\", () => {setData()})\nwindow.addEventListener(\"reset\", () => {setData()})\nfunction setData(){\nconst segmented = document.querySelector('rux-segmented-button')\n if(!segmented) return\nconst data = [\n{ label: 'First item' },\n{ label: 'Second item'},\n{ label: 'Third item' },\n]\nsegmented.data = data};"
 				}
 			],
 			"fields": [
