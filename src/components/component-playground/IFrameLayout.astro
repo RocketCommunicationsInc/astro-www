@@ -36,6 +36,9 @@ const scriptContent = [
 	`globalThis.$tag=${JSON.stringify(attrs.tag)}`,
 	`globalThis.$target=document.querySelector('${attrs.tag}')`,
 ].join(';')
+
+// scripts that exist on a given example.
+const scripts = attrs.examples.filter((example) => example.script).map((example) => example.script).join(';')
 ---
 <html class="dark-theme" lang="en-US">
 	<head>
@@ -60,6 +63,10 @@ const scriptContent = [
 					attrs.style
 						? <style set:html={attrs.style} />
 					: null
+				}
+				{
+					scripts
+						? <script set:html={scripts} /> : null
 				}
 			</section>
 

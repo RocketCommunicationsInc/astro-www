@@ -26,7 +26,8 @@
 					"description": "Adds an Example",
 					"body": {
 						"name": "$2",
-						"code": "<rux-$1></rux-$1>"
+						"code": "<rux-$1></rux-$1>",
+						"script": "$3"
 					}
 				}
 			]
@@ -39,6 +40,9 @@
 				},
 				"code": {
 					"type": "string"
+				},
+				"script": {
+					"type": "string"
 				}
 			},
 			"additionalProperties": false,
@@ -48,7 +52,8 @@
 					"description": "Adds an Example",
 					"body": {
 						"name": "$2",
-						"code": "<rux-$1></rux-$1>"
+						"code": "<rux-$1></rux-$1>",
+						"script": "$3"
 					}
 				}
 			]
@@ -304,7 +309,8 @@
 							"examples": [
 								{
 									"name": "Default",
-									"code": "<rux-${4:${1/([^ ]*)( ?)/${1:/downcase}${2:+-}/g}} />"
+									"code": "<rux-${4:${1/([^ ]*)( ?)/${1:/downcase}${2:+-}/g}} />",
+									"script": "No <script> tag"
 								}
 							],
 							"fields": "^[${5}]"
