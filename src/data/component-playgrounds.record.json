@@ -1052,6 +1052,22 @@
 				{
 					"name": "Default",
 					"code": "<rux-input label=\"Input label\" type=\"text\" autocomplete=\"\" size=\"medium\"></rux-input>"
+				},
+				{
+					"name": "Label Slot",
+					"code": "<rux-input type=\"text\" autocomplete=\"\" size=\"medium\"><div slot=\"label\">Label slot</div></rux-input>"
+				},
+				{
+					"name": "Prefix and Suffix Slot",
+					"code": "<rux-input label=\"With Prefix and Suffix\" type=\"text\">\n\t<rux-icon slot=\"prefix\" icon=\"border-clear\" size=\"extra-small\"></rux-icon>\n\t<rux-icon slot=\"suffix\" icon=\"border-clear\" size=\"extra-small\"></rux-icon>\n</rux-input>"
+				},
+				{
+					"name": "Error Text Slot",
+					"code": "<rux-input label=\"Input label\" type=\"text\" autocomplete=\"\" size=\"medium\"><div slot=\"error-text\">Error text</div></rux-input>"
+				},
+				{
+					"name": "Help Text Slot",
+					"code": "<rux-input label=\"Input label\" type=\"text\" autocomplete=\"\" size=\"medium\"><div slot=\"help-text\">Help text</div></rux-input>"
 				}
 			],
 			"fields": [
@@ -1177,6 +1193,10 @@
 				{
 					"tag": "rux-icon",
 					"constructor": "RuxIcon"
+				},
+				{
+					"tag": "rux-icon-border-clear",
+					"constructor": "RuxIconBorderClear"
 				}
 			]
 		},
