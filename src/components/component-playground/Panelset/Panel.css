@@ -1,4 +1,4 @@
-:host {
+:host(:not([hidden])) {
 	display: grid;
 
 	/* Layout */
@@ -26,7 +26,6 @@
 		display: flex;
 
 		/* Layout */
-		align-items: center;
 		gap: 3--step;
 		padding-block: 10--rpx;
 		padding-inline: 12--rpx;
@@ -70,5 +69,41 @@
 			justify-content: flex-start;
 			padding-block: 8px 16px;
 		}
+	}
+
+	& button {
+		/* Layout */
+		margin-inline-start: auto;
+
+		/* Layout */
+		padding: 0;
+
+		/* Appearance */
+		background-color: transparent;
+		border: none;
+
+		/* Appearance */
+		cursor: pointer;
+		fill: var(--Grey700Color);
+
+		& svg {
+			/* Layout */
+			display: block;
+
+			/* Layout */
+			block-size: 5--step;
+			inline-size: 5--step;
+		}
+
+		&:hover {
+			fill: #000000;
+		}
+	}
+
+	& svg {
+		/* Layout */
+		block-size: 6--step;
+		inline-size: 6--step;
+		fill: var(--Grey700Color);
 	}
 }

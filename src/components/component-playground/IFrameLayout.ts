@@ -9,7 +9,7 @@ if (iframe !== null) {
 		const contentHeight = document.body.scrollHeight + 2
 
 		if (contentHeight !== iframeHeight && iframeHeight !== (contentHeight - 2)) {
-			iframeHeight = contentHeight
+			iframeHeight = visualViewport.width < 700 ? contentHeight : 460
 
 			iframe.style.setProperty('--y', `${iframeHeight}px`)
 		}
@@ -53,7 +53,6 @@ let $tag = globalThis.$tag as any
 // @ts-ignore
 let $target = globalThis.$target as any
 
-// @ts-ignore
 let $canvas = $target.parentNode as HTMLElement
 
 addEventListener('input', (event) => {
