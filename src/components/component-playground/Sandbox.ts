@@ -14,7 +14,6 @@ export default class SandboxElement extends HTMLElement {
 			content,
 			styling,
 		})
-
 		DOM.observe(shadowRoot, {
 			change(event: Event & { target: HTMLElement & { checked: boolean } }) {
 				if (typeof event.target.checked !== 'boolean') return
