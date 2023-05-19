@@ -52,7 +52,11 @@
 		"stylelint-use-logical": "2.1.0",
 		"stylelint-use-nesting": "4.1.0",
 		"types-object": "0.3.0",
-		"typescript": "5.0.4"
+		"typescript": "5.0.4",
+		"@astrojs/lit": "^2.0.2",
+		"@astrouxds/documentation-components": "^0.0.15",
+		"@webcomponents/template-shadowroot": "^0.2.1",
+		"lit": "^2.7.4"
 	},
 	"eslintConfig": {
 		"extends": [
