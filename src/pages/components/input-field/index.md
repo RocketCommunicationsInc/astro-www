@@ -11,7 +11,7 @@ assets:
 
 ## Interactive Example
 
-::storybook-demo
+::tag{ is=a-playground tag=rux-input }
 
 ## Rules of Thumb
 
