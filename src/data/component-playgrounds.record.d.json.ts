@@ -42,6 +42,7 @@ export interface PlaygroundDependency {
 export interface PlaygroundExample {
 	name: string
 	code: string
+	script?: string
 }
 
 export interface PlaygroundRecord {
