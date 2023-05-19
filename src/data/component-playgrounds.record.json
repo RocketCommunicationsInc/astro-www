@@ -2331,7 +2331,7 @@
 			"examples": [
 				{
 					"name": "Default",
-					"code": "<rux-tooltip message=\"Tooltip\" delay=\"400\">\n\t<rux-button>Trigger</rux-button>\n</rux-tooltip>"
+					"code": "<rux-tooltip message=\"Tooltip\" delay=\"400\" open>\n\t<rux-button>Trigger</rux-button>\n</rux-tooltip>"
 				}
 			],
 			"fields": [
