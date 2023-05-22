@@ -159,6 +159,32 @@ const createObservers = (headings: NodeListOf<HTMLHeadingElement>, footer: HTMLE
 
 				for (const listItem of listElements) {
 					listItem.classList.contains(currentHeading.id) ? listItem.classList.add('-highlighted') : listItem.classList.remove('-highlighted')
+
+					if (listItem.classList.contains(currentHeading.id)) {
+						// create intersection observer to check the list parent to see if the item is visible or not.
+
+						let options = {
+							root: document.querySelector('.section-links'),
+							rootMargin: '10px 0px',
+							threshold: 1.0,
+						}
+
+						let callback = (entries: any[]) => {
+							entries.forEach((entry) => {
+								if (entry.intersectionRatio === 0) {
+									console.log(entry.target, entry)
+									entry.target.scrollIntoView()
+								}
+							})
+						}
+
+						let listObserver = new IntersectionObserver(callback, options)
+
+						let target = listItem
+						listObserver.observe(target)
+
+						// listItem.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' })
+					}
 				}
 			}
 		}, {
