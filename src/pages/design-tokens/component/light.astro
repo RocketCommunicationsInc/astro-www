@@ -2,6 +2,7 @@
 import DocsLayout from 'project:layouts/docs/docs-layout.astro'
 import { component, lookupProperty } from 'project:utils/tokens.js'
 import '../shared.css'
+import { RuxDesignTokenPreview } from '@astrouxds/documentation-components' 
 
 const title = 'Component Tokens'
 const description = 'Component specific tokens to be used only when rebuilding components.'
@@ -12,7 +13,8 @@ const description = 'Component specific tokens to be used only when rebuilding c
 			</h2>
 			{
 				component('light', 'button').map((token) => (
-					<rux-design-token-preview
+					<RuxDesignTokenPreview
+    client:visible
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -29,7 +31,8 @@ const description = 'Component specific tokens to be used only when rebuilding c
 			</h2>
 			{
 				component('light', 'card').map((token) => (
-					<rux-design-token-preview
+					<RuxDesignTokenPreview
+    client:visible
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -46,7 +49,8 @@ const description = 'Component specific tokens to be used only when rebuilding c
 			</h2>
 			{
 				component('light', 'checkbox').map((token) => (
-					<rux-design-token-preview
+					<RuxDesignTokenPreview
+    client:visible
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -63,7 +67,8 @@ const description = 'Component specific tokens to be used only when rebuilding c
 			</h2>
 			{
 				component('light', 'classification-banner').map((token) => (
-					<rux-design-token-preview
+					<RuxDesignTokenPreview
+    client:visible
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -80,7 +85,8 @@ const description = 'Component specific tokens to be used only when rebuilding c
 			</h2>
 			{
 				component('light', 'clock').map((token) => (
-					<rux-design-token-preview
+					<RuxDesignTokenPreview
+    client:visible
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -97,7 +103,8 @@ const description = 'Component specific tokens to be used only when rebuilding c
 			</h2>
 			{
 				component('light', 'container').map((token) => (
-					<rux-design-token-preview
+					<RuxDesignTokenPreview
+    client:visible
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -113,7 +120,8 @@ const description = 'Component specific tokens to be used only when rebuilding c
 			</h2>
 			{
 				component('light', 'gsb').map((token) => (
-					<rux-design-token-preview
+					<RuxDesignTokenPreview
+    client:visible
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -130,7 +138,8 @@ const description = 'Component specific tokens to be used only when rebuilding c
 			</h2>
 			{
 				component('light', 'indeterminate-progress').map((token) => (
-					<rux-design-token-preview
+					<RuxDesignTokenPreview
+    client:visible
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -147,7 +156,8 @@ const description = 'Component specific tokens to be used only when rebuilding c
 			</h2>
 			{
 				component('light', 'input').map((token) => (
-					<rux-design-token-preview
+					<RuxDesignTokenPreview
+    client:visible
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -164,7 +174,8 @@ const description = 'Component specific tokens to be used only when rebuilding c
 			</h2>
 			{
 				component('light', 'link').map((token) => (
-					<rux-design-token-preview
+					<RuxDesignTokenPreview
+    client:visible
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -181,7 +192,8 @@ const description = 'Component specific tokens to be used only when rebuilding c
 			</h2>
 			{
 				component('light', 'log').map((token) => (
-					<rux-design-token-preview
+					<RuxDesignTokenPreview
+    client:visible
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -198,7 +210,8 @@ const description = 'Component specific tokens to be used only when rebuilding c
 			</h2>
 			{
 				component('light', 'menu').map((token) => (
-					<rux-design-token-preview
+					<RuxDesignTokenPreview
+    client:visible
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -214,7 +227,8 @@ const description = 'Component specific tokens to be used only when rebuilding c
 			</h2>
 			{
 				component('light', 'monitoring-icon').map((token) => (
-					<rux-design-token-preview
+					<RuxDesignTokenPreview
+    client:visible
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -231,7 +245,8 @@ const description = 'Component specific tokens to be used only when rebuilding c
 			</h2>
 			{
 				component('light', 'notification-banner').map((token) => (
-					<rux-design-token-preview
+					<RuxDesignTokenPreview
+    client:visible
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -248,7 +263,8 @@ const description = 'Component specific tokens to be used only when rebuilding c
 			</h2>
 			{
 				component('light', 'progress').map((token) => (
-					<rux-design-token-preview
+					<RuxDesignTokenPreview
+    client:visible
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -266,7 +282,8 @@ const description = 'Component specific tokens to be used only when rebuilding c
 			</h2>
 			{
 				component('light', 'radio').map((token) => (
-					<rux-design-token-preview
+					<RuxDesignTokenPreview
+    client:visible
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -283,7 +300,8 @@ const description = 'Component specific tokens to be used only when rebuilding c
 			</h2>
 			{
 				component('light', 'scrollbar').map((token) => (
-					<rux-design-token-preview
+					<RuxDesignTokenPreview
+    client:visible
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -300,7 +318,8 @@ const description = 'Component specific tokens to be used only when rebuilding c
 			</h2>
 			{
 				component('light', 'select').map((token) => (
-					<rux-design-token-preview
+					<RuxDesignTokenPreview
+    client:visible
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -317,7 +336,8 @@ const description = 'Component specific tokens to be used only when rebuilding c
 			</h2>
 			{
 				component('light', 'slider').map((token) => (
-					<rux-design-token-preview
+					<RuxDesignTokenPreview
+    client:visible
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -332,7 +352,8 @@ const description = 'Component specific tokens to be used only when rebuilding c
 			<h2 id="status-symbol">Status Symbol</h2>
 			{
 				component('light', 'status-symbol').map((token) => (
-					<rux-design-token-preview
+					<RuxDesignTokenPreview
+    client:visible
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -349,7 +370,8 @@ const description = 'Component specific tokens to be used only when rebuilding c
 			</h2>
 			{
 				component('light', 'switch').map((token) => (
-					<rux-design-token-preview
+					<RuxDesignTokenPreview
+    client:visible
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -366,7 +388,8 @@ const description = 'Component specific tokens to be used only when rebuilding c
 			</h2>
 			{
 				component('light', 'tag').map((token) => (
-					<rux-design-token-preview
+					<RuxDesignTokenPreview
+    client:visible
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -382,7 +405,8 @@ const description = 'Component specific tokens to be used only when rebuilding c
 			</h2>
 			{
 				component('light', 'textarea').map((token) => (
-					<rux-design-token-preview
+					<RuxDesignTokenPreview
+    client:visible
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -398,7 +422,8 @@ const description = 'Component specific tokens to be used only when rebuilding c
 			</h2>
 			{
 				component('light', 'timeline').map((token) => (
-					<rux-design-token-preview
+					<RuxDesignTokenPreview
+    client:visible
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -413,7 +438,8 @@ const description = 'Component specific tokens to be used only when rebuilding c
 			</h2>
 			{
 				component('light', 'tooltip').map((token) => (
-					<rux-design-token-preview
+					<RuxDesignTokenPreview
+    client:visible
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -424,6 +450,4 @@ const description = 'Component specific tokens to be used only when rebuilding c
 			}
 </DocsLayout>
 <script>
-	import 'https://cdn.jsdelivr.net/npm/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.esm.js'
-	import 'https://cdn.jsdelivr.net/npm/@astrouxds/documentation-components@0.0.14/+esm'
 </script>
