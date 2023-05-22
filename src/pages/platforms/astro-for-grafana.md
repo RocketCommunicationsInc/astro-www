@@ -38,7 +38,6 @@ Astro for Grafana is implemented as an open source Grafana plugin available in t
 
 | Grafana                                                    | Astro Theme / grafana-theme                                                           |
 |------------------------------------------------------------|---------------------------------------------------------------------------------------|
-|                                                            |                                                                                       |
 | <span>![](/img/platforms/grafanaIcon.svg) Grafana 9</span> | 2.0 (in development)                                                                  |
 | <span>![](/img/platforms/grafanaIcon.svg) Grafana 8</span> | [1.0.6](https://github.com/RocketCommunicationsInc/grafana-theme/releases/tag/v1.0.6) |
 
