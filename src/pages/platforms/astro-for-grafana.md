@@ -5,16 +5,15 @@ layout: project:layouts/docs/docs-layout.astro
 title: Astro for Grafana
 description: Astro for Grafana extends the Astro Space UX Design System to the Grafana dashboard environment, offering select Astro colors and components.
 ---
+## Sample Apps
 
-## Toolkits
+<figure>
 
-Astro for Grafana is implemented as an open source Grafana plugin available in two forms.
+<a href="https://rocketcom.grafana.net/public-dashboards/2fb84c7af5064b51a2c13578e5567980?orgId=1"><img src="/img/platforms/grafana-sample-dashboard.png" alt="A sample dashboard shows the plugin in action, along with some Astro themed data visualizations." loading="lazy" width="2292" height="1204"></a>
 
-* grafana-theme is for self-hosted environments. Code and documentation are on [GitHub](https://github.com/RocketCommunicationsInc/grafana-theme).
+<figcaption>A <a href="https://rocketcom.grafana.net/public-dashboards/2fb84c7af5064b51a2c13578e5567980?orgId=1">sample dashboard</a> shows the plugin in action, along with some Astro themed data visualizations.</figcaption>
 
-* Astro Theme is packaged for Grafana Cloud and is available in Grafana’s [plugin store](https://grafana.com/grafana/plugins/rocketcom-astrotheme-panel/).
-
-The plugin is based on Astro 7 and Astro Design Tokens and requires Grafana 9.1.6.
+</figure>
 
 ## Features
 
@@ -26,12 +25,21 @@ The plugin is based on Astro 7 and Astro Design Tokens and requires Grafana 9.1.
 
 * Optional [Clock](https://www.astrouxds.com/components/clock/)
 
-## Sample Apps
+## Toolkits
 
-<figure>
+Astro for Grafana is implemented as an open source Grafana plugin available in two forms.
 
-<img src="/img/platforms/grafana-sample-dashboard.png" alt="A sample dashboard shows the plugin in action, along with some Astro themed data visualizations." loading="lazy" width="2292" height="1204">
+* grafana-theme is for self-hosted environments. Code and documentation are on [GitHub](https://github.com/RocketCommunicationsInc/grafana-theme).
 
-<figcaption>A <a href="https://rocketcom.grafana.net/public-dashboards/2fb84c7af5064b51a2c13578e5567980?orgId=1">sample dashboard</a> shows the plugin in action, along with some Astro themed data visualizations.</figcaption>
+* Astro Theme is packaged for Grafana Cloud and is available in Grafana’s [plugin store](https://grafana.com/grafana/plugins/rocketcom-astrotheme-panel/).
 
-</figure>
+## Versions
+:::table-overflow
+
+| Grafana                                                    | Astro Theme / grafana-theme                                                           |
+|------------------------------------------------------------|---------------------------------------------------------------------------------------|
+|                                                            |                                                                                       |
+| <span>![](/img/platforms/grafanaIcon.svg) Grafana 9</span> | 2.0 (in development)                                                                  |
+| <span>![](/img/platforms/grafanaIcon.svg) Grafana 8</span> | [1.0.6](https://github.com/RocketCommunicationsInc/grafana-theme/releases/tag/v1.0.6) |
+
+:::
