@@ -125,5 +125,19 @@
                 "url": "/components/secondary-nav-example/specs/"
             }
         ]
+    },
+    {
+        "description": "Tables",
+        "heading": "Table",
+        "items": [
+            {
+                "label": "Usage",
+                "url": "/patterns/table/"
+            },
+            {
+                "label": "Specifications",
+                "url": "/patterns/table/specs/"
+            }
+        ]
     }
 ]
