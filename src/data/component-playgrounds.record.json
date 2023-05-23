@@ -838,28 +838,80 @@
 					"checked": false
 				},
 				{
-					"kind": "text",
-					"property": "confirmText",
+					"kind": "radio-group",
 					"attribute": "confirm-text",
+					"property": "confirmText",
+					"note": "confirm-text options are examples.",
+					"options": [
+						{
+							"kind": "radio",
+							"label": "Confirm",
+							"value": "Confirm"
+						},
+						{
+							"kind": "radio",
+							"label": "Agree",
+							"value": "Agree"
+						}
+					],
 					"value": "Confirm"
 				},
 				{
-					"kind": "text",
-					"property": "denyText",
+					"kind": "radio-group",
 					"attribute": "deny-text",
+					"property": "denyText",
+					"note": "deny-text options are examples.",
+					"options": [
+						{
+							"kind": "radio",
+							"label": "Cancel",
+							"value": "Cancel"
+						},
+						{
+							"kind": "radio",
+							"label": "Dismiss",
+							"value": "Dismiss"
+						}
+					],
 					"value": "Cancel"
 				},
 				{
-					"kind": "text",
-					"property": "header",
+					"kind": "radio-group",
 					"attribute": "header",
+					"property": "header",
+					"note": "header options are examples.",
+					"options": [
+						{
+							"kind": "radio",
+							"label": "Header",
+							"value": "Header"
+						},
+						{
+							"kind": "radio",
+							"label": "Confirmation Dialog",
+							"value": "Confirmation Dialog"
+						}
+					],
 					"value": "Header"
 				},
 				{
-					"kind": "text",
-					"property": "message",
+					"kind": "radio-group",
 					"attribute": "message",
-					"value": "Content goes here"
+					"property": "message",
+					"note": "message options are examples.",
+					"options": [
+						{
+							"kind": "radio",
+							"label": "Content goes here.",
+							"value": "Content goes here."
+						},
+						{
+							"kind": "radio",
+							"label": "Other content here.",
+							"value": "Other content here."
+						}
+					],
+					"value": "Content goes here."
 				}
 			],
 			"dependencies": [
