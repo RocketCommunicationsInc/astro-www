@@ -171,6 +171,9 @@
 }
 
 .page {
+	/* Layout */
+	block-size: 100%;
+
 	& li,
 	& p {
 		/* Layout */

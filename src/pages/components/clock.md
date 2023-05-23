@@ -8,6 +8,7 @@ git: rux-clock
 assets:
   name: Clock
 ---
+## Interactive Example
 
 ::tag{ is=a-playground tag=rux-clock }
 

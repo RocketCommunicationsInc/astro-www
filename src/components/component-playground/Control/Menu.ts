@@ -24,12 +24,27 @@ export default class MenuElement extends ReflectedElement(
 
 		value: {
 			defaultValue() {
-				return DOM.withInternals<Internals>(this).shadowContent.value
+				return this.defaultValue
 			},
 			setValue(value) {
-				return value
+				return value == null ? '' : String(value)
 			},
 		},
+
+		defaultValue: {
+			defaultValue() {
+				// find the actual default value
+				const allOptions = Array.from(this.options) as HTMLOptionElement[]
+				// the default value will either be set in the options, or we will choose the first option in the select menu
+				let trueDefault = allOptions.find((option) => (option).hasAttribute('selected'))?.value || allOptions[0].value
+				// set it to the menu select
+				DOM.withInternals<Internals>(this).shadowContent.value = trueDefault
+				return trueDefault
+			},
+			setValue(value) {
+				return value == null ? '' : String(value)
+			},
+		}
 	}
 ) {
 	constructor() {
@@ -47,6 +62,14 @@ export default class MenuElement extends ReflectedElement(
 		}))
 
 		DOM.observe(shadowRoot, {
+			// listen for when event input happens on a-menu (meaning in this case a select menu change)
+			input(event: InputEvent & { target: HTMLSelectElement }) {
+				// set the a-menu value to the same thing as the select menu when it changes
+				element.value = event.target.value
+
+				// dispatch an event that we did this to this element specifically
+				element.dispatchEvent(new InputEvent('input', event))
+			},
 			change() {
 				DOM.trigger(element, {
 					change: { bubbles: true, composed: true },
@@ -63,7 +86,7 @@ MenuElement.prototype.type = 'menu'
 customElements.define('a-menu', MenuElement)
 
 declare class MenuElementInterface extends HTMLElement {
-	/** List of RadioElements contained by the RadioGroupElement. */
+	/** List of Menu Options contained by the MenuElement. */
 	options: NodeList
 
 	/** String representing the value of the Menu. */

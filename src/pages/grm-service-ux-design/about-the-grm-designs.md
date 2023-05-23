@@ -2,7 +2,7 @@
 tags: ["grm", "egs"]
 path: /grm-service-ux-design/about-the-grm-designs
 date: Last Modified
-layout: project:layouts/new-docs/new-docs-layout.astro
+layout: project:layouts/docs/docs-layout.astro
 title: Ground Resource Management
 description: Directing and maintaining satellites orbiting in space requires coordinating personnel, processes, and equipment on the ground. This is the role of Ground Resource Management (GRM) systems.
 ---

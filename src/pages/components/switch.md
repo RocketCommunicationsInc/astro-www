@@ -8,10 +8,9 @@ git: rux-switch
 assets:
     name: Switch
 ---
+## Interactive Example
 
 ::tag{ is=a-playground tag=rux-switch }
-
-<!-- A Switch toggles between two mutually exclusive states such as "On" or "Off." Unlike a Checkbox, a Switch initiates an action with immediate effect without requiring a "Save" or "Submit" action. -->
 
 ## Rules of Thumb
 

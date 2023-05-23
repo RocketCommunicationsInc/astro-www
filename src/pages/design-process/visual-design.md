@@ -1,5 +1,5 @@
 ---
-layout: project:layouts/new-docs/new-docs-layout.astro
+layout: project:layouts/docs/docs-layout.astro
 title: Visual Design
 description: The visual language for Astro applications is designed to reinforce usability and provide a professional appearance.
 ---

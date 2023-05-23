@@ -95,7 +95,6 @@ export const ReflectedElement = <
 			},
 		})
 	}
-
 	return ReflectedElement
 }
 

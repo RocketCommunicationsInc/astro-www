@@ -8,10 +8,9 @@ git: rux-log
 assets:
     name: Log
 ---
+## Interactive Example
 
-::storybook-demo
-
-<!-- A Log is a tabular representation of application events and may include username, priority, equipment type, signal type, etc. As part of the Notification System, Logs provide sorting and filtering function for examining events. -->
+::tag{ is=a-playground tag=rux-log }
 
 ## Rules of Thumb
 

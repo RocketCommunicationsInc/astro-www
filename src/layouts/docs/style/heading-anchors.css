@@ -8,27 +8,14 @@ a.h {
 	& > * {
 		display: flex;
 
-		--border-color: var(--Heading1BorderColor);
-		--border-size: 1px;
-
-		@nest :focus-visible > &, :active > & {
-			--border-color: var(--Orange700Color);
-			--border-size: max(2px, .25em);
-		}
-
-		/* Appearance */
-		box-shadow: var(--border-color) 0 -1--border-size 0 0 inset;
-
-		/* Animation */
-		transition: box-shadow 60ms;
-
-		&::before {
+		&::after {
 			display: inline-block;
 
 			/* Layout */
 			block-size: 1--icon-size;
 			inline-size: 1--icon-size;
-			margin-inline: -1.25--icon-size .25--icon-size;
+			margin-block-start: .1rem;
+			margin-inline: .25--icon-size;
 
 			/* Appearance */
 			opacity: 0;
@@ -41,9 +28,9 @@ a.h {
 		}
 	}
 
-	&:hover:not(:focus-visible) {
+	&:hover, &:focus-visible {
 		& > * {
-			&::before {
+			&::after {
 				/* Appearance */
 				opacity: 60%;
 			}

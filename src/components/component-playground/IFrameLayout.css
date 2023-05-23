@@ -1,6 +1,7 @@
 @import "project:layouts/default/style/ui-monospace.css";
 @import "project:layouts/default/style/sanitize.css";
 @import "project:layouts/default/style/variables.css";
+@import "project:components/component-playground/Control/Slots.css";
 
 /* Baseline */
 
@@ -10,6 +11,18 @@
 
 	/* Text */
 	font-family: "Helvetica", var(--SystemType);
+}
+
+:where(:root, html, body, main.app) {
+	@media (width > 700px) {
+		/* Layout */
+		block-size: 100%;
+	}
+
+	@media (width <= 700px) {
+		/* Layout */
+		block-size: auto;
+	}
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
@@ -97,27 +110,33 @@
 
 	@media (width <= 700px) {
 		/* Layout */
-		grid-template-rows: 68--step auto;
+		grid-template-rows: 80--step auto;
 
 		/* Reference */
 		--max-height: 400px;
+
+		& .panel-nav-area {
+			display: none;
+		}
 	}
 
 	@media (width > 700px) {
 		/* Layout */
-		grid-template-columns: auto max-content;
+		grid-template-columns: auto max-content max-content;
+		overflow: initial;
 
 		/* Reference */
-		--max-height: 512px;
+		--max-height: 100%;
 	}
 
 	& .sandbox-area,
-	& .control-area {
+	& .control-area,
+	& .panel-nav-area {
 		display: grid;
 
 		/* Layout */
 		block-size: 100%;
-		grid-auto-rows: auto;
+		grid-auto-rows: auto 1fr;
 		overflow: hidden;
 
 		/* Appearance */
@@ -144,11 +163,26 @@
 		@media (width < 700px) {
 			border-end-start-radius: var(--EdgeSizeInner);
 			border-end-end-radius: var(--EdgeSizeInner);
+
+			/* Layout */
+			overflow: initial;
 		}
 
 		@media (width >= 700px) {
+			/* Layout */
+			grid-auto-rows: minmax(0, 1fr);
+		}
+	}
+
+	& .panel-nav-area {
+		@media (width >= 700px) {
+			/* Layout */
 			border-start-end-radius: var(--EdgeSizeInner);
 			border-end-end-radius: var(--EdgeSizeInner);
+		}
+
+		@media (width < 700px) {
+			display: none;
 		}
 	}
 }

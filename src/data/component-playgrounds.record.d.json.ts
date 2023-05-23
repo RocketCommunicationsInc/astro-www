@@ -42,6 +42,7 @@ export interface PlaygroundDependency {
 export interface PlaygroundExample {
 	name: string
 	code: string
+	script?: string
 }
 
 export interface PlaygroundRecord {
@@ -52,6 +53,7 @@ export interface PlaygroundRecord {
 	fields?: PlaygroundField[]
 	dependencies?: PlaygroundDependency[]
 	style?: string
+	align?: string
 }
 
 export interface PlaygroundSchema {

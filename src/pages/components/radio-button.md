@@ -9,9 +9,9 @@ assets:
     name: Radio Button
 ---
 
-::tag{ is=a-playground tag=rux-radio-group }
+## Interactive Example
 
-<!-- Radio Buttons allow users to select a mutually exclusive option from a predefined set of options. When one selection is made, the previous selection becomes deselected. One option should always be selected. -->
+::tag{ is=a-playground tag=rux-radio-group }
 
 ## Rules of Thumb
 

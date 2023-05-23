@@ -8,10 +8,10 @@ git: rux-segmented-button
 assets:
     name: Segmented Button
 ---
+## Interactive Example
 
+<!-- ::tag{ is=a-playground tag=rux-segmented-button } -->
 ::storybook-demo
-
-<!-- Segmented Buttons allow users to select one item at a time from two to four options. Selecting one option automatically turns off the last selection made. Segmented Buttons are mutually exclusive. -->
 
 ## Rules of Thumb
 

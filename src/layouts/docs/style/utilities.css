@@ -3,22 +3,42 @@
 
 .table-overflow {
 	/* Layout */
+	margin-block-end: 5--step;
+	max-inline-size: 230--step;
+
+	/* Layout */
 	overflow-x: auto;
+	overflow-x: overlay;
 
 	& table {
 		/* Layout */
 		inline-size: 100%;
 
 		/* Layout */
+
+		/* Layout */
 		min-inline-size: auto;
 	}
 }
 
-/* Table for Status System page */
+.table-typography {
+	& table {
+		& thead {
+			& th {
+				/* Layout */
+				min-inline-size: 29--step;
+			}
+		}
+	}
+}
+
+/* Table for Status System / Status Symbol page */
 /* ========================================================================== */
 
-.status-system-colors {
+.status-system-colors, .status-symbol-colors {
 	/* Layout */
+	margin-block-end: 5--step;
+	max-inline-size: 230--step;
 	overflow-x: auto;
 
 	& table {
@@ -31,6 +51,13 @@
 		& td {
 			/* Text */
 			line-height: 1.5rem;
+		}
+
+		& th:not(:first-of-type) {
+			@media (width < 768px) {
+				/* Layout */
+				min-inline-size: 350px;
+			}
 		}
 	}
 
@@ -48,11 +75,60 @@
 	}
 }
 
+/* Table for Heat Map page */
+/* ========================================================================== */
+
+.heat-map-table {
+	/* Layout */
+	margin-block-end: 20px;
+
+	& table {
+		/* Layout */
+		inline-size: auto;
+
+		& th, & td {
+			/* Appearance */
+			border: 1px solid var(--Grey300Color);
+		}
+
+		& tr {
+			/* Layout */
+			border-block-end: 0;
+		}
+
+		& thead th {
+			/* Text */
+			font-weight: 400;
+			text-align: center;
+
+			/* Appearance */
+			background: transparent;
+			color: inherit;
+		}
+
+		& td {
+			/* Text */
+			line-height: 1.5rem;
+			text-align: center;
+
+			& span {
+				display: flex;
+
+				/* Layout */
+				justify-content: center;
+			}
+		}
+	}
+}
+
 /* Code */
 /* ========================================================================== */
 
 .astro-code,
 .code-block {
+	/* Layout */
+	margin-block-end: 5--step;
+
 	/* Layout */
 	overflow-x: auto;
 	padding: 4--step;
@@ -111,27 +187,6 @@
 	--note-icon: var(--CautionIcon);
 }
 
-/* Columns */
-/* ========================================================================== */
-
-.two-col, .three-col {
-	display: grid;
-
-	/* Layout */
-	gap: 8--step 4--step;
-	margin-block-start: 4--step;
-}
-
-.two-col {
-	/* Layout */
-	grid-template-columns: repeat(2, [col-start] 1fr);
-}
-
-.three-col {
-	/* Layout */
-	grid-template-columns: repeat(3, [col-start] 1fr);
-}
-
 /* Example */
 /* ========================================================================== */
 
@@ -160,7 +215,8 @@
 
 .release-table {
 	/* Layout */
-	margin-block-start: 4--step;
+	margin-block-end: 5--step;
+	max-inline-size: 230--step;
 	overflow-x: scroll;
 
 	& th, & td {

@@ -18,6 +18,7 @@
 	},
 	"devDependencies": {
 		"@astrojs/image": "0.16.6",
+		"@astrojs/markdown-remark": "2.1.4",
 		"@astrojs/mdx": "0.19.0",
 		"@astrojs/sitemap": "1.2.2",
 		"@astrojs/ts-plugin": "0.4.4",
@@ -51,7 +52,11 @@
 		"stylelint-use-logical": "2.1.0",
 		"stylelint-use-nesting": "4.1.0",
 		"types-object": "0.3.0",
-		"typescript": "5.0.4"
+		"typescript": "5.0.4",
+		"@astrojs/lit": "^2.0.2",
+		"@astrouxds/documentation-components": "^0.0.15",
+		"@webcomponents/template-shadowroot": "^0.2.1",
+		"lit": "^2.7.4"
 	},
 	"eslintConfig": {
 		"extends": [

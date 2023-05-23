@@ -2,7 +2,7 @@
 tags: ["grm", "egs"]
 path: /grm-service-ux-design/grm-dashboard
 date: Last Modified
-layout: project:layouts/new-docs/new-docs-layout.astro
+layout: project:layouts/docs/docs-layout.astro
 title: GRM Dashboard
 description: Helps operators maintain situational awareness.
 ---

@@ -9,9 +9,9 @@ assets:
     name: Select Menu
 ---
 
-::storybook-demo
+## Interactive Example
 
-<!-- When activated, Select Menus allow users to select a value from a list. Once a value is selected, the Select Menu displays the selected value. -->
+::tag{ is=a-playground tag=rux-select }
 
 ## Rules of Thumb
 

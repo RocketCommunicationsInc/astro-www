@@ -29,7 +29,7 @@
 
 :where(.p-grid) {
 	/* Layout */
-	min-block-size: calc(100 * var(--vph));
+	block-size: calc(100 * var(--vph));
 
 	@media (width >= 1024px) {
 		display: grid;

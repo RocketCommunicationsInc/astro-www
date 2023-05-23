@@ -1,28 +1,32 @@
 ---
-layout: project:layouts/new-docs/new-docs-layout.astro
+layout: project:layouts/docs/docs-layout.astro
 title: "Getting Started for Developers"
-description: The Astro UXDS Web Component and CSS libraries provide a starting point to build in-browser space app experiences and custom applications following today’s web development best practices.
+description: The Astro UXDS Web Component library provides a starting point to build in-browser space app experiences and custom applications following today’s web development best practices.
 ---
 
- The Astro UXDS Web Components are designed to be as platform and implementation-agnostic as possible, easy to implement or extend in existing projects, and generic by default. Each component, as well as the overall CSS library, is individually published and updated according to the standard Semantic Versioning pattern.
+ The Astro UXDS Web Components are designed to be as platform and implementation-agnostic as possible, easy to implement or extend in existing projects, and generic by default. Astro UXDS Web Components adhere to Semantic Versioning. You can read more about our policy on breaking changes on the [releases](/releases/#web-component-breaking-changes) page.
+
+:::note
+You can view all our developer documentation on **[Storybook](https://astro-components.netlify.app/)**.
+:::
 
 ## Astro Components
 
-In an effort to provide as close to native a development experience as possible, we’ve provided a set of [Stencil-powered](https://stenciljs.com) [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) distributed in individual packages on [npm.org](https://www.npmjs.com/package/@astrouxds/astro-web-components). You can also see the full source code here and instructions for importing the components in a typical NodeJS project [here](https://github.com/RocketCommunicationsInc/astro/blob/main/packages/web-components/README.md).
+In an effort to provide as close to native a development experience as possible, we’ve provided a set of [Stencil-powered](https://stenciljs.com) [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) distributed in a single packages on [npm](https://www.npmjs.com/package/@astrouxds/astro-web-components). You can also see the full source code here and instructions for importing the components in a typical NodeJS project [on GitHub](https://github.com/RocketCommunicationsInc/astro/blob/main/packages/web-components/README.md).
 
 ## Astro Icons, Fonts and Colors
 
-We recognize that not all space application development projects are tooled for utilizing Web Components; you can download [Astro’s Dark theme](https://github.com/RocketCommunicationsInc/astro/blob/main/packages/web-components/src/global/_variables.scss) and [Light theme](https://github.com/RocketCommunicationsInc/astro/blob/main/packages/web-components/src/global/theme/_theme-light.scss) hex/rgb values. You may also view the specifications in the [Astro UXDS Figma file](https://www.figma.com/community/file/1014254163928270411).
+We recognize that not all space application development projects are tooled for utilizing Web Components; you can leverage our [Design Tokens](/design-tokens/getting-started/) to create your own components using the Astro Visual Design Language.
 
-Icon assets are available as SVGs via the [Astro Icon Github Repository](https://github.com/RocketCommunicationsInc/astro/tree/main/packages/web-components/src/icons) or export to the format and size you need from the [Astro Icons Figma library](https://www.figma.com/community/file/1022883566772542677).
+You may also view a component's specifications under their [Specifications Tab](/components/button/specs/).
 
-Astro uses the freely availabe [Roboto](https://fonts.google.com/specimen/Roboto) and [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono?query=roboto+mono).
+Icon assets are available as SVGs via the [Astro Github Repository](https://github.com/RocketCommunicationsInc/astro/tree/main/packages/web-components/src/icons) or export to the format and size you need from the [Astro Icons Figma library](https://www.figma.com/community/file/1022883566772542677).
+
+Astro uses the freely available [Roboto](https://fonts.google.com/specimen/Roboto) font.
 
 ## Astro Storybook and Sample Apps
 
-You can review the latest versions of the web components at the [Astro Storybook](https://astro-components.netlify.app/?path=/story/astro-uxds-welcome-start-here--page). The Astro development team uses Storybook as an environment for building and demonstrating the capabilities of each component. If your team often works offline, you may want to [download and run the Storybook](https://github.com/RocketCommunicationsInc/astro/tree/main/packages/web-components) on your local network to see how the examples work.
-
-For online examples of full Astro app experiences, check out these EGS Service-Specific sample experiences:
+You can review the latest versions of the web components at the [Astro Storybook](https://astro-components.netlify.app/?path=/story/astro-uxds-welcome-start-here--page). The Astro development team uses Storybook as an environment for building and demonstrating the capabilities of each component. For online examples of full Astro app experiences, check out these EGS Service-Specific sample experiences:
 
 :::table-overflow
 | Ground Resources Management                                                                                                                               | Telemetry, Tracking, and Control                                                                                                     |
@@ -35,17 +39,6 @@ For online examples of full Astro app experiences, check out these EGS Service-S
 :::note
 These examples use a previous release of Astro, and are not intended as boilerplates for building new applications. See below for easy ways to get started building Astro web applications.
 :::
-
-## Astro for Material Design
-
-We also have Material Design themes using Astro styling. These files include everything needed to build an Astro application using both Astro components and/or Material Design components.
-
-There are two ways to add Astro for Material Design CSS to your project:
-
-- Via CDN - Simply add the one line of code to your HTML and get the newest version of Astro for Material Design.
-  - Dark Theme (Default) <div class="code-block">`<link rel="stylesheet" href="https://gitcdn.link/repo/RocketCommunicationsInc/astro-material-themes/main/dark/dist/darkTheme.css" />`</div>
-  - Light Theme <div class="code-block">`<link rel="stylesheet" href="https://min.gitcdn.link/repo/RocketCommunicationsInc/astro-material-themes/main/light/dist/lightTheme.css" />`</div>
-- Download CSS Files Directly - Each can be found in our [downloads section](/downloads).
 
 ## EGS Compliance
 
