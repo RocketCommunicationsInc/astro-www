@@ -1,4 +1,5 @@
 import type PlaygroundElement from './Playground/Playground.ts'
+import { sendEvent } from 'project:utils/client/DOM.ts'
 
 const iframe = window.parent?.document.querySelector('a-playground')! as PlaygroundElement
 
@@ -85,26 +86,21 @@ addEventListener('reset', (event) => {
 			control.checked = control.defaultChecked
 		}
 	}
-	sendTagToParent('gtag', 'hi there I am from the frame!')
 })
 
 // google tag events
 // -----------------------------------------------------------------------------
 
-// send gtag event to parent window
-function sendTagToParent(messageType: string, messageData: Object) {
-	const data = {
-		messageType,
-		messageData,
-	}
-
-	window.parent.postMessage(data, '*')
-}
 // send gtag data to parent add when someone clicks in the preview window
 addEventListener('click', (event) => {
-	const { target } = event as any as { target: HTMLElement }
+	const { target } = event as any as { target: HTMLElement, currentTarget: HTMLElement }
 
 	if (target.localName !== 'a-sandbox' && target.closest('a-sandbox')) {
-		sendTagToParent('gtag', JSON.stringify(event))
+		// get the current tag that exists within the playground
+		const ruxTarget = $canvas.innerHTML as string
+		// clean up the target string by removing all new line, and tab characters
+		const targetAsCleanString = ruxTarget.replace(/[\n\t\\]/g, '')
+		// send the event as a 'gtag' to the parent window to be consumed by google
+		sendEvent('gtag', 'playground-click', { target: targetAsCleanString })
 	}
 })

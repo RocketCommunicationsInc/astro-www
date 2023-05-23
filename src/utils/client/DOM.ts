@@ -127,6 +127,13 @@ export let createInternals: CreateRef = (map = new WeakMap()): Referencer => (
 	)
 )
 
+/** Formats a message to send to google analytics and sends it to parent of iframe */
+/** NOTE: Everything you intend to pass on to google analytics MUST be a string, eventData can be an object of strings */
+export const sendEvent = (messageType: string, eventType:string = '', eventData: object = {}) => {
+	const message: object = { messageType, eventType, eventData }
+	window.parent.postMessage(message, window.location.origin)
+}
+
 /** Returns internal data associated with the given object. */
 export let withInternals = createInternals()
 
