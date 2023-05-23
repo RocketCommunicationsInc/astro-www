@@ -47,15 +47,6 @@ if (iframe !== null) {
 	})
 }
 
-
-const debounce = (fn: Function, ms = 300) => {
-	let timeoutId: ReturnType<typeof setTimeout>
-	return function (this: any, ...args: any[]) {
-		clearTimeout(timeoutId)
-		timeoutId = setTimeout(() => fn.apply(this, args), ms)
-	}
-}
-
 // @ts-ignore
 let $tag = globalThis.$tag as any
 
@@ -75,6 +66,8 @@ const handleInput = (event: any) => {
 
 			$target = $canvas.querySelector($tag)
 
+			console.log($target)
+
 			target.dispatchEvent(new Event('reset', { bubbles: true }))
 		} else {
 			if ('type' in target && target.type === 'switch') {
@@ -86,37 +79,7 @@ const handleInput = (event: any) => {
 	}
 }
 
-const handleInputDebounce = debounce((event: any) => {
-	handleInput(event)
-}, 500)
-
-$target.nodeName === 'RUX-DIALOG' ? addEventListener('input', handleInputDebounce) : addEventListener('input', handleInput)
-
-// addEventListener('input', (event) => {
-// 	const { target } = event as any as { target: HTMLInputElement }
-
-// 	const property = target.getAttribute('for')!
-
-// 	if (typeof property === 'string') {
-// 		if (property === 'sandbox:example') {
-// 			$canvas.innerHTML = target.value
-
-// 			$target = $canvas.querySelector($tag)
-
-// 			target.dispatchEvent(new Event('reset', { bubbles: true }))
-// 		} else {
-// 			if ('type' in target && target.type === 'switch') {
-// 				$target[property] = target.checked
-// 			} else {
-// 				if (target.nodeName === 'A-TEXT-CONTROL') {
-// 					$target[property] = target.value
-// 				} else {
-// 					$target[property] = target.value
-// 				}
-// 			}
-// 		}
-// 	}
-// })
+addEventListener('input', handleInput)
 
 addEventListener('reset', (event) => {
 	for (const control of document.querySelectorAll<HTMLFormElement>('[for]')) {
