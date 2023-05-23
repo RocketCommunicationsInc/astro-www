@@ -935,7 +935,7 @@
 					"code": "<div style=\"display: flex; justify-content: center;\">\n\t<rux-global-status-bar include-icon=\"true\" app-domain=\"Astro\" app-name=\"Dashboard\" app-version=\"4.0 Alpha\" menu-icon=\"apps\" username=\"Joan Smith\" app-state-color=\"tag1\" app-state=\"Production\"></rux-global-status-bar>\n</div>"
 				},
 				{
-					"name": "With Slot Content",
+					"name": "With Default Content",
 					"code": "<div style=\"display: flex; justify-content: center;\">\n\t<rux-global-status-bar include-icon=\"true\" app-state=\"Production\" app-state-color=\"tag1\" username=\"Joan Smith\" app-domain=\"Astro\" app-name=\"Dashboard\" app-version=\"4.0 Alpha\" menu-icon=\"apps\">\n\t\t<rux-clock></rux-clock>\n\t</rux-global-status-bar>\n</div>"
 				},
 				{
