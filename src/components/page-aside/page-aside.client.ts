@@ -155,6 +155,7 @@ const createObservers = (headings: NodeListOf<HTMLHeadingElement>, footer: HTMLE
 			}
 
 			if (currentHeading) {
+				// const listElement = document.querySelector('.section-links')!
 				const listElements = document.querySelectorAll('.section-links li a')
 
 				for (const listItem of listElements) {
@@ -171,9 +172,9 @@ const createObservers = (headings: NodeListOf<HTMLHeadingElement>, footer: HTMLE
 
 						let callback = (entries: any[]) => {
 							entries.forEach((entry) => {
-								if (entry.intersectionRatio === 0) {
-									console.log(entry.target, entry)
-									entry.target.scrollIntoView()
+								if (!entry.isIntersecting) {
+									console.log(entry.target, entry.boundingClientRect.top, entry)
+									// listElement.scrollTo(0, entry.boundingClientRect.top)
 								}
 							})
 						}
