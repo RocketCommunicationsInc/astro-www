@@ -27,10 +27,10 @@ const initializeGTagScript = (id: string) => {
 	}
 }
 
-// if (import.meta.env.PROD) {
+if (import.meta.env.PROD) {
 	initializeGTagScript('UA-114182957-1')
 	initializeGTagScript('G-ZHMMGPG3B3')
-// }
+}
 
 /* Interfaces */
 

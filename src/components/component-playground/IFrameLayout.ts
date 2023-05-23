@@ -56,6 +56,8 @@ let $target = globalThis.$target as any
 
 let $canvas = $target.parentNode as HTMLElement
 
+let $textTimeoutID: number
+
 addEventListener('input', (event) => {
 	const { target } = event as any as { target: HTMLInputElement }
 
@@ -65,14 +67,30 @@ addEventListener('input', (event) => {
 		if (property === 'sandbox:example') {
 			$canvas.innerHTML = target.value
 
+
 			$target = $canvas.querySelector($tag)
 
 			target.dispatchEvent(new Event('reset', { bubbles: true }))
+			sendEvent('gtag', 'playground-control', { control: 'Examples', value: `${target.textContent}` })
 		} else {
 			if ('type' in target && target.type === 'switch') {
 				$target[property] = target.checked
+				sendEvent('gtag', 'playground-control', { control: `${property}`, value: target.checked ? 'on' : 'off' })
 			} else {
 				$target[property] = target.value
+
+				// if the target is a text input write a timeout so that it doesn't send every single input change to analytics
+				if (target.nodeName.toLowerCase() === 'a-text-control') {
+					// make sure that if someone types in quick succession the timeout is cleared and a new one is put in place
+					clearTimeout($textTimeoutID)
+					$textTimeoutID = setTimeout(() => {
+						// if the time between input is greater than 3 seconds send the google event
+						sendEvent('gtag', 'playground-control', { control: `${property}`, value: `${target.value}` })
+					}, 3000)
+				} else {
+					// send the value immediately
+					sendEvent('gtag', 'playground-control', { control: `${property}`, value: `${target.value}` })
+				}
 			}
 		}
 	}
