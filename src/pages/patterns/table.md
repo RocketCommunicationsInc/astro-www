@@ -39,10 +39,69 @@ Tables use a familiar Selection/Action model. In simple Tables, selection can be
 
 ## Complex Tables
 
-For more complex Tables, we recommend using either the community or enterprise tier of [ag-Grid](https://www.ag-grid.com/). While we cannot provide support for ag-Grid or its many features, we do provide light and dark variants of Astro in a theme file consumable by ag-grid.
+For more complex Tables, we recommend using either the community or enterprise tier of [AG Grid](https://www.ag-grid.com/). While we cannot provide support for AG Grid or its many features, we do provide light and dark variants of Astro in a theme file consumable by AG Grid.
 
-We maintain a [separate repo for the ag-Grid Astro theme](https://github.com/RocketCommunicationsInc/astro-ag-Grid). Please visit the following links to get started:
+### AG Grid Theme
 
-- [Documentation](https://github.com/RocketCommunicationsInc/astro-ag-Grid/#astro-ag-grid-theme)
-- [Astro Theme SASS files](https://github.com/RocketCommunicationsInc/astro-ag-Grid/tree/master/src/css)
-- Working [example](https://astro-ag-grid-example.netlify.app/) of a complex table using the Astro theme
+The Astro AG-Grid theme follows the [Astro theming guidelines](https://www.astrouxds.com/design-guidelines/theme/) and the [AG-Grid theme development guidelines](https://www.ag-grid.com/javascript-grid-themes-customising/).
+
+There are three parts to the Astro AG-Grid theme:
+
+1. [Astro UXDS Design tokens](https://www.npmjs.com/package/@astrouxds/tokens) which are already imported and consumed in `@astrouxds/ag-grid-theme`.
+2. The AG Grid community alpine-dark theme that the Astro AG-Grid theme builds off of, which is imported from the `ag-grid-community` repository.
+3. The Astro AG-Grid theme itself, which is defined in `@astrouxds/ag-grid-theme/dist/main.css` and consumes the imported design tokens above.
+
+The @astrouxds/ag-grid-theme/dist/main.css file merges the ag-grid.css, ag-theme-alpine.css and the astro ag-grid theme sources so you will only need to import one file.
+
+### Installation
+
+:::note
+The default installation method of AG Grid can add a considerable amount to your bundle size. Instead, consider using [AG Grid Modules](https://www.ag-grid.com/javascript-data-grid/modules/) to cherry pick the features you need.
+:::
+
+Import the Astro AG Grid theme via NPM:
+
+```
+npm install @astrouxds/ag-grid-theme
+```
+
+### Usage
+
+In your main css entrypoint:
+
+```css
+@import "~@astrouxds/ag-grid-theme/dist/main.css"
+```
+
+> If you are already importing `ag-grid-community/dist/styles/ag-grid.css` or `ag-grid-community/dist/styles/ag-theme-alpine.css` you can remove them as they are already bundled in our ag-grid-theme css.
+
+Apply the class "ag-theme-astro" to your `ag-grid` element:
+
+```html
+<ag-grid class="ag-theme-astro" ...></ag-grid>
+```
+
+### Themes
+
+The Astro Dark variant is the default theme. The Light variant can be assigned by wrapping the grid in an element with the "light-theme" class.
+
+```html
+<section class="light-theme">
+    <ag-grid- class="ag-theme-astro" ...></ag-grid->
+</section>
+```
+
+### Example Project
+
+<iframe
+      src="https://codesandbox.io/embed/github/RocketCommunicationsInc/astro/tree/main/packages/web-components/src/stories/astro-sandboxes/themes/ag-grid"
+      class="sandbox"
+      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+      title="Astro AG-Grid Theme Example"
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+  ></iframe>
+
+### Support
+
+Please report any issues on our [AG Grid Theme](https://github.com/RocketCommunicationsInc/ag-grid-theme) repository on Github.
