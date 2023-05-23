@@ -1,5 +1,4 @@
 import type PlaygroundElement from './Playground/Playground.ts'
-import 'project:utils/client/google-analytics'
 
 const iframe = window.parent?.document.querySelector('a-playground')! as PlaygroundElement
 
