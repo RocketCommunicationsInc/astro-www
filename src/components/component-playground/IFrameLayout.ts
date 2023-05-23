@@ -55,7 +55,7 @@ let $target = globalThis.$target as any
 
 let $canvas = $target.parentNode as HTMLElement
 
-addEventListener('input', (event) => {
+const handleInput = (event: any) => {
 	const { target } = event as any as { target: HTMLInputElement }
 
 	const property = target.getAttribute('for')!
@@ -66,6 +66,8 @@ addEventListener('input', (event) => {
 
 			$target = $canvas.querySelector($tag)
 
+			console.log($target)
+
 			target.dispatchEvent(new Event('reset', { bubbles: true }))
 		} else {
 			if ('type' in target && target.type === 'switch') {
@@ -75,7 +77,9 @@ addEventListener('input', (event) => {
 			}
 		}
 	}
-})
+}
+
+addEventListener('input', handleInput)
 
 addEventListener('reset', (event) => {
 	for (const control of document.querySelectorAll<HTMLFormElement>('[for]')) {
