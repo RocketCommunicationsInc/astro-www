@@ -20,7 +20,7 @@ export default class SandboxElement extends HTMLElement {
 
 				element.classList.toggle('dark-theme', event.target.checked)
 				element.classList.toggle('light-theme', !event.target.checked)
-				DOM.sendEvent('gtag', 'playground-themeToggle', { toggleTo: event.target.checked ? 'dark-theme' : 'light-theme' })
+				DOM.sendEvent('gtag', 'playground-themeToggle', { event_category: 'playground', event_label: event.target.checked ? 'dark-theme' : 'light-theme' })
 			}
 		})
 	}
