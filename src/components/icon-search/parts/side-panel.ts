@@ -147,6 +147,14 @@ class IconPanelInternals {
 
 		// give focus affordance to the Icon Panel
 		host.tabIndex = -1
+
+		/** Add google events */
+		/** SVG Downloaded */
+		addEventListener('download:file', (e: Event) => {
+			const iconName = this.heading?.textContent
+			const iconId = this.host.getAttribute('use')
+			gtag('event', 'icon_downloaded', { 'icon_name': iconName, 'icon_id': iconId })
+		})
 	}
 
 	async handleEvent(event: CustomEvent) {
@@ -158,6 +166,7 @@ class IconPanelInternals {
 				this.emitClipboardActiveButton = <HTMLButtonElement>event.target!
 				await this.closeStatus()
 				await this.openStatus()
+				this.sendCopyEvent()
 				break
 			case 'scroll': {
 				this.updateStatusPosition()
@@ -209,6 +218,15 @@ class IconPanelInternals {
 
 			this.timedStatusClose.start()
 		}
+	}
+
+	sendCopyEvent() {
+		/** Add google event */
+			/** Icon Copied */
+			const iconName = this.heading.textContent
+			const iconId = this.host.getAttribute('use')
+			const copied = this.emitClipboardActiveButton?.getAttribute('data-text')
+			gtag('event', 'icon_copied', { 'icon_name': iconName, 'icon_id': iconId, 'icon_code': copied })
 	}
 
 	setHeading(headingText: string) {
