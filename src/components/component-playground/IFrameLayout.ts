@@ -73,11 +73,11 @@ const handleInput = (event: any) => {
 			console.log($target)
 
 			target.dispatchEvent(new Event('reset', { bubbles: true }))
-			sendEvent('gtag', 'playground-control', { event_category: 'playground', event_label: 'Examples', value: `${target.textContent}` })
+			sendEvent('gtag', 'playground-control', { 'event_category': 'playground', 'event_label': 'Examples', 'control_value': `${target.textContent}` })
 		} else {
 			if ('type' in target && target.type === 'switch') {
 				$target[property] = target.checked
-				sendEvent('gtag', 'playground-control', { event_category: 'playground', event_label: `${property}`, value: target.checked ? 'on' : 'off' })
+				sendEvent('gtag', 'playground-control', { 'event_category': 'playground', 'event_label': `${property}`, 'control_value': target.checked ? 'on' : 'off' })
 			} else {
 				$target[property] = target.value
 
@@ -87,11 +87,11 @@ const handleInput = (event: any) => {
 					clearTimeout($textTimeoutID)
 					$textTimeoutID = setTimeout(() => {
 						// if the time between input is greater than 3 seconds send the google event
-						sendEvent('gtag', 'playground-control', { event_category: 'playground', event_label: `${property}`, value: `${target.value}` })
+						sendEvent('gtag', 'playground-control', { 'event_category': 'playground', 'event_label': `${property}`, 'control_value': `${target.value}` })
 					}, 3000)
 				} else {
 					// send the value immediately
-					sendEvent('gtag', 'playground-control', { event_category: 'playground', event_label: `${property}`, value: `${target.value}` })
+					sendEvent('gtag', 'playground-control', { 'event_category': 'playground', 'event_label': `${property}`, 'control_value': `${target.value}` })
 				}
 			}
 		}
@@ -123,6 +123,6 @@ addEventListener('click', (event) => {
 		// clean up the target string by removing all new line, and tab characters
 		const targetAsCleanString = ruxTarget.replace(/[\n\t\\]/g, '')
 		// send the event as a 'gtag' to the parent window to be consumed by google
-		sendEvent('gtag', 'playground-click', { event_category: 'playground', event_label: targetAsCleanString })
+		sendEvent('gtag', 'playground-click', { 'event_category': 'playground', 'event_label': targetAsCleanString })
 	}
 })
