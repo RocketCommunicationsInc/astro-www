@@ -10,29 +10,29 @@
                     "version": "N/A"
                 },
                 {
-                    "name": "UI Kit - Dark",
                     "link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+                    "name": "UI Kit - Dark",
                     "status": "available",
                     "type": "ui",
                     "version": "v7"
                 },
                 {
-                    "name": "UI Kit - Light",
                     "link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+                    "name": "UI Kit - Light",
                     "status": "available",
                     "type": "ui",
                     "version": "v7"
                 },
                 {
-                    "name": "UI Kit - Wireframe",
                     "link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+                    "name": "UI Kit - Wireframe",
                     "status": "available",
                     "type": "ui",
                     "version": "v7"
                 },
                 {
-                    "name": "Web Component",
                     "link": "https://astro-components.netlify.app/?path=/story/components-accordion--default-story",
+                    "name": "Web Component",
                     "status": "available",
                     "type": "component",
                     "version": "v7"
@@ -170,11 +170,11 @@
                     "version": "v7"
                 },
                 {
+                    "link": "/components/button/specs/",
                     "name": "Component Tokens",
                     "status": "available",
                     "type": "token",
-                    "version": "v1",
-                    "link": "/components/button/specs/"
+                    "version": "v1"
                 }
             ]
         },
@@ -703,11 +703,11 @@
                     "version": "v7"
                 },
                 {
+                    "link": "/components/input-field/specs/",
                     "name": "Component Tokens",
                     "status": "available",
                     "type": "token",
-                    "version": "v1",
-                    "link": "/components/input-field/specs/"
+                    "version": "v1"
                 }
             ]
         },
@@ -1304,11 +1304,11 @@
                     "version": "v7"
                 },
                 {
+                    "link": "/components/select/specs/",
                     "name": "Component Tokens",
                     "status": "available",
                     "type": "token",
-                    "version": "v1",
-                    "link": "/components/select/specs/"
+                    "version": "v1"
                 }
             ]
         },
@@ -1392,11 +1392,11 @@
                     "version": "v7"
                 },
                 {
+                    "link": "/components/slider/specs/",
                     "name": "Component Tokens",
                     "status": "available",
                     "type": "token",
-                    "version": "v1",
-                    "link": "/components/slider/specs/"
+                    "version": "v1"
                 }
             ]
         },
@@ -1570,7 +1570,7 @@
                 },
                 {
                     "name": "Component Tokens",
-                    "status": "planned",
+                    "status": "inprogress",
                     "type": "token",
                     "version": "N/A"
                 }
@@ -1701,11 +1701,11 @@
                     "version": "v7"
                 },
                 {
+                    "link": "/components/textarea/specs/",
                     "name": "Component Tokens",
                     "status": "available",
                     "type": "token",
-                    "version": "v1",
-                    "link": "/components/textarea/specs/"
+                    "version": "v1"
                 }
             ]
         },
