@@ -40,7 +40,7 @@ const iconState = {
 			/* send google analytics event */
 			const iconName = iconState.activeElement.querySelector('svg').getAttribute('aria-label')
 			const iconId = iconState.activeElement.querySelector('use').getAttribute('href')
-			gtag('event', 'icon_selected', { 'icon_name': iconName, 'icon_id': iconId })
+			gtag('event', 'icon_selected', { 'icon_name': iconName, 'icon_id': iconId, 'event_category': 'icon_library' })
 		}
 	},
 }

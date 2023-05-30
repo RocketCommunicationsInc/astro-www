@@ -153,7 +153,7 @@ class IconPanelInternals {
 		addEventListener('download:file', (e: Event) => {
 			const iconName = this.heading?.textContent
 			const iconId = this.host.getAttribute('use')
-			gtag('event', 'icon_downloaded', { 'icon_name': iconName, 'icon_id': iconId })
+			gtag('event', 'icon_downloaded', { 'icon_name': iconName, 'icon_id': iconId, 'event_category': 'icon_library' })
 		})
 	}
 
@@ -226,7 +226,7 @@ class IconPanelInternals {
 			const iconName = this.heading.textContent
 			const iconId = this.host.getAttribute('use')
 			const copied = this.emitClipboardActiveButton?.getAttribute('data-text')
-			gtag('event', 'icon_copied', { 'icon_name': iconName, 'icon_id': iconId, 'icon_code': copied })
+			gtag('event', 'icon_copied', { 'icon_name': iconName, 'icon_id': iconId, 'icon_code': copied, 'event_category': 'icon_library' })
 	}
 
 	setHeading(headingText: string) {
