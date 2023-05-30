@@ -10,8 +10,7 @@ assets:
 ---
 ## Interactive Example
 
-<!-- ::tag{ is=a-playground tag=rux-segmented-button } -->
-::storybook-demo
+::tag{ is=a-playground tag=rux-segmented-button }
 
 ## Rules of Thumb
 
