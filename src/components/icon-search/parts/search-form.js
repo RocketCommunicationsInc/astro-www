@@ -11,6 +11,9 @@
 	/** Search Terms Clear Button. */
 	let formClear = /** @type {HTMLInputElement} */ (formElement.querySelector('.-clear'))
 
+	/** gtag search modifier */
+	let searchTimeoutID
+
 	let formState = {
 		focused: false,
 		filled: false,
@@ -32,7 +35,6 @@
 		let isFilled = Boolean(formControl.value)
 
 		if (formState.filled !== isFilled) formElement.classList.toggle('-filled', formState.filled = isFilled)
-
 		cancelAnimationFrame(onInputQueue)
 		onInputQueue = requestAnimationFrame(() => onInput(formControl.value))
 	})
@@ -143,6 +145,15 @@
 			: `
 			<strong>No results for "${value}".</strong> <p>Not finding what you want? <a href="mailto:support@astrouxds.com">Contact us</a> and suggest a new icon.</p>`
 		)
+
+				/** Add google analytic search result logic */
+		// make sure that if someone types in quick succession the timeout is cleared and a new one is put in place
+		clearTimeout(searchTimeoutID)
+		searchTimeoutID = setTimeout(() => {
+			// if the time between input is greater than 3 seconds send the google event
+			console.log('send search event', 'value', value, 'results', searchResultCount)
+			gtag('event', 'search', { 'event_category': 'icon_library', 'search_term': `${value}`, 'search_results': searchResultCount > 0 })
+		}, 2000)
 	}
 }
 

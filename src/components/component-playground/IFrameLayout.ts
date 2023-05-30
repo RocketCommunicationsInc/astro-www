@@ -1,6 +1,5 @@
 import type PlaygroundElement from './Playground/Playground.ts'
 import { sendEvent } from 'project:utils/client/DOM.ts'
-import { sendEvent } from 'project:utils/client/DOM.ts'
 
 const iframe = window.parent?.document.querySelector('a-playground')! as PlaygroundElement
 
