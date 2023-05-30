@@ -39,6 +39,18 @@ H4s and H5s are the same at this time. H5s are not typically used. H4s are prefe
 
 Paragraph - 1rem - This is just a normal paragraph of text. [This is a link inside a paragraph of text.](https://astrouxds.com) It is the default link style for the body of the site.
 
+### Code Block
+
+```
+<div>
+	<ul>
+		<li>List Item</li>
+		<li>List Item</li>
+		<li>List Item</li>
+	</ul>
+</div>
+```
+
 ## Images
 
 There are several sizes of images on the site but they all follow the same general pattern. The aspect ratio for images is around 16 x 9 but the height of the image can vary based on need.
@@ -73,25 +85,63 @@ We have two different types of columns for use on the site. 2-column width and 3
 
 ### Two Column
 
-:::two-col
+<div class="two-col">
 
+:::col
+
+#### First Column
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fermentum, lectus nec blandit tincidunt, felis orci viverra nisi, nec vehicula enim arcu eget mi. Duis posuere nisl vel enim pharetra, et dapibus lacus viverra. Nulla nec turpis vel tortor fermentum consectetur. Vestibulum in diam vel lorem finibus egestas. Aliquam sed molestie libero. Integer sit amet egestas odio. Phasellus purus augue, maximus sed turpis eu, pretium finibus augue. Quisque sit amet pulvinar tortor. In arcu ligula, laoreet eget consectetur id, feugiat posuere neque.
 :::
+
+:::col
+
+#### Second Column
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fermentum, lectus nec blandit tincidunt, felis orci viverra nisi, nec vehicula enim arcu eget mi. Duis posuere nisl vel enim pharetra, et dapibus lacus viverra. Nulla nec turpis vel tortor fermentum consectetur. Vestibulum in diam vel lorem finibus egestas. Aliquam sed molestie libero. Integer sit amet egestas odio. Phasellus purus augue, maximus sed turpis eu, pretium finibus augue. Quisque sit amet pulvinar tortor. In arcu ligula, laoreet eget consectetur id, feugiat posuere neque.
+:::
+
+</div>
 
 
 ### Three Column
 
-:::three-col
+<div class="three-col">
 
 :::col
+
+#### First Column
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fermentum, lectus nec blandit tincidunt, felis orci viverra nisi, nec vehicula enim arcu eget mi. Duis posuere nisl vel enim pharetra, et dapibus lacus viverra. Nulla nec turpis vel tortor fermentum consectetur. Vestibulum in diam vel lorem finibus egestas.
+
 :::
 
 :::col
+
+#### Second Column
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fermentum, lectus nec blandit tincidunt, felis orci viverra nisi, nec vehicula enim arcu eget mi. Duis posuere nisl vel enim pharetra, et dapibus lacus viverra. Nulla nec turpis vel tortor fermentum consectetur. Vestibulum in diam vel lorem finibus egestas.
 :::
 
 :::col
-:::
+
+#### Third Column
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fermentum, lectus nec blandit tincidunt, felis orci viverra nisi, nec vehicula enim arcu eget mi. Duis posuere nisl vel enim pharetra, et dapibus lacus viverra. Nulla nec turpis vel tortor fermentum consectetur. Vestibulum in diam vel lorem finibus egestas.
 
 :::
 
+</div>
 
+### Standard Table
 
+This is the standard table design. There are a couple of variations on pages but those typically just adjust the max width of one of the rows so that the table doesn't distort on mobile.
+
+:::table-overflow
+|       | Column 1 | Column 2 |
+|-------|----------|----------|
+| Row 1 | Content  | Content  |
+| Row 2 | Content  | Content  |
+:::
+
+## Special Classes
