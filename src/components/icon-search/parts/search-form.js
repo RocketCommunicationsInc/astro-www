@@ -151,7 +151,6 @@
 		clearTimeout(searchTimeoutID)
 		searchTimeoutID = setTimeout(() => {
 			// if the time between input is greater than 3 seconds send the google event
-			console.log('send search event', 'value', value, 'results', searchResultCount)
 			gtag('event', 'search', { 'event_category': 'icon_library', 'search_term': `${value}`, 'search_results': searchResultCount > 0 })
 		}, 2000)
 	}
