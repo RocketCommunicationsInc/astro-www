@@ -21,9 +21,9 @@ assets:
 Search has two states:
 
 :::two-col
-![The normal (enabled) state is less prominent than the focused state.](/img/components/search-enabled.png "The normal (enabled) state is less prominent than the focused state.")
+!(/img/components/search-enabled.png)
 
-![Within the focused state, the magnifying glass symbol is more prominent. The “Clear” button becomes enabled.](/img/components/search-focus.png "Within the focused state, the magnifying glass symbol is more prominent. The “Clear” button becomes enabled.")
+![Putting focus on the search field adds a pink ring around the field and an ‘X’ for clearing search string.](/img/components/search-focus.png "Putting focus on the search field adds a pink ring around the field and an ‘X’ for clearing search string.")
 :::
 
 To learn more about adding Help Text or Validation to Input Fields like Search, see the [Forms and Validation](/patterns/forms-and-validation) guidance.
