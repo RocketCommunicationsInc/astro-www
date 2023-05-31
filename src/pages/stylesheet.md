@@ -41,7 +41,58 @@ Paragraph - 1rem - This is just a normal paragraph of text. [This is a link insi
 
 ## Colors
 
-coming soon.
+:::table-overflow
+| Color | Variable                    | Use |
+|-------|-----------------------------|-----|
+|       | `--LinkColor`               |     |
+|       | `--TextColor`               |     |
+|       | `--TableHeadingBorderColor` |     |
+|       | `--ExampleDoColor`          |     |
+|       | `--ExampleDontColor`        |     |
+|       | `--CautionBorderColor`      |     |
+|       | `--CautionColor`            |     |
+|       | `--NoteBorderColor`         |     |
+|       | `--NoteColor`               |     |
+:::
+
+<script type="module">
+customElements.define('color-swab', class extends HTMLElement {})
+
+/** Matches a value which is CSS custom property. */
+const matchCustomProp = /^--[\w]+/
+
+// transform tables within any available table overflow elements
+for (const td of document.querySelectorAll('.table-overflow td')) {
+	td.classList.add('processed')
+
+	const tdContent = td.textContent
+
+	/* Whether the content of the next TD matched a CSS custom property. */
+	const isTdColor = matchCustomProp.test(tdContent)
+
+	// conditionally add a color swab to the previous td
+	if (isTdColor) {
+		const previousTd = td.previousSibling
+		
+		innerHTML = (
+			`<color-swab style="--color:${tdContent}">Hi!</color-swab>`
+		)
+
+		const nextTd = td.nextSibling
+		const nextTdContent = nextTd?.textContent
+
+		/* Whether the content of the next TD matched a CSS custom property. */
+		const isTdHexColor = matchCustomProp.test(nextTdContent)
+
+		// conditionally wrap the contents of the next td in a <color-swab>
+		if (isTdHexColor) {
+			nextTd.innerHTML = (
+				`<color-swab style="--color:${tdContent}">${nextTdContent}</color-swab>`
+			)
+		}
+	}
+}
+</script>
 
 
 ## Images
