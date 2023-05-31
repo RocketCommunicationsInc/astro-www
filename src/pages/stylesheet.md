@@ -39,6 +39,10 @@ H4s and H5s are the same at this time. H5s are not typically used. H4s are prefe
 
 Paragraph - 1rem - This is just a normal paragraph of text. [This is a link inside a paragraph of text.](https://astrouxds.com) It is the default link style for the body of the site.
 
+## Colors
+
+coming soon.
+
 
 ## Images
 
