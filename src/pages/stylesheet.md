@@ -1,5 +1,5 @@
 ---
-draft: true # When draft: true is in frontmatter the page is only available in dev #
+# draft: true  When draft: true is in frontmatter the page is only available in dev #
 title: Style Guide
 description: A (mostly) comprehensive list of styles/elements used on AstroUXDS
 layout: project:layouts/component-docs/component-docs-layout.astro
@@ -39,17 +39,6 @@ H4s and H5s are the same at this time. H5s are not typically used. H4s are prefe
 
 Paragraph - 1rem - This is just a normal paragraph of text. [This is a link inside a paragraph of text.](https://astrouxds.com) It is the default link style for the body of the site.
 
-### Code Block
-
-```
-<div>
-	<ul>
-		<li>List Item</li>
-		<li>List Item</li>
-		<li>List Item</li>
-	</ul>
-</div>
-```
 
 ## Images
 
@@ -145,3 +134,41 @@ This is the standard table design. There are a couple of variations on pages but
 :::
 
 ## Special Classes
+
+### Notes
+
+:::note
+
+This is a  note, it is a div with the .note class
+:::
+
+:::caution
+
+This is a caution note, it is a div with the .caution class
+:::
+
+### Code Blocks
+This is a `` <code> `` block for html
+
+```html
+<div>
+	<ul>
+		<li>List Item</li>
+		<li>List Item</li>
+		<li>List Item</li>
+	</ul>
+</div>
+```
+
+This is a `` <code> `` block for javascript
+
+```js
+window.addEventListener('click', (event) => {
+	// if the click is not on the key make sure it closes
+	if (event.target.closest('.-toggle') === null) {
+		eventElement.classList.remove('--open')
+		eventElement.classList.add('--closed')
+		return
+	}
+})
+```
