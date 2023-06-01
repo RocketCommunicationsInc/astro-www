@@ -1,5 +1,5 @@
 ---
-title: Notifications
+title: Notifications yo
 description: Notifications of application events have varying levels of urgency or interruption.
 tags: resources
 path: /patterns/notifications
