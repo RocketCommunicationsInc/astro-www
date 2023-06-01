@@ -74,7 +74,7 @@ Paragraph - 1rem - This is just a normal paragraph of text. [This is a link insi
 |       | `--InteractiveMutedColor` | `var(--BrightBlue700Color)` | Hover/selected background color of interactive blocks (homepage) |
 :::
 
-# Surface Colors
+### Surface Colors
 
 :::color-table
 | Color | Variable                 | Reference Variable          | Use                                       |
