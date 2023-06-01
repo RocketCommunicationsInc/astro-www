@@ -50,6 +50,8 @@ const scripts = attrs.examples.filter((example) => example.script).map((example)
 		<link rel="stylesheet" href={getNPMURL('@astrouxds/tokens@1.5.0/dist/css/index.css')} />
 		<link rel="stylesheet" href={getNPMURL('@astrouxds/tokens@1.5.0/dist/css/theme.light.css')} />
 		<script src="https://cdn.jsdelivr.net/npm/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.esm.js" />
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&amp;family=Roboto:wght@100;300;400;500;700;900&amp;display=swap" rel="stylesheet">
 
 		<script type="module" set:html={scriptContent}></script>
 	</head>
