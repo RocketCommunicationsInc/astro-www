@@ -1,7 +1,7 @@
 ---
 # draft: true  When draft: true is in frontmatter the page is only available in dev #
 title: Style Guide
-description: A (mostly) comprehensive list of styles/elements used on AstroUXDS
+description: A (mostly)` comprehensive list of styles/elements used on AstroUXDS
 layout: project:layouts/component-docs/component-docs-layout.astro
 ---
 
@@ -37,109 +37,109 @@ H4s and H5s are the same at this time. H5s are not typically used. H4s are prefe
 - Forth Item
 - Fifth Item
 
-Paragraph - 1rem - This is just a normal paragraph of text. [This is a link inside a paragraph of text.](https://astrouxds.com) It is the default link style for the body of the site.
+Paragraph - 1rem - This is just a normal paragraph of text. [This is a link inside a paragraph of text.](https://astrouxds.com)` It is the default link style for the body of the site.
 
 ## Colors Variable
 
 ### System Colors
 
-:::table-overflow
-| Color | Variable             | Reference Variable      | Use                                                                  |
-|-------|----------------------|-------------------------|----------------------------------------------------------------------|
-|       | `--InverseColor`     | var(--DarkBlue950Color) | Main text color on light backgrounds                                 |
-|       | `--PlaceholderColor` | var(--Grey500Color)     | Placeholder color for inputs                                         |
-|       | `--PrimaryColor`     | var(--Neutral000Color)  | Background of all docs pages and White text used on dark backgrounds |
-|       | `--SecondaryColor`   | var(--Grey300Color)     | Subtitle color for dark backgrounds                                  |
+:::color-table
+| Color | Variable             | Reference Variable        | Use                                                                  |
+|-------|----------------------|---------------------------|----------------------------------------------------------------------|
+|       | `--InverseColor`     | `var(--DarkBlue950Color)` | Main text color on light backgrounds                                 |
+|       | `--PlaceholderColor` | `var(--Grey500Color)`     | Placeholder color for inputs                                         |
+|       | `--PrimaryColor`     | `var(--Neutral000Color)`  | Background of all docs pages and White text used on dark backgrounds |
+|       | `--SecondaryColor`   | `var(--Grey300Color)`     | Subtitle color for dark backgrounds                                  |
 :::
 
 ### Base Colors
 
-:::table-overflow
-| Color | Variable              | Reference Variable        | Use                                         |
-|-------|-----------------------|---------------------------|---------------------------------------------|
-|       | `--BaseColor`         | var(--BrightBlue900Color) | The dark background of home page containers |
-|       | `--BaseHeaderColor`   | var(--DarkBlue900Color)   | Not Currently used                          |
-|       | `--BaseHoverColor`    | var(--BrightBlue850Color) | Not Currently Used                          |
-|       | `--BaseSelectedColor` | var(--DarkBlue700Color)   | Not Currently Used                          |
+:::color-table
+| Color | Variable              | Reference Variable          | Use                                         |
+|-------|-----------------------|-----------------------------|---------------------------------------------|
+|       | `--BaseColor`         | `var(--BrightBlue900Color)` | The dark background of home page containers |
+|       | `--BaseHeaderColor`   | `var(--DarkBlue900Color)`   | Not Currently used                          |
+|       | `--BaseHoverColor`    | `var(--BrightBlue850Color)` | Not Currently Used                          |
+|       | `--BaseSelectedColor` | `var(--DarkBlue700Color)`   | Not Currently Used                          |
 :::
 
 ### Interactive Colors
 
-:::table-overflow
-| Color | Variable                  | Reference Variable        | Use                                                              |
-|-------|---------------------------|---------------------------|------------------------------------------------------------------|
-|       | `--InteractiveColor`      | var(--BrightBlue500Color) | Color of borders/text that are interactive                       |
-|       | `--InteractiveHoverColor` | var(--BrightBlue400Color) | Hover color of text/borders using InteractiveColor               |
-|       | `--InteractivePressColor` | var(--BrightBlue300Color) | Not currently Used                                               |
-|       | `--InteractiveMutedColor` | var(--BrightBlue700Color) | Hover/selected background color of interactive blocks (homepage) |
+:::color-table
+| Color | Variable                  | Reference Variable          | Use                                                              |
+|-------|---------------------------|-----------------------------|------------------------------------------------------------------|
+|       | `--InteractiveColor`      | `var(--BrightBlue500Color)` | Color of borders/text that are interactive                       |
+|       | `--InteractiveHoverColor` | `var(--BrightBlue400Color)` | Hover color of text/borders using InteractiveColor               |
+|       | `--InteractivePressColor` | `var(--BrightBlue300Color)` | Not currently Used                                               |
+|       | `--InteractiveMutedColor` | `var(--BrightBlue700Color)` | Hover/selected background color of interactive blocks (homepage) |
 :::
 
 # Surface Colors
 
-:::table-overflow
-| Color | Variable                 | Reference Variable        | Use                                       |
-|-------|--------------------------|---------------------------|-------------------------------------------|
-|       | `--SurfaceColor`         | var(--DarkBlue850Color)   | Dark background color usually on homepage |
-|       | `--SurfaceHeaderColor`   | var(--DarkBlue900Color)   | Dark background header color (homepage)   |
-|       | `--SurfaceHoverColor`    | var(--BrightBlue800Color) | Not currently in use                      |
-|       | `--SurfaceSelectedColor` | var(--DarkBlue700Color)   | Interactive element background (homepage) |
+:::color-table
+| Color | Variable                 | Reference Variable          | Use                                       |
+|-------|--------------------------|-----------------------------|-------------------------------------------|
+|       | `--SurfaceColor`         | `var(--DarkBlue850Color)`   | Dark background color usually on homepage |
+|       | `--SurfaceHeaderColor`   | `var(--DarkBlue900Color)`   | Dark background header color (homepage)   |
+|       | `--SurfaceHoverColor`    | `var(--BrightBlue800Color)` | Not currently in use                      |
+|       | `--SurfaceSelectedColor` | `var(--DarkBlue700Color)`   | Interactive element background (homepage) |
 :::
 
 ### Misc colors
 
-:::table-overflow
-| Color | Variable               | hsl/variable             | Use                                                     |
-|-------|------------------------|--------------------------|---------------------------------------------------------|
-|       | `--ExampleDoColor`     | hsl(109 82% 39%)         | Color of border separating Example Do image and text    |
-|       | `--ExampleDontColor`   | hsl(13 99% 50%)          | Color of border separating Example Don't image and text |
-|       | `--CautionBorderColor` | var(--HotOrange600Color) | Caution note border color                               |
-|       | `--CautionColor`       | var(--HotOrange600Color) | Caution note background color                           |
-|       | `--NoteBorderColor`    | var(--DarkBlue500Color)  | Note border color                                       |
-|       | `--NoteColor`          | var(--DarkBlue500Color)  | Note background color                                   |
+:::color-table
+| Color | Variable               | hsl/variable               | Use                                                     |
+|-------|------------------------|----------------------------|---------------------------------------------------------|
+|       | `--ExampleDoColor`     | `hsl(109 82% 39%)`         | Color of border separating Example Do image and text    |
+|       | `--ExampleDontColor`   | `hsl(13 99% 50%)`          | Color of border separating Example Don't image and text |
+|       | `--CautionBorderColor` | `var(--HotOrange600Color)` | Caution note border color                               |
+|       | `--CautionColor`       | `var(--HotOrange600Color)` | Caution note background color                           |
+|       | `--NoteBorderColor`    | `var(--DarkBlue500Color)`  | Note border color                                       |
+|       | `--NoteColor`          | `var(--DarkBlue500Color)`  | Note background color                                   |
 :::
 
 ### Reference colors
 
 TODO: we are currently using these colors directly. If we want a design system thinking these should be used in terms of other variables.
 
-:::table-overflow
-| Color | Variable               | HSL                |
-|-------|------------------------|--------------------|
-|       | `--BrightBlue200Color` | hsl(205 88% 90%)   |
-|       | `--BrightBlue300Color` | hsl(209 100% 86%)  |
-|       | `--BrightBlue400Color` | hsl(209 100% 79%)  |
-|       | `--BrightBlue500Color` | hsl(208 100% 65%)  |
-|       | `--BrightBlue600Color` | hsl(209 61% 52%)   |
-|       | `--BrightBlue700Color` | hsl(209 57% 39%)   |
-|       | `--BrightBlue800Color` | hsl(208 49% 21%)   |
-|       | `--BrightBlue850Color` | hsl(211 45% 14%)   |
-|       | `--BrightBlue900Color` | hsl(212 37% 10%)   |
-|       | `--DarkBlue400Color`   | hsl(203 56% 42%)   |
-|       | `--DarkBlue500Color`   | hsl(202 100% 28%)  |
-|       | `--DarkBlue600Color`   | hsl(202 100% 22%)  |
-|       | `--DarkBlue700Color`   | hsl(208 54% 24%)   |
-|       | `--DarkBlue800Color`   | hsl(209 39% 17%)   |
-|       | `--DarkBlue850Color`   | hsl(209 39% 17%)   |
-|       | `--DarkBlue900Color`   | hsl(210 39% 15%)   |
-|       | `--DarkBlue950Color`   | hsl(213 36% 5%)    |
-|       | `--Grey200Color`       | hsl(216 31% 94%)   |
-|       | `--Grey300Color`       | hsl(213 12% 85%)   |
-|       | `--Grey400Color`       | hsl(214 11% 76%)   |
-|       | `--Grey500Color`       | hsl(217 11% 68%)   |
-|       | `--Grey600Color`       | hsl(219 6% 51%)    |
-|       | `--Grey700Color`       | hsl(216 6% 34%)    |
-|       | `--Grey800Color`       | hsl(220 5% 24.7%)  |
-|       | `--Grey900Color`       | hsl(225 5% 16.86%) |
-|       | `--HotOrange600Color`  | hsl(20, 89%, 36%)  |
-|       | `--Neutral000Color`    | hsl(0 0% 100%)     |
-|       | `--Orange400Color`     | hsl(42 100% 67%)   |
-|       | `--Orange600Color`     | hsl(35 100% 62%)   |
-|       | `--Orange700Color`     | hsl(33 100% 50%)   |
-|       | `--Pink600Color`       | hsl(290 100% 30%)  |
-|       | `--Purple300Color`     | hsl(250 54% 78%)   |
-|       | `--Red500Color`        | hsl(0 100% 61%)    |
-|       | `--Red800Color`        | hsl(9 96% 28%)     |
-|       | `--Teal600Color`       | hsl(181 100% 32%)  |
+:::color-table
+| Color | Variable               | HSL                  |
+|-------|------------------------|----------------------|
+|       | `--BrightBlue200Color` | `hsl(205 88% 90%)`   |
+|       | `--BrightBlue300Color` | `hsl(209 100% 86%)`  |
+|       | `--BrightBlue400Color` | `hsl(209 100% 79%)`  |
+|       | `--BrightBlue500Color` | `hsl(208 100% 65%)`  |
+|       | `--BrightBlue600Color` | `hsl(209 61% 52%)`   |
+|       | `--BrightBlue700Color` | `hsl(209 57% 39%)`   |
+|       | `--BrightBlue800Color` | `hsl(208 49% 21%)`   |
+|       | `--BrightBlue850Color` | `hsl(211 45% 14%)`   |
+|       | `--BrightBlue900Color` | `hsl(212 37% 10%)`   |
+|       | `--DarkBlue400Color`   | `hsl(203 56% 42%)`   |
+|       | `--DarkBlue500Color`   | `hsl(202 100% 28%)`  |
+|       | `--DarkBlue600Color`   | `hsl(202 100% 22%)`  |
+|       | `--DarkBlue700Color`   | `hsl(208 54% 24%)`   |
+|       | `--DarkBlue800Color`   | `hsl(209 39% 17%)`   |
+|       | `--DarkBlue850Color`   | `hsl(209 39% 17%)`   |
+|       | `--DarkBlue900Color`   | `hsl(210 39% 15%)`   |
+|       | `--DarkBlue950Color`   | `hsl(213 36% 5%)`    |
+|       | `--Grey200Color`       | `hsl(216 31% 94%)`   |
+|       | `--Grey300Color`       | `hsl(213 12% 85%)`   |
+|       | `--Grey400Color`       | `hsl(214 11% 76%)`   |
+|       | `--Grey500Color`       | `hsl(217 11% 68%)`   |
+|       | `--Grey600Color`       | `hsl(219 6% 51%)`    |
+|       | `--Grey700Color`       | `hsl(216 6% 34%)`    |
+|       | `--Grey800Color`       | `hsl(220 5% 24.7%)`  |
+|       | `--Grey900Color`       | `hsl(225 5% 16.86%)` |
+|       | `--HotOrange600Color`  | `hsl(20, 89%, 36%)`  |
+|       | `--Neutral000Color`    | `hsl(0 0% 100%)`     |
+|       | `--Orange400Color`     | `hsl(42 100% 67%)`   |
+|       | `--Orange600Color`     | `hsl(35 100% 62%)`   |
+|       | `--Orange700Color`     | `hsl(33 100% 50%)`   |
+|       | `--Pink600Color`       | `hsl(290 100% 30%)`  |
+|       | `--Purple300Color`     | `hsl(250 54% 78%)`   |
+|       | `--Red500Color`        | `hsl(0 100% 61%)`    |
+|       | `--Red800Color`        | `hsl(9 96% 28%)`     |
+|       | `--Teal600Color`       | `hsl(181 100% 32%)`  |
 :::
 
 
@@ -148,7 +148,7 @@ TODO: we are currently using these colors directly. If we want a design system t
 /** Matches a value which is CSS custom property. */
 const matchCustomProp = /^--[\w]+/
 // transform tables within any available table overflow elements
-for (const td of document.querySelectorAll('.table-overflow td')) {
+for (const td of document.querySelectorAll('.color-table td')) {
 	const tdContent = td.textContent
 
 	/* Whether the content of the TD matched a CSS custom property. */
