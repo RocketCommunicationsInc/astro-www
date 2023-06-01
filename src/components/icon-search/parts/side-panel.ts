@@ -245,8 +245,23 @@ class IconPanelInternals {
 		this.groupNameLabel.textContent = 'Category'
 		this.groupNameParagraph.textContent = groupName
 
-		this.tagsParagraph.textContent = content.querySelector('metadata')!.textContent
+		// populate keywords
+		const tagButtons = content.querySelector('metadata')!.textContent?.split(', ')
+		// add buttons to the tags so they can be clicked
+		const tagsContent = tagButtons?.map((tag) => `<button>${tag}</button>`).join(', ')
+		this.tagsParagraph.innerHTML = tagsContent || ''
 		this.tagsLabel.textContent = 'Keywords'
+
+		// listens for a click in the tags section and then sends the clicked keyword to the search
+		this.tagsParagraph.addEventListener('click', (e: Event) => {
+			const target = e.target as HTMLElement
+			if (target.nodeName !== 'BUTTON') return
+			const keyword = target.textContent
+			const search = document.querySelector('.p-searchform .-control') as HTMLInputElement
+			search.value = keyword || ''
+			// initiate the search by dispatching an input event
+			search.dispatchEvent(new Event('input', { bubbles: true }))
+		})
 
 		// update the emit buttons
 		this.emitClipboardWriteIdButton.dataset.text = id
