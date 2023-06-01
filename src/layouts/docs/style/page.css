@@ -519,7 +519,7 @@
 
 	& .p-contribution-footer {
 		/* Layout */
-		border-block-start: 1px solid var(--TableHeadingBorderColor);
+		border-block-start: 1px solid var(--Grey900Color);
 
 		/* Layout */
 		margin-block-start: 15--step;
