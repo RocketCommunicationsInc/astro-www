@@ -374,3 +374,13 @@ h2 {
 :host(:not([use])) {
 	display: none;
 }
+
+[part="tags"] button {
+	/* Appearance */
+	color: var(--InteractiveColor);
+
+	&:hover, &:focus {
+		/* Appearance */
+		color: var(--InteractiveHoverColor);
+	}
+}
