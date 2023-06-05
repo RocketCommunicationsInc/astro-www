@@ -37,7 +37,6 @@ assets:
 | Border Width                             | table-row-border-width                 | 1px                                                                                                                  |
 | Text Color                             | table-row-color-text                 | #ffffff                                                                                                                  |
 | Background Color                             | table-row-color-background-default                 | #1b2d3e                                                                                                                  |
-| Border Width                             | table-row-border-width                 | 1px                                                                                                                  |
 | Font family                                          | font-body-1-font-family         | 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif |
 | Font size                                            | font-body-1-font-size           | 1rem                                                                                                                  |
 | Font weight                                          | font-body-1-font-weight         | 400                                                                                                                   |
