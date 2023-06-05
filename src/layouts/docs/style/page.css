@@ -560,14 +560,14 @@
 	/* Layout */
 	//flex-shrink: 0;
 
-	@media (width < 1728px) {
+	@media (width < 1293px) {
 		display: none;
 
 		/* Layout */
 		/* flex-basis: 0; */
 	}
 
-	@media (width >= 1728px) {
+	@media (width >= 1294px) {
 		/* Layout */
 		flex-basis: 74--step;
 	}
