@@ -24,12 +24,6 @@
 					"checked": false
 				}
 			],
-			"dependencies": [
-				{
-					"tag": "rux-accordion-item",
-					"constructor": "RuxAccordionItem"
-				}
-			],
 			"style": ""
 		},
 		{
@@ -42,13 +36,7 @@
 					"code": "<rux-breadcrumb>\n\t<rux-breadcrumb-item href=\"#\">Home</rux-breadcrumb-item>\n\t<rux-breadcrumb-item href=\"#\">Second Item</rux-breadcrumb-item>\n\t<rux-breadcrumb-item>Current Item</rux-breadcrumb-item>\n</rux-breadcrumb>"
 				}
 			],
-			"fields": [],
-			"dependencies": [
-				{
-					"tag": "rux-breadcrumb-item",
-					"constructor": "RuxBreadcrumbItem"
-				}
-			]
+			"fields": []
 		},
 		{
 			"tag": "rux-button",
@@ -120,20 +108,6 @@
 				}
 			],
 			"fields": [],
-			"dependencies": [
-				{
-					"tag": "rux-button",
-					"constructor": "RuxButton"
-				},
-				{
-					"tag": "rux-icon",
-					"constructor": "RuxIcon"
-				},
-				{
-					"tag": "rux-icon-star",
-					"constructor": "RuxIconStar"
-				}
-			],
 			"style": ""
 		},
 		{
@@ -641,72 +615,6 @@
 				}
 			],
 			"fields": [],
-			"dependencies": [
-				{
-					"tag": "rux-icon",
-					"constructor": "RuxIcon"
-				},
-				{
-					"tag": "rux-icon-clear",
-					"constructor": "RuxIconClear"
-				},
-				{
-					"tag": "rux-button",
-					"constructor": "RuxButton"
-				},
-				{
-					"tag": "rux-card",
-					"constructor": "RuxCard"
-				},
-				{
-					"tag": "rux-slider",
-					"constructor": "RuxSlider"
-				},
-				{
-					"tag": "rux-tabs",
-					"constructor": "RuxTabs"
-				},
-				{
-					"tag": "rux-tab",
-					"constructor": "RuxTab"
-				},
-				{
-					"tag": "rux-tab-panels",
-					"constructor": "RuxTabPanels"
-				},
-				{
-					"tag": "rux-tab-panel",
-					"constructor": "RuxTabPanel"
-				},
-				{
-					"tag": "rux-table",
-					"constructor": "RuxTable"
-				},
-				{
-					"tag": "rux-table-header",
-					"constructor": "RuxTableHeader"
-				},
-				{
-					"tag": "rux-table-header-row",
-					"constructor": "RuxTableHeaderRow"
-				},
-				{
-					"tag": "rux-table-header-cell",
-					"constructor": "RuxTableHeaderCell"
-				},
-				{
-					"tag": "rux-table-body",
-					"constructor": "RuxTableBody"
-				},
-				{
-					"tag": "rux-table-row",
-					"constructor": "RuxTableRow"
-				},
-				{
-					"tag": "rux-table-cell",
-					"constructor": "RuxTableCell"
-				}
-			],
 			"style": ""
 		},
 		{
@@ -723,37 +631,37 @@
 					"kind": "text",
 					"attribute": "date",
 					"property": "date",
-					"value":""
+					"value": ""
 				},
 				{
 					"kind": "text",
 					"attribute": "day",
 					"property": "day",
-					"value":""
+					"value": ""
 				},
 				{
 					"kind": "text",
 					"attribute": "era",
 					"property": "era",
-					"value":""
+					"value": ""
 				},
 				{
 					"kind": "text",
 					"attribute": "hour",
 					"property": "hour",
-					"value":""
+					"value": ""
 				},
 				{
 					"kind": "text",
 					"attribute": "hour-12",
 					"property": "hour12",
-					"value":""
+					"value": ""
 				},
 				{
 					"kind": "text",
 					"attribute": "locale",
 					"property": "locale",
-					"value":""
+					"value": ""
 				},
 				{
 					"kind": "text",
@@ -914,16 +822,6 @@
 					"value": "Content goes here."
 				}
 			],
-			"dependencies": [
-				{
-					"tag": "rux-button",
-					"constructor": "RuxButton"
-				},
-				{
-					"tag": "rux-button-group",
-					"constructor": "RuxButtonGroup"
-				}
-			],
 			"style": "rux-dialog::part(container) { position: absolute; height: 100%; width: 100%; } a-sandbox::part(content) { position: relative; }"
 		},
 		{
@@ -1034,52 +932,6 @@
 					"property": "username",
 					"attribute": "username",
 					"value": "Joan Smith"
-				}
-			],
-			"dependencies": [
-				{
-					"tag": "rux-button",
-					"constructor": "RuxButton"
-				},
-				{
-					"tag": "rux-icon",
-					"constructor": "RuxIcon"
-				},
-				{
-					"tag": "rux-icon-apps",
-					"constructor": "RuxIconApps"
-				},
-				{
-					"tag": "rux-icon-antenna",
-					"constructor": "RuxIconAntenna"
-				},
-				{
-					"tag": "rux-icon-antenna-transmit",
-					"constructor": "RuxIconAntennaTransmit"
-				},
-				{
-					"tag": "rux-tag",
-					"constructor": "RuxTag"
-				},
-				{
-					"tag": "rux-clock",
-					"constructor": "RuxClock"
-				},
-				{
-					"tag": "rux-tabs",
-					"constructor": "RuxTabs"
-				},
-				{
-					"tag": "rux-tab",
-					"constructor": "RuxTab"
-				},
-				{
-					"tag": "rux-tab-panels",
-					"constructor": "RuxTabPanels"
-				},
-				{
-					"tag": "rux-tab-panel",
-					"constructor": "RuxTabPanel"
 				}
 			],
 			"style": ""
@@ -1239,16 +1091,6 @@
 						"text"
 					],
 					"value": "text"
-				}
-			],
-			"dependencies": [
-				{
-					"tag": "rux-icon",
-					"constructor": "RuxIcon"
-				},
-				{
-					"tag": "rux-icon-border-clear",
-					"constructor": "RuxIconBorderClear"
 				}
 			]
 		},
@@ -1638,48 +1480,6 @@
 					"value": "America/Los_Angeles"
 				}
 			],
-			"dependencies": [
-				{
-					"tag": "rux-table",
-					"constructor": "RuxTable"
-				},
-				{
-					"tag": "rux-table-header",
-					"constructor": "RuxTableHeader"
-				},
-				{
-					"tag": "rux-table-header-row",
-					"constructor": "RuxTableHeaderRow"
-				},
-				{
-					"tag": "rux-table-header-cell",
-					"constructor": "RuxTableHeaderCell"
-				},
-				{
-					"tag": "rux-table-body",
-					"constructor": "RuxTableBody"
-				},
-				{
-					"tag": "rux-table-row",
-					"constructor": "RuxTableRow"
-				},
-				{
-					"tag": "rux-table-cell",
-					"constructor": "RuxTableCell"
-				},
-				{
-					"tag": "rux-status",
-					"constructor": "RuxStatus"
-				},
-				{
-					"tag": "rux-datetime",
-					"constructor": "RuxDatetime"
-				},
-				{
-					"tag": "rux-input",
-					"constructor": "RuxInput"
-				}
-			],
 			"style": "rux-log { --normal-fill: #56f000; --standby-fill: #2dccff; --standby-border: #2dccff; --standby-fill-opacity: 0; --off-fill: #a4abb6; --off-border: #a4abb6; --critical-fill: #ff3838; --critical-border: #ff3838; --caution-fill: #fce83a; --caution-border: #fce83a; --serious-fill: #ffb302; --serious-border: #ffb302;}"
 		},
 		{
@@ -1740,44 +1540,6 @@
 					"property": "sublabel",
 					"attribute": "sublabel",
 					"value": "Sub-label"
-				}
-			],
-			"dependencies": [
-				{
-					"tag": "rux-icon",
-					"constructor": "RuxIcon"
-				},
-				{
-					"tag": "rux-icon-altitude",
-					"constructor": "RuxIconAltitude"
-				},
-				{
-					"tag": "rux-icon-mission",
-					"constructor": "RuxIconMission"
-				},
-				{
-					"tag": "rux-icon-processor",
-					"constructor": "RuxIconProcessor"
-				},
-				{
-					"tag": "rux-icon-equipment",
-					"constructor": "RuxIconEquipment"
-				},
-				{
-					"tag": "rux-icon-antenna",
-					"constructor": "RuxIconAntenna"
-				},
-				{
-					"tag": "rux-icon-antenna-transmit",
-					"constructor": "RuxIconAntennaTransmit"
-				},
-				{
-					"tag": "rux-icon-antenna-receive",
-					"constructor": "RuxIconAntennaReceive"
-				},
-				{
-					"tag": "rux-status",
-					"constructor": "RuxStatus"
 				}
 			],
 			"style": "rux-monitoring-icon { --normal-fill: #56f000; --standby-fill: #2dccff; --standby-border: #2dccff; --standby-fill-opacity: 0; --off-fill: #a4abb6; --off-border: #a4abb6; --critical-fill: #ff3838; --critical-border: #ff3838; --caution-fill: #fce83a; --caution-border: #fce83a; --serious-fill: #ffb302; --serious-border: #ffb302;}"
@@ -1850,28 +1612,6 @@
 					"checked": false
 				}
 			],
-			"dependencies": [
-				{
-					"tag": "rux-icon",
-					"constructor": "RuxIcon"
-				},
-				{
-					"tag": "rux-icon-clear",
-					"constructor": "RuxIconClear"
-				},
-				{
-					"tag": "rux-button",
-					"constructor": "RuxButton"
-				},
-				{
-					"tag": "rux-status",
-					"constructor": "RuxStatus"
-				},
-				{
-					"tag": "rux-classification-marking",
-					"constructor": "RuxClassificationMarking"
-				}
-			],
 			"style": "rux-notification { --normal-fill: #56f000; --standby-fill: #2dccff; --standby-border: #2dccff; --standby-fill-opacity: 0; --off-fill: #a4abb6; --off-border: #a4abb6; --critical-fill: #ff3838; --critical-border: #ff3838; --caution-fill: #fce83a; --caution-border: #fce83a; --serious-fill: #ffb302; --serious-border: #ffb302;}"
 		},
 		{
@@ -1939,28 +1679,6 @@
 						"fixed"
 					],
 					"value": "absolute"
-				}
-			],
-			"dependencies": [
-				{
-					"tag": "rux-icon",
-					"constructor": "RuxIcon"
-				},
-				{
-					"tag": "rux-icon-apps",
-					"constructor": "RuxIconApps"
-				},
-				{
-					"tag": "rux-menu",
-					"constructor": "RuxMenu"
-				},
-				{
-					"tag": "rux-menu-item",
-					"constructor": "RuxMenuItem"
-				},
-				{
-					"tag": "rux-menu-item-divider",
-					"constructor": "RuxMenuItemDivider"
 				}
 			],
 			"style": ""
@@ -2060,13 +1778,7 @@
 					"code": "<rux-radio-group name=\"radios\" label=\"Radio group\">\n\t<rux-radio value=\"one\" name=\"radios\">One</rux-radio>\n\t<rux-radio value=\"two\" name=\"radios\">Two</rux-radio>\n\t<rux-radio value=\"three\" name=\"radios\">Three</rux-radio>\n</rux-radio-group>"
 				}
 			],
-			"fields": [],
-			"dependencies": [
-				{
-					"tag": "rux-radio-group",
-					"constructor": "RuxRadioGroup"
-				}
-			]
+			"fields": []
 		},
 		{
 			"tag": "rux-radio-group",
@@ -2119,12 +1831,6 @@
 					"attribute": "help-text",
 					"property": "helpText",
 					"value": ""
-				}
-			],
-			"dependencies": [
-				{
-					"tag": "rux-radio",
-					"constructor": "RuxRadio"
 				}
 			]
 		},
@@ -2298,16 +2004,6 @@
 					"checked": false
 				}
 			],
-			"dependencies": [
-				{
-					"tag": "rux-option",
-					"constructor": "RuxOption"
-				},
-				{
-					"tag": "rux-option-group",
-					"constructor": "RuxOptionGroup"
-				}
-			],
 			"style": ""
 		},
 		{
@@ -2400,12 +2096,6 @@
 					"property": "small",
 					"attribute": "small",
 					"checked": false
-				}
-			],
-			"dependencies": [
-				{
-					"tag": "rux-tab",
-					"constructor": "RuxTab"
 				}
 			],
 			"style": "rux-tabs { height: auto; }"
@@ -2950,32 +2640,6 @@
 					"value": "America/New_York"
 				}
 			],
-			"dependencies": [
-				{
-					"tag": "rux-track",
-					"constructor": "RuxTrack"
-				},
-				{
-					"tag": "rux-time-region",
-					"constructor": "RuxTimeRegion"
-				},
-				{
-					"tag": "rux-ruler",
-					"constructor": "RuxRuler"
-				},
-				{
-					"tag": "rux-status",
-					"constructor": "RuxStatus"
-				},
-				{
-					"tag": "rux-icon",
-					"constructor": "RuxIcon"
-				},
-				{
-					"tag": "rux-icon-arrow-right",
-					"constructor": "RuxIconArrowRight"
-				}
-			],
 			"style": "rux-timeline { --normal-fill: #56f000; --standby-fill: #2dccff; --standby-border: #2dccff; --standby-fill-opacity: 0; --off-fill: #a4abb6; --off-border: #a4abb6; --critical-fill: #ff3838; --critical-border: #ff3838; --caution-fill: #fce83a; --caution-border: #fce83a; --serious-fill: #ffb302; --serious-border: #ffb302;}"
 		},
 		{
@@ -3028,12 +2692,6 @@
 					],
 					"value": "auto"
 				}
-			],
-			"dependencies": [
-				{
-					"tag": "rux-button",
-					"constructor": "RuxButton"
-				}
 			]
 		},
 		{
@@ -3047,16 +2705,6 @@
 				{
 					"name": "Status",
 					"code": "<rux-tree>\n\t<rux-tree-node>\n\t\t<rux-status slot='prefix' status='normal'></rux-status>\nTree item 1\n\t\t<rux-tree-node slot='node'>\n\t\t\t<rux-status slot='prefix' status='normal'></rux-status>\n\t\t\t\tTree item 1.1\n\t\t\t\t</rux-tree-node>\n\t\t\t<rux-tree-node slot='node'>\n\t\t\t<rux-status slot='prefix' status='normal'></rux-status>\n\t\t\t\tTree item 1.2\n\t\t\t</rux-tree-node>\n\t\t\t<rux-tree-node slot='node'>\n\t\t\t<rux-status slot='prefix' status='normal'></rux-status>\n\t\t\t\tTree item 1.3\n\t\t\t</rux-tree-node>\n\t\t\t</rux-tree-node>\n\t\t<rux-tree-node>\n\t\t<rux-status slot='prefix' status='standby'></rux-status>\n\t\t\tTree item 2\n\t\t\t</rux-tree-node>\n\t\t<rux-tree-node>\n\t\t<rux-status slot='prefix' status='normal'></rux-status>\n\t\t\tTree item 3\n\t\t\t<rux-tree-node slot='node'>\n\t\t\t\t<rux-status slot='prefix' status='off'></rux-status>\n\t\t\t\t\tTree item 3.1\n\t\t\t\t\t</rux-tree-node>\n\t\t\t\t<rux-tree-node slot='node'>\n\t\t\t\t<rux-status slot='prefix' status='critical'></rux-status>\n\t\t\t\t\tTree item 3.2\n\t\t\t\t\t</rux-tree-node>\n\t\t\t\t<rux-tree-node slot='node'>\n\t\t\t\t<rux-status slot='prefix' status='normal'></rux-status>\n\t\t\t\t\tTree item 3.3\n\t\t\t\t\t</rux-tree-node>\n\t\t\t\t</rux-tree-node>\n\t\t<rux-tree-node>\n\t\t<rux-status slot='prefix' status='caution'></rux-status>\n\t\t\tTree item 4\n\t\t\t<rux-tree-node slot='node'>\n\t\t\t\t<rux-status slot='prefix' status='caution'></rux-status>\n\t\t\t\t\tTree item 4.1\n\t\t\t\t\t</rux-tree-node>\n\t\t\t\t<rux-tree-node slot='node'>\n\t\t\t\t<rux-status slot='prefix' status='normal'></rux-status>\n\t\t\t\t\tTree item 4.2\n\t\t\t\t\t</rux-tree-node>\n\t\t\t\t</rux-tree-node>\n\t\t</rux-tree>"
-				}
-			],
-			"dependencies": [
-				{
-					"tag": "rux-tree-node",
-					"constructor": "RuxTreeNode"
-				},
-				{
-					"tag": "rux-status",
-					"constructor": "RuxStatus"
 				}
 			],
 			"style": "rux-tree { --normal-fill: #56f000; --standby-fill: #2dccff; --standby-border: #2dccff; --standby-fill-opacity: 0; --off-fill: #a4abb6; --off-border: #a4abb6; --critical-fill: #ff3838; --critical-border: #ff3838; --caution-fill: #fce83a; --caution-border: #fce83a;}"
