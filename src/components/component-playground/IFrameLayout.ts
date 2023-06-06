@@ -70,8 +70,6 @@ const handleInput = (event: any) => {
 
 			$target = $canvas.querySelector($tag)
 
-			console.log($target)
-
 			target.dispatchEvent(new Event('reset', { bubbles: true }))
 			sendEvent('gtag', 'playground-control', { 'event_category': 'playground', 'event_label': 'Examples', 'control_value': `${target.textContent}` })
 		} else {
