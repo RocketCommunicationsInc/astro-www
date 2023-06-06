@@ -21,7 +21,7 @@ assets:
 Search has two states:
 
 :::two-col
-![](/img/components/search-default.png)
+![The default state for the Search component.](/img/components/search-default.png)
 
 ![Putting focus on the search field adds a pink ring around the field and an ‘X’ for clearing search string.](/img/components/search-focus-1.png 'Putting focus on the search field adds a pink ring around the field and an ‘X’ for clearing search string.')
 :::
