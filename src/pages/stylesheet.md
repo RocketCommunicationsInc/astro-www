@@ -1,7 +1,7 @@
 ---
 # draft: true  When draft: true is in frontmatter the page is only available in dev #
 title: Style Guide
-description: A (mostly)` comprehensive list of styles/elements used on AstroUXDS
+description: A (mostly) comprehensive list of styles/elements used on AstroUXDS
 layout: project:layouts/component-docs/component-docs-layout.astro
 ---
 
@@ -259,19 +259,32 @@ This is the standard table design. There are a couple of variations on pages but
 | Row 2 | Content  | Content  |
 :::
 
-## Special Classes
+## Special Components
 
 ### Notes
 
 :::note
 
-This is a  note, it is a div with the .note class
+This is a  note, it is a div with the .note class. [Link](#)
 :::
 
 :::caution
 
-This is a caution note, it is a div with the .caution class
+This is a caution note, it is a div with the .caution class. [Link](#)
 :::
+
+### Do/Don't
+
+Many component pages have specifi do/don't images. These are usually side by side in a two column layout.
+
+:::two-col
+
+![Do: Add 'Do:' in the front of this image](/img/stylesheet/small-image.png "Do:  Add Do: to the front of this image")
+
+![Don’t: Add it in front of this one. Add 'Don't:' instead](/img/stylesheet/small-image.png "Don’t: Add 'do' in front of this one. Add 'Don't:' instead")
+
+:::
+
 
 ### Code Blocks
 This is a `` <code> `` block for html
