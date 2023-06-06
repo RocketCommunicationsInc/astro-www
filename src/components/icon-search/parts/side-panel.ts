@@ -225,8 +225,14 @@ class IconPanelInternals {
 			/** Icon Copied */
 			const iconName = this.heading.textContent
 			const iconId = this.host.getAttribute('use')
-			const copied = this.emitClipboardActiveButton?.getAttribute('data-text')
-			gtag('event', 'icon_copied', { 'icon_name': iconName, 'icon_id': iconId, 'icon_code': copied, 'event_category': 'icon_library' })
+			const copied = () => {
+				const value = this.emitClipboardActiveButton?.value
+				if (value === 'clipboard:write:vg') return 'SVG'
+				if (value === 'clipboard:write:id') return 'Icon ID'
+				if (value === 'clipboard:write:wc') return 'Web Component'
+				return ''
+			}
+			gtag('event', 'icon_copied', { 'icon_name': iconName, 'icon_id': iconId, 'icon_copy_type': copied(), 'event_category': 'icon_library' })
 	}
 
 	setHeading(headingText: string) {
