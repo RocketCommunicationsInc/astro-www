@@ -25,6 +25,10 @@ H3s are the secondary header in the body of the page. They do not propagate to t
 
 H4s and H5s are the same at this time. H5s are not typically used. H4s are preferred.
 
+### Lists
+
+:::two-col
+
 1. First Item 
 2. Second Item
 3. Third Item
@@ -36,8 +40,49 @@ H4s and H5s are the same at this time. H5s are not typically used. H4s are prefe
 - Third Item
 - Forth Item
 - Fifth Item
+:::
+
+### Paragraphs and links
 
 Paragraph - 1rem - This is just a normal paragraph of text. [This is a link inside a paragraph of text.](https://astrouxds.com)` It is the default link style for the body of the site.
+
+## Spacing
+
+### `--step` and `--rpx`
+We use a 4px grid system. There are two special variables that you can use in our css: `--step` and `--rpx` you don't use these as you would normal variables. Instead you can simply write something like `margin: 2--step`  or `border-width: 1--rpx` and the site will compile it for you.
+
+<div class="two-col">
+
+:::col
+
+#### Steps
+1 `--step` is equivalent to .25rem or 4px. You can add any number in front to make a multiple of 1 --step. For example:
+
+- `1--step` = 4px (0.25rem)
+- `2--step` = 8px (0.5rem)
+- `3--step` = 12px (0.75rem)
+- etc..
+:::
+
+:::col
+
+#### Rpx
+
+`--rpx` is similar to `--step` except that it represents 0.0625rem or 1px. For example:
+
+- `1--rpx` = 1px (.0625rem)
+- `2--rpx` = 2px (.125rem)
+- `3--rpx` = 3px (.1875rem)
+- etc...
+:::
+</div>
+
+### General spacing rules
+
+- New sections are defined by H2s they have 60px of space above them.
+- Within a section, each element should have 20px of space between it and the next element.
+- Check out this [Figma](https://www.figma.com/file/LZaOyLpIMq3ZGZbx5X7ium/ASTROUXDS.com---Site-Redesign?type=design&node-id=2499-28393&t=76WRDonfbAmlcD1O-0) for specifics. (Must be logged in to figma)
+
 
 ## Colors Variable
 
