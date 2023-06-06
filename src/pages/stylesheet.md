@@ -320,7 +320,7 @@ This is a caution note, it is a div with the .caution class. [Link](#)
 
 ### Do/Don't
 
-Many component pages have specifi do/don't images. These are usually side by side in a two column layout.
+Many component pages have specific do/don't images. These are usually side by side in a two column layout.
 
 :::two-col
 
