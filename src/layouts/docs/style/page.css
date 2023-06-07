@@ -380,7 +380,7 @@
 			/* Layout */
 			padding: 2--step 5--step;
 
-			& span {
+			& > span {
 				display: flex;
 
 				/* Layout */
