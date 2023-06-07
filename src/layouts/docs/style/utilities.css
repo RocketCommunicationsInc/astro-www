@@ -1,10 +1,18 @@
+:root {
+	--max-table-size: 230--step;
+
+	@media (1440px > width >= 1294px) {
+		--max-table-size: 175--step;
+	}
+}
+
 /* Table */
 /* ========================================================================== */
 
 .table-overflow {
 	/* Layout */
 	margin-block-end: 5--step;
-	max-inline-size: 230--step;
+	max-inline-size: var(--max-table-size);
 
 	/* Layout */
 	overflow-x: auto;
@@ -38,7 +46,7 @@
 .status-system-colors, .status-symbol-colors {
 	/* Layout */
 	margin-block-end: 5--step;
-	max-inline-size: 230--step;
+	max-inline-size: var(--max-table-size);
 	overflow-x: auto;
 
 	& table {
@@ -216,7 +224,7 @@
 .release-table {
 	/* Layout */
 	margin-block-end: 5--step;
-	max-inline-size: 230--step;
+	max-inline-size: var(--max-table-size);
 	overflow-x: scroll;
 
 	& th, & td {
