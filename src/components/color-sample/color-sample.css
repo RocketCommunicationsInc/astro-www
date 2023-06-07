@@ -1,0 +1,16 @@
+:host {
+	--color: var(--Grey300Color);
+	--border: var(--Grey700Color);
+
+	display: inline-block;
+
+	/* Layout */
+	block-size: 8--step;
+	inline-size: 8--step;
+
+	/* Appearance */
+	background: var(--color);
+
+	/* Appearance */
+	border: 1px solid var(--border);
+}
