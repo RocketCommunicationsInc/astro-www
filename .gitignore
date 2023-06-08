@@ -2,7 +2,7 @@
 dist/
 package-lock.json
 *.lock
-*.webp
+#*.webp
 
 # dependencies
 node_modules/

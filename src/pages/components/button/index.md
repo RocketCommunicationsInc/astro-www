@@ -52,14 +52,14 @@ Astro uses Primary, Secondary, and Borderless buttons to help the user visually 
 
 :::two-col
 
-![Do: Use Buttons for actionable controls only](/img/components/button-do-1.png "Do: Use Buttons for actionable controls only")
+![Do: Use Buttons for actionable controls only](/img/components/button/button-do-1.webp "Do: Use Buttons for actionable controls only")
 
-![Don’t: Use elements that look like Buttons but are not](/img/components/button-dont-1.png "Don’t: Use elements that look like Buttons but are not")
+![Don’t: Use elements that look like Buttons but are not](/img/components/button-dont-1.webp "Don’t: Use elements that look like Buttons but are not")
 
-![Do: Right-align Buttons and give them adequate spacing from fields.](/img/components/button-do-2.png "Do: Right-align Buttons and give them adequate spacing from fields.")
+![Do: Right-align Buttons and give them adequate spacing from fields.](/img/components/button/button-do-2.webp "Do: Right-align Buttons and give them adequate spacing from fields.")
 
-![Don’t: Mix Button colors and sizes.](/img/components/button-dont-2.png "Don’t: Mix Button colors and sizes.")
+![Don’t: Mix Button colors and sizes.](/img/components/button/button-dont-2.webp "Don’t: Mix Button colors and sizes.")
 
-![Do: Use standardized Button colors only.](/img/components/button-do-3.png "Do: Use standardized Button colors only.")
+![Do: Use standardized Button colors only.](/img/components/button/button-do-3.webp "Do: Use standardized Button colors only.")
 
 :::
