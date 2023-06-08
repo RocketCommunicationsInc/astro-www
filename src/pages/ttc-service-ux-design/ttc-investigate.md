@@ -75,7 +75,7 @@ Below is an animated walkthrough of a representative task flow using the TT&C In
  <figure markdown="1">
   <a href="#demo" class="demo" name="close">
    <span class="icon-play"></span>
-   <img src="/img/service-specific-ux-design/ttc-investigate/ttc-investigate-add-watcher-placeholder.webp"
+   <img src="/img/service-specific-ux-design/ttc-investigate/ttc-investigate-add-watcher-placeholder.png"
    alt="TT&C Investigate Add Watcher demo" />
   </a>
  </figure>

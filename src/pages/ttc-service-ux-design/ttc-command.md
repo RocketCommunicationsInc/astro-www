@@ -85,7 +85,7 @@ Below is an animated walkthrough of a representative task flow using the TT&C Mo
  <figure markdown="1" >
   <a href="#demo" class="demo" name="close">
    <span class="icon-play"></span>
-   <img src="/img/service-specific-ux-design/ttc-command/ttc-command-execute-pass-plan-placeholder.webp"
+   <img src="/img/service-specific-ux-design/ttc-command/ttc-command-execute-pass-plan-placeholder.png"
    alt="TT&C Command Execute Pass Plan demo" />
   </a>
  </figure>
