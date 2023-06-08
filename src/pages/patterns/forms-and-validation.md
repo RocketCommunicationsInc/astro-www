@@ -20,11 +20,11 @@ One-column layout is preferred, but use two to four column layouts when:
 - There are too many components to fit in an area of the page
 - Specific fields have strong associations.
 
-![Two Column Layout. The Observations From field is associated with the Observations Start Time field](/img/patterns/forms-layout.png)
+![Two Column Layout. The Observations From field is associated with the Observations Start Time field](/img/patterns/forms-&-validation/forms-layout.webp)
 
 ### Form Spacing
 
-![Values for horizontal and vertical spacing.](/img/patterns/forms-spacing.png)
+![Values for horizontal and vertical spacing.](/img/patterns/forms-&-validation/forms-spacing.webp)
 
 ### Labels
 
@@ -73,15 +73,15 @@ Like labels, in general, Help Text should only have one line of text below a fie
 ### Examples
 
 :::two-col
-![Do: Use Help Text for important, concise instructions.](/img/patterns/val-help-text-do-1.png "Do: Use Help Text for important, concise instructions.")
+![Do: Use Help Text for important, concise instructions.](/img/patterns/forms-&-validation/val-help-text-do-1.webp "Do: Use Help Text for important, concise instructions.")
 
-![Don’t: Use placeholder text for information that should be visible when the form element is in focus.](/img/patterns/val-help-text-dont-1.png "Don’t: Use placeholder text for information that should be visible when the form element is in focus.")
+![Don’t: Use placeholder text for information that should be visible when the form element is in focus.](/img/patterns/forms-&-validation/val-help-text-dont-1.webp "Don’t: Use placeholder text for information that should be visible when the form element is in focus.")
 :::
 
 :::two-col
-![Do: Indent Help Text under a Radio Button or Checkbox to align with the list item’s text instead of its icon.](/img/patterns/val-help-text-do-2.png "Do: Indent Help Text under a Radio Button or Checkbox to align with the list item’s text instead of its icon.")
+![Do: Indent Help Text under a Radio Button or Checkbox to align with the list item’s text instead of its icon.](/img/patterns/forms-&-validation/val-help-text-do-2.webp "Do: Indent Help Text under a Radio Button or Checkbox to align with the list item’s text instead of its icon.")
 
-![Don’t: Go over one line of Help Text. Use a Pop Over instead for text that is too long.](/img/patterns/val-help-text-dont-2.png "Go over one line of Help Text. Use a Pop Over instead for text that is too long.")
+![Don’t: Go over one line of Help Text. Use a Pop Over instead for text that is too long.](/img/patterns/forms-&-validation/val-help-text-dont-2.webp "Go over one line of Help Text. Use a Pop Over instead for text that is too long.")
 :::
 
 ## Validation
@@ -137,14 +137,14 @@ For post-submission errors, a [Notification Banner](/components/notification-ban
 Examples of configuration options for validation of Input Fields:
 :::two-col
 
-![Required Input - User must enter some text. If no text is entered, a warning icon and instructional text is shown.](/img/patterns/val-required-input.png "Required Input - User must enter some text. If no text is entered, a warning icon and instructional text is shown.")
+![Required Input - User must enter some text. If no text is entered, a warning icon and instructional text is shown.](/img/patterns/forms-&-validation/val-required-input.webp "Required Input - User must enter some text. If no text is entered, a warning icon and instructional text is shown.")
 
-![Range - Input must be a number within a specific range. Non-numeric characters and out-of-range values are indicated with a warning icon and instructional text.](/img/patterns/val-numeric-range.png "Range - Input must be a number within a specific range. Non-numeric characters and out-of-range values are indicated with a warning icon and instructional text.")
+![Range - Input must be a number within a specific range. Non-numeric characters and out-of-range values are indicated with a warning icon and instructional text.](/img/patterns/forms-&-validation/val-numeric-range.webp "Range - Input must be a number within a specific range. Non-numeric characters and out-of-range values are indicated with a warning icon and instructional text.")
 
-![Time - Input must be a valid time. Text that cannot be recognized as a valid time is indicated with a warning icon and instructional text.](/img/patterns/val-time.png "Time - Input must be a valid time. Text that cannot be recognized as a valid time is indicated with a warning icon and instructional text.")
+![Time - Input must be a valid time. Text that cannot be recognized as a valid time is indicated with a warning icon and instructional text.](/img/patterns/forms-&-validation/val-time.webp "Time - Input must be a valid time. Text that cannot be recognized as a valid time is indicated with a warning icon and instructional text.")
 
-![Checkboxes can be configured to require input, where at least one item in a group must be selected.](/img/patterns/val-group-checkbox.png "Checkboxes can be configured to require input, where at least one item in a group must be selected.")
+![Checkboxes can be configured to require input, where at least one item in a group must be selected.](/img/patterns/forms-&-validation/val-group-checkbox.webp "Checkboxes can be configured to require input, where at least one item in a group must be selected.")
 
-![Select Menus can be configured to require input, where at least one item in the menu must be selected.](/img/patterns/val-select-menu-input.png "Select Menus can be configured to require input, where at least one item in the menu must be selected.")
+![Select Menus can be configured to require input, where at least one item in the menu must be selected.](/img/patterns/forms-&-validation/val-select-menu-input.webp "Select Menus can be configured to require input, where at least one item in the menu must be selected.")
 
 :::

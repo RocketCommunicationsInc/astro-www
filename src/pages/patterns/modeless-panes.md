@@ -18,7 +18,7 @@ Modeless Panes are revealed inline by shifting existing content downward or to t
 
 The simplest type of Modeless Pane displays static content and has a single close button.
 
-![Modeless Pane example.](/img/patterns/modeless-panes-1.png)
+![Modeless Pane example.](/img/patterns/modeless-panes/modeless-panes-1.webp)
 
 Modeless Panes with **actionable content**, such as controls for setting new values, have a pair of action buttons with a specific interaction.
 
@@ -26,17 +26,17 @@ In this example, the command to Set Power on Radio 1 causes the content below to
 
 Until commitable changes have been made, the button pair are entitled **Cancel** (enabled) and **Apply** (disabled).
 
-![Modeless Pane example.](/img/patterns/modeless-panes-2.png)
+![Modeless Pane example.](/img/patterns/modeless-panes/modeless-panes-2.webp)
 
 After committable changes have been made, the button pair become Cancel (enabled) and Apply (enabled).
 
-![Modeless Pane example.](/img/patterns/modeless-panes-3.png)
+![Modeless Pane example.](/img/patterns/modeless-panes/modeless-panes-3.webp)
 
 Note that the design of this interaction, and the very nature of the Web, means that the user can simply leave this pane by navigating elsewhere or closing the browser window. This design expects the users affirmative command to apply before new values take effect.
 
 **Never place two “close” buttons on the same Pane.** Users may think they have different purposes. Always follow the distinct button layout described above.
 
-![Modeless Pane Don't Example.](/img/patterns/modeless-panes-dont-2.png)
+![Modeless Pane Don't Example.](/img/patterns/modeless-panes/modeless-panes-dont-2.webp)
 :::note
 Modeless Panes aren’t a specific programming construct. They may be implemented in a variety of ways. Astro doesn’t provide a standard implementation, so it’s important to follow the spirit and best practices of these guidelines as closely as possible. However, one way to build a Modeless panes is from [Containers](/components/container/) which allow for custom content in the same way that Modeless panes are often designed.
 :::
