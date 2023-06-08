@@ -33,8 +33,8 @@ A Radio Button consists of a small circle that is filled in upon selection. Text
 Help Text for individual Radio Button list items left-aligns with the item’s text and not its icon for easier text scanning. To learn more about adding Help Text to Radio Buttons or Radio Button groups, see the [Forms and Validation](/patterns/forms-and-validation) guidance.
 
 :::two-col
-![Do: Use Radio Buttons when asking users to select a mutually exclusive option from a predefined set of options. When one selection is made, a previous selection becomes deselected.](/img/components/radio-buttons-do-1.png "Do: Use Radio Buttons when asking users to select a mutually exclusive option from a predefined set of options. When one selection is made, a previous selection becomes deselected.")
+![Do: Use Radio Buttons when asking users to select a mutually exclusive option from a predefined set of options. When one selection is made, a previous selection becomes deselected.](/img/components/radio-button/radio-buttons-do-1.webp "Do: Use Radio Buttons when asking users to select a mutually exclusive option from a predefined set of options. When one selection is made, a previous selection becomes deselected.")
 
-![Don’t: Use Radio Buttons to display more than six items. Instead, use a Select Menu.](/img/components/radio-buttons-dont-1.png "Don’t: Use Radio Buttons to display more than six items. Instead, use a Select Menu.")
+![Don’t: Use Radio Buttons to display more than six items. Instead, use a Select Menu.](/img/components/radio-button/radio-buttons-dont-1.webp "Don’t: Use Radio Buttons to display more than six items. Instead, use a Select Menu.")
 
 :::

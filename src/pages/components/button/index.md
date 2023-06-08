@@ -54,7 +54,7 @@ Astro uses Primary, Secondary, and Borderless buttons to help the user visually 
 
 ![Do: Use Buttons for actionable controls only](/img/components/button/button-do-1.webp "Do: Use Buttons for actionable controls only")
 
-![Don’t: Use elements that look like Buttons but are not](/img/components/button-dont-1.webp "Don’t: Use elements that look like Buttons but are not")
+![Don’t: Use elements that look like Buttons but are not](/img/components/button/button-dont-1.webp "Don’t: Use elements that look like Buttons but are not")
 
 ![Do: Right-align Buttons and give them adequate spacing from fields.](/img/components/button/button-do-2.webp "Do: Right-align Buttons and give them adequate spacing from fields.")
 

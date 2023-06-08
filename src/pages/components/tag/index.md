@@ -39,16 +39,16 @@ Tags are most commonly used in large data sets, such as tables, to help filter a
 ## Examples
 
 :::two-col
-![Do: Use tags when items are mapped to multiple categories and you need to differentiate between them.](/img/components/tags-do-1.png "Do: Use tags when items are mapped to multiple categories and you need to differentiate between them.")
+![Do: Use tags when items are mapped to multiple categories and you need to differentiate between them.](/img/components/tag/tags-do-1.webp "Do: Use tags when items are mapped to multiple categories and you need to differentiate between them.")
 
-![Don’t: When writing tags, avoid line-wrapping and utilize short keywords when possible.](/img/components/tags-dont-1.png "When writing tags, avoid line-wrapping and utilize short keywords when possible.")
+![Don’t: When writing tags, avoid line-wrapping and utilize short keywords when possible.](/img/components/tag/tags-dont-1.webp "When writing tags, avoid line-wrapping and utilize short keywords when possible.")
 
-![Do: Use Status Tags to show system status.](/img/components/tags-do-2.png "Do: Use Status Tags to show system status.")
+![Do: Use Status Tags to show system status.](/img/components/tag/tags-do-2.webp "Do: Use Status Tags to show system status.")
 
-![Don’t: Don't edit the text on Status Tags.](/img/components/tags-dont-2.png "Don’t: Don't edit the text on Status Tags.")
+![Don’t: Don't edit the text on Status Tags.](/img/components/tag/tags-dont-2.webp "Don’t: Don't edit the text on Status Tags.")
 
-![Do: Use text colors in tags that pass WCAG AA contrast tests compared to the tags' background colors.](/img/components/tags-do-3.png "Do: Use text colors in tags that pass WCAG AA contrast tests compared to the tags' background colors.")
+![Do: Use text colors in tags that pass WCAG AA contrast tests compared to the tags' background colors.](/img/components/tag/tags-do-3.webp "Do: Use text colors in tags that pass WCAG AA contrast tests compared to the tags' background colors.")
 
-![Don’t: Use too many colors for tags. If you need to use multiple colors, ensure that the colors are meaningful or differentiated enough to your users to help recall and recognition.](/img/components/tags-dont-3.png "Don’t: Use too many colors for tags. If you need to use multiple colors, ensure that the colors are meaningful or differentiated enough to your users to help recall and recognition.")
+![Don’t: Use too many colors for tags. If you need to use multiple colors, ensure that the colors are meaningful or differentiated enough to your users to help recall and recognition.](/img/components/tag/tags-dont-3.webp "Don’t: Use too many colors for tags. If you need to use multiple colors, ensure that the colors are meaningful or differentiated enough to your users to help recall and recognition.")
 
 :::

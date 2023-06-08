@@ -34,20 +34,20 @@ Tooltips have consistent text styling and do not include icons, rich text, image
 
 :::two-col
 
-![Do: Tooltips can be used to clarify iconography with actions.](/img/components/tooltip-do-1.png 'Do: Tooltips can be used to clarify iconography with actions.')
+![Do: Tooltips can be used to clarify iconography with actions.](/img/components/tooltip/tooltip-do-1.webp 'Do: Tooltips can be used to clarify iconography with actions.')
 
-![Don’t: Use tooltips to restate visible text.](/img/components/tooltip-dont-1.png 'Don’t: Use tooltips to restate visible text.')
+![Don’t: Use tooltips to restate visible text.](/img/components/tooltip/tooltip-dont-1.webp 'Don’t: Use tooltips to restate visible text.')
 
-![Do: Keep the position of the tooltip visible.](/img/components/tooltip-do-2.png 'Do: Keep the position of the tooltip visible.')
+![Do: Keep the position of the tooltip visible.](/img/components/tooltip/tooltip-do-2.webp 'Do: Keep the position of the tooltip visible.')
 
-![Don’t: Crop tooltips.](/img/components/tooltip-dont-2.png 'Don’t: Crop tooltips.')
+![Don’t: Crop tooltips.](/img/components/tooltip/tooltip-dont-2.webp 'Don’t: Crop tooltips.')
 
-![Do: Tooltips can be used to show shortcuts or hotkeys.](/img/components/tooltip-do-3.png 'Do: Tooltips can be used to show shortcuts or hotkeys.')
+![Do: Tooltips can be used to show shortcuts or hotkeys.](/img/components/tooltip/tooltip-do-3.webp 'Do: Tooltips can be used to show shortcuts or hotkeys.')
 
-![Don’t: Use rich text, icons, links, or other actions in Tooltips.](/img/components/tooltip-dont-3.png 'Don’t: Use rich text, icons, links, or other actions in Tooltips.')
+![Don’t: Use rich text, icons, links, or other actions in Tooltips.](/img/components/tooltip/tooltip-dont-3.webp 'Don’t: Use rich text, icons, links, or other actions in Tooltips.')
 
-![Do: Use Tooltips to add context to an item.](/img/components/tooltip-do-4.png 'Do: Use Tooltips to add context to an item.')
+![Do: Use Tooltips to add context to an item.](/img/components/tooltip/tooltip-do-4.webp 'Do: Use Tooltips to add context to an item.')
 
-![Don’t: Convey errors or status using Tooltips.](/img/components/tooltip-dont-4.png 'Don’t: Convey errors or status using Tooltips.')
+![Don’t: Convey errors or status using Tooltips.](/img/components/tooltip/tooltip-dont-4.webp 'Don’t: Convey errors or status using Tooltips.')
 
 :::

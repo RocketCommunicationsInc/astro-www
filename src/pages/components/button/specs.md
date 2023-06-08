@@ -6,7 +6,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 ## Anatomy
 
 <div class="spec-container -anatomy">
-    <figure><img loading="lazy" width="260px" src="/img/components/button/button/button-anatomy.webp" alt="Anatomy Image"/></figure>
+    <figure><img loading="lazy" width="260px" src="/img/components/button/button-anatomy.png" alt="Anatomy Image"/></figure>
     <ol>
         <li>Container</li>
         <li>Left icon (optional) (optional)</li>
@@ -44,9 +44,9 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 ### Primary
 
 <div class="spec-container -examples">
-    <figure><img loading="lazy" width="139" src="/img/components/button/button-primary-medium-default.webp" alt="Default Primary Button"/></figure>
-    <figure><img loading="lazy" width="139" src="/img/components/button/button-primary-medium-hover.webp" alt="Primary Button with Hover State"/></figure>
-    <figure><img loading="lazy" width="139" src="/img/components/button/button-primary-medium-disabled.webp" alt="Disabled Primary Button"/></figure>
+    <figure><img loading="lazy" width="139" src="/img/components/button/button-primary-medium-default.png" alt="Default Primary Button"/></figure>
+    <figure><img loading="lazy" width="139" src="/img/components/button/button-primary-medium-hover.png" alt="Primary Button with Hover State"/></figure>
+    <figure><img loading="lazy" width="139" src="/img/components/button/button-primary-medium-disabled.png" alt="Disabled Primary Button"/></figure>
 </div>
 
 #### Default
@@ -87,9 +87,9 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 ### Secondary
 
 <div class="spec-container -examples">
-    <figure><img loading="lazy" width="163" src="/img/components/button/button-secondary-medium-default.webp" alt="Default Secondary Button"/></figure>
-    <figure><img loading="lazy" width="163" src="/img/components/button/button-secondary-medium-hover.webp" alt="Secondary Button with Hover State"/></figure>
-    <figure><img loading="lazy" width="163" src="/img/components/button/button-secondary-medium-disabled.webp" alt="Disabled Secondary Button"/></figure>
+    <figure><img loading="lazy" width="163" src="/img/components/button/button-secondary-medium-default.png" alt="Default Secondary Button"/></figure>
+    <figure><img loading="lazy" width="163" src="/img/components/button/button-secondary-medium-hover.png" alt="Secondary Button with Hover State"/></figure>
+    <figure><img loading="lazy" width="163" src="/img/components/button/button-secondary-medium-disabled.png" alt="Disabled Secondary Button"/></figure>
 </div>
 
 #### Default
@@ -134,9 +134,9 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 ### Borderless
 
 <div class="spec-container -examples">
-    <figure><img loading="lazy" width="161" src="/img/components/button/button-borderless-default.webp" alt="Default Borderless Button"/></figure>
-    <figure><img loading="lazy" width="161" src="/img/components/button/button-borderless-hover.webp" alt="Borderless Button with Hover State"/></figure>
-    <figure><img loading="lazy" width="161" src="/img/components/button/button-borderless-disabled.webp" alt="Disabled Borderless Button"/></figure>
+    <figure><img loading="lazy" width="161" src="/img/components/button/button-borderless-default.png" alt="Default Borderless Button"/></figure>
+    <figure><img loading="lazy" width="161" src="/img/components/button/button-borderless-hover.png" alt="Borderless Button with Hover State"/></figure>
+    <figure><img loading="lazy" width="161" src="/img/components/button/button-borderless-disabled.png" alt="Disabled Borderless Button"/></figure>
 </div>
 
 #### Default
@@ -176,9 +176,9 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 ## Sizes
 
 <div class="spec-container -examples">
-    <figure><img loading="lazy" width="140" src="/img/components/button/button-primary-small-default.webp" alt="Small Primary Button"/></figure>
-    <figure><img loading="lazy" width="140" src="/img/components/button/button-primary-medium-default.webp" alt="Medium Primary Button"/></figure>
-    <figure><img loading="lazy" width="140" src="/img/components/button/button-primary-large-default.webp" alt="Large Primary Button"/></figure>
+    <figure><img loading="lazy" width="140" src="/img/components/button/button-primary-small-default.png" alt="Small Primary Button"/></figure>
+    <figure><img loading="lazy" width="140" src="/img/components/button/button-primary-medium-default.png" alt="Medium Primary Button"/></figure>
+    <figure><img loading="lazy" width="140" src="/img/components/button/button-primary-large-default.png" alt="Large Primary Button"/></figure>
 </div>
 
 ### Small
@@ -214,9 +214,9 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 ## Icon Only
 
 <div class="spec-container -examples">
-    <figure><img loading="lazy" width="42" src="/img/components/button/button-primary-small-default-icon-only.webp" alt="Small Icon Only Primary Button"/></figure>
-    <figure><img loading="lazy" width="60" src="/img/components/button/button-primary-medium-default-icon-only.webp" alt="Medium Icon Only Primary Button"/></figure>
-    <figure><img loading="lazy" width="44" src="/img/components/button/button-primary-large-default-icon-only.webp" alt="Large Icon Only Primary Button"/></figure>
+    <figure><img loading="lazy" width="42" src="/img/components/button/button-primary-small-default-icon-only.png" alt="Small Icon Only Primary Button"/></figure>
+    <figure><img loading="lazy" width="60" src="/img/components/button/button-primary-medium-default-icon-only.png" alt="Medium Icon Only Primary Button"/></figure>
+    <figure><img loading="lazy" width="44" src="/img/components/button/button-primary-large-default-icon-only.png" alt="Large Icon Only Primary Button"/></figure>
 </div>
 
 ### Small
@@ -252,7 +252,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 ## Focus
 
 <div class="spec-container -examples">
-    <figure><img loading="lazy" width="139" src="/img/components/button/button-primary-medium-focus.webp" alt="Primary Button with Focus State"/></figure>
+    <figure><img loading="lazy" width="139" src="/img/components/button/button-primary-medium-focus.png" alt="Primary Button with Focus State"/></figure>
 </div>
 
 :::specs-table-container

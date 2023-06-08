@@ -48,10 +48,10 @@ The user is allowed to manually resize the text area components to fit whatever 
 
 :::two-col
 
-![Do: Use a multi-line text field that is the correct size for the expected input.](/img/components/textareas-do-1.png "Do: Use a multi-line text field that is the correct size for the expected input.")
+![Do: Use a multi-line text field that is the correct size for the expected input.](/img/components/textarea/textareas-do-1.webp "Do: Use a multi-line text field that is the correct size for the expected input.")
 
-![Don’t: Use a Textarea if custom formatting is desired, such as applying bold or adding links.](/img/components/textareas-dont-1.png "Don’t: Use a Textarea if custom formatting is desired, such as applying bold or adding links.")
+![Don’t: Use a Textarea if custom formatting is desired, such as applying bold or adding links.](/img/components/textarea/textareas-dont-1.webp "Don’t: Use a Textarea if custom formatting is desired, such as applying bold or adding links.")
 
-![Do: Use a label along with a Textarea for better user accessibility.](/img/components/textareas-do-2.png "Do: Use a label along with a Textarea for better user accessibility.")
+![Do: Use a label along with a Textarea for better user accessibility.](/img/components/textarea/textareas-do-2.webp "Do: Use a label along with a Textarea for better user accessibility.")
 
-![Don’t: Use placeholder text as a label as it will disappear on focus.](/img/components/textareas-dont-2.png "Don’t: Use placeholder text as a label as it will disappear on focus.")
+![Don’t: Use placeholder text as a label as it will disappear on focus.](/img/components/textarea/textareas-dont-2.webp "Don’t: Use placeholder text as a label as it will disappear on focus.")
