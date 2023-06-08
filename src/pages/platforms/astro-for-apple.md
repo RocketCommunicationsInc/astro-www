@@ -3,14 +3,14 @@ path: /platforms/astro-for-apple
 date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
 title: Astro for Apple
-description: Astro for Apple extends the Astro Space UX Design System to iPhone, iPad, Mac, AppleTV, and Apple Watch.
+description: Astro for Apple extends the Astro Space UX Design System to iPhone, iPad, Mac, Apple TV, and Apple Watch.
 ---
 
 ## Sample Apps
 
 **Astro Launches** displays up-to-date information about space launches all over the world. It provides developers an example of using Astro Swift Foundation in a full-featured SwiftUI application. Launches is in the [App Store](https://apps.apple.com/ca/app/astro-launches/id1555135768) and open source on [GitHub](https://github.com/RocketCommunicationsInc/AstroLaunches).
 
-<figure><a href="https://apps.apple.com/ca/app/astro-launches/id1555135768"><img src="/img/platforms/apple-launches.png" alt="Astro Launch App on AppleTV and iPhone" loading="lazy" width="2318" height="1132"></a><figcaption>Astro Launch App on AppleTV and iPhone</figcaption></figure>
+<figure><a href="https://apps.apple.com/ca/app/astro-launches/id1555135768"><img src="/img/platforms/apple-launches.png" alt="Astro Launches on AppleTV, iPhone, and Apple Watch" loading="lazy" width="2318" height="1132"></a><figcaption> Astro Launches on Apple TV, iPhone, and Apple Watch</figcaption></figure>
 
 **Astro Sampler** lets users and developers explore and experiment with Astro components, colors, symbols, and data visualization. Sampler is in the [App Store](https://apps.apple.com/ca/app/astro-sampler/id1622099101) and open source on [GitHub](https://github.com/RocketCommunicationsInc/AstroSwiftSampler).
 
