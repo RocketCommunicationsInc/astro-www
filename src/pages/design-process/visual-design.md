@@ -6,7 +6,7 @@ description: The visual language for Astro applications is designed to reinforce
 
  The visual design supports key functionality such as monitoring the health and status of systems, logically grouping common tasks and related data, and rapid identification of different equipment. The Astro visual language is comprised of specific colors, fonts, icons, widgets and controls.
 
-![Low fidelity wireframe juxtaposed against a final visual design](/img/visual-design/visual-design.png)
+![Low fidelity wireframe juxtaposed against a final visual design](/img/design-process/visual-design/visual-design.webp)
 
 If an application requires the design of unique application elements that aren't covered in the guidelines, make the new designs complement the Astro visual language. Whenever possible, use the same color palette, fonts, and icon style. The goal is to evolve the visual language to meet specific application needs, not redesign it.
 
