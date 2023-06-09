@@ -19,6 +19,31 @@
 				{
 					"heading": {
 						"type": "text",
+						"data": "Context Pairing"
+					},
+					"image": {
+						"type": "link",
+						"data": {
+							"url": "/images/article-3.svg",
+							"description": "",
+							"width": 318,
+							"height": 240
+						}
+					},
+					"content": {
+						"type": "text",
+						"data": "A common stereotype is that developers are lone wolves by nature; indeed any depiction you see of them in the media reinforces this..."
+					},
+					"action": {
+						"type": "link",
+						"data": {
+							"url": "https://medium.com/astrouxds/context-pairing-c3b3153bcf3"
+						}
+					}
+				},
+				{
+					"heading": {
+						"type": "text",
 						"data": "Testing pixel perfection in Figma and code"
 					},
 					"image": {
