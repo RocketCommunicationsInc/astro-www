@@ -4,9 +4,9 @@ description: The Astro design system brings together UX guidelines, HTML/CSS fra
 layout: project:layouts/docs/docs-layout.astro
 ---
 
-Astro was commissioned by the United States Space Force and Missile System Center (SMC) for designing Enterprise Ground Services (EGS) and Satellite Operations (SATOPS) web applications.
+Astro was commissioned by the United States Space Force and [Space Systems Command](https://www.ssc.spaceforce.mil) (SSC) for designing Rapid Resilient Command and Control (R2C2) and Satellite Operations (SATOPS) web applications.
 
-Astro’s designs are based on user-centered research into the functions and capabilities required for applications used in space operations. This approach involves SMC and commercial space systems operators in all phases of research and design validation. Their direct participation ensures that applications developed with these guidelines will meet user needs. To learn about incorporating a user-centered approach in your application designs, leverage guidance provided in Astro’s [Research](/design-process/research/) section. Astro is a living design system for government and commercial space-based applications, created and stewarded by [Rocket Communications Inc.](https://rocketcom.com/), for the United States Space Force and Missile System Center (SMC). For questions, contact Rocket at: [UXsupport@rocketcom.com](mailto:UXsupport@rocketcom.com).
+Astro’s designs are based on user-centered research into the functions and capabilities required for applications used in space operations. This approach involves SMC and commercial space systems operators in all phases of research and design validation. Their direct participation ensures that applications developed with these guidelines will meet user needs. To learn about incorporating a user-centered approach in your application designs, leverage guidance provided in Astro’s [Research](/design-process/research/) section. Astro is a living design system for government and commercial space-based applications, created and stewarded by [Rocket Communications Inc.](https://rocketcom.com/), for the United States Space Force and Space Systems Command (SSC). For questions, contact Rocket at: [support@astrouxds.com](mailto:support@astrouxds.com).
 
 ## The Design Process
 
