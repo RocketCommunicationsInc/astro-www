@@ -43,8 +43,8 @@ To learn more about adding Help Text to Sliders, see the [Forms and Validation](
 ## Examples
 
 :::two-col
-![Do: If adding labels, only use the minimal amount necessary to indicate the values.](/img/components/slider-do-1.png "Do: If adding labels, only use the minimal amount necessary to indicate the values.")
+![Do: If adding labels, only use the minimal amount necessary to indicate the values.](/img/components/slider/slider-do-1.webp "Do: If adding labels, only use the minimal amount necessary to indicate the values.")
 
-![Don’t: Excessive labels clutter the design.](/img/components/slider-dont-1.png "Don’t: Excessive labels clutter the design.")
+![Don’t: Excessive labels clutter the design.](/img/components/slider/slider-dont-1.webp "Don’t: Excessive labels clutter the design.")
 
 :::

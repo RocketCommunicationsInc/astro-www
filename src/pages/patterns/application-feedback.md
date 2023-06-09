@@ -25,31 +25,31 @@ Close-ended questions provide data that can be directly compared between partici
 
 Use yes/no questions to capture both positive and negative sentiments about an experience in an application, such as <em>Was this page helpful?</em> These question types require little interaction cost from the user and help to gain a snapshot of a user’s experience; however, they do not offer further explanation.
 
-![Example of yes/no questions](/img/patterns/feedback-yes-no.png)
+![Example of yes/no questions](/img/patterns/application-feedback/feedback-yes-no.webp)
 
 ### Multiple-choice questions
 
 Use multiple-choice questions when the kinds of answers you will receive are already known, such as demographic questions like age ranges, industry, or location. These question types are often presented after submission of information, such as a checkout.
 
-![Example of multiple-choice questions](/img/patterns/feedback-multiple-choice.png)
+![Example of multiple-choice questions](/img/patterns/application-feedback/feedback-multiple-choice.webp)
 
 ### Ratings
 
 Use numeric rating scales to measure ease of use, satisfaction, likelihood to recommend, and feature importance. Rating scales are often displayed at the end of an experience and prompt the user to indicate how helpful a feature was or how difficult or easy the task was to complete.
 
-![Example of rating questions](/img/patterns/feedback-ratings.png)
+![Example of rating questions](/img/patterns/application-feedback/feedback-ratings.webp)
 
 ### Open-text questions
 
 Use open-text questions to capture feedback when the likely response is unknown. These question types are often used to give additional explanation behind a numeric rating survey, but have a high interaction cost, so they should be used sparingly.
 
-![Example of open-text questions](/img/patterns/feedback-open-text-questions.png)
+![Example of open-text questions](/img/patterns/application-feedback/feedback-open-text-questions.webp)
 
 ### Requests for visuals
 
 Use requests for visuals when it is easier to troubleshoot issues using a visual example rather than through words. These question types work well when reporting a bug or providing usability feedback.
 
-![Example of a file uploader for visuals](/img/patterns/feedback-request-for-visuals.png)
+![Example of a file uploader for visuals](/img/patterns/application-feedback/feedback-request-for-visuals.webp)
 
 ## Examples of Common Feedback Metrics
 
@@ -57,13 +57,13 @@ Use requests for visuals when it is easier to troubleshoot issues using a visual
 
 The NPS is a common feedback metric to measure overall customer satisfaction that consists of a question: Please rate how likely you are to recommend our product on a scale from 0 to 10. To better understand the chosen rating, [additional questions](https://www.surveymonkey.com/mp/customer-feedback-guide/) can be added. To fully leverage the customer insights that this research provides, proper analysis of the NPS score is important – learn more at [NPS Analysis: 6 Ways to Analyze Your NPS](https://monkeylearn.com/blog/nps-analysis/).
 
-![Example of an NPS survey template](/img/patterns/feedback-nps-example.png)
+![Example of an NPS survey template](/img/patterns/application-feedback/feedback-nps-example.webp)
 
 ### Customer Effort Score (CES)
 
 The CES is another common feedback metric that measures how much effort it takes for the user to complete a task on a scale of 1 to 5. CES data is collected in real-time after the user completes a task. It may appear directly after task completion on the webpage.
 
-![Example of a CES survey template](/img/patterns/feedback-ces-example.png)
+![Example of a CES survey template](/img/patterns/application-feedback/feedback-ces-example.webp)
 
 ## Placement
 
@@ -77,31 +77,31 @@ For example, a simple ratings widget would easily fit inline in the application 
 
 Use an inline feedback pattern for collecting short survey information while not distracting from the users’s workflow or obscuring parts of the interface. Inline feedback mechanisms are often displayed adjacent to a specific section of UI upon which survey information is to be collected.
 
-![Example of feedback placed inline](/img/patterns/feedback-inline.png)
+![Example of feedback placed inline](/img/patterns/application-feedback/feedback-inline.webp)
 
 ### In an overlay docked to a corner of the interface
 
 Docked overlays or composers are typically toolbars that are persistent in the interface that allow the user to expand or collapse more detailed feedback forms at their discretion. This is useful for applications that demand heightened user attention for critical tasks where a user may need to return to the feedback form at a later point to complete it.
 
-![Example of feedback placed in a docked overlay](/img/patterns/feedback-docked.png)
+![Example of feedback placed in a docked overlay](/img/patterns/application-feedback/feedback-docked.webp)
 
 ### On a separate full page
 
 Use full-page feedback patterns for questions that require the user’s attention. With this option, it is critical to let the user know that their current workflow will be disrupted if they choose to move forward and they will be taken to a separate page. With this type of feedback pattern, it is possible to separate the survey content into multiple pages to capture a greater level of detail.
 
-![](/img/patterns/feedback-full-screen.png)
+![](/img/patterns/application-feedback/feedback-full-screen.webp)
 
 ### In a Modal Dialog
 
 Use a [Modal Dialog](/components/dialog/) to hold the page context while presenting a survey to the user. This easily allows the user to return to their task without losing their place on the underlying page once the form has been submitted or dismissed. Modal Dialog feedback patterns are disruptive to the user’s workflow and should not be applied to applications with controls and displays that need to be accessible to users at all times.
 
-![Example of feedback in a Modal Dialog](/img/patterns/feedback-modal.png)
+![Example of feedback in a Modal Dialog](/img/patterns/application-feedback/feedback-modal.webp)
 
 ### In a Pop Up or Non-modal Dialog
 
 Use a [Pop Up](/components/pop-up/) or [Non-modal Dialog](/components/dialog/) for simple feedback forms in applications where the user requires constant access to the UI controls and the displays. Pop Ups can be anchored to various trigger elements, giving them greater flexibility of placement within the interface and make them well suited for gathering feedback on specific UI features.
 
-![Example of feedback placed in a Pop Up](/img/patterns/feedback-pop-up.png)
+![Example of feedback placed in a Pop Up](/img/patterns/application-feedback/feedback-pop-up.webp)
 
 ## Best Practices
 

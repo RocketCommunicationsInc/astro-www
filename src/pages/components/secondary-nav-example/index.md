@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Tabs
 description: Tabs in Astro applications are used to divide major areas of content and to indicate work process.
 layout: project:layouts/component-docs/component-docs-layout.astro
@@ -44,8 +45,8 @@ For use outside of main navigation, a more compact Tab component can be used.
 ## Examples
 
 :::two-col
-![Do: To guide users through a process, correctly place and label Tabs to reflect a step-by-step process.](/img/components/nav-tabs-do-1.png 'Do: To guide users through a process, correctly place and label Tabs to reflect a step-by-step process.')
+![Do: To guide users through a process, correctly place and label Tabs to reflect a step-by-step process.](/img/components/tab/nav-tabs-do-1.webp 'Do: To guide users through a process, correctly place and label Tabs to reflect a step-by-step process.')
 
-![Don’t: Stack or improperly nest Tabs.](/img/components/nav-tabs-dont-1.png 'Don’t: Stack or improperly nest Tabs.')
+![Don’t: Stack or improperly nest Tabs.](/img/components/tab/nav-tabs-dont-1.webp 'Don’t: Stack or improperly nest Tabs.')
 
 :::

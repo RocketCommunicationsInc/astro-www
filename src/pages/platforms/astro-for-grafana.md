@@ -9,7 +9,7 @@ description: Astro for Grafana extends the Astro Space UX Design System to the G
 
 <figure>
 
-<a href="https://rocketcom.grafana.net/public-dashboards/2fb84c7af5064b51a2c13578e5567980?orgId=1"><img src="/img/platforms/grafana-sample-dashboard.png" alt="A sample dashboard shows the plugin in action, along with some Astro themed data visualizations." loading="lazy" width="2292" height="1204"></a>
+<a href="https://rocketcom.grafana.net/public-dashboards/2fb84c7af5064b51a2c13578e5567980?orgId=1"><img src="/img/platforms/grafana/grafana-sample-dashboard.webp" alt="A sample dashboard shows the plugin in action, along with some Astro themed data visualizations." loading="lazy" width="2292" height="1204"></a>
 
 <figcaption>A <a href="https://rocketcom.grafana.net/public-dashboards/2fb84c7af5064b51a2c13578e5567980?orgId=1">sample dashboard</a> shows the plugin in action, along with some Astro themed data visualizations.</figcaption>
 
@@ -36,9 +36,9 @@ Astro for Grafana is implemented as an open source Grafana plugin available in t
 ## Versions
 :::table-overflow
 
-| Grafana                                                    | Astro Theme / grafana-theme                                                           |
-|------------------------------------------------------------|---------------------------------------------------------------------------------------|
-| <span>![](/img/platforms/grafanaIcon.svg) Grafana 9</span> | 2.0 (in development)                                                                  |
-| <span>![](/img/platforms/grafanaIcon.svg) Grafana 8</span> | [1.0.6](https://github.com/RocketCommunicationsInc/grafana-theme/releases/tag/v1.0.6) |
+| Grafana                                                            | Astro Theme / grafana-theme                                                           |
+|--------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+| <span>![](/img/platforms/grafana/grafanaIcon.svg) Grafana 9</span> | 2.0 (in development)                                                                  |
+| <span>![](/img/platforms/grafana/grafanaIcon.svg) Grafana 8</span> | [1.0.6](https://github.com/RocketCommunicationsInc/grafana-theme/releases/tag/v1.0.6) |
 
 :::
