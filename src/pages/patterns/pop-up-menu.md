@@ -29,7 +29,7 @@ While rules governing the Pop Up Menu appearance and behavior generally mirror t
 
 ## Examples
 :::two-col
-![Do: Use ellipses to indicate when further action will be required for that item](/img/patterns/popup-menu-do-1.png "Do: Use ellipses to indicate when further action will be required for that item")
+![Do: Use ellipses to indicate when further action will be required for that item](/img/patterns/pop-up-menu/popup-menu-do-1.webp "Do: Use ellipses to indicate when further action will be required for that item")
 
-![Don’t: Use long menu item names that cause the the text to wrap](/img/patterns/popup-menu-dont-1.png "Don't: Use long menu item names that cause the the text to wrap")
+![Don’t: Use long menu item names that cause the the text to wrap](/img/patterns/pop-up-menu/popup-menu-dont-1.webp "Don't: Use long menu item names that cause the the text to wrap")
 :::

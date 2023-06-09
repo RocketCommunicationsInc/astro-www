@@ -13,9 +13,9 @@ description: A grid system is a defined set of vertical columns and optionally h
 
 The Astro Grid is a standard 12 [column](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column) grid with column widths that expand or contract in relation to the width of the display. Columns are separated by a fixed-width [gutter](https://developer.mozilla.org/en-US/docs/Web/CSS/column-gap). Astro-compliant applications may use gutters of either 24 pixels (default) or 12 pixels (compact). The grid is enclosed by a fixed-width margin of 24 pixels. These specifications are for screen resolutions of 769px to 1920px max width.
 
-![Sample grid 20px gutter.](/img/design-guidelines/grid-lg-gutter.png "Sample grid 20px gutter.")
+![Sample grid 20px gutter.](/img/design-guidelines/grids/grid-lg-gutter.webp "Sample grid 20px gutter.")
 
-![Sample grid 10px gutter.](/img/design-guidelines/grid-compact-gutter.png "Sample grid 10px gutter.")
+![Sample grid 10px gutter.](/img/design-guidelines/grids/grid-compact-gutter.webp "Sample grid 10px gutter.")
 
 ## Breakpoints
 

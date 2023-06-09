@@ -19,7 +19,7 @@
 	"files.exclude": {
 		"**/.vscode": false,
 		"**/*.lock": true,
-		"**/*.webp": true,
+		"**/*.webp": false,
 		"**/dist": true,
 		"**/node_modules": false,
 		"**/package-lock.json": true,
