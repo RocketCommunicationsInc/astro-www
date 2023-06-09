@@ -1,12 +1,5 @@
 :root {
-	/* Color References */
-
-	--LinkColor: hsl(23 62% 43%);
-	--TextColor: hsl(0 0% 0%);
-	--TableHeadingBorderColor: #51555b;
-
 	/* Example References */
-
 	--ExampleDoColor: hsl(109 82% 39%);
 	--ExampleDontColor: hsl(13 99% 50%);
 

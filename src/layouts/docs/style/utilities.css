@@ -1,7 +1,7 @@
 /* Table */
 /* ========================================================================== */
 
-.table-overflow {
+.table-overflow, .color-table {
 	/* Layout */
 	margin-block-end: 5--step;
 	max-inline-size: 230--step;
@@ -73,6 +73,11 @@
 		background: transparent;
 		border: 1--step solid transparent;
 	}
+}
+
+.color-table code {
+	/* Text */
+	white-space: nowrap;
 }
 
 /* Table for Heat Map page */
@@ -147,44 +152,6 @@
 		/* Text */
 		white-space: pre;
 	}
-}
-
-/* Note */
-/* ========================================================================== */
-
-.caution,
-.note {
-	display: flex;
-
-	/* Layout */
-	flex-flow: column;
-	justify-content: center;
-	margin-block-start: 4--step;
-	min-block-size: 18--step;
-	padding-block: 4--step;
-	padding-inline: 16--step 4--step;
-
-	/* Appearance */
-	background: var(--note-color) var(--note-icon) no-repeat 4--step 5--step / 8--step;
-	border-radius: var(--EdgeRadius);
-	box-shadow: var(--note-border-color, transparent) 0 0 0 1px inset;
-
-	& > :nth-child(1) {
-		/* Layout */
-		margin-block-start: 0;
-	}
-}
-
-.note {
-	--note-border-color: var(--CautionBorderColor);
-	--note-color: var(--NoteColor);
-	--note-icon: var(--NoteIcon);
-}
-
-.caution {
-	--note-border-color: var(--CautionBorderColor);
-	--note-color: var(--CautionColor);
-	--note-icon: var(--CautionIcon);
 }
 
 /* Example */
