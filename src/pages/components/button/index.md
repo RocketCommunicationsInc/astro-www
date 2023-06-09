@@ -34,17 +34,9 @@ assets:
 
 Astro offers three kinds of buttons, Primary, Secondary, and Borderless, to create a hierarchy among different buttons in your application.
 
-#### Primary
-
-Primary buttons are the most visually prominent button and should be used for the most critical actions.
-
-#### Secondary
-
-Secondary Buttons are an alternative Button style to be used in situations where a de-emphasized button is beneficial in guiding the user to a preferred option. For example, use a Secondary Button for the less preferred option in OK/Cancel Button pairings.
-
-#### Borderless
-
-Borderless buttons are the least visually prominent button and should be used for less important actions.
+- **Primary** - Primary buttons are the most visually prominent button and should be used for the most critical actions.
+- **Secondary** - Secondary Buttons are an alternative Button style to be used in situations where a de-emphasized button is beneficial in guiding the user to a preferred option. For example, use a Secondary Button for the less preferred option in OK/Cancel Button pairings.
+- **Borderless** - Borderless buttons are the least visually prominent button and should be used for less important actions.
 
 ### Size
 
