@@ -51,23 +51,23 @@ Only use Tag colors when necessary as overuse of colors may reduce efficacy of m
 ## Examples
 
 :::two-col
-![Do: Place the indicator below the application title.](/img/components/app-state-do-1.png "Do: Place the indicator below the application title.")
+![Do: Place the indicator below the application title.](/img/components/application-state/app-state-do-1.webp "Do: Place the indicator below the application title.")
 
-![Don’t: Place the indicator below the application menu.](/img/components/app-state-dont-1.png "Don’t: Place the indicator below the application menu.")
+![Don’t: Place the indicator below the application menu.](/img/components/application-state/app-state-dont-1.webp "Don’t: Place the indicator below the application menu.")
 
-![Do: Show all relevant state names if more than one application state is ongoing at the time.](/img/components/app-state-do-2.png "Do: Show all relevant state names if more than one application state is ongoing at the time.")
+![Do: Show all relevant state names if more than one application state is ongoing at the time.](/img/components/application-state/app-state-do-2.webp "Do: Show all relevant state names if more than one application state is ongoing at the time.")
 
-![Don’t: Allow text wrapping in the component.](/img/components/app-state-dont-2.png "Don’t: Allow text wrapping in the component.")
+![Don’t: Allow text wrapping in the component.](/img/components/application-state/app-state-dont-2.webp "Don’t: Allow text wrapping in the component.")
 
-![Do: Use short names to avoid overcrowding of the Global Status Bar.](/img/components/app-state-do-3.png "Do: Use short names to avoid overcrowding of the Global Status Bar.")
+![Do: Use short names to avoid overcrowding of the Global Status Bar.](/img/components/application-state/app-state-do-3.webp "Do: Use short names to avoid overcrowding of the Global Status Bar.")
 
-![Don’t: Allow other elements of the user interface like the app menu to obscure the Application State.](/img/components/app-state-dont-3.png "Don’t: Allow other elements of the user interface like the app menu to obscure the Application State.")
+![Don’t: Allow other elements of the user interface like the app menu to obscure the Application State.](/img/components/application-state/app-state-dont-3.webp "Don’t: Allow other elements of the user interface like the app menu to obscure the Application State.")
 
-![Do: Use the application menu to enable state switching when necessary.](/img/components/app-state-do-4.png "Do: Use the application menu to enable state switching when necessary.")
+![Do: Use the application menu to enable state switching when necessary.](/img/components/application-state/app-state-do-4.webp "Do: Use the application menu to enable state switching when necessary.")
 
-![Don’t: Implement state switching in the UI without confirming that this functionality is approved by your client or security expert.](/img/components/app-state-dont-4.png "Don’t: Implement state switching in the UI without confirming that this functionality is approved by your client or security expert.")
+![Don’t: Implement state switching in the UI without confirming that this functionality is approved by your client or security expert.](/img/components/application-state/app-state-dont-4.webp "Don’t: Implement state switching in the UI without confirming that this functionality is approved by your client or security expert.")
 
-![Do: Change text color to `--color-palette-grey-800` if the background color makes the original text color hard to read.](/img/components/app-state-do-5.png "Do: Change text color to --color-palette-grey-800 if the background color makes the original text color hard to read.")
+![Do: Change text color to `--color-palette-grey-800` if the background color makes the original text color hard to read.](/img/components/application-state/app-state-do-5.webp "Do: Change text color to --color-palette-grey-800 if the background color makes the original text color hard to read.")
 
-![Don’t: Use non-default or non-tag colors for background colors.](/img/components/app-state-dont-5.png "Don’t: Use non-default or non-tag colors for background colors.")
+![Don’t: Use non-default or non-tag colors for background colors.](/img/components/application-state/app-state-dont-5.webp "Don’t: Use non-default or non-tag colors for background colors.")
 :::

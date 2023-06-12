@@ -11,7 +11,7 @@ description: Astro supports dark and light themes.
 
 It is important to determine the users’ environment and select the appropriate theme. In low-light operating environments where users’ pupils expand to allow more light to enter the cornea, a light-themed UI can be glaring and cause eye strain. Conversely, in a bright operating environment where the pupil contracts, letting less light in, dark-themed UIs can lose distinction and readability.
 
-![Example of a light theme Astro application.](/img/design-guidelines/theme-lightui.png "Example of a light theme Astro application.")
+![Example of a light theme Astro application.](/img/design-guidelines/theme/theme-lightui.webp "Example of a light theme Astro application.")
 
 :::note
 By convention, the Global Status Bar and its enclosed elements will always use the dark theme styling.
@@ -29,7 +29,7 @@ By convention, the Global Status Bar and its enclosed elements will always use t
 - Projection on large screens
 - Applications where a primary media element demands attention
 
-![The Global Status Bar is always rendered with the dark theme, as is any element contained within it.](/img/design-guidelines/theme-darkui.png "The Global Status Bar is always rendered with the dark theme, as is any element contained within it.")
+![The Global Status Bar is always rendered with the dark theme, as is any element contained within it.](/img/design-guidelines/theme/theme-darkui.webp "The Global Status Bar is always rendered with the dark theme, as is any element contained within it.")
 
 ## Mixed Use
 
@@ -38,7 +38,7 @@ Individual sections or components can override their inherited theme on a case-b
 - Dark-themed elements in the Global Status Bar
 - Light-themed modal window in a dark themed app
 
-![Example of a predominantly dark theme interface with the modal window rendered using the light theme to place greater emphasis on an interaction demanding the user’s attention.](/img/design-guidelines/theme-darkui-mixed.png "Example of a predominantly dark theme interface with the modal window rendered using the light theme to place greater emphasis on an interaction demanding the user’s attention.")
+![Example of a predominantly dark theme interface with the modal window rendered using the light theme to place greater emphasis on an interaction demanding the user’s attention.](/img/design-guidelines/theme/theme-darkui-mixed.webp "Example of a predominantly dark theme interface with the modal window rendered using the light theme to place greater emphasis on an interaction demanding the user’s attention.")
 
 ## Future Considerations
 

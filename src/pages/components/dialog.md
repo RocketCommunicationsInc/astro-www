@@ -42,8 +42,8 @@ Regardless of type, Dialogs will be invoked by user action. This may involve dir
 
 :::two-col
 
-![Do: Use buttons within a Dialog to confirm or cancel actions.](/img/components/modal-do-1.png "Do: Use buttons within a Dialog to confirm or cancel actions.")
+![Do: Use buttons within a Dialog to confirm or cancel actions.](/img/components/dialog/modal-do-1.webp "Do: Use buttons within a Dialog to confirm or cancel actions.")
 
-![Don’t: Use links or other components to confirm or cancel actions.](/img/components/modal-dont-1.png "Don’t: Use links or other components to confirm or cancel actions.")
+![Don’t: Use links or other components to confirm or cancel actions.](/img/components/dialog/modal-dont-1.webp "Don’t: Use links or other components to confirm or cancel actions.")
 
 :::

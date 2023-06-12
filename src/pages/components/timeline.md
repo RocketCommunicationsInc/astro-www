@@ -15,7 +15,7 @@ assets:
 
 ## Anatomy
 
-![Anatomy of a simple Timeline element](/img/components/timeline-anatomy.png "Anatomy of a simple Timeline element")
+![Anatomy of a simple Timeline element](/img/components/timeline/timeline-anatomy.webp "Anatomy of a simple Timeline element")
 
 ## Appearance and Behavior
 

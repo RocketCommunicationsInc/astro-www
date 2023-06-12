@@ -29,36 +29,36 @@ Breadcrumb links should be styled in the Astro-defined primary interactive color
 
 When used in applications intended for large monitors, Breadcrumb trails should span no more than half of the parent window’s width, beyond which label truncation or line wrapping should be used.
 
-![](/img/patterns/breadcrumbs-halfway.png)
+![](/img/patterns/breadcrumbs/breadcrumbs-halfway.webp)
 
 While presenting a single non-interactive Breadcrumb on a homepage is relatively uncommon, it is a permitted option.
 
-![](/img/patterns/breadcrumbs-single.png)
+![](/img/patterns/breadcrumbs/breadcrumbs-single.webp)
 
 ## Examples
 
 :::two-col
-![Do: Show active links on previous/parent pages. The current page is not active or clickable.](/img/patterns/breadcrumbs-do-1.png "Do: Show active links on previous/parent pages. The current page is not active or clickable.")
+![Do: Show active links on previous/parent pages. The current page is not active or clickable.](/img/patterns/breadcrumbs/breadcrumbs-do-1.webp "Do: Show active links on previous/parent pages. The current page is not active or clickable.")
 
-![Don’t: Show the current page as an active link or with a divider to its right.](/img/patterns/breadcrumbs-dont-1.png "Don't: Show the current page as an active link or with a divider to its right.")
+![Don’t: Show the current page as an active link or with a divider to its right.](/img/patterns/breadcrumbs/breadcrumbs-dont-1.webp "Don't: Show the current page as an active link or with a divider to its right.")
 
-![Do: Hovering over Breadcrumbs changes the interactive color to hover.](/img/patterns/breadcrumbs-do-2.png "Do: Hovering over Breadcrumbs changes the interactive color to hover.")
+![Do: Hovering over Breadcrumbs changes the interactive color to hover.](/img/patterns/breadcrumbs/breadcrumbs-do-2.webp "Do: Hovering over Breadcrumbs changes the interactive color to hover.")
 
-![Don’t: Display hovered Breadcrumbs with an underline.](/img/patterns/breadcrumbs-dont-2.png "Don’t: Display hovered Breadcrumbs with an underline.")
+![Don’t: Display hovered Breadcrumbs with an underline.](/img/patterns/breadcrumbs/breadcrumbs-dont-2.webp "Don’t: Display hovered Breadcrumbs with an underline.")
 
-![Do: When using icons in the item label make sure to include a label with the icon. The exception to this is a home icon at the beginning of the Breadcrumb list.](/img/patterns/breadcrumbs-do-3.png "Do: When using icons in the item label make sure to include a label with the icon. The exception to this is a home icon at the beginning of the Breadcrumb list.")
+![Do: When using icons in the item label make sure to include a label with the icon. The exception to this is a home icon at the beginning of the Breadcrumb list.](/img/patterns/breadcrumbs/breadcrumbs-do-3.webp "Do: When using icons in the item label make sure to include a label with the icon. The exception to this is a home icon at the beginning of the Breadcrumb list.")
 
-![Don’t: Only use icons to identify separate Breadcrumbs.](/img/patterns/breadcrumbs-dont-3.png "Don’t: Only use icons to identify separate Breadcrumbs.")
+![Don’t: Only use icons to identify separate Breadcrumbs.](/img/patterns/breadcrumbs/breadcrumbs-dont-3.webp "Don’t: Only use icons to identify separate Breadcrumbs.")
 
-![Do: Truncate breadcrumbs with an ellipsis when space is limited or the seven item limit is reached. It is also recommended to show at least three items in addition to an ellipsis at a minimum.](/img/patterns/breadcrumbs-do-4.png "Do: Truncate breadcrumbs with an ellipsis when space is limited or the seven item limit is reached. It is also recommended to show at least three items in addition to an ellipsis at a minimum.")
+![Do: Truncate breadcrumbs with an ellipsis when space is limited or the seven item limit is reached. It is also recommended to show at least three items in addition to an ellipsis at a minimum.](/img/patterns/breadcrumbs/breadcrumbs-do-4.webp "Do: Truncate breadcrumbs with an ellipsis when space is limited or the seven item limit is reached. It is also recommended to show at least three items in addition to an ellipsis at a minimum.")
 
-![Don’t: Truncate Breadcrumbs when there are three or fewer items if space allows.](/img/patterns/breadcrumbs-dont-4.png "Don’t: Truncate Breadcrumbs when there are three or fewer items if space allows.")
+![Don’t: Truncate Breadcrumbs when there are three or fewer items if space allows.](/img/patterns/breadcrumbs/breadcrumbs-dont-4.webp "Don’t: Truncate Breadcrumbs when there are three or fewer items if space allows.")
 
-![Do: Use an ellipsis to trigger a Pop Up Menu of hidden page links on-click.](/img/patterns/breadcrumbs-do-5.png "Do: Use an ellipsis to trigger a Pop Up Menu of hidden page links on-click.")
+![Do: Use an ellipsis to trigger a Pop Up Menu of hidden page links on-click.](/img/patterns/breadcrumbs/breadcrumbs-do-5.webp "Do: Use an ellipsis to trigger a Pop Up Menu of hidden page links on-click.")
 
-![Don’t: Orphan the last Breadcrumb item when line-wrapping.](/img/patterns/breadcrumbs-dont-5.png "Don’t: Orphan the last Breadcrumb item when line-wrapping.")
+![Don’t: Orphan the last Breadcrumb item when line-wrapping.](/img/patterns/breadcrumbs/breadcrumbs-dont-5.webp "Don’t: Orphan the last Breadcrumb item when line-wrapping.")
 
-![Do: Nest all truncated links under a single ellipsis if more than one Breadcrumb item needs to be truncated.](/img/patterns/breadcrumbs-do-6.png "Do: Nest all truncated links under a single ellipsis if more than one Breadcrumb item needs to be truncated.")
+![Do: Nest all truncated links under a single ellipsis if more than one Breadcrumb item needs to be truncated.](/img/patterns/breadcrumbs/breadcrumbs-do-6.webp "Do: Nest all truncated links under a single ellipsis if more than one Breadcrumb item needs to be truncated.")
 
-![Don’t: Truncate a single item with an ellipsis unless space is limited.](/img/patterns/breadcrumbs-dont-6.png "Truncate a single item with an ellipsis unless space is limited.")
+![Don’t: Truncate a single item with an ellipsis unless space is limited.](/img/patterns/breadcrumbs/breadcrumbs-dont-6.webp "Truncate a single item with an ellipsis unless space is limited.")
 :::

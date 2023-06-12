@@ -21,15 +21,15 @@ This effort included many hours of interviews with users and stakeholders, detai
 
 The UX research conducted on GRM services drove the design of three sample apps integrated into the GRM App Suite. The [GRM Dashboard][grm-dashboard] provides space situational awareness to the operator by consolidating and surfacing the most important information related to contacts and equipment. In addition to this primary usage, the GRM App Suite supports a comprehensive set of secondary tasks for managing contacts and equipment in the [GRM Schedule][grm-schedule] and [GRM Equipment Manager][grm-equipment] apps. You can get an overview of the design work on the [About the GRM Designs page][grm-designs] or use one of the links below to get more information about a particular app.
 
-![](/img/service-specific-ux-design/grm-dashboard-app.png)
+![](/img/service-specific-ux-design/grm/grm-dashboard-app.webp)
 
 [GRM Dashboard][grm-dashboard]
 
-![](/img/service-specific-ux-design/grm-equipment-manager-app.png)
+![](/img/service-specific-ux-design/grm/grm-equipment-manager-app.webp)
 
 [GRM Equipment Manager][grm-equipment]
 
-![](/img/service-specific-ux-design/grm-schedule-app.png)
+![](/img/service-specific-ux-design/grm/grm-schedule-app.webp)
 
 [GRM Schedule][grm-schedule]
 
@@ -37,15 +37,15 @@ The UX research conducted on GRM services drove the design of three sample apps 
 
 The UX research on TT&C services also resulted in the design of a three-app suite. The TT&C App Suite is designed to support ground-to-satellite communication, including sending commands, monitoring constellations and maintaining the health of spacecraft. The [TT&C Monitor][ttc-monitor] app allows the operator to monitor status, alerts, health and function of an individual satellite and satellite constellations. The [TT&C Command][ttc-command] app allows the operator to send and receive streams of data to and from a spacecraft using a set of commands. The [TT&C Investigate][ttc-investigate] app allows the operator to investigate spacecraft alerts and anomalies and analyze subsystem mnemonics, measurements, limits, etc. You can get an overview of the design work on the [About the TT&C Designs][ttc-designs] page or use one of the links below to get more information about a particular app.
 
-![](/img/service-specific-ux-design/ttc-monitor-app.png)
+![](/img/service-specific-ux-design/ttc/ttc-monitor-app.webp)
 
 [TT&C Monitor App][ttc-monitor]
 
-![](/img/service-specific-ux-design/ttc-command-app.png)
+![](/img/service-specific-ux-design/ttc/ttc-command-app.webp)
 
 [TT&C Command App][ttc-command]
 
-![](/img/service-specific-ux-design/ttc-investigate-app.png)
+![](/img/service-specific-ux-design/ttc/ttc-investigate-app.webp)
 
 [TT&C Investigate][ttc-investigate]
 
