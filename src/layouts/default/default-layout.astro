@@ -20,6 +20,7 @@ const attrs = {
 	<slot slot="head" name="head" />
 	<meta slot="head" name="theme-color" content="#101923" />
 	<slot name="top" />
+	<link slot="head" rel="sitemap" href="/sitemap-index.xml">
 	<div class="x-menu">
 		<SiteNavigation />
 	</div>
@@ -32,4 +33,5 @@ const attrs = {
 </Document>
 <script>
 import './default-layout.client'
+import 'project:components/color-sample/color-sample'
 </script>

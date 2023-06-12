@@ -10,8 +10,7 @@ assets:
 ---
 ## Interactive Example
 
-<!-- ::tag{ is=a-playground tag=rux-segmented-button } -->
-::storybook-demo
+::tag{ is=a-playground tag=rux-segmented-button }
 
 ## Rules of Thumb
 
@@ -27,12 +26,12 @@ To learn more about adding Help Text to Segmented Buttons, see the [Forms and Va
 ## Examples
 
 :::two-col
-![Do: Use Segmented Buttons to filter an associated table or grid.](/img/components/segmented-button-do-1.png "Do: Use Segmented Buttons to filter an associated Table or Grid.")
+![Do: Use Segmented Buttons to filter an associated table or grid.](/img/components/segmented-button/segmented-button-do-1.webp "Do: Use Segmented Buttons to filter an associated Table or Grid.")
 
-![Don’t: Use Segmented Buttons to switch between separate views. Use Tabs instead.](/img/components/segmented-button-dont-1.png "Don’t: Use Segmented Buttons to switch between separate views. Use Tabs instead.")
+![Don’t: Use Segmented Buttons to switch between separate views. Use Tabs instead.](/img/components/segmented-button/segmented-button-dont-1.webp "Don’t: Use Segmented Buttons to switch between separate views. Use Tabs instead.")
 
-![Do: Use Segmented Buttons to switch a view’s display mode.](/img/components/segmented-button-do-2.png "Do: Use Segmented Buttons to switch a view’s display mode.")
+![Do: Use Segmented Buttons to switch a view’s display mode.](/img/components/segmented-button/segmented-button-do-2.webp "Do: Use Segmented Buttons to switch a view’s display mode.")
 
-![Don’t: Use Segmented Buttons for user input in a form. Use Radio Buttons or Select Menus instead.](/img/components/segmented-button-dont-2.png "Don’t: Use Segmented Buttons for user input in a form. Use Radio Buttons or Select Menus instead.")
+![Don’t: Use Segmented Buttons for user input in a form. Use Radio Buttons or Select Menus instead.](/img/components/segmented-button/segmented-button-dont-2.webp "Don’t: Use Segmented Buttons for user input in a form. Use Radio Buttons or Select Menus instead.")
 
 :::

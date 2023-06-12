@@ -451,19 +451,19 @@
                 },
                 {
                     "name": "UI Kit - Dark",
-                    "status": "inprogress",
+                    "status": "available",
                     "type": "ui",
                     "version": "N/A"
                 },
                 {
                     "name": "UI Kit - Light",
-                    "status": "inprogress",
+                    "status": "available",
                     "type": "ui",
                     "version": "N/A"
                 },
                 {
                     "name": "UI Kit - Wireframe",
-                    "status": "inprogress",
+                    "status": "available",
                     "type": "ui",
                     "version": "N/A"
                 },

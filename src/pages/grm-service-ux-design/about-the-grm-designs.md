@@ -38,7 +38,7 @@ Based on this initial research and follow-up design iterations with operators an
 ### GRM App Suite
 
 :::two-col
-![GRM Application Suite](/img/service-specific-ux-design/grm-suite-apps.png)
+![GRM Application Suite](/img/service-specific-ux-design/grm/grm-suite-apps.webp)
 :::col
 
 The GRM App Suite comprises three integrated sample apps: Dashboard, Equipment Manager, and Schedule.
@@ -51,7 +51,7 @@ The GRM App Suite comprises three integrated sample apps: Dashboard, Equipment M
 ### GRM Dashboard
 
 :::two-col
-![GRM Dashboard App](/img/service-specific-ux-design/grm-dashboard-app.png)
+![GRM Dashboard App](/img/service-specific-ux-design/grm/grm-dashboard-app.webp)
 
 :::col
 
@@ -66,7 +66,7 @@ The GRM Dashboard app rolls up all information necessary for providing the opera
 ### GRM Equipment Manager
 
 :::two-col
-![GRM Equipment Manager App](/img/service-specific-ux-design/grm-equipment-manager-app.png)
+![GRM Equipment Manager App](/img/service-specific-ux-design/grm/grm-equipment-manager-app.webp)
 
 :::col
 
@@ -81,7 +81,7 @@ The GRM Equipment Manager app consolidates all ground equipment in one place, al
 ### GRM Schedule
 
 :::two-col
-![GRM Schedule App](/img/service-specific-ux-design/grm-schedule-app.png)
+![GRM Schedule App](/img/service-specific-ux-design/grm/grm-schedule-app.webp)
 
 :::col
 

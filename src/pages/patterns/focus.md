@@ -35,16 +35,16 @@ Here is an example of focus CSS using Astro design tokens.
 
 :::two-col
 
-![Do: Include the entire component within the focus state for radio buttons and checkboxes.](/img/patterns/focus-do-1.png "Do: Include the entire component within the focus state for radio buttons and checkboxes.")
+![Do: Include the entire component within the focus state for radio buttons and checkboxes.](/img/patterns/focus-state/focus-do-1.webp "Do: Include the entire component within the focus state for radio buttons and checkboxes.")
 
-![Don’t: Focus only the radio button control when its label is visible.](/img/patterns/focus-dont-1.png "Don’t: Focus only the radio button control when its label is visible.")
+![Don’t: Focus only the radio button control when its label is visible.](/img/patterns/focus-state/focus-dont-1.webp "Don’t: Focus only the radio button control when its label is visible.")
 
-![Do: Focus only interactive elements.](/img/patterns/focus-do-2.png "Do: Focus only interactive elements.")
+![Do: Focus only interactive elements.](/img/patterns/focus-state/focus-do-2.webp "Do: Focus only interactive elements.")
 
-![Don’t: Focus non-interactive patterns and components.](/img/patterns/focus-dont-2.png "Don’t: Focus non-interactive patterns and components.")
+![Don’t: Focus non-interactive patterns and components.](/img/patterns/focus-state/focus-dont-2.webp "Don’t: Focus non-interactive patterns and components.")
 
-![Do: Focus the thumb control of the slider.](/img/patterns/focus-do-3.png "Do: Focus the thumb control of the slider.")
+![Do: Focus the thumb control of the slider.](/img/patterns/focus-state/focus-do-3.webp "Do: Focus the thumb control of the slider.")
 
-![Don’t: Focus the entire slider component.](/img/patterns/focus-dont-3.png "Don’t: Focus the entire slider component.")
+![Don’t: Focus the entire slider component.](/img/patterns/focus-state/focus-dont-3.webp "Don’t: Focus the entire slider component.")
 
 :::

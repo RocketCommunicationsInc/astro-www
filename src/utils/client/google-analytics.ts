@@ -27,6 +27,7 @@ const initializeGTagScript = (id: string) => {
 	}
 }
 
+/* this prevents analytics from being sent while browsing the site in dev mode (locally) */
 if (import.meta.env.PROD) {
 	initializeGTagScript('UA-114182957-1')
 	initializeGTagScript('G-ZHMMGPG3B3')

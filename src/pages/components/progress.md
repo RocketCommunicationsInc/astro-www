@@ -42,8 +42,8 @@ A **Determinate Progress indicator** is displayed as a linear bar that dynamical
 ## Examples
 
 :::two-col
-![Do: Use a Determinate Progress Bar to indicate to users how much of an operation has been completed.](/img/components/determinate-progress-do-1.png "Do: Use a Determinate Progress Bar to indicate to users how much of an operation has been completed.")
+![Do: Use a Determinate Progress Bar to indicate to users how much of an operation has been completed.](/img/components/progress/determinate-progress-do-1.webp "Do: Use a Determinate Progress Bar to indicate to users how much of an operation has been completed.")
 
-![Do: Use an Indeterminate Progress control to indicate that an application is busy performing an operation but the progress is unknown.](/img/components/indeterminate-progress-do-1.png "Do: Use an Indeterminate Progress control to indicate that an application is busy performing an operation but the progress is unknown.")
+![Do: Use an Indeterminate Progress control to indicate that an application is busy performing an operation but the progress is unknown.](/img/components/progress/indeterminate-progress-do-1.webp "Do: Use an Indeterminate Progress control to indicate that an application is busy performing an operation but the progress is unknown.")
 
 :::

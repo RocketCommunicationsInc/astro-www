@@ -18,7 +18,7 @@ To ensure optimal user experience and reduce development time, use these Design 
 
 Before coding begins, Concept Sketches on paper help lay out the main navigation and controls. Sketches clarify the flow of user interaction from screen-to-screen.
 
-![Hand drawn wireframe example](/img/ui-design/concept-sketches.png "Example of a hand drawn wireframe concept")
+![Hand drawn wireframe example](/img/design-process/ui-design/concept-sketches.webp "Example of a hand drawn wireframe concept")
 
 ## Wireframe Design
 
@@ -38,4 +38,4 @@ Validate the wireframes with the users. It’s important that you elicit feedbac
 - App supports the users workflow and tasks.
 - Wireframes communicate the functionality.
 
-![Low fidelity wireframes](/img/ui-design/wireframes.png "Example of low fidelity wireframes executed in a design program")
+![Low fidelity wireframes](/img/design-process/ui-design/wireframes.webp "Example of low fidelity wireframes executed in a design program")

@@ -10,11 +10,11 @@ description: Astro for Apple extends the Astro Space UX Design System to iPhone,
 
 **Astro Launches** displays up-to-date information about space launches all over the world. It provides developers an example of using Astro Swift Foundation in a full-featured SwiftUI application, on iPhone, iPad, Mac, and AppleTV. Launches is in the [App Store](https://apps.apple.com/ca/app/astro-launches/id1555135768) and open source on [GitHub](https://github.com/RocketCommunicationsInc/AstroLaunches).
 
-<figure><a href="https://apps.apple.com/ca/app/astro-launches/id1555135768"><img src="/img/platforms/apple-launches.png" alt="Astro Launch App on AppleTV and iPhone" loading="lazy" width="2318" height="1132"></a><figcaption>Astro Launch App on AppleTV and iPhone</figcaption></figure>
+<figure><a href="https://apps.apple.com/ca/app/astro-launches/id1555135768"><img src="/img/platforms/apple/apple-launches.webp" alt="Astro Launch App on AppleTV and iPhone" loading="lazy" width="2318" height="1132"></a><figcaption>Astro Launch App on AppleTV and iPhone</figcaption></figure>
 
 **Astro Sampler** lets users and developers explore and experiment with Astro components, colors, symbols, and data visualization on every Apple platform. Sampler is in the [App Store](https://apps.apple.com/ca/app/astro-sampler/id1622099101) and open source on [GitHub](https://github.com/RocketCommunicationsInc/AstroSwiftSampler).
 
-<figure><a href="https://apps.apple.com/ca/app/astro-sampler/id1622099101"><img src="/img/platforms/apple-sampler.png" alt="Astro Sampler App on Mac, iPhone, and Apple Watch" loading="lazy" width="2316" height="1452"></a><figcaption>Astro Sampler App on Mac, iPhone, and Apple Watch</figcaption></figure>
+<figure><a href="https://apps.apple.com/ca/app/astro-sampler/id1622099101"><img src="/img/platforms/apple/apple-sampler.webp" alt="Astro Sampler App on Mac, iPhone, and Apple Watch" loading="lazy" width="2316" height="1452"></a><figcaption>Astro Sampler App on Mac, iPhone, and Apple Watch</figcaption></figure>
 
 ## Features
 
@@ -43,9 +43,9 @@ description: Astro for Apple extends the Astro Space UX Design System to iPhone,
 ## Versions
 :::table-overflow
 
-| OS Versions                                                                         | Foundation                                                                                  | Core                                                                              | Utilities                                                                                  |
-|-------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
-| <span>![](/img/platforms/swiftLogo.svg) iOS 16, macOS 13, tvOS 16, watchOS 9</span> | [3.2.1](https://github.com/RocketCommunicationsInc/AstroSwiftFoundation/releases/tag/3.2.1) | [2.0](https://github.com/RocketCommunicationsInc/AstroSwiftCore/releases/tag/2.0) | [1.0.2](https://github.com/RocketCommunicationsInc/AstroSwiftUtilities/releases/tag/1.0.2) |
-| <span>![](/img/platforms/swiftLogo.svg) iOS 15, macOS 12, tvOS 15, watchOS 8</span> | [2.0.2](https://github.com/RocketCommunicationsInc/AstroSwiftFoundation/releases/tag/2.0.2) | [2.0](https://github.com/RocketCommunicationsInc/AstroSwiftCore/releases/tag/2.0) | n/a                                                                                        |
+| OS Versions                                                                               | Foundation                                                                                  | Core                                                                              | Utilities                                                                              |
+|-------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| <span>![](/img/platforms/apple/swiftLogo.svg) iOS 16, macOS 13, tvOS 16, watchOS 9</span> | [3.2.1](https://github.com/RocketCommunicationsInc/AstroSwiftFoundation/releases/tag/3.2.1) | [2.0](https://github.com/RocketCommunicationsInc/AstroSwiftCore/releases/tag/2.0) | [1.1](https://github.com/RocketCommunicationsInc/AstroSwiftUtilities/releases/tag/1.1) |
+| <span>![](/img/platforms/apple/swiftLogo.svg) iOS 15, macOS 12, tvOS 15, watchOS 8</span> | [2.0.2](https://github.com/RocketCommunicationsInc/AstroSwiftFoundation/releases/tag/2.0.2) | [2.0](https://github.com/RocketCommunicationsInc/AstroSwiftCore/releases/tag/2.0) | n/a                                                                                    |
 
 :::

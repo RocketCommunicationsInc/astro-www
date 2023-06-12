@@ -31,7 +31,7 @@ npm start
 
 That’s it!
 
-Navigate to http://localhost:3000/. You should see the website, which is now running in your local environment.
+Navigate to <http://localhost:3000/>. You should see the website, which is now running in your local environment.
 
 The `npm start` command launches the website in development mode. Any saved changes are reflected instantly in the local website.
 
@@ -103,6 +103,18 @@ The `pages` directory contains Astro and Markdown files used to generate pages o
 ### The `utils` directory
 
 ...
+
+## Fetching Figma Assets
+
+Static assets such as component do and dont examples are maintained by the design team and live in a Figma file. These images can automatically be pulled from the file using the `npm run fetch:images` command.
+
+To pull assets locally, create a .env file with the following keys:
+
+```
+FIGMA_ASSET_ACCESS_TOKEN: your personal figma access token
+FIGMA_ASSET_FILE_ID: the website images figma file id
+FIGMA_ASSET_OUTPUT_DIR: "public/img"
+```
 
 ## Commands
 

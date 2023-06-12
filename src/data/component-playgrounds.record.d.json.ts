@@ -2,6 +2,7 @@ interface __PlaygroundFieldBase {
 	kind: string
 	attribute: string
 	property: string
+	note?: string
 }
 
 export interface PlaygroundFieldMenu extends __PlaygroundFieldBase {
