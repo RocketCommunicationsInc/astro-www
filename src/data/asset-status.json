@@ -1570,9 +1570,9 @@
                 },
                 {
                     "name": "Component Tokens",
-                    "status": "inprogress",
+                    "status": "available",
                     "type": "token",
-                    "version": "N/A"
+                    "version": "v7"
                 }
             ]
         },

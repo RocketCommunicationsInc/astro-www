@@ -8,12 +8,15 @@ assets:
 
 ## Anatomy
 
-<ol>
-    <li>Container</li>
-    <li>Header Row</li>
-    <li>Rows</li>
-    <li>Cell</li>
-</ol>
+<div class="spec-container -anatomy">
+    <figure><img loading="lazy" width="620px" src="/img/patterns/tables/table-anatomy.webp" alt="Anatomy Image"/></figure>
+    <ol>
+        <li>Container</li>
+        <li>Header Row</li>
+        <li>Row</li>
+        <li>Cell</li>
+    </ol>
+</div>
 
 ## Default Values
 
@@ -46,7 +49,24 @@ assets:
 
 ## States
 
+### Default
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="1200" src="/img/patterns/tables/table-default-state.webp" alt="Default Table"/></figure>
+</div>
+
+:::specs-table-container
+| Attribute                                 | Token                  | Value   |
+|:------------------------------------------|:-----------------------|:--------|
+| <span class="attr-title">Row</span> |                        |         |
+| Background Color                  | table-row-color-background-default | #1b2d3e    |
+:::
+
 ### Hover
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="1200" src="/img/patterns/tables/table-hover-state.webp" alt="Hovered Table Row"/></figure>
+</div>
 
 :::specs-table-container
 | Attribute                                 | Token                  | Value   |
@@ -56,6 +76,10 @@ assets:
 :::
 
 ### Selected
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="1200" src="/img/patterns/tables/table-selected-state.webp" alt="Selected Table Row"/></figure>
+</div>
 
 :::specs-table-container
 | Attribute                                 | Token                   | Value  |
