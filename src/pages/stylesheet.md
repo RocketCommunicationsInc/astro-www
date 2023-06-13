@@ -1,5 +1,5 @@
 ---
-draft: true  # When draft: true is in frontmatter the page is only available in dev #
+#draft: true   When draft: true is in frontmatter the page is only available in dev #
 title: Style Guide
 description: A (mostly) comprehensive list of styles/elements used on AstroUXDS
 layout: project:layouts/component-docs/component-docs-layout.astro
