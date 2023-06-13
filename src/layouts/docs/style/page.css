@@ -2,6 +2,20 @@
 	--layout-inline-gap-start: var(--layout-inline-gap, 0);
 	--layout-inline-gap-end: var(--layout-inline-gap, 0);
 
+	@media (width >= 1920px) {
+		--header-block-size: 430--rpx;
+		--header-nav-gap: 9--step;
+		--header-nav-text-size: 24--rpx;
+		--header-nav-text-line: calc(28 / 24);
+		--header-nav-padding-block: 6--step 7--step;
+		--header-nav-padding-inline: 3--step;
+		--heading-1-text-size: 64--rpx;
+		--heading-1-text-line: calc(72 / 64);
+		--layout-inline-gap-start: 8--step;
+		--icon-search-margin-inline: -112--rpx;
+		--icon-search-margin-inline-end: -64--rpx;
+	}
+
 	@media (width >= 1440px) {
 		--header-block-size: 380--rpx;
 		--header-padding-block-start: 25--step;
@@ -17,8 +31,8 @@
 		--subheading-1-text-size: 20--rpx;
 		--subheading-1-text-line: calc(24 / 20);
 		--heading-2-margin: 15--step 5--step;
-		--main-content-width: 254--step;
 		--layout-inline-gap: 8--step;
+		--main-content-width: 254--step;
 		--icon-search-margin-inline: -32--rpx;
 		--icon-search-margin-inline-end: -64--rpx;
 		--page-padding-block: 15--step;
@@ -30,41 +44,7 @@
 		--font-size-h4: 24--rpx;
 	}
 
-	@media (1440px > width >= 1294px) {
-		--header-block-size: 430--rpx;
-		--header-nav-gap: 9--step;
-		--header-nav-text-size: 24--rpx;
-		--header-nav-text-line: calc(28 / 24);
-		--header-nav-padding-block: 6--step 7--step;
-		--header-nav-padding-inline: 3--step;
-		--main-content-width: calc(100% - 74--step);
-		--heading-1-text-size: 64--rpx;
-		--heading-1-text-line: calc(72 / 64);
-		--layout-inline-gap-start: 8--step;
-		--icon-search-margin-inline: -112--rpx;
-		--page-padding-inline-end: 8--step;
-		--icon-search-margin-inline-end: -64--rpx;
-	}
-
-	@media (width < 1293px) {
-		--main-content-width: 100%;
-	}
-
-	@media (width >= 1920px) {
-		--header-block-size: 430--rpx;
-		--header-nav-gap: 9--step;
-		--header-nav-text-size: 24--rpx;
-		--header-nav-text-line: calc(28 / 24);
-		--header-nav-padding-block: 6--step 7--step;
-		--header-nav-padding-inline: 3--step;
-		--heading-1-text-size: 64--rpx;
-		--heading-1-text-line: calc(72 / 64);
-		--layout-inline-gap-start: 8--step;
-		--icon-search-margin-inline: -112--rpx;
-		--icon-search-margin-inline-end: -64--rpx;
-	}
-
-	@media (768px <= width < 1440px) {
+	@media (1440px >= width > 768px) {
 		--header-block-size: 280--rpx;
 		--header-padding-block-start: 15--step;
 		--header-padding-block-end: 15--step;
@@ -74,8 +54,8 @@
 		--header-nav-text-line: calc(28 / 24);
 		--header-nav-padding-block: 6--step 7--step;
 		--header-nav-padding-inline: 3--step;
-		--heading-1-text-size: 60--rpx;
-		--heading-1-text-line: 65--rpx;
+		--heading-1-text-size: 64--rpx;
+		--heading-1-text-line: calc(72 / 64);
 		--subheading-1-text-size: 18--rpx;
 		--subheading-1-text-line: calc(24 / 18);
 		--heading-2-margin: 15--step 5--step;
@@ -89,6 +69,14 @@
 		--font-size-h2: 36--rpx;
 		--font-size-h3: 28--rpx;
 		--font-size-h4: 24--rpx;
+	}
+
+	@media (1440px > width >= 1294px) {
+		--main-content-width: calc(100% - 74--step);
+	}
+
+	@media (width < 1294px) {
+		--main-content-width: 100%;
 	}
 
 	@media (width < 768px) {
