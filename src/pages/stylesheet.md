@@ -305,6 +305,16 @@ This is the standard table design. There are a couple of variations on pages but
 | Row 2 | Content  | Content  |
 :::
 
+### Dark Table
+
+<div class="table-overflow table-dark">
+
+|       | Column 1 | Column 2 |
+|-------|----------|----------|
+| Row 1 | Content  | Content  |
+| Row 2 | Content  | Content  |
+</div>
+
 ## Special Components
 
 ### Notes
