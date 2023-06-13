@@ -103,7 +103,8 @@ We use a 4px grid system. There are two special variables that you can use in ou
 | Color | Variable              | Reference Variable          | Use                                         |
 |-------|-----------------------|-----------------------------|---------------------------------------------|
 |       | `--BaseColor`         | `var(--BrightBlue900Color)` | The dark background of home page containers |
-|       | `--BaseHeaderColor`   | `var(--DarkBlue900Color)`   | Not Currently used                          |
+|       | `--BaseColorDefault`  | `var(--DarkBlue800Color)`   | Dark table background color                 |
+|       | `--BaseHeaderColor`   | `var(--DarkBlue900Color)`   | Dark table header background                |
 |       | `--BaseHoverColor`    | `var(--BrightBlue850Color)` | Not Currently Used                          |
 |       | `--BaseSelectedColor` | `var(--DarkBlue700Color)`   | Not Currently Used                          |
 :::

@@ -7,6 +7,7 @@ description: The R2C2 program under the USSF utilizes OMG C2MS message standards
 ---
 
 ## Tier Information
+
 <div class="table-overflow table-dark">
 
 | Value                | Design token                                | Status symbol |
@@ -40,11 +41,32 @@ RESPONSE-STATUS locations in the Message Interface Specification Document: 3.3 -
 
 Indicates the severity of the Log Message. Scale is traditionally applied to message based on requirements and characteristics of the component or ground system. The severity field may be used to alert the system such as triggering additional visual or audible operator notifications. Debug is typically used by software developers.
 
+<div class="table-overflow table-dark">
+
+| Value      | Design token          | Status symbol |
+|------------|-----------------------|---------------|
+| DEBUG:0    | color.status.standby  |               |
+| NORMAL:1   | color.status.normal   |               |
+| MEDIUM:2   | color.status.caution  |               |
+| HIGH:3     | color.status.serious  |               |
+| CRITICAL:4 | color.status.critical |               |
+
+</div>
+
 SEVERITY locations in the Message Interface Specification Document: 3.6 - Log message.
 
 ### PRIORITY
 
 Indicates processing priority, if applicable.
+
+<div class="table-overflow table-dark">
+
+| Value    | Design token          | Status symbol |
+|----------|-----------------------|---------------|
+| Normal:1 | color.status.normal   |               |
+| Medium:2 | color.status.caution  |               |
+| High:3   | color.status.critical |               |
+</div>
 
 PRIORITY locations in the Message Interface Specification Document: 3.8.1 - Directive Request Message, 3.16.1 - Simple Service Request Message.
 
@@ -52,17 +74,48 @@ PRIORITY locations in the Message Interface Specification Document: 3.8.1 - Dire
 
 Condition of the device being reported. The criteria for selecting the DEVICE.N.STATUS description is left to the reporting component.
 
+<div class="table-overflow table-dark">
+
+| Value          | Design token          | Status symbol |
+|----------------|-----------------------|---------------|
+| DEBUG:0        | color.status.standby  |               |
+| NORMAL_GREEN:1 | color.status.normal   |               |
+| YELLOW:2       | color.status.caution  |               |
+| ORANGE:3       | color.status.serious  |               |
+| RED:4          | color.status.critical |               |
+</div>
+
 DEVICE.N.STATUS locations in the Message Interface Specification Document: 3.9.3 - Component-To-Component Transfer Device Message.
 
 ### COMPONENT-STATUS
 
 Indicates the condition of the component being monitored, typically itself, although it may be a proxy for a remote component. The component may choose the condition level based on its own criteria.
 
+<div class="table-overflow table-dark">
+
+| Value          | Design token          | Status symbol |
+|----------------|-----------------------|---------------|
+| DEBUG:0        | color.status.standby  |               |
+| NORMAL_GREEN:1 | color.status.normal   |               |
+| YELLOW:2       | color.status.caution  |               |
+| ORANGE:3       | color.status.serious  |               |
+| RED:4          | color.status.critical |               |
+</div>
+
 COMPONENT-STATUS locations in the Message Interface Specification Document: 3.9.4 - Component-To-Component Transfer Heartbeat Message.
 
 ### MNEMONIC.N.STATUS
 
 Status of the ‘nth’ mnemonic: valid mnemonic, valid mnemonic with no data, or invalid mnemonic.
+
+<div class="table-overflow table-dark">
+
+| Value           | Design token         | Status symbol |
+|-----------------|----------------------|---------------|
+| VALID:1         | color.status.normal  |               |
+| VALID_NO_DATA:2 | color.status.off     |               |
+| INVALID:3       | color.status.caution |               |
+</div>
 
 MNEMONIC.N.STATUS locations in the Message Interface Specification Document: 3.10.4 - Processed Telemetry Frame Message, 3.12.2 - Mnemonic Value Response Message, 3.12.3 - Mnemonic Value Data Message, 3.13.2 - Archive Mnemonic Value Response Message, 3.13.3 - Archive Mnemonic Value Data Message.
 
@@ -74,12 +127,31 @@ If you have a use case where the other values for XTCE-Status ( 1 = Acknowledgem
 3 = TRANSFERRED_TO_RANGE, 4 = SENT_FROM_RANGE, 5 = RECEIVED, 6 = ACCEPTED, 
 7 = QUEUED, 8 = EXECUTING) require a status color or symbol please reach out to Astro for assistance.
 
+<div class="table-overflow table-dark">
+
+| Value       | Design token          | Status symbol |
+|-------------|-----------------------|---------------|
+| INVALID:2   | color.status.caution  |               |
+| COMPLETED:9 | color.status.normal   |               |
+| FALED:10    | color.status.critical |               |
+</div>
 
 XTCE-STATUS locations in the Message Interface Specification Document: 3.14.2 - Command Response Message.
 
 ### CMD-ECHO-RESULT
 
 The Command-Echo-Message’s command echo result field enumeration descriptions: NOTC: Not Compared, GOOD: Good Compare, MISC: Miscompare, TOUT: Timeout waiting for echo, UNEX: Unexpected echo data received.
+
+<div class="table-overflow table-dark">
+
+| Value | Design token          | Status symbol |
+|-------|-----------------------|---------------|
+| NOTC  | color.status.off      |               |
+| GOOD  | color.status.normal   |               |
+| MISC  | color.status.critical |               |
+| TOUT  | color.status.serious  |               |
+| UNEX  | color.status.caution  |               |
+</div>
 
 CMD-ECHO-RESULT in the Message Interface Specification Document: 3.14.3 - Command ECHO Message.
 
@@ -89,6 +161,14 @@ The quality of the data. RAW = No quality check, VALIDATED = Checked and passed,
 
 **Note:** We do not provide color guidance for RAW since it is more of a state or process and not a status. If you have a use case that requires a status color or symbol please reach out to Astro support.
 
+<div class="table-overflow table-dark">
+
+| Value     | Design token         | Status symbol |
+|-----------|----------------------|---------------|
+| VALIDATED | color.status.normal  |               |
+| DEGRADED  | color.status.serious |               |
+</div>
+
 DATA-QUALITY locations in the Message Interface Specification Document: 3.17.6 - Tracking Data Message.
 
 ## Additional Guidance
@@ -96,19 +176,46 @@ The MNEMONIC.N.SAMPLE.M.Statuses; RED-HIGH, RED-LOW, YELLOW-HIGH, YELLOW-LOW Boo
 
 ### MNEMONIC.N.SAMPLE.M.RED-HIGH
 
+<div class="table-overflow table-dark">
+
+| Value    | Design token          | Status symbol |
+|----------|-----------------------|---------------|
+| Red High | color.status.critical |               |
+</div>
 MNEMONIC.N.SAMPLE.M.RED-HIGH locations in the Message Interface Specification Document: 3.12.2 - Mnemonic 
 
 Value Response Message, 3.12.3 - Mnemonic Value Data Message, 3.13.3 - Archive Mnemonic Value Data Message.
 
 ### MNEMONIC.N.SAMPLE.M.RED-LOW
 
+<div class="table-overflow table-dark">
+
+| Value   | Design token          | Status symbol |
+|---------|-----------------------|---------------|
+| Red Low | color.status.critical |               |
+</div>
+
 MNEMONIC.N.SAMPLE.M.RED-LOW locations in the Message Interface Specification Document: 3.12.2 - Mnemonic Value Response Message, 3.12.3 - Mnemonic Value Data Message, 3.13.3 - Archive Mnemonic Value Data Message.
 
 ### MNEMONIC.N.SAMPLE.M.YELLOW-HIGH
 
+<div class="table-overflow table-dark">
+
+| Value       | Design token         | Status symbol |
+|-------------|----------------------|---------------|
+| Yellow High | color.status.caution |               |
+</div>
+
 MNEMONIC.N.SAMPLE.M.YELLOW-HIGH locations in the Message Interface Specification Document: 3.12.2 - Mnemonic Value Response Message, 3.12.3 - Mnemonic Value Data Message, 3.13.3 - Archive Mnemonic Value Data Message.
 
 ### MNEMONIC.N.SAMPLE.M.YELLOW-LOW
+
+<div class="table-overflow table-dark">
+
+| Value      | Design token         | Status symbol |
+|------------|----------------------|---------------|
+| Yellow Low | color.status.caution |               |
+</div>
 
 MNEMONIC.N.SAMPLE.M.YELLOW-LOW locations in the Message Interface Specification Document: 3.12.2 - Mnemonic Value Response Message, 3.12.3 - Mnemonic Value Data Message, 3.13.3 - Archive Mnemonic Value Data Message.
 
@@ -121,3 +228,42 @@ MNEMONIC.N.SAMPLE.M.YELLOW-LOW locations in the Message Interface Specification 
 | Message Interface Specific Document-Tier 1 | 5.2.0   |
 
 :::
+
+<script type="module">
+/** add color samples to the tables with colors */
+/** Matches a value which is CSS custom property. */
+const matchCustomProp = /^\w+\.\w+\.\w+$/
+const colors = {
+	'off': '#A4ABB6',
+	'standby': '#2DCCFF',
+	'normal': '#56F000' ,
+	'caution':'#FCE83A',
+	'serious':'#FFB302',
+	'critical':'#FF3838'
+}
+// const symbols ={
+// 	'off':,
+// 	'standby':,
+// 	'normal':,
+// 	'caution':,
+// 	'serious':,
+// 	'critical':
+// }
+
+// transform tables within any available table overflow elements
+for (const td of document.querySelectorAll('.table-dark td')) {
+	const tdContent = td.textContent
+
+	/* Whether the content of the TD matched a CSS custom property. */
+	const isTdColor = matchCustomProp.test(tdContent)
+
+	// conditionally add a color sample to the front of the wording
+	if (isTdColor) {
+		const color = tdContent.split('.').at(-1)
+		
+		td.innerHTML = (
+			`<color-sample style="--color:${colors[color]};--border:transparent; width:16px; height: 16px; margin-inline-end: .5rem; border-radius: 2px;vertical-align:middle;"></color-sample>${tdContent}`
+		)
+	}
+}
+</script>

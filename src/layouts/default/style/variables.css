@@ -53,6 +53,7 @@
 	/* Base Colors */
 
 	--BaseColor: var(--BrightBlue900Color);
+	--BaseColorDefault: var(--DarkBlue800Color);
 	--BaseHeaderColor: var(--DarkBlue900Color);
 	--BaseHoverColor: var(--BrightBlue850Color);
 	--BaseSelectedColor: var(--DarkBlue700Color);
