@@ -9,7 +9,7 @@ description: The R2C2 program under the USSF utilizes OMG C2MS message standards
 
 ## Tier Information
 
-<div class="table-overflow table-dark">
+<div class="table-overflow table-dark short">
 
 | Value                | Design token                                | Status symbol |
 |----------------------|---------------------------------------------|---------------|
@@ -42,7 +42,7 @@ RESPONSE-STATUS locations in the Message Interface Specification Document: 3.3 -
 
 Indicates the severity of the Log Message. Scale is traditionally applied to message based on requirements and characteristics of the component or ground system. The severity field may be used to alert the system such as triggering additional visual or audible operator notifications. Debug is typically used by software developers.
 
-<div class="table-overflow table-dark">
+<div class="table-overflow table-dark short">
 
 | Value      | Design token          | Status symbol |
 |------------|-----------------------|---------------|
@@ -60,7 +60,7 @@ SEVERITY locations in the Message Interface Specification Document: 3.6 - Log me
 
 Indicates processing priority, if applicable.
 
-<div class="table-overflow table-dark">
+<div class="table-overflow table-dark short">
 
 | Value    | Design token          | Status symbol |
 |----------|-----------------------|---------------|
@@ -75,7 +75,7 @@ PRIORITY locations in the Message Interface Specification Document: 3.8.1 - Dire
 
 Condition of the device being reported. The criteria for selecting the DEVICE.N.STATUS description is left to the reporting component.
 
-<div class="table-overflow table-dark">
+<div class="table-overflow table-dark short">
 
 | Value          | Design token          | Status symbol |
 |----------------|-----------------------|---------------|
@@ -92,7 +92,7 @@ DEVICE.N.STATUS locations in the Message Interface Specification Document: 3.9.3
 
 Indicates the condition of the component being monitored, typically itself, although it may be a proxy for a remote component. The component may choose the condition level based on its own criteria.
 
-<div class="table-overflow table-dark">
+<div class="table-overflow table-dark short">
 
 | Value          | Design token          | Status symbol |
 |----------------|-----------------------|---------------|
@@ -109,7 +109,7 @@ COMPONENT-STATUS locations in the Message Interface Specification Document: 3.9.
 
 Status of the ‘nth’ mnemonic: valid mnemonic, valid mnemonic with no data, or invalid mnemonic.
 
-<div class="table-overflow table-dark">
+<div class="table-overflow table-dark short">
 
 | Value           | Design token         | Status symbol |
 |-----------------|----------------------|---------------|
@@ -128,7 +128,7 @@ If you have a use case where the other values for XTCE-Status ( 1 = Acknowledgem
 3 = TRANSFERRED_TO_RANGE, 4 = SENT_FROM_RANGE, 5 = RECEIVED, 6 = ACCEPTED, 
 7 = QUEUED, 8 = EXECUTING) require a status color or symbol please reach out to Astro for assistance.
 
-<div class="table-overflow table-dark">
+<div class="table-overflow table-dark short">
 
 | Value       | Design token          | Status symbol |
 |-------------|-----------------------|---------------|
@@ -143,7 +143,7 @@ XTCE-STATUS locations in the Message Interface Specification Document: 3.14.2 - 
 
 The Command-Echo-Message’s command echo result field enumeration descriptions: NOTC: Not Compared, GOOD: Good Compare, MISC: Miscompare, TOUT: Timeout waiting for echo, UNEX: Unexpected echo data received.
 
-<div class="table-overflow table-dark">
+<div class="table-overflow table-dark short">
 
 | Value | Design token          | Status symbol |
 |-------|-----------------------|---------------|
@@ -162,7 +162,7 @@ The quality of the data. RAW = No quality check, VALIDATED = Checked and passed,
 
 **Note:** We do not provide color guidance for RAW since it is more of a state or process and not a status. If you have a use case that requires a status color or symbol please reach out to Astro support.
 
-<div class="table-overflow table-dark">
+<div class="table-overflow table-dark short">
 
 | Value     | Design token         | Status symbol |
 |-----------|----------------------|---------------|
@@ -177,7 +177,7 @@ The MNEMONIC.N.SAMPLE.M.Statuses; RED-HIGH, RED-LOW, YELLOW-HIGH, YELLOW-LOW Boo
 
 ### MNEMONIC.N.SAMPLE.M.RED-HIGH
 
-<div class="table-overflow table-dark">
+<div class="table-overflow table-dark short">
 
 | Value    | Design token          | Status symbol |
 |----------|-----------------------|---------------|
@@ -189,7 +189,7 @@ Value Response Message, 3.12.3 - Mnemonic Value Data Message, 3.13.3 - Archive M
 
 ### MNEMONIC.N.SAMPLE.M.RED-LOW
 
-<div class="table-overflow table-dark">
+<div class="table-overflow table-dark short">
 
 | Value   | Design token          | Status symbol |
 |---------|-----------------------|---------------|
@@ -200,7 +200,7 @@ MNEMONIC.N.SAMPLE.M.RED-LOW locations in the Message Interface Specification Doc
 
 ### MNEMONIC.N.SAMPLE.M.YELLOW-HIGH
 
-<div class="table-overflow table-dark">
+<div class="table-overflow table-dark short">
 
 | Value       | Design token         | Status symbol |
 |-------------|----------------------|---------------|
@@ -211,7 +211,7 @@ MNEMONIC.N.SAMPLE.M.YELLOW-HIGH locations in the Message Interface Specification
 
 ### MNEMONIC.N.SAMPLE.M.YELLOW-LOW
 
-<div class="table-overflow table-dark">
+<div class="table-overflow table-dark short">
 
 | Value      | Design token         | Status symbol |
 |------------|----------------------|---------------|

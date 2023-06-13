@@ -21,6 +21,11 @@
 	}
 }
 
+.table-overflow.short {
+	/* Layout */
+	max-inline-size: 175--step;
+}
+
 .table-typography {
 	& table {
 		& thead {
