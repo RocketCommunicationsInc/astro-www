@@ -5,15 +5,6 @@ layout: project:layouts/docs/docs-layout.astro
 title: Astro for R2C2
 description: The R2C2 program under the USSF utilizes OMG C2MS message standards; some of these underlying data messages carry status information and this guidance marries the Astro UXDS and R2C2' C2MS standards. 
 
-# const symbols ={
-# 	'off':,
-# 	'standby':,
-# 	'normal':,
-# 	'caution':,
-# 	'serious':,
-# 	'critical':
-# }
-
 ---
 
 ## Tier Information
@@ -242,7 +233,7 @@ MNEMONIC.N.SAMPLE.M.YELLOW-LOW locations in the Message Interface Specification 
 <script type="module">
 /** add color samples to the tables with colors */
 /** Matches a value which is CSS custom property. */
-const matchCustomProp = /^\w+\.\w+\.\w+$/
+const matchCustomProp = /\b\w+\.\w+\.\w+\b/g
 const colors = {
 	'off': '#A4ABB6',
 	'standby': '#2DCCFF',
@@ -251,29 +242,35 @@ const colors = {
 	'serious':'#FFB302',
 	'critical':'#FF3838'
 }
-// const symbols ={
-// 	'off':,
-// 	'standby':,
-// 	'normal':,
-// 	'caution':,
-// 	'serious':,
-// 	'critical':
-// }
+
+
 
 // transform tables within any available table overflow elements
 for (const td of document.querySelectorAll('.table-dark td')) {
 	const tdContent = td.textContent
 
+	
+
+
 	/* Whether the content of the TD matched a CSS custom property. */
-	const isTdColor = matchCustomProp.test(tdContent)
+	const allVars = tdContent.match(matchCustomProp)
+
 
 	// conditionally add a color sample to the front of the wording
-	if (isTdColor) {
-		const color = tdContent.split('.').at(-1)
+	if (allVars) {
+		let iconhtml = [];
+		const iconTd = td.nextSibling;
+		const newhtml = allVars.map((colorvar)=>{
+			const color = colorvar.split('.').at(-1)
+			iconhtml.push(`<img src='/img/platforms/r2c2/${color}.svg' alt=${color}>`) 
+			return `<color-sample style="--color:${colors[color]};--border:transparent; width:16px; height: 16px; margin-inline-end: .5rem; border-radius: 2px;vertical-align:middle;"></color-sample>${colorvar}`
+
+		}).join(' or<br />')
+		console.log(iconhtml)
 		
-		td.innerHTML = (
-			`<color-sample style="--color:${colors[color]};--border:transparent; width:16px; height: 16px; margin-inline-end: .5rem; border-radius: 2px;vertical-align:middle;"></color-sample>${tdContent}`
-		)
+		td.innerHTML = newhtml
+		//add the icons to the next td
+		iconTd.innerHTML = iconhtml.join(' or ')
 	}
 }
 </script>
