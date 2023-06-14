@@ -15,7 +15,7 @@ a.h {
 			block-size: 1--icon-size;
 			inline-size: 1--icon-size;
 			margin-block-start: .1rem;
-			margin-inline: .25--icon-size;
+			margin-inline-start: .25--icon-size;
 
 			/* Appearance */
 			opacity: 0;
