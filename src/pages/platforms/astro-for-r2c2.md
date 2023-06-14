@@ -9,6 +9,18 @@ description: The R2C2 program under the USSF utilizes OMG C2MS message standards
 
 ## Tier Information
 
+The Rapid Resilient Command and Control (R2C2) program under the United States Space Force (USSF) has four tiers of interface specification documents (ISDs). For more information, contact the [R2C2 Program Office](mailto:egssupport@spaceforce.mil).
+
+Tier 1 and 2 are tactical command and control space vehicle message standards while Tier 3 and 4 are implementation specific interfaces for services in those satellite operating centers (SOCs). The R2C2 Tier 1 ISD clones [Object Management Group (OMG) Command Control Mission Systems (C2MS) v1.0](https://www.omg.org/spec/C2MS/1.0/PDF) with some alterations and message creations supporting DoD requirements or USSF space domain capabilities. Tier 2 ISDs are the R2C2 standards for system domain capabilities (e.g. Flight Dynamics, Telemetry Tracking & Commanding, Mission Planning & Scheduling, Ground Resource Management, Ground Resource Scheduling, etc.) which are based on Tier 1 messages. The Tier 3 ISDs are for service component’s or product’s interface implementation details while Tier 4 is the mission-specific interface details.
+
+This page only includes status guidance for the R2C2’s Tier 1 message interface standard with AstroUXDS statuses. For information regarding the other Tiers, contact [Astro Support](/support/).
+
+## Message Alerts
+
+### RESPONSE-STATUS
+
+Identifies the status of the message that was processed. The figure below of a status tree shows the behavioral paths a response status can take, given it is a more dynamic status type of field.
+
 <div class="table-overflow table-dark short">
 
 | Value                | Design token                                | Status symbol |
@@ -23,18 +35,6 @@ description: The R2C2 program under the USSF utilizes OMG C2MS message standards
 </div>
 
 ![](/img/platforms/r2c2/_RESPONSE-STATUS.webp)
-
-The Rapid Resilient Command and Control (R2C2) program under the United States Space Force (USSF) has four tiers of interface specification documents (ISDs). For more information, contact the [R2C2 Program Office](mailto:egssupport@spaceforce.mil).
-
-Tier 1 and 2 are tactical command and control space vehicle message standards while Tier 3 and 4 are implementation specific interfaces for services in those satellite operating centers (SOCs). The R2C2 Tier 1 ISD clones [Object Management Group (OMG) Command Control Mission Systems (C2MS) v1.0](https://www.omg.org/spec/C2MS/1.0/PDF) with some alterations and message creations supporting DoD requirements or USSF space domain capabilities. Tier 2 ISDs are the R2C2 standards for system domain capabilities (e.g. Flight Dynamics, Telemetry Tracking & Commanding, Mission Planning & Scheduling, Ground Resource Management, Ground Resource Scheduling, etc.) which are based on Tier 1 messages. The Tier 3 ISDs are for service component’s or product’s interface implementation details while Tier 4 is the mission-specific interface details.
-
-This page only includes status guidance for the R2C2’s Tier 1 message interface standard with AstroUXDS statuses. For information regarding the other Tiers, contact [Astro Support](/support/).
-
-## Message Alerts
-
-### RESPONSE-STATUS
-
-Identifies the status of the message that was processed. The figure below of a status tree shows the behavioral paths a response status can take, given it is a more dynamic status type of field.
 
 RESPONSE-STATUS locations in the Message Interface Specification Document: 3.3 - Alert Notification Message, 3.7.2 - Archive Message Retrieval Response, 3.8.2 - Directive Response Message, 3.8.2 - Replay Telemetry Response Message, 3.12.2 - Mnemonic Value Response Message, 3.13.2 - Archive Mnemonic Value Response Message, 3.14.2 - Command Response Message, 3.15.2 - Product Response Message, 3.15.3 - Product Message, 3.16.2 - Simple Service Response Message.
 
@@ -183,6 +183,7 @@ The MNEMONIC.N.SAMPLE.M.Statuses; RED-HIGH, RED-LOW, YELLOW-HIGH, YELLOW-LOW Boo
 |----------|-----------------------|---------------|
 | Red High | color.status.critical |               |
 </div>
+
 MNEMONIC.N.SAMPLE.M.RED-HIGH locations in the Message Interface Specification Document: 3.12.2 - Mnemonic 
 
 Value Response Message, 3.12.3 - Mnemonic Value Data Message, 3.13.3 - Archive Mnemonic Value Data Message.
@@ -222,13 +223,13 @@ MNEMONIC.N.SAMPLE.M.YELLOW-LOW locations in the Message Interface Specification 
 
 ## Versions
 
-:::table-overflow
+<div class="table-overflow short">
 
 | Document                                   | Version |
 |--------------------------------------------|---------|
 | Message Interface Specific Document-Tier 1 | 5.2.0   |
 
-:::
+</div>
 
 <script type="module">
 /** add color samples to the tables with colors */
@@ -243,18 +244,12 @@ const colors = {
 	'critical':'#FF3838'
 }
 
-
-
 // transform tables within any available table overflow elements
 for (const td of document.querySelectorAll('.table-dark td')) {
 	const tdContent = td.textContent
 
-	
-
-
 	/* Whether the content of the TD matched a CSS custom property. */
 	const allVars = tdContent.match(matchCustomProp)
-
 
 	// conditionally add a color sample to the front of the wording
 	if (allVars) {
@@ -264,9 +259,7 @@ for (const td of document.querySelectorAll('.table-dark td')) {
 			const color = colorvar.split('.').at(-1)
 			iconhtml.push(`<img src='/img/platforms/r2c2/${color}.svg' alt=${color}>`) 
 			return `<color-sample style="--color:${colors[color]};--border:transparent; width:16px; height: 16px; margin-inline-end: .5rem; border-radius: 2px;vertical-align:middle;"></color-sample>${colorvar}`
-
 		}).join(' or<br />')
-		console.log(iconhtml)
 		
 		td.innerHTML = newhtml
 		//add the icons to the next td
