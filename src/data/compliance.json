@@ -242,6 +242,37 @@
 							"tier": 3
 						}
 					]
+				},
+				{
+					"name": "Notifications",
+					"numeral": 8,
+					"link": "/patterns/notifications/",
+					"rules": [
+						{
+							"numeral": 1,
+							"rule": "Interface feedback shall use notification patterns that cause the least disruption possible.",
+							"status": "new",
+							"tier": 3
+						},
+						{
+							"numeral": 2,
+							"rule": "Toast notifications shall not be placed over interface elements that need to remain visible.",
+							"status": "new",
+							"tier": 3
+						},
+						{
+							"numeral": 3,
+							"rule": "Toast notifications should stack vertically, with the most recent appearing at the top of the list.",
+							"status": "new",
+							"tier": 3
+						},
+						{
+							"numeral": 4,
+							"rule": "Banner notifications should not block other interactions or obscure interface elements.",
+							"status": "new",
+							"tier": 3
+						}
+					]
 				}
 			]
 		},
