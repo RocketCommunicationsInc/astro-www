@@ -18,7 +18,7 @@ Below are suggested notification patterns to appropriately grab a user’s atten
 
 Events of least urgency may be added to a [Log](/components/log). Logged events aren’t likely to receive the user’s attention (Logs aren’t always in the user’s view), but are captured for later forensic use. Examples of low-level events are ordinary device state changes or routine consistency checks.
 
-![Notification log example.](/img/patterns/notifications-log.png)
+<!-- ![Notification log example.](/img/patterns/notifications-log.png) -->
 
 ## Notification Symbol
 
