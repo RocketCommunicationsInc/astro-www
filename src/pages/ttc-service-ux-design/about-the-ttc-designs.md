@@ -5,6 +5,7 @@ date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
 title: About the TT&C Designs
 description: The purpose of a Telemetry, Tracking, and Command (TT&C) system is to support missions requiring communication between satellites and ground systems.
+anchorNav: extended
 ---
 
 :::note
