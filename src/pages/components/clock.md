@@ -8,8 +8,9 @@ git: rux-clock
 assets:
   name: Clock
 ---
+## Interactive Example
 
-::storybook-demo
+::tag{ is=a-playground tag=rux-clock }
 
 ## Appearance and Behavior
 
@@ -21,4 +22,4 @@ All digits should be displayed using the system mono font, system font, or Robot
 
 ## Examples
 
-![Example Clock](/img/components/clock-roboto-mono.png "Example Clock")
+![Example Clock](/img/components/clock/clock-roboto-mono.webp "Example Clock")

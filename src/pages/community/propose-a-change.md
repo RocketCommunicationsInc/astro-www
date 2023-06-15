@@ -1,11 +1,12 @@
 ---
 title: Propose a Change
+description: Any user of Astro can propose changes in a safe, trackable and relatively easy manner.
 layout: project:layouts/docs/docs-layout.astro
 ---
 
-# How to Propose a Change
+## How to Propose a Change
 
-The Astro User Experience Design System is hosted on [GitHub](https://github.com) as an open source project and uses [Markdown](https://guides.github.com/features/mastering-markdown/) for content. This enables any user of Astro to proposes changes in a safe, trackable and relatively easy manner.
+The Astro User Experience Design System is hosted on [GitHub](https://github.com) as an open source project and uses [Markdown](https://guides.github.com/features/mastering-markdown/) for content.
 
 You will need a free GitHub account to propose changes to Astro.
 
@@ -19,13 +20,13 @@ At the bottom of each page on [AstroUXDS.com](https://www.astrouxds.com/) you wi
 
 If you aren’t a member of the Astro team your proposed changes use Git’s fork process. This effectively creates an identical clone of Astro you can edit without affecting the published version.
 
-![GitHub’s integrated Markdown editor](/img/community/step-1.png)
+![GitHub’s integrated Markdown editor](/img/community/step-1.webp)
 
 ## Step 3 - Edit the page
 
 Use Github’s integrated editor to make the changes you plan on submitting.
 
-![GitHub’s integrated Markdown editor](/img/community/step-2.png)
+![GitHub’s integrated Markdown editor](/img/community/step-2.webp)
 
 ## Step 4 - Propose change
 
@@ -37,7 +38,7 @@ Click the **Propose file change** button
 
 This is a commit message and will be forever included in the Astro changelog.
 
-![GitHub’s integrated Markdown editor](/img/community/step-3.png)
+![GitHub’s integrated Markdown editor](/img/community/step-3.webp)
 
 ## Step 5 - Confirm your changes and create a pull request
 
@@ -51,13 +52,13 @@ The pull request screen will auto-populate the text field with your previous com
 
 Once you are content with your changes click **Create pull request**
 
-![GitHub’s integrated Markdown editor](/img/community/step-4.png)
+![GitHub’s integrated Markdown editor](/img/community/step-4.webp)
 
 ## Step 6 - Preview your change
 
 Every pull request on AstroUXDS gets published to its own ephemeral URL for testing. You can view your changes live by clicking the _Details_ link associated with the final check, deploy/netlify - Deploy preview ready! This URL is valid for as long as the pull request is open and will automatically delete itself after the pull request is closed or merged in to Astro.
 
-![Don’t worry about the two red error messages, these are simply safeguards preventing changes being made public prior to necessary approval](/img/community/step-6.png)
+![Don’t worry about the two red error messages, these are simply safeguards preventing changes being made public prior to necessary approval](/img/community/step-6.webp)
 
 ## Step 7 - Approval process
 

@@ -10,8 +10,9 @@ assets:
 sandbox:
   style: "--y: 580px;"
 ---
+## Interactive Example
 
-::storybook-demo
+::tag{ is=a-playground tag=rux-dialog }
 
 There are two types of Dialogs, modal and non-modal. A Modal Dialog blocks the user from interacting with any content in the background as long as it remains open. A Non-modal Dialog, however, does not impose such restrictions. In general, users will encounter Modal Dialogs when dealing with critical tasks or information that requires action or acknowledgement, while Non-modal Dialogs are more typically tied to optional tasks requiring no user acknowledgement or validation.
 
@@ -41,8 +42,8 @@ Regardless of type, Dialogs will be invoked by user action. This may involve dir
 
 :::two-col
 
-![Do: Use buttons within a Dialog to confirm or cancel actions.](/img/components/modal-do-1.png "Do: Use buttons within a Dialog to confirm or cancel actions.")
+![Do: Use buttons within a Dialog to confirm or cancel actions.](/img/components/dialog/modal-do-1.webp "Do: Use buttons within a Dialog to confirm or cancel actions.")
 
-![Don’t: Use links or other components to confirm or cancel actions.](/img/components/modal-dont-1.png "Don’t: Use links or other components to confirm or cancel actions.")
+![Don’t: Use links or other components to confirm or cancel actions.](/img/components/dialog/modal-dont-1.webp "Don’t: Use links or other components to confirm or cancel actions.")
 
 :::

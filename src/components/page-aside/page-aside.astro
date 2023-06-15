@@ -34,7 +34,7 @@ if (content.assets?.name) {
 	})
 }
 
-const storybookUrl: string = `https://astro-components.netlify.app/?path=/story/${content.storybook}`
+const storybookUrl: string = content.storybook ? `https://astro-components.netlify.app/?path=/story/${content.storybook}` : `https://astro-components.netlify.app/`
 ---
 <nav class="p-quicklinks-navigation" aria-label="Quick Links">
 	<ul id='top-links'>
@@ -50,10 +50,9 @@ const storybookUrl: string = `https://astro-components.netlify.app/?path=/story/
 			<IconLink type="github" href="https://github.com/RocketCommunicationsInc/astro">GitHub</IconLink>
 		</li>
 	</ul>
-
+{ h2Headings.length > 1 ?
 	<hr />
-	{ h2Headings.length > 1
-		? <div class='section-links-wrapper'>
+		 <div class='section-links-wrapper'>
 			<ul class='section-links'>{
 				h2Headings.map((heading, index) => (
 					<li>

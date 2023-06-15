@@ -10,8 +10,9 @@ assets:
 sandbox:
   style: "--y: 200px;"
 ---
+## Interactive Example
 
-::storybook-demo
+::tag{ is=a-playground tag=rux-card }
 
 A card is a container for a few short, related pieces of information. It roughly resembles a playing card in size and shape, and is intended as a linked, short representation of a conceptual unit.
 
@@ -50,12 +51,12 @@ Use sentence case unless an extenuating circumstance arises.
 
 :::two-col
 
-![Do: Group content that is short and scannable with obvious hero content and a clear action item.](/img/components/card-do-1.png "Do: Group content that is short and scannable with obvious hero content and a clear action item.")
+![Do: Group content that is short and scannable with obvious hero content and a clear action item.](/img/components/card/card-do-1.webp "Do: Group content that is short and scannable with obvious hero content and a clear action item.")
 
-![Don’t: Clutter the card with long blocks of text, multiple hero items, or any not easily scannable and un-actionable content where the purpose is unclear. ](/img/components/card-dont-1.png "Don’t: Clutter the card with long blocks of text, multiple hero items, or any not easily scannable and un-actionable content where the purpose is unclear. ")
+![Don’t: Clutter the card with long blocks of text, multiple hero items, or any not easily scannable and un-actionable content where the purpose is unclear. ](/img/components/card/card-dont-1.webp "Don’t: Clutter the card with long blocks of text, multiple hero items, or any not easily scannable and un-actionable content where the purpose is unclear. ")
 
-![Do: Keep cards in a container the same size, and cards used in similar contexts across the application a consistent size. ](/img/components/card-do-2.png "Do: Keep cards in a container the same size, and cards used in similar contexts across the application a consistent size. ")
+![Do: Keep cards in a container the same size, and cards used in similar contexts across the application a consistent size. ](/img/components/card/card-do-2.webp "Do: Keep cards in a container the same size, and cards used in similar contexts across the application a consistent size. ")
 
-![Don’t: Vary the size of cards in a group or container, or use different sized cards in similar situations across the application. ](/img/components/card-dont-2.png "Don’t: Vary the size of cards in a group or container, or use different sized cards in similar situations across the application. ")
+![Don’t: Vary the size of cards in a group or container, or use different sized cards in similar situations across the application. ](/img/components/card/card-dont-2.webp "Don’t: Vary the size of cards in a group or container, or use different sized cards in similar situations across the application. ")
 
 :::

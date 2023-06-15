@@ -8,8 +8,9 @@ git: rux-notification
 assets:
     name: Notification Banner
 ---
+## Interactive Example
 
-::storybook-demo
+::tag{ is=a-playground tag=rux-notification }
 
 ## Appearance and Behavior
 

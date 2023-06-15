@@ -5,13 +5,10 @@ import BreakingChange from 'project:components/breaking-change/breaking-change.a
 import { Code } from 'astro/components'
 
 const title = 'Migration'
+const description = 'Astro 7.0 introduces a number of breaking changes that require developers to update their application code.'
 ---
-<DocsLayout content={{ title }} file={import.meta.url}>
-	<h1>
-		7.0 Migration Guide
-	</h1>
+<DocsLayout content={{ title, description }} file={import.meta.url}>
 	<p>
-		Astro 7.0 introduces a number of breaking changes that require developers to update their application code.
 		We've compiled a list of every breaking change below.
 		Since the migration process will vary on an application-by-application basis, we've broken down changes per component based on the likelihood of impact.
 	</p>
@@ -30,21 +27,21 @@ const title = 'Migration'
 		</li>
 	</ul>
 
-	<h2>
+	<h3>
 		Steps:
-	</h2>
+	</h3>
 	<ol>
 		<li>
-			Update your package.json
+			<p>Update your package.json</p>
 			<ul>
 				<li>
-					For React: <code>"@astrouxds/react": "^7.0.0"</code>
+					For React: <div class="code-block"><code>"@astrouxds/react": "^7.0.0"</code></div>
 				</li>
 				<li>
-					For Angular: <code>"@astrouxds/angular": "^7.0.0"</code>
+					For Angular: <div class="code-block"><code>"@astrouxds/angular": "^7.0.0"</code></div>
 				</li>
 				<li>
-					For Web Components: <code>"@astrouxds/astro-web-components": "^7.0.0"</code>
+					For Web Components: <div class="code-block"><code>"@astrouxds/astro-web-components": "^7.0.0"</code></div>
 				</li>
 			</ul>
 		</li>
@@ -103,7 +100,7 @@ const title = 'Migration'
 					<div class="breaking-change__code__title">v7</div>
 					<Code
 						lang="html"
-						code={`<lin rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />`}
+						code={`<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />`}
 					/>
 				</div>
 			</div>
@@ -1319,10 +1316,10 @@ rux-tree-node::part(node) {
 	</BreakingChangeComponent>
 </DocsLayout>
 <script>
-import 'https://unpkg.com/@shoelace-style/shoelace@2.0.0-beta.83/dist/shoelace.js'
+import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0/dist/shoelace.js'
 </script>
 <style is:global>
-@import "https://unpkg.com/@shoelace-style/shoelace@2.0.0-beta.83/dist/themes/light.css";
+@import "https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0/dist/themes/light.css";
 </style>
 <style is:global>
 :root {

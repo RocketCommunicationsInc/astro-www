@@ -30,4 +30,4 @@ export interface Compliance {
 export declare const version: Compliance['version']
 export declare const contents: Compliance['contents']
 
-export default null as Compliance
+export default Object as Compliance

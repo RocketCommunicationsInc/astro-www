@@ -1,90 +1,126 @@
-import * as DOM from 'project:utils/client/ZOM.ts'
+import * as DOM from 'project:utils/client/DOM'
+import ReflectedElement from 'project:utils/client/ReflectedElement.ts'
 import styling from './Field.css?withtype=style'
 import content from './Field.html?withtype=fragment'
 
-export default DOM.elementOf({
-	name: 'a-field',
+export default class FieldElement extends ReflectedElement(
+	HTMLElement as typeof FieldElementInterface,
+	{
+		label: {
+			defaultValue() {
+				return ''
+			},
+			setValue(label) {
+				return label == null ? '' : String(label)
+			},
+			useAttributes: {
+				label() {
+					return this.getAttribute('label') || ''
+				},
+			},
+			onValueChange(label) {
+				const internals = DOM.withInternals<Internals>(this)
 
+				internals.shadowLabel.textContent = label
+			},
+		},
+
+		labelHidden: {
+			defaultValue() {
+				return this.defaultLabelHidden
+			},
+			setValue(labelHidden) {
+				return Boolean(labelHidden)
+			},
+			useAttributes: {
+				labelhidden() {
+					return this.labelHidden
+				},
+			},
+			onValueChange(labelHidden) {
+				const internals = DOM.withInternals<Internals>(this)
+
+				internals.shadowLabel.part.toggle('hidden-label', labelHidden)
+			},
+		},
+
+		defaultLabelHidden: {
+			defaultValue() {
+				return this.getAttribute('labelhidden') !== null
+			},
+			setValue(labelHidden) {
+				return Boolean(labelHidden)
+			},
+			useAttributes: {
+				labelhidden() {
+					return this.hasAttribute('labelhidden')
+				},
+			},
+			onValueChange(labelHidden) {
+				this.toggleAttribute('labelhidden', labelHidden)
+			},
+		},
+
+		note: {
+			defaultValue() {
+				return ''
+			},
+			setValue(note) {
+				return note == null ? '' : String(note)
+			},
+			useAttributes: {
+				note() {
+					return this.getAttribute('note') || ''
+				},
+			},
+			onValueChange(note) {
+				const internals = DOM.withInternals<Internals>(this)
+
+				internals.shadowNote.innerHTML = `<div style="margin-block-start: -14px;">${note}</div>`
+			},
+		},
+
+	}
+) {
 	constructor() {
-		const element = this
-		const shadowRoot = element.attachShadow({ mode: 'open' })
+		const element: FieldElement = super()!
 
-		shadowRoot.adoptedStyleSheets = [ styling ]
-		shadowRoot.replaceChildren(content.cloneNode(true))
-
-		const shadowLabel = DOM.queryPart<HTMLSpanElement>(shadowRoot, 'label')!
-
-		const internals = DOM.internals<Internals, DOM.CustomElement>(element, () => ({
-			shadowRoot,
-			shadowLabel,
-
-			label: '',
-			defaultLabel: '',
-			isLabelSet: false,
-			setLabel(label) {
-				if (label !== this.label) {
-					this.label = label
-
-					DOM.dispatchEvent(element, 'changelabel', { bubbles: true, composed: true })
-				}
-			},
-
-			hiddenLabel: false,
-			setHiddenLabel(hiddenLabel) {
-				if (hiddenLabel !== this.hiddenLabel) {
-					this.hiddenLabel = hiddenLabel
-
-					shadowLabel.part.toggle('hidden-label', this.hiddenLabel)
-				}
-			},
-		}))
-
-		element.addEventListener('changelabel', () => {
-			internals.shadowLabel.textContent = internals.label
+		const shadowRoot = DOM.withShadow(element, {
+			mode: 'open',
+			content,
+			styling,
 		})
-	},
 
-	prototype: {
-		get defaultLabel(): string {
-			return DOM.internals<Internals>(this).defaultLabel
-		},
+		DOM.withInternals<Internals>(element, () => ({
+			shadowLabel: DOM.queryPart<HTMLSpanElement>(shadowRoot, 'label')!,
+			shadowNote: DOM.queryPart<HTMLParagraphElement>(shadowRoot, 'note')!,
+		}))
+	}
+}
 
-		get label(): string {
-			return DOM.internals<Internals>(this).label
-		},
+customElements.define('a-field', FieldElement)
 
-		set label(label) {
-			DOM.internals<Internals>(this).setLabel(label)
-		},
-	},
+declare class FieldElementInterface extends HTMLElement {
+	/** String label indicating the meaning of the option. */
+	label: string
 
-	observeAttributes: {
-		label(attributeLabel) {
-			const internals = DOM.internals<Internals>(this)
+	/** Boolean indicating whether the option is selected. */
+	labelHidden: boolean
 
-			internals.defaultLabel = attributeLabel === null ? '' : attributeLabel
+	/** String representing the value of the Radio. */
+	value: string
 
-			if (internals.isLabelSet === false) {
-				internals.setLabel(internals.defaultLabel)
-			}
-		},
-		hiddenlabel(attributeHiddenLabel) {
-			const internals = DOM.internals<Internals>(this)
+	/** Boolean indicating whether the option is initially selected. */
+	defaultLabelHidden: boolean
 
-			internals.setHiddenLabel(attributeHiddenLabel !== null)
-		},
-	},
-})
+	/** String representing the initial value of the Radio. */
+	defaultValue: string
+
+	/** String representing a note. */
+	note: string
+}
 
 interface Internals {
-	shadowRoot: ShadowRoot
-	shadowLabel: HTMLSpanElement
-
-	label: string
-	defaultLabel: string
-	isLabelSet: boolean
-	setLabel(label: string): void
-
-	hiddenLabel: boolean
-	setHiddenLabel(hiddenLabel: boolean): void
+	shadowLabel: HTMLSpanElement,
+	shadowNote: HTMLParagraphElement
 }

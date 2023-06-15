@@ -4,9 +4,8 @@ path: /ttc-service-ux-design/ttc-monitor
 date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
 title: TT&C Monitor
+description: The TT&C Monitor app monitors system and constellation health, upcoming contacts and system trends.
 ---
-
-# TT&C Monitor
 
 :::note
 The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
@@ -17,17 +16,17 @@ For operators of a TT&C service, maintaining situational awareness is of critica
 
 As operators’ primary TT&C App, the Monitor App would constantly occupy one of their large displays. The main usage would be in between contacts, when operators would use it to keep an eye on system and constellation health, prepare for upcoming contacts, and view system trends.
 
-![TT&C Monitor App](/img/service-specific-ux-design/ttc-monitor-app.png)
+![TT&C Monitor App](/img/service-specific-ux-design/ttc-monitor/ttc-monitor-app.webp)
 
 There are four main areas in the Monitor App: the Global Status Bar, Alerts panel, Constellation panel, and Watcher panel. The key elements are described below, but you can find much more design and task flow detail in the [TT&C Design Specification and Wireframes](/ttc-service-ux-design/ttc-monitor/#design-materials-and-source-code) documents. You can also launch the [TT&C Monitor Sample App](https://ttc-monitor.astrouxds.com/) to explore the design interactively.
 
-![TT&C Monitor App Details](/img/service-specific-ux-design/ttc-monitor-app-details.png)
+![TT&C Monitor App Details](/img/service-specific-ux-design/ttc-monitor/ttc-monitor-app-details.webp)
 
 ## Global Status Bar
 
 As outlined on the [About TT&C Designs](/ttc-service-ux-design/about-the-ttc-designs) page, each of the apps in the TT&C Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar), an Astro component featured in all three apps. Though the status bar contents vary somewhat between apps in order to best support each app’s individual workflows, all contain a [Clock](/components/clock), [Monitoring Icons](/components/icons-and-symbols), and an App Switcher Menu that allows operators to transition quickly from one TT&C task flow to another.
 
-![TT&C Monitor App Details](/img/service-specific-ux-design/ttc-monitor-global-status-bar-details.png)
+![TT&C Monitor App Details](/img/service-specific-ux-design/ttc-monitor/ttc-monitor-global-status-bar-details.webp)
 
 1. **App Switcher Menu** - The App Switcher Menu allows the user to launch new instances of different TT&C apps, sign in/sign out, and edit preferences.
 2. **Global Clock** - Time is central to many TT&C service task flows, so it is included in the Global Status Bar in all TT&C apps.
@@ -38,7 +37,7 @@ As outlined on the [About TT&C Designs](/ttc-service-ux-design/about-the-ttc-des
 The Alerts panel provides operators with a roll-up of alerts across the ground system, satellite vehicles, and satellite subsystems. Operators can filter the alerts by Severity and Category, allowing them to quickly identify the most severe issues or focus in on particular areas of the global system. This allows operators to efficiently track their workflow and keeps the Alerts pane more sparsely populated, so they’ll be more likely to notice when new alerts come in. Operators can also drill in to see additional information on any of the alerts and launch an instance of the TT&C Investigate App to explore the issue further.
 
 :::two-col
-![TT&C Monitor Alerts Details](/img/service-specific-ux-design/ttc-monitor-alerts-details.png)
+![TT&C Monitor Alerts Details](/img/service-specific-ux-design/ttc-monitor/ttc-monitor-alerts-details.webp)
 
 1. **Active Alert Hero Number** - Shows number of active alerts at a glance.
 2. **Filter Select menus** - Filters alert list by severity and category.
@@ -53,7 +52,7 @@ The Constellation panel shows the contacts for the satellites in the constellati
 
 ### Timeline View
 
-![TT&C Timeline View](/img/service-specific-ux-design/ttc-monitor-constellation-timeline-details.png)
+![TT&C Timeline View](/img/service-specific-ux-design/ttc-monitor/ttc-monitor-constellation-timeline-details.webp)
 
 1. **Spacecraft Names & Status Symbols** - Indicates spacecraft and current status and severity.
 2. **Time Blocks** - Shows contact/pass duration and respective ground station and ground station status. Clicking a time block also launches the Contact Details Slide-In Pane (Contact Details tab) where you can view contact details, as well as launch a Command Application Window for the corresponding spacecraft.
@@ -62,7 +61,7 @@ The Constellation panel shows the contacts for the satellites in the constellati
 
 ### List View
 
-![TT&C List View](/img/service-specific-ux-design/ttc-monitor-constellation-list-details.png)
+![TT&C List View](/img/service-specific-ux-design/ttc-monitor/ttc-monitor-constellation-list-details.webp)
 
 1. **Spacecraft Names & Status Symbols** - Indicates spacecraft and current status and severity.
 2. **Command Quick Launch** - Launches the Command App/Window for respective spacecrafts (in active pass state). This interaction is indicated by the underline.
@@ -73,7 +72,12 @@ The Constellation panel shows the contacts for the satellites in the constellati
 
 The Contact Details Modeless Pane opens on the right side of the browser window. It allows operators to view contact details for a spacecraft — including information such as next pass time, AOS/LOS, and state of contact as well as ground station details like name, azimuth, and elevation. Operators can also toggle the view to display the Pass Plan for the spacecraft’s current/upcoming pass, which includes details like AOS commands, steps, and run lengths.
 
-![TT&C Contact Details Pane](/img/service-specific-ux-design/ttc-monitor-contact-details.png)
+:::two-col
+![TT&C Contact Details Pane](/img/service-specific-ux-design/ttc-monitor/ttc-monitor-contact-details.webp)
+
+![](/img/service-specific-ux-design/ttc-monitor/ttc-monitor-contact-details2.webp)
+
+:::
 
 1. **Command Quick Launch** - Launches TT&C Command App for the contact.
 2. **View Switch** - Switches between Contact Details and Pass Plan views.
@@ -82,7 +86,7 @@ The Contact Details Modeless Pane opens on the right side of the browser window.
 
 The Watcher functionality allows the operator to flag and watch specific telemetry trends over time such as changes in battery levels and other mnemonic values. Mnemonics are monitored for actual value in relation to the assigned value threshold.
 
-![TT&C Watcher](/img/service-specific-ux-design/ttc-monitor-watcher-details.png)
+![TT&C Watcher](/img/service-specific-ux-design/ttc-monitor/ttc-monitor-watcher-details.webp)
 
 1. Collapsible Item List - Items in the Watcher are categorized by spacecraft and can be collapsed or expanded to show the subsequent list of mnemonics being monitored.
 2. Mnemonics - Hovering over a mnemonic value shows the longhand version of its name. This interaction is indicated by the dashed underline. Clicking a mnemonic/watcher item changes the graph on the right to reflect how the values have trended over time.
@@ -99,12 +103,12 @@ Below is an animated walkthrough of a representative task flow using the TT&C Mo
  <figure markdown="1">
   <a href="#demo" class="demo" name="close">
    <span class="icon-play"></span>
-   <img src="/img/service-specific-ux-design/ttc-monitor-prep-for-pass-placeholder.png"
+   <img src="/img/service-specific-ux-design/ttc-monitor/ttc-monitor-prep-for-pass-placeholder.png"
    alt="TT&C Monitor Prep for Pass demo" />
   </a>
  </figure>
  <a href="#close" class="lightbox" id="demo">
-  <img src="/img/service-specific-ux-design/ttc-monitor-prep-for-pass.gif" alt="TT&C Monitor Prep for pass" />
+  <img src="/img/service-specific-ux-design/ttc-monitor/ttc-monitor-prep-for-pass.gif" alt="TT&C Monitor Prep for pass" />
  </a>
 </div>
 

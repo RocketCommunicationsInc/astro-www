@@ -1,5 +1,5 @@
 {
-	"version": "4.2.0",
+	"version": "4.3.0",
 	"contents": [
 		{
 			"name": "General",
@@ -681,7 +681,7 @@
 				{
 					"name": "Pop Up Menu",
 					"numeral": 11,
-					"note":"Pop Up Menu has been revised from a component to a pattern. See 3.6.0 for updates."
+					"note": "Pop Up Menu has been revised from a component to a pattern. See 3.6.0 for updates."
 				},
 				{
 					"name": "Progress",
@@ -1130,13 +1130,19 @@
 						{
 							"numeral": 1,
 							"rule": "A Pop Up shall be visible in its entirety and never exceed the constraints of the window frame.",
-							"status": "under-review",
+							"status": "current",
 							"tier": 3
 						},
 						{
 							"numeral": 2,
 							"rule": "Pop Ups shall never obscure screen items that require persistent visibility (such as Classification Banners or Application States).",
-							"status": "under-review",
+							"status": "current",
+							"tier": 3
+						},
+						{
+							"numeral": 3,
+							"rule": "Pop Ups shall not be activated by Buttons.",
+							"status": "new",
 							"tier": 3
 						}
 					]

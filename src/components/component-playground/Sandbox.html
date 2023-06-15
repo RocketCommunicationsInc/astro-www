@@ -1,7 +1,8 @@
 <span part="heading">
-	<a-field part="theme-switch">
-		<a-control-switch selected></a-control-switch>
-		Dark Mode
+	<a-field part="theme-switch" label="Dark Mode">
+		<a-switch checked></a-switch>
 	</a-field>
 </span>
-<slot part="content"></slot>
+<span part="content">
+	<slot></slot>
+</span>

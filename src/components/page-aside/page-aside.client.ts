@@ -99,15 +99,48 @@ const addComplianceFooterToNav = () => {
 	}
 }
 
-const createHeadingObserver = (headings: NodeListOf<HTMLHeadingElement>) => {
+const createNav = (headings: any) => {
+	const linksNav = document.querySelector('.p-quicklinks-navigation')
+	const separator = h('<hr />')
+	const navigation = h('<div class="section-links-wrapper">')
+	const ul = h('<ul class="section-links">')
+	headings.map((heading: HTMLElement, index: number) => {
+			const li = h('<li>')
+			const link = h(`<a href="#${heading.id}" class="${heading.id}">${heading.textContent}`)
+			if (index === 0) {
+				link.classList.add('-highlighted')
+				link.classList.add('-first')
+			}
+			if (index === headings.length - 1) link.classList.add('-last')
+			li.append(link)
+			ul.append(li)
+			return null
+	})
+	navigation.append(ul)
+	linksNav?.append(separator)
+	linksNav?.append(navigation)
+}
+
+const createObservers = (headings: NodeListOf<HTMLHeadingElement>, footer: HTMLElement | null) => {
 	let currentHeading: HTMLHeadingElement | null
 
+	// check to see if there is a nav, if not, make one.
+	const nav = document.querySelector('.section-links-wrapper')
+	if (!nav && headings.length > 1) {
+		createNav(Array.from(headings))
+	}
+
 	let headingObserver: IntersectionObserver | undefined
+	let footerObserver: IntersectionObserver | undefined
 	const visualViewport = globalThis.visualViewport!
 
 	const onresize = () => {
 		if (headingObserver) {
 			headingObserver.disconnect()
+		}
+
+		if (footerObserver) {
+			footerObserver.disconnect()
 		}
 
 		headingObserver = new IntersectionObserver((entries) => {
@@ -133,6 +166,22 @@ const createHeadingObserver = (headings: NodeListOf<HTMLHeadingElement>) => {
 			threshold: 0,
 		})
 
+		footerObserver = new IntersectionObserver((footer) => {
+				if (footer[0].isIntersecting) {
+					const listElements = Array.from(document.querySelectorAll('.section-links li a'))
+
+					listElements.map((listItem, index) => {
+						index === listElements.length - 1 ? listItem.classList.add('-highlighted') : listItem.classList.remove('-highlighted')
+						return null
+					})
+				}
+		}, {
+			rootMargin: `0% 0px 0px`,
+			threshold: 0.99,
+		})
+
+		if (footer) footerObserver.observe(footer)
+
 		for (const heading of headings) {
 			headingObserver.observe(heading)
 		}
@@ -144,5 +193,6 @@ const createHeadingObserver = (headings: NodeListOf<HTMLHeadingElement>) => {
 }
 
 addComplianceFooterToNav()
-createHeadingObserver(document.querySelectorAll('main [id]:is(h2)'))
+// make h2 observers and one for the footer
+createObservers(document.querySelectorAll('main [id]:is(h2)'), document.querySelector('footer.p-footer'))
 // createTableOfContentsNavigation(document.querySelectorAll('main [id]:is(h1,h2,h3,h4,h5,h6)'))

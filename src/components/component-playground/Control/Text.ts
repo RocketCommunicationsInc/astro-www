@@ -1,76 +1,126 @@
-import * as DOM from 'project:utils/client/ZOM.ts'
+import * as DOM from 'project:utils/client/DOM'
+import ReflectedElement from 'project:utils/client/ReflectedElement.ts'
 import content from './Text.html?withtype=fragment'
 import styling from './Text.css?withtype=style'
 
-export default DOM.elementOf({
-	name: 'a-control-text',
-
-	constructor() {
-		const element = this
-		const shadowRoot = element.attachShadow({ mode: 'open' })
-
-		shadowRoot.adoptedStyleSheets = [ styling ]
-		shadowRoot.replaceChildren(content.cloneNode(true))
-
-		const shadowContent = DOM.queryPart<HTMLInputElement>(shadowRoot, 'content')!
-
-		const internals = DOM.internals<Internals, DOM.CustomElement>(element, () => ({
-			shadowRoot,
-			shadowContent,
-
-			value: '',
-			defaultValue: '',
-			isValueSet: false,
-			setValue(value) {
-				if (value !== this.value) {
-					this.value = value
-
-					shadowContent.value = value
-
-					DOM.dispatchEvent(element, 'change', { bubbles: true, composed: true })
-				}
+export default class TextElement extends ReflectedElement(
+	HTMLElement as typeof TextElementInterface,
+	{
+		type: {
+			defaultValue() {
+				return this.defaultType
 			},
+			setValue(type) {
+				return type == null ? '' : String(type)
+			},
+			onValueChange(type) {
+				const internals = DOM.withInternals<Internals>(this)
+
+				internals.shadowContent.type = type
+			},
+		},
+
+		defaultType: {
+			defaultValue() {
+				return this.getAttribute('type') || ''
+			},
+			setValue(type) {
+				return type == null ? '' : String(type)
+			},
+			useAttributes: {
+				type() {
+					return this.getAttribute('type')
+				},
+			},
+			onValueChange(type) {
+				this.setAttribute('type', type)
+
+				const internals = DOM.withInternals<Internals>(this)
+
+				internals.shadowContent.setAttribute('type', type)
+			},
+		},
+
+		value: {
+			defaultValue() {
+				return this.defaultValue
+			},
+			setValue(value) {
+				return value == null ? '' : String(value)
+			},
+			onValueChange(value) {
+				const internals = DOM.withInternals<Internals>(this)
+
+				internals.shadowContent.value = value
+			},
+		},
+
+		defaultValue: {
+			defaultValue() {
+				return this.getAttribute('value') || ''
+			},
+			setValue(value) {
+				return value == null ? '' : String(value)
+			},
+			useAttributes: {
+				value() {
+					return this.getAttribute('value')
+				},
+			},
+			onValueChange(value) {
+				const internals = DOM.withInternals<Internals>(this)
+
+				this.setAttribute('value', value)
+
+				internals.shadowContent.setAttribute('value', value)
+			},
+		},
+	}
+) {
+	constructor() {
+		const element: TextElement = super()!
+
+		const shadowRoot = DOM.withShadow(element, {
+			mode: 'open',
+			content,
+			styling,
+		})
+
+		DOM.withInternals<Internals>(element, () => ({
+			shadowContent: DOM.queryPart<HTMLInputElement>(shadowRoot, 'content')!,
 		}))
 
-		shadowContent.addEventListener('input', () => {
-			internals.setValue(shadowContent.value)
+		DOM.observe(shadowRoot, {
+			change() {
+				DOM.trigger(element, {
+					change: { bubbles: true, composed: true }
+				})
+			},
+			input(event: InputEvent & { target: HTMLInputElement }) {
+				element.value = event.target.value
+
+				element.dispatchEvent(new InputEvent('input', event))
+			},
 		})
-	},
+	}
+}
 
-	prototype: {
-		get defaultValue(): string {
-			return DOM.internals<Internals>(this).defaultValue
-		},
+customElements.define('a-text-control', TextElement)
 
-		get value(): string {
-			return DOM.internals<Internals>(this).value
-		},
-
-		set value(value) {
-			DOM.internals<Internals>(this).setValue(value)
-		},
-	},
-
-	observeAttributes: {
-		value(attributeValue) {
-			const internals = DOM.internals<Internals>(this)
-
-			internals.defaultValue = attributeValue === null ? '' : attributeValue
-
-			if (internals.isValueSet === false) {
-				internals.setValue(internals.defaultValue)
-			}
-		},
-	},
-})
-
-interface Internals {
-	shadowRoot: ShadowRoot
-	shadowContent: HTMLInputElement
-
+declare class TextElementInterface extends HTMLElement {
+	/** String representing the value of the text control. */
 	value: string
+
+	/** String representing the initial value of the text control. */
 	defaultValue: string
 
-	isValueSet: boolean
-	setValue(value: string): void
+	/** String representing the type of text control to display. */
+	type: 'text' | 'password' | 'number' | 'email' | string
+
+	/** String representing the initial type of text control to display. */
+	defaultType: string
+}
+
+interface Internals {
+	shadowContent: HTMLInputElement
 }

@@ -10,8 +10,9 @@ assets:
 sandbox:
   style: "--y: 180px;"
 ---
+## Interactive Example
 
-::storybook-demo
+::tag{ is=a-playground tag=rux-container }
 
 Containers can be used to help effectively manage lists, tables, dialogs, modals, slide out panels, content containers (top and bottom), and other components.
 
@@ -27,8 +28,8 @@ Child containers (smaller Containers meant to reside inside of a larger Containe
 
 :::two-col
 
-![Do: Use Containers to build lists, tables, slide outs, and the like with proper component usage and placement.](/img/components/container-do-1.png "Do: Use Containers to build lists, tables, slide outs, and the like with proper component usage and placement.")
+![Do: Use Containers to build lists, tables, slide outs, and the like with proper component usage and placement.](/img/components/container/container-do-1.webp "Do: Use Containers to build lists, tables, slide outs, and the like with proper component usage and placement.")
 
-![Don’t: Use Containers to add or stack components in an improper or confusing manner.](/img/components/container-dont-1.png "Don’t: Use Containers to add or stack components in an improper or confusing manner.")
+![Don’t: Use Containers to add or stack components in an improper or confusing manner.](/img/components/container/container-dont-1.webp "Don’t: Use Containers to add or stack components in an improper or confusing manner.")
 
 :::

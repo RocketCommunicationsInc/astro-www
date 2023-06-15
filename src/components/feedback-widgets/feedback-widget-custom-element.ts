@@ -92,7 +92,6 @@ class FeedbackWidget extends HTMLElement {
 			let difference: number = (footerBottom - viewportHeight) * -1
 
 			if (widgetWrapper !== null) widgetWrapper.style.insetBlockEnd = `${difference}px`
-			console.log('difference', difference)
 		}
 
 		const watchForFooter = () => {

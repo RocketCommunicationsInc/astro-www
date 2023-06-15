@@ -6,11 +6,10 @@ storybook: components-classification-markings--all-banner-variants
 git: rux-classification-marking
 assets:
   name: Classification & Control Markings
-sandbox:
-  style: "--y: 420px;"
 ---
+## Interactive Example
 
-::storybook-demo
+::tag{ is=a-playground tag=rux-classification-marking }
 
 In your digital product, such as a desktop or web application, there should be an [Overall Marking](#overall-marking), [Portion Markings](#portion-marking) if possible, and an [Authority Block](#authority-block). Each of these features will be described in more detail below.
 
@@ -39,14 +38,14 @@ The guidance on this page is focused on the use of, and rules for, Classificatio
 ### Banner Examples
 
 :::table-overflow
-|                                                                              | State            | Hex Value | RGB Value    | CSS                                                     | Font Color |
-|------------------------------------------------------------------------------|------------------|-----------|--------------|---------------------------------------------------------|------------|
-| ![Marking Unclassified Swatch](/img/swatches/marking__unclassified.svg)      | Unclassified     | #007a33   | 0, 122, 51   | `--classification-banner-color-background-unclassified` | white      |
-| ![Marking Controlled Swatch](/img/swatches/marking__controlled.svg)          | Controlled (CUI) | #502b85   | 80, 43, 133  | `--classification-banner-color-background-cui`          | white      |
-| ![Marking Confidential Swatch](/img/swatches/marking__confidential.svg)      | Confidential     | #0033a0   | 0, 51, 160   | `--classification-banner-color-background-confidential` | white      |
-| ![Marking Secret Swatch](/img/swatches/marking__secret.svg)                  | Secret           | #c8102e   | 200, 16, 46  | `--classification-banner-color-background-secret`       | white      |
-| ![Marking Top Secret Swatch](/img/swatches/marking__top-secret.svg)          | Top Secret       | #ff8c00   | 255, 140, 0  | `--classification-banner-color-background-topsecret`    | black      |
-| ![Marking Top Secret//SCI Swatch](/img/swatches/marking__top-secret-sci.svg) | Top Secret//SCI  | #fce83a   | 252, 232, 58 | `--classification-banner-color-background-topsecretsci` | black      |
+|                                                                                                                 | State            | Hex Value | RGB Value    | CSS                                                     | Font Color |
+|-----------------------------------------------------------------------------------------------------------------|------------------|-----------|--------------|---------------------------------------------------------|------------|
+| ![Marking Unclassified Swatch](/img/components/classification-markings/swatches/marking__unclassified.svg)      | Unclassified     | #007a33   | 0, 122, 51   | `--classification-banner-color-background-unclassified` | white      |
+| ![Marking Controlled Swatch](/img/components/classification-markings/swatches/marking__controlled.svg)          | Controlled (CUI) | #502b85   | 80, 43, 133  | `--classification-banner-color-background-cui`          | white      |
+| ![Marking Confidential Swatch](/img/components/classification-markings/swatches/marking__confidential.svg)      | Confidential     | #0033a0   | 0, 51, 160   | `--classification-banner-color-background-confidential` | white      |
+| ![Marking Secret Swatch](/img/components/classification-markings/swatches/marking__secret.svg)                  | Secret           | #c8102e   | 200, 16, 46  | `--classification-banner-color-background-secret`       | white      |
+| ![Marking Top Secret Swatch](/img/components/classification-markings/swatches/marking__top-secret.svg)          | Top Secret       | #ff8c00   | 255, 140, 0  | `--classification-banner-color-background-topsecret`    | black      |
+| ![Marking Top Secret//SCI Swatch](/img/components/classification-markings/swatches/marking__top-secret-sci.svg) | Top Secret//SCI  | #fce83a   | 252, 232, 58 | `--classification-banner-color-background-topsecretsci` | black      |
 :::
 
 ### Overall Marking Background Information
@@ -69,17 +68,17 @@ Astro banner component colors match what government users are familiar with in p
 
 :::two-col
 
-![Do: Use all-caps for marking text](/img/components/overall-marking-do-1.png "Do: Use all-caps for marking text")
+![Do: Use all-caps for marking text](/img/components/classification-markings/overall-marking-do-1.webp "Do: Use all-caps for marking text")
 
-![Don’t: Add any other text or elements to the banner](/img/components/overall-marking-dont-1.png "Don’t: Add any other text or elements to the banner")
+![Don’t: Add any other text or elements to the banner](/img/components/classification-markings/overall-marking-dont-1.webp "Don’t: Add any other text or elements to the banner")
 
-![Do: Show the banner at the top of every page ](/img/components/overall-marking-do-2.png "Do: Show the banner at the top of every page ")
+![Do: Show the banner at the top of every page ](/img/components/classification-markings/overall-marking-do-2.webp "Do: Show the banner at the top of every page ")
 
-![Don’t: Allow the banner to scroll out of view or be obscured by other elements](/img/components/overall-marking-dont-2.png "Don’t: Allow the banner to scroll out of view or be obscured by other elements")
+![Don’t: Allow the banner to scroll out of view or be obscured by other elements](/img/components/classification-markings/overall-marking-dont-2.webp "Don’t: Allow the banner to scroll out of view or be obscured by other elements")
 
-![Do: Use Astro’s defined color sets for contrast compliance ](/img/components/overall-marking-do-3.png "Do: Use Astro’s defined color sets for contrast compliance")
+![Do: Use Astro’s defined color sets for contrast compliance ](/img/components/classification-markings/overall-marking-do-3.webp "Do: Use Astro’s defined color sets for contrast compliance")
 
-![Don’t: Deviate from the defined background colors](/img/components/overall-marking-dont-3.png "Don’t: Deviate from the defined background colors")
+![Don’t: Deviate from the defined background colors](/img/components/classification-markings/overall-marking-dont-3.webp "Don’t: Deviate from the defined background colors")
 
 :::
 
@@ -87,7 +86,7 @@ Astro banner component colors match what government users are familiar with in p
 
 ### Tag Examples
 
-![Portion Marking Tag example](/img/components/marking-tag-example.png)
+![Portion Marking Tag example](/img/components/classification-markings/marking-tag-example.webp)
 
 ### Portion Marking Background Information
 
@@ -115,17 +114,17 @@ The colors used in the Tag components are the same as those in the Overall Banne
 
 :::two-col
 
-![Do: Abbreviate text in portion markings](/img/components/portion-marking-do-1.png "Do: Abbreviate text in Portion Markings")
+![Do: Abbreviate text in portion markings](/img/components/classification-markings/portion-marking-do-1.webp "Do: Abbreviate text in Portion Markings")
 
-![Don’t: Have portion markings with higher classifications than the overall marking](/img/components/portion-marking-dont-1.png "Don’t: Have Portion Markings with higher classifications than the Overall Marking")
+![Don’t: Have portion markings with higher classifications than the overall marking](/img/components/classification-markings/portion-marking-dont-1.webp "Don’t: Have Portion Markings with higher classifications than the Overall Marking")
 
-![Do: Place portion markings at the top-left of classified or controlled information ](/img/components/portion-marking-do-2.png "Do: Place Portion Markings at the top-left of classified or controlled information ")
+![Do: Place portion markings at the top-left of classified or controlled information ](/img/components/classification-markings/portion-marking-do-2.webp "Do: Place Portion Markings at the top-left of classified or controlled information ")
 
-![](/img/components/blank.png)
+![](/img/blank.webp)
 
-![Do: Use colored Tags for general section markings and text portion marking in portions lower in the visual hierarchy  ](/img/components/portion-marking-do-3.png "Do: Use colored Tags for general section markings and text Portion Marking in portions lower in the visual hierarchy")
+![Do: Use colored Tags for general section markings and text portion marking in portions lower in the visual hierarchy  ](/img/components/classification-markings/portion-marking-do-3.webp "Do: Use colored Tags for general section markings and text Portion Marking in portions lower in the visual hierarchy")
 
-![Don’t: Clutter the interface with colored Tags on every line](/img/components/portion-marking-dont-3.png "Don’t: Clutter the interface with colored Tags on every line")
+![Don’t: Clutter the interface with colored Tags on every line](/img/components/classification-markings/portion-marking-dont-3.webp "Don’t: Clutter the interface with colored Tags on every line")
 
 :::
 

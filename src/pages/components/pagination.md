@@ -19,11 +19,11 @@ assets:
 ## Examples
 
 :::two-col
-![Offer a “Prev” and “Next” link where useful.](/img/components/pagination-1.png)
+![Offer a “Prev” and “Next” link where useful.](/img/components/pagination/pagination-1.webp)
 
-![Disable the “Prev” link when there are no more pages before the first numeral displayed.](/img/components/pagination-2.png)
+![Disable the “Prev” link when there are no more pages before the first numeral displayed.](/img/components/pagination/pagination-2.webp)
 
-![Disable the “Next” link when there are no more pages after the last numeral displayed.](/img/components/pagination-3.png)
+![Disable the “Next” link when there are no more pages after the last numeral displayed.](/img/components/pagination/pagination-3.webp)
 
 :::
 
@@ -31,7 +31,7 @@ assets:
 
 :::two-col
 
-![Optionally, links for “Show all” and “Number of results” may be displayed below page numbers. Links are centered below the Pagination on the same baseline.](/img/components/pagination-4.png)
+![Optionally, links for “Show all” and “Number of results” may be displayed below page numbers. Links are centered below the Pagination on the same baseline.](/img/components/pagination/pagination-4.webp)
 
-![When there are no Search results, suggest that the user amend the Search.](/img/components/pagination-5.png)
+![When there are no Search results, suggest that the user amend the Search.](/img/components/pagination/pagination-5.webp)
 :::

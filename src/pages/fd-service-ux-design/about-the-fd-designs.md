@@ -3,11 +3,10 @@ tags: ["flight dynamics", "egs"]
 path: /fd-service-ux-design/about-the-fd-designs
 date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
-title: Flight Dynamics Service
+title: Flight Dynamics Service (FDS)
+description: The FDS system supports missions that require communication between satellites and ground systems.
 class: fds
 ---
-
-# Flight Dynamics Service (FDS)
 
 :::note
 While the Maneuvering and Reporting tools have not been researched, tested, and designed to the same depth as the Orbit Determination Tool, they have been considered throughout the research and design process from the broader perspective of the application.
@@ -96,7 +95,7 @@ Based on this initial research and follow-up design iterations with operators an
 
 Based on system requirements and user research, the architecture of the application provides the guidance needed to build an FDS app, yet remains agnostic to the mission needs.
 
-![FDS Orbit Determination](/img/service-specific-ux-design/fds-framework.png)
+![FDS Orbit Determination](/img/service-specific-ux-design/fds/fds-framework.webp)
 
 ## FDS Orbit Determination
 
@@ -106,7 +105,7 @@ For operators of the FDS Application, flexibility and automating redundant tasks
 
 The [Global Status Bar](../../components/global-status-bar) of the FDS App contains a single sign in, high level navigation [tabs](../../components/tabs) to switch between tools, a [clock](../../components/clock) and notification, chat and help icons. [Monitoring icons](../../components/icons-and-symbols) may be included if the mission requires additional situational awareness.
 
-![Global Status Bar](/img/service-specific-ux-design/fds-global-status-bar.png)
+![Global Status Bar](/img/service-specific-ux-design/fds/fds-global-status-bar.webp)
 
 1. **App Switcher Menu** - The App Switcher Menu allows the operator to launch new instances of different apps, sign in/sign out, and edit preferences. The App Name appears directly to the right of the menu.
 2. **Navigation Tabs** - The navigation tabs allow the operator to switch between workspaces or tools.
@@ -119,8 +118,8 @@ The [Global Status Bar](../../components/global-status-bar) of the FDS App conta
 ### Scenarios
 
 :::two-col
-![Scenarios wireframe](/img/service-specific-ux-design/fds-scenarios.png)
-::: col
+![Scenarios wireframe](/img/service-specific-ux-design/fds/fds-scenarios.webp)
+:::col
 
 The scenarios panel is where a task begins. Depending on common mission tasks, operators may create, edit, or delete scenarios that best fit their workflows. For example, if an operator performs orbit determinations on Mondays for each satellite they are responsible for, they might create a “Nominal OD” scenario. Clicking a satellite in this scenario would load its last state, its last input files, and pre-select all the necessary products and reports needed for this task.
 
@@ -132,7 +131,7 @@ The scenarios panel is where a task begins. Depending on common mission tasks, o
 ### Properties Pane
 
 :::two-col
-![Properties Pane wireframe](/img/service-specific-ux-design/fds-properties-pane.png)
+![Properties Pane wireframe](/img/service-specific-ux-design/fds/fds-properties-pane.webp)
 :::col
 The properties pane displays various attributes an operator may expect to see when selecting an item in the scenarios panel.
 
@@ -146,7 +145,7 @@ The properties pane displays various attributes an operator may expect to see wh
 #### Inputs
 
 :::two-col
-![Inputs wireframe](/img/service-specific-ux-design/fds-inputs.png)
+![Inputs wireframe](/img/service-specific-ux-design/fds/fds-inputs.webp)
 :::col
 
 The inputs pane houses the initial input files required in order to run an orbit determination.
@@ -163,7 +162,7 @@ The inputs pane houses the initial input files required in order to run an orbit
 
 :::two-col
 
-![Outputs wireframe](/img/service-specific-ux-design/fds-outputs.png)
+![Outputs wireframe](/img/service-specific-ux-design/fds/fds-outputs.webp)
 :::col
 
 The outputs pane houses the required output files and products for a scenario.
@@ -176,7 +175,7 @@ The outputs pane houses the required output files and products for a scenario.
 
 The data display is a multi-functional output view of an orbit determination.
 
-![Data Display wireframe](/img/service-specific-ux-design/fds-table-data-display.png)
+![Data Display wireframe](/img/service-specific-ux-design/fds/fds-table-data-display.webp)
 
 1. **Notification Banner** - The Notification Banner shows the status for the latest/last orbit determination that was initiated.
 2. **Deviation Count** - The deviation count shows the total number of deviations (violations of the standard deviation found in the OD Results.
@@ -192,7 +191,7 @@ The data display is a multi-functional output view of an orbit determination.
 
 The Utility Tool Kit is a collection of contextual utilities for accessing secondary task flows. These remain agnostic to the needs of the mission. Launching a utility opens up a new window at any default size the mission deems useful. Utility windows behave like browser windows and have the ability to be resized, expanded to full screen or minimized.
 
-![Utility Tool Kit](/img/service-specific-ux-design/fds-utility-tool-kit.png)
+![Utility Tool Kit](/img/service-specific-ux-design/fds/fds-utility-tool-kit.webp)
 
 1. **Compare** - Allows operators to compare reports or products.
 2. **Create Report** - Allows operators to create reports that are contextual to the satellite and scenario.
@@ -204,7 +203,7 @@ The Utility Tool Kit is a collection of contextual utilities for accessing secon
 
 The Log Utility shows a log of application and system messages. Usage and functionality of this utility is mission-agnostic based on what is most valuable to the operator/mission.
 
-![Log Utility wireframe](/img/service-specific-ux-design/fds-log-utility.png)
+![Log Utility wireframe](/img/service-specific-ux-design/fds/fds-log-utility.webp)
 
 1. **Tabs** - Allows for more than view or category of log messages.
 2. **Control Buttons** - Triggers a slide in pane that allows the operator control over the event log display.
@@ -217,7 +216,7 @@ The Track Data Utility is an identified secondary task flow an operator would ex
 
 #### Track Data Utility: Select Raw Tracking Files
 
-![Track Data Utility wireframe](/img/service-specific-ux-design/fds-track-data-utility-raw-track.png)
+![Track Data Utility wireframe](/img/service-specific-ux-design/fds/fds-track-data-utility-raw-track.webp)
 
 1. **File List** - Displays a table list of raw tracking data.
 2. **Edit Track File Button** - Allows operator to edit/remove data from a track file.
@@ -227,7 +226,7 @@ The Track Data Utility is an identified secondary task flow an operator would ex
 
 #### Track Data Utility: Filter Data
 
-![Fitler Data Utility wireframe](/img/service-specific-ux-design/fds-track-data-utility-filter.png)
+![Fitler Data Utility wireframe](/img/service-specific-ux-design/fds/fds-track-data-utility-filter.webp)
 
 1. **Data Display Segmented Button** - Allows operator to change views from tabular data to a visual data display to view individual track data points.
 2. **Track Data Contextual Information** - Clicking on an individual plot data instance will show additional information or actions associated with the track data. An example would be what ground station the track data point is from as well as the date/time of the impression and it’s elevation numerical data.
@@ -243,7 +242,7 @@ The Propagator Utility is an identified secondary task flow an operator would ex
 
 #### Input Source
 
-![Input Source wireframe](/img/service-specific-ux-design/fds-prpagator-utility-input.png)
+![Input Source wireframe](/img/service-specific-ux-design/fds/fds-prpagator-utility-input.webp)
 
 1. **Source Settings**- Allows an operator to select an orbit source and an input file for generating the ephemeris or TLE file.
 2. **Epoch Settings** - Allows operator to set an epoch in the orbit source.
@@ -253,7 +252,7 @@ The Propagator Utility is an identified secondary task flow an operator would ex
 
 #### View Orbit
 
-![View Orbit wireframe](/img/service-specific-ux-design/fds-propagator-utility-orbit.png)
+![View Orbit wireframe](/img/service-specific-ux-design/fds/fds-propagator-utility-orbit.webp)
 
 1. **Orbit Visualization Segmented Button** - Allows an operator to switch between a tabular data view and a orbit visualization with the applied orbit source and settings.
 2. **Orbit Data Display** - Displays in 2D/3D the orbit track with the applied orbit source and settings as well as a play button to run the simulation.

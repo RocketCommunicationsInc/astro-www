@@ -1,0 +1,471 @@
+---
+import DocsLayout from 'project:layouts/docs/docs-layout.astro'
+import { component, lookupProperty } from 'project:utils/tokens.js'
+import '../shared.css'
+import { RuxDesignTokenPreview } from '@astrouxds/documentation-components' 
+
+const title = 'Component Tokens'
+const description = 'Component specific tokens to be used only when rebuilding components.'
+---
+<DocsLayout content={{ title, description }} file={import.meta.url}>
+			<h2 id="button">
+				Button
+			</h2>
+			{
+				component('light', 'button').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2 id="card">
+				Card
+			</h2>
+			{
+				component('light', 'card').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2 id="checkbox">
+				Checkbox
+			</h2>
+			{
+				component('light', 'checkbox').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2 id="classification">
+				Classification Banner
+			</h2>
+			{
+				component('light', 'classification-banner').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2 id="clock">
+				Clock
+			</h2>
+			{
+				component('light', 'clock').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="background"
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2 id="container">
+				Container
+			</h2>
+			{
+				component('light', 'container').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+			<hr />
+
+			<h2 id="gsb">
+				Global Status Bar
+			</h2>
+			{
+				component('light', 'gsb').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+
+			<hr />
+			<h2 id="indeterminate">
+				Indeterminate Progress
+			</h2>
+			{
+				component('light', 'indeterminate-progress').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2 id="input">
+				Input
+			</h2>
+			{
+				component('light', 'input').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2 id="link">
+				Link
+			</h2>
+			{
+				component('light', 'link').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2 id="log">
+				Log
+			</h2>
+			{
+				component('light', 'log').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2 id="menu">
+				Menu
+			</h2>
+			{
+				component('light', 'menu').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="background"
+					/>
+				))
+			}
+
+			<hr />
+			<h2 id="monitoring-icon">
+				Monitoring Icon
+			</h2>
+			{
+				component('light', 'monitoring-icon').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="background"
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2 id="notification">
+				Notification Banner
+			</h2>
+			{
+				component('light', 'notification-banner').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2 id="progress">
+				Progress
+			</h2>
+			{
+				component('light', 'progress').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+
+			<h2 id="radio">
+				Radio
+			</h2>
+			{
+				component('light', 'radio').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2 id="scrollbar">
+				Scrollbar
+			</h2>
+			{
+				component('light', 'scrollbar').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2 id="select">
+				Select
+			</h2>
+			{
+				component('light', 'select').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2 id="slider">
+				Slider
+			</h2>
+			{
+				component('light', 'slider').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2 id="status-symbol">Status Symbol</h2>
+			{
+				component('light', 'status-symbol').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2 id="switch">
+				Switch
+			</h2>
+			{
+				component('light', 'switch').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2 id="table">
+				Table
+			</h2>
+			{
+				component('light', 'table').map((token) => (
+					<RuxDesignTokenPreview
+						client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+			<hr />
+
+			
+			<h2 id="tag">
+				Tag
+			</h2>
+			{
+				component('light', 'tag').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+			<hr />
+
+			<h2 id="textarea">
+				Textarea
+			</h2>
+			{
+				component('light', 'textarea').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+			<hr />
+
+			<h2 id="timeline">
+				Timeline
+			</h2>
+			{
+				component('light', 'timeline').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+			<hr />
+			<h2 id="tooltip">
+				Tooltip
+			</h2>
+			{
+				component('light', 'tooltip').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+</DocsLayout>
+<script>
+</script>

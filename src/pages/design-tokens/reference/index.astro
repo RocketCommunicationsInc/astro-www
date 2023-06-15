@@ -1,23 +1,20 @@
 ---
 import DocsLayout from 'project:layouts/docs/docs-layout.astro'
 import { reference, findByName } from 'project:utils/tokens.js'
+import { RuxDesignTokenPreview } from '@astrouxds/documentation-components' 
 
 const title = 'Reference'
+const description = 'Full catalog of Astro design tokens.'
 ---
-<DocsLayout content={{ title }} file={import.meta.url}>
-	<a href="#reference-tokens" class="h h1">
-		<h1 id="reference-tokens">
-			Reference Tokens
-		</h1>
-	</a>
-
+<DocsLayout content={{ title, description }} file={import.meta.url}>
 	<h2 id="colors">
 		Colors
 	</h2>
 
 	{
 		reference('dark', 'color').map((token) => (
-			<rux-design-token-preview
+			<RuxDesignTokenPreview
+    client:visible
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -29,7 +26,7 @@ const title = 'Reference'
 
 	<hr />
 
-	<h2>
+	<h2 id="font-size">
 		Font Size
 	</h2>
 	<p>
@@ -39,7 +36,8 @@ const title = 'Reference'
 	</p>
 	{
 		reference('dark', 'fontSizes').map((token) => (
-			<rux-design-token-preview
+			<RuxDesignTokenPreview
+    client:visible
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -51,12 +49,13 @@ const title = 'Reference'
 
 	<hr />
 
-	<h2>
+	<h2 id="font-weight">
 		Font Weight
 	</h2>
 	{
 		reference('dark', 'fontWeights').map((token) => (
-			<rux-design-token-preview
+			<RuxDesignTokenPreview
+    client:visible
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -68,12 +67,13 @@ const title = 'Reference'
 
 	<hr />
 
-	<h2>
+	<h2 id="radii">
 		Radii
 	</h2>
 	{
 		reference('dark', 'borderRadius').map((token) => (
-			<rux-design-token-preview
+			<RuxDesignTokenPreview
+    client:visible
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -85,12 +85,13 @@ const title = 'Reference'
 
 	<hr />
 
-	<h2>
+	<h2 id="opacity">
 		Opacity
 	</h2>
 	{
 		reference('dark', 'opacity').map((token) => (
-			<rux-design-token-preview
+			<RuxDesignTokenPreview
+    client:visible
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -102,12 +103,13 @@ const title = 'Reference'
 
 	<hr />
 
-	<h2>
+	<h2 id="border-width">
 		Border Width
 	</h2>
 	{
 		reference('dark', 'borderWidth').map((token) => (
-			<rux-design-token-preview
+			<RuxDesignTokenPreview
+    client:visible
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -119,7 +121,7 @@ const title = 'Reference'
 
 	<hr />
 
-	<h2>
+	<h2 id="spacing">
 		Spacing
 	</h2>
 	<p>
@@ -134,7 +136,8 @@ const title = 'Reference'
 	</p>
 	{
 		reference('dark', 'spacing').map((token) => (
-			<rux-design-token-preview
+			<RuxDesignTokenPreview
+    client:visible
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -146,7 +149,7 @@ const title = 'Reference'
 
 	<hr />
 
-	<h2>
+	<h2 id="line-height">
 		Line Height
 	</h2>
 	<p>
@@ -156,7 +159,8 @@ const title = 'Reference'
 	</p>
 	{
 		reference('dark', 'lineHeights').map((token) => (
-			<rux-design-token-preview
+			<RuxDesignTokenPreview
+    client:visible
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -166,7 +170,7 @@ const title = 'Reference'
 		))
 	}
 
-	<h2>
+	<h2 id="typography">
 		Typography
 	</h2>
 	<div class="note">
@@ -179,35 +183,40 @@ const title = 'Reference'
 	<h3>
 		Monospace-1
 	</h3>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-monospace-1-font-family')?.name}
 		value={findByName('font-monospace-1-font-family')?.value}
 		alias={findByName('font-monospace-1-font-family')?.referenceToken}
 		description={findByName('font-monospace-1-font-family')?.description}
 		type="font-family"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-monospace-1-font-size')?.name}
 		value={findByName('font-monospace-1-font-size')?.value}
 		alias={findByName('font-monospace-1-font-size')?.referenceToken}
 		description={findByName('font-monospace-1-font-size')?.description}
 		type="font-size"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-monospace-1-font-weight')?.name}
 		value={findByName('font-monospace-1-font-weight')?.value}
 		alias={findByName('font-monospace-1-font-weight')?.referenceToken}
 		description={findByName('font-monospace-1-font-weight')?.description}
 		type="font-weight"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-monospace-1-line-height')?.name}
 		value={findByName('font-monospace-1-line-height')?.value}
 		alias={findByName('font-monospace-1-line-height')?.referenceToken}
 		description={findByName('font-monospace-1-line-height')?.description}
 		type="line-height"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-monospace-1-letter-spacing')?.name}
 		value={findByName('font-monospace-1-letter-spacing')?.value}
 		alias={findByName('font-monospace-1-letter-spacing')?.referenceToken}
@@ -218,35 +227,40 @@ const title = 'Reference'
 	<h3>
 		Display 1
 	</h3>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-display-1-font-family')?.name}
 		value={findByName('font-display-1-font-family')?.value}
 		alias={findByName('font-display-1-font-family')?.referenceToken}
 		description={findByName('font-display-1-font-family')?.description}
 		type="font-family"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-display-1-font-size')?.name}
 		value={findByName('font-display-1-font-size')?.value}
 		alias={findByName('font-display-1-font-size')?.referenceToken}
 		description={findByName('font-display-1-font-size')?.description}
 		type="font-size"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-display-1-font-weight')?.name}
 		value={findByName('font-display-1-font-weight')?.value}
 		alias={findByName('font-display-1-font-weight')?.referenceToken}
 		description={findByName('font-display-1-font-weight')?.description}
 		type="font-weight"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-display-1-line-height')?.name}
 		value={findByName('font-display-1-line-height')?.value}
 		alias={findByName('font-display-1-line-height')?.referenceToken}
 		description={findByName('font-display-1-line-height')?.description}
 		type="line-height"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-display-1-letter-spacing')?.name}
 		value={findByName('font-display-1-letter-spacing')?.value}
 		alias={findByName('font-display-1-letter-spacing')?.referenceToken}
@@ -257,35 +271,40 @@ const title = 'Reference'
 	<h3>
 		Display 2
 	</h3>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-display-2-font-family')?.name}
 		value={findByName('font-display-2-font-family')?.value}
 		alias={findByName('font-display-2-font-family')?.referenceToken}
 		description={findByName('font-display-2-font-family')?.description}
 		type="font-family"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-display-2-font-size')?.name}
 		value={findByName('font-display-2-font-size')?.value}
 		alias={findByName('font-display-2-font-size')?.referenceToken}
 		description={findByName('font-display-2-font-size')?.description}
 		type="font-size"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-display-2-font-weight')?.name}
 		value={findByName('font-display-2-font-weight')?.value}
 		alias={findByName('font-display-2-font-weight')?.referenceToken}
 		description={findByName('font-display-2-font-weight')?.description}
 		type="font-weight"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-display-2-line-height')?.name}
 		value={findByName('font-display-2-line-height')?.value}
 		alias={findByName('font-display-2-line-height')?.referenceToken}
 		description={findByName('font-display-2-line-height')?.description}
 		type="line-height"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-display-2-letter-spacing')?.name}
 		value={findByName('font-display-2-letter-spacing')?.value}
 		alias={findByName('font-display-2-letter-spacing')?.referenceToken}
@@ -296,35 +315,40 @@ const title = 'Reference'
 	<h3>
 		Heading 1
 	</h3>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-1-font-family')?.name}
 		value={findByName('font-heading-1-font-family')?.value}
 		alias={findByName('font-heading-1-font-family')?.referenceToken}
 		description={findByName('font-heading-1-font-family')?.description}
 		type="font-family"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-1-font-size')?.name}
 		value={findByName('font-heading-1-font-size')?.value}
 		alias={findByName('font-heading-1-font-size')?.referenceToken}
 		description={findByName('font-heading-1-font-size')?.description}
 		type="font-size"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-1-font-weight')?.name}
 		value={findByName('font-heading-1-font-weight')?.value}
 		alias={findByName('font-heading-1-font-weight')?.referenceToken}
 		description={findByName('font-heading-1-font-weight')?.description}
 		type="font-weight"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-1-line-height')?.name}
 		value={findByName('font-heading-1-line-height')?.value}
 		alias={findByName('font-heading-1-line-height')?.referenceToken}
 		description={findByName('font-heading-1-line-height')?.description}
 		type="line-height"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-1-letter-spacing')?.name}
 		value={findByName('font-heading-1-letter-spacing')?.value}
 		alias={findByName('font-heading-1-letter-spacing')?.referenceToken}
@@ -335,35 +359,40 @@ const title = 'Reference'
 	<h3>
 		Heading 1 Bold
 	</h3>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-1-bold-font-family')?.name}
 		value={findByName('font-heading-1-bold-font-family')?.value}
 		alias={findByName('font-heading-1-bold-font-family')?.referenceToken}
 		description={findByName('font-heading-1-bold-font-family')?.description}
 		type="font-family"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-1-bold-font-size')?.name}
 		value={findByName('font-heading-1-bold-font-size')?.value}
 		alias={findByName('font-heading-1-bold-font-size')?.referenceToken}
 		description={findByName('font-heading-1-bold-font-size')?.description}
 		type="font-size"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-1-bold-font-weight')?.name}
 		value={findByName('font-heading-1-bold-font-weight')?.value}
 		alias={findByName('font-heading-1-bold-font-weight')?.referenceToken}
 		description={findByName('font-heading-1-bold-font-weight')?.description}
 		type="font-weight"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-1-bold-line-height')?.name}
 		value={findByName('font-heading-1-bold-line-height')?.value}
 		alias={findByName('font-heading-1-bold-line-height')?.referenceToken}
 		description={findByName('font-heading-1-bold-line-height')?.description}
 		type="line-height"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-1-bold-letter-spacing')?.name}
 		value={findByName('font-heading-1-bold-letter-spacing')?.value}
 		alias={findByName('font-heading-1-bold-letter-spacing')?.referenceToken}
@@ -374,35 +403,40 @@ const title = 'Reference'
 	<h3>
 		Heading 2
 	</h3>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-2-font-family')?.name}
 		value={findByName('font-heading-2-font-family')?.value}
 		alias={findByName('font-heading-2-font-family')?.referenceToken}
 		description={findByName('font-heading-2-font-family')?.description}
 		type="font-family"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-2-font-size')?.name}
 		value={findByName('font-heading-2-font-size')?.value}
 		alias={findByName('font-heading-2-font-size')?.referenceToken}
 		description={findByName('font-heading-2-font-size')?.description}
 		type="font-size"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-2-font-weight')?.name}
 		value={findByName('font-heading-2-font-weight')?.value}
 		alias={findByName('font-heading-2-font-weight')?.referenceToken}
 		description={findByName('font-heading-2-font-weight')?.description}
 		type="font-weight"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-2-line-height')?.name}
 		value={findByName('font-heading-2-line-height')?.value}
 		alias={findByName('font-heading-2-line-height')?.referenceToken}
 		description={findByName('font-heading-2-line-height')?.description}
 		type="line-height"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-2-letter-spacing')?.name}
 		value={findByName('font-heading-2-letter-spacing')?.value}
 		alias={findByName('font-heading-2-letter-spacing')?.referenceToken}
@@ -413,35 +447,40 @@ const title = 'Reference'
 	<h3>
 		Heading 3
 	</h3>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-3-font-family')?.name}
 		value={findByName('font-heading-3-font-family')?.value}
 		alias={findByName('font-heading-3-font-family')?.referenceToken}
 		description={findByName('font-heading-3-font-family')?.description}
 		type="font-family"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-3-font-size')?.name}
 		value={findByName('font-heading-3-font-size')?.value}
 		alias={findByName('font-heading-3-font-size')?.referenceToken}
 		description={findByName('font-heading-3-font-size')?.description}
 		type="font-size"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-3-font-weight')?.name}
 		value={findByName('font-heading-3-font-weight')?.value}
 		alias={findByName('font-heading-3-font-weight')?.referenceToken}
 		description={findByName('font-heading-3-font-weight')?.description}
 		type="font-weight"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-3-line-height')?.name}
 		value={findByName('font-heading-3-line-height')?.value}
 		alias={findByName('font-heading-3-line-height')?.referenceToken}
 		description={findByName('font-heading-3-line-height')?.description}
 		type="line-height"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-3-letter-spacing')?.name}
 		value={findByName('font-heading-3-letter-spacing')?.value}
 		alias={findByName('font-heading-3-letter-spacing')?.referenceToken}
@@ -452,35 +491,40 @@ const title = 'Reference'
 	<h3>
 		Heading 4
 	</h3>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-4-font-family')?.name}
 		value={findByName('font-heading-4-font-family')?.value}
 		alias={findByName('font-heading-4-font-family')?.referenceToken}
 		description={findByName('font-heading-4-font-family')?.description}
 		type="font-family"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-4-font-size')?.name}
 		value={findByName('font-heading-4-font-size')?.value}
 		alias={findByName('font-heading-4-font-size')?.referenceToken}
 		description={findByName('font-heading-4-font-size')?.description}
 		type="font-size"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-4-font-weight')?.name}
 		value={findByName('font-heading-4-font-weight')?.value}
 		alias={findByName('font-heading-4-font-weight')?.referenceToken}
 		description={findByName('font-heading-4-font-weight')?.description}
 		type="font-weight"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-4-line-height')?.name}
 		value={findByName('font-heading-4-line-height')?.value}
 		alias={findByName('font-heading-4-line-height')?.referenceToken}
 		description={findByName('font-heading-4-line-height')?.description}
 		type="line-height"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-4-letter-spacing')?.name}
 		value={findByName('font-heading-4-letter-spacing')?.value}
 		alias={findByName('font-heading-4-letter-spacing')?.referenceToken}
@@ -491,35 +535,40 @@ const title = 'Reference'
 	<h3>
 		Heading 5
 	</h3>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-5-font-family')?.name}
 		value={findByName('font-heading-5-font-family')?.value}
 		alias={findByName('font-heading-5-font-family')?.referenceToken}
 		description={findByName('font-heading-5-font-family')?.description}
 		type="font-family"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-5-font-size')?.name}
 		value={findByName('font-heading-5-font-size')?.value}
 		alias={findByName('font-heading-5-font-size')?.referenceToken}
 		description={findByName('font-heading-5-font-size')?.description}
 		type="font-size"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-5-font-weight')?.name}
 		value={findByName('font-heading-5-font-weight')?.value}
 		alias={findByName('font-heading-5-font-weight')?.referenceToken}
 		description={findByName('font-heading-5-font-weight')?.description}
 		type="font-weight"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-5-line-height')?.name}
 		value={findByName('font-heading-5-line-height')?.value}
 		alias={findByName('font-heading-5-line-height')?.referenceToken}
 		description={findByName('font-heading-5-line-height')?.description}
 		type="line-height"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-5-letter-spacing')?.name}
 		value={findByName('font-heading-5-letter-spacing')?.value}
 		alias={findByName('font-heading-5-letter-spacing')?.referenceToken}
@@ -530,35 +579,40 @@ const title = 'Reference'
 	<h3>
 		Heading 6
 	</h3>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-6-font-family')?.name}
 		value={findByName('font-heading-6-font-family')?.value}
 		alias={findByName('font-heading-6-font-family')?.referenceToken}
 		description={findByName('font-heading-6-font-family')?.description}
 		type="font-family"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-6-font-size')?.name}
 		value={findByName('font-heading-6-font-size')?.value}
 		alias={findByName('font-heading-6-font-size')?.referenceToken}
 		description={findByName('font-heading-6-font-size')?.description}
 		type="font-size"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-6-font-weight')?.name}
 		value={findByName('font-heading-6-font-weight')?.value}
 		alias={findByName('font-heading-6-font-weight')?.referenceToken}
 		description={findByName('font-heading-6-font-weight')?.description}
 		type="font-weight"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-6-line-height')?.name}
 		value={findByName('font-heading-6-line-height')?.value}
 		alias={findByName('font-heading-6-line-height')?.referenceToken}
 		description={findByName('font-heading-6-line-height')?.description}
 		type="line-height"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-heading-6-letter-spacing')?.name}
 		value={findByName('font-heading-6-letter-spacing')?.value}
 		alias={findByName('font-heading-6-letter-spacing')?.referenceToken}
@@ -569,35 +623,40 @@ const title = 'Reference'
 	<h3>
 		Body 1
 	</h3>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-1-font-family')?.name}
 		value={findByName('font-body-1-font-family')?.value}
 		alias={findByName('font-body-1-font-family')?.referenceToken}
 		description={findByName('font-body-1-font-family')?.description}
 		type="font-family"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-1-font-size')?.name}
 		value={findByName('font-body-1-font-size')?.value}
 		alias={findByName('font-body-1-font-size')?.referenceToken}
 		description={findByName('font-body-1-font-size')?.description}
 		type="font-size"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-1-font-weight')?.name}
 		value={findByName('font-body-1-font-weight')?.value}
 		alias={findByName('font-body-1-font-weight')?.referenceToken}
 		description={findByName('font-body-1-font-weight')?.description}
 		type="font-weight"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-1-line-height')?.name}
 		value={findByName('font-body-1-line-height')?.value}
 		alias={findByName('font-body-1-line-height')?.referenceToken}
 		description={findByName('font-body-1-line-height')?.description}
 		type="line-height"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-1-letter-spacing')?.name}
 		value={findByName('font-body-1-letter-spacing')?.value}
 		alias={findByName('font-body-1-letter-spacing')?.referenceToken}
@@ -608,35 +667,40 @@ const title = 'Reference'
 	<h3>
 		Body 1 Bold
 	</h3>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-1-bold-font-family')?.name}
 		value={findByName('font-body-1-bold-font-family')?.value}
 		alias={findByName('font-body-1-bold-font-family')?.referenceToken}
 		description={findByName('font-body-1-bold-font-family')?.description}
 		type="font-family"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-1-bold-font-size')?.name}
 		value={findByName('font-body-1-bold-font-size')?.value}
 		alias={findByName('font-body-1-bold-font-size')?.referenceToken}
 		description={findByName('font-body-1-bold-font-size')?.description}
 		type="font-size"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-1-bold-font-weight')?.name}
 		value={findByName('font-body-1-bold-font-weight')?.value}
 		alias={findByName('font-body-1-bold-font-weight')?.referenceToken}
 		description={findByName('font-body-1-bold-font-weight')?.description}
 		type="font-weight"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-1-bold-line-height')?.name}
 		value={findByName('font-body-1-bold-line-height')?.value}
 		alias={findByName('font-body-1-bold-line-height')?.referenceToken}
 		description={findByName('font-body-1-bold-line-height')?.description}
 		type="line-height"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-1-bold-letter-spacing')?.name}
 		value={findByName('font-body-1-bold-letter-spacing')?.value}
 		alias={findByName('font-body-1-bold-letter-spacing')?.referenceToken}
@@ -647,35 +711,40 @@ const title = 'Reference'
 	<h3>
 		Body 2
 	</h3>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-2-font-family')?.name}
 		value={findByName('font-body-2-font-family')?.value}
 		alias={findByName('font-body-2-font-family')?.referenceToken}
 		description={findByName('font-body-2-font-family')?.description}
 		type="font-family"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-2-font-size')?.name}
 		value={findByName('font-body-2-font-size')?.value}
 		alias={findByName('font-body-2-font-size')?.referenceToken}
 		description={findByName('font-body-2-font-size')?.description}
 		type="font-size"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-2-font-weight')?.name}
 		value={findByName('font-body-2-font-weight')?.value}
 		alias={findByName('font-body-2-font-weight')?.referenceToken}
 		description={findByName('font-body-2-font-weight')?.description}
 		type="font-weight"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-2-line-height')?.name}
 		value={findByName('font-body-2-line-height')?.value}
 		alias={findByName('font-body-2-line-height')?.referenceToken}
 		description={findByName('font-body-2-line-height')?.description}
 		type="line-height"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-2-letter-spacing')?.name}
 		value={findByName('font-body-2-letter-spacing')?.value}
 		alias={findByName('font-body-2-letter-spacing')?.referenceToken}
@@ -686,35 +755,40 @@ const title = 'Reference'
 	<h3>
 		Body 2 Bold
 	</h3>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-2-bold-font-family')?.name}
 		value={findByName('font-body-2-bold-font-family')?.value}
 		alias={findByName('font-body-2-bold-font-family')?.referenceToken}
 		description={findByName('font-body-2-bold-font-family')?.description}
 		type="font-family"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-2-bold-font-size')?.name}
 		value={findByName('font-body-2-bold-font-size')?.value}
 		alias={findByName('font-body-2-bold-font-size')?.referenceToken}
 		description={findByName('font-body-2-bold-font-size')?.description}
 		type="font-size"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-2-bold-font-weight')?.name}
 		value={findByName('font-body-2-bold-font-weight')?.value}
 		alias={findByName('font-body-2-bold-font-weight')?.referenceToken}
 		description={findByName('font-body-2-bold-font-weight')?.description}
 		type="font-weight"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-2-bold-line-height')?.name}
 		value={findByName('font-body-2-bold-line-height')?.value}
 		alias={findByName('font-body-2-bold-line-height')?.referenceToken}
 		description={findByName('font-body-2-bold-line-height')?.description}
 		type="line-height"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-2-bold-letter-spacing')?.name}
 		value={findByName('font-body-2-bold-letter-spacing')?.value}
 		alias={findByName('font-body-2-bold-letter-spacing')?.referenceToken}
@@ -725,35 +799,40 @@ const title = 'Reference'
 	<h3>
 		Body 3
 	</h3>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-3-font-family')?.name}
 		value={findByName('font-body-3-font-family')?.value}
 		alias={findByName('font-body-3-font-family')?.referenceToken}
 		description={findByName('font-body-3-font-family')?.description}
 		type="font-family"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-3-font-size')?.name}
 		value={findByName('font-body-3-font-size')?.value}
 		alias={findByName('font-body-3-font-size')?.referenceToken}
 		description={findByName('font-body-3-font-size')?.description}
 		type="font-size"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-3-font-weight')?.name}
 		value={findByName('font-body-3-font-weight')?.value}
 		alias={findByName('font-body-3-font-weight')?.referenceToken}
 		description={findByName('font-body-3-font-weight')?.description}
 		type="font-weight"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-3-line-height')?.name}
 		value={findByName('font-body-3-line-height')?.value}
 		alias={findByName('font-body-3-line-height')?.referenceToken}
 		description={findByName('font-body-3-line-height')?.description}
 		type="line-height"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-3-letter-spacing')?.name}
 		value={findByName('font-body-3-letter-spacing')?.value}
 		alias={findByName('font-body-3-letter-spacing')?.referenceToken}
@@ -764,35 +843,40 @@ const title = 'Reference'
 	<h3>
 		Body 3 Bold
 	</h3>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-3-bold-font-family')?.name}
 		value={findByName('font-body-3-bold-font-family')?.value}
 		alias={findByName('font-body-3-bold-font-family')?.referenceToken}
 		description={findByName('font-body-3-bold-font-family')?.description}
 		type="font-family"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-3-bold-font-size')?.name}
 		value={findByName('font-body-3-bold-font-size')?.value}
 		alias={findByName('font-body-3-bold-font-size')?.referenceToken}
 		description={findByName('font-body-3-bold-font-size')?.description}
 		type="font-size"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-3-bold-font-weight')?.name}
 		value={findByName('font-body-3-bold-font-weight')?.value}
 		alias={findByName('font-body-3-bold-font-weight')?.referenceToken}
 		description={findByName('font-body-3-bold-font-weight')?.description}
 		type="font-weight"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-3-bold-line-height')?.name}
 		value={findByName('font-body-3-bold-line-height')?.value}
 		alias={findByName('font-body-3-bold-line-height')?.referenceToken}
 		description={findByName('font-body-3-bold-line-height')?.description}
 		type="line-height"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-body-3-bold-letter-spacing')?.name}
 		value={findByName('font-body-3-bold-letter-spacing')?.value}
 		alias={findByName('font-body-3-bold-letter-spacing')?.referenceToken}
@@ -803,35 +887,40 @@ const title = 'Reference'
 	<h3>
 		Control Body 1
 	</h3>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-control-body-1-font-family')?.name}
 		value={findByName('font-control-body-1-font-family')?.value}
 		alias={findByName('font-control-body-1-font-family')?.referenceToken}
 		description={findByName('font-control-body-1-font-family')?.description}
 		type="font-family"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-control-body-1-font-size')?.name}
 		value={findByName('font-control-body-1-font-size')?.value}
 		alias={findByName('font-control-body-1-font-size')?.referenceToken}
 		description={findByName('font-control-body-1-font-size')?.description}
 		type="font-size"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-control-body-1-font-weight')?.name}
 		value={findByName('font-control-body-1-font-weight')?.value}
 		alias={findByName('font-control-body-1-font-weight')?.referenceToken}
 		description={findByName('font-control-body-1-font-weight')?.description}
 		type="font-weight"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-control-body-1-line-height')?.name}
 		value={findByName('font-control-body-1-line-height')?.value}
 		alias={findByName('font-control-body-1-line-height')?.referenceToken}
 		description={findByName('font-control-body-1-line-height')?.description}
 		type="line-height"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-control-body-1-letter-spacing')?.name}
 		value={findByName('font-control-body-1-letter-spacing')?.value}
 		alias={findByName('font-control-body-1-letter-spacing')?.referenceToken}
@@ -842,35 +931,40 @@ const title = 'Reference'
 	<h3>
 		Control Body 1 Bold
 	</h3>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-control-body-1-bold-font-family')?.name}
 		value={findByName('font-control-body-1-bold-font-family')?.value}
 		alias={findByName('font-control-body-1-bold-font-family')?.referenceToken}
 		description={findByName('font-control-body-1-bold-font-family')?.description}
 		type="font-family"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-control-body-1-bold-font-size')?.name}
 		value={findByName('font-control-body-1-bold-font-size')?.value}
 		alias={findByName('font-control-body-1-bold-font-size')?.referenceToken}
 		description={findByName('font-control-body-1-bold-font-size')?.description}
 		type="font-size"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-control-body-1-bold-font-weight')?.name}
 		value={findByName('font-control-body-1-bold-font-weight')?.value}
 		alias={findByName('font-control-body-1-bold-font-weight')?.referenceToken}
 		description={findByName('font-control-body-1-bold-font-weight')?.description}
 		type="font-weight"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-control-body-1-bold-line-height')?.name}
 		value={findByName('font-control-body-1-bold-line-height')?.value}
 		alias={findByName('font-control-body-1-bold-line-height')?.referenceToken}
 		description={findByName('font-control-body-1-bold-line-height')?.description}
 		type="line-height"
 	/>
-	<rux-design-token-preview
+	<RuxDesignTokenPreview
+    client:visible
 		name={findByName('font-control-body-1-bold-letter-spacing')?.name}
 		value={findByName('font-control-body-1-bold-letter-spacing')?.value}
 		alias={findByName('font-control-body-1-bold-letter-spacing')?.referenceToken}
@@ -878,11 +972,3 @@ const title = 'Reference'
 		type="letter-spacing"
 	/>
 </DocsLayout>
-<script>
-import 'https://cdn.jsdelivr.net/npm/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.esm.js'
-import 'https://cdn.jsdelivr.net/npm/@astrouxds/documentation-components@0.0.14/+esm'
-import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0/dist/shoelace.js'
-</script>
-<style is:global>
-@import "https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0/dist/themes/light.css";
-</style>

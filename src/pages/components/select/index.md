@@ -9,9 +9,9 @@ assets:
     name: Select Menu
 ---
 
-::storybook-demo
+## Interactive Example
 
-<!-- When activated, Select Menus allow users to select a value from a list. Once a value is selected, the Select Menu displays the selected value. -->
+::tag{ is=a-playground tag=rux-select }
 
 ## Rules of Thumb
 
@@ -36,6 +36,6 @@ To learn more about adding Help Text or Validation to Select Menus, see the [For
 
 :::two-col
 
-![Don’t: Create a Select Menu list with too many options. The user needs to be able to scan and navigate the list easily](/img/components/select-dont-1.png "Don’t: Create a Select Menu list with too many options. The user needs to be able to scan and navigate the list easily")
+![Don’t: Create a Select Menu list with too many options. The user needs to be able to scan and navigate the list easily](/img/components/select/select-dont-1.webp "Don’t: Create a Select Menu list with too many options. The user needs to be able to scan and navigate the list easily")
 
 :::

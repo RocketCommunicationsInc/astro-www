@@ -2,6 +2,7 @@ interface __PlaygroundFieldBase {
 	kind: string
 	attribute: string
 	property: string
+	note?: string
 }
 
 export interface PlaygroundFieldMenu extends __PlaygroundFieldBase {
@@ -42,6 +43,7 @@ export interface PlaygroundDependency {
 export interface PlaygroundExample {
 	name: string
 	code: string
+	script?: string
 }
 
 export interface PlaygroundRecord {
@@ -51,6 +53,8 @@ export interface PlaygroundRecord {
 	examples: PlaygroundExample[]
 	fields?: PlaygroundField[]
 	dependencies?: PlaygroundDependency[]
+	style?: string
+	align?: string
 }
 
 export interface PlaygroundSchema {

@@ -1,27 +1,29 @@
-import * as DOM from 'project:utils/client/ZOM.ts'
+import * as DOM from 'project:utils/client/DOM.ts'
 import content from './Sandbox.html?withtype=fragment'
 import styling from './Sandbox.css?withtype=style'
 
 import './Field/Field.ts'
 import './Control/Switch.ts'
 
-export default DOM.elementOf({
-	name: 'a-sandbox',
-
+export default class SandboxElement extends HTMLElement {
 	constructor() {
-		const shadowRoot = this.attachShadow({ mode: 'open' })
+		const element: SandboxElement = super()!
 
-		shadowRoot.adoptedStyleSheets = [ styling ]
+		const shadowRoot = DOM.withShadow(element, {
+			mode: 'open',
+			content,
+			styling,
+		})
+		DOM.observe(shadowRoot, {
+			change(event: Event & { target: HTMLElement & { checked: boolean } }) {
+				if (typeof event.target.checked !== 'boolean') return
 
-		shadowRoot.replaceChildren(content.cloneNode(true))
-
-		shadowRoot.addEventListener('change', (event) => {
-			if (!(event.target instanceof HTMLElement)) return
-			if (!('selected' in event.target)) return
-			if (typeof event.target.selected !== 'boolean') return
-
-			this.classList.toggle('dark-theme', event.target.selected)
-			this.classList.toggle('light-theme', !event.target.selected)
-		}, { capture: true })
+				element.classList.toggle('dark-theme', event.target.checked)
+				element.classList.toggle('light-theme', !event.target.checked)
+				DOM.sendEvent('gtag', 'playground-themeToggle', { 'event_category': 'playground', 'event_label': event.target.checked ? 'dark-theme' : 'light-theme' })
+			}
+		})
 	}
-})
+}
+
+customElements.define('a-sandbox', SandboxElement)

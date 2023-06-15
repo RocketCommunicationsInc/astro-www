@@ -4,9 +4,8 @@ path: /ttc-service-ux-design/about-the-ttc-designs
 date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
 title: About the TT&C Designs
+description: The purpose of a Telemetry, Tracking, and Command (TT&C) system is to support missions requiring communication between satellites and ground systems.
 ---
-
-# About the TT&C Designs
 
 :::note
 The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
@@ -26,16 +25,16 @@ The animated graphic below depicts a much simplified version of a TT&C task flow
 	<figure markdown="1">
 		<a href="#demo" class="demo" name="close">
 			<span class="icon-play"></span>
-			<img src="/img/service-specific-ux-design/ttc-phases-placeholder.png" markdown="1"
+			<img src="/img/service-specific-ux-design/ttc/ttc-phases-placeholder.webp" markdown="1"
 			alt="TT&C Phases" />
 		</a>
 	</figure>
 	<a href="#close" class="lightbox" id="demo">
-		<img src="/img/service-specific-ux-design/ttc-phases.gif" alt="TT&C Phases" />
+		<img src="/img/service-specific-ux-design/ttc/ttc-phases.gif" alt="TT&C Phases" />
 	</a>
 </div>
 
-### UX Research Findings
+## UX Research Findings
 
 UX research conducted in collaboration with users and domain experts on existing TT&C workflows and systems found that:
 
@@ -54,7 +53,7 @@ Based on this initial research and follow-up design iterations with operators an
 
 :::two-col
 
-![TT&C Application Suite](/img/service-specific-ux-design/ttc-suite-apps.png)
+![TT&C Application Suite](/img/service-specific-ux-design/ttc/ttc-suite-apps.webp)
 
 :::col
 The TT&C App Suite comprises three integrated apps: Monitor, Command, & Investigate.
@@ -67,7 +66,7 @@ The TT&C App Suite comprises three integrated apps: Monitor, Command, & Investig
 
 :::two-col
 
-![TT&C Monitor App](/img/service-specific-ux-design/ttc-monitor-app.png)
+![TT&C Monitor App](/img/service-specific-ux-design/ttc/ttc-monitor-app.webp)
 
 :::col
 The TT&C Monitor app allows operators to monitor status, alerts, health, and function of an individual satellite and satellite constellations.
@@ -81,7 +80,7 @@ The TT&C Monitor app allows operators to monitor status, alerts, health, and fun
 
 :::two-col
 
-![TT&C Command App](/img/service-specific-ux-design/ttc-equipment-manager-app.png)
+![TT&C Command App](/img/service-specific-ux-design/ttc/ttc-equipment-manager-app.webp)
 
 :::col
 The TT&C Command app allows operators to send and receive streams of data to and from a spacecraft using a set of commands, often referred to as a pass plan.
@@ -96,7 +95,7 @@ The TT&C Command app allows operators to send and receive streams of data to and
 
 :::two-col
 
-![TT&C Schedule App](/img/service-specific-ux-design/ttc-investigate-app.png)
+![TT&C Schedule App](/img/service-specific-ux-design/ttc/ttc-investigate-app.webp)
 
 :::col
 The TT&C Investigate App allows operators to investigate spacecraft alerts and anomalies and analyze subsystem mnemonics, measurements, limits, etc.

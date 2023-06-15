@@ -35,7 +35,7 @@
 		transition: background-color 80ms;
 	}
 
-	&::part(track selected) {
+	&::part(track checked) {
 		/* Reference */
 		--BackColor: var(--DarkBlue500Color);
 	}
@@ -57,7 +57,7 @@
 		transition: translate 80ms;
 	}
 
-	&::part(thumb selected) {
+	&::part(thumb checked) {
 		/* Animation */
 		translate: .75rem 0;
 	}

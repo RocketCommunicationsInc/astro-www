@@ -34,12 +34,12 @@ Underlines can be applied by detaching the text style and selecting the three do
 ## Examples
 
 :::two-col
-![Do: Use the Astro-defined primary interactive color for links.](/img/components/links-do-1.png "Do: Use the Astro-defined primary interactive color for links.")
+![Do: Use the Astro-defined primary interactive color for links.](/img/components/link/links-do-1.webp "Do: Use the Astro-defined primary interactive color for links.")
 
-![Don’t: Style links with non-link colors.](/img/components/links-dont-1.png "Don’t: Style links with non-link colors.")
+![Don’t: Style links with non-link colors.](/img/components/link/links-dont-1.webp "Don’t: Style links with non-link colors.")
 
-![Do: Style hovered links with an underline without any color change.](/img/components/links-do-2.png "Do: Style hovered links with an underline without any color change.")
+![Do: Style hovered links with an underline without any color change.](/img/components/link/links-do-2.webp "Do: Style hovered links with an underline without any color change.")
 
-![Don’t: Add underlines on non-hovered links.](/img/components/links-dont-2.png "Don’t: Add underlines on non-hovered links.")
+![Don’t: Add underlines on non-hovered links.](/img/components/link/links-dont-2.webp "Don’t: Add underlines on non-hovered links.")
 
 :::

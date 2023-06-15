@@ -1,24 +1,52 @@
+:root {
+	--max-table-size: 230--step;
+
+	@media (1440px > width >= 1294px) {
+		--max-table-size: 175--step;
+	}
+}
+
 /* Table */
 /* ========================================================================== */
 
-.table-overflow {
+.table-overflow, .color-table {
+	/* Layout */
+	margin-block-end: 5--step;
+	max-inline-size: var(--max-table-size);
+
 	/* Layout */
 	overflow-x: auto;
+	overflow-x: overlay;
 
 	& table {
 		/* Layout */
 		inline-size: 100%;
 
 		/* Layout */
+
+		/* Layout */
 		min-inline-size: auto;
 	}
 }
 
-/* Table for Status System page */
+.table-typography {
+	& table {
+		& thead {
+			& th {
+				/* Layout */
+				min-inline-size: 29--step;
+			}
+		}
+	}
+}
+
+/* Table for Status System / Status Symbol page */
 /* ========================================================================== */
 
-.status-system-colors {
+.status-system-colors, .status-symbol-colors {
 	/* Layout */
+	margin-block-end: 5--step;
+	max-inline-size: var(--max-table-size);
 	overflow-x: auto;
 
 	& table {
@@ -31,6 +59,13 @@
 		& td {
 			/* Text */
 			line-height: 1.5rem;
+		}
+
+		& th:not(:first-of-type) {
+			@media (width < 768px) {
+				/* Layout */
+				min-inline-size: 350px;
+			}
 		}
 	}
 
@@ -48,11 +83,65 @@
 	}
 }
 
+.color-table code {
+	/* Text */
+	white-space: nowrap;
+}
+
+/* Table for Heat Map page */
+/* ========================================================================== */
+
+.heat-map-table {
+	/* Layout */
+	margin-block-end: 20px;
+
+	& table {
+		/* Layout */
+		inline-size: auto;
+
+		& th, & td {
+			/* Appearance */
+			border: 1px solid var(--Grey300Color);
+		}
+
+		& tr {
+			/* Layout */
+			border-block-end: 0;
+		}
+
+		& thead th {
+			/* Text */
+			font-weight: 400;
+			text-align: center;
+
+			/* Appearance */
+			background: transparent;
+			color: inherit;
+		}
+
+		& td {
+			/* Text */
+			line-height: 1.5rem;
+			text-align: center;
+
+			& span {
+				display: flex;
+
+				/* Layout */
+				justify-content: center;
+			}
+		}
+	}
+}
+
 /* Code */
 /* ========================================================================== */
 
 .astro-code,
 .code-block {
+	/* Layout */
+	margin-block-end: 5--step;
+
 	/* Layout */
 	overflow-x: auto;
 	padding: 4--step;
@@ -63,7 +152,7 @@
 	line-height: calc(20 / 14);
 
 	/* Appearance */
-	background: var(--BrightBlue850);
+	background: var(--BrightBlue850Color);
 	border-radius: var(--EdgeRadius);
 	color: var(--PrimaryColor);
 
@@ -71,65 +160,6 @@
 		/* Text */
 		white-space: pre;
 	}
-}
-
-/* Note */
-/* ========================================================================== */
-
-.caution,
-.note {
-	display: flex;
-
-	/* Layout */
-	flex-flow: column;
-	justify-content: center;
-	margin-block-start: 4--step;
-	min-block-size: 18--step;
-	padding-block: 4--step;
-	padding-inline: 16--step 4--step;
-
-	/* Appearance */
-	background: var(--note-color) var(--note-icon) no-repeat 4--step 5--step / 8--step;
-	border-radius: var(--EdgeRadius);
-	box-shadow: var(--note-border-color, transparent) 0 0 0 1px inset;
-
-	& > :nth-child(1) {
-		/* Layout */
-		margin-block-start: 0;
-	}
-}
-
-.note {
-	--note-border-color: var(--CautionBorderColor);
-	--note-color: var(--NoteColor);
-	--note-icon: var(--NoteIcon);
-}
-
-.caution {
-	--note-border-color: var(--CautionBorderColor);
-	--note-color: var(--CautionColor);
-	--note-icon: var(--CautionIcon);
-}
-
-/* Columns */
-/* ========================================================================== */
-
-.two-col, .three-col {
-	display: grid;
-
-	/* Layout */
-	gap: 8--step 4--step;
-	margin-block-start: 4--step;
-}
-
-.two-col {
-	/* Layout */
-	grid-template-columns: repeat(2, [col-start] 1fr);
-}
-
-.three-col {
-	/* Layout */
-	grid-template-columns: repeat(3, [col-start] 1fr);
 }
 
 /* Example */
@@ -160,7 +190,8 @@
 
 .release-table {
 	/* Layout */
-	margin-block-start: 4--step;
+	margin-block-end: 5--step;
+	max-inline-size: var(--max-table-size);
 	overflow-x: scroll;
 
 	& th, & td {

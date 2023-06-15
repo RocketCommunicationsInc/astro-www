@@ -5,10 +5,21 @@
 	"editor.insertSpaces": false,
 	"editor.useTabStops": true,
 
+	"explorer.fileNesting.enabled": true,
+	"explorer.fileNesting.expand": false,
+	"explorer.fileNesting.patterns": {
+		"*.astro": "$(capture).*",
+		"*.png": "$(capture).webp",
+		"*.record.json": "$(capture).schema.json, $(capture).*.ts",
+		"*.json": "$(capture).schema.json, $(capture).d.json.ts",
+		"index.*": "*",
+		"package.json": ".*, astro*, netlify*, tsconfig*"
+	},
+
 	"files.exclude": {
 		"**/.vscode": false,
 		"**/*.lock": true,
-		"**/*.webp": true,
+		"**/*.webp": false,
 		"**/dist": true,
 		"**/node_modules": false,
 		"**/package-lock.json": true,

@@ -1,0 +1,114 @@
+---
+import DocsLayout from 'project:layouts/docs/docs-layout.astro'
+import { system } from 'project:utils/tokens.js'
+import '../shared.css'
+import { RuxDesignTokenPreview } from '@astrouxds/documentation-components' 
+
+const title = 'System Tokens'
+const description = 'Tokens representing Astro semantic design decisions.'
+---
+<DocsLayout content={{ title, description }} file={import.meta.url}>
+			<h2 id="background">
+				Background Colors
+			</h2>
+			{
+				system('light', 'color', 'background').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="background"
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2 id="text-colors">
+				Text Colors
+			</h2>
+			{
+				system('light', 'color', 'text').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="text"
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2 id="border">
+				Border Colors
+			</h2>
+			{
+				system('light', 'color', 'border').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="border"
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2 id="status">
+				Status Colors
+			</h2>
+			{
+				system('light', 'color', 'status').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="background"
+					/>
+				))
+			}
+
+			<hr />
+
+			<h2 id="classification">
+				Classification Colors
+			</h2>
+			{
+				system('light', 'color', 'classification').map((token) => (
+					<RuxDesignTokenPreview
+    client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type="background"
+					/>
+				))
+			}
+
+		<h2 id="data-viz">
+			Data Visualization
+		</h2>
+		{
+			system('light', 'color', 'data-visualization').map((token) => (
+				<RuxDesignTokenPreview
+    client:visible
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type="background"
+				/>
+			))
+		}
+</DocsLayout>

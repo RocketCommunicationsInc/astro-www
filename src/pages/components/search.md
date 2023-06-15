@@ -3,7 +3,7 @@ title: Search
 description: Search is a specialized text field for entering Search terms.
 layout: project:layouts/component-docs/component-docs-layout.astro
 assets:
-    name: Search
+  name: Search
 ---
 
 :::note
@@ -21,9 +21,9 @@ assets:
 Search has two states:
 
 :::two-col
-![The normal (enabled) state is less prominent than the focused state.](/img/components/search-enabled.png "The normal (enabled) state is less prominent than the focused state.")
+![The default state for the Search component.](/img/components/search/search-enabled.webp)
 
-![Within the focused state, the magnifying glass symbol is more prominent. The “Clear” button becomes enabled.](/img/components/search-focus.png "Within the focused state, the magnifying glass symbol is more prominent. The “Clear” button becomes enabled.")
+![Putting focus on the search field adds a pink ring around the field and an ‘X’ for clearing search string.](/img/components/search/search-focus.webp 'Putting focus on the search field adds a pink ring around the field and an ‘X’ for clearing search string.')
 :::
 
 To learn more about adding Help Text or Validation to Input Fields like Search, see the [Forms and Validation](/patterns/forms-and-validation) guidance.

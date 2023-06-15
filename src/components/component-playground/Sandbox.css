@@ -8,6 +8,7 @@
 
 	/* Layout */
 	grid-template-rows: 44--rpx auto;
+	overflow: hidden;
 
 	&::part(heading) {
 		display: flex;
@@ -36,13 +37,17 @@
 		display: flex;
 
 		/* Layout */
-		align-items: center;
+		block-size: 100%;
 		flex-flow: column;
-		justify-content: center;
+		overflow: overlay;
 		padding: 1rem;
 
 		/* Appearance */
 		background-color: var(--BackColor);
+
+		/* background-image: radial-gradient(circle, var(--GridBack) 1px, transparent 1px);
+		background-position: top left;
+		background-size: 4--step 4--step; */
 
 		/* Animation */
 		transition: background-color 80ms, color 80ms;
@@ -52,16 +57,36 @@
 		--EdgeSize: 0;
 	}
 
+	& slot {
+		display: flex;
+
+		/* Layout */
+		block-size: 100%;
+		flex-flow: column;
+		inline-size: 100%;
+	}
+
+	&::slotted(*) {
+		/* Layout */
+		justify-content: center;
+	}
+
 	&::part(theme-switch) {
 		/* Layout */
-		flex-flow: row;
-
-		/* Text */
-		text-indent: 8--rpx;
+		flex-flow: row-reverse;
+		gap: 8--rpx;
 
 		/* Appearance */
 		color: var(--Grey800Color);
 	}
+}
+
+/* Alignment */
+
+:host(.align-center) slot {
+	/* Layout */
+	align-items: center;
+	justify-content: center;
 }
 
 /* Separator */
@@ -71,10 +96,14 @@
 		/* Reference */
 		background-color: var(--DarkBlue800Color);
 		color: var(--Neutral000Color);
+
+		--GridBack: #ffffff30;
 	}
 
 	@nest :host(.light-theme)& {
 		/* Reference */
 		background-color: var(--Neutral000Color);
+
+		--GridBack: #00000030;
 	}
 }

@@ -1,12 +1,11 @@
 ---
-import Layout from 'project:layouts/new-docs/new-docs-layout.astro'
+import Layout from 'project:layouts/docs/docs-layout.astro'
 import './component-docs-layout.css'
 
 import { getSecondaryNavGroup } from 'project:components/site-navigation/server/currentPath.ts'
 
 import PageHeader from 'project:components/page-header/page-header.js'
 import globalData from 'project:data/global.json'
-import PageAside from 'project:components/page-aside/page-aside.astro'
 import AssetStatus from 'project:components/asset-status/asset-status.astro'
 import ComplianceAside from 'project:components/compliance/compliance-aside.astro'
 // import ContributionFooter from 'project:components/contribution-footer/contribution-footer.astro'
@@ -74,11 +73,10 @@ const html = `<style>:root{--StorybookPreviewHeight:${StorybookPreviewHeight};}<
 
 	<ComplianceAside compliance={complianceData} />
 	<!-- <ContributionFooter sourceurl={githubSourceURL} /> -->
-
-	<Fragment slot="aside">
-		<PageAside {...Astro.props} />
-	</Fragment>
 </Layout>
+<script>
+import 'project:components/component-playground/Playground/Playground.ts'
+</script>
 <script define:vars={{ GitHubId, GitHubRepoURL, GitHubRepoBranch, StorybookId, storybookURL }}>
 const template = document.createElement('template')
 

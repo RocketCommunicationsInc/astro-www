@@ -9,9 +9,9 @@ assets:
     name: Accordion
 ---
 
-::storybook-demo
+## Interactive Example
 
-<!-- An Accordion is a component comprised of one or more vertically stacked sections or items, which can be expanded and collapsed to hide or reveal content. -->
+::tag{ is=a-playground tag=rux-accordion }
 
 While Accordions are often used to present information hierarchy or hide lengthy descriptive text, they may also be used to display controls, input fields, and data visualizations.
 
@@ -25,16 +25,14 @@ It is common practice to allow multiple Accordion items to be expanded at once. 
 
 :::two-col
 
-![Orient the caret icon in the direction in which the content will move when selected.](/img/components/accordion-2.png "Orient the caret icon in the direction in which the content will move when selected.")
+![Orient the caret icon in the direction in which the content will move when selected.](/img/components/accordion/accordion-2.webp "Orient the caret icon in the direction in which the content will move when selected.")
 
-![Use Accordions to display user controls.](/img/components/accordion-4.png "Use Accordions to display user controls.")
+![Use Accordions to display user controls.](/img/components/accordion/accordion-4.webp "Use Accordions to display user controls.")
 
 :::
-
 
 ## Best Practices
 
 - Differentiate the Accordion header from its content via color, spacing, separator lines, or other methods.
 - Use spacing and background shading to achieve separation between Accordion items.
 - If content needs to be visible at all times, use a different component or design pattern instead of an Accordion.
-

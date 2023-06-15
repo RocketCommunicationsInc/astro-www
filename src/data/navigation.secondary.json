@@ -28,6 +28,21 @@
         ]
     },
     {
+        "description": "Action Buttons allow users to trigger actions by clicking, tapping, or pressing a corresponding key on a keyboard, such as the “Enter” key.",
+        "heading": "Data Visualization",
+        "hide": true,
+        "items": [
+            {
+                "label": "Data Visualization",
+                "url": "/patterns/data-visualization/"
+            },
+            {
+                "label": "Heat Map",
+                "url": "/patterns/data-visualization/heat-map/"
+            }
+        ]
+    },
+    {
         "description": "A Slider allows users to choose from a range of continuous and discrete values arranged from minimum to maximum.",
         "heading": "Slider",
         "items": [
@@ -70,6 +85,34 @@
         ]
     },
     {
+        "description": "Component specific tokens to be used only when rebuilding components",
+        "heading": "Component Tokens",
+        "items": [
+            {
+                "label": "Dark Theme",
+                "url": "/design-tokens/component/"
+            },
+            {
+                "label": "Light Theme",
+                "url": "/design-tokens/component/light/"
+            }
+        ]
+    },
+    {
+        "description": "Tokens representing Astro semantic design decisions",
+        "heading": "System Tokens",
+        "items": [
+            {
+                "label": "Dark Theme",
+                "url": "/design-tokens/system/"
+            },
+            {
+                "label": "Light Theme",
+                "url": "/design-tokens/system/light/"
+            }
+        ]
+    },
+    {
         "description": "This is the nav for the nav example",
         "heading": "Secondary Nav Example",
         "items": [
@@ -80,6 +123,20 @@
             {
                 "label": "Specifications",
                 "url": "/components/secondary-nav-example/specs/"
+            }
+        ]
+    },
+    {
+        "description": "Tables",
+        "heading": "Tables are a fundamental UX design tool for organizing and displaying data.",
+        "items": [
+            {
+                "label": "Usage",
+                "url": "/patterns/table/"
+            },
+            {
+                "label": "Specifications",
+                "url": "/patterns/table/specs/"
             }
         ]
     }

@@ -8,14 +8,9 @@ git: rux-slider
 assets:
     name: Slider
 ---
+## Interactive Example
 
-::storybook-demo
-
-<!-- A Slider allows users to choose from a range of continuous and discrete values arranged from minimum to maximum. -->
-
-:::note
-To achieve the split color element in the slider, a small amount of JavaScript is needed. Refer to Slider documentation in the Git repository for more information.
-:::
+::tag{ is=a-playground tag=rux-slider }
 
 ## Rules of Thumb
 
@@ -48,8 +43,8 @@ To learn more about adding Help Text to Sliders, see the [Forms and Validation](
 ## Examples
 
 :::two-col
-![Do: If adding labels, only use the minimal amount necessary to indicate the values.](/img/components/slider-do-1.png "Do: If adding labels, only use the minimal amount necessary to indicate the values.")
+![Do: If adding labels, only use the minimal amount necessary to indicate the values.](/img/components/slider/slider-do-1.webp "Do: If adding labels, only use the minimal amount necessary to indicate the values.")
 
-![Don’t: Excessive labels clutter the design.](/img/components/slider-dont-1.png "Don’t: Excessive labels clutter the design.")
+![Don’t: Excessive labels clutter the design.](/img/components/slider/slider-dont-1.webp "Don’t: Excessive labels clutter the design.")
 
 :::

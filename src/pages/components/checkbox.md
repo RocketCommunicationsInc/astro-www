@@ -8,10 +8,9 @@ git: rux-checkbox
 assets:
     name: Checkbox
 ---
+## Interactive Example
 
-::storybook-demo
-
-<!-- A Checkbox describes a state or value that can be either “On" or "Off.” Checkboxes are not mutually exclusive. More than one Checkbox may be checked at the same time. -->
+::tag{ is=a-playground tag=rux-checkbox }
 
 ## Rules of Thumb
 
@@ -34,19 +33,19 @@ Don’t use a Checkbox to initiate an action. Instead, use an [Action Button](/c
 ## Examples
 
 :::two-col
-![Do: Neatly arrange and group multiple Checkboxes whenever possible.](/img/components/checkbox-do-1.png "Do: Neatly arrange and group multiple Checkboxes whenever possible.")
+![Do: Neatly arrange and group multiple Checkboxes whenever possible.](/img/components/checkbox/checkbox-do-1.webp "Do: Neatly arrange and group multiple Checkboxes whenever possible.")
 
-![Don’t: Poorly placed and misaligned Checkboxes make it difficult for users to differentiate one state from another.](/img/components/checkbox-dont-1.png "Don’t: Poorly placed and misaligned Checkboxes make it difficult for users to differentiate one state from another.")
+![Don’t: Poorly placed and misaligned Checkboxes make it difficult for users to differentiate one state from another.](/img/components/checkbox/checkbox-dont-1.webp "Don’t: Poorly placed and misaligned Checkboxes make it difficult for users to differentiate one state from another.")
 :::
 
 :::two-col
-![Do: Use parent Checkboxes, when grouped, to select all or select none.](/img/components/checkbox-do-2.png "Do: Use parent Checkboxes, when grouped, to select all or select none.")
+![Do: Use parent Checkboxes, when grouped, to select all or select none.](/img/components/checkbox/checkbox-do-2.webp "Do: Use parent Checkboxes, when grouped, to select all or select none.")
 
-![Don’t: Group a single Checkbox under a parent checkbox unless you have a good reason to do so.](/img/components/checkbox-dont-2.png "Group a single Checkbox under a parent Checkbox unless you have a good reason to do so.")
+![Don’t: Group a single Checkbox under a parent checkbox unless you have a good reason to do so.](/img/components/checkbox/checkbox-dont-2.webp "Group a single Checkbox under a parent Checkbox unless you have a good reason to do so.")
 :::
 
 :::two-col
-![Do: Reflect an indeterminate state when a mix of child values are applied.](/img/components/checkbox-do-3.png "Do: Reflect an indeterminate state when a mix of child values are applied.")
+![Do: Reflect an indeterminate state when a mix of child values are applied.](/img/components/checkbox/checkbox-do-3.webp "Do: Reflect an indeterminate state when a mix of child values are applied.")
 
-![Don’t: Group Checkboxes without a parent label.](/img/components/checkbox-dont-3.png "Don’t: Group Checkboxes without a parent label.")
+![Don’t: Group Checkboxes without a parent label.](/img/components/checkbox/checkbox-dont-3.webp "Don’t: Group Checkboxes without a parent label.")
 :::

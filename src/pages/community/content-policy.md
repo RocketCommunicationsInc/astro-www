@@ -1,10 +1,8 @@
 ---
-title: Content Policy
+title: Content Policy v0.2
+description: How we create, maintain and version our content.
 layout: project:layouts/docs/docs-layout.astro
 ---
-
-
-# AstroUXDS<nolink>.com Content Policy v0.2
 
 ## Policy Principles
 
@@ -13,7 +11,7 @@ layout: project:layouts/docs/docs-layout.astro
 3. The Astro UXDS content management process should not seem opaque, untimely, reactive, or inconsistent to designers, developers, and other primary users.
 4. Due to the nature of our work, Astro UXDS content has a much longer shelf-life than typical web guidelines or frameworks. Wherever possible, we will be transparent about previous versions of Astro, which users may be working with well into the future.
 
-## Content states
+## Content States
 
 Ultimately, all Astro UXDS documentation content exists in one of 4 states:
 
@@ -30,7 +28,7 @@ By default, all content available on AstroUXDS.com will reflect what is on the m
 
 ### 2\. Draft Content
 
-Occasionally, AstroUXDS contributors will draft content and/or components and make those changes available for review or comment. If the content is of a sensitive nature or could create confusion by being made public before official adoption, it can be published to a unique, unlisted subdomain rather than the public site for the benefit of program management and EGS review. On a separate branch, Astro UXDS contributors may display and revise draft content freely until it has been made canonical by merging into main and publishing to AstroUXDS.com. Take care to remember that all branches of the Astro website and components are publicly accessible, as the repo is a public open source project. Such a draft within Compliance or Component documentation or functionality can be identified as [pre-release](https://semver.org/#spec-item-9) by adding an "-alpha" or "-beta" (or similar) suffix to the version if published on [AstroUXDS.com](https://www.astrouxds.com/) or on NPM.
+Occasionally, AstroUXDS contributors will draft content and/or components and make those changes available for review or comment. If the content is of a sensitive nature or could create confusion by being made public before official adoption, it can be published to a unique, unlisted subdomain rather than the public site for the benefit of program management and EGS review. On a separate branch, Astro UXDS contributors may display and revise draft content freely until it has been made canonical by merging into main and publishing to AstroUXDS.com. Take care to remember that all branches of the Astro website and components are publicly accessible, as the repo is a public open source project. Such a draft within Compliance or Component documentation or functionality can be identified as [pre-release](https://semver.org/#spec-item-9) by adding an "-alpha" or "-beta" (or similar) suffix to the version if published on [AstroUXDS.com](https://www.astrouxds.com/) or on NPM.
 
 ### 3\. Modified or Deprecated Content
 
