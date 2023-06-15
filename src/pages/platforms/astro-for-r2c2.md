@@ -34,7 +34,7 @@ Identifies the status of the message that was processed. The figure below of a s
 
 </div>
 
-![](/img/platforms/r2c2/_RESPONSE-STATUS.svg)
+![](/img/platforms/r2c2/_RESPONSE-STATUS.webp)
 
 RESPONSE-STATUS locations in the Message Interface Specification Document: 3.3 - Alert Notification Message, 3.7.2 - Archive Message Retrieval Response, 3.8.2 - Directive Response Message, 3.8.2 - Replay Telemetry Response Message, 3.12.2 - Mnemonic Value Response Message, 3.13.2 - Archive Mnemonic Value Response Message, 3.14.2 - Command Response Message, 3.15.2 - Product Response Message, 3.15.3 - Product Message, 3.16.2 - Simple Service Response Message.
 
