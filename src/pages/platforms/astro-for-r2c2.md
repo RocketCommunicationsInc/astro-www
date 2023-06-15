@@ -34,7 +34,7 @@ Identifies the status of the message that was processed. The figure below of a s
 
 </div>
 
-![](/img/platforms/r2c2/_RESPONSE-STATUS.webp)
+![](/img/platforms/r2c2/_RESPONSE-STATUS.svg)
 
 RESPONSE-STATUS locations in the Message Interface Specification Document: 3.3 - Alert Notification Message, 3.7.2 - Archive Message Retrieval Response, 3.8.2 - Directive Response Message, 3.8.2 - Replay Telemetry Response Message, 3.12.2 - Mnemonic Value Response Message, 3.13.2 - Archive Mnemonic Value Response Message, 3.14.2 - Command Response Message, 3.15.2 - Product Response Message, 3.15.3 - Product Message, 3.16.2 - Simple Service Response Message.
 
@@ -124,7 +124,7 @@ MNEMONIC.N.STATUS locations in the Message Interface Specification Document: 3.1
 
 Status codes from the OMG XML Telemetric and Command Data Exchange (XTCE) specification. This status links the OMG XTCE with OMG C2MS in order to represent the command sequence progression against space assets. The most visual and status related fields for common display are INVALID:2, COMPLETED:9, FAILED:10.
 
-If you have a use case where the other values for XTCE-Status ( 1 = Acknowledgement, 
+If you have a use case where the other values for XTCE-Status ( 1 = ACKNOWLEDGEMENT, 
 3 = TRANSFERRED_TO_RANGE, 4 = SENT_FROM_RANGE, 5 = RECEIVED, 6 = ACCEPTED, 
 7 = QUEUED, 8 = EXECUTING) require a status color or symbol please reach out to Astro for assistance.
 
@@ -173,7 +173,7 @@ The quality of the data. RAW = No quality check, VALIDATED = Checked and passed,
 DATA-QUALITY locations in the Message Interface Specification Document: 3.17.6 - Tracking Data Message.
 
 ## Additional Guidance
-The MNEMONIC.N.SAMPLE.M.Statuses; RED-HIGH, RED-LOW, YELLOW-HIGH, YELLOW-LOW Boolean fields within the mnemonic samples of telemetry data messages indicate thresholds of what state the data is currently in, in relation to the space vehicle qualitative metrics. The recommended color status reflect the accompanying names (e.g. RED-HIGH and RED-LOW are typically used with a Critical/Red AstroUXDS status and similar for the named Yellow fields.
+The MNEMONIC.N.SAMPLE.M.Statuses; RED-HIGH, RED-LOW, YELLOW-HIGH, YELLOW-LOW Boolean fields within the mnemonic samples of telemetry data messages indicate thresholds of what state the data is currently in, in relation to the space vehicle qualitative metrics. The recommended color status reflect the accompanying names (e.g. RED-HIGH and RED-LOW are typically used with a Critical/Red AstroUXDS status and similar for the named Yellow fields.)
 
 ### MNEMONIC.N.SAMPLE.M.RED-HIGH
 
@@ -184,9 +184,7 @@ The MNEMONIC.N.SAMPLE.M.Statuses; RED-HIGH, RED-LOW, YELLOW-HIGH, YELLOW-LOW Boo
 | Red High | color.status.critical |               |
 </div>
 
-MNEMONIC.N.SAMPLE.M.RED-HIGH locations in the Message Interface Specification Document: 3.12.2 - Mnemonic 
-
-Value Response Message, 3.12.3 - Mnemonic Value Data Message, 3.13.3 - Archive Mnemonic Value Data Message.
+MNEMONIC.N.SAMPLE.M.RED-HIGH locations in the Message Interface Specification Document: 3.12.2 - Mnemonic Value Response Message, 3.12.3 - Mnemonic Value Data Message, 3.13.3 - Archive Mnemonic Value Data Message.
 
 ### MNEMONIC.N.SAMPLE.M.RED-LOW
 
