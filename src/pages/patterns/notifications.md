@@ -28,6 +28,8 @@ Notifications and interface feedback both communicate important information to t
 
 ## Choosing a Pattern for Notifications
 
+![](/img/patterns/notifications/notifications-decision-tree.png)
+
 When choosing a pattern for notifications, you must first choose which type best fits the message content. As it has been defined, notifications will be communications with the user that hold information which needs to be accessed later. This information may or may not require a response and will have different levels of urgency.
 
 Below is a graphic to help choose which pattern to use depending on whether the message being displayed is a notification or interface feedback (form validation guidance can be found on the [Forms and Validation](/patterns/forms-and-validation/) page).
@@ -60,6 +62,8 @@ These messages should use patterns that cause the least disruption.
 
 When attention-grabbing notification patterns like banners are overused, they clutter the interface, distract the user, and, worst of all, lose their attention-grabbing power to communicate important messages.
 
+![](/img/patterns/notifications/notifications-matrix.png)
+
 ## Patterns
 
 Below are suggested notification patterns to appropriately grab a user’s attention once it has been decided that a notification is necessary.  
@@ -70,15 +74,15 @@ Log notifications are less urgent notification patterns as they do not disrupt a
 
 Log notifications can be purely informational, as in a satellite or application that is running normally, or they can be actionable, as with a satellite that may be experiencing an interruption in service which needs to be resolved (while this type of example may be logged, the appropriate pattern would be more disruptive, such as a banner, depending on the level of criticality of the system).
 
-Notification log example.
-
-
+![](/img/patterns/notifications/notifications-log.png)
 
 #### Examples
 
-Image 1 - Do include time stamps in log notifications.
+:::two-col
+![Do: Include time stamps in log notifications.](/img/patterns/notifications/notifications-log-do-1.png "Do: Include time stamps in log notifications.")
 
-Image 2 - Don’t display notifications that would be classified as interface feedback in logs.
+![Don’t: Display notifications that would be classified as interface feedback in logs.](/img/patterns/notifications/notifications-log-dont-1.png "Don't: Display notifications that would be classified as interface feedback in logs.")
+:::
 
 ### Badge
 
@@ -86,15 +90,17 @@ Events that require some user attention, but no immediate response, may be indic
 
 This Badge shows that one event related to a satellite has occurred. You may hyperlink icons to reveal a deeper view of relevant Notification information. You may also link to the general log.
 
-Badge example.
+![](/img/patterns/notifications/badges.png)
 
 
 
 #### Examples
 
-Image 1 - Do link Badge icons to the general log.
+:::two-col
+![Do: Link Badge icons to the general log](/img/patterns/notifications/badge-do-1.png "Do: Link Badge icons to the general log")
 
-Image 2 - Don’t use a long string of numbers for higher values.
+![Don’t: Use a long string of numbers for higher values.](/img/patterns/notifications/badge-dont-1.png "Don't: Use a long string of numbers for higher values.")
+:::
 
 ### Toast
 
@@ -106,23 +112,21 @@ Toasts are time-based, non-modal notifications that display a short message to t
 
 Toasts typically slide in and out of the top right side of the desktop screen, and should be displayed below Badges if those are being used in the status bar. Toasts can also be displayed at the bottom end (left or right) or top center of the desktop screen.
 
-Image should go here.
-
-
+![](/img/patterns/notifications/notifications-toast.png)
 
 #### Dismissible Toast
 
 A toast message with actionable content that will persist until it is dismissed by the user
 
-
-
 #### Examples
 
-Image 1 - Multiple toasts stack vertically, with the most recent appearing at the top of the list.
+:::two-col
+![Do: Multiple toasts stack vertically, with the most recent appearing at the top of the list.](/img/patterns/notifications/notifications-toast-do-1.png "Do: Multiple toasts stack vertically, with the most recent appearing at the top of the list.")
 
-Image 2 - Don’t place toasts over interface elements which need to remain visible like Notification Symbols.
+![Don’t: Place toasts over interface elements which need to remain visible like Notification Symbols.](/img/patterns/notifications/notifications-toast-dont-1.png "Don't: Place toasts over interface elements which need to remain visible like Notification Symbols.")
 
-Image 3 - Don’t stack more than 4 toasts. When there are more than 4 toasts, visible toasts must be dismissed before any additional toasts appear.
+![Don’t: Stack more than 4 toasts. When there are more than 4 toasts, visible toasts must be dismissed before any additional toasts appear.](/img/patterns/notifications/notifications-toast-dont-2.png "Don't: Stack more than 4 toasts. When there are more than 4 toasts, visible toasts must be dismissed before any additional toasts appear.")
+:::
 
 ### Banner
 
@@ -132,31 +136,31 @@ Events that provide urgent information or require a user response use a Banner. 
 
 If the user is currently working in a specific screen area, the Banner may be presented in that area. If the Notification is more general, or doesn’t relate to a specific area of the screen, it may be presented in the center of the screen just below the [Global Status Bar](/components/global-status-bar/).
 
-Banner example.
-
-
+![](/img/patterns/notifications/notifications-banner.png)
 
 #### Examples
 
-Image 1 - Do use banners for system notifications such as when network connection fails and system needs to reconnect.
+:::two-col
+![Do: Use banners for system notifications such as when network connection fails and system needs to reconnect.](/img/patterns/notifications/notifications-toast-do-1.png "Do: Use banners for system notifications such as when network connection fails and system needs to reconnect.")
 
-Image 2 - Don’t use banners for user feedback (ie. Contact has been saved).
+![Don’t: Use banners for user feedback (ie. Contact has been saved).](/img/patterns/notifications/notifications-toast-dont-1.png "Don't: Use banners for user feedback (ie. Contact has been saved).")
 
-Image 3 - Don’t obscure interface elements with a banner.
+![Don’t: Obscure interface elements with a banner.](/img/patterns/notifications/notifications-toast-dont-2.png "Don't: Obscure interface elements with a banner.")
+:::
 
 ### Modal Dialog
 
 For events that require the user’s immediate attention and response, a modal Dialog may be used. Modal Dialogs should be avoided if possible, as they deliberately interrupt all other user interaction which could be critical.
 
-Modal Dialog example.
-
-
+![](/img/patterns/notifications/notification-modal-dialog.png)
 
 #### Examples
 
-Image 1 - Do write clear titles for modal Dialog notifications.
+:::two-col
+![Do: Write clear titles for modal Dialog notifications.](/img/patterns/notifications/notification-modal-dialog-do-1.png "Do: Write clear titles for modal Dialog notifications.")
 
-Image 2 - Don’t use modal notifications for user feedback.
+![Don’t: Use modal notifications for user feedback.](/img/patterns/notifications/notification-modal-dialog-dont-1.png "Don't: Use modal notifications for user feedback.")
+:::
 
 ## Notification Status 
 
