@@ -29,6 +29,11 @@
 	}
 }
 
+.table-overflow.short {
+	/* Layout */
+	max-inline-size: 175--step;
+}
+
 .table-typography {
 	& table {
 		& thead {
@@ -88,6 +93,38 @@
 	white-space: nowrap;
 }
 
+/* Dark Color Table */
+/* ========================================================= */
+
+.table-dark table {
+	/* Appearance */
+	color: var(--PrimaryColor);
+
+	& td {
+		/* Appearance */
+		background-color: var(--BaseColorDefault);
+	}
+
+	& thead th {
+		/* Appearance */
+		background-color: var(--BaseHeaderColor);
+		color: var(--PrimaryColor);
+	}
+
+	& tbody tr:last-child {
+		/* Layout */
+		border-block-end: 0 solid transparent;
+
+		& td:first-child {
+			border-end-start-radius: 2--step;
+		}
+
+		& td:last-child {
+			border-end-end-radius: 2--step;
+		}
+	}
+}
+
 /* Table for Heat Map page */
 /* ========================================================================== */
 
@@ -101,7 +138,7 @@
 
 		& th, & td {
 			/* Appearance */
-			border: 1px solid var(--Grey300Color);
+			border: 1px solid var(--SecondaryColor);
 		}
 
 		& tr {

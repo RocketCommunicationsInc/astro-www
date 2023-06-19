@@ -164,6 +164,14 @@
 				/* Reference */
 				--ActiveColor: transparent;
 
+				&.heading-3 {
+					/* Layout */
+					padding-block: 0 6--step;
+
+					/* Layout */
+					padding-inline: 10--step 0;
+				}
+
 				&.-first {
 					/* Layout */
 					padding-block-start: 0;
