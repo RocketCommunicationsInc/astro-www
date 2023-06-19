@@ -195,6 +195,7 @@ const createObservers = (headings: NodeListOf<HTMLHeadingElement>, footer: HTMLE
 addComplianceFooterToNav()
 // check to see if h3s exist in the side nav
 const extendedNav = document.querySelectorAll('a.heading-3').length > 0 ? 'h2,h3' : 'h2'
+console.log(extendedNav)
 // make h2 observers and one for the footer
 createObservers(document.querySelectorAll(`main [id]:is(${extendedNav})`), document.querySelector('footer.p-footer'))
 // createTableOfContentsNavigation(document.querySelectorAll('main [id]:is(h1,h2,h3,h4,h5,h6)'))
