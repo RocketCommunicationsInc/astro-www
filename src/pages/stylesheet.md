@@ -7,9 +7,11 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ## Text Styles
 
-# h1 - 4rem
+:::note
 
-h1s are only used in the header of the page. In the body they have no style and should not be used.
+<strong>A note on H1s:</strong><br />
+H1s appear ONLY once in the header of the page and should not be used in the body. They are 4rem.
+:::
 
 <h2>h2 - 2.25rem</h2>
 
@@ -299,20 +301,20 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fermentum, le
 This is the standard table design. There are a couple of variations on pages but those typically just adjust the max width of one of the rows so that the table doesn't distort on mobile.
 
 :::table-overflow
-|       | Column 1 | Column 2 |
-|-------|----------|----------|
-| Row 1 | Content  | Content  |
-| Row 2 | Content  | Content  |
+| Column 1 | Column 2 | Column 3 |
+|----------|----------|----------|
+| Row 1    | Content  | Content  |
+| Row 2    | Content  | Content  |
 :::
 
 ### Dark Table
 
 <div class="table-overflow table-dark">
 
-|       | Column 1 | Column 2 |
-|-------|----------|----------|
-| Row 1 | Content  | Content  |
-| Row 2 | Content  | Content  |
+| Column 1 | Column 2 | Column 3 |
+|----------|----------|----------|
+| Row 1    | Content  | Content  |
+| Row 2    | Content  | Content  |
 </div>
 
 ## Special Components
