@@ -114,12 +114,12 @@ We use a 4px grid system. There are two special variables that you can use in ou
 ### Interactive Colors
 
 :::color-table
-| Color | Variable                  | Reference Variable          | Use                                                              |
-|-------|---------------------------|-----------------------------|------------------------------------------------------------------|
-|       | `--InteractiveColor`      | `var(--BrightBlue500Color)` | Color of borders/text that are interactive                       |
-|       | `--InteractiveHoverColor` | `var(--BrightBlue400Color)` | Hover color of text/borders using InteractiveColor               |
-|       | `--InteractivePressColor` | `var(--BrightBlue300Color)` | Not currently Used                                               |
-|       | `--InteractiveMutedColor` | `var(--BrightBlue700Color)` | Hover/selected background color of interactive blocks (homepage) |
+| Color | Variable                  | Reference Variable          | Use                                                                           |
+|-------|---------------------------|-----------------------------|-------------------------------------------------------------------------------|
+|       | `--InteractiveColor`      | `var(--BrightBlue500Color)` | Color of borders/text that are interactive in dark areas(homepage/navigation) |
+|       | `--InteractiveHoverColor` | `var(--BrightBlue400Color)` | Hover color of text/borders using InteractiveColor (homepage/navigation)      |
+|       | `--InteractivePressColor` | `var(--BrightBlue300Color)` | Not currently Used                                                            |
+|       | `--InteractiveMutedColor` | `var(--BrightBlue700Color)` | Hover/selected background color of interactive blocks (homepage)              |
 :::
 
 ### Surface Colors
@@ -151,43 +151,43 @@ We use a 4px grid system. There are two special variables that you can use in ou
 TODO: we are currently using these colors directly. If we want a design system thinking these should be used in terms of other variables.
 
 :::color-table
-| Color | Variable               | HSL                  | Use |
-|-------|------------------------|----------------------|-----|
-|       | `--BrightBlue200Color` | `hsl(205 88% 90%)`   |     |
-|       | `--BrightBlue300Color` | `hsl(209 100% 86%)`  |     |
-|       | `--BrightBlue400Color` | `hsl(209 100% 79%)`  |     |
-|       | `--BrightBlue500Color` | `hsl(208 100% 65%)`  |     |
-|       | `--BrightBlue600Color` | `hsl(209 61% 52%)`   |     |
-|       | `--BrightBlue700Color` | `hsl(209 57% 39%)`   |     |
-|       | `--BrightBlue800Color` | `hsl(208 49% 21%)`   |     |
-|       | `--BrightBlue850Color` | `hsl(211 45% 14%)`   |     |
-|       | `--BrightBlue900Color` | `hsl(212 37% 10%)`   |     |
-|       | `--DarkBlue400Color`   | `hsl(203 56% 42%)`   |     |
-|       | `--DarkBlue500Color`   | `hsl(202 100% 28%)`  |     |
-|       | `--DarkBlue600Color`   | `hsl(202 100% 22%)`  |     |
-|       | `--DarkBlue700Color`   | `hsl(208 54% 24%)`   |     |
-|       | `--DarkBlue800Color`   | `hsl(209 39% 17%)`   |     |
-|       | `--DarkBlue850Color`   | `hsl(209 39% 17%)`   |     |
-|       | `--DarkBlue900Color`   | `hsl(210 39% 15%)`   |     |
-|       | `--DarkBlue950Color`   | `hsl(213 36% 5%)`    |     |
-|       | `--Grey200Color`       | `hsl(216 31% 94%)`   |     |
-|       | `--Grey300Color`       | `hsl(213 12% 85%)`   |     |
-|       | `--Grey400Color`       | `hsl(214 11% 76%)`   |     |
-|       | `--Grey500Color`       | `hsl(217 11% 68%)`   |     |
-|       | `--Grey600Color`       | `hsl(219 6% 51%)`    |     |
-|       | `--Grey700Color`       | `hsl(216 6% 34%)`    |     |
-|       | `--Grey800Color`       | `hsl(220 5% 24.7%)`  |     |
-|       | `--Grey900Color`       | `hsl(225 5% 16.86%)` |     |
-|       | `--HotOrange600Color`  | `hsl(20, 89%, 36%)`  |     |
-|       | `--Neutral000Color`    | `hsl(0 0% 100%)`     |     |
-|       | `--Orange400Color`     | `hsl(42 100% 67%)`   |     |
-|       | `--Orange600Color`     | `hsl(35 100% 62%)`   |     |
-|       | `--Orange700Color`     | `hsl(33 100% 50%)`   |     |
-|       | `--Pink600Color`       | `hsl(290 100% 30%)`  |     |
-|       | `--Purple300Color`     | `hsl(250 54% 78%)`   |     |
-|       | `--Red500Color`        | `hsl(0 100% 61%)`    |     |
-|       | `--Red800Color`        | `hsl(9 96% 28%)`     |     |
-|       | `--Teal600Color`       | `hsl(181 100% 32%)`  |     |
+| Color | Variable               | HSL                  | Use                                                                                                                                                                        |
+|-------|------------------------|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|       | `--BrightBlue200Color` | `hsl(205 88% 90%)`   | icon background color(icon library), component playground behind select indicator                                                                                          |
+|       | `--BrightBlue300Color` | `hsl(209 100% 86%)`  | --InteractivePressColor (not currently use)                                                                                                                                |
+|       | `--BrightBlue400Color` | `hsl(209 100% 79%)`  | --InteractiveHoverColor  (homepage)                                                                                                                                        |
+|       | `--BrightBlue500Color` | `hsl(208 100% 65%)`  | --InteractiveColor  (homepage)                                                                                                                                             |
+|       | `--BrightBlue600Color` | `hsl(209 61% 52%)`   | Compliance t2 tag color                                                                                                                                                    |
+|       | `--BrightBlue700Color` | `hsl(209 57% 39%)`   | --InteractiveMutedColor (homepage)                                                                                                                                         |
+|       | `--BrightBlue800Color` | `hsl(208 49% 21%)`   | --SurfaceHoverColor (not currently used)                                                                                                                                   |
+|       | `--BrightBlue850Color` | `hsl(211 45% 14%)`   | Code Block Background Color                                                                                                                                                |
+|       | `--BrightBlue900Color` | `hsl(212 37% 10%)`   | --BaseColor (homepage)                                                                                                                                                     |
+|       | `--DarkBlue400Color`   | `hsl(203 56% 42%)`   | Component Playground border color of select menus and text fields (maybe retire this and use 500 instead)                                                                  |
+|       | `--DarkBlue500Color`   | `hsl(202 100% 28%)`  | Playground: Border colors  all other components, base color of navigation items, feedback widget borders & Header: tabs hover/current & Note color & Aside Highlight color |
+|       | `--DarkBlue600Color`   | `hsl(202 100% 22%)`  | Playground: Border hover color for switch, select, and text. Also navigation icons.                                                                                        |
+|       | `--DarkBlue700Color`   | `hsl(208 54% 24%)`   | Compliance hover color, support page submit button, --SurfaceSelectedColor, --BaseSelectedColor (not currently used)                                                       |
+|       | `--DarkBlue800Color`   | `hsl(209 39% 17%)`   | --BaseColorDefault, page header text color, playground: background color, icon library: sidepanel background, spec pages: images background color                          |
+|       | `--DarkBlue850Color`   | `hsl(209 39% 17%)`   | --SurfaceColor                                                                                                                                                             |
+|       | `--DarkBlue900Color`   | `hsl(210 39% 15%)`   | --SurfaceHeaderColor, --BaseHeaderColor can combine these two variables and name them something else                                                                       |
+|       | `--DarkBlue950Color`   | `hsl(213 36% 5%)`    | --InverseColor                                                                                                                                                             |
+|       | `--Grey200Color`       | `hsl(216 31% 94%)`   | Playground: panel header background, text, radio, switch, select(off) background & Header background. Icon search background, table header background                      |
+|       | `--Grey300Color`       | `hsl(213 12% 85%)`   | --SecondaryColor, also default table borders, and the icon library sidepanel text color                                                                                    |
+|       | `--Grey400Color`       | `hsl(214 11% 76%)`   | Icon Library search border color (recommendation: replace with something close)                                                                                            |
+|       | `--Grey500Color`       | `hsl(217 11% 68%)`   | --PlaceholderColor, also complicance `deprecated` tag color and close button on icon library sidebar                                                                       |
+|       | `--Grey600Color`       | `hsl(219 6% 51%)`    |                                                                                                                                                                            |
+|       | `--Grey700Color`       | `hsl(216 6% 34%)`    |                                                                                                                                                                            |
+|       | `--Grey800Color`       | `hsl(220 5% 24.7%)`  |                                                                                                                                                                            |
+|       | `--Grey900Color`       | `hsl(225 5% 16.86%)` |                                                                                                                                                                            |
+|       | `--HotOrange600Color`  | `hsl(20, 89%, 36%)`  |                                                                                                                                                                            |
+|       | `--Neutral000Color`    | `hsl(0 0% 100%)`     |                                                                                                                                                                            |
+|       | `--Orange400Color`     | `hsl(42 100% 67%)`   |                                                                                                                                                                            |
+|       | `--Orange600Color`     | `hsl(35 100% 62%)`   |                                                                                                                                                                            |
+|       | `--Orange700Color`     | `hsl(33 100% 50%)`   |                                                                                                                                                                            |
+|       | `--Pink600Color`       | `hsl(290 100% 30%)`  |                                                                                                                                                                            |
+|       | `--Purple300Color`     | `hsl(250 54% 78%)`   |                                                                                                                                                                            |
+|       | `--Red500Color`        | `hsl(0 100% 61%)`    |                                                                                                                                                                            |
+|       | `--Red800Color`        | `hsl(9 96% 28%)`     |                                                                                                                                                                            |
+|       | `--Teal600Color`       | `hsl(181 100% 32%)`  |                                                                                                                                                                            |
 :::
 
 
