@@ -383,6 +383,24 @@ const description = 'Component specific tokens to be used only when rebuilding c
 
 			<hr />
 
+			<h2 id="table">
+				Table
+			</h2>
+			{
+				component('light', 'table').map((token) => (
+					<RuxDesignTokenPreview
+						client:visible
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+			<hr />
+
+			
 			<h2 id="tag">
 				Tag
 			</h2>

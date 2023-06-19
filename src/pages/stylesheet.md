@@ -103,7 +103,8 @@ We use a 4px grid system. There are two special variables that you can use in ou
 | Color | Variable              | Reference Variable          | Use                                         |
 |-------|-----------------------|-----------------------------|---------------------------------------------|
 |       | `--BaseColor`         | `var(--BrightBlue900Color)` | The dark background of home page containers |
-|       | `--BaseHeaderColor`   | `var(--DarkBlue900Color)`   | Not Currently used                          |
+|       | `--BaseColorDefault`  | `var(--DarkBlue800Color)`   | Dark table background color                 |
+|       | `--BaseHeaderColor`   | `var(--DarkBlue900Color)`   | Dark table header background                |
 |       | `--BaseHoverColor`    | `var(--BrightBlue850Color)` | Not Currently Used                          |
 |       | `--BaseSelectedColor` | `var(--DarkBlue700Color)`   | Not Currently Used                          |
 :::
@@ -303,6 +304,16 @@ This is the standard table design. There are a couple of variations on pages but
 | Row 1 | Content  | Content  |
 | Row 2 | Content  | Content  |
 :::
+
+### Dark Table
+
+<div class="table-overflow table-dark">
+
+|       | Column 1 | Column 2 |
+|-------|----------|----------|
+| Row 1 | Content  | Content  |
+| Row 2 | Content  | Content  |
+</div>
 
 ## Special Components
 

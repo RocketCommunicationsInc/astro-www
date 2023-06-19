@@ -1,10 +1,18 @@
+:root {
+	--max-table-size: 230--step;
+
+	@media (1440px > width >= 1294px) {
+		--max-table-size: 175--step;
+	}
+}
+
 /* Table */
 /* ========================================================================== */
 
 .table-overflow, .color-table {
 	/* Layout */
 	margin-block-end: 5--step;
-	max-inline-size: 230--step;
+	max-inline-size: var(--max-table-size);
 
 	/* Layout */
 	overflow-x: auto;
@@ -19,6 +27,11 @@
 		/* Layout */
 		min-inline-size: auto;
 	}
+}
+
+.table-overflow.short {
+	/* Layout */
+	max-inline-size: 175--step;
 }
 
 .table-typography {
@@ -38,7 +51,7 @@
 .status-system-colors, .status-symbol-colors {
 	/* Layout */
 	margin-block-end: 5--step;
-	max-inline-size: 230--step;
+	max-inline-size: var(--max-table-size);
 	overflow-x: auto;
 
 	& table {
@@ -80,6 +93,38 @@
 	white-space: nowrap;
 }
 
+/* Dark Color Table */
+/* ========================================================= */
+
+.table-dark table {
+	/* Appearance */
+	color: var(--PrimaryColor);
+
+	& td {
+		/* Appearance */
+		background-color: var(--BaseColorDefault);
+	}
+
+	& thead th {
+		/* Appearance */
+		background-color: var(--BaseHeaderColor);
+		color: var(--PrimaryColor);
+	}
+
+	& tbody tr:last-child {
+		/* Layout */
+		border-block-end: 0 solid transparent;
+
+		& td:first-child {
+			border-end-start-radius: 2--step;
+		}
+
+		& td:last-child {
+			border-end-end-radius: 2--step;
+		}
+	}
+}
+
 /* Table for Heat Map page */
 /* ========================================================================== */
 
@@ -93,7 +138,7 @@
 
 		& th, & td {
 			/* Appearance */
-			border: 1px solid var(--Grey300Color);
+			border: 1px solid var(--SecondaryColor);
 		}
 
 		& tr {
@@ -183,7 +228,7 @@
 .release-table {
 	/* Layout */
 	margin-block-end: 5--step;
-	max-inline-size: 230--step;
+	max-inline-size: var(--max-table-size);
 	overflow-x: scroll;
 
 	& th, & td {
