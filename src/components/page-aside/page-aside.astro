@@ -19,17 +19,28 @@ const { headings } = {
 	...Astro.props
 }
 
-let h2Headings: MarkdownHeading[] = []
-
-for (const heading of headings) {
-	if (heading.depth === 2) {
-		h2Headings.push(heading)
+let anchorHeadings: MarkdownHeading[] = []
+// if anchorNav is set to 'extended' then grab h2s and h3s
+if( content.anchorNav && content.anchorNav === 'extended'){
+	for (const heading of headings) {
+		if (heading.depth === 2 || heading.depth === 3) {
+			anchorHeadings.push(heading)
+		}
+	}
+} // otherwise grab h2s only
+else {
+	for (const heading of headings) {
+		if (heading.depth === 2) {
+			anchorHeadings.push(heading)
+		}
 	}
 }
 
+console.log(anchorHeadings)
+
 // after headings runs through, add asset status if it exists
 if (content.assets?.name) {
-	h2Headings.push({
+	anchorHeadings.push({
 		depth: 2, slug: 'asset-status', text: 'Asset Status'
 	})
 }
@@ -50,18 +61,18 @@ const storybookUrl: string = content.storybook ? `https://astro-components.netli
 			<IconLink type="github" href="https://github.com/RocketCommunicationsInc/astro">GitHub</IconLink>
 		</li>
 	</ul>
-{ h2Headings.length > 1 ?
+{ anchorHeadings.length > 1 ?
 	<hr />
 		 <div class='section-links-wrapper'>
 			<ul class='section-links'>{
-				h2Headings.map((heading, index) => (
+				anchorHeadings.map((heading, index) => (
 					<li>
 						<a class={
 							index === 0
-								? `${heading.slug} -highlighted -first`
-							: index === (h2Headings.length - 1)
-								? `${heading.slug} -last`
-							: `${heading.slug}`
+								? `${heading.slug} heading-${heading.depth} -highlighted -first`
+							: index === (anchorHeadings.length - 1)
+								? `${heading.slug} heading-${heading.depth} -last`
+							: `${heading.slug} heading-${heading.depth}`
 						} href={
 							`#${heading.slug}`
 						}>{

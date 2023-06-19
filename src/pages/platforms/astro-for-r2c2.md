@@ -1,9 +1,11 @@
 ---
+draft: true
 path: /platforms/astro-for-r2c2
 date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
 title: Astro for R2C2
-description: The R2C2 program under the USSF utilizes OMG C2MS message standards; some of these underlying data messages carry status information and this guidance marries the Astro UXDS and R2C2' C2MS standards. 
+description: The R2C2 program under the USSF utilizes OMG C2MS message standards; some of these underlying data messages carry status information and this guidance marries the Astro UXDS and R2C2' C2MS standards.
+anchorNav: extended  
 
 ---
 
