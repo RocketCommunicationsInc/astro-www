@@ -151,43 +151,43 @@ We use a 4px grid system. There are two special variables that you can use in ou
 TODO: we are currently using these colors directly. If we want a design system thinking these should be used in terms of other variables.
 
 :::color-table
-| Color | Variable               | HSL                  |
-|-------|------------------------|----------------------|
-|       | `--BrightBlue200Color` | `hsl(205 88% 90%)`   |
-|       | `--BrightBlue300Color` | `hsl(209 100% 86%)`  |
-|       | `--BrightBlue400Color` | `hsl(209 100% 79%)`  |
-|       | `--BrightBlue500Color` | `hsl(208 100% 65%)`  |
-|       | `--BrightBlue600Color` | `hsl(209 61% 52%)`   |
-|       | `--BrightBlue700Color` | `hsl(209 57% 39%)`   |
-|       | `--BrightBlue800Color` | `hsl(208 49% 21%)`   |
-|       | `--BrightBlue850Color` | `hsl(211 45% 14%)`   |
-|       | `--BrightBlue900Color` | `hsl(212 37% 10%)`   |
-|       | `--DarkBlue400Color`   | `hsl(203 56% 42%)`   |
-|       | `--DarkBlue500Color`   | `hsl(202 100% 28%)`  |
-|       | `--DarkBlue600Color`   | `hsl(202 100% 22%)`  |
-|       | `--DarkBlue700Color`   | `hsl(208 54% 24%)`   |
-|       | `--DarkBlue800Color`   | `hsl(209 39% 17%)`   |
-|       | `--DarkBlue850Color`   | `hsl(209 39% 17%)`   |
-|       | `--DarkBlue900Color`   | `hsl(210 39% 15%)`   |
-|       | `--DarkBlue950Color`   | `hsl(213 36% 5%)`    |
-|       | `--Grey200Color`       | `hsl(216 31% 94%)`   |
-|       | `--Grey300Color`       | `hsl(213 12% 85%)`   |
-|       | `--Grey400Color`       | `hsl(214 11% 76%)`   |
-|       | `--Grey500Color`       | `hsl(217 11% 68%)`   |
-|       | `--Grey600Color`       | `hsl(219 6% 51%)`    |
-|       | `--Grey700Color`       | `hsl(216 6% 34%)`    |
-|       | `--Grey800Color`       | `hsl(220 5% 24.7%)`  |
-|       | `--Grey900Color`       | `hsl(225 5% 16.86%)` |
-|       | `--HotOrange600Color`  | `hsl(20, 89%, 36%)`  |
-|       | `--Neutral000Color`    | `hsl(0 0% 100%)`     |
-|       | `--Orange400Color`     | `hsl(42 100% 67%)`   |
-|       | `--Orange600Color`     | `hsl(35 100% 62%)`   |
-|       | `--Orange700Color`     | `hsl(33 100% 50%)`   |
-|       | `--Pink600Color`       | `hsl(290 100% 30%)`  |
-|       | `--Purple300Color`     | `hsl(250 54% 78%)`   |
-|       | `--Red500Color`        | `hsl(0 100% 61%)`    |
-|       | `--Red800Color`        | `hsl(9 96% 28%)`     |
-|       | `--Teal600Color`       | `hsl(181 100% 32%)`  |
+| Color | Variable               | HSL                  | Use |
+|-------|------------------------|----------------------|-----|
+|       | `--BrightBlue200Color` | `hsl(205 88% 90%)`   |     |
+|       | `--BrightBlue300Color` | `hsl(209 100% 86%)`  |     |
+|       | `--BrightBlue400Color` | `hsl(209 100% 79%)`  |     |
+|       | `--BrightBlue500Color` | `hsl(208 100% 65%)`  |     |
+|       | `--BrightBlue600Color` | `hsl(209 61% 52%)`   |     |
+|       | `--BrightBlue700Color` | `hsl(209 57% 39%)`   |     |
+|       | `--BrightBlue800Color` | `hsl(208 49% 21%)`   |     |
+|       | `--BrightBlue850Color` | `hsl(211 45% 14%)`   |     |
+|       | `--BrightBlue900Color` | `hsl(212 37% 10%)`   |     |
+|       | `--DarkBlue400Color`   | `hsl(203 56% 42%)`   |     |
+|       | `--DarkBlue500Color`   | `hsl(202 100% 28%)`  |     |
+|       | `--DarkBlue600Color`   | `hsl(202 100% 22%)`  |     |
+|       | `--DarkBlue700Color`   | `hsl(208 54% 24%)`   |     |
+|       | `--DarkBlue800Color`   | `hsl(209 39% 17%)`   |     |
+|       | `--DarkBlue850Color`   | `hsl(209 39% 17%)`   |     |
+|       | `--DarkBlue900Color`   | `hsl(210 39% 15%)`   |     |
+|       | `--DarkBlue950Color`   | `hsl(213 36% 5%)`    |     |
+|       | `--Grey200Color`       | `hsl(216 31% 94%)`   |     |
+|       | `--Grey300Color`       | `hsl(213 12% 85%)`   |     |
+|       | `--Grey400Color`       | `hsl(214 11% 76%)`   |     |
+|       | `--Grey500Color`       | `hsl(217 11% 68%)`   |     |
+|       | `--Grey600Color`       | `hsl(219 6% 51%)`    |     |
+|       | `--Grey700Color`       | `hsl(216 6% 34%)`    |     |
+|       | `--Grey800Color`       | `hsl(220 5% 24.7%)`  |     |
+|       | `--Grey900Color`       | `hsl(225 5% 16.86%)` |     |
+|       | `--HotOrange600Color`  | `hsl(20, 89%, 36%)`  |     |
+|       | `--Neutral000Color`    | `hsl(0 0% 100%)`     |     |
+|       | `--Orange400Color`     | `hsl(42 100% 67%)`   |     |
+|       | `--Orange600Color`     | `hsl(35 100% 62%)`   |     |
+|       | `--Orange700Color`     | `hsl(33 100% 50%)`   |     |
+|       | `--Pink600Color`       | `hsl(290 100% 30%)`  |     |
+|       | `--Purple300Color`     | `hsl(250 54% 78%)`   |     |
+|       | `--Red500Color`        | `hsl(0 100% 61%)`    |     |
+|       | `--Red800Color`        | `hsl(9 96% 28%)`     |     |
+|       | `--Teal600Color`       | `hsl(181 100% 32%)`  |     |
 :::
 
 
