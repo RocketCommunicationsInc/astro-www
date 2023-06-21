@@ -102,13 +102,11 @@ We use a 4px grid system. There are two special variables that you can use in ou
 ### Base Colors
 
 :::color-table
-| Color | Variable              | Reference Variable          | Use                                         |
-|-------|-----------------------|-----------------------------|---------------------------------------------|
-|       | `--BaseColor`         | `var(--BrightBlue900Color)` | The dark background of home page containers |
-|       | `--BaseColorDefault`  | `var(--DarkBlue800Color)`   | Dark table background color                 |
-|       | `--BaseHeaderColor`   | `var(--DarkBlue900Color)`   | Dark table header background                |
-|       | `--BaseHoverColor`    | `var(--BrightBlue850Color)` | Not Currently Used                          |
-|       | `--BaseSelectedColor` | `var(--DarkBlue700Color)`   | Not Currently Used                          |
+| Color | Variable             | Reference Variable          | Use                                         |
+|-------|----------------------|-----------------------------|---------------------------------------------|
+|       | `--BaseColor`        | `var(--BrightBlue900Color)` | The dark background of home page containers |
+|       | `--BaseColorDefault` | `var(--DarkBlue800Color)`   | Dark table background color                 |
+|       | `--BaseHeaderColor`  | `var(--DarkBlue900Color)`   | Dark table header background                |
 :::
 
 ### Interactive Colors
@@ -118,19 +116,17 @@ We use a 4px grid system. There are two special variables that you can use in ou
 |-------|---------------------------|-----------------------------|-------------------------------------------------------------------------------|
 |       | `--InteractiveColor`      | `var(--BrightBlue500Color)` | Color of borders/text that are interactive in dark areas(homepage/navigation) |
 |       | `--InteractiveHoverColor` | `var(--BrightBlue400Color)` | Hover color of text/borders using InteractiveColor (homepage/navigation)      |
-|       | `--InteractivePressColor` | `var(--BrightBlue300Color)` | Not currently Used                                                            |
 |       | `--InteractiveMutedColor` | `var(--BrightBlue700Color)` | Hover/selected background color of interactive blocks (homepage)              |
 :::
 
 ### Surface Colors
 
 :::color-table
-| Color | Variable                 | Reference Variable          | Use                                       |
-|-------|--------------------------|-----------------------------|-------------------------------------------|
-|       | `--SurfaceColor`         | `var(--DarkBlue850Color)`   | Dark background color usually on homepage |
-|       | `--SurfaceHeaderColor`   | `var(--DarkBlue900Color)`   | Dark background header color (homepage)   |
-|       | `--SurfaceHoverColor`    | `var(--BrightBlue800Color)` | Not currently in use                      |
-|       | `--SurfaceSelectedColor` | `var(--DarkBlue700Color)`   | Interactive element background (homepage) |
+| Color | Variable                 | Reference Variable        | Use                                       |
+|-------|--------------------------|---------------------------|-------------------------------------------|
+|       | `--SurfaceColor`         | `var(--DarkBlue850Color)` | Dark background color usually on homepage |
+|       | `--SurfaceHeaderColor`   | `var(--DarkBlue900Color)` | Dark background header color (homepage)   |
+|       | `--SurfaceSelectedColor` | `var(--DarkBlue700Color)` | Interactive element background (homepage) |
 :::
 
 ### Misc colors
@@ -154,18 +150,16 @@ TODO: we are currently using these colors directly. If we want a design system t
 | Color | Variable               | HSL                   | Use                                                                                                                                                                        |
 |-------|------------------------|-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       | `--BrightBlue200Color` | `hsl(205 88% 90%)`    | icon background color(icon library), component playground behind select indicator                                                                                          |
-|       | `--BrightBlue300Color` | `hsl(209 100% 86%)`   | --InteractivePressColor (not currently use)                                                                                                                                |
 |       | `--BrightBlue400Color` | `hsl(209 100% 79%)`   | --InteractiveHoverColor  (homepage)                                                                                                                                        |
 |       | `--BrightBlue500Color` | `hsl(208 100% 65%)`   | --InteractiveColor  (homepage)                                                                                                                                             |
 |       | `--BrightBlue600Color` | `hsl(209 61% 52%)`    | Compliance t2 tag color                                                                                                                                                    |
 |       | `--BrightBlue700Color` | `hsl(209 57% 39%)`    | --InteractiveMutedColor (homepage)                                                                                                                                         |
-|       | `--BrightBlue800Color` | `hsl(208 49% 21%)`    | --SurfaceHoverColor (not currently used)                                                                                                                                   |
 |       | `--BrightBlue850Color` | `hsl(211 45% 14%)`    | Code Block Background Color                                                                                                                                                |
 |       | `--BrightBlue900Color` | `hsl(212 37% 10%)`    | --BaseColor (homepage)                                                                                                                                                     |
 |       | `--DarkBlue400Color`   | `hsl(203 56% 42%)`    | Component Playground border color of select menus and text fields (maybe retire this and use 500 instead)                                                                  |
 |       | `--DarkBlue500Color`   | `hsl(202 100% 28%)`   | Playground: Border colors  all other components, base color of navigation items, feedback widget borders & Header: tabs hover/current & Note color & Aside Highlight color |
 |       | `--DarkBlue600Color`   | `hsl(202 100% 22%)`   | Playground: Border hover color for switch, select, and text. Also navigation icons.                                                                                        |
-|       | `--DarkBlue700Color`   | `hsl(208 54% 24%)`    | Compliance hover color, support page submit button, --SurfaceSelectedColor, --BaseSelectedColor (not currently used)                                                       |
+|       | `--DarkBlue700Color`   | `hsl(208 54% 24%)`    | Compliance hover color, support page submit button                                                                                                                         |
 |       | `--DarkBlue800Color`   | `hsl(209 39% 17%)`    | --BaseColorDefault, page header text color, playground: background color, icon library: sidepanel background, spec pages: images background color                          |
 |       | `--DarkBlue850Color`   | `hsl(209 39% 17%)`    | --SurfaceColor                                                                                                                                                             |
 |       | `--DarkBlue900Color`   | `hsl(210 39% 15%)`    | --SurfaceHeaderColor, --BaseHeaderColor can combine these two variables and name them something else                                                                       |
