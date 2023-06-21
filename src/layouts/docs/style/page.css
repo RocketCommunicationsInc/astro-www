@@ -468,11 +468,11 @@
 		background: var(--note-color) var(--note-icon) no-repeat 4--step center;
 		border-radius: 6--rpx;
 		box-shadow: var(--note-border-color, transparent) 0 0 0 1px inset;
-		color: #ffffff;
+		color: var(--PrimaryColor);
 
 		& :is(li, p) a:not([class]):not(:focus-visible) {
 			/* Appearance */
-			color: #ffc235;
+			color: var(--Orange600Color);
 		}
 
 		& > :last-child {

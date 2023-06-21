@@ -117,17 +117,17 @@
 
 	&.-under-review {
 		/* Appearance */
-		color: #c8102e;
+		color: var(--Red700Color);
 	}
 
 	&.-updated {
 		/* Appearance */
-		color: #786dd3;
+		color: var(--Purple500Color);
 	}
 
 	&.-new {
 		/* Appearance */
-		color: #005a00;
+		color: var(--Green900Color);
 	}
 }
 
@@ -165,7 +165,7 @@
 
 	/* Appearance */
 	border-radius: var(--EdgeRadius);
-	color: #ffffff;
+	color: var(--PrimaryColor);
 
 	&.-t1 {
 		/* Appearance */
