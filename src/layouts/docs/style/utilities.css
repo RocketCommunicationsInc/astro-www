@@ -175,6 +175,7 @@
 /* ========================================================================== */
 
 .astro-code {	/* Appearance */
+	/* stylelint-disable-next-line declaration-no-important */
 	background-color: var(--BrightBlue850Color) !important;
 }
 
@@ -251,17 +252,11 @@
 
 		/* Text */
 		font-weight: 700;
-
-		/* Appearance */
-		background-color: #efefef;
 	}
 
 	& td {
 		/* Layout */
 		padding: 2--step;
-
-		/* Appearance */
-		box-shadow: #efefef 0 -1px 0 0 inset;
 	}
 }
 
