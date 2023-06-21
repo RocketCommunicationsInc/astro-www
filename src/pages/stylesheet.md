@@ -102,31 +102,29 @@ We use a 4px grid system. There are two special variables that you can use in ou
 ### Base Colors
 
 :::color-table
-| Color | Variable             | Reference Variable          | Use                                         |
-|-------|----------------------|-----------------------------|---------------------------------------------|
-|       | `--BaseColor`        | `var(--BrightBlue900Color)` | The dark background of home page containers |
-|       | `--BaseColorDefault` | `var(--DarkBlue800Color)`   | Dark table background color                 |
-|       | `--BaseHeaderColor`  | `var(--DarkBlue900Color)`   | Dark table header background                |
+| Color | Variable             | Reference Variable          | Use                                                                                 |
+|-------|----------------------|-----------------------------|-------------------------------------------------------------------------------------|
+|       | `--BaseColor`        | `var(--BrightBlue900Color)` | The dark background of home page containers, also background of algolia site search |
+|       | `--BaseColorDefault` | `var(--DarkBlue800Color)`   | Dark table background color                                                         |
+|       | `--BaseHeaderColor`  | `var(--DarkBlue900Color)`   | Dark table header background                                                        |
 :::
 
 ### Interactive Colors
 
 :::color-table
-| Color | Variable                  | Reference Variable          | Use                                                                           |
-|-------|---------------------------|-----------------------------|-------------------------------------------------------------------------------|
-|       | `--InteractiveColor`      | `var(--BrightBlue500Color)` | Color of borders/text that are interactive in dark areas(homepage/navigation) |
-|       | `--InteractiveHoverColor` | `var(--BrightBlue400Color)` | Hover color of text/borders using InteractiveColor (homepage/navigation)      |
-|       | `--InteractiveMutedColor` | `var(--BrightBlue700Color)` | Hover/selected background color of interactive blocks (homepage)              |
+| Color | Variable                  | Reference Variable          | Use                                                                                                                  |
+|-------|---------------------------|-----------------------------|----------------------------------------------------------------------------------------------------------------------|
+|       | `--InteractiveColor`      | `var(--BrightBlue500Color)` | Color of borders/text that are interactive in dark areas(homepage/navigation) also Icon side panel links and buttons |
+|       | `--InteractiveHoverColor` | `var(--BrightBlue400Color)` | Hover color of text/borders using InteractiveColor (homepage/navigation) Icon side panel hover color                 |
+|       | `--InteractiveMutedColor` | `var(--BrightBlue700Color)` | Hover/selected background color of interactive blocks (homepage/algolia search)                                      |
 :::
 
 ### Surface Colors
 
 :::color-table
-| Color | Variable                 | Reference Variable        | Use                                       |
-|-------|--------------------------|---------------------------|-------------------------------------------|
-|       | `--SurfaceColor`         | `var(--DarkBlue850Color)` | Dark background color usually on homepage |
-|       | `--SurfaceHeaderColor`   | `var(--DarkBlue900Color)` | Dark background header color (homepage)   |
-|       | `--SurfaceSelectedColor` | `var(--DarkBlue700Color)` | Interactive element background (homepage) |
+| Color | Variable         | Reference Variable        | Use                                                            |
+|-------|------------------|---------------------------|----------------------------------------------------------------|
+|       | `--SurfaceColor` | `var(--DarkBlue850Color)` | Dark background color usually on homepage, also mobile menu bg |
 :::
 
 ### Misc colors
@@ -150,12 +148,12 @@ TODO: we are currently using these colors directly. If we want a design system t
 | Color | Variable               | HSL                   | Use                                                                                                                                                                        |
 |-------|------------------------|-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       | `--BrightBlue200Color` | `hsl(205 88% 90%)`    | icon background color(icon library), component playground behind select indicator                                                                                          |
-|       | `--BrightBlue400Color` | `hsl(209 100% 79%)`   | --InteractiveHoverColor  (homepage)                                                                                                                                        |
-|       | `--BrightBlue500Color` | `hsl(208 100% 65%)`   | --InteractiveColor  (homepage)                                                                                                                                             |
+|       | `--BrightBlue400Color` | `hsl(209 100% 79%)`   | --InteractiveHoverColor  (homepage/icon library side)                                                                                                                      |
+|       | `--BrightBlue500Color` | `hsl(208 100% 65%)`   | --InteractiveColor (homepage) , also active arrow color on feedback                                                                                                        |
 |       | `--BrightBlue600Color` | `hsl(209 61% 52%)`    | Compliance t2 tag color                                                                                                                                                    |
-|       | `--BrightBlue700Color` | `hsl(209 57% 39%)`    | --InteractiveMutedColor (homepage)                                                                                                                                         |
+|       | `--BrightBlue700Color` | `hsl(209 57% 39%)`    | --InteractiveMutedColor (homepage/ algolia sitesearch)                                                                                                                     |
 |       | `--BrightBlue850Color` | `hsl(211 45% 14%)`    | Code Block Background Color                                                                                                                                                |
-|       | `--BrightBlue900Color` | `hsl(212 37% 10%)`    | --BaseColor (homepage)                                                                                                                                                     |
+|       | `--BrightBlue900Color` | `hsl(212 37% 10%)`    | --BaseColor (homepage/algolia sitesearch)                                                                                                                                  |
 |       | `--DarkBlue400Color`   | `hsl(203 56% 42%)`    | Component Playground border color of select menus and text fields (maybe retire this and use 500 instead)                                                                  |
 |       | `--DarkBlue500Color`   | `hsl(202 100% 28%)`   | Playground: Border colors  all other components, base color of navigation items, feedback widget borders & Header: tabs hover/current & Note color & Aside Highlight color |
 |       | `--DarkBlue600Color`   | `hsl(202 100% 22%)`   | Playground: Border hover color for switch, select, and text. Also navigation icons.                                                                                        |
@@ -184,6 +182,18 @@ TODO: we are currently using these colors directly. If we want a design system t
 |       | `--Teal600Color`       | `hsl(181 100% 32%)`   | Tier1 compliance                                                                                                                                                           |
 :::
 
+
+### Homepage Only Colors
+
+At Emily's request, I've pulled ALL colors that are solely in use on the home page and placed them down here. This includes Reference colors (we can put them back under reference later.)
+
+:::color-table
+| Color | Variable                 | HSL/variable              | Use                                       |
+|-------|--------------------------|---------------------------|-------------------------------------------|
+|       | `--SurfaceHeaderColor`   | `var(--DarkBlue900Color)` | Dark background header color (homepage)   |
+|       | `--SurfaceSelectedColor` | `var(--DarkBlue700Color)` | Interactive element background (homepage) |
+
+:::
 
 <script type="module">
 /** add color samples to the tables with colors */
