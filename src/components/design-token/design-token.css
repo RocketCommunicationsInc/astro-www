@@ -20,8 +20,8 @@
 		margin-inline-end: 5--step;
 
 		/* Appearance */
-		background-color: #1b2d3e;
-		color: #4dacff;
+		background-color: var(--DarkBlue800Color);
+		color: var(--BrightBlue500Color);
 	}
 
 	&:where(.--type-text) .--preview {

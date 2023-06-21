@@ -96,7 +96,7 @@
 		}
 
 		&:hover {
-			fill: #000000;
+			fill: var(--InverseColor);
 		}
 	}
 
