@@ -352,10 +352,6 @@
 			{
 				"label": "Astro for Grafana",
 				"url": "/platforms/astro-for-grafana/"
-			},
-			{
-				"label": "Astro for R2C2",
-				"url": "/platforms/astro-for-r2c2/"
 			}
 		],
 		"label": "Platforms"
