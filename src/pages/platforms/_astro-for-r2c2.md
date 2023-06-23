@@ -1,4 +1,5 @@
 ---
+draft: true
 path: /platforms/astro-for-r2c2
 date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
