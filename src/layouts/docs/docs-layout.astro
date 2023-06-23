@@ -16,6 +16,7 @@ import './docs-layout.css'
 
 export interface Props extends DocProps {
 	content: {
+		draft?: boolean
 		title: string
 		subtitle?: string
 		description?: string
@@ -28,6 +29,7 @@ const { content } = Astro.props
 const title = content.subtitle ? `${content.title} ${content.subtitle}` : content.title
 const tabTitle = content.title
 const url = content.url
+const draft = content.draft ? content.draft : false
 
 /* Create github link to source file */
 
@@ -49,9 +51,10 @@ const gitURL = fileName !== finalURLSeg ? `${Astro.url.pathname}${fileName}.${fi
 
 /** URL to the current source for this page. */
 const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData.designSystem.repositoryBranch}/src/pages${gitURL}`
-console.log(Astro.props)
+
 ---
 <Layout title={title} tabtitle={tabTitle}>
+	{draft ? <meta slot="head" name="robots" content="noindex, nofollow" /> : null }
 	<SiteSkipTo slot="top" />
 
 	<main class="page" id="content">
