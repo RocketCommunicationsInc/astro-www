@@ -50,7 +50,7 @@
 		padding-inline-start: 5--step;
 
 		/* Appearance */
-		background-color: #ffffff;
+		background-color: var(--PrimaryColor);
 		color: var(--DarkBlue500Color);
 
 		/* Appearance */
@@ -70,7 +70,7 @@
 			transform: rotate(180deg);
 
 			& path {
-				fill: #4dacff;
+				fill: var(--BrightBlue500Color);
 			}
 		}
 
@@ -110,12 +110,12 @@
 		position: relative;
 
 		/* Appearance */
-		background-color: #eaeef4;
+		background-color: var(--Grey200Color);
 
 		/* Appearance */
-		border: 1px solid #2f7aa7;
+		border: 1px solid var(--DarkBlue400Color);
 		border-radius: 3px;
-		color: #292a2d;
+		color: var(--Grey900Color);
 
 		/* Animation */
 		transition: height 200ms cubic-bezier(.66, .11, .33, .98);

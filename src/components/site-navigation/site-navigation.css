@@ -149,7 +149,8 @@ h-navigation-list {
 		margin-inline: calc(11 * var(--step));
 
 		/* Appearance */
-		box-shadow: #99999922 1px 1px 0 0;
+		box-shadow: var(--Grey500Color) 1px 1px 0 0;
+		opacity: .1;
 	}
 }
 

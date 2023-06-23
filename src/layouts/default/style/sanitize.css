@@ -332,9 +332,9 @@
 	position: absolute;
 
 	/* Appearance */
-	background-color: #ffffff;
+	background-color: var(--PrimaryColor);
 	border: solid;
-	color: #000000;
+	color: var(--InverseColor);
 }
 
 :where(dialog:not([open])) {

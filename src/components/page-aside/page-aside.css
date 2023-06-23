@@ -46,7 +46,7 @@
 		line-height: calc(20 / 14);
 
 		/* Appearance */
-		color: #3c3e42;
+		color: var(--Grey800Color);
 
 		&.current {
 			/* Text */
