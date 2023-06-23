@@ -50,7 +50,7 @@ const gitURL = fileName !== finalURLSeg ? `${Astro.url.pathname}${fileName}.${fi
 /** URL to the current source for this page. */
 const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData.designSystem.repositoryBranch}/src/pages${gitURL}`
 ---
-<Layout title={title} tabtitle={tabTitle}>
+<Layout title={title} tabtitle={tabTitle} {...Astro.props}>
 	<SiteSkipTo slot="top" />
 
 	<main class="page" id="content">

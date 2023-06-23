@@ -15,10 +15,13 @@ const attrs = {
 	...globalData.siteMeta,
 	...Astro.props,
 }
+
+
 ---
 <Document body-class="p-grid" {...attrs}>
 	<slot slot="head" name="head" />
 	<meta slot="head" name="theme-color" content="#101923" />
+	{attrs.frontmatter.draft ? <meta name="robots" content="noindex, nofollow" /> : null}
 	<slot name="top" />
 	<link slot="head" rel="sitemap" href="/sitemap-index.xml">
 	<div class="x-menu">
