@@ -14,6 +14,11 @@
 	/* Animation */
 	transition: inline-size 200ms;
 
+	& *:focus-visible {
+		/* Appearance */
+		outline-color: var(--FocusLight);
+	}
+
 	@media (width < 1024px) {
 		display: grid;
 
@@ -194,16 +199,25 @@ h-navigation-list {
 	display: block;
 
 	/* Layout */
+	margin-inline: 1--step;
+	max-inline-size: calc(100% - 2--step);
 	padding-block: 4--step;
-	padding-inline: 11--step;
+	padding-inline: 9--step;
 }
 
 .p-navigation ul ul :is(a, span) {
 	display: block;
 
 	/* Layout */
+	max-inline-size: max(100% - 2--step);
 	padding-block: 2--step;
 	padding-inline: 11--step;
+
+	&:focus-visible {
+		/* Appearance */
+		border-radius: 3--rpx;
+		outline: 1px solid var(--FocusLight);
+	}
 }
 
 .p-navigation h-navigation-list > :is(a, span) {

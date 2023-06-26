@@ -168,9 +168,14 @@
 	& :where(a) {
 		display: block;
 
-		&:is(:hover, :focus-visible) {
+		&:is(:hover) {
 			/* Text */
 			text-decoration: underline;
+		}
+
+		&:is(:focus-visible) {
+			/* Appearance */
+			outline-color: var(--FocusLight);
 		}
 	}
 }

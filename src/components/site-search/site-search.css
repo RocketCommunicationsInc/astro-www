@@ -53,6 +53,11 @@
 			--border-color: var(--InteractiveHoverColor);
 		}
 
+		&:is(:focus-visible) {
+			/* Appearance */
+			outline-offset: 2--rpx;
+		}
+
 		&::placeholder {
 			/* Appearance */
 			color: var(--PlaceholderColor);

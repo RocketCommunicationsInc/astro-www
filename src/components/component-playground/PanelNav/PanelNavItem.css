@@ -30,6 +30,12 @@
 		&:hover {
 			fill: var(--DarkBlue600Color);
 		}
+
+		&:focus-visible {
+			/* Appearance */
+			outline: 1--rpx solid var(--FocusDark);
+			outline-offset: -2--rpx;
+		}
 	}
 }
 

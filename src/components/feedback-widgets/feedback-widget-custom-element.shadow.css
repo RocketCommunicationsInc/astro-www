@@ -12,6 +12,12 @@
 		}
 	}
 
+	& *:focus-visible {
+		/* Appearance */
+		outline: 1--rpx solid var(--FocusDark);
+		outline-offset: 2--rpx;
+	}
+
 	& .widget_content {
 		/* Layout */
 		position: relative;
@@ -155,23 +161,11 @@
 
 			/* Layout */
 			margin-block-start: 6--step;
-
-			&:focus {
-				/* Appearance */
-				outline: 1px solid var(--DarkBlue400Color);
-			}
 		}
 
 		& input {
 			/* Layout */
 			margin-block-start: 3--step;
-
-			&:focus {
-				&:valid {
-					/* Appearance */
-					outline: 1px solid var(--DarkBlue400Color);
-				}
-			}
 
 			&:invalid {
 				/* Appearance */

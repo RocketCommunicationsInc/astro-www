@@ -46,20 +46,30 @@ button {
 
 button {
 	/* Layout */
-	padding: 4--step;
-
-	@media (width < 460px) {
-		/* Layout */
-		padding: 1--step;
-	}
+	margin: 1--step;
+	padding: 3--step;
 
 	/* Appearance */
 	color: var(--InteractiveColor);
 
+	@media (width < 460px) {
+		/* Layout */
+		margin: 2--rpx;
+		padding: 2--rpx;
+	}
+
 	&:focus,
 	&:hover {
 		/* Appearance */
+		border-radius: 3--rpx;
+
+		/* Appearance */
 		color: var(--InteractiveHoverColor);
+	}
+
+	&:focus-visible {
+		/* Appearance */
+		outline: 1--rpx solid var(--FocusLight);
 	}
 
 	&:disabled {

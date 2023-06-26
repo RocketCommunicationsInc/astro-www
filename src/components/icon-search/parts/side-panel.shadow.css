@@ -31,6 +31,13 @@ button {
 	text-rendering: inherit;
 }
 
+:where(:focus-visible) {
+	/* Appearance */
+	border-radius: 3--rpx;
+	outline: 1px solid var(--FocusLight);
+	outline-offset: 2--rpx;
+}
+
 dialog {
 	/* Layout */
 	padding: 0;

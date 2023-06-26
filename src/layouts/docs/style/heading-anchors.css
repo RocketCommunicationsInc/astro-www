@@ -37,13 +37,13 @@ a.h {
 		}
 	}
 
-	&:hover, &:focus-visible {
+	&:hover {
 		/* Appearance */
 		color: var(--InvertedColor);
 	}
 
 	&:focus-visible {
-		/* Appearance */
-		outline: none;
+		/* allows focus to show */
+		display: inherit;
 	}
 }

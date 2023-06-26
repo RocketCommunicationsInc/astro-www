@@ -22,6 +22,11 @@
 		/* Layout */
 		grid-area: col-2of2;
 	}
+
+	& :where(:focus-visible) {
+		/* Appearance */
+		outline-color: var(--FocusLight);
+	}
 }
 
 /* Community: Heading */
@@ -351,9 +356,14 @@
 	/* Appearance */
 	color: var(--PrimaryColor);
 
-	&:is(:hover, :focus-visible) {
+	&:is(:hover, :focus-visible, :focus-within) {
 		/* Appearance */
 		background: var(--InteractiveMutedColor);
+
+		& * {
+			/* Appearance */
+			outline-color: transparent;
+		}
 	}
 
 	@media (width >= 1024px) and (width < 1200px) {

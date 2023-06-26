@@ -226,6 +226,7 @@
 	/* Layout */
 	inset-block-start: 0;
 	position: sticky;
+	z-index: 2;
 
 	@media (width < 1024px) {
 		/* Layout */
@@ -269,20 +270,12 @@
 	}
 
 	& a[href]:not([class]) {
-		&:focus-visible {
-			/* Appearance */
-			background-color: var(--InverseColor);
-			color: var(--Orange400Color);
-		}
+		/* Appearance */
+		color: var(--DarkBlue500Color);
 
-		&:not(:focus-visible) {
-			/* Appearance */
-			color: var(--DarkBlue500Color);
-
-			&:hover {
-				/* Text */
-				color: var(--DarkBlue700Color);
-			}
+		&:hover {
+			/* Text */
+			color: var(--DarkBlue700Color);
 		}
 	}
 

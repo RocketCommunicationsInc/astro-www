@@ -62,3 +62,9 @@
 	font: 300 18--rpx/max(24 / 18) var(--SystemType);
 	letter-spacing: 0;
 }
+
+:is(:focus-visible) {
+	border-radius: 3--rpx;
+	outline: 1--rpx solid var(--FocusDark);
+	outline-offset: 2--rpx;
+}

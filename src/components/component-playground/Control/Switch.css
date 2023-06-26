@@ -67,11 +67,12 @@
 
 :host(:focus-visible) {
 	/* Appearance */
-	outline: none;
+	outline-color: transparent;
 
 	&::part(thumb) {
 		/* Appearance */
-		outline: auto 1px;
+		outline: 1--rpx solid var(--FocusDark);
+		outline-offset: 2--rpx;
 	}
 }
 

@@ -107,6 +107,11 @@
 	border-radius: 1--step;
 	box-shadow: var(--Grey700Color) 0 0 0 1px inset;
 
+	& :where(:focus-visible) {
+		/* Appearance */
+		outline: transparent;
+	}
+
 	& .-heading {
 		/* stylelint-disable-next-line value-no-vendor-prefix */
 		display: -webkit-box;
@@ -206,6 +211,11 @@
 
 			/* Generated */
 			content: "";
+		}
+
+		&:focus-visible {
+			/* Appearance */
+			outline-color: var(--FocusLight);
 		}
 	}
 

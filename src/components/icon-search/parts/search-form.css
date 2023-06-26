@@ -61,11 +61,6 @@
 		}
 	}
 
-	& .-control {
-		/* Appearance */
-		outline: none;
-	}
-
 	& .-icon {
 		/* Layout */
 		block-size: 5--step;
@@ -113,6 +108,11 @@
 		&:focus {
 			/* Animation */
 			transition-duration: 0ms;
+		}
+
+		&:focus-visible {
+			/* Appearance */
+			outline-offset: -2--rpx;
 		}
 	}
 

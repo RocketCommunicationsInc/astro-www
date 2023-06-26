@@ -193,3 +193,10 @@ a-panel + a-panel {
 		box-shadow: var(--Grey600Color) 0 -1px 0 0;
 	}
 }
+
+:is(:focus-visible) {
+	/* Appearance */
+	border-radius: 3--rpx;
+	outline: 1--rpx solid var(--FocusDark);
+	outline-offset: 2--rpx;
+}
