@@ -67,7 +67,7 @@
 
 :host(:focus-visible) {
 	/* Appearance */
-	outline-color: transparent;
+	outline: none;
 
 	&::part(thumb) {
 		/* Appearance */
