@@ -32,9 +32,26 @@
 		}
 
 		&:focus-visible {
+			/* Layout */
+			position: relative;
+
 			/* Appearance */
-			outline: 1--rpx solid var(--FocusDark);
-			outline-offset: -2--rpx;
+			outline-color: transparent;
+
+			&::after {
+				display: block;
+
+				/* Layout */
+				inset: 0;
+				position: absolute;
+
+				/* Appearance */
+				border: 1px solid var(--FocusDark);
+				border-radius: var(--EdgeRadius);
+
+				/* Generated */
+				content: "";
+			}
 		}
 	}
 }
