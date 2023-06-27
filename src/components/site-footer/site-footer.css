@@ -12,6 +12,11 @@
 	background-color: var(--color-background-base-default, #101923);
 	box-shadow: var(--color-wireframe-primary) 0 1px0 0 inset;
 
+	& :where(a):is(:focus-visible) {
+		/* Appearance */
+		outline-color: var(--FocusLight);
+	}
+
 	@media (width < 1024px) {
 		display: flex;
 
@@ -171,11 +176,6 @@
 		&:is(:hover) {
 			/* Text */
 			text-decoration: underline;
-		}
-
-		&:is(:focus-visible) {
-			/* Appearance */
-			outline-color: var(--FocusLight);
 		}
 	}
 }

@@ -12,7 +12,7 @@
 
 	& :is(:focus-visible) {
 		/* Appearance */
-		border-radius: 3--rpx;
+		border-radius: var(--EdgeRadius);
 		outline: 1--rpx solid var(--FocusDark);
 		outline-offset: 2--rpx;
 	}

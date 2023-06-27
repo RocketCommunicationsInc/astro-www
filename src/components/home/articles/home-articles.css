@@ -186,9 +186,7 @@
 	scroll-snap-type: x mandatory;
 	scrollbar-width: none;
 
-	& + .-link {
-		display: block;
-
+	& + .-link-container {
 		/* Layout */
 		inline-size: min(100%, calc(1--articlesize * 1--articlecount + 1--gap * (1--articlecount - 1)));
 
@@ -198,24 +196,26 @@
 		/* Text */
 		text-align: end;
 
-		/* Appearance */
-		color: var(--Orange600Color);
-
-		&::after {
-			/* Layout */
-			margin-inline-start: 2--step;
-			padding: 2--step;
-
+		& .-link {
 			/* Appearance */
-			background: url(/images/arrow.svg) center center no-repeat;
+			color: var(--Orange600Color);
 
-			/* Generated */
-			content: "";
-		}
+			&::after {
+				/* Layout */
+				margin-inline-start: 2--step;
+				padding: 2--step;
 
-		&:focus-visible {
-			/* Appearance */
-			outline-color: var(--FocusLight);
+				/* Appearance */
+				background: url(/images/arrow.svg) center center no-repeat;
+
+				/* Generated */
+				content: "";
+			}
+
+			&:focus-visible {
+				/* Appearance */
+				outline-color: var(--FocusLight);
+			}
 		}
 	}
 

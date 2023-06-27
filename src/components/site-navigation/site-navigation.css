@@ -215,7 +215,7 @@ h-navigation-list {
 
 	&:focus-visible {
 		/* Appearance */
-		border-radius: 3--rpx;
+		border-radius: var(--EdgeRadius);
 		outline: 1px solid var(--FocusLight);
 	}
 }

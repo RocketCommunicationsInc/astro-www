@@ -61,7 +61,7 @@ button {
 	&:focus,
 	&:hover {
 		/* Appearance */
-		border-radius: 3--rpx;
+		border-radius: var(--EdgeRadius);
 
 		/* Appearance */
 		color: var(--InteractiveHoverColor);
