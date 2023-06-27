@@ -20,8 +20,8 @@ The Astro Usability Heuristic Assessment is an evaluation that compares an appli
 
 
 <figure>
-<a href="/pdf/usability-heuristics.pdf" download><img src="/img/design-process/ux-assessments/ux-assessment-heuristics.webp" alt="Usability Heuristics Worksheet" loading="lazy" width="1400" height="1800"></a>
-<figcaption>Usability Heuristics Worksheet - <a href="/pdf/usability-heuristics.pdf" download>Download PDF</a></figcaption>
+<a href="/pdf/usability-heuristics.pdf" download="Usability Heuristics Worksheet"><img src="/img/design-process/ux-assessments/ux-assessment-heuristics.webp" alt="Usability Heuristics Worksheet" loading="lazy" width="1400" height="1800"></a>
+<figcaption>Usability Heuristics Worksheet - <a href="/pdf/usability-heuristics.pdf" download="Usability Heuristics Worksheet">Download PDF</a></figcaption>
 </figure>
 
 ## Cognitive Walkthrough
@@ -35,8 +35,8 @@ The Astro Cognitive Walkthrough Assessment evaluates an application’s ease of 
 - Discovers required user and system knowledge
 
 <figure>
-<a href="/pdf/cognitive-walkthrough.pdf" download><img src="/img/design-process/ux-assessments/ux-assessment-cognitive-walkthrough.webp" alt="Cognitive Walkthrough Worksheet" loading="lazy" width="1400" height="1800"></a>
-<figcaption>Cognitive Walkthrough Worksheet - <a href="/pdf/cognitive-walkthrough.pdf" download>Download PDF</a></figcaption>
+<a href="/pdf/cognitive-walkthrough.pdf" download="Cognitive Walkthrough Worksheet"><img src="/img/design-process/ux-assessments/ux-assessment-cognitive-walkthrough.webp" alt="Cognitive Walkthrough Worksheet" loading="lazy" width="1400" height="1800"></a>
+<figcaption>Cognitive Walkthrough Worksheet - <a href="/pdf/cognitive-walkthrough.pdf" download="Cognitive Walkthrough Worksheet">Download PDF</a></figcaption>
 </figure>
 
 ## Astro Compliance Audit
@@ -50,19 +50,19 @@ The Astro Compliance Audit Assessment provides rules for design and specific usa
 - Improves integration through standardization
 
 <figure>
-<a href="/pdf/astro-compliance.pdf" download><img src="/img/design-process/ux-assessments/ux-assessment-compliance.webp" alt="Astro Compliance Audit Worksheet" loading="lazy" width="1400" height="1800"></a>
-<figcaption>Astro Compliance Audit Worksheet - <a href="/pdf/astro-compliance.pdf" download>Download PDF</a></figcaption>
+<a href="/pdf/astro-compliance.pdf" download="Astro Compliance Worksheet"><img src="/img/design-process/ux-assessments/ux-assessment-compliance.webp" alt="Astro Compliance Audit Worksheet" loading="lazy" width="1400" height="1800"></a>
+<figcaption>Astro Compliance Audit Worksheet - <a href="/pdf/astro-compliance.pdf" download="Astro Compliance Worksheet">Download PDF</a></figcaption>
 </figure>
 
 ## Downloads
 
 Download all three worksheets and utilize each evaluation to improve the software quality and an application’s user experience.
 
-- <a href="/pdf/usability-heuristics.pdf" download>Heuristics Worksheet</a>
+- <a href="/pdf/usability-heuristics.pdf" download="Usability Heuristics Worksheet">Heuristics Worksheet</a>
 
-- <a href="/pdf/cognitive-walkthrough.pdf" download>Cognitive Walkthrough Worksheet</a>
+- <a href="/pdf/cognitive-walkthrough.pdf" download="Cognitive Walkthrough Worksheet">Cognitive Walkthrough Worksheet</a>
 
-- <a href="/pdf/astro-compliance.pdf" download>Download PDF</a>Astro Compliance Audit Worksheet</a>
+- <a href="/pdf/astro-compliance.pdf" download="Astro Compliance Worksheet">Astro Compliance Audit Worksheet</a></a>
 
 ## For More Information
 
