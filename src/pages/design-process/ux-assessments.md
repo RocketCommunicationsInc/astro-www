@@ -12,7 +12,7 @@ Applying all three evaluations is recommended to most effectively boost usabilit
 
 The Astro Usability Heuristic Assessment is an evaluation that compares an application against long-standing best practices derived from the [Jakob Nielsen's 10 general principles for interaction design](https://www.nngroup.com/articles/usability-heuristics-complex-applications/). 
 
-### Benefits of Usability Heuristic Evaluations
+**Benefits of Usability Heuristic Evaluations**
 
 - Finds usability problems in a quick timeframe
 - Combines multiple perspectives from evaluation insights
@@ -28,7 +28,7 @@ The Astro Usability Heuristic Assessment is an evaluation that compares an appli
 
 The Astro Cognitive Walkthrough Assessment evaluates an application’s ease of use by observing and scoring a user’s success at each workflow step, revealing obstacles preventing task completion. 
 
-### Benefits of Cognitive Walkthroughs 
+**Benefits of Cognitive Walkthroughs**
 
 - Reveals early-stage constraints and improvements
 - Identifies user issues and optimize work flows 
@@ -43,7 +43,7 @@ The Astro Cognitive Walkthrough Assessment evaluates an application’s ease of 
 
 The Astro Compliance Audit Assessment provides rules for design and specific usage guidelines for Astro components and applications. The guide illustrates Tier 1 practices, since they are fundamental to Astro’s design and are the easiest to adopt.
 
-### Benefits of Tier 1 Compliance Audits 
+**Benefits of Tier 1 Compliance Audits** 
 
 - Informs future design efforts
 - Increases user participation and adoption
