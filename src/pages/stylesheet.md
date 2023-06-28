@@ -137,9 +137,8 @@ We use a 4px grid system. There are two special variables that you can use in ou
 |       | `--ExampleDoColor`     | `hsl(109 82% 39%)`         | Color of border separating Example Do image and text    |
 |       | `--ExampleDontColor`   | `hsl(13 99% 50%)`          | Color of border separating Example Don't image and text |
 |       | `--CautionBorderColor` | `var(--HotOrange600Color)` | Caution note border color                               |
-|       | `--CautionColor`       | `var(--HotOrange600Color)` | Caution note background color                           |
 |       | `--NoteBorderColor`    | `var(--DarkBlue500Color)`  | Note border color                                       |
-|       | `--NoteColor`          | `var(--Grey100Color)`      | Note background color                                   |
+|       | `--NoteColor`          | `var(--Grey100Color)`      | Note/caution background color                           |
 :::
 
 ### Reference colors
