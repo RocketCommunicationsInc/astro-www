@@ -35,6 +35,8 @@
 	--Orange400Color: hsl(42 100% 67%);
 	--Orange600Color: hsl(35 100% 62%);
 	--Orange700Color: hsl(33 100% 50%);
+	--Pink200Color: hsl(290, 61%, 76%);
+	--Pink400Color: hsl(290, 61%, 51%);
 	--Pink600Color: hsl(290 100% 30%);
 	--Purple500Color: hsl(246, 54%, 63%);
 	--Red700Color: hsl(350, 85%, 42%);
@@ -47,6 +49,8 @@
 	--PlaceholderColor: var(--Grey500Color);
 	--PrimaryColor: var(--Neutral000Color);
 	--SecondaryColor: var(--Grey300Color);
+	--FocusLight: var(--Pink200Color);
+	--FocusDark: var(--Pink400Color);
 
 	/* Base Colors */
 

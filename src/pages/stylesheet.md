@@ -97,6 +97,8 @@ We use a 4px grid system. There are two special variables that you can use in ou
 |       | `--PlaceholderColor` | `var(--Grey500Color)`     | Placeholder color for inputs                                         |
 |       | `--PrimaryColor`     | `var(--Neutral000Color)`  | Background of all docs pages and White text used on dark backgrounds |
 |       | `--SecondaryColor`   | `var(--Grey300Color)`     | Subtitle color for dark backgrounds                                  |
+|       | `--FocusLight`       | `var(--Pink200Color)`     | Light focus color intended for dark backgrounds                      |
+|       | `--FocusDark`        | `var(--Pink400Color)`     | Dark focus color intended for light backgrounds                      |
 :::
 
 ### Base Colors
@@ -175,6 +177,8 @@ TODO: we are currently using these colors directly. If we want a design system t
 |       | `--Orange400Color`     | `hsl(42 100% 67%)`    | Focus text color                                                                                                                                                           |
 |       | `--Orange600Color`     | `hsl(35 100% 62%)`    | Homepage link color, note and caution link color                                                                                                                           |
 |       | `--Orange700Color`     | `hsl(33 100% 50%)`    | Design tokens page, site navigation 'current' color, and the dot in the Astro logo in the navigation bar.                                                                  |
+|       | `--Pink200Color`       | `hsl(290, 61%, 76%)`  | --FocusLight                                                                                                                                                               |
+|       | `--Pink400Color`       | `hsl(290, 61%, 51%)`  | --FocusDark                                                                                                                                                                |
 |       | `--Pink600Color`       | `hsl(290 100% 30%)`   | Tier3 compliance tag                                                                                                                                                       |
 |       | `--Purple500Color`     | `hsl(246, 54%, 63%)`  | Compliance 'updated' text color                                                                                                                                            |
 |       | `--Red700Color`        | `hsl(350, 85%, 42%)`  | Compliance 'under review' text color                                                                                                                                       |

@@ -123,6 +123,11 @@
 				background-color: var(--BrightBlue200Color);
 			}
 
+			&:focus-visible {
+				/* Layout */
+				z-index: 1;
+			}
+
 			&.selected {
 				/* Appearance */
 				background-color: var(--Grey200Color);

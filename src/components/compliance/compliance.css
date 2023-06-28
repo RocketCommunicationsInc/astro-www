@@ -58,20 +58,12 @@
 				font-size: 14--rpx;
 				line-height: calc(20 / 14);
 
-				&:focus-visible {
-					/* Appearance */
-					background-color: var(--InverseColor);
-					color: var(--Orange400Color);
-				}
+				/* Text */
+				color: var(--DarkBlue500Color);
 
-				&:not(:focus-visible) {
+				&:hover {
 					/* Text */
-					color: var(--DarkBlue500Color);
-
-					&:hover {
-						/* Text */
-						color: var(--DarkBlue700Color);
-					}
+					color: var(--DarkBlue700Color);
 				}
 
 				@media (width < 400px) {

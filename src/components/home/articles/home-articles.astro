@@ -19,7 +19,7 @@ const { data } = Astro.props as typeof articles
 				</article>
 			)}</For>
 		</h-slideshow>
-		<a href={data.mainlink.data.url} class="-link" target="_blank">{data.mainlink.data.description}</a>
+		<div class="-link-container"><a href={data.mainlink.data.url} class="-link" target="_blank">{data.mainlink.data.description}</a></div>
 	</div>
 </section>
 <script>
