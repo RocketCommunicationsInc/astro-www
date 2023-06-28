@@ -76,12 +76,30 @@
 
 			/* Appearance */
 			color: var(--Grey700Color);
-			outline-offset: -2px;
 
 			&:hover,
 			&:focus-visible {
+				/* Layout */
+				position: relative;
+
 				/* Appearance */
 				color: var(--DarkBlue500Color);
+				outline-color: transparent;
+			}
+
+			&:focus-visible::after {
+				display: block;
+
+				/* Layout */
+				inset: 0;
+				position: absolute;
+
+				/* Appearance */
+				border: 1px solid var(--FocusDark);
+				border-radius: var(--EdgeRadius);
+
+				/* Generated */
+				content: "";
 			}
 		}
 

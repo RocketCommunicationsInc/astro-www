@@ -51,9 +51,14 @@
 		--padding-block: 5--step;
 		--padding-inline: 10--step;
 
-		&:is(:hover, :focus-visible) {
+		&:is(:hover, :focus-visible, :focus-within) {
 			/* Appearance */
 			background: var(--InteractiveMutedColor);
+
+			& * {
+				/* Appearance */
+				outline-color: transparent;
+			}
 		}
 	}
 

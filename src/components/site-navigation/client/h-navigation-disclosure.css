@@ -18,6 +18,12 @@ button {
 	border-width: 0;
 }
 
+:where(:focus-visible) {
+	/* Appearance */
+	border-radius: var(--EdgeRadius);
+	outline: 1px solid var(--FocusLight);
+}
+
 /* Unset SVG styles */
 
 svg {
@@ -29,9 +35,10 @@ svg {
 
 	/* Layout */
 	align-items: center;
-	inline-size: max(100%);
+	inline-size: max(100% - 2--step);
+	margin-inline: 1--step;
 	padding-block: 4--step;
-	padding-inline: 11--step;
+	padding-inline: 10--step;
 
 	/* Appearance */
 	cursor: pointer;

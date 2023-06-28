@@ -19,8 +19,10 @@
 
 	/* Appearance */
 	background-color: var(--SurfaceColor);
+	border-radius: 0;
 	box-shadow: currentColor 0 -1px 0 0 inset;
 	color: var(--PrimaryColor);
+	outline-color: transparent;
 }
 
 :where(.p-skip:not(:focus-visible)) {

@@ -16,6 +16,11 @@
 	border-radius: var(--EdgeRadius);
 	color: var(--PrimaryColor);
 
+	& :where(:focus-visible) {
+		/* Appearance */
+		outline-color: var(--FocusLight);
+	}
+
 	@media (width >= 400px) {
 		/* Layout */
 		inline-size: min(100% - 4--step, 134--step);

@@ -30,6 +30,29 @@
 		&:hover {
 			fill: var(--DarkBlue600Color);
 		}
+
+		&:focus-visible {
+			/* Layout */
+			position: relative;
+
+			/* Appearance */
+			outline-color: transparent;
+
+			&::after {
+				display: block;
+
+				/* Layout */
+				inset: 0;
+				position: absolute;
+
+				/* Appearance */
+				border: 1px solid var(--FocusDark);
+				border-radius: var(--EdgeRadius);
+
+				/* Generated */
+				content: "";
+			}
+		}
 	}
 }
 
