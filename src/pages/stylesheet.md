@@ -137,9 +137,8 @@ We use a 4px grid system. There are two special variables that you can use in ou
 |       | `--ExampleDoColor`     | `hsl(109 82% 39%)`         | Color of border separating Example Do image and text    |
 |       | `--ExampleDontColor`   | `hsl(13 99% 50%)`          | Color of border separating Example Don't image and text |
 |       | `--CautionBorderColor` | `var(--HotOrange600Color)` | Caution note border color                               |
-|       | `--CautionColor`       | `var(--HotOrange600Color)` | Caution note background color                           |
 |       | `--NoteBorderColor`    | `var(--DarkBlue500Color)`  | Note border color                                       |
-|       | `--NoteColor`          | `var(--DarkBlue500Color)`  | Note background color                                   |
+|       | `--NoteColor`          | `var(--Grey100Color)`      | Note/caution background color                           |
 :::
 
 ### Reference colors
@@ -164,6 +163,7 @@ TODO: we are currently using these colors directly. If we want a design system t
 |       | `--DarkBlue850Color`   | `hsl(209 39% 17%)`    | --SurfaceColor                                                                                                                                                             |
 |       | `--DarkBlue900Color`   | `hsl(210 39% 15%)`    | --SurfaceHeaderColor, --BaseHeaderColor can combine these two variables and name them something else                                                                       |
 |       | `--DarkBlue950Color`   | `hsl(213 36% 5%)`     | --InverseColor                                                                                                                                                             |
+|       | `--Grey100Color`       | `hsl(225, 25%, 97%)`  | Playground: panel header background, text, radio, switch, select(off) background & Header background. Icon search background, table header background                      |
 |       | `--Grey200Color`       | `hsl(216 31% 94%)`    | Playground: panel header background, text, radio, switch, select(off) background & Header background. Icon search background, table header background                      |
 |       | `--Grey300Color`       | `hsl(213 12% 85%)`    | --SecondaryColor, also default table borders, and the icon library sidepanel text color                                                                                    |
 |       | `--Grey400Color`       | `hsl(214 11% 76%)`    | Icon Library search border color (recommendation: replace with something close)                                                                                            |

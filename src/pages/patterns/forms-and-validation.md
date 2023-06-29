@@ -103,6 +103,7 @@ Individual elements outside of a Dialog or Pane can also be configured for valid
 - Use appropriate input type on form fields for the expected data input (e.g., `<input type="number">` when entering numeric data).
 
 :::note
+<span>
 Poorly written error messages confuse and frustrate the user and force them to fix the input problem through trial and error.
 
 A well written validation error message greatly reduces the user’s error recovery time and boosts user’s confidence in the quality of the application. The error message should inform the user as succinctly as possible:
@@ -110,6 +111,7 @@ A well written validation error message greatly reduces the user’s error recov
 - What the input problem is.
 - Why the input was deemed invalid.
 - How to fix the input error.
+<span>
 
 :::
 
