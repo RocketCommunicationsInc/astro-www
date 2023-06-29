@@ -22,6 +22,13 @@
 		box-shadow: var(--EdgeColor) 0 -1px 0 0;
 	}
 
+	& :is(:focus-visible) {
+		/* Appearance */
+		border-radius: var(--EdgeRadius);
+		outline: 1--rpx solid var(--FocusDark);
+		outline-offset: 2--rpx;
+	}
+
 	&::part(heading) {
 		display: flex;
 
@@ -96,7 +103,7 @@
 		}
 
 		&:hover {
-			fill: #000000;
+			fill: var(--InverseColor);
 		}
 	}
 

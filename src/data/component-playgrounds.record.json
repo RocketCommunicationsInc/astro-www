@@ -1007,6 +1007,12 @@
 				},
 				{
 					"kind": "switch",
+					"attribute": "invalid",
+					"property": "invalid",
+					"checked": false
+				},
+				{
+					"kind": "switch",
 					"attribute": "required",
 					"property": "required",
 					"checked": false

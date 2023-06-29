@@ -101,7 +101,7 @@ a-slots-control {
 
 				/* Appearance */
 				background-color: var(--Grey200Color);
-				border-radius: 3--rpx;
+				border-radius: var(--EdgeRadius);
 				box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
 			}
 		}

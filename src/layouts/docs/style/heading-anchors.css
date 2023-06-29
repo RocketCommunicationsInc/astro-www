@@ -37,13 +37,16 @@ a.h {
 		}
 	}
 
-	&:hover, &:focus-visible {
+	&:hover {
 		/* Appearance */
 		color: var(--InvertedColor);
 	}
 
 	&:focus-visible {
+		/* The focus state for headers is the same as hover so set outline to transparent so */
+		/* that if a high contrast preferred user comes they can still get focus outline. */
+
 		/* Appearance */
-		outline: none;
+		outline-color: transparent;
 	}
 }

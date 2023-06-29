@@ -226,6 +226,7 @@
 	/* Layout */
 	inset-block-start: 0;
 	position: sticky;
+	z-index: 2;
 
 	@media (width < 1024px) {
 		/* Layout */
@@ -269,20 +270,12 @@
 	}
 
 	& a[href]:not([class]) {
-		&:focus-visible {
-			/* Appearance */
-			background-color: var(--InverseColor);
-			color: var(--Orange400Color);
-		}
+		/* Appearance */
+		color: var(--DarkBlue500Color);
 
-		&:not(:focus-visible) {
-			/* Appearance */
-			color: var(--DarkBlue500Color);
-
-			&:hover {
-				/* Text */
-				color: var(--DarkBlue700Color);
-			}
+		&:hover {
+			/* Text */
+			color: var(--DarkBlue700Color);
 		}
 	}
 
@@ -457,28 +450,58 @@
 		display: flex;
 
 		/* Layout */
-		flex-flow: column;
-		justify-content: center;
+		align-items: center;
+		gap: 4--step;
+
+		/* Layout */
 		margin-block-end: 5--step;
-		min-block-size: 18--step;
-		padding-block: 7--step;
-		padding-inline: 16--step 4--step;
+		padding: 3--step 2--step 3--step 4--step;
+		position: relative;
 
 		/* Appearance */
-		background: var(--note-color) var(--note-icon) no-repeat 4--step center;
-		border-radius: 6--rpx;
-		box-shadow: var(--note-border-color, transparent) 0 0 0 1px inset;
-		color: #ffffff;
+		background: var(--NoteColor);
+		border: 1--step solid var(--note-border-color);
+		border-radius: var(--EdgeRadius);
+		border-inline-start-width: 3--step;
 
-		& :is(li, p) a:not([class]):not(:focus-visible) {
+		&::before {/* create before icon in a way that can be color masked */
+			/* Layout */
+			block-size: 8--step;
+			inline-size: 8--step;
+			min-inline-size: 8--step;
+
 			/* Appearance */
-			color: #ffc235;
+			background-color: var(--note-border-color);
+
+			/* Masking */
+			mask: var(--note-icon) no-repeat 50% 50%;
+			mask-size: cover;
+
+			/* Generated */
+			content: "";
 		}
 
-		& > :last-child {
+		&::after { /* this is for the interior rounding visual */
+			display: block;
+
+			/* Layout */
+			inset: -1px;
+			position: absolute;
+
+			/* Appearance */
+			border: 1px solid var(--note-border-color);
+			border-radius: var(--EdgeRadius);
+
+			/* Behavior */
+			pointer-events: none;
+
+			/* Generated */
+			content: "";
+		}
+
+		& :is(*) {
 			/* Layout */
 			margin-block: 0;
-			padding-inline-start: 2--step;
 		}
 
 		& ul {
@@ -494,13 +517,11 @@
 
 	& .note {
 		--note-border-color: var(--NoteBorderColor);
-		--note-color: var(--NoteColor);
 		--note-icon: var(--NoteIcon);
 	}
 
 	& .caution {
 		--note-border-color: var(--CautionBorderColor);
-		--note-color: var(--CautionColor);
 		--note-icon: var(--CautionIcon);
 	}
 

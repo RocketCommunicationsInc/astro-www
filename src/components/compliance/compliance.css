@@ -58,20 +58,12 @@
 				font-size: 14--rpx;
 				line-height: calc(20 / 14);
 
-				&:focus-visible {
-					/* Appearance */
-					background-color: var(--InverseColor);
-					color: var(--Orange400Color);
-				}
+				/* Text */
+				color: var(--DarkBlue500Color);
 
-				&:not(:focus-visible) {
+				&:hover {
 					/* Text */
-					color: var(--DarkBlue500Color);
-
-					&:hover {
-						/* Text */
-						color: var(--DarkBlue700Color);
-					}
+					color: var(--DarkBlue700Color);
 				}
 
 				@media (width < 400px) {
@@ -117,17 +109,17 @@
 
 	&.-under-review {
 		/* Appearance */
-		color: #c8102e;
+		color: var(--Red700Color);
 	}
 
 	&.-updated {
 		/* Appearance */
-		color: #786dd3;
+		color: var(--Purple500Color);
 	}
 
 	&.-new {
 		/* Appearance */
-		color: #005a00;
+		color: var(--Green900Color);
 	}
 }
 
@@ -165,7 +157,7 @@
 
 	/* Appearance */
 	border-radius: var(--EdgeRadius);
-	color: #ffffff;
+	color: var(--PrimaryColor);
 
 	&.-t1 {
 		/* Appearance */

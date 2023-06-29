@@ -12,6 +12,12 @@
 		}
 	}
 
+	& *:focus-visible {
+		/* Appearance */
+		outline: 1--rpx solid var(--FocusDark);
+		outline-offset: 2--rpx;
+	}
+
 	& .widget_content {
 		/* Layout */
 		position: relative;
@@ -40,10 +46,10 @@
 			line-height: 24--rpx;
 
 			/* Appearance */
-			background-color: #ffffff;
+			background-color: var(--PrimaryColor);
 
 			/* Appearance */
-			border: 1px solid #005a8f;
+			border: 1px solid var(--DarkBlue500Color);
 
 			/* Appearance */
 			border-radius: 3px;
@@ -65,25 +71,25 @@
 					vertical-align: middle;
 
 					& path {
-						fill: #005a8f;
+						fill: var(--DarkBlue500Color);
 					}
 				}
 
 				&.selected {
 					/* Appearance */
-					background-color: #2f7aa7;
-					border: 1px solid #005a8f;
+					background-color: var(--DarkBlue400Color);
+					border: 1px solid var(--DarkBlue500Color);
 
 					& svg path {
-						fill: #ffffff;
+						fill: var(--PrimaryColor);
 					}
 				}
 			}
 
 			&.widget_primary-button {
 				/* Appearance */
-				background-color: #005a8f;
-				color: #ffffff;
+				background-color: var(--DarkBlue500Color);
+				color: var(--PrimaryColor);
 
 				&:disabled {
 					/* Appearance */
@@ -97,7 +103,7 @@
 				margin-inline-end: 3--step;
 
 				/* Appearance */
-				color: #005a8f;
+				color: var(--DarkBlue500Color);
 			}
 		}
 
@@ -143,7 +149,7 @@
 
 			/* Appearance */
 			background-color: #fafafa;
-			border: 1px solid #2f7aa7;
+			border: 1px solid var(--DarkBlue400Color);
 
 			/* Appearance */
 			border-radius: 3px;
@@ -155,23 +161,11 @@
 
 			/* Layout */
 			margin-block-start: 6--step;
-
-			&:focus {
-				/* Appearance */
-				outline: 1px solid #2f7aa7;
-			}
 		}
 
 		& input {
 			/* Layout */
 			margin-block-start: 3--step;
-
-			&:focus {
-				&:valid {
-					/* Appearance */
-					outline: 1px solid #2f7aa7;
-				}
-			}
 
 			&:invalid {
 				/* Appearance */
@@ -209,7 +203,7 @@
 			position: absolute;
 
 			/* Appearance */
-			background-color: #ffffff;
+			background-color: var(--PrimaryColor);
 			opacity: 0;
 
 			/* Animation */
@@ -236,10 +230,10 @@
 			}
 
 			& svg {
-				fill: #005a8f;
+				fill: var(--DarkBlue500Color);
 
 				&.success {
-					fill: #f68e1e;
+					fill: var(--Orange700Color);
 
 					/* Animation */
 					transition: fill 400ms ease-in;
@@ -271,7 +265,7 @@
 					inline-size: 2--step;
 
 					/* Appearance */
-					background-color: #005a8f;
+					background-color: var(--DarkBlue500Color);
 					border-radius: 100%;
 					opacity: 1;
 
@@ -340,7 +334,7 @@
 				text-align: center;
 
 				/* Appearance */
-				color: #292a2d;
+				color: var(--Grey900Color);
 			}
 		}
 
@@ -362,7 +356,7 @@
 			position: absolute;
 
 			/* Appearance */
-			background-color: #eaeef4;
+			background-color: var(--Grey200Color);
 			opacity: 0;
 
 			/* Animation */
@@ -379,7 +373,7 @@
 			}
 
 			& svg path {
-				fill: #c8102e;
+				fill: var(--Red700Color);
 			}
 
 			& .widget_fail-text {
@@ -392,7 +386,7 @@
 				text-align: center;
 
 				/* Appearance */
-				color: #292a2d;
+				color: var(--Grey900Color);
 			}
 		}
 	}
@@ -407,7 +401,7 @@
 			inset-block-start: 0;
 
 			/* Appearance */
-			background-color: #eaeef4;
+			background-color: var(--Grey200Color);
 		}
 	}
 
@@ -435,12 +429,12 @@
 @keyframes antennaDot {
 	from {
 		/* Appearance */
-		background-color: #005a8f;
+		background-color: var(--DarkBlue500Color);
 	}
 
 	30% {
 		/* Appearance */
-		background-color: #005a8f;
+		background-color: var(--DarkBlue500Color);
 
 		/* Transform */
 		transform: scale(1);
@@ -448,7 +442,7 @@
 
 	50% {
 		/* Appearance */
-		background-color: #f68e1e;
+		background-color: var(--Orange700Color);
 
 		/* Transform */
 		transform: scale(1.5);
@@ -456,6 +450,6 @@
 
 	to {
 		/* Appearance */
-		background-color: #005a8f;
+		background-color: var(--DarkBlue500Color);
 	}
 }

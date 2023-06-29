@@ -120,6 +120,13 @@ const createNav = (headings: any) => {
 	linksNav?.append(separator)
 	linksNav?.append(navigation)
 }
+const checkVisibility = (currentItem: Element) => {
+	const navWrapper = document.querySelector('.section-links-wrapper') as HTMLElement
+	const navWrapperSize = navWrapper.getBoundingClientRect()
+	const itemSize = currentItem.getBoundingClientRect()
+	const isVisible = (itemSize.top >= navWrapperSize.top && itemSize.bottom <= navWrapperSize.bottom)
+	return isVisible
+}
 
 const createObservers = (headings: NodeListOf<HTMLHeadingElement>, footer: HTMLElement | null) => {
 	let currentHeading: HTMLHeadingElement | null
@@ -155,10 +162,21 @@ const createObservers = (headings: NodeListOf<HTMLHeadingElement>, footer: HTMLE
 			}
 
 			if (currentHeading) {
-				const listElements = document.querySelectorAll('.section-links li a')
+				const listElements = document.querySelectorAll('.section-links li a') as NodeListOf<HTMLElement>
 
 				for (const listItem of listElements) {
-					listItem.classList.contains(currentHeading.id) ? listItem.classList.add('-highlighted') : listItem.classList.remove('-highlighted')
+					// look for the appropriate element then highlight it
+					if (listItem.classList.contains(currentHeading.id)) {
+						listItem.classList.add('-highlighted')
+						// see if the highlighted item is visible and if not, scroll to it
+						if (!checkVisibility(listItem)) {
+							const parent = document.querySelector('.section-links') as HTMLElement
+							parent?.scrollTo({
+								top: listItem.offsetTop - parent.offsetTop,
+								behavior: 'smooth'
+})
+						}
+					} else { listItem.classList.remove('-highlighted') }
 				}
 			}
 		}, {
@@ -193,6 +211,8 @@ const createObservers = (headings: NodeListOf<HTMLHeadingElement>, footer: HTMLE
 }
 
 addComplianceFooterToNav()
+// check to see if h3s exist in the side nav
+const extendedNav = document.querySelectorAll('a.heading-3').length > 0 ? 'h2,h3' : 'h2'
 // make h2 observers and one for the footer
-createObservers(document.querySelectorAll('main [id]:is(h2)'), document.querySelector('footer.p-footer'))
+createObservers(document.querySelectorAll(`main [id]:is(${extendedNav})`), document.querySelector('footer.p-footer'))
 // createTableOfContentsNavigation(document.querySelectorAll('main [id]:is(h1,h2,h3,h4,h5,h6)'))

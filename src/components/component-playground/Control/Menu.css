@@ -88,11 +88,13 @@ svg {
 
 /* Contextual Styles */
 
-:host(:where(:hover, :focus)) {
+:host(:where(:hover)) {
 	--EdgeColor: var(--DarkBlue600Color);
 }
 
 :host(:focus) {
 	/* Appearance */
-	outline: auto 1px;
+	border-radius: var(--EdgeRadius);
+	outline: 1--rpx solid var(--FocusDark);
+	outline-offset: 2--rpx;
 }

@@ -67,12 +67,9 @@
 
 :host(:focus-visible) {
 	/* Appearance */
-	outline: none;
-
-	&::part(thumb) {
-		/* Appearance */
-		outline: auto 1px;
-	}
+	border-radius: 3--rpx;
+	outline: 1--rpx solid var(--FocusDark);
+	outline-offset: 2--rpx;
 }
 
 :host(:where(:hover, :focus-visible)) {
