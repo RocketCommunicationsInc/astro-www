@@ -10,11 +10,16 @@ import SiteFooter from 'project:components/site-footer/site-footer.astro'
 
 export type { Props }
 
+const description = Astro.props.description ? Astro.props.description : `The Astro Space UX Design System enables developers & designers to build rich space app experiences with established interaction patterns & best practices.`
+
 const attrs = {
 	url: Astro.url.href,
 	...globalData.siteMeta,
+	description,
 	...Astro.props,
 }
+
+console.log(attrs)
 
 
 ---
