@@ -19,7 +19,9 @@ Filters, to narrow what is displayed in the Table, may be presented in the heade
 
 ## Sorting
 
-Tables default to being sorted by the data in the first column with an arrow pointing up or down to indicate whether that column is being sorted in ascending or descending order, respectively. Manual sorting is accomplished by clicking the text in a column header. On initial sort, data may sort either ascending or descending, depending on what type of data is contained in that column, with subsequent clicks toggling between the two.
+By default, tables are sorted by the data in the first column with an arrow pointing up or down to indicate whether the column is being sorted in ascending or descending order, respectively. However, the default sorting order may vary based on the specific use case or the results of user testing. For example, a table that populates new content based on time entries, such as a log, may make more sense to default sorting by time.
+
+Manual sorting can be accomplished by clicking the text in a column header. On initial sort, data may sort either ascending or descending, depending on what type of data is contained in that column, with subsequent clicks toggling between the two. It's important to consider the specific use case and the needs of the users when determining the default sorting order for a table.
 
 ## Selection and Action
 
