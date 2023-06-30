@@ -28,11 +28,11 @@ Notifications and interface feedback both communicate important information to t
 
 ## Choosing a Pattern for Notifications
 
-![](/img/patterns/notifications/notifications-decision-tree.webp)
-
 When choosing a pattern for notifications, you must first choose which type best fits the message content. As it has been defined, notifications will be communications with the user that hold information which needs to be accessed later. This information may or may not require a response and will have different levels of urgency.
 
 Below is a graphic to help choose which pattern to use depending on whether the message being displayed is a notification or interface feedback (form validation guidance can be found on the [Forms and Validation](/patterns/forms-and-validation/) page).
+
+![](/img/patterns/notifications/notifications-decision-tree.webp)
 
 ### Understanding Context for Notifications
 
@@ -81,7 +81,7 @@ Log notifications can be purely informational, as in a satellite or application 
 :::two-col
 ![Do: Include time stamps in log notifications.](/img/patterns/notifications/notifications-log-do-1.webp "Do: Include time stamps in log notifications.")
 
-![Don’t: Display notifications that would be classified as interface feedback in logs.](/img/patterns/notifications/notifications-log-dont-1.webp "Don't: Display notifications that would be classified as interface feedback in logs.")
+![Don’t: Don't display notifications that would be classified as interface feedback in logs.](/img/patterns/notifications/notifications-log-dont-1.webp "Don't: Don't display notifications that would be classified as interface feedback in logs.")
 :::
 
 ### Badge
@@ -99,7 +99,7 @@ This Badge shows that one event related to a satellite has occurred. You may hyp
 :::two-col
 ![Do: Link Badge icons to the general log](/img/patterns/notifications/badge-do-1.webp "Do: Link Badge icons to the general log")
 
-![Don’t: Use a long string of numbers for higher values.](/img/patterns/notifications/badge-dont-1.webp "Don't: Use a long string of numbers for higher values.")
+![Don’t: Don't use a long string of numbers for higher values.](/img/patterns/notifications/badge-dont-1.webp "Don't: Don't use a long string of numbers for higher values.")
 :::
 
 ### Toast
@@ -116,16 +116,16 @@ Toasts typically slide in and out of the top right side of the desktop screen, a
 
 #### Dismissible Toast
 
-A toast message with actionable content that will persist until it is dismissed by the user
+A toast message with actionable content that will persist until it is dismissed by the user.
 
 #### Examples
 
 :::two-col
 ![Do: Multiple toasts stack vertically, with the most recent appearing at the top of the list.](/img/patterns/notifications/notifications-toast-do-1.webp "Do: Multiple toasts stack vertically, with the most recent appearing at the top of the list.")
 
-![Don’t: Place toasts over interface elements which need to remain visible like Notification Symbols.](/img/patterns/notifications/notifications-toast-dont-1.webp "Don't: Place toasts over interface elements which need to remain visible like Notification Symbols.")
+![Don’t: Don't place toasts over interface elements which need to remain visible like Notification Symbols.](/img/patterns/notifications/notifications-toast-dont-1.webp "Don't: Don't place toasts over interface elements which need to remain visible like Notification Symbols.")
 
-![Don’t: Stack more than 4 toasts. When there are more than 4 toasts, visible toasts must be dismissed before any additional toasts appear.](/img/patterns/notifications/notifications-toast-dont-2.webp "Don't: Stack more than 4 toasts. When there are more than 4 toasts, visible toasts must be dismissed before any additional toasts appear.")
+![Don’t: Don't stack more than 4 toasts. When there are more than 4 toasts, visible toasts must be dismissed before any additional toasts appear.](/img/patterns/notifications/notifications-toast-dont-2.webp "Don't: Don't stack more than 4 toasts. When there are more than 4 toasts, visible toasts must be dismissed before any additional toasts appear.")
 :::
 
 ### Banner
@@ -143,14 +143,14 @@ If the user is currently working in a specific screen area, the Banner may be pr
 :::two-col
 ![Do: Use banners for system notifications such as when network connection fails and system needs to reconnect.](/img/patterns/notifications/notifications-banner-do-1.webp "Do: Use banners for system notifications such as when network connection fails and system needs to reconnect.")
 
-![Don’t: Use banners for user feedback (ie. Contact has been saved).](/img/patterns/notifications/notifications-banner-dont-1.webp "Don't: Use banners for user feedback (ie. Contact has been saved).")
+![Don’t: Don't use banners for user feedback (ie. Contact has been saved).](/img/patterns/notifications/notifications-banner-dont-1.webp "Don't: Don't use banners for user feedback (ie. Contact has been saved).")
 
-![Don’t: Obscure interface elements with a banner.](/img/patterns/notifications/notifications-banner-dont-2.webp "Don't: Obscure interface elements with a banner.")
+![Don’t: Don't obscure interface elements with a banner.](/img/patterns/notifications/notifications-banner-dont-2.webp "Don't: Don't obscure interface elements with a banner.")
 :::
 
 ### Modal Dialog
 
-For events that require the user’s immediate attention and response, a modal Dialog may be used. Modal Dialogs should be avoided if possible, as they deliberately interrupt all other user interaction which could be critical.
+For events that require the user’s immediate attention and response, a modal [Dialog](/components/dialog/) may be used. Modal Dialogs should be avoided if possible, as they deliberately interrupt all other user interaction which could be critical.
 
 ![](/img/patterns/notifications/notification-modal-dialog.webp)
 
@@ -159,7 +159,7 @@ For events that require the user’s immediate attention and response, a modal D
 :::two-col
 ![Do: Write clear titles for modal Dialog notifications.](/img/patterns/notifications/notification-modal-dialog-do-1.webp "Do: Write clear titles for modal Dialog notifications.")
 
-![Don’t: Use modal notifications for user feedback.](/img/patterns/notifications/notification-modal-dialog-dont-1.webp "Don't: Use modal notifications for user feedback.")
+![Don’t: Don't use modal notifications for user feedback.](/img/patterns/notifications/notification-modal-dialog-dont-1.webp "Don't: Don't use modal notifications for user feedback.")
 :::
 
 ## Notification Status 
