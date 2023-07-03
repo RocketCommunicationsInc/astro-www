@@ -1,0 +1,90 @@
+:host {
+	display: block;
+
+	/* Appearance */
+	background: var(--Neutral000Color);
+
+	&::part(heading) {
+		display: flex;
+
+		/* Layout */
+		border-block-end: 1px solid var(--Grey700Color);
+
+		/* Layout */
+		gap: 3--step;
+		padding-block: 10--rpx;
+		padding-inline: 12--rpx;
+
+		/* Appearance */
+		cursor: default;
+		user-select: none;
+	}
+
+	&::part(code) {
+		/* Layout */
+		padding: 1rem;
+
+		/* Appearance */
+		background-color: var(--DarkBlue850Color);
+		color: var(--PrimaryColor);
+	}
+
+	& pre {
+		/* Layout */
+		margin: 0;
+	}
+
+	& button {
+		/* Layout */
+		margin-inline-start: auto;
+
+		/* Layout */
+		padding: 0;
+
+		/* Appearance */
+		background-color: transparent;
+		border: none;
+
+		/* Appearance */
+		cursor: pointer;
+		fill: var(--Grey700Color);
+
+		& svg {
+			/* Layout */
+			display: block;
+
+			/* Layout */
+			block-size: 5--step;
+			inline-size: 5--step;
+		}
+
+		&:hover {
+			fill: var(--InverseColor);
+		}
+	}
+
+	& svg {
+		/* Layout */
+		block-size: 6--step;
+		inline-size: 6--step;
+		fill: var(--Grey700Color);
+	}
+}
+
+/* Context Styles */
+
+:host([collapsed]) {
+	&::part(heading) {
+		/* Layout */
+		border-block-end: none;
+	}
+
+	&::part(code) {
+		display: none;
+	}
+
+	& svg {
+		/* Transform */
+		transform: rotate(180deg);
+	}
+}

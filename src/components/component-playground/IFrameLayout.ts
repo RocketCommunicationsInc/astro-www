@@ -34,6 +34,11 @@ if (iframe !== null) {
 
 	visualViewport.addEventListener('resize', updateIframeHeight, { capture: true })
 
+	// resize whenever code is expanded or collapsed
+	// -----------------------------------------------------------------------------
+
+	addEventListener('togglePanel', updateIframeHeight, { capture: true })
+
 	// resize whenever new elements are defined
 	// -----------------------------------------------------------------------------
 
@@ -48,6 +53,13 @@ if (iframe !== null) {
 	})
 }
 
+function updateCode() {
+	const codeString = $code!.outerHTML
+	codeDrawer.textContent = codeString
+}
+
+const codeDrawer = document.querySelector('a-code-drawer')!
+
 // @ts-ignore
 let $tag = globalThis.$tag as any
 
@@ -56,7 +68,15 @@ let $target = globalThis.$target as any
 
 let $canvas = $target.parentNode as HTMLElement
 
+let $code = parseHTML(codeDrawer.textContent) || document.createElement(`${$tag}`)
+
 let $textTimeoutID: number
+
+function parseHTML(textContent:string = '') {
+    const t = document.createElement('template')
+    t.innerHTML = textContent
+    return t.content.firstElementChild
+}
 
 const handleInput = (event: any) => {
 	const { target } = event as any as { target: HTMLInputElement }
@@ -66,18 +86,21 @@ const handleInput = (event: any) => {
 	if (typeof property === 'string') {
 		if (property === 'sandbox:example') {
 			$canvas.innerHTML = target.value
-
-
 			$target = $canvas.querySelector($tag)
+			$code = parseHTML(target.value)
 
 			target.dispatchEvent(new Event('reset', { bubbles: true }))
 			sendEvent('gtag', 'playground-control', { 'event_category': 'playground', 'event_label': 'Examples', 'control_value': `${target.textContent}` })
 		} else {
+			const codeAttr = property.replace(/([A-Z])/g, '-$1')
 			if ('type' in target && target.type === 'switch') {
 				$target[property] = target.checked
+				target.checked ? $code.setAttribute(`${codeAttr}`, '') : $code.removeAttribute(`${codeAttr}`)
 				sendEvent('gtag', 'playground-control', { 'event_category': 'playground', 'event_label': `${property}`, 'control_value': target.checked ? 'on' : 'off' })
 			} else {
 				$target[property] = target.value
+				console.log(codeAttr, 'attribute')
+				$code.setAttribute(`${codeAttr}`, `${target.value}`)
 
 				// if the target is a text input write a timeout so that it doesn't send every single input change to analytics
 				if (target.nodeName.toLowerCase() === 'a-text-control') {
@@ -94,6 +117,7 @@ const handleInput = (event: any) => {
 			}
 		}
 	}
+	updateCode()
 }
 
 addEventListener('input', handleInput)
