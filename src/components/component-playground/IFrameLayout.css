@@ -165,6 +165,7 @@
 		/* Layout */
 		block-size: 100%;
 		grid-auto-rows: auto 1fr;
+		min-block-size: 400px;
 		overflow: hidden;
 
 		/* Appearance */
@@ -189,9 +190,6 @@
 		max-block-size: var(--max-height);
 
 		@media (width < 700px) {
-			border-end-start-radius: var(--EdgeSizeInner);
-			border-end-end-radius: var(--EdgeSizeInner);
-
 			/* Layout */
 			overflow: initial;
 		}
@@ -206,7 +204,6 @@
 		@media (width >= 700px) {
 			/* Layout */
 			border-start-end-radius: var(--EdgeSizeInner);
-			border-end-end-radius: var(--EdgeSizeInner);
 		}
 
 		@media (width < 700px) {
@@ -214,8 +211,9 @@
 		}
 	}
 
-	& .code-drawer-area{
-
+	& .code-drawer-area {
+		border-end-start-radius: var(--EdgeSizeInner);
+		border-end-end-radius: var(--EdgeSizeInner);
 	}
 }
 

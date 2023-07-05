@@ -344,5 +344,8 @@
 			"**/sanitize.css",
 			"**/dist/**"
 		]
+	},
+	"dependencies": {
+		"highlight.js": "^11.8.0"
 	}
 }

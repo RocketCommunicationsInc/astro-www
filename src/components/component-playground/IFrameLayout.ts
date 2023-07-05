@@ -8,11 +8,12 @@ if (iframe !== null) {
 
 	const updateIframeHeight = () => {
 		const contentHeight = document.body.scrollHeight + 2
+		const codeHeight = document.querySelector('a-code-drawer')?.scrollHeight || 44
 
-		if (contentHeight !== iframeHeight && iframeHeight !== (contentHeight - 2)) {
+		if (iframeHeight !== (contentHeight - 2)) {
 			iframeHeight = visualViewport.width < 700 ? contentHeight : 460
 
-			iframe.style.setProperty('--y', `${iframeHeight}px`)
+			iframe.style.setProperty('--y', `${iframeHeight + codeHeight}px`)
 		}
 	}
 
@@ -55,7 +56,9 @@ if (iframe !== null) {
 
 function updateCode() {
 	const codeString = $code!.outerHTML
-	codeDrawer.textContent = codeString
+	codeDrawer.code = `${codeString}`
+
+	codeDrawer.dispatchEvent(new Event('codeUpdate', { bubbles: true }))
 }
 
 const codeDrawer = document.querySelector('a-code-drawer')!

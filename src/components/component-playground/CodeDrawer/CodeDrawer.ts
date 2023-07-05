@@ -3,7 +3,10 @@ import ReflectedElement from 'project:utils/client/ReflectedElement.ts'
 import { h } from 'project:utils/html.ts'
 import { playgroundSvgs } from 'project:utils/component-playground-svg.ts'
 import styling from './CodeDrawer.css?withtype=style'
+import highlighting from './hljs.css?withtype="style'
 import content from './CodeDrawer.html?withtype=fragment'
+import hljs from 'highlight.js'
+
 
 export default class CodeDrawer extends ReflectedElement(
 	HTMLElement as typeof CodeDrawerInterface,
@@ -41,6 +44,41 @@ export default class CodeDrawer extends ReflectedElement(
 			},
 		},
 
+		code: {
+			defaultValue() {
+				return this.defaultCode
+			},
+			setValue(value) {
+				return value == null ? '' : String(value)
+			},
+			useAttributes: {
+				code() {
+					return this.getAttribute('code') || ''
+				},
+			},
+			onValueChange(code) {
+
+
+			},
+		},
+
+		defaultCode: {
+			defaultValue() {
+				return this.getAttribute('code') || ''
+			},
+			setValue(value) {
+				return value == null ? '' : String(value)
+			},
+			useAttributes: {
+				code() {
+					return this.getAttribute('code') || ''
+				},
+			},
+			onValueChange(code) {
+
+			},
+		},
+
 		defaultCollapsed: {
 			defaultValue() {
 				return this.getAttribute('collapsed') !== null
@@ -61,14 +99,13 @@ export default class CodeDrawer extends ReflectedElement(
 ) {
 	constructor() {
 		const element: CodeDrawer = super()!
+		console.log(highlighting)
 
 		const shadowRoot = DOM.withShadow(element, {
 			mode: 'open',
 			content,
 			styling,
 		})
-
-
 
 		const collapseButton = DOM.queryPart<HTMLButtonElement>(shadowRoot, 'collapseButton')!
 		collapseButton.appendChild(h(`${playgroundSvgs.collapseIcon}`))
@@ -84,11 +121,29 @@ export default class CodeDrawer extends ReflectedElement(
 		})
 
 		const shadowHeading = DOM.queryPart<HTMLSlotElement>(shadowRoot, 'headingTitle')!
+		const shadowContent = DOM.queryPart<HTMLSlotElement>(shadowRoot, 'content')!
+		const formatForDisplay = (code) => {
+			const pattern = /[<>]/g
+			const replacement = { '<': '&lt;', '>': '&gt;' }
+			let newCode = code.replace(pattern, function (match) {
+				return replacement[match]
+			})
+			return newCode
+		}
+
+		// run this once on load
+		shadowContent.innerHTML = formatForDisplay(this.code)
+		hljs.highlightElement(shadowContent)
 
 		DOM.withInternals<Internals>(element, () => ({
 			shadowHeading,
-			shadowContent: DOM.queryPart<HTMLSlotElement>(shadowRoot, 'content')!,
+			shadowContent,
 		}))
+
+		this.addEventListener('codeUpdate', () => {
+			shadowContent.innerHTML = formatForDisplay(this.code)
+			hljs.highlightElement(shadowContent)
+		})
 	}
 }
 
@@ -97,6 +152,12 @@ customElements.define('a-code-drawer', CodeDrawer)
 declare class CodeDrawerInterface extends HTMLElement {
 	/** String label indicating the meaning of the option. */
 	label: string
+
+	/** String representing the code. */
+	code: string
+
+		/** String representing the default code. */
+		defaultCode: string
 
 	/** Boolean indicating whether the panel is active. */
 	collapsed: boolean
