@@ -43,6 +43,9 @@
 			block-size: 100%;
 			box-sizing: border-box;
 			overflow: overlay;
+
+			/* Layout */
+			font-size: 14--rpx;
 			scrollbar-gutter: stable both-edges;
 		}
 	}

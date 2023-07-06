@@ -15,13 +15,13 @@ code.hljs {
 
 .hljs {
 	/* Appearance */
-	background: #1e1e1e;
-	color: #dcdcdc;
+	background: var(--BrightBlue850Color);
+	color: #c9d1d9;
 }
 
 .hljs-keyword, .hljs-literal, .hljs-name, .hljs-symbol {
 	/* Appearance */
-	color: #569cd6;
+	color: #7ee787;
 }
 
 .hljs-link {
@@ -72,7 +72,7 @@ code.hljs {
 
 .hljs-meta, .hljs-meta .hljs-keyword, .hljs-tag {
 	/* Appearance */
-	color: #9b9b9b;
+	color: #c9d1d9;
 }
 
 .hljs-template-variable, .hljs-variable {
@@ -82,7 +82,7 @@ code.hljs {
 
 .hljs-attr, .hljs-attribute {
 	/* Appearance */
-	color: #9cdcfe;
+	color: #79c0ff;
 }
 
 .hljs-section {

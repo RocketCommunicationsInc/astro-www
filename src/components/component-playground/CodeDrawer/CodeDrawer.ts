@@ -9,6 +9,7 @@ import highlighting from './hljs.css?raw'
 /* @ts-ignore */
 import template from './CodeDrawer.html?raw'
 import hljs from 'highlight.js'
+// import theme from 'highlight.js/styles/a11y-dark.css?raw'
 
 const content = html(template + '<style>' + highlighting + '</style>')
 
