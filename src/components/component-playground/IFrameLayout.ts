@@ -13,7 +13,7 @@ if (iframe !== null) {
 		const contentHeight = document.body.scrollHeight + 2
 		const drawerHeight = codeDrawer.scrollHeight <= 400 ? codeDrawer.scrollHeight : 400
 		if (iframeHeight !== (contentHeight - 2)) {
-			iframeHeight = visualViewport!.width < 700 ? contentHeight : 460
+			iframeHeight = visualViewport!.width < 700 ? contentHeight : 500
 
 			iframe.style.setProperty('--y', `${iframeHeight + drawerHeight}px`)
 		}
