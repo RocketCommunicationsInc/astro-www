@@ -10,14 +10,13 @@ Applying all three evaluations is recommended to most effectively boost usabilit
 
 ## Usability Heuristics
 
-The Astro Usability Heuristic Assessment is an evaluation that compares an application against long-standing best practices derived from the [Jakob Nielsen's 10 general principles for interaction design](https://www.nngroup.com/articles/usability-heuristics-complex-applications/). 
+The Astro Usability Heuristic Assessment is an evaluation that compares an application against long-standing best practices derived from the [Jakob Nielsen's 10 general principles for interaction design](https://www.nngroup.com/articles/usability-heuristics-complex-applications/).
 
 **Benefits of Usability Heuristic Evaluations**
 
 - Finds usability problems in a quick timeframe
 - Combines multiple perspectives from evaluation insights
 - Ranks initial issues by severity to prioritize future solutions
-
 
 <figure>
 <a href="/pdf/usability-heuristics.pdf" download="Usability Heuristics Worksheet"><img src="/img/design-process/ux-assessments/ux-assessment-heuristics.webp" alt="Usability Heuristics Worksheet" loading="lazy" width="1400" height="1800"></a>
@@ -26,12 +25,12 @@ The Astro Usability Heuristic Assessment is an evaluation that compares an appli
 
 ## Cognitive Walkthrough
 
-The Astro Cognitive Walkthrough Assessment evaluates an application’s ease of use by observing and scoring a user’s success at each workflow step, revealing obstacles preventing task completion. 
+The Astro Cognitive Walkthrough Assessment evaluates an application’s ease of use by observing and scoring a user’s success at each workflow step, revealing obstacles preventing task completion.
 
 **Benefits of Cognitive Walkthroughs**
 
 - Reveals early-stage constraints and improvements
-- Identifies user issues and optimize work flows 
+- Identifies user issues and optimize work flows
 - Discovers required user and system knowledge
 
 <figure>
@@ -43,7 +42,7 @@ The Astro Cognitive Walkthrough Assessment evaluates an application’s ease of 
 
 The Astro Compliance Audit Assessment provides rules for design and specific usage guidelines for Astro components and applications. The guide illustrates Tier 1 practices, since they are fundamental to Astro’s design and are the easiest to adopt.
 
-**Benefits of Tier 1 Compliance Audits** 
+**Benefits of Tier 1 Compliance Audits**
 
 - Informs future design efforts
 - Increases user participation and adoption
@@ -66,6 +65,6 @@ Download all three worksheets and utilize each evaluation to improve the softwar
 
 ## For More Information
 
-Reach out to the Astro [support team](/support/) or [community](https://app.slack.com/client/TJH6ZB7ST/CJ3U0E127) for any assistance. 
+Reach out to the Astro [support team](/support/) or [community](https://app.slack.com/client/TJH6ZB7ST/CJ3U0E127) for any assistance.
 
-For further reading, see the [Design Resources](/design-process/resources/) page for helpful websites and books. For additional information about patterns and components, visit <a href="/">www.AstroUXDS.com</a>.
+For additional information about patterns and components, visit <a href="/">www.AstroUXDS.com</a>.

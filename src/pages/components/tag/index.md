@@ -32,7 +32,7 @@ Tags are most commonly used in large data sets, such as tables, to help filter a
 
 - Users may confuse tags with buttons, so it is important to distinguish the shape and interaction of tags from button components.
 
-- When using tags, colors should not overlap status or classification colors. We recommend using standard tag colors. For further color guidance, please refer to the usage documentation [Color](/design-guidelines/color/).
+- When using tags, colors should not overlap status or classification colors. We recommend using standard tag colors. For further color guidance, please refer to the usage documentation [Color](/design-tokens/reference/).
 
 - Keep in mind that using tags adds to the visual noise of an interface, so use tags in moderation.
 
