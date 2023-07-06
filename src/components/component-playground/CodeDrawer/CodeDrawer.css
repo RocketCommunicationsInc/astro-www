@@ -19,6 +19,10 @@
 		padding-inline: 12--rpx;
 
 		/* Appearance */
+		background: var(--Grey200Color);
+		color: var(--Grey800Color);
+
+		/* Appearance */
 		cursor: default;
 		user-select: none;
 	}
@@ -31,14 +35,15 @@
 	& pre {
 		/* Layout */
 		block-size: calc(100% - 45px);
-
-		/* Layout */
 		margin: 0;
+		overflow: hidden;
 
 		& code {
 			/* Layout */
 			block-size: 100%;
 			box-sizing: border-box;
+			overflow: overlay;
+			scrollbar-gutter: stable both-edges;
 		}
 	}
 
@@ -98,7 +103,9 @@
 	}
 
 	&::part(code) {
-		display: none;
+		/* Layout */
+		block-size: 0;
+		overflow: hidden;
 	}
 
 	& [part="collapseButton"] {
