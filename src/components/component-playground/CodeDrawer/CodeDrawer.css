@@ -30,10 +30,12 @@
 		margin: 0;
 	}
 
-	& button {
+	&::part(copyCodeButton) {
 		/* Layout */
 		margin-inline-start: auto;
+	}
 
+	& button {
 		/* Layout */
 		padding: 0;
 
@@ -79,135 +81,10 @@
 		display: none;
 	}
 
-	& svg {
-		/* Transform */
-		transform: rotate(180deg);
+	&::part(collapseButton) {
+		& svg {
+			/* Transform */
+			transform: rotate(180deg);
+		}
 	}
-}
-
-/*** HIGHLIGHTING ***/
-
-code.hljs {
-	/* Layout */
-	padding: 3px 5px;
-
-	@nest pre & {
-		display: block;
-
-		/* Layout */
-		overflow-x: auto;
-		padding: 1em;
-	}
-}
-
-.hljs {
-	/* Appearance */
-	background: #1e1e1e;
-	color: #dcdcdc;
-}
-
-.hljs-keyword, .hljs-literal, .hljs-name, .hljs-symbol {
-	/* Appearance */
-	color: #569cd6;
-}
-
-.hljs-link {
-	/* Text */
-	text-decoration: underline;
-
-	/* Appearance */
-	color: #569cd6;
-}
-
-.hljs-built_in, .hljs-type {
-	/* Appearance */
-	color: #4ec9b0;
-}
-
-.hljs-class, .hljs-number {
-	/* Appearance */
-	color: #b8d7a3;
-}
-
-.hljs-meta .hljs-string, .hljs-string {
-	/* Appearance */
-	color: #d69d85;
-}
-
-.hljs-regexp, .hljs-template-tag {
-	/* Appearance */
-	color: #9a5334;
-}
-
-.hljs-formula, .hljs-function, .hljs-params, .hljs-subst, .hljs-title {
-	/* Appearance */
-	color: #dcdcdc;
-}
-
-.hljs-comment, .hljs-quote {
-	/* Text */
-	font-style: italic;
-
-	/* Appearance */
-	color: #57a64a;
-}
-
-.hljs-doctag {
-	/* Appearance */
-	color: #608b4e;
-}
-
-.hljs-meta, .hljs-meta .hljs-keyword, .hljs-tag {
-	/* Appearance */
-	color: #9b9b9b;
-}
-
-.hljs-template-variable, .hljs-variable {
-	/* Appearance */
-	color: #bd63c5;
-}
-
-.hljs-attr, .hljs-attribute {
-	/* Appearance */
-	color: #9cdcfe;
-}
-
-.hljs-section {
-	/* Appearance */
-	color: #ffd700;
-}
-
-.hljs-emphasis {
-	/* Text */
-	font-style: italic;
-}
-
-.hljs-strong {
-	/* Text */
-	font-weight: 700;
-}
-
-.hljs-bullet, .hljs-selector-attr, .hljs-selector-class, .hljs-selector-id, .hljs-selector-pseudo, .hljs-selector-tag {
-	/* Appearance */
-	color: #d7ba7d;
-}
-
-.hljs-addition {
-	display: inline-block;
-
-	/* Layout */
-	inline-size: 100%;
-
-	/* Appearance */
-	background-color: #144212;
-}
-
-.hljs-deletion {
-	display: inline-block;
-
-	/* Layout */
-	inline-size: 100%;
-
-	/* Appearance */
-	background-color: #660000;
 }

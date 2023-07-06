@@ -1,11 +1,13 @@
 import * as DOM from 'project:utils/client/DOM'
 import ReflectedElement from 'project:utils/client/ReflectedElement.ts'
-import { h } from 'project:utils/html.ts'
+import { h, html } from 'project:utils/html.ts'
 import { playgroundSvgs } from 'project:utils/component-playground-svg.ts'
 import styling from './CodeDrawer.css?withtype=style'
-import highlighting from './hljs.css?withtype="style'
-import content from './CodeDrawer.html?withtype=fragment'
+import highlighting from './hljs.css?raw'
+import template from './CodeDrawer.html?raw'
 import hljs from 'highlight.js'
+
+const content = html(template + '<style>' + highlighting + '</style>')
 
 
 export default class CodeDrawer extends ReflectedElement(
@@ -99,7 +101,6 @@ export default class CodeDrawer extends ReflectedElement(
 ) {
 	constructor() {
 		const element: CodeDrawer = super()!
-		console.log(highlighting)
 
 		const shadowRoot = DOM.withShadow(element, {
 			mode: 'open',
@@ -107,6 +108,7 @@ export default class CodeDrawer extends ReflectedElement(
 			styling,
 		})
 
+		// Collapse/Expand Drawer
 		const collapseButton = DOM.queryPart<HTMLButtonElement>(shadowRoot, 'collapseButton')!
 		collapseButton.appendChild(h(`${playgroundSvgs.collapseIcon}`))
 		// trigger a togglePanel event
@@ -117,6 +119,16 @@ export default class CodeDrawer extends ReflectedElement(
 				DOM.trigger(element, {
 					togglePanel: { bubbles: true, composed: true },
 				})
+			}
+		})
+
+		const copyButton = DOM.queryPart<HTMLButtonElement>(shadowRoot, 'copyCodeButton')!
+		copyButton.appendChild(h(`${playgroundSvgs.copyIcon}`))
+
+		// trigger a togglePanel event
+		DOM.observe(copyButton, {
+			click() {
+				navigator.clipboard.writeText(element.code)
 			}
 		})
 

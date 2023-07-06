@@ -11,6 +11,7 @@ if (iframe !== null) {
 		const codeHeight = document.querySelector('a-code-drawer')?.scrollHeight || 44
 
 		if (iframeHeight !== (contentHeight - 2)) {
+			console.log('heard it too')
 			iframeHeight = visualViewport.width < 700 ? contentHeight : 460
 
 			iframe.style.setProperty('--y', `${iframeHeight + codeHeight}px`)
@@ -39,6 +40,10 @@ if (iframe !== null) {
 	// -----------------------------------------------------------------------------
 
 	addEventListener('togglePanel', updateIframeHeight, { capture: true })
+	addEventListener('input', () => {
+		console.log('heard it!')
+		updateIframeHeight()
+}, { capture: true })
 
 	// resize whenever new elements are defined
 	// -----------------------------------------------------------------------------
@@ -71,7 +76,7 @@ let $target = globalThis.$target as any
 
 let $canvas = $target.parentNode as HTMLElement
 
-let $code = parseHTML(codeDrawer.textContent) || document.createElement(`${$tag}`)
+let $code = parseHTML(codeDrawer.textContent) || parseHTML(codeDrawer.getAttribute('code'))
 
 let $textTimeoutID: number
 

@@ -110,6 +110,7 @@
 
 	@media (width <= 700px) {
 		/* Layout */
+		grid-template-columns: 100%;
 		grid-template-rows: 80--step auto max-content;
 
 		/* Reference */
@@ -165,7 +166,6 @@
 		/* Layout */
 		block-size: 100%;
 		grid-auto-rows: auto 1fr;
-		min-block-size: 400px;
 		overflow: hidden;
 
 		/* Appearance */
@@ -182,6 +182,9 @@
 		@media (width >= 700px) {
 			border-start-start-radius: var(--EdgeSizeInner);
 			border-end-start-radius: var(--EdgeSizeInner);
+
+			/* Layout */
+			min-block-size: 400px;
 		}
 	}
 
@@ -197,6 +200,7 @@
 		@media (width >= 700px) {
 			/* Layout */
 			grid-auto-rows: minmax(0, 1fr);
+			min-block-size: 400px;
 		}
 	}
 
@@ -204,6 +208,9 @@
 		@media (width >= 700px) {
 			/* Layout */
 			border-start-end-radius: var(--EdgeSizeInner);
+
+			/* Layout */
+			min-block-size: 400px;
 		}
 
 		@media (width < 700px) {

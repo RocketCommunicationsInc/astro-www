@@ -25,6 +25,7 @@ if (!globalThis.ClipboardItem) {
 addEventListener('clipboard:write', event => {
 	const { href, type = typeOfTextPlain, text = '' } = event.detail
 	const target = event.composedPath().shift()!
+	console.log('wut')
 
 	Object(
 		href == null
