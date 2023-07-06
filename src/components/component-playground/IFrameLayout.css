@@ -180,11 +180,10 @@
 		}
 
 		@media (width >= 700px) {
-			border-start-start-radius: var(--EdgeSizeInner);
-			border-end-start-radius: var(--EdgeSizeInner);
-
 			/* Layout */
 			min-block-size: 400px;
+			border-start-start-radius: var(--EdgeSizeInner);
+			border-end-start-radius: var(--EdgeSizeInner);
 		}
 	}
 
@@ -219,6 +218,8 @@
 	}
 
 	& .code-drawer-area {
+		/* Layout */
+		max-block-size: 400px;
 		border-end-start-radius: var(--EdgeSizeInner);
 		border-end-end-radius: var(--EdgeSizeInner);
 	}

@@ -2,8 +2,11 @@ import * as DOM from 'project:utils/client/DOM'
 import ReflectedElement from 'project:utils/client/ReflectedElement.ts'
 import { h, html } from 'project:utils/html.ts'
 import { playgroundSvgs } from 'project:utils/component-playground-svg.ts'
+/* @ts-ignore */
 import styling from './CodeDrawer.css?withtype=style'
+/* @ts-ignore */
 import highlighting from './hljs.css?raw'
+/* @ts-ignore */
 import template from './CodeDrawer.html?raw'
 import hljs from 'highlight.js'
 
@@ -58,10 +61,6 @@ export default class CodeDrawer extends ReflectedElement(
 					return this.getAttribute('code') || ''
 				},
 			},
-			onValueChange(code) {
-
-
-			},
 		},
 
 		defaultCode: {
@@ -75,9 +74,6 @@ export default class CodeDrawer extends ReflectedElement(
 				code() {
 					return this.getAttribute('code') || ''
 				},
-			},
-			onValueChange(code) {
-
 			},
 		},
 
@@ -129,14 +125,22 @@ export default class CodeDrawer extends ReflectedElement(
 		DOM.observe(copyButton, {
 			click() {
 				navigator.clipboard.writeText(element.code)
+				copyButton.innerHTML = playgroundSvgs.doneIcon
+				setTimeout(() => {
+					copyButton.innerHTML = playgroundSvgs.copyIcon
+				}, 1000)
+
+				DOM.trigger(element, {
+					clipboardWrite: { bubbles: true, composed: true },
+				})
 			}
 		})
 
 		const shadowHeading = DOM.queryPart<HTMLSlotElement>(shadowRoot, 'headingTitle')!
 		const shadowContent = DOM.queryPart<HTMLSlotElement>(shadowRoot, 'content')!
-		const formatForDisplay = (code) => {
+		const formatForDisplay = (code: string) => {
 			const pattern = /[<>]/g
-			const replacement = { '<': '&lt;', '>': '&gt;' }
+			const replacement: { [key: string]: string; } = { '<': '&lt;', '>': '&gt;' }
 			let newCode = code.replace(pattern, function (match) {
 				return replacement[match]
 			})
@@ -168,8 +172,8 @@ declare class CodeDrawerInterface extends HTMLElement {
 	/** String representing the code. */
 	code: string
 
-		/** String representing the default code. */
-		defaultCode: string
+	/** String representing the default code. */
+	defaultCode: string
 
 	/** Boolean indicating whether the panel is active. */
 	collapsed: boolean

@@ -1,20 +1,21 @@
+import type CodeDrawer from 'project:components/component-playground/CodeDrawer/CodeDrawer.ts'
 import type PlaygroundElement from './Playground/Playground.ts'
 import { sendEvent } from 'project:utils/client/DOM.ts'
+import { h } from 'project:utils/html.ts'
 
 const iframe = window.parent?.document.querySelector('a-playground')! as PlaygroundElement
+const codeDrawer: CodeDrawer = document.querySelector('a-code-drawer')!
 
 if (iframe !== null) {
 	let iframeHeight = 0
 
 	const updateIframeHeight = () => {
 		const contentHeight = document.body.scrollHeight + 2
-		const codeHeight = document.querySelector('a-code-drawer')?.scrollHeight || 44
-
+		const drawerHeight = codeDrawer.scrollHeight <= 400 ? codeDrawer.scrollHeight : 400
 		if (iframeHeight !== (contentHeight - 2)) {
-			console.log('heard it too')
-			iframeHeight = visualViewport.width < 700 ? contentHeight : 460
+			iframeHeight = visualViewport!.width < 700 ? contentHeight : 460
 
-			iframe.style.setProperty('--y', `${iframeHeight + codeHeight}px`)
+			iframe.style.setProperty('--y', `${iframeHeight + drawerHeight}px`)
 		}
 	}
 
@@ -34,16 +35,15 @@ if (iframe !== null) {
 	// resize whenever the iframe viewport resizes
 	// -----------------------------------------------------------------------------
 
-	visualViewport.addEventListener('resize', updateIframeHeight, { capture: true })
+	visualViewport!.addEventListener('resize', updateIframeHeight, { capture: true })
 
 	// resize whenever code is expanded or collapsed
 	// -----------------------------------------------------------------------------
 
-	addEventListener('togglePanel', updateIframeHeight, { capture: true })
+	addEventListener('togglePanel', updateIframeHeightOnFrame, { capture: true })
 	addEventListener('input', () => {
-		console.log('heard it!')
-		updateIframeHeight()
-}, { capture: true })
+		updateIframeHeightOnFrame()
+})
 
 	// resize whenever new elements are defined
 	// -----------------------------------------------------------------------------
@@ -60,13 +60,11 @@ if (iframe !== null) {
 }
 
 function updateCode() {
-	const codeString = $code!.outerHTML
+	const codeString = $htmlCode!.outerHTML
 	codeDrawer.code = `${codeString}`
 
 	codeDrawer.dispatchEvent(new Event('codeUpdate', { bubbles: true }))
 }
-
-const codeDrawer = document.querySelector('a-code-drawer')!
 
 // @ts-ignore
 let $tag = globalThis.$tag as any
@@ -76,15 +74,9 @@ let $target = globalThis.$target as any
 
 let $canvas = $target.parentNode as HTMLElement
 
-let $code = parseHTML(codeDrawer.textContent) || parseHTML(codeDrawer.getAttribute('code'))
+let $htmlCode = h(codeDrawer.textContent as string) || h(codeDrawer.getAttribute('code') as string)
 
-let $textTimeoutID: number
-
-function parseHTML(textContent:string = '') {
-    const t = document.createElement('template')
-    t.innerHTML = textContent
-    return t.content.firstElementChild
-}
+let $textTimeoutID: ReturnType<typeof setTimeout>
 
 const handleInput = (event: any) => {
 	const { target } = event as any as { target: HTMLInputElement }
@@ -95,7 +87,7 @@ const handleInput = (event: any) => {
 		if (property === 'sandbox:example') {
 			$canvas.innerHTML = target.value
 			$target = $canvas.querySelector($tag)
-			$code = parseHTML(target.value)
+			$htmlCode = h(target.value)
 
 			target.dispatchEvent(new Event('reset', { bubbles: true }))
 			sendEvent('gtag', 'playground-control', { 'event_category': 'playground', 'event_label': 'Examples', 'control_value': `${target.textContent}` })
@@ -103,12 +95,11 @@ const handleInput = (event: any) => {
 			const codeAttr = property.replace(/([A-Z])/g, '-$1')
 			if ('type' in target && target.type === 'switch') {
 				$target[property] = target.checked
-				target.checked ? $code.setAttribute(`${codeAttr}`, '') : $code.removeAttribute(`${codeAttr}`)
+				target.checked ? $htmlCode.setAttribute(`${codeAttr}`, '') : $htmlCode.removeAttribute(`${codeAttr}`)
 				sendEvent('gtag', 'playground-control', { 'event_category': 'playground', 'event_label': `${property}`, 'control_value': target.checked ? 'on' : 'off' })
 			} else {
 				$target[property] = target.value
-				console.log(codeAttr, 'attribute')
-				$code.setAttribute(`${codeAttr}`, `${target.value}`)
+				$htmlCode.setAttribute(`${codeAttr}`, `${target.value}`)
 
 				// if the target is a text input write a timeout so that it doesn't send every single input change to analytics
 				if (target.nodeName.toLowerCase() === 'a-text-control') {

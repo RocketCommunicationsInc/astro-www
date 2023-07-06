@@ -1,6 +1,9 @@
 :host {
 	display: block;
 
+	/* Layout */
+	block-size: 100%;
+
 	/* Appearance */
 	background: var(--Neutral000Color);
 
@@ -27,12 +30,29 @@
 
 	& pre {
 		/* Layout */
+		block-size: calc(100% - 45px);
+
+		/* Layout */
 		margin: 0;
+
+		& code {
+			/* Layout */
+			block-size: 100%;
+			box-sizing: border-box;
+		}
 	}
 
-	&::part(copyCodeButton) {
+	& [part="copyCodeButton"] {
 		/* Layout */
 		margin-inline-start: auto;
+
+		&:active {
+			& svg {
+				/* Transform */
+				transform: scale(95%);
+				fill: var(--Grey800Color);
+			}
+		}
 	}
 
 	& button {
@@ -81,7 +101,7 @@
 		display: none;
 	}
 
-	&::part(collapseButton) {
+	& [part="collapseButton"] {
 		& svg {
 			/* Transform */
 			transform: rotate(180deg);
