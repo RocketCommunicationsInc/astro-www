@@ -183,7 +183,6 @@
 			/* Layout */
 			min-block-size: 400px;
 			border-start-start-radius: var(--EdgeSizeInner);
-			border-end-start-radius: var(--EdgeSizeInner);
 		}
 	}
 

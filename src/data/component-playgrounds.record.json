@@ -955,11 +955,11 @@
 			"examples": [
 				{
 					"name": "Default",
-					"code": "<rux-input label=\"Input label\" type=\"text\" autocomplete=\"\" size=\"medium\"></rux-input>"
+					"code": "<rux-input label=\"Input label\" type=\"text\" size=\"medium\"></rux-input>"
 				},
 				{
 					"name": "Label Slot",
-					"code": "<rux-input type=\"text\" autocomplete=\"\" size=\"medium\">\n\t<div slot=\"label\">Label slot</div>\n</rux-input>"
+					"code": "<rux-input type=\"text\" size=\"medium\">\n\t<div slot=\"label\">Label slot</div>\n</rux-input>"
 				},
 				{
 					"name": "Prefix and Suffix Slot",
@@ -967,11 +967,11 @@
 				},
 				{
 					"name": "Error Text Slot",
-					"code": "<rux-input label=\"Input label\" type=\"text\" autocomplete=\"\" size=\"medium\">\n\t<div slot=\"error-text\">Error text</div>\n</rux-input>"
+					"code": "<rux-input label=\"Input label\" type=\"text\" size=\"medium\">\n\t<div slot=\"error-text\">Error text</div>\n</rux-input>"
 				},
 				{
 					"name": "Help Text Slot",
-					"code": "<rux-input label=\"Input label\" type=\"text\" autocomplete=\"\" size=\"medium\">\n\t<div slot=\"help-text\">Help text</div>\n</rux-input>"
+					"code": "<rux-input label=\"Input label\" type=\"text\" size=\"medium\">\n\t<div slot=\"help-text\">Help text</div>\n</rux-input>"
 				}
 			],
 			"fields": [
@@ -1021,6 +1021,12 @@
 					"kind": "switch",
 					"attribute": "readonly",
 					"property": "readonly",
+					"checked": false
+				},
+				{
+					"kind": "switch",
+					"attribute": "autocomplete",
+					"property": "autocomplete",
 					"checked": false
 				},
 				{

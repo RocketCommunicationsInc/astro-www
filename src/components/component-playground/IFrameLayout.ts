@@ -59,14 +59,21 @@ if (iframe !== null) {
 	})
 }
 
-function updateCode() {
+// this updates the code drawer whenever an input happens
+function updateCodeDrawer() {
 	const codeString = $htmlCode!.outerHTML
 	codeDrawer.code = `${codeString}`
 
 	codeDrawer.dispatchEvent(new Event('codeUpdate', { bubbles: true }))
 }
 
-// @ts-ignore
+// this checks to see if there is additional html wrapping our component and if so, it sends it back to attrs can be added to the right spot
+const findTag = (html: Element) => {
+	const actualComponent = html.querySelector(`${$tag}`) ? html.querySelector(`${$tag}`) : html as HTMLElement
+	return actualComponent
+}
+
+// @ts-ignore this represents rux-component tag
 let $tag = globalThis.$tag as any
 
 // @ts-ignore
@@ -74,6 +81,7 @@ let $target = globalThis.$target as any
 
 let $canvas = $target.parentNode as HTMLElement
 
+// this is the code that goes into the codeDrawer
 let $htmlCode = h(codeDrawer.textContent as string) || h(codeDrawer.getAttribute('code') as string)
 
 let $textTimeoutID: ReturnType<typeof setTimeout>
@@ -84,6 +92,7 @@ const handleInput = (event: any) => {
 	const property = target.getAttribute('for')!
 
 	if (typeof property === 'string') {
+		// if the property is sandbox:example its a new example so it resets the controls and sets the html to sandbox and code drawer
 		if (property === 'sandbox:example') {
 			$canvas.innerHTML = target.value
 			$target = $canvas.querySelector($tag)
@@ -92,14 +101,19 @@ const handleInput = (event: any) => {
 			target.dispatchEvent(new Event('reset', { bubbles: true }))
 			sendEvent('gtag', 'playground-control', { 'event_category': 'playground', 'event_label': 'Examples', 'control_value': `${target.textContent}` })
 		} else {
+			// this regex converts the property to an attribute for code drawer
 			const codeAttr = property.replace(/([A-Z])/g, '-$1')
+
+			// if the type is a switch then it is a boolean value
 			if ('type' in target && target.type === 'switch') {
 				$target[property] = target.checked
-				target.checked ? $htmlCode.setAttribute(`${codeAttr}`, '') : $htmlCode.removeAttribute(`${codeAttr}`)
+				target.checked ? findTag($htmlCode)!.setAttribute(`${codeAttr}`, ``) : findTag($htmlCode)!.removeAttribute(`${codeAttr}`)
 				sendEvent('gtag', 'playground-control', { 'event_category': 'playground', 'event_label': `${property}`, 'control_value': target.checked ? 'on' : 'off' })
 			} else {
+				// otherwise it isn't and so it will take a value other than true/false
 				$target[property] = target.value
-				$htmlCode.setAttribute(`${codeAttr}`, `${target.value}`)
+
+				target.value.length > 0 ? findTag($htmlCode)!.setAttribute(`${codeAttr}`, `${target.value}`) : findTag($htmlCode)!.removeAttribute(`${codeAttr}`)
 
 				// if the target is a text input write a timeout so that it doesn't send every single input change to analytics
 				if (target.nodeName.toLowerCase() === 'a-text-control') {
@@ -116,7 +130,8 @@ const handleInput = (event: any) => {
 			}
 		}
 	}
-	updateCode()
+	// whatever happens, the code drawer needs an update
+	updateCodeDrawer()
 }
 
 addEventListener('input', handleInput)
