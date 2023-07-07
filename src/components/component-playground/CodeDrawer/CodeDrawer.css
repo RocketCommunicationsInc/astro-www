@@ -96,6 +96,64 @@
 		inline-size: 6--step;
 		fill: var(--Grey700Color);
 	}
+
+	&::part(status) {
+		/* Layout */
+		align-items: center;
+		inset: 0 auto auto 0;
+		justify-items: center;
+		position: fixed;
+		z-index: var(--TopLayer);
+
+		/* Appearance */
+		opacity: 0%;
+
+		/* Transform */
+		scale: 75% 75%;
+		translate: calc(var(--x, 0) * 1px - 50%) calc(var(--y, 0) * 1px - 100%);
+
+		/* Animation */
+		transition: opacity .15s, scale .075s;
+	}
+
+	&::part(status-open), &::part(status-opening), &::part(status-closing) {
+		display: flex;
+
+		/* Layout */
+		flex-flow: column;
+	}
+
+	&::part(status-open) {
+		/* Appearance */
+		opacity: 100%;
+
+		/* Transform */
+		scale: 100% 100%;
+	}
+
+	&::part(status-content) {
+		/* Layout */
+		padding-block: .5--step;
+		padding-inline: 2--step;
+
+		/* Text */
+		font-size: 14--rpx;
+		line-height: calc(20 / 13.9999);
+
+		/* Appearance */
+		background-color: var(--Grey800Color);
+		border-radius: var(--EdgeRadius);
+		color: var(--Neutral000Color);
+	}
+
+	&::part(status-arrow) {
+		/* Layout */
+		block-size: 5px;
+		inline-size: 10px;
+
+		/* Appearance */
+		color: var(--Grey800Color);
+	}
 }
 
 /* Context Styles */
