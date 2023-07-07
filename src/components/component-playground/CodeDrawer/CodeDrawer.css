@@ -100,6 +100,15 @@
 
 /* Context Styles */
 
+:host(:not([collapsed])) {
+	& [part="collapseButton"] {
+		& svg {
+			/* Transform */
+			transform: rotate(180deg);
+		}
+	}
+}
+
 :host([collapsed]) {
 	&::part(heading) {
 		/* Layout */
@@ -112,12 +121,5 @@
 		/* Layout */
 		block-size: 0;
 		overflow: hidden;
-	}
-
-	& [part="collapseButton"] {
-		& svg {
-			/* Transform */
-			transform: rotate(180deg);
-		}
 	}
 }
