@@ -19,6 +19,7 @@
 		/* Layout */
 		flex-flow: row;
 		gap: 3--step;
+		justify-content: space-between;
 		padding-block: 10--rpx;
 		padding-inline: 12--rpx;
 
@@ -53,13 +54,20 @@
 		--EdgeSize: 0;
 	}
 
-	& slot {
+	& [part="content"] slot {
 		display: flex;
 
 		/* Layout */
 		block-size: 100%;
 		flex-flow: column;
 		inline-size: 100%;
+	}
+
+	& ::slotted([slot="examples"]) {
+		/* Layout */
+		align-items: center;
+		flex-flow: initial;
+		max-inline-size: unset;
 	}
 
 	&::slotted(*) {

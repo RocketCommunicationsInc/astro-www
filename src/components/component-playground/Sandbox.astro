@@ -1,4 +1,37 @@
-<a-sandbox {...Astro.props}><slot /></a-sandbox>
+---
+import { For } from '@astropub/flow'
+import ControlMenu from './Control/Menu.astro'
+import Field from './Field/Field.astro'
+
+//get examples for the tag
+const { examples } = Astro.props
+const defaultExample = examples[0]
+
+//filter examples from all props so they don't show up as an attr
+function getProps(allProps){
+	let newprops = {...allProps}
+	delete newprops.examples
+	return newprops
+}
+const props = getProps(Astro.props)
+---
+<a-sandbox {...props}>
+	{
+		// examples panel
+		examples.length > 1
+			? (
+				<Field label="examples" slot="examples">
+					<ControlMenu for="sandbox:example">{
+						<For of={examples!}>{(example) => (
+							<option value={example.code} selected={example === defaultExample ? '' : null} set:text={example.name} />
+						)}</For>
+					}</ControlMenu>
+				</Field>
+			)
+		: null
+	}
+	<slot />
+</a-sandbox>
 <script>
 import './Sandbox.ts'
 </script>

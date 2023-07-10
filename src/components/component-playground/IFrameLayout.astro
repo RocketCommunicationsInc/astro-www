@@ -60,7 +60,7 @@ const scripts = attrs.examples.filter((example) => example.script).map((example)
 	<body>
 		<main class="app">
 			<section class="sandbox-area">
-				<Sandbox class={attrs.align ? `align-${attrs.align} dark-theme` : 'dark-theme'} set:html={
+				<Sandbox class={attrs.align ? `align-${attrs.align} dark-theme` : 'dark-theme'} examples={attrs.examples} set:html={
 					defaultExample.code
 				} />
 				{
