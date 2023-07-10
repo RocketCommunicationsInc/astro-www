@@ -16,20 +16,20 @@ function getProps(allProps){
 const props = getProps(Astro.props)
 ---
 <a-sandbox {...props}>
-	{
+	<!-- {
 		// examples panel
 		examples.length > 1
 			? (
-				<Field label="examples" slot="examples">
+				<Field label="examples" slot="examples" type="menu" property="example:variant">
 					<ControlMenu for="sandbox:example">{
 						<For of={examples!}>{(example) => (
-							<option value={example.code} selected={example === defaultExample ? '' : null} set:text={example.name} />
+							<option value={example.code} selected={example === defaultExample ? '' : null}>{example.name}</option>
 						)}</For>
 					}</ControlMenu>
 				</Field>
 			)
 		: null
-	}
+	} -->
 	<slot />
 </a-sandbox>
 <script>

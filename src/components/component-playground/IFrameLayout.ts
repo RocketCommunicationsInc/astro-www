@@ -1,7 +1,7 @@
 import type CodeDrawer from 'project:components/component-playground/CodeDrawer/CodeDrawer.ts'
 import type PlaygroundElement from './Playground/Playground.ts'
 import { sendEvent } from 'project:utils/client/DOM.ts'
-import { h } from 'project:utils/html.ts'
+import { h, html } from 'project:utils/html.ts'
 
 const iframe = window.parent?.document.querySelector('a-playground')! as PlaygroundElement
 const codeDrawer: CodeDrawer = document.querySelector('a-code-drawer')!
@@ -80,6 +80,7 @@ let $tag = globalThis.$tag as any
 let $target = globalThis.$target as any
 
 let $canvas = $target.parentNode as HTMLElement
+console.log($canvas)
 
 // this is the code that goes into the codeDrawer
 let $htmlCode = h(codeDrawer.textContent as string) || h(codeDrawer.getAttribute('code') as string)
@@ -94,8 +95,13 @@ const handleInput = (event: any) => {
 	if (typeof property === 'string') {
 		// if the property is sandbox:example its a new example so it resets the controls and sets the html to sandbox and code drawer
 		if (property === 'sandbox:example') {
-			$canvas.innerHTML = target.value
+			// remove previous example
+			$canvas.removeChild($target)
+			// append new example in its place
+			$canvas.appendChild(h(target.value))
+			// grab new target
 			$target = $canvas.querySelector($tag)
+			// update code drawer
 			$htmlCode = h(target.value)
 
 			target.dispatchEvent(new Event('reset', { bubbles: true }))
@@ -138,6 +144,7 @@ addEventListener('input', handleInput)
 
 addEventListener('reset', (event) => {
 	for (const control of document.querySelectorAll<HTMLFormElement>('[for]')) {
+		console.log('reset!', event.target)
 		if (control !== event.target) {
 			control.value = control.defaultValue
 			control.selected = control.defaultSelected
