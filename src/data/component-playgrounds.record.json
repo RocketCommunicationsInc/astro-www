@@ -724,7 +724,7 @@
 			"examples": [
 				{
 					"name": "Default",
-					"code": "<div style=\"display: flex; flex-direction: column; justify-content: center;\">\n\t<rux-dialog open=\"true\" header=\"Header\" message=\"Content goes here\" confirmText=\"Confirm\" denyText=\"Cancel\">\n\t</rux-dialog>\n</div>"
+					"code": "<div style=\"display: flex; flex-direction: column; justify-content: center;\">\n\t<rux-dialog open=\"true\" header=\"Header\" message=\"Content goes here\" confirm-text=\"Confirm\" deny-text=\"Cancel\">\n\t</rux-dialog>\n</div>"
 				},
 				{
 					"name": "With Slotted Content",
