@@ -16,7 +16,7 @@ function getProps(allProps){
 const props = getProps(Astro.props)
 ---
 <a-sandbox {...props}>
-	<!-- {
+	{
 		// examples panel
 		examples.length > 1
 			? (
@@ -29,7 +29,7 @@ const props = getProps(Astro.props)
 				</Field>
 			)
 		: null
-	} -->
+	}
 	<slot />
 </a-sandbox>
 <script>

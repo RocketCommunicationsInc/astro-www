@@ -76,22 +76,6 @@ const scripts = attrs.examples.filter((example) => example.script).map((example)
 
 			<section class="control-area">
 				<Panelset>
-					{
-					// examples panel
-					attrs.examples.length > 1
-						? (
-							<Panel label="Examples">
-								<Field type="menu" property="example:variant" hiddenlabel>
-									<ControlRadioGroup for="sandbox:example">{
-										<For of={attrs.examples!}>{(example) => (
-											<ControlRadio for="sandbox:example" value={example.code} selected={example === defaultExample ? '' : null} set:text={example.name} />
-										)}</For>
-									}</ControlRadioGroup>
-								</Field>
-							</Panel>
-						)
-					: null
-				}
 				{	// Properties Panel
 					Array.isArray(attrs.fields) && attrs.fields.length > 0
 						? (

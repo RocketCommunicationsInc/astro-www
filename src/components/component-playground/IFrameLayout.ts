@@ -95,6 +95,7 @@ const handleInput = (event: any) => {
 	if (typeof property === 'string') {
 		// if the property is sandbox:example its a new example so it resets the controls and sets the html to sandbox and code drawer
 		if (property === 'sandbox:example') {
+			console.log('heard', event)
 			// remove previous example
 			$canvas.removeChild($target)
 			// append new example in its place
@@ -143,8 +144,9 @@ const handleInput = (event: any) => {
 addEventListener('input', handleInput)
 
 addEventListener('reset', (event) => {
+	console.log('yo')
 	for (const control of document.querySelectorAll<HTMLFormElement>('[for]')) {
-		console.log('reset!', event.target)
+		console.log('reset!')
 		if (control !== event.target) {
 			control.value = control.defaultValue
 			control.selected = control.defaultSelected
