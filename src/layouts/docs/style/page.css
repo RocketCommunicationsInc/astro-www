@@ -11,9 +11,14 @@
 		--header-nav-padding-inline: 3--step;
 		--heading-1-text-size: 64--rpx;
 		--heading-1-text-line: calc(72 / 64);
+		--main-content-width: 254--step;
 		--layout-inline-gap-start: 8--step;
 		--icon-search-margin-inline: -112--rpx;
 		--icon-search-margin-inline-end: -64--rpx;
+	}
+
+	@media (1920px > width >= 1440px) {
+		--main-content-width: 212--step;
 	}
 
 	@media (width >= 1440px) {
@@ -32,7 +37,6 @@
 		--subheading-1-text-line: calc(24 / 20);
 		--heading-2-margin: 15--step 5--step;
 		--layout-inline-gap: 8--step;
-		--main-content-width: 254--step;
 		--icon-search-margin-inline: -32--rpx;
 		--icon-search-margin-inline-end: -64--rpx;
 		--page-padding-block: 15--step;
