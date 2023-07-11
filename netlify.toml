@@ -146,3 +146,9 @@
 	to = "/patterns/pop-up-menu/"
 	status = 301
 	force = true
+
+[[redirects]]
+	from = "/design-guidelines/color/"
+	to = "/design-tokens/getting-started/"
+	status = 301
+	force = true
