@@ -110,7 +110,8 @@
 
 	@media (width <= 700px) {
 		/* Layout */
-		grid-template-rows: 80--step auto;
+		grid-template-columns: 100%;
+		grid-template-rows: 80--step auto max-content;
 
 		/* Reference */
 		--max-height: 400px;
@@ -122,11 +123,39 @@
 
 	@media (width > 700px) {
 		/* Layout */
-		grid-template-columns: auto max-content max-content;
+		grid-template-areas:
+			"sandbox control nav"
+			"codedrawer codedrawer codedrawer";
+
+		/* Reference */
+		grid-template-columns: 1fr max-content max-content;
+		grid-template-rows: auto max-content;
+
+		/* Layout */
 		overflow: initial;
 
 		/* Reference */
 		--max-height: 100%;
+
+		& .sandbox-area {
+			/* Layout */
+			grid-area: sandbox;
+		}
+
+		& .control-area {
+			/* Layout */
+			grid-area: control;
+		}
+
+		& .panel-nav-area {
+			/* Layout */
+			grid-area: nav;
+		}
+
+		& .code-drawer-area {
+			/* Layout */
+			grid-area: codedrawer;
+		}
 	}
 
 	& .sandbox-area,
@@ -151,8 +180,9 @@
 		}
 
 		@media (width >= 700px) {
+			/* Layout */
+			min-block-size: 400px;
 			border-start-start-radius: var(--EdgeSizeInner);
-			border-end-start-radius: var(--EdgeSizeInner);
 		}
 	}
 
@@ -161,9 +191,6 @@
 		max-block-size: var(--max-height);
 
 		@media (width < 700px) {
-			border-end-start-radius: var(--EdgeSizeInner);
-			border-end-end-radius: var(--EdgeSizeInner);
-
 			/* Layout */
 			overflow: initial;
 		}
@@ -171,6 +198,7 @@
 		@media (width >= 700px) {
 			/* Layout */
 			grid-auto-rows: minmax(0, 1fr);
+			min-block-size: 400px;
 		}
 	}
 
@@ -178,12 +206,21 @@
 		@media (width >= 700px) {
 			/* Layout */
 			border-start-end-radius: var(--EdgeSizeInner);
-			border-end-end-radius: var(--EdgeSizeInner);
+
+			/* Layout */
+			min-block-size: 400px;
 		}
 
 		@media (width < 700px) {
 			display: none;
 		}
+	}
+
+	& .code-drawer-area {
+		/* Layout */
+		max-block-size: 400px;
+		border-end-start-radius: var(--EdgeSizeInner);
+		border-end-end-radius: var(--EdgeSizeInner);
 	}
 }
 

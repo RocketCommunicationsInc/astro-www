@@ -20,6 +20,7 @@ import ControlRadio from './Control/Radio.astro'
 import ControlRadioGroup from './Control/RadioGroup.astro'
 import ControlSwitch from './Control/Switch.astro'
 import ControlSlots from './Control/Slots.astro'
+import CodeDrawer from './CodeDrawer/CodeDrawer.astro'
 
 const attrs = Astro.props as PlaygroundRecord
 
@@ -146,6 +147,9 @@ const scripts = attrs.examples.filter((example) => example.script).map((example)
 					<PanelNavItem data-nav-item="Properties" />
 					<PanelNavItem data-nav-item="Slots" />
 				</PanelNav>
+			</section>
+			<section class="code-drawer-area">
+				<CodeDrawer label="Code" code={defaultExample.code} collapsed />
 			</section>
 		</main>
 	</body>

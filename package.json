@@ -181,7 +181,7 @@
 					]
 				}
 			],
-			"declaration-block-no-redundant-longhand-properties": true,
+			"declaration-block-no-redundant-longhand-properties": null,
 			"declaration-block-no-shorthand-property-overrides": true,
 			"declaration-block-single-line-max-declarations": 0,
 			"block-no-empty": true,
@@ -344,5 +344,8 @@
 			"**/sanitize.css",
 			"**/dist/**"
 		]
+	},
+	"dependencies": {
+		"highlight.js": "^11.8.0"
 	}
 }
