@@ -89,8 +89,8 @@ The Slideshow element presents a set of items by displaying a subset of those it
 
 ### Color Swab
 
-The Color Swab element presents a visualization for a given color as it is written out. Before the written out color, it displays a small box filled with the given color.
+The Color Swab element presents a visualization for a given color as it is written out. Before the written out color, it displays a small box filled with the given color. Currently only used on /migration. Accepts a HEX in its default slot
 
 ```html
-<color-swab>HotPink</color-swab>
+<color-swab>#FACADE</color-swab>
 ```

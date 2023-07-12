@@ -27,7 +27,7 @@ description: A list of commonly used terms and definitions.
 - [Classification & Control Markings](/components/classification-markings) - Markings required to be present on software that includes controlled or classified information.
 - [Clock](/components/clock) - Clock shows the current date and time, and optional AOS and LOS timers.
 - Close Button - A UI component that, when activated, dismisses a [Dialog](/components/dialog).
-- [Color Palettes](/design-guidelines/color) - The list of color values used in and approved by the Astro design system.
+- [Color Palettes](/design-tokens/reference) - The list of color values used in and approved by the Astro design system.
 - [Compliance](/design-guidelines/compliance) - A list of rules used to determine if products align with Astro design and usage patterns.
 - Container - An object that holds other objects.
 - [Concept Sketch](/design-process/ui-design) - A sketch on paper that lays out the main content workspace and controls and clarifies the flow of user interaction from screen-to-screen.
