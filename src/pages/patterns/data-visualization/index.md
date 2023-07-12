@@ -81,7 +81,6 @@ The standard way to show a statistical distribution - keep the gaps between colu
 Heat maps enable you to do exploratory data analysis with two dimensions on the axes and the third dimension shown by intensity of color.
 <br />[Learn more...](/patterns/data-visualization/heat-map/)
 
-
 :::
 
 :::col
@@ -170,7 +169,7 @@ Legends should be arranged as per the order of appearance of the data plot (e.g.
 
 **Type**: Astro guidelines dictate a minimum type size of 14pt for axes and data points to maximize legibility. Roboto or Roboto Mono, sans-serif typefaces, are required for optimum legibility. See [Typography](/design-guidelines/typography) for additional information.
 
-**Color and Contrast**: Use colors that have sufficient contrast for the appropriate theme. If necessary, complement the use of color with a pattern or texture to convey different types of information. The non-status palettes provided in the [Color](/design-guidelines/color) guidelines are applicable to both themes and are contrast compliant.
+**Color and Contrast**: Use colors that have sufficient contrast for the appropriate theme. If necessary, complement the use of color with a pattern or texture to convey different types of information. The non-status palettes provided in the [Color](/design-tokens/system) guidelines are applicable to both themes and are contrast compliant.
 
 #### Mixed Accessible Visualization Palette
 

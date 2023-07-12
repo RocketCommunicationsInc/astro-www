@@ -8,7 +8,7 @@ Before reading any further, we recommend you review available Astro components o
 
 ## Design Guidance
 
-- [Color](/design-guidelines/color/)
+- [Design Tokens](/design-tokens/getting-started/)
 - [Typography](/design-guidelines/typography/)
 - [Theme](/design-guidelines/theme/)
 - [Grid](/design-guidelines/grid/)
