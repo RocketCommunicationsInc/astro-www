@@ -10,6 +10,9 @@ assets:
 sandbox:
   style: "--y: 260px;"
 ---
+## Interactive Examples
+
+::tag{ is=a-playground tag=rux-status}
 
 ![Astro Status Symbols in context of a modem list layout.](/img/components/status-symbol/icons-symbols-modems.webp "Astro Status Symbols in context of a modem list layout.")
 

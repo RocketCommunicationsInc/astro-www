@@ -2062,6 +2062,38 @@
 			"style": "rux-slider { flex-grow: revert; } rux-slider::part(input) { background-color: transparent; }"
 		},
 		{
+			"tag": "rux-status",
+			"constructor": "RuxStatus",
+			"align": "center",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-status status=\"critical\"></rux-status>"
+				},
+				{
+					"name": "All Symbols",
+					"code": "<ul>\n\t<li>\n\t\t<rux-status status=\"off\"></rux-status>\n\t\t<div class=\"label\">Off</div>\n\t</li>\n\t<li>\n\t\t<rux-status status=\"standby\"></rux-status>\n\t\t<div class=\"label\">Standby</div>\n\t</li>\n\t<li>\n\t\t<rux-status status=\"normal\"></rux-status>\n\t\t<div class=\"label\">Normal</div>\n\t</li>\n\t<li>\n\t\t<rux-status status=\"caution\"></rux-status>\n\t\t<div class=\"label\">Caution</div>\n\t</li>\n\t<li>\n\t\t<rux-status status=\"serious\"></rux-status>\n\t\t<div class=\"label\">Serious</div>\n\t</li>\n\t<li>\n\t\t<rux-status status=\"critical\"></rux-status>\n\t\t<div class=\"label\">Critical</div>\n\t</li>\n</ul>"
+				}
+			],
+			"fields": [
+				{
+					"kind": "menu",
+					"attribute": "status",
+					"property": "status",
+					"options": [
+						"off",
+						"standby",
+						"normal",
+						"caution",
+						"serious",
+						"critical"
+					],
+					"value": "critical"
+				}
+			],
+			"style": "ul {display: flex;list-style: none;justify-content: space-between;padding: 0 1rem;width:inherit;}ul li {display: flex;flex-direction: column;align-items: center;}"
+		},
+		{
 			"tag": "rux-switch",
 			"constructor": "RuxSwitch",
 			"align": "center",
