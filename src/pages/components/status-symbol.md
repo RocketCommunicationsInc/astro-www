@@ -22,10 +22,6 @@ sandbox:
 - Only use the provided colors for status.
 - Use the highest color possible if multiple statuses are consolidated. For example, if the statuses of underlying components are green, yellow, and red, the consolidated indicator is red.
 
-:::note
-Place your cursor over any Status Symbol above to see an example.
-:::
-
 ## Related Pages
 
 - For a detailed description of how Status Symbols are used within Monitoring Icons, see [Icons and Symbols](/components/icons-and-symbols).
