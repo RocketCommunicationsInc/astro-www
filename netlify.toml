@@ -131,7 +131,13 @@
 
 [[redirects]]
 	from = "/compliance"
-	to = "/compliance/egs-design-compliance"
+	to = "/compliance/r2c2-design-compliance"
+	status = 301
+	force = true
+
+[[redirects]]
+	from = "/egs-design-compliancee"
+	to = "/compliance/r2c2-design-compliance"
 	status = 301
 	force = true
 

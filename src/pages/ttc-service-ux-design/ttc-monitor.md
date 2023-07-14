@@ -1,5 +1,5 @@
 ---
-tags: ["ttc", "egs"]
+tags: ["ttc", "egs", "r2c2"]
 path: /ttc-service-ux-design/ttc-monitor
 date: Last Modified
 layout: project:layouts/docs/docs-layout.astro

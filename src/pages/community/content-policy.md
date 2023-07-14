@@ -20,7 +20,7 @@ Ultimately, all Astro UXDS documentation content exists in one of 4 states:
 3. **Deprecated** (archived, renamed, obsolete, no longer recommended or supported ) e.g., Spectrum Analyzer
 4. **Deleted** (hidden, moved, no longer available, published in error, redacted)
 
-Further distinctions are unhelpful noise to the customer seeking to build Astro UXDS-based applications. Additional commentary regarding the program's state and pipeline is far more effectively communicated through official channels to the directly responsible points of contact at EGS and not to be published on [AstroUXDS.com](https://www.astrouxds.com/). However, there is an opportunity in future program increments to explore opportunities to publicize what's coming in future Astro UXDS releases given additional development resources.
+Further distinctions are unhelpful noise to the customer seeking to build Astro UXDS-based applications. Additional commentary regarding the program's state and pipeline is far more effectively communicated through official channels to the directly responsible points of contact at R2C2 and not to be published on [AstroUXDS.com](https://www.astrouxds.com/). However, there is an opportunity in future program increments to explore opportunities to publicize what's coming in future Astro UXDS releases given additional development resources.
 
 ### 1\. Current Content
 
@@ -28,7 +28,7 @@ By default, all content available on AstroUXDS.com will reflect what is on the m
 
 ### 2\. Draft Content
 
-Occasionally, AstroUXDS contributors will draft content and/or components and make those changes available for review or comment. If the content is of a sensitive nature or could create confusion by being made public before official adoption, it can be published to a unique, unlisted subdomain rather than the public site for the benefit of program management and EGS review. On a separate branch, Astro UXDS contributors may display and revise draft content freely until it has been made canonical by merging into main and publishing to AstroUXDS.com. Take care to remember that all branches of the Astro website and components are publicly accessible, as the repo is a public open source project. Such a draft within Compliance or Component documentation or functionality can be identified as [pre-release](https://semver.org/#spec-item-9) by adding an "-alpha" or "-beta" (or similar) suffix to the version if published on [AstroUXDS.com](https://www.astrouxds.com/) or on NPM.
+Occasionally, AstroUXDS contributors will draft content and/or components and make those changes available for review or comment. If the content is of a sensitive nature or could create confusion by being made public before official adoption, it can be published to a unique, unlisted subdomain rather than the public site for the benefit of program management and R2C2 review. On a separate branch, Astro UXDS contributors may display and revise draft content freely until it has been made canonical by merging into main and publishing to AstroUXDS.com. Take care to remember that all branches of the Astro website and components are publicly accessible, as the repo is a public open source project. Such a draft within Compliance or Component documentation or functionality can be identified as [pre-release](https://semver.org/#spec-item-9) by adding an "-alpha" or "-beta" (or similar) suffix to the version if published on [AstroUXDS.com](https://www.astrouxds.com/) or on NPM.
 
 ### 3\. Modified or Deprecated Content
 
