@@ -5,13 +5,13 @@ date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
 title: Astro for R2C2
 description: The R2C2 program under the USSF utilizes OMG C2MS message standards; some of these underlying data messages carry status information and this guidance marries the Astro UXDS and R2C2' C2MS standards.
-anchorNav: extended  
+anchorNav: extended
 
 ---
 
 ## Tier Information
 
-The Rapid Resilient Command and Control (R2C2) program under the United States Space Force (USSF) has four tiers of interface specification documents (ISDs). For more information, contact the [R2C2 Program Office](mailto:egssupport@spaceforce.mil).
+The Rapid Resilient Command and Control (R2C2) program under the United States Space Force (USSF) has four tiers of interface specification documents (ISDs).
 
 Tier 1 and 2 are tactical command and control space vehicle message standards while Tier 3 and 4 are implementation specific interfaces for services in those satellite operating centers (SOCs). The R2C2 Tier 1 ISD clones [Object Management Group (OMG) Command Control Mission Systems (C2MS) v1.0](https://www.omg.org/spec/C2MS/1.0/PDF) with some alterations and message creations supporting DoD requirements or USSF space domain capabilities. Tier 2 ISDs are the R2C2 standards for system domain capabilities (e.g. Flight Dynamics, Telemetry Tracking & Commanding, Mission Planning & Scheduling, Ground Resource Management, Ground Resource Scheduling, etc.) which are based on Tier 1 messages. The Tier 3 ISDs are for service component’s or product’s interface implementation details while Tier 4 is the mission-specific interface details.
 
@@ -126,8 +126,8 @@ MNEMONIC.N.STATUS locations in the Message Interface Specification Document: 3.1
 
 Status codes from the OMG XML Telemetric and Command Data Exchange (XTCE) specification. This status links the OMG XTCE with OMG C2MS in order to represent the command sequence progression against space assets. The most visual and status related fields for common display are INVALID:2, COMPLETED:9, FAILED:10.
 
-If you have a use case where the other values for XTCE-Status ( 1 = ACKNOWLEDGEMENT, 
-3 = TRANSFERRED_TO_RANGE, 4 = SENT_FROM_RANGE, 5 = RECEIVED, 6 = ACCEPTED, 
+If you have a use case where the other values for XTCE-Status ( 1 = ACKNOWLEDGEMENT,
+3 = TRANSFERRED_TO_RANGE, 4 = SENT_FROM_RANGE, 5 = RECEIVED, 6 = ACCEPTED,
 7 = QUEUED, 8 = EXECUTING) require a status color or symbol please reach out to Astro for assistance.
 
 <div class="table-overflow table-dark short">
@@ -257,10 +257,10 @@ for (const td of document.querySelectorAll('.table-dark td')) {
 		const iconTd = td.nextSibling;
 		const newhtml = allVars.map((colorvar)=>{
 			const color = colorvar.split('.').at(-1)
-			iconhtml.push(`<img src='/img/platforms/r2c2/${color}.svg' alt=${color}>`) 
+			iconhtml.push(`<img src='/img/platforms/r2c2/${color}.svg' alt=${color}>`)
 			return `<color-sample style="--color:${colors[color]};--border:transparent; width:16px; height: 16px; margin-inline-end: .5rem; border-radius: 2px;vertical-align:middle;"></color-sample>${colorvar}`
 		}).join(' or<br />')
-		
+
 		td.innerHTML = newhtml
 		//add the icons to the next td
 		iconTd.innerHTML = iconhtml.join(' or ')

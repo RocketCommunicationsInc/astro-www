@@ -1,5 +1,5 @@
 ---
-tags: ["grm", "egs"]
+tags: ["grm", "egs", "r2c2"]
 path: /grm-service-ux-design/about-the-grm-designs
 date: Last Modified
 layout: project:layouts/docs/docs-layout.astro

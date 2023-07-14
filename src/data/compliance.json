@@ -6,7 +6,7 @@
             "rules": [
                 {
                     "numeral": 1,
-                    "rule": "ASTRO UXDS provides developers with guidance to develop user interfaces. User interfaces must comply with the guidance in this section to be EGS Design Compliant. Developers are encouraged to conform to guidance in other sections identified as “Rules of Thumb”, “Do” examples, and “Don't” examples as described on individual component pages.",
+                    "rule": "ASTRO UXDS provides developers with guidance to develop user interfaces. User interfaces must comply with the guidance in this section to be R2C2 Design Compliant. Developers are encouraged to conform to guidance in other sections identified as “Rules of Thumb”, “Do” examples, and “Don't” examples as described on individual component pages.",
                     "status": "current"
                 }
             ]

@@ -17,7 +17,7 @@ Learn more about the software design process with Astro:
 - Base application design on a solid foundation of [Research](/design-process/research)
 - Learn to provide a successful, effective user experience through [UI Design](/design-process/ui-design)
 - Create applications with a mature, established [Visual Design](/design-process/visual-design)
-- Follow established [EGS Compliance Guidance](/compliance/egs-design-compliance/) required for EGS applications
+- Follow established [R2C2 Compliance Guidance](/compliance/r2c2-design-compliance/) required for R2C2 applications
 
 **Design Assets**
 
