@@ -26,7 +26,7 @@ Astro uses the freely available [Roboto](https://fonts.google.com/specimen/Robot
 
 ## Astro Storybook and Sample Apps
 
-You can review the latest versions of the web components at the [Astro Storybook](https://astro-components.netlify.app/?path=/story/astro-uxds-welcome-start-here--page). The Astro development team uses Storybook as an environment for building and demonstrating the capabilities of each component. For online examples of full Astro app experiences, check out these EGS Service-Specific sample experiences:
+You can review the latest versions of the web components at the [Astro Storybook](https://astro-components.netlify.app/?path=/story/astro-uxds-welcome-start-here--page). The Astro development team uses Storybook as an environment for building and demonstrating the capabilities of each component. For online examples of full Astro app experiences, check out these R2C2 Service-Specific sample experiences:
 
 :::table-overflow
 | Ground Resources Management                                                                                                                               | Telemetry, Tracking, and Control                                                                                                     |
@@ -40,9 +40,9 @@ You can review the latest versions of the web components at the [Astro Storybook
 These examples use a previous release of Astro, and are not intended as boilerplates for building new applications. See below for easy ways to get started building Astro web applications.
 :::
 
-## EGS Compliance
+## R2C2 Compliance
 
-The Astro team has worked with EGS to establish the EGS Compliance requirements for developers targeting the EGS Platform. These requirements are specific to EGS development; these requirements are based off of common best practices and accessibility guidance and it is highly recommended for all users to incorporate them into their applications.
+The Astro team has worked with R2C2 to establish the R2C2 Compliance requirements for developers targeting the R2C2 Platform. These requirements are specific to R2C2 development; these requirements are based off of common best practices and accessibility guidance and it is highly recommended for all users to incorporate them into their applications.
 
 ## Offline Development Resources
 
