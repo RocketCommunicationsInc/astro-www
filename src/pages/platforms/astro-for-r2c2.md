@@ -1,12 +1,10 @@
 ---
-draft: true
 path: /platforms/astro-for-r2c2
 date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
 title: Astro for R2C2
 description: The R2C2 program under the USSF utilizes OMG C2MS message standards; some of these underlying data messages carry status information and this guidance marries the Astro UXDS and R2C2' C2MS standards.
 anchorNav: extended
-
 ---
 
 ## Tier Information
@@ -26,7 +24,7 @@ Identifies the status of the message that was processed. The figure below of a s
 <div class="table-overflow table-dark short">
 
 | Value                | Design token                                | Status symbol |
-|----------------------|---------------------------------------------|---------------|
+| -------------------- | ------------------------------------------- | ------------- |
 | ACKNOWLEDGEMENT:1    | color.status.standby or color.status.normal |               |
 | WORKING_KEEP_ALIVE:2 | color.status.standby                        |               |
 | SUCCESSFUL:3         | color.status.normal                         |               |
@@ -47,7 +45,7 @@ Indicates the severity of the Log Message. Scale is traditionally applied to mes
 <div class="table-overflow table-dark short">
 
 | Value      | Design token          | Status symbol |
-|------------|-----------------------|---------------|
+| ---------- | --------------------- | ------------- |
 | DEBUG:0    | color.status.standby  |               |
 | NORMAL:1   | color.status.normal   |               |
 | MEDIUM:2   | color.status.caution  |               |
@@ -65,10 +63,11 @@ Indicates processing priority, if applicable.
 <div class="table-overflow table-dark short">
 
 | Value    | Design token          | Status symbol |
-|----------|-----------------------|---------------|
+| -------- | --------------------- | ------------- |
 | Normal:1 | color.status.normal   |               |
 | Medium:2 | color.status.caution  |               |
 | High:3   | color.status.critical |               |
+
 </div>
 
 PRIORITY locations in the Message Interface Specification Document: 3.8.1 - Directive Request Message, 3.16.1 - Simple Service Request Message.
@@ -80,12 +79,13 @@ Condition of the device being reported. The criteria for selecting the DEVICE.N.
 <div class="table-overflow table-dark short">
 
 | Value          | Design token          | Status symbol |
-|----------------|-----------------------|---------------|
+| -------------- | --------------------- | ------------- |
 | DEBUG:0        | color.status.standby  |               |
 | NORMAL_GREEN:1 | color.status.normal   |               |
 | YELLOW:2       | color.status.caution  |               |
 | ORANGE:3       | color.status.serious  |               |
 | RED:4          | color.status.critical |               |
+
 </div>
 
 DEVICE.N.STATUS locations in the Message Interface Specification Document: 3.9.3 - Component-To-Component Transfer Device Message.
@@ -97,12 +97,13 @@ Indicates the condition of the component being monitored, typically itself, alth
 <div class="table-overflow table-dark short">
 
 | Value          | Design token          | Status symbol |
-|----------------|-----------------------|---------------|
+| -------------- | --------------------- | ------------- |
 | DEBUG:0        | color.status.standby  |               |
 | NORMAL_GREEN:1 | color.status.normal   |               |
 | YELLOW:2       | color.status.caution  |               |
 | ORANGE:3       | color.status.serious  |               |
 | RED:4          | color.status.critical |               |
+
 </div>
 
 COMPONENT-STATUS locations in the Message Interface Specification Document: 3.9.4 - Component-To-Component Transfer Heartbeat Message.
@@ -114,10 +115,11 @@ Status of the ‘nth’ mnemonic: valid mnemonic, valid mnemonic with no data, o
 <div class="table-overflow table-dark short">
 
 | Value           | Design token         | Status symbol |
-|-----------------|----------------------|---------------|
+| --------------- | -------------------- | ------------- |
 | VALID:1         | color.status.normal  |               |
 | VALID_NO_DATA:2 | color.status.off     |               |
 | INVALID:3       | color.status.caution |               |
+
 </div>
 
 MNEMONIC.N.STATUS locations in the Message Interface Specification Document: 3.10.4 - Processed Telemetry Frame Message, 3.12.2 - Mnemonic Value Response Message, 3.12.3 - Mnemonic Value Data Message, 3.13.2 - Archive Mnemonic Value Response Message, 3.13.3 - Archive Mnemonic Value Data Message.
@@ -133,10 +135,11 @@ If you have a use case where the other values for XTCE-Status ( 1 = ACKNOWLEDGEM
 <div class="table-overflow table-dark short">
 
 | Value       | Design token          | Status symbol |
-|-------------|-----------------------|---------------|
+| ----------- | --------------------- | ------------- |
 | INVALID:2   | color.status.caution  |               |
 | COMPLETED:9 | color.status.normal   |               |
 | FALED:10    | color.status.critical |               |
+
 </div>
 
 XTCE-STATUS locations in the Message Interface Specification Document: 3.14.2 - Command Response Message.
@@ -148,12 +151,13 @@ The Command-Echo-Message’s command echo result field enumeration descriptions:
 <div class="table-overflow table-dark short">
 
 | Value | Design token          | Status symbol |
-|-------|-----------------------|---------------|
+| ----- | --------------------- | ------------- |
 | NOTC  | color.status.off      |               |
 | GOOD  | color.status.normal   |               |
 | MISC  | color.status.critical |               |
 | TOUT  | color.status.serious  |               |
 | UNEX  | color.status.caution  |               |
+
 </div>
 
 CMD-ECHO-RESULT in the Message Interface Specification Document: 3.14.3 - Command ECHO Message.
@@ -167,14 +171,16 @@ The quality of the data. RAW = No quality check, VALIDATED = Checked and passed,
 <div class="table-overflow table-dark short">
 
 | Value     | Design token         | Status symbol |
-|-----------|----------------------|---------------|
+| --------- | -------------------- | ------------- |
 | VALIDATED | color.status.normal  |               |
 | DEGRADED  | color.status.serious |               |
+
 </div>
 
 DATA-QUALITY locations in the Message Interface Specification Document: 3.17.6 - Tracking Data Message.
 
 ## Additional Guidance
+
 The MNEMONIC.N.SAMPLE.M.Statuses; RED-HIGH, RED-LOW, YELLOW-HIGH, YELLOW-LOW Boolean fields within the mnemonic samples of telemetry data messages indicate thresholds of what state the data is currently in, in relation to the space vehicle qualitative metrics. The recommended color status reflect the accompanying names (e.g. RED-HIGH and RED-LOW are typically used with a Critical/Red AstroUXDS status and similar for the named Yellow fields.)
 
 ### MNEMONIC.N.SAMPLE.M.RED-HIGH
@@ -182,8 +188,9 @@ The MNEMONIC.N.SAMPLE.M.Statuses; RED-HIGH, RED-LOW, YELLOW-HIGH, YELLOW-LOW Boo
 <div class="table-overflow table-dark short">
 
 | Value    | Design token          | Status symbol |
-|----------|-----------------------|---------------|
+| -------- | --------------------- | ------------- |
 | Red High | color.status.critical |               |
+
 </div>
 
 MNEMONIC.N.SAMPLE.M.RED-HIGH locations in the Message Interface Specification Document: 3.12.2 - Mnemonic Value Response Message, 3.12.3 - Mnemonic Value Data Message, 3.13.3 - Archive Mnemonic Value Data Message.
@@ -193,8 +200,9 @@ MNEMONIC.N.SAMPLE.M.RED-HIGH locations in the Message Interface Specification Do
 <div class="table-overflow table-dark short">
 
 | Value   | Design token          | Status symbol |
-|---------|-----------------------|---------------|
+| ------- | --------------------- | ------------- |
 | Red Low | color.status.critical |               |
+
 </div>
 
 MNEMONIC.N.SAMPLE.M.RED-LOW locations in the Message Interface Specification Document: 3.12.2 - Mnemonic Value Response Message, 3.12.3 - Mnemonic Value Data Message, 3.13.3 - Archive Mnemonic Value Data Message.
@@ -204,8 +212,9 @@ MNEMONIC.N.SAMPLE.M.RED-LOW locations in the Message Interface Specification Doc
 <div class="table-overflow table-dark short">
 
 | Value       | Design token         | Status symbol |
-|-------------|----------------------|---------------|
+| ----------- | -------------------- | ------------- |
 | Yellow High | color.status.caution |               |
+
 </div>
 
 MNEMONIC.N.SAMPLE.M.YELLOW-HIGH locations in the Message Interface Specification Document: 3.12.2 - Mnemonic Value Response Message, 3.12.3 - Mnemonic Value Data Message, 3.13.3 - Archive Mnemonic Value Data Message.
@@ -215,8 +224,9 @@ MNEMONIC.N.SAMPLE.M.YELLOW-HIGH locations in the Message Interface Specification
 <div class="table-overflow table-dark short">
 
 | Value      | Design token         | Status symbol |
-|------------|----------------------|---------------|
+| ---------- | -------------------- | ------------- |
 | Yellow Low | color.status.caution |               |
+
 </div>
 
 MNEMONIC.N.SAMPLE.M.YELLOW-LOW locations in the Message Interface Specification Document: 3.12.2 - Mnemonic Value Response Message, 3.12.3 - Mnemonic Value Data Message, 3.13.3 - Archive Mnemonic Value Data Message.
@@ -226,7 +236,7 @@ MNEMONIC.N.SAMPLE.M.YELLOW-LOW locations in the Message Interface Specification 
 <div class="table-overflow short">
 
 | Document                                   | Version |
-|--------------------------------------------|---------|
+| ------------------------------------------ | ------- |
 | Message Interface Specific Document-Tier 1 | 5.2.0   |
 
 </div>
