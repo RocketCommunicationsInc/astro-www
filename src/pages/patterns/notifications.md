@@ -20,9 +20,9 @@ Three principles define a useful Astro Notification:
 
 ### Notifications vs Interface Feedback
 
-Notifications and interface feedback both communicate important information to the user and use different patterns, but they can be distinguished by their traceability. 
+Notifications and interface feedback both communicate important information to the user and use different patterns, but they can be distinguished by their traceability.
 
-- **Notifications** are traceable, meaning they can be viewed later on in a log. Dismissed notifications will show up in a log, but dismissed interface feedback will not. 
+- **Notifications** are traceable, meaning they can be viewed later on in a log. Dismissed notifications will show up in a log, but dismissed interface feedback will not.
 
 - **Interface** feedback is not traceable and occurs in response to user input such as when a user receives a notification that there was a problem uploading a file or an invalid input in a form field.
 
@@ -58,7 +58,7 @@ Some examples of intrusions are:
 
 - Toast confirmations of a completed action
 
-These messages should use patterns that cause the least disruption. 
+These messages should use patterns that cause the least disruption.
 
 When attention-grabbing notification patterns like banners are overused, they clutter the interface, distract the user, and, worst of all, lose their attention-grabbing power to communicate important messages.
 
@@ -92,8 +92,6 @@ This Badge shows that one event related to a satellite has occurred. You may hyp
 
 ![](/img/patterns/notifications/badges.webp)
 
-
-
 #### Examples
 
 :::two-col
@@ -106,7 +104,7 @@ This Badge shows that one event related to a satellite has occurred. You may hyp
 
 A communication that requires user attention but is not necessarily considered the most urgent would be a candidate for a toast notification.
 
-Toasts are time-based, non-modal notifications that display a short message to the user. Toast notifications attract a user’s attention without forcing the user to interact with the message as it dismisses on a timer.
+Toasts are non-modal notifications that display a short message to the user. Toast notifications attract a user’s attention without forcing the user to interact with the message as they can dismiss on a timer.
 
 #### Placement
 
@@ -121,11 +119,11 @@ A toast message with actionable content that will persist until it is dismissed 
 #### Examples
 
 :::two-col
-![Do: Multiple toasts stack vertically, with the most recent appearing at the top of the list.](/img/patterns/notifications/notifications-toast-do-1.webp "Do: Multiple toasts stack vertically, with the most recent appearing at the top of the list.")
+![Do: Stack multiple toasts vertically, with the most recent appearing at the top of the list.](/img/patterns/notifications/notifications-toast-do-1.webp "Do: Stack multiple toasts vertically, with the most recent appearing at the top of the list.")
 
-![Don’t: Don't place toasts over interface elements which need to remain visible like Notification Symbols.](/img/patterns/notifications/notifications-toast-dont-1.webp "Don't: Don't place toasts over interface elements which need to remain visible like Notification Symbols.")
+![Don’t: Place toasts over interface elements which need to remain visible like Monitoring Icons.](/img/patterns/notifications/notifications-toast-dont-1.webp "Don’t: Place toasts over interface elements which need to remain visible like Monitoring Icons.")
 
-![Don’t: Don't stack more than 4 toasts. When there are more than 4 toasts, visible toasts must be dismissed before any additional toasts appear.](/img/patterns/notifications/notifications-toast-dont-2.webp "Don't: Don't stack more than 4 toasts. When there are more than 4 toasts, visible toasts must be dismissed before any additional toasts appear.")
+![Don’t: Stack more than four toasts when possible. When there are more than that, visible toasts should be dismissed before any additional toasts appear.](/img/patterns/notifications/notifications-toast-dont-2.webp "Don't: Stack more than four toasts when possible. When there are more than that, visible toasts should be dismissed before any additional toasts appear.")
 :::
 
 ### Banner
@@ -162,6 +160,6 @@ For events that require the user’s immediate attention and response, a modal [
 ![Don’t: Don't use modal notifications for user feedback.](/img/patterns/notifications/notification-modal-dialog-dont-1.webp "Don't: Don't use modal notifications for user feedback.")
 :::
 
-## Notification Status 
+## Notification Status
 
 Guidance for communicating status can be found on the [Status System](/patterns/status-system/) page on the Astro UXDS website.
