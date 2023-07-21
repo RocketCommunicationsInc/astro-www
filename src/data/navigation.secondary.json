@@ -139,5 +139,49 @@
                 "url": "/patterns/table/specs/"
             }
         ]
+    },
+    {
+        "description": "GRM",
+        "heading": "Directing and maintaining satellites orbiting in space requires coordinating personnel, processes, and equipment on the ground. This is the role of Ground Resource Management (GRM) systems.",
+        "items": [
+            {
+                "label": "About",
+                "url": "/grm-service-ux-design/about-the-grm-designs/"
+            },
+            {
+                "label": "Dashboard",
+                "url": "/grm-service-ux-design/grm-dashboard/"
+            },
+            {
+                "label": "Equipment Manager",
+                "url": "/grm-service-ux-design/grm-equipment-manager/"
+            },
+            {
+                "label": "Schedule",
+                "url": "/grm-service-ux-design/grm-schedule/"
+            }
+        ]
+    },
+    {
+        "description": "TT&C",
+        "heading": "Directing and maintaining satellites orbiting in space requires coordinating personnel, processes, and equipment on the ground. This is the role of Ground Resource Management (GRM) systems.",
+        "items": [
+            {
+                "label": "About",
+                "url": "/ttc-service-ux-design/about-the-ttc-designs/"
+            },
+            {
+                "label": "Monitor",
+                "url": "/ttc-service-ux-design/ttc-monitor/"
+            },
+            {
+                "label": "Command",
+                "url": "/ttc-service-ux-design/ttc-command/"
+            },
+            {
+                "label": "Investigate",
+                "url": "/ttc-service-ux-design/ttc-investigate/"
+            }
+        ]
     }
 ]
