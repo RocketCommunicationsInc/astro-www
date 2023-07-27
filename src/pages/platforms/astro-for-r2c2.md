@@ -233,7 +233,7 @@ MNEMONIC.N.SAMPLE.M.YELLOW-LOW locations in the Message Interface Specification 
 
 ### XTCE Alarm Levels
 
-The XTCE specification defines multiple alarm levels.  This section provides guidance for the colors that align to each level.  AstroUX does not define a watch or severe level, so the next less critical level is recommended.
+The XTCE specification defines multiple alarm levels. This is defined within the AlarmConditionsType, AlarmRangesType, and ConcernLevelsType within the XTCE schema. This section provides guidance for the colors that align to each level. Since AstroUX does not define watch or severe levels, the next less critical level is recommended.
 
 <div class="table-overflow table-dark short">
 
