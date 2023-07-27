@@ -231,6 +231,23 @@ MNEMONIC.N.SAMPLE.M.YELLOW-HIGH locations in the Message Interface Specification
 
 MNEMONIC.N.SAMPLE.M.YELLOW-LOW locations in the Message Interface Specification Document: 3.12.2 - Mnemonic Value Response Message, 3.12.3 - Mnemonic Value Data Message, 3.13.3 - Archive Mnemonic Value Data Message.
 
+### XTCE Alarm Levels
+
+The XTCE specification defines multiple alarm levels.  This section provides guidance for the colors that align to each level.
+
+<div class="table-overflow table-dark short">
+
+| Value          | Design token          | Status symbol | Notes                                    |
+| -------------- | --------------------- | ------------- | ---------------------------------------- |
+| N/A (None)     | color.status.normal   |               |                                          |
+| Watch          | color.status.normal   |               | No separate color defined. Use Normal.   |
+| Warning        | color.status.caution  |               |                                          |
+| Distress       | color.status.serious  |               |                                          |
+| Critical       | color.status.critical |               |                                          |
+| Severe         | color.status.critical |               | No separate color defined. Use Critical. |
+
+</div>
+
 ## Versions
 
 <div class="table-overflow short">
