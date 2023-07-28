@@ -1,0 +1,406 @@
+---
+import ComponentDocsLayout from 'project:layouts/component-docs/component-docs-layout.astro';
+import TokenSpecTable from 'project:components/token-spec-table/token-spec-table.astro';
+---
+<ComponentDocsLayout content={{title: "Button", description: `Action Buttons allow users to trigger actions by clicking, tapping, or pressing a corresponding key on a keyboard, such as the “Enter” key.`}}>
+
+<a href="#anatomy" class="h h2"><h2 id="anatomy">Anatomy</h2></a>
+
+<div class="spec-container -anatomy">
+    <figure><img loading="lazy" width="260px" src="/img/components/button/button-anatomy.png" alt="Anatomy Image"/></figure>
+    <ol>
+        <li>Container</li>
+        <li>Left icon (optional) (optional)</li>
+        <li>Label</li>
+    </ol>
+</div>
+
+<a href="#default-values" class="h h2">
+    <h2 id="default-values">Default Values</h2>
+</a>
+
+<TokenSpecTable tokens={[
+    {
+        name: 'Container',
+        tokens: [
+        'button-padding-x-medium',                 
+'button-padding-y-medium',                 
+'button-border-width',                     
+'button-radius',                           
+'button-color-border-primary-default',     
+'button-color-background-primary-default',                                         
+        ]
+    },
+    {
+        name: "Label",
+        tokens: [
+'font-control-body-1-font-family',         
+'font-control-body-1-font-size',           
+'font-control-body-1-font-weight',         
+'font-control-body-1-line-height',         
+'font-control-body-1-letter-spacing',      
+'button-color-text-primary',               
+        ]
+    },
+    {
+        name: "Left icon (optional)",
+        tokens: [
+
+'button-icon-dimension',                   
+'button-icon-margin-right',                
+'button-icon-color-fill-primary'
+        ]
+    }
+]}>
+
+</TokenSpecTable>
+
+<a href="#kinds" class="h h2">
+    <h2 id="kinds">Kinds</h2>
+</a>
+
+<a href="#primary" class="h h3">
+    <h3 id="primary">Primary</h3>
+</a>
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="139" src="/img/components/button/button-primary-medium-default.webp" alt="Default Primary Button"/></figure>
+    <figure><img loading="lazy" width="139" src="/img/components/button/button-primary-medium-hover.webp" alt="Primary Button with Hover State"/></figure>
+    <figure><img loading="lazy" width="139" src="/img/components/button/button-primary-medium-disabled.webp" alt="Disabled Primary Button"/></figure>
+</div>
+
+<a href="#kind-default" class="h h4">
+    <h4 id="kind-default">Default</h4>
+</a>
+
+<TokenSpecTable tokens={[
+    {
+        name: "Container",
+        tokens: [
+            'button-color-background-primary-default',
+            'button-color-border-primary-default'
+        ]
+    },
+    {
+        name: "Label",
+        tokens: ['button-color-text-primary']
+    },
+    {
+        name: "Left icon (optional)",
+        tokens:['button-icon-color-fill-primary']
+    }
+]}>
+
+</TokenSpecTable>
+
+
+<a href="#kind-hover" class="h h4">
+    <h4 id="kind-over">Hover</h4>
+</a>
+
+<TokenSpecTable tokens={[
+    {
+        name: "Container",
+        tokens: [
+            'button-color-background-primary-hover',
+            'button-color-border-primary-hover'
+        ]
+    },
+]}>
+
+</TokenSpecTable>
+
+<a href="#disabled" class="h h4">
+    <h4 id="disabled">Disabled</h4>
+</a>
+
+<TokenSpecTable tokens={[
+    {
+        name: "Container",
+        tokens: [
+            'opacity-disabled',
+        ]
+    },
+]}>
+
+</TokenSpecTable>
+
+
+<a href="#secondary" class="h h3">
+    <h3 id="secondary">Secondary</h3>
+</a>
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="163" src="/img/components/button/button-secondary-medium-default.webp" alt="Default Secondary Button"/></figure>
+    <figure><img loading="lazy" width="163" src="/img/components/button/button-secondary-medium-hover.webp" alt="Secondary Button with Hover State"/></figure>
+    <figure><img loading="lazy" width="163" src="/img/components/button/button-secondary-medium-disabled.webp" alt="Disabled Secondary Button"/></figure>
+</div>
+
+
+<a href="#secondary-default" class="h h4">
+    <h4 id="secondary-default">Default</h4>
+</a>
+
+<TokenSpecTable tokens={[
+    {
+        name: "Container",
+        tokens: [
+            'button-color-background-secondary',
+            'button-color-border-secondary-default'
+        ]
+    },
+    {
+        name: "Label",
+        tokens: ['button-color-text-secondary-default']
+    },
+    {
+        name: "Left icon (optional)",
+        tokens: ['button-icon-color-fill-secondary-default']
+    }
+]}/>
+
+
+<a href="#secondary-hover" class="h h4">
+    <h4 id="secondary-hover">Hover</h4>
+</a>
+
+
+<TokenSpecTable tokens={[
+    {
+        name: "Container",
+        tokens: [
+            'button-color-background-secondary',
+            'button-color-border-secondary-hover'
+        ]
+    },
+    {
+        name: "Label",
+        tokens: ['button-color-text-secondary-hover']
+    },
+    {
+        name: "Left icon (optional)",
+        tokens: ['button-icon-color-fill-secondary-hover']
+    }
+]}/>
+
+
+<a href="#secondary-disabled" class="h h4">
+    <h4 id="secondary-disabled">Disabled</h4>
+</a>
+
+
+<TokenSpecTable tokens={[
+    {
+        name: "Container",
+        tokens: [
+            'opacity-disabled',
+        ]
+    },
+]}/>
+
+<a href="#borderless" class="h h3">
+    <h3 id="borderless">Borderless</h4>
+</a>
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="161" src="/img/components/button/button-borderless-default.webp" alt="Default Borderless Button"/></figure>
+    <figure><img loading="lazy" width="161" src="/img/components/button/button-borderless-hover.webp" alt="Borderless Button with Hover State"/></figure>
+    <figure><img loading="lazy" width="161" src="/img/components/button/button-borderless-disabled.webp" alt="Disabled Borderless Button"/></figure>
+</div>
+
+<a href="#borderless-default" class="h h4">
+    <h4 id="borderless-default">Default</h4>
+</a>
+
+<TokenSpecTable tokens={[
+    {
+        name: "Container",
+        tokens: [
+            'button-color-background-borderless',
+            'button-color-border-borderless'
+        ]
+    },
+    {
+        name: "Label",
+        tokens: [
+            'button-color-text-borderless-default'
+        ]
+    },
+    {
+        name: "Left icon (optional)",
+        tokens: ['button-icon-color-fill-borderless-default']
+    }
+]}/>
+
+
+<a href="#borderless-hover" class="h h4">
+    <h4 id="borderless-hover">Hover</h4>
+</a>
+
+
+<TokenSpecTable tokens={[
+    {
+        name: "Label",
+        tokens: [
+            'button-color-text-borderless-hover'
+        ]
+    },
+    {
+        name: "Left icon (optional)",
+        tokens: ['button-icon-color-fill-borderless-hover']
+    }
+]}/>
+
+
+
+<a href="#borderless-disabled" class="h h4">
+    <h4 id="borderless-disabled">Disabled</h4>
+</a>
+
+<TokenSpecTable tokens={[
+    {
+        name: "Container",
+        tokens: [
+            'opacity-disabled'
+        ]
+    }
+]}/>
+
+
+
+<a href="#sizes" class="h h2">
+    <h2 id="sizes">Default</h2>
+</a>
+
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="140" src="/img/components/button/button-primary-small-default.webp" alt="Small Primary Button"/></figure>
+    <figure><img loading="lazy" width="140" src="/img/components/button/button-primary-medium-default.webp" alt="Medium Primary Button"/></figure>
+    <figure><img loading="lazy" width="140" src="/img/components/button/button-primary-large-default.webp" alt="Large Primary Button"/></figure>
+</div>
+
+<a href="#small" class="h h3">
+    <h3 id="small">small</h3>
+</a>
+
+<TokenSpecTable tokens={[
+    {
+        name: "Container",
+        tokens: [
+            'button-padding-x-small',
+            'button-padding-y-small'
+        ]
+    }
+]}/>
+
+
+<a href="#medium" class="h h3">
+    <h3 id="medium">Medium</h3>
+</a>
+
+<TokenSpecTable tokens={[
+    {
+        name: "Container",
+        tokens: [
+            'button-padding-x-medium',
+            'button-padding-y-medium'
+        ]
+    }
+]}/>
+
+
+<a href="#large" class="h h3">
+    <h3 id="large">Large</h3>
+</a>
+
+<TokenSpecTable tokens={[
+    {
+        name: "Container",
+        tokens: [
+            'button-padding-x-large',
+            'button-padding-y-large'
+        ]
+    }
+]}/>
+
+
+
+
+<a href="#icon-only" class="h h2">
+    <h2 id="icon-only">Icon Only</h2>
+</a>
+
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="42" src="/img/components/button/button-primary-small-default-icon-only.webp" alt="Small Icon Only Primary Button"/></figure>
+    <figure><img loading="lazy" width="60" src="/img/components/button/button-primary-medium-default-icon-only.webp" alt="Medium Icon Only Primary Button"/></figure>
+    <figure><img loading="lazy" width="44" src="/img/components/button/button-primary-large-default-icon-only.webp" alt="Large Icon Only Primary Button"/></figure>
+</div>
+
+<a href="#icon-only-small" class="h h3">
+    <h3 id="icon-only-small">Small</h3>
+</a>
+
+
+<TokenSpecTable tokens={[
+    {
+        name: "Container",
+        tokens: [
+            'button-padding-x-small-icon-only',
+            'button-padding-y-small-icon-only'
+        ]
+    }
+]}/>
+
+
+<a href="#icon-only-medium" class="h h3">
+    <h3 id="icon-only-medium">Medium</h3>
+</a>
+
+<TokenSpecTable tokens={[
+    {
+        name: "Container",
+        tokens: [
+            'button-padding-x-medium-icon-only',
+            'button-padding-y-medium-icon-only'
+        ]
+    }
+]}/>
+
+
+<a href="#icon-only-large" class="h h3">
+    <h3 id="icon-only-large">Large</h3>
+</a>
+
+<TokenSpecTable tokens={[
+    {
+        name: "Container",
+        tokens: [
+            'button-padding-x-large-icon-only',
+            'button-padding-y-large-icon-only'
+        ]
+    }
+]}/>
+
+
+<a href="#focus" class="h h2">
+    <h2 id="focus">Focus</h2>
+</a>
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="139" src="/img/components/button/button-primary-medium-focus.webp" alt="Primary Button with Focus State"/></figure>
+</div>
+
+<TokenSpecTable tokens={[
+    {
+        name: "Container",
+        tokens: [
+            'spacing-focus-default',
+            'color-border-focus-default'
+        ]
+    }
+]}/>
+
+
+
+</ComponentDocsLayout>

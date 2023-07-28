@@ -1,0 +1,20 @@
+---
+
+import ComponentDocsLayout from 'project:layouts/component-docs/component-docs-layout.astro';
+import TokenSpecTable from 'project:components/token-spec-table/token-spec-table.astro';
+---
+
+<ComponentDocsLayout content={{title: 'Card'}}>
+<color-swab>#FACADE</color-swab>
+	<TokenSpecTable tokens={[
+		{
+			'name': 'outer container',
+			tokens: ['button-padding-x-medium', 'button-color-border-primary-default']
+		},
+		{
+			name: 'header',
+			tokens: ['foo']
+		}
+	]}></TokenSpecTable>
+
+</ComponentDocsLayout>

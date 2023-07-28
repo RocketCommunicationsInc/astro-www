@@ -2194,52 +2194,7 @@ rux-tree-node::part(node) {
 	import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0/dist/shoelace.js';
 </script>
 
-<script>
-	class ColorSwab extends HTMLElement {
-		constructor() {
-			super();
-			this.attachShadow({ mode: 'open' });
-		}
 
-		connectedCallback() {
-			this.render();
-		}
-
-		render() {
-			const hexCode = this.textContent.trim();
-			const style = `
-		  .color-swab {
-			display: inline-flex;
-			align-items: center;
-			gap: 5px;
-		  }
-		  .color-preview {
-			inline-size: .875em;
-			block-size: .875em;
-			box-shadow: 0 0 0 1px inset;
-		  }
-		`;
-
-			const colorPreview = document.createElement('div');
-			colorPreview.classList.add('color-preview');
-			colorPreview.style.backgroundColor = hexCode;
-
-			const container = document.createElement('div');
-			container.classList.add('color-swab');
-			container.appendChild(colorPreview);
-			container.appendChild(document.createTextNode(hexCode));
-
-			const styleElement = document.createElement('style');
-			styleElement.textContent = style;
-
-			this.shadowRoot.innerHTML = '';
-			this.shadowRoot.appendChild(styleElement);
-			this.shadowRoot.appendChild(container);
-		}
-	}
-
-	customElements.define('color-swab', ColorSwab);
-</script>
 
 <style is:global>
 	@import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0/dist/themes/light.css';

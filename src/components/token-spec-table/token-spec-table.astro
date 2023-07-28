@@ -1,0 +1,87 @@
+---
+import { findByName } from 'project:utils/tokens.js';
+const { name, tokens } = Astro.props;
+
+
+function translateString(inputString) {
+	const translationMap = {
+		'margin-right': 'Margin (Right)',
+		'margin-left': 'Margin (Left)',
+		'color-text': 'Text Color',
+		'padding-x': 'Padding (Left and Right)',
+		'padding-y': 'Padding (Top and Bottom)',
+		'border-width': 'Border Width',
+		'radius': 'Border Radius',
+		'font-size': 'Font Size',
+		'font-family': 'Font Family',
+		'font-weight': 'Font Weight',
+		'color-border-focus-default': "Outline",
+		'spacing-focus-default': 'Outline Offset',
+		'letter-spacing': 'Letter Spacing',
+		'line-height': 'Line Height',
+		'dimension': 'Dimension',
+		'opacity': 'Opacity',
+		'color-background': 'Background Color',
+		'color-border': 'Border Color',
+		'color-fill': 'Fill Color',
+
+	};
+
+	for (const key in translationMap) {
+		if (inputString.includes(key)) {
+			return translationMap[key];
+		}
+	}
+	return ''
+}
+
+
+function getValue(token) {
+	const result = findByName(token);
+	if (result && result.value) {
+
+			return result.value;
+	}
+	return 'N/A';
+}
+---
+
+<div class="specs-table-container">
+	<table>
+		<thead>
+			<tr>
+				<th align="left">Attribute</th>
+				<th align="left">Token</th>
+				<th align="left">Value</th>
+			</tr>
+		</thead>
+		<tbody>
+			{
+				tokens.map((section) => (
+					<>
+						<tr>
+							<>
+								<td align="left">
+									<span class="attr-title">{section.name}</span>
+								</td>
+								<td></td>
+								<td align="left" />
+							</>
+						</tr>
+						<>
+							{section.tokens.map((token) => (
+								<tr>
+									<td>{translateString(token)}</td>
+									<td>{token}</td>
+									<td><color-swab>
+										{getValue(token)}
+										</color-swab></td>
+								</tr>
+							))}
+						</>
+					</>
+				))
+			}
+		</tbody>
+	</table>
+</div>
