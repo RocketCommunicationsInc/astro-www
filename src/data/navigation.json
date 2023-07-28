@@ -1,372 +1,376 @@
 [
-    {
-        "items": [
-            {
-                "label": "Getting Started",
-                "url": "/getting-started/"
-            },
-            {
-                "label": "Designers",
-                "url": "/getting-started/designers/"
-            },
-            {
-                "label": "Developers",
-                "url": "/getting-started/developers/"
-            }
-        ],
-        "label": "Getting Started"
-    },
-    {
-        "items": [
-            {
-                "label": "Getting Started",
-                "url": "/design-tokens/getting-started/"
-            },
-            {
-                "label": "Installation",
-                "url": "/design-tokens/installation/"
-            },
-            {
-                "label": "Reference",
-                "url": "/design-tokens/reference/"
-            },
-            {
-                "label": "System",
-                "url": "/design-tokens/system/"
-            },
-            {
-                "label": "Component",
-                "url": "/design-tokens/component/"
-            }
-        ],
-        "label": "Design Tokens"
-    },
-    {
-        "items": [
-            {
-                "label": "Typography",
-                "url": "/design-guidelines/typography/"
-            },
-            {
-                "label": "Theme",
-                "url": "/design-guidelines/theme/"
-            },
-            {
-                "label": "Grid",
-                "url": "/design-guidelines/grid/"
-            },
-            {
-                "label": "Glossary",
-                "url": "/design-guidelines/glossary/"
-            }
-        ],
-        "label": "Design Guidelines"
-    },
-    {
-        "items": [
-            {
-                "label": "Application Feedback",
-                "url": "/patterns/application-feedback/"
-            },
-            {
-                "label": "Breadcrumbs",
-                "url": "/patterns/breadcrumbs/"
-            },
-            {
-                "label": "Data Visualization",
-                "url": "/patterns/data-visualization/"
-            },
-            {
-                "label": "Focus State",
-                "url": "/patterns/focus/"
-            },
-            {
-                "label": "Forms and Validation",
-                "url": "/patterns/forms-and-validation/"
-            },
-            {
-                "label": "Modeless Panes",
-                "url": "/patterns/modeless-panes/"
-            },
-            {
-                "label": "Navigation",
-                "url": "/patterns/navigation/"
-            },
-            {
-                "label": "Notifications",
-                "url": "/patterns/notifications/"
-            },
-            {
-                "label": "Pop Up Menu",
-                "url": "/patterns/pop-up-menu/"
-            },
-            {
-                "label": "Sign In",
-                "url": "/patterns/sign-in/"
-            },
-            {
-                "label": "Status System",
-                "url": "/patterns/status-system/"
-            },
-            {
-                "label": "Table",
-                "url": "/patterns/table/"
-            }
-        ],
-        "label": "Patterns"
-    },
-    {
-        "items": [
-            {
-                "label": "Getting Started",
-                "url": "/components/getting-started/"
-            },
-            {
-                "label": "Component Sandbox",
-                "url": "/components/component-sandbox/"
-            },
-            {
-                "label": "separator",
-                "url": "/separator"
-            },
-            {
-                "label": "Accordion",
-                "url": "/components/accordion/"
-            },
-            {
-                "label": "Application State",
-                "url": "/components/application-state/"
-            },
-            {
-                "label": "Button",
-                "url": "/components/button/"
-            },
-            {
-                "label": "Card",
-                "url": "/components/card/"
-            },
-            {
-                "label": "Checkbox",
-                "url": "/components/checkbox/"
-            },
-            {
-                "label": "Classification Markings",
-                "url": "/components/classification-markings/"
-            },
-            {
-                "label": "Clock",
-                "url": "/components/clock/"
-            },
-            {
-                "label": "Container",
-                "url": "/components/container/"
-            },
-            {
-                "label": "Date Picker",
-                "url": "/components/date-picker/"
-            },
-            {
-                "label": "Dialog",
-                "url": "/components/dialog/"
-            },
-            {
-                "label": "Global Status Bar",
-                "url": "/components/global-status-bar/"
-            },
-            {
-                "label": "Icons and Symbols",
-                "url": "/components/icons-and-symbols/"
-            },
-            {
-                "label": "Input Field",
-                "url": "/components/input-field/"
-            },
-            {
-                "label": "Link",
-                "url": "/components/link/"
-            },
-            {
-                "label": "Log",
-                "url": "/components/log/"
-            },
-            {
-                "label": "Notification Banner",
-                "url": "/components/notification-banner/"
-            },
-            {
-                "label": "Pagination",
-                "url": "/components/pagination/"
-            },
-            {
-                "label": "Pop Up",
-                "url": "/components/pop-up/"
-            },
-            {
-                "label": "Progress",
-                "url": "/components/progress/"
-            },
-            {
-                "label": "Push Button",
-                "url": "/components/push-button/"
-            },
-            {
-                "label": "Radio Button",
-                "url": "/components/radio-button/"
-            },
-            {
-                "label": "Search",
-                "url": "/components/search/"
-            },
-            {
-                "label": "Segmented Button",
-                "url": "/components/segmented-button/"
-            },
-            {
-                "label": "Select",
-                "url": "/components/select/"
-            },
-            {
-                "label": "Slider",
-                "url": "/components/slider/"
-            },
-            {
-                "label": "Status Symbol",
-                "url": "/components/status-symbol/"
-            },
-            {
-                "label": "Switch",
-                "url": "/components/switch/"
-            },
-            {
-                "label": "Tabs",
-                "url": "/components/tabs/"
-            },
-            {
-                "label": "Tag",
-                "url": "/components/tag/"
-            },
-            {
-                "label": "Textarea",
-                "url": "/components/textarea/"
-            },
-            {
-                "label": "Timeline",
-                "url": "/components/timeline/"
-            },
-            {
-                "label": "Tooltip",
-                "url": "/components/tooltip/"
-            },
-            {
-                "label": "Tree",
-                "url": "/components/tree/"
-            }
-        ],
-        "label": "Components"
-    },
-    {
-        "label": "Icon Library",
-        "url": "/icon-library/"
-    },
-    {
-        "items": [
-            {
-                "label": "Research",
-                "url": "/design-process/research/"
-            },
-            {
-                "label": "UI Design",
-                "url": "/design-process/ui-design/"
-            },
-            {
-                "label": "Visual Design",
-                "url": "/design-process/visual-design/"
-            },
-            {
-                "label": "UX Assessments",
-                "url": "/design-process/ux-assessments/"
-            }
-        ],
-        "label": "Design Process"
-    },
-    {
-        "items": [
-            {
-                "label": "Service Specific UX Design",
-                "url": "/service-specific-ux-design/"
-            },
-            {
-                "label": "GRM Service UX Design",
-                "url": "/grm-service-ux-design/about-the-grm-designs/"
-            },
-            {
-                "label": "TT&C Service UX Design",
-                "url": "/ttc-service-ux-design/about-the-ttc-designs/"
-            },
-            {
-                "label": "FD Service UX Design",
-                "url": "/fd-service-ux-design/about-the-fd-designs/"
-            }
-        ],
-        "label": "Case Studies"
-    },
-    {
-        "items": [
-            {
-                "label": "Astro for Apple",
-                "url": "/platforms/astro-for-apple/"
-            },
-            {
-                "label": "Astro for Grafana",
-                "url": "/platforms/astro-for-grafana/"
-            },
-            {
-                "label": "Astro for R2C2",
-                "url": "/platforms/astro-for-r2c2/"
-            }
-        ],
-        "label": "Platforms"
-    },
-    {
-        "items": [
-            {
-                "label": "Propose a Change",
-                "url": "/community/propose-a-change/"
-            },
-            {
-                "label": "Content Policy",
-                "url": "/community/content-policy/"
-            }
-        ],
-        "label": "Community"
-    },
-    {
-        "items": [
-            {
-                "label": "R2C2 Design Compliance",
-                "url": "/compliance/r2c2-design-compliance/"
-            },
-            {
-                "label": "MIL-STD 1472H",
-                "url": "/compliance/mil-std-1472/"
-            }
-        ],
-        "label": "Compliance"
-    },
-    {
-        "label": "Releases",
-        "url": "/releases/"
-    },
-    {
-        "label": "Migration",
-        "url": "/migration/"
-    },
-    {
-        "label": "Downloads",
-        "url": "/downloads/"
-    },
-    {
-        "label": "Support",
-        "url": "/support/"
-    }
+	{
+		"items": [
+			{
+				"label": "Getting Started",
+				"url": "/getting-started/"
+			},
+			{
+				"label": "Designers",
+				"url": "/getting-started/designers/"
+			},
+			{
+				"label": "Developers",
+				"url": "/getting-started/developers/"
+			}
+		],
+		"label": "Getting Started"
+	},
+	{
+		"items": [
+			{
+				"label": "Getting Started",
+				"url": "/design-tokens/getting-started/"
+			},
+			{
+				"label": "Installation",
+				"url": "/design-tokens/installation/"
+			},
+			{
+				"label": "Reference",
+				"url": "/design-tokens/reference/"
+			},
+			{
+				"label": "System",
+				"url": "/design-tokens/system/"
+			},
+			{
+				"label": "Component",
+				"url": "/design-tokens/component/"
+			}
+		],
+		"label": "Design Tokens"
+	},
+	{
+		"items": [
+			{
+				"label": "Typography",
+				"url": "/design-guidelines/typography/"
+			},
+			{
+				"label": "Theme",
+				"url": "/design-guidelines/theme/"
+			},
+			{
+				"label": "Grid",
+				"url": "/design-guidelines/grid/"
+			},
+			{
+				"label": "Glossary",
+				"url": "/design-guidelines/glossary/"
+			}
+		],
+		"label": "Design Guidelines"
+	},
+	{
+		"items": [
+			{
+				"label": "Application Feedback",
+				"url": "/patterns/application-feedback/"
+			},
+			{
+				"label": "Breadcrumbs",
+				"url": "/patterns/breadcrumbs/"
+			},
+			{
+				"label": "Data Visualization",
+				"url": "/patterns/data-visualization/"
+			},
+			{
+				"label": "Focus State",
+				"url": "/patterns/focus/"
+			},
+			{
+				"label": "Forms and Validation",
+				"url": "/patterns/forms-and-validation/"
+			},
+			{
+				"label": "Modeless Panes",
+				"url": "/patterns/modeless-panes/"
+			},
+			{
+				"label": "Navigation",
+				"url": "/patterns/navigation/"
+			},
+			{
+				"label": "Notifications",
+				"url": "/patterns/notifications/"
+			},
+			{
+				"label": "Pop Up Menu",
+				"url": "/patterns/pop-up-menu/"
+			},
+			{
+				"label": "Sign In",
+				"url": "/patterns/sign-in/"
+			},
+			{
+				"label": "Status System",
+				"url": "/patterns/status-system/"
+			},
+			{
+				"label": "Table",
+				"url": "/patterns/table/"
+			}
+		],
+		"label": "Patterns"
+	},
+	{
+		"items": [
+			{
+				"label": "Getting Started",
+				"url": "/components/getting-started/"
+			},
+			{
+				"label": "Component Sandbox",
+				"url": "/components/component-sandbox/"
+			},
+			{
+				"label": "separator",
+				"url": "/separator"
+			},
+			{
+				"label": "Accordion",
+				"url": "/components/accordion/"
+			},
+			{
+				"label": "Application State",
+				"url": "/components/application-state/"
+			},
+			{
+				"label": "Button",
+				"url": "/components/button/"
+			},
+			{
+				"label": "Card",
+				"url": "/components/card/"
+			},
+			{
+				"label": "Checkbox",
+				"url": "/components/checkbox/"
+			},
+			{
+				"label": "Classification Markings",
+				"url": "/components/classification-markings/"
+			},
+			{
+				"label": "Clock",
+				"url": "/components/clock/"
+			},
+			{
+				"label": "Container",
+				"url": "/components/container/"
+			},
+			{
+				"label": "Date Picker",
+				"url": "/components/date-picker/"
+			},
+			{
+				"label": "Dialog",
+				"url": "/components/dialog/"
+			},
+			{
+				"label": "Global Status Bar",
+				"url": "/components/global-status-bar/"
+			},
+			{
+				"label": "Icons and Symbols",
+				"url": "/components/icons-and-symbols/"
+			},
+			{
+				"label": "Input Field",
+				"url": "/components/input-field/"
+			},
+			{
+				"label": "Link",
+				"url": "/components/link/"
+			},
+			{
+				"label": "Log",
+				"url": "/components/log/"
+			},
+			{
+				"label": "Notification Banner",
+				"url": "/components/notification-banner/"
+			},
+			{
+				"label": "Pagination",
+				"url": "/components/pagination/"
+			},
+			{
+				"label": "Pop Up",
+				"url": "/components/pop-up/"
+			},
+			{
+				"label": "Progress",
+				"url": "/components/progress/"
+			},
+			{
+				"label": "Push Button",
+				"url": "/components/push-button/"
+			},
+			{
+				"label": "Radio Button",
+				"url": "/components/radio-button/"
+			},
+			{
+				"label": "Search",
+				"url": "/components/search/"
+			},
+			{
+				"label": "Segmented Button",
+				"url": "/components/segmented-button/"
+			},
+			{
+				"label": "Select",
+				"url": "/components/select/"
+			},
+			{
+				"label": "Slider",
+				"url": "/components/slider/"
+			},
+			{
+				"label": "Status Symbol",
+				"url": "/components/status-symbol/"
+			},
+			{
+				"label": "Switch",
+				"url": "/components/switch/"
+			},
+			{
+				"label": "Tabs",
+				"url": "/components/tabs/"
+			},
+			{
+				"label": "Tag",
+				"url": "/components/tag/"
+			},
+			{
+				"label": "Textarea",
+				"url": "/components/textarea/"
+			},
+			{
+				"label": "Timeline",
+				"url": "/components/timeline/"
+			},
+			{
+				"label": "Toast",
+				"url": "/components/toast/"
+			},
+			{
+				"label": "Tooltip",
+				"url": "/components/tooltip/"
+			},
+			{
+				"label": "Tree",
+				"url": "/components/tree/"
+			}
+		],
+		"label": "Components"
+	},
+	{
+		"label": "Icon Library",
+		"url": "/icon-library/"
+	},
+	{
+		"items": [
+			{
+				"label": "Research",
+				"url": "/design-process/research/"
+			},
+			{
+				"label": "UI Design",
+				"url": "/design-process/ui-design/"
+			},
+			{
+				"label": "Visual Design",
+				"url": "/design-process/visual-design/"
+			},
+			{
+				"label": "UX Assessments",
+				"url": "/design-process/ux-assessments/"
+			}
+		],
+		"label": "Design Process"
+	},
+	{
+		"items": [
+			{
+				"label": "Service Specific UX Design",
+				"url": "/service-specific-ux-design/"
+			},
+			{
+				"label": "GRM Service UX Design",
+				"url": "/grm-service-ux-design/about-the-grm-designs/"
+			},
+			{
+				"label": "TT&C Service UX Design",
+				"url": "/ttc-service-ux-design/about-the-ttc-designs/"
+			},
+			{
+				"label": "FD Service UX Design",
+				"url": "/fd-service-ux-design/about-the-fd-designs/"
+			}
+		],
+		"label": "Case Studies"
+	},
+	{
+		"items": [
+			{
+				"label": "Astro for Apple",
+				"url": "/platforms/astro-for-apple/"
+			},
+			{
+				"label": "Astro for Grafana",
+				"url": "/platforms/astro-for-grafana/"
+			},
+			{
+				"label": "Astro for R2C2",
+				"url": "/platforms/astro-for-r2c2/"
+			}
+		],
+		"label": "Platforms"
+	},
+	{
+		"items": [
+			{
+				"label": "Propose a Change",
+				"url": "/community/propose-a-change/"
+			},
+			{
+				"label": "Content Policy",
+				"url": "/community/content-policy/"
+			}
+		],
+		"label": "Community"
+	},
+	{
+		"items": [
+			{
+				"label": "R2C2 Design Compliance",
+				"url": "/compliance/r2c2-design-compliance/"
+			},
+			{
+				"label": "MIL-STD 1472H",
+				"url": "/compliance/mil-std-1472/"
+			}
+		],
+		"label": "Compliance"
+	},
+	{
+		"label": "Releases",
+		"url": "/releases/"
+	},
+	{
+		"label": "Migration",
+		"url": "/migration/"
+	},
+	{
+		"label": "Downloads",
+		"url": "/downloads/"
+	},
+	{
+		"label": "Support",
+		"url": "/support/"
+	}
 ]
