@@ -42,6 +42,20 @@
         ]
     },
     {
+        "description": "Push Buttons are a variant of the Switch that incorporate label and action into a single user interface element. Push Buttons may provide a useful interface element where screen real-estate is at a premium.",
+        "heading": "Push Button",
+        "items": [
+            {
+                "label": "Usage",
+                "url": "/components/push-button/"
+            },
+            {
+                "label": "Specifications",
+                "url": "/components/push-button/specs/"
+            }
+        ]
+    },
+    {
         "description": "Action Buttons allow users to trigger actions by clicking, tapping, or pressing a corresponding key on a keyboard, such as the “Enter” key.",
         "heading": "Data Visualization",
         "hide": true,
