@@ -163,7 +163,8 @@
 			},
 			{
 				"label": "Date Picker",
-				"url": "/components/date-picker/"
+				"url": "/components/date-picker/",
+				"status": "beta"
 			},
 			{
 				"label": "Dialog",
