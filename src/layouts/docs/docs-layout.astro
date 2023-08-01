@@ -27,7 +27,6 @@ export interface Props extends DocProps {
 }
 
 const { content } = Astro.props
-console.log(content)
 const title = content.subtitle ? `${content.title} ${content.subtitle}` : content.title
 const tabTitle = content.title
 const description = content.description || false
