@@ -7,6 +7,7 @@ height: 216px
 git: rux-toast
 assets:
   name: Toast
+status: beta
 ---
 
 ## Interactive Example

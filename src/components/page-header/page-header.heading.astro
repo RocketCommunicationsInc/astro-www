@@ -1,1 +1,5 @@
-<h1 class="-heading" {...Astro.props}><slot /></h1>
+---
+const { status, ...props} = Astro.props
+
+---
+<h1 class="-heading" {...props}><slot />{status ? <sup class={`status-tag status-${status}`}>{status}</sup> : null}</h1>

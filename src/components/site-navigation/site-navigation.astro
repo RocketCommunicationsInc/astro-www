@@ -28,7 +28,7 @@ import './client/h-navigation-list.js'
 			<For of={navigation.items}>{item => (
 				<li class={current.has(item) ? 'current' : null}>
 					<When test={item.url}>
-						<a href={item.url}>{item.label}</a>
+						<a href={item.url}>{item.label}{item.status ? <sup class={`status-tag status-${item.status}`}>{item.status}</span> : null }</sup>
 					</When>
 
 					<When test={!item.url}>
@@ -41,7 +41,7 @@ import './client/h-navigation-list.js'
 										<hr />
 
 										<li slot="else" class={current.has(subitem) ? 'current' : null}>
-											<a href={subitem.url} aria-current={current.has(item)}>{subitem.label}</a>
+											<a href={subitem.url} aria-current={current.has(item)}>{subitem.label}{subitem.status ? <sup class={`status-tag status-${subitem.status}`}>{subitem.status}</sup> : null }</a>
 										</li>
 									</When>
 								)}</For>

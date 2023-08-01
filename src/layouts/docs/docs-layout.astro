@@ -21,11 +21,13 @@ export interface Props extends DocProps {
 		subtitle?: string
 		description?: string
 		url?: string
+		status?: string
 	}
 	file?: string
 }
 
 const { content } = Astro.props
+console.log(content)
 const title = content.subtitle ? `${content.title} ${content.subtitle}` : content.title
 const tabTitle = content.title
 const description = content.description || false
@@ -60,7 +62,7 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 
 	<main class="page" id="content">
 		<PageHeader slot="header">
-			<PageHeader.Heading>
+			<PageHeader.Heading status={content.status || null}>
 				{content.title}
 			</PageHeader.Heading>
 			<PageHeader.Subheading>

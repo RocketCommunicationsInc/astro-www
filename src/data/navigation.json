@@ -251,11 +251,13 @@
 			},
 			{
 				"label": "Timeline",
-				"url": "/components/timeline/"
+				"url": "/components/timeline/",
+				"status": "beta"
 			},
 			{
 				"label": "Toast",
-				"url": "/components/toast/"
+				"url": "/components/toast/",
+				"status": "beta"
 			},
 			{
 				"label": "Tooltip",
