@@ -19,6 +19,11 @@
 		outline-color: var(--FocusLight);
 	}
 
+	& .status-tag {
+		font-size: .65em;
+		vertical-align: middle;
+	}
+
 	@media (width < 1024px) {
 		display: grid;
 

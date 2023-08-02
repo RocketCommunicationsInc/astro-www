@@ -65,3 +65,28 @@
 		grid-area: foot;
 	}
 }
+
+.status-tag {
+	display: inline-block;
+
+	/* Layout */
+	margin-inline-start: 2--step;
+
+	/* Layout */
+	padding: .5--step 1--step;
+
+	/* Text */
+	font-weight: 400;
+	line-height: unset;
+	text-transform: uppercase;
+
+	/* Appearance */
+	background-color: var(--Grey700Color);
+	border-radius: var(--EdgeRadius);
+	color: var(--PrimaryColor);
+
+	&.status-beta {
+		/* Appearance */
+		background: var(--Purple500Color);
+	}
+}
