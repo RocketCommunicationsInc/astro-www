@@ -21,6 +21,11 @@
 		line-height: var(--heading-1-text-line);
 	}
 
+	& .status-tag {
+		/* Text */
+		font-size: 4--step;
+	}
+
 	& .-subheading {
 		/* Layout */
 		margin-block-end: 0;

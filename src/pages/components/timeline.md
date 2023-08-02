@@ -7,6 +7,7 @@ height: 700px
 git: rux-timeline
 assets:
     name: Timeline
+status: beta
 ---
 
 ## Interactive Example

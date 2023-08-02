@@ -2,6 +2,7 @@ export interface Link {
 	label: string
 	url: string
 	items: never
+	status?: string
 }
 
 export interface Group {
