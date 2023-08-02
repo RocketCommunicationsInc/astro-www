@@ -21,6 +21,7 @@ export interface Props extends DocProps {
 		subtitle?: string
 		description?: string
 		url?: string
+		status?: string
 	}
 	file?: string
 }
@@ -60,7 +61,7 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 
 	<main class="page" id="content">
 		<PageHeader slot="header">
-			<PageHeader.Heading>
+			<PageHeader.Heading status={content.status || null}>
 				{content.title}
 			</PageHeader.Heading>
 			<PageHeader.Subheading>

@@ -5,6 +5,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: forms-input--types
 assets:
   name: Date Picker
+status: "beta"
 
 ---
 
@@ -14,7 +15,7 @@ assets:
 
 - Use the Date Picker when a calendar view is helpful for selecting a date.
 - Do not use the Date Picker for dates easily remembered, such as birthdays; use a simple input field instead for faster input.
-- The Date Picker should display the current month and year when activated; however, if a value has already been added to the input field, then the Date Picker will display the full date entered, including month, year, and day. 
+- The Date Picker should display the current month and year when activated; however, if a value has already been added to the input field, then the Date Picker will display the full date entered, including month, year, and day.
 - Use an identifier to specifically highlight the current day to give context cues to users.
 - Use an “Apply” action button to finalize selection when possible.
 

@@ -1686,10 +1686,7 @@
 					"kind": "menu",
 					"attribute": "strategy",
 					"property": "strategy",
-					"options": [
-						"absolute",
-						"fixed"
-					],
+					"options": ["absolute", "fixed"],
 					"value": "absolute"
 				}
 			],
@@ -2685,6 +2682,36 @@
 				}
 			],
 			"style": "rux-timeline { --normal-fill: #56f000; --standby-fill: #2dccff; --standby-border: #2dccff; --standby-fill-opacity: 0; --off-fill: #a4abb6; --off-border: #a4abb6; --critical-fill: #ff3838; --critical-border: #ff3838; --caution-fill: #fce83a; --caution-border: #fce83a; --serious-fill: #ffb302; --serious-border: #ffb302;}"
+		},
+		{
+			"tag": "rux-toast",
+			"constructor": "RuxToast",
+			"align": "center",
+			"examples": [
+				{
+					"name": "Default",
+					"code": "<rux-toast message=\"Toast\"></rux-toast>"
+				}
+			],
+			"fields": [
+				{
+					"kind": "text",
+					"property": "message",
+					"attribute": "message",
+					"value": "Toast"
+				},
+				{
+					"kind": "text",
+					"property": "close-after",
+					"attribute": "close-after"
+				},
+				{
+					"kind": "switch",
+					"property": "hideClose",
+					"attribute": "hideClose",
+					"checked": false
+				}
+			]
 		},
 		{
 			"tag": "rux-tooltip",

@@ -8,8 +8,9 @@ git: rux-card
 assets:
   name: Card
 sandbox:
-  style: "--y: 200px;"
+  style: '--y: 200px;'
 ---
+
 ## Interactive Example
 
 ::tag{ is=a-playground tag=rux-card }
@@ -18,17 +19,17 @@ A card is a container for a few short, related pieces of information. It roughly
 
 ## Rules of Thumb
 
-Limit actions on a card. Actions should be simple, direct, and predictable. Actions should clearly indicate what will happen when selected.
+- Limit actions on a card. Actions should be simple, direct, and predictable. Actions should clearly indicate what will happen when selected.
 
-Display content with a logical hierarchy, setting clear prioritization of content.
+- Display content with a logical hierarchy, setting clear prioritization of content.
 
-Cards should be self-contained, without relying on surrounding elements for context. It cannot be merged, divided, or split.
+- Cards should be self-contained, without relying on surrounding elements for context. It cannot be merged, divided, or split.
 
-Copy should be scannable; content is crisp, brief, and focused. Actionable language is preferred. Passive voice should be avoided.
+- Copy should be scannable; content is crisp, brief, and focused. Actionable language is preferred. Passive voice should be avoided.
 
-Identify “Hero content”, but limit them to 1-2 elements. These draw attention.
+- Identify “Hero content”, but limit them to 1-2 elements. These draw attention.
 
-Content should be actionable. Structured with visual hierarchy to bring prominence to important content. Be clear about content that requires user action.
+- Content should be actionable. Structured with visual hierarchy to bring prominence to important content. Be clear about content that requires user action.
 
 ## Appearance and Behavior
 
@@ -51,12 +52,12 @@ Use sentence case unless an extenuating circumstance arises.
 
 :::two-col
 
-![Do: Group content that is short and scannable with obvious hero content and a clear action item.](/img/components/card/card-do-1.webp "Do: Group content that is short and scannable with obvious hero content and a clear action item.")
+![Do: Group content that is short and scannable with obvious hero content and a clear action item.](/img/components/card/card-do-1.webp 'Do: Group content that is short and scannable with obvious hero content and a clear action item.')
 
-![Don’t: Clutter the card with long blocks of text, multiple hero items, or any not easily scannable and un-actionable content where the purpose is unclear. ](/img/components/card/card-dont-1.webp "Don’t: Clutter the card with long blocks of text, multiple hero items, or any not easily scannable and un-actionable content where the purpose is unclear. ")
+![Don’t: Clutter the card with long blocks of text, multiple hero items, or any not easily scannable and un-actionable content where the purpose is unclear. ](/img/components/card/card-dont-1.webp 'Don’t: Clutter the card with long blocks of text, multiple hero items, or any not easily scannable and un-actionable content where the purpose is unclear. ')
 
-![Do: Keep cards in a container the same size, and cards used in similar contexts across the application a consistent size. ](/img/components/card/card-do-2.webp "Do: Keep cards in a container the same size, and cards used in similar contexts across the application a consistent size. ")
+![Do: Keep cards in a container the same size, and cards used in similar contexts across the application a consistent size. ](/img/components/card/card-do-2.webp 'Do: Keep cards in a container the same size, and cards used in similar contexts across the application a consistent size. ')
 
-![Don’t: Vary the size of cards in a group or container, or use different sized cards in similar situations across the application. ](/img/components/card/card-dont-2.webp "Don’t: Vary the size of cards in a group or container, or use different sized cards in similar situations across the application. ")
+![Don’t: Vary the size of cards in a group or container, or use different sized cards in similar situations across the application. ](/img/components/card/card-dont-2.webp 'Don’t: Vary the size of cards in a group or container, or use different sized cards in similar situations across the application. ')
 
 :::
