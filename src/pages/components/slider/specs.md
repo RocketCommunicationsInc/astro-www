@@ -50,6 +50,73 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ## States
 
+### Single Thumb Continuous Slider
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-hover.png" alt="Discrete Slider with Hover"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-disabled.png" alt="Disabled Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
+</div>
+
+### Single Thumb Discreet Slider
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-hover.png" alt="Discrete Slider with Hover"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-disabled.png" alt="Disabled Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
+</div>
+
+### Dual Range Continuous Slider
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-hover.png" alt="Discrete Slider with Hover"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-disabled.png" alt="Disabled Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
+</div>
+
+### Dual Range Discreet Slider
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-hover.png" alt="Discrete Slider with Hover"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-disabled.png" alt="Disabled Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
+</div>
+
+## Positions
+
+### Single Thumb Continuous Slider
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-hover.png" alt="Discrete Slider with Hover"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-disabled.png" alt="Disabled Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
+</div>
+
+### Single Thumb Discreet Slider
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-hover.png" alt="Discrete Slider with Hover"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-disabled.png" alt="Disabled Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
+</div>
+
+### Dual Range Continuous Slider
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-hover.png" alt="Discrete Slider with Hover"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-disabled.png" alt="Disabled Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
+</div>
+
+### Dual Range Discreet Slider
+
 <div class="spec-container -examples">
     <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
     <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-hover.png" alt="Discrete Slider with Hover"/></figure>
@@ -95,3 +162,10 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 | Outline                                   | focus-outline | 1px solid #da9ce7 |
 | Outline Offset                            | focus-offset  | 0.125rem          |
 :::
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-hover.png" alt="Discrete Slider with Hover"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-disabled.png" alt="Disabled Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
+</div>
