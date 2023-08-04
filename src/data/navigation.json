@@ -163,7 +163,8 @@
 			},
 			{
 				"label": "Date Picker",
-				"url": "/components/date-picker/"
+				"url": "/components/date-picker/",
+				"status": "beta"
 			},
 			{
 				"label": "Dialog",
@@ -251,11 +252,13 @@
 			},
 			{
 				"label": "Timeline",
-				"url": "/components/timeline/"
+				"url": "/components/timeline/",
+				"status": "beta"
 			},
 			{
 				"label": "Toast",
-				"url": "/components/toast/"
+				"url": "/components/toast/",
+				"status": "beta"
 			},
 			{
 				"label": "Tooltip",
