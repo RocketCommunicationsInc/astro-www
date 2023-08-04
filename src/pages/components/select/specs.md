@@ -17,7 +17,7 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 </div>
 
 <div class="spec-container -anatomy">
-    <figure><img loading="lazy" width="226px" src="/img/components/select/select-menu-inline-dark-700.webp" alt="Anatomy Image"/></figure>
+    <figure><img loading="lazy" width="226px" src="/img/components/select/select-menu-inline-anatomy.webp" alt="Anatomy Image"/></figure>
     <ol>
         <li>Container</li>
         <li>Text</li>
@@ -55,12 +55,24 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ## States
 
+### Select Menu
+
 <div class="spec-container -examples">
     <figure><img loading="lazy" width="170" src="/img/components/select/select-default.png" alt="Default select"/></figure>
     <figure><img loading="lazy" width="170" src="/img/components/select/select-hover.png" alt="Hover select"/></figure>
     <figure><img loading="lazy" width="170" src="/img/components/select/select-invalid.png" alt="Invalid select"/></figure>
     <figure><img loading="lazy" width="170" src="/img/components/select/select-disabled.png" alt="Disabled select"/></figure>
     <figure><img loading="lazy" width="170" src="/img/components/select/select-focus.png" alt="Focus select"/></figure>
+</div>
+
+### Inline Select Menu
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="170" src="/img/components/select/select-menu-inline-default-state.webp" alt="Default select"/></figure>
+    <figure><img loading="lazy" width="170" src="/img/components/select/select-menu-inline-hover-state.webp" alt="Hover select"/></figure>
+    <figure><img loading="lazy" width="170" src="/img/components/select/select-menu-inline-invalid-state.webp" alt="Invalid select"/></figure>
+    <figure><img loading="lazy" width="170" src="/img/components/select/select-menu-inline-disabled-state.webp" alt="Disabled select"/></figure>
+    <figure><img loading="lazy" width="170" src="/img/components/select/select-menu-inline-focus-state.webp" alt="Focus select"/></figure>
 </div>
 
 ### Default
@@ -111,10 +123,20 @@ layout: project:layouts/component-docs/component-docs-layout.astro
 
 ## Sizes
 
+### Select Menu
+
 <div class="spec-container -examples">
     <figure><img loading="lazy" width="170" src="/img/components/select/select-small.png" alt="select Size Small"/></figure>
     <figure><img loading="lazy" width="170" src="/img/components/select/select-medium.png" alt="select Size Medium"/></figure>
     <figure><img loading="lazy" width="170" src="/img/components/select/select-large.png" alt="select Size Large"/></figure>
+</div>
+
+### Inline Select Menu
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="170" src="/img/components/select/select-menu-inline-small-size.webp" alt="select Size Small"/></figure>
+    <figure><img loading="lazy" width="170" src="/img/components/select/select-menu-inline-medium-size.webp" alt="select Size Medium"/></figure>
+    <figure><img loading="lazy" width="170" src="/img/components/select/select-menu-inline-large-size.webp" alt="select Size Large"/></figure>
 </div>
 
 ### Small
