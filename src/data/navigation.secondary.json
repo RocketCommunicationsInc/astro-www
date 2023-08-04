@@ -42,6 +42,20 @@
         ]
     },
     {
+        "description": "Tabs in Astro applications are used to divide major areas of content and to indicate work process.",
+        "heading": "Tabs",
+        "items": [
+            {
+                "label": "Usage",
+                "url": "/components/tabs/"
+            },
+            {
+                "label": "Specifications",
+                "url": "/components/tabs/specs/"
+            }
+        ]
+    },
+    {
         "description": "Push Buttons are a variant of the Switch that incorporate label and action into a single user interface element. Push Buttons may provide a useful interface element where screen real-estate is at a premium.",
         "heading": "Push Button",
         "items": [
