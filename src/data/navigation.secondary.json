@@ -1,229 +1,243 @@
 [
-    {
-        "description": "Input Fields allow users to enter freeform text. Variations on this field often provide specific data entry formats such as masked data (e.g. passwords or phone numbers), date and time, and numeric data entry.",
-        "heading": "Input Field",
-        "items": [
-            {
-                "label": "Usage",
-                "url": "/components/input-field/"
-            },
-            {
-                "label": "Specifications",
-                "url": "/components/input-field/specs/"
-            }
-        ]
-    },
-    {
-        "description": "Action Buttons allow users to trigger actions by clicking, tapping, or pressing a corresponding key on a keyboard, such as the “Enter” key.",
-        "heading": "Button",
-        "items": [
-            {
-                "label": "Usage",
-                "url": "/components/button/"
-            },
-            {
-                "label": "Specifications",
-                "url": "/components/button/specs/"
-            }
-        ]
-    },
-    {
-        "description": "A “card” is a UI design pattern that groups related information in a flexible-size container visually resembling a playing card.",
-        "heading": "Card",
-        "items": [
-            {
-                "label": "Usage",
-                "url": "/components/card/"
-            },
-            {
-                "label": "Specifications",
-                "url": "/components/card/specs/"
-            }
-        ]
-    },
-    {
-        "description": "Tabs in Astro applications are used to divide major areas of content and to indicate work process.",
-        "heading": "Tabs",
-        "items": [
-            {
-                "label": "Usage",
-                "url": "/components/tabs/"
-            },
-            {
-                "label": "Specifications",
-                "url": "/components/tabs/specs/"
-            }
-        ]
-    },
-    {
-        "description": "Push Buttons are a variant of the Switch that incorporate label and action into a single user interface element. Push Buttons may provide a useful interface element where screen real-estate is at a premium.",
-        "heading": "Push Button",
-        "items": [
-            {
-                "label": "Usage",
-                "url": "/components/push-button/"
-            },
-            {
-                "label": "Specifications",
-                "url": "/components/push-button/specs/"
-            }
-        ]
-    },
-    {
-        "description": "Action Buttons allow users to trigger actions by clicking, tapping, or pressing a corresponding key on a keyboard, such as the “Enter” key.",
-        "heading": "Data Visualization",
-        "hide": true,
-        "items": [
-            {
-                "label": "Data Visualization",
-                "url": "/patterns/data-visualization/"
-            },
-            {
-                "label": "Heat Map",
-                "url": "/patterns/data-visualization/heat-map/"
-            }
-        ]
-    },
-    {
-        "description": "A Slider allows users to choose from a range of continuous and discrete values arranged from minimum to maximum.",
-        "heading": "Slider",
-        "items": [
-            {
-                "label": "Usage",
-                "url": "/components/slider/"
-            },
-            {
-                "label": "Specifications",
-                "url": "/components/slider/specs/"
-            }
-        ]
-    },
-    {
-        "description": "When activated, Select Menus allow users to select a value from a list. Once a value is selected, the Select Menu displays the selected value.",
-        "heading": "Select",
-        "items": [
-            {
-                "label": "Usage",
-                "url": "/components/select/"
-            },
-            {
-                "label": "Specifications",
-                "url": "/components/select/specs/"
-            }
-        ]
-    },
-    {
-        "description": "Textareas are multi-line text inputs that allow for entering text in a larger area than a single-line text input would allow. They are typically used for multi-line input use cases like comments or feedback.",
-        "heading": "Textarea",
-        "items": [
-            {
-                "label": "Usage",
-                "url": "/components/textarea/"
-            },
-            {
-                "label": "Specifications",
-                "url": "/components/textarea/specs/"
-            }
-        ]
-    },
-    {
-        "description": "Component specific tokens to be used only when rebuilding components",
-        "heading": "Component Tokens",
-        "items": [
-            {
-                "label": "Dark Theme",
-                "url": "/design-tokens/component/"
-            },
-            {
-                "label": "Light Theme",
-                "url": "/design-tokens/component/light/"
-            }
-        ]
-    },
-    {
-        "description": "Tokens representing Astro semantic design decisions",
-        "heading": "System Tokens",
-        "items": [
-            {
-                "label": "Dark Theme",
-                "url": "/design-tokens/system/"
-            },
-            {
-                "label": "Light Theme",
-                "url": "/design-tokens/system/light/"
-            }
-        ]
-    },
-    {
-        "description": "This is the nav for the nav example",
-        "heading": "Secondary Nav Example",
-        "items": [
-            {
-                "label": "Usage",
-                "url": "/components/secondary-nav-example/"
-            },
-            {
-                "label": "Specifications",
-                "url": "/components/secondary-nav-example/specs/"
-            }
-        ]
-    },
-    {
-        "description": "Tables",
-        "heading": "Tables are a fundamental UX design tool for organizing and displaying data.",
-        "items": [
-            {
-                "label": "Usage",
-                "url": "/patterns/table/"
-            },
-            {
-                "label": "Specifications",
-                "url": "/patterns/table/specs/"
-            }
-        ]
-    },
-    {
-        "description": "GRM",
-        "heading": "Directing and maintaining satellites orbiting in space requires coordinating personnel, processes, and equipment on the ground. This is the role of Ground Resource Management (GRM) systems.",
-        "items": [
-            {
-                "label": "About",
-                "url": "/grm-service-ux-design/about-the-grm-designs/"
-            },
-            {
-                "label": "Dashboard",
-                "url": "/grm-service-ux-design/grm-dashboard/"
-            },
-            {
-                "label": "Equipment Manager",
-                "url": "/grm-service-ux-design/grm-equipment-manager/"
-            },
-            {
-                "label": "Schedule",
-                "url": "/grm-service-ux-design/grm-schedule/"
-            }
-        ]
-    },
-    {
-        "description": "TT&C",
-        "heading": "Directing and maintaining satellites orbiting in space requires coordinating personnel, processes, and equipment on the ground. This is the role of Ground Resource Management (GRM) systems.",
-        "items": [
-            {
-                "label": "About",
-                "url": "/ttc-service-ux-design/about-the-ttc-designs/"
-            },
-            {
-                "label": "Monitor",
-                "url": "/ttc-service-ux-design/ttc-monitor/"
-            },
-            {
-                "label": "Command",
-                "url": "/ttc-service-ux-design/ttc-command/"
-            },
-            {
-                "label": "Investigate",
-                "url": "/ttc-service-ux-design/ttc-investigate/"
-            }
-        ]
-    }
+	{
+		"description": "Input Fields allow users to enter freeform text. Variations on this field often provide specific data entry formats such as masked data (e.g. passwords or phone numbers), date and time, and numeric data entry.",
+		"heading": "Input Field",
+		"items": [
+			{
+				"label": "Usage",
+				"url": "/components/input-field/"
+			},
+			{
+				"label": "Specifications",
+				"url": "/components/input-field/specs/"
+			}
+		]
+	},
+	{
+		"description": "Action Buttons allow users to trigger actions by clicking, tapping, or pressing a corresponding key on a keyboard, such as the “Enter” key.",
+		"heading": "Button",
+		"items": [
+			{
+				"label": "Usage",
+				"url": "/components/button/"
+			},
+			{
+				"label": "Specifications",
+				"url": "/components/button/specs/"
+			}
+		]
+	},
+	{
+		"description": "A “card” is a UI design pattern that groups related information in a flexible-size container visually resembling a playing card.",
+		"heading": "Card",
+		"items": [
+			{
+				"label": "Usage",
+				"url": "/components/card/"
+			},
+			{
+				"label": "Specifications",
+				"url": "/components/card/specs/"
+			}
+		]
+	},
+	{
+		"description": "Tabs in Astro applications are used to divide major areas of content and to indicate work process.",
+		"heading": "Tabs",
+		"items": [
+			{
+				"label": "Usage",
+				"url": "/components/tabs/"
+			},
+			{
+				"label": "Specifications",
+				"url": "/components/tabs/specs/"
+			}
+		]
+	},
+	{
+		"description": "Push Buttons are a variant of the Switch that incorporate label and action into a single user interface element. Push Buttons may provide a useful interface element where screen real-estate is at a premium.",
+		"heading": "Push Button",
+		"items": [
+			{
+				"label": "Usage",
+				"url": "/components/push-button/"
+			},
+			{
+				"label": "Specifications",
+				"url": "/components/push-button/specs/"
+			}
+		]
+	},
+	{
+		"description": "Action Buttons allow users to trigger actions by clicking, tapping, or pressing a corresponding key on a keyboard, such as the “Enter” key.",
+		"heading": "Data Visualization",
+		"hide": true,
+		"items": [
+			{
+				"label": "Data Visualization",
+				"url": "/patterns/data-visualization/"
+			},
+			{
+				"label": "Heat Map",
+				"url": "/patterns/data-visualization/heat-map/"
+			}
+		]
+	},
+	{
+		"description": "A Slider allows users to choose from a range of continuous and discrete values arranged from minimum to maximum.",
+		"heading": "Slider",
+		"items": [
+			{
+				"label": "Usage",
+				"url": "/components/slider/"
+			},
+			{
+				"label": "Specifications",
+				"url": "/components/slider/specs/"
+			}
+		]
+	},
+	{
+		"description": "When activated, Select Menus allow users to select a value from a list. Once a value is selected, the Select Menu displays the selected value.",
+		"heading": "Select",
+		"items": [
+			{
+				"label": "Usage",
+				"url": "/components/select/"
+			},
+			{
+				"label": "Specifications",
+				"url": "/components/select/specs/"
+			}
+		]
+	},
+	{
+		"description": "Textareas are multi-line text inputs that allow for entering text in a larger area than a single-line text input would allow. They are typically used for multi-line input use cases like comments or feedback.",
+		"heading": "Textarea",
+		"items": [
+			{
+				"label": "Usage",
+				"url": "/components/textarea/"
+			},
+			{
+				"label": "Specifications",
+				"url": "/components/textarea/specs/"
+			}
+		]
+	},
+	{
+		"description": "Component specific tokens to be used only when rebuilding components",
+		"heading": "Component Tokens",
+		"items": [
+			{
+				"label": "Dark Theme",
+				"url": "/design-tokens/component/"
+			},
+			{
+				"label": "Light Theme",
+				"url": "/design-tokens/component/light/"
+			}
+		]
+	},
+	{
+		"description": "Tokens representing Astro semantic design decisions",
+		"heading": "System Tokens",
+		"items": [
+			{
+				"label": "Dark Theme",
+				"url": "/design-tokens/system/"
+			},
+			{
+				"label": "Light Theme",
+				"url": "/design-tokens/system/light/"
+			}
+		]
+	},
+	{
+		"description": "This is the nav for the nav example",
+		"heading": "Secondary Nav Example",
+		"items": [
+			{
+				"label": "Usage",
+				"url": "/components/secondary-nav-example/"
+			},
+			{
+				"label": "Specifications",
+				"url": "/components/secondary-nav-example/specs/"
+			}
+		]
+	},
+	{
+		"description": "Tables",
+		"heading": "Tables are a fundamental UX design tool for organizing and displaying data.",
+		"items": [
+			{
+				"label": "Usage",
+				"url": "/patterns/table/"
+			},
+			{
+				"label": "Specifications",
+				"url": "/patterns/table/specs/"
+			}
+		]
+	},
+	{
+		"description": "Events that deserve user attention but don't require a response, may be displayed in a Notification Banner.",
+		"heading": "Notification Banner",
+		"items": [
+			{
+				"label": "Usage",
+				"url": "/components/notification-banner/"
+			},
+			{
+				"label": "Specifications",
+				"url": "/components/notification-banner/specs/"
+			}
+		]
+	},
+	{
+		"description": "GRM",
+		"heading": "Directing and maintaining satellites orbiting in space requires coordinating personnel, processes, and equipment on the ground. This is the role of Ground Resource Management (GRM) systems.",
+		"items": [
+			{
+				"label": "About",
+				"url": "/grm-service-ux-design/about-the-grm-designs/"
+			},
+			{
+				"label": "Dashboard",
+				"url": "/grm-service-ux-design/grm-dashboard/"
+			},
+			{
+				"label": "Equipment Manager",
+				"url": "/grm-service-ux-design/grm-equipment-manager/"
+			},
+			{
+				"label": "Schedule",
+				"url": "/grm-service-ux-design/grm-schedule/"
+			}
+		]
+	},
+	{
+		"description": "TT&C",
+		"heading": "Directing and maintaining satellites orbiting in space requires coordinating personnel, processes, and equipment on the ground. This is the role of Ground Resource Management (GRM) systems.",
+		"items": [
+			{
+				"label": "About",
+				"url": "/ttc-service-ux-design/about-the-ttc-designs/"
+			},
+			{
+				"label": "Monitor",
+				"url": "/ttc-service-ux-design/ttc-monitor/"
+			},
+			{
+				"label": "Command",
+				"url": "/ttc-service-ux-design/ttc-command/"
+			},
+			{
+				"label": "Investigate",
+				"url": "/ttc-service-ux-design/ttc-investigate/"
+			}
+		]
+	}
 ]
