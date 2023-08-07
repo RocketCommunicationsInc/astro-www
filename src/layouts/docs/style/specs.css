@@ -68,6 +68,14 @@
 			}
 		}
 	}
+
+	strong {
+		/* Layout */
+		display: block;
+
+		/* Layout */
+		margin-block-start: 4--step;
+	}
 }
 
 tr:has(td > span.attr-title) {

@@ -1,0 +1,197 @@
+---
+import ComponentDocsLayout from 'project:layouts/component-docs/component-docs-layout.astro';
+import TokenSpecTable from 'project:components/token-spec-table/token-spec-table.astro';
+---
+
+<ComponentDocsLayout content={{ title: 'Tabs' }}>
+	<a href="#anatomy" class="h h2"><h2 id="anatomy">Anatomy</h2></a>
+
+	<div class="spec-container -anatomy">
+		<figure>
+			<img
+				loading="lazy"
+				width="800px"
+				src="/img/components/tab/tab-anatomy.webp"
+				alt="Anatomy Image"
+			/>
+		</figure>
+		<ol>
+			<li>Label</li>
+			<li>Active Indicator</li>
+		</ol>
+		
+	</div>
+
+	<a href="#default-value" class="h h2">
+		<h2 id="default-value">Default</h2>
+	</a>
+
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Tab',
+				tokens: [
+					'tab-padding-x-large',
+					'tab-padding-top-large',
+					'tab-padding-bottom-large',
+					'tab-border-width-bottom',
+
+
+				],
+			},
+			{
+				name: 'Label',
+				tokens: [
+					'tab-color-text-default',
+					'font-heading-2-font-size',
+					'font-heading-2-font-family',
+					'font-heading-2-font-weight',
+					'font-heading-2-line-height',
+					'font-heading-2-letter-spacing'
+				],
+			},
+			{
+				name: "Body",
+				tokens: [
+					'card-body-padding'
+				]
+			}
+		]}
+	/>
+
+	<a href="#sizes" class="h h2">
+		<h2 id="sizes">Sizes</h2>
+	</a>
+	
+	
+	<div class="spec-container -examples">
+		<figure><img loading="lazy" width="102" src="/img/components/tab/tab-small-size.webp" alt="Small Tab"/></figure>
+		<figure><img loading="lazy" width="102" src="/img/components/tab/tab-large-size.webp" alt="Large Tab"/></figure>
+	</div>
+	
+	<a href="#small" class="h h3">
+		<h3 id="small">Small</h3>
+	</a>
+
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Tab',
+				tokens: [
+					'tab-padding-x-small',
+					'tab-padding-top-small',
+					'tab-padding-bottom-small',
+				],
+			}
+		]}
+	/>
+
+	<a href="#large" class="h h3">
+		<h3 id="large">Large</h3>
+	</a>
+
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Tab',
+				tokens: [
+					'tab-padding-x-large',
+					'tab-padding-top-large',
+					'tab-padding-bottom-large',
+				],
+			}
+		]}
+	/>
+
+	<a href="#states" class="h h2">
+		<h2 id="states">States</h2>
+	</a>
+
+	<div class="spec-container -examples">
+		<figure><img loading="lazy" width="149" src="/img/components/tab/tab-default-state.webp" alt="Default Tab"/></figure>
+		<figure><img loading="lazy" width="123" src="/img/components/tab/tab-selected-state.webp" alt="Selected Tab"/></figure>
+		<figure><img loading="lazy" width="123" src="/img/components/tab/tab-disabled-state.webp" alt="Disabled Tab"/></figure>
+		<figure><img loading="lazy" width="178" src="/img/components/tab/tab-unselected-and-hovered-state.webp" alt="Hovered Tab"/></figure>
+		<figure><img loading="lazy" width="129" src="/img/components/tab/tab-focus-state.webp" alt="Focused Tab"/></figure>
+	</div>
+
+	<a href="#default" class="h h3">
+		<h3 id="default">Default</h3>
+	</a>
+
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Tab',
+			tokens: [
+				'tab-color-text-default',
+			],
+		}
+	]}
+/>
+
+
+	<a href="#hover" class="h h3">
+		<h3 id="hover">Hover</h3>
+	</a>
+
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Tab',
+			tokens: [
+				'tab-color-text-hover',
+			],
+		}
+	]}
+/>
+
+
+	<a href="#selected" class="h h3">
+		<h3 id="selected">Selected</h3>
+	</a>
+
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Header',
+			tokens: [
+				'tab-color-text-selected',
+				'tab-color-border-bottom-selected'
+			],
+		}
+	]}
+/>
+
+	<a href="#disabled" class="h h3">
+		<h3 id="disabled">Disabled</h3>
+	</a>
+
+
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Tab',
+				tokens: [
+					'opacity-disabled',
+				],
+			}
+		]}
+	/>
+
+	<a href="#focus" class="h h3">
+		<h3 id="focus">Focus</h3>
+	</a>
+
+
+	<TokenSpecTable tokens={[
+		{
+			name: "Tab",
+			tokens: [
+				'spacing-focus-default',
+				'color-border-focus-default'
+			]
+		}
+	]}/>
+
+</ComponentDocsLayout>
