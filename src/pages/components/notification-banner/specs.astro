@@ -4,7 +4,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
 import Heading from 'project:components/astro-headings/heading.astro';
 ---
 
-<ComponentDocsLayout content={{ title: 'Push Button' }}>
+<ComponentDocsLayout content={{ title: 'Notification Banner' }}>
 	<a href="#anatomy" class="h h2"><h2 id="anatomy">Anatomy</h2></a>
 
 	<div class="spec-container -anatomy">
@@ -15,11 +15,7 @@ import Heading from 'project:components/astro-headings/heading.astro';
 		</ol>
 	</div>
 
-	<!-- <Heading type="h2">Default</Heading> -->
-	<a href="#default-value" class="h h2">
-		<h2 id="default-value">Default</h2>
-	</a>
-
+	<Heading type="h2" title="Default Layout" />
 	<TokenSpecTable
 		tokens={[
 			{

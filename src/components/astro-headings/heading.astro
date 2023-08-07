@@ -1,0 +1,10 @@
+---
+const {type, title} = Astro.props
+const headingTypes = ["h1", "h2","h3","h4","h5","h6"]
+const id = title ? title.replace(' ', '-').toLowerCase() : null
+const heading=`<${headingTypes.includes(type.toLowerCase()) ? type : 'h1'} id="${id}">${title}</${headingTypes.includes(type.toLowerCase()) ? type : 'h1'}>`
+
+---
+
+<a href=`#${id}` class=`h ${type || null}` set:html={heading}>
+</a>

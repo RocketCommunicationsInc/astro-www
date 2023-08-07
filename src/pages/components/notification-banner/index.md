@@ -14,7 +14,9 @@ assets:
 
 ## Appearance and Behavior
 
-Events that deserve user attention but don’t require a response, may be displayed in a Notification Banner.
+Events that provide urgent information but don’t require an immediate response may be displayed in a Notification Banner.
+
+For more details on how to choose a notification pattern and view the accompanying diagram, visit the [Notifications](/patterns/notifications) page.
 
 The Banner displays within the user’s field-of-view, but doesn’t block other interaction. To do this, Banners push content down instead of overlaying atop it, and should span the width of the container. Therefore, we do not recommend using more than 2 lines of text as to not obscure the main content.
 
