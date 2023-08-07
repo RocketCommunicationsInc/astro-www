@@ -1,0 +1,118 @@
+---
+import ComponentDocsLayout from 'project:layouts/component-docs/component-docs-layout.astro';
+import TokenSpecTable from 'project:components/token-spec-table/token-spec-table.astro';
+---
+
+<ComponentDocsLayout content={{ title: 'Card' }}>
+	<a href="#anatomy" class="h h2"><h2 id="anatomy">Anatomy</h2></a>
+
+	<div class="spec-container -anatomy">
+		<figure>
+			<img
+				loading="lazy"
+				width="409px"
+				src="/img/components/card/card-anatomy.png"
+				alt="Anatomy Image"
+			/>
+		</figure>
+		<ol>
+			<li>Outer Container</li>
+
+			<strong>Header</strong>
+			<li>Prefix Slot (Optional)</li>
+			<li>Title</li>
+			<li>Header Container</li>
+			<li>Suffix Slot (Optional)</li>
+			<strong>Body</strong>
+			<li>Content Slot (Default)</li>
+			<strong>Footer</strong>
+			<li>Footer Slot (Optional)</li>
+			<li>Footer Container</li>
+		</ol>
+	</div>
+
+	<a href="#default-value" class="h h2">
+		<h2 id="default-value">Default</h2>
+	</a>
+
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Container',
+				tokens: [
+					'card-shadow',
+					'card-border-width',
+					'card-color-border',
+					'card-color-background',
+				],
+			},
+			{
+				name: 'Header',
+				tokens: [
+					'card-header-padding-y',
+					'card-header-padding-x',
+					'font-heading-3-font-size',
+					'font-heading-3-font-family',
+					'font-heading-3-font-weight',
+					'font-heading-3-line-height',
+					'font-heading-3-letter-spacing'
+				],
+			},
+			{
+				name: "Body",
+				tokens: [
+					'card-body-padding'
+				]
+			}
+		]}
+	/>
+
+	<a href="#with-prefix" class="h h2">
+		<h2 id="with-prefix">With Prefix</h2>
+	</a>
+
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Header',
+				tokens: [
+					'card-header-prefix-dimension',
+					'card-header-prefix-margin-right',
+				],
+			}
+		]}
+	/>
+
+	<a href="#with-suffix" class="h h2">
+		<h2 id="with-suffix">With Suffix</h2>
+	</a>
+
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Header',
+				tokens: [
+					'card-header-suffix-dimension',
+					'card-header-suffix-margin-left',
+				],
+			}
+		]}
+	/>
+
+
+	<a href="#with-footer" class="h h2">
+		<h2 id="with-footer">With Footer</h2>
+	</a>
+
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Footer',
+				tokens: [
+					'card-footer-padding'
+				],
+			}
+		]}
+	/>
+
+</ComponentDocsLayout>
