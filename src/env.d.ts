@@ -1,4 +1,4 @@
-// <reference types="../.vscode/tsconfig.d.ts" />
-// <reference types="types-object" />
-// <reference types="@typescript/lib-dom" />
-// <reference types="astro/client" />
+// import '../.vscode/tsconfig.d.ts'
+// import 'types-object'
+// import '@typescript/lib-dom'
+// import 'astro/client'

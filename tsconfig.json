@@ -20,9 +20,7 @@
 		],
 		"baseUrl": ".",
 		"paths": {
-			"project:*": [
-				"src/*"
-			]
+			"project:*": ["src/*"]
 		},
 
 		/* Emit */
@@ -47,5 +45,8 @@
 	},
 	"include": [
 		"src/**/*.ts"
+	],
+	"exclude":[
+		"node_modules"
 	]
 }
