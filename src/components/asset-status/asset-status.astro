@@ -16,7 +16,7 @@ const {
 ---
 {
 	// if there is an asset status list for the component in the json file, read it
-	data[frontmatter.assets?.name as keyof typeof data]
+	data[frontmatter?.assets?.name as keyof typeof data]
 		? <Fragment>
 			<a href={`#${general.id}`} class="h h2">
 				<h2 id={general.id} class="-heading">{

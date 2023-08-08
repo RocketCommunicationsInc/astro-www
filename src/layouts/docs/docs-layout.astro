@@ -43,13 +43,13 @@ const withoutTrailingSlash = (value: string) => value.replace(matchTrailingSlash
 
 /* grab the source file url and then get the extension */
 const fileURL = new URL(Astro.props.file!, 'file:').toString()
-const fileExt = fileURL.split('.').at(-1)
+let fileExt = fileURL.split('.').at(-1)
 
 /* test the file name against the file URL */
 const fileNoExt = fileURL.split('.').at(0)
 const fileName = fileNoExt?.split('/').at(-1)
 const finalURLSeg = withoutTrailingSlash(Astro.url.pathname).split('/').at(-1)
-const gitURL = fileName !== finalURLSeg ? `${Astro.url.pathname}${fileName}.${fileExt}` : `${withoutTrailingSlash(Astro.url.pathname)}.${fileExt}`
+const gitURL = fileName !== finalURLSeg ? `${Astro.url.pathname}${fileName}.${fileExt === 'mjs' ? 'astro' : fileExt}` : `${withoutTrailingSlash(Astro.url.pathname)}.${fileExt === 'mjs' ? 'astro' : fileExt}`
 
 /** URL to the current source for this page. */
 const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData.designSystem.repositoryBranch}/src/pages${gitURL}`
@@ -101,4 +101,5 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 </Layout>
 <script>
 import './docs-layout.client'
+import 'project:components/color-swab-custom-element.ts'
 </script>
