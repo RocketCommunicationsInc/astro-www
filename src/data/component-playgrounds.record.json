@@ -1686,7 +1686,10 @@
 					"kind": "menu",
 					"attribute": "strategy",
 					"property": "strategy",
-					"options": ["absolute", "fixed"],
+					"options": [
+						"absolute",
+						"fixed"
+					],
 					"value": "absolute"
 				}
 			],
@@ -2030,9 +2033,24 @@
 				{
 					"name": "Default",
 					"code": "<rux-slider max=\"100\" min=\"0\" step=\"1\" value=\"50\"></rux-slider>"
+				},
+				{
+					"name": "With Axis Labels",
+					"code": "<rux-slider id=\"axis\" max=\"100\" min=\"0\" step=\"1\" value=\"50\" axis-labels=\"[0,25,50,75,100]\"></rux-slider>",
+					"script": "window.addEventListener(\"DOMContentLoaded\", () => {slider()})\nwindow.addEventListener(\"reset\", () => {slider()})\nconst slider = () => {document.querySelector('#axis') ? document.querySelector('#axis').axisLabels = [\"0\",\"25\",\"50\",\"75\",\"100\"] : null}"
+				},
+				{
+					"name": "Dual Range",
+					"code": "<rux-slider max=\"100\" min=\"0\" min-val=\"25\" step=\"1\" value=\"50\"></rux-slider>"
 				}
 			],
 			"fields": [
+				{
+					"kind": "text",
+					"attribute": "label",
+					"property": "label",
+					"value": ""
+				},
 				{
 					"kind": "text",
 					"attribute": "max",
@@ -2058,9 +2076,33 @@
 					"value": "50"
 				},
 				{
+					"kind": "text",
+					"attribute": "help-text",
+					"property": "helpText",
+					"value": ""
+				},
+				{
+					"kind": "text",
+					"attribute": "error-text",
+					"property": "errorText",
+					"value": ""
+				},
+				{
 					"kind": "switch",
 					"attribute": "disabled",
 					"property": "disabled",
+					"checked": false
+				},
+				{
+					"kind": "switch",
+					"attribute": "strict",
+					"property": "strict",
+					"checked": false
+				},
+				{
+					"kind": "switch",
+					"attribute": "ticks-only",
+					"property": "ticksOnly",
 					"checked": false
 				}
 			],

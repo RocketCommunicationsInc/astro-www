@@ -1,0 +1,214 @@
+---
+import ComponentDocsLayout from 'project:layouts/component-docs/component-docs-layout.astro';
+import TokenSpecTable from 'project:components/token-spec-table/token-spec-table.astro';
+import Heading from 'project:components/astro-headings/heading.astro';
+
+const content = { title: 'Slider', description: "A Slider allows users to choose from a range of continuous and discrete values arranged from minimum to maximum." }
+---
+
+<ComponentDocsLayout content={content}>
+<Heading type="h2" title="Anatomy" />
+
+<div class="spec-container -anatomy">
+    <figure><img loading="lazy" width="384px" src="/img/components/slider/slider-anatomy.png" alt="Anatomy Image"/></figure>
+    <ol>
+        <li>Thumb</li>
+        <li>Track (active)</li>
+        <li>Track (inactive)</li>
+        <li>Axis Label</li>
+        <li>Tick (optional)</li>
+        <li>Container</li>
+    </ol>
+</div>
+
+<Heading type="h2" title="Default Values" />
+
+<TokenSpecTable
+		tokens={[
+			{
+				name: 'Thumb',
+				tokens: [
+					'slider-thumb-radius',
+					'slider-thumb-color-background',
+					'slider-thumb-border-width',
+					'slider-thumb-color-border-default'
+				],
+			},
+			{
+				name: 'Track (active)',
+				tokens: [
+					'slider-track-radius',
+'slider-track-height-active'
+				],
+			},
+			{
+				name: 'Track (inactive)',
+				tokens: [
+					'slider-track-radius',
+'slider-track-height-inactive'
+				],
+			},
+			{
+				name: 'Axis Label',
+				tokens: [
+					'font-body-3-font-family',
+					'font-body-3-font-size',
+					'font-body-3-font-weight',
+					'font-body-3-line-height',
+					'font-body-3-letter-spacing',
+					'slider-axis-label-color-text'
+				],
+			},
+			{
+				name: 'Tick',
+				tokens: [
+					'slider-tick-radius',
+					'slider-tick-dimension',
+					'slider-tick-color-background'
+				],
+			}
+		]}
+
+	/>
+
+<Heading type="h2" title="States" />
+
+<Heading type="h3" title="Single Thumb Continuous Slider" />
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-hover.png" alt="Discrete Slider with Hover"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-disabled.png" alt="Disabled Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
+</div>
+
+<Heading type="h3" title="Single Thumb Discreet Slider" />
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-hover.png" alt="Discrete Slider with Hover"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-disabled.png" alt="Disabled Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
+</div>
+
+<Heading type="h3" title="Dual Range Continuous Slider" />
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-hover.png" alt="Discrete Slider with Hover"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-disabled.png" alt="Disabled Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
+</div>
+
+<Heading type="h3" title="Dual Range Discreet Slider" />
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-hover.png" alt="Discrete Slider with Hover"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-disabled.png" alt="Disabled Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
+</div>
+
+<Heading type="h2" title="Positions" />
+
+<Heading type="h3" title="Single Thumb Continuous Slider" />
+
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-hover.png" alt="Discrete Slider with Hover"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-disabled.png" alt="Disabled Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
+</div>
+
+<Heading type="h3" title="Single Thumb Discreet Slider" />
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-hover.png" alt="Discrete Slider with Hover"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-disabled.png" alt="Disabled Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
+</div>
+
+<Heading type="h3" title="Dual Range Continuous Slider" />
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-hover.png" alt="Discrete Slider with Hover"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-disabled.png" alt="Disabled Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
+</div>
+
+<Heading type="h3" title="Dual Range Discreet Slider" />
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-hover.png" alt="Discrete Slider with Hover"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-disabled.png" alt="Disabled Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
+</div>
+
+<Heading type="h3" title="Default" />
+
+<TokenSpecTable
+		tokens={[
+			{
+				name: 'Thumb',
+				tokens: [
+					'slider-thumb-color-border-default'
+				],
+			}
+		]}
+
+	/>
+
+<Heading type="h3" title="Hover" />
+<TokenSpecTable
+		tokens={[
+			{
+				name: 'Thumb',
+				tokens: [
+					'slider-thumb-color-border-hover'
+				],
+			}
+		]}
+
+	/>
+
+<Heading type="h3" title="Disabled" />
+
+<TokenSpecTable
+		tokens={[
+			{
+				name: 'Container',
+				tokens: [
+					'opacity-disabled'
+				],
+			}
+		]}
+
+	/>
+
+<Heading type="h3" title="Focus" />
+
+<TokenSpecTable
+		tokens={[
+			{
+				name: 'Container',
+				tokens: [
+					'color-border-focus-default',
+					'border-width-focus-default',
+					'spacing-focus-default'
+				],
+			}
+		]}
+
+	/>
+
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-hover.png" alt="Discrete Slider with Hover"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-disabled.png" alt="Disabled Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
+</div>
+
+</ComponentDocsLayout>
