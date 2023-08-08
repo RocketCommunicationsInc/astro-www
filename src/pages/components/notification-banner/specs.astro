@@ -1,0 +1,285 @@
+---
+import ComponentDocsLayout from 'project:layouts/component-docs/component-docs-layout.astro';
+import TokenSpecTable from 'project:components/token-spec-table/token-spec-table.astro';
+import Heading from 'project:components/astro-headings/heading.astro';
+
+const content = {draft: true, title: "Notification Banner", description: "Events that deserve user attention but don't require a response, may be displayed in a Notification Banner."}
+---
+
+<ComponentDocsLayout content={content}>
+	<a href="#anatomy" class="h h2"><h2 id="anatomy">Anatomy</h2></a>
+
+	<div class="spec-container -anatomy">
+		<ol>
+			<li>Container</li>
+			<li>Prefix Slot (Optional)</li>
+			<li>Label</li>
+		</ol>
+	</div>
+
+	<Heading type="h2" title="Default Layout" />
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Container (outer)',
+				tokens: [
+					'notification-banner-padding',
+					'notification-banner-color-border-inner-default',
+					'notification-banner-color-border-outer-default',
+					'notification-banner-radius-outer',
+					'notification-banner-border-width'
+				],
+			},
+			{
+				name: 'Container (inner)',
+				tokens: [
+					'notification-banner-radius-inner',
+					'notification-banner-color-background'
+				],
+			},
+			{
+				name: 'Label',
+				tokens: [
+					'font-heading-5-font-family',
+					'font-heading-5-font-size',
+					'font-heading-5-font-weight',
+					'font-heading-5-line-height',
+					'font-heading-5-letter-spacing',
+					'notification-banner-color-text'
+				],
+			},
+			{
+				name: 'Link',
+				tokens: [
+					'font-heading-5-font-family',
+					'font-heading-5-font-size',
+					'font-heading-5-font-weight',
+					'font-heading-5-line-height',
+					'font-heading-5-letter-spacing',
+					'link-text-color'
+				],
+			},
+			{
+				name: 'Close icon',
+				tokens: [
+					'color-text-interactive-default'
+				],
+			},
+		]}
+
+	/>
+
+	<Heading type="h2" title="Variants" />
+
+	<Heading type="h3" title="Left Slot" />
+
+	<div class="spec-container -examples">
+	</div>
+
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Slot',
+				tokens: [
+					'notification-banner-prefix-margin-right',
+				],
+			},
+		]}
+	/>
+
+	<Heading type="h3" title="Status Symbol" />
+
+	<div class="spec-container -examples">
+	</div>
+
+	<Heading type="h4" title="Normal" />
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Container (outer)',
+				tokens: [
+					'notification-banner-color-border-inner-normal',
+					'notification-banner-color-border-outer-normal'
+				],
+			},
+		]}
+		/>
+	<Heading type="h4" title="Caution" />
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Container (outer)',
+			tokens: [
+				'notification-banner-color-border-inner-caution',
+				'notification-banner-color-border-outer-caution'
+			],
+		},
+	]}
+	/>
+	<Heading type="h4" title="Serious" />
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Container (outer)',
+			tokens: [
+				'notification-banner-color-border-inner-serious',
+				'notification-banner-color-border-outer-serious'
+			],
+		},
+	]}
+	/>
+	<Heading type="h4" title="Critical" />
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Container (outer)',
+			tokens: [
+				'notification-banner-color-border-inner-critical',
+				'notification-banner-color-border-outer-critical'
+			],
+		},
+	]}
+	/>
+	<Heading type="h4" title="Standby" />
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Container (outer)',
+			tokens: [
+				'notification-banner-color-border-inner-standby',
+				'notification-banner-color-border-outer-standby'
+			],
+		},
+	]}
+	/>
+	<Heading type="h4" title="Off" />
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Container (outer)',
+			tokens: [
+				'notification-banner-color-border-inner-off',
+				'notification-banner-color-border-outer-off'
+			],
+		},
+	]}
+	/>
+	<Heading type="h4" title="Default" />
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Container (outer)',
+			tokens: [
+				'notification-banner-color-border-inner-default',
+				'notification-banner-color-border-outer-default'
+			],
+		},
+	]}
+	/>
+
+	<Heading type="h3" title="Link" />
+	<div class="spec-container -examples">
+	</div>
+
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Link',
+				tokens: [
+					'link-color-text-interactive-default',
+					'link-color-text-interactive-hover',
+				],
+			},
+		]}
+	/>
+
+	<Heading type="h3" title="Right Slot" />
+	<div class="spec-container -examples">
+	</div>
+
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Slot',
+				tokens: [
+					'notification-banner-suffix-margin-left',
+					'notification-banner-color-text-interactive-default',
+					'notification-banner-color-text-interactive-hover'
+				],
+			},
+		]}
+	/>
+
+	<Heading type="h3" title="Sizes" />
+	<div class="spec-container -examples">
+	</div>
+
+	<Heading type="h4" title="Small" />
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Container (outer)',
+				tokens: [
+					'notification-banner-padding',
+					'notification-banner-border-width'
+				],
+			},
+			{
+				name: 'Label',
+				tokens: [
+					'font-body-1-font-family',
+					'font-body-1-font-size',
+					'font-body-1-font-weight',
+					'font-body-1-line-height',
+					'font-body-1-letter-spacing',
+				],
+			},
+			{
+				name: 'Link',
+				tokens: [
+					'font-body-1-font-family',
+					'font-body-1-font-size',
+					'font-body-1-font-weight',
+					'font-body-1-line-height',
+					'font-body-1-letter-spacing',
+				],
+			}
+		]}
+
+	/>
+
+	<Heading type="h4" title="Large" />
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Container (outer)',
+				tokens: [
+					'notification-banner-padding',
+					'notification-banner-border-width'
+				],
+			},
+			{
+				name: 'Label',
+				tokens: [
+					'font-heading-5-font-family',
+					'font-heading-5-font-size',
+					'font-heading-5-font-weight',
+					'font-heading-5-line-height',
+					'font-heading-5-letter-spacing',
+				],
+			},
+			{
+				name: 'Link',
+				tokens: [
+					'font-heading-5-font-family',
+					'font-heading-5-font-size',
+					'font-heading-5-font-weight',
+					'font-heading-5-line-height',
+					'font-heading-5-letter-spacing',
+				],
+			}
+		]}
+
+	/>
+
+</ComponentDocsLayout>
