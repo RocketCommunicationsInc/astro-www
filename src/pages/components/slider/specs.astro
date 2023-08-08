@@ -1,9 +1,11 @@
 ---
-title: Slider
-description: A Slider allows users to choose from a range of continuous and discrete values arranged from minimum to maximum.
-layout: project:layouts/component-docs/component-docs-layout.astro
+import ComponentDocsLayout from 'project:layouts/component-docs/component-docs-layout.astro';
+import TokenSpecTable from 'project:components/token-spec-table/token-spec-table.astro';
+
+const content = { title: 'Slider', description: "A Slider allows users to choose from a range of continuous and discrete values arranged from minimum to maximum." }
 ---
 
+<ComponentDocsLayout content={content}>
 ## Anatomy
 
 <div class="spec-container -anatomy">
@@ -169,3 +171,5 @@ layout: project:layouts/component-docs/component-docs-layout.astro
     <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-disabled.png" alt="Disabled Discrete Slider"/></figure>
     <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
 </div>
+
+</ComponentDocsLayout>
