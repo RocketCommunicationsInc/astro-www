@@ -183,20 +183,6 @@
 		]
 	},
 	{
-		"description": "Events that deserve user attention but don't require a response, may be displayed in a Notification Banner.",
-		"heading": "Notification Banner",
-		"items": [
-			{
-				"label": "Usage",
-				"url": "/components/notification-banner/"
-			},
-			{
-				"label": "Specifications",
-				"url": "/components/notification-banner/specs/"
-			}
-		]
-	},
-	{
 		"description": "GRM",
 		"heading": "Directing and maintaining satellites orbiting in space requires coordinating personnel, processes, and equipment on the ground. This is the role of Ground Resource Management (GRM) systems.",
 		"items": [
