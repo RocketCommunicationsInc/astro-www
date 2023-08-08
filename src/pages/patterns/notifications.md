@@ -36,13 +36,13 @@ Below is a graphic to help choose which pattern to use depending on whether the 
 
 ### Understanding Context for Notifications
 
-It is important to understand the impact on, and context of, the user and their role before choosing a notification pattern to deliver a message.  
+It is important to understand the impact on, and context of, the user and their role before choosing a notification pattern to deliver a message.
 
 For example, if an operator is monitoring a mission-critical satellite and sees a disruption in the satellite’s signal, this would be relevant to their primary task of monitoring specific satellites for anomalies. As the satellite is deemed mission-critical, it would follow that the urgency level of this notification would likely be high.
 
 This notification would require the operator to restore the signal, changing their task from monitoring to troubleshooting. An application designer should use a modal or banner to display the notification as the message is important enough to grab the user’s attention and require that they respond to the notification immediately.
 
-However, if the operator is likely to be monitoring multiple satellites, a modal might be too disruptive to their primary task and a banner would be more appropriate.  
+However, if the operator is likely to be monitoring multiple satellites, a modal might be too disruptive to their primary task and a banner would be more appropriate.
 
 Considering the context and how the notification pattern will impact the user and their ability to complete their primary tasks will help mitigate potential issues.
 
@@ -66,11 +66,11 @@ When attention-grabbing notification patterns like banners are overused, they cl
 
 ## Patterns
 
-Below are suggested notification patterns to appropriately grab a user’s attention once it has been decided that a notification is necessary.  
+Below are suggested notification patterns to appropriately grab a user’s attention once it has been decided that a notification is necessary.
 
 ### Log
 
-Log notifications are less urgent notification patterns as they do not disrupt a user’s workflow and are captured for later forensic use.  
+Log notifications are less urgent notification patterns as they do not disrupt a user’s workflow and are captured for later forensic use.
 
 Log notifications can be purely informational, as in a satellite or application that is running normally, or they can be actionable, as with a satellite that may be experiencing an interruption in service which needs to be resolved (while this type of example may be logged, the appropriate pattern would be more disruptive, such as a banner, depending on the level of criticality of the system).
 
@@ -128,7 +128,7 @@ A toast message with actionable content that will persist until it is dismissed 
 
 ### Banner
 
-Events that provide urgent information or require a user response use a Banner. The Banner displays within the user’s field-of-view, but doesn’t block other interaction. Banners can communicate system or product wide updates or changes, or be used to alert a user to an important change requiring user action. Banners have the ability to easily attract a user’s attention; consider whether this is the appropriate pattern for the message being communicated.
+Events that provide urgent information but don’t require an immediate response may be displayed in a [Notification Banner](/components/notification-banner/). The Banner displays within the user’s field-of-view, but doesn’t block other interaction. Banners can communicate system or product wide updates or changes, or be used to alert a user to an important change requiring user action. Banners have the ability to easily attract a user’s attention; consider whether this is the appropriate pattern for the message being communicated.
 
 #### Placement
 
