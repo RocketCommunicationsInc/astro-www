@@ -1,12 +1,13 @@
 ---
 import ComponentDocsLayout from 'project:layouts/component-docs/component-docs-layout.astro';
 import TokenSpecTable from 'project:components/token-spec-table/token-spec-table.astro';
+import Heading from 'project:components/astro-headings/heading.astro';
 
 const content = { title: 'Slider', description: "A Slider allows users to choose from a range of continuous and discrete values arranged from minimum to maximum." }
 ---
 
 <ComponentDocsLayout content={content}>
-## Anatomy
+<Heading type="h2" title="Anatomy" />
 
 <div class="spec-container -anatomy">
     <figure><img loading="lazy" width="384px" src="/img/components/slider/slider-anatomy.png" alt="Anatomy Image"/></figure>
@@ -20,66 +21,59 @@ const content = { title: 'Slider', description: "A Slider allows users to choose
     </ol>
 </div>
 
-## Default Values
+<Heading type="h2" title="Default Values" />
 
-:::specs-table-container
-| Attribute                                        | Token                             | Value                                                                                                                 |
-|:-------------------------------------------------|:----------------------------------|:----------------------------------------------------------------------------------------------------------------------|
-| <span class="attr-title">Thumb</span>            |                                   |                                                                                                                       |
-| Border radius                                    | slider-thumb-radius               | 50%                                                                                                                   |
-| Background color                                 | slider-thumb-color-background     | #101923                                                                                                               |
-| Border width                                     | slider-thumb-border-width         | 2px                                                                                                                   |
-| Border color                                     | slider-thumb-color-border-default | #4dacff                                                                                                               |
-| <span class="attr-title">Track (active)</span>   |                                   |                                                                                                                       |
-| Border radius                                    | slider-track-radius               | 3px                                                                                                                   |
-| Height                                           | slider-track-height-active        | 4px                                                                                                                   |
-| <span class="attr-title">Track (inactive)</span> |                                   |                                                                                                                       |
-| Border radius                                    | slider-track-radius               | 3px                                                                                                                   |
-| Height                                           | slider-track-height-inactive      | 1px                                                                                                                   |
-| <span class="attr-title">Axis Label</span>       |                                   |                                                                                                                       |
-| Font family                                      | font-body-3-font-family           | 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif |
-| Font size                                        | font-body-3-font-size             | 0.75rem                                                                                                               |
-| Font weight                                      | font-body-3-font-weight           | 400                                                                                                                   |
-| Line height                                      | font-body-3-line-height           | calc(20 / 14)                                                                                                         |
-| Letter spacing                                   | font-body-3-letter-spacing        | 0.005em                                                                                                               |
-| Text color                                       | slider-axis-label-color-text      | #ffffff                                                                                                               |
-| <span class="attr-title">Tick</span>             |                                   |                                                                                                                       |
-| Border radius                                    | slider-tick-radius                | 50%                                                                                                                   |
-| Dimension                                        | slider-tick-dimension             | 4px                                                                                                                   |
-| Background color                                 | slider-tick-color-background      | #4dacff                                                                                                               |
+<TokenSpecTable
+		tokens={[
+			{
+				name: 'Thumb',
+				tokens: [
+					'slider-thumb-radius',
+					'slider-thumb-color-background',
+					'slider-thumb-border-width',
+					'slider-thumb-color-border-default'
+				],
+			},
+			{
+				name: 'Track (active)',
+				tokens: [
+					'slider-track-radius',
+'slider-track-height-active'
+				],
+			},
+			{
+				name: 'Track (inactive)',
+				tokens: [
+					'slider-track-radius',
+'slider-track-height-inactive'
+				],
+			},
+			{
+				name: 'Axis Label',
+				tokens: [
+					'font-body-3-font-family',
+					'font-body-3-font-size',
+					'font-body-3-font-weight',
+					'font-body-3-line-height',
+					'font-body-3-letter-spacing',
+					'slider-axis-label-color-text'
+				],
+			},
+			{
+				name: 'Tick',
+				tokens: [
+					'slider-tick-radius',
+					'slider-tick-dimension',
+					'slider-tick-color-background'
+				],
+			}
+		]}
 
-:::
+	/>
 
-## States
+<Heading type="h2" title="States" />
 
-### Single Thumb Continuous Slider
-
-<div class="spec-container -examples">
-    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
-    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-hover.png" alt="Discrete Slider with Hover"/></figure>
-    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-disabled.png" alt="Disabled Discrete Slider"/></figure>
-    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
-</div>
-
-### Single Thumb Discreet Slider
-
-<div class="spec-container -examples">
-    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
-    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-hover.png" alt="Discrete Slider with Hover"/></figure>
-    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-disabled.png" alt="Disabled Discrete Slider"/></figure>
-    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
-</div>
-
-### Dual Range Continuous Slider
-
-<div class="spec-container -examples">
-    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
-    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-hover.png" alt="Discrete Slider with Hover"/></figure>
-    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-disabled.png" alt="Disabled Discrete Slider"/></figure>
-    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
-</div>
-
-### Dual Range Discreet Slider
+<Heading type="h3" title="Single Thumb Continuous Slider" />
 
 <div class="spec-container -examples">
     <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
@@ -88,9 +82,7 @@ const content = { title: 'Slider', description: "A Slider allows users to choose
     <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
 </div>
 
-## Positions
-
-### Single Thumb Continuous Slider
+<Heading type="h3" title="Single Thumb Discreet Slider" />
 
 <div class="spec-container -examples">
     <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
@@ -99,7 +91,15 @@ const content = { title: 'Slider', description: "A Slider allows users to choose
     <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
 </div>
 
-### Single Thumb Discreet Slider
+<Heading type="h3" title="Dual Range Continuous Slider" />
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-hover.png" alt="Discrete Slider with Hover"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-disabled.png" alt="Disabled Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
+</div>
+
+<Heading type="h3" title="Dual Range Discreet Slider" />
 
 <div class="spec-container -examples">
     <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
@@ -108,7 +108,10 @@ const content = { title: 'Slider', description: "A Slider allows users to choose
     <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
 </div>
 
-### Dual Range Continuous Slider
+<Heading type="h2" title="Positions" />
+
+<Heading type="h3" title="Single Thumb Continuous Slider" />
+
 
 <div class="spec-container -examples">
     <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
@@ -117,7 +120,7 @@ const content = { title: 'Slider', description: "A Slider allows users to choose
     <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
 </div>
 
-### Dual Range Discreet Slider
+<Heading type="h3" title="Single Thumb Discreet Slider" />
 
 <div class="spec-container -examples">
     <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
@@ -126,44 +129,80 @@ const content = { title: 'Slider', description: "A Slider allows users to choose
     <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
 </div>
 
-### Default
+<Heading type="h3" title="Dual Range Continuous Slider" />
 
-:::specs-table-container
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-hover.png" alt="Discrete Slider with Hover"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-disabled.png" alt="Disabled Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
+</div>
 
-| Attribute                             | Token                             | Value   |
-|:--------------------------------------|:----------------------------------|:--------|
-| <span class="attr-title">Thumb</span> |                                   |         |
-| Border color                          | slider-thumb-color-border-default | #4dacff |
+<Heading type="h3" title="Dual Range Discreet Slider" />
 
-:::
+<div class="spec-container -examples">
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-hover.png" alt="Discrete Slider with Hover"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-disabled.png" alt="Disabled Discrete Slider"/></figure>
+    <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-focus.png" alt="Discrete Slider with Focus"/></figure>
+</div>
 
-### Hover
+<Heading type="h3" title="Default" />
 
-:::specs-table-container
-| Attribute                             | Token                           | Value   |
-|:--------------------------------------|:--------------------------------|:--------|
-| <span class="attr-title">Thumb</span> |                                 |         |
-| Border color                          | slider-thumb-color-border-hover | #92cbff |
-:::
+<TokenSpecTable
+		tokens={[
+			{
+				name: 'Thumb',
+				tokens: [
+					'slider-thumb-color-border-default'
+				],
+			}
+		]}
 
-### Disabled
+	/>
 
-:::specs-table-container
-| Attribute                                 | Token            | Value |
-|:------------------------------------------|:-----------------|:------|
-| <span class="attr-title">Container</span> |                  |       |
-| Opacity                                   | opacity-disabled | 40%   |
-:::
+<Heading type="h3" title="Hover" />
+<TokenSpecTable
+		tokens={[
+			{
+				name: 'Thumb',
+				tokens: [
+					'slider-thumb-color-border-hover'
+				],
+			}
+		]}
 
-### Focus
+	/>
 
-:::specs-table-container
-| Attribute                                 | Token         | Value             |
-|:------------------------------------------|:--------------|:------------------|
-| <span class="attr-title">Container</span> |               |                   |
-| Outline                                   | focus-outline | 1px solid #da9ce7 |
-| Outline Offset                            | focus-offset  | 0.125rem          |
-:::
+<Heading type="h3" title="Disabled" />
+
+<TokenSpecTable
+		tokens={[
+			{
+				name: 'Container',
+				tokens: [
+					'opacity-disabled'
+				],
+			}
+		]}
+
+	/>
+
+<Heading type="h3" title="Focus" />
+
+<TokenSpecTable
+		tokens={[
+			{
+				name: 'Container',
+				tokens: [
+					'color-border-focus-default',
+					'border-width-focus-default',
+					'spacing-focus-default'
+				],
+			}
+		]}
+
+	/>
 
 <div class="spec-container -examples">
     <figure><img loading="lazy" width="280" src="/img/components/slider/slider-discrete-default.png" alt="Default Discrete Slider"/></figure>
