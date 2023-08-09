@@ -1,10 +1,12 @@
 ---
 import ComponentDocsLayout from 'project:layouts/component-docs/component-docs-layout.astro';
 import TokenSpecTable from 'project:components/token-spec-table/token-spec-table.astro';
+import Heading from 'project:components/astro-headings/heading.astro';
+const content={ title: 'Tabs', description: "Tabs in Astro applications are used to divide major areas of content and to indicate work process." }
 ---
 
-<ComponentDocsLayout content={{ title: 'Tabs' }}>
-	<a href="#anatomy" class="h h2"><h2 id="anatomy">Anatomy</h2></a>
+<ComponentDocsLayout content={content}>
+	<Heading type="h2" title="Anatomy" />
 
 	<div class="spec-container -anatomy">
 		<figure>
@@ -19,12 +21,10 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
 			<li>Label</li>
 			<li>Active Indicator</li>
 		</ol>
-		
+
 	</div>
 
-	<a href="#default-value" class="h h2">
-		<h2 id="default-value">Default</h2>
-	</a>
+	<Heading type="h2" title="Default" />
 
 	<TokenSpecTable
 		tokens={[
@@ -59,19 +59,15 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
 		]}
 	/>
 
-	<a href="#sizes" class="h h2">
-		<h2 id="sizes">Sizes</h2>
-	</a>
-	
-	
+	<Heading type="h2" title="Sizes" />
+
+
 	<div class="spec-container -examples">
 		<figure><img loading="lazy" width="102" src="/img/components/tab/tab-small-size.webp" alt="Small Tab"/></figure>
 		<figure><img loading="lazy" width="102" src="/img/components/tab/tab-large-size.webp" alt="Large Tab"/></figure>
 	</div>
-	
-	<a href="#small" class="h h3">
-		<h3 id="small">Small</h3>
-	</a>
+
+	<Heading type="h3" title="Small" />
 
 	<TokenSpecTable
 		tokens={[
@@ -86,9 +82,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
 		]}
 	/>
 
-	<a href="#large" class="h h3">
-		<h3 id="large">Large</h3>
-	</a>
+	<Heading type="h3" title="Large" />
 
 	<TokenSpecTable
 		tokens={[
@@ -103,9 +97,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
 		]}
 	/>
 
-	<a href="#states" class="h h2">
-		<h2 id="states">States</h2>
-	</a>
+	<Heading type="h2" title="States" />
 
 	<div class="spec-container -examples">
 		<figure><img loading="lazy" width="149" src="/img/components/tab/tab-default-state.webp" alt="Default Tab"/></figure>
@@ -115,9 +107,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
 		<figure><img loading="lazy" width="129" src="/img/components/tab/tab-focus-state.webp" alt="Focused Tab"/></figure>
 	</div>
 
-	<a href="#default" class="h h3">
-		<h3 id="default">Default</h3>
-	</a>
+	<Heading type="h3" id="states-default" title="Default" />
 
 	<TokenSpecTable
 	tokens={[
@@ -130,10 +120,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
 	]}
 />
 
-
-	<a href="#hover" class="h h3">
-		<h3 id="hover">Hover</h3>
-	</a>
+	<Heading type="h3" title="Hover" />
 
 	<TokenSpecTable
 	tokens={[
@@ -146,10 +133,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
 	]}
 />
 
-
-	<a href="#selected" class="h h3">
-		<h3 id="selected">Selected</h3>
-	</a>
+	<Heading type="h3" title="Selected" />
 
 	<TokenSpecTable
 	tokens={[
@@ -163,9 +147,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
 	]}
 />
 
-	<a href="#disabled" class="h h3">
-		<h3 id="disabled">Disabled</h3>
-	</a>
+	<Heading type="h3" title="Disabled" />
 
 
 	<TokenSpecTable
@@ -179,10 +161,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
 		]}
 	/>
 
-	<a href="#focus" class="h h3">
-		<h3 id="focus">Focus</h3>
-	</a>
-
+	<Heading type="h3" title="Focus" />
 
 	<TokenSpecTable tokens={[
 		{

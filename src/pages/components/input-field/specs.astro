@@ -1,0 +1,216 @@
+---
+import ComponentDocsLayout from 'project:layouts/component-docs/component-docs-layout.astro';
+import TokenSpecTable from 'project:components/token-spec-table/token-spec-table.astro';
+import Heading from 'project:components/astro-headings/heading.astro';
+
+const content = {title: "Input Field", description: "Input Fields allow users to enter freeform text. Variations on this field often provide specific data entry formats such as masked data (e.g. passwords or phone numbers), date and time, and numeric data entry."}
+---
+
+<ComponentDocsLayout content={content}>
+
+	<Heading type="h2" title="Anatomy" />
+
+	<div class="spec-container -anatomy">
+		<figure><img loading="lazy" width="252px" src="/img/components/input-field/input-anatomy.png" alt="Anatomy Image"/></figure>
+		<ol>
+			<li>Container</li>
+			<li>Prefix Slot (optional)</li>
+			<li>Label (using “default text”)</li>
+			<li>Suffix Slot (optional)</li>
+		</ol>
+	</div>
+
+	<Heading type="h2" title="Default Values" />
+
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Container',
+				tokens: [
+					'input-padding-x-medium',
+					'input-padding-y-medium',
+					'input-border-width',
+					'input-radius',
+					'input-color-border-default',
+					'input-color-background-default',
+				],
+			},
+			{
+				name: 'Label',
+				tokens: [
+					'font-control-body-1-font-family',
+					'font-control-body-1-font-size',
+					'font-control-body-1-font-weight',
+					'font-control-body-1-line-height',
+					'font-control-body-1-letter-spacing',
+					'input-color-text-default'
+				],
+			},
+		]}
+	/>
+
+	<Heading type="h2" title="States" />
+
+	<div class="spec-container -examples">
+		<figure><img loading="lazy" width="170" src="/img/components/input-field/input-global-default.png" alt="Default Input Field"/></figure>
+		<figure><img loading="lazy" width="170" src="/img/components/input-field/input-global-hover.png" alt="Hover Input Field"/></figure>
+		<figure><img loading="lazy" width="170" src="/img/components/input-field/input-global-invalid.png" alt="Invalid Input Field"/></figure>
+		<figure><img loading="lazy" width="170" src="/img/components/input-field/input-global-disabled.png" alt="Disabled Input Field"/></figure>
+		<figure><img loading="lazy" width="170" src="/img/components/input-field/input-global-focus.png" alt="Focus Input Field"/></figure>
+	</div>
+
+	<Heading type="h3" title="Hover" />
+
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Container',
+				tokens: [
+					'input-color-border-hover'
+				],
+			}
+		]}
+	/>
+
+	<Heading type="h3" title="Invalid" />
+
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Container',
+				tokens: [
+					'input-color-border-invalid'
+				],
+			}
+		]}
+	/>
+
+	<Heading type="h3" title="Disabled" />
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Container',
+				tokens: [
+					'opacity-disabled'
+				],
+			}
+		]}
+	/>
+
+	<Heading type="h3" title="Focus" />
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Container',
+				tokens: [
+						'color-border-focus-default',
+						'border-width-focus-default',
+						'spacing-focus-default'
+				],
+			}
+		]}
+	/>
+
+	<Heading type="h2" title="Sizes" />
+
+	<div class="spec-container -examples">
+		<figure><img loading="lazy" width="170" src="/img/components/input-field/input-size-small.png" alt="Input Size Small"/></figure>
+		<figure><img loading="lazy" width="170" src="/img/components/input-field/input-size-medium.png" alt="Input Size Medium"/></figure>
+		<figure><img loading="lazy" width="170" src="/img/components/input-field/input-size-large.png" alt="Input Size Large"/></figure>
+	</div>
+
+	<Heading type="h3" title="Small" />
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Container',
+				tokens: [
+						'input-padding-x-small',
+						'input-padding-y-small'
+				],
+			}
+		]}
+	/>
+
+	<Heading type="h3" title="Medium" />
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Container',
+				tokens: [
+						'input-padding-x-medium',
+						'input-padding-y-medium'
+				],
+			}
+		]}
+	/>
+
+	<Heading type="h3" title="Large" />
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Container',
+				tokens: [
+						'input-padding-x-large',
+						'input-padding-y-large'
+				],
+			}
+		]}
+	/>
+
+	<Heading type="h2" title="Variants" />
+
+	<div class="spec-container -examples">
+		<figure><img loading="lazy" width="170" src="/img/components/input-field/input-placeholder.png" alt="Input Placeholder"/></figure>
+	</div>
+
+	<Heading type="h3" title="Placeholder Text" />
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Container',
+				tokens: [
+						'input-color-text-placeholder'
+				],
+			}
+		]}
+	/>
+
+	<div class="spec-container -examples">
+		<figure><img loading="lazy" width="170" src="/img/components/input-field/input-type-search.png" alt="Search Input"/></figure>
+	</div>
+
+	<Heading type="h3" title="With Prefix" />
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Prefix',
+				tokens: [
+					'input-icon-dimension',
+					'input-prefix-margin-right',
+					'input-icon-color-fill-default'
+				],
+			}
+		]}
+	/>
+
+	<div class="spec-container -examples">
+		<figure><img loading="lazy" width="170" src="/img/components/input-field/input-type-password.png" alt="Password Input"/></figure>
+		<figure><img loading="lazy" width="170" src="/img/components/input-field/input-type-number.png" alt="Number Input"/></figure>
+	</div>
+
+	<Heading type="h3" title="With Suffix" />
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Suffix',
+				tokens: [
+					'input-icon-dimension',
+					'input-suffix-margin-left',
+					'input-icon-color-fill-default'
+				],
+			}
+		]}
+	/>
+
+</ComponentDocsLayout>

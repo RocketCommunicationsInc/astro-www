@@ -1,10 +1,11 @@
 ---
 import ComponentDocsLayout from 'project:layouts/component-docs/component-docs-layout.astro';
 import TokenSpecTable from 'project:components/token-spec-table/token-spec-table.astro';
+import Heading from 'project:components/astro-headings/heading.astro';
 ---
 
 <ComponentDocsLayout content={{ title: 'Card' }}>
-	<a href="#anatomy" class="h h2"><h2 id="anatomy">Anatomy</h2></a>
+	<Heading type="h2" title="Anatomy" />
 
 	<div class="spec-container -anatomy">
 		<figure>
@@ -31,9 +32,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
 		</ol>
 	</div>
 
-	<a href="#default-value" class="h h2">
-		<h2 id="default-value">Default</h2>
-	</a>
+	<Heading type="h2" title="Default" />
 
 	<TokenSpecTable
 		tokens={[
@@ -67,9 +66,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
 		]}
 	/>
 
-	<a href="#with-prefix" class="h h2">
-		<h2 id="with-prefix">With Prefix</h2>
-	</a>
+	<Heading type="h2" title="With Prefix" />
 
 	<TokenSpecTable
 		tokens={[
@@ -83,9 +80,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
 		]}
 	/>
 
-	<a href="#with-suffix" class="h h2">
-		<h2 id="with-suffix">With Suffix</h2>
-	</a>
+	<Heading type="h2" title="With Suffix" />
 
 	<TokenSpecTable
 		tokens={[
@@ -99,10 +94,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
 		]}
 	/>
 
-
-	<a href="#with-footer" class="h h2">
-		<h2 id="with-footer">With Footer</h2>
-	</a>
+	<Heading type="h2" title="With Footer" />
 
 	<TokenSpecTable
 		tokens={[

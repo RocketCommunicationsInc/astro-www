@@ -1,0 +1,219 @@
+---
+import ComponentDocsLayout from 'project:layouts/component-docs/component-docs-layout.astro';
+import TokenSpecTable from 'project:components/token-spec-table/token-spec-table.astro';
+import Heading from 'project:components/astro-headings/heading.astro';
+const content = {title: "Select Menu", description: `When activated, Select Menus allow users to select a value from a list. Once a value is selected, the Select Menu displays the selected value.`}
+---
+<ComponentDocsLayout content={content}>
+
+	<Heading type="h2" title="Anatomy" />
+
+	<div class="spec-container -anatomy">
+		<figure><img loading="lazy" width="226px" src="/img/components/select/select-anatomy.png" alt="Anatomy Image"/></figure>
+		<ol>
+			<li>Container</li>
+			<li>Text</li>
+			<li>Caret Selector</li>
+			<li>Caret</li>
+		</ol>
+	</div>
+
+	<div class="spec-container -anatomy">
+		<figure><img loading="lazy" width="226px" src="/img/components/select/select-menu-inline-anatomy.webp" alt="Anatomy Image"/></figure>
+		<ol>
+			<li>Container</li>
+			<li>Text</li>
+			<li>Caret Selector Clickable Space</li>
+			<li>Caret</li>
+		</ol>
+	</div>
+
+	<Heading type="h2" title="Default Values" />
+
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Container',
+			tokens: [
+				'select-padding-x-medium',
+				'select-padding-y-medium',
+				'select-border-width',
+				'select-radius',
+				'select-color-border-default',
+				'select-color-background'
+			],
+		},
+		{
+			name: 'Text',
+			tokens: [
+			'font-control-body-1-font-family',
+			'font-control-body-1-font-size',
+			'font-control-body-1-font-weight',
+			'font-control-body-1-line-height',
+			'font-control-body-1-letter-spacing',
+			'select-color-text'
+			],
+		},
+		{
+			name: 'Caret Selector',
+			tokens: [
+				'select-caret-selector-width',
+				'select-caret-selector-color-background'
+			],
+		},
+		{
+			name: 'Caret',
+			tokens: [
+				'select-caret-dimension',
+				'select-caret-color-fill'
+			],
+		}
+	]}
+	/>
+
+	<Heading type="h2" title="States" />
+
+	<Heading type="h3" title="Select Menu" />
+
+	<div class="spec-container -examples">
+		<figure><img loading="lazy" width="170" src="/img/components/select/select-default.png" alt="Default select"/></figure>
+		<figure><img loading="lazy" width="170" src="/img/components/select/select-hover.png" alt="Hover select"/></figure>
+		<figure><img loading="lazy" width="170" src="/img/components/select/select-invalid.png" alt="Invalid select"/></figure>
+		<figure><img loading="lazy" width="170" src="/img/components/select/select-disabled.png" alt="Disabled select"/></figure>
+		<figure><img loading="lazy" width="170" src="/img/components/select/select-focus.png" alt="Focus select"/></figure>
+	</div>
+
+	<Heading type="h3" title="Inline Select Menu" />
+
+	<div class="spec-container -examples">
+		<figure><img loading="lazy" width="170" src="/img/components/select/select-menu-inline-default-state.webp" alt="Default select"/></figure>
+		<figure><img loading="lazy" width="170" src="/img/components/select/select-menu-inline-hover-state.webp" alt="Hover select"/></figure>
+		<figure><img loading="lazy" width="170" src="/img/components/select/select-menu-inline-invalid-state.webp" alt="Invalid select"/></figure>
+		<figure><img loading="lazy" width="170" src="/img/components/select/select-menu-inline-disabled-state.webp" alt="Disabled select"/></figure>
+		<figure><img loading="lazy" width="170" src="/img/components/select/select-menu-inline-focus-state.webp" alt="Focus select"/></figure>
+	</div>
+
+	<Heading type="h3" title="Default" />
+
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Container',
+			tokens: [
+				'select-color-border-default'
+			],
+		}
+	]}
+	/>
+
+	<Heading type="h3" title="Hover" />
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Container',
+			tokens: [
+				'select-color-border-hover'
+			],
+		}
+	]}
+	/>
+
+	<Heading type="h3" title="Invalid" />
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Container',
+			tokens: [
+				'select-color-border-invalid'
+			],
+		}
+	]}
+	/>
+
+	<Heading type="h3" title="Disabled" />
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Container',
+			tokens: [
+				'opacity-disabled'
+			],
+		}
+	]}
+	/>
+
+	<Heading type="h3" title="Focus" />
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Container',
+			tokens: [
+				'color-border-focus-default',
+				'border-width-focus-default',
+				'spacing-focus-default'
+			],
+		}
+	]}
+	/>
+
+	<Heading type="h2" title="Sizes" />
+
+	<Heading type="h3" title="Select Menu" />
+
+	<div class="spec-container -examples">
+		<figure><img loading="lazy" width="170" src="/img/components/select/select-small.png" alt="select Size Small"/></figure>
+		<figure><img loading="lazy" width="170" src="/img/components/select/select-medium.png" alt="select Size Medium"/></figure>
+		<figure><img loading="lazy" width="170" src="/img/components/select/select-large.png" alt="select Size Large"/></figure>
+	</div>
+
+
+	<Heading type="h3" title="Inline Select Menu" />
+
+	<div class="spec-container -examples">
+		<figure><img loading="lazy" width="170" src="/img/components/select/select-menu-inline-small-size.webp" alt="select Size Small"/></figure>
+		<figure><img loading="lazy" width="170" src="/img/components/select/select-menu-inline-medium-size.webp" alt="select Size Medium"/></figure>
+		<figure><img loading="lazy" width="170" src="/img/components/select/select-menu-inline-large-size.webp" alt="select Size Large"/></figure>
+	</div>
+
+	<Heading type="h3" title="Small" />
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Container',
+			tokens: [
+				'select-padding-x-small',
+				'select-padding-y-small'
+			],
+		}
+	]}
+	/>
+
+	<Heading type="h3" title="Medium" />
+
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Container',
+			tokens: [
+				'select-padding-x-medium',
+				'select-padding-y-medium'
+			],
+		}
+	]}
+	/>
+
+	<Heading type="h3" title="Large" />
+
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Container',
+			tokens: [
+				'select-padding-x-large',
+				'select-padding-y-large'
+			],
+		}
+	]}
+	/>
+
+</ComponentDocsLayout>

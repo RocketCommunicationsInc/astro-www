@@ -1,0 +1,187 @@
+---
+import ComponentDocsLayout from 'project:layouts/component-docs/component-docs-layout.astro';
+import TokenSpecTable from 'project:components/token-spec-table/token-spec-table.astro';
+import Heading from 'project:components/astro-headings/heading.astro';
+const content={ title: 'Textarea', description: "Textareas are multi-line text inputs that allow for entering text in a larger area than a single-line text input would allow. They are typically used for multi-line input use cases like comments or feedback." }
+---
+
+<ComponentDocsLayout content={content}>
+	<Heading type="h2" title="Anatomy" />
+
+	<div class="spec-container -anatomy">
+		<figure><img loading="lazy" width="226px" src="/img/components/textarea/textarea-anatomy.png" alt="Anatomy Image"/></figure>
+		<ol>
+			<li>Container</li>
+			<li>Input text</li>
+		</ol>
+	</div>
+
+	<Heading type="h2" title="Default Values" />
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Container',
+			tokens: [
+				'textarea-padding-x-medium',
+				'textarea-padding-y-medium',
+				'textarea-border-width',
+				'textarea-radius',
+				'textarea-color-border-default',
+				'textarea-color-background-default'
+			],
+		},
+		{
+			name: 'Label',
+			tokens: [
+				'font-control-body-1-font-family',
+				'font-control-body-1-font-size',
+				'font-control-body-1-font-weight',
+				'font-control-body-1-line-height',
+				'font-control-body-1-letter-spacing',
+				'textarea-color-text-default'
+			],
+		}
+	]}
+	/>
+
+	<Heading type="h2" title="States" />
+
+	<div class="spec-container -examples">
+		<figure><img loading="lazy" width="170" src="/img/components/textarea/textarea-default.png" alt="Default Textarea"/></figure>
+		<figure><img loading="lazy" width="170" src="/img/components/textarea/textarea-hover.png" alt="Hover Textarea"/></figure>
+		<figure><img loading="lazy" width="170" src="/img/components/textarea/textarea-invalid.png" alt="Invalid Textarea"/></figure>
+		<figure><img loading="lazy" width="170" src="/img/components/textarea/textarea-disabled.png" alt="Disabled Textarea"/></figure>
+		<figure><img loading="lazy" width="170" src="/img/components/textarea/textarea-focus.png" alt="Focus Textarea"/></figure>
+	</div>
+
+	<Heading type="h3" title="Default" />
+
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Container',
+			tokens: [
+				'textarea-color-border-default'
+			],
+		}
+	]}
+	/>
+
+	<Heading type="h3" title="Hover" />
+
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Container',
+			tokens: [
+				'textarea-color-border-hover'
+			],
+		}
+	]}
+	/>
+
+	<Heading type="h3" title="Invalid" />
+
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Container',
+			tokens: [
+				'textarea-color-border-invalid'
+			],
+		}
+	]}
+	/>
+
+	<Heading type="h3" title="Disabled" />
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Container',
+			tokens: [
+				'opacity-disabled'
+			],
+		}
+	]}
+	/>
+
+	<Heading type="h3" title="Focus" />
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Container',
+			tokens: [
+				'spacing-focus-default',
+				'color-border-focus-default'
+			],
+		}
+	]}
+	/>
+
+	<Heading type="h2" title="Sizes" />
+
+	<div class="spec-container -examples">
+		<figure><img loading="lazy" width="170" src="/img/components/textarea/textarea-small-default.png" alt="Textarea Size Small"/></figure>
+		<figure><img loading="lazy" width="170" src="/img/components/textarea/textarea-medium-default.png" alt="Textarea Size Medium"/></figure>
+		<figure><img loading="lazy" width="170" src="/img/components/textarea/textarea-large-default.png" alt="Textarea Size Large"/></figure>
+	</div>
+
+	<Heading type="h3" title="Small" />
+
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Container',
+			tokens: [
+				'textarea-padding-x-small',
+				'textarea-padding-y-small'
+			],
+		}
+	]}
+	/>
+
+	<Heading type="h3" title="Medium" />
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Container',
+			tokens: [
+				'textarea-padding-x-medium',
+				'textarea-padding-y-medium'
+			],
+		}
+	]}
+	/>
+
+	<Heading type="h3" title="Large" />
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Container',
+			tokens: [
+				'textarea-padding-x-large',
+				'textarea-padding-y-large'
+			],
+		}
+	]}
+	/>
+
+	<Heading type="h2" title="Variants" />
+
+	<div class="spec-container -examples">
+		<figure><img loading="lazy" width="170" src="/img/components/textarea/textarea-placeholder.png" alt="Input Placeholder"/></figure>
+	</div>
+
+	<Heading type="h3" title="Placeholder Text" />
+	<TokenSpecTable
+	tokens={[
+		{
+			name: 'Container',
+			tokens: [
+				'textarea-color-text-placeholder'
+			],
+		}
+	]}
+	/>
+
+</ComponentDocsLayout>

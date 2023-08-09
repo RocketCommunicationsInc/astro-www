@@ -1,10 +1,12 @@
 ---
 import ComponentDocsLayout from 'project:layouts/component-docs/component-docs-layout.astro';
 import TokenSpecTable from 'project:components/token-spec-table/token-spec-table.astro';
+import Heading from 'project:components/astro-headings/heading.astro';
+const content = {title: "Button", description: `Action Buttons allow users to trigger actions by clicking, tapping, or pressing a corresponding key on a keyboard, such as the “Enter” key.`}
 ---
-<ComponentDocsLayout content={{title: "Button", description: `Action Buttons allow users to trigger actions by clicking, tapping, or pressing a corresponding key on a keyboard, such as the “Enter” key.`}}>
+<ComponentDocsLayout content={content}>
 
-<a href="#anatomy" class="h h2"><h2 id="anatomy">Anatomy</h2></a>
+<Heading type="h2" title="Anatomy" />
 
 <div class="spec-container -anatomy">
     <figure><img loading="lazy" width="260px" src="/img/components/button/button-anatomy.png" alt="Anatomy Image"/></figure>
@@ -15,51 +17,45 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
     </ol>
 </div>
 
-<a href="#default-values" class="h h2">
-    <h2 id="default-values">Default Values</h2>
-</a>
+<Heading type="h2" title="Default Values" />
 
 <TokenSpecTable tokens={[
     {
         name: 'Container',
         tokens: [
-            'button-padding-x-medium',                 
-            'button-padding-y-medium',                 
-            'button-border-width',                     
-            'button-radius',                           
-            'button-color-border-primary-default',     
-            'button-color-background-primary-default',                                         
+            'button-padding-x-medium',
+            'button-padding-y-medium',
+            'button-border-width',
+            'button-radius',
+            'button-color-border-primary-default',
+            'button-color-background-primary-default',
         ]
     },
     {
         name: "Label",
         tokens: [
-            'font-control-body-1-font-family',         
-            'font-control-body-1-font-size',           
-            'font-control-body-1-font-weight',         
-            'font-control-body-1-line-height',         
-            'font-control-body-1-letter-spacing',      
-            'button-color-text-primary',               
+            'font-control-body-1-font-family',
+            'font-control-body-1-font-size',
+            'font-control-body-1-font-weight',
+            'font-control-body-1-line-height',
+            'font-control-body-1-letter-spacing',
+            'button-color-text-primary',
         ]
     },
     {
         name: "Left icon (optional)",
         tokens: [
-            'button-icon-dimension',                   
-            'button-icon-margin-right',                
+            'button-icon-dimension',
+            'button-icon-margin-right',
             'button-icon-color-fill-primary'
         ]
     }
 ]}/>
 
 
-<a href="#kinds" class="h h2">
-    <h2 id="kinds">Kinds</h2>
-</a>
+<Heading type="h2" title="Kinds" />
 
-<a href="#primary" class="h h3">
-    <h3 id="primary">Primary</h3>
-</a>
+<Heading type="h3" title="Primary" />
 
 <div class="spec-container -examples">
     <figure><img loading="lazy" width="139" src="/img/components/button/button-primary-medium-default.webp" alt="Default Primary Button"/></figure>
@@ -67,9 +63,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
     <figure><img loading="lazy" width="139" src="/img/components/button/button-primary-medium-disabled.webp" alt="Disabled Primary Button"/></figure>
 </div>
 
-<a href="#kind-default" class="h h4">
-    <h4 id="kind-default">Default</h4>
-</a>
+<Heading type="h4" title="Default" />
 
 <TokenSpecTable tokens={[
     {
@@ -91,10 +85,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
 
 </TokenSpecTable>
 
-
-<a href="#kind-hover" class="h h4">
-    <h4 id="kind-over">Hover</h4>
-</a>
+<Heading type="h4" id="default-hover" title="Hover" />
 
 <TokenSpecTable tokens={[
     {
@@ -108,9 +99,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
 
 </TokenSpecTable>
 
-<a href="#disabled" class="h h4">
-    <h4 id="disabled">Disabled</h4>
-</a>
+<Heading type="h4" id="default-disabled" title="Disabled" />
 
 <TokenSpecTable tokens={[
     {
@@ -123,10 +112,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
 
 </TokenSpecTable>
 
-
-<a href="#secondary" class="h h3">
-    <h3 id="secondary">Secondary</h3>
-</a>
+<Heading type="h3" title="Secondary" />
 
 <div class="spec-container -examples">
     <figure><img loading="lazy" width="163" src="/img/components/button/button-secondary-medium-default.webp" alt="Default Secondary Button"/></figure>
@@ -134,10 +120,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
     <figure><img loading="lazy" width="163" src="/img/components/button/button-secondary-medium-disabled.webp" alt="Disabled Secondary Button"/></figure>
 </div>
 
-
-<a href="#secondary-default" class="h h4">
-    <h4 id="secondary-default">Default</h4>
-</a>
+<Heading type="h4" id="secondary-default" title="Default" />
 
 <TokenSpecTable tokens={[
     {
@@ -157,11 +140,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
     }
 ]}/>
 
-
-<a href="#secondary-hover" class="h h4">
-    <h4 id="secondary-hover">Hover</h4>
-</a>
-
+<Heading type="h4" id="secondary-hover" title="Hover" />
 
 <TokenSpecTable tokens={[
     {
@@ -181,10 +160,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
     }
 ]}/>
 
-
-<a href="#secondary-disabled" class="h h4">
-    <h4 id="secondary-disabled">Disabled</h4>
-</a>
+<Heading type="h4"  id="secondary-disabled" title="Disabled" />
 
 
 <TokenSpecTable tokens={[
@@ -196,9 +172,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
     },
 ]}/>
 
-<a href="#borderless" class="h h3">
-    <h3 id="borderless">Borderless</h4>
-</a>
+<Heading type="h3" title="Borderless" />
 
 <div class="spec-container -examples">
     <figure><img loading="lazy" width="161" src="/img/components/button/button-borderless-default.webp" alt="Default Borderless Button"/></figure>
@@ -206,9 +180,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
     <figure><img loading="lazy" width="161" src="/img/components/button/button-borderless-disabled.webp" alt="Disabled Borderless Button"/></figure>
 </div>
 
-<a href="#borderless-default" class="h h4">
-    <h4 id="borderless-default">Default</h4>
-</a>
+<Heading type="h4" id="borderless-default" title="Default" />
 
 <TokenSpecTable tokens={[
     {
@@ -230,10 +202,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
     }
 ]}/>
 
-
-<a href="#borderless-hover" class="h h4">
-    <h4 id="borderless-hover">Hover</h4>
-</a>
+<Heading type="h4"  id="borderless-hover" title="Hover" />
 
 
 <TokenSpecTable tokens={[
@@ -249,11 +218,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
     }
 ]}/>
 
-
-
-<a href="#borderless-disabled" class="h h4">
-    <h4 id="borderless-disabled">Disabled</h4>
-</a>
+<Heading type="h4"  id="borderless-disabled" title="Disabled" />
 
 <TokenSpecTable tokens={[
     {
@@ -264,11 +229,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
     }
 ]}/>
 
-
-
-<a href="#sizes" class="h h2">
-    <h2 id="sizes">Sizes</h2>
-</a>
+<Heading type="h2" title="Sizes" />
 
 
 <div class="spec-container -examples">
@@ -277,9 +238,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
     <figure><img loading="lazy" width="140" src="/img/components/button/button-primary-large-default.webp" alt="Large Primary Button"/></figure>
 </div>
 
-<a href="#small" class="h h3">
-    <h3 id="small">Small</h3>
-</a>
+<Heading type="h3" title="Small" />
 
 <TokenSpecTable tokens={[
     {
@@ -291,10 +250,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
     }
 ]}/>
 
-
-<a href="#medium" class="h h3">
-    <h3 id="medium">Medium</h3>
-</a>
+<Heading type="h3" title="Medium" />
 
 <TokenSpecTable tokens={[
     {
@@ -306,10 +262,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
     }
 ]}/>
 
-
-<a href="#large" class="h h3">
-    <h3 id="large">Large</h3>
-</a>
+<Heading type="h3" title="Large" />
 
 <TokenSpecTable tokens={[
     {
@@ -322,11 +275,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
 ]}/>
 
 
-
-
-<a href="#icon-only" class="h h2">
-    <h2 id="icon-only">Icon Only</h2>
-</a>
+<Heading type="h2" title="Icon Only" />
 
 
 <div class="spec-container -examples">
@@ -335,10 +284,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
     <figure><img loading="lazy" width="44" src="/img/components/button/button-primary-large-default-icon-only.webp" alt="Large Icon Only Primary Button"/></figure>
 </div>
 
-<a href="#icon-only-small" class="h h3">
-    <h3 id="icon-only-small">Small</h3>
-</a>
-
+<Heading type="h3"  id="icon-small" title="Small" />
 
 <TokenSpecTable tokens={[
     {
@@ -350,10 +296,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
     }
 ]}/>
 
-
-<a href="#icon-only-medium" class="h h3">
-    <h3 id="icon-only-medium">Medium</h3>
-</a>
+<Heading type="h3" id="icon-medium" title="Medium" />
 
 <TokenSpecTable tokens={[
     {
@@ -365,10 +308,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
     }
 ]}/>
 
-
-<a href="#icon-only-large" class="h h3">
-    <h3 id="icon-only-large">Large</h3>
-</a>
+<Heading type="h3" id="icon-large" title="Large" />
 
 <TokenSpecTable tokens={[
     {
@@ -380,10 +320,7 @@ import TokenSpecTable from 'project:components/token-spec-table/token-spec-table
     }
 ]}/>
 
-
-<a href="#focus" class="h h2">
-    <h2 id="focus">Focus</h2>
-</a>
+<Heading type="h2" title="Focus" />
 
 <div class="spec-container -examples">
     <figure><img loading="lazy" width="139" src="/img/components/button/button-primary-medium-focus.webp" alt="Primary Button with Focus State"/></figure>
