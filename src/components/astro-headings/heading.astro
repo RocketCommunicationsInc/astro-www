@@ -1,10 +1,13 @@
 ---
 // Linked headings for .astro files made less tedious
-// <Heading type="h2" title="Your Message Here" />
-const {type, title} = Astro.props
+// <Heading type="h2" id?="optional-id" title="Your Message Here" />
+const {type, title, id} = Astro.props
 const headingTypes = ["h1", "h2","h3","h4","h5","h6"]
-const id = title ? title.replace(' ', '-').toLowerCase() : null
-const heading=`<${headingTypes.includes(type.toLowerCase()) ? type : 'h1'} id="${id}">${title}</${headingTypes.includes(type.toLowerCase()) ? type : 'h1'}>`
+const headingId = (()=>{
+	if(id) return id;
+
+	return title ? title.replace(' ', '-').toLowerCase() : null})()
+const heading=`<${headingTypes.includes(type.toLowerCase()) ? type : 'h1'} id="${headingId}">${title}</${headingTypes.includes(type.toLowerCase()) ? type : 'h1'}>`
 ---
 
-<a href=`#${id}` class=`h ${type || null}` set:html={heading}></a>
+<a href=`#${headingId}` class=`h ${type || null}` set:html={heading}></a>
