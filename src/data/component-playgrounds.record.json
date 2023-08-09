@@ -1633,6 +1633,10 @@
 			"examples": [
 				{
 					"name": "Default",
+					"code": "<rux-pop-up open=\"true\" placement=\"bottom-end\" enable-animation-frame>\n\t<rux-icon icon=\"apps\" slot=\"trigger\"></rux-icon>\n\t<p>This pop up is activated when a user clicks on the associated icon.</p>\n</rux-pop-up>"
+				},
+				{
+					"name": "With Menu",
 					"code": "<rux-pop-up open=\"true\" placement=\"bottom-end\" enable-animation-frame>\n\t<rux-icon icon=\"apps\" slot=\"trigger\"></rux-icon>\n\t<rux-menu>\n\t\t<rux-menu-item href=\"#\">Menu Item 1</rux-menu-item>\n\t\t<rux-menu-item href=\"#\">Menu Item 2</rux-menu-item>\n\t\t<rux-menu-item-divider></rux-menu-item-divider>\n\t\t<rux-menu-item href=\"#\">Menu Item 3</rux-menu-item>\n\t</rux-menu>\n</rux-pop-up>"
 				}
 			],
@@ -1693,7 +1697,7 @@
 					"value": "absolute"
 				}
 			],
-			"style": ""
+			"style": "rux-pop-up{position: absolute;} rux-pop-up::part(popup-content){width:200px;} p{padding-inline: 10px;} a-sandbox::part(content) { position: relative; }"
 		},
 		{
 			"tag": "rux-progress",
@@ -2752,13 +2756,13 @@
 				},
 				{
 					"kind": "text",
-					"property": "close-after",
+					"property": "closeAfter",
 					"attribute": "close-after"
 				},
 				{
 					"kind": "switch",
 					"property": "hideClose",
-					"attribute": "hideClose",
+					"attribute": "hide-close",
 					"checked": false
 				}
 			]
