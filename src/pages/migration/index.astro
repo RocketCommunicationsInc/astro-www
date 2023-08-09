@@ -1,12 +1,12 @@
 ---
-import DocsLayout from 'project:layouts/docs/docs-layout.astro';
-import BreakingChangeComponent from 'project:components/breaking-change-component/breaking-change-component.astro';
-import BreakingChange from 'project:components/breaking-change/breaking-change.astro';
-import { Code } from 'astro/components';
+import DocsLayout from 'project:layouts/docs/docs-layout.astro'
+import BreakingChangeComponent from 'project:components/breaking-change-component/breaking-change-component.astro'
+import BreakingChange from 'project:components/breaking-change/breaking-change.astro'
+import { Code } from 'astro/components'
 
-const title = 'Migration';
+const title = 'Migration'
 const description =
-	'Astro 7.0 introduces a number of breaking changes that require developers to update their application code.';
+	'Astro 7.0 introduces a number of breaking changes that require developers to update their application code.'
 ---
 
 <DocsLayout content={{ title, description }} file={import.meta.url}>
@@ -2200,7 +2200,7 @@ rux-tree-node::part(node) {
 	@import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0/dist/themes/light.css';
 </style>
 <style is:global>
-	table { 
+	table {
 		margin-block-end: max(5 * var(--step));
 	}
 </style>
