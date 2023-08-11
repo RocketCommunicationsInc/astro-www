@@ -252,7 +252,7 @@
 	/* Layout */
 	inline-size: var(--main-content-width);
 
-	& > *:not(a-playground, .table-overflow, table, .storybook-demo, .p-icon-groups, .status-system-colors, .color-table) {
+	& > *:not(a-playground, .table-overflow, table, .storybook-demo, .p-icon-groups, .status-system-colors, .color-table, iframe) {
 		/* Layout */
 		max-inline-size: 175--step;
 	}
