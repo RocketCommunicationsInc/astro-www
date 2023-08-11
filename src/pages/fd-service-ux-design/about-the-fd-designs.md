@@ -140,7 +140,7 @@ The properties pane displays various attributes an operator may expect to see wh
 
 :::
 
-### Inputs/Outputs Pange
+### Inputs/Outputs Pane
 
 #### Inputs
 
