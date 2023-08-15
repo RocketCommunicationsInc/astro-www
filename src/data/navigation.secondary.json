@@ -141,6 +141,20 @@
         ]
     },
     {
+        "description": "Events that deserve user attention but don't require a response, may be displayed in a Notification Banner.",
+        "heading": "Notification Banner",
+        "items": [
+            {
+                "label": "Usage",
+                "url": "/components/notification-banner/"
+            },
+            {
+                "label": "Specifications",
+                "url": "/components/notification-banner/specs/"
+            }
+        ]
+    },
+    {
         "description": "A Tag is a component made up of a text label, container, and color. Tags help users quickly identify important information related to an item and categorize items by keywords.",
         "heading": "Tag",
         "items": [
