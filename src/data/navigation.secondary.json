@@ -42,6 +42,20 @@
         ]
     },
     {
+        "description": "A Log is a tabular representation of application events and may include username, priority, equipment type, signal type, etc. As part of the Notification System, Logs provide sorting and filtering function for examining events.",
+        "heading": "Log",
+        "items": [
+            {
+                "label": "Usage",
+                "url": "/components/log/"
+            },
+            {
+                "label": "Specifications",
+                "url": "/components/log/specs/"
+            }
+        ]
+    },
+    {
         "description": "Tabs in Astro applications are used to divide major areas of content and to indicate work process.",
         "heading": "Tabs",
         "items": [

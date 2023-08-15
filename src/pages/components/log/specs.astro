@@ -1,0 +1,32 @@
+---
+import ComponentDocsLayout from 'project:layouts/component-docs/component-docs-layout.astro';
+import TokenSpecTable from 'project:components/token-spec-table/token-spec-table.astro';
+import Heading from 'project:components/astro-headings/heading.astro';
+---
+
+<ComponentDocsLayout content={{ title: 'Log' }}>
+	<Heading type="h2" title="Anatomy" />
+
+	<div class="spec-container -anatomy">
+		<figure>
+			<img
+				loading="lazy"
+				width="610"
+				src="/img/components/log/log-anatomy.webp"
+				alt="Anatomy Image"
+			/>
+		</figure>
+		<ol>
+			<li>Table</li>
+			<li>Time Column</li>
+			<li>Status Column</li>
+			<li>Event Column</li>
+			<li>Search</li>
+		</ol>
+	</div>
+
+	<p>
+		The Log component is composed using other components – like <a href="/patterns/table/"> Table</a>, <a href="/components/status-symbol/">Status Symbol</a>, and <a href="/components/input-field/">Input Field</a>. Detailed specifications for the individual components can be found on their pages.
+	</p>
+
+</ComponentDocsLayout>
