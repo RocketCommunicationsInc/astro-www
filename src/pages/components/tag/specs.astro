@@ -1,0 +1,111 @@
+---
+import ComponentDocsLayout from 'project:layouts/component-docs/component-docs-layout.astro';
+import TokenSpecTable from 'project:components/token-spec-table/token-spec-table.astro';
+import Heading from 'project:components/astro-headings/heading.astro';
+---
+
+<ComponentDocsLayout content={{ title: 'Tag' }}>
+	<Heading type="h2" title="Anatomy" />
+
+	<div class="spec-container -anatomy">
+		<figure>
+			<img
+				loading="lazy"
+				width="116"
+				src="/img/components/tag/tag-anatomy.webp"
+				alt="Anatomy Image"
+			/>
+		</figure>
+		<ol>
+			<li>Container</li>
+			<li>Text</li>
+		</ol>
+	</div>
+
+	<Heading type="h2" title="Default" />
+
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Container',
+				tokens: [
+					'tag-padding-y-',
+					'tag-padding-x',
+					'tag-radius',
+					'tag-color-background-unknown',
+					'tag-color-border-unknown',
+					'tag-shadow-inner-unknown'
+				],
+			},
+			{
+				name: 'Text',
+				tokens: [
+					'tag-color-text',
+					'font-body-2-bold-font-size',
+					'font-body-2-bold-font-family',
+					'font-body-2-bold-font-weight',
+					'font-body-2-bold-line-height',
+					'font-body-2-bold-letter-spacing'
+				],
+			}
+		]}
+	/>
+
+	<Heading type="h2" title="Status" />
+	<div class="spec-container -examples">
+		<figure><img loading="lazy" width="124" src="/img/components/tag/tag-pass-variant.webp" alt="Pass Tag"/></figure>
+		<figure><img loading="lazy" width="124" src="/img/components/tag/tag-fail-variant.webp" alt="Fail Tag"/></figure>
+		<figure><img loading="lazy" width="136" src="/img/components/tag/tag-unknown-variant.webp" alt="Unknown Tag"/></figure>
+	</div>
+	<Heading type="h3" title="Pass" />
+
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Container',
+				tokens: [
+					'tag-color-background-pass',
+					'tag-color-border-pass',
+					'tag-shadow-inner-pass',
+				],
+			}
+		]}
+	/>
+
+	<Heading type="h3" title="Fail" />
+
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Container',
+				tokens: [
+					'tag-color-background-fail',
+					'tag-color-border-fail',
+					'tag-shadow-inner-fail',
+				],
+			}
+		]}
+	/>
+
+	<Heading type="h3" title="Unknown" />
+
+	<TokenSpecTable
+		tokens={[
+			{
+				name: 'Container',
+				tokens: [
+					'tag-color-background-unknown',
+					'tag-color-border-unknown',
+					'tag-shadow-inner-unknown',
+				],
+			}
+		]}
+	/>
+
+
+
+
+
+
+
+</ComponentDocsLayout>
