@@ -1,0 +1,54 @@
+---
+import ComponentDocsLayout from 'project:layouts/component-docs/component-docs-layout.astro';
+import TokenSpecTable from 'project:components/token-spec-table/token-spec-table.astro';
+import Heading from 'project:components/astro-headings/heading.astro';
+const content = {title: "Progress", description: `A Progress indicator signals that an application is busy performing an operation.`}
+---
+<ComponentDocsLayout content={content}>
+
+<Heading type="h2" title="Anatomy" />
+
+<div class="spec-container -anatomy">
+    <figure><img loading="lazy" width="420px" src="/img/components/progress/progress-anatomy.webp" alt="Anatomy Image"/></figure>
+    <ol>
+        <li>Container</li>
+        <li>Inner Fill</li>
+        <li>Label</li>
+    </ol>
+</div>
+
+<Heading type="h2" title="Default Values" />
+
+<TokenSpecTable tokens={[
+    {
+        name: 'Container',
+        tokens: [
+            'progress-padding',
+            'progress-color-background',
+            'progress-color-border',
+            'progress-radius-outer',
+			'progress-border-width'
+        ]
+    },
+	{
+		name: 'Inner Fill',
+		tokens: [
+            'progress-inner-color-background',
+			'progress-radius-inner',
+		]
+	},
+    {
+        name: "Label",
+        tokens: [
+            'progress-label-margin-left',
+            'font-body-1-font-family',
+            'font-body-1-font-size',
+            'font-body-1-font-weight',
+            'font-body-1-line-height',
+            'font-body-1-letter-spacing',
+            'color-text-primary',
+        ]
+    }
+]}/>
+
+</ComponentDocsLayout>
