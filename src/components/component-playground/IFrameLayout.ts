@@ -15,7 +15,11 @@ if (iframe !== null) {
 		if (iframeHeight !== (contentHeight - 2)) {
 			iframeHeight = visualViewport!.width < 700 ? contentHeight : 500
 
-			iframe.style.setProperty('--y', `${iframeHeight + drawerHeight}px`)
+			if (visualViewport!.width < 700) {
+				iframe.style.setProperty('--y', `${iframeHeight - 2}px`)
+			} else {
+				iframe.style.setProperty('--y', `${iframeHeight + drawerHeight}px`)
+			}
 		}
 	}
 
