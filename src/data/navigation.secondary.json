@@ -141,6 +141,20 @@
         ]
     },
     {
+        "description": "Events that deserve user attention but don't require a response, may be displayed in a Notification Banner.",
+        "heading": "Notification Banner",
+        "items": [
+            {
+                "label": "Usage",
+                "url": "/components/notification-banner/"
+            },
+            {
+                "label": "Specifications",
+                "url": "/components/notification-banner/specs/"
+            }
+        ]
+    },
+    {
         "description": "Component specific tokens to be used only when rebuilding components",
         "heading": "Component Tokens",
         "items": [
