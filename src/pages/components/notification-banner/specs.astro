@@ -3,17 +3,29 @@ import ComponentDocsLayout from 'project:layouts/component-docs/component-docs-l
 import TokenSpecTable from 'project:components/token-spec-table/token-spec-table.astro';
 import Heading from 'project:components/astro-headings/heading.astro';
 
-const content = {draft: true, title: "Notification Banner", description: "Events that deserve user attention but don't require a response, may be displayed in a Notification Banner."}
+const content = {title: "Notification Banner", description: "Events that deserve user attention but don't require a response, may be displayed in a Notification Banner."}
 ---
 
 <ComponentDocsLayout content={content}>
-	<a href="#anatomy" class="h h2"><h2 id="anatomy">Anatomy</h2></a>
+	<Heading type="h2" title="Anatomy" />
 
 	<div class="spec-container -anatomy">
+		<figure>
+			<img
+				loading="lazy"
+				width="952px"
+				src="/img/components/notification-banner/notification-banner-anatomy.webp"
+				alt="Anatomy Image"
+			/>
+		</figure>
 		<ol>
-			<li>Container</li>
 			<li>Prefix Slot (Optional)</li>
-			<li>Label</li>
+			<li>Status Symbol (Optional)</li>
+			<li>Text</li>
+			<li>Link (Optional)</li>
+			<li>Action Slot (Optional)</li>
+			<li>Outer Container</li>
+			<li>Inner Container</li>
 		</ol>
 	</div>
 
@@ -23,11 +35,12 @@ const content = {draft: true, title: "Notification Banner", description: "Events
 			{
 				name: 'Container (outer)',
 				tokens: [
-					'notification-banner-padding',
+					'notification-banner-padding-y-large',
+					'notification-banner-padding-right',
+					'notification-banner-padding-left',
 					'notification-banner-color-border-inner-default',
 					'notification-banner-color-border-outer-default',
 					'notification-banner-radius-outer',
-					'notification-banner-border-width'
 				],
 			},
 			{
@@ -38,7 +51,7 @@ const content = {draft: true, title: "Notification Banner", description: "Events
 				],
 			},
 			{
-				name: 'Label',
+				name: 'Text',
 				tokens: [
 					'font-heading-5-font-family',
 					'font-heading-5-font-size',
@@ -49,6 +62,10 @@ const content = {draft: true, title: "Notification Banner", description: "Events
 				],
 			},
 			{
+				name: 'Status Symbol',
+				tokens: ['notification-banner-status-symbol-margin-right']
+			},
+			{
 				name: 'Link',
 				tokens: [
 					'font-heading-5-font-family',
@@ -56,7 +73,6 @@ const content = {draft: true, title: "Notification Banner", description: "Events
 					'font-heading-5-font-weight',
 					'font-heading-5-line-height',
 					'font-heading-5-letter-spacing',
-					'link-text-color'
 				],
 			},
 			{
@@ -74,14 +90,18 @@ const content = {draft: true, title: "Notification Banner", description: "Events
 	<Heading type="h3" title="Left Slot" />
 
 	<div class="spec-container -examples">
+		<figure><img loading="lazy" width="800" src="/img/components/notification-banner/notification-banner-left-slot-variant.webp" alt="Notification Banner with Prefix Slot"/></figure>
 	</div>
+
+
 
 	<TokenSpecTable
 		tokens={[
 			{
-				name: 'Slot',
+				name: 'Prefix Slot',
 				tokens: [
 					'notification-banner-prefix-margin-right',
+					'notification-banner-prefix-dimension'
 				],
 			},
 		]}
@@ -90,6 +110,12 @@ const content = {draft: true, title: "Notification Banner", description: "Events
 	<Heading type="h3" title="Status Symbol" />
 
 	<div class="spec-container -examples">
+		<figure><img loading="lazy" width="800" src="/img/components/notification-banner/notification-banner-critical-status-variant.webp" alt="Critical Notification Banner"/></figure>
+		<figure><img loading="lazy" width="800" src="/img/components/notification-banner/notification-banner-caution-status-variant.webp" alt="Caution Notification Banner"/></figure>
+		<figure><img loading="lazy" width="800" src="/img/components/notification-banner/notification-banner-serious-status-variant.webp" alt="Serious Notification Banner"/></figure>
+		<figure><img loading="lazy" width="800" src="/img/components/notification-banner/notification-banner-normal-status-variant.webp" alt="Normal Notification Banner"/></figure>
+		<figure><img loading="lazy" width="800" src="/img/components/notification-banner/notification-banner-standby-status-variant.webp" alt="Standby Notification Banner"/></figure>
+		<figure><img loading="lazy" width="800" src="/img/components/notification-banner/notification-banner-off-status-variant.webp" alt="Off Notification Banner"/></figure>
 	</div>
 
 	<Heading type="h4" title="Normal" />
@@ -177,73 +203,23 @@ const content = {draft: true, title: "Notification Banner", description: "Events
 	]}
 	/>
 
-	<Heading type="h3" title="Link" />
-	<div class="spec-container -examples">
-	</div>
 
-	<TokenSpecTable
-		tokens={[
-			{
-				name: 'Link',
-				tokens: [
-					'link-color-text-interactive-default',
-					'link-color-text-interactive-hover',
-				],
-			},
-		]}
-	/>
-
-	<Heading type="h3" title="Right Slot" />
-	<div class="spec-container -examples">
-	</div>
-
-	<TokenSpecTable
-		tokens={[
-			{
-				name: 'Slot',
-				tokens: [
-					'notification-banner-suffix-margin-left',
-					'notification-banner-color-text-interactive-default',
-					'notification-banner-color-text-interactive-hover'
-				],
-			},
-		]}
-	/>
 
 	<Heading type="h3" title="Sizes" />
 	<div class="spec-container -examples">
+		<figure><img loading="lazy" width="800" src="/img/components/notification-banner/notification-banner-large-size.webp" alt="Large Notification Banner"/></figure>
+		<figure><img loading="lazy" width="800" src="/img/components/notification-banner/notification-banner-small-size.webp" alt="Small Notification Banner"/></figure>
 	</div>
 
 	<Heading type="h4" title="Small" />
 	<TokenSpecTable
 		tokens={[
 			{
-				name: 'Container (outer)',
+				name: 'Container (Inner)',
 				tokens: [
-					'notification-banner-padding',
-					'notification-banner-border-width'
+					'notification-banner-padding-y-small',
 				],
 			},
-			{
-				name: 'Label',
-				tokens: [
-					'font-body-1-font-family',
-					'font-body-1-font-size',
-					'font-body-1-font-weight',
-					'font-body-1-line-height',
-					'font-body-1-letter-spacing',
-				],
-			},
-			{
-				name: 'Link',
-				tokens: [
-					'font-body-1-font-family',
-					'font-body-1-font-size',
-					'font-body-1-font-weight',
-					'font-body-1-line-height',
-					'font-body-1-letter-spacing',
-				],
-			}
 		]}
 
 	/>
@@ -252,32 +228,11 @@ const content = {draft: true, title: "Notification Banner", description: "Events
 	<TokenSpecTable
 		tokens={[
 			{
-				name: 'Container (outer)',
+				name: 'Container (Inner)',
 				tokens: [
-					'notification-banner-padding',
-					'notification-banner-border-width'
+					'notification-banner-padding-y-large',
 				],
 			},
-			{
-				name: 'Label',
-				tokens: [
-					'font-heading-5-font-family',
-					'font-heading-5-font-size',
-					'font-heading-5-font-weight',
-					'font-heading-5-line-height',
-					'font-heading-5-letter-spacing',
-				],
-			},
-			{
-				name: 'Link',
-				tokens: [
-					'font-heading-5-font-family',
-					'font-heading-5-font-size',
-					'font-heading-5-font-weight',
-					'font-heading-5-line-height',
-					'font-heading-5-letter-spacing',
-				],
-			}
 		]}
 
 	/>
