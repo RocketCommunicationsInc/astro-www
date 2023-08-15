@@ -155,6 +155,20 @@
         ]
     },
     {
+        "description": "A Tag is a component made up of a text label, container, and color. Tags help users quickly identify important information related to an item and categorize items by keywords.",
+        "heading": "Tag",
+        "items": [
+            {
+                "label": "Usage",
+                "url": "/components/tag/"
+            },
+            {
+                "label": "Specifications",
+                "url": "/components/tag/specs/"
+            }
+        ]
+    },
+    {
         "description": "Component specific tokens to be used only when rebuilding components",
         "heading": "Component Tokens",
         "items": [
