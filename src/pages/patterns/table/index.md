@@ -6,7 +6,7 @@ path: /patterns/table
 date: Last Modified
 layout: project:layouts/component-docs/component-docs-layout.astro
 assets:
-    name: Table
+name: Table
 ---
 
 ## Appearance and Behavior
@@ -38,6 +38,16 @@ Tables use a familiar Selection/Action model. In simple Tables, selection can be
 - Body text size should generally be used for data within a table. Some Tables may use a larger text size for column headers. If space is limited or the table is dense, a smaller text size may be used. Text should be no smaller than 14 px/0.875 rem, or the Body 2 text size.
 - Generally, data should be left-aligned. However, if the data is a date, time, currency, or numerical data related to size (i.e., values that a user might want to quickly scan and compare), it should be right-aligned. Column headers match the alignment of the data in the column.
 - In a table with a column of checkboxes, if one or more rows are selected (but not all rows) then the parent checkbox in the column header row should be in the indeterminate state. This behavior is in keeping with checkbox guidance.
+
+## Design Token Example
+
+<iframe
+  src="https://codesandbox.io/embed/astro-uxds-with-table-tokens-tz9mpr?fontsize=14&hidenavigation=1&theme=dark"
+  style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+  title="Astro UXDS with Table Tokens"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
 
 ## Complex Tables
 
@@ -72,7 +82,7 @@ npm install @astrouxds/ag-grid-theme
 In your main css entrypoint:
 
 ```css
-@import "~@astrouxds/ag-grid-theme/dist/main.css"
+@import '~@astrouxds/ag-grid-theme/dist/main.css';
 ```
 
 > If you are already importing `ag-grid-community/dist/styles/ag-grid.css` or `ag-grid-community/dist/styles/ag-theme-alpine.css` you can remove them as they are already bundled in our ag-grid-theme css.
@@ -89,7 +99,7 @@ The Astro Dark variant is the default theme. The Light variant can be assigned b
 
 ```html
 <section class="light-theme">
-    <ag-grid- class="ag-theme-astro" ...></ag-grid->
+  <ag-grid- class="ag-theme-astro" ...></ag-grid->
 </section>
 ```
 
@@ -107,3 +117,18 @@ The Astro Dark variant is the default theme. The Light variant can be assigned b
 ### Support
 
 Please report any issues on our [AG Grid Theme](https://github.com/RocketCommunicationsInc/ag-grid-theme) repository on Github.
+
+## Headless Tables
+
+In the headless category, we recommend [Tanstack Table](https://tanstack.com/table/). Tanstack table offers integrations for many UI frameworks, such as Vue and React.
+
+It is easy to work with, and because it does not bring any HTML or styles itself, you can use it to render a plain, semantic `<table>` and add the necessary design tokens to your styles as shown in the React example below.
+
+### Example Project
+
+<iframe
+  style="border: 1px solid rgba(0, 0, 0, 0.1);border-radius:2px;"
+  width="800"
+  height="450"
+  src="https://codesandbox.io/p/sandbox/astro-uxds-with-tanstack-react-table-4mcgfx?embed=1"
+  allowfullscreen></iframe>
