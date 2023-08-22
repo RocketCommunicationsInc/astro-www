@@ -231,23 +231,6 @@ MNEMONIC.N.SAMPLE.M.YELLOW-HIGH locations in the Message Interface Specification
 
 MNEMONIC.N.SAMPLE.M.YELLOW-LOW locations in the Message Interface Specification Document: 3.12.2 - Mnemonic Value Response Message, 3.12.3 - Mnemonic Value Data Message, 3.13.3 - Archive Mnemonic Value Data Message.
 
-### XTCE Alarm Levels
-
-The XTCE specification defines multiple alarm levels. This is defined within the AlarmConditionsType, AlarmRangesType, and ConcernLevelsType within the XTCE schema. This section provides guidance for the colors that align to each level. Since AstroUX does not define watch or severe levels, the next less critical level is recommended.
-
-<div class="table-overflow table-dark short">
-
-| Value          | Design token          | Status symbol |
-| -------------- | --------------------- | ------------- |
-| N/A (None)     | color.status.normal   |               |
-| Watch          | color.status.normal   |               |
-| Warning        | color.status.caution  |               |
-| Distress       | color.status.serious  |               |
-| Critical       | color.status.critical |               |
-| Severe         | color.status.critical |               |
-
-</div>
-
 ## Versions
 
 <div class="table-overflow short">
