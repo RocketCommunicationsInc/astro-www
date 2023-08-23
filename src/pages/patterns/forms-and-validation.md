@@ -9,7 +9,7 @@ assets:
     name: Forms and Validation
 ---
 
-Forms usually contain form elements including [Checkbox](/components/checkbox), [Dialog](/components/dialog), [Select Menu](/components/select), [Input Field](/components/input-field), [Radio Button](/components/radio-button) and [Switch](/components/switch).
+Forms usually contain form elements including [Checkbox](/components/checkbox), [Select Menu](/components/select), [Input Field](/components/input-field), and [Radio Button](/components/radio-button).
 
 ## Form Layout
 
