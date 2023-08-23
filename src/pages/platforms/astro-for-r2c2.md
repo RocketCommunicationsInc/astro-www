@@ -13,7 +13,9 @@ The Rapid Resilient Command and Control (R2C2) program under the United States S
 
 Tier 1 and 2 are tactical command and control space vehicle message standards while Tier 3 and 4 are implementation specific interfaces for services in those satellite operating centers (SOCs). The R2C2 Tier 1 ISD clones [Object Management Group (OMG) Command Control Mission Systems (C2MS) v1.0](https://www.omg.org/spec/C2MS/1.0/PDF) with some alterations and message creations supporting DoD requirements or USSF space domain capabilities. Tier 2 ISDs are the R2C2 standards for system domain capabilities (e.g. Flight Dynamics, Telemetry Tracking & Commanding, Mission Planning & Scheduling, Ground Resource Management, Ground Resource Scheduling, etc.) which are based on Tier 1 messages. The Tier 3 ISDs are for service component’s or product’s interface implementation details while Tier 4 is the mission-specific interface details.
 
-This page only includes status guidance for the R2C2’s Tier 1 message interface standard with AstroUXDS statuses. For information regarding the other Tiers, contact [Astro Support](/support/).
+:::note
+This page includes status guidance for the R2C2’s Tier 1 message interface standard and additional alerts with AstroUXDS statuses. For information regarding the other Tiers, contact [Astro Support](/support/).
+:::
 
 ## Message Fields
 
@@ -24,7 +26,7 @@ Identifies the status of the message that was processed. The figure below of a s
 <div class="table-overflow table-dark short">
 
 | Value                | Design token                                | Status symbol |
-| -------------------- | ------------------------------------------- | ------------- |
+|----------------------|---------------------------------------------|---------------|
 | ACKNOWLEDGEMENT:1    | color.status.standby or color.status.normal |               |
 | WORKING_KEEP_ALIVE:2 | color.status.standby                        |               |
 | SUCCESSFUL:3         | color.status.normal                         |               |
@@ -45,7 +47,7 @@ Indicates the severity of the Log Message. Scale is traditionally applied to mes
 <div class="table-overflow table-dark short">
 
 | Value      | Design token          | Status symbol |
-| ---------- | --------------------- | ------------- |
+|------------|-----------------------|---------------|
 | DEBUG:0    | color.status.standby  |               |
 | NORMAL:1   | color.status.normal   |               |
 | MEDIUM:2   | color.status.caution  |               |
@@ -63,7 +65,7 @@ Indicates processing priority, if applicable.
 <div class="table-overflow table-dark short">
 
 | Value    | Design token          | Status symbol |
-| -------- | --------------------- | ------------- |
+|----------|-----------------------|---------------|
 | Normal:1 | color.status.normal   |               |
 | Medium:2 | color.status.caution  |               |
 | High:3   | color.status.critical |               |
@@ -79,7 +81,7 @@ Condition of the device being reported. The criteria for selecting the DEVICE.N.
 <div class="table-overflow table-dark short">
 
 | Value          | Design token          | Status symbol |
-| -------------- | --------------------- | ------------- |
+|----------------|-----------------------|---------------|
 | DEBUG:0        | color.status.standby  |               |
 | NORMAL_GREEN:1 | color.status.normal   |               |
 | YELLOW:2       | color.status.caution  |               |
@@ -97,7 +99,7 @@ Indicates the condition of the component being monitored, typically itself, alth
 <div class="table-overflow table-dark short">
 
 | Value          | Design token          | Status symbol |
-| -------------- | --------------------- | ------------- |
+|----------------|-----------------------|---------------|
 | DEBUG:0        | color.status.standby  |               |
 | NORMAL_GREEN:1 | color.status.normal   |               |
 | YELLOW:2       | color.status.caution  |               |
@@ -115,7 +117,7 @@ Status of the ‘nth’ mnemonic: valid mnemonic, valid mnemonic with no data, o
 <div class="table-overflow table-dark short">
 
 | Value           | Design token         | Status symbol |
-| --------------- | -------------------- | ------------- |
+|-----------------|----------------------|---------------|
 | VALID:1         | color.status.normal  |               |
 | VALID_NO_DATA:2 | color.status.off     |               |
 | INVALID:3       | color.status.caution |               |
@@ -135,7 +137,7 @@ If you have a use case where the other values for XTCE-Status ( 1 = ACKNOWLEDGEM
 <div class="table-overflow table-dark short">
 
 | Value       | Design token          | Status symbol |
-| ----------- | --------------------- | ------------- |
+|-------------|-----------------------|---------------|
 | INVALID:2   | color.status.caution  |               |
 | COMPLETED:9 | color.status.normal   |               |
 | FALED:10    | color.status.critical |               |
@@ -151,7 +153,7 @@ The Command-Echo-Message’s command echo result field enumeration descriptions:
 <div class="table-overflow table-dark short">
 
 | Value | Design token          | Status symbol |
-| ----- | --------------------- | ------------- |
+|-------|-----------------------|---------------|
 | NOTC  | color.status.off      |               |
 | GOOD  | color.status.normal   |               |
 | MISC  | color.status.critical |               |
@@ -171,7 +173,7 @@ The quality of the data. RAW = No quality check, VALIDATED = Checked and passed,
 <div class="table-overflow table-dark short">
 
 | Value     | Design token         | Status symbol |
-| --------- | -------------------- | ------------- |
+|-----------|----------------------|---------------|
 | VALIDATED | color.status.normal  |               |
 | DEGRADED  | color.status.serious |               |
 
@@ -188,7 +190,7 @@ The MNEMONIC.N.SAMPLE.M.Statuses; RED-HIGH, RED-LOW, YELLOW-HIGH, YELLOW-LOW Boo
 <div class="table-overflow table-dark short">
 
 | Value    | Design token          | Status symbol |
-| -------- | --------------------- | ------------- |
+|----------|-----------------------|---------------|
 | Red High | color.status.critical |               |
 
 </div>
@@ -200,7 +202,7 @@ MNEMONIC.N.SAMPLE.M.RED-HIGH locations in the Message Interface Specification Do
 <div class="table-overflow table-dark short">
 
 | Value   | Design token          | Status symbol |
-| ------- | --------------------- | ------------- |
+|---------|-----------------------|---------------|
 | Red Low | color.status.critical |               |
 
 </div>
@@ -212,7 +214,7 @@ MNEMONIC.N.SAMPLE.M.RED-LOW locations in the Message Interface Specification Doc
 <div class="table-overflow table-dark short">
 
 | Value       | Design token         | Status symbol |
-| ----------- | -------------------- | ------------- |
+|-------------|----------------------|---------------|
 | Yellow High | color.status.caution |               |
 
 </div>
@@ -224,21 +226,44 @@ MNEMONIC.N.SAMPLE.M.YELLOW-HIGH locations in the Message Interface Specification
 <div class="table-overflow table-dark short">
 
 | Value      | Design token         | Status symbol |
-| ---------- | -------------------- | ------------- |
+|------------|----------------------|---------------|
 | Yellow Low | color.status.caution |               |
 
 </div>
 
 MNEMONIC.N.SAMPLE.M.YELLOW-LOW locations in the Message Interface Specification Document: 3.12.2 - Mnemonic Value Response Message, 3.12.3 - Mnemonic Value Data Message, 3.13.3 - Archive Mnemonic Value Data Message.
 
+### XTCE Alarm Levels
+
+The OMG XTCE specification defines multiple alarm levels. This is defined within the AlarmConditionsType, AlarmRangesType, and ConcernLevelsType within the XTCE schema. These alarm levels are found within telemetry definitions that can be embedded in messages in the OMG C2MS and R2C2 C2MS message schemas. This section provides guidance for the colors that align to each level if this data is shown on screen. Since AstroUX does not define Watch or Severe levels, the next less critical level is recommended.
+
+:::note
+The OMG XTCE and OMG C2MS standards are constantly evolving. The teams are working to better align the statuses given the mismatch of quantity. In the interim, this translation table is our current guidance. We are aware that this can result in one-way translation or inability to reconstitute given duplicate statuses. This will be amended in the future and is stated as low risk given the small amount of use cases that require translating these statuses.
+:::
+
+<div class="table-overflow table-dark short small">
+
+| Value    | Design token          | C2MS Status | C2MS Severity | Status symbol |
+|----------|-----------------------|-------------|---------------|---------------|
+| NO ALARM | color.status.normal   | GREEN       | NORMAL        |               |
+| WATCH    | color.status.caution  | YELLOW      | MEDIUM        |               |
+| WARNING  | color.status.caution  | YELLOW      | MEDIUM        |               |
+| DISTRESS | color.status.serious  | ORANGE      | HIGH          |               |
+| CRITICAL | color.status.critical | RED         | CRITICAL      |               |
+| SEVERE   | color.status.critical | RED         | CRITICAL      |               |
+
+</div>
+
+XTCE Alarm Levels location in the XML Telemetric and Command Exchange Document (XTCE): 6.1.3.2.5 DefaultSignificance and ContextSignificanceList.
+
 ## Versions
 
 <div class="table-overflow short">
 
-| Document                                   | Version |
-| ------------------------------------------ | ------- |
-| Message Interface Specific Document-Tier 1 | 5.2.0   |
-
+| Document                                            | Version                                  |
+|-----------------------------------------------------|------------------------------------------|
+| Message Interface Specific Document-Tier 1          | 5.2.0                                    |
+| XML Telemetric and Command Exchange Document (XTCE) | [1.2](https://www.omg.org/spec/XTCE/1.2) |
 </div>
 
 <script type="module">
@@ -264,7 +289,13 @@ for (const td of document.querySelectorAll('.table-dark td')) {
 	// conditionally add a color sample to the front of the wording
 	if (allVars) {
 		let iconhtml = [];
-		const iconTd = td.nextSibling;
+		const iconTd = (()=> {
+      //gather siblings
+      const children = Array.from(td.parentNode.children)
+      //find the empty one
+      return children.find((child) => child.textContent.length === 0)
+    })()
+
 		const newhtml = allVars.map((colorvar)=>{
 			const color = colorvar.split('.').at(-1)
 			iconhtml.push(`<img src='/img/platforms/r2c2/${color}.svg' alt=${color}>`)
@@ -273,7 +304,7 @@ for (const td of document.querySelectorAll('.table-dark td')) {
 
 		td.innerHTML = newhtml
 		//add the icons to the next td
-		iconTd.innerHTML = iconhtml.join(' or ')
+		if(iconTd) iconTd.innerHTML = iconhtml.join(' or ')
 	}
 }
 </script>
