@@ -6,7 +6,7 @@ storybook: beta-timeline-beta--default-story
 height: 700px
 git: rux-timeline
 assets:
-    name: Timeline
+  name: Timeline
 status: beta
 ---
 
@@ -16,7 +16,7 @@ status: beta
 
 ## Anatomy
 
-![Anatomy of a simple Timeline element](/img/components/timeline/timeline-anatomy.webp "Anatomy of a simple Timeline element")
+![Anatomy of a simple Timeline element](/img/components/timeline/timeline-anatomy.webp 'Anatomy of a simple Timeline element')
 
 ## Appearance and Behavior
 
@@ -26,7 +26,9 @@ The header houses the Timeline Title and Status Symbol as well as Zoom control. 
 
 ### Track
 
-A Track is a row of Time Regions. A Timeline can have multiple Tracks. When the Timeline reaches maximum height, the Track area becomes vertically scrollable. Tracks have an optional label area fixed on the left end.
+A Track is a row of Time Regions. A Timeline can have multiple Tracks. When the Timeline reaches maximum height, the Track area becomes vertically scrollable.
+
+The Timeline Track is the focus of the Timeline and should occupy the majority of the screen space. There is an optional label area fixed to the left end of the Track, to allow for a title to be added to each Track. When the Track title happens to be a long text string, it may be wrapped to a maximum of three lines. The Track title may be truncated if the title is not of critical importance, but it must always fully display the text string in a Tooltip on hover. Make sure that the Track title column only takes up a minimum amount of space and provides the timeline with the majority of the space to display Time Regions and Events.
 
 ### Ruler
 
