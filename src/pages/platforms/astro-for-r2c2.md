@@ -243,7 +243,7 @@ The OMG XTCE and OMG C2MS standards are constantly evolving. The teams are worki
 
 <div class="table-overflow table-dark short small">
 
-| Value    | Design token          | C2MS Status | C2MS Severity | Status symbol |
+| Value    | Design token          | C2MS STATUS | C2MS SEVERITY | Status symbol |
 |----------|-----------------------|-------------|---------------|---------------|
 | NO ALARM | color.status.normal   | GREEN       | NORMAL        |               |
 | WATCH    | color.status.caution  | YELLOW      | MEDIUM        |               |
