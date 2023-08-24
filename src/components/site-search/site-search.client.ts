@@ -26,6 +26,8 @@ let searchForm = <HTMLFormElement>document.getElementById('search')!
 let searchResults = document.getElementById('search-results')!
 let searchElement = <HTMLInputElement>document.getElementById('search-field')!
 let resultChildren = <NodeListOf<HTMLElement>><any>[]
+/** gtag search modifier */
+let searchTimeoutID: ReturnType<typeof setTimeout>
 
 const navigation = searchForm.closest('.p-navigation')!
 
@@ -46,13 +48,21 @@ searchElement.addEventListener('focus', (event) => {
 	search = search || createSearch()
 })
 
-searchElement.addEventListener('input', (event: InputEvent & { target: HTMLInputElement }) => {
+searchElement.addEventListener('input', (event: any & { target: HTMLInputElement }) => {
 	cancelAnimationFrame(searchFrame)
 
 	search.then(searchUtils => {
 		searchFrame = requestAnimationFrame(async () => {
 			const results = await searchUtils.search(event.target.value)
 			const hasResults = Boolean(results && results.items.length)
+
+			// send no results event
+			clearTimeout(searchTimeoutID)
+			searchTimeoutID = setTimeout(() => {
+				console.log('sending event', hasResults)
+				// if the time between input is greater than 1 seconds send the google event
+				gtag('event', 'search', { 'event_category': 'site_search', 'search_term': `${searchElement.value}`, 'search_results': hasResults })
+			}, 1000)
 
 			// results that have urls that end in #content are removed because #content is for accessibility
 			if (hasResults) {
@@ -120,7 +130,7 @@ const selectListItem = (listItem: HTMLElement) => {
 	indexNumber = nextIndexNumber
 }
 
-const onPointerEnter = (event: PointerEvent & { target: HTMLElement }) => {
+const onPointerEnter = (event: any & { target: HTMLElement }) => {
 	if (resultChildren.length < 1) return
 
 	const target = <HTMLElement>event.target!.closest('.listitem')
