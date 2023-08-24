@@ -29,6 +29,22 @@
 	}
 }
 
+/* less padding on cells */
+
+.small table {
+	& thead th {
+		/* Layout */
+		padding-inline-end: 0;
+		padding-inline-start: 4--step;
+	}
+
+	& td {
+		/* Layout */
+		padding-inline-end: 0;
+		padding-inline-start: 4--step;
+	}
+}
+
 .table-overflow.short {
 	/* Layout */
 	max-inline-size: 175--step;
@@ -98,17 +114,27 @@
 
 .table-dark table {
 	/* Appearance */
+	background-color: var(--BaseColorDefault);
+	border-radius: 2--step;
 	color: var(--PrimaryColor);
+
+	/* Table */
+	border-collapse: collapse;
 
 	& td {
 		/* Appearance */
-		background-color: var(--BaseColorDefault);
+		background-color: transparent;
 	}
 
-	& thead th {
+	& thead {
 		/* Appearance */
 		background-color: var(--BaseHeaderColor);
-		color: var(--PrimaryColor);
+
+		& th {
+			/* Appearance */
+			background-color: transparent;
+			color: var(--PrimaryColor);
+		}
 	}
 
 	& tbody tr:last-child {
