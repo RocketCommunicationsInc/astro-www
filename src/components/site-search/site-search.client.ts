@@ -56,10 +56,9 @@ searchElement.addEventListener('input', (event: any & { target: HTMLInputElement
 			const results = await searchUtils.search(event.target.value)
 			const hasResults = Boolean(results && results.items.length)
 
-			// send no results event
+			// send results event
 			clearTimeout(searchTimeoutID)
 			searchTimeoutID = setTimeout(() => {
-				console.log('sending event', hasResults)
 				// if the time between input is greater than 1 seconds send the google event
 				gtag('event', 'search', { 'event_category': 'site_search', 'search_term': `${searchElement.value}`, 'search_results': hasResults })
 			}, 1000)
