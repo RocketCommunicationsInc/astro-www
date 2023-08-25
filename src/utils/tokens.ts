@@ -40,9 +40,10 @@ export const system = (theme: string, category: string, property: string) => {
 
 	return themeTokens.filter((token) => {
 		return (
-			token.tokenLevel === 'system' &&
+			(token.tokenLevel === 'system' || token.tokenLevel === 'theme') &&
 			token.category === category &&
-			token.property === property
+			token.property === property &&
+			token.component === null
 		)
 	})
 }
