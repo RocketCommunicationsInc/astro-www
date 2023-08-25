@@ -35,13 +35,13 @@
 	& thead th {
 		/* Layout */
 		padding-inline-end: 0;
-		padding-inline-start: 4--step;
+		padding-inline-start: 3--step;
 	}
 
 	& td {
 		/* Layout */
 		padding-inline-end: 0;
-		padding-inline-start: 4--step;
+		padding-inline-start: 3--step;
 	}
 }
 
