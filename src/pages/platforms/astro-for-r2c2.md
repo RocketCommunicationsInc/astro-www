@@ -25,7 +25,7 @@ Identifies the status of the message that was processed. The figure below of a s
 
 <div class="table-overflow table-dark short">
 
-| Value                | Design token                                | Status symbol |
+| Value                | Design Token                                | Status Symbol |
 |----------------------|---------------------------------------------|---------------|
 | ACKNOWLEDGEMENT:1    | color.status.standby or color.status.normal |               |
 | WORKING_KEEP_ALIVE:2 | color.status.standby                        |               |
@@ -46,7 +46,7 @@ Indicates the severity of the Log Message. Scale is traditionally applied to mes
 
 <div class="table-overflow table-dark short">
 
-| Value      | Design token          | Status symbol |
+| Value      | Design Token          | Status Symbol |
 |------------|-----------------------|---------------|
 | DEBUG:0    | color.status.standby  |               |
 | NORMAL:1   | color.status.normal   |               |
@@ -64,7 +64,7 @@ Indicates processing priority, if applicable.
 
 <div class="table-overflow table-dark short">
 
-| Value    | Design token          | Status symbol |
+| Value    | Design Token          | Status Symbol |
 |----------|-----------------------|---------------|
 | Normal:1 | color.status.normal   |               |
 | Medium:2 | color.status.caution  |               |
@@ -80,7 +80,7 @@ Condition of the device being reported. The criteria for selecting the DEVICE.N.
 
 <div class="table-overflow table-dark short">
 
-| Value          | Design token          | Status symbol |
+| Value          | Design Token          | Status Symbol |
 |----------------|-----------------------|---------------|
 | DEBUG:0        | color.status.standby  |               |
 | NORMAL_GREEN:1 | color.status.normal   |               |
@@ -98,7 +98,7 @@ Indicates the condition of the component being monitored, typically itself, alth
 
 <div class="table-overflow table-dark short">
 
-| Value          | Design token          | Status symbol |
+| Value          | Design Token          | Status Symbol |
 |----------------|-----------------------|---------------|
 | DEBUG:0        | color.status.standby  |               |
 | NORMAL_GREEN:1 | color.status.normal   |               |
@@ -116,7 +116,7 @@ Status of the ‘nth’ mnemonic: valid mnemonic, valid mnemonic with no data, o
 
 <div class="table-overflow table-dark short">
 
-| Value           | Design token         | Status symbol |
+| Value           | Design Token         | Status Symbol |
 |-----------------|----------------------|---------------|
 | VALID:1         | color.status.normal  |               |
 | VALID_NO_DATA:2 | color.status.off     |               |
@@ -136,7 +136,7 @@ If you have a use case where the other values for XTCE-Status ( 1 = ACKNOWLEDGEM
 
 <div class="table-overflow table-dark short">
 
-| Value       | Design token          | Status symbol |
+| Value       | Design Token          | Status Symbol |
 |-------------|-----------------------|---------------|
 | INVALID:2   | color.status.caution  |               |
 | COMPLETED:9 | color.status.normal   |               |
@@ -152,7 +152,7 @@ The Command-Echo-Message’s command echo result field enumeration descriptions:
 
 <div class="table-overflow table-dark short">
 
-| Value | Design token          | Status symbol |
+| Value | Design Token          | Status Symbol |
 |-------|-----------------------|---------------|
 | NOTC  | color.status.off      |               |
 | GOOD  | color.status.normal   |               |
@@ -172,7 +172,7 @@ The quality of the data. RAW = No quality check, VALIDATED = Checked and passed,
 
 <div class="table-overflow table-dark short">
 
-| Value     | Design token         | Status symbol |
+| Value     | Design Token         | Status Symbol |
 |-----------|----------------------|---------------|
 | VALIDATED | color.status.normal  |               |
 | DEGRADED  | color.status.serious |               |
@@ -189,7 +189,7 @@ The MNEMONIC.N.SAMPLE.M.Statuses; RED-HIGH, RED-LOW, YELLOW-HIGH, YELLOW-LOW Boo
 
 <div class="table-overflow table-dark short">
 
-| Value    | Design token          | Status symbol |
+| Value    | Design Token          | Status Symbol |
 |----------|-----------------------|---------------|
 | Red High | color.status.critical |               |
 
@@ -201,7 +201,7 @@ MNEMONIC.N.SAMPLE.M.RED-HIGH locations in the Message Interface Specification Do
 
 <div class="table-overflow table-dark short">
 
-| Value   | Design token          | Status symbol |
+| Value   | Design Token          | Status Symbol |
 |---------|-----------------------|---------------|
 | Red Low | color.status.critical |               |
 
@@ -213,7 +213,7 @@ MNEMONIC.N.SAMPLE.M.RED-LOW locations in the Message Interface Specification Doc
 
 <div class="table-overflow table-dark short">
 
-| Value       | Design token         | Status symbol |
+| Value       | Design Token         | Status Symbol |
 |-------------|----------------------|---------------|
 | Yellow High | color.status.caution |               |
 
@@ -225,7 +225,7 @@ MNEMONIC.N.SAMPLE.M.YELLOW-HIGH locations in the Message Interface Specification
 
 <div class="table-overflow table-dark short">
 
-| Value      | Design token         | Status symbol |
+| Value      | Design Token         | Status Symbol |
 |------------|----------------------|---------------|
 | Yellow Low | color.status.caution |               |
 
@@ -243,7 +243,7 @@ The OMG XTCE and OMG C2MS standards are constantly evolving. The teams are worki
 
 <div class="table-overflow table-dark short small">
 
-| Value    | Design token          | C2MS STATUS | C2MS SEVERITY | Status symbol |
+| Value    | Design Token          | C2MS STATUS | C2MS SEVERITY | Status Symbol |
 |----------|-----------------------|-------------|---------------|---------------|
 | NO ALARM | color.status.normal   | GREEN       | NORMAL        |               |
 | WATCH    | color.status.caution  | YELLOW      | MEDIUM        |               |
