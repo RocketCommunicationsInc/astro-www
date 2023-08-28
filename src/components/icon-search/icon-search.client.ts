@@ -8,7 +8,7 @@ const sidePanel = <HTMLElement>document.querySelector('icon-panel')
 icons.forEach(icon => {
 	icon.addEventListener('click', () => {
 		let pageHeaderHeight: number = pageHeader.offsetHeight
-		let navHeight: number = window.visualViewport.width < 800 ? nav.offsetHeight : 0
+		let navHeight: number = window.visualViewport!.width < 800 ? nav.offsetHeight : 0
 		let heightToBottomOfSearchPanel: number = pageHeaderHeight + navHeight
 
 		let searchRectY: number = iconSearch?.getBoundingClientRect().top
@@ -24,12 +24,12 @@ icons.forEach(icon => {
 // to be run on scroll
 const setIconPanelPosition = () => {
 	let iconSearchHeight: number = iconSearch.offsetHeight
-	let navHeight: number = window.visualViewport.width < 800 ? nav.offsetHeight : 0
+	let navHeight: number = window.visualViewport!.width < 800 ? nav.offsetHeight : 0
 	let pageHeaderHeight: number = pageHeader.offsetHeight
 	let pageHeaderPlusNavHeight: number = pageHeaderHeight + navHeight
 	let searchRect: number = iconSearch?.getBoundingClientRect().y
 	let offset: number = searchRect + iconSearchHeight
-  if (window.visualViewport.pageTop > pageHeaderPlusNavHeight) {
+  if (window.visualViewport!.pageTop > pageHeaderPlusNavHeight) {
 	sidePanel.style.insetBlockStart = `${iconSearchHeight + navHeight}px`
 	sidePanel.style.blockSize = `calc(100dvh - ${iconSearchHeight + navHeight}px)`
   } else {
