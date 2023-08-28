@@ -14,7 +14,7 @@ The Rapid Resilient Command and Control (R2C2) program under the United States S
 Tier 1 and 2 are tactical command and control space vehicle message standards while Tier 3 and 4 are implementation specific interfaces for services in those satellite operating centers (SOCs). The R2C2 Tier 1 ISD clones [Object Management Group (OMG) Command Control Mission Systems (C2MS) v1.0](https://www.omg.org/spec/C2MS/1.0/PDF) with some alterations and message creations supporting DoD requirements or USSF space domain capabilities. Tier 2 ISDs are the R2C2 standards for system domain capabilities (e.g. Flight Dynamics, Telemetry Tracking & Commanding, Mission Planning & Scheduling, Ground Resource Management, Ground Resource Scheduling, etc.) which are based on Tier 1 messages. The Tier 3 ISDs are for service component’s or product’s interface implementation details while Tier 4 is the mission-specific interface details.
 
 :::note
-This page includes status guidance for the R2C2’s Tier 1 message interface standard and additional alerts with AstroUXDS statuses. For information regarding the other Tiers, contact [Astro Support](/support/).
+This page includes status guidance for R2C2’s Tier 1 message interface standard and additional alerts with AstroUXDS statuses. For information regarding the other Tiers, contact [Astro Support](/support/).
 :::
 
 ## Message Fields
