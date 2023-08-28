@@ -150,9 +150,9 @@
 		// make sure that if someone types in quick succession the timeout is cleared and a new one is put in place
 		clearTimeout(searchTimeoutID)
 		searchTimeoutID = setTimeout(() => {
-			// if the time between input is greater than 3 seconds send the google event
+			// if the time between input is greater than 1 seconds send the google event
 			gtag('event', 'search', { 'event_category': 'icon_library', 'search_term': `${value}`, 'search_results': searchResultCount > 0 })
-		}, 2000)
+		}, 1000)
 	}
 }
 
