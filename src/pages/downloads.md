@@ -17,7 +17,7 @@ layout: project:layouts/docs/docs-layout.astro
 
 ## Astro Web Components Download
 
-Latest version ( <a id="latest-download" hidden href="" download> Download </a> )
+- Latest version ( <a id="latest-download" hidden download> Download </a> )
 
 **Need a previous version?**
 
@@ -26,9 +26,6 @@ Latest version ( <a id="latest-download" hidden href="" download> Download </a> 
   </select>
   <a id="downloadButton">Download</a>
 </div>
-<script type="module">
-  import "/src/utils/client/astro-download.ts"
-</script>
 
 ## Themes
 
