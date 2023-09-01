@@ -1,6 +1,5 @@
-const previousVersions: HTMLDivElement|null = document.querySelector('div#previousVersions')
 const selectInput: HTMLSelectElement|null = document.querySelector('#allVersions')
-const downloadButton: HTMLAnchorElement|null|undefined = previousVersions?.querySelector('#downloadButton')
+const downloadButton: HTMLAnchorElement|null = document.querySelector('a#downloadButton')
 
 selectInput?.addEventListener('change', () => {
 	const ver = selectInput.value !== '' ? selectInput.value : null
