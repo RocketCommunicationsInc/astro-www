@@ -29,17 +29,15 @@ for (const version of filteredVersions) {
 }
 ---
 <div class="astro-downloads">
+	<p>Download either the latest build version of the AstroUXDS Web Components or any previous version.</p>
 	<ul>
 		<li set:html={latestVersion}></li>
+		<li><div id="previousVersions">
+			<select style="margin-inline-start: var(--spacing-2)" id="allVersions" class="styled-select" set:html={options}>
+			</select>
+			<a id="downloadButton" class="styled-button">Download</a>
+		</div></li>
 	</ul>
-
-	<strong>Need a previous version?</strong>
-
-	<div id="previousVersions">
-	  <select id="allVersions" class="styled-select" set:html={options}>
-	  </select>
-	  <a id="downloadButton" class="styled-button">Download</a>
-	</div>
 </div>
 <script>
 	import './astro-downloads.ts'
