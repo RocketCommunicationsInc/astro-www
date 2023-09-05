@@ -1,6 +1,4 @@
 ---
-import scriptURL from './astro-downloads.ts?url'
-
 import './astro-downloads.css'
 
 const getPackageInfo = async () => {
@@ -29,7 +27,6 @@ for (const version of filteredVersions) {
 }
 ---
 <div class="astro-downloads">
-	<p>Download either the latest build version of the AstroUXDS Web Components or any previous version.</p>
 	<ul>
 		<li set:html={latestVersion}></li>
 		<li><div id="previousVersions">
