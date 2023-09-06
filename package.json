@@ -346,6 +346,7 @@
 		]
 	},
 	"dependencies": {
+		"astro-netlify-cms": "^0.5.4",
 		"highlight.js": "^11.8.0"
 	}
 }

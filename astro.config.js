@@ -3,6 +3,8 @@ import astroPlugins from './.vscode/astro-plugins.js'
 import astroSitemapIntegration from '@astrojs/sitemap'
 import astroWebComponentPolyfills from '@astropub/webcomponent-polyfills'
 import lit from '@astrojs/lit'
+import NetlifyCMS from 'astro-netlify-cms'
+
 
 import sitemap from '@astrojs/sitemap'
 
@@ -17,5 +19,30 @@ export default defineConfig({
   markdown: {
     drafts: true,
   },
-  integrations: [ astroPlugins(), astroSitemapIntegration(), astroWebComponentPolyfills(), lit(), sitemap() ]
+  integrations: [ astroPlugins(), astroSitemapIntegration(), astroWebComponentPolyfills(), lit(), sitemap(),
+    NetlifyCMS({
+      adminPath: '/wp-admin',
+      config: {
+        backend: {
+          name: 'git-gateway',
+          branch: 'main',
+        },
+        publish_mode: 'editorial_workflow',
+        collections: [
+          {
+            name: 'components',
+            label: 'Components',
+            folder: 'src/pages/components',
+            create: true,
+            delete: true,
+            fields: [
+              { name: 'title', widget: 'string', label: 'Post Title' },
+              { name: 'body', widget: 'markdown', label: 'Post Body' },
+            ],
+          },
+          // Content collections
+        ],
+      },
+    }),
+   ]
 })
