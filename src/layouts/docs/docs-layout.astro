@@ -55,7 +55,7 @@ const gitURL = fileName !== finalURLSeg ? `${Astro.url.pathname}${fileName}.${fi
 const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData.designSystem.repositoryBranch}/src/pages${gitURL}`
 
 ---
-<Layout title={title} tabtitle={tabTitle} description={description}>
+<Layout title={title} tabtitle={tabTitle} description?={description}>
 	{draft ? <meta slot="head" name="robots" content="noindex, nofollow" /> : null }
 	<SiteSkipTo slot="top" />
 
@@ -100,6 +100,7 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 	<FeedbackWidget currentURL={url} />
 </Layout>
 <script>
-import './docs-layout.client'
-import 'project:components/color-swab-custom-element.ts'
+	import './docs-layout.client'
+	import 'project:components/iframe-fallback/IframeFallback.ts'
+	import 'project:components/color-swab-custom-element.ts'
 </script>

@@ -290,3 +290,24 @@
 	/* Layout */
 	margin-block-start: 4--step;
 }
+
+/* IFrame Fallback Utils */
+/* ========================================================================== */
+
+button.iframeFallback-trigger {
+	/* Layout */
+	margin-block-end: 20--rpx;
+
+	/* Text */
+	font-size: 14--rpx;
+
+	/* Appearance */
+	color: var(--DarkBlue500Color);
+	cursor: pointer;
+
+	&:hover {
+		/* Appearance */
+		color: var(--DarkBlue700Color);
+		cursor: pointer;
+	}
+}
