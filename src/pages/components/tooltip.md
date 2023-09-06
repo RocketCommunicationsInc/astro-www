@@ -22,13 +22,13 @@ assets:
 
 ## Appearance and Behavior
 
-**Behavior**
-
-Tooltips display informative text in a message box when the user has hovered or paused their mouse over an associated UI element for a brief length of time (800 ms by default). They can also be activated by focusing an element using the keyboard or voice activation. They should remain visible if the user briefly moves the mouse off and back on to the target. When the user exits the element area, moves the cursor off the element by scrolling, or clicks on another UI element, the Tooltip is hidden.
-
 **Appearance**
 
 Tooltips have consistent text styling and do not include icons, rich text, images, links, or actions. If those options are desired, consider using the [Pop Up](/components/pop-up/) component.
+
+**Behavior**
+
+Tooltips display informative text in a message box when the user has hovered or paused their mouse over an associated UI element for a brief length of time (800 ms by default). They can also be activated by focusing an element using the keyboard or voice activation. They should remain visible if the user briefly moves the mouse off and back on to the target. When the user exits the element area, moves the cursor off the element by scrolling, or clicks on another UI element, the Tooltip is hidden.
 
 ## Examples
 
