@@ -27,6 +27,13 @@ export default class IframeFallbackElement extends HTMLElement {
 			trigger.textContent = fallbackHidden ? 'Not loading? Click Here' : 'Return to iFrame'
 			iFrame.toggleAttribute('hidden', !fallbackHidden)
 			this.toggleAttribute('hidden', fallbackHidden)
+
+			// scroll to the correct item
+			if (!fallbackHidden) {
+				iFrame.scrollIntoView()
+			} else {
+				this.scrollIntoView()
+			}
 		})
 		this.after(trigger)
 	}
