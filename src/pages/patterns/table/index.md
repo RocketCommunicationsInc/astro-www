@@ -41,13 +41,225 @@ Tables use a familiar Selection/Action model. In simple Tables, selection can be
 
 ## Design Token Example
 
-<iframe
-  src="https://codesandbox.io/embed/astro-uxds-with-table-tokens-tz9mpr?fontsize=14&hidenavigation=1&theme=dark"
-  style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-  title="Astro UXDS with Table Tokens"
-  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-></iframe>
+<div class="collapsible-code">
+  <details open>
+    <summary>styles.css</summary>
+
+```css
+  section {
+    padding: var(--spacing-8);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--table-row-color-background-default);
+  }
+
+  table rux-checkbox {
+    display: flex;
+  }
+
+  thead {
+    box-shadow: var(--table-header-shadow);
+  }
+
+  th {
+    padding: var(--table-header-cell-padding);
+    text-align: left;
+    background-color: var(--table-header-color-background);
+    font-family: var(--font-heading-5-font-family);
+    font-size: var(--font-heading-5-font-size);
+    font-weight: var(--font-heading-5-font-weight);
+    line-height: var(--font-heading-5-line-height);
+    letter-spacing: var(--font-heading-5-letter-spacing);
+  }
+
+  tbody tr {
+    color: var(--table-row-color-text);
+    border-bottom-style: solid;
+    border-bottom-color: var(--table-row-color-border);
+    border-bottom-width: var(--table-row-border-width);
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    line-height: var(--font-body-1-line-height);
+    letter-spacing: var(--font-body-1-letter-spacing);
+  }
+
+  tbody tr:hover {
+    background-color: var(--table-row-color-background-hover);
+  }
+
+  tbody tr[selected='true'] {
+    background-color: var(--table-row-color-background-selected);
+  }
+
+  td {
+    padding-inline: var(--table-body-cell-padding-x);
+    padding-block: var(--table-body-cell-padding-y);
+  }
+```
+  </details>
+  <details>
+    <summary>index.js</summary>
+
+```javascript
+  const getRandomNum = (min, max, roundTo = 0) => {
+    const num = Math.random() * max + min;
+    return num.toFixed(roundTo);
+  };
+
+  const checkAll = 'checkAll';
+
+  const headers = [
+    { header: '', field: checkAll },
+    { header: 'Current tag', field: 'currentTag' },
+    { header: 'Original tag', field: 'originalTag' },
+    { header: 'Sensor', field: 'sensor' },
+    { header: 'ASTAT', field: 'astat' },
+    { header: 'Obs time', field: 'obsTime' },
+    { header: 'Ob type', field: 'obType' },
+    { header: 'Az/Rt asc', field: 'azRtAsc' },
+    { header: 'El/Dec', field: 'elDec' },
+    { header: 'Range', field: 'range' },
+    { header: 'Range rate', field: 'rangeRate' },
+  ];
+
+  const rows = Array.from({ length: 24 }, () => ({
+    id: getRandomNum(19999999, 9999999),
+    currentTag: getRandomNum(19999999, 9999999),
+    originalTag: '0000' + getRandomNum(11111, 99999),
+    sensor: getRandomNum(250, 450),
+    astat: getRandomNum(-1, 3) > 0 ? 'FULL' : 'SP_FULL',
+    obsTime: '2020 158 01:23:45:678',
+    obType: 'OBTYPE_' + getRandomNum(1, 9),
+    azRtAsc: getRandomNum(120, 150, 4),
+    elDec: getRandomNum(1000, 3500, 3),
+    range: getRandomNum(1500, 7500, 3),
+    rangeRate: getRandomNum(-10, 10, 5),
+  }));
+
+  document.querySelector('#app').innerHTML = `
+    <section>
+      <table>
+        <thead>
+          <tr>
+            ${headers
+              .map(({ field, header }) => {
+                const isCheckAll = field === checkAll;
+                if (isCheckAll) {
+                  return `
+                    <th>
+                      <rux-checkbox id=${field}></rux-checkbox>
+                    </th>
+                  `;
+                }
+                return `<th>${header}</th>`;
+              })
+              .join('')}
+          </tr>
+        </thead>
+        <tbody>
+          ${rows
+            .map((row) => {
+              return `
+                <tr id="${row.id}">
+                  ${Object.entries(row)
+                    .map(([key, value]) => {
+                      const isId = key === 'id';
+                      if (isId) {
+                        return `
+                          <td>
+                            <rux-checkbox></rux-checkbox>
+                          </td>
+                        `;
+                      }
+                      return `<td>${value}</td>`;
+                    })
+                    .join('')}
+                </tr>
+              `;
+            })
+            .join('')}
+        </tbody>
+      </table>
+    </section>
+  `;
+
+  const checkboxs = document.querySelectorAll('rux-checkbox');
+
+  checkboxs.forEach((checkbox) => {
+    checkbox.addEventListener('ruxchange', (e) => {
+      const isChecked = e.target.checked;
+
+      if (e.target.id === checkAll) {
+        checkboxs.forEach((checkbox) => {
+          checkbox.setAttribute('checked', isChecked);
+          const rowId = checkbox.parentElement.parentElement.id;
+          const rowEle = document.getElementById(rowId);
+          if (!rowEle) return;
+          rowEle.setAttribute('selected', isChecked);
+        });
+        return;
+      }
+
+      const rowId = checkbox.parentElement.parentElement.id;
+      const rowEle = document.getElementById(rowId);
+      rowEle.setAttribute('selected', isChecked);
+
+      const checkeds = [];
+      checkboxs.forEach((checkbox) => {
+        if (checkbox.id === checkAll) return;
+        checkeds.push(checkbox.checked);
+      });
+
+      const areAllRowsChecked = checkeds.every((check) => check);
+      const checkAllEle = document.getElementById(checkAll);
+      checkAllEle.setAttribute('checked', areAllRowsChecked);
+    });
+  });
+```
+  </details>
+  <details>
+    <summary>index.html</summary>
+
+```html
+
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <title>Astro Basic Table</title>
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet"
+      />
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css"
+      />
+      <link rel="stylesheet" href="styles.css" />
+      <script
+        type="module"
+        src="https://cdn.jsdelivr.net/npm/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.esm.js"
+      ></script>
+    </head>
+
+    <body>
+      <div id="app"></div>
+      <script src="index.js"></script>
+    </body>
+  </html>
+```
+  </details>
+</div>
+
+[View on CodeSandbox](https://codesandbox.io/s/astro-uxds-with-table-tokens-tz9mpr?from-embed)
+
 
 ## Complex Tables
 
@@ -104,15 +316,135 @@ The Astro Dark variant is the default theme. The Light variant can be assigned b
 ```
 
 ### Example Project
+<div class="collapsible-code">
+  <details open>
+    <summary>index.js</summary>
 
-<iframe
-      src="https://codesandbox.io/embed/github/RocketCommunicationsInc/astro/tree/main/packages/web-components/src/stories/astro-sandboxes/themes/ag-grid"
-      class="sandbox"
-      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;margin-block-end: 20px;"
-      title="Astro AG-Grid Theme Example"
-      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-  ></iframe>
+```javascript
+  import '@astrouxds/ag-grid-theme/dist/main.css'
+  import { Grid } from 'ag-grid-community'
+
+  const getRandomNum = (min, max, roundTo = 0) => {
+      const num = Math.random() * max + min
+      return num.toFixed(roundTo)
+  }
+  const columnData = [
+      { headerName: '', field: 'control' },
+      { headerName: 'Current tag', field: 'currentTag' },
+      { headerName: 'Original tag', field: 'originalTag' },
+      { headerName: 'Sensor', field: 'sensor' },
+      { headerName: 'ASTAT', field: 'astat' },
+      { headerName: 'Obs time', field: 'obsTime' },
+      { headerName: 'Ob type', field: 'obType' },
+      { headerName: 'Az/Rt asc', field: 'azRtAsc' },
+      { headerName: 'El/Dec', field: 'elDec' },
+      { headerName: 'Range', field: 'range' },
+      { headerName: 'Range rate', field: 'rangeRate' },
+  ]
+  const agColumnData = columnData.slice(0)
+
+  agColumnData.shift()
+
+  const agRowData = Array(24)
+  for (let i = 0; i < agRowData.length; i++) {
+      agRowData[i] = {
+          selected: false,
+          currentTag: getRandomNum(19999999, 9999999),
+          originalTag: '0000' + getRandomNum(11111, 99999),
+          sensor: getRandomNum(250, 450),
+          astat: getRandomNum(-1, 3) > 0 ? 'FULL' : 'SP_FULL',
+          obsTime: '2020 158 01:23:45:678',
+          obType: 'OBTYPE_' + getRandomNum(1, 9),
+          azRtAsc: getRandomNum(120, 150, 4),
+          elDec: getRandomNum(1000, 3500, 3),
+          range: getRandomNum(1500, 7500, 3),
+          rangeRate: getRandomNum(-10, 10, 5),
+      }
+  }
+
+  const gridOptions = {
+      columnDefs: agColumnData,
+      rowData: agRowData,
+  }
+
+  function startAGGrid() {
+      const eGridDiv = document.querySelector('#myGrid')
+      new Grid(eGridDiv, gridOptions)
+  }
+
+  startAGGrid()
+```
+  </details>
+  <details>
+  <summary>index.html</summary>
+
+```html
+  <!DOCTYPE html>
+  <html>
+      <head>
+          <title>Parcel Sandbox</title>
+          <meta charset="UTF-8" />
+          <title>Astro AG-Grid Theme</title>
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+              href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+              rel="stylesheet"
+          />
+          <link
+              rel="stylesheet"
+              href="https://unpkg.com/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css"
+          />
+      </head>
+
+      <body>
+          <div style="padding: 2rem">
+              <div
+                  id="myGrid"
+                  class="ag-theme-astro"
+                  style="width: 100%; height: 80vh"
+              ></div>
+          </div>
+
+          <script src="src/index.js"></script>
+      </body>
+  </html>
+```
+  </details>
+
+  <details>
+  <summary>package.json</summary>
+
+```json
+  {
+      "name": "vanilla",
+      "version": "1.0.0",
+      "description": "JavaScript example starter project",
+      "main": "index.html",
+      "scripts": {
+          "start": "parcel index.html --open",
+          "build": "parcel build index.html"
+      },
+      "dependencies": {
+          "@astrouxds/ag-grid-theme": "6.0.1",
+          "ag-grid-community": "26.1.0",
+          "parcel-bundler": "^1.6.1"
+      },
+      "devDependencies": {
+          "@babel/core": "7.2.0"
+      },
+      "resolutions": {
+          "@babel/preset-env": "7.13.8"
+      },
+      "keywords": [
+          "javascript",
+          "starter"
+      ]
+  }
+```
+  </details>
+</div>
+
+[View on CodeSandbox](https://codesandbox.io/s/github/RocketCommunicationsInc/astro/tree/main/packages/web-components/src/stories/astro-sandboxes/themes/ag-grid)
 
 ### Support
 
@@ -126,9 +458,250 @@ It is easy to work with, and because it does not bring any HTML or styles itself
 
 ### Example Project
 
-<iframe
-  style="border: 1px solid rgba(0, 0, 0, 0.1);border-radius:2px;"
-  width="800"
-  height="450"
-  src="https://codesandbox.io/p/sandbox/astro-uxds-with-tanstack-react-table-4mcgfx?embed=1"
-  allowfullscreen></iframe>
+<div class="collapsible-code">
+  <details open>
+    <summary>App.tsx</summary>
+
+```javascript
+  import { useMemo, useState } from "react";
+  import { RuxCheckbox } from "@astrouxds/react";
+  import {
+    createColumnHelper,
+    flexRender,
+    getCoreRowModel,
+    useReactTable,
+    RowSelectionState,
+  } from "@tanstack/react-table";
+  import "./App.css";
+
+  const getRandomNum = (min: number, max: number, roundTo = 0) => {
+    const num = Math.random() * max + min;
+    return num.toFixed(roundTo);
+  };
+
+  const columnDefs: { header: string; field: keyof Data }[] = [
+    { header: "", field: "id" },
+    { header: "Current tag", field: "currentTag" },
+    { header: "Original tag", field: "originalTag" },
+    { header: "Sensor", field: "sensor" },
+    { header: "ASTAT", field: "astat" },
+    { header: "Obs time", field: "obsTime" },
+    { header: "Ob type", field: "obType" },
+    { header: "Az/Rt asc", field: "azRtAsc" },
+    { header: "El/Dec", field: "elDec" },
+    { header: "Range", field: "range" },
+    { header: "Range rate", field: "rangeRate" },
+  ];
+
+  type Data = {
+    id: string;
+    currentTag: string;
+    originalTag: string;
+    sensor: string;
+    astat: string;
+    obsTime: string;
+    obType: string;
+    azRtAsc: string;
+    elDec: string;
+    range: string;
+    rangeRate: string;
+  };
+
+  const defaultData: Data[] = Array.from({ length: 24 }, () => ({
+    id: getRandomNum(19999999, 9999999),
+    currentTag: getRandomNum(19999999, 9999999),
+    originalTag: "0000" + getRandomNum(11111, 99999),
+    sensor: getRandomNum(250, 450),
+    astat: Number(getRandomNum(-1, 3)) > 0 ? "FULL" : "SP_FULL",
+    obsTime: "2020 158 01:23:45:678",
+    obType: "OBTYPE_" + getRandomNum(1, 9),
+    azRtAsc: getRandomNum(120, 150, 4),
+    elDec: getRandomNum(1000, 3500, 3),
+    range: getRandomNum(1500, 7500, 3),
+    rangeRate: getRandomNum(-10, 10, 5),
+  }));
+
+  const columnHelper = createColumnHelper<Data>();
+
+  const App = () => {
+    const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
+
+    const columns = useMemo(() => {
+      return columnDefs.map(({ field, header }) => {
+        const isId = field === "id";
+
+        const columnDef = columnHelper.accessor(field, {
+          header: (info) => {
+            if (isId) {
+              return (
+                <RuxCheckbox
+                  checked={info.table.getIsAllRowsSelected()}
+                  onRuxchange={info.table.getToggleAllRowsSelectedHandler()}
+                />
+              );
+            }
+            return header;
+          },
+          cell: (info) => {
+            if (isId) {
+              return (
+                <RuxCheckbox
+                  checked={info.row.getIsSelected()}
+                  onRuxchange={info.row.getToggleSelectedHandler()}
+                />
+              );
+            }
+            return info.getValue();
+          },
+        });
+
+        return columnDef;
+      });
+    }, []);
+
+    const data = useMemo(() => [...defaultData], []);
+
+    const table = useReactTable({
+      columns,
+      data,
+      getCoreRowModel: getCoreRowModel(),
+      enableRowSelection: true,
+      state: { rowSelection },
+      onRowSelectionChange: setRowSelection,
+    });
+
+    return (
+      <section>
+        <table>
+          <thead>
+            {table.getHeaderGroups().map((headerGroup) => (
+              <tr key={headerGroup.id}>
+                {headerGroup.headers.map((header) => (
+                  <th key={header.id}>
+                    {flexRender(
+                      header.column.columnDef.header,
+                      header.getContext()
+                    )}
+                  </th>
+                ))}
+              </tr>
+            ))}
+          </thead>
+          <tbody>
+            {table.getRowModel().rows.map((row) => (
+              <tr key={row.id} data-selected={row.getIsSelected()}>
+                {row.getVisibleCells().map((cell) => (
+                  <td key={cell.id}>
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+    );
+  };
+
+  export default App;
+```
+  </details>
+  <details>
+    <summary>App.css</summary>
+
+```css
+  section {
+    padding: var(--spacing-8);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--table-row-color-background-default);
+  }
+
+  table rux-checkbox {
+    display: flex;
+  }
+
+  thead {
+    box-shadow: var(--table-header-shadow);
+  }
+
+  th {
+    padding: var(--table-header-cell-padding);
+    text-align: left;
+    background-color: var(--table-header-color-background);
+    font-family: var(--font-heading-5-font-family);
+    font-size: var(--font-heading-5-font-size);
+    font-weight: var(--font-heading-5-font-weight);
+    line-height: var(--font-heading-5-line-height);
+    letter-spacing: var(--font-heading-5-letter-spacing);
+  }
+
+  tbody tr {
+    color: var(--table-row-color-text);
+    border-bottom-style: solid;
+    border-bottom-color: var(--table-row-color-border);
+    border-bottom-width: var(--table-row-border-width);
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    line-height: var(--font-body-1-line-height);
+    letter-spacing: var(--font-body-1-letter-spacing);
+  }
+
+  tbody tr:hover {
+    background-color: var(--table-row-color-background-hover);
+  }
+
+  tbody tr[data-selected='true'] {
+    background-color: var(--table-row-color-background-selected);
+  }
+
+  td {
+    padding-inline: var(--table-body-cell-padding-x);
+    padding-block: var(--table-body-cell-padding-y);
+  }
+```
+
+  </details>
+  <details>
+    <summary>package.json</summary>
+
+```json
+  {
+    "name": "astro-react-starter",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+      "dev": "vite",
+      "build": "tsc && vite build",
+      "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+      "preview": "vite preview"
+    },
+    "dependencies": {
+      "@astrouxds/react": "^7.15.2",
+      "@tanstack/react-table": "^8.9.3",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+      "@types/react": "^18.0.37",
+      "@types/react-dom": "^18.0.11",
+      "@typescript-eslint/eslint-plugin": "^5.59.0",
+      "@typescript-eslint/parser": "^5.59.0",
+      "@vitejs/plugin-react": "^4.0.0",
+      "eslint": "^8.38.0",
+      "eslint-plugin-react-hooks": "^4.6.0",
+      "eslint-plugin-react-refresh": "^0.3.4",
+      "typescript": "^5.0.2",
+      "vite": "^4.3.9"
+    }
+  }
+```
+  </details>
+</div>
+
+[View on CodeSandbox](https://codesandbox.io/p/sandbox/astro-uxds-with-tanstack-react-table-4mcgfx?embed=1&file=/src/App.tsx:1,1)
