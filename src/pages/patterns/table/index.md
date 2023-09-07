@@ -41,15 +41,66 @@ Tables use a familiar Selection/Action model. In simple Tables, selection can be
 
 ## Design Token Example
 
-<iframe
-  src="https://codesandbox.io/embed/astro-uxds-with-table-tokens-tz9mpr?fontsize=14&hidenavigation=1&theme=dark"
-  style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-  title="Astro UXDS with Table Tokens"
-  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-></iframe>
+<div class="collapsible-code">
+  <details open>
+    <summary>styles.css</summary>
 
-<a-iframe-fallback>
+```css
+  section {
+    padding: var(--spacing-8);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--table-row-color-background-default);
+  }
+
+  table rux-checkbox {
+    display: flex;
+  }
+
+  thead {
+    box-shadow: var(--table-header-shadow);
+  }
+
+  th {
+    padding: var(--table-header-cell-padding);
+    text-align: left;
+    background-color: var(--table-header-color-background);
+    font-family: var(--font-heading-5-font-family);
+    font-size: var(--font-heading-5-font-size);
+    font-weight: var(--font-heading-5-font-weight);
+    line-height: var(--font-heading-5-line-height);
+    letter-spacing: var(--font-heading-5-letter-spacing);
+  }
+
+  tbody tr {
+    color: var(--table-row-color-text);
+    border-bottom-style: solid;
+    border-bottom-color: var(--table-row-color-border);
+    border-bottom-width: var(--table-row-border-width);
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    line-height: var(--font-body-1-line-height);
+    letter-spacing: var(--font-body-1-letter-spacing);
+  }
+
+  tbody tr:hover {
+    background-color: var(--table-row-color-background-hover);
+  }
+
+  tbody tr[selected='true'] {
+    background-color: var(--table-row-color-background-selected);
+  }
+
+  td {
+    padding-inline: var(--table-body-cell-padding-x);
+    padding-block: var(--table-body-cell-padding-y);
+  }
+```
+  </details>
   <details>
     <summary>index.js</summary>
 
@@ -171,65 +222,44 @@ Tables use a familiar Selection/Action model. In simple Tables, selection can be
 ```
   </details>
   <details>
-    <summary>index.css</summary>
+    <summary>index.html</summary>
 
-```css
-  section {
-    padding: var(--spacing-8);
-  }
+```html
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: var(--table-row-color-background-default);
-  }
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <title>Astro Basic Table</title>
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet"
+      />
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css"
+      />
+      <link rel="stylesheet" href="styles.css" />
+      <script
+        type="module"
+        src="https://cdn.jsdelivr.net/npm/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.esm.js"
+      ></script>
+    </head>
 
-  table rux-checkbox {
-    display: flex;
-  }
-
-  thead {
-    box-shadow: var(--table-header-shadow);
-  }
-
-  th {
-    padding: var(--table-header-cell-padding);
-    text-align: left;
-    background-color: var(--table-header-color-background);
-    font-family: var(--font-heading-5-font-family);
-    font-size: var(--font-heading-5-font-size);
-    font-weight: var(--font-heading-5-font-weight);
-    line-height: var(--font-heading-5-line-height);
-    letter-spacing: var(--font-heading-5-letter-spacing);
-  }
-
-  tbody tr {
-    color: var(--table-row-color-text);
-    border-bottom-style: solid;
-    border-bottom-color: var(--table-row-color-border);
-    border-bottom-width: var(--table-row-border-width);
-    font-family: var(--font-body-1-font-family);
-    font-size: var(--font-body-1-font-size);
-    font-weight: var(--font-body-1-font-weight);
-    line-height: var(--font-body-1-line-height);
-    letter-spacing: var(--font-body-1-letter-spacing);
-  }
-
-  tbody tr:hover {
-    background-color: var(--table-row-color-background-hover);
-  }
-
-  tbody tr[selected='true'] {
-    background-color: var(--table-row-color-background-selected);
-  }
-
-  td {
-    padding-inline: var(--table-body-cell-padding-x);
-    padding-block: var(--table-body-cell-padding-y);
-  }
+    <body>
+      <div id="app"></div>
+      <script src="index.js"></script>
+    </body>
+  </html>
 ```
   </details>
-</a-iframe-fallback>
+</div>
+
+[View on CodeSandbox](https://codesandbox.io/s/astro-uxds-with-table-tokens-tz9mpr?from-embed)
+
 
 ## Complex Tables
 
@@ -286,18 +316,8 @@ The Astro Dark variant is the default theme. The Light variant can be assigned b
 ```
 
 ### Example Project
-
-<iframe
-      src="https://codesandbox.io/embed/github/RocketCommunicationsInc/astro/tree/main/packages/web-components/src/stories/astro-sandboxes/themes/ag-grid"
-      class="sandbox"
-      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-      title="Astro AG-Grid Theme Example"
-      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-  ></iframe>
-
-<a-iframe-fallback>
-  <details>
+<div class="collapsible-code">
+  <details open>
     <summary>index.js</summary>
 
 ```javascript
@@ -390,7 +410,41 @@ The Astro Dark variant is the default theme. The Light variant can be assigned b
   </html>
 ```
   </details>
-</a-iframe-fallback>
+
+  <details>
+  <summary>package.json</summary>
+
+```json
+  {
+      "name": "vanilla",
+      "version": "1.0.0",
+      "description": "JavaScript example starter project",
+      "main": "index.html",
+      "scripts": {
+          "start": "parcel index.html --open",
+          "build": "parcel build index.html"
+      },
+      "dependencies": {
+          "@astrouxds/ag-grid-theme": "6.0.1",
+          "ag-grid-community": "26.1.0",
+          "parcel-bundler": "^1.6.1"
+      },
+      "devDependencies": {
+          "@babel/core": "7.2.0"
+      },
+      "resolutions": {
+          "@babel/preset-env": "7.13.8"
+      },
+      "keywords": [
+          "javascript",
+          "starter"
+      ]
+  }
+```
+  </details>
+</div>
+
+[View on CodeSandbox](https://codesandbox.io/s/github/RocketCommunicationsInc/astro/tree/main/packages/web-components/src/stories/astro-sandboxes/themes/ag-grid)
 
 ### Support
 
@@ -404,15 +458,9 @@ It is easy to work with, and because it does not bring any HTML or styles itself
 
 ### Example Project
 
-<iframe
-  style="border: 1px solid rgba(0, 0, 0, 0.1);border-radius:2px;"
-  width="800"
-  height="450"
-  src="https://codesandbox.io/p/sandbox/astro-uxds-with-tanstack-react-table-4mcgfx?embed=1"
-  allowfullscreen></iframe>
-<a-iframe-fallback>
-  <details>
-    <summary>App.js</summary>
+<div class="collapsible-code">
+  <details open>
+    <summary>App.tsx</summary>
 
 ```javascript
   import { useMemo, useState } from "react";
@@ -618,4 +666,42 @@ It is easy to work with, and because it does not bring any HTML or styles itself
 ```
 
   </details>
-</a-iframe-fallback>
+  <details>
+    <summary>package.json</summary>
+
+```json
+  {
+    "name": "astro-react-starter",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+      "dev": "vite",
+      "build": "tsc && vite build",
+      "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+      "preview": "vite preview"
+    },
+    "dependencies": {
+      "@astrouxds/react": "^7.15.2",
+      "@tanstack/react-table": "^8.9.3",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+      "@types/react": "^18.0.37",
+      "@types/react-dom": "^18.0.11",
+      "@typescript-eslint/eslint-plugin": "^5.59.0",
+      "@typescript-eslint/parser": "^5.59.0",
+      "@vitejs/plugin-react": "^4.0.0",
+      "eslint": "^8.38.0",
+      "eslint-plugin-react-hooks": "^4.6.0",
+      "eslint-plugin-react-refresh": "^0.3.4",
+      "typescript": "^5.0.2",
+      "vite": "^4.3.9"
+    }
+  }
+```
+  </details>
+</div>
+
+[View on CodeSandbox](https://codesandbox.io/p/sandbox/astro-uxds-with-tanstack-react-table-4mcgfx?embed=1&file=/src/App.tsx:1,1)
