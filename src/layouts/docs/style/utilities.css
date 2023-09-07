@@ -332,11 +332,11 @@
 		/* Layout */
 		margin-block-end: 0;
 	}
+}
 
- 
 /* buttons */
 /* ========================================================================== */
-  
+
 .styled-button {
 	/* Layout */
 	padding-block: 1--step;
