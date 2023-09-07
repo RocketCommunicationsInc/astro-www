@@ -10,7 +10,7 @@ description: The GRM Schedule app allows operators to view and interact with the
 :::note
 The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
 :::
-[Launch GRM Schedule Sample App](https://grm-schedule.astrouxds.com/) | [Design Materials and Source Code](/grm-service-ux-design/grm-schedule/#design-materials-and-source-code)
+[Launch GRM Schedule Sample App](https://grm-schedule-react.netlify.app) | [Design Materials and Source Code](/grm-service-ux-design/grm-schedule/#design-materials-and-source-code)
 
 Ground Resource Management (GRM) operations require ensuring that all the necessary equipment is available during the time windows when a target satellite is in range. Complicating this task is the fact that there are multiple simultaneous satellite contacts to manage, pieces of equipment that are shared amongst operational groups, and shifting priorities that can require a well-orchestrated schedule to be modified in-flight. Operators need to be able to monitor these impacts to the schedule and make the necessary modifications quickly to ensure that satellite operations can continue.
 
@@ -65,7 +65,7 @@ The List view shares many of the elements of the Timeline view including the tim
 
 Operators can view additional detail on a contact by clicking on it in the timeline or row in the list view. This detail is presented in a [Modeless Pane](/patterns/modeless-panes) that draws in from the right side of the window so operators aren’t taken away from the main app view. The data in the pane is presented in read-only form initially, but a Modify Contact button swaps the read-only view for an editable one, allowing operators to change the contact’s settings. Similarly, to schedule a new contact, operators can click on the Add Contact button which opens the pane to specify settings.
 
-The image below shows the Contact pane for this Add Contact task flow. To see the view contact and modify contact variants of the pane, and more design and task flow details, download the [GRM Design Specification or Wireframes](/grm-service-ux-design/grm-schedule/#design-materials-and-source-code). You can also interact with these elements in the [GRM Schedule Sample App](https://grm-schedule.astrouxds.com/).
+The image below shows the Contact pane for this Add Contact task flow. To see the view contact and modify contact variants of the pane, and more design and task flow details, download the [GRM Design Specification or Wireframes](/grm-service-ux-design/grm-schedule/#design-materials-and-source-code). You can also interact with these elements in the [GRM Schedule Sample App](https://grm-schedule-react.netlify.app).
 
 :::two-col
 ![GRM Schedule Manage Contacts Pane](/img/service-specific-ux-design/grm-schedule/grm-schedule-manage-contacts-details.webp)
@@ -94,12 +94,12 @@ Below is an animated walkthrough of a representative task flow using the GRM Sch
 
 ## Design Materials and Source Code
 
-Below are design and development resources to get you started on an app that supports GRM equipment management. Note that there are some discrepancies between the design documents and the [GRM Schedule Sample App](https://grm-equipment.astrouxds.com/) due to design improvements that were introduced late in the app development cycle.
+Below are design and development resources to get you started on an app that supports GRM equipment management. Note that there are some discrepancies between the design documents and the [GRM Schedule Sample App](https://grm-equipment-react-ts.netlify.app) due to design improvements that were introduced late in the app development cycle.
 
 :::table-overflow
-| Resources                                                                                                                                       | Description                                                                                                                                                |
-|-------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [GRM Design Specifications (pdf)](http://com.rocketcom.astrouxds.s3.amazonaws.com/attachments/cjx3r384i2gbihmqnxcwrq25d-grm-specifications.pdf) | The GRM Design Specification contains information on use cases, task flows, UX research and wireframes for key features of the GRM App Suite.              |
-| [GRM Design Wireframes (pdf)](http://com.rocketcom.astrouxds.s3.amazonaws.com/attachments/cjtsx349t073s4iqnxbejjwg6-grm-wireframes.pdf)         | The GRM Design Wireframes document contains the complete set of wireframes (mid-fidelity renderings) of the screens designed for the GRM App Suite.        |
-| [App Source Code (Git Repository)](https://bitbucket.org/rocketcom/grm-sample-apps-schedule/src/master/)                                        | The source code Git repository and other useful documentation for the GRM Dashboard App is hosted at bitbucket.org so that you can check it out in detail. |
+| Resources                                                                                         | Description                                                                                                                                             |
+|---------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [GRM Design Specifications (pdf)](/pdf/grm-specifications.pdf)                                    | The GRM Design Specification contains information on use cases, task flows, UX research and wireframes for key features of the GRM App Suite.           |
+| [GRM Design Wireframes (pdf)](/pdf/grm-wireframes.pdf)                                            | The GRM Design Wireframes document contains the complete set of wireframes (mid-fidelity renderings) of the screens designed for the GRM App Suite.     |
+| [App Source Code (Git Repository)](https://github.com/RocketCommunicationsInc/grm-schedule-react) | The source code Git repository and other useful documentation for the GRM Dashboard App is hosted at github.com so that you can check it out in detail. |
 :::
