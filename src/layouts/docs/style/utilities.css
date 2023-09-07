@@ -332,4 +332,68 @@
 		/* Layout */
 		margin-block-end: 0;
 	}
+
+ 
+/* buttons */
+/* ========================================================================== */
+  
+.styled-button {
+	/* Layout */
+	padding-block: 1--step;
+	padding-inline: 4--step;
+
+	/* Text */
+	font-size: 16--rpx;
+	line-height: 24--rpx;
+
+	/* Appearance */
+	background-color: var(--DarkBlue500Color);
+	border: 1px solid var(--DarkBlue500Color);
+	border-radius: 3px;
+	color: var(--PrimaryColor);
+	cursor: pointer;
+
+	&:hover {
+		/* Appearance */
+		background-color: var(--DarkBlue700Color);
+		border-color: var(--DarkBlue500Color);
+	}
+
+	&:disabled, &:not([href]) {
+		/* Appearance */
+		cursor: not-allowed;
+		opacity: .4;
+	}
+}
+
+/* select */
+/* ========================================================================== */
+
+.styled-select {
+	/* Layout */
+	margin-inline-end: 2--step;
+
+	/* Layout */
+	margin-inline-start: calc(-1 * 2--step);
+
+	/* Layout */
+	max-inline-size: 100--step;
+	padding-block: 1--step;
+	padding-inline-end: 8--step;
+	padding-inline-start: 2--step;
+
+	/* Text */
+	font-size: 16--rpx;
+	line-height: 20--rpx;
+
+	/* Arrow */
+	appearance: none;
+
+	/* Appearance */
+	background-color: var(--PrimaryColor);
+	background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.12 9.29 12 13.17l3.88-3.88a.996.996 0 1 1 1.41 1.41l-4.59 4.59a.996.996 0 0 1-1.41 0L6.7 10.7a.996.996 0 0 1 0-1.41c.39-.38 1.03-.39 1.42 0Z" /></svg>');
+	background-position: right 1--step top 50%;
+	background-repeat: no-repeat;
+	background-size: 24--rpx auto;
+	border-radius: var(--EdgeRadius);
 }

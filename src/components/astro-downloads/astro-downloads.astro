@@ -1,0 +1,41 @@
+---
+import './astro-downloads.css'
+
+const getPackageInfo = async () => {
+	const data = await fetch('https://registry.npmjs.org/@astrouxds/astro-web-components/').then((response) => {
+	return response.ok ? response.json() : null
+}).catch((err) => console.log(err, 'an error occured'))
+	return data
+}
+const packageJson = await getPackageInfo()
+const downloadLink = 'https://registry.npmjs.org/@astrouxds/astro-web-components/-/astro-web-components-'
+
+// handle latest links
+const latestVersion = packageJson ? `Latest version ( <a id="latest-download" href=${downloadLink + packageJson[`dist-tags`].latest + '.tgz'} download> Download </a> )` : null
+
+// handle all versions
+const allVersions = Object.keys(packageJson.versions)
+const pattern = /^[6-9]\d?\.\d+\.\d+$/
+const filteredVersions = allVersions.filter((ver) => pattern.test(ver)).reverse()
+
+if (filteredVersions.length < 1) return
+
+let options = `<option value=''>--Select Version--</option>`
+
+for (const version of filteredVersions) {
+	options = options + `<option value=${version}>${version}</option>`
+}
+---
+<div class="astro-downloads">
+	<ul>
+		<li set:html={latestVersion}></li>
+		<li><div id="previousVersions">
+			<select style="margin-inline-start: var(--spacing-2)" id="allVersions" class="styled-select" set:html={options}>
+			</select>
+			<a id="downloadButton" class="styled-button">Download</a>
+		</div></li>
+	</ul>
+</div>
+<script>
+	import './astro-downloads.ts'
+</script>

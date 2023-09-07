@@ -235,7 +235,7 @@ MNEMONIC.N.SAMPLE.M.YELLOW-LOW locations in the Message Interface Specification 
 
 ### XTCE Alarm Levels
 
-The OMG XTCE specification defines multiple alarm levels. This is defined within the AlarmConditionsType, AlarmRangesType, and ConcernLevelsType within the XTCE schema. These alarm levels are found within telemetry definitions that can be embedded in messages in the OMG C2MS and R2C2 C2MS message schemas. This section provides guidance for the colors that align to each level if this data is shown on screen. Since AstroUX does not define Watch or Severe levels, the next less critical level is recommended.
+The OMG XTCE specification defines multiple alarm levels. This is defined within the AlarmConditionsType, AlarmRangesType, and ConcernLevelsType within the XTCE schema. These alarm levels are found within telemetry definitions that can be embedded in messages in the OMG C2MS and R2C2 C2MS message schemas. This section provides guidance for the colors that align to each level if this data is shown on screen. Since AstroUX does not define Watch or Severe levels, Watch is mapped to the same coloring as Warning and Severe is mapped to the same coloring as Critical.
 
 :::note
 The OMG XTCE and OMG C2MS standards are constantly evolving. The teams are working to better align the statuses given the mismatch of quantity. In the interim, this translation table is our current guidance. We are aware that this can result in one-way translation or inability to reconstitute given duplicate statuses. This will be amended in the future and is stated as low risk given the small amount of use cases that require translating these statuses.
