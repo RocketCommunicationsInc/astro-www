@@ -10,7 +10,7 @@ description: Helps operators maintain situational awareness.
 :::note
 The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
 :::
-[Launch GRM Dashboard Sample App](https://grm-dashboard.astrouxds.com/) | [Design Materials and Source Code](/grm-service-ux-design/grm-dashboard/#design-materials-and-source-code)
+[Launch GRM Dashboard Sample App](https://grm-dashboard-react.netlify.app) | [Design Materials and Source Code](/grm-service-ux-design/grm-dashboard/#design-materials-and-source-code)
 
 Given the large number of satellite contacts and equipment assets that operators are responsible for, maintaining situational awareness poses a significant challenge. Operators must be able to quickly identify equipment issues and resolve them so that there are no missed opportunities to communicate with satellites. The GRM Dashboard app was designed with this goal in mind. As the operators’ primary GRM app, it would constantly occupy one of their large displays.
 
@@ -98,12 +98,12 @@ Below is an animated walkthrough of a representative task flow using the GRM Das
 
 ## Design Materials and Source Code
 
-Below are design and development resources to get you started on an app that supports GRM services. Note that there are some discrepancies between the design documents and the [GRM Dashboard Sample App](https://grm-dashboard.astrouxds.com/) due to design improvements that were introduced late in the app development cycle.
+Below are design and development resources to get you started on an app that supports GRM services. Note that there are some discrepancies between the design documents and the [GRM Dashboard Sample App](https://grm-dashboard-react.netlify.app) due to design improvements that were introduced late in the app development cycle.
 
 :::table-overflow
-| Resources                                                                                                                                       | Description                                                                                                                                                |
-|-------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [GRM Design Specifications (pdf)](http://com.rocketcom.astrouxds.s3.amazonaws.com/attachments/cjx3r384i2gbihmqnxcwrq25d-grm-specifications.pdf) | The GRM Design Specification contains information on use cases, task flows, UX research and wireframes for key features of the GRM App Suite.              |
-| [GRM Design Wireframes (pdf)](http://com.rocketcom.astrouxds.s3.amazonaws.com/attachments/cjtsx349t073s4iqnxbejjwg6-grm-wireframes.pdf)         | The GRM Design Wireframes document contains the complete set of wireframes (mid-fidelity renderings) of the screens designed for the GRM App Suite.        |
-| [App Source Code (Git Repository)](https://bitbucket.org/rocketcom/grm-sample-apps-dashboard/src/master/)                                       | The source code Git repository and other useful documentation for the GRM Dashboard App is hosted at bitbucket.org so that you can check it out in detail. |
+| Resources                                                                                          | Description                                                                                                                                             |
+|----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [GRM Design Specifications (pdf)](/pdf/grm-specifications.pdf)                                     | The GRM Design Specification contains information on use cases, task flows, UX research and wireframes for key features of the GRM App Suite.           |
+| [GRM Design Wireframes (pdf)](/pdf/grm-wireframes.pdf)                                             | The GRM Design Wireframes document contains the complete set of wireframes (mid-fidelity renderings) of the screens designed for the GRM App Suite.     |
+| [App Source Code (Git Repository)](https://github.com/RocketCommunicationsInc/grm-dashboard-react) | The source code Git repository and other useful documentation for the GRM Dashboard App is hosted at github.com so that you can check it out in detail. |
 :::

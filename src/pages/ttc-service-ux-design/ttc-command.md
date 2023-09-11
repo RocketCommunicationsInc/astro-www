@@ -11,7 +11,7 @@ description: The TT&C Command App is designed to be used for sending and receivi
 The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
 :::
 
-[Launch TT&C Command Sample App](https://ttc-command.astrouxds.com/) | [Design Materials and Source Code](/ttc-service-ux-design/ttc-command/#design-materials-and-source-code)
+[Launch TT&C Command Sample App](https://ttc-command-react.netlify.app/) | [Design Materials and Source Code](/ttc-service-ux-design/ttc-command/#design-materials-and-source-code)
 
 The TT&C Command App is designed to be used for sending and receiving communications with a satellite during a contact. It contains status and command data for only a single satellite - one currently in a pass. Operators can open multiple command windows if they are managing several passes simultaneously.
 
@@ -21,7 +21,7 @@ Another aspect of the design aimed at reducing cognitive load is to give operato
 
 ![TT&C Command App](/img/service-specific-ux-design/ttc-command/ttc-command-app.webp)
 
-There are four main areas in the Command App: the Global Status Bar, Alerts panel, Pass Plan panel, and System Health panel. The key elements are described below, but you can find much more design and task flow detail in the [TT&C Design Specification and Wireframes](/ttc-service-ux-design/ttc-command/#design-materials-and-source-code) documents. You can also launch the [TT&C Command Sample App](https://ttc-command.astrouxds.com/) to explore the design interactively.
+There are four main areas in the Command App: the Global Status Bar, Alerts panel, Pass Plan panel, and System Health panel. The key elements are described below, but you can find much more design and task flow detail in the [TT&C Design Specification and Wireframes](/ttc-service-ux-design/ttc-command/#design-materials-and-source-code) documents. You can also launch the [TT&C Command Sample App](https://ttc-command-react.netlify.app/) to explore the design interactively.
 
 ![TT&C Command App Details](/img/service-specific-ux-design/ttc-command/ttc-command-app-details.webp)
 
@@ -96,12 +96,12 @@ Below is an animated walkthrough of a representative task flow using the TT&C Mo
 
 ## Design Materials and Source Code
 
-Below are design and development resources to get you started on an app that supports TT&C services. Note that there are some discrepancies between the design documents and the [TT&C Command Sample App](https://ttc-command.astrouxds.com/) due to design improvements that were introduced late in the app development cycle.
+Below are design and development resources to get you started on an app that supports TT&C services. Note that there are some discrepancies between the design documents and the [TT&C Command Sample App](https://ttc-command-react.netlify.app/) due to design improvements that were introduced late in the app development cycle.
 
 :::table-overflow
-| Resources                                                                                                                       | Description                                                                                                                                               |
-|---------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [TT&C Design Specifications (pdf)](https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/ttc-specifications.pdf) | The TT&C Design Specification contains information on use cases, task flows, UX research and wireframes for key features of the TT&C App Suite.           |
-| [TT&C Design Wireframes (pdf)](https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/ttc-wireframes.pdf)         | The TT&C Design Wireframes document contains the complete set of wireframes (mid-fidelity renderings) of the screens designed for the TT&C App Suite.     |
-| [App Source Code (Git Repository)](https://bitbucket.org/rocketcom/tt-c-command/src/master/)                                    | The source code Git repository and other useful documentation for the TT&C Command App is hosted at bitbucket.org so that you can check it out in detail. |
+| Resources                                                                                        | Description                                                                                                                                            |
+|--------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [TT&C Design Specifications (pdf)](/pdf/ttc-specifications.pdf)                                  | The TT&C Design Specification contains information on use cases, task flows, UX research and wireframes for key features of the TT&C App Suite.        |
+| [TT&C Design Wireframes (pdf)](/pdf/ttc-wireframes.pdf)                                          | The TT&C Design Wireframes document contains the complete set of wireframes (mid-fidelity renderings) of the screens designed for the TT&C App Suite.  |
+| [App Source Code (Git Repository)](https://github.com/RocketCommunicationsInc/ttc-command-react) | The source code Git repository and other useful documentation for the TT&C Command App is hosted at github.com so that you can check it out in detail. |
 :::

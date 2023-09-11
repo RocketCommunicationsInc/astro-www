@@ -10,7 +10,7 @@ description: The GRM Equipment Manager app is designed to operators by consolida
 :::note
 The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
 :::
-[Launch GRM Equipment Manager Sample App](https://grm-equipment.astrouxds.com/) | [Design Materials and Source Code](/grm-service-ux-design/grm-equipment-manager/#design-materials-and-source-code)
+[Launch GRM Equipment Manager Sample App](https://grm-equipment-react-ts.netlify.app) | [Design Materials and Source Code](/grm-service-ux-design/grm-equipment-manager/#design-materials-and-source-code)
 
 A core requirement of GRM is to ensure that the equipment on the ground responsible for communicating with satellites is operational and available. This equipment includes hardware such as antennas, processors and software systems that all must interact with one another during a satellite contact. These resources are often shared amongst multiple operations, so if a piece of equipment is not available, it can affect multiple missions. As such, it is critical for operators to quickly identify equipment in need of attention and schedule maintenance to get it back up and running as quickly as possible.
 
@@ -106,12 +106,12 @@ Below is an animated walkthrough of a representative task flow using the GRM Equ
 
 ## Design Materials and Source Code
 
-Below are design and development resources to get you started on an app that supports GRM equipment management. Note that there are some discrepancies between the design documents and the [GRM Equipment Manager Sample App](https://grm-equipment.astrouxds.com/) due to design improvements that were introduced late in the app development cycle.
+Below are design and development resources to get you started on an app that supports GRM equipment management. Note that there are some discrepancies between the design documents and the [GRM Equipment Manager Sample App](https://grm-equipment-react-ts.netlify.app) due to design improvements that were introduced late in the app development cycle.
 
 :::table-overflow
-| Resources                                                                                                                                       | Description                                                                                                                                                |
-|-------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [GRM Design Specifications (pdf)](http://com.rocketcom.astrouxds.s3.amazonaws.com/attachments/cjx3r384i2gbihmqnxcwrq25d-grm-specifications.pdf) | The GRM Design Specification contains information on use cases, task flows, UX research and wireframes for key features of the GRM App Suite.              |
-| [GRM Design Wireframes (pdf)](http://com.rocketcom.astrouxds.s3.amazonaws.com/attachments/cjtsx349t073s4iqnxbejjwg6-grm-wireframes.pdf)         | The GRM Design Wireframes document contains the complete set of wireframes (mid-fidelity renderings) of the screens designed for the GRM App Suite.        |
-| [App Source Code (Git Repository)](https://bitbucket.org/rocketcom/grm-sample-apps-equipment/src/master/)                                       | The source code Git repository and other useful documentation for the GRM Dashboard App is hosted at bitbucket.org so that you can check it out in detail. |
+| Resources                                                                                             | Description                                                                                                                                             |
+|-------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [GRM Design Specifications (pdf)](/pdf/grm-specifications.pdf)                                        | The GRM Design Specification contains information on use cases, task flows, UX research and wireframes for key features of the GRM App Suite.           |
+| [GRM Design Wireframes (pdf)](/pdf/grm-wireframes.pdf)                                                | The GRM Design Wireframes document contains the complete set of wireframes (mid-fidelity renderings) of the screens designed for the GRM App Suite.     |
+| [App Source Code (Git Repository)](https://github.com/RocketCommunicationsInc/grm-equipment-react-ts) | The source code Git repository and other useful documentation for the GRM Dashboard App is hosted at github.com so that you can check it out in detail. |
 :::
