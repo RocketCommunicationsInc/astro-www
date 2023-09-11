@@ -48,7 +48,7 @@ Conveys part-to-whole data. Pie charts are very common, but research has shown t
 
 ![Donut Chart](/img/patterns/data-visualization/data-viz-donut.webp)<br/>
 
-Similar to a pie chart – but the center can be useful for additional information about the data (e.g. total). Example: [GRM Sample app](https://grm-dashboard.astrouxds.com/) - Equipment tab
+Similar to a pie chart – but the center can be useful for additional information about the data (e.g. total). Example: [GRM Sample app](https://grm-dashboard-react.netlify.app) - Equipment tab
 
 :::
 
@@ -68,7 +68,7 @@ Standard bar charts display the ranks of values more easily when sorted in order
 
 ![Stack Bar Chart](/img/patterns/data-visualization/data-viz-stacked-bar.webp)<br/>
 
-The standard way to show a statistical distribution - keep the gaps between columns small to highlight the ‘shape’ of the data. Example: [GRM Sample app](https://grm-dashboard.astrouxds.com/) - Contacts tab
+The standard way to show a statistical distribution - keep the gaps between columns small to highlight the ‘shape’ of the data. Example: [GRM Sample app](https://grm-dashboard-react.netlify.app) - Contacts tab
 
 :::
 
@@ -129,7 +129,7 @@ Conveys an accurate representation of the distribution of numerical data. It is 
 
 ![Gantt Chart](/img/patterns/data-visualization/data-viz-gantt.webp)<br/>
 
-A chart that depicts how a set of resources are used over time. Gantt charts illustrate the start, end, and duration of tasks (e.g. timeline or schedule). Example: [TT&C Sample app](https://ttc-monitor.astrouxds.com/) - Timeline view
+A chart that depicts how a set of resources are used over time. Gantt charts illustrate the start, end, and duration of tasks (e.g. timeline or schedule). Example: [TT&C Sample app](https://monitor-ttc.netlify.app) - Timeline view
 
 :::
 
