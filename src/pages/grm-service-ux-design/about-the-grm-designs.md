@@ -7,15 +7,11 @@ title: Ground Resource Management
 description: Directing and maintaining satellites orbiting in space requires coordinating personnel, processes, and equipment on the ground. This is the role of Ground Resource Management (GRM) systems.
 ---
 
-:::note
-The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
-:::
-
 Directing and maintaining satellites orbiting in space requires coordinating personnel, processes, and equipment on the ground. This is the role of Ground Resource Management (GRM) systems. Key aspects of GRM services include the following:
 
-- Monitor System - Maintaining awareness of the status of critical components of the ground system, including equipment and scheduled contacts.
-- Manage Contacts - Coordinate ground systems to ensure satellite contacts have all the equipment needed to achieve mission objectives.
-- Manage Equipment - Monitor health status of ground system equipment and schedule maintenance jobs as needed to ensure availability and ongoing reliability.
+- **Monitor System** - Maintaining awareness of the status of critical components of the ground system, including equipment and scheduled contacts.
+- **Manage Contacts** - Coordinate ground systems to ensure satellite contacts have all the equipment needed to achieve mission objectives.
+- **Manage Equipment** - Monitor health status of ground system equipment and schedule maintenance jobs as needed to ensure availability and ongoing reliability.
 
 ## UX Research Findings
 
@@ -33,7 +29,7 @@ A GRM system that enables efficient coordination of ground resources would allow
 
 ## UX Design and Sample Apps
 
-Based on this initial research and follow-up design iterations with operators and stakeholders, the resulting design effort focused on an integrated suite of three GRM Sample Apps, each designed to support key functionality and task flows. Each of the apps is designed to occupy its own browser window, allowing operators to focus on the task at hand, but by virtue of being integrated into a suite, the apps share functionality and support common task flows.
+Based on this initial research and follow-up design iterations with operators and stakeholders, the resulting design effort focused on an integrated suite of three GRM Sample Apps, each designed to support key functionality and task flows. Each of the apps is designed to occupy its own browser window, allowing operators to focus on the task at hand. By virtue of being integrated into a suite, the apps share functionality and support common task flows.
 
 ### GRM App Suite
 
@@ -55,7 +51,7 @@ The GRM App Suite comprises three integrated sample apps: Dashboard, Equipment M
 
 :::col
 
-The GRM Dashboard app rolls up all information necessary for providing the operator the highest level of situational awareness.
+The GRM Dashboard app rolls up all information necessary for providing operators the highest level of situational awareness.
 
 - [Overview of GRM Dashboard](/grm-service-ux-design/grm-dashboard)
 - [Launch GRM Dashboard Sample App](https://grm-dashboard-react.netlify.app)
