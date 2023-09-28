@@ -7,9 +7,6 @@ title: GRM Schedule
 description: The GRM Schedule app allows operators to view and interact with the full schedule of contacts via a Timeline or List View.
 ---
 
-:::note
-The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
-:::
 [Launch GRM Schedule Sample App](https://grm-schedule-react.netlify.app) | [Design Materials and Source Code](/grm-service-ux-design/grm-schedule/#design-materials-and-source-code)
 
 Ground Resource Management (GRM) operations require ensuring that all the necessary equipment is available during the time windows when a target satellite is in range. Complicating this task is the fact that there are multiple simultaneous satellite contacts to manage, pieces of equipment that are shared amongst operational groups, and shifting priorities that can require a well-orchestrated schedule to be modified in-flight. Operators need to be able to monitor these impacts to the schedule and make the necessary modifications quickly to ensure that satellite operations can continue.
@@ -24,13 +21,13 @@ There are three main areas in the Schedule app: the Global Status Bar, the Conta
 
 ## Global Status Bar
 
-As outlined on the [About GRM Designs](/grm-service-ux-design/about-the-grm-designs) page, each of the apps in the GRM Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar), an Astro component featured in all three apps. Though the status bar contents vary somewhat between apps in order to best support each app’s individual workflows, all contain a [Clock](/components/clock), [Monitoring Icons](/components/icons-and-symbols), and an app switching menu that allows operators to transition quickly from one GRM task flow to another.
+As outlined on the [About GRM Designs](/grm-service-ux-design/about-the-grm-designs) page, each of the apps in the GRM Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar), an Astro component featured in all three apps. Status bars contain an App Switcher Menu, that allows operators to transition quickly from one GRM task flow to another, a [Clock](/components/clock), and [Monitoring Icons](/components/icons-and-symbols).
 
 ![GRM Schedule Global Status Bar Details](/img/service-specific-ux-design/grm-schedule/grm-schedule-global-status-bar-details.webp)
 
 1. **App Switcher Menu** - The App Switcher Menu allows the user to launch new instances of different GRM apps, sign in/sign out, and edit preferences.
 2. **Global Clock** - Time is central to many GRM service task flows, so it is included in the Global Status Bar in all GRM apps.
-3. **Monitoring Icons** - The Dashboard app includes Upcoming Contacts Allocated (UCA) and Software status indicators, as well as status and alert counts for each of the top categories in the equipment hierarchy.
+3. **Monitoring Icons** - The Dashboard app includes Upcoming Contacts Allocated (UCA) status indicator and alert count.
 
 ## Contacts Panel
 
@@ -38,7 +35,7 @@ The GRM Schedule app presents operators with two alternative views of their cont
 
 ### Timeline View
 
-In the Timeline view, contacts are plotted by ground station and antenna on the y-axis and time on the x-axis. The contacts are represented as bars, the length of which indicates the duration of the contact. This design, which is based on the Astro Timeline component, provides operators with a consolidated view of the time and status for all recent, current and future contacts in their system. To allow operators to focus in on particular elements of interest, Ground Station rows can be expanded to show individual antennas, the timeline can be filtered by contact status, or zoomed in/out to focus on a particular time range.
+In the [Timeline](/components/timeline) view, contacts are plotted by ground station and antenna on the y-axis and time on the x-axis. The contacts are represented as bars, the length of which indicates the duration of the contact. This design, which is based on the Astro Timeline component, provides operators with a consolidated view of the time and status for all recent, current and future contacts in their system. To allow operators to focus in on particular elements of interest, Ground Station rows can be expanded to show individual antennas, the timeline can be filtered by contact status, or zoomed in/out to focus on a particular time range.
 
 ![GRM Schedule Timeline View](/img/service-specific-ux-design/grm-schedule/grm-schedule-timeline-details.webp)
 
