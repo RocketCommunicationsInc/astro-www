@@ -21,15 +21,15 @@ This effort included many hours of interviews with users and stakeholders, detai
 
 The UX research conducted on GRM services drove the design of three sample apps integrated into the GRM App Suite. The [GRM Dashboard][grm-dashboard] provides space situational awareness to the operator by consolidating and surfacing the most important information related to contacts and equipment. In addition to this primary usage, the GRM App Suite supports a comprehensive set of secondary tasks for managing contacts and equipment in the [GRM Schedule][grm-schedule] and [GRM Equipment Manager][grm-equipment] apps. You can get an overview of the design work on the [About the GRM Designs page][grm-designs] or use one of the links below to get more information about a particular app.
 
-![](/img/service-specific-ux-design/grm/grm-dashboard-app.webp)
+![](/img/case-studies/grm/grm-dashboard.webp)
 
 [GRM Dashboard][grm-dashboard]
 
-![](/img/service-specific-ux-design/grm/grm-equipment-manager-app.webp)
+![](/img/case-studies/grm/grm-equipment-manager.webp)
 
 [GRM Equipment Manager][grm-equipment]
 
-![](/img/service-specific-ux-design/grm/grm-schedule-app.webp)
+![](/img/case-studies/grm/grm-schedule.webp)
 
 [GRM Schedule][grm-schedule]
 

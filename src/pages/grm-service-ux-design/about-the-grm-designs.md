@@ -34,7 +34,7 @@ Based on this initial research and follow-up design iterations with operators an
 ### GRM App Suite
 
 :::two-col
-![GRM Application Suite](/img/service-specific-ux-design/grm/grm-suite-apps.webp)
+![GRM Application Suite](/img/case-studies/grm/grm-app-suite.webp)
 :::col
 
 The GRM App Suite comprises three integrated sample apps: Dashboard, Equipment Manager, and Schedule.
@@ -47,13 +47,13 @@ The GRM App Suite comprises three integrated sample apps: Dashboard, Equipment M
 ### GRM Dashboard
 
 :::two-col
-![GRM Dashboard App](/img/service-specific-ux-design/grm/grm-dashboard-app.webp)
+![GRM Dashboard App](/img/case-studies/grm/grm-dashboard.webp)
 
 :::col
 
 The GRM Dashboard app rolls up all information necessary for providing operators the highest level of situational awareness.
 
-- [Overview of GRM Dashboard](/grm-service-ux-design/grm-dashboard)
+- [Overview of GRM Dashboard](/grm-service-ux-design/grm-dashboard/)
 - [Launch GRM Dashboard Sample App](https://grm-dashboard-react.netlify.app)
 - [App Source Code (Git repo)](https://github.com/RocketCommunicationsInc/grm-dashboard-react)
 
@@ -62,13 +62,13 @@ The GRM Dashboard app rolls up all information necessary for providing operators
 ### GRM Equipment Manager
 
 :::two-col
-![GRM Equipment Manager App](/img/service-specific-ux-design/grm/grm-equipment-manager-app.webp)
+![GRM Equipment Manager App](/img/case-studies/grm/grm-equipment-manager.webp)
 
 :::col
 
 The GRM Equipment Manager app consolidates all ground equipment in one place, allowing operators to view status and request maintenance.
 
-- [Overview of GRM Equipment Manager](/grm-service-ux-design/grm-equipment-manager)
+- [Overview of GRM Equipment Manager](/grm-service-ux-design/grm-equipment-manager/)
 - [Launch GRM Equipment Manager Sample App](https://grm-equipment-react-ts.netlify.app)
 - [App Source Code (Git Repository)](https://github.com/RocketCommunicationsInc/grm-equipment-react-ts)
 
@@ -77,13 +77,13 @@ The GRM Equipment Manager app consolidates all ground equipment in one place, al
 ### GRM Schedule
 
 :::two-col
-![GRM Schedule App](/img/service-specific-ux-design/grm/grm-schedule-app.webp)
+![GRM Schedule App](/img/case-studies/grm/grm-schedule.webp)
 
 :::col
 
 The GRM Schedule app allows operators to view and manage the full schedule of contacts in their sphere of responsibility.
 
-- [Overview of GRM Schedule](/grm-service-ux-design/grm-schedule)
+- [Overview of GRM Schedule](/grm-service-ux-design/grm-schedule/)
 - [Launch GRM Schedule Sample App](https://grm-schedule-react.netlify.app)
 - [App Source Code (Git Repository)](https://github.com/RocketCommunicationsInc/grm-schedule-react)
 
