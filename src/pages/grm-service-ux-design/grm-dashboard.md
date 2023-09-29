@@ -47,13 +47,21 @@ The Alerts panel provides operators with a roll-up of issues across the ground s
 
 The Contacts tab allows operators to view all contacts configured in the GRM app. Contacts can be filtered by status to allow operators to quickly identify those that failed or are currently executing. The contacts are displayed in the table along with important information such as Ground Station, Equipment String, and AOS/LOS times, but can also be expanded to present additional detail. The Contacts Summary at the bottom provides operators with a view of contact counts over time, color coded by status.
 
-![GRM Dashboard Contacts Details](/img/service-specific-ux-design/grm-dashboard/grm-dashboard-contact-details.webp)
+![GRM Dashboard Contacts](/img/service-specific-ux-design/grm-dashboard/grm-dashboard-contact-details.webp)
 
 1. **Contacts Hero Numbers** - Shows number of executing contacts at a glance.
 2. **Segmented Button Filter** - Filters Current Contacts by All, Executing, or Failed.
 3. **Histogram** - Y-axis measures contact counts, while the x-axis represents time.
 4. **Histogram Filters** - Filters may be applied to one, many or all of the Contact States; Upcoming, Executing, Complete, Failed.
 5. **Zoom Control** - Operators can drag the slider to zoom in or out of the Histogram
+
+![GRM Dashboard Contact Details]()
+
+1. **Breadcrumb Navigation** - returns the user to the Dashboard view.
+2. **Contact Details** - information relevant to that contact is displayed here.
+3. **Status Information** - equipment strings provides configuration details. 
+4. **Event Log** - displays the events leading up to the alert, which could be useful in troubleshooting.
+5. **Modify Button** - puts the contact in an editable mode to allow operators to resolve the issue, in this case by modifying the Equipment String.
 
 ## Equipment
 
