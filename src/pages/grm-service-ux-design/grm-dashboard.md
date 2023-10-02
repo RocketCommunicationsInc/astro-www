@@ -59,7 +59,7 @@ The Contacts tab allows operators to view all contacts configured in the GRM app
 
 1. **Breadcrumb Navigation** - returns the user to the Dashboard view.
 2. **Contact Details** - information relevant to that contact is displayed here.
-3. **Status Information** - equipment strings provides configuration details. 
+3. **Status Information** - equipment strings provides configuration details.
 4. **Event Log** - displays the events leading up to the alert, which could be useful in troubleshooting.
 5. **Modify Button** - puts the contact in an editable mode to allow operators to resolve the issue, in this case by modifying the Equipment String.
 
@@ -95,7 +95,7 @@ Below is an animated walkthrough of a representative task flow using the GRM Das
  <figure>
   <a href="#demo" class="demo" name="close">
    <span class="icon-play"></span>
-   <img src="/img/service-specific-ux-design/grm-dashboard/grm-dashboard-modify-string-placeholder.webp"
+   <img src="/img/service-specific-ux-design/grm-dashboard/grm-dashboard-modify-string-placeholder.png"
    alt="GRM Dashboard demo" />
   </a>
  </figure>

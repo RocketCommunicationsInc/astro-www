@@ -95,7 +95,7 @@ Below is an animated walkthrough of a representative task flow using the GRM Equ
  <figure>
   <a href="#demo" class="demo" name="close">
    <span class="icon-play"></span>
-   <img src="/img/service-specific-ux-design/grm-equipment-manager/grm-equipment-manager-sched-job-placeholder.webp"
+   <img src="/img/service-specific-ux-design/grm-equipment-manager/grm-equipment-manager-sched-job-placeholder.png"
    alt="GRM Equipment Manager demo" />
   </a>
  </figure>
