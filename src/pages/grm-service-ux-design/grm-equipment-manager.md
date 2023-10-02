@@ -4,12 +4,9 @@ path: /grm-service-ux-design/grm-equipment-manager
 date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
 title: GRM Equipment Manager
-description: The GRM Equipment Manager app is designed to operators by consolidating information related to all ground equipment in one place.
+description: The GRM Equipment Manager app is designed for operators by consolidating information related to all ground equipment in one place.
 ---
 
-:::note
-The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
-:::
 [Launch GRM Equipment Manager Sample App](https://grm-equipment-react-ts.netlify.app) | [Design Materials and Source Code](/grm-service-ux-design/grm-equipment-manager/#design-materials-and-source-code)
 
 A core requirement of GRM is to ensure that the equipment on the ground responsible for communicating with satellites is operational and available. This equipment includes hardware such as antennas, processors and software systems that all must interact with one another during a satellite contact. These resources are often shared amongst multiple operations, so if a piece of equipment is not available, it can affect multiple missions. As such, it is critical for operators to quickly identify equipment in need of attention and schedule maintenance to get it back up and running as quickly as possible.
@@ -24,13 +21,13 @@ There are three main areas of the GRM Equipment Manager app: the Global Status B
 
 ## Global Status Bar
 
-As outlined on the [About GRM Designs](/grm-service-ux-design/about-the-grm-designs) page, each of the apps in the GRM Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar), an Astro component featured in all three apps. Though the status bar contents vary somewhat between apps in order to best support each app’s individual workflows, all contain a [Clock](/components/clock), [Monitoring Icons](/components/icons-and-symbols), and an App Switcher Menu that allows operators to transition quickly from one GRM task flow to another.
+As outlined on the [About GRM Designs](/grm-service-ux-design/about-the-grm-designs) page, each of the apps in the GRM Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar), an Astro component featured in all three apps. Status bars contain an App Switcher Menu, that allows operators to transition quickly from one GRM task flow to another, a [Clock](/components/clock), and [Monitoring Icons](/components/icons-and-symbols). Status bar contents may vary somewhat between apps in order to best support each app’s individual workflows.
 
 ![GRM Dashboard App Details](/img/service-specific-ux-design/grm-equipment-manager/grm-equipment-manager-global-status-bar-details.webp)
 
 1. **App Switcher Menu** - The App Switcher Menu allows the user to launch new instances of different GRM apps, sign in/sign out, and edit preferences.
 2. **Global Clock** - Time is central to many GRM service task flows, so it is included in the Global Status Bar in all GRM apps.
-3. **Monitoring Icons** - The Dashboard app includes Upcoming Contacts Allocated (UCA) and Software status indicators, as well as status and alert counts for each of the top categories in the equipment hierarchy.
+3. **Monitoring Icons** - The Dashboard app includes Software status indicators, as well as status and alert counts for each of the top categories in the equipment hierarchy.
 
 ## Equipment Navigation Tree
 
@@ -54,13 +51,13 @@ The default view of the Equipment Manager app is the Inoperable Equipment page, 
 
 Operators can access the Equipment Details page for a particular piece of equipment either via the navigation tree or from the grid of Inoperable Equipment. When operators open the details page for a piece of equipment, a new navigation tab to access it is added to the right of the Inoperable tab. This design allows operators to quickly and easily switch back and forth between equipment they are working with in the app.
 
-There are two panels on the Equipment Details page, one on top designed to provide comprehensive information and actions for an individual piece of ground equipment and the other below, which is focused on Maintenance.
+There are two panels on the Equipment Details page, one on top designed to provide comprehensive information and actions for an individual piece of ground equipment, and the other below, which is focused on Maintenance.
 
 ### Equipment Details
 
 ![GRM Equipment Manager Equipment Details](/img/service-specific-ux-design/grm-equipment-manager/grm-equipment-manager-equip-det-top-details.webp)
 
-1. **Equipment Tab** - A new tab labeled with the name of the equipment appears to the right of the “Inoperable” home button when operators navigate to any Equipment Details page.
+1. **Equipment Tab** - A new tab labeled with the name of the equipment appears to the right of the “Inoperable” tab when operators navigate to any Equipment Details page.
 2. **Toggles** - Allow operators to change equipment's online/offline and considered/deconsidered states.
 3. **Alerts** - A list of all current and past alerts for the related equipment.
 4. **Current Contacts** - All contacts currently executing that include the related equipment in their equipment string.
@@ -85,7 +82,7 @@ Note that maintenance-related task flows are covered in much more detail in the 
 2. **Job Settings** - Operators enter required information for the maintenance in the form at the left.
 3. **Calculate Conflicts** - Generates a list of contacts that will not execute due to the time window of this job, unless they are allocated different equipment.
 4. **Conflicts Table** - If there are conflicts caused by the maintenance window, they are displayed in this table.
-5. **Submit Request** - Once operators have.
+5. **Submit Request** - Allows operators to submit or cancel their maintenance request.
 
 ## Task Flow Example - Schedule Maintenance Job
 
