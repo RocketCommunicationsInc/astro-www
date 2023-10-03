@@ -7,12 +7,9 @@ title: GRM Dashboard
 description: Helps operators maintain situational awareness.
 ---
 
-:::note
-The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
-:::
 [Launch GRM Dashboard Sample App](https://grm-dashboard-react.netlify.app) | [Design Materials and Source Code](/grm-service-ux-design/grm-dashboard/#design-materials-and-source-code)
 
-Given the large number of satellite contacts and equipment assets that operators are responsible for, maintaining situational awareness poses a significant challenge. Operators must be able to quickly identify equipment issues and resolve them so that there are no missed opportunities to communicate with satellites. The GRM Dashboard app was designed with this goal in mind. As the operators’ primary GRM app, it would constantly occupy one of their large displays.
+Given the large number of satellite contacts and equipment assets that operators are responsible for, maintaining situational awareness poses a significant challenge. Operators must be able to quickly identify equipment issues and resolve them so that there are no missed opportunities to communicate with satellites. The GRM Dashboard app was designed with this goal in mind. As an operator's primary GRM app, it would constantly occupy one of their large displays.
 
 ![GRM Dashboard App](/img/service-specific-ux-design/grm-dashboard/grm-dashboard-app.webp)
 
@@ -22,7 +19,7 @@ There are three main areas of the GRM Dashboard app: the Global Status Bar, the 
 
 ## Global Status Bar
 
-As outlined on the [About GRM Designs](/grm-service-ux-design/about-the-grm-designs) page, each of the apps in the GRM Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar), an Astro component featured in all three apps. Though the status bar contents vary somewhat between apps in order to best support each app’s individual workflows, all contain a [Clock](/components/clock), [Monitoring Icons](/components/icons-and-symbols), and an App Switcher Menu that allows operators to transition quickly from one GRM task flow to another.
+As outlined on the [About GRM Designs](/grm-service-ux-design/about-the-grm-designs) page, each of the apps in the GRM Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar), an Astro component featured in all three apps. Status bars contain an App Switcher Menu, that allows operators to transition quickly from one GRM task flow to another, a [Clock](/components/clock), and [Monitoring Icons](/components/icons-and-symbols). Status bar contents may vary somewhat between apps in order to best support each app’s individual workflows.
 
 ![GRM Dashboard App Details](/img/service-specific-ux-design/grm-dashboard/grm-dashboard-global-status-bar-details.webp)
 
@@ -45,23 +42,15 @@ The Alerts panel provides operators with a roll-up of issues across the ground s
 
 ## Contacts
 
-The Contacts tab allows operators to view all contacts configured in the GRM app. Contacts can be filtered by status to allow operators to quickly identify those that failed or are currently executing. The contacts are displayed in the table along with important information such as Ground Station, Equipment String, and AOS/LOS times, but can also be expanded to present additional detail. The Contacts Summary at the bottom provides operators with a view of contact counts over time, color coded by status.
+The Contacts tab allows operators to view all contacts configured in the GRM app. Contacts can be filtered by status to allow operators to quickly identify those that failed or are currently executing. The contacts are displayed in the table along with important information such as Ground Station, Equipment String, and AOS/LOS times, but can also be clicked to provide additional detail in a new tab. The Contacts Summary at the bottom provides operators with a view of contact counts over time, color coded by status.
 
-![GRM Dashboard Contacts](/img/service-specific-ux-design/grm-dashboard/grm-dashboard-contact-details.webp)
+![GRM Dashboard Contacts Details](/img/service-specific-ux-design/grm-dashboard/grm-dashboard-contact-details.webp)
 
 1. **Contacts Hero Numbers** - Shows number of executing contacts at a glance.
 2. **Segmented Button Filter** - Filters Current Contacts by All, Executing, or Failed.
 3. **Histogram** - Y-axis measures contact counts, while the x-axis represents time.
 4. **Histogram Filters** - Filters may be applied to one, many or all of the Contact States; Upcoming, Executing, Complete, Failed.
 5. **Zoom Control** - Operators can drag the slider to zoom in or out of the Histogram
-
-![GRM Dashboard Contact Details]()
-
-1. **Breadcrumb Navigation** - returns the user to the Dashboard view.
-2. **Contact Details** - information relevant to that contact is displayed here.
-3. **Status Information** - equipment strings provides configuration details. 
-4. **Event Log** - displays the events leading up to the alert, which could be useful in troubleshooting.
-5. **Modify Button** - puts the contact in an editable mode to allow operators to resolve the issue, in this case by modifying the Equipment String.
 
 ## Equipment
 
@@ -75,17 +64,29 @@ The Equipment tab provides operators with a usage summary of the major equipment
 
 ## Alert Details
 
-If operators choose to drill into an alert via the Investigate button in the Alerts panel, an Alert Details page is displayed in the main content area. The content of the page changes somewhat depending on whether the alert pertains to a contact or a piece of equipment, but each variant allows operators to view additional detail on the alert, dismiss, acknowledge it, or take some action to remedy it. The image below shows an example of the Alert Details page for a contact-related alert; you can find information on the equipment variant along with relevant task flows in the [GRM Design Specifications](/grm-service-ux-design/grm-dashboard/#design-materials-and-source-code) and Wireframes documents.
+If operators choose to expand an alert via the Investigate button in the Alerts panel, an Alert Details page is displayed in the main content area. The content of the page changes somewhat depending on whether the alert pertains to a contact or a piece of equipment, but each variant allows operators to view additional detail on the alert, dismiss, acknowledge it, or take some action to remedy it. The image below shows an example of the Alert Details page for a contact-related alert; you can find information on the equipment variant along with relevant task flows in the [GRM Design Specifications](/grm-service-ux-design/grm-dashboard/#design-materials-and-source-code) and Wireframes documents.
 
 ![GRM Dashboard Alert Details](/img/service-specific-ux-design/grm-dashboard/grm-dashboard-contact-alert-details.webp)
 
 1. **Breadcrumb Navigation** - returns the user to the Dashboard view.
 2. **Alert Details** - contains information relevant to the particular alert.
 3. **Acknowledge/Dismiss** - operators can acknowledge or dismiss the alert.
-4. **Contact Details** - because the alert in the example above is related to a contact, information relevant to that contact is displayed here.
-5. **Status Information** - in this example, the equipment string indicates that an antenna is in a critical status for this contact.
-6. **Event Log** - displays the events leading up to the alert, which could be useful in troubleshooting.
-7. **Modify Button** - puts the contact in an editable mode to allow operators to resolve the issue, in this case by modifying the Equipment String.
+4. **Equipment Details** - because the alert is related to a piece of equipment, information relevant to the equipment is displayed here.
+5. **Event Log** - displays the events leading up to the alert, which could be useful in troubleshooting.
+6. **Maintenance** - operators can view the status of requested maintenance or schedule a new maintenance job for the piece of equipment.
+7. **Maintenance History** - displays previously completed maintenance, which could be useful in troubleshooting.
+
+## Contact Details
+
+If operators choose to click a specific contact within the Current Contacts table, a Contact Details page is displayed in the main content area. The content of the page allows operators to view additional detail on the contact and take action to modify it if necessary. The image below shows an example of the Contact Details page; you can find additional information with relevant task flows in the [GRM Design Specifications](/grm-service-ux-design/grm-dashboard/#design-materials-and-source-code) and Wireframes documents.
+
+![GRM Dashboard Contact Details](/img/service-specific-ux-design/grm-dashboard/grm-dashboard-contact-details.webp)
+
+1. **Breadcrumb Navigation** - returns the user to the Dashboard view.
+2. **Contact Details** - information relevant to the particular contact is displayed here.
+3. **Status Information** - the equipment string indicates that all equipment have a normal status for this contact.
+4. **Event Log** - displays recent events, which could be useful if troubleshooting is needed.
+5. **Modify Button** - puts the contact in an editable mode to allow operators to resolve any issues, for example by modifying the Equipment String configuration if there was a more critical status present.
 
 ## Task Flow Example - Modify Equipment String
 
@@ -95,7 +96,7 @@ Below is an animated walkthrough of a representative task flow using the GRM Das
  <figure>
   <a href="#demo" class="demo" name="close">
    <span class="icon-play"></span>
-   <img src="/img/service-specific-ux-design/grm-dashboard/grm-dashboard-modify-string-placeholder.webp"
+   <img src="/img/service-specific-ux-design/grm-dashboard/grm-dashboard-modify-string-placeholder.png"
    alt="GRM Dashboard demo" />
   </a>
  </figure>

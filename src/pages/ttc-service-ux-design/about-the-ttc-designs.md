@@ -22,16 +22,16 @@ The purpose of a Telemetry, Tracking, and Command (TT&C) system is to support mi
 The animated graphic below depicts a much simplified version of a TT&C task flow, including major phases and activities.
 
 <div markdown="1">
-	<figure markdown="1">
-		<a href="#demo" class="demo" name="close">
-			<span class="icon-play"></span>
-			<img src="/img/service-specific-ux-design/ttc/ttc-phases-placeholder.webp" markdown="1"
-			alt="TT&C Phases" />
-		</a>
-	</figure>
-	<a href="#close" class="lightbox" id="demo">
-		<img src="/img/service-specific-ux-design/ttc/ttc-phases.gif" alt="TT&C Phases" />
-	</a>
+ <figure markdown="1">
+  <a href="#demo" class="demo" name="close">
+   <span class="icon-play"></span>
+   <img src="/img/service-specific-ux-design/ttc/ttc-phases-placeholder.png" markdown="1"
+   alt="TT&C Phases" />
+  </a>
+ </figure>
+ <a href="#close" class="lightbox" id="demo">
+  <img src="/img/service-specific-ux-design/ttc/ttc-phases.gif" alt="TT&C Phases" />
+ </a>
 </div>
 
 ## UX Research Findings
