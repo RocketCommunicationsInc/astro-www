@@ -3,17 +3,11 @@ tags: ["ttc", "egs", "r2c2"]
 path: /ttc-service-ux-design/about-the-ttc-designs
 date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
-title: About the TT&C Designs
+title: Telemetry, Tracking, and Command
 description: The purpose of a Telemetry, Tracking, and Command (TT&C) system is to support missions requiring communication between satellites and ground systems.
 ---
 
-:::note
-The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
-:::
-
-## Telemetry, Tracking & Command (TT&C)
-
-The purpose of a Telemetry, Tracking, and Command (TT&C) system is to support missions requiring communication between satellites and ground systems. Key aspects of this include tracking the satellites, monitoring and maintaining their state of health (SOH) via telemetry data, and transmitting commands to them to achieve mission objectives. An analysis of existing systems and task flows reveals three main components to supporting TT&C services:
+Key aspects of a TT&C system include tracking the satellites, monitoring and maintaining their state of health (SOH) via telemetry data, and transmitting commands to them to achieve mission objectives. An analysis of existing systems and task flows reveals three main components to supporting TT&C services:
 
 - **Monitor Constellation** - Monitor the status, health, and function of a satellite constellation and the systems it relies on.
 - **Command Satellites** - Send and receive streams of data to and from a spacecraft, done using a set of commands arranged into a pass plan.
@@ -80,7 +74,7 @@ The TT&C Monitor app allows operators to monitor status, alerts, health, and fun
 
 :::two-col
 
-![TT&C Command App](/img/service-specific-ux-design/ttc/ttc-equipment-manager-app.webp)
+![TT&C Command App](/img/service-specific-ux-design/ttc/ttc-command-app.webp)
 
 :::col
 The TT&C Command app allows operators to send and receive streams of data to and from a spacecraft using a set of commands, often referred to as a pass plan.
