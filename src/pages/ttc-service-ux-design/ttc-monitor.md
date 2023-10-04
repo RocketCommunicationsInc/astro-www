@@ -61,9 +61,8 @@ The Constellation panel shows the contacts for the satellites in the constellati
 ![TT&C List View](/img/service-specific-ux-design/ttc-monitor/ttc-monitor-constellation-list-details.webp)
 
 1. **Spacecraft Names & Status Symbols** - Indicates spacecraft and current status and severity.
-2. **Command Quick Launch** - Launches the Command App/Window for respective spacecrafts (in active pass state). This interaction is indicated by the underline.
-3. **View Switch** - Switches between List and Timeline views.
-4. **Actions Menu (View Pass Plan)** - Opens the Contact Details Modeless Pane
+2. **View Switch** - Switches between List and Timeline views.
+3. **Actions Menu (View Pass Plan)** - Opens the Contact Details Modeless Pane
 
 ## Contact Details and Pass Plan Pane
 
