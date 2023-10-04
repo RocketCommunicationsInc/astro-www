@@ -7,13 +7,13 @@ title: Telemetry, Tracking, and Command
 description: The purpose of a Telemetry, Tracking, and Command (TT&C) system is to support missions requiring communication between satellites and ground systems.
 ---
 
-Key aspects of a TT&C system include tracking the satellites, monitoring and maintaining their state of health (SOH) via telemetry data, and transmitting commands to them to achieve mission objectives. An analysis of existing systems and task flows reveals three main components to supporting TT&C services:
+Essential aspects of a TT&C system include tracking satellites, monitoring and maintaining state of health (SOH) via telemetry data, and transmitting commands to achieve mission objectives. Analyzing existing systems and task flows revealed three main components for supporting TT&C services:
 
 - **Monitor Constellation** - Monitor the status, health, and function of a satellite constellation and the systems it relies on.
 - **Command Satellites** - Send and receive streams of data to and from a spacecraft, done using a set of commands arranged into a pass plan.
 - **Investigate Anomalies** - Investigate spacecraft alerts and anomalies, as well as analyze subsystem mnemonics, measurements, value limits, etc.
 
-The animated graphic below depicts a much simplified version of a TT&C task flow, including major phases and activities.
+The animated graphic, TT&C Phases, depicts a simplified overview of TT&C task flow phases and activities.
 
 <div markdown="1">
  <figure markdown="1">
@@ -41,7 +41,8 @@ UX research conducted in collaboration with users and domain experts on existing
 
 ## UX Design and Sample Apps
 
-Based on this initial research and follow-up design iterations with operators and stakeholders, the resulting design effort focused on a suite of three TT&C Sample Apps, each designed to support key functionality and task flows. Each of the apps is designed to occupy its own browser window, allowing operators to focus on the task at hand, but by virtue of being integrated into a suite, the apps share functionality and support common task flows.
+The UX research and follow-up design iterations with operators and stakeholders produced a suite of three TT&C Sample Apps. Each suite app occupies a separate browser window, allowing operators to focus on a task while still being integrated into a suite designed to share functionality and support common workflows. 
+
 
 ### TT&C App Suite
 
