@@ -60,7 +60,7 @@ The TT&C App Suite comprises three integrated apps: Monitor, Command, & Investig
 
 :::two-col
 
-![TT&C Monitor App](/img/service-specific-ux-design/ttc/ttc-monitor-app.webp)
+![TT&C Monitor App](/img/case-studies/tt&c/ttc-monitor-app.webp)
 
 :::col
 The TT&C Monitor app allows operators to monitor status, alerts, health, and function of an individual satellite and satellite constellations.
