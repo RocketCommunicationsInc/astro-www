@@ -7,7 +7,7 @@ layout: project:layouts/docs/docs-layout.astro
 :::note
 The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
 :::
-The goal of the Service Specific UX Design effort is to promote the development of consistent, robust applications to support Rapid Reslient Command & Control (R2C2) by applying UX design process and the Astro Space UX Design System to create, document and implement baseline designs as interactive sample apps. The work described here focused on two key R2C2 services, [Ground Resource Management (GRM)][grm-designs] and [Telemetry, Tracking & Command (TT&C)][ttc-designs] and followed the process below:
+The Service Specific UX Design effort supported Rapid Resilient Command & Control (R2C2) to develop consistent, robust applications. The design efforts achieved the goal by applying UX Design processes aligned with the Astro Space UX Design System to create, document, and implement baseline designs as interactive sample apps. The work described here focused on two key R2C2 services, [Ground Resource Management (GRM)][grm-designs] and [Telemetry, Tracking & Command (TT&C)][ttc-designs] and followed the process below:
 
 - Conducted [UX research](/design-process/research) with users and stakeholders to identify key task flows, constraints, and current pain points in existing systems.
 - Used the findings from this research and the Astro Space UX Design System to [design](/design-process/ui-design) solutions to support GRM and TT&C Services.
@@ -15,7 +15,8 @@ The goal of the Service Specific UX Design effort is to promote the development 
 - Implemented the resulting designs as interactive sample applications using the [Astro UI Components](/components/readme).
 - Provided the detailed design specifications, wireframes, sample applications, and source code as [downloadable resources](/downloads) to teams looking to develop applications supporting GRM and TT&C Services.
 
-This effort included many hours of interviews with users and stakeholders, detailed analysis of task flows and requirements, and iterative evaluation and improvement to the designs based on user feedback. All of this was done with the intent that the sample app designs be used as a reference for developing GRM and TT&C apps, thus fostering a consistent, successful user experience across systems that support this functionality.
+Design efforts included several hours of user and stakeholder interviews, detailed task flow analysis, and iterative design evaluations based on user feedback. The result of the design activities produced sample app designs to reference for developing future GRM and TT&C apps, fostering consistent and functional user experience across systems. 
+
 
 ## GRM Service UX Design
 
@@ -35,19 +36,27 @@ The UX research conducted on GRM services drove the design of three sample apps 
 
 ## TT&C Service UX Design
 
-The UX research on TT&C services also resulted in the design of a three-app suite. The TT&C App Suite is designed to support ground-to-satellite communication, including sending commands, monitoring constellations and maintaining the health of spacecraft. The [TT&C Monitor][ttc-monitor] app allows the operator to monitor status, alerts, health and function of an individual satellite and satellite constellations. The [TT&C Command][ttc-command] app allows the operator to send and receive streams of data to and from a spacecraft using a set of commands. The [TT&C Investigate][ttc-investigate] app allows the operator to investigate spacecraft alerts and anomalies and analyze subsystem mnemonics, measurements, limits, etc. You can get an overview of the design work on the [About the TT&C Designs][ttc-designs] page or use one of the links below to get more information about a particular app.
+The UX research for TT&C services resulted in designing the TT&C App Suite that supports ground-to-satellite communications, monitoring constellations, and maintaining spacecraft health. 
 
+The [TT&C Monitor][ttc-monitor] app allows the operator to monitor status, alerts, health and function of an individual satellite and satellite constellations.
 ![](/img/service-specific-ux-design/ttc/ttc-monitor-app.webp)
 
 [TT&C Monitor App][ttc-monitor]
 
+
+The [TT&C Command][ttc-command] app allows the operator to send and receive streams of data to and from a spacecraft using a set of commands.
 ![](/img/service-specific-ux-design/ttc/ttc-command-app.webp)
 
 [TT&C Command App][ttc-command]
 
-![](/img/service-specific-ux-design/ttc/ttc-investigate-app.webp)
+
+The [TT&C Investigate][ttc-investigate] app allows the operator to investigate spacecraft alerts and anomalies and analyze subsystem mnemonics, measurements, limits, etc. 
 
 [TT&C Investigate][ttc-investigate]
+
+You can get an overview of the design work on the [About the TT&C Designs][ttc-designs] page or use one of the links below to get more information about a particular app.
+![](/img/service-specific-ux-design/ttc/ttc-investigate-app.webp)
+
 
 [grm-designs]: /grm-service-ux-design/about-the-grm-designs
 [grm-dashboard]: /grm-service-ux-design/grm-dashboard
