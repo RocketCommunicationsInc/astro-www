@@ -7,8 +7,6 @@ title: TT&C Investigate
 description: The Investigate App displays system schematics and status data for a selected satellite.
 ---
 
-:::note
-The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
 :::
 [Launch TT&C Investigate Sample App](https://ttc-investigate.astrouxds.com) | [Design Materials and Source Code](/ttc-service-ux-design/ttc-investigate/#design-materials-and-source-code)
 
@@ -30,7 +28,7 @@ As outlined on the [About TT&C Designs](/ttc-service-ux-design/about-the-ttc-des
 
 1. **App Switcher Menu** - The App Switcher Menu allows the user to launch new instances of different TT&C apps, sign in/sign out, and edit preferences.
 2. **Global Clock** - Time is central to many TT&C service task flows, so it is included in the Global Status Bar in all TT&C apps.
-3. **Monitoring Icons** - The Dashboard App includes Upcoming Contacts Allocated (UCA) and Software status indicators, as well as status and alert counts for each of the top categories in the equipment hierarchy.
+3. **Monitoring Icons** - The Investigate App includes software status indicators, as well as status and alert counts for each of the top categories in the equipment hierarchy.
 
 ## Subsystem Tree Menu
 
@@ -40,13 +38,10 @@ The Subsystem Tree Menu shows a hierarchical list of the satellite subsystems. S
 
 ![TT&C Subsytem Tree](/img/service-specific-ux-design/ttc-investigate/ttc-investigate-subsystem-tree-details.webp)
 
-1. **Expandable List Items** - Subsystem menu items expand to show any related sub-subsystems in the section to the right.
+1. **Expandable List Items** - Subsystem menu items expand to show any related sub-subsystems.
 2. **Status Symbols** - Status symbols indicate current subsystem status and severity.
 
 :::
-
-1. **Equipment Categories** - Inoperable equipment is organized into categories along with a total for the category.
-2. **Equipment Status** - Inoperable equipment is displayed with status coding indicating the severity of the problem.
 
 ## Subsystem Assembly Layout
 
