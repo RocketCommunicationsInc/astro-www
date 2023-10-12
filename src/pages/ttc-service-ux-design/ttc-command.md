@@ -7,8 +7,6 @@ title: TT&C Command
 description: The TT&C Command App is designed to be used for sending and receiving communications with a satellite during a contact.
 ---
 
-:::note
-The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
 :::
 
 [Launch TT&C Command Sample App](https://ttc-command-react.netlify.app/) | [Design Materials and Source Code](/ttc-service-ux-design/ttc-command/#design-materials-and-source-code)
@@ -17,7 +15,7 @@ The TT&C Command App is designed to be used for sending and receiving communicat
 
 UX research underscored the fact that commanding is the core of TT&C operations and that existing systems often split the functionality to support it across application windows. This makes finding critical information and actions more difficult and time consuming. Therefore, a key tenet of the Command App design was to centralize the core functionality into a single window.
 
-Another aspect of the design aimed at reducing cognitive load is to give operators the ability to automate execution of the Pass Plan. Here, a plan can be run in a Manual mode, in which an operator determines when the next step is executed, Automated mode, in which the steps are executed sequentially by the system itself, or Semi-Auto mode, a hybrid of the two. Plans are set up to run in a default mode, but operators with sufficient privileges can override this as the situation dictates. Operators also have the option to add commands to the Pass Plan queue if necessary.
+Another aspect of the design aimed at reducing cognitive load is to give operators the ability to automate execution of the Pass Plan. Here, a plan can be run in Automated mode, in which the steps are executed sequentially by the system itself, or Semi-Auto mode. Plans are set up to run in a default mode, but operators with sufficient privileges can override this as the situation dictates. Operators also have the option to add commands to the Pass Plan queue if necessary.
 
 ![TT&C Command App](/img/service-specific-ux-design/ttc-command/ttc-command-app.webp)
 
@@ -33,7 +31,7 @@ As outlined on the [About TT&C Designs](/ttc-service-ux-design/about-the-ttc-des
 
 1. **App Switcher Menu** - The App Switcher Menu allows the user to launch new instances of different TT&C apps, sign in/sign out, and edit preferences.
 2. **Global Clock** - Time is central to many TT&C service task flows, so it is included in the Global Status Bar in all TT&C apps.
-3. **Monitoring Icons** - The Dashboard App includes Upcoming Contacts Allocated (UCA) and Software status indicators, as well as status and alert counts for each of the top categories in the equipment hierarchy.
+3. **Monitoring Icons** - The Command App includes software status indicators, as well as status and alert counts for each of the top categories in the equipment hierarchy.
 
 ## Alerts
 
@@ -51,12 +49,12 @@ The Alerts panel provides operators with a roll-up of spacecraft specific alerts
 
 ## Pass Plan
 
-The Pass Plan panel is where operators will track or initiate execution of the commands sent to the satellite. Depending on whether the current plan is running in Manual, Semi-Auto, or Automated mode, operators will either explicitly initiate commands in this pane, simply monitor the progress as the system initiates the commands, or something in between. If it becomes necessary to insert a command in the plan, operators could use the Add to queue functionality at the bottom of the pane to search and specify the command to be inserted.
+The Pass Plan panel is where operators will track or initiate execution of the commands sent to the satellite. Depending on whether the current plan is running in Semi-Auto or Automated mode, operators will either explicitly initiate commands in this pane, simply monitor the progress as the system initiates the commands, or something in between. If it becomes necessary to insert a command in the plan, operators could use the Add to queue functionality at the bottom of the pane to search and specify the command to be inserted.
 
 :::two-col
 ![TT&C Command Pass Plan Detail](/img/service-specific-ux-design/ttc-command/ttc-command-pass-plan-details.webp)
 
-1. **Mode** - Allows operators with the necessary permissions to set the plan to run in Manual, Semi-Auto, or Automated mode.
+1. **Mode** - Allows operators with the necessary permissions to set the plan to run in Semi-Auto or Automated mode.
 2. **Pass Indicator** - Allows operators to determine if they are in pre-pass, pass or post-pass in relation to the AOS/LOS for the contact.
 3. **Pass Plan** - An interactive checklist of instructions an operator is expected to complete during a pass. This includes, but is not limited to: Checkboxes, Select Menus and play and pause controls.
 4. **Mnemonic Snapshot** - Allows operators to inspect a mnemonic called out for verification in the pass plan.
@@ -79,7 +77,7 @@ The System Health panel allows operators to track the strength of the communicat
 
 ## Task Flow Example - Pass Flow
 
-Below is an animated walkthrough of a representative task flow using the TT&C Monitor App. In this flow, an operator runs through the steps in the pre-defined Pass Plan and adds a command at the end.
+Below is an animated walkthrough of a representative task flow using the TT&C Command App. In this flow, an operator runs through the steps in the pre-defined Pass Plan and adds a command at the end.
 
 <div markdown="1">
  <figure markdown="1" >
