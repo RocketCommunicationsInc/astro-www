@@ -7,8 +7,6 @@ title: TT&C Command
 description: The TT&C Command App is designed to be used for sending and receiving communications with a satellite during a contact.
 ---
 
-:::
-
 [Launch TT&C Command Sample App](https://ttc-command-react.netlify.app/) | [Design Materials and Source Code](/ttc-service-ux-design/ttc-command/#design-materials-and-source-code)
 
 The TT&C Command App is designed to be used for sending and receiving communications with a satellite during a contact. It contains status and command data for only a single satellite - one currently in a pass. Operators can open multiple command windows if they are managing several passes simultaneously.
@@ -17,17 +15,17 @@ UX research underscored the fact that commanding is the core of TT&C operations 
 
 Another aspect of the design aimed at reducing cognitive load is to give operators the ability to automate execution of the Pass Plan. Here, a plan can be run in Automated mode, in which the steps are executed sequentially by the system itself, or Semi-Auto mode. Plans are set up to run in a default mode, but operators with sufficient privileges can override this as the situation dictates. Operators also have the option to add commands to the Pass Plan queue if necessary.
 
-![TT&C Command App](/img/service-specific-ux-design/ttc-command/ttc-command-app.webp)
+![TT&C Command App](/img/case-studies/tt&c/ttc-command-app.webp)
 
 There are four main areas in the Command App: the Global Status Bar, Alerts panel, Pass Plan panel, and System Health panel. The key elements are described below, but you can find much more design and task flow detail in the [TT&C Design Specification and Wireframes](/ttc-service-ux-design/ttc-command/#design-materials-and-source-code) documents. You can also launch the [TT&C Command Sample App](https://ttc-command-react.netlify.app/) to explore the design interactively.
 
-![TT&C Command App Details](/img/service-specific-ux-design/ttc-command/ttc-command-app-details.webp)
+![TT&C Command App Details](/img/case-studies/tt&c/ttc-command-app-details.webp)
 
 ## Global Status Bar
 
 As outlined on the [About TT&C Designs](/ttc-service-ux-design/about-the-ttc-designs) page, each of the apps in the TT&C Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar), an Astro component featured in all three apps. Though the status bar contents vary somewhat between apps in order to best support each app’s individual workflows, all contain a [Clock](/components/clock), [Monitoring Icons](/components/icons-and-symbols), and an App Switcher Menu that allows operators to transition quickly from one TT&C task flow to another.
 
-![TT&C Command Global Status Bar Details](/img/service-specific-ux-design/ttc-command/ttc-command-global-status-bar-details.webp)
+![TT&C Command Global Status Bar Details](/img/case-studies/tt&c/ttc-command-global-status-bar-details.webp)
 
 1. **App Switcher Menu** - The App Switcher Menu allows the user to launch new instances of different TT&C apps, sign in/sign out, and edit preferences.
 2. **Global Clock** - Time is central to many TT&C service task flows, so it is included in the Global Status Bar in all TT&C apps.
@@ -38,7 +36,7 @@ As outlined on the [About TT&C Designs](/ttc-service-ux-design/about-the-ttc-des
 The Alerts panel provides operators with a roll-up of spacecraft specific alerts, as well as communications, software, and its assigned ground station. Operators can filter the alerts by Severity and Category, allowing them to quickly identify the most severe issues or focus in on particular areas of the system. This allows operators to efficiently track their workflow and keeps the Alerts pane more sparsely populated, so they will be more likely to notice when new alerts come in. Operators can also drill in to see additional information on any of the alerts and launch an instance of the [TT&C Investigate App](/ttc-service-ux-design/ttc-investigate) to explore the issue further.
 
 :::two-col
-![TT&C Command Alerts Detail](/img/service-specific-ux-design/ttc-command/ttc-monitor-alerts-details.webp)
+![TT&C Command Alerts Detail](/img/case-studies/tt&c/ttc-monitor-alerts-details.webp)
 
 1. **Active Alert Hero Number** - Shows number of active alerts at a glance.
 2. **Filter Select menus** - Filters alert list by severity and category.
@@ -52,7 +50,7 @@ The Alerts panel provides operators with a roll-up of spacecraft specific alerts
 The Pass Plan panel is where operators will track or initiate execution of the commands sent to the satellite. Depending on whether the current plan is running in Semi-Auto or Automated mode, operators will either explicitly initiate commands in this pane, simply monitor the progress as the system initiates the commands, or something in between. If it becomes necessary to insert a command in the plan, operators could use the Add to queue functionality at the bottom of the pane to search and specify the command to be inserted.
 
 :::two-col
-![TT&C Command Pass Plan Detail](/img/service-specific-ux-design/ttc-command/ttc-command-pass-plan-details.webp)
+![TT&C Command Pass Plan Detail](/img/case-studies/tt&c/ttc-command-pass-plan-details.webp)
 
 1. **Mode** - Allows operators with the necessary permissions to set the plan to run in Semi-Auto or Automated mode.
 2. **Pass Indicator** - Allows operators to determine if they are in pre-pass, pass or post-pass in relation to the AOS/LOS for the contact.
@@ -65,7 +63,7 @@ The Pass Plan panel is where operators will track or initiate execution of the c
 
 The System Health panel allows operators to track the strength of the communication signal with the satellite and monitor the overall health of the satellite subsystems. The health data here is determined from telemetry data coming in during the pass. If there is a problem with any of the subsystems, operators can navigate directly to a detailed view of it in the Investigate App to determine if action is required during the pass. This panel also includes Watcher functionality specific to the satellite.
 :::two-col
-![TT&C Command System Health Detail](/img/service-specific-ux-design/ttc-command/ttc-command-system-health-details.webp)
+![TT&C Command System Health Detail](/img/case-studies/tt&c/ttc-command-system-health-details.webp)
 
 1. **Lock and Signal Strength** - Displays the lock value and signal strength, as well as a status indicator of the quality of lock.
 2. **Telemetry and Total Frame Count** - Displays telemetry value and a status indicator to determine, at-a-glance, the quality of telemetry, as well as the frame count.
@@ -83,12 +81,12 @@ Below is an animated walkthrough of a representative task flow using the TT&C Co
  <figure markdown="1" >
   <a href="#demo" class="demo" name="close">
    <span class="icon-play"></span>
-   <img src="/img/service-specific-ux-design/ttc-command/ttc-command-execute-pass-plan-placeholder.png"
+   <img src="/img/case-studies/tt&c/ttc-command-execute-pass-plan-placeholder.png"
    alt="TT&C Command Execute Pass Plan demo" />
   </a>
  </figure>
  <a href="#close" class="lightbox" id="demo">
-  <img src="/img/service-specific-ux-design/ttc-command/ttc-command-execute-pass-plan.gif" alt="TT&C Command Execute pass plan" />
+  <img src="/img/case-studies/tt&c/ttc-command-execute-pass-plan.gif" alt="TT&C Command Execute pass plan" />
  </a>
 </div>
 
