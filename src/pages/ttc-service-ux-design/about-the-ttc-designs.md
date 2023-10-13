@@ -16,16 +16,7 @@ Essential aspects of a TT&C system include tracking satellites, monitoring and m
 The animated graphic, TT&C Phases, depicts a simplified overview of TT&C task flow phases and activities.
 
 <div markdown="1">
- <figure markdown="1">
-  <a href="#demo" class="demo" name="close">
-   <span class="icon-play"></span>
-   <img src="/img/service-specific-ux-design/ttc/ttc-phases-placeholder.png" markdown="1"
-   alt="TT&C Phases" />
-  </a>
- </figure>
- <a href="#close" class="lightbox" id="demo">
-  <img src="/img/service-specific-ux-design/ttc/ttc-phases.gif" alt="TT&C Phases" />
- </a>
+  <img src="/img/case-studies/tt&c/ttc-phases.gif" alt="TT&C Phases" />
 </div>
 
 ## UX Research Findings
@@ -41,14 +32,14 @@ UX research conducted in collaboration with users and domain experts on existing
 
 ## UX Design and Sample Apps
 
-The UX research and follow-up design iterations with operators and stakeholders produced a suite of three TT&C Sample Apps. Each suite app occupies a separate browser window, allowing operators to focus on a task while still being integrated into a suite designed to share functionality and support common workflows. 
+The UX research and follow-up design iterations with operators and stakeholders produced a suite of three TT&C Sample Apps. Each suite app occupies a separate browser window, allowing operators to focus on a task while still being integrated into a suite designed to share functionality and support common workflows.
 
 
 ### TT&C App Suite
 
 :::two-col
 
-![TT&C Application Suite](/img/service-specific-ux-design/ttc/ttc-suite-apps.webp)
+![TT&C Application Suite](/img/case-studies/tt&c/ttc-suite-apps.webp)
 
 :::col
 The TT&C App Suite comprises three integrated apps: Monitor, Command, & Investigate.
@@ -75,7 +66,7 @@ The TT&C Monitor app allows operators to monitor status, alerts, health, and fun
 
 :::two-col
 
-![TT&C Command App](/img/service-specific-ux-design/ttc/ttc-command-app.webp)
+![TT&C Command App](/img/case-studies/tt&c/ttc-command-app.webp)
 
 :::col
 The TT&C Command app allows operators to send and receive streams of data to and from a spacecraft using a set of commands, often referred to as a pass plan.
@@ -90,7 +81,7 @@ The TT&C Command app allows operators to send and receive streams of data to and
 
 :::two-col
 
-![TT&C Schedule App](/img/service-specific-ux-design/ttc/ttc-investigate-app.webp)
+![TT&C Schedule App](/img/case-studies/tt&c/ttc-investigate-app.webp)
 
 :::col
 The TT&C Investigate App allows operators to investigate spacecraft alerts and anomalies and analyze subsystem mnemonics, measurements, limits, etc.
