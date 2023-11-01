@@ -1,5 +1,5 @@
 ---
-tags: ["flight dynamics", "egs","r2c2"]
+tags: ['flight dynamics', 'egs', 'r2c2']
 path: /fd-service-ux-design/about-the-fd-designs
 date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
@@ -17,6 +17,8 @@ The FDS system supports missions that require communication between satellites a
 
 - [FD Design Specifications (pdf)](https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/fds-specifications.pdf)
 - [FD Wireframes (pdf)](https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/fds-wireframes.pdf)
+- [FD Sample App (live deployment)](https://flight-dynamics-service.netlify.app/Nominal-OD-IRON-7381)
+- [FD Sampel App Source Code (Github Repository)](https://github.com/RocketCommunicationsInc/Flight-Dynamics-Service)
 
 <video controls width="100%">
 		<source src="https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/media/fds-video.mp4" type="video/mp4">
