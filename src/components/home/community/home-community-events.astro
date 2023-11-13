@@ -19,6 +19,7 @@ const sanitizer = new Sanitizer()
 		attrs.heading.data
 	}</h4>
 	<div class="p-community-events-content">
+		{calendarEvents.length < 1 && <div class="no-events"><div class="main">No Upcoming Events at This Time</div> But be sure to join our community for the latest Astro news!</div>}
 		<For of={calendarEvents}>{calendarEvent => (
 			<article class="p-community-event">
 				<hgroup class="p-community-event-heading">

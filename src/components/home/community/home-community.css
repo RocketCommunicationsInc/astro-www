@@ -75,6 +75,32 @@
 /* Community: Content: Events */
 
 .p-community-events {
+	.p-community-events-content:has(>.no-events) {
+		/* Layout */
+		block-size: 100%;
+	}
+
+	.no-events {
+		display: flex;
+
+		/* Layout */
+		align-items: center;
+		block-size: 100%;
+		flex-direction: column;
+		flex-grow: 1;
+		gap: 2--step;
+		inline-size: 100%;
+		justify-content: center;
+
+		.main {
+			/* Text */
+			font-size: max(20--rpx);
+			line-height: calc(24 / 20);
+		}
+	}
+}
+
+.p-community-events {
 	display: flex;
 
 	/* Layout */
