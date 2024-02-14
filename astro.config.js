@@ -19,11 +19,4 @@ export default defineConfig({
     drafts: true,
   },
   integrations: [ astroPlugins(), astroSitemapIntegration(), astroWebComponentPolyfills(), lit(), sitemap() ],
-	vite: {
-    build: {
-      rollupOptions: {
-        external: 'shiki/themes/hc_light.json'
-      }
-  }
-}
 })
