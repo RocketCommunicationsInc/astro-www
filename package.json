@@ -47,7 +47,7 @@
 		"eslint-plugin-jsx-a11y": "6.7.1",
 		"isomorphic-dompurify": "1.8.0",
 		"lightningcss": "1.21.5",
-		"lit": "^2.7.6",
+		"lit": "2.8.0",
 		"parse-yaml": "0.1.0",
 		"postcss-load-config": "4.0.1",
 		"postcss-preset-env": "9.0.0",
@@ -346,6 +346,7 @@
 		]
 	},
 	"dependencies": {
-		"highlight.js": "^11.8.0"
+	
+		"highlight.js": "11.8.0"
 	}
 }
