@@ -22,7 +22,7 @@
 		"**/*.webp": false,
 		"**/dist": true,
 		"**/node_modules": false,
-		"**/package-lock.json": true
+		"**/package-lock.json": false
 	},
 
 	"javascript.preferences.importModuleSpecifier": "non-relative",
