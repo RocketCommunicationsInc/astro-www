@@ -183,7 +183,7 @@ If you have a use case where the other values for XTCE-Status ( 1 = ACKNOWLEDGEM
 |-------------|-----------------------|---------------|
 | INVALID:2   | color.status.caution  |               |
 | COMPLETED:9 | color.status.normal   |               |
-| FALED:10    | color.status.critical |               |
+| FAILED:10   | color.status.critical |               |
 
 </div>
 
