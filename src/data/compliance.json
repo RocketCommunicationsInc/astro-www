@@ -887,7 +887,7 @@
                             "rule": "Status Symbols shall be displayed with the [specified colors](/components/status-symbol/#status-colors).",
                             "status": "current",
                             "tier": 1
-                        },
+                        }
                     ]
                 },
                 {
