@@ -1,0 +1,35 @@
+---
+import caseStudiesAccess from 'project:data/case-studies-access.json'
+import './case-studies-access.css'
+
+import Control from './case-studies-access-control.astro'
+import { For } from '@astropub/flow'
+
+const { data } = caseStudiesAccess
+---
+<section class="p-case-studies">
+	<button type="button" class="open"><slot /></button>
+	<dialog>
+		<h3 class="p-scase-studies-heading">{data.heading.data}</h3>
+		<p class="p-scase-studies-content">{data.summary.data}</p>
+		<form class="p-scase-studies-form" action={data.form.data.action.data} method={data.form.data.method.data} target="_blank">
+			<For of={data.content.data}>{item => (
+				<Control type={item.type.data} required={item.required.data} placeholder={item.placeholder.data} autocomplete={item.autocomplete.data} name={item.mcname.data}>{item.label.data}</Control>
+			)}</For>
+
+
+			<!-- <For of={data.hidden.data}>{item => (
+				<input type={item.type.data as any} name={item.name.data} value={item.value?.data} />
+			)}</For> -->
+
+			<footer>
+				<button type="reset" class="close p-case-studies-button secondary">Cancel</button>
+				<button type="submit" class="submit p-case-studies-button">Submit</button>
+			</footer>
+		</form>
+	</dialog>
+</section>
+
+<script>
+	import './case-studies-access.js'
+</script>
