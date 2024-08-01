@@ -9,22 +9,52 @@ const { data } = caseStudiesAccess
 ---
 <section class="p-case-studies">
 	<button type="button" class="open"><slot /></button>
-	<dialog>
-		<h3 class="p-scase-studies-heading">{data.heading.data}</h3>
-		<p class="p-scase-studies-content">{data.summary.data}</p>
-		<form class="p-scase-studies-form" action={data.form.data.action.data} method={data.form.data.method.data} target="_blank">
-			<For of={data.content.data}>{item => (
-				<Control type={item.type.data} required={item.required.data} placeholder={item.placeholder.data} autocomplete={item.autocomplete.data} name={item.mcname.data}>{item.label.data}</Control>
-			)}</For>
+	<dialog class="p-case-studies-dialog">
+		<h3 class="p-case-studies-heading">{data.heading.data}</h3>
+		<p class="p-case-studies-content">{data.summary.data}</p>
+		<form class="p-case-studies-form">
+			<div class="p-case-studies-inputs">
+				<For of={data.content.data}>{item => (
+					<Control type={item.type.data} required={item.required.data} placeholder={item.placeholder.data} autocomplete={item.autocomplete.data} name={item.name.data}>{item.label.data}</Control>
+				)}</For>
 
+				<fieldset>
+					<legend>{data.useLabel.data}</legend>
+					<div class="p-case-studies-use">
+						<For of={data.use.data}>{item => (
+							<span>
+								<input id={item.placeholder.data} type={item.type.data as 'radio'} name={item.name.data} value={item.placeholder.data} checked={item.checked.data} />
+								<label for={item.placeholder.data}>{item.label.data}</label>
+							</span>
+						)}</For>
+					</div>
+				</fieldset>
 
-			<!-- <For of={data.hidden.data}>{item => (
-				<input type={item.type.data as any} name={item.name.data} value={item.value?.data} />
-			)}</For> -->
+				<fieldset>
+					<legend>{data.accessLabel.data}</legend>
+					<div class="p-case-studies-apps">
+						<For of={data.apps.data}>{item => (
+							<span>
+								<input id={item.placeholder.data} type={item.type.data as 'checkbox'} name={item.name.data} value={item.placeholder.data} />
+								<label for={item.placeholder.data}>{item.label.data}</label>
+							</span>
+						)}</For>
+					</div>
+				</fieldset>
 
-			<footer>
+				<fieldset class="p-case-studies-subscribe">
+					<input id="subscribe" type="checkbox" name="subscribe" checked />
+					<label for="subscribe">Subscribe to Astro UXDS News and Updates?</label>
+				</fieldset>
+
+				<small class="p-case-studies-error" />
+			</div>
+
+			<footer class="p-case-studies-footer">
 				<button type="reset" class="close p-case-studies-button secondary">Cancel</button>
-				<button type="submit" class="submit p-case-studies-button">Submit</button>
+				<button type="submit" class="p-case-studies-button">
+					<div class="submit">Submit</div>
+				</button>
 			</footer>
 		</form>
 	</dialog>

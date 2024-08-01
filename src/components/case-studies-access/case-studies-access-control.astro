@@ -13,6 +13,8 @@ if (Astro.props.class) {
 
 if (Astro.props.required) {
 	classesForControl.push('-required')
+} else {
+	classesForControl.push('-optional')
 }
 
 const classForControl = [ ...new Set(classesForControl) ].join(' ')

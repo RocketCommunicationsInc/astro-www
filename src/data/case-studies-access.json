@@ -8,7 +8,15 @@
 		},
 		"summary": {
 			"type": "text",
-			"data": "The source code Git repository and other useful documentation for Astro’s apps are hosted on Github.com. Please fill out the form below to request access. "
+			"data": "The source code Git repository and other useful documentation for Astro’s apps are hosted on Github.com. Please fill out the form below to request access."
+		},
+		"useLabel": {
+			"type": "text",
+			"data": "How Would You Like to Use Astro’s Source Code?"
+		},
+		"accessLabel": {
+			"type": "text",
+			"data": "Which Astro App’s Source Code Would You Like Access to?"
 		},
 		"form": {
 			"type": "object",
@@ -33,23 +41,19 @@
 					},
 					"name": {
 						"type": "text",
-						"data": "name"
-					},
-					"mcname": {
-						"type": "text",
-						"data": "NAME"
+						"data": "first"
 					},
 					"label": {
 						"type": "text",
-						"data": "Your Name"
+						"data": "First Name"
 					},
 					"autocomplete": {
 						"type": "text",
-						"data": "name"
+						"data": "first"
 					},
 					"placeholder": {
 						"type": "text",
-						"data": "First and Last Name"
+						"data": "Enter first name"
 					},
 					"required": {
 						"type": "switch",
@@ -63,23 +67,19 @@
 					},
 					"name": {
 						"type": "text",
-						"data": "organization"
-					},
-					"mcname": {
-						"type": "text",
-						"data": "COMPANY"
+						"data": "last"
 					},
 					"label": {
 						"type": "text",
-						"data": "Your Company"
+						"data": "Last Name"
 					},
 					"autocomplete": {
 						"type": "text",
-						"data": "organization"
+						"data": "last"
 					},
 					"placeholder": {
 						"type": "text",
-						"data": ""
+						"data": "Enter last name"
 					},
 					"required": {
 						"type": "switch",
@@ -95,13 +95,9 @@
 						"type": "text",
 						"data": "email"
 					},
-					"mcname": {
-						"type": "text",
-						"data": "EMAIL"
-					},
 					"label": {
 						"type": "text",
-						"data": "Your Email"
+						"data": "Email"
 					},
 					"autocomplete": {
 						"type": "text",
@@ -109,54 +105,177 @@
 					},
 					"placeholder": {
 						"type": "text",
-						"data": ""
+						"data": "Enter email"
 					},
 					"required": {
 						"type": "switch",
 						"data": true
 					}
+				},
+				{
+					"type": {
+						"type": "text",
+						"data": "text"
+					},
+					"name": {
+						"type": "text",
+						"data": "company"
+					},
+					"label": {
+						"type": "text",
+						"data": "Company"
+					},
+					"autocomplete": {
+						"type": "text",
+						"data": "company"
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "Enter company name"
+					},
+					"required": {
+						"type": "switch",
+						"data": false
+					}
 				}
 			]
 		},
-		"hidden": {
+		"use": {
 			"type": "objects",
 			"data": [
 				{
 					"type": {
 						"type": "text",
-						"data": "hidden"
+						"data": "radio"
 					},
 					"name": {
 						"type": "text",
-						"data": "b_f067e558ee805172850a87843_c1af406c10"
+						"data": "use"
+					},
+					"label": {
+						"type": "text",
+						"data": "Company Use"
+					},
+					"autocomplete": {
+						"type": "text",
+						"data": "use"
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "company"
+					},
+					"checked": {
+						"type": "switch",
+						"data": true
 					}
 				},
 				{
 					"type": {
 						"type": "text",
-						"data": "hidden"
+						"data": "radio"
 					},
 					"name": {
 						"type": "text",
-						"data": "u"
+						"data": "use"
 					},
-					"value": {
+					"label": {
 						"type": "text",
-						"data": "f067e558ee805172850a87843"
+						"data": "Personal Use"
+					},
+					"autocomplete": {
+						"type": "text",
+						"data": "use"
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "personal"
+					},
+					"checked": {
+						"type": "switch",
+						"data": false
+					}
+				}
+			]
+		},
+		"apps": {
+			"type": "objects",
+			"data": [
+				{
+					"type": {
+						"type": "text",
+						"data": "checkbox"
+					},
+					"name": {
+						"type": "text",
+						"data": "apps"
+					},
+					"label": {
+						"type": "text",
+						"data": "GRM"
+					},
+					"autocomplete": {
+						"type": "text",
+						"data": "apps"
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "grm"
+					},
+					"checked": {
+						"type": "switch",
+						"data": false
 					}
 				},
 				{
 					"type": {
 						"type": "text",
-						"data": "hidden"
+						"data": "checkbox"
 					},
 					"name": {
 						"type": "text",
-						"data": "id"
+						"data": "apps"
 					},
-					"value": {
+					"label": {
 						"type": "text",
-						"data": "c1af406c10"
+						"data": "FDS"
+					},
+					"autocomplete": {
+						"type": "text",
+						"data": "apps"
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "fds"
+					},
+					"checked": {
+						"type": "switch",
+						"data": false
+					}
+				},
+				{
+					"type": {
+						"type": "text",
+						"data": "checkbox"
+					},
+					"name": {
+						"type": "text",
+						"data": "apps"
+					},
+					"label": {
+						"type": "text",
+						"data": "TT&C"
+					},
+					"autocomplete": {
+						"type": "text",
+						"data": "apps"
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "ttc"
+					},
+					"checked": {
+						"type": "switch",
+						"data": false
 					}
 				}
 			]
