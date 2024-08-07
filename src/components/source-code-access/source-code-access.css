@@ -278,3 +278,14 @@
 		opacity: .4;
 	}
 }
+
+.p-source-code-dialog-open {
+	/* Appearance */
+	color: var(--DarkBlue500Color);
+
+	&:hover {
+		/* Appearance */
+		color: var(--DarkBlue700Color);
+		cursor: pointer;
+	}
+}
