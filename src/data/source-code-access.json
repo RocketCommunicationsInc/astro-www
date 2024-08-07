@@ -224,7 +224,7 @@
 					},
 					"label": {
 						"type": "text",
-						"data": "FDS"
+						"data": "TT&C"
 					},
 					"autocomplete": {
 						"type": "text",
@@ -232,7 +232,7 @@
 					},
 					"placeholder": {
 						"type": "text",
-						"data": "FDS"
+						"data": "TT&C"
 					},
 					"checked": {
 						"type": "switch",
@@ -250,7 +250,7 @@
 					},
 					"label": {
 						"type": "text",
-						"data": "TT&C"
+						"data": "FDS"
 					},
 					"autocomplete": {
 						"type": "text",
@@ -258,7 +258,7 @@
 					},
 					"placeholder": {
 						"type": "text",
-						"data": "TT&C"
+						"data": "FDS"
 					},
 					"checked": {
 						"type": "switch",
