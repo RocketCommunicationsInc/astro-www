@@ -18,19 +18,6 @@
 			"type": "text",
 			"data": "Which Astro App’s Source Code Would You Like Access to?"
 		},
-		"form": {
-			"type": "object",
-			"data": {
-				"action": {
-					"type": "text",
-					"data": "http://localhost:4000/subscribe/post"
-				},
-				"method": {
-					"type": "text",
-					"data": "GET"
-				}
-			}
-		},
 		"content": {
 			"type": "objects",
 			"data": [
@@ -219,7 +206,7 @@
 					},
 					"placeholder": {
 						"type": "text",
-						"data": "grm"
+						"data": "GRM"
 					},
 					"checked": {
 						"type": "switch",
@@ -245,7 +232,7 @@
 					},
 					"placeholder": {
 						"type": "text",
-						"data": "fds"
+						"data": "FDS"
 					},
 					"checked": {
 						"type": "switch",
@@ -271,7 +258,7 @@
 					},
 					"placeholder": {
 						"type": "text",
-						"data": "ttc"
+						"data": "TT&C"
 					},
 					"checked": {
 						"type": "switch",
