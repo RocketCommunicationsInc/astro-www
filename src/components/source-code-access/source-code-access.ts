@@ -1,7 +1,7 @@
 const dialog = document.querySelector('.p-source-code-dialog') as HTMLDialogElement
 const openButtons = document.querySelectorAll('.p-source-code-dialog-open') as NodeListOf<HTMLButtonElement>
 const closeButton = document.querySelector('.p-source-code-dialog-close') as HTMLButtonElement
-const submitButton = document.querySelector('p-source-code-dialog-submit') as HTMLButtonElement
+const submitButton = document.querySelector('.p-source-code-dialog-submit') as HTMLButtonElement
 const loadingEle = document.querySelector('.loading-container') as HTMLDivElement
 const form = document.querySelector('.p-source-code-form') as HTMLFormElement
 const appCheckboxes = document.querySelectorAll('.p-source-code-app-checkbox') as NodeListOf<HTMLInputElement>

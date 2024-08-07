@@ -263,7 +263,7 @@
 		}
 	}
 
-	& .submit.loading {
+	& .loading-container.loading {
 		/* Layout */
 		padding-inline-start: 6--step;
 
