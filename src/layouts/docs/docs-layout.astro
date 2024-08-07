@@ -32,7 +32,6 @@ const tabTitle = content.title
 const description = content.description || false
 const url = content.url
 const draft = content.draft ? content.draft : false
-
 /* Create github link to source file */
 
 /** RegEx to match a slash (/) at the end ($) of a string. */
@@ -97,7 +96,7 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 			</aside>
 		</div>
 	</main>
-	<FeedbackWidget currentURL={url} />
+	<FeedbackWidget currentURL={Astro.url.pathname} />
 </Layout>
 <script>
 	import './docs-layout.client'
