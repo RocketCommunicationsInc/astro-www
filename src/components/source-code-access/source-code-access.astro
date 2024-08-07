@@ -1,0 +1,65 @@
+---
+import sourceCodeAccess from 'project:data/source-code-access.json'
+import './source-code-access.css'
+
+import Control from './source-code-access-control.astro'
+import { For } from '@astropub/flow'
+
+const { data } = sourceCodeAccess
+---
+<span class="p-source-code">
+	<dialog class="p-source-code-dialog">
+		<h3 class="p-source-code-heading">{data.heading.data}</h3>
+		<p class="p-source-code-content">{data.summary.data}</p>
+		<form class="p-source-code-form">
+			<div class="p-source-code-inputs">
+				<For of={data.content.data}>{item => (
+					<Control type={item.type.data} required={item.required.data} placeholder={item.placeholder.data} autocomplete={item.autocomplete.data} name={item.name.data}>{item.label.data}</Control>
+				)}</For>
+
+				<fieldset>
+					<legend>{data.useLabel.data}</legend>
+					<div class="p-source-code-use">
+						<For of={data.use.data}>{item => (
+							<span>
+								<input id={item.placeholder.data} type={item.type.data as 'radio'} name={item.name.data} value={item.placeholder.data} checked={item.checked.data} />
+								<label for={item.placeholder.data}>{item.label.data}</label>
+							</span>
+						)}</For>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend>{data.accessLabel.data}</legend>
+					<div class="p-source-code-apps">
+						<For of={data.apps.data}>{item => (
+							<span>
+								<input class="p-source-code-app-checkbox" id={item.placeholder.data} type={item.type.data as 'checkbox'} name={item.name.data} value={item.placeholder.data} />
+								<label for={item.placeholder.data}>{item.label.data}</label>
+							</span>
+						)}</For>
+					</div>
+					<small class="p-source-code-apps-error" />
+				</fieldset>
+
+				<fieldset class="p-source-code-subscribe">
+					<input id="subscribe" type="checkbox" name="subscribe" checked />
+					<label for="subscribe">Subscribe to Astro UXDS News and Updates?</label>
+				</fieldset>
+
+				<small class="p-source-code-error" />
+			</div>
+
+			<footer class="p-source-code-footer">
+				<button type="reset" class="p-source-code-button p-source-code-dialog-close secondary">Cancel</button>
+				<button type="submit" class="p-source-code-button p-source-code-dialog-submit">
+					<div class="loading-container">Submit</div>
+				</button>
+			</footer>
+		</form>
+	</dialog>
+</span>
+
+<script>
+	import './source-code-access.js'
+</script>
