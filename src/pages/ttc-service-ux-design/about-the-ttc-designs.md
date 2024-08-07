@@ -1,5 +1,5 @@
 ---
-tags: ["ttc", "egs", "r2c2"]
+tags: ['ttc', 'egs', 'r2c2']
 path: /ttc-service-ux-design/about-the-ttc-designs
 date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
@@ -34,7 +34,6 @@ UX research conducted in collaboration with users and domain experts on existing
 
 The UX research and follow-up design iterations with operators and stakeholders produced a suite of three TT&C Sample Apps. Each suite app occupies a separate browser window, allowing operators to focus on a task while still being integrated into a suite designed to share functionality and support common workflows.
 
-
 ### TT&C App Suite
 
 :::two-col
@@ -59,7 +58,7 @@ The TT&C Monitor app allows operators to monitor status, alerts, health, and fun
 
 - [Overview of TT&C Monitor](/ttc-service-ux-design/ttc-monitor)
 - [Launch TT&C Monitor Sample App](https://monitor-ttc.netlify.app)
-- [App Source Code (Git Repository)](https://github.com/RocketCommunicationsInc/ttc-monitor-react)
+- <button data-app="TT&C" type="button" class="p-source-code-dialog-open">Request Source Code Access</button>
   :::
 
 ### TT&C Command
@@ -73,7 +72,7 @@ The TT&C Command app allows operators to send and receive streams of data to and
 
 - [Overview of TT&C Command](/ttc-service-ux-design/ttc-command)
 - [Launch TT&C Command Sample App](https://ttc-command-react.netlify.app/)
-- [App Source Code (Git Repository)](https://github.com/RocketCommunicationsInc/ttc-command-react)
+- <button data-app="TT&C" type="button" class="p-source-code-dialog-open">Request Source Code Access</button>
 
 :::
 
@@ -88,5 +87,5 @@ The TT&C Investigate App allows operators to investigate spacecraft alerts and a
 
 - [Overview of TT&C Investigate](/ttc-service-ux-design/ttc-investigate)
 - [Launch TT&C Investigate Sample App](https://ttc-command-react.netlify.app)
-- [App Source Code (Git Repository)](https://github.com/RocketCommunicationsInc/ttc-command-react)
+- <button data-app="TT&C" type="button" class="p-source-code-dialog-open">Request Source Code Access</button>
   :::
