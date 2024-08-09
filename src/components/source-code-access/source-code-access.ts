@@ -75,8 +75,8 @@ form.addEventListener('submit', async (e) => {
 		}
 	}
 
-	const hasAppOneAppMin = params.apps.length > 0
-	if (!hasAppOneAppMin) {
+	const hasOneAppMin = params.apps.length > 0
+	if (!hasOneAppMin) {
 		appsError.innerText = appsErrorMgs
 		resetLoading()
 		return
