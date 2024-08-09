@@ -1,5 +1,5 @@
 ---
-tags: ["grm", "egs", "r2c2"]
+tags: ['grm', 'egs', 'r2c2']
 path: /grm-service-ux-design/grm-dashboard
 date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
@@ -110,9 +110,9 @@ Below is an animated walkthrough of a representative task flow using the GRM Das
 Below are design and development resources to get you started on an app that supports GRM services. Note that there are some discrepancies between the design documents and the [GRM Dashboard Sample App](https://grm-dashboard-react.netlify.app) due to design improvements that were introduced late in the app development cycle.
 
 :::table-overflow
-| Resources                                                                                          | Description                                                                                                                                             |
+| Resources | Description |
 |----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [GRM Design Specifications (pdf)](/pdf/grm-specifications.pdf)                                     | The GRM Design Specification contains information on use cases, task flows, UX research and wireframes for key features of the GRM App Suite.           |
-| [GRM Design Wireframes (pdf)](/pdf/grm-wireframes.pdf)                                             | The GRM Design Wireframes document contains the complete set of wireframes (mid-fidelity renderings) of the screens designed for the GRM App Suite.     |
-| [App Source Code (Git Repository)](https://github.com/RocketCommunicationsInc/grm-dashboard-react) | The source code Git repository and other useful documentation for the GRM Dashboard App is hosted at github.com so that you can check it out in detail. |
+| [GRM Design Specifications (pdf)](/pdf/grm-specifications.pdf) | The GRM Design Specification contains information on use cases, task flows, UX research and wireframes for key features of the GRM App Suite. |
+| [GRM Design Wireframes (pdf)](/pdf/grm-wireframes.pdf) | The GRM Design Wireframes document contains the complete set of wireframes (mid-fidelity renderings) of the screens designed for the GRM App Suite. |
+| <button data-app="GRM" type="button" class="p-source-code-dialog-open">GRM Request Source Code Access</button> | The source code Git repository and other useful documentation for the GRM Dashboard App is hosted at github.com so that you can check it out in detail. |
 :::

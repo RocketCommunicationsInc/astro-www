@@ -1,5 +1,5 @@
 ---
-tags: ["grm", "egs", "r2c2"]
+tags: ['grm', 'egs', 'r2c2']
 path: /grm-service-ux-design/about-the-grm-designs
 date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
@@ -55,7 +55,7 @@ The GRM Dashboard app rolls up all information necessary for providing operators
 
 - [Overview of GRM Dashboard](/grm-service-ux-design/grm-dashboard/)
 - [Launch GRM Dashboard Sample App](https://grm-dashboard-react.netlify.app)
-- [App Source Code (Git repo)](https://github.com/RocketCommunicationsInc/grm-dashboard-react)
+- <button data-app="GRM" type="button" class="p-source-code-dialog-open">Request Source Code Access</button>
 
   :::
 
@@ -70,7 +70,7 @@ The GRM Equipment Manager app consolidates all ground equipment in one place, al
 
 - [Overview of GRM Equipment Manager](/grm-service-ux-design/grm-equipment-manager/)
 - [Launch GRM Equipment Manager Sample App](https://grm-equipment-react-ts.netlify.app)
-- [App Source Code (Git Repository)](https://github.com/RocketCommunicationsInc/grm-equipment-react-ts)
+- <button data-app="GRM" type="button" class="p-source-code-dialog-open">Request Source Code Access</button>
 
   :::
 
@@ -85,6 +85,6 @@ The GRM Schedule app allows operators to view and manage the full schedule of co
 
 - [Overview of GRM Schedule](/grm-service-ux-design/grm-schedule/)
 - [Launch GRM Schedule Sample App](https://grm-schedule-react.netlify.app)
-- [App Source Code (Git Repository)](https://github.com/RocketCommunicationsInc/grm-schedule-react)
+- <button data-app="GRM" type="button" class="p-source-code-dialog-open">Request Source Code Access</button>
 
   :::

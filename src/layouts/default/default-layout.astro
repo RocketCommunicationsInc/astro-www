@@ -4,6 +4,7 @@ import type { Props } from '@astropub/doc'
 import Document from '@astropub/doc'
 import './default-layout.css'
 
+import SourceCodeAccess from 'project:components/source-code-access/source-code-access.astro'
 import globalData from 'project:data/global.json'
 import SiteNavigation from 'project:components/site-navigation/site-navigation.astro'
 import SiteFooter from 'project:components/site-footer/site-footer.astro'
@@ -34,6 +35,7 @@ const attrs = {
 	<div class="x-foot">
 		<SiteFooter />
 	</div>
+	<SourceCodeAccess />
 </Document>
 <script>
 import './default-layout.client'
