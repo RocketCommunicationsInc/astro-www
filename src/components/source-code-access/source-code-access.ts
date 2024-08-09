@@ -5,6 +5,7 @@ const submitButton = document.querySelector('.p-source-code-dialog-submit') as H
 const loadingEle = document.querySelector('.loading-container') as HTMLDivElement
 const form = document.querySelector('.p-source-code-form') as HTMLFormElement
 const appCheckboxes = document.querySelectorAll('.p-source-code-app-checkbox') as NodeListOf<HTMLInputElement>
+const popover = document.querySelector('.p-source-code-success-popover') as HTMLDivElement
 const appsError = document.querySelector('.p-source-code-apps-error') as HTMLDivElement
 const appsErrorMgs = `Please select an app you like source code access too.`
 const error = document.querySelector('.p-source-code-error') as HTMLDivElement
@@ -34,8 +35,6 @@ openButtons.forEach((openBtn) => {
 		})
 	})
 })
-
-
 
 closeButton.addEventListener('click', () => {
 	dialog.close()
@@ -95,6 +94,7 @@ form.addEventListener('submit', async (e) => {
 			return
 		}
 
+		popover.showPopover()
 		form.reset()
 		dialog.close()
 	} catch (err) {

@@ -14,7 +14,7 @@
 
 		/* Appearance */
 		background: var(--SurfaceColor);
-		border: 1--rpx solid var(--DarkBlue950Color);
+		border: 1--rpx solid var(--BaseColor);
 		border-radius: var(--EdgeRadius);
 		color: var(--PrimaryColor);
 
@@ -25,7 +25,7 @@
 
 		&::backdrop {
 			/* Appearance */
-			background-color: var(--DarkBlue950Color);
+			background-color: var(--BaseColor);
 			opacity: .8;
 		}
 
@@ -287,5 +287,43 @@
 		/* Appearance */
 		color: var(--DarkBlue700Color);
 		cursor: pointer;
+	}
+}
+
+.p-source-code-success-popover:popover-open {
+	display: flex;
+
+	/* Layout */
+	align-items: center;
+	gap: 8--step;
+	margin-block-start: 8--step;
+	margin-inline-end: 8--step;
+	padding: 4--step;
+
+	/* Appearance */
+	/* background-color: var(--BaseColor); */
+	border-radius: var(--EdgeRadius);
+
+	/* Appearance */
+	color: var(--ExampleDoColor);
+	border-color: var(--ExampleDoColor);
+
+	& .p-source-code-success-content {
+		display: flex;
+
+		/* Layout */
+		align-items: center;
+		gap: 2--step;
+	}
+
+	& .p-source-code-success-message {
+		/* Text */
+		font-size: 18--rpx;
+		font-weight: 400;
+	}
+
+	& .p-source-code-success-close {
+		/* Appearance */
+		color: var(--DarkBlue500Color);
 	}
 }
