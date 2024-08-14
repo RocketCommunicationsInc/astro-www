@@ -26,9 +26,9 @@ Before reading any further, we recommend you review available Astro components o
 
 The Astro Figma files use fonts that are free to download from Google and linked below. Astro 6 Figma files use a combination of [Roboto](https://fonts.google.com/specimen/Roboto) and [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono). Astro 7 Figma files use [Roboto](https://fonts.google.com/specimen/Roboto). To see the latest recommended fonts for Astro applications, go to our [Typography](/design-guidelines/typography/) page.
 
-## Astro and R2C2 Design Compliance
+## Astro Design Compliance
 
-The Astro team has worked with R2C2 to establish the R2C2 Design Compliance requirements for developers targeting the R2C2 Platform. These requirements are specific to R2C2 development; these requirements are based on common best practices and accessibility guidelines and it is highly recommended for all users to incorporate them into their applications.
+The Astro team has worked to establish the Astro Design Compliance requirements for developers targeting the R2C2 Platform. These requirements are specific to R2C2 development; these requirements are based on common best practices and accessibility guidelines and it is highly recommended for all users to incorporate them into their applications.
 
 [R2C2 Design Compliance](/compliance/r2c2-design-compliance/)
 

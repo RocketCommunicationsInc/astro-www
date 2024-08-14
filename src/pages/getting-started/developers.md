@@ -1,10 +1,10 @@
 ---
 layout: project:layouts/docs/docs-layout.astro
-title: "Getting Started for Developers"
+title: 'Getting Started for Developers'
 description: The Astro UXDS Web Component library provides a starting point to build in-browser space app experiences and custom applications following today’s web development best practices.
 ---
 
- The Astro UXDS Web Components are designed to be as platform and implementation-agnostic as possible, easy to implement or extend in existing projects, and generic by default. Astro UXDS Web Components adhere to Semantic Versioning. You can read more about our policy on breaking changes on the [releases](/releases/#web-component-breaking-changes) page.
+The Astro UXDS Web Components are designed to be as platform and implementation-agnostic as possible, easy to implement or extend in existing projects, and generic by default. Astro UXDS Web Components adhere to Semantic Versioning. You can read more about our policy on breaking changes on the [releases](/releases/#web-component-breaking-changes) page.
 
 :::note
 You can view all our developer documentation on **[Storybook](https://astro-components.netlify.app/)**.
@@ -26,14 +26,14 @@ Astro uses the freely available [Roboto](https://fonts.google.com/specimen/Robot
 
 ## Astro Storybook and Sample Apps
 
-You can review the latest versions of the web components at the [Astro Storybook](https://astro-components.netlify.app/?path=/story/astro-uxds-welcome-start-here--page). The Astro development team uses Storybook as an environment for building and demonstrating the capabilities of each component. For online examples of full Astro app experiences, check out these R2C2 Service-Specific sample experiences:
+You can review the latest versions of the web components at the [Astro Storybook](https://astro-components.netlify.app/?path=/story/astro-uxds-welcome-start-here--page). The Astro development team uses Storybook as an environment for building and demonstrating the capabilities of each component. For online examples of full Astro app experiences, check out these Service-Specific sample experiences:
 
 :::table-overflow
-| Ground Resources Management                                                                                                                           | Telemetry, Tracking, and Control                                                                                                     |
+| Ground Resources Management | Telemetry, Tracking, and Control |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
-| [Dashboard](/grm-service-ux-design/grm-dashboard/) - [Source code](https://github.com/RocketCommunicationsInc/grm-dashboard-react)                    | [Monitor](/ttc-service-ux-design/ttc-monitor/) - [Source code](https://github.com/RocketCommunicationsInc/ttc-monitor-react)         |
-| [Equipment Manager](/grm-service-ux-design/grm-equipment-manager/) - [Source code](https://github.com/RocketCommunicationsInc/grm-equipment-react-ts) | [Command](/ttc-service-ux-design/ttc-command/) - [Source code](https://github.com/RocketCommunicationsInc/ttc-command-react)         |
-| [Schedule](/grm-service-ux-design/grm-schedule/) - [Source code](https://github.com/RocketCommunicationsInc/grm-schedule-react)                       | [Investigate](/ttc-service-ux-design/ttc-investigate/) - [Source code](https://github.com/RocketCommunicationsInc/ttc-command-react) |
+| [Dashboard](/grm-service-ux-design/grm-dashboard/) - [Source code](https://github.com/RocketCommunicationsInc/grm-dashboard-react) | [Monitor](/ttc-service-ux-design/ttc-monitor/) - [Source code](https://github.com/RocketCommunicationsInc/ttc-monitor-react) |
+| [Equipment Manager](/grm-service-ux-design/grm-equipment-manager/) - [Source code](https://github.com/RocketCommunicationsInc/grm-equipment-react-ts) | [Command](/ttc-service-ux-design/ttc-command/) - [Source code](https://github.com/RocketCommunicationsInc/ttc-command-react) |
+| [Schedule](/grm-service-ux-design/grm-schedule/) - [Source code](https://github.com/RocketCommunicationsInc/grm-schedule-react) | [Investigate](/ttc-service-ux-design/ttc-investigate/) - [Source code](https://github.com/RocketCommunicationsInc/ttc-command-react) |
 :::
 
 :::note
@@ -42,7 +42,7 @@ These examples use a previous release of Astro, and are not intended as boilerpl
 
 ## R2C2 Compliance
 
-The Astro team has worked with R2C2 to establish the R2C2 Compliance requirements for developers targeting the R2C2 Platform. These requirements are specific to R2C2 development; these requirements are based off of common best practices and accessibility guidance and it is highly recommended for all users to incorporate them into their applications.
+The Astro team has worked to establish the Astro Compliance requirements for developers targeting the R2C2 Platform. These requirements are specific to R2C2 development; these requirements are based off of common best practices and accessibility guidance and it is highly recommended for all users to incorporate them into their applications.
 
 ## Offline Development Resources
 
