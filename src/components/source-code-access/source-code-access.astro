@@ -11,7 +11,7 @@ const { data } = sourceCodeAccess
 	<dialog class="p-source-code-dialog">
 		<h3 class="p-source-code-heading">{data.heading.data}</h3>
 		<p class="p-source-code-content">{data.summary.data}</p>
-		<form class="p-source-code-form">
+		<form class="p-source-code-form" name="code-access-request" id="code-access-request">
 			<div class="p-source-code-inputs">
 				<For of={data.content.data}>{item => (
 					<Control type={item.type.data} required={item.required.data} placeholder={item.placeholder.data} autocomplete={item.autocomplete.data} name={item.name.data}>{item.label.data}</Control>
