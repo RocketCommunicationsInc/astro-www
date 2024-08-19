@@ -24,7 +24,7 @@ class RequestParams {
 openButtons.forEach((openBtn) => {
 	openBtn.addEventListener('click', () => {
 		dialog.showModal()
-		gtag('event', 'open_code_access_popup')
+		gtag('event', 'open_code_access_popup', { 'page_location': window.location.href })
 		appCheckboxes.forEach((checkbox) => {
 			if (!openBtn.dataset.app && checkbox.id === 'GRM') {
 				checkbox.checked = true
