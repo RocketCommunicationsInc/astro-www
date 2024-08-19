@@ -24,6 +24,7 @@ class RequestParams {
 openButtons.forEach((openBtn) => {
 	openBtn.addEventListener('click', () => {
 		dialog.showModal()
+		gtag('event', 'open_code_access_popup')
 		appCheckboxes.forEach((checkbox) => {
 			if (!openBtn.dataset.app && checkbox.id === 'GRM') {
 				checkbox.checked = true
@@ -69,7 +70,7 @@ form.addEventListener('submit', async (e) => {
 		const key = entry[0] as keyof RequestParams
 		const value = entry[1] as string
 		if (key === 'apps') {
-			params.apps = [ ...params.apps, value ]
+			params.apps = [...params.apps, value]
 		} else {
 			params[key] = value
 		}
