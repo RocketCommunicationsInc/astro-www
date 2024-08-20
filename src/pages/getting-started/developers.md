@@ -40,10 +40,6 @@ You can review the latest versions of the web components at the [Astro Storybook
 These examples use a previous release of Astro, and are not intended as boilerplates for building new applications. See below for easy ways to get started building Astro web applications.
 :::
 
-## R2C2 Compliance
-
-The Astro team has worked to establish the Astro Compliance requirements for developers targeting the R2C2 Platform. These requirements are specific to R2C2 development; these requirements are based off of common best practices and accessibility guidance and it is highly recommended for all users to incorporate them into their applications.
-
 ## Offline Development Resources
 
 This website and its contents are provided as separate downloadable files for the convenience of developers and designers working in closed environments. Designer and developer assets are provided as downloads on their respective ‘Getting Started’ sections:
