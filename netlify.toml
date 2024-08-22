@@ -131,13 +131,20 @@
 
 [[redirects]]
 	from = "/compliance"
-	to = "/compliance/r2c2-design-compliance"
+	to = "/compliance/astro-design-compliance"
 	status = 301
 	force = true
 
 [[redirects]]
+	from = "/compliance/r2c2-design-compliance"
+	to = "/compliance/astro-design-compliance"
+	status = 301
+	force = true
+
+
+[[redirects]]
 	from = "/egs-design-compliancee"
-	to = "/compliance/r2c2-design-compliance"
+	to = "/compliance/astro-design-compliance"
 	status = 301
 	force = true
 
