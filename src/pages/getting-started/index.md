@@ -17,7 +17,7 @@ Learn more about the software design process with Astro:
 - Base application design on a solid foundation of [Research](/design-process/research)
 - Learn to provide a successful, effective user experience through [UI Design](/design-process/ui-design)
 - Create applications with a mature, established [Visual Design](/design-process/visual-design)
-- Follow established [R2C2 Compliance Guidance](/compliance/r2c2-design-compliance/) required for R2C2 applications
+- Follow established [Astro Compliance Guidance](/compliance/astro-design-compliance/) required for Astro applications
 
 **Design Assets**
 
@@ -39,9 +39,9 @@ Astro is tested & supported in major 'evergreen' web browsers (the latest browse
 
 :::table-overflow
 :::support-table
-|       | Chrome  | Firefox |  Edge   | Safari  | Chrome (Android) | Safari (iOS) |
+| | Chrome | Firefox | Edge | Safari | Chrome (Android) | Safari (iOS) |
 |:------|:-------:|:-------:|:-------:|:-------:|:----------------:|:------------:|
-| Astro | &check; | &check; | &check; | &check; |   unsupported    | unsupported  |
+| Astro | &check; | &check; | &check; | &check; | unsupported | unsupported |
 :::
 :::
 
