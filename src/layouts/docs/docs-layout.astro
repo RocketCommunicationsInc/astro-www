@@ -10,7 +10,6 @@ import PageAside from 'project:components/page-aside/page-aside.astro'
 import ContributionFooter from 'project:components/contribution-footer/contribution-footer.astro'
 import FeedbackWidget from 'project:components/feedback-widgets/feedback-widget-sticky/feedback-widget.astro'
 import globalData from 'project:data/global.json'
-// import FeedbackWidgetStatic from 'project:components/feedback-widgets/feedback-widget-static/feedback-widget-static.astro'
 
 import './docs-layout.css'
 
@@ -86,7 +85,6 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 			<div class="page-content-main-col">
 				<slot />
 				<ContributionFooter sourceurl={githubSourceURL} />
-				<!-- <FeedbackWidgetStatic currentURL={url} /> -->
 			</div>
 
 			<aside class="page-content-side-col" id="aside">
