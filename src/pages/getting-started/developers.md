@@ -31,9 +31,9 @@ You can review the latest versions of the web components at the [Astro Storybook
 :::table-overflow
 | Ground Resources Management | Telemetry, Tracking, and Control |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
-| [Dashboard](/grm-service-ux-design/grm-dashboard/) - [Source code](https://github.com/RocketCommunicationsInc/grm-dashboard-react) | [Monitor](/ttc-service-ux-design/ttc-monitor/) - [Source code](https://github.com/RocketCommunicationsInc/ttc-monitor-react) |
-| [Equipment Manager](/grm-service-ux-design/grm-equipment-manager/) - [Source code](https://github.com/RocketCommunicationsInc/grm-equipment-react-ts) | [Command](/ttc-service-ux-design/ttc-command/) - [Source code](https://github.com/RocketCommunicationsInc/ttc-command-react) |
-| [Schedule](/grm-service-ux-design/grm-schedule/) - [Source code](https://github.com/RocketCommunicationsInc/grm-schedule-react) | [Investigate](/ttc-service-ux-design/ttc-investigate/) - [Source code](https://github.com/RocketCommunicationsInc/ttc-command-react) |
+| [Dashboard](/grm-service-ux-design/grm-dashboard/) - <button data-app="GRM" type="button" class="p-source-code-dialog-open">Request Source Code Access</button> | [Monitor](/ttc-service-ux-design/ttc-monitor/) - <button data-app="TT&C" type="button" class="p-source-code-dialog-open">Request Source Code Access</button> |
+| [Equipment Manager](/grm-service-ux-design/grm-equipment-manager/) - <button data-app="GRM" type="button" class="p-source-code-dialog-open">Request Source Code Access</button> | [Command](/ttc-service-ux-design/ttc-command/) - <button data-app="TT&C" type="button" class="p-source-code-dialog-open">Request Source Code Access</button> |
+| [Schedule](/grm-service-ux-design/grm-schedule/) - <button data-app="GRM" type="button" class="p-source-code-dialog-open">Request Source Code Access</button> | [Investigate](/ttc-service-ux-design/ttc-investigate/) - <button data-app="TT&C" type="button" class="p-source-code-dialog-open">Request Source Code Access</button> |
 :::
 
 :::note

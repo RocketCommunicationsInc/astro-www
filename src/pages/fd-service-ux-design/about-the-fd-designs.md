@@ -15,10 +15,10 @@ While the Maneuvering and Reporting tools have not been researched, tested, and 
 The FDS system supports missions that require communication between satellites and ground systems in order to estimate the position of a satellite, as well as perform any maneuvers to keep the satellite in a nominal position. Some key features of FDS include Orbit Determinations (OD), generating products (Ephemerides, TLE’s, reports, etc.), and Maneuvering, such as station keeping, conjunction assessment, and COLA’s (burns).
 (pdf)
 
-- [FD Design Specifications (pdf)](https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/fds-specifications.pdf)
-- [FD Wireframes (pdf)](https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/fds-wireframes.pdf)
-- [FD Sample App (live deployment)](https://flight-dynamics-service.netlify.app/Nominal-OD-IRON-7381)
-- [FD Sample App Source Code (Github Repository)](https://github.com/RocketCommunicationsInc/Flight-Dynamics-Service)
+- [FDS Design Specifications (pdf)](https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/fds-specifications.pdf)
+- [FDS Wireframes (pdf)](https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/fds-wireframes.pdf)
+- [FDS Sample App (live deployment)](https://flight-dynamics-service.netlify.app/Nominal-OD-IRON-7381)
+- <button data-app="FDS" type="button" class="p-source-code-dialog-open">FDS Request Source Code Access</button>
 
 <video controls width="100%">
 		<source src="https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/media/fds-video.mp4" type="video/mp4">
