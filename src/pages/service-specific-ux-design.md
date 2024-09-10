@@ -1,10 +1,10 @@
 ---
 title: Service Specific UX Design
-description: Service Specific UX Design promotes the development of consistent, robust applications to support Enterprise Ground Services (R2C2) by applying UX design process and the Astro Space UX Design System.
+description: Service Specific UX Design promotes the development of consistent, robust applications to support Enterprise Ground Services by applying UX design process and the Astro Space UX Design System.
 layout: project:layouts/docs/docs-layout.astro
 ---
 
-The Service Specific UX Design effort supported Rapid Resilient Command & Control (R2C2) to develop consistent, robust applications. The design efforts achieved the goal by applying UX Design processes aligned with the Astro Space UX Design System to create, document, and implement baseline designs as interactive sample apps. The work described here focused on two key R2C2 services, [Ground Resource Management (GRM)][grm-designs] and [Telemetry, Tracking & Command (TT&C)][ttc-designs] and followed the process below:
+The Service Specific UX Design effort supported Space Systems Command (SSC) to develop consistent, robust applications. The design efforts achieved the goal by applying UX Design processes aligned with the Astro Space UX Design System to create, document, and implement baseline designs as interactive sample apps. The work described here focused on two key services, [Ground Resource Management (GRM)][grm-designs] and [Telemetry, Tracking & Command (TT&C)][ttc-designs] and followed the process below:
 
 - Conducted [UX research](/design-process/research) with users and stakeholders to identify key task flows, constraints, and current pain points in existing systems.
 - Used the findings from this research and the Astro Space UX Design System to [design](/design-process/ui-design) solutions to support GRM and TT&C Services.
@@ -13,7 +13,6 @@ The Service Specific UX Design effort supported Rapid Resilient Command & Contro
 - Provided the detailed design specifications, wireframes, sample applications, and source code as [downloadable resources](/downloads) to teams looking to develop applications supporting GRM and TT&C Services.
 
 Design efforts included several hours of user and stakeholder interviews, detailed task flow analysis, and iterative design evaluations based on user feedback. The result of the design activities produced sample app designs to reference for developing future GRM and TT&C apps, fostering consistent and functional user experience across systems.
-
 
 ## GRM Service UX Design
 
@@ -40,12 +39,10 @@ The [TT&C Monitor][ttc-monitor] app allows the operator to monitor status, alert
 
 [TT&C Monitor App][ttc-monitor]
 
-
 The [TT&C Command][ttc-command] app allows the operator to send and receive streams of data to and from a spacecraft using a set of commands.
 ![](/img/case-studies/service-specific-ux-design/ttc-command-app.webp)
 
 [TT&C Command App][ttc-command]
-
 
 The [TT&C Investigate][ttc-investigate] app allows the operator to investigate spacecraft alerts and anomalies and analyze subsystem mnemonics, measurements, limits, etc.
 
@@ -53,7 +50,6 @@ The [TT&C Investigate][ttc-investigate] app allows the operator to investigate s
 
 You can get an overview of the design work on the [About the TT&C Designs][ttc-designs] page or use one of the links below to get more information about a particular app.
 ![](/img/case-studies/service-specific-ux-design/ttc-investigate-app.webp)
-
 
 [grm-designs]: /grm-service-ux-design/about-the-grm-designs
 [grm-dashboard]: /grm-service-ux-design/grm-dashboard

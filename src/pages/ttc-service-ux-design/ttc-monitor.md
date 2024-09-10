@@ -1,5 +1,5 @@
 ---
-tags: ["ttc", "egs", "r2c2"]
+tags: ['ttc', 'egs', 'r2c2']
 path: /ttc-service-ux-design/ttc-monitor
 date: Last Modified
 layout: project:layouts/docs/docs-layout.astro
@@ -108,9 +108,9 @@ Below is an animated walkthrough of a representative task flow using the TT&C Mo
 Below are design and development resources to get you started on an app that supports TT&C services. Note that there are some discrepancies between the design documents and the [TT&C Monitor Sample App](https://monitor-ttc.netlify.app) due to design improvements that were introduced late in the app development cycle.
 
 :::table-overflow
-| Resources                                                                                        | Description                                                                                                                                            |
+| Resources | Description |
 |--------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [TT&C Design Specifications (pdf)](/pdf/ttc-specifications.pdf)                                  | The TT&C Design Specification contains information on use cases, task flows, UX research and wireframes for key features of the TT&C App Suite.        |
-| [TT&C Design Wireframes (pdf)](/pdf/ttc-wireframes.pdf)                                          | The TT&C Design Wireframes document contains the complete set of wireframes (mid-fidelity renderings) of the screens designed for the TT&C App Suite.  |
-| [App Source Code (Git Repository)](https://github.com/RocketCommunicationsInc/ttc-monitor-react) | The source code Git repository and other useful documentation for the TT&C Monitor App is hosted at github.com so that you can check it out in detail. |
+| [TT&C Design Specifications (pdf)](/pdf/ttc-specifications.pdf) | The TT&C Design Specification contains information on use cases, task flows, UX research and wireframes for key features of the TT&C App Suite. |
+| [TT&C Design Wireframes (pdf)](/pdf/ttc-wireframes.pdf) | The TT&C Design Wireframes document contains the complete set of wireframes (mid-fidelity renderings) of the screens designed for the TT&C App Suite. |
+| <button data-app="TT&C" type="button" class="p-source-code-dialog-open">TT&C Request Source Code Access</button> | The source code Git repository and other useful documentation for the TT&C Monitor App is hosted at github.com so that you can check it out in detail. |
 :::

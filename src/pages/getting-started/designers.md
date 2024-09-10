@@ -4,7 +4,7 @@ title: 'Getting Started for Designers'
 description: Astro UXDS design assets include files for creating Astro application mockups and wireframes in Figma.
 ---
 
-Before reading any further, we recommend you review available Astro components on the [Astro Storybook](https://astro-components.netlify.app/) site. Examples of Astro in-use can be seen within the Astro [Service Specific](/service-specific-ux-design/) Design pages.
+Before reading any further, we recommend you review available Astro components on the [Astro Storybook](https://astro-components.netlify.app/) site.
 
 ## Design Guidance
 
@@ -25,12 +25,6 @@ Before reading any further, we recommend you review available Astro components o
 - [Astro UXDS Icon Library](https://www.figma.com/community/file/1022883566772542677)
 
 The Astro Figma files use fonts that are free to download from Google and linked below. Astro 6 Figma files use a combination of [Roboto](https://fonts.google.com/specimen/Roboto) and [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono). Astro 7 Figma files use [Roboto](https://fonts.google.com/specimen/Roboto). To see the latest recommended fonts for Astro applications, go to our [Typography](/design-guidelines/typography/) page.
-
-## Astro and R2C2 Design Compliance
-
-The Astro team has worked with R2C2 to establish the R2C2 Design Compliance requirements for developers targeting the R2C2 Platform. These requirements are specific to R2C2 development; these requirements are based on common best practices and accessibility guidelines and it is highly recommended for all users to incorporate them into their applications.
-
-[R2C2 Design Compliance](/compliance/r2c2-design-compliance/)
 
 ## MIL-STD-1472 Compliance
 

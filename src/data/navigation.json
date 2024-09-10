@@ -311,7 +311,7 @@
 				"url": "/ttc-service-ux-design/about-the-ttc-designs/"
 			},
 			{
-				"label": "FD Service UX Design",
+				"label": "FDS Service UX Design",
 				"url": "/fd-service-ux-design/about-the-fd-designs/"
 			}
 		],
@@ -350,8 +350,8 @@
 	{
 		"items": [
 			{
-				"label": "R2C2 Design Compliance",
-				"url": "/compliance/r2c2-design-compliance/"
+				"label": "Astro Design Compliance",
+				"url": "/compliance/astro-design-compliance/"
 			},
 			{
 				"label": "MIL-STD 1472H",
