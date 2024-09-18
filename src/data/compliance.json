@@ -142,7 +142,7 @@
 						},
 						{
 							"numeral": 4,
-							"rule": "Optional fields shall be marked with an asterisk to the right of the label when the majority of a form is required.",
+							"rule": "Optional fields shall be marked with (optional) to the right of the label when the majority of a form is required.",
 							"status": "under-review",
 							"tier": 2
 						},
