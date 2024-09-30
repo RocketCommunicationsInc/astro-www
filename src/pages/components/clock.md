@@ -2,12 +2,13 @@
 title: Clock
 description: Clock shows the current time and optional date, AOS, and LOS timers. It will typically be positioned on the Global Status Bar.
 layout: project:layouts/component-docs/component-docs-layout.astro
-storybook: components-clock--default-story
+storybook: components-clock--default
 height: 220px
 git: rux-clock
 assets:
   name: Clock
 ---
+
 ## Interactive Example
 
 ::tag{ is=a-playground tag=rux-clock }
@@ -22,4 +23,4 @@ All digits should be displayed using the system mono font, system font, or Robot
 
 ## Examples
 
-![Example Clock](/img/components/clock/clock-roboto-mono.webp "Example Clock")
+![Example Clock](/img/components/clock/clock-roboto-mono.webp 'Example Clock')
