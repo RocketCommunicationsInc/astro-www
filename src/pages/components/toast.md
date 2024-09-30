@@ -2,7 +2,7 @@
 title: Toast
 description: Toasts are non-modal notifications that display a short message to the user.
 layout: project:layouts/component-docs/component-docs-layout.astro
-storybook: beta-toast-beta--default-story
+storybook: beta-toast-beta--default
 height: 216px
 git: rux-toast
 assets:

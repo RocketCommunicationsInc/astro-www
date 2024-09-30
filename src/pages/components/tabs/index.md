@@ -2,12 +2,13 @@
 title: Tabs
 description: Tabs in Astro applications are used to divide major areas of content and to indicate work process.
 layout: project:layouts/component-docs/component-docs-layout.astro
-storybook: components-tabs--default-story
+storybook: components-tabs--default
 height: 160px
 git: rux-tabs
 assets:
-    name: Tabs
+  name: Tabs
 ---
+
 ## Interactive Example
 
 ::tag{ is=a-playground tag=rux-tabs }
@@ -27,7 +28,7 @@ High Level Tabs are often process/workflow oriented. Process oriented Tabs shoul
 - Appear in the upper left quadrant.
 - Be clearly labeled.
 - Guide users through a sequential process.
-</span>
+  </span>
 
 :::
 
