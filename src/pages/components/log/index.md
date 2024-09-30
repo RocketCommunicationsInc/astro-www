@@ -2,12 +2,13 @@
 title: Log
 description: A Log is a tabular representation of application events and may include username, priority, equipment type, signal type, etc. As part of the Notification System, Logs provide sorting and filtering function for examining events.
 layout: project:layouts/component-docs/component-docs-layout.astro
-storybook: components-log--log
+storybook: components-log--default
 height: 380px
 git: rux-log
 assets:
-    name: Log
+  name: Log
 ---
+
 ## Interactive Example
 
 ::tag{ is=a-playground tag=rux-log }
@@ -20,7 +21,7 @@ assets:
 
 ### Basic Log
 
-![The Log includes a Table of timestamped events and a Search field to narrow the displayed events](/img/components/log/log-basic.webp "The Log includes a Table of timestamped events and a Search field to narrow the displayed events")
+![The Log includes a Table of timestamped events and a Search field to narrow the displayed events](/img/components/log/log-basic.webp 'The Log includes a Table of timestamped events and a Search field to narrow the displayed events')
 
 ### Scroll Interaction
 
@@ -34,4 +35,4 @@ New events are added to the top of the Table. The Log has two subtly different m
 - The user may enter text into the Search field to narrow displayed events. As users enter text, all events that match the Search text remain, and events that do not are removed. Simple wildcard pattern matching should be used.
 - The defined scrolling rules apply when a Search term is entered. If the Table is scrolled to the top, it should remain locked to the top. New events that match the Search term are added to the top.
 
-![View of Search Text Applied Within Field](/img/components/log/log-search.webp "View of Search Text Applied Within Field")
+![View of Search Text Applied Within Field](/img/components/log/log-search.webp 'View of Search Text Applied Within Field')

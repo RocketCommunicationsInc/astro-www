@@ -2,11 +2,11 @@
 title: Accordion
 description: An Accordion is a component comprised of one or more vertically stacked sections or items, which can be expanded and collapsed to hide or reveal content.
 layout: project:layouts/component-docs/component-docs-layout.astro
-storybook: components-accordion--default-story
+storybook: components-accordion--default
 height: 216px
 git: rux-accordion
 assets:
-    name: Accordion
+  name: Accordion
 ---
 
 ## Interactive Example
@@ -25,9 +25,9 @@ It is common practice to allow multiple Accordion items to be expanded at once. 
 
 :::two-col
 
-![Orient the caret icon in the direction in which the content will move when selected.](/img/components/accordion/accordion-2.webp "Orient the caret icon in the direction in which the content will move when selected.")
+![Orient the caret icon in the direction in which the content will move when selected.](/img/components/accordion/accordion-2.webp 'Orient the caret icon in the direction in which the content will move when selected.')
 
-![Use Accordions to display user controls.](/img/components/accordion/accordion-4.webp "Use Accordions to display user controls.")
+![Use Accordions to display user controls.](/img/components/accordion/accordion-4.webp 'Use Accordions to display user controls.')
 
 :::
 

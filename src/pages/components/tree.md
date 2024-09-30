@@ -2,11 +2,11 @@
 title: Tree
 description: Trees present a hierarchical set of related items and allow users to explore and select items within that hierarchy.
 layout: project:layouts/component-docs/component-docs-layout.astro
-storybook: components-tree--default-story
+storybook: components-tree--default
 height: 428px
 git: rux-tree
 assets:
-    name: Tree
+  name: Tree
 ---
 
 ## Interactive Example
@@ -19,7 +19,7 @@ Accordions are closely related to Trees, but are specialized to automatically di
 
 ## Anatomy
 
-![Anatomy of an Astro Tree Component.](/img/components/tree/tree-anatomy.webp "Anatomy of an Astro Tree Component.")
+![Anatomy of an Astro Tree Component.](/img/components/tree/tree-anatomy.webp 'Anatomy of an Astro Tree Component.')
 
 ## Rules of Thumb
 
@@ -34,11 +34,11 @@ Accordions are closely related to Trees, but are specialized to automatically di
 :::two-col
 The Tree component has a transparent background, allowing it to be placed on different background colors. Items in the Tree that have children display a turn-down arrow. A child branch can have its own child branches, indicated by a turn-down arrow. Items without children, even if they represent empty containers, do not display a turn-down arrow. Items are indented according to their depth.
 
-![Astro Tree Component with no status symbols.](/img/components/tree/tree-no-status.webp "Astro Tree Component with no status symbols.")
+![Astro Tree Component with no status symbols.](/img/components/tree/tree-no-status.webp 'Astro Tree Component with no status symbols.')
 
 The Tree may optionally show a [Status Symbol](/components/status-symbol) alongside each item.
 
-![Astro Tree Component with status symbols.](/img/components/tree/tree-with-status.webp "Astro Tree Component with status symbols.")
+![Astro Tree Component with status symbols.](/img/components/tree/tree-with-status.webp 'Astro Tree Component with status symbols.')
 :::
 
 ### Behavior

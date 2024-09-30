@@ -3,14 +3,14 @@ draft: true
 title: Tabs
 description: Tabs in Astro applications are used to divide major areas of content and to indicate work process.
 layout: project:layouts/component-docs/component-docs-layout.astro
-storybook: components-tabs--default-story
+storybook: components-tabs--default
 height: 160px
 git: rux-tabs
 assets:
-    name: All Options
-
+  name: All Options
 # to get tabs you need to add them to project:data/navigation.secondary.json
 ---
+
 ## Interactive Example
 
 ::storybook-demo
