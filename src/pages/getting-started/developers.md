@@ -26,7 +26,7 @@ Astro uses the freely available [Roboto](https://fonts.google.com/specimen/Robot
 
 ## Astro Storybook and Sample Apps
 
-You can review the latest versions of the web components at the [Astro Storybook](https://astro-components.netlify.app/?path=/story/astro-uxds-welcome-start-here--page). The Astro development team uses Storybook as an environment for building and demonstrating the capabilities of each component. For online examples of full Astro app experiences, check out these Service-Specific sample experiences:
+You can review the latest versions of the web components at the [Astro Storybook](https://astro-components.netlify.app/?path=/docs/astro-uxds-start-here--docs). The Astro development team uses Storybook as an environment for building and demonstrating the capabilities of each component. For online examples of full Astro app experiences, check out these Service-Specific sample experiences:
 
 :::table-overflow
 | Ground Resources Management | Telemetry, Tracking, and Control |
