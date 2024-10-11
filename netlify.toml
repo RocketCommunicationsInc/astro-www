@@ -2,12 +2,18 @@
 
 	publish = "dist/"
 	command = "npm run build"
+    functions = "netlify/functions"
 
 [context.production]
 	NODE_VERSION = "18.16.0"
 
 [context.deploy-preview.environment]
 	NODE_VERSION = "18.16.0"
+
+[[redirects]]
+  from = '/api/*'
+  to = '/.netlify/functions/:splat'
+  status = 200
 
 [[redirects]]
 	from = "/ui-components/*"

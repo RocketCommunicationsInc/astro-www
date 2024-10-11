@@ -8,6 +8,7 @@ import SourceCodeAccess from 'project:components/source-code-access/source-code-
 import globalData from 'project:data/global.json'
 import SiteNavigation from 'project:components/site-navigation/site-navigation.astro'
 import SiteFooter from 'project:components/site-footer/site-footer.astro'
+import Checkout from 'project:components/checkout/checkout.astro'
 
 export type { Props }
 
@@ -24,6 +25,7 @@ const attrs = {
 <Document body-class="p-grid" {...attrs}>
 	<slot slot="head" name="head" />
 	<meta slot="head" name="theme-color" content="#101923" />
+	<script slot="head" src="https://js.stripe.com/v3/"></script>
 	<slot name="top" />
 	<link slot="head" rel="sitemap" href="/sitemap-index.xml">
 	<div class="x-menu">
@@ -36,6 +38,7 @@ const attrs = {
 		<SiteFooter />
 	</div>
 	<SourceCodeAccess />
+	<Checkout />
 </Document>
 <script>
 import './default-layout.client'
