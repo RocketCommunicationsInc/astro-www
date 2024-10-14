@@ -12,6 +12,7 @@ import FeedbackWidget from 'project:components/feedback-widgets/feedback-widget-
 import globalData from 'project:data/global.json'
 
 import './docs-layout.css'
+import Checkout from 'project:components/checkout/checkout.astro'
 
 export interface Props extends DocProps {
 	content: {
@@ -84,6 +85,7 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 		<div class="page-content">
 			<div class="page-content-main-col">
 				<slot />
+				<Checkout />
 				<ContributionFooter sourceurl={githubSourceURL} />
 			</div>
 
