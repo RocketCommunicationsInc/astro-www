@@ -7,7 +7,7 @@
 
 		checkoutButton.forEach((btn) => btn.addEventListener('click', function () {
 			console.log('heard click')
-		fetch('/api/stripe', {
+		fetch('/netlify/functions/stripe', {
 			method: 'POST',
 			})
 			.then(function (response) {
