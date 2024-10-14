@@ -11,9 +11,11 @@
 			method: 'POST',
 			})
 			.then(function (response) {
+				if (!response.ok) throw new Error('Failed to create checkout session')
 			return response.json()
 		})
 			.then(function (session) {
+				if (!session.id) throw new Error('No session ID returned')
 				return stripe.redirectToCheckout({ sessionId: session.id })
 		})
 			.then(function (result) {
