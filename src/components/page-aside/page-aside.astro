@@ -1,6 +1,7 @@
 ---
 import IconLink from 'project:components/icon/icon-link.astro'
 import './page-aside.css'
+import Checkout from 'project:components/checkout/checkout.astro'
 
 interface MarkdownHeading {
 	slug: string
@@ -21,7 +22,7 @@ const { headings } = {
 
 let anchorHeadings: MarkdownHeading[] = []
 // if anchorNav is set to 'extended' then grab h2s and h3s
-if( content.anchorNav && content.anchorNav === 'extended'){
+if (content.anchorNav && content.anchorNav === 'extended') {
 	for (const heading of headings) {
 		if (heading.depth === 2 || heading.depth === 3) {
 			anchorHeadings.push(heading)
@@ -44,7 +45,12 @@ if (content.assets?.name) {
 }
 
 const storybookUrl: string = content.storybook ? `https://astro-components.netlify.app/?path=/story/${content.storybook}` : `https://astro-components.netlify.app/`
+const showCheckoutButton = Astro.props.frontmatter.url.includes('service-ux-design') || Astro.props.frontmatter.url.includes('service-specific-ux-design')
 ---
+{showCheckoutButton
+? <Checkout />
+: null}
+
 <nav class="p-quicklinks-navigation" aria-label="Quick Links">
 	<ul id='top-links'>
 		<li class="-first">
@@ -59,8 +65,8 @@ const storybookUrl: string = content.storybook ? `https://astro-components.netli
 			<IconLink type="github" href="https://github.com/RocketCommunicationsInc/astro">GitHub</IconLink>
 		</li>
 	</ul>
-{ anchorHeadings.length > 1 ?
-	<hr />
+{ anchorHeadings.length > 1
+	? <hr />
 		 <div class='section-links-wrapper'>
 			<ul class='section-links'>{
 				anchorHeadings.map((heading, index) => (
