@@ -19,11 +19,11 @@ description: A list of commonly used terms and definitions.
 - AFB - Air Force Base {data-category="organization" data-tags="organization, policy"}
 - AFSPC - Air Force Space Command {data-category="organization" data-tags="organization, policy"}
 - AGOM - area gamma over mass; radiation pressure {data-category="orbit_dynamics" data-tags="space_operations, operations, orbital_mechanics"}
-- AMCAP - As much context as possible {data-category="general_terms" data-tags="general_terms"}
 - AMIC - ASW message interface to CPS. {data-category="communications" data-tags="space_operations, communications, operations, technical, space_communications, system_operations"}
 - AN/TPY-2 - Army/Navy Transportable Radar {data-category="satops" data-tags="space_operations, operations, space_communications, system_operations"}
 - AOF - area over flight (AS s/w computes potential ground visibility to overhead sats) {data-category="general_terms" data-tags="general_terms"}
 - AOR - association observations; Provides the capability to manually select a specified collection of observations and execute the obs association algorithms against a specified set of satellites. The results may be used by the analyst to retag (change) the current association. {data-category="data_processing" data-tags="space_operations, data_management, technical, project_management, data_analysis, system_engineering, software_engineering, data_processing_tools"}
+- AOR - Area of Responsibility {data-category="general_terms"}
 - AOS - Acquisition of Signal (or Satellite). AOS is the time that a satellite rises above the horizon of an observer. {data-category="orbit_dynamics" data-tags="space_operations, operations, orbital_mechanics"}
 - AObs - associated observations {data-category="data_processing" data-tags="space_operations, data_management, technical, project_management, data_analysis, system_engineering, software_engineering, data_processing_tools"}
 - ART - Agile Release Train {data-category="management" data-tags="management, operations, project_management, agile_management"}
@@ -55,7 +55,6 @@ description: A list of commonly used terms and definitions.
 - BCWP - budgeted cost of work performed {data-category="management" data-tags="management, operations, project_management, agile_management"}
 - BCWS - budgeted cost of work scheduled {data-category="management" data-tags="management, operations, project_management, agile_management"}
 - BDA - battle damage assessment {data-category="general_terms" data-tags="general_terms"}
-- BEVEL - The execution of the BVL command for calibration satellites produces precision Special Perturbations (SP) ELSETs after the satellites undergo DC processing. This process generates the BEVEL message (MU16) to appropriate users {data-category="general_terms" data-tags="general_terms"}
 - BLUF - Bottom Line Up Front {data-category="management" data-tags="management, operations, project_management, agile_management"}
 - BMC2 - ballistic missile command and control {data-category="satops" data-tags="space_operations, operations, space_communications, system_operations"}
 - BMC3 - Battle Management, Command, Control, and Communications {data-category="satops" data-tags="space_operations, operations, space_communications, system_operations"}
@@ -67,7 +66,6 @@ description: A list of commonly used terms and definitions.
 - BSA - battle space analyst (OA at the NSDC) {data-category="general_terms" data-tags="general_terms"}
 - BSTAR - SGP4-type drag coefficient {data-category="general_terms" data-tags="general_terms"}
 - BV - Business value {data-category="general_terms" data-tags="general_terms"}
-- BVL - See BEVEL {data-category="general_terms" data-tags="general_terms"}
 - BatchDC - batch DC (AS app that performs least squares batch DCs using SSN obs) {data-category="data_processing" data-tags="space_operations, data_management, technical, project_management, data_analysis, system_engineering, software_engineering, data_processing_tools"}
 - Brig Gen - Brigadier General {data-category="organization" data-tags="organization, policy"}
 - Buster - Identify and flag classified data {data-category="general_terms" data-tags="general_terms"}
@@ -104,7 +102,7 @@ description: A list of commonly used terms and definitions.
 - COCO - co-planar comparison (AS app that compares TLEs to find co-planar orbits) {data-category="analysis_tools" data-tags="space_operations, data_management, analysis_tools, technical, data_analysis, data_processing_tools"}
 - CODAC - catalog orbit determination accuracy {data-category="data_processing" data-tags="space_operations, data_management, technical, project_management, data_analysis, system_engineering, software_engineering, data_processing_tools"}
 - COLA - Launch Collision Avoidance {data-category="organization" data-tags="organization, policy"}
-- COMBO - computation of miss between orbits (ASW app) {data-category="communications, data_processing" data-tags="space_operations, data_management, communications, operations, technical, project_management, data_analysis, system_engineering, software_engineering, space_communications, data_processing_tools, system_operations"}
+- COMBO - computation of miss between orbits {data-category="communications, data_processing" data-tags="space_operations, data_management, communications, operations, technical, project_management, data_analysis, system_engineering, software_engineering, space_communications, data_processing_tools, system_operations"}
 - COMSEC - Communications Security {data-category="security" data-tags="security, policy, information_security"}
 - CONOPS - Concept of Operations {data-category="general_terms" data-tags="general_terms"}
 - Capt - Captain {data-category="organization" data-tags="organization, policy"}
@@ -133,7 +131,6 @@ description: A list of commonly used terms and definitions.
 - DCIO - Deputy Chief Information Officer {data-category="general_terms" data-tags="general_terms"}
 - DCP - dynamic consider parameter {data-category="orbit_dynamics, data_processing" data-tags="space_operations, data_management, operations, technical, project_management, data_analysis, system_engineering, software_engineering, orbital_mechanics, data_processing_tools"}
 - DCY - decay report or a command initiating a decay report {data-category="general_terms" data-tags="general_terms"}
-- DEL 9 - Space Delta 9 {data-category="general_terms" data-tags="general_terms"}
 - DISA - Defense Information Systems Agency {data-category="general_terms" data-tags="general_terms"}
 - DISN - Defense Information Systems Network {data-category="general_terms" data-tags="general_terms"}
 - DLA - dynamic LUPI algorithm {data-category="general_terms" data-tags="general_terms"}
@@ -166,7 +163,6 @@ description: A list of commonly used terms and definitions.
 - EDR - energy dissipation rate {data-category="general_terms" data-tags="general_terms"}
 - EGP - extrapolated general perturbations {data-category="general_terms" data-tags="general_terms"}
 - EGR - error growth rate {data-category="general_terms" data-tags="general_terms"}
-- EGS - Enterprise Ground Services {data-category="general_terms" data-tags="general_terms"}
 - ELCOMP - TLE comparison app {data-category="analysis_tools, engineering" data-tags="space_operations, data_management, analysis_tools, technical, data_analysis, system_engineering, technical_training, software_engineering, hardware_engineering, data_processing_tools, system_operations"}
 - ELSET - Element set {data-category="general_terms" data-tags="general_terms"}
 - ELSET Plotter - application on CAVENet {data-category="analysis_tools, engineering" data-tags="space_operations, data_management, analysis_tools, technical, data_analysis, system_engineering, technical_training, software_engineering, hardware_engineering, data_processing_tools, system_operations"}
@@ -177,11 +173,9 @@ description: A list of commonly used terms and definitions.
 - ERB - Engineering Review Board {data-category="engineering" data-tags="space_operations, technical, system_engineering, technical_training, software_engineering, hardware_engineering, system_operations"}
 - ESA - European Space Agency {data-category="general_terms" data-tags="general_terms"}
 - ESBMC2 - Enterprise Space Battle Management Command & Control {data-category="general_terms" data-tags="general_terms"}
-- ESDK - EGS Software Developer Kit {data-category="engineering" data-tags="space_operations, technical, system_engineering, technical_training, software_engineering, hardware_engineering, system_operations"}
 - ESO - enhanced surveillance operations {data-category="general_terms" data-tags="general_terms"}
 - ETC - estimated cost to completion {data-category="general_terms" data-tags="general_terms"}
 - EVE - ephemeris validation environment {data-category="general_terms" data-tags="general_terms"}
-- EWE - UNVERIFIED early warning event {data-category="general_terms" data-tags="general_terms"}
 - EWR - early warning radar {data-category="general_terms" data-tags="general_terms"}
 - EXDIS - Exclusive Distribution, DoS classification {data-category="security" data-tags="security, policy, information_security"}
 - Ephemeris - predicted future location of a satellite {data-category="general_terms" data-tags="general_terms"}
@@ -208,13 +202,11 @@ description: A list of commonly used terms and definitions.
 - GNC - Guidance, Navigation and Control subsystem {data-category="engineering" data-tags="space_operations, technical, system_engineering, technical_training, software_engineering, hardware_engineering, system_operations"}
 - GOBS - Geosynchronous Orbital Belt Software {data-category="analysis_tools" data-tags="space_operations, data_management, analysis_tools, technical, data_analysis, data_processing_tools"}
 - GP - general perturbations {data-category="general_terms" data-tags="general_terms"}
-- GRI-CC - GRI Core Components {data-category="general_terms" data-tags="general_terms"}
 - GRM - Ground Resource Management {data-category="management" data-tags="management, operations, project_management, agile_management"}
 - GRS - Ground Resource Scheduling {data-category="management" data-tags="management, operations, project_management, agile_management"}
 - GSO - Ground Systems Operator {data-category="general_terms" data-tags="general_terms"}
 - GSSAP - geostationary SSA program {data-category="general_terms" data-tags="general_terms"}
 - GSW - global sensor watch {data-category="general_terms" data-tags="general_terms"}
-- GTRA - Government Tactical Reference Architecture {data-category="engineering" data-tags="space_operations, technical, system_engineering, technical_training, software_engineering, hardware_engineering, system_operations"}
 - Gen - General {data-category="general_terms" data-tags="general_terms"}
 - [Global Controls](/design-process/ui-design) - Display top-level system and equipment status throughout Astro applications. {data-category="design" data-tags="ui, ux"}
 - [Global Status Bar](/components/global-status-bar) - A full width view across the top of an application that displays the overall health and status of a system. {data-category="design" data-tags="ui, ux"}
@@ -233,7 +225,6 @@ description: A list of commonly used terms and definitions.
 - HIO - high interest object {data-category="general_terms" data-tags="general_terms"}
 - HIT - high interest tasking {data-category="general_terms" data-tags="general_terms"}
 - HOS - Hardened Operating System {data-category="engineering" data-tags="space_operations, technical, system_engineering, technical_training, software_engineering, hardware_engineering, system_operations"}
-- HOTF - Higher Order Theory Elements - Special Perturbations modeling algorithm {data-category="general_terms" data-tags="general_terms"}
 - HSA - Human Safety Analyst; aka OSA (newer) {data-category="general_terms" data-tags="general_terms"}
 - HSF - human space flight {data-category="general_terms" data-tags="general_terms"}
 - Hand jam - operator manually enters data {data-category="human_computer_interaction" data-tags="user_interface, human_computer_interaction"}
@@ -272,7 +263,6 @@ description: A list of commonly used terms and definitions.
 
 ## J
 
-- JEM - JSpOC Event Message System {data-category="satops" data-tags="space_operations, operations, space_communications, system_operations"}
 - JFCC - Joint Functional Component Command {data-category="satops, organization" data-tags="space_operations, organization, operations, policy, space_communications, system_operations"}
 - JIRA - Agile project management software {data-category="general_terms" data-tags="general_terms"}
 - JMS - JSpOC Mission System {data-category="satops" data-tags="space_operations, operations, space_communications, system_operations"}
@@ -405,7 +395,6 @@ description: A list of commonly used terms and definitions.
 - PSLV - Polar Space Launch Vehicle debris {data-category="general_terms" data-tags="general_terms"}
 - PSO - Payload System Operator {data-category="general_terms" data-tags="general_terms"}
 - [Pagination](/components/pagination) - The process of dividing content for display on multiple pages. It is utilized when content, such as Search results, does not fit onto one page and must be split across multiple pages. {data-category="design" data-tags="ui, ux"}
-- Perch - staying in one position relative to another target {data-category="orbit_dynamics" data-tags="space_operations, operations, orbital_mechanics"}
 - Perigee - closest point an object in orbit reaches to Earth {data-category="orbit_dynamics" data-tags="space_operations, operations, orbital_mechanics"}
 - Period - amount of time to complete an orbit {data-category="orbit_dynamics" data-tags="space_operations, operations, orbital_mechanics"}
 - Pitch - Rotation around the side-to-side axis {data-category="orbit_dynamics" data-tags="space_operations, operations, orbital_mechanics"}
@@ -424,7 +413,6 @@ description: A list of commonly used terms and definitions.
 - R2C2 - Rapid Resilience Control and Command {data-category="engineering" data-tags="space_operations, technical, system_engineering, technical_training, software_engineering, hardware_engineering, system_operations"}
 - RA - reentry assessment {data-category="orbit_dynamics, general_terms" data-tags="space_operations, general_terms, operations, orbital_mechanics"}
 - RAAN - right ascension of the ascending node {data-category="orbit_dynamics" data-tags="space_operations, operations, orbital_mechanics"}
-- RAMCAT - catalog stored in RAM {data-category="general_terms" data-tags="general_terms"}
 - RANODE - the right ascension of the ascending node {data-category="general_terms" data-tags="general_terms"}
 - RAVEN - Residual Analysis and Visualization Environment {data-category="analysis_tools" data-tags="space_operations, data_management, analysis_tools, technical, data_analysis, data_processing_tools"}
 - RCO - Rapid Capabilities Office {data-category="organization" data-tags="organization, policy"}
@@ -443,8 +431,6 @@ description: A list of commonly used terms and definitions.
 - RSC - RDT&E Support Complex {data-category="general_terms" data-tags="general_terms"}
 - RSO - Resident Space Object {data-category="general_terms" data-tags="general_terms"}
 - RTE - Release Train Engineer {data-category="management" data-tags="management, operations, project_management, agile_management"}
-- RUA - Review and update analyst sets {data-category="management" data-tags="management, operations, project_management, agile_management"}
-- RUC - Review and update candidates {data-category="management" data-tags="management, operations, project_management, agile_management"}
 - [Radio Button](/components/radio-button) - Allows users to mutually select an option from a predefined set of options. When one selection is made, the previous selection becomes deselected. {data-category="design" data-tags="ui, ux"}
 - Ref - referring to {data-category="general_terms" data-tags="general_terms"}
 - [Research](/design-process/research) - Research is an essential process to a project’s success. It reveals, clarifies, and establishes the foundation on which the application resides. {data-category="design" data-tags="ux, process"}
@@ -460,17 +446,14 @@ description: A list of commonly used terms and definitions.
 - SAAS - satellite attack assessment {data-category="general_terms" data-tags="general_terms"}
 - SAC - space analysis cell {data-category="general_terms" data-tags="general_terms"}
 - SAFe - Scaled Agile Framework {data-category="general_terms" data-tags="general_terms"}
-- SAGE - Simple Astro GUI for EAT {data-category="analysis_tools" data-tags="space_operations, data_management, analysis_tools, technical, data_analysis, data_processing_tools"}
 - SAPF - Special Access Program Facilities {data-category="general_terms" data-tags="general_terms"}
 - SATC - see SatCat {data-category="general_terms" data-tags="general_terms"}
 - SATCOM - satellite communications {data-category="communications" data-tags="space_operations, communications, operations, technical, space_communications, system_operations"}
 - SATOPS - satellite operations {data-category="satops" data-tags="space_operations, operations, space_communications, system_operations"}
-- SATRAK - satellite tracking software {data-category="satops, analysis_tools" data-tags="space_operations, data_management, analysis_tools, operations, technical, data_analysis, space_communications, data_processing_tools, system_operations"}
 - SATRAN - satellite reconnaissance advanced notification {data-category="general_terms" data-tags="general_terms"}
 - SBIRS - Space Based Infrared System {data-category="satops" data-tags="space_operations, operations, space_communications, system_operations"}
 - SCB - Service Catalog Board {data-category="general_terms" data-tags="general_terms"}
 - SCC - satellite catalog number {data-category="general_terms" data-tags="general_terms"}
-- SCCAT - SuperCODAC Catalog Accuracy Tool {data-category="analysis_tools, data_processing" data-tags="space_operations, data_management, analysis_tools, technical, project_management, data_analysis, system_engineering, software_engineering, data_processing_tools"}
 - SCG - Security Classification Guide {data-category="general_terms" data-tags="general_terms"}
 - SCI - Sensitive Compartmented Information {data-category="security" data-tags="security, policy, information_security"}
 - SCIF - Sensitive Compartmented Information Facility {data-category="security" data-tags="security, policy, information_security"}
@@ -542,10 +525,8 @@ description: A list of commonly used terms and definitions.
 - TLE - two-line element {data-category="orbit_dynamics" data-tags="space_operations, operations, orbital_mechanics"}
 - TLM - Telemetry {data-category="training" data-tags="training, agile_management, technical_training"}
 - TO - Technical Order {data-category="general_terms" data-tags="general_terms"}
-- TOES - time off element set {data-category="training" data-tags="training, agile_management, technical_training"}
 - TOW - test objective worksheet {data-category="management" data-tags="management, operations, project_management, agile_management"}
 - TRACK - Tiered ROTAS Association with Covariance Knowledge {data-category="general_terms" data-tags="general_terms"}
-- TREx - Transmit-Receive Enterprise Service {data-category="analysis_tools" data-tags="space_operations, data_management, analysis_tools, technical, data_analysis, data_processing_tools"}
 - TS - Top Secret classification level {data-category="general_terms" data-tags="general_terms"}
 - TSS - The system shall {data-category="general_terms" data-tags="general_terms"}
 - TT&C - Tracking, Telemetry & Command {data-category="communications" data-tags="space_operations, communications, operations, technical, space_communications, system_operations"}
@@ -578,7 +559,6 @@ description: A list of commonly used terms and definitions.
 
 ## V
 
-- VAFB - Vandenberg Air Force Base {data-category="general_terms" data-tags="general_terms"}
 - [Validation](/patterns/forms-and-validation) - Ensures that data is properly entered into an Input Field or Form. It alerts users to data errors, required input, and prompts them to make corrections. {data-category="design" data-tags="ui, ux"}
 
 ## W
