@@ -7,6 +7,7 @@ if (process.env.CONTEXT === 'deploy-preview') {
 } else if (process.env.CONTEXT === 'production') { baseUrl = process.env.BASE_URL } else {
 	baseUrl = 'http://localhost:8888'
 }
+
 const PRODUCTS = {
 	'fds': {
 		name: 'FDS Source Code',
