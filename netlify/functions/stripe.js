@@ -1,6 +1,7 @@
 // STRIPE_SECRET for real
 const stripe = require('stripe')(process.env.STRIPE_SANDBOX_SECRET)
-const baseUrl = process.env.DEPLOY_URL || process.env.BASE_URL || 'http://localhost:8888'
+// const baseUrl = process.env.DEPLOY_URL || process.env.BASE_URL || 'http://localhost:8888'
+const baseUrl = process.env.CONTEXT === 'deploy-preview' ? process.env.DEPLOY_URL : process.env.DEPLOY_URL === 'production' ? process.env.BASE_URL : 'http://localhost:8888'
 const PRODUCTS = {
 	'fds': {
 		name: 'FDS Source Code',
