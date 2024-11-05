@@ -1,6 +1,6 @@
 // STRIPE_SECRET for real
 const stripe = require('stripe')(process.env.STRIPE_SANDBOX_SECRET)
-
+const baseUrl = process.env.DEPLOY_URL || process.env.BASE_URL || 'http://localhost:8888'
 const PRODUCTS = {
 	'fds': {
 		name: 'FDS Source Code',
@@ -49,8 +49,8 @@ const PRODUCTS = {
 		// eslint-disable-next-line camelcase
 		line_items,
 		mode: 'payment',
-		success_url: `${process.env.BASE_URL}/checkout/success/`,
-		cancel_url: `${process.env.BASE_URL}/checkout/cancel/`,
+		success_url: `${baseUrl}/checkout/success/`,
+		cancel_url: `${baseUrl}/checkout/cancel/`,
 		// custom_fields: [
 		// 	{
 		// 	key: 'engraving',
