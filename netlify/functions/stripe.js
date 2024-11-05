@@ -29,6 +29,7 @@ const PRODUCTS = {
 	}
 
 	// Create line items based on the selected products
+	// eslint-disable-next-line camelcase
 	const line_items = selectedProducts.map(productCode => {
 		const product = PRODUCTS[productCode]
 		return {
@@ -42,25 +43,25 @@ const PRODUCTS = {
 			quantity: 1, // You can make this dynamic if needed
 		}
 	})
-
 	// Create the Stripe checkout session
 	const session = await stripe.checkout.sessions.create({
 		payment_method_types: [ 'card' ],
+		// eslint-disable-next-line camelcase
 		line_items,
 		mode: 'payment',
-		success_url: 'http://localhost:8888/checkout/success/',
-		cancel_url: 'http://localhost:8888/checkout/cancel/',
-		custom_fields: [
-			{
-			key: 'engraving',
-			label: {
-				type: 'custom',
-				custom: 'Personalized engraving',
-			},
-			type: 'text',
-			optional: true,
-			},
-		],
+		success_url: `${process.env.BASE_URL}/checkout/success/`,
+		cancel_url: `${process.env.BASE_URL}/checkout/cancel/`,
+		// custom_fields: [
+		// 	{
+		// 	key: 'engraving',
+		// 	label: {
+		// 		type: 'custom',
+		// 		custom: 'Personalized engraving',
+		// 	},
+		// 	type: 'text',
+		// 	optional: true,
+		// 	},
+		// ],
 	})
 
 	return {
