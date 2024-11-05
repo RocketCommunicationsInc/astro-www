@@ -28,8 +28,7 @@ if (content.anchorNav && content.anchorNav === 'extended') {
 			anchorHeadings.push(heading)
 		}
 	}
-} // otherwise grab h2s only
-else {
+} else {
 	for (const heading of headings) {
 		if (heading.depth === 2) {
 			anchorHeadings.push(heading)
@@ -45,7 +44,7 @@ if (content.assets?.name) {
 }
 
 const storybookUrl: string = content.storybook ? `https://astro-components.netlify.app/?path=/story/${content.storybook}` : `https://astro-components.netlify.app/`
-const showCheckoutButton = Astro.props.frontmatter.url.includes('service-ux-design') || Astro.props.frontmatter.url.includes('service-specific-ux-design')
+const showCheckoutButton = Astro.url.pathname.includes('service-ux-design') || Astro.url.pathname.includes('service-specific-ux-design')
 ---
 {showCheckoutButton
 ? <Checkout />
@@ -67,7 +66,7 @@ const showCheckoutButton = Astro.props.frontmatter.url.includes('service-ux-desi
 	</ul>
 { anchorHeadings.length > 1
 	? <hr />
-		 <div class='section-links-wrapper'>
+		<div class='section-links-wrapper'>
 			<ul class='section-links'>{
 				anchorHeadings.map((heading, index) => (
 					<li>
