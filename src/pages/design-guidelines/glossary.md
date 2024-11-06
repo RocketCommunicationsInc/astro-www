@@ -7,7 +7,6 @@ title: Glossary
 description: A list of commonly used terms and definitions.
 ---
 
-
 ## A
 
 - A-File - full catalog, sent from SPADOC (similar to CAVENet's daft) {data-category="orbit_dynamics, data_processing" data-tags="space_operations, data_management, operations, technical, project_management, data_analysis, system_engineering, software_engineering, orbital_mechanics, data_processing_tools"}
@@ -115,8 +114,8 @@ description: A list of commonly used terms and definitions.
 - Comms - Communications {data-category="general_terms" data-tags="general_terms"}
 - [Compliance](/design-guidelines/compliance) - A list of rules used to determine if products align with Astro design and usage patterns. {data-category="general_terms"}
 - [Concept Sketch](/design-process/ui-design) - A sketch on paper that lays out the main content workspace and controls and clarifies the flow of user interaction from screen-to-screen. {data-category="design" data-tags="ui, ux"}
-- conjunction - Collision Risk {data-category="satops" data-tags="general_terms"}
-- contact - Period in which a spacecraft is able to be in contact with a ground system {data-category="satops" data-tags="general_terms"}
+- Conjunction - Collision Risk {data-category="satops" data-tags="general_terms"}
+- Contact - Period in which a spacecraft is able to be in contact with a ground system {data-category="satops" data-tags="general_terms"}
 
 ## D
 
@@ -495,8 +494,8 @@ description: A list of commonly used terms and definitions.
 - STO - Space Tasking Order {data-category="satops" data-tags="space_operations, operations, space_communications, system_operations"}
 - SV - Space Vehicle {data-category="satops, orbit_dynamics" data-tags="space_operations, operations, space_communications, orbital_mechanics, system_operations"}
 - SWC - Space War-fighting Construct {data-category="satops" data-tags="space_operations, operations, space_communications, system_operations"}
-- s/c - Spacecraft {data-category="general_terms" data-tags="general_terms"}
-- satf - file of all TLEs {data-category="general_terms" data-tags="general_terms"}
+- S/C - Spacecraft {data-category="general_terms" data-tags="general_terms"}
+- Satf - file of all TLEs {data-category="general_terms" data-tags="general_terms"}
 - Sat - satellite {data-category="general_terms" data-tags="general_terms"}
 - SatCat - satellite catalog {data-category="general_terms" data-tags="general_terms"}
 - [Search](/components/search) - A specialized text field for entering search terms. {data-category="design" data-tags="ui, ux"}
