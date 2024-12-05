@@ -10,39 +10,43 @@
 	const dialog = document.querySelector('.p-source-code-dialog')
 	const form = document.getElementById('buy-code-access')
 
-form.addEventListener('submit', async (e) => {
-	e.preventDefault()
-	const data = new FormData(form)
-	const formObject = {
-		'source-code': data.getAll('source-code'), // Gather all values into an array
-  }
+if (form) {
+	form.addEventListener('submit', async (e) => {
+		e.preventDefault()
+		const data = new FormData(form)
+		const formObject = {
+			'source-code': data.getAll('source-code'), // Gather all values into an array
+	}
 
-console.log(formObject, 'data from formdata')
-	fetch('/.netlify/functions/stripe', {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json',
-	},
-	body: JSON.stringify(formObject) // looks like {source-code: ['fds', 'grm']}
+	console.log(formObject, 'data from formdata')
+		fetch('/.netlify/functions/stripe', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(formObject) // looks like {source-code: ['fds', 'grm']}
+			})
+			.then(function (response) {
+				if (!response.ok) throw new Error('Failed to create checkout session')
+			return response.json()
 		})
-		.then(function (response) {
-			if (!response.ok) throw new Error('Failed to create checkout session')
-		return response.json()
+			.then(function (session) {
+				if (!session.id) throw new Error('No session ID returned')
+				return stripe.redirectToCheckout({ sessionId: session.id })
+		})
+			.then(function (result) {
+			if (result.error) {
+				alert(result.error.message)
+			}
+			}).catch((err) => console.error('Error with stripe fetch: ', err))
 	})
-		.then(function (session) {
-			if (!session.id) throw new Error('No session ID returned')
-			return stripe.redirectToCheckout({ sessionId: session.id })
-	})
-		.then(function (result) {
-		if (result.error) {
-			alert(result.error.message)
-		}
-		}).catch((err) => console.error('Error with stripe fetch: ', err))
-})
+}
 
-openBtn.forEach((openBtn) => {
-	openBtn.addEventListener('click', () => {
-		dialog.showModal()
-		// gtag('event', 'open_code_access_popup', { 'page_location': window.location.href })
+if (openBtn) {
+	openBtn.forEach((openBtn) => {
+		openBtn.addEventListener('click', () => {
+			dialog.showModal()
+			// gtag('event', 'open_code_access_popup', { 'page_location': window.location.href })
+		})
 	})
-})
+}

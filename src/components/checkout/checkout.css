@@ -3,7 +3,6 @@
 	/* Layout */
 	align-self: center;
 	margin-block-start: 4--step;
-	margin-inline-start: auto;
 	padding-block: 2--step;
 	padding-inline: 11--step;
 
@@ -20,10 +19,36 @@
 	color: var(--InverseColor);
 	cursor: pointer;
 
+	&.secondary {
+		/* Appearance */
+		background-color: unset;
+		color: var(--InteractiveColor);
+
+		&:disabled {
+			/* Appearance */
+			background-color: unset;
+			cursor: not-allowed;
+			opacity: .4;
+		}
+	}
+
 	&:is(:hover, :focus-visible) {
 		/* Appearance */
 		background-color: var(--InteractiveHoverColor);
 		box-shadow: var(--InteractiveHoverColor) 0 0 0 1px inset;
+
+		&.secondary {
+			/* Appearance */
+			background-color: unset;
+			color: var(--InteractiveColor);
+
+			&:disabled {
+				/* Appearance */
+				background-color: unset;
+				cursor: not-allowed;
+				opacity: .4;
+			}
+		}
 	}
 }
 
@@ -261,19 +286,6 @@
 	box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
 	color: var(--InverseColor);
 	cursor: pointer;
-
-	&.secondary {
-		/* Appearance */
-		background-color: unset;
-		color: var(--InteractiveColor);
-
-		&:disabled {
-			/* Appearance */
-			background-color: unset;
-			cursor: not-allowed;
-			opacity: .4;
-		}
-	}
 
 	&:is(:hover, :focus-visible) {
 		/* Appearance */
