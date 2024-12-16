@@ -1,0 +1,11 @@
+---
+import compliance from 'project:data/compliance.json'
+import DocsLayout from 'project:layouts/docs/docs-layout.astro'
+import Access from 'project:components/astro-product-access/astro-product-access.astro'
+
+const title = 'Digital Download'
+const description = 'Digital product download'
+---
+<DocsLayout content={{ title, description }} file={import.meta.url}>
+	<Access title={title} compliance={compliance} />
+</DocsLayout>

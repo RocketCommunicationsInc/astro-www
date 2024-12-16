@@ -1,0 +1,18 @@
+{
+	"$schema": "./schema.json",
+	"type": "object",
+	"data": {
+		"heading": {
+			"type": "text",
+			"data": "Astro Digital Product Download"
+		},
+		"summary": {
+			"type": "text",
+			"data": "Your digital product download will begin shortly."
+		},
+		"content": {
+			"type": "text",
+			"data": "Your digital product data will begin shortly"
+		}
+	}
+}

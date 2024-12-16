@@ -1,0 +1,15 @@
+---
+import astroProductAccess from 'project:data/product-download.json'
+import './astro-product-access.css'
+
+const { data } = astroProductAccess
+---
+<span class="p-astro-product-access">
+		<p class="p-astro-product-access-content">{data.summary.data}</p>
+		<small class="p-astro-product-access-success" />
+		<small class="p-astro-product-access-error" />
+</span>
+
+<script>
+	import './astro-product-access.js'
+</script>
