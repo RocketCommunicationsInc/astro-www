@@ -2,7 +2,7 @@
 import DocsLayout from 'project:layouts/docs/docs-layout.astro'
 import { system } from 'project:utils/tokens.js'
 import '../shared.css'
-import { RuxDesignTokenPreview } from '@astrouxds/documentation-components' 
+import { RuxDesignTokenPreview } from '@astrouxds/documentation-components'
 
 const title = 'System Tokens'
 const description = 'Tokens representing Astro semantic design decisions.'
@@ -14,7 +14,7 @@ const description = 'Tokens representing Astro semantic design decisions.'
 			{
 				system('light', 'color', 'background').map((token) => (
 					<RuxDesignTokenPreview
-    client:visible
+    client:load
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -32,7 +32,7 @@ const description = 'Tokens representing Astro semantic design decisions.'
 			{
 				system('light', 'color', 'text').map((token) => (
 					<RuxDesignTokenPreview
-    client:visible
+    client:load
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -50,7 +50,7 @@ const description = 'Tokens representing Astro semantic design decisions.'
 			{
 				system('light', 'color', 'border').map((token) => (
 					<RuxDesignTokenPreview
-    client:visible
+    client:load
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -68,7 +68,7 @@ const description = 'Tokens representing Astro semantic design decisions.'
 			{
 				system('light', 'color', 'status').map((token) => (
 					<RuxDesignTokenPreview
-    client:visible
+    client:load
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -86,7 +86,7 @@ const description = 'Tokens representing Astro semantic design decisions.'
 			{
 				system('light', 'color', 'classification').map((token) => (
 					<RuxDesignTokenPreview
-    client:visible
+    client:load
 						name={token.name}
 						value={token.value}
 						alias={token.referenceToken}
@@ -102,7 +102,7 @@ const description = 'Tokens representing Astro semantic design decisions.'
 		{
 			system('light', 'color', 'data-visualization').map((token) => (
 				<RuxDesignTokenPreview
-    client:visible
+    client:load
 					name={token.name}
 					value={token.value}
 					alias={token.referenceToken}
