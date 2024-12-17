@@ -1,70 +1,71 @@
 ---
 title: Propose a Change
-description: Any user of Astro can propose changes in a safe, trackable and relatively easy manner.
+description: Submit changes to Astro through a standardized, tracked process using GitHub.
 layout: project:layouts/docs/docs-layout.astro
 ---
 
 ## How to Propose a Change
 
-The Astro User Experience Design System is hosted on [GitHub](https://github.com) as an open source project and uses [Markdown](https://guides.github.com/features/mastering-markdown/) for content.
+The Astro User Experience Design System operates as an open source project on [GitHub](https://github.com) using [Markdown](https://guides.github.com/features/mastering-markdown/) for content management.
 
-You will need a free GitHub account to propose changes to Astro.
+Changes to Astro require a GitHub account. For users new to Git and fork workflows, follow steps 1-4 using GitHub's online interface. Users familiar with Git repositories may proceed to step 5 for pull request procedures.
 
-If you are new to Git and Git fork workflows the easiest way to edit Astro content is through GitHub’s online interface. If you are comfortable with Git and forking repositories skip to Step 5 below to see information about creating a pull request.
+## Step 1 - Access the Target Page
 
-## Step 1 - Navigate to the page you want to edit
+Locate the **Propose a change or fix to this page** link at the bottom of any [AstroUXDS.com](https://www.astrouxds.com/) page. This link directs to the GitHub editing interface. Non-authorized contributors must fork the repository to proceed.
 
-At the bottom of each page on [AstroUXDS.com](https://www.astrouxds.com/) you will find a link titled **Propose a change or fix to this page**. Follow the link to propose your change on GitHub. If you are not an authorized Astro contributor you will be asked to create a fork of the repository, this is a safe operation. You cannot break Astro proposing a change.
+## Step 2 - Fork Repository
 
-## Step 2 - Fork the Astro repository
+Non-team members initiate changes through Git's fork process, creating an isolated repository clone for modifications.
 
-If you aren’t a member of the Astro team your proposed changes use Git’s fork process. This effectively creates an identical clone of Astro you can edit without affecting the published version.
+![GitHub repository fork interface](/img/community/step-1.webp)
 
-![GitHub’s integrated Markdown editor](/img/community/step-1.webp)
+## Step 3 - Implement Changes
 
-## Step 3 - Edit the page
+Enter modifications using the GitHub integrated editor.
 
-Use Github’s integrated editor to make the changes you plan on submitting.
+![GitHub Markdown editor interface](/img/community/step-2.webp)
 
-![GitHub’s integrated Markdown editor](/img/community/step-2.webp)
+## Step 4 - Submit Change Proposal
 
-## Step 4 - Propose change
+Navigate to the **Propose file change** interface:
 
-When you have completed your changes scroll the browser window down to the **Propose file change** interface at the bottom of the page.
+1. Enter a concise description in the required first field
+2. Use the second field for detailed explanations if required
+3. Select **Propose file change**
 
-Create a brief description of the change you are proposing in the first field. This is required. Keep this description informative but succinct. If your change requires more than a brief length of text use the larger text field to elaborate on your change.
+This submission generates a permanent commit entry in the Astro changelog.
 
-Click the **Propose file change** button
+![GitHub change proposal interface](/img/community/step-3.webp)
 
-This is a commit message and will be forever included in the Astro changelog.
+## Step 5 - Review and Create Pull Request
 
-![GitHub’s integrated Markdown editor](/img/community/step-3.webp)
+1. Verify changes in the GitHub diff view:
+   - Previous version displays in red
+   - Proposed changes display in green
+2. Select **Create pull request**
+3. Review auto-populated commit messages
+4. Add supplementary information if required
 
-## Step 5 - Confirm your changes and create a pull request
+**NOTE**: Pull request submission establishes changes, messages, and requests as permanent public records.
 
-Take a moment after submitting your change to confirm there are no errors. GitHub will present the file you are changing, the previous version highlighted in red and your proposed change highlighted in green.
+![GitHub pull request interface](/img/community/step-4.webp)
 
-When you are satsified your change is ready for review click the **Create pull request**
+## Step 6 - Access Preview
 
-The pull request screen will auto-populate the text field with your previous commit message(s). Feel free to leave these as your pull request or if you think your change needs additional clarification enter that now.
+Each pull request generates a dedicated preview URL:
 
-**NOTE**: Once you click **Create pull request** all your changes, commit messages and pull requests become public and part of the permanent Astro record
+1. Locate the deploy/netlify status check
+2. Select the _Details_ link for preview access
+3. Preview URL remains active until pull request closure or merge
 
-Once you are content with your changes click **Create pull request**
+![GitHub deploy preview interface with status checks](/img/community/step-6.webp)
 
-![GitHub’s integrated Markdown editor](/img/community/step-4.webp)
+## Step 7 - Review Process
 
-## Step 6 - Preview your change
+The Astro team conducts weekly pull request reviews. Potential outcomes:
 
-Every pull request on AstroUXDS gets published to its own ephemeral URL for testing. You can view your changes live by clicking the _Details_ link associated with the final check, deploy/netlify - Deploy preview ready! This URL is valid for as long as the pull request is open and will automatically delete itself after the pull request is closed or merged in to Astro.
-
-![Don’t worry about the two red error messages, these are simply safeguards preventing changes being made public prior to necessary approval](/img/community/step-6.webp)
-
-## Step 7 - Approval process
-
-The Astro team reviews pull requests weekly. Proposals may be
-
-- Implemented immediately in a "minor" release version
-- Scheduled for implementation in a future release if the scope of change requires sufficient effort
-- Returned with requests for further clarification or guidance on changes necessary for acceptance
-- Rejected if the proposal is not suitable for Astro at this time
+- Immediate implementation in minor release
+- Scheduled implementation for future release
+- Return for clarification or modification
+- Non-acceptance with explanation
