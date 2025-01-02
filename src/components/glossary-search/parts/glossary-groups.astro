@@ -1,0 +1,20 @@
+---
+import { For } from '@astropub/flow'
+import icons from 'project:data/icons.json'
+import scriptURL from './glossary-groups.js?url'
+---
+<div class="p-icon-groups">
+	<For of={Object.entries(icons)}>{([ name, icons ]) => (
+		<article class="-group">
+			<h2 class="-group-heading" id={name}>{name}</h2>
+			<div class="-icons">
+				<For of={Object.entries(icons)}>{([ id, { name } ]) => (
+					<figure class="icon" tabindex="0">
+						<svg aria-label={name}><use href={`#icon-${id}`} /></svg>
+						<figcaption>{name}</figcaption>
+					</figure>
+				)}</For>
+			</div>
+		</article>
+	)}</For>
+</div><script defer src={scriptURL} />

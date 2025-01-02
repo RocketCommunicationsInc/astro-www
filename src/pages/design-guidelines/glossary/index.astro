@@ -1,0 +1,24 @@
+---
+import Layout from 'project:layouts/docs/docs-layout.astro'
+import GlossarySearch from 'project:components/glossary-search/glossary-search'
+import PageHeader from 'project:components/page-header/page-header.js'
+import GlossarySearchForm from 'project:components/glossary-search/parts/search-form.astro'
+import GlossaryCategories from 'project:components/glossary-search/parts/search-categories.astro'
+---
+<Layout content={{ title: 'Glossary' }} file={import.meta.url}>
+	<PageHeader slot="header">
+		<PageHeader.Heading>
+			Glossary
+		</PageHeader.Heading>
+		<PageHeader.Subheading>
+			A list of commonly used terms and definitions.
+		</PageHeader.Subheading>
+	</PageHeader>
+
+	<Fragment slot="toolbar">
+		<section class="p-icon-search"><GlossaryCategories /><GlossarySearchForm label="Search glossary" /></section>
+	</Fragment>
+
+	<GlossarySearch />
+
+</Layout>

@@ -1,0 +1,159 @@
+.p-icon-search {
+	display: flex;
+
+	/* Layout */
+	border-block-end: 1--rpx solid var(--Grey200Color);
+
+	/* Layout */
+	padding-block: 7--step;
+	padding-inline: 8--step;
+
+	/* Accounting for being a higher z than the feedback widget tab */
+	z-index: 2;
+
+	/* Appearance */
+	background-color: var(--PrimaryColor);
+	//box-shadow: -2px 2px 4px #00000040;
+
+	@media (width < 375px) {
+		/* Layout */
+		flex-direction: column-reverse;
+	}
+
+	@media (width < 480px) {
+		/* Layout */
+		padding-block: 4--step;
+
+		/* Layout */
+		padding-inline: 4--step;
+	}
+
+	@media (width >= 1440px) {
+		/* Layout */
+		padding-inline: 28--step;
+	}
+}
+
+.p-icon-results {
+	/* Text */
+	font-size: 36--rpx;
+
+	p {
+		/* Text */
+		font-size: 24--rpx;
+	}
+
+	a {
+		/* Text */
+		text-decoration: none;
+
+		/* Appearance */
+		color: var(--DarkBlue500Color);
+	}
+}
+
+.p-icon-groups {
+	--icon-size: 40--rpx;
+
+	& .-group {
+		&.nomatch {
+			display: none;
+		}
+
+		& .-group-heading {
+			/* Layout */
+			margin-block-start: 10--step;
+
+			/* Text */
+			font-size: 24--rpx;
+		}
+	}
+
+	& .-icons {
+		display: grid;
+
+		/* Layout */
+		--grid-layout-gap: 2--step;
+		--grid-column-count: 8;
+		--grid-item--min-width: 125--rpx;
+		--gap-count: calc(var(--grid-column-count) - 1);
+		--total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+		--grid-item--max-width: calc((100% - var(--total-gap-width)) / var(--grid-column-count));
+
+		/* Layout */
+		grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
+
+		& .icon {
+			display: flex;
+
+			/* Layout */
+			align-items: center;
+			flex-flow: column;
+			margin-inline: 1--step;
+			padding-block: 8--step;
+			padding-inline: 5--step;
+
+			@media (width < 1024px) {
+				/* Layout */
+				padding-block: 2--step;
+				padding-inline: 1--step;
+			}
+
+			/* Typography */
+			text-align: center;
+
+			/* Appearance */
+			background-color: var(--PrimaryColor);
+			border-radius: 6--rpx;
+			cursor: pointer;
+
+			/* Interaction */
+			transition: background-color 200ms ease-in-out;
+
+			&:is(figure) {
+				/* Layout */
+				inline-size: 100%;
+
+				/* Layout */
+				margin-block: 1--step;
+			}
+
+			&:hover, &:focus-visible {
+				/* Appearance */
+				background-color: var(--BrightBlue200Color);
+			}
+
+			&:focus-visible {
+				/* Layout */
+				z-index: 1;
+			}
+
+			&.selected {
+				/* Appearance */
+				background-color: var(--Grey200Color);
+			}
+
+			&.nomatch {
+				display: none;
+			}
+		}
+
+		& svg {
+			display: block;
+
+			/* Layout */
+			aspect-ratio: 1 / 1;
+			block-size: var(--icon-size);
+			inline-size: var(--icon-size);
+		}
+
+		& figcaption {
+			/* Layout */
+			margin-block-start: 4--step;
+		}
+	}
+}
+
+.p-icon-shapes {
+	display: none;
+}
