@@ -1,20 +1,38 @@
 ---
 import { For } from '@astropub/flow'
-import icons from 'project:data/icons.json'
+import glossaryItems from 'project:data/glossary.json'
 import scriptURL from './glossary-groups.js?url'
 ---
-<div class="p-icon-groups">
-	<For of={Object.entries(icons)}>{([ name, icons ]) => (
-		<article class="-group">
-			<h2 class="-group-heading" id={name}>{name}</h2>
-			<div class="-icons">
-				<For of={Object.entries(icons)}>{([ id, { name } ]) => (
-					<figure class="icon" tabindex="0">
-						<svg aria-label={name}><use href={`#icon-${id}`} /></svg>
-						<figcaption>{name}</figcaption>
-					</figure>
-				)}</For>
-			</div>
-		</article>
-	)}</For>
-</div><script defer src={scriptURL} />
+
+<div class="p-glossary-item-groups">
+	<For of={Object.entries(glossaryItems)}>
+		{
+			([ name, items ]) => (
+				<article class="-group">
+					<h2 class="-group-heading" id={name}>
+						{name}
+					</h2>
+					<ul class="-glossary-items">
+						<For of={Object.entries(items)}>
+							{([ id, { name, description, categories, tags } ]) => (
+								<li class="glossary-item">
+									<div>
+										<strong class="glossary-item-name">{name}</strong>
+										<div>{description}</div>
+									</div>
+
+									<div class="categories">
+										<For of={categories}>
+											{(item) => <strong class="category">{item}</strong>}
+										</For>
+									</div>
+									<metadata class="glossary-metadata" set:text={tags.join(', ')} />
+								</li>
+							)}
+						</For>
+					</ul>
+				</article>
+			)
+		}
+	</For>
+</div><script defer src={scriptURL}></script>

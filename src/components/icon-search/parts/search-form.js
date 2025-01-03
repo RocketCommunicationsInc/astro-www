@@ -97,6 +97,8 @@
 			}
 		)
 
+		console.log('icon category array:', iconCategoryArray)
+
 		noResultsElement = noResultsElement || document.querySelector('.p-icon-results')
 
 		let searchResultCount = 0

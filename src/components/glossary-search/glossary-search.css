@@ -1,4 +1,4 @@
-.p-icon-search {
+.p-glossary-search {
 	display: flex;
 
 	/* Layout */
@@ -34,7 +34,7 @@
 	}
 }
 
-.p-icon-results {
+.p-glossary-results {
 	/* Text */
 	font-size: 36--rpx;
 
@@ -52,8 +52,8 @@
 	}
 }
 
-.p-icon-groups {
-	--icon-size: 40--rpx;
+.p-glossary-item-groups {
+	/* --glossary-item-size: 40--rpx; */
 
 	& .-group {
 		&.nomatch {
@@ -69,91 +69,51 @@
 		}
 	}
 
-	& .-icons {
-		display: grid;
+	& .-glossary-items {
+		display: flex;
 
 		/* Layout */
-		--grid-layout-gap: 2--step;
-		--grid-column-count: 8;
-		--grid-item--min-width: 125--rpx;
-		--gap-count: calc(var(--grid-column-count) - 1);
-		--total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
-		--grid-item--max-width: calc((100% - var(--total-gap-width)) / var(--grid-column-count));
+		flex-direction: column;
+		gap: 3--step;
 
-		/* Layout */
-		grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
-
-		& .icon {
+		& .glossary-item {
 			display: flex;
 
 			/* Layout */
-			align-items: center;
 			flex-flow: column;
-			margin-inline: 1--step;
-			padding-block: 8--step;
-			padding-inline: 5--step;
-
-			@media (width < 1024px) {
-				/* Layout */
-				padding-block: 2--step;
-				padding-inline: 1--step;
-			}
-
-			/* Typography */
-			text-align: center;
-
-			/* Appearance */
-			background-color: var(--PrimaryColor);
-			border-radius: 6--rpx;
-			cursor: pointer;
-
-			/* Interaction */
-			transition: background-color 200ms ease-in-out;
-
-			&:is(figure) {
-				/* Layout */
-				inline-size: 100%;
-
-				/* Layout */
-				margin-block: 1--step;
-			}
-
-			&:hover, &:focus-visible {
-				/* Appearance */
-				background-color: var(--BrightBlue200Color);
-			}
-
-			&:focus-visible {
-				/* Layout */
-				z-index: 1;
-			}
-
-			&.selected {
-				/* Appearance */
-				background-color: var(--Grey200Color);
-			}
+			gap: 4--step;
 
 			&.nomatch {
 				display: none;
 			}
-		}
 
-		& svg {
-			display: block;
+			& .categories {
+				display: flex;
 
-			/* Layout */
-			aspect-ratio: 1 / 1;
-			block-size: var(--icon-size);
-			inline-size: var(--icon-size);
-		}
+				/* Layout */
+				gap: 4--step;
 
-		& figcaption {
-			/* Layout */
-			margin-block-start: 4--step;
+				& .category {
+					/* Layout */
+					padding-block: 1--step;
+					padding-inline: 2--step;
+
+					/* Text */
+					font-size: .875rem;
+
+					/* Appearance */
+					background: #bbc1c9;
+					border-radius: 3px;
+				}
+			}
 		}
 	}
 }
 
-.p-icon-shapes {
+.p-glossary-shapes {
+	display: none;
+}
+
+.glossary-metadata {
 	display: none;
 }

@@ -1,12 +1,12 @@
 {
 	const select = document.currentScript.previousSibling
-	const iconSearchHeight = document.querySelector('.p-icon-search').offsetHeight
+	const glossarySearchHeight = document.querySelector('.p-glossary-search').offsetHeight
 	const viewportHeight = window.innerHeight
-	const intersectionOffset = viewportHeight - iconSearchHeight
-	const iconGroups = document.querySelectorAll('.-group')
-	const iconHeaders = document.querySelectorAll('.-group-heading')
-	const iconHeaderFirst = iconHeaders[0]
-	const iconHeaderMarginTop = parseFloat(getComputedStyle(iconHeaderFirst).marginTop)
+	const intersectionOffset = viewportHeight - glossarySearchHeight
+	const glossaryGroups = document.querySelectorAll('.-group')
+	const glossaryHeaders = document.querySelectorAll('.-group-heading')
+	const glossaryHeaderFirst = glossaryHeaders[0]
+	const glossaryHeaderMarginTop = parseFloat(getComputedStyle(glossaryHeaderFirst).marginTop)
 
 	const options = [ ...document.querySelectorAll('.-group-heading') ]
 	options.forEach(option => {
@@ -17,7 +17,7 @@
 	})
 
 	const changeLocation = (event) => {
-		const scrollOffset = iconSearchHeight - iconHeaderFirst.offsetHeight
+		const scrollOffset = glossarySearchHeight - glossaryHeaderFirst.offsetHeight
 		const scrollTarget = document.getElementById(event.target.value)
 
 		// we need to offset the scroll to account for sticky header
@@ -30,7 +30,7 @@
 	// create intersection observer to watch for when group headings intersect search bar, update selected option displayed
 	let intersectOptions = {
 		root: null,
-		rootMargin: `${-1 * iconHeaderMarginTop}px 0px ${-1 * intersectionOffset}px 0px`,
+		rootMargin: `${-1 * glossaryHeaderMarginTop}px 0px ${-1 * intersectionOffset}px 0px`,
 		threshold: 0,
 	}
 
@@ -45,7 +45,7 @@
 
 	let observer = new IntersectionObserver(callback, intersectOptions)
 
-	iconGroups.forEach((group) => {
+	glossaryGroups.forEach((group) => {
 		observer.observe(group)
 	})
 }

@@ -12,7 +12,7 @@
 	let formClear = /** @type {HTMLInputElement} */ (formElement.querySelector('.-clear'))
 
 	/** gtag search modifier */
-	let searchTimeoutID
+	// let searchTimeoutID
 
 	let formState = {
 		focused: false,
@@ -48,8 +48,8 @@
 		onInputQueue = requestAnimationFrame(() => onInput(formControl.value))
 	})
 
-	/** Array of icon categories. */
-	let iconCategoryArray = /** @type {IconCategoryObject[]} */ (any)
+	/** Array of glossary item categories. */
+	let glossaryItemArrayByLetter = /** @type {GlossaryItemLetterObject[]} */ (any)
 
 	/** Search result text (only currently used when there are no results). */
 	let noResultsElement = /** @type {HTMLParagraphElement} */ (any)
@@ -61,72 +61,69 @@
 		// value, trimmed and converted to lower case
 		value = value.trim().toLowerCase()
 
-		iconCategoryArray = iconCategoryArray || [
-			...document.querySelectorAll('.p-icon-groups .-group')
+		glossaryItemArrayByLetter = glossaryItemArrayByLetter || [
+			...document.querySelectorAll('.p-glossary-item-groups .-group')
 		].map(
 			(/** @type {HTMLElement} */ element) => {
-				/** Category name. */
-				const name = element.querySelector('.-group-heading').textContent.toLowerCase()
-
-				/** Icons as a normalized object. */
-				const icons = [
-					...element.querySelectorAll('.icon')
+				const letterHeading = element.querySelector('.-group-heading').textContent.trim()
+				/** An array of the glossary items for the current letter */
+				const glossaryItems = [
+					...element.querySelectorAll('.glossary-item')
 				].map(
-					(/** @type {HTMLElement} */ element) => {
-						const use = element.querySelector('use')
-						const name = element.querySelector('figcaption').textContent.toLowerCase()
-						const tags = document.querySelector(use.getAttribute('href') + ' metadata').textContent.split(', ')
+					(/** @type {HTMLElement} */ iconElement) => {
+						const name = iconElement.querySelector('.glossary-item-name').textContent.toLowerCase().trim()
+						const tags = iconElement.querySelector('metadata.glossary-metadata').textContent.split(', ')
 
 						return {
-							/** Icon name. */
+							/** Glossary item name. */
 							name,
-							/** Icon (`<figure>`) element. */
-							element,
-							/** Icon tags. */
+							/** Glossary item (`<li>`) element. */
+							element: iconElement,
+							/** Glossary item tags. */
 							tags,
 						}
 					}
 				)
 
 				return {
-					/** Category Name */
-					name,
+					/** Letter Name */
+					letterHeading,
 					element,
-					icons,
+					glossaryItems,
 				}
 			}
 		)
 
-		noResultsElement = noResultsElement || document.querySelector('.p-icon-results')
+		noResultsElement = noResultsElement || document.querySelector('.p-glossary-results')
 
 		let searchResultCount = 0
 
-		for (let iconGroup of iconCategoryArray) {
+		for (let glossaryGroup of glossaryItemArrayByLetter) {
 			let nomatches = true
 
-			/** Whether the icon is matched early because it is empty or matches the category name. */
-			let earlymatch = !value || iconGroup.name.toLowerCase().includes(value)
+			/** Whether the glossary item is matched early because it is empty or matches the category name. */
+			let earlymatch = !value || glossaryGroup.letterHeading.toLowerCase().includes(value)
 
-			for (let icon of iconGroup.icons) {
-				/** Whether the icon is not matching the search term. */
+			for (let item of glossaryGroup.glossaryItems) {
+				/** Whether the item is not matching the search term. */
 				const nomatch = (
-					// whether the icon is
+					// whether the item is
 					!earlymatch &&
-					!icon.name.includes(value) &&
-					!icon.tags.some(
+					!item.name.includes(value) &&
+					!item.tags.some(
 						tag => tag.includes(value)
 					)
 				)
 
 				nomatches = nomatches && nomatch
 
-				icon.element.classList.toggle('nomatch', nomatch)
+				item.element.classList.toggle('nomatch', nomatch)
 
 				if (!nomatch) {
 					++searchResultCount
 				}
 			}
-			iconGroup.element.classList.toggle('nomatch', nomatches)
+			glossaryGroup.element.classList.toggle('nomatch', nomatches)
 
 			const pageHeaderHeight = document.querySelector('.page-header').offsetHeight
 			const navHeight = document.querySelector('.p-navigation').offsetHeight
@@ -143,18 +140,18 @@
 					? ``
 				: ``
 			: `
-			<strong>No results for "${value}".</strong> <p>Not finding what you want? <a href="mailto:support@astrouxds.com">Contact us</a> and suggest a new icon.</p>`
+			<strong>No results for "${value}".</strong> <p>Not finding what you want? <a href="mailto:support@astrouxds.com">Contact us</a> and suggest a new glossary entry.</p>`
 		)
-
+		// !TODO: ADD IN GTAG EVENTS WHEN THEY EXIST
 				/** Add google analytic search result logic */
 		// make sure that if someone types in quick succession the timeout is cleared and a new one is put in place
-		clearTimeout(searchTimeoutID)
-		searchTimeoutID = setTimeout(() => {
-			// if the time between input is greater than 1 seconds send the google event
-			gtag('event', 'search', { 'event_category': 'icon_library', 'search_term': `${value}`, 'search_results': searchResultCount > 0 })
-		}, 1000)
+		// clearTimeout(searchTimeoutID)
+		// searchTimeoutID = setTimeout(() => {
+		// 	// if the time between input is greater than 1 seconds send the google event
+		// 	gtag('event', 'search', { 'event_category': 'glossary', 'search_term': `${value}`, 'search_results': searchResultCount > 0 })
+		// }, 1000)
 	}
 }
 
-/** @typedef {import('./search-form.d').IconObject} IconObject */
-/** @typedef {import('./search-form.d').IconCategoryObject} IconCategoryObject */
+/** @typedef {import('./glossary-search-form').GlossaryItemObject} GlossaryItemObject */
+/** @typedef {import('./glossary-search-form').GlossaryItemLetterObject} GlossaryItemLetterObject */
