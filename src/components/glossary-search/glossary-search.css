@@ -87,13 +87,13 @@
 				display: none;
 			}
 
-			& .categories {
+			& .glossary-categories {
 				display: flex;
 
 				/* Layout */
 				gap: 4--step;
 
-				& .category {
+				& .glossary-category {
 					/* Layout */
 					padding-block: 1--step;
 					padding-inline: 2--step;

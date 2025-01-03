@@ -8,11 +8,15 @@
 	const glossaryHeaderFirst = glossaryHeaders[0]
 	const glossaryHeaderMarginTop = parseFloat(getComputedStyle(glossaryHeaderFirst).marginTop)
 
-	const options = [ ...document.querySelectorAll('.-group-heading') ]
+	const optionNotUnique = [ ...document.querySelectorAll('.glossary-categories') ].map((categoryElement) => (
+		categoryElement.getAttribute('data-categories').split(',')
+	)).flat()
+
+	const options = [ ...new Set(optionNotUnique) ]
 	options.forEach(option => {
 		const newOption = document.createElement('option')
-		newOption.value = `${option.textContent}`
-		newOption.textContent = option.textContent
+		newOption.value = option
+		newOption.textContent = option.replace('_', ' ')
 		select.appendChild(newOption)
 	})
 

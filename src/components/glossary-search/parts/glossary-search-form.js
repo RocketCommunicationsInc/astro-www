@@ -70,15 +70,21 @@
 				const glossaryItems = [
 					...element.querySelectorAll('.glossary-item')
 				].map(
-					(/** @type {HTMLElement} */ iconElement) => {
-						const name = iconElement.querySelector('.glossary-item-name').textContent.toLowerCase().trim()
-						const tags = iconElement.querySelector('metadata.glossary-metadata').textContent.split(', ')
+					(/** @type {HTMLElement} */ itemElement) => {
+						const name = itemElement.querySelector('.glossary-item-name').textContent.toLowerCase().trim()
+						const description = itemElement.querySelector('.glossary-item-description').textContent.toLowerCase().trim()
+						const categories = itemElement.querySelector('.glossary-categories').getAttribute('data-categories').split(',').map(category => category.replace('_', ' ')) // replace underscore with space for search performance with human typing
+						const tags = itemElement.querySelector('metadata.glossary-metadata').textContent.split(', ').map(tag => tag.replace('_', ' ')) // replace underscore with space for search performance with human typing
 
 						return {
 							/** Glossary item name. */
 							name,
+							/** Glossary item description. */
+							description,
 							/** Glossary item (`<li>`) element. */
-							element: iconElement,
+							element: itemElement,
+							/** Glossary item categories. */
+							categories,
 							/** Glossary item tags. */
 							tags,
 						}
@@ -110,6 +116,10 @@
 					// whether the item is
 					!earlymatch &&
 					!item.name.includes(value) &&
+					!item.description.includes(value) &&
+					!item.categories.some(
+						category => category.includes(value)
+					) &&
 					!item.tags.some(
 						tag => tag.includes(value)
 					)
