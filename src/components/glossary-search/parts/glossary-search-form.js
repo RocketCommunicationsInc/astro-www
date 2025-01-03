@@ -11,6 +11,9 @@
 	/** Search Terms Clear Button. */
 	let formClear = /** @type {HTMLInputElement} */ (formElement.querySelector('.-clear'))
 
+	/** Category Filter. */
+	let selectElement = /** @type {HTMLSelectElement} */ (document.getElementById('glossary-category-select'))
+
 	/** gtag search modifier */
 	// let searchTimeoutID
 
@@ -47,6 +50,8 @@
 		cancelAnimationFrame(onInputQueue)
 		onInputQueue = requestAnimationFrame(() => onInput(formControl.value))
 	})
+
+	selectElement.addEventListener('change', (event) => onInput(event.target.value.replace('_', ' ')))
 
 	/** Array of glossary item categories. */
 	let glossaryItemArrayByLetter = /** @type {GlossaryItemLetterObject[]} */ (any)
