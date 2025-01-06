@@ -306,8 +306,8 @@
 				"system_operations"
 			]
 		},
-		"[accordion](/components/accordion)": {
-			"name": "[Accordion](/components/accordion)",
+		"[accordion](/components/accordion/)": {
+			"name": "[Accordion](/components/accordion/)",
 			"description": "A navigational device which presents a hierarchical set of items in which only a single branch of that hierarchy is exposed at one time.",
 			"categories": ["design"],
 			"tags": ["ui"]
@@ -547,8 +547,8 @@
 			"categories": ["general_terms"],
 			"tags": ["general_terms"]
 		},
-		"[button](/components/button)": {
-			"name": "[Button](/components/button)",
+		"[button](/components/button/)": {
+			"name": "[Button](/components/button/)",
 			"description": "A Button allows users to trigger actions by clicking, tapping, or pressing a corresponding key on a keyboard, such as “Enter.”",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
@@ -816,20 +816,20 @@
 			"categories": ["organization"],
 			"tags": ["organization", "policy"]
 		},
-		"[checkbox](/components/checkbox)": {
-			"name": "[Checkbox](/components/checkbox)",
+		"[checkbox](/components/checkbox/)": {
+			"name": "[Checkbox](/components/checkbox/)",
 			"description": "A Checkbox allows a user to select a value from a small set of options.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
 		},
-		"[classification-&-control-markings](/components/classification-markings)": {
-			"name": "[Classification & Control Markings](/components/classification-markings)",
+		"[classification-&-control-markings](/components/classification-markings/)": {
+			"name": "[Classification & Control Markings](/components/classification-markings/)",
 			"description": "Markings required to be present on software that includes controlled or classified information.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
 		},
-		"[clock](/components/clock)": {
-			"name": "[Clock](/components/clock)",
+		"[clock](/components/clock/)": {
+			"name": "[Clock](/components/clock/)",
 			"description": "Clock shows the current date and time, and optional AOS and LOS timers.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
@@ -858,14 +858,14 @@
 			"categories": ["general_terms"],
 			"tags": ["general_terms"]
 		},
-		"[compliance](/design-guidelines/compliance)": {
-			"name": "[Compliance](/design-guidelines/compliance)",
+		"[compliance](/design-guidelines/compliance/)": {
+			"name": "[Compliance](/design-guidelines/compliance/)",
 			"description": "A list of rules used to determine if products align with Astro design and usage patterns.",
 			"categories": ["general_terms"],
 			"tags": [""]
 		},
-		"[concept-sketch](/design-process/ui-design)": {
-			"name": "[Concept Sketch](/design-process/ui-design)",
+		"[concept-sketch](/design-process/ui-design/)": {
+			"name": "[Concept Sketch](/design-process/ui-design/)",
 			"description": "A sketch on paper that lays out the main content workspace and controls and clarifies the flow of user interaction from screen-to-screen.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
@@ -1072,8 +1072,8 @@
 			"categories": ["general_terms"],
 			"tags": ["general_terms"]
 		},
-		"[data-visualization](/patterns/data-visualization)": {
-			"name": "[Data Visualization](/patterns/data-visualization)",
+		"[data-visualization](/patterns/data-visualization/)": {
+			"name": "[Data Visualization](/patterns/data-visualization/)",
 			"description": "The goal of Data Visualization is to make complex information accessible and easy to digest in a visual manner.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
@@ -1101,14 +1101,14 @@
 			"categories": ["orbit_dynamics"],
 			"tags": ["space_operations", "operations", "orbital_mechanics"]
 		},
-		"[design-tokens](/design-tokens/getting-started)": {
-			"name": "[Design Tokens](/design-tokens/getting-started)",
+		"[design-tokens](/design-tokens/getting-started/)": {
+			"name": "[Design Tokens](/design-tokens/getting-started/)",
 			"description": "A pairing of the same code and visual properties in a format that is deployable across all platforms, acting as a single source of truth for both designers and developers.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
 		},
-		"[dialog](/components/dialog)": {
-			"name": "[Dialog](/components/dialog)",
+		"[dialog](/components/dialog/)": {
+			"name": "[Dialog](/components/dialog/)",
 			"description": "A Dialog interrupts app processing to prompt a user to confirm an action or acknowledge a piece of information. It displays information along with a set of buttons allowing users to accept or cancel the actions presented within the Dialog.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
@@ -1491,14 +1491,14 @@
 			"categories": ["general_terms"],
 			"tags": ["general_terms"]
 		},
-		"[global-controls](/design-process/ui-design)": {
-			"name": "[Global Controls](/design-process/ui-design)",
+		"[global-controls](/design-process/ui-design/)": {
+			"name": "[Global Controls](/design-process/ui-design/)",
 			"description": "Display top-level system and equipment status throughout Astro applications.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
 		},
-		"[global-status-bar](/components/global-status-bar)": {
-			"name": "[Global Status Bar](/components/global-status-bar)",
+		"[global-status-bar](/components/global-status-bar/)": {
+			"name": "[Global Status Bar](/components/global-status-bar/)",
 			"description": "A full width view across the top of an application that displays the overall health and status of a system.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
@@ -1509,8 +1509,8 @@
 			"categories": ["general_terms"],
 			"tags": ["general_terms"]
 		},
-		"[grid](/design-guidelines/grid)": {
-			"name": "[Grid](/design-guidelines/grid)",
+		"[grid](/design-guidelines/grid/)": {
+			"name": "[Grid](/design-guidelines/grid/)",
 			"description": "A Grid system is a defined set of vertical columns and optionally horizontal rows based on time-tested principles of graphic design and layout.",
 			"categories": ["design"],
 			"tags": ["ui"]
@@ -1781,8 +1781,8 @@
 				"system_operations"
 			]
 		},
-		"[icons](/components/icons-and-symbols)": {
-			"name": "[Icons](/components/icons-and-symbols)",
+		"[icons](/components/icons-and-symbols/)": {
+			"name": "[Icons](/components/icons-and-symbols/)",
 			"description": "A graphic representation to convey meaning in a concise, visual manner.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
@@ -1793,8 +1793,8 @@
 			"categories": ["general_terms"],
 			"tags": ["general_terms"]
 		},
-		"[input-field](/components/input-field)": {
-			"name": "[Input Field](/components/input-field)",
+		"[input-field](/components/input-field/)": {
+			"name": "[Input Field](/components/input-field/)",
 			"description": "A type of field that allows users to enter text or numeric data.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
@@ -1968,14 +1968,14 @@
 			"categories": ["general_terms"],
 			"tags": ["general_terms"]
 		},
-		"[link](/components/link)": {
-			"name": "[Link](/components/link)",
+		"[link](/components/link/)": {
+			"name": "[Link](/components/link/)",
 			"description": "A link (also known as a hyperlink) is a clickable text element. The link control is used for navigation, but can also trigger an event.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
 		},
-		"[log](/components/log)": {
-			"name": "[Log](/components/log)",
+		"[log](/components/log/)": {
+			"name": "[Log](/components/log/)",
 			"description": "A tabular representation of application events and may include username, priority, equipment type, signal type, etc.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
@@ -2196,8 +2196,8 @@
 			"categories": ["general_terms"],
 			"tags": ["general_terms"]
 		},
-		"[modeless-pane](/patterns/modeless-panes)": {
-			"name": "[Modeless Pane](/patterns/modeless-panes)",
+		"[modeless-pane](/patterns/modeless-panes/)": {
+			"name": "[Modeless Pane](/patterns/modeless-panes/)",
 			"description": "A visual pattern used to present temporary interactions inline and does not require user action before moving to another area of the page.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
@@ -2370,26 +2370,26 @@
 			"categories": ["general_terms"],
 			"tags": ["general_terms"]
 		},
-		"[navigation](/patterns/navigation)": {
-			"name": "[Navigation](/patterns/navigation)",
+		"[navigation](/patterns/navigation/)": {
+			"name": "[Navigation](/patterns/navigation/)",
 			"description": "Navigation defines how the user moves through the application and establishes their mental model of the object hierarchy.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
 		},
-		"[navigational-tabs](/components/tabs)": {
-			"name": "[Navigational Tabs](/components/tabs)",
+		"[navigational-tabs](/components/tabs/)": {
+			"name": "[Navigational Tabs](/components/tabs/)",
 			"description": "Divide major areas of content and to indicate a work process.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
 		},
-		"[notification-banner](/components/notification-banner)": {
-			"name": "[Notification Banner](/components/notification-banner)",
+		"[notification-banner](/components/notification-banner/)": {
+			"name": "[Notification Banner](/components/notification-banner/)",
 			"description": "Events that deserve user attention, but don’t require a response, may be displayed in a Notification Banner. The Banner displays within the user’s field-of-view, but doesn’t block other interaction.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
 		},
-		"[notification-system](/patterns/notifications)": {
-			"name": "[Notification System](/patterns/notifications)",
+		"[notification-system](/patterns/notifications/)": {
+			"name": "[Notification System](/patterns/notifications/)",
 			"description": "A system which generates, prioritizes, and displays event notifications for significant occurrences within an application and its associated systems and hardware.",
 			"categories": ["design"],
 			"tags": ["ux"]
@@ -2707,8 +2707,8 @@
 			"categories": ["general_terms"],
 			"tags": ["general_terms"]
 		},
-		"[pagination](/components/pagination)": {
-			"name": "[Pagination](/components/pagination)",
+		"[pagination](/components/pagination/)": {
+			"name": "[Pagination](/components/pagination/)",
 			"description": "The process of dividing content for display on multiple pages. It is utilized when content, such as Search results, does not fit onto one page and must be split across multiple pages.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
@@ -2731,20 +2731,20 @@
 			"categories": ["orbit_dynamics"],
 			"tags": ["space_operations", "operations", "orbital_mechanics"]
 		},
-		"[pop-up-menu](/components/pop-up-menu)": {
-			"name": "[Pop Up Menu](/components/pop-up-menu)",
+		"[pop-up-menu](/components/pop-up-menu/)": {
+			"name": "[Pop Up Menu](/components/pop-up-menu/)",
 			"description": "A Pop Up Menu provides users with a quick way to access common actions for a highlighted item.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
 		},
-		"[progress-indicator](/components/progress)": {
-			"name": "[Progress Indicator](/components/progress)",
+		"[progress-indicator](/components/progress/)": {
+			"name": "[Progress Indicator](/components/progress/)",
 			"description": "A Progress Indicator signals that an application is busy performing an operation.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
 		},
 		"[push-button](/components/push-button)": {
-			"name": "[Push Button](/components/push-button)",
+			"name": "[Push Button](/components/push-button/)",
 			"description": "A control that initiates an action.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
@@ -2957,8 +2957,8 @@
 				"agile_management"
 			]
 		},
-		"[radio-button](/components/radio-button)": {
-			"name": "[Radio Button](/components/radio-button)",
+		"[radio-button](/components/radio-button/)": {
+			"name": "[Radio Button](/components/radio-button/)",
 			"description": "Allows users to mutually select an option from a predefined set of options. When one selection is made, the previous selection becomes deselected.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
@@ -2969,8 +2969,8 @@
 			"categories": ["general_terms"],
 			"tags": ["general_terms"]
 		},
-		"[research](/design-process/research)": {
-			"name": "[Research](/design-process/research)",
+		"[research](/design-process/research/)": {
+			"name": "[Research](/design-process/research/)",
 			"description": "Research is an essential process to a project’s success. It reveals, clarifies, and establishes the foundation on which the application resides.",
 			"categories": ["design"],
 			"tags": ["ux", "process"]
@@ -3548,26 +3548,26 @@
 			"categories": ["general_terms"],
 			"tags": ["general_terms"]
 		},
-		"[search](/components/search)": {
-			"name": "[Search](/components/search)",
+		"[search](/components/search/)": {
+			"name": "[Search](/components/search/)",
 			"description": "A specialized text field for entering search terms.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
 		},
-		"[segmented-button](/components/segmented-button)": {
-			"name": "[Segmented Button](/components/segmented-button)",
+		"[segmented-button](/components/segmented-button/)": {
+			"name": "[Segmented Button](/components/segmented-button/)",
 			"description": "Allows users to select one item at a time from two to four options.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
 		},
-		"[select-menu](/components/select)": {
-			"name": "[Select Menu](/components/select)",
+		"[select-menu](/components/select/)": {
+			"name": "[Select Menu](/components/select/)",
 			"description": "A UI control that allows users to select a value from a list of values.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
 		},
-		"[sign-in](/patterns/sign-in)": {
-			"name": "[Sign In](/patterns/sign-in)",
+		"[sign-in](/patterns/sign-in/)": {
+			"name": "[Sign In](/patterns/sign-in/)",
 			"description": "A form input in which a user enters authenticating information to gain access to specific information or usage of an application.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
@@ -3578,32 +3578,32 @@
 			"categories": ["general_terms"],
 			"tags": ["general_terms"]
 		},
-		"[slider](/components/slider)": {
-			"name": "[Slider](/components/slider)",
+		"[slider](/components/slider/)": {
+			"name": "[Slider](/components/slider/)",
 			"description": "A graphical control element that allows users to choose from a range of continuous and discrete values.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
 		},
-		"[status-indicator](/components/status-symbol)": {
-			"name": "[Status Indicator](/components/status-symbol)",
+		"[status-indicator](/components/status-symbol/)": {
+			"name": "[Status Indicator](/components/status-symbol/)",
 			"description": "Indicates the state of a device or feature in a standard and consistent way using color, shapes, labeling, and badging.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
 		},
-		"[status-system](/patterns/status-system)": {
-			"name": "[Status System](/patterns/status-system)",
+		"[status-system](/patterns/status-system/)": {
+			"name": "[Status System](/patterns/status-system/)",
 			"description": "A combination of colors and symbols to convey the status of a system.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
 		},
-		"[switch](/components/switch)": {
-			"name": "[Switch](/components/switch)",
+		"[switch](/components/switch/)": {
+			"name": "[Switch](/components/switch/)",
 			"description": "A Switch which describes a state or value. It allows users to change a setting between two states such as “On\" and \"Off.\"",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
 		},
-		"[symbols](/components/icons-and-symbols)": {
-			"name": "[Symbols](/components/icons-and-symbols)",
+		"[symbols](/components/icons-and-symbols/)": {
+			"name": "[Symbols](/components/icons-and-symbols/)",
 			"description": "A graphical representation or glyph associated with actions, concepts, or objects such as an asterisk.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
@@ -3781,20 +3781,20 @@
 				"system_operations"
 			]
 		},
-		"[tables](/patterns/table)": {
-			"name": "[Tables](/patterns/table)",
+		"[tables](/patterns/table/)": {
+			"name": "[Tables](/patterns/table/)",
 			"description": "A UX design mechanism comprised of rows and columns used for displaying content.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
 		},
-		"[tabs](/components/tabs)": {
-			"name": "[Tabs](/components/tabs)",
+		"[tabs](/components/tabs/)": {
+			"name": "[Tabs](/components/tabs/)",
 			"description": "Tabs in Astro Applications are used to divide major areas of content and to indicate work process.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
 		},
-		"[tags](/components/tag)": {
-			"name": "[Tags](/components/tag)",
+		"[tags](/components/tag/)": {
+			"name": "[Tags](/components/tag/)",
 			"description": "Small markers which often use color to identify important information at a glance, as well as filter and categorize items by keywords.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
@@ -3812,20 +3812,20 @@
 				"system_operations"
 			]
 		},
-		"[theme](/design-guidelines/theme)": {
-			"name": "[Theme](/design-guidelines/theme)",
+		"[theme](/design-guidelines/theme/)": {
+			"name": "[Theme](/design-guidelines/theme/)",
 			"description": "A preset set of colors applied as a group to the design system.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
 		},
-		"[timeline](/components/timeline)": {
-			"name": "[Timeline](/components/timeline)",
+		"[timeline](/components/timeline/)": {
+			"name": "[Timeline](/components/timeline/)",
 			"description": "Displays event information within a specified time period.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
 		},
-		"[tree](/components/tree)": {
-			"name": "[Tree](/components/tree)",
+		"[tree](/components/tree/)": {
+			"name": "[Tree](/components/tree/)",
 			"description": "A list box that displays the hierarchical relationship among the objects in the list.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
@@ -3843,8 +3843,8 @@
 				"system_operations"
 			]
 		},
-		"[typography](/design-guidelines/typography)": {
-			"name": "[Typography](/design-guidelines/typography)",
+		"[typography](/design-guidelines/typography/)": {
+			"name": "[Typography](/design-guidelines/typography/)",
 			"description": "The font and text settings that Astro uses across the design system.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
@@ -3992,16 +3992,16 @@
 		}
 	},
 	"V": {
-		"[validation](/patterns/forms-and-validation)": {
-			"name": "[Validation](/patterns/forms-and-validation)",
+		"[validation](/patterns/forms-and-validation/)": {
+			"name": "[Validation](/patterns/forms-and-validation/)",
 			"description": "Ensures that data is properly entered into an Input Field or Form. It alerts users to data errors, required input, and prompts them to make corrections.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]
 		}
 	},
 	"W": {
-		"[wireframe](/design-process/ui-design)": {
-			"name": "[Wireframe](/design-process/ui-design)",
+		"[wireframe](/design-process/ui-design/)": {
+			"name": "[Wireframe](/design-process/ui-design/)",
 			"description": "A page schematic or screen blueprint that represents the skeletal framework of a Web page or Web site.",
 			"categories": ["design"],
 			"tags": ["ui", "ux"]

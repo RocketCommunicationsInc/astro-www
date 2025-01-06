@@ -17,16 +17,32 @@ import scriptURL from './glossary-groups.js?url'
 							{([ id, { name, description, categories, tags } ]) => (
 								<li class="glossary-item">
 									<div class="glossary-describers">
-										<strong class="glossary-item-name">{name}</strong>
+										{name.includes('[')
+										? (
+											<a class="glossary-item-name" href={name.replace(')', '').split('(')[1]} class="glossary-item-name">
+												<strong>{name.replace(/[[\]]/g, '').split('(')[0]}</strong>
+											</a>
+										)
+										: (
+											<strong class="glossary-item-name">{name}</strong>
+										)}
+
 										<div class="glossary-item-description">{description}</div>
 									</div>
 
 									<div class="glossary-categories" data-categories={categories}>
 										<For of={categories}>
-											{(cat) => <strong class="glossary-category">{cat.replace('_', ' ')}</strong>}
+											{(cat) => (
+												<strong class="glossary-category">
+													{cat.replaceAll('_', ' ')}
+												</strong>
+											)}
 										</For>
 									</div>
-									<metadata class="glossary-metadata" set:text={tags.join(', ')} />
+									<metadata
+										class="glossary-metadata"
+										set:text={tags.join(', ')}
+									/>
 								</li>
 							)}
 						</For>

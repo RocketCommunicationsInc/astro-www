@@ -58,12 +58,7 @@
 .p-glossary-item-groups {
 	& .-group {
 		/* Layout */
-		margin-block-start: 15--step;
-
-		&:first-child {
-			/* Layout */
-			margin-block-start: 0;
-		}
+		margin-block-end: 15--step;
 
 		&.nomatch {
 			display: none;
@@ -101,6 +96,14 @@
 				& .glossary-item-name {
 					/* Text */
 					font-size: 1rem;
+				}
+
+				& a.glossary-item-name {
+					/* Text */
+					font-size: 1rem;
+
+					/* Appearance */
+					color: var(--DarkBlue500Color);
 				}
 			}
 

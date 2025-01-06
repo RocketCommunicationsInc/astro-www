@@ -9,7 +9,7 @@
 	options.forEach(option => {
 		const newOption = document.createElement('option')
 		newOption.value = option
-		newOption.textContent = option.replace('_', ' ')
+		newOption.textContent = option.replaceAll('_', ' ')
 		select.appendChild(newOption)
 	})
 }

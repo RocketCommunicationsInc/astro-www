@@ -51,7 +51,7 @@
 		onInputQueue = requestAnimationFrame(() => onInput(formControl.value))
 	})
 
-	selectElement.addEventListener('change', (event) => onInput(event.target.value.replace('_', ' ')))
+	selectElement.addEventListener('change', (event) => onInput(event.target.value.replaceAll('_', ' ')))
 
 	/** Array of glossary item categories. */
 	let glossaryItemArrayByLetter = /** @type {GlossaryItemLetterObject[]} */ (any)
@@ -78,8 +78,8 @@
 					(/** @type {HTMLElement} */ itemElement) => {
 						const name = itemElement.querySelector('.glossary-item-name').textContent.toLowerCase().trim()
 						const description = itemElement.querySelector('.glossary-item-description').textContent.toLowerCase().trim()
-						const categories = itemElement.querySelector('.glossary-categories').getAttribute('data-categories').split(',').map(category => category.replace('_', ' ')) // replace underscore with space for search performance with human typing
-						const tags = itemElement.querySelector('metadata.glossary-metadata').textContent.split(', ').map(tag => tag.replace('_', ' ')) // replace underscore with space for search performance with human typing
+						const categories = itemElement.querySelector('.glossary-categories').getAttribute('data-categories').split(',').map(category => category.replaceAll('_', ' ')) // replace underscore with space for search performance with human typing
+						const tags = itemElement.querySelector('metadata.glossary-metadata').textContent.split(', ').map(tag => tag.replaceAll('_', ' ')) // replace underscore with space for search performance with human typing
 
 						return {
 							/** Glossary item name. */
