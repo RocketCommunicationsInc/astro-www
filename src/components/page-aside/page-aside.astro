@@ -3,25 +3,25 @@ import IconLink from 'project:components/icon/icon-link.astro'
 import './page-aside.css'
 
 interface MarkdownHeading {
-	slug: string
-	text: string
-	depth: number
+	slug: string;
+	text: string;
+	depth: number;
 }
 
 export interface Props {
-	headings?: MarkdownHeading[]
-	content?: any
+	headings?: MarkdownHeading[];
+	content?: any;
 }
 
 const { content } = Astro.props
 const { headings } = {
 	headings: [],
-	...Astro.props
+	...Astro.props,
 }
 
 let anchorHeadings: MarkdownHeading[] = []
 // if anchorNav is set to 'extended' then grab h2s and h3s
-if( content.anchorNav && content.anchorNav === 'extended'){
+if (content.anchorNav && content.anchorNav === 'extended') {
 	for (const heading of headings) {
 		if (heading.depth === 2 || heading.depth === 3) {
 			anchorHeadings.push(heading)
@@ -39,16 +39,27 @@ else {
 // after headings runs through, add asset status if it exists
 if (content.assets?.name) {
 	anchorHeadings.push({
-		depth: 2, slug: 'asset-status', text: 'Asset Status'
+		depth: 2,
+		slug: 'asset-status',
+		text: 'Asset Status',
 	})
 }
 
-const storybookUrl: string = content.storybook ? `https://astro-components.netlify.app/?path=/story/${content.storybook}` : `https://astro-components.netlify.app/`
+const storybookUrl: string = content.storybook
+	? `https://astro-components.netlify.app/?path=/story/${content.storybook}`
+	: `https://astro-components.netlify.app/`
 ---
+
 <nav class="p-quicklinks-navigation" aria-label="Quick Links">
-	<ul id='top-links'>
+	<ul id="top-links">
 		<li class="-first">
-			<IconLink type="figma" href="https://www.figma.com/@astrouxds" class="figma">Figma</IconLink>
+			<IconLink
+				type="figma"
+				href="https://www.figma.com/@astrouxds"
+				class="figma"
+			>
+				Figma
+			</IconLink>
 		</li>
 
 		<li>
@@ -56,33 +67,44 @@ const storybookUrl: string = content.storybook ? `https://astro-components.netli
 		</li>
 
 		<li class="-last">
-			<IconLink type="github" href="https://github.com/RocketCommunicationsInc/astro">GitHub</IconLink>
+			<IconLink
+				type="github"
+				href="https://github.com/RocketCommunicationsInc/astro"
+			>
+				GitHub
+			</IconLink>
 		</li>
 	</ul>
-{ anchorHeadings.length > 1 ?
-	<hr />
-		 <div class='section-links-wrapper'>
-			<ul class='section-links'>{
-				anchorHeadings.map((heading, index) => (
-					<li>
-						<a class={
-							index === 0
-								? `${heading.slug} heading-${heading.depth} -highlighted -first`
-							: index === (anchorHeadings.length - 1)
-								? `${heading.slug} heading-${heading.depth} -last`
-							: `${heading.slug} heading-${heading.depth}`
-						} href={
-							`#${heading.slug}`
-						}>{
-							heading.text
-						}</a>
-					</li>
-				))
-			}</ul>
-		</div>
-		: null
+	{
+		anchorHeadings.length > 1
+? (
+			<>
+				<hr />
+				<div class="section-links-wrapper">
+					<ul class="section-links">
+						{anchorHeadings.map((heading, index) => (
+							<li>
+								<a
+									class={
+										index === 0
+											? `${heading.slug} heading-${heading.depth} -highlighted -first`
+											: index === anchorHeadings.length - 1
+											? `${heading.slug} heading-${heading.depth} -last`
+											: `${heading.slug} heading-${heading.depth}`
+									}
+									href={`#${heading.slug}`}
+								>
+									{heading.text}
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			</>
+		)
+: null
 	}
 </nav>
 <script>
-import './page-aside.client.js'
+	import './page-aside.client.js'
 </script>

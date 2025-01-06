@@ -1,0 +1,18 @@
+---
+import { For } from '@astropub/flow'
+import glossaryItems from 'project:data/glossary.json'
+import './glossary-nav.css'
+import scriptURL from './glossary-nav.js?url'
+---
+
+<div class="p-glossary-nav">
+	<For of={Object.entries(glossaryItems)}>
+		{
+			([ name, items ]) => (
+					<button type="button" class="p-glossary-nav-button" id={name}>
+						{name}
+					</button>
+			)
+		}
+	</For>
+</div><script defer src={scriptURL}></script>

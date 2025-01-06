@@ -17,6 +17,7 @@ import scriptURL from './glossary-groups.js?url'
 							{([ id, { name, description, categories, tags } ]) => (
 								<li class="glossary-item">
 									<div class="glossary-describers">
+										{/* This ternary shows a link for the name that is transformed to show only the readable name if it is intended to be a link, otherwise just the name */}
 										{name.includes('[')
 										? (
 											<a class="glossary-item-name" href={name.replace(')', '').split('(')[1]} class="glossary-item-name">

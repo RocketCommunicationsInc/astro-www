@@ -3,6 +3,7 @@
 
 	/* Layout */
 	border-block-end: 1--rpx solid var(--Grey200Color);
+	flex-direction: column;
 
 	/* Layout */
 	padding-block: 7--step;
@@ -31,6 +32,10 @@
 	@media (width >= 1440px) {
 		/* Layout */
 		padding-inline: 28--step;
+	}
+
+	& > div {
+		display: flex;
 	}
 }
 

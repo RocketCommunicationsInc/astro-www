@@ -2,6 +2,7 @@
 import Layout from 'project:layouts/docs/docs-layout.astro'
 import GlossarySearch from 'project:components/glossary-search/glossary-search'
 import GlossarySearchForm from 'project:components/glossary-search/parts/glossary-search-form.astro'
+import GlossaryNav from 'project:components/glossary-search/parts/glossary-nav.astro'
 import GlossaryCategories from 'project:components/glossary-search/parts/glossary-search-categories.astro'
 
 const title = 'Glossary'
@@ -9,7 +10,14 @@ const description = 'The Glossary is your go-to resource for understanding terms
 ---
 <Layout content={{ title, description }} file={import.meta.url}>
 	<Fragment slot="toolbar">
-		<section class="p-glossary-search"><GlossaryCategories /><GlossarySearchForm label="Search glossary" /></section>
+		<section class="p-glossary-search">
+			<div>
+				<GlossaryCategories />
+				<GlossarySearchForm label="Search glossary" />
+			</div>
+
+			<GlossaryNav />
+		</section>
 	</Fragment>
 
 	<GlossarySearch />

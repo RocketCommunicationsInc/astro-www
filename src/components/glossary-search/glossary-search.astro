@@ -1,25 +1,11 @@
 ---
-// import { For } from '@astropub/flow'
 import GlossaryGroups from 'project:components/glossary-search/parts/glossary-groups.astro'
-// import glossaryItems from 'project:data/glossary.json'
 import './glossary-search.css'
 ---
 <p class="p-glossary-results" />
 
 <GlossaryGroups />
 
-<!-- <svg id="shapes" class="p-glossary-shapes">
-	<For of={Object.entries(glossaryItems)}>{([ name, glossaryItems ]) => (
-		<g data-name={name}>
-			<For of={Object.entries(glossaryItems)}>{([ id, { name, categories, tags } ]) => (
-				<symbol id={`glossary-${id}`} viewBox="0 0 24 24">
-					<title>{name}</title>
-					<metadata set:text={tags.join(', ')} />
-				</symbol>
-			)}</For>
-		</g>
-	)}</For>
-</svg> -->
 <script>
 import './glossary-search.client.js'
 </script>
