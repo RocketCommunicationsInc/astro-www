@@ -34,7 +34,10 @@
 	}
 }
 
-.p-glossary-results {
+.p-glossary-results, p.p-glossary-results {
+	/* Layout */
+	margin-block-end: 0;
+
 	/* Text */
 	font-size: 36--rpx;
 
@@ -53,16 +56,22 @@
 }
 
 .p-glossary-item-groups {
-	/* --glossary-item-size: 40--rpx; */
-
 	& .-group {
+		/* Layout */
+		margin-block-start: 15--step;
+
+		&:first-child {
+			/* Layout */
+			margin-block-start: 0;
+		}
+
 		&.nomatch {
 			display: none;
 		}
 
 		& .-group-heading {
 			/* Layout */
-			margin-block-start: 10--step;
+			margin-block-start: 0;
 
 			/* Text */
 			font-size: 24--rpx;
@@ -77,14 +86,22 @@
 		gap: 3--step;
 
 		& .glossary-item {
-			display: flex;
-
 			/* Layout */
-			flex-flow: column;
-			gap: 4--step;
+			/* flex-flow: column;
+			gap: 4--step; */
 
 			&.nomatch {
 				display: none;
+			}
+
+			& .glossary-describers {
+				/* Layout */
+				margin-block-end: 4--step;
+
+				& .glossary-item-name {
+					/* Text */
+					font-size: 1rem;
+				}
 			}
 
 			& .glossary-categories {

@@ -16,7 +16,7 @@ import scriptURL from './glossary-groups.js?url'
 						<For of={Object.entries(items)}>
 							{([ id, { name, description, categories, tags } ]) => (
 								<li class="glossary-item">
-									<div>
+									<div class="glossary-describers">
 										<strong class="glossary-item-name">{name}</strong>
 										<div class="glossary-item-description">{description}</div>
 									</div>
