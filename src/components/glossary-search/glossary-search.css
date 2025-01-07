@@ -16,11 +16,6 @@
 	background-color: var(--PrimaryColor);
 	//box-shadow: -2px 2px 4px #00000040;
 
-	@media (width < 375px) {
-		/* Layout */
-		flex-direction: column-reverse;
-	}
-
 	@media (width < 480px) {
 		/* Layout */
 		padding-block: 4--step;
@@ -34,8 +29,13 @@
 		padding-inline: 28--step;
 	}
 
-	& > div {
+	& > div:first-child {
 		display: flex;
+
+		@media (width < 375px) {
+			/* Layout */
+			flex-direction: column-reverse;
+		}
 	}
 }
 

@@ -9,6 +9,11 @@
 	inline-size: 170--step;
 	padding-block-start: 6--step;
 
+	@media (width < 1024px) {
+		/* Layout */
+		inline-size: 100%;
+	}
+
 	& .p-glossary-nav-button {
 		display: flex;
 
