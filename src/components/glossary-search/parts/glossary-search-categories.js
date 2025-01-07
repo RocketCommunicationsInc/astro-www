@@ -1,6 +1,14 @@
 {
 	const select = document.currentScript.previousSibling
 
+	// fire the onInput search when the select element changes.
+	select.addEventListener('change', (event) => onChange(event.target.value))
+
+	// this performs the category filter in the case where the user has pressed the back button so they can return to their filtered state
+	window.addEventListener('load', () => {
+		if (select.value !== 'content') { onChange(select.value) }
+	})
+
 	// eslint-disable-next-line no-undef-init
 	let any = /** @type {any} */ (undefined)
 
@@ -39,9 +47,6 @@
 		newOption.textContent = option
 		select.appendChild(newOption)
 	})
-
-	// fire the onInput search when the select element changes.
-	select.addEventListener('change', (event) => onChange(event.target.value))
 
 	/** Array of glossary item categories. */
 	let glossaryItemArrayByLetter = /** @type {GlossaryItemLetterObject[]} */ (

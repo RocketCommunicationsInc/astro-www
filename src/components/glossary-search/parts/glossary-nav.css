@@ -39,13 +39,14 @@
 
 		&:is(:hover, :focus-visible) {
 			/* Appearance */
-			box-shadow: var(--DarkBlue500Color) 0 0 0 2px inset;
+			box-shadow: var(--DarkBlue700Color) 0 0 0 1px inset;
+			color: var(--DarkBlue700Color);
 		}
 
 		&.selected {
 			/* Appearance */
 			background-color: var(--DarkBlue500Color);
-			color: var(--Grey100Color);
+			color: var(--Neutral000Color);
 		}
 
 		&:disabled {
