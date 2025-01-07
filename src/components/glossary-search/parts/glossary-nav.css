@@ -1,0 +1,71 @@
+.p-glossary-nav {
+	display: flex;
+
+	/* Layout */
+	flex-wrap: wrap;
+
+	/* Layout */
+	gap: 1rem;
+	inline-size: 170--step;
+	padding-block-start: 6--step;
+
+	@media (width < 1024px) {
+		/* Layout */
+		inline-size: 100%;
+	}
+
+	& .p-glossary-nav-button {
+		display: flex;
+
+		/* Layout */
+		align-items: center;
+		block-size: 9--step;
+
+		/* Layout */
+		inline-size: 9--step;
+		justify-content: center;
+
+		/* Layout */
+		padding-block: 2--step;
+		padding-inline: 3--step;
+
+		/* Text */
+		font-size: 16--rpx;
+		line-height: max(20 / 16);
+
+		/* Appearance */
+		background-color: unset;
+
+		/* Appearance */
+		border-radius: var(--EdgeRadius);
+		box-shadow: var(--DarkBlue500Color) 0 0 0 1px inset;
+		color: var(--DarkBlue500Color);
+		cursor: pointer;
+
+		&:is(:hover, :focus-visible) {
+			/* Appearance */
+			box-shadow: var(--DarkBlue700Color) 0 0 0 1px inset;
+			color: var(--DarkBlue700Color);
+		}
+
+		&.selected {
+			/* Appearance */
+			background-color: var(--DarkBlue400Color);
+			color: var(--Neutral000Color);
+		}
+
+		&:disabled {
+			/* Appearance */
+			box-shadow: var(--Grey500Color) 0 0 0 1px inset;
+
+			/* Appearance */
+			color: var(--Grey500Color);
+			cursor: not-allowed;
+			opacity: .4;
+		}
+
+		&.hidden {
+			display: none;
+		}
+	}
+}
