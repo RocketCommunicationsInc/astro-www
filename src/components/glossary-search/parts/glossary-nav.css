@@ -37,13 +37,6 @@
 		color: var(--DarkBlue500Color);
 		cursor: pointer;
 
-		&:disabled {
-			/* Appearance */
-			background-color: unset;
-			cursor: not-allowed;
-			opacity: .4;
-		}
-
 		&:is(:hover, :focus-visible) {
 			/* Appearance */
 			box-shadow: var(--DarkBlue500Color) 0 0 0 2px inset;
@@ -63,6 +56,10 @@
 			color: var(--Grey500Color);
 			cursor: not-allowed;
 			opacity: .4;
+		}
+
+		&.hidden {
+			display: none;
 		}
 	}
 }
