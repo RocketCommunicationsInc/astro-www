@@ -1,0 +1,75 @@
+---
+import { For } from '@astropub/flow'
+import glossaryItems from 'project:data/glossary.json'
+
+// util function
+const _capitalizeFirstLetter = (word: string) => {
+	const firstLetterCap = word.charAt(0).toUpperCase()
+	const remainingLetters = word.slice(1)
+	return firstLetterCap + remainingLetters
+}
+
+const capitalizeCategory = (category: string): string => {
+	if (category.includes('_')) {
+		return category.split('_').map(word => _capitalizeFirstLetter(word)).join(' ')
+	} else {
+		return _capitalizeFirstLetter(category)
+	}
+}
+---
+
+<div class="p-glossary-item-groups">
+	<For of={Object.entries(glossaryItems)}>
+		{
+			([ name, items ]) => (
+				<article class="-group">
+					<h2 class="-group-heading" id={name}>
+						{name}
+					</h2>
+					<ul class="-glossary-items">
+						<For of={Object.entries(items)}>
+							{([ id, { name, description, categories, tags } ]) => (
+								<li class="glossary-item">
+									<div class="glossary-describers">
+										{/* This ternary shows a link for the name that is transformed to show only the readable name if it is intended to be a link, otherwise just the name */}
+										{name.includes('[')
+? (
+											<a
+												class="glossary-item-name"
+												href={name.replace(')', '').split('(')[1]}
+												class="glossary-item-name"
+											>
+												<strong>
+													{name.replace(/[[\]]/g, '').split('(')[0]}
+												</strong>
+											</a>
+										)
+: (
+											<strong class="glossary-item-name">{name}</strong>
+										)}
+
+										<div class="glossary-item-description">{description}</div>
+									</div>
+
+									<div class="glossary-categories" data-categories={categories}>
+										<For of={categories}>
+											{(cat) => (
+												<strong class="glossary-category">
+													{capitalizeCategory(cat)}
+												</strong>
+											)}
+										</For>
+									</div>
+									<metadata
+										class="glossary-metadata"
+										set:text={tags.join(', ')}
+									/>
+								</li>
+							)}
+						</For>
+					</ul>
+				</article>
+			)
+		}
+	</For>
+</div>
