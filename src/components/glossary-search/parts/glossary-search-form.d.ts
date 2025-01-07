@@ -1,21 +1,27 @@
 export interface GlossaryItemObject {
-	/** Name of this icon. */
-	name: string
+	/** Name of this glossary item. */
+	name: string;
+
+	/** Description of this glossary item */
+	description: string;
 
 	/** Element (`<div>`) representing this item in the DOM. */
-	element: HTMLElement
+	element: HTMLElement;
 
-	/** Tags associated with this icon. */
-	tags: string[]
+	/** Categoriess associated with this glossary item. */
+	categories: string[];
+
+	/** Tags associated with this glossary item. */
+	tags: string[];
 }
 
 export interface GlossaryItemLetterObject {
-	/** Name of this category. */
-	name: string
+	/** Name of this group. */
+	name: string;
 
-	/** Element (`<article>`) representing this category in the DOM. */
-	element: HTMLElement
+	/** Element (`<article>`) representing this group in the DOM. */
+	element: HTMLElement;
 
-	/** Glossary items within this category. */
-	glossaryItems: GlossaryItemObject[]
+	/** Glossary items within this group. */
+	glossaryItems: GlossaryItemObject[];
 }

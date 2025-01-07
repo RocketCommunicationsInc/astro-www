@@ -1,5 +1,4 @@
 {
-	// Find our component DOM on the page.
 	const navButtons = document.querySelectorAll('.p-glossary-nav-button')
 
 	// Add event listeners to fire confetti when a button is clicked.

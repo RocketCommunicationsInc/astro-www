@@ -36,7 +36,6 @@ function convertMarkdownToJson(markdown) {
 
 	// map through and convert to json result
 	markdownLines.map((line) => {
-		console.log(line)
 		const parsedLine = parseMarkdown(line);
 		jsonResult = {...jsonResult, ...parsedLine}
 	});
