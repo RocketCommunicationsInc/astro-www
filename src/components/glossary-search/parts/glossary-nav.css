@@ -50,7 +50,7 @@
 
 		&.selected {
 			/* Appearance */
-			background-color: var(--DarkBlue500Color);
+			background-color: var(--DarkBlue400Color);
 			color: var(--Neutral000Color);
 		}
 
