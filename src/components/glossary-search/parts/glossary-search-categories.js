@@ -38,7 +38,7 @@
 		} else {
 			return capitalizeFirstLetter(opt)
 		}
-	})
+	}).sort()
 
 	// append each option value to select element
 	options.forEach((option) => {
