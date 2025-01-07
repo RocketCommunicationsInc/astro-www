@@ -51,8 +51,6 @@
 		onInputQueue = requestAnimationFrame(() => onInput(formControl.value))
 	})
 
-	selectElement.addEventListener('change', (event) => onInput(event.target.value.replaceAll('_', ' ')))
-
 	/** Array of glossary item categories. */
 	let glossaryItemArrayByLetter = /** @type {GlossaryItemLetterObject[]} */ (any)
 
