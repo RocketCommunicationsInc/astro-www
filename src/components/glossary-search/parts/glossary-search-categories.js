@@ -52,7 +52,6 @@
 	let noResultsElement = /** @type {HTMLParagraphElement} */ (any)
 
 	const onChange = (/** @type {string} */ value) => {
-		// value, trimmed and converted to lower case and back to snake case to match JSON file values
 		value = value.trim().toLowerCase()
 
 		glossaryItemArrayByLetter =
@@ -99,7 +98,7 @@
 
 			/** Whether the glossary item is matched early because it is empty or matches the category name. */
 			let earlymatch =
-				!value || glossaryGroup.letterHeading.toLowerCase().includes(value)
+				!value || value === 'content' || glossaryGroup.letterHeading.toLowerCase().includes(value)
 
 			for (let item of glossaryGroup.glossaryItems) {
 				/** Whether the item is not matching the search term. */
