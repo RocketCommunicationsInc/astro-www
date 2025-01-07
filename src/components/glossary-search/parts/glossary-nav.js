@@ -15,7 +15,11 @@
 			),
 		].map((group) => group.querySelector('.-group-heading').id)
 
-		navButtons.forEach(button => {
+		navButtons.forEach((button) => {
+			// remove selected state
+			if (button.classList.contains('selected')) { button.classList.remove('selected') }
+
+			// hide all buttons that don't have visible group headings
 			if (!visibleLetters.includes(button.id)) {
 				button.classList.add('hidden')
 			} else {
