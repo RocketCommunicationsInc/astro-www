@@ -124,12 +124,12 @@
 
 			const pageHeaderHeight =
 				document.querySelector('.page-header').offsetHeight
-			const navHeight = document.querySelector('.p-navigation').offsetHeight
+			const toolbar = document.querySelector('.page-toolbar').offsetHeight
 
 			// on successful search, scroll to top of search results minus header
 			const scrollBackTo =
-				window.visualViewport.width < 800
-					? pageHeaderHeight + navHeight
+				window.visualViewport.width < 480
+					? toolbar
 					: pageHeaderHeight
 			document.documentElement.scrollTo(0, scrollBackTo)
 		}

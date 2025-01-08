@@ -3,7 +3,7 @@
 	inline-size: 100%;
 
 	/* Layout */
-	max-inline-size: 125--step;
+	/* max-inline-size: 185--step; */
 
 	/* Reference */
 	--border-color: var(--Grey400Color);
