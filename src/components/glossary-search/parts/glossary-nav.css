@@ -2,6 +2,9 @@
 	display: flex;
 
 	/* Layout */
+	justify-content: center;
+
+	/* Layout */
 	max-inline-size: 255--step;
 
 	/* Layout */
@@ -164,6 +167,12 @@
 
 				/* Layout */
 				max-inline-size: 100%;
+			}
+
+			& option {
+				&.hidden {
+					display: none;
+				}
 			}
 		}
 
