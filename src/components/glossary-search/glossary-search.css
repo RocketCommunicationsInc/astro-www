@@ -14,7 +14,6 @@
 
 	/* Appearance */
 	background-color: var(--PrimaryColor);
-	//box-shadow: -2px 2px 4px #00000040;
 
 	@media (width < 480px) {
 		/* Layout */
@@ -26,16 +25,22 @@
 
 	@media (width >= 1440px) {
 		/* Layout */
-		padding-inline: 28--step;
+		padding-inline: 8--step;
 	}
 
 	& > div:first-child {
 		display: flex;
 
-		@media (width < 375px) {
+		@media (width < 480px) {
 			/* Layout */
 			flex-direction: column-reverse;
+			gap: .5rem;
 		}
+	}
+
+	& .p-glossary-cat-search {
+		/* Layout */
+		max-inline-size: 255--step;
 	}
 }
 

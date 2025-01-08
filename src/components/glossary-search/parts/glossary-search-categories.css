@@ -18,9 +18,14 @@
 	font-family: var(--SystemType);
 	font-size: 9--step;
 
+	@media (width < 480px) {
+		/* Layout */
+		inline-size: 100%;
+	}
+
 	& select {
 		/* Layout */
-		inline-size: 50--step;
+		inline-size: 65--step;
 
 		/* Layout */
 		margin-inline-end: 2--step;
@@ -31,7 +36,7 @@
 		/* Layout */
 		max-inline-size: 100--step;
 		padding-block: 2--step;
-		padding-inline: 2--step;
+		padding-inline: 5--step;
 
 		/* Text */
 		font-size: 16--rpx;
@@ -47,6 +52,8 @@
 		background-repeat: no-repeat;
 		background-size: 24--rpx auto;
 		border: unset;
+		border-radius: max(6* var(--rpx));
+		box-shadow: var(--Grey400Color) 0 0 0 1px inset;
 
 		@media (width < 1024px) {
 			/* Layout */
@@ -54,6 +61,15 @@
 
 			/* Text */
 			font-size: 16--rpx;
+		}
+
+		@media (width < 480px) {
+			/* Layout */
+			inline-size: 100%;
+			margin-inline: 0--step;
+
+			/* Layout */
+			max-inline-size: 100%;
 		}
 	}
 
