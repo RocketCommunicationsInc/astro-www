@@ -6,13 +6,30 @@ import scriptURL from './glossary-nav.js?url'
 ---
 
 <div class="p-glossary-nav">
-	<For of={Object.entries(glossaryItems)}>
-		{
-			([ name ]) => (
-				<button type="button" class="p-glossary-nav-button" id={name}>
-					{name}
-				</button>
-			)
-		}
-	</For>
+	<div class="p-glossary-nav-buttons">
+		<For of={Object.entries(glossaryItems)}>
+			{
+				([ name ]) => (
+					<button type="button" class="p-glossary-nav-button" id={name}>
+						{name}
+					</button>
+				)
+			}
+		</For>
+	</div>
+	<div class="p-glossary-nav-select">
+		<label for="glossary-categories">Filter by Letter</label>
+		<select id="glossary-nav-select" name="glossary-nav-select">
+			<option value="content">Filter by Letter</option>
+			<For of={Object.entries(glossaryItems)}>
+				{
+					([ name ]) => (
+						<option value={name} class="p-glossary-nav-option" id={name}>
+							{name}
+						</option>
+					)
+				}
+			</For>
+		</select>
+	</div>
 </div><script defer src={scriptURL}></script>
