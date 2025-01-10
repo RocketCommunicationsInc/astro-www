@@ -6,15 +6,14 @@ import { RuxDesignTokenPreview } from '@astrouxds/documentation-components'
 const title = 'Reference'
 const description = 'Full catalog of Astro design tokens.'
 ---
+
 <DocsLayout content={{ title, description }} file={import.meta.url}>
-	<h2 id="colors">
-		Colors
-	</h2>
+	<h2 id="colors">Colors</h2>
 
 	{
 		reference('dark', 'color').map((token) => (
 			<RuxDesignTokenPreview
-client:load
+				client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -26,18 +25,20 @@ client:load
 
 	<hr />
 
-	<h2 id="font-size">
-		Font Size
-	</h2>
+	<h2 id="font-size">Font Size</h2>
 	<p>
-		Astro UXDS font size tokens define the font size of text styles and elements.
-		The design tokens are based on a t-shirt sizing system where the <code>font-size-base</code> token equals 1 rem (16 px by default), and font sizes are either smaller (sm, xs) or larger (lg, xl, 2xl, 3xl, 4xl, 5xl, 6xl) than the base.
-		For reference, the P body text style uses the <code>font-size-base</code> token to set the font size.
+		Astro UXDS font size tokens define the font size of text styles and
+		elements. The design tokens are based on a t-shirt sizing system where the <code
+			>font-size-base</code
+		> token equals 1 rem (16 px by default), and font sizes are either smaller (sm,
+		xs) or larger (lg, xl, 2xl, 3xl, 4xl, 5xl, 6xl) than the base. For reference,
+		the P body text style uses the <code>font-size-base</code> token to set the font
+		size.
 	</p>
 	{
 		reference('dark', 'fontSizes').map((token) => (
 			<RuxDesignTokenPreview
-    client:load
+				client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -95,13 +96,23 @@ client:load
 
 	<hr />
 
-	<h2 id="radii">
-		Radii
-	</h2>
+	<h2 id="font-family">Font Family</h2>
+	<RuxDesignTokenPreview
+	client:load
+	name={findByName('font-family-sans')?.name}
+	value={findByName('font-family-sans')?.value}
+	alias={findByName('font-family-sans')?.referenceToken}
+	description={findByName('font-family-sans')?.description}
+	type="font-family"
+/>
+
+	<hr />
+
+	<h2 id="radii">Radii</h2>
 	{
 		reference('dark', 'borderRadius').map((token) => (
 			<RuxDesignTokenPreview
-    client:load
+				client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -113,13 +124,11 @@ client:load
 
 	<hr />
 
-	<h2 id="opacity">
-		Opacity
-	</h2>
+	<h2 id="opacity">Opacity</h2>
 	{
 		reference('dark', 'opacity').map((token) => (
 			<RuxDesignTokenPreview
-    client:load
+				client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -131,13 +140,11 @@ client:load
 
 	<hr />
 
-	<h2 id="border-width">
-		Border Width
-	</h2>
+	<h2 id="border-width">Border Width</h2>
 	{
 		reference('dark', 'borderWidth').map((token) => (
 			<RuxDesignTokenPreview
-    client:load
+				client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -149,23 +156,26 @@ client:load
 
 	<hr />
 
-	<h2 id="spacing">
-		Spacing
-	</h2>
+	<h2 id="spacing">Spacing</h2>
 	<p>
-		Astro UXDS spacing tokens use increments of four to define all dimensions, padding, and margins for components, containers, grids, and other UI elements.
-		The design tokens are based on a 4 px system where 1 token step equals .25 rem, which equals 4 px by default.
-		For example, the <code>spacing-4</code> token equals 1 rem (16 px by default).
+		Astro UXDS spacing tokens use increments of four to define all dimensions,
+		padding, and margins for components, containers, grids, and other UI
+		elements. The design tokens are based on a 4 px system where 1 token step
+		equals .25 rem, which equals 4 px by default. For example, the <code
+			>spacing-4</code
+		> token equals 1 rem (16 px by default).
 	</p>
 	<p class="note">
-		When building components, Astro UXDS uses the border-collapse method for sizing.
-		In this method the borders overlap the padding within a component, as opposed to the box model method where the borders are added in addition to the padding.
-		So in Astro UXDS, a component with 8 px padding and 2 px border would only have 8 px of spacing.
+		When building components, Astro UXDS uses the border-collapse method for
+		sizing. In this method the borders overlap the padding within a component,
+		as opposed to the box model method where the borders are added in addition
+		to the padding. So in Astro UXDS, a component with 8 px padding and 2 px
+		border would only have 8 px of spacing.
 	</p>
 	{
 		reference('dark', 'spacing').map((token) => (
 			<RuxDesignTokenPreview
-    client:load
+				client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -177,18 +187,19 @@ client:load
 
 	<hr />
 
-	<h2 id="line-height">
-		Line Height
-	</h2>
+	<h2 id="line-height">Line Height</h2>
 	<p>
-		Astro UXDS line height tokens use increments of four to define the spacing and line height of text styles and elements.
-		The design tokens are based on a t-shirt sizing system where the <code>line-height-base</code> token equals 1.5 rem (24 px by default), and line heights are either smaller (sm, xs, 2xs) or larger (lg, xl, 2xl, 3xl, 4xl) than the base.
-		For reference, the P body text style uses the <code>line-height-base</code> token to set the line height.
+		Astro UXDS line height tokens use increments of four to define the spacing
+		and line height of text styles and elements. The design tokens are based on
+		a t-shirt sizing system where the <code>line-height-base</code> token equals
+		1.5 rem (24 px by default), and line heights are either smaller (sm, xs, 2xs)
+		or larger (lg, xl, 2xl, 3xl, 4xl) than the base. For reference, the P body text
+		style uses the <code>line-height-base</code> token to set the line height.
 	</p>
 	{
 		reference('dark', 'lineHeights').map((token) => (
 			<RuxDesignTokenPreview
-    client:load
+				client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -198,21 +209,17 @@ client:load
 		))
 	}
 
-	<h2 id="typography">
-		Typography
-	</h2>
+	<h2 id="typography">Typography</h2>
 	<div class="note">
 		<p>
-			The following typography tokens are mostly for reference.
-			We recommend that developers use our typography utility classes instead
+			The following typography tokens are mostly for reference. We recommend
+			that developers use our typography utility classes instead
 		</p>
 	</div>
 
-	<h3>
-		Monospace-1
-	</h3>
+	<h3>Monospace-1</h3>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-monospace-1-font-family')?.name}
 		value={findByName('font-monospace-1-font-family')?.value}
 		alias={findByName('font-monospace-1-font-family')?.referenceToken}
@@ -220,7 +227,7 @@ client:load
 		type="font-family"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-monospace-1-font-size')?.name}
 		value={findByName('font-monospace-1-font-size')?.value}
 		alias={findByName('font-monospace-1-font-size')?.referenceToken}
@@ -228,7 +235,7 @@ client:load
 		type="font-size"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-monospace-1-font-weight')?.name}
 		value={findByName('font-monospace-1-font-weight')?.value}
 		alias={findByName('font-monospace-1-font-weight')?.referenceToken}
@@ -236,7 +243,7 @@ client:load
 		type="font-weight"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-monospace-1-line-height')?.name}
 		value={findByName('font-monospace-1-line-height')?.value}
 		alias={findByName('font-monospace-1-line-height')?.referenceToken}
@@ -244,7 +251,7 @@ client:load
 		type="line-height"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-monospace-1-letter-spacing')?.name}
 		value={findByName('font-monospace-1-letter-spacing')?.value}
 		alias={findByName('font-monospace-1-letter-spacing')?.referenceToken}
@@ -252,11 +259,9 @@ client:load
 		type="letter-spacing"
 	/>
 
-	<h3>
-		Display 1
-	</h3>
+	<h3>Display 1</h3>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-display-1-font-family')?.name}
 		value={findByName('font-display-1-font-family')?.value}
 		alias={findByName('font-display-1-font-family')?.referenceToken}
@@ -264,7 +269,7 @@ client:load
 		type="font-family"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-display-1-font-size')?.name}
 		value={findByName('font-display-1-font-size')?.value}
 		alias={findByName('font-display-1-font-size')?.referenceToken}
@@ -272,7 +277,7 @@ client:load
 		type="font-size"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-display-1-font-weight')?.name}
 		value={findByName('font-display-1-font-weight')?.value}
 		alias={findByName('font-display-1-font-weight')?.referenceToken}
@@ -280,7 +285,7 @@ client:load
 		type="font-weight"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-display-1-line-height')?.name}
 		value={findByName('font-display-1-line-height')?.value}
 		alias={findByName('font-display-1-line-height')?.referenceToken}
@@ -288,7 +293,7 @@ client:load
 		type="line-height"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-display-1-letter-spacing')?.name}
 		value={findByName('font-display-1-letter-spacing')?.value}
 		alias={findByName('font-display-1-letter-spacing')?.referenceToken}
@@ -296,11 +301,9 @@ client:load
 		type="letter-spacing"
 	/>
 
-	<h3>
-		Display 2
-	</h3>
+	<h3>Display 2</h3>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-display-2-font-family')?.name}
 		value={findByName('font-display-2-font-family')?.value}
 		alias={findByName('font-display-2-font-family')?.referenceToken}
@@ -308,7 +311,7 @@ client:load
 		type="font-family"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-display-2-font-size')?.name}
 		value={findByName('font-display-2-font-size')?.value}
 		alias={findByName('font-display-2-font-size')?.referenceToken}
@@ -316,7 +319,7 @@ client:load
 		type="font-size"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-display-2-font-weight')?.name}
 		value={findByName('font-display-2-font-weight')?.value}
 		alias={findByName('font-display-2-font-weight')?.referenceToken}
@@ -324,7 +327,7 @@ client:load
 		type="font-weight"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-display-2-line-height')?.name}
 		value={findByName('font-display-2-line-height')?.value}
 		alias={findByName('font-display-2-line-height')?.referenceToken}
@@ -332,7 +335,7 @@ client:load
 		type="line-height"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-display-2-letter-spacing')?.name}
 		value={findByName('font-display-2-letter-spacing')?.value}
 		alias={findByName('font-display-2-letter-spacing')?.referenceToken}
@@ -340,11 +343,9 @@ client:load
 		type="letter-spacing"
 	/>
 
-	<h3>
-		Heading 1
-	</h3>
+	<h3>Heading 1</h3>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-1-font-family')?.name}
 		value={findByName('font-heading-1-font-family')?.value}
 		alias={findByName('font-heading-1-font-family')?.referenceToken}
@@ -352,7 +353,7 @@ client:load
 		type="font-family"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-1-font-size')?.name}
 		value={findByName('font-heading-1-font-size')?.value}
 		alias={findByName('font-heading-1-font-size')?.referenceToken}
@@ -360,7 +361,7 @@ client:load
 		type="font-size"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-1-font-weight')?.name}
 		value={findByName('font-heading-1-font-weight')?.value}
 		alias={findByName('font-heading-1-font-weight')?.referenceToken}
@@ -368,7 +369,7 @@ client:load
 		type="font-weight"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-1-line-height')?.name}
 		value={findByName('font-heading-1-line-height')?.value}
 		alias={findByName('font-heading-1-line-height')?.referenceToken}
@@ -376,7 +377,7 @@ client:load
 		type="line-height"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-1-letter-spacing')?.name}
 		value={findByName('font-heading-1-letter-spacing')?.value}
 		alias={findByName('font-heading-1-letter-spacing')?.referenceToken}
@@ -384,11 +385,9 @@ client:load
 		type="letter-spacing"
 	/>
 
-	<h3>
-		Heading 1 Bold
-	</h3>
+	<h3>Heading 1 Bold</h3>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-1-bold-font-family')?.name}
 		value={findByName('font-heading-1-bold-font-family')?.value}
 		alias={findByName('font-heading-1-bold-font-family')?.referenceToken}
@@ -396,7 +395,7 @@ client:load
 		type="font-family"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-1-bold-font-size')?.name}
 		value={findByName('font-heading-1-bold-font-size')?.value}
 		alias={findByName('font-heading-1-bold-font-size')?.referenceToken}
@@ -404,7 +403,7 @@ client:load
 		type="font-size"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-1-bold-font-weight')?.name}
 		value={findByName('font-heading-1-bold-font-weight')?.value}
 		alias={findByName('font-heading-1-bold-font-weight')?.referenceToken}
@@ -412,7 +411,7 @@ client:load
 		type="font-weight"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-1-bold-line-height')?.name}
 		value={findByName('font-heading-1-bold-line-height')?.value}
 		alias={findByName('font-heading-1-bold-line-height')?.referenceToken}
@@ -420,7 +419,7 @@ client:load
 		type="line-height"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-1-bold-letter-spacing')?.name}
 		value={findByName('font-heading-1-bold-letter-spacing')?.value}
 		alias={findByName('font-heading-1-bold-letter-spacing')?.referenceToken}
@@ -428,11 +427,9 @@ client:load
 		type="letter-spacing"
 	/>
 
-	<h3>
-		Heading 2
-	</h3>
+	<h3>Heading 2</h3>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-2-font-family')?.name}
 		value={findByName('font-heading-2-font-family')?.value}
 		alias={findByName('font-heading-2-font-family')?.referenceToken}
@@ -440,7 +437,7 @@ client:load
 		type="font-family"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-2-font-size')?.name}
 		value={findByName('font-heading-2-font-size')?.value}
 		alias={findByName('font-heading-2-font-size')?.referenceToken}
@@ -448,7 +445,7 @@ client:load
 		type="font-size"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-2-font-weight')?.name}
 		value={findByName('font-heading-2-font-weight')?.value}
 		alias={findByName('font-heading-2-font-weight')?.referenceToken}
@@ -456,7 +453,7 @@ client:load
 		type="font-weight"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-2-line-height')?.name}
 		value={findByName('font-heading-2-line-height')?.value}
 		alias={findByName('font-heading-2-line-height')?.referenceToken}
@@ -464,7 +461,7 @@ client:load
 		type="line-height"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-2-letter-spacing')?.name}
 		value={findByName('font-heading-2-letter-spacing')?.value}
 		alias={findByName('font-heading-2-letter-spacing')?.referenceToken}
@@ -472,11 +469,9 @@ client:load
 		type="letter-spacing"
 	/>
 
-	<h3>
-		Heading 3
-	</h3>
+	<h3>Heading 3</h3>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-3-font-family')?.name}
 		value={findByName('font-heading-3-font-family')?.value}
 		alias={findByName('font-heading-3-font-family')?.referenceToken}
@@ -484,7 +479,7 @@ client:load
 		type="font-family"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-3-font-size')?.name}
 		value={findByName('font-heading-3-font-size')?.value}
 		alias={findByName('font-heading-3-font-size')?.referenceToken}
@@ -492,7 +487,7 @@ client:load
 		type="font-size"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-3-font-weight')?.name}
 		value={findByName('font-heading-3-font-weight')?.value}
 		alias={findByName('font-heading-3-font-weight')?.referenceToken}
@@ -500,7 +495,7 @@ client:load
 		type="font-weight"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-3-line-height')?.name}
 		value={findByName('font-heading-3-line-height')?.value}
 		alias={findByName('font-heading-3-line-height')?.referenceToken}
@@ -508,7 +503,7 @@ client:load
 		type="line-height"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-3-letter-spacing')?.name}
 		value={findByName('font-heading-3-letter-spacing')?.value}
 		alias={findByName('font-heading-3-letter-spacing')?.referenceToken}
@@ -516,11 +511,9 @@ client:load
 		type="letter-spacing"
 	/>
 
-	<h3>
-		Heading 4
-	</h3>
+	<h3>Heading 4</h3>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-4-font-family')?.name}
 		value={findByName('font-heading-4-font-family')?.value}
 		alias={findByName('font-heading-4-font-family')?.referenceToken}
@@ -528,7 +521,7 @@ client:load
 		type="font-family"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-4-font-size')?.name}
 		value={findByName('font-heading-4-font-size')?.value}
 		alias={findByName('font-heading-4-font-size')?.referenceToken}
@@ -536,7 +529,7 @@ client:load
 		type="font-size"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-4-font-weight')?.name}
 		value={findByName('font-heading-4-font-weight')?.value}
 		alias={findByName('font-heading-4-font-weight')?.referenceToken}
@@ -544,7 +537,7 @@ client:load
 		type="font-weight"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-4-line-height')?.name}
 		value={findByName('font-heading-4-line-height')?.value}
 		alias={findByName('font-heading-4-line-height')?.referenceToken}
@@ -552,7 +545,7 @@ client:load
 		type="line-height"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-4-letter-spacing')?.name}
 		value={findByName('font-heading-4-letter-spacing')?.value}
 		alias={findByName('font-heading-4-letter-spacing')?.referenceToken}
@@ -560,11 +553,9 @@ client:load
 		type="letter-spacing"
 	/>
 
-	<h3>
-		Heading 5
-	</h3>
+	<h3>Heading 5</h3>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-5-font-family')?.name}
 		value={findByName('font-heading-5-font-family')?.value}
 		alias={findByName('font-heading-5-font-family')?.referenceToken}
@@ -572,7 +563,7 @@ client:load
 		type="font-family"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-5-font-size')?.name}
 		value={findByName('font-heading-5-font-size')?.value}
 		alias={findByName('font-heading-5-font-size')?.referenceToken}
@@ -580,7 +571,7 @@ client:load
 		type="font-size"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-5-font-weight')?.name}
 		value={findByName('font-heading-5-font-weight')?.value}
 		alias={findByName('font-heading-5-font-weight')?.referenceToken}
@@ -588,7 +579,7 @@ client:load
 		type="font-weight"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-5-line-height')?.name}
 		value={findByName('font-heading-5-line-height')?.value}
 		alias={findByName('font-heading-5-line-height')?.referenceToken}
@@ -596,7 +587,7 @@ client:load
 		type="line-height"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-5-letter-spacing')?.name}
 		value={findByName('font-heading-5-letter-spacing')?.value}
 		alias={findByName('font-heading-5-letter-spacing')?.referenceToken}
@@ -604,11 +595,9 @@ client:load
 		type="letter-spacing"
 	/>
 
-	<h3>
-		Heading 6
-	</h3>
+	<h3>Heading 6</h3>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-6-font-family')?.name}
 		value={findByName('font-heading-6-font-family')?.value}
 		alias={findByName('font-heading-6-font-family')?.referenceToken}
@@ -616,7 +605,7 @@ client:load
 		type="font-family"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-6-font-size')?.name}
 		value={findByName('font-heading-6-font-size')?.value}
 		alias={findByName('font-heading-6-font-size')?.referenceToken}
@@ -624,7 +613,7 @@ client:load
 		type="font-size"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-6-font-weight')?.name}
 		value={findByName('font-heading-6-font-weight')?.value}
 		alias={findByName('font-heading-6-font-weight')?.referenceToken}
@@ -632,7 +621,7 @@ client:load
 		type="font-weight"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-6-line-height')?.name}
 		value={findByName('font-heading-6-line-height')?.value}
 		alias={findByName('font-heading-6-line-height')?.referenceToken}
@@ -640,7 +629,7 @@ client:load
 		type="line-height"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-heading-6-letter-spacing')?.name}
 		value={findByName('font-heading-6-letter-spacing')?.value}
 		alias={findByName('font-heading-6-letter-spacing')?.referenceToken}
@@ -648,11 +637,9 @@ client:load
 		type="letter-spacing"
 	/>
 
-	<h3>
-		Body 1
-	</h3>
+	<h3>Body 1</h3>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-1-font-family')?.name}
 		value={findByName('font-body-1-font-family')?.value}
 		alias={findByName('font-body-1-font-family')?.referenceToken}
@@ -660,7 +647,7 @@ client:load
 		type="font-family"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-1-font-size')?.name}
 		value={findByName('font-body-1-font-size')?.value}
 		alias={findByName('font-body-1-font-size')?.referenceToken}
@@ -668,7 +655,7 @@ client:load
 		type="font-size"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-1-font-weight')?.name}
 		value={findByName('font-body-1-font-weight')?.value}
 		alias={findByName('font-body-1-font-weight')?.referenceToken}
@@ -676,7 +663,7 @@ client:load
 		type="font-weight"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-1-line-height')?.name}
 		value={findByName('font-body-1-line-height')?.value}
 		alias={findByName('font-body-1-line-height')?.referenceToken}
@@ -684,7 +671,7 @@ client:load
 		type="line-height"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-1-letter-spacing')?.name}
 		value={findByName('font-body-1-letter-spacing')?.value}
 		alias={findByName('font-body-1-letter-spacing')?.referenceToken}
@@ -692,11 +679,9 @@ client:load
 		type="letter-spacing"
 	/>
 
-	<h3>
-		Body 1 Bold
-	</h3>
+	<h3>Body 1 Bold</h3>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-1-bold-font-family')?.name}
 		value={findByName('font-body-1-bold-font-family')?.value}
 		alias={findByName('font-body-1-bold-font-family')?.referenceToken}
@@ -704,7 +689,7 @@ client:load
 		type="font-family"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-1-bold-font-size')?.name}
 		value={findByName('font-body-1-bold-font-size')?.value}
 		alias={findByName('font-body-1-bold-font-size')?.referenceToken}
@@ -712,7 +697,7 @@ client:load
 		type="font-size"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-1-bold-font-weight')?.name}
 		value={findByName('font-body-1-bold-font-weight')?.value}
 		alias={findByName('font-body-1-bold-font-weight')?.referenceToken}
@@ -720,7 +705,7 @@ client:load
 		type="font-weight"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-1-bold-line-height')?.name}
 		value={findByName('font-body-1-bold-line-height')?.value}
 		alias={findByName('font-body-1-bold-line-height')?.referenceToken}
@@ -728,7 +713,7 @@ client:load
 		type="line-height"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-1-bold-letter-spacing')?.name}
 		value={findByName('font-body-1-bold-letter-spacing')?.value}
 		alias={findByName('font-body-1-bold-letter-spacing')?.referenceToken}
@@ -736,11 +721,9 @@ client:load
 		type="letter-spacing"
 	/>
 
-	<h3>
-		Body 2
-	</h3>
+	<h3>Body 2</h3>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-2-font-family')?.name}
 		value={findByName('font-body-2-font-family')?.value}
 		alias={findByName('font-body-2-font-family')?.referenceToken}
@@ -748,7 +731,7 @@ client:load
 		type="font-family"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-2-font-size')?.name}
 		value={findByName('font-body-2-font-size')?.value}
 		alias={findByName('font-body-2-font-size')?.referenceToken}
@@ -756,7 +739,7 @@ client:load
 		type="font-size"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-2-font-weight')?.name}
 		value={findByName('font-body-2-font-weight')?.value}
 		alias={findByName('font-body-2-font-weight')?.referenceToken}
@@ -764,7 +747,7 @@ client:load
 		type="font-weight"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-2-line-height')?.name}
 		value={findByName('font-body-2-line-height')?.value}
 		alias={findByName('font-body-2-line-height')?.referenceToken}
@@ -772,7 +755,7 @@ client:load
 		type="line-height"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-2-letter-spacing')?.name}
 		value={findByName('font-body-2-letter-spacing')?.value}
 		alias={findByName('font-body-2-letter-spacing')?.referenceToken}
@@ -780,11 +763,9 @@ client:load
 		type="letter-spacing"
 	/>
 
-	<h3>
-		Body 2 Bold
-	</h3>
+	<h3>Body 2 Bold</h3>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-2-bold-font-family')?.name}
 		value={findByName('font-body-2-bold-font-family')?.value}
 		alias={findByName('font-body-2-bold-font-family')?.referenceToken}
@@ -792,7 +773,7 @@ client:load
 		type="font-family"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-2-bold-font-size')?.name}
 		value={findByName('font-body-2-bold-font-size')?.value}
 		alias={findByName('font-body-2-bold-font-size')?.referenceToken}
@@ -800,7 +781,7 @@ client:load
 		type="font-size"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-2-bold-font-weight')?.name}
 		value={findByName('font-body-2-bold-font-weight')?.value}
 		alias={findByName('font-body-2-bold-font-weight')?.referenceToken}
@@ -808,7 +789,7 @@ client:load
 		type="font-weight"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-2-bold-line-height')?.name}
 		value={findByName('font-body-2-bold-line-height')?.value}
 		alias={findByName('font-body-2-bold-line-height')?.referenceToken}
@@ -816,7 +797,7 @@ client:load
 		type="line-height"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-2-bold-letter-spacing')?.name}
 		value={findByName('font-body-2-bold-letter-spacing')?.value}
 		alias={findByName('font-body-2-bold-letter-spacing')?.referenceToken}
@@ -824,11 +805,9 @@ client:load
 		type="letter-spacing"
 	/>
 
-	<h3>
-		Body 3
-	</h3>
+	<h3>Body 3</h3>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-3-font-family')?.name}
 		value={findByName('font-body-3-font-family')?.value}
 		alias={findByName('font-body-3-font-family')?.referenceToken}
@@ -836,7 +815,7 @@ client:load
 		type="font-family"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-3-font-size')?.name}
 		value={findByName('font-body-3-font-size')?.value}
 		alias={findByName('font-body-3-font-size')?.referenceToken}
@@ -844,7 +823,7 @@ client:load
 		type="font-size"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-3-font-weight')?.name}
 		value={findByName('font-body-3-font-weight')?.value}
 		alias={findByName('font-body-3-font-weight')?.referenceToken}
@@ -852,7 +831,7 @@ client:load
 		type="font-weight"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-3-line-height')?.name}
 		value={findByName('font-body-3-line-height')?.value}
 		alias={findByName('font-body-3-line-height')?.referenceToken}
@@ -860,7 +839,7 @@ client:load
 		type="line-height"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-3-letter-spacing')?.name}
 		value={findByName('font-body-3-letter-spacing')?.value}
 		alias={findByName('font-body-3-letter-spacing')?.referenceToken}
@@ -868,11 +847,9 @@ client:load
 		type="letter-spacing"
 	/>
 
-	<h3>
-		Body 3 Bold
-	</h3>
+	<h3>Body 3 Bold</h3>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-3-bold-font-family')?.name}
 		value={findByName('font-body-3-bold-font-family')?.value}
 		alias={findByName('font-body-3-bold-font-family')?.referenceToken}
@@ -880,7 +857,7 @@ client:load
 		type="font-family"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-3-bold-font-size')?.name}
 		value={findByName('font-body-3-bold-font-size')?.value}
 		alias={findByName('font-body-3-bold-font-size')?.referenceToken}
@@ -888,7 +865,7 @@ client:load
 		type="font-size"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-3-bold-font-weight')?.name}
 		value={findByName('font-body-3-bold-font-weight')?.value}
 		alias={findByName('font-body-3-bold-font-weight')?.referenceToken}
@@ -896,7 +873,7 @@ client:load
 		type="font-weight"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-3-bold-line-height')?.name}
 		value={findByName('font-body-3-bold-line-height')?.value}
 		alias={findByName('font-body-3-bold-line-height')?.referenceToken}
@@ -904,7 +881,7 @@ client:load
 		type="line-height"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-body-3-bold-letter-spacing')?.name}
 		value={findByName('font-body-3-bold-letter-spacing')?.value}
 		alias={findByName('font-body-3-bold-letter-spacing')?.referenceToken}
@@ -912,11 +889,9 @@ client:load
 		type="letter-spacing"
 	/>
 
-	<h3>
-		Control Body 1
-	</h3>
+	<h3>Control Body 1</h3>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-control-body-1-font-family')?.name}
 		value={findByName('font-control-body-1-font-family')?.value}
 		alias={findByName('font-control-body-1-font-family')?.referenceToken}
@@ -924,7 +899,7 @@ client:load
 		type="font-family"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-control-body-1-font-size')?.name}
 		value={findByName('font-control-body-1-font-size')?.value}
 		alias={findByName('font-control-body-1-font-size')?.referenceToken}
@@ -932,7 +907,7 @@ client:load
 		type="font-size"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-control-body-1-font-weight')?.name}
 		value={findByName('font-control-body-1-font-weight')?.value}
 		alias={findByName('font-control-body-1-font-weight')?.referenceToken}
@@ -940,7 +915,7 @@ client:load
 		type="font-weight"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-control-body-1-line-height')?.name}
 		value={findByName('font-control-body-1-line-height')?.value}
 		alias={findByName('font-control-body-1-line-height')?.referenceToken}
@@ -948,7 +923,7 @@ client:load
 		type="line-height"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-control-body-1-letter-spacing')?.name}
 		value={findByName('font-control-body-1-letter-spacing')?.value}
 		alias={findByName('font-control-body-1-letter-spacing')?.referenceToken}
@@ -956,19 +931,18 @@ client:load
 		type="letter-spacing"
 	/>
 
-	<h3>
-		Control Body 1 Bold
-	</h3>
+	<h3>Control Body 1 Bold</h3>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-control-body-1-bold-font-family')?.name}
 		value={findByName('font-control-body-1-bold-font-family')?.value}
 		alias={findByName('font-control-body-1-bold-font-family')?.referenceToken}
-		description={findByName('font-control-body-1-bold-font-family')?.description}
+		description={findByName('font-control-body-1-bold-font-family')
+			?.description}
 		type="font-family"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-control-body-1-bold-font-size')?.name}
 		value={findByName('font-control-body-1-bold-font-size')?.value}
 		alias={findByName('font-control-body-1-bold-font-size')?.referenceToken}
@@ -976,27 +950,87 @@ client:load
 		type="font-size"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-control-body-1-bold-font-weight')?.name}
 		value={findByName('font-control-body-1-bold-font-weight')?.value}
 		alias={findByName('font-control-body-1-bold-font-weight')?.referenceToken}
-		description={findByName('font-control-body-1-bold-font-weight')?.description}
+		description={findByName('font-control-body-1-bold-font-weight')
+			?.description}
 		type="font-weight"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-control-body-1-bold-line-height')?.name}
 		value={findByName('font-control-body-1-bold-line-height')?.value}
 		alias={findByName('font-control-body-1-bold-line-height')?.referenceToken}
-		description={findByName('font-control-body-1-bold-line-height')?.description}
+		description={findByName('font-control-body-1-bold-line-height')
+			?.description}
 		type="line-height"
 	/>
 	<RuxDesignTokenPreview
-    client:load
+		client:load
 		name={findByName('font-control-body-1-bold-letter-spacing')?.name}
 		value={findByName('font-control-body-1-bold-letter-spacing')?.value}
-		alias={findByName('font-control-body-1-bold-letter-spacing')?.referenceToken}
-		description={findByName('font-control-body-1-bold-letter-spacing')?.description}
+		alias={findByName('font-control-body-1-bold-letter-spacing')
+			?.referenceToken}
+		description={findByName('font-control-body-1-bold-letter-spacing')
+			?.description}
+		type="letter-spacing"
+	/>
+
+	<hr />
+
+	<h2 id="paragraph-spacing">Paragraph Spacing</h2>
+	<RuxDesignTokenPreview
+		client:load
+		name={findByName('paragraph-spacing-0')?.name}
+		value={findByName('paragraph-spacing-0')?.value}
+		alias={findByName('paragraph-spacing-0')?.referenceToken}
+		description={findByName('paragraph-spacing-0')?.description}
+		type="letter-spacing"
+	/>
+
+	<hr />
+
+	<h2 id="letter-spacing">Letter Spacing</h2>
+	<RuxDesignTokenPreview
+		client:load
+		name={findByName('letter-spacing-sm')?.name}
+		value={findByName('letter-spacing-sm')?.value}
+		alias={findByName('letter-spacing-sm')?.referenceToken}
+		description={findByName('letter-spacing-sm')?.description}
+		type="letter-spacing"
+	/>
+	<RuxDesignTokenPreview
+		client:load
+		name={findByName('letter-spacing-base')?.name}
+		value={findByName('letter-spacing-base')?.value}
+		alias={findByName('letter-spacing-base')?.referenceToken}
+		description={findByName('letter-spacing-base')?.description}
+		type="letter-spacing"
+	/>
+	<RuxDesignTokenPreview
+		client:load
+		name={findByName('letter-spacing-lg')?.name}
+		value={findByName('letter-spacing-lg')?.value}
+		alias={findByName('letter-spacing-lg')?.referenceToken}
+		description={findByName('letter-spacing-lg')?.description}
+		type="letter-spacing"
+	/>
+	<RuxDesignTokenPreview
+		client:load
+		name={findByName('letter-spacing-xl')?.name}
+		value={findByName('letter-spacing-xl')?.value}
+		alias={findByName('letter-spacing-xl')?.referenceToken}
+		description={findByName('letter-spacing-xl')?.description}
+		type="letter-spacing"
+	/>
+	<RuxDesignTokenPreview
+		client:load
+		name={findByName('letter-spacing-2xl')?.name}
+		value={findByName('letter-spacing-2xl')?.value}
+		alias={findByName('letter-spacing-2xl')?.referenceToken}
+		description={findByName('letter-spacing-2xl')?.description}
 		type="letter-spacing"
 	/>
 </DocsLayout>
