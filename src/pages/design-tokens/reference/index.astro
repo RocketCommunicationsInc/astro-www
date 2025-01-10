@@ -52,18 +52,46 @@ client:load
 	<h2 id="font-weight">
 		Font Weight
 	</h2>
-	{
-		reference('dark', 'fontWeights').map((token) => (
-			<RuxDesignTokenPreview
+	<div class="note">
+		<p>
+			The font weight tokens have dropped the 's' on the word weights.
+			<br>The old tokens using '--font-weights-light', '--font-weights-regular', etc. instead of '--font-weight' are still compatible.
+		</p>
+	</div>
+	<!-- Font weights need to found by name since the fontWeights to fontWeight change.
+	Mapping through fontWeight from the tokens JSON will now give you more than just the font-weight tokens. -->
+	<RuxDesignTokenPreview
     client:load
-				name={token.name}
-				value={token.value}
-				alias={token.referenceToken}
-				description={token.description}
-				type="font-weight"
-			/>
-		))
-	}
+		name={findByName('font-weight-light')?.name}
+		value={findByName('font-weight-light')?.value}
+		alias={findByName('font-weight-light')?.referenceToken}
+		description={findByName('font-weight-light')?.description}
+		type="font-family"
+	/>
+	<RuxDesignTokenPreview
+    client:load
+		name={findByName('font-weight-regular')?.name}
+		value={findByName('font-weight-regular')?.value}
+		alias={findByName('font-weight-regular')?.referenceToken}
+		description={findByName('font-weight-regular')?.description}
+		type="font-family"
+	/>
+	<RuxDesignTokenPreview
+    client:load
+		name={findByName('font-weight-medium')?.name}
+		value={findByName('font-weight-medium')?.value}
+		alias={findByName('font-weight-medium')?.referenceToken}
+		description={findByName('font-weight-medium')?.description}
+		type="font-family"
+	/>
+	<RuxDesignTokenPreview
+    client:load
+		name={findByName('font-weight-bold')?.name}
+		value={findByName('font-weight-bold')?.value}
+		alias={findByName('font-weight-bold')?.referenceToken}
+		description={findByName('font-weight-bold')?.description}
+		type="font-family"
+	/>
 
 	<hr />
 
