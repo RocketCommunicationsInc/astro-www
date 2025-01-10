@@ -67,6 +67,14 @@ const description = 'Full catalog of Astro design tokens.'
 	<hr />
 
 	<h2 id="font-family-sans">Font Family Sans</h2>
+	<RuxDesignTokenPreview
+	client:load
+	name={findByName('font-family-sans')?.name}
+	value={findByName('font-family-sans')?.value}
+	alias={findByName('font-family-sans')?.referenceToken}
+	description={findByName('font-family-sans')?.description}
+	type="font-family"
+/>
 
 	<hr />
 
@@ -178,15 +186,6 @@ const description = 'Full catalog of Astro design tokens.'
 			that developers use our typography utility classes instead
 		</p>
 	</div>
-
-	<RuxDesignTokenPreview
-		client:load
-		name={findByName('font-family-sans')?.name}
-		value={findByName('font-family-sans')?.value}
-		alias={findByName('font-family-sans')?.referenceToken}
-		description={findByName('font-family-sans')?.description}
-		type="font-family"
-	/>
 
 	<h3>Monospace-1</h3>
 	<RuxDesignTokenPreview
