@@ -32,7 +32,7 @@
 		"@astropub/webcomponent-polyfills": "file:.vscode/astropub-webcomponent-polyfills-0.1.1.tgz",
 		"@astrouxds/astrouxds-figma-assets": "^0.0.5",
 		"@astrouxds/documentation-components": "^0.0.16",
-		"@astrouxds/tokens": "^1.12.0",
+		"@astrouxds/tokens": "^1.13.0",
 		"@csstools/custom-units": "0.1.1",
 		"@typescript-eslint/eslint-plugin": "6.0.0",
 		"@typescript-eslint/parser": "6.0.0",
