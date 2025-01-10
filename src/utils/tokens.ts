@@ -17,7 +17,6 @@ export const reference = (theme: string, category: string) => {
 			return parseFloat(String(a.value)) - parseFloat(String(b.value))
 		})
 	}
-
 	return themeTokens
 }
 
