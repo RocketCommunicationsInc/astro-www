@@ -2,25 +2,24 @@
 /** @typedef {import('astro').AstroConfig} AstroConfig */
 
 // remark plugins
-import remarkDirective from 'remark-directive'
-import remarkDirectives from './remark-plugins/remark-directives.js'
-import remarkDoDontFigures from './remark-plugins/remark-do-dont-figures.js'
-import remarkGfm from 'remark-gfm'
-import remarkHeadingLinks from './remark-plugins/remark-heading-links.js'
-import remarkImplicitFigures from './remark-plugins/remark-implicit-figures.js'
-import remarkLazyImages from './remark-plugins/remark-lazy-images.js'
-import remarkLists from './remark-plugins/remark-lists.js'
-import remarkSmartyPants from 'remark-smartypants'
+import remarkDirective from 'remark-directive';
+import remarkDirectives from './remark-plugins/remark-directives.js';
+import remarkDoDontFigures from './remark-plugins/remark-do-dont-figures.js';
+import remarkGfm from 'remark-gfm';
+import remarkHeadingLinks from './remark-plugins/remark-heading-links.js';
+import remarkImplicitFigures from './remark-plugins/remark-implicit-figures.js';
+import remarkLazyImages from './remark-plugins/remark-lazy-images.js';
+import remarkLists from './remark-plugins/remark-lists.js';
+import remarkAttributes from './remark-plugins/remark-attributes.js';
+import remarkSmartyPants from 'remark-smartypants';
 
 // vite plugins
-import { viteImportYaml } from './vite-plugins/vite-import-yaml.js'
-import { viteMinifyRaw } from './vite-plugins/vite-minify-raw.js'
-import { vitePostCSS } from './vite-plugins/vite-postcss.js'
-import viteImportWithType from './vite-plugins/vite-import-with-type.js'
+import { viteImportYaml } from './vite-plugins/vite-import-yaml.js';
+import { viteMinifyRaw } from './vite-plugins/vite-minify-raw.js';
+import { vitePostCSS } from './vite-plugins/vite-postcss.js';
+import viteImportWithType from './vite-plugins/vite-import-with-type.js';
 
-export default () => [
-	astroWWWIntegration()
-]
+export default () => [astroWWWIntegration()];
 
 function astroWWWIntegration() {
 	/** @type {AstroIntegration} */
@@ -42,6 +41,7 @@ function astroWWWIntegration() {
 							remarkImplicitFigures,
 							remarkDoDontFigures,
 							remarkLists,
+							remarkAttributes,
 							remarkHeadingLinks,
 						],
 					},
@@ -57,10 +57,10 @@ function astroWWWIntegration() {
 							viteMinifyRaw(),
 						],
 					},
-				})
+				});
 			},
 		},
-	}
+	};
 
-	return integration
+	return integration;
 }

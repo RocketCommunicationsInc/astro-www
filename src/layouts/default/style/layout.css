@@ -31,6 +31,9 @@
 	/* Layout */
 	block-size: calc(100 * var(--vph));
 
+	/* Layout */
+	block-size: fit-content;
+
 	@media (width >= 1024px) {
 		display: grid;
 
