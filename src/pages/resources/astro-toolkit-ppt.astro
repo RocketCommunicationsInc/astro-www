@@ -1,0 +1,72 @@
+---
+import DocsLayout from 'project:layouts/docs/docs-layout.astro'
+import AstroToolkitPPTPurchaseButton from 'project:components/astro-toolkit-ppt-purchase-button/astro-toolkit-ppt-purchase-button.astro'
+import Heading from 'project:components/astro-headings/heading.astro'
+const content = {
+	title: 'Astro Toolkit for Microsoft PowerPoint',
+	description: `Introducing the Astro PowerPoint Toolkit: Streamline wireframing for space and intelligence professionals in secure environments..`,
+}
+---
+
+<DocsLayout content={content}>
+	<Heading type="h2" title="Product Details" />
+
+	<p>
+		In the aerospace and defense industry, software restrictions can pose
+		challenges when it comes to wireframing in certain environments. That's why
+		we've developed the Astro PowerPoint Toolkit, a solution tailored
+		specifically for space and intelligence workers to use in the most secure
+		and restricted environments.
+	</p>
+	<AstroToolkitPPTPurchaseButton />
+	<div style="margin-bottom: 36px;  margin-top: 68px;">
+		<img
+		src="/images/astro-toolkit-ppt-screen-1.png"
+		alt=""
+		loading="lazy"
+		width="635"
+		height="353"
+		style="max-width: 100%; margin-bottom: 36px;"
+	/>
+	<small style="display: flex"
+		>The Astro Toolkit enables rapid, DoD-approved wireframing for streamlined design and validation.</small
+	>
+	</div>
+
+	<p>
+		<strong>The Astro PowerPoint Toolkit&nbsp;</strong>offers a lightweight and
+		DoD-approved medium for rapid wireframing. It leverages familiar PowerPoint
+		software, widely used in the industry, to provide a seamless integration
+		into existing workflows. This means that designers, developers, and product
+		teams can quickly create and validate wireframes, even in environments where
+		time and access to other design tools are limited.
+	</p>
+
+	<div style="margin-top: 36px;">
+		<img
+		src="/images/astro-toolkit-ppt-screen-2.png"
+		alt=""
+		loading="lazy"
+		width="512"
+		height="434"
+		style="max-width: 100%; margin-bottom: 36px;"
+	/>
+	<small style="display: flex"
+		>The toolkit provides core components for quickly customizing your space app
+		designs with drag-and-drop ease.</small
+	>
+	</div>
+	<Heading type="h2" title="Features" />
+
+	<ul>
+		<li>Core Astro design system: The toolkit includes the essential components of the Astro design system, ensuring consistency and efficiency in wireframing.</li>
+		<li>Authorized and familiar medium: By leveraging the power of PowerPoint, professionals can seamlessly integrate wireframing into their existing workflows.</li>
+		<li>Effort reduction: Reduced prototyping design time by 75%, allowing teams to focus on innovation and collaboration.</li>
+	</ul>
+
+	<Heading type="h2" title="Purchase Astro Toolkit" />
+
+	<AstroToolkitPPTPurchaseButton />
+	<p style="margin-top: 36px;"><strong>File Size:&nbsp;</strong>XX MB</p>
+
+</DocsLayout>

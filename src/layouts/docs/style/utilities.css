@@ -366,6 +366,30 @@
 	}
 }
 
+.p-button {
+	/* Layout */
+	padding-block: 3--step;
+	padding-inline: 10--step;
+
+	/* Text */
+	font-size: 16--rpx;
+	font-weight: 300;
+	line-height: 24--rpx;
+
+	/* Appearance */
+	background-color: var(--DarkBlue500Color);
+	border: 1px solid var(--DarkBlue500Color);
+	border-radius: var(--EdgeRadius);
+	color: var(--PrimaryColor);
+	cursor: pointer;
+
+	&:hover {
+		/* Appearance */
+		background-color: var(--DarkBlue700Color);
+		border-color: var(--DarkBlue500Color);
+	}
+}
+
 /* select */
 /* ========================================================================== */
 
