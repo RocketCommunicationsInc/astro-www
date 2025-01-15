@@ -284,6 +284,10 @@
 			{
 				"label": "Astro for R2C2",
 				"url": "/platforms/astro-for-r2c2/"
+			},
+			{
+				"label": "Astro for PowerPoint",
+				"url": "/platforms/astro-toolkit-ppt/"
 			}
 		],
 		"label": "Platforms"
@@ -340,10 +344,6 @@
 			{
 				"label": "Downloads",
 				"url": "/resources/downloads/"
-			},
-			{
-				"label": "Astro PPT Toolkit",
-				"url": "/resources/astro-toolkit-ppt/"
 			},
 			{
 				"label": "Glossary",

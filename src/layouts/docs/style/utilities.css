@@ -368,6 +368,9 @@
 
 .p-button {
 	/* Layout */
+	inline-size: fit-content;
+
+	/* Layout */
 	padding-block: 3--step;
 	padding-inline: 10--step;
 

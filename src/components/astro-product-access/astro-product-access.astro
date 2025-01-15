@@ -1,14 +1,26 @@
 ---
-import astroProductAccess from 'project:data/product-download.json'
 import './astro-product-access.css'
-
-const { data } = astroProductAccess
 ---
-<span class="p-astro-product-access">
-		<p class="p-astro-product-access-content">{data.summary.data}</p>
-		<small class="p-astro-product-access-success" />
+
+<div class="p-astro-product-access">
+		<!-- <small class="p-astro-product-access-success" /> -->
 		<small class="p-astro-product-access-error" />
-</span>
+	<p>
+		Click the button below to start your download. A product download link has
+		also been sent to the email provided during checkout.
+	</p>
+
+	<button disabled type="button" id="product-download-button" class="p-button p-astro-product-access-button"
+		>
+		<div class="loading-container loading">Verifying</div></button
+	>
+
+	<div>
+		<p><strong>File Size:&nbsp;</strong>XX MB</p>
+
+		<p>For any issues, please contact us at support@astouxds.com.</p>
+	</div>
+</div>
 
 <script>
 	import './astro-product-access.js'

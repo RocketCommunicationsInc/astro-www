@@ -20,12 +20,17 @@ const PRODUCTS = {
 	'ttc': {
 		name: 'TT&C Source Code',
 		unit_amount: 10000
+	},
+	'astro-toolkit-ppt': {
+		name: 'Astro Toolkit PPT',
+		unit_amount: 10000
 	}
   }
   exports.handler = async (event) => {
 	try {
+		console.log(event.body)
 		// Parse the incoming request body
-		const { 'source-code': selectedProducts } = JSON.parse(event.body)
+		const { 'products': selectedProducts } = JSON.parse(event.body)
 
 		// Validate that there are selected products
 	if (!selectedProducts || selectedProducts.length === 0) {
@@ -56,8 +61,8 @@ const PRODUCTS = {
 		// eslint-disable-next-line camelcase
 		line_items,
 		mode: 'payment',
-		success_url: `${baseUrl}/checkout/success/`,
-		cancel_url: `${baseUrl}/checkout/cancel/`,
+		success_url: `${baseUrl}/checkout/success/?session_id={CHECKOUT_SESSION_ID}`,
+		cancel_url: `${baseUrl}/platforms/astro-toolkit-ppt/`,
 		// custom_fields: [
 		// 	{
 		// 	key: 'engraving',

@@ -15,7 +15,7 @@ if (form) {
 		e.preventDefault()
 		const data = new FormData(form)
 		const formObject = {
-			'source-code': data.getAll('source-code'), // Gather all values into an array
+			'products': data.getAll('source-code'), // Gather all values into an array
 	}
 
 	console.log(formObject, 'data from formdata')

@@ -1,6 +1,9 @@
 .p-astro-product-access {
 	display: flex;
 
+	/* Layout */
+	flex-direction: column;
+
 	& .p-astro-product-access-heading {
 		display: flex;
 
@@ -39,55 +42,9 @@
 }
 
 .p-astro-product-access-button {
-	/* Layout */
-	padding-block: 2--step;
-	padding-inline: 8--step;
-
-	/* Text */
-	font-size: 16--rpx;
-	line-height: max(20 / 16);
-
-	/* Appearance */
-	background-color: var(--InteractiveColor);
-	border-radius: var(--EdgeRadius);
-	box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
-	color: var(--InverseColor);
-	cursor: pointer;
-
-	&.secondary {
-		/* Appearance */
-		background-color: unset;
-		color: var(--InteractiveColor);
-
-		&:disabled {
-			/* Appearance */
-			background-color: unset;
-			cursor: not-allowed;
-			opacity: .4;
-		}
-	}
-
-	&:is(:hover, :focus-visible) {
-		/* Appearance */
-		background-color: var(--InteractiveHoverColor);
-		box-shadow: var(--InteractiveHoverColor) 0 0 0 1px inset;
-
-		&.secondary {
-			/* Appearance */
-			background-color: unset;
-			color: var(--InteractiveHoverColor);
-
-			&:disabled {
-				/* Appearance */
-				box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
-				color: var(--InteractiveColor);
-			}
-		}
-	}
-
 	& .loading-container.loading {
 		/* Layout */
-		padding-inline-start: 6--step;
+		padding-inline-start: 7--step;
 
 		/* Appearance */
 		background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHN0cm9rZT0iIzAwMCIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxzdHlsZT4uc3Bpbm5lcl9WOG0xe3RyYW5zZm9ybS1vcmlnaW46Y2VudGVyO2FuaW1hdGlvbjpzcGlubmVyX3pLb2EgMnMgbGluZWFyIGluZmluaXRlfS5zcGlubmVyX1Y4bTEgY2lyY2xle3N0cm9rZS1saW5lY2FwOnJvdW5kO2FuaW1hdGlvbjpzcGlubmVyX1lwWlMgMS41cyBlYXNlLWluLW91dCBpbmZpbml0ZX1Aa2V5ZnJhbWVzIHNwaW5uZXJfektvYXsxMDAle3RyYW5zZm9ybTpyb3RhdGUoMzYwZGVnKX19QGtleWZyYW1lcyBzcGlubmVyX1lwWlN7MCV7c3Ryb2tlLWRhc2hhcnJheTowIDE1MDtzdHJva2UtZGFzaG9mZnNldDowfTQ3LjUle3N0cm9rZS1kYXNoYXJyYXk6NDIgMTUwO3N0cm9rZS1kYXNob2Zmc2V0Oi0xNn05NSUsMTAwJXtzdHJva2UtZGFzaGFycmF5OjQyIDE1MDtzdHJva2UtZGFzaG9mZnNldDotNTl9fTwvc3R5bGU+PGcgY2xhc3M9InNwaW5uZXJfVjhtMSI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iOS41IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjMiPjwvY2lyY2xlPjwvZz48L3N2Zz4=");
@@ -95,7 +52,6 @@
 
 	&:disabled {
 		/* Appearance */
-		background-color: var(--InteractiveColor);
 		cursor: not-allowed;
 		opacity: .4;
 	}
