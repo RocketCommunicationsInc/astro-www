@@ -1,12 +1,15 @@
 ---
-import compliance from 'project:data/compliance.json'
 import DocsLayout from 'project:layouts/docs/docs-layout.astro'
 import ProductAccess from 'project:components/astro-product-access/astro-product-access.astro'
+import compliance from 'project:data/compliance.json'
 
-const title = 'Product Download'
-const description = 'Please see instructions below on how to download your new product.'
+const title = 'Thank You for Your Purchase!'
+const description =
+	'Your order has been completed and payment was made successfully. Please see instructions below on how to download your new Astro PowerPoint Toolkit.'
 ---
+
 <DocsLayout content={{ title, description }} file={import.meta.url}>
+	<!-- <h2 id="product download">Product Download</h2> -->
 	<ProductAccess title={title} compliance={compliance} />
 
 	<p>
@@ -19,6 +22,11 @@ const description = 'Please see instructions below on how to download your new p
 
 	<p>
 		To learn more about the Astro Power Point Toolkit and how it can benefit
-		your organization, please contact us at <a href="mailto:support@astrouxds.com">support@astrouxds.com</a>.
+		your organization, please contact us at <a
+			href="mailto:support@astrouxds.com">support@astrouxds.com</a
+		>.
 	</p>
 </DocsLayout>
+<script>
+	import './success.js'
+</script>

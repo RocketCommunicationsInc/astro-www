@@ -3,22 +3,30 @@ import './astro-product-access.css'
 ---
 
 <div class="p-astro-product-access">
-		<!-- <small class="p-astro-product-access-success" /> -->
-		<small class="p-astro-product-access-error" />
 	<p>
 		Click the button below to start your download. A product download link has
-		also been sent to the email provided during checkout.
+		also been sent to the email provided during checkout. The download link will
+		expire 72 hours after it is emailed to you. To get a new link, send a
+		request to <a href="mailto:support@astrouxds.com">support@astrouxds.com</a>.
 	</p>
 
-	<button disabled type="button" id="product-download-button" class="p-button p-astro-product-access-button"
-		>
+	<button
+		disabled
+		type="button"
+		id="product-download-button"
+		class="p-button p-astro-product-access-button"
+	>
 		<div class="loading-container loading">Verifying</div></button
 	>
+	<div class="p-astro-product-access_status-wrapper hidden">
+		<span class="p-astro-product-access_success"></span>
+		<span class="p-astro-product-access_error"></span>
+	</div>
 
 	<div>
-		<p><strong>File Size:&nbsp;</strong>XX MB</p>
-
-		<p>For any issues, please contact us at support@astouxds.com.</p>
+		<p>
+			<strong>File Size:&nbsp;</strong><span id="product-file-size">--</span> MB
+		</p>
 	</div>
 </div>
 

@@ -31,66 +31,54 @@
 		}
 	}
 
-	& .p-astro-product-access-error, .p-astro-product-access-apps-error {
-		/* Text */
-		font-size: 14--rpx;
-		font-weight: 700;
-
-		/* Appearance */
-		color: hsla(0, 100%, 61%, 1);
-	}
-}
-
-.p-astro-product-access-button {
-	& .loading-container.loading {
-		/* Layout */
-		padding-inline-start: 7--step;
-
-		/* Appearance */
-		background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHN0cm9rZT0iIzAwMCIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxzdHlsZT4uc3Bpbm5lcl9WOG0xe3RyYW5zZm9ybS1vcmlnaW46Y2VudGVyO2FuaW1hdGlvbjpzcGlubmVyX3pLb2EgMnMgbGluZWFyIGluZmluaXRlfS5zcGlubmVyX1Y4bTEgY2lyY2xle3N0cm9rZS1saW5lY2FwOnJvdW5kO2FuaW1hdGlvbjpzcGlubmVyX1lwWlMgMS41cyBlYXNlLWluLW91dCBpbmZpbml0ZX1Aa2V5ZnJhbWVzIHNwaW5uZXJfektvYXsxMDAle3RyYW5zZm9ybTpyb3RhdGUoMzYwZGVnKX19QGtleWZyYW1lcyBzcGlubmVyX1lwWlN7MCV7c3Ryb2tlLWRhc2hhcnJheTowIDE1MDtzdHJva2UtZGFzaG9mZnNldDowfTQ3LjUle3N0cm9rZS1kYXNoYXJyYXk6NDIgMTUwO3N0cm9rZS1kYXNob2Zmc2V0Oi0xNn05NSUsMTAwJXtzdHJva2UtZGFzaGFycmF5OjQyIDE1MDtzdHJva2UtZGFzaG9mZnNldDotNTl9fTwvc3R5bGU+PGcgY2xhc3M9InNwaW5uZXJfVjhtMSI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iOS41IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjMiPjwvY2lyY2xlPjwvZz48L3N2Zz4=");
-	}
-
-	&:disabled {
-		/* Appearance */
-		cursor: not-allowed;
-		opacity: .4;
-	}
-}
-
-.p-astro-product-access-success-popover:popover-open {
-	display: flex;
-
-	/* Layout */
-	align-items: center;
-	gap: 8--step;
-	margin-block-start: 8--step;
-	margin-inline-end: 8--step;
-	padding: 4--step;
-
-	/* Appearance */
-	/* background-color: var(--BaseColor); */
-	border-radius: var(--EdgeRadius);
-
-	/* Appearance */
-	color: var(--ExampleDoColor);
-	border-color: var(--ExampleDoColor);
-
-	& .p-astro-product-access-success-content {
-		display: flex;
+	& .p-astro-product-access_status-wrapper {
+		&.hidden {
+			display: none;
+		}
 
 		/* Layout */
-		align-items: center;
-		gap: 2--step;
+		margin-block-end: 8--step;
+
+		& .p-astro-product-access_error {
+			/* Text */
+			font-size: 14--rpx;
+			font-weight: 700;
+
+			/* Appearance */
+			color: hsla(0, 100%, 61%, 1);
+		}
+
+		& .p-astro-product-access_success {
+			/* Text */
+			font-size: 14--rpx;
+			font-weight: 700;
+
+			/* Appearance */
+			color: hsla(120, 100%, 18%, 1);
+		}
 	}
 
-	& .p-astro-product-access-success-message {
-		/* Text */
-		font-size: 18--rpx;
-		font-weight: 400;
-	}
+	.p-astro-product-access-button {
+		/* Layout */
+		margin-block-end: 8--step;
+		margin-block-start: 3--step;
 
-	& .p-astro-product-access-success-close {
-		/* Appearance */
-		color: var(--DarkBlue500Color);
+		& .loading-container.loading {
+			/* Layout */
+			padding-inline-start: 7--step;
+
+			/* Appearance */
+			background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHN0cm9rZT0iIzAwMCIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxzdHlsZT4uc3Bpbm5lcl9WOG0xe3RyYW5zZm9ybS1vcmlnaW46Y2VudGVyO2FuaW1hdGlvbjpzcGlubmVyX3pLb2EgMnMgbGluZWFyIGluZmluaXRlfS5zcGlubmVyX1Y4bTEgY2lyY2xle3N0cm9rZS1saW5lY2FwOnJvdW5kO2FuaW1hdGlvbjpzcGlubmVyX1lwWlMgMS41cyBlYXNlLWluLW91dCBpbmZpbml0ZX1Aa2V5ZnJhbWVzIHNwaW5uZXJfektvYXsxMDAle3RyYW5zZm9ybTpyb3RhdGUoMzYwZGVnKX19QGtleWZyYW1lcyBzcGlubmVyX1lwWlN7MCV7c3Ryb2tlLWRhc2hhcnJheTowIDE1MDtzdHJva2UtZGFzaG9mZnNldDowfTQ3LjUle3N0cm9rZS1kYXNoYXJyYXk6NDIgMTUwO3N0cm9rZS1kYXNob2Zmc2V0Oi0xNn05NSUsMTAwJXtzdHJva2UtZGFzaGFycmF5OjQyIDE1MDtzdHJva2UtZGFzaG9mZnNldDotNTl9fTwvc3R5bGU+PGcgY2xhc3M9InNwaW5uZXJfVjhtMSI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iOS41IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjMiPjwvY2lyY2xlPjwvZz48L3N2Zz4=");
+		}
+
+		&.hidden {
+			display: none;
+		}
+
+		&:disabled {
+			/* Appearance */
+			cursor: not-allowed;
+			opacity: .4;
+		}
 	}
 }
