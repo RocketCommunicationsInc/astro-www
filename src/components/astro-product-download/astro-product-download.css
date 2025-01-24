@@ -4,11 +4,6 @@
 	/* Layout */
 	flex-direction: column;
 
-	& .p-astro-product-download_header {
-		/* Layout */
-		margin-block-start: 0--step;
-	}
-
 	& .p-astro-product-download-content {
 		/* Layout */
 		margin: 0;
@@ -22,10 +17,6 @@
 	}
 
 	& .p-astro-product-download_status-wrapper {
-		&.hidden {
-			display: none;
-		}
-
 		/* Layout */
 		/* Specific margin to match height of download button */
 		margin-block-end: 11--step;
@@ -73,4 +64,13 @@
 			opacity: .4;
 		}
 	}
+}
+
+h2.p-astro-product-download_header {
+	/* Layout */
+	margin-block-start: 0--step;
+}
+
+.hidden {
+	display: none;
 }

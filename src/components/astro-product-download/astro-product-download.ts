@@ -1,6 +1,9 @@
 import productData from 'project:data/product-download.json'
 
 // main elements
+const mainElement = document.querySelector(
+	'.p-astro-product-download'
+) as HTMLDivElement
 const headerElement = document.querySelector(
 	'.p-astro-product-download_header'
 ) as HTMLHeadingElement
@@ -14,6 +17,16 @@ const descriptionParagraph = document?.querySelector(
 ) as HTMLDivElement
 const supportParagraph = document?.querySelector(
 	'.p-astro-product-download_support'
+) as HTMLDivElement
+
+// purchase not found error page
+const purchaseNotFoundElement = document.querySelector(
+	'.p-astro-product-download_purchase-not-found'
+) as HTMLDivElement
+
+// expired error page
+const linkExpiredElement = document.querySelector(
+	'.p-astro-product-download_link-expired'
 ) as HTMLDivElement
 
 // status elements
@@ -35,6 +48,16 @@ const handleButtonState = (innerText: string) => {
 		: downloadButton?.setAttribute('disabled', '')
 	buttonInner.classList.toggle('loading')
 	buttonInner.innerText = `${innerText}`
+}
+
+const handlePurchaseNotFoundState = () => {
+	purchaseNotFoundElement.classList.remove('hidden')
+	mainElement.classList.add('hidden')
+}
+
+const handleExpiredState = () => {
+	linkExpiredElement.classList.remove('hidden')
+	mainElement.classList.add('hidden')
 }
 
 const getPresignedURL = async (token: string) => {
@@ -81,7 +104,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 	if (!token) {
 		console.error('No valid token')
-		handleButtonState('Error')
+		handlePurchaseNotFoundState()
 		return
 	}
 
@@ -90,12 +113,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 		const res = await fetch(url, { method: 'GET' })
 		const status = res.status
 		const data = await res.json()
-		console.log(data)
 
 		if (status !== 201) {
 			console.error(data)
-			error.innerText = `${data.message} ${errorMsg}`
-			handleButtonState('Error')
+			data.message.includes('expired') ? handleExpiredState() : handlePurchaseNotFoundState()
 			return
 		}
 
@@ -113,8 +134,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 		fileSizeText!.innerText = data.fileSize
 		downloadButton?.addEventListener('click', () => getPresignedURL(token))
 	} catch (err) {
-		console.error(err)
-		error.innerText = errorMsg
-		handleButtonState('Error')
+		console.error(err, 'THIS IS THE ERROR')
 	}
 })
