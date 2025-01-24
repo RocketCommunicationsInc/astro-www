@@ -1,19 +1,33 @@
-const statusWrapper = document.querySelector(
-	'.p-astro-product-access_status-wrapper'
-) as HTMLDivElement
-const success = document.querySelector(
-	'.p-astro-product-access_success'
-) as HTMLDivElement
-const successMsg = `Your download has started successfully!`
-const error = document.querySelector(
-	'.p-astro-product-access_error'
-) as HTMLDivElement
-const errorMsg = `There was a problem with your request, please try again. If the issue persists, please contact support@astrouxds.com for assistance.`
+import productData from 'project:data/product-download.json'
+
+// main elements
+const headerElement = document.querySelector(
+	'.p-astro-product-download_header'
+) as HTMLHeadingElement
 const downloadButton = document.getElementById('product-download-button')
 const buttonInner = downloadButton?.querySelector(
 	'.loading-container'
 ) as HTMLDivElement
-const fileSizeText = document.getElementById('product-file-size')
+const fileSizeText = document.getElementById('product-file-size') as HTMLSpanElement
+const descriptionParagraph = document?.querySelector(
+	'.p-astro-product-download_description'
+) as HTMLDivElement
+const supportParagraph = document?.querySelector(
+	'.p-astro-product-download_support'
+) as HTMLDivElement
+
+// status elements
+const statusWrapper = document.querySelector(
+	'.p-astro-product-download_status-wrapper'
+) as HTMLDivElement
+const success = document.querySelector(
+	'.p-astro-product-download_success'
+) as HTMLDivElement
+const successMsg = `Your download has started successfully!`
+const error = document.querySelector(
+	'.p-astro-product-download_error'
+) as HTMLDivElement
+const errorMsg = `There was a problem with your request, please try again. If the issue persists, please contact support@astrouxds.com for assistance.`
 
 const handleButtonState = (innerText: string) => {
 	downloadButton?.hasAttribute('disabled')
@@ -31,7 +45,6 @@ const getPresignedURL = async (token: string) => {
 		const res = await fetch(url, { method: 'GET' })
 		const status = res.status
 		const data = await res.json()
-		console.log(data)
 
 		if (status !== 201) {
 			console.error(data)
@@ -57,6 +70,7 @@ const getPresignedURL = async (token: string) => {
 	}
 }
 
+// api call for validation and data fetching on page load
 document.addEventListener('DOMContentLoaded', async () => {
 	const urlParams = new URLSearchParams(window.location.search)
 
@@ -85,8 +99,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 			return
 		}
 
+		// loop through json data to find the correct product entries
+		Object.entries(productData).forEach(([ key, value ]) => {
+			if (value.name === data.productName) {
+				headerElement.innerText = value['header-name']
+				descriptionParagraph.innerHTML = value['description-paragraph']
+				supportParagraph.innerHTML = value['learn-more']
+			}
+		})
+
 		handleButtonState('Click Here to Download')
-		// success.innerText = successMsg
 
 		fileSizeText!.innerText = data.fileSize
 		downloadButton?.addEventListener('click', () => getPresignedURL(token))

@@ -1,24 +1,10 @@
 ---
-import compliance from 'project:data/compliance.json'
 import DocsLayout from 'project:layouts/docs/docs-layout.astro'
-import ProductAccess from 'project:components/astro-product-access/astro-product-access.astro'
+import ProductDownload from 'project:components/astro-product-download/astro-product-download.astro'
 
 const title = 'Product Download'
 const description = 'Please see instructions below on how to download your new product.'
 ---
 <DocsLayout content={{ title, description }} file={import.meta.url}>
-	<ProductAccess title={title} compliance={compliance} />
-
-	<p>
-		<strong>With the Astro Power Point Toolkit&nbsp;</strong> you can confidently
-		create wireframes that align with industry standards and regulations, without
-		compromising on speed, usability, or security. Empower your team to iterate,
-		validate, and refine designs efficiently, ultimately driving better outcomes
-		for your space and intelligence projects.
-	</p>
-
-	<p>
-		To learn more about the Astro Power Point Toolkit and how it can benefit
-		your organization, please contact us at <a href="mailto:support@astrouxds.com">support@astrouxds.com</a>.
-	</p>
+	<ProductDownload title={title} />
 </DocsLayout>

@@ -1,8 +1,9 @@
 ---
-import './astro-product-access.css'
+import './astro-product-download.css'
 ---
 
-<div class="p-astro-product-access">
+<div class="p-astro-product-download">
+	<h2 class="p-astro-product-download_header">--</h2>
 	<p>
 		Click the button below to start your download. A product download link has
 		also been sent to the email provided during checkout. The download link will
@@ -14,22 +15,24 @@ import './astro-product-access.css'
 		disabled
 		type="button"
 		id="product-download-button"
-		class="p-button p-astro-product-access-button"
+		class="p-button p-astro-product-download-button"
 	>
 		<div class="loading-container loading">Verifying</div></button
 	>
-	<div class="p-astro-product-access_status-wrapper hidden">
-		<span class="p-astro-product-access_success"></span>
-		<span class="p-astro-product-access_error"></span>
+	<div class="p-astro-product-download_status-wrapper hidden">
+		<span class="p-astro-product-download_success"></span>
+		<span class="p-astro-product-download_error"></span>
 	</div>
 
 	<div>
 		<p>
 			<strong>File Size:&nbsp;</strong><span id="product-file-size">--</span> MB
 		</p>
+		<div class="p-astro-product-download_description"></div>
+		<div class="p-astro-product-download_support"></div>
 	</div>
 </div>
 
 <script>
-	import './astro-product-access.js'
+	import './astro-product-download.js'
 </script>

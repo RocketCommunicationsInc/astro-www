@@ -1,25 +1,15 @@
-.p-astro-product-access {
+.p-astro-product-download {
 	display: flex;
 
 	/* Layout */
 	flex-direction: column;
 
-	& .p-astro-product-access-heading {
-		display: flex;
-
+	& .p-astro-product-download_header {
 		/* Layout */
-		padding: 4--step;
-
-		/* Text */
-		font-size: 7--step;
-		font-weight: 400;
-		letter-spacing: .025rem;
-
-		/* Appearance */
-		background-color: var(--BaseHeaderColor);
+		margin-block-start: 0--step;
 	}
 
-	& .p-astro-product-access-content {
+	& .p-astro-product-download-content {
 		/* Layout */
 		margin: 0;
 		padding-block: 4--step;
@@ -31,15 +21,17 @@
 		}
 	}
 
-	& .p-astro-product-access_status-wrapper {
+	& .p-astro-product-download_status-wrapper {
 		&.hidden {
 			display: none;
 		}
 
 		/* Layout */
-		margin-block-end: 8--step;
+		/* Specific margin to match height of download button */
+		margin-block-end: 11--step;
+		margin-block-start: 6--step;
 
-		& .p-astro-product-access_error {
+		& .p-astro-product-download_error {
 			/* Text */
 			font-size: 14--rpx;
 			font-weight: 700;
@@ -48,7 +40,7 @@
 			color: hsla(0, 100%, 61%, 1);
 		}
 
-		& .p-astro-product-access_success {
+		& .p-astro-product-download_success {
 			/* Text */
 			font-size: 14--rpx;
 			font-weight: 700;
@@ -58,7 +50,7 @@
 		}
 	}
 
-	.p-astro-product-access-button {
+	.p-astro-product-download-button {
 		/* Layout */
 		margin-block-end: 8--step;
 		margin-block-start: 3--step;
