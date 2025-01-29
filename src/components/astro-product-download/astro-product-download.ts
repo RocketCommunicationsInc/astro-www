@@ -62,9 +62,10 @@ const handleExpiredState = () => {
 
 const getPresignedURL = async (token: string) => {
 	handleButtonState('Verifying')
+	const isCheckout = window.location.href.indexOf('checkout') > -1
 
 	try {
-		const url = `https://astrouxds-ap-fix-jwt-fi-8e6jbd.herokuapp.com/api/v1/get-product?params=${token}`
+		const url = `https://astrouxds-ap-fix-jwt-fi-8e6jbd.herokuapp.com/api/v1/get-product?params=${token}&isCheckout=${isCheckout}`
 		const res = await fetch(url, { method: 'GET' })
 		const status = res.status
 		const data = await res.json()
@@ -96,9 +97,9 @@ const getPresignedURL = async (token: string) => {
 // api call for validation and data fetching on page load
 document.addEventListener('DOMContentLoaded', async () => {
 	const urlParams = new URLSearchParams(window.location.search)
-
+	const isCheckout = window.location.href.indexOf('checkout') > -1
 	const token =
-		window.location.href.indexOf('checkout') > -1
+		isCheckout
 			? urlParams.get('session_id')
 			: urlParams.get('token')
 
@@ -109,7 +110,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 	}
 
 	try {
-		const url = `https://astrouxds-ap-fix-jwt-fi-8e6jbd.herokuapp.com/api/v1/validate-token?params=${token}`
+		const url = `https://astrouxds-ap-fix-jwt-fi-8e6jbd.herokuapp.com/api/v1/validate-token?params=${token}&isCheckout=${isCheckout}`
 		const res = await fetch(url, { method: 'GET' })
 		const status = res.status
 		const data = await res.json()
@@ -134,6 +135,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 		fileSizeText!.innerText = data.fileSize
 		downloadButton?.addEventListener('click', () => getPresignedURL(token))
 	} catch (err) {
-		console.error(err, 'THIS IS THE ERROR')
+		console.error(err)
 	}
 })
