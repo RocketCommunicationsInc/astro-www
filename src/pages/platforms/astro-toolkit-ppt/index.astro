@@ -6,6 +6,7 @@ const content = {
 	title: 'Astro Toolkit for Microsoft PowerPoint',
 	description: `Introducing the Astro PowerPoint Toolkit: Streamline wireframing for space and intelligence professionals in secure environments.`,
 }
+import './astro-toolkit-ppt.css'
 ---
 
 <DocsLayout content={content}>
@@ -19,17 +20,16 @@ const content = {
 		and restricted environments.
 	</p>
 	<AstroToolkitPPTPurchaseButton />
-	<div style="margin-bottom: 36px;  margin-top: 28px;">
+	<div class="p-astro-toolkit-ppt_image">
 		<img
 		src="/images/astro-toolkit-ppt-screen-1.png"
 		alt="Astro toolkit ppt screen 1"
 		loading="lazy"
 		width="635"
 		height="353"
-		style="max-width: 100%; margin-bottom: 36px;"
 	/>
-	<small style="display: flex"
-		>The Astro Toolkit enables rapid, DoD-approved wireframing for streamlined design and validation.</small
+	<p
+		>The Astro Toolkit enables rapid, DoD-approved wireframing for streamlined design and validation.</p
 	>
 	</div>
 
@@ -42,18 +42,17 @@ const content = {
 		time and access to other design tools are limited.
 	</p>
 
-	<div style="margin-top: 28px;">
+	<div class="p-astro-toolkit-ppt_image">
 		<img
 		src="/images/astro-toolkit-ppt-screen-2.png"
 		alt="Astro toolkit ppt screen 2"
 		loading="lazy"
 		width="512"
 		height="434"
-		style="max-width: 100%; margin-bottom: 36px;"
 	/>
-	<small style="display: flex"
+	<p
 		>The toolkit provides core components for quickly customizing your space app
-		designs with drag-and-drop ease.</small
+		designs with drag-and-drop ease.</p
 	>
 	</div>
 	<Heading type="h2" title="Features" />
