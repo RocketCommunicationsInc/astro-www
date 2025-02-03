@@ -266,6 +266,37 @@
 					}
 				}
 			]
+		},
+		"useDescription": {
+			"type": "objects",
+			"data": [
+				{
+					"type": {
+						"type": "text",
+						"data": "text"
+					},
+					"name": {
+						"type": "text",
+						"data": "description"
+					},
+					"label": {
+						"type": "text",
+						"data": "To help Astro better improve, please tell us a little bit about your project."
+					},
+					"autocomplete": {
+						"type": "text",
+						"data": "description"
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "Tell us about your project to help us better support you."
+					},
+					"required": {
+						"type": "switch",
+						"data": false
+					}
+				}
+			]
 		}
 	}
 }

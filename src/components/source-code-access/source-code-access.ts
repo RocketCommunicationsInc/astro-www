@@ -18,6 +18,7 @@ class RequestParams {
 	first: string = ''
 	last: string = ''
 	use: string = ''
+	useDescription: string = ''
 	subscribe: string = 'off'
 }
 
@@ -70,7 +71,7 @@ form.addEventListener('submit', async (e) => {
 		const key = entry[0] as keyof RequestParams
 		const value = entry[1] as string
 		if (key === 'apps') {
-			params.apps = [...params.apps, value]
+			params.apps = [ ...params.apps, value ]
 		} else {
 			params[key] = value
 		}
