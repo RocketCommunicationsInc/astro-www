@@ -216,6 +216,39 @@
 	background-position: center;
 }
 
+.p-source-code-use-description {
+	display: flex;
+
+	/* Layout */
+	flex-direction: column-reverse;
+
+	& textarea {
+		/* Layout */
+		padding-block: 4--step;
+		padding-inline-start: 4--step;
+
+		/* Appearance */
+		background: var(--BaseColor);
+
+		/* Appearance */
+		border: none;
+		border-radius: var(--EdgeRadius);
+		box-shadow: var(--InteractiveMutedColor) 0 0 0 1px inset;
+		color: var(--PrimaryColor);
+
+		&:is(:hover, :focus-visible) {
+			/* Appearance */
+			box-shadow: var(--InteractiveHoverColor) 0 0 0 1px inset;
+		}
+
+		&::placeholder {
+			/* Text */
+			font-family: Helvetica, system-ui;
+			font-size: 1rem;
+		}
+	}
+}
+
 .p-source-code-button {
 	/* Layout */
 	padding-block: 2--step;

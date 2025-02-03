@@ -43,13 +43,11 @@ const { data } = sourceCodeAccess
 				</fieldset>
 
 				<fieldset>
-					<legend>{data.useDescription.data}</legend>
+					<legend>{data.useDescriptionLabel.data}</legend>
 					<div class="p-source-code-use-description">
 						<For of={data.useDescription.data}>{item => (
-							<span>
-								<textarea class="p-source-code-app-checkbox" id={item.placeholder.data} name={item.name.data} value={item.placeholder.data} />
-								<label for={item.placeholder.data}>{item.label.data}</label>
-							</span>
+								<textarea class="p-source-code-use-description" id={item.placeholder.data} name={item.name.data} placeholder={item.placeholder.data} rows="10" />
+								<label for={item.name.data}>{item.label.data}</label>
 						)}</For>
 					</div>
 				</fieldset>
