@@ -1,7 +1,7 @@
 ---
 import IconLink from 'project:components/icon/icon-link.astro'
 import './page-aside.css'
-import Checkout from 'project:components/checkout/checkout.astro'
+import PPTCheckoutButton from 'project:components/astro-toolkit-ppt-purchase-button/astro-toolkit-ppt-purchase-button.astro'
 
 interface MarkdownHeading {
 	slug: string;
@@ -46,10 +46,10 @@ if (content.assets?.name) {
 }
 
 const storybookUrl: string = content.storybook ? `https://astro-components.netlify.app/?path=/story/${content.storybook}` : `https://astro-components.netlify.app/`
-const showCheckoutButton = Astro.url.pathname.includes('service-ux-design') || Astro.url.pathname.includes('service-specific-ux-design')
+const showCheckoutButton = Astro.url.pathname.includes('astro-toolkit-ppt')
 ---
 {showCheckoutButton
-? <Checkout />
+? <PPTCheckoutButton showTerms={false} />
 : null}
 
 <nav class="p-quicklinks-navigation" aria-label="Quick Links">
