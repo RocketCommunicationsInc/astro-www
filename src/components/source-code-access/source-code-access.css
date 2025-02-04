@@ -68,7 +68,7 @@
 
 			/* Layout */
 			flex-flow: column;
-			gap: 8--step;
+			gap: 6--step;
 			padding-block: 4--step;
 			padding-inline: 4--step;
 
@@ -221,11 +221,17 @@
 
 	/* Layout */
 	flex-direction: column-reverse;
+	gap: 2--step;
+	inline-size: 100%;
 
 	& textarea {
 		/* Layout */
 		padding-block: 4--step;
 		padding-inline-start: 4--step;
+
+		/* Text */
+		font-family: Helvetica, system-ui;
+		font-size: 1rem;
 
 		/* Appearance */
 		background: var(--BaseColor);

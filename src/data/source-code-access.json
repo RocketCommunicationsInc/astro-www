@@ -18,10 +18,6 @@
 			"type": "text",
 			"data": "Which Astro App’s Source Code Would You Like Access to?"
 		},
-		"useDescriptionLabel": {
-			"type": "text",
-			"data": "To help Astro better improve, please tell us a little bit about your project."
-		},
 		"content": {
 			"type": "objects",
 			"data": [
@@ -285,7 +281,7 @@
 					},
 					"label": {
 						"type": "text",
-						"data": "Use Description"
+						"data": "To help Astro better improve, please tell us a little bit about your project."
 					},
 					"autocomplete": {
 						"type": "text",
