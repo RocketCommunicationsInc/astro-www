@@ -14,28 +14,54 @@ class FeedbackWidget extends HTMLElement {
 
 		// grabs current url from passed in attribute and sets it in the form
 		const currentURL: string = this.getAttribute('current-url')!
-		const currentURLInput = root?.getElementById('current-url') as HTMLInputElement
+		const currentURLInput = root?.getElementById(
+			'current-url'
+		) as HTMLInputElement
 		currentURLInput.value = currentURL
 		currentURLInput.setAttribute('value', currentURL)
 
 		// document elements
-		const widgetWrapper: HTMLElement | null = document.querySelector('.widget_wrapper')
-		const widgetInteriorWrapper: HTMLElement | null = document.querySelector('.widget_interior-wrapper')
-		const topTab: HTMLElement | null = document.querySelector('.widget_top-tab')
-		const widgetContent: HTMLElement | null = document.querySelector('.widget_content-wrapper')
+		const widgetWrapper: HTMLElement | null =
+			document.querySelector('.widget_wrapper')
+		const widgetInteriorWrapper: HTMLElement | null = document.querySelector(
+			'.widget_interior-wrapper'
+		)
+		const topTab: HTMLElement | null =
+			document.querySelector('.widget_top-tab')
+		const widgetContent: HTMLElement | null = document.querySelector(
+			'.widget_content-wrapper'
+		)
 		const pageFooter: HTMLElement = document.querySelector('.p-footer')!
 
 		// shadow elements
 		const form: HTMLFormElement = root.querySelector('form#feedback-form')!
-		const clearButton: HTMLButtonElement = root.querySelector('.widget_secondary-button')!
-		const rateButtons: NodeListOf<HTMLButtonElement> = root.querySelectorAll('.widget_rate-group button')!
-		const submitButton: HTMLButtonElement = root.querySelector('.widget_primary-button')!
-		const emailInput: HTMLInputElement = root.querySelector('input[type="email"]#user-email')!
-		const textarea: HTMLTextAreaElement = root.querySelector('textarea#user-input')!
-		const hiddenThumbsUpRadio: HTMLInputElement = root.querySelector('#radio_thumbs-up')!
-		const hiddenThumbsDownRadio: HTMLInputElement = root.querySelector('#radio_thumbs-down')!
-		const urlInput: HTMLInputElement = root.querySelector('input[type="text"]#current-url')!
-		const widgetSuccess: HTMLDivElement = root.querySelector('.widget_success')!
+		const clearButton: HTMLButtonElement = root.querySelector(
+			'.widget_secondary-button'
+		)!
+		const rateButtons: NodeListOf<HTMLButtonElement> = root.querySelectorAll(
+			'.widget_rate-group button'
+		)!
+		const submitButton: HTMLButtonElement = root.querySelector(
+			'.widget_primary-button'
+		)!
+		const receiveResponseCheckbox: HTMLInputElement = root.querySelector(
+			'input[type="checkbox"]#widget_receive-response'
+		)!
+		const emailInput: HTMLInputElement = root.querySelector(
+			'input[type="email"]#user-email'
+		)!
+		const textarea: HTMLTextAreaElement = root.querySelector(
+			'textarea#user-input'
+		)!
+		const hiddenThumbsUpRadio: HTMLInputElement =
+			root.querySelector('#radio_thumbs-up')!
+		const hiddenThumbsDownRadio: HTMLInputElement =
+			root.querySelector('#radio_thumbs-down')!
+		const urlInput: HTMLInputElement = root.querySelector(
+			'input[type="text"]#current-url'
+		)!
+		const widgetSuccess: HTMLDivElement =
+			root.querySelector('.widget_success')!
 		const widgetFail: HTMLDivElement = root.querySelector('.widget_fail')!
 
 		// booleans
@@ -67,23 +93,45 @@ class FeedbackWidget extends HTMLElement {
 
 			// map selected button state to checked state of hidden radios
 			if (button.id === 'button_thumbs-up') {
-				button.classList.contains('selected') ? hiddenThumbsUpRadio.setAttribute('checked', '') : hiddenThumbsUpRadio.removeAttribute('checked')
+				button.classList.contains('selected')
+					? hiddenThumbsUpRadio.setAttribute('checked', '')
+					: hiddenThumbsUpRadio.removeAttribute('checked')
 			}
 
 			if (button.id === 'button_thumbs-down') {
-				button.classList.contains('selected') ? hiddenThumbsDownRadio.setAttribute('checked', '') : hiddenThumbsDownRadio.removeAttribute('checked')
+				button.classList.contains('selected')
+					? hiddenThumbsDownRadio.setAttribute('checked', '')
+					: hiddenThumbsDownRadio.removeAttribute('checked')
 			}
 		}
 
+		const handleReceiveResponse = () => {
+			receiveResponseCheckbox.addEventListener('change', () => {
+				if (receiveResponseCheckbox.checked) {
+					emailInput.setAttribute('required', '')
+					emailInput.placeholder = 'Email Address (required)'
+				} else {
+					emailInput.placeholder = 'Email Address (optional)'
+					emailInput.removeAttribute('required')
+				}
+
+				handleSubmitButton()
+			})
+		}
+
 		const handleSubmitButton = () => {
-			// check booleans and enable/disable form submit button
-			if (!emailPopulated && !textareaPopulated && !rateButtonSelected) {
+			// no rating button selected, early return
+			if (!rateButtonSelected) {
 				submitButton.disabled = true
-			} else if (emailPopulated && !textareaPopulated && !rateButtonSelected) {
-				submitButton.disabled = true
-			} else {
-				submitButton.disabled = false
+				return
 			}
+
+			// receive response checked and email not populated, return
+			if (!emailPopulated && receiveResponseCheckbox.checked) {
+				submitButton.disabled = true
+				return
+			}
+			submitButton.disabled = false
 		}
 
 		const watchFooterScroll = () => {
@@ -91,7 +139,9 @@ class FeedbackWidget extends HTMLElement {
 			let viewportHeight: number = visualViewport.height
 			let difference: number = (footerBottom - viewportHeight) * -1
 
-			if (widgetWrapper !== null) widgetWrapper.style.insetBlockEnd = `${difference}px`
+			if (widgetWrapper !== null) {
+				widgetWrapper.style.insetBlockEnd = `${difference}px`
+			}
 		}
 
 		const watchForFooter = () => {
@@ -106,7 +156,9 @@ class FeedbackWidget extends HTMLElement {
 						document.addEventListener('scroll', watchFooterScroll)
 					} else {
 						document.removeEventListener('scroll', watchFooterScroll)
-						if (widgetWrapper !== null) widgetWrapper.style.insetBlockEnd = `0px`
+						if (widgetWrapper !== null) {
+							widgetWrapper.style.insetBlockEnd = `0px`
+						}
 					}
 				})
 			}
@@ -136,11 +188,17 @@ class FeedbackWidget extends HTMLElement {
 			toggleAttributes(true)
 
 			// get tab size to account for widget positioning on open/close
-			const tabSize = topTab?.getBoundingClientRect()[visualViewport.width < 1024 ? 'width' : 'height']
+			const tabSize =
+				topTab?.getBoundingClientRect()[
+					visualViewport.width < 1024 ? 'width' : 'height'
+				]
 
 			// set min max values for keyframe animation
 			let keyframeInteriorMin: Record<string, string> = {
-				translate: visualViewport.width < 1024 ? `calc(100% - ${tabSize}px) 0%` : `0% calc(100% - ${tabSize}px)`,
+				translate:
+					visualViewport.width < 1024
+						? `calc(100% - ${tabSize}px) 0%`
+						: `0% calc(100% - ${tabSize}px)`,
 			}
 			let keyframeInteriorMax: Record<string, string> = {
 				translate: `0% 0%`,
@@ -165,27 +223,25 @@ class FeedbackWidget extends HTMLElement {
 			}
 
 			const keyframes = toggle ? [ min, max ] : [ max, min ]
-			const keyframesInterior = toggle ? [ keyframeInteriorMin, keyframeInteriorMax ] : [ keyframeInteriorMax, keyframeInteriorMin ]
+			const keyframesInterior = toggle
+				? [ keyframeInteriorMin, keyframeInteriorMax ]
+				: [ keyframeInteriorMax, keyframeInteriorMin ]
 
 			// animate interior wrapper
-			widgetInteriorWrapper?.animate(
-				keyframesInterior,
-				{
-					duration: 200,
-					iterations: 1,
-				}
-			)
+			widgetInteriorWrapper?.animate(keyframesInterior, {
+				duration: 200,
+				iterations: 1,
+			})
 
 			// animate content wrapper
-			widgetContent?.animate(
-				keyframes,
-				{
+			widgetContent
+				?.animate(keyframes, {
 					duration: 200,
 					iterations: 1,
-				}
-			).finished.then(() => {
-				toggleAttributes(toggle)
-			})
+				})
+				.finished.then(() => {
+					toggleAttributes(toggle)
+				})
 		}
 
 		const handleRateButtonSelected = (button: HTMLButtonElement) => {
@@ -233,7 +289,8 @@ class FeedbackWidget extends HTMLElement {
 
 		const handleFormSubmit = (event: Event) => {
 			const antenna: SVGElement = widgetSuccess.querySelector('svg')!
-			const animatingElement: NodeListOf<HTMLSpanElement> = widgetSuccess.querySelectorAll('.widget_success-orange-circle span')!
+			const animatingElement: NodeListOf<HTMLSpanElement> =
+				widgetSuccess.querySelectorAll('.widget_success-orange-circle span')!
 
 			if (formSubmittable) {
 				// put receiving animation in place, dots animating into antenna
@@ -241,11 +298,11 @@ class FeedbackWidget extends HTMLElement {
 
 				const target = event.target as HTMLFormElement
 				let data = {
-					'feedback': textarea.value,
-					'thumbUp': hiddenThumbsUpRadio.checked,
-					'thumbDown': hiddenThumbsDownRadio.checked,
-					'email': emailInput.value,
-					'pageURL': urlInput.value,
+					feedback: textarea.value,
+					thumbUp: hiddenThumbsUpRadio.checked,
+					thumbDown: hiddenThumbsDownRadio.checked,
+					email: emailInput.value,
+					pageURL: urlInput.value,
 				}
 				const action = target.action
 				fetch(action, {
@@ -253,30 +310,31 @@ class FeedbackWidget extends HTMLElement {
 					method: 'POST',
 					body: JSON.stringify(data),
 				})
-				.then(() => {
-					// on success, make antenna success color, stop receiving animation after brief timeout.
-					setTimeout(() => {
-						antenna.classList.add('success')
-						for (const span of animatingElement) {
-							span.style.animationIterationCount = '1'
-						}
-					}, 900)
+					.then(() => {
+						// on success, make antenna success color, stop receiving animation after brief timeout.
+						setTimeout(() => {
+							antenna.classList.add('success')
+							for (const span of animatingElement) {
+								span.style.animationIterationCount = '1'
+							}
+						}, 900)
 
-					// after timeout, remove all success panels and close widget.
-					setTimeout(() => {
-						widgetSuccess.classList.remove('-active')
-						antenna.classList.remove('selected')
-						handleFormReset()
-						showHideWidget()
-					}, 2500)
-				}).catch(() => {
-					// on failure display failure panel, remove all panels.
-					widgetFail.classList.add('-active')
-					setTimeout(() => {
-						widgetSuccess.classList.remove('-active')
-						widgetFail.classList.remove('-active')
-					}, 2500)
-				})
+						// after timeout, remove all success panels and close widget.
+						setTimeout(() => {
+							widgetSuccess.classList.remove('-active')
+							antenna.classList.remove('selected')
+							handleFormReset()
+							showHideWidget()
+						}, 2500)
+					})
+					.catch(() => {
+						// on failure display failure panel, remove all panels.
+						widgetFail.classList.add('-active')
+						setTimeout(() => {
+							widgetSuccess.classList.remove('-active')
+							widgetFail.classList.remove('-active')
+						}, 2500)
+					})
 			}
 		}
 
@@ -295,11 +353,10 @@ class FeedbackWidget extends HTMLElement {
 			})
 		}
 
-
 		const handleTextareaListener = () => {
 			textarea.addEventListener('input', (event) => {
 				const target = event.currentTarget as HTMLInputElement
-				target.value ? textareaPopulated = true : textareaPopulated = false
+				target.value ? (textareaPopulated = true) : (textareaPopulated = false)
 
 				handleSubmitButton()
 				// set form boolean to true
@@ -310,7 +367,7 @@ class FeedbackWidget extends HTMLElement {
 		const handleEmailListener = () => {
 			emailInput.addEventListener('input', (event) => {
 				const target = event.currentTarget as HTMLInputElement
-				target.value ? emailPopulated = true : emailPopulated = false
+				target.value ? (emailPopulated = true) : (emailPopulated = false)
 
 				handleSubmitButton()
 			})
@@ -338,6 +395,7 @@ class FeedbackWidget extends HTMLElement {
 		handleClearButtonListener()
 		handleRateButtonListener()
 		handleTextareaListener()
+		handleReceiveResponse()
 		handleEmailListener()
 		handleFormListener()
 		watchForFooter()
