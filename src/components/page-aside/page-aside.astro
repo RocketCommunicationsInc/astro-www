@@ -48,12 +48,14 @@ if (content.assets?.name) {
 const storybookUrl: string = content.storybook ? `https://astro-components.netlify.app/?path=/story/${content.storybook}` : `https://astro-components.netlify.app/`
 const showCheckoutButton = Astro.url.pathname.includes('astro-toolkit-ppt')
 ---
-{showCheckoutButton
+<!-- {showCheckoutButton
 ? <PPTCheckoutButton showTerms={false} />
-: null}
+: null} -->
 
 <nav class="p-quicklinks-navigation" aria-label="Quick Links">
-	<ul id="top-links">
+	{showCheckoutButton
+		? <PPTCheckoutButton showTerms={false} />
+		: 	<ul id="top-links">
 		<li class="-first">
 			<IconLink
 				type="figma"
@@ -77,6 +79,7 @@ const showCheckoutButton = Astro.url.pathname.includes('astro-toolkit-ppt')
 			</IconLink>
 		</li>
 	</ul>
+	}
 { anchorHeadings.length > 1
 	? <hr />
 		<div class='section-links-wrapper'>

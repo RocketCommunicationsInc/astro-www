@@ -1,16 +1,11 @@
 .astro-toolkit-ppt-purchase-button {
 	display: inherit;
 
-	& .ppt-purchase-button {
-		/* Layout */
-		margin-block-end: 2--step;
-	}
-
 	& p {
+		/* Text */
+		margin-block-start: 2--step;
+
 		/* Text */
 		font-size: .875rem;
 	}
-
-	/* Layout */
-	margin-block-end: 4--step;
 }
