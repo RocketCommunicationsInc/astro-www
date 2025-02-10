@@ -68,7 +68,7 @@
 
 			/* Layout */
 			flex-flow: column;
-			gap: 8--step;
+			gap: 6--step;
 			padding-block: 4--step;
 			padding-inline: 4--step;
 
@@ -214,6 +214,45 @@
 	/* Appearance */
 	background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00LjkxNDk1IDExLjI3MTJMNi4wNjIxIDkuNjMyOTFMNi4wNjIwNiA5LjYzMjg5TDExLjc5NzggMS40NDEzOEwxMC4xNTk1IDAuMjk0MjI5TDQuNDIzNzYgOC40ODU3M0wxLjE0NzE5IDYuMTkxNDVMMy41MjM3N2UtMDUgNy44Mjk3NkwzLjI3NjYxIDEwLjEyNEwzLjI3NjYgMTAuMTI0MUw0LjkxNDkgMTEuMjcxMkw0LjkxNDkxIDExLjI3MTJMNC45MTQ5NSAxMS4yNzEyWiIgZmlsbD0iIzREQUNGRiIvPgo8L3N2Zz4K");
 	background-position: center;
+}
+
+.p-source-code-use-description {
+	display: flex;
+
+	/* Layout */
+	flex-direction: column-reverse;
+	gap: 2--step;
+	inline-size: 100%;
+
+	& textarea {
+		/* Layout */
+		padding-block: 4--step;
+		padding-inline-start: 4--step;
+
+		/* Text */
+		font-family: Helvetica, system-ui;
+		font-size: 1rem;
+
+		/* Appearance */
+		background: var(--BaseColor);
+
+		/* Appearance */
+		border: none;
+		border-radius: var(--EdgeRadius);
+		box-shadow: var(--InteractiveMutedColor) 0 0 0 1px inset;
+		color: var(--PrimaryColor);
+
+		&:is(:hover, :focus-visible) {
+			/* Appearance */
+			box-shadow: var(--InteractiveHoverColor) 0 0 0 1px inset;
+		}
+
+		&::placeholder {
+			/* Text */
+			font-family: Helvetica, system-ui;
+			font-size: 1rem;
+		}
+	}
 }
 
 .p-source-code-button {

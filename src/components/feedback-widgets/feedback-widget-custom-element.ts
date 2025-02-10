@@ -14,99 +14,133 @@ class FeedbackWidget extends HTMLElement {
 
 		// grabs current url from passed in attribute and sets it in the form
 		const currentURL: string = this.getAttribute('current-url')!
-		const currentURLInput = root?.getElementById('current-url') as HTMLInputElement
-		currentURLInput.value = currentURL
-		currentURLInput.setAttribute('value', currentURL)
 
 		// document elements
-		const widgetWrapper: HTMLElement | null = document.querySelector('.widget_wrapper')
-		const widgetInteriorWrapper: HTMLElement | null = document.querySelector('.widget_interior-wrapper')
-		const topTab: HTMLElement | null = document.querySelector('.widget_top-tab')
-		const widgetContent: HTMLElement | null = document.querySelector('.widget_content-wrapper')
+		const widgetWrapper: HTMLElement | null =
+			document.querySelector('.widget_wrapper')
+		const widgetInteriorWrapper: HTMLElement | null = document.querySelector(
+			'.widget_interior-wrapper'
+		)
+		const topTab: HTMLElement | null =
+			document.querySelector('.widget_top-tab')
+		const widgetContent: HTMLElement | null = document.querySelector(
+			'.widget_content-wrapper'
+		)
 		const pageFooter: HTMLElement = document.querySelector('.p-footer')!
 
 		// shadow elements
 		const form: HTMLFormElement = root.querySelector('form#feedback-form')!
-		const clearButton: HTMLButtonElement = root.querySelector('.widget_secondary-button')!
-		const rateButtons: NodeListOf<HTMLButtonElement> = root.querySelectorAll('.widget_rate-group button')!
-		const submitButton: HTMLButtonElement = root.querySelector('.widget_primary-button')!
-		const emailInput: HTMLInputElement = root.querySelector('input[type="email"]#user-email')!
-		const textarea: HTMLTextAreaElement = root.querySelector('textarea#user-input')!
-		const hiddenThumbsUpRadio: HTMLInputElement = root.querySelector('#radio_thumbs-up')!
-		const hiddenThumbsDownRadio: HTMLInputElement = root.querySelector('#radio_thumbs-down')!
-		const urlInput: HTMLInputElement = root.querySelector('input[type="text"]#current-url')!
-		const widgetSuccess: HTMLDivElement = root.querySelector('.widget_success')!
+		const clearButton: HTMLButtonElement = root.querySelector(
+			'.widget_secondary-button'
+		)!
+		const rateButtons: NodeListOf<HTMLButtonElement> = root.querySelectorAll(
+			'.widget_rate-group button'
+		)!
+		const submitButton: HTMLButtonElement = root.querySelector(
+			'.widget_primary-button'
+		)!
+		const receiveResponseCheckbox: HTMLInputElement = root.querySelector(
+			'input[type="checkbox"]#widget_receive-response'
+		)!
+		const emailInput: HTMLInputElement = root.querySelector(
+			'input[type="email"]#user-email'
+		)!
+		const textarea: HTMLTextAreaElement = root.querySelector(
+			'textarea#user-input'
+		)!
+		const hiddenThumbsUpRadio: HTMLInputElement =
+			root.querySelector('#radio_thumbs-up')!
+		const hiddenThumbsDownRadio: HTMLInputElement =
+			root.querySelector('#radio_thumbs-down')!
+		const widgetSuccess: HTMLDivElement =
+			root.querySelector('.widget_success')!
 		const widgetFail: HTMLDivElement = root.querySelector('.widget_fail')!
 
 		// booleans
 		let emailPopulated: boolean = false
-		let textareaPopulated: boolean = false
 		let rateButtonSelected: boolean = false
-		let formSubmittable: boolean = false
 		let toggle: boolean = false
 
 		// intersection observer
 		let observer: IntersectionObserver | undefined
 
-		const handleRemoveSelected = () => {
+		type FeedbackData = {
+			feedback: string;
+			thumbUp: boolean;
+			thumbDown: boolean;
+			receiveResponse: boolean;
+			email: string;
+			pageURL: string;
+		};
+
+		const handleRateButtonsRemoveSelected = () => {
 			// deselect UI buttons
 			for (const button of rateButtons) {
 				button.classList.remove('selected')
 			}
-		}
 
-		const handleUncheckedRadios = () => {
 			// pull checked state from both hidden radios
-			hiddenThumbsUpRadio.removeAttribute('checked')
-			hiddenThumbsDownRadio.removeAttribute('checked')
+			hiddenThumbsUpRadio.checked = false
+			hiddenThumbsDownRadio.checked = false
+
+			rateButtonSelected = false
 		}
 
-		const handleRateButtonCheck = (button: HTMLButtonElement) => {
-			// select UI button
-			button.classList.add('selected')
+		const handleReceiveResponse = () => {
+			receiveResponseCheckbox.addEventListener('change', () => {
+				if (receiveResponseCheckbox.checked) {
+					emailInput.required = true
+					emailInput.placeholder = 'Email Address (required)'
+				} else {
+					emailInput.placeholder = 'Email Address (optional)'
+					emailInput.required = false
+				}
 
-			// map selected button state to checked state of hidden radios
-			if (button.id === 'button_thumbs-up') {
-				button.classList.contains('selected') ? hiddenThumbsUpRadio.setAttribute('checked', '') : hiddenThumbsUpRadio.removeAttribute('checked')
-			}
-
-			if (button.id === 'button_thumbs-down') {
-				button.classList.contains('selected') ? hiddenThumbsDownRadio.setAttribute('checked', '') : hiddenThumbsDownRadio.removeAttribute('checked')
-			}
+				handleDisableSubmitButton()
+			})
 		}
 
-		const handleSubmitButton = () => {
-			// check booleans and enable/disable form submit button
-			if (!emailPopulated && !textareaPopulated && !rateButtonSelected) {
+		const handleDisableSubmitButton = () => {
+			// no rating button selected, early return
+			if (!rateButtonSelected) {
 				submitButton.disabled = true
-			} else if (emailPopulated && !textareaPopulated && !rateButtonSelected) {
+				return
+			}
+
+			// receive response checked and email not populated, return
+			if (!emailPopulated && receiveResponseCheckbox.checked) {
 				submitButton.disabled = true
-			} else {
-				submitButton.disabled = false
+				return
+			}
+			submitButton.disabled = false
+		}
+
+		const handleSetWidgetOnFooter = () => {
+			const footerBottom: number = pageFooter.getBoundingClientRect().top
+			const viewportHeight: number = visualViewport!.height
+			const difference: number = (footerBottom - viewportHeight) * -1
+
+			if (widgetWrapper !== null) {
+				widgetWrapper.style.insetBlockEnd = `${difference}px`
 			}
 		}
 
-		const watchFooterScroll = () => {
-			let footerBottom: number = pageFooter.getBoundingClientRect().top
-			let viewportHeight: number = visualViewport.height
-			let difference: number = (footerBottom - viewportHeight) * -1
-
-			if (widgetWrapper !== null) widgetWrapper.style.insetBlockEnd = `${difference}px`
-		}
-
+		// observer to pin widget to top of footer instead of bottom of page if footer is in viewport
 		const watchForFooter = () => {
 			if (observer) observer.disconnect()
-			if (visualViewport.width > 1024) {
+			if (visualViewport!.width > 1024) {
 				return
 			}
 
 			const handleIntersect = (entries: any[]) => {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
-						document.addEventListener('scroll', watchFooterScroll)
+						document.addEventListener('scroll', handleSetWidgetOnFooter)
 					} else {
-						document.removeEventListener('scroll', watchFooterScroll)
-						if (widgetWrapper !== null) widgetWrapper.style.insetBlockEnd = `0px`
+						document.removeEventListener('scroll', handleSetWidgetOnFooter)
+						if (widgetWrapper !== null) {
+							widgetWrapper.style.insetBlockEnd = `0px`
+						}
 					}
 				})
 			}
@@ -136,11 +170,17 @@ class FeedbackWidget extends HTMLElement {
 			toggleAttributes(true)
 
 			// get tab size to account for widget positioning on open/close
-			const tabSize = topTab?.getBoundingClientRect()[visualViewport.width < 1024 ? 'width' : 'height']
+			const tabSize =
+				topTab?.getBoundingClientRect()[
+					visualViewport!.width < 1024 ? 'width' : 'height'
+				]
 
 			// set min max values for keyframe animation
 			let keyframeInteriorMin: Record<string, string> = {
-				translate: visualViewport.width < 1024 ? `calc(100% - ${tabSize}px) 0%` : `0% calc(100% - ${tabSize}px)`,
+				translate:
+					visualViewport!.width < 1024
+						? `calc(100% - ${tabSize}px) 0%`
+						: `0% calc(100% - ${tabSize}px)`,
 			}
 			let keyframeInteriorMax: Record<string, string> = {
 				translate: `0% 0%`,
@@ -155,7 +195,7 @@ class FeedbackWidget extends HTMLElement {
 			}
 
 			// treanslating width if on mobile view
-			if (window.visualViewport.width < 1024) {
+			if (window.visualViewport!.width < 1024) {
 				min = {
 					width: `${widgetContent?.getBoundingClientRect().width}px`,
 				}
@@ -165,119 +205,122 @@ class FeedbackWidget extends HTMLElement {
 			}
 
 			const keyframes = toggle ? [ min, max ] : [ max, min ]
-			const keyframesInterior = toggle ? [ keyframeInteriorMin, keyframeInteriorMax ] : [ keyframeInteriorMax, keyframeInteriorMin ]
+			const keyframesInterior = toggle
+				? [ keyframeInteriorMin, keyframeInteriorMax ]
+				: [ keyframeInteriorMax, keyframeInteriorMin ]
 
 			// animate interior wrapper
-			widgetInteriorWrapper?.animate(
-				keyframesInterior,
-				{
-					duration: 200,
-					iterations: 1,
-				}
-			)
+			widgetInteriorWrapper?.animate(keyframesInterior, {
+				duration: 200,
+				iterations: 1,
+			})
 
 			// animate content wrapper
-			widgetContent?.animate(
-				keyframes,
-				{
+			widgetContent
+				?.animate(keyframes, {
 					duration: 200,
 					iterations: 1,
-				}
-			).finished.then(() => {
-				toggleAttributes(toggle)
-			})
+				})
+				.finished.then(() => {
+					toggleAttributes(toggle)
+				})
 		}
 
-		const handleRateButtonSelected = (button: HTMLButtonElement) => {
+		const handleRateButtonToggle = (button: HTMLButtonElement) => {
 			// if any selected, deselect all, disable form submit
 			if (button.classList.contains('selected')) {
-				handleRemoveSelected()
-				handleUncheckedRadios()
-				// set boolean to false
-				rateButtonSelected = false
-
-				handleSubmitButton()
+				handleRateButtonsRemoveSelected()
 			} else {
 				// Remove selected from all, uncheck hidden radios
-				handleRemoveSelected()
-				handleUncheckedRadios()
+				handleRateButtonsRemoveSelected()
 
-				// add selected to clicked button, enable submit button
-				handleRateButtonCheck(button)
+				// select UI button
+				button.classList.add('selected')
+
+				// map selected button state to checked state of hidden radios
+				if (button.id === 'button_thumbs-up') {
+					button.classList.contains('selected')
+						? (hiddenThumbsUpRadio.checked = true)
+						: (hiddenThumbsUpRadio.checked = false)
+				}
+
+				if (button.id === 'button_thumbs-down') {
+					button.classList.contains('selected')
+						? (hiddenThumbsDownRadio.checked = true)
+						: (hiddenThumbsDownRadio.checked = false)
+				}
 
 				// set boolean to true so handleFormSubmit() works properly
 				rateButtonSelected = true
-				handleSubmitButton()
-
-				// set form boolean to true
-				formSubmittable = true
 			}
+
+			handleDisableSubmitButton()
 		}
 
 		const handleFormReset = () => {
-			textarea.value = ''
-			emailInput.value = ''
+			form.reset()
+			emailInput.required = false
+			emailInput.placeholder = 'Email Address (optional)'
 			emailPopulated = false
-			textareaPopulated = false
 
 			// makes sure rate buttons are deselected when form clears
-			handleRemoveSelected()
-			handleUncheckedRadios()
-			// set boolean to false
-			rateButtonSelected = false
+			handleRateButtonsRemoveSelected()
+
 			// deselct submit button
-			handleSubmitButton()
-			// set form boolean to false
-			formSubmittable = false
+			handleDisableSubmitButton()
 		}
 
 		const handleFormSubmit = (event: Event) => {
+			// check for valid email
+			if (!emailInput.checkValidity()) return
+
 			const antenna: SVGElement = widgetSuccess.querySelector('svg')!
-			const animatingElement: NodeListOf<HTMLSpanElement> = widgetSuccess.querySelectorAll('.widget_success-orange-circle span')!
+			const animatingElement: NodeListOf<HTMLSpanElement> =
+				widgetSuccess.querySelectorAll('.widget_success-orange-circle span')!
 
-			if (formSubmittable) {
-				// put receiving animation in place, dots animating into antenna
-				widgetSuccess.classList.add('-active')
+			// put receiving animation in place, dots animating into antenna
+			widgetSuccess.classList.add('-active')
 
-				const target = event.target as HTMLFormElement
-				let data = {
-					'feedback': textarea.value,
-					'thumbUp': hiddenThumbsUpRadio.checked,
-					'thumbDown': hiddenThumbsDownRadio.checked,
-					'email': emailInput.value,
-					'pageURL': urlInput.value,
-				}
-				const action = target.action
-				fetch(action, {
-					headers: { 'Content-Type': 'application/json' },
-					method: 'POST',
-					body: JSON.stringify(data),
-				})
+			const target = event.target as HTMLFormElement
+			let data: FeedbackData = {
+				feedback: textarea.value,
+				thumbUp: hiddenThumbsUpRadio.checked,
+				thumbDown: hiddenThumbsDownRadio.checked,
+				receiveResponse: receiveResponseCheckbox.checked,
+				email: emailInput.value,
+				pageURL: currentURL,
+			}
+			const action = target.action
+			fetch(action, {
+				headers: { 'Content-Type': 'application/json' },
+				method: 'POST',
+				body: JSON.stringify(data),
+			})
 				.then(() => {
 					// on success, make antenna success color, stop receiving animation after brief timeout.
-					setTimeout(() => {
-						antenna.classList.add('success')
-						for (const span of animatingElement) {
-							span.style.animationIterationCount = '1'
-						}
-					}, 900)
-
-					// after timeout, remove all success panels and close widget.
-					setTimeout(() => {
-						widgetSuccess.classList.remove('-active')
-						antenna.classList.remove('selected')
-						handleFormReset()
-						showHideWidget()
-					}, 2500)
-				}).catch(() => {
+					antenna.classList.add('success')
+					for (const span of animatingElement) {
+						span.style.animationIterationCount = '1'
+					}
+				})
+				.catch(() => {
 					// on failure display failure panel, remove all panels.
 					widgetFail.classList.add('-active')
 					setTimeout(() => {
 						widgetSuccess.classList.remove('-active')
 						widgetFail.classList.remove('-active')
-					}, 2500)
+					}, 1200)
 				})
-			}
+				.finally(() => {
+					// small pause to allow animation to complete
+					// 1200ms matches animation in css file
+					setTimeout(() => {
+						widgetSuccess.classList.remove('-active')
+						antenna.classList.remove('selected')
+						handleFormReset()
+						showHideWidget()
+					}, 1200)
+				})
 		}
 
 		/** ** SETTING UP EVENT LISTENERS ** **/
@@ -295,24 +338,12 @@ class FeedbackWidget extends HTMLElement {
 			})
 		}
 
-
-		const handleTextareaListener = () => {
-			textarea.addEventListener('input', (event) => {
-				const target = event.currentTarget as HTMLInputElement
-				target.value ? textareaPopulated = true : textareaPopulated = false
-
-				handleSubmitButton()
-				// set form boolean to true
-				formSubmittable = true
-			})
-		}
-
 		const handleEmailListener = () => {
 			emailInput.addEventListener('input', (event) => {
 				const target = event.currentTarget as HTMLInputElement
-				target.value ? emailPopulated = true : emailPopulated = false
+				target.value ? (emailPopulated = true) : (emailPopulated = false)
 
-				handleSubmitButton()
+				handleDisableSubmitButton()
 			})
 		}
 
@@ -328,7 +359,7 @@ class FeedbackWidget extends HTMLElement {
 			for (const button of rateButtons) {
 				button.addEventListener('click', () => {
 					// handle UI selection of button
-					handleRateButtonSelected(button)
+					handleRateButtonToggle(button)
 				})
 			}
 		}
@@ -337,12 +368,12 @@ class FeedbackWidget extends HTMLElement {
 		if (this.getAttribute('collapsible')) handleWidgetToggleListener()
 		handleClearButtonListener()
 		handleRateButtonListener()
-		handleTextareaListener()
+		handleReceiveResponse()
 		handleEmailListener()
 		handleFormListener()
 		watchForFooter()
 		window.addEventListener('resize', () => {
-			document.removeEventListener('scroll', watchFooterScroll)
+			document.removeEventListener('scroll', handleSetWidgetOnFooter)
 			watchForFooter()
 		})
 	}
