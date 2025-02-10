@@ -1,0 +1,10 @@
+---
+import DocsLayout from 'project:layouts/docs/docs-layout.astro'
+import ProductDownload from 'project:components/astro-product-download/astro-product-download.astro'
+
+const title = 'Product Download'
+const description = 'Please see instructions below on how to download your new product.'
+---
+<DocsLayout content={{ title, description }} file={import.meta.url}>
+	<ProductDownload title={title} />
+</DocsLayout>
