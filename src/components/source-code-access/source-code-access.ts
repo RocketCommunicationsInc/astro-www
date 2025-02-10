@@ -67,8 +67,6 @@ form.addEventListener('submit', async (e) => {
 	const data = new FormData(form)
 	const params = new RequestParams()
 
-	console.log('data: ', data)
-
 	for (const entry of data) {
 		const key = entry[0] as keyof RequestParams
 		const value = entry[1] as string
@@ -85,8 +83,6 @@ form.addEventListener('submit', async (e) => {
 		resetLoading()
 		return
 	}
-
-	console.log('params: ', params)
 
 	try {
 		const url = 'https://astrouxds-api-196cde1c48d0.herokuapp.com/api/v1/source-code'
