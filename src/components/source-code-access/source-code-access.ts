@@ -18,6 +18,7 @@ class RequestParams {
 	first: string = ''
 	last: string = ''
 	use: string = ''
+	useDescription: string = ''
 	subscribe: string = 'off'
 }
 
