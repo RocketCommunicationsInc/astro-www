@@ -14,11 +14,6 @@ class FeedbackWidget extends HTMLElement {
 
 		// grabs current url from passed in attribute and sets it in the form
 		const currentURL: string = this.getAttribute('current-url')!
-		const currentURLInput = root?.getElementById(
-			'current-url'
-		) as HTMLInputElement
-		currentURLInput.value = currentURL
-		currentURLInput.setAttribute('value', currentURL)
 
 		// document elements
 		const widgetWrapper: HTMLElement | null =
@@ -57,9 +52,6 @@ class FeedbackWidget extends HTMLElement {
 			root.querySelector('#radio_thumbs-up')!
 		const hiddenThumbsDownRadio: HTMLInputElement =
 			root.querySelector('#radio_thumbs-down')!
-		const urlInput: HTMLInputElement = root.querySelector(
-			'input[type="text"]#current-url'
-		)!
 		const widgetSuccess: HTMLDivElement =
 			root.querySelector('.widget_success')!
 		const widgetFail: HTMLDivElement = root.querySelector('.widget_fail')!
@@ -71,6 +63,15 @@ class FeedbackWidget extends HTMLElement {
 
 		// intersection observer
 		let observer: IntersectionObserver | undefined
+
+		type FeedbackData = {
+			feedback: string;
+			thumbUp: boolean;
+			thumbDown: boolean;
+			receiveResponse: boolean;
+			email: string;
+			pageURL: string;
+		};
 
 		const handleRateButtonsRemoveSelected = () => {
 			// deselect UI buttons
@@ -281,13 +282,13 @@ class FeedbackWidget extends HTMLElement {
 			widgetSuccess.classList.add('-active')
 
 			const target = event.target as HTMLFormElement
-			let data = {
+			let data: FeedbackData = {
 				feedback: textarea.value,
 				thumbUp: hiddenThumbsUpRadio.checked,
 				thumbDown: hiddenThumbsDownRadio.checked,
 				receiveResponse: receiveResponseCheckbox.checked,
 				email: emailInput.value,
-				pageURL: urlInput.value,
+				pageURL: currentURL,
 			}
 			const action = target.action
 			fetch(action, {
@@ -297,20 +298,10 @@ class FeedbackWidget extends HTMLElement {
 			})
 				.then(() => {
 					// on success, make antenna success color, stop receiving animation after brief timeout.
-					setTimeout(() => {
-						antenna.classList.add('success')
-						for (const span of animatingElement) {
-							span.style.animationIterationCount = '1'
-						}
-					}, 900)
-
-					// after timeout, remove all success panels and close widget.
-					setTimeout(() => {
-						widgetSuccess.classList.remove('-active')
-						antenna.classList.remove('selected')
-						handleFormReset()
-						showHideWidget()
-					}, 2500)
+					antenna.classList.add('success')
+					for (const span of animatingElement) {
+						span.style.animationIterationCount = '1'
+					}
 				})
 				.catch(() => {
 					// on failure display failure panel, remove all panels.
@@ -318,7 +309,17 @@ class FeedbackWidget extends HTMLElement {
 					setTimeout(() => {
 						widgetSuccess.classList.remove('-active')
 						widgetFail.classList.remove('-active')
-					}, 2500)
+					}, 1200)
+				})
+				.finally(() => {
+					// small pause to allow animation to complete
+					// 1200ms matches animation in css file
+					setTimeout(() => {
+						widgetSuccess.classList.remove('-active')
+						antenna.classList.remove('selected')
+						handleFormReset()
+						showHideWidget()
+					}, 1200)
 				})
 		}
 

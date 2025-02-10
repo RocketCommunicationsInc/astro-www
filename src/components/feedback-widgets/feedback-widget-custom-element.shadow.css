@@ -138,6 +138,9 @@
 			gap: 2--step;
 			justify-content: center;
 
+			/* Layout */
+			margin-block-start: 3--step;
+
 			& input[type="checkbox"] {
 				/* Layout */
 				margin: 0;
@@ -170,6 +173,11 @@
 					background-position: center;
 					background-repeat: no-repeat;
 				}
+			}
+
+			& label {
+				/* Text */
+				line-height: 5--step;
 			}
 		}
 
@@ -204,6 +212,9 @@
 
 			/* Layout */
 			margin-block-start: 6--step;
+
+			/* Text */
+			vertical-align: top;
 		}
 
 		& input {
