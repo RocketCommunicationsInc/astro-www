@@ -6,8 +6,11 @@ const content = {
 	title: 'Astro Toolkit for Microsoft PowerPoint',
 	description: `Introducing the Astro PowerPoint Toolkit: Streamline wireframing for space and intelligence professionals in secure environments.`,
 }
-import './astro-toolkit-ppt.css'
+
 ---
+
+<DocsLayout content={content} file={import.meta.url}>
+	<Heading type="h2" title="Product Details" />
 <style>
 	.p-astro-toolkit-ppt_image {
 	/* Layout */
@@ -34,9 +37,6 @@ import './astro-toolkit-ppt.css'
 	}
 }
 </style>
-<DocsLayout content={content} file={import.meta.url}>
-	<Heading type="h2" title="Product Details" />
-
 	<p>
 		In the aerospace and defense industry, software restrictions can pose
 		challenges when it comes to wireframing in certain environments. That's why
