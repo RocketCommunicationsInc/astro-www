@@ -8,7 +8,32 @@ const content = {
 }
 import './astro-toolkit-ppt.css'
 ---
+<style>
+	.p-astro-toolkit-ppt_image {
+	/* Layout */
+	margin-block-end: 7--step;
 
+	/* Layout */
+	margin-block-start: 7--step;
+
+	& img {
+		/* Layout */
+		margin-block-end: 9--step;
+		max-inline-size: 100%;
+	}
+
+	& p {
+		/* Text */
+		font-size: .875rem;
+	}
+}
+
+.p-astro-toolkit-ppt {
+	&small {
+		display: flex;
+	}
+}
+</style>
 <DocsLayout content={content}>
 	<Heading type="h2" title="Product Details" />
 

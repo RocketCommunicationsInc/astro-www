@@ -5,7 +5,7 @@ let baseUrl
 if (process.env.CONTEXT === 'deploy-preview') {
 	baseUrl = process.env.DEPLOY_PRIME_URL
 } else if (process.env.CONTEXT === 'production') { baseUrl = process.env.BASE_URL } else {
-	baseUrl = 'http://localhost:8888'
+	baseUrl = 'https://www.astrouxds.com/'
 }
 
 const PRODUCTS = {
