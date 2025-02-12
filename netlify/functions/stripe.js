@@ -1,6 +1,7 @@
 // STRIPE_SECRET for real
 const stripe = require('stripe')(process.env.STRIPE_SANDBOX_SECRET)
 // const baseUrl = process.env.DEPLOY_URL || process.env.BASE_URL || 'http://localhost:8888'
+console.log('Netlify CONTEXT:', process.env.CONTEXT)
 let baseUrl
 if (process.env.CONTEXT === 'deploy-preview') {
 	baseUrl = process.env.DEPLOY_PRIME_URL
