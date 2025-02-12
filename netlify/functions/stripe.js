@@ -4,7 +4,7 @@ const stripe = require('stripe')(process.env.STRIPE_SANDBOX_SECRET)
 
 console.log('Netlify CONTEXT:', process.env.CONTEXT)
 console.log('DEPLOY_PRIME_URL:', process.env.DEPLOY_PRIME_URL)
-console.log('BASE_URL:', process.ev.BASE_URL)
+console.log('BASE_URL:', process.env.BASE_URL)
 
 let baseUrl
 if (process.env.CONTEXT === 'deploy-preview') {
