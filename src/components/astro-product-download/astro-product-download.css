@@ -64,11 +64,11 @@
 			opacity: .4;
 		}
 	}
-}
 
-h2.p-astro-product-download_header {
-	/* Layout */
-	margin-block-start: 0--step;
+	& h2.p-astro-product-download_header {
+		/* Layout */
+		margin-block-start: 0--step;
+	}
 }
 
 .hidden {
