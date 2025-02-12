@@ -6,6 +6,9 @@ import Version from 'project:components/home/version/home-version.astro'
 import Banner from 'project:components/home/banner/home-banner.astro'
 import banner from 'project:data/home-banner.json'
 
+import ProductBanner from 'project:components/home/product-banner/product-banner.astro'
+import productBanner from 'project:data/home-product-banner.json'
+
 import Explainer from 'project:components/home/explainer/home-explainer.astro'
 import explainer from 'project:data/home-explainer.json'
 
@@ -21,6 +24,7 @@ import signup from 'project:data/home-signup.json'
 <Layout>
 	<Version />
 	<Banner {...banner.data} />
+	<ProductBanner data={productBanner.data} />
 	<Explainer data={explainer.data} />
 	<Community data={community.data} />
 	<Articles data={articles.data} />

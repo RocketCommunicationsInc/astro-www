@@ -1,0 +1,61 @@
+{
+	"$schema": "./schema.json",
+	"type": "objects",
+	"data": [
+		{
+			"heading": {
+				"type": "text",
+				"data": "What is Astro?"
+			},
+			"content": {
+				"type": "text",
+				"data": "Learn what Astro is and what a design system can do for you and your applications."
+			},
+			"image": {
+				"type": "link",
+				"data": {
+					"url": "/images/astro-icon.svg#content",
+					"width": 192,
+					"height": 96
+				}
+			},
+			"action": {
+				"type": "link",
+				"data": {
+					"url": "/getting-started/",
+					"description": "Learn more"
+				}
+			}
+		},
+		{
+			"content": {
+				"type": "text",
+				"data": "You asked, we listened. Now you can design Astro-compliant mock-ups and lo-fi wireframes in secured environments by using our brand new, ASTRO UXDS PowerPoint Toolkit! Built from the ground up, in collaboration with designers from all over the DoD space, the ASTRO UXDS PowerPoint Toolkit includes all of Astro’s components, now optimized for use in Microsoft PowerPoint!"
+			},
+			"action": {
+				"type": "link",
+				"data": {
+					"url": "/getting-started/designers/",
+					"description": "Learn more"
+				}
+			}
+		},
+		{
+			"image": {
+				"type": "link",
+				"data": {
+					"url": "/images/astro-toolkit-ppt-screen-2.png",
+					"width": 500,
+					"height": 154
+				}
+			},
+			"action": {
+				"type": "link",
+				"data": {
+					"url": "/getting-started/developers/",
+					"description": "Learn more"
+				}
+			}
+		}
+	]
+}

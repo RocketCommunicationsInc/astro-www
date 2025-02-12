@@ -1,0 +1,18 @@
+---
+import type productBanner from 'project:data/home-product-banner.json'
+import { For } from '@astropub/flow'
+import './product-banner.css'
+
+const { data } = Astro.props as typeof productBanner
+
+// const slugify = (value) => value.replace(/[^\w]/g, '-').toLowerCase()
+---
+<section class="p-product-banner" id="product-banner" aria-label="product banner">
+	<For of={data}>{(item) => (
+		<div class="x-card">
+			{item.image ? <img src={item.image.data.url} width={item.image.data.width} alt="astro-toolkit"> : null}
+			{/* <h3><a href={item.action.data.url}>{item.heading.data}</a></h3> */}
+			{item.content ? <p>{item.content.data}</p> : null}
+		</div>
+	)}</For>
+</section>
