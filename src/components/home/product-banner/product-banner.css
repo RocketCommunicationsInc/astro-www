@@ -43,6 +43,11 @@
 		padding-inline: var(--padding-inline);
 		position: relative;
 
+		& img {
+			/* Layout */
+			inline-size: 100%;
+		}
+
 		&:nth-child(2) {
 			& .x-card_heading {
 				/* Layout */

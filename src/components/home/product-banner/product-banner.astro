@@ -25,7 +25,7 @@ const { data } = Astro.props as typeof productBanner
 					<div class="x-card_content">
 						{item.image
 						? (
-							<Image {...item.image.data} aria-hidden="true" />
+							item.image.data.url.includes('svg') ? <Image {...item.image.data} aria-hidden="true" /> : <img src={item.image.data.url} alt="ppt-screen" />
 						)
 						: null}
 						{item['sub-image']
