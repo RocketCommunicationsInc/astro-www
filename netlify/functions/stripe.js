@@ -2,6 +2,8 @@
 const stripe = require('stripe')(process.env.STRIPE_SANDBOX_SECRET)
 // const baseUrl = process.env.DEPLOY_URL || process.env.BASE_URL || 'http://localhost:8888'
 
+console.log('Environment Variables:', process.env)
+
 let baseUrl
 if (process.env.CONTEXT === 'deploy-preview') {
 	baseUrl = process.env.DEPLOY_PRIME_URL
