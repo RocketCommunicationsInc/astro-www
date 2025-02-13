@@ -1,5 +1,6 @@
 ---
 import type productBanner from 'project:data/home-product-banner.json'
+import Image from 'project:components/image/image'
 import { For } from '@astropub/flow'
 import './product-banner.css'
 
@@ -7,12 +8,42 @@ const { data } = Astro.props as typeof productBanner
 
 // const slugify = (value) => value.replace(/[^\w]/g, '-').toLowerCase()
 ---
-<section class="p-product-banner" id="product-banner" aria-label="product banner">
-	<For of={data}>{(item) => (
-		<div class="x-card">
-			{item.image ? <img src={item.image.data.url} width={item.image.data.width} alt="astro-toolkit"> : null}
-			{/* <h3><a href={item.action.data.url}>{item.heading.data}</a></h3> */}
-			{item.content ? <p>{item.content.data}</p> : null}
-		</div>
-	)}</For>
+
+<section
+	class="p-product-banner"
+	id="product-banner"
+	aria-label="product banner"
+>
+	<For of={data}>
+		{
+			(item) => (
+				<div class="x-card">
+					<div class="x-card_heading">
+						{item.heading ? <h3>{item.heading.data}</h3> : null}
+					</div>
+
+					<div class="x-card_content">
+						{item.image
+						? (
+							<Image {...item.image.data} aria-hidden="true" />
+						)
+						: null}
+						{item['sub-image']
+						? (
+							<Image {...item['sub-image'].data} aria-hidden="true" />
+						)
+						: null}
+
+						{item.content ? <p>{item.content.data}</p> : null}
+						{item['content-extra'] ? <p>{item['content-extra'].data}</p> : null}
+						{item.action
+						? 	<a href={item.action.data.url}><button
+								type="button"
+							>{item.action.data.description}</button></a>
+						: null}
+					</div>
+				</div>
+			)
+		}
+	</For>
 </section>

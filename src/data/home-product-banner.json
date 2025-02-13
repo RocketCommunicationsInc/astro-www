@@ -5,38 +5,43 @@
 		{
 			"heading": {
 				"type": "text",
-				"data": "What is Astro?"
+				"data": "Astro for PowerPoint"
 			},
 			"content": {
 				"type": "text",
-				"data": "Learn what Astro is and what a design system can do for you and your applications."
+				"data": "You asked, we listened. Now you can design Astro-compliant mock-ups and lo-fi wireframes in secured environments by using our brand new, ASTRO UXDS PowerPoint Toolkit!"
+			},
+			"content-extra": {
+				"type": "text",
+				"data": "Built from the ground up, in collaboration with designers from all over the DoD space, the ASTRO UXDS PowerPoint Toolkit includes all of Astro’s components, now optimized for use in Microsoft PowerPoint!"
+			}
+		},
+		{
+			"heading": {
+				"type": "text",
+				"data": "New for 2025!"
 			},
 			"image": {
 				"type": "link",
 				"data": {
-					"url": "/images/astro-icon.svg#content",
-					"width": 192,
-					"height": 96
+					"url": "/images/astro.svg#content",
+					"width": 160,
+					"height": 68
+				}
+			},
+			"sub-image": {
+				"type": "link",
+				"data": {
+					"url": "/images/astro-ppt-banner-sub-title.svg#content",
+					"width": 293,
+					"height": 18
 				}
 			},
 			"action": {
 				"type": "link",
 				"data": {
-					"url": "/getting-started/",
-					"description": "Learn more"
-				}
-			}
-		},
-		{
-			"content": {
-				"type": "text",
-				"data": "You asked, we listened. Now you can design Astro-compliant mock-ups and lo-fi wireframes in secured environments by using our brand new, ASTRO UXDS PowerPoint Toolkit! Built from the ground up, in collaboration with designers from all over the DoD space, the ASTRO UXDS PowerPoint Toolkit includes all of Astro’s components, now optimized for use in Microsoft PowerPoint!"
-			},
-			"action": {
-				"type": "link",
-				"data": {
-					"url": "/getting-started/designers/",
-					"description": "Learn more"
+					"url": "/platforms/astro-toolkit-ppt/",
+					"description": "Learn More"
 				}
 			}
 		},
@@ -44,16 +49,9 @@
 			"image": {
 				"type": "link",
 				"data": {
-					"url": "/images/astro-toolkit-ppt-screen-2.png",
-					"width": 500,
-					"height": 154
-				}
-			},
-			"action": {
-				"type": "link",
-				"data": {
-					"url": "/getting-started/developers/",
-					"description": "Learn more"
+					"url": "/images/astro-ppt-banner-comp-screen.svg#content",
+					"width": 354,
+					"height": 300
 				}
 			}
 		}
