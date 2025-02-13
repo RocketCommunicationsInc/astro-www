@@ -6,7 +6,7 @@
 [context.production]
 	NODE_VERSION = "18.16.0"
 
-[context.deploy-preview]
+[context.deploy-preview.environment]
 	NODE_VERSION = "18.16.0"
 
 [[redirects]]
