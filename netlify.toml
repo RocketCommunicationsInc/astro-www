@@ -3,9 +3,8 @@
 	command = "npm run build"
     functions = "netlify/functions"
 
-[context.production.environment]
+[context.production]
 	NODE_VERSION = "18.16.0"
-	BASE_URL = "https://www.astrouxds.com"
 
 [context.deploy-preview.environment]
 	NODE_VERSION = "18.16.0"

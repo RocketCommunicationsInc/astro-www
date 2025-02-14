@@ -1,12 +1,6 @@
 ---
-import type productBanner from 'project:data/home-product-banner.json'
 import Image from 'project:components/image/image'
-import { For } from '@astropub/flow'
 import './product-banner.css'
-
-const { data } = Astro.props as typeof productBanner
-
-// const slugify = (value) => value.replace(/[^\w]/g, '-').toLowerCase()
 ---
 
 <section
@@ -14,36 +8,61 @@ const { data } = Astro.props as typeof productBanner
 	id="product-banner"
 	aria-label="product banner"
 >
-	<For of={data}>
-		{
-			(item) => (
-				<div class="x-card">
-					<div class="x-card_heading">
-						{item.heading ? <h3>{item.heading.data}</h3> : null}
-					</div>
+	<div class="x-card">
+		<h3 class="x-card_heading">Astro for PowerPoint</h3>
+		<div class="x-card_content">
+			<p>
+				You asked, we listened. Now you can design Astro-compliant mock-ups and
+				lo-fi wireframes in secured environments by using our brand new, ASTRO
+				UXDS PowerPoint Toolkit!
+			</p>
+			<p>
+				Built from the ground up, in collaboration with designers from all over
+				the DoD space, the ASTRO UXDS PowerPoint Toolkit includes all of Astro’s
+				components, now optimized for use in Microsoft PowerPoint.
+			</p>
+		</div>
+	</div>
+	<div class="x-card">
+		<div class="x-card_heading">
+			<h3>New for 2025</h3>
+		</div>
+		<div class="x-card_content">
+			<Image
+				{...{
+					url: '/images/astro.svg#content',
+					width: 160,
+					height: 68,
+				}}
+				aria-hidden="true"
+			/>
+			<div class="x-card_sub-title">
+				<Image
+					{...{
+						url: '/images/astro-sub-title.svg#content',
+						width: 188,
+						height: 18,
+					}}
+					aria-hidden="true"
+				/>
+				<Image
+					{...{
+						url: '/images/astro-sub-title-ppt-toolkit.svg#content',
+						width: 90,
+						height: 18,
+					}}
+					aria-hidden="true"
+				/>
+			</div>
 
-					<div class="x-card_content">
-						{item.image
-						? (
-							item.image.data.url.includes('svg') ? <Image {...item.image.data} aria-hidden="true" /> : <img src={item.image.data.url} alt="ppt-screen" />
-						)
-						: null}
-						{item['sub-image']
-						? (
-							<Image {...item['sub-image'].data} aria-hidden="true" />
-						)
-						: null}
-
-						{item.content ? <p>{item.content.data}</p> : null}
-						{item['content-extra'] ? <p>{item['content-extra'].data}</p> : null}
-						{item.action
-						? 	<a href={item.action.data.url}><button
-								type="button"
-							>{item.action.data.description}</button></a>
-						: null}
-					</div>
-				</div>
-			)
-		}
-	</For>
+			<a href="/platforms/astro-toolkit-ppt/">
+				<button type="button">Learn More</button>
+			</a>
+		</div>
+	</div>
+	<div class="x-card">
+		<div class="x-card_content">
+			<img src="/images/astro-toolkit-ppt-screen-2.png" alt="ppt-screen" />
+		</div>
+	</div>
 </section>

@@ -3,7 +3,8 @@ const stripe = require('stripe')(process.env.STRIPE_SANDBOX_SECRET)
 // const baseUrl = process.env.DEPLOY_URL || process.env.BASE_URL || 'http://localhost:8888'
 const baseUrl = process.env.BASE_URL
 
-
+// this is commented out because NEtlify doesn't seem to have it's CONTEXT env var set automaticaly like it's supposed to
+// if we can ever get this working we can use this.
 // let baseUrl
 // if (process.env.CONTEXT === 'deploy-preview') {
 // 	baseUrl = process.env.DEPLOY_PRIME_URL
@@ -31,7 +32,6 @@ const PRODUCTS = {
   }
   exports.handler = async (event) => {
 	try {
-		console.log(event.body)
 		// Parse the incoming request body
 		const { 'products': selectedProducts } = JSON.parse(event.body)
 

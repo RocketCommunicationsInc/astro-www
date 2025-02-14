@@ -11,7 +11,7 @@
 
 	@media (width < 1200px) {
 		/* Layout */
-		flex-flow: column;
+		flex-flow: column-reverse;
 		gap: 5--step;
 	}
 
@@ -20,13 +20,13 @@
 		gap: 8--step;
 	}
 
-	@media (width < 1665px) {
+	@media (width < 1520px) {
 		/* Layout */
 		padding-block: 5--step;
 		padding-inline: 5--step;
 	}
 
-	@media (width >= 1665px) {
+	@media (width >= 1520px) {
 		/* Layout */
 		gap: 20--step;
 		padding-block: 9--step;
@@ -84,6 +84,28 @@
 
 				/* Appearance */
 				background-color: var(--BrightBlue900Color);
+
+				& .x-card_sub-title {
+					display: flex;
+
+					/* Layout */
+					gap: .75rem;
+
+					& > * {
+						/* Layout */
+						margin-block: 0;
+					}
+
+					@media (width < 1520px) {
+						/* Layout */
+						flex-direction: column;
+					}
+
+					@media (width >= 1520px) {
+						/* Layout */
+						flex-direction: row;
+					}
+				}
 			}
 		}
 
@@ -93,6 +115,11 @@
 			/* Layout */
 			align-items: center;
 			justify-content: center;
+
+			@media (width < 1200px) {
+				/* Layout */
+				display: none;
+			}
 		}
 
 		& button {
@@ -125,8 +152,8 @@
 
 	& .x-card {
 		@media (width < 1024px) {
-			--padding-block: 6--step;
-			--padding-inline: 5--step;
+			--padding-block: 0--step;
+			--padding-inline: 0--step;
 		}
 
 		& svg {
@@ -134,12 +161,6 @@
 
 			/* parent layout */
 			align-self: center;
-
-			/* block-size: min(100%, 24--step);
-			inline-size: auto; */
-
-			/* Layout */
-			/* max-inline-size: 100%; */
 			object-fit: contain;
 		}
 
