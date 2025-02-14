@@ -6,37 +6,37 @@ const content = {
 	title: 'Astro Toolkit for Microsoft PowerPoint',
 	description: `Introducing the Astro PowerPoint Toolkit: Streamline wireframing for space and intelligence professionals in secure environments.`,
 }
-
 ---
 
 <DocsLayout content={content} file={import.meta.url}>
+	<!-- Putting custom styles in a style tag like this is Astro.js's recommendation -->
+	<style>
+		.p-astro-toolkit-ppt_image {
+			/* Layout */
+			margin-block-end: 7--step;
+
+			/* Layout */
+			margin-block-start: 7--step;
+
+			& img {
+				/* Layout */
+				margin-block-end: 9--step;
+				max-inline-size: 100%;
+			}
+
+			& p {
+				/* Text */
+				font-size: 0.875rem;
+			}
+		}
+
+		.p-astro-toolkit-ppt {
+			&small {
+				display: flex;
+			}
+		}
+	</style>
 	<Heading type="h2" title="Product Details" />
-<style>
-	.p-astro-toolkit-ppt_image {
-	/* Layout */
-	margin-block-end: 7--step;
-
-	/* Layout */
-	margin-block-start: 7--step;
-
-	& img {
-		/* Layout */
-		margin-block-end: 9--step;
-		max-inline-size: 100%;
-	}
-
-	& p {
-		/* Text */
-		font-size: .875rem;
-	}
-}
-
-.p-astro-toolkit-ppt {
-	&small {
-		display: flex;
-	}
-}
-</style>
 	<p>
 		In the aerospace and defense industry, software restrictions can pose
 		challenges when it comes to wireframing in certain environments. That's why
@@ -47,15 +47,16 @@ const content = {
 	<AstroToolkitPPTPurchaseButton showTerms={true} />
 	<div class="p-astro-toolkit-ppt_image">
 		<img
-		src="/images/astro-toolkit-ppt-screen-1.png"
-		alt="Astro toolkit ppt screen 1"
-		loading="lazy"
-		width="635"
-		height="353"
-	/>
-	<p
-		>The Astro Toolkit enables rapid, DoD-approved wireframing for streamlined design and validation.</p
-	>
+			src="/images/astro-toolkit-ppt-screen-1.png"
+			alt="Astro toolkit ppt screen 1"
+			loading="lazy"
+			width="635"
+			height="353"
+		/>
+		<p>
+			The Astro Toolkit enables rapid, DoD-approved wireframing for streamlined
+			design and validation.
+		</p>
 	</div>
 
 	<p>
@@ -69,27 +70,37 @@ const content = {
 
 	<div class="p-astro-toolkit-ppt_image">
 		<img
-		src="/images/astro-toolkit-ppt-screen-2.png"
-		alt="Astro toolkit ppt screen 2"
-		loading="lazy"
-		width="512"
-		height="434"
-	/>
-	<p
-		>The toolkit provides core components for quickly customizing your space app
-		designs with drag-and-drop ease.</p
-	>
+			src="/images/astro-toolkit-ppt-screen-2.png"
+			alt="Astro toolkit ppt screen 2"
+			loading="lazy"
+			width="512"
+			height="434"
+		/>
+		<p>
+			The toolkit provides core components for quickly customizing your space
+			app designs with drag-and-drop ease.
+		</p>
 	</div>
 	<Heading type="h2" title="Features" />
 
 	<ul>
-		<li>Core Astro design system: The toolkit includes the essential components of the Astro design system, ensuring consistency and efficiency in wireframing.</li>
-		<li>Authorized and familiar medium: By leveraging the power of PowerPoint, professionals can seamlessly integrate wireframing into their existing workflows.</li>
-		<li>Effort reduction: Reduced prototyping design time by 75%, allowing teams to focus on innovation and collaboration.</li>
+		<li>
+			Core Astro design system: The toolkit includes the essential components of
+			the Astro design system, ensuring consistency and efficiency in
+			wireframing.
+		</li>
+		<li>
+			Authorized and familiar medium: By leveraging the power of PowerPoint,
+			professionals can seamlessly integrate wireframing into their existing
+			workflows.
+		</li>
+		<li>
+			Effort reduction: Reduced prototyping design time by 75%, allowing teams
+			to focus on innovation and collaboration.
+		</li>
 	</ul>
 
 	<Heading type="h2" title="Purchase Astro Toolkit" />
 
 	<AstroToolkitPPTPurchaseButton showTerms={true} />
-
 </DocsLayout>

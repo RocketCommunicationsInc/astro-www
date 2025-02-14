@@ -2,6 +2,26 @@
 	display: flex;
 
 	/* Layout */
+	flex-flow: column;
+	gap: 4--step;
+	inline-size: 100%;
+}
+
+/* Explainer: Heading */
+
+.p-explainer-heading {
+	/* Text */
+	font-size: 34--rpx;
+	font-weight: 700;
+	line-height: calc(40 / 34);
+}
+
+/* Explainer: Content */
+
+.p-explainer-content {
+	display: flex;
+
+	/* Layout */
 	inline-size: min(100%, 380--step);
 
 	/* Appearance */
