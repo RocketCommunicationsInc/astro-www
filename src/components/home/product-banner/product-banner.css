@@ -96,7 +96,17 @@
 						margin-block: 0;
 					}
 
-					@media (width < 1520px) {
+					@media (width < 700px) {
+						/* Layout */
+						flex-direction: column;
+					}
+
+					@media (width >= 700px) and (width < 1200px) {
+						/* Layout */
+						flex-direction: row;
+					}
+
+					@media (width >= 1200px) and (width < 1520px) {
 						/* Layout */
 						flex-direction: column;
 					}
@@ -125,10 +135,9 @@
 		& button {
 			/* Layout */
 			inline-size: fit-content;
-
-			/* Layout */
+			min-inline-size: 200--rpx;
 			padding-block: 3--step;
-			padding-inline: 15--step;
+			padding-inline: 14--step;
 
 			/* Text */
 			font-size: 16--rpx;
@@ -165,6 +174,9 @@
 		}
 
 		& h3 {
+			/* Layout */
+			margin-block-end: 1--step;
+
 			/* Text */
 			font-size: 24--rpx;
 			font-weight: 600;
