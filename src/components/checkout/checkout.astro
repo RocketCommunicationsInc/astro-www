@@ -1,0 +1,40 @@
+---
+import './checkout.css'
+---
+<div style="margin-bottom: 2rem;">
+	<button type="button" class="open-btn rux-btn">Purchase Source Code</button>
+</div>
+
+<span class="p-source-code">
+<dialog class="p-source-code-dialog">
+	<h3 class="p-source-code-heading">Purchase Source Code</h3>
+	<form class="p-source-code-form" name="buy-code-access" id="buy-code-access">
+		<div class="p-source-code-inputs">
+			<fieldset>
+				<legend>Which sample apps would you like to purchase?</legend>
+				<div class="p-source-code-use">
+					<span>
+						<input id="fds-source-code" type="checkbox" name="source-code" value="fds" />
+						<label for="fds-source-code">FDS</label>
+					</span>
+					<span>
+						<input id="grm-source-code" type="checkbox" name="source-code" value="grm" />
+						<label for="grm-source-code">GRM</label>
+					</span>
+					<span>
+						<input id="ttc-source-code" type="checkbox" name="source-code" value="ttc" />
+						<label for="ttc-source-code">TTC</label>
+					</span>
+				</div>
+			</fieldset>
+		</div>
+		<footer class="p-source-code-footer">
+			<button type="reset" class="rux-btn p-source-code-dialog-close secondary">Cancel</button>
+			<button type="submit" class="rux-btn p-source-code-dialog-submit checkout-btn">Checkout</button>
+		</footer>
+	</form>
+</dialog>
+</span>
+<script>
+	import './checkout.js'
+</script>

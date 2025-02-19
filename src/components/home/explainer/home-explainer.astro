@@ -9,11 +9,17 @@ const { data } = Astro.props as typeof explainer
 // const slugify = (value) => value.replace(/[^\w]/g, '-').toLowerCase()
 ---
 <section class="p-explainer" id="explainer" aria-label="getting started">
-	<For of={data}>{(item) => (
-		<article class="x-card">
-			<Image {...item.image.data} aria-hidden="true" />
-			<h3><a href={item.action.data.url}>{item.heading.data}</a></h3>
-			<p>{item.content.data}</p>
-		</article>
-	)}</For>
+	<div class="p-explainer-heading">
+		<h3>Get Started</h3>
+	</div>
+	<div class="p-explainer-content">
+		<For of={data}>{(item) => (
+			<article class="x-card">
+				<Image {...item.image.data} aria-hidden="true" />
+				<h3><a href={item.action.data.url}>{item.heading.data}</a></h3>
+				<p>{item.content.data}</p>
+			</article>
+		)}</For>
+	</div>
+
 </section>

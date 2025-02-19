@@ -85,7 +85,7 @@ form.addEventListener('submit', async (e) => {
 	}
 
 	try {
-		const url = 'https://astrouxds-api-196cde1c48d0.herokuapp.com/api/v1/source-code'
+		const url = 'https://astrouxds-ap-feat-ap-18-af7hoi.herokuapp.com/api/v1/source-code'
 		const res = await fetch(url, { method: 'post', body: JSON.stringify(params) })
 		const status = res.status
 		const data = await res.json()
