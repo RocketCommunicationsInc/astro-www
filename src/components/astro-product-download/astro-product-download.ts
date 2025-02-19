@@ -77,14 +77,15 @@ const getPresignedURL = async (token: string) => {
 			return
 		}
 		window.location.href = data.url
-		handleButtonState('Verification Successful')
-		downloadButton?.setAttribute('disabled', '')
-		downloadButton?.removeEventListener(
-			'click',
-			() => getPresignedURL(token),
-			true
-		)
-		downloadButton?.classList.add('hidden')
+		handleButtonState('Click Here to Download')
+		// removing for now, but this code may need to be added back in to remove the button if the download is successful to prevent mal use.
+		// downloadButton?.setAttribute('disabled', '')
+		// downloadButton?.removeEventListener(
+		// 	'click',
+		// 	() => getPresignedURL(token),
+		// 	true
+		// )
+		// downloadButton?.classList.add('hidden')
 		statusWrapper.classList.remove('hidden')
 		success.innerText = successMsg
 	} catch (err) {
