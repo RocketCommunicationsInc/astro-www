@@ -40,7 +40,7 @@ const successMsg = `Your download has started successfully!`
 const error = document.querySelector(
 	'.p-astro-product-download_error'
 ) as HTMLDivElement
-const errorMsg = `There was a problem with your request, please try again. If the issue persists, please contact support@astrouxds.com for assistance.`
+const errorMsg = `<span>Error:&nbsp;</span>Oops... Something went wrong. Please contact our <a href="mailto:support@astrouxds.com">Support Team</a> for help downloading your purchase.`
 
 const handleButtonState = (innerText: string) => {
 	downloadButton?.hasAttribute('disabled')
@@ -74,6 +74,7 @@ const getPresignedURL = async (token: string) => {
 			console.error(data)
 			statusWrapper.classList.remove('hidden')
 			error.innerText = errorMsg
+			handleButtonState('Click Here to Download')
 			return
 		}
 		window.location.href = data.url

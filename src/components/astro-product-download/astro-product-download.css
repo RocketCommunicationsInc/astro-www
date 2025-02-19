@@ -23,12 +23,14 @@
 		margin-block-start: 0;
 
 		& .p-astro-product-download_error {
-			/* Text */
-			font-size: 14--rpx;
-			font-weight: 700;
+			& span {
+				/* Text */
+				font-size: 14--rpx;
+				font-weight: 700;
 
-			/* Appearance */
-			color: hsla(0, 100%, 61%, 1);
+				/* Appearance */
+				color: hsla(350, 85%, 42%, 1);
+			}
 		}
 
 		& .p-astro-product-download_success {
