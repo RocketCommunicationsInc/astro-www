@@ -276,6 +276,24 @@ const description = 'Component specific tokens to be used only when rebuilding c
 
 			<hr />
 
+			<h2 id="push-button">
+				Push Button
+			</h2>
+			{
+				component('light', 'push-button').map((token) => (
+					<RuxDesignTokenPreview
+    client:load
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
+
+			<hr />
+
 
 			<h2 id="radio">
 				Radio
@@ -381,6 +399,23 @@ const description = 'Component specific tokens to be used only when rebuilding c
 				))
 			}
 
+			<hr />
+
+			<h2 id="tab">
+				Tab
+			</h2>
+			{
+				component('light', 'tab').map((token) => (
+					<RuxDesignTokenPreview
+						client:load
+						name={token.name}
+						value={token.value}
+						alias={token.referenceToken}
+						description={token.description}
+						type={lookupProperty(token.category, token.property)}
+					/>
+				))
+			}
 			<hr />
 
 			<h2 id="table">
