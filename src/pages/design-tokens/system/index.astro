@@ -43,7 +43,9 @@ const description = 'Tokens representing Astro semantic design decisions.'
 
 	<h2 id="border">Border Colors</h2>
 	{
-		system('dark', 'color', 'border').map((token) => (
+		system('dark', 'color', 'border')
+		.filter((token) => !token.name.includes('focus'))
+		.map((token) => (
 			<RuxDesignTokenPreview
 				client:load
 				name={token.name}
