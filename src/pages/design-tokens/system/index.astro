@@ -7,14 +7,13 @@ import { RuxDesignTokenPreview } from '@astrouxds/documentation-components'
 const title = 'System Tokens'
 const description = 'Tokens representing Astro semantic design decisions.'
 ---
+
 <DocsLayout content={{ title, description }} file={import.meta.url}>
-	<h2 id="background">
-		Background Colors
-	</h2>
+	<h2 id="background">Background Colors</h2>
 	{
 		system('dark', 'color', 'background').map((token) => (
 			<RuxDesignTokenPreview
-    client:load
+				client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -26,13 +25,11 @@ const description = 'Tokens representing Astro semantic design decisions.'
 
 	<hr />
 
-	<h2 id="text">
-		Text Colors
-	</h2>
+	<h2 id="text">Text Colors</h2>
 	{
 		system('dark', 'color', 'text').map((token) => (
 			<RuxDesignTokenPreview
-    client:load
+				client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -44,13 +41,13 @@ const description = 'Tokens representing Astro semantic design decisions.'
 
 	<hr />
 
-	<h2 id="border">
-		Border Colors
-	</h2>
+	<h2 id="border">Border Colors</h2>
 	{
-		system('dark', 'color', 'border').map((token) => (
+		system('dark', 'color', 'border')
+		.filter((token) => !token.name.includes('focus'))
+		.map((token) => (
 			<RuxDesignTokenPreview
-    client:load
+				client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -62,13 +59,11 @@ const description = 'Tokens representing Astro semantic design decisions.'
 
 	<hr />
 
-	<h2 id="status">
-		Status Colors
-	</h2>
+	<h2 id="status">Status Colors</h2>
 	{
 		system('dark', 'color', 'status').map((token) => (
 			<RuxDesignTokenPreview
-    client:load
+				client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -80,13 +75,11 @@ const description = 'Tokens representing Astro semantic design decisions.'
 
 	<hr />
 
-	<h2 id="classification">
-		Classification Colors
-	</h2>
+	<h2 id="classification">Classification Colors</h2>
 	{
 		system('dark', 'color', 'classification').map((token) => (
 			<RuxDesignTokenPreview
-    client:load
+				client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -95,13 +88,30 @@ const description = 'Tokens representing Astro semantic design decisions.'
 			/>
 		))
 	}
-	<h2 id="data-viz">
-		Data Visualization
-	</h2>
+
+	<hr />
+
+	<h2 id="opacity">Opacity</h2>
+	{
+		system('dark', 'opacity', 'disabled').map((token) => (
+			<RuxDesignTokenPreview
+				client:load
+				name={token.name}
+				value={token.value}
+				alias={token.referenceToken}
+				description={token.description}
+				type="opacity"
+			/>
+		))
+	}
+
+	<hr />
+
+	<h2 id="data-viz">Data Visualization</h2>
 	{
 		system('dark', 'color', 'data-visualization').map((token) => (
 			<RuxDesignTokenPreview
-    client:load
+				client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -110,6 +120,65 @@ const description = 'Tokens representing Astro semantic design decisions.'
 			/>
 		))
 	}
+
+	<hr />
+
+	<h2 id="Focus">Focus</h2>
+	{
+		system('dark', 'color', 'border')
+			.filter((token) => token.name.includes('focus'))
+			.map((token) => (
+				<RuxDesignTokenPreview
+					client:load
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type="border"
+				/>
+			))
+	}
+	{
+		system('dark', 'borderWidth', 'focus').map((token) => (
+			<RuxDesignTokenPreview
+				client:load
+				name={token.name}
+				value={token.value}
+				alias={token.referenceToken}
+				description={token.description}
+				type="border-width"
+			/>
+		))
+	}
+	{
+		system('dark', 'spacing', 'focus').map((token) => (
+			<RuxDesignTokenPreview
+				client:load
+				name={token.name}
+				value={token.value}
+				alias={token.referenceToken}
+				description={token.description}
+				type="spacing"
+			/>
+		))
+	}
+
+	<hr />
+
+	<h2 id="shadow">Shadow Overlay</h2>
+	{
+		system('dark', 'boxShadow', undefined).map((token) => (
+			<RuxDesignTokenPreview
+				client:load
+				name={token.name}
+				value={token.value}
+				alias={token.referenceToken}
+				description={token.description}
+				type="opacity"
+			/>
+		))
+	}
+
+	<hr />
 </DocsLayout>
-<script>
-</script>
+<script></script>
