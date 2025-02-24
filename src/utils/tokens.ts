@@ -30,7 +30,7 @@ export const component = (theme: string, componentName: string) => {
 	return themeTokens.filter((token) => token.component === componentName)
 }
 
-export const system = (theme: string, category: string, property: string) => {
+export const system = (theme: string, category: string, property: string | undefined) => {
 	let themeTokens = tokens
 
 	if (theme === 'light') {
