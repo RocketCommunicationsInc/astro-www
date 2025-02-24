@@ -43,7 +43,9 @@ const description = 'Tokens representing Astro semantic design decisions.'
 
 	<h2 id="border">Border Colors</h2>
 	{
-		system('light', 'color', 'border').map((token) => (
+		system('light', 'color', 'border')
+		.filter((token) => !token.name.includes('focus'))
+		.map((token) => (
 			<RuxDesignTokenPreview
 				client:load
 				name={token.name}
@@ -121,7 +123,21 @@ const description = 'Tokens representing Astro semantic design decisions.'
 
 	<hr />
 
-	<h2 id="border-width">Focus Border Width</h2>
+	<h2 id="Focus">Focus</h2>
+	{
+		system('light', 'color', 'border')
+			.filter((token) => token.name.includes('focus'))
+			.map((token) => (
+				<RuxDesignTokenPreview
+					client:load
+					name={token.name}
+					value={token.value}
+					alias={token.referenceToken}
+					description={token.description}
+					type="border"
+				/>
+			))
+	}
 	{
 		system('light', 'borderWidth', 'focus').map((token) => (
 			<RuxDesignTokenPreview
@@ -134,10 +150,6 @@ const description = 'Tokens representing Astro semantic design decisions.'
 			/>
 		))
 	}
-
-	<hr />
-
-	<h2 id="spacing">Focus Spacing</h2>
 	{
 		system('light', 'spacing', 'focus').map((token) => (
 			<RuxDesignTokenPreview
