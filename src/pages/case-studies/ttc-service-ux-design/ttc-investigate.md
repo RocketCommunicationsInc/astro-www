@@ -7,7 +7,7 @@ title: TT&C Investigate
 description: The Investigate App displays system schematics and status data for a selected satellite.
 ---
 
-[Launch TT&C Investigate Sample App](https://ttc-command-react.netlify.app/) | [Design Materials and Source Code](/ttc-service-ux-design/ttc-investigate/#design-materials-and-source-code)
+[Launch TT&C Investigate Sample App](https://ttc-command-react.netlify.app/) | [Design Materials and Source Code](/case-studies/ttc-service-ux-design/ttc-investigate/#design-materials-and-source-code)
 
 The Investigate App displays system schematics and status data for a selected satellite. This allows operators to gather additional detail on alerts, view the relationships of components in the equipment hierarchy, and select particular values to add to the Watcher panel in the Monitor and Command Apps.
 
@@ -15,13 +15,13 @@ UX research revealed that existing systems often require operators to drill-in t
 
 ![TT&C Investigate App](/img/case-studies/tt&c/ttc-investigate-app.webp)
 
-There are four main areas in the Investigate App: the Global Status Bar, Subsystem Tree Menu, Subsystem Assembly Layout, and Mnemonic Data Table. The key elements are described below, but you can find much more design and task flow detail in the [TT&C Design Specification and Wireframes](/ttc-service-ux-design/ttc-investigate/#design-materials-and-source-code) documents. You can also launch the [TT&C Investigate Sample App](https://ttc-command-react.netlify.app) to explore the design interactively.
+There are four main areas in the Investigate App: the Global Status Bar, Subsystem Tree Menu, Subsystem Assembly Layout, and Mnemonic Data Table. The key elements are described below, but you can find much more design and task flow detail in the [TT&C Design Specification and Wireframes](/case-studies/ttc-service-ux-design/ttc-investigate/#design-materials-and-source-code) documents. You can also launch the [TT&C Investigate Sample App](https://ttc-command-react.netlify.app) to explore the design interactively.
 
 ![TT&C Investigate App Details](/img/case-studies/tt&c/ttc-investigate-app-details.webp)
 
 ## Global Status Bar
 
-As outlined on the [About TT&C Designs](/ttc-service-ux-design/about-the-ttc-designs) page, each of the apps in the TT&C Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar), an Astro component featured in all three apps. Though the status bar contents vary somewhat between apps in order to best support each app’s individual workflows, all contain a [Clock](/components/clock), [Monitoring Icons](/components/icons-and-symbols), and an App Switcher Menu that allows operators to transition quickly from one TT&C task flow to another.
+As outlined on the [About TT&C Designs](/case-studies/ttc-service-ux-design/about-the-ttc-designs/) page, each of the apps in the TT&C Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar/), an Astro component featured in all three apps. Though the status bar contents vary somewhat between apps in order to best support each app’s individual workflows, all contain a [Clock](/components/clock/), [Monitoring Icons](/components/icons-and-symbols/), and an App Switcher Menu that allows operators to transition quickly from one TT&C task flow to another.
 
 ![TT&C Dashboard Global Status Bar Details](/img/case-studies/tt&c/ttc-investigate-global-status-bar-details.webp)
 
@@ -69,8 +69,6 @@ Below is an animated walkthrough of a representative task flow using the TT&C In
  <figure markdown="1">
   <a href="#demo" class="demo" name="close">
    <span class="icon-play"></span>
-   <img src="/img/case-studies/tt&c/ttc-investigate-add-watcher-placeholder.png"
-   alt="TT&C Investigate Add Watcher demo" />
   </a>
  </figure>
  <a href="#close" class="lightbox" id="demo">

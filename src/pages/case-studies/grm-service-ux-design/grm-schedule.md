@@ -7,7 +7,7 @@ title: GRM Schedule
 description: The GRM Schedule app allows operators to view and interact with the full schedule of contacts via a Timeline or List View.
 ---
 
-[Launch GRM Schedule Sample App](https://grm-schedule-react.netlify.app) | [Design Materials and Source Code](/grm-service-ux-design/grm-schedule/#design-materials-and-source-code)
+[Launch GRM Schedule Sample App](https://grm-schedule-react.netlify.app) | [Design Materials and Source Code](/case-studies/grm-service-ux-design/grm-schedule/#design-materials-and-source-code)
 
 Ground Resource Management (GRM) operations require ensuring that all the necessary equipment is available during the time windows when a target satellite is in range. Complicating this task is the fact that there are multiple simultaneous satellite contacts to manage, pieces of equipment that are shared amongst operational groups, and shifting priorities that can require a well-orchestrated schedule to be modified in-flight. Operators need to be able to monitor these impacts to the schedule and make the necessary modifications quickly to ensure that satellite operations can continue.
 
@@ -21,7 +21,7 @@ There are three main areas in the Schedule app: the Global Status Bar, the Conta
 
 ## Global Status Bar
 
-As outlined on the [About GRM Designs](/grm-service-ux-design/about-the-grm-designs) page, each of the apps in the GRM Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar), an Astro component featured in all three apps. Status bars contain an App Switcher Menu, that allows operators to transition quickly from one GRM task flow to another, a [Clock](/components/clock), and [Monitoring Icons](/components/icons-and-symbols).
+As outlined on the [About GRM Designs](/case-studies/grm-service-ux-design/about-the-grm-designs/) page, each of the apps in the GRM Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar/), an Astro component featured in all three apps. Status bars contain an App Switcher Menu, that allows operators to transition quickly from one GRM task flow to another, a [Clock](/components/clock/), and [Monitoring Icons](/components/icons-and-symbols/).
 
 ![GRM Schedule Global Status Bar Details](/img/case-studies/grm/grm-schedule-global-status-bar-details.webp)
 
@@ -35,7 +35,7 @@ The GRM Schedule app presents operators with two alternative views of their cont
 
 ### Timeline View
 
-In the [Timeline](/components/timeline) view, contacts are plotted by ground station and antenna on the y-axis and time on the x-axis. The contacts are represented as bars, the length of which indicates the duration of the contact. This design, which is based on the Astro Timeline component, provides operators with a consolidated view of the time and status for all recent, current and future contacts in their system. To allow operators to focus in on particular elements of interest, Ground Station rows can be expanded to show individual antennas, the timeline can be filtered by contact status, or zoomed in/out to focus on a particular time range.
+In the [Timeline](/components/timeline/) view, contacts are plotted by ground station and antenna on the y-axis and time on the x-axis. The contacts are represented as bars, the length of which indicates the duration of the contact. This design, which is based on the Astro Timeline component, provides operators with a consolidated view of the time and status for all recent, current and future contacts in their system. To allow operators to focus in on particular elements of interest, Ground Station rows can be expanded to show individual antennas, the timeline can be filtered by contact status, or zoomed in/out to focus on a particular time range.
 
 ![GRM Schedule Timeline View](/img/case-studies/grm/grm-schedule-timeline-details.webp)
 
@@ -60,9 +60,9 @@ The List view shares many of the elements of the Timeline view including the tim
 
 ## Manage Contacts Pane
 
-Operators can view additional detail on a contact by clicking on it in the timeline or row in the list view. This detail is presented in a [Modeless Pane](/patterns/modeless-panes) that draws in from the right side of the window so operators aren’t taken away from the main app view. The data in the pane is presented in read-only form initially, but a Modify Contact button swaps the read-only view for an editable one, allowing operators to change the contact’s settings. Similarly, to schedule a new contact, operators can click on the Add Contact button which opens the pane to specify settings.
+Operators can view additional detail on a contact by clicking on it in the timeline or row in the list view. This detail is presented in a [Modeless Pane](/patterns/modeless-panes/) that draws in from the right side of the window so operators aren’t taken away from the main app view. The data in the pane is presented in read-only form initially, but a Modify Contact button swaps the read-only view for an editable one, allowing operators to change the contact’s settings. Similarly, to schedule a new contact, operators can click on the Add Contact button which opens the pane to specify settings.
 
-The image below shows the Contact pane for this Add Contact task flow. To see the view contact and modify contact variants of the pane, and more design and task flow details, download the [GRM Design Specification or Wireframes](/grm-service-ux-design/grm-schedule/#design-materials-and-source-code). You can also interact with these elements in the [GRM Schedule Sample App](https://grm-schedule-react.netlify.app).
+The image below shows the Contact pane for this Add Contact task flow. To see the view contact and modify contact variants of the pane, and more design and task flow details, download the [GRM Design Specification or Wireframes](/case-studies/grm-service-ux-design/grm-schedule/#design-materials-and-source-code). You can also interact with these elements in the [GRM Schedule Sample App](https://grm-schedule-react.netlify.app).
 
 :::two-col
 ![GRM Schedule Manage Contacts Pane](/img/case-studies/grm/grm-schedule-manage-contacts-details.webp)
