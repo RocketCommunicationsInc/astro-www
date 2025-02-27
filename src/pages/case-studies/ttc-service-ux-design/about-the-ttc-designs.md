@@ -56,7 +56,7 @@ The TT&C App Suite comprises three integrated apps: Monitor, Command, & Investig
 :::col
 The TT&C Monitor app allows operators to monitor status, alerts, health, and function of an individual satellite and satellite constellations.
 
-- [Overview of TT&C Monitor](/ttc-service-ux-design/ttc-monitor)
+- [Overview of TT&C Monitor](/case-studies/ttc-service-ux-design/ttc-monitor/)
 - [Launch TT&C Monitor Sample App](https://monitor-ttc.netlify.app)
 - <button data-app="TT&C" type="button" class="p-source-code-dialog-open">Request Source Code Access</button>
   :::
@@ -70,7 +70,7 @@ The TT&C Monitor app allows operators to monitor status, alerts, health, and fun
 :::col
 The TT&C Command app allows operators to send and receive streams of data to and from a spacecraft using a set of commands, often referred to as a pass plan.
 
-- [Overview of TT&C Command](/ttc-service-ux-design/ttc-command)
+- [Overview of TT&C Command](/case-studies/ttc-service-ux-design/ttc-command/)
 - [Launch TT&C Command Sample App](https://ttc-command-react.netlify.app/)
 - <button data-app="TT&C" type="button" class="p-source-code-dialog-open">Request Source Code Access</button>
 
@@ -85,7 +85,7 @@ The TT&C Command app allows operators to send and receive streams of data to and
 :::col
 The TT&C Investigate App allows operators to investigate spacecraft alerts and anomalies and analyze subsystem mnemonics, measurements, limits, etc.
 
-- [Overview of TT&C Investigate](/ttc-service-ux-design/ttc-investigate)
+- [Overview of TT&C Investigate](/case-studies/ttc-service-ux-design/ttc-investigate/)
 - [Launch TT&C Investigate Sample App](https://ttc-command-react.netlify.app)
 - <button data-app="TT&C" type="button" class="p-source-code-dialog-open">Request Source Code Access</button>
   :::

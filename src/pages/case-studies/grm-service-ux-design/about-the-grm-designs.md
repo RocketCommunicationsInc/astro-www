@@ -53,7 +53,7 @@ The GRM App Suite comprises three integrated sample apps: Dashboard, Equipment M
 
 The GRM Dashboard app rolls up all information necessary for providing operators the highest level of situational awareness.
 
-- [Overview of GRM Dashboard](/grm-service-ux-design/grm-dashboard/)
+- [Overview of GRM Dashboard](/case-studies/grm-service-ux-design/grm-dashboard/)
 - [Launch GRM Dashboard Sample App](https://grm-dashboard-react.netlify.app)
 - <button data-app="GRM" type="button" class="p-source-code-dialog-open">Request Source Code Access</button>
 
@@ -68,7 +68,7 @@ The GRM Dashboard app rolls up all information necessary for providing operators
 
 The GRM Equipment Manager app consolidates all ground equipment in one place, allowing operators to view status and request maintenance.
 
-- [Overview of GRM Equipment Manager](/grm-service-ux-design/grm-equipment-manager/)
+- [Overview of GRM Equipment Manager](/case-studies/grm-service-ux-design/grm-equipment-manager/)
 - [Launch GRM Equipment Manager Sample App](https://grm-equipment-react-ts.netlify.app)
 - <button data-app="GRM" type="button" class="p-source-code-dialog-open">Request Source Code Access</button>
 
@@ -83,7 +83,7 @@ The GRM Equipment Manager app consolidates all ground equipment in one place, al
 
 The GRM Schedule app allows operators to view and manage the full schedule of contacts in their sphere of responsibility.
 
-- [Overview of GRM Schedule](/grm-service-ux-design/grm-schedule/)
+- [Overview of GRM Schedule](/case-studies/grm-service-ux-design/grm-schedule/)
 - [Launch GRM Schedule Sample App](https://grm-schedule-react.netlify.app)
 - <button data-app="GRM" type="button" class="p-source-code-dialog-open">Request Source Code Access</button>
 

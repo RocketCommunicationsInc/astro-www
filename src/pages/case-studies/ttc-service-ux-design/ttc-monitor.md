@@ -7,7 +7,7 @@ title: TT&C Monitor
 description: The TT&C Monitor app monitors system and constellation health, upcoming contacts and system trends.
 ---
 
-[Launch TT&C Monitor Sample App](https://monitor-ttc.netlify.app) | [Design Materials and Source Code](/ttc-service-ux-design/ttc-monitor/#design-materials-and-source-code)
+[Launch TT&C Monitor Sample App](https://monitor-ttc.netlify.app) | [Design Materials and Source Code](/case-studies/ttc-service-ux-design/ttc-monitor/#design-materials-and-source-code)
 
 For operators of a TT&C service, maintaining situational awareness is of critical importance, and the TT&C Monitor App is designed to support this requirement. During the UX research effort, operators expressed a desire for a quick and efficient way to view overall status of their constellation and all of their systems, something lacking in their current systems. To deliver on this, the design team worked with domain experts and the operators to identify the most important data and then display it in a clear, logical manner in the app.
 
@@ -15,13 +15,13 @@ The Monitor App, as an operator’s primary TT&C App, would constantly occupy on
 
 ![TT&C Monitor App](/img/case-studies/tt&c/ttc-monitor-app.webp)
 
-There are four main areas in the Monitor App: the Global Status Bar, Alerts panel, Constellation panel, and Watcher panel. The key elements are described below, but you can find much more design and task flow detail in the [TT&C Design Specification and Wireframes](/ttc-service-ux-design/ttc-monitor/#design-materials-and-source-code) documents. You can also launch the [TT&C Monitor Sample App](https://monitor-ttc.netlify.app) to explore the design interactively.
+There are four main areas in the Monitor App: the Global Status Bar, Alerts panel, Constellation panel, and Watcher panel. The key elements are described below, but you can find much more design and task flow detail in the [TT&C Design Specification and Wireframes](/case-studies/ttc-service-ux-design/ttc-monitor/#design-materials-and-source-code) documents. You can also launch the [TT&C Monitor Sample App](https://monitor-ttc.netlify.app) to explore the design interactively.
 
 ![TT&C Monitor App Details](/img/case-studies/tt&c/ttc-monitor-app-details.webp)
 
 ## Global Status Bar
 
-As outlined on the [About TT&C Designs](/ttc-service-ux-design/about-the-ttc-designs) page, each of the apps in the TT&C Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar), an Astro component featured in all three apps. Though the status bar contents vary somewhat between apps in order to best support each app’s individual workflows, all contain a [Clock](/components/clock), [Monitoring Icons](/components/icons-and-symbols), and an App Switcher Menu that allows operators to transition quickly from one TT&C task flow to another.
+As outlined on the [About TT&C Designs](/case-studies/ttc-service-ux-design/about-the-ttc-designs/) page, each of the apps in the TT&C Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar/), an Astro component featured in all three apps. Though the status bar contents vary somewhat between apps in order to best support each app’s individual workflows, all contain a [Clock](/components/clock/), [Monitoring Icons](/components/icons-and-symbols/), and an App Switcher Menu that allows operators to transition quickly from one TT&C task flow to another.
 
 ![TT&C Monitor App Details](/img/case-studies/tt&c/ttc-monitor-global-status-bar-details.webp)
 
@@ -45,7 +45,7 @@ The Alerts panel provides operators with a roll-up of alerts across the ground s
 
 ## Constellation
 
-The Constellation panel shows the contacts for the satellites in the constellation. The operator has the option to either view these in a Timeline View, which shows past, current, and future contacts along a scalable time range, or in a List View, which provides additional detail on each pass. In both views, the user can click a contact to open a [Modeless Pane](/patterns/modeless-panes) containing its Contact Details or the associated Pass Plan.
+The Constellation panel shows the contacts for the satellites in the constellation. The operator has the option to either view these in a Timeline View, which shows past, current, and future contacts along a scalable time range, or in a List View, which provides additional detail on each pass. In both views, the user can click a contact to open a [Modeless Pane](/patterns/modeless-panes/) containing its Contact Details or the associated Pass Plan.
 
 ### Timeline View
 

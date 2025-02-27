@@ -7,7 +7,7 @@ title: GRM Dashboard
 description: Helps operators maintain situational awareness.
 ---
 
-[Launch GRM Dashboard Sample App](https://grm-dashboard-react.netlify.app) | [Design Materials and Source Code](/grm-service-ux-design/grm-dashboard/#design-materials-and-source-code)
+[Launch GRM Dashboard Sample App](https://grm-dashboard-react.netlify.app) | [Design Materials and Source Code](/case-studies/grm-service-ux-design/grm-dashboard/#design-materials-and-source-code)
 
 Given the large number of satellite contacts and equipment assets that operators are responsible for, maintaining situational awareness poses a significant challenge. Operators must be able to quickly identify equipment issues and resolve them so that there are no missed opportunities to communicate with satellites. The GRM Dashboard app was designed with this goal in mind. As an operator's primary GRM app, it would constantly occupy one of their large displays.
 
@@ -19,7 +19,7 @@ There are three main areas of the GRM Dashboard app: the Global Status Bar, the 
 
 ## Global Status Bar
 
-As outlined on the [About GRM Designs](/grm-service-ux-design/about-the-grm-designs) page, each of the apps in the GRM Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar), an Astro component featured in all three apps. Status bars contain an App Switcher Menu, that allows operators to transition quickly from one GRM task flow to another, a [Clock](/components/clock), and [Monitoring Icons](/components/icons-and-symbols). Status bar contents may vary somewhat between apps in order to best support each app’s individual workflows.
+As outlined on the [About GRM Designs](/case-studies/grm-service-ux-design/about-the-grm-designs/) page, each of the apps in the GRM Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar/), an Astro component featured in all three apps. Status bars contain an App Switcher Menu, that allows operators to transition quickly from one GRM task flow to another, a [Clock](/components/clock/), and [Monitoring Icons](/components/icons-and-symbols/). Status bar contents may vary somewhat between apps in order to best support each app’s individual workflows.
 
 ![GRM Dashboard App Details](/img/case-studies/grm/grm-dashboard-global-status-bar-details.webp)
 
@@ -64,7 +64,7 @@ The Equipment tab provides operators with a usage summary of the major equipment
 
 ## Alert Details
 
-If operators choose to expand an alert via the Investigate button in the Alerts panel, an Alert Details page is displayed in the main content area. The content of the page changes somewhat depending on whether the alert pertains to a contact or a piece of equipment, but each variant allows operators to view additional detail on the alert, dismiss, acknowledge it, or take some action to remedy it. The image below shows an example of the Alert Details page for a contact-related alert; you can find information on the equipment variant along with relevant task flows in the [GRM Design Specifications](/grm-service-ux-design/grm-dashboard/#design-materials-and-source-code) and Wireframes documents.
+If operators choose to expand an alert via the Investigate button in the Alerts panel, an Alert Details page is displayed in the main content area. The content of the page changes somewhat depending on whether the alert pertains to a contact or a piece of equipment, but each variant allows operators to view additional detail on the alert, dismiss, acknowledge it, or take some action to remedy it. The image below shows an example of the Alert Details page for a contact-related alert; you can find information on the equipment variant along with relevant task flows in the [GRM Design Specifications](/case-studies/grm-service-ux-design/grm-dashboard/#design-materials-and-source-code) and Wireframes documents.
 
 ![GRM Dashboard Alert Details](/img/case-studies/grm/grm-dashboard-alerts-details.webp)
 
@@ -78,7 +78,7 @@ If operators choose to expand an alert via the Investigate button in the Alerts 
 
 ## Contact Details
 
-If operators choose to click a specific contact within the Current Contacts table, a Contact Details page is displayed in the main content area. The content of the page allows operators to view additional detail on the contact and take action to modify it if necessary. The image below shows an example of the Contact Details page; you can find additional information with relevant task flows in the [GRM Design Specifications](/grm-service-ux-design/grm-dashboard/#design-materials-and-source-code) and Wireframes documents.
+If operators choose to click a specific contact within the Current Contacts table, a Contact Details page is displayed in the main content area. The content of the page allows operators to view additional detail on the contact and take action to modify it if necessary. The image below shows an example of the Contact Details page; you can find additional information with relevant task flows in the [GRM Design Specifications](/case-studies/grm-service-ux-design/grm-dashboard/#design-materials-and-source-code) and Wireframes documents.
 
 ![GRM Dashboard Contact Details](/img/case-studies/grm/grm-dashboard-contact-details.webp)
 
@@ -96,8 +96,6 @@ Below is an animated walkthrough of a representative task flow using the GRM Das
  <figure>
   <a href="#demo" class="demo" name="close">
    <span class="icon-play"></span>
-   <img src="/img/case-studies/grm/grm-dashboard-modify-string-placeholder.png"
-   alt="GRM Dashboard demo" />
   </a>
  </figure>
  <a href="#close" class="lightbox" id="demo" markdown="1">
