@@ -13,21 +13,21 @@ const baseUrl = process.env.BASE_URL
 // }
 
 const PRODUCTS = {
-	'fds': {
-		name: 'FDS Source Code',
-		unit_amount: 10000 // Amount in cents (i.e., $100.00)
-	},
-	'grm': {
-		name: 'GRM Source Code',
-		unit_amount: 10000
-	},
-	'ttc': {
-		name: 'TT&C Source Code',
-		unit_amount: 10000
-	},
+	// 'fds': {
+	// 	name: 'FDS Source Code',
+	// 	unit_amount: 10000 // Amount in cents (i.e., $100.00)
+	// },
+	// 'grm': {
+	// 	name: 'GRM Source Code',
+	// 	unit_amount: 10000
+	// },
+	// 'ttc': {
+	// 	name: 'TT&C Source Code',
+	// 	unit_amount: 10000
+	// },
 	'astro-toolkit-ppt': {
 		name: 'Astro Toolkit PPT',
-		unit_amount: 10000
+		unit_amount: 4900
 	}
   }
   exports.handler = async (event) => {
