@@ -7,7 +7,7 @@ title: GRM Equipment Manager
 description: The GRM Equipment Manager app is designed for operators by consolidating information related to all ground equipment in one place.
 ---
 
-[Launch GRM Equipment Manager Sample App](https://grm-equipment-react-ts.netlify.app) | [Design Materials and Source Code](/grm-service-ux-design/grm-equipment-manager/#design-materials-and-source-code)
+[Launch GRM Equipment Manager Sample App](https://grm-equipment-react-ts.netlify.app) | [Design Materials and Source Code](/case-studies/grm-service-ux-design/grm-equipment-manager/#design-materials-and-source-code)
 
 A core requirement of GRM is to ensure that the equipment on the ground responsible for communicating with satellites is operational and available. This equipment includes hardware such as antennas, processors and software systems that all must interact with one another during a satellite contact. These resources are often shared amongst multiple operations, so if a piece of equipment is not available, it can affect multiple missions. As such, it is critical for operators to quickly identify equipment in need of attention and schedule maintenance to get it back up and running as quickly as possible.
 
@@ -21,7 +21,7 @@ There are three main areas of the GRM Equipment Manager app: the Global Status B
 
 ## Global Status Bar
 
-As outlined on the [About GRM Designs](/grm-service-ux-design/about-the-grm-designs) page, each of the apps in the GRM Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar), an Astro component featured in all three apps. Status bars contain an App Switcher Menu, that allows operators to transition quickly from one GRM task flow to another, a [Clock](/components/clock), and [Monitoring Icons](/components/icons-and-symbols). Status bar contents may vary somewhat between apps in order to best support each app’s individual workflows.
+As outlined on the [About GRM Designs](/case-studies/grm-service-ux-design/about-the-grm-designs/) page, each of the apps in the GRM Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar/), an Astro component featured in all three apps. Status bars contain an App Switcher Menu, that allows operators to transition quickly from one GRM task flow to another, a [Clock](/components/clock/), and [Monitoring Icons](/components/icons-and-symbols/). Status bar contents may vary somewhat between apps in order to best support each app’s individual workflows.
 
 ![GRM Dashboard App Details](/img/case-studies/grm/grm-equipment-manager-global-status-bar-details.webp)
 
@@ -31,7 +31,7 @@ As outlined on the [About GRM Designs](/grm-service-ux-design/about-the-grm-desi
 
 ## Equipment Navigation Tree
 
-Along the left side of the GRM Equipment Manager app is a [navigation tree](/components/tree) that organizes the equipment in hierarchical form. The nature of the hierarchy would likely vary based on the structure of the operation, so it would need to be configurable on a per deployment basis. Using the tree, operators could drill in through the hierarchy and select a piece of equipment. Once the equipment is selected, a new tab is added in the tabbed content area and its details are displayed.
+Along the left side of the GRM Equipment Manager app is a [navigation tree](/components/tree/) that organizes the equipment in hierarchical form. The nature of the hierarchy would likely vary based on the structure of the operation, so it would need to be configurable on a per deployment basis. Using the tree, operators could drill in through the hierarchy and select a piece of equipment. Once the equipment is selected, a new tab is added in the tabbed content area and its details are displayed.
 
 ![GRM Equipment Manager Navigation Tree](/img/case-studies/grm/grm-equipment-manager-nav-tree-details.webp)
 
@@ -74,7 +74,7 @@ There are two panels on the Equipment Details page, one on top designed to provi
 
 A key capability of the Maintenance panel is that it allows operators to schedule a new job. When Schedule Job is clicked, Maintenance Details appear and operators can enter all required information. Once a time frame for the job has been entered, clicking the Calculate Conflicts button will display any schedule conflicts that will arise when this equipment is unavailable during the maintenance window. Seeing this information allows operators to either schedule the maintenance to minimize impact or to see the contacts that will have to be modified to use a different piece of equipment during that period.
 
-Note that maintenance-related task flows are covered in much more detail in the [GRM Design Specification and Wireframes](/grm-service-ux-design/grm-equipment-manager/#design-materials-and-source-code) documents, so be sure to consult those for more information.
+Note that maintenance-related task flows are covered in much more detail in the [GRM Design Specification and Wireframes](/case-studies/grm-service-ux-design/grm-equipment-manager/#design-materials-and-source-code) documents, so be sure to consult those for more information.
 
 ![GRM Equipment Manager Schedule Jobs Details](/img/case-studies/grm/grm-equipment-manager-sched-maint-details.webp)
 

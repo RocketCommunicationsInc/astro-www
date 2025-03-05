@@ -6,11 +6,11 @@ layout: project:layouts/docs/docs-layout.astro
 
 The Service Specific UX Design effort supported Space Systems Command (SSC) to develop consistent, robust applications. The design efforts achieved the goal by applying UX Design processes aligned with the Astro Space UX Design System to create, document, and implement baseline designs as interactive sample apps. The work described here focused on two key services, [Ground Resource Management (GRM)][grm-designs] and [Telemetry, Tracking & Command (TT&C)][ttc-designs] and followed the process below:
 
-- Conducted [UX research](/design-process/research) with users and stakeholders to identify key task flows, constraints, and current pain points in existing systems.
-- Used the findings from this research and the Astro Space UX Design System to [design](/design-process/ui-design) solutions to support GRM and TT&C Services.
+- Conducted [UX research](/resources/research/) with users and stakeholders to identify key task flows, constraints, and current pain points in existing systems.
+- Used the findings from this research and the Astro Space UX Design System to [design](/resources/ui-design/) solutions to support GRM and TT&C Services.
 - In partnership with users and stakeholders, iteratively evaluated and improved on the designs to ensure they support the key task flows in an efficient and usable manner.
-- Implemented the resulting designs as interactive sample applications using the [Astro UI Components](/components/readme).
-- Provided the detailed design specifications, wireframes, sample applications, and source code as [downloadable resources](/downloads) to teams looking to develop applications supporting GRM and TT&C Services.
+- Implemented the resulting designs as interactive sample applications using the [Astro UI Components](/components/getting-started/).
+- Provided the detailed design specifications, wireframes, sample applications, and source code as [downloadable resources](/resources/downloads/) to teams looking to develop applications supporting GRM and TT&C Services.
 
 Design efforts included several hours of user and stakeholder interviews, detailed task flow analysis, and iterative design evaluations based on user feedback. The result of the design activities produced sample app designs to reference for developing future GRM and TT&C apps, fostering consistent and functional user experience across systems.
 
@@ -51,11 +51,11 @@ The [TT&C Investigate][ttc-investigate] app allows the operator to investigate s
 You can get an overview of the design work on the [About the TT&C Designs][ttc-designs] page or use one of the links below to get more information about a particular app.
 ![](/img/case-studies/service-specific-ux-design/ttc-investigate-app.webp)
 
-[grm-designs]: /grm-service-ux-design/about-the-grm-designs
-[grm-dashboard]: /grm-service-ux-design/grm-dashboard
-[grm-equipment]: /grm-service-ux-design/grm-equipment-manager
-[grm-schedule]: /grm-service-ux-design/grm-schedule
-[ttc-designs]: /ttc-service-ux-design/about-the-ttc-designs
-[ttc-monitor]: /ttc-service-ux-design/ttc-monitor
-[ttc-command]: /ttc-service-ux-design/ttc-command
-[ttc-investigate]: /ttc-service-ux-design/ttc-investigate
+[grm-designs]: /case-studies/grm-service-ux-design/about-the-grm-designs/
+[grm-dashboard]: /case-studies/grm-service-ux-design/grm-dashboard/
+[grm-equipment]: /case-studies/grm-service-ux-design/grm-equipment-manager/
+[grm-schedule]: /case-studies/grm-service-ux-design/grm-schedule/
+[ttc-designs]: /case-studies/ttc-service-ux-design/about-the-ttc-designs/
+[ttc-monitor]: /case-studies/ttc-service-ux-design/ttc-monitor/
+[ttc-command]: /case-studies/ttc-service-ux-design/ttc-command/
+[ttc-investigate]: /case-studies/ttc-service-ux-design/ttc-investigate/

@@ -107,7 +107,7 @@ For operators of the FDS Application, flexibility and automating redundant tasks
 
 ### Global Status Bar
 
-The [Global Status Bar](../../components/global-status-bar) of the FDS App contains a single sign in, high level navigation [tabs](../../components/tabs) to switch between tools, a [clock](../../components/clock) and notification, chat and help icons. [Monitoring icons](../../components/icons-and-symbols) may be included if the mission requires additional situational awareness.
+The [Global Status Bar](/components/global-status-bar/) of the FDS App contains a single sign in, high level navigation [tabs](/components/tabs/) to switch between tools, a [clock](/components/clock/) and notification, chat and help icons. [Monitoring icons](/components/icons-and-symbols/) may be included if the mission requires additional situational awareness.
 
 ![Global Status Bar](/img/service-specific-ux-design/fds/fds-global-status-bar.webp)
 
