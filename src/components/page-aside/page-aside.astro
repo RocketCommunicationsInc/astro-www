@@ -1,6 +1,7 @@
 ---
 import IconLink from 'project:components/icon/icon-link.astro'
 import './page-aside.css'
+import PPTCheckoutButton from 'project:components/astro-toolkit-ppt-purchase-button/astro-toolkit-ppt-purchase-button.astro'
 
 interface MarkdownHeading {
 	slug: string;
@@ -27,8 +28,7 @@ if (content.anchorNav && content.anchorNav === 'extended') {
 			anchorHeadings.push(heading)
 		}
 	}
-} // otherwise grab h2s only
-else {
+} else {
 	for (const heading of headings) {
 		if (heading.depth === 2) {
 			anchorHeadings.push(heading)
@@ -45,13 +45,17 @@ if (content.assets?.name) {
 	})
 }
 
-const storybookUrl: string = content.storybook
-	? `https://astro-components.netlify.app/?path=/story/${content.storybook}`
-	: `https://astro-components.netlify.app/`
+const storybookUrl: string = content.storybook ? `https://astro-components.netlify.app/?path=/story/${content.storybook}` : `https://astro-components.netlify.app/`
+const showCheckoutButton = Astro.url.pathname.includes('astro-toolkit-ppt')
 ---
+<!-- {showCheckoutButton
+? <PPTCheckoutButton showTerms={false} />
+: null} -->
 
 <nav class="p-quicklinks-navigation" aria-label="Quick Links">
-	<ul id="top-links">
+	{showCheckoutButton
+		? <PPTCheckoutButton showTerms={false} />
+		: 	<ul id="top-links">
 		<li class="-first">
 			<IconLink
 				type="figma"
@@ -75,34 +79,29 @@ const storybookUrl: string = content.storybook
 			</IconLink>
 		</li>
 	</ul>
-	{
-		anchorHeadings.length > 1
-? (
-			<>
-				<hr />
-				<div class="section-links-wrapper">
-					<ul class="section-links">
-						{anchorHeadings.map((heading, index) => (
-							<li>
-								<a
-									class={
-										index === 0
-											? `${heading.slug} heading-${heading.depth} -highlighted -first`
-											: index === anchorHeadings.length - 1
-											? `${heading.slug} heading-${heading.depth} -last`
-											: `${heading.slug} heading-${heading.depth}`
-									}
-									href={`#${heading.slug}`}
-								>
-									{heading.text}
-								</a>
-							</li>
-						))}
-					</ul>
-				</div>
-			</>
-		)
-: null
+	}
+{ anchorHeadings.length > 1
+	? <hr />
+		<div class='section-links-wrapper'>
+			<ul class='section-links'>{
+				anchorHeadings.map((heading, index) => (
+					<li>
+						<a class={
+							index === 0
+								? `${heading.slug} heading-${heading.depth} -highlighted -first`
+							: index === (anchorHeadings.length - 1)
+								? `${heading.slug} heading-${heading.depth} -last`
+							: `${heading.slug} heading-${heading.depth}`
+						} href={
+							`#${heading.slug}`
+						}>{
+							heading.text
+						}</a>
+					</li>
+				))
+			}</ul>
+		</div>
+		: null
 	}
 </nav>
 <script>

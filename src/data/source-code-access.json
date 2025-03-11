@@ -4,11 +4,11 @@
 	"data": {
 		"heading": {
 			"type": "text",
-			"data": "Request Access to Source Code Repository"
+			"data": "Request App Source Code"
 		},
 		"summary": {
 			"type": "text",
-			"data": "The source code Git repository and other useful documentation for Astro’s apps are hosted on Github.com. Please fill out the form below to request access."
+			"data": "Please fill out the form below to request download links for one or more of the Astro App source codes."
 		},
 		"useLabel": {
 			"type": "text",
@@ -16,7 +16,7 @@
 		},
 		"accessLabel": {
 			"type": "text",
-			"data": "Which Astro App’s Source Code Would You Like Access to?"
+			"data": "Which Astro App’s Source Code Would You Like to Download?"
 		},
 		"content": {
 			"type": "objects",
