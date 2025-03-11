@@ -71,6 +71,16 @@
 		/* Layout */
 		margin-block-start: 0--step;
 	}
+
+	& .p-astro-product-download_file-size {
+		/* Layout */
+		margin-block-end: 0;
+	}
+
+	& .p-astro-product-download_terms {
+		/* Layout */
+		margin-block-end: 8--step;
+	}
 }
 
 .p-astro-product-download_purchase-not-found, .p-astro-product-download_link-expired {
