@@ -24,6 +24,7 @@ const attrs = {
 <Document body-class="p-grid" {...attrs}>
 	<slot slot="head" name="head" />
 	<meta slot="head" name="theme-color" content="#101923" />
+	<script slot="head" src="https://js.stripe.com/v3/"></script>
 	<slot name="top" />
 	<link slot="head" rel="sitemap" href="/sitemap-index.xml">
 	<div class="x-menu">
