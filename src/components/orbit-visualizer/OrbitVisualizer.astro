@@ -1,0 +1,172 @@
+---
+// OrbitVisualizer.astro - An Astro component that displays orbit information
+---
+
+<div class="orbit-wrapper">
+  <div class="orbit-message">
+    <p>Interactive orbit visualizer will load when JavaScript is enabled.</p>
+  </div>
+  <div id="orbit-visualizer-container" class="orbit-container"></div>
+</div>
+
+<style>
+.orbit-wrapper {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin: 20px 0;
+  background-color: #0a0a1a;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.orbit-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.orbit-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+</style>
+
+<script>
+// We'll initialize the orbit visualizer when the DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Check if Three.js is loaded
+  if (typeof THREE === 'undefined') {
+    console.error('THREE.js is not loaded');
+    return;
+  }
+
+  // Initialize orbit visualizer
+  initOrbitVisualizer();
+});
+
+function initOrbitVisualizer() {
+  const container = document.getElementById('orbit-visualizer-container');
+  if (!container) return;
+
+  // Set container to visible
+  container.style.opacity = '1';
+  // Hide message
+  const message = document.querySelector('.orbit-message');
+  if (message) message.style.display = 'none';
+
+  // Create Three.js scene
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+  camera.position.set(0, 25, 0); // Position above the north pole
+
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  renderer.setClearColor(0x000000);
+  container.appendChild(renderer.domElement);
+
+  // Set up orbit controls
+  const controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.05;
+  controls.minDistance = 5;
+  controls.maxDistance = 50;
+
+  // Add lights
+  const ambientLight = new THREE.AmbientLight(0x404040, 0.5);
+  scene.add(ambientLight);
+
+  const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+  directionalLight.position.set(5, 3, 5);
+  scene.add(directionalLight);
+
+  // Create Earth
+  const radius = 3;
+  const earthGeometry = new THREE.SphereGeometry(radius, 32, 32);
+  const earthMaterial = new THREE.MeshPhongMaterial({
+    color: 0x2233ff,
+    shininess: 25
+  });
+  const earth = new THREE.Mesh(earthGeometry, earthMaterial);
+  scene.add(earth);
+
+  // Create a simple LEO orbit
+  const orbitParams = {
+    semiMajorAxis: 5,
+    eccentricity: 0,
+    inclination: 0
+  };
+
+  const orbitLine = createOrbit(orbitParams.semiMajorAxis, orbitParams.eccentricity, orbitParams.inclination, 0x4285f4);
+  scene.add(orbitLine);
+
+  // Animation
+  const clock = new THREE.Clock();
+  function animate() {
+    requestAnimationFrame(animate);
+    controls.update();
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  // Handle window resize
+  window.addEventListener('resize', function() {
+    camera.aspect = container.clientWidth / container.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(container.clientWidth, container.clientHeight);
+  });
+
+  // Function to create orbit
+  function createOrbit(semiMajorAxis, eccentricity, inclination, color) {
+    const points = 100;
+    const orbitPoints = [];
+
+    // For perfectly circular orbits, ensure eccentricity is exactly zero
+    if (eccentricity < 0.001) eccentricity = 0;
+
+    // Create elliptical orbit path
+    for (let i = 0; i <= points; i++) {
+      const angle = (i / points) * Math.PI * 2;
+
+      // Calculate position on ellipse
+      let distance;
+      if (eccentricity === 0) {
+        // Perfect circle when eccentricity is zero
+        distance = semiMajorAxis;
+      } else {
+        // Elliptical orbit formula
+        distance =
+          (semiMajorAxis * (1 - eccentricity * eccentricity)) /
+          (1 + eccentricity * Math.cos(angle));
+      }
+
+      // Calculate position without inclination
+      let x = distance * Math.cos(angle);
+      let y = 0;
+      let z = distance * Math.sin(angle);
+
+      // Apply inclination (rotation around x-axis)
+      const incRad = (inclination * Math.PI) / 180;
+      const newY = y * Math.cos(incRad) - z * Math.sin(incRad);
+      const newZ = y * Math.sin(incRad) + z * Math.cos(incRad);
+
+      // Add point to orbit
+      orbitPoints.push(new THREE.Vector3(x, newY, newZ));
+    }
+
+    // Create orbit line
+    const orbitGeometry = new THREE.BufferGeometry().setFromPoints(orbitPoints);
+    const orbitMaterial = new THREE.LineBasicMaterial({ color: color });
+    return new THREE.Line(orbitGeometry, orbitMaterial);
+  }
+}
+</script>
