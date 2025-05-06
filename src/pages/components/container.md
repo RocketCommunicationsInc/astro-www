@@ -2,14 +2,15 @@
 title: Container
 description: Containers are used to group multiple components into a specific area that allows them to flow in a flexible/responsive manner.
 layout: project:layouts/component-docs/component-docs-layout.astro
-storybook: components-container--default-story
+storybook: components-container--default
 height: 140px
 git: rux-container
 assets:
   name: Container
 sandbox:
-  style: "--y: 180px;"
+  style: '--y: 180px;'
 ---
+
 ## Interactive Example
 
 ::tag{ is=a-playground tag=rux-container }
@@ -28,8 +29,8 @@ Child containers (smaller Containers meant to reside inside of a larger Containe
 
 :::two-col
 
-![Do: Use Containers to build lists, tables, slide outs, and the like with proper component usage and placement.](/img/components/container/container-do-1.webp "Do: Use Containers to build lists, tables, slide outs, and the like with proper component usage and placement.")
+![Do: Use Containers to build lists, tables, slide outs, and the like with proper component usage and placement.](/img/components/container/container-do-1.webp 'Do: Use Containers to build lists, tables, slide outs, and the like with proper component usage and placement.')
 
-![Don’t: Use Containers to add or stack components in an improper or confusing manner.](/img/components/container/container-dont-1.webp "Don’t: Use Containers to add or stack components in an improper or confusing manner.")
+![Don’t: Use Containers to add or stack components in an improper or confusing manner.](/img/components/container/container-dont-1.webp 'Don’t: Use Containers to add or stack components in an improper or confusing manner.')
 
 :::

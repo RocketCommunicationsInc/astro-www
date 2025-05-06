@@ -1,0 +1,4010 @@
+{
+	"A": {
+		"a-file": {
+			"name": "A-File",
+			"description": "full catalog, sent from SPADOC (similar to CAVENet's daft)",
+			"categories": ["orbit_dynamics", "data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"operations",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"orbital_mechanics",
+				"data_processing_tools"
+			]
+		},
+		"acas": {
+			"name": "ACAS",
+			"description": "Assured compliance assessment solution (DISA network security)",
+			"categories": ["security"],
+			"tags": ["security", "policy", "information_security"]
+		},
+		"acc": {
+			"name": "ACC",
+			"description": "Automatic Catalog Correction",
+			"categories": ["management", "data_processing"],
+			"tags": [
+				"space_operations",
+				"management",
+				"data_management",
+				"operations",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"agile_management",
+				"software_engineering",
+				"data_processing_tools"
+			]
+		},
+		"acs": {
+			"name": "ACS",
+			"description": "Attitude Control System, which is a subsystem that calculates the SV's whereabouts and positioning.",
+			"categories": ["satops", "engineering"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"technical",
+				"system_engineering",
+				"technical_training",
+				"software_engineering",
+				"hardware_engineering",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"adc": {
+			"name": "ADC",
+			"description": "Automatic differential correction",
+			"categories": ["data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"data_processing_tools"
+			]
+		},
+		"aehf": {
+			"name": "AEHF",
+			"description": "Advanced Extreme High Frequency",
+			"categories": ["communications"],
+			"tags": [
+				"space_operations",
+				"communications",
+				"operations",
+				"technical",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"afb": {
+			"name": "AFB",
+			"description": "Air Force Base",
+			"categories": ["organization"],
+			"tags": ["organization", "policy"]
+		},
+		"afspc": {
+			"name": "AFSPC",
+			"description": "Air Force Space Command",
+			"categories": ["organization"],
+			"tags": ["organization", "policy"]
+		},
+		"agom": {
+			"name": "AGOM",
+			"description": "area gamma over mass; radiation pressure",
+			"categories": ["orbit_dynamics"],
+			"tags": ["space_operations", "operations", "orbital_mechanics"]
+		},
+		"amic": {
+			"name": "AMIC",
+			"description": "ASW message interface to CPS.",
+			"categories": ["communications"],
+			"tags": [
+				"space_operations",
+				"communications",
+				"operations",
+				"technical",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"an/tpy-2": {
+			"name": "AN/TPY-2",
+			"description": "Army/Navy Transportable Radar",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"aof": {
+			"name": "AOF",
+			"description": "area over flight (AS s/w computes potential ground visibility to overhead sats)",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"aor": {
+			"name": "AOR",
+			"description": "Area of Responsibility",
+			"categories": ["general_terms"],
+			"tags": [""]
+		},
+		"aos": {
+			"name": "AOS",
+			"description": "Acquisition of Signal (or Satellite). AOS is the time that a satellite rises above the horizon of an observer.",
+			"categories": ["orbit_dynamics"],
+			"tags": ["space_operations", "operations", "orbital_mechanics"]
+		},
+		"aobs": {
+			"name": "AObs",
+			"description": "associated observations",
+			"categories": ["data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"data_processing_tools"
+			]
+		},
+		"art": {
+			"name": "ART",
+			"description": "Agile Release Train",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"as": {
+			"name": "AS",
+			"description": "astrodynamics standards (AFSPC suite of JSpOC-compatible astro algorithms)",
+			"categories": ["orbit_dynamics"],
+			"tags": ["space_operations", "operations", "orbital_mechanics"]
+		},
+		"asat": {
+			"name": "ASAT",
+			"description": "Anti-satellite weapons",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"ascc": {
+			"name": "ASCC",
+			"description": "alternative space control center (former name of DSC2-D)",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"asot": {
+			"name": "ASOT",
+			"description": "Authoritative Source of Truth",
+			"categories": ["analysis_tools"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"analysis_tools",
+				"technical",
+				"data_analysis",
+				"data_processing_tools"
+			]
+		},
+		"asp": {
+			"name": "ASP",
+			"description": "automatic satellite propagation (creates ephemeris)",
+			"categories": ["orbit_dynamics"],
+			"tags": ["space_operations", "operations", "orbital_mechanics"]
+		},
+		"astat": {
+			"name": "ASTAT",
+			"description": "Association Status (0-4), residuals for each observation in the pass are evaluated against preconfigured association thresholds and multipliers representing established Association Status. Passes achieving ASTAT 0 or 1 are considered verified. Passes achieving ASTAT 2, 3, or 4 are “detagged” by the system and sent to retag processing.",
+			"categories": ["data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"data_processing_tools"
+			]
+		},
+		"asw": {
+			"name": "ASW",
+			"description": "astrodynamics support workstation (generates eGP TLEs and VCMs); Suite of GUI applications to support SP Catalog Maintenance, Conjunction Assessment, Catalog Metrics, and Sensor Calibration; Omitron legacy COTS product at CSpOC",
+			"categories": ["satops", "communications"],
+			"tags": [
+				"space_operations",
+				"communications",
+				"operations",
+				"technical",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"atl": {
+			"name": "ATL",
+			"description": "Applied Technology Lab, a physical lab & industry group",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"atlas": {
+			"name": "ATLAS",
+			"description": "Advanced Tracking Launch Analysis System",
+			"categories": ["analysis_tools"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"analysis_tools",
+				"technical",
+				"data_analysis",
+				"data_processing_tools"
+			]
+		},
+		"atp": {
+			"name": "ATP",
+			"description": "authority to proceed",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"ats": {
+			"name": "ATS",
+			"description": "Absolute Time Sequence",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"awe": {
+			"name": "AWE",
+			"description": "alarm warning and events (NDPP screen)",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"aaas": {
+			"name": "AaaS",
+			"description": "Antenna as a Service",
+			"categories": ["communications"],
+			"tags": [
+				"space_operations",
+				"communications",
+				"operations",
+				"technical",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"[accordion](/components/accordion/)": {
+			"name": "[Accordion](/components/accordion/)",
+			"description": "A navigational device which presents a hierarchical set of items in which only a single branch of that hierarchy is exposed at one time.",
+			"categories": ["design"],
+			"tags": ["ui"]
+		},
+		"adaline": {
+			"name": "AdaLinE",
+			"description": "Adaptive Linear Element (algorithm for maneuver detection/processing)",
+			"categories": ["analysis_tools"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"analysis_tools",
+				"technical",
+				"data_analysis",
+				"data_processing_tools"
+			]
+		},
+		"alert": {
+			"name": "Alert",
+			"description": "Message with a severity and category that is triggered when a mnemonic passes a threshold value",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"apogee": {
+			"name": "Apogee",
+			"description": "farthest point an object in orbit reaches from Earth (closest point is Perigee)",
+			"categories": ["orbit_dynamics"],
+			"tags": ["space_operations", "operations", "orbital_mechanics"]
+		},
+		"[application-state](/components/application-state/)": {
+			"name": "[Application State](/components/application-state/)",
+			"description": "A tag on the Global Status Bar that presents what state the application is in, such as Production, Review, or Testing.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		}
+	},
+	"B": {
+		"b": {
+			"name": "B",
+			"description": "Drag ballistic coefficient",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"bac": {
+			"name": "BAC",
+			"description": "budget at completion",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"bam": {
+			"name": "BAM",
+			"description": "Breakup Analysis Module (AS app, finds time/location of satellite breakup)",
+			"categories": ["analysis_tools"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"analysis_tools",
+				"technical",
+				"data_analysis",
+				"data_processing_tools"
+			]
+		},
+		"bcr": {
+			"name": "BCR",
+			"description": "baseline change request",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"bcwp": {
+			"name": "BCWP",
+			"description": "budgeted cost of work performed",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"bcws": {
+			"name": "BCWS",
+			"description": "budgeted cost of work scheduled",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"bda": {
+			"name": "BDA",
+			"description": "battle damage assessment",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"bluf": {
+			"name": "BLUF",
+			"description": "Bottom Line Up Front",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"bmc2": {
+			"name": "BMC2",
+			"description": "ballistic missile command and control",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"bmc3": {
+			"name": "BMC3",
+			"description": "Battle Management, Command, Control, and Communications",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"bmews": {
+			"name": "BMEWS",
+			"description": "ballistic missile early warning system",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"bo": {
+			"name": "BO",
+			"description": "Business Owner",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"boe": {
+			"name": "BOE",
+			"description": "basis of estimate",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"bom": {
+			"name": "BOM",
+			"description": "bill of material",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"bpp": {
+			"name": "BPP",
+			"description": "BMEWS and Pave Paws",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"bsa": {
+			"name": "BSA",
+			"description": "battle space analyst (OA at the NSDC)",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"bstar": {
+			"name": "BSTAR",
+			"description": "SGP4-type drag coefficient",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"bv": {
+			"name": "BV",
+			"description": "Business value",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"batchdc": {
+			"name": "BatchDC",
+			"description": "batch DC (AS app that performs least squares batch DCs using SSN obs)",
+			"categories": ["data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"data_processing_tools"
+			]
+		},
+		"brig-gen": {
+			"name": "Brig Gen",
+			"description": "Brigadier General",
+			"categories": ["organization"],
+			"tags": ["organization", "policy"]
+		},
+		"buster": {
+			"name": "Buster",
+			"description": "Identify and flag classified data",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"[button](/components/button/)": {
+			"name": "[Button](/components/button/)",
+			"description": "A Button allows users to trigger actions by clicking, tapping, or pressing a corresponding key on a keyboard, such as “Enter.”",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		}
+	},
+	"C": {
+		"c-&-c": {
+			"name": "C & C",
+			"description": "command and control",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"c2": {
+			"name": "C2",
+			"description": "command and control",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"ca": {
+			"name": "CA",
+			"description": "Conjunction Assessment",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"cac": {
+			"name": "CAC",
+			"description": "Common Access Card",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"cadt": {
+			"name": "CADT",
+			"description": "Conjunction Assessment Duty Technician",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"cal": {
+			"name": "CAL",
+			"description": "cost account lead",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"camp": {
+			"name": "CAMP",
+			"description": "(As in Space Camp) Commercially Augmented Mission Platform",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"capco": {
+			"name": "CAPCO",
+			"description": "Controlled Access Program Coordination Office",
+			"categories": ["organization"],
+			"tags": ["organization", "policy"]
+		},
+		"cara": {
+			"name": "CARA",
+			"description": "Conjunction Assessment Risk Analysis",
+			"categories": ["organization", "analysis_tools"],
+			"tags": [
+				"space_operations",
+				"organization",
+				"data_management",
+				"analysis_tools",
+				"technical",
+				"policy",
+				"data_analysis",
+				"data_processing_tools"
+			]
+		},
+		"cavenet": {
+			"name": "CAVENet",
+			"description": "Correlation, Analysis, and Verification of Ephemerides Network; SGI-based computer network",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"cbrne": {
+			"name": "CBRNE",
+			"description": "Chemical, Biological, Radiological, Nuclear, and Explosives",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"cc": {
+			"name": "CC",
+			"description": "Crew Commander",
+			"categories": ["organization"],
+			"tags": ["organization", "policy"]
+		},
+		"ccas": {
+			"name": "CCAS",
+			"description": "combat capability assessment system, outputs scheduled sensor downtime",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"ccsc": {
+			"name": "CCSC",
+			"description": "Command and Control System – Consolidated",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"ccsds": {
+			"name": "CCSDS",
+			"description": "consultative committee for space data services",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"cdm": {
+			"name": "CDM",
+			"description": "Conjunction Data Message",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"cdr": {
+			"name": "CDR",
+			"description": "Commander",
+			"categories": ["organization"],
+			"tags": ["organization", "policy"]
+		},
+		"cdrl": {
+			"name": "CDRL",
+			"description": "contract/customer data requirements list",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"cfe": {
+			"name": "CFE",
+			"description": "Common Framework Environment (Dahlgren)",
+			"categories": ["engineering"],
+			"tags": [
+				"space_operations",
+				"technical",
+				"system_engineering",
+				"technical_training",
+				"software_engineering",
+				"hardware_engineering",
+				"system_operations"
+			]
+		},
+		"cli": {
+			"name": "CLI",
+			"description": "Command Line Interface",
+			"categories": ["engineering", "human_computer_interaction"],
+			"tags": [
+				"space_operations",
+				"user_interface",
+				"technical",
+				"human_computer_interaction",
+				"system_engineering",
+				"technical_training",
+				"software_engineering",
+				"hardware_engineering",
+				"system_operations"
+			]
+		},
+		"clin": {
+			"name": "CLIN",
+			"description": "contract line item number",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"cmas": {
+			"name": "CMAS",
+			"description": "Cheyenne Mountain Air Station",
+			"categories": ["organization"],
+			"tags": ["organization", "policy"]
+		},
+		"cmd": {
+			"name": "CMD",
+			"description": "Command/s",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"cmmc": {
+			"name": "CMMC",
+			"description": "Cybersecurity Maturity Model Certification",
+			"categories": ["security"],
+			"tags": ["security", "policy", "information_security"]
+		},
+		"cns": {
+			"name": "CNS",
+			"description": "Capabilities Needs Statements",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"coa": {
+			"name": "COA",
+			"description": "Course of Action",
+			"categories": ["analysis_tools"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"analysis_tools",
+				"technical",
+				"data_analysis",
+				"data_processing_tools"
+			]
+		},
+		"coco": {
+			"name": "COCO",
+			"description": "co-planar comparison (AS app that compares TLEs to find co-planar orbits)",
+			"categories": ["analysis_tools"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"analysis_tools",
+				"technical",
+				"data_analysis",
+				"data_processing_tools"
+			]
+		},
+		"codac": {
+			"name": "CODAC",
+			"description": "catalog orbit determination accuracy",
+			"categories": ["data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"data_processing_tools"
+			]
+		},
+		"cola": {
+			"name": "COLA",
+			"description": "Launch Collision Avoidance",
+			"categories": ["organization"],
+			"tags": ["organization", "policy"]
+		},
+		"combo": {
+			"name": "COMBO",
+			"description": "computation of miss between orbits",
+			"categories": ["communications", "data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"communications",
+				"operations",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"space_communications",
+				"data_processing_tools",
+				"system_operations"
+			]
+		},
+		"comsec": {
+			"name": "COMSEC",
+			"description": "Communications Security",
+			"categories": ["security"],
+			"tags": ["security", "policy", "information_security"]
+		},
+		"conops": {
+			"name": "CONOPS",
+			"description": "Concept of Operations",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"capt": {
+			"name": "Capt",
+			"description": "Captain",
+			"categories": ["organization"],
+			"tags": ["organization", "policy"]
+		},
+		"[checkbox](/components/checkbox/)": {
+			"name": "[Checkbox](/components/checkbox/)",
+			"description": "A Checkbox allows a user to select a value from a small set of options.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"[classification-&-control-markings](/components/classification-markings/)": {
+			"name": "[Classification & Control Markings](/components/classification-markings/)",
+			"description": "Markings required to be present on software that includes controlled or classified information.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"[clock](/components/clock/)": {
+			"name": "[Clock](/components/clock/)",
+			"description": "Clock shows the current date and time, and optional AOS and LOS timers.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"coin": {
+			"name": "CoIn",
+			"description": "communications infrastructure",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"col": {
+			"name": "Col",
+			"description": "Colonel",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"[color-palettes](/design-tokens/reference)": {
+			"name": "[Color Palettes](/design-tokens/reference)",
+			"description": "The list of color values used in and approved by the Astro design system.",
+			"categories": ["design"],
+			"tags": [""]
+		},
+		"comms": {
+			"name": "Comms",
+			"description": "Communications",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"[compliance](/design-guidelines/compliance/)": {
+			"name": "[Compliance](/design-guidelines/compliance/)",
+			"description": "A list of rules used to determine if products align with Astro design and usage patterns.",
+			"categories": ["general_terms"],
+			"tags": [""]
+		},
+		"[concept-sketch](/design-process/ui-design/)": {
+			"name": "[Concept Sketch](/design-process/ui-design/)",
+			"description": "A sketch on paper that lays out the main content workspace and controls and clarifies the flow of user interaction from screen-to-screen.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"conjunction": {
+			"name": "Conjunction",
+			"description": "Collision Risk",
+			"categories": ["satops"],
+			"tags": ["general_terms"]
+		},
+		"contact": {
+			"name": "Contact",
+			"description": "Period in which a spacecraft is able to be in contact with a ground system",
+			"categories": ["satops"],
+			"tags": ["general_terms"]
+		}
+	},
+	"D": {
+		"d3soe": {
+			"name": "D3SOE",
+			"description": "denied, degraded and disrupted space operating environment",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"da": {
+			"name": "DA",
+			"description": "data access",
+			"categories": ["orbit_dynamics"],
+			"tags": ["space_operations", "operations", "orbital_mechanics"]
+		},
+		"dal": {
+			"name": "DAL",
+			"description": "data accession list",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"db-state": {
+			"name": "DB State",
+			"description": "Database State",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"dc": {
+			"name": "DC",
+			"description": "Differential Correction; techniques for improving GPS positioning accuracy",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"dca": {
+			"name": "DCA",
+			"description": "dynamic calibration atmosphere",
+			"categories": ["organization"],
+			"tags": ["organization", "policy"]
+		},
+		"dce": {
+			"name": "DCE",
+			"description": "differential correction ephemeris",
+			"categories": ["orbit_dynamics", "data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"operations",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"orbital_mechanics",
+				"data_processing_tools"
+			]
+		},
+		"dcf": {
+			"name": "DCF",
+			"description": "DSC2 Common Framework",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"dcio": {
+			"name": "DCIO",
+			"description": "Deputy Chief Information Officer",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"dcp": {
+			"name": "DCP",
+			"description": "dynamic consider parameter",
+			"categories": ["orbit_dynamics", "data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"operations",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"orbital_mechanics",
+				"data_processing_tools"
+			]
+		},
+		"dcy": {
+			"name": "DCY",
+			"description": "decay report or a command initiating a decay report",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"disa": {
+			"name": "DISA",
+			"description": "Defense Information Systems Agency",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"disn": {
+			"name": "DISN",
+			"description": "Defense Information Systems Network",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"dla": {
+			"name": "DLA",
+			"description": "dynamic LUPI algorithm",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"dnp": {
+			"name": "DNP",
+			"description": "Do Not Process",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"dns": {
+			"name": "DNS",
+			"description": "Domain Name System",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"doors": {
+			"name": "DOORS",
+			"description": "Dynamic Object-Oriented Requirements System",
+			"categories": ["engineering"],
+			"tags": [
+				"space_operations",
+				"technical",
+				"system_engineering",
+				"technical_training",
+				"software_engineering",
+				"hardware_engineering",
+				"system_operations"
+			]
+		},
+		"dot&e": {
+			"name": "DOT&E",
+			"description": "Director of Operational Test and Evaluation",
+			"categories": ["organization"],
+			"tags": ["organization", "policy"]
+		},
+		"doy": {
+			"name": "DOY",
+			"description": "Day of Year",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"dra": {
+			"name": "DRA",
+			"description": "Data Reduction and Analysis",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"drb": {
+			"name": "DRB",
+			"description": "Discrepancy Review Board",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"ds": {
+			"name": "DS",
+			"description": "deep space",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"dsc2-d": {
+			"name": "DSC2-D",
+			"description": "distributed space command and control at Dahlgren",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"dsil": {
+			"name": "DSIL",
+			"description": "Distributed Systems Integration Laboratories",
+			"categories": ["engineering"],
+			"tags": [
+				"space_operations",
+				"technical",
+				"system_engineering",
+				"technical_training",
+				"software_engineering",
+				"hardware_engineering",
+				"system_operations"
+			]
+		},
+		"dx": {
+			"name": "DX",
+			"description": "Developer Experience",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"[data-visualization](/patterns/data-visualization/)": {
+			"name": "[Data Visualization](/patterns/data-visualization/)",
+			"description": "The goal of Data Visualization is to make complex information accessible and easy to digest in a visual manner.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"degs": {
+			"name": "Degs",
+			"description": "Degree/s",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"delta": {
+			"name": "Delta",
+			"description": "Symbol for change",
+			"categories": ["orbit_dynamics", "general_terms"],
+			"tags": [
+				"space_operations",
+				"general_terms",
+				"operations",
+				"orbital_mechanics"
+			]
+		},
+		"delta-v": {
+			"name": "Delta-V",
+			"description": "Capability for a satellite to maneuver in orbit",
+			"categories": ["orbit_dynamics"],
+			"tags": ["space_operations", "operations", "orbital_mechanics"]
+		},
+		"[design-tokens](/design-tokens/getting-started/)": {
+			"name": "[Design Tokens](/design-tokens/getting-started/)",
+			"description": "A pairing of the same code and visual properties in a format that is deployable across all platforms, acting as a single source of truth for both designers and developers.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"[dialog](/components/dialog/)": {
+			"name": "[Dialog](/components/dialog/)",
+			"description": "A Dialog interrupts app processing to prompt a user to confirm an action or acknowledge a piece of information. It displays information along with a set of buttons allowing users to accept or cancel the actions presented within the Dialog.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"doc": {
+			"name": "DoC",
+			"description": "Demonstration of Capabilities",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"dod": {
+			"name": "DoD",
+			"description": "Department of Defense",
+			"categories": ["organization"],
+			"tags": ["organization", "policy"]
+		},
+		"dos": {
+			"name": "DoS",
+			"description": "Department of State",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		}
+	},
+	"E": {
+		"eac": {
+			"name": "EAC",
+			"description": "revised budget based on BAC and VAC",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"eci": {
+			"name": "ECI",
+			"description": "earth-centered inertial reference frame",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"ecp": {
+			"name": "ECP",
+			"description": "Engineering change proposal",
+			"categories": ["engineering"],
+			"tags": [
+				"space_operations",
+				"technical",
+				"system_engineering",
+				"technical_training",
+				"software_engineering",
+				"hardware_engineering",
+				"system_operations"
+			]
+		},
+		"edr": {
+			"name": "EDR",
+			"description": "energy dissipation rate",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"egp": {
+			"name": "EGP",
+			"description": "extrapolated general perturbations",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"egr": {
+			"name": "EGR",
+			"description": "error growth rate",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"elcomp": {
+			"name": "ELCOMP",
+			"description": "TLE comparison app",
+			"categories": ["analysis_tools", "engineering"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"analysis_tools",
+				"technical",
+				"data_analysis",
+				"system_engineering",
+				"technical_training",
+				"software_engineering",
+				"hardware_engineering",
+				"data_processing_tools",
+				"system_operations"
+			]
+		},
+		"elset": {
+			"name": "ELSET",
+			"description": "Element set",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"elset-plotter": {
+			"name": "ELSET Plotter",
+			"description": "application on CAVENet",
+			"categories": ["analysis_tools", "engineering"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"analysis_tools",
+				"technical",
+				"data_analysis",
+				"system_engineering",
+				"technical_training",
+				"software_engineering",
+				"hardware_engineering",
+				"data_processing_tools",
+				"system_operations"
+			]
+		},
+		"ema": {
+			"name": "EMA",
+			"description": "Enterprise Messaging & Adapters",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"ens": {
+			"name": "ENS",
+			"description": "Emergency Notification System",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"enum": {
+			"name": "ENUM",
+			"description": "special data type for predefined constants",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"eqa": {
+			"name": "EQA",
+			"description": "Element Quality",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"erb": {
+			"name": "ERB",
+			"description": "Engineering Review Board",
+			"categories": ["engineering"],
+			"tags": [
+				"space_operations",
+				"technical",
+				"system_engineering",
+				"technical_training",
+				"software_engineering",
+				"hardware_engineering",
+				"system_operations"
+			]
+		},
+		"esa": {
+			"name": "ESA",
+			"description": "European Space Agency",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"esbmc2": {
+			"name": "ESBMC2",
+			"description": "Enterprise Space Battle Management Command & Control",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"eso": {
+			"name": "ESO",
+			"description": "enhanced surveillance operations",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"etc": {
+			"name": "ETC",
+			"description": "estimated cost to completion",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"eve": {
+			"name": "EVE",
+			"description": "ephemeris validation environment",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"ewr": {
+			"name": "EWR",
+			"description": "early warning radar",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"exdis": {
+			"name": "EXDIS",
+			"description": "Exclusive Distribution, DoS classification",
+			"categories": ["security"],
+			"tags": ["security", "policy", "information_security"]
+		},
+		"ephemeris": {
+			"name": "Ephemeris",
+			"description": "predicted future location of a satellite",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		}
+	},
+	"F": {
+		"feld": {
+			"name": "FELD",
+			"description": "Field elements",
+			"categories": ["security"],
+			"tags": ["security", "policy", "information_security"]
+		},
+		"fmc": {
+			"name": "FMC",
+			"description": "Forced Motion Circumnavigation",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"foss": {
+			"name": "FOSS",
+			"description": "Free and open source software",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"fouo": {
+			"name": "FOUO",
+			"description": "For Official Use Only, replaced by CUI",
+			"categories": ["security"],
+			"tags": ["security", "policy", "information_security"]
+		},
+		"fov": {
+			"name": "FOV",
+			"description": "field of view",
+			"categories": ["security", "orbit_dynamics"],
+			"tags": [
+				"space_operations",
+				"security",
+				"operations",
+				"policy",
+				"information_security",
+				"orbital_mechanics"
+			]
+		},
+		"frd": {
+			"name": "FRD",
+			"description": "Formerly Restricted Data",
+			"categories": ["security"],
+			"tags": ["security", "policy", "information_security"]
+		},
+		"fvey": {
+			"name": "FVEY",
+			"description": "Five Eyes intelligence alliance",
+			"categories": ["security"],
+			"tags": ["security", "policy", "information_security"]
+		},
+		"[forms](/patterns/forms-and-validation/)": {
+			"name": "[Forms](/patterns/forms-and-validation/)",
+			"description": "A text field, input, or inputs which require interaction with the user to complete an action such as signing up for an account.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		}
+	},
+	"G": {
+		"gca": {
+			"name": "GCA",
+			"description": "Geocentric Crossing Analysis",
+			"categories": ["analysis_tools"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"analysis_tools",
+				"technical",
+				"data_analysis",
+				"data_processing_tools"
+			]
+		},
+		"geo": {
+			"name": "GEO",
+			"description": "geosynchronous orbit",
+			"categories": ["orbit_dynamics"],
+			"tags": ["space_operations", "operations", "orbital_mechanics"]
+		},
+		"geodss": {
+			"name": "GEODSS",
+			"description": "ground-based electro-optical deep space surveillance",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"gfe": {
+			"name": "GFE",
+			"description": "government-furnished equipment",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"gmsec": {
+			"name": "GMSEC",
+			"description": "Goddard Mission Services Evolution Center",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"gmt": {
+			"name": "GMT",
+			"description": "Greenwich Mean Time",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"gnc": {
+			"name": "GNC",
+			"description": "Guidance, Navigation and Control subsystem",
+			"categories": ["engineering"],
+			"tags": [
+				"space_operations",
+				"technical",
+				"system_engineering",
+				"technical_training",
+				"software_engineering",
+				"hardware_engineering",
+				"system_operations"
+			]
+		},
+		"gobs": {
+			"name": "GOBS",
+			"description": "Geosynchronous Orbital Belt Software",
+			"categories": ["analysis_tools"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"analysis_tools",
+				"technical",
+				"data_analysis",
+				"data_processing_tools"
+			]
+		},
+		"gp": {
+			"name": "GP",
+			"description": "general perturbations",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"grm": {
+			"name": "GRM",
+			"description": "Ground Resource Management",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"grs": {
+			"name": "GRS",
+			"description": "Ground Resource Scheduling",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"gso": {
+			"name": "GSO",
+			"description": "Ground Systems Operator",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"gssap": {
+			"name": "GSSAP",
+			"description": "geostationary SSA program",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"gsw": {
+			"name": "GSW",
+			"description": "global sensor watch",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"gen": {
+			"name": "Gen",
+			"description": "General",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"[global-controls](/design-process/ui-design/)": {
+			"name": "[Global Controls](/design-process/ui-design/)",
+			"description": "Display top-level system and equipment status throughout Astro applications.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"[global-status-bar](/components/global-status-bar/)": {
+			"name": "[Global Status Bar](/components/global-status-bar/)",
+			"description": "A full width view across the top of an application that displays the overall health and status of a system.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"govie": {
+			"name": "Govie",
+			"description": "Customer Resource",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"[grid](/design-guidelines/grid/)": {
+			"name": "[Grid](/design-guidelines/grid/)",
+			"description": "A Grid system is a defined set of vertical columns and optionally horizontal rows based on time-tested principles of graphic design and layout.",
+			"categories": ["design"],
+			"tags": ["ui"]
+		}
+	},
+	"H": {
+		"hac": {
+			"name": "HAC",
+			"description": "high accuracy catalog",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"hamr": {
+			"name": "HAMR",
+			"description": "high area to mass ratio",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"hasdm": {
+			"name": "HASDM",
+			"description": "high accuracy satellite drag model",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"hbr": {
+			"name": "HBR",
+			"description": "hard body radius (same as radius of exclusion volume)",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"hbss": {
+			"name": "HBSS",
+			"description": "host-based security system (DoD COTS security software)",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"heo": {
+			"name": "HEO",
+			"description": "highly elliptical orbit",
+			"categories": ["orbit_dynamics"],
+			"tags": ["space_operations", "operations", "orbital_mechanics"]
+		},
+		"hiet": {
+			"name": "HIET",
+			"description": "high interest event tracker",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"hio": {
+			"name": "HIO",
+			"description": "high interest object",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"hit": {
+			"name": "HIT",
+			"description": "high interest tasking",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"hos": {
+			"name": "HOS",
+			"description": "Hardened Operating System",
+			"categories": ["engineering"],
+			"tags": [
+				"space_operations",
+				"technical",
+				"system_engineering",
+				"technical_training",
+				"software_engineering",
+				"hardware_engineering",
+				"system_operations"
+			]
+		},
+		"hsa": {
+			"name": "HSA",
+			"description": "Human Safety Analyst; aka OSA (newer)",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"hsf": {
+			"name": "HSF",
+			"description": "human space flight",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"hand-jam": {
+			"name": "Hand jam",
+			"description": "operator manually enters data",
+			"categories": ["human_computer_interaction"],
+			"tags": ["user_interface", "human_computer_interaction"]
+		},
+		"high-e": {
+			"name": "High-E",
+			"description": "Highly Eccentric orbit (e.g., Molniya orbit)",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		}
+	},
+	"I": {
+		"i&a": {
+			"name": "I&A",
+			"description": "Inspect & Adapt (Agile Program Increment terminology)",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"i&p": {
+			"name": "I&P",
+			"description": "Innovation & Planning (Agile Program Increment terminology)",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"i&w": {
+			"name": "I&W",
+			"description": "Indications and Warnings",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"icd": {
+			"name": "ICD",
+			"description": "interface control document",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"ice": {
+			"name": "ICE",
+			"description": "install, checkout and evaluation",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"il": {
+			"name": "IL",
+			"description": "DoD Impact Level; combination of data sensitivity and potential impact",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"il2": {
+			"name": "IL2",
+			"description": "DoD Impact Level 2, accommodates DoD information approved for public release",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"il4": {
+			"name": "IL4",
+			"description": "DoD Impact Level 4, accommodates DoD Controlled Unclassified Information",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"il5": {
+			"name": "IL5",
+			"description": "DoD Impact Level 5, accommodates DoD CUI & National Security Systems",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"il6": {
+			"name": "IL6",
+			"description": "DoD Impact Level 6, accommodates DoD Classified Information up to SECRET",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"imosc": {
+			"name": "IMOSC",
+			"description": "Integrated Mission Operations Control Center",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"iod": {
+			"name": "IOD",
+			"description": "improved object detection",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"iod-or-iodet": {
+			"name": "IOD or IODET",
+			"description": "initial orbit determination",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"ioe": {
+			"name": "IOE",
+			"description": "Integrated Operations Environment",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"iomod": {
+			"name": "IOMOD",
+			"description": "initial orbit determination module",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"ipr": {
+			"name": "IPR",
+			"description": "In Progress Review",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"iqt": {
+			"name": "IQT",
+			"description": "Initial Qualification Training",
+			"categories": ["training"],
+			"tags": ["training", "agile_management", "technical_training"]
+		},
+		"irad": {
+			"name": "IRAD",
+			"description": "Internal Research and Development",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"irci": {
+			"name": "IRCI",
+			"description": "infrared cloud imager",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"iron": {
+			"name": "IRON",
+			"description": "Inter-Range Operating Number",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"iss": {
+			"name": "ISS",
+			"description": "International Space Station",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"issa": {
+			"name": "ISSA",
+			"description": "integrated space situational awareness",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"isse": {
+			"name": "ISSE",
+			"description": "Information Support Server Environment",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"itj": {
+			"name": "ITJ",
+			"description": "command to display tasking groups",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"itw/aa": {
+			"name": "ITW/AA",
+			"description": "Integrated Tactical Warning and Attack Assessment",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"[icons](/components/icons-and-symbols/)": {
+			"name": "[Icons](/components/icons-and-symbols/)",
+			"description": "A graphic representation to convey meaning in a concise, visual manner.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"idcs": {
+			"name": "IdCS",
+			"description": "Identified Catalog Services, used to query a catalog for specific entity classes like satellites.",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"[input-field](/components/input-field/)": {
+			"name": "[Input Field](/components/input-field/)",
+			"description": "A type of field that allows users to enter text or numeric data.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		}
+	},
+	"J": {
+		"jfcc": {
+			"name": "JFCC",
+			"description": "Joint Functional Component Command",
+			"categories": ["satops", "organization"],
+			"tags": [
+				"space_operations",
+				"organization",
+				"operations",
+				"policy",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"jira": {
+			"name": "JIRA",
+			"description": "Agile project management software",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"jms": {
+			"name": "JMS",
+			"description": "JSpOC Mission System",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"jms-hiet": {
+			"name": "JMS-HIET",
+			"description": "JMS - High Interest Event Tracker",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"joitl": {
+			"name": "JOitL",
+			"description": "Joint Operator in the Loop",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"jspoc": {
+			"name": "JSpOC",
+			"description": "Joint Space Operational Command",
+			"categories": ["satops", "organization"],
+			"tags": [
+				"space_operations",
+				"organization",
+				"operations",
+				"policy",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"jwics": {
+			"name": "JWICS",
+			"description": "Joint Worldwide Intelligence Communications System",
+			"categories": ["satops", "training"],
+			"tags": [
+				"space_operations",
+				"training",
+				"operations",
+				"agile_management",
+				"technical_training",
+				"space_communications",
+				"system_operations"
+			]
+		}
+	},
+	"K": {
+		"kdp": {
+			"name": "KDP",
+			"description": "Key Decision Points",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		}
+	},
+	"L": {
+		"lace": {
+			"name": "LACE",
+			"description": "Lean Agile Center of Excellence",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"lado": {
+			"name": "LADO",
+			"description": "launch and early orbit anomaly resolution and disposal operations",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"lamod": {
+			"name": "LAMOD",
+			"description": "look angle module",
+			"categories": ["engineering"],
+			"tags": [
+				"space_operations",
+				"technical",
+				"system_engineering",
+				"technical_training",
+				"software_engineering",
+				"hardware_engineering",
+				"system_operations"
+			]
+		},
+		"ldcm": {
+			"name": "LDCM",
+			"description": "Limited Dissemination Control Marking",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"leo": {
+			"name": "LEO",
+			"description": "low Earth orbit",
+			"categories": ["orbit_dynamics"],
+			"tags": ["space_operations", "operations", "orbital_mechanics"]
+		},
+		"lfm": {
+			"name": "LFM",
+			"description": "linear frequency modulation",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"loe": {
+			"name": "LOE",
+			"description": "level of effort",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"los": {
+			"name": "LOS",
+			"description": "Loss of Signal",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"lpm": {
+			"name": "LPM",
+			"description": "Lean Portfolio Management",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"lupi": {
+			"name": "LUpI",
+			"description": "length of update interval",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"[link](/components/link/)": {
+			"name": "[Link](/components/link/)",
+			"description": "A link (also known as a hyperlink) is a clickable text element. The link control is used for navigation, but can also trigger an event.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"[log](/components/log/)": {
+			"name": "[Log](/components/log/)",
+			"description": "A tabular representation of application events and may include username, priority, equipment type, signal type, etc.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"lt": {
+			"name": "Lt",
+			"description": "Lieutenant",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"lt-col": {
+			"name": "Lt Col",
+			"description": "Lieutenant Colonel",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"lt-gen": {
+			"name": "Lt Gen",
+			"description": "Lieutenant General",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		}
+	},
+	"M": {
+		"maestro": {
+			"name": "MAESTRO",
+			"description": "mission adaptive environment for spacecraft test and real-time operations",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"majcom": {
+			"name": "MAJCOM",
+			"description": "Major Command",
+			"categories": ["organization"],
+			"tags": ["organization", "policy"]
+		},
+		"mat": {
+			"name": "MAT",
+			"description": "Mission Area Teams",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"mbse": {
+			"name": "MBSE",
+			"description": "Model Based Systems Engineering",
+			"categories": ["engineering"],
+			"tags": [
+				"space_operations",
+				"technical",
+				"system_engineering",
+				"technical_training",
+				"software_engineering",
+				"hardware_engineering",
+				"system_operations"
+			]
+		},
+		"md": {
+			"name": "MD",
+			"description": "missile defense",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"mdc": {
+			"name": "MDC",
+			"description": "manual differential correction",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"meca": {
+			"name": "MECA",
+			"description": "Mega Constellation Analysis",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"meme": {
+			"name": "MEME",
+			"description": "mean equator, mean equinox",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"meo": {
+			"name": "MEO",
+			"description": "Medium Earth Orbit",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"mgp": {
+			"name": "MGP",
+			"description": "Maintenance Group",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"mie": {
+			"name": "MIE",
+			"description": "Mission Integration Enclave",
+			"categories": ["engineering"],
+			"tags": [
+				"space_operations",
+				"technical",
+				"system_engineering",
+				"technical_training",
+				"software_engineering",
+				"hardware_engineering",
+				"system_operations"
+			]
+		},
+		"mil-standard": {
+			"name": "MIL Standard",
+			"description": "government mandated service",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"mip": {
+			"name": "MIP",
+			"description": "maneuver in progress",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"moc": {
+			"name": "MOC",
+			"description": "Mission Operation Center",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"mom": {
+			"name": "MOM",
+			"description": "Measure of Merit",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"moss": {
+			"name": "MOSS",
+			"description": "Moron optical space surveillance",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"mps": {
+			"name": "MPS",
+			"description": "mission processing system",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"mr": {
+			"name": "MR",
+			"description": "management reserve",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"ms": {
+			"name": "MS",
+			"description": "milestone",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"mw": {
+			"name": "MW",
+			"description": "missile warning",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"maj": {
+			"name": "Maj",
+			"description": "Major",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"maj-gen": {
+			"name": "Maj Gen",
+			"description": "Major General",
+			"categories": ["organization"],
+			"tags": ["organization", "policy"]
+		},
+		"mandc": {
+			"name": "ManDC",
+			"description": "Manual Differential Correction",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"message": {
+			"name": "Message",
+			"description": "Tracks (obs), taskings, elsets.",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"mnemonic": {
+			"name": "Mnemonic",
+			"description": "Single value that can be monitored",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"[modeless-pane](/patterns/modeless-panes/)": {
+			"name": "[Modeless Pane](/patterns/modeless-panes/)",
+			"description": "A visual pattern used to present temporary interactions inline and does not require user action before moving to another area of the page.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"mtx": {
+			"name": "Mtx",
+			"description": "maintenance",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"mx": {
+			"name": "Mx",
+			"description": "maintenance",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		}
+	},
+	"N": {
+		"naf": {
+			"name": "NAF",
+			"description": "Numbered Air Force",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"nao": {
+			"name": "NAO",
+			"description": "Network Administration Operator",
+			"categories": ["organization"],
+			"tags": ["organization", "policy"]
+		},
+		"nara": {
+			"name": "NARA",
+			"description": "National Archives and Records Administration",
+			"categories": ["organization"],
+			"tags": ["organization", "policy"]
+		},
+		"nasa": {
+			"name": "NASA",
+			"description": "National Aeronautics and Space Administration",
+			"categories": ["organization"],
+			"tags": ["organization", "policy"]
+		},
+		"nc3": {
+			"name": "NC3",
+			"description": "Nuclear Command and Control system",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"nco": {
+			"name": "NCO",
+			"description": "Non-Commissioned Officer",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"nd": {
+			"name": "ND",
+			"description": "Normal Decay",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"ndpp": {
+			"name": "NDPP",
+			"description": "nontraditional data pre-processor",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"ndsa": {
+			"name": "NDSA",
+			"description": "National Defense Space Architecture",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"ne": {
+			"name": "NE",
+			"description": "near-Earth",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"nf": {
+			"name": "NF",
+			"description": "abbreviated version of NOFORN",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"nfl": {
+			"name": "NFL",
+			"description": "new foreign launch",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"ngg": {
+			"name": "NGG",
+			"description": "Next Gen Geo",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"nipr": {
+			"name": "NIPR",
+			"description": "Non-classified Internet Protocol Router Network",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"nist": {
+			"name": "NIST",
+			"description": "National Institute of Standards and Technology",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"nlt": {
+			"name": "NLT",
+			"description": "No later than",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"nmc": {
+			"name": "NMC",
+			"description": "Natural Motion Circumnavigation",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"nml": {
+			"name": "NML",
+			"description": "normal, i.e., normal decay",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"noaa": {
+			"name": "NOAA",
+			"description": "National Oceanic and Atmospheric Administration",
+			"categories": ["organization"],
+			"tags": ["organization", "policy"]
+		},
+		"noforn": {
+			"name": "NOFORN",
+			"description": "Classification marking caveat",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"norad": {
+			"name": "NORAD",
+			"description": "North American Aerospace Defense Command",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"nos": {
+			"name": "NOS",
+			"description": "network ops service",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"nro": {
+			"name": "NRO",
+			"description": "National Reconnaissance Office",
+			"categories": ["organization"],
+			"tags": ["organization", "policy"]
+		},
+		"nsdc": {
+			"name": "NSDC",
+			"description": "National Space Defense Center",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"[navigation](/patterns/navigation/)": {
+			"name": "[Navigation](/patterns/navigation/)",
+			"description": "Navigation defines how the user moves through the application and establishes their mental model of the object hierarchy.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"[navigational-tabs](/components/tabs/)": {
+			"name": "[Navigational Tabs](/components/tabs/)",
+			"description": "Divide major areas of content and to indicate a work process.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"[notification-banner](/components/notification-banner/)": {
+			"name": "[Notification Banner](/components/notification-banner/)",
+			"description": "Events that deserve user attention, but don’t require a response, may be displayed in a Notification Banner. The Banner displays within the user’s field-of-view, but doesn’t block other interaction.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"[notification-system](/patterns/notifications/)": {
+			"name": "[Notification System](/patterns/notifications/)",
+			"description": "A system which generates, prioritizes, and displays event notifications for significant occurrences within an application and its associated systems and hardware.",
+			"categories": ["design"],
+			"tags": ["ux"]
+		}
+	},
+	"O": {
+		"oa": {
+			"name": "OA",
+			"description": "orbital analysis or orbital analyst",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"ocm": {
+			"name": "OCM",
+			"description": "Orbital Conjunction Message",
+			"categories": ["data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"data_processing_tools"
+			]
+		},
+		"ocr": {
+			"name": "OCR",
+			"description": "Office of Contributory Responsibility",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"od": {
+			"name": "OD",
+			"description": "orbit determination",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"ode": {
+			"name": "ODE",
+			"description": "orbit determination ephemeris",
+			"categories": ["data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"data_processing_tools"
+			]
+		},
+		"odi": {
+			"name": "ODI",
+			"description": "orbit determination interval",
+			"categories": ["data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"data_processing_tools"
+			]
+		},
+		"odr": {
+			"name": "ODR",
+			"description": "Orbital Data Requests",
+			"categories": ["data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"data_processing_tools"
+			]
+		},
+		"oem": {
+			"name": "OEM",
+			"description": "Orbital Ephemeris Message",
+			"categories": ["engineering", "data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"technical_training",
+				"software_engineering",
+				"hardware_engineering",
+				"data_processing_tools",
+				"system_operations"
+			]
+		},
+		"ojt": {
+			"name": "OJT",
+			"description": "On the Job Training",
+			"categories": ["training"],
+			"tags": ["training", "agile_management", "technical_training"]
+		},
+		"ola": {
+			"name": "OLA",
+			"description": "Operating Location Alpha",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"omr": {
+			"name": "OMR",
+			"description": "observation maintenance request",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"onr": {
+			"name": "ONR",
+			"description": "office of naval research",
+			"categories": ["organization"],
+			"tags": ["organization", "policy"]
+		},
+		"opir": {
+			"name": "OPIR",
+			"description": "Overhead Persistent Infrared",
+			"categories": ["data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"data_processing_tools"
+			]
+		},
+		"osa": {
+			"name": "OSA",
+			"description": "Orbital Safety Analyst",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"ot&e": {
+			"name": "OT&E",
+			"description": "Operational Test & Evaluation",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"ota": {
+			"name": "OTA",
+			"description": "Other Transaction Authority",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"otl": {
+			"name": "OTL",
+			"description": "Ops Tasking List",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"ob(s)": {
+			"name": "Ob(s)",
+			"description": "observation(s)",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"ops": {
+			"name": "Ops",
+			"description": "Operations",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		}
+	},
+	"P": {
+		"parcs": {
+			"name": "PARCS",
+			"description": "perimeter acquisition radar attack characterization system",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"pave-paws": {
+			"name": "PAVE PAWS",
+			"description": "Perimeter Acquisition Vehicle Entry Phased Array Warning System",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"pc": {
+			"name": "PC",
+			"description": "probability of collision",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"pca": {
+			"name": "PCA",
+			"description": "position of closest approach",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"peg": {
+			"name": "PEG",
+			"description": "Pegasus debris",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"pert": {
+			"name": "PERT",
+			"description": "program evaluation and review technique",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"pi": {
+			"name": "PI",
+			"description": "Program Increment",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"pmo": {
+			"name": "PMO",
+			"description": "Program Management Office",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"pnt": {
+			"name": "PNT",
+			"description": "Position, Navigation, and Timing",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"pobs": {
+			"name": "POBS",
+			"description": "partially associated observations",
+			"categories": ["data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"data_processing_tools"
+			]
+		},
+		"poc": {
+			"name": "POC",
+			"description": "Point of Contact",
+			"categories": ["data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"data_processing_tools"
+			]
+		},
+		"pop": {
+			"name": "POP",
+			"description": "Period of Performance",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"ppl": {
+			"name": "PPL",
+			"description": "pre-planned launch",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"pslv": {
+			"name": "PSLV",
+			"description": "Polar Space Launch Vehicle debris",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"pso": {
+			"name": "PSO",
+			"description": "Payload System Operator",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"[pagination](/components/pagination/)": {
+			"name": "[Pagination](/components/pagination/)",
+			"description": "The process of dividing content for display on multiple pages. It is utilized when content, such as Search results, does not fit onto one page and must be split across multiple pages.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"perigee": {
+			"name": "Perigee",
+			"description": "closest point an object in orbit reaches to Earth",
+			"categories": ["orbit_dynamics"],
+			"tags": ["space_operations", "operations", "orbital_mechanics"]
+		},
+		"period": {
+			"name": "Period",
+			"description": "amount of time to complete an orbit",
+			"categories": ["orbit_dynamics"],
+			"tags": ["space_operations", "operations", "orbital_mechanics"]
+		},
+		"pitch": {
+			"name": "Pitch",
+			"description": "Rotation around the side-to-side axis",
+			"categories": ["orbit_dynamics"],
+			"tags": ["space_operations", "operations", "orbital_mechanics"]
+		},
+		"[pop-up-menu](/components/pop-up-menu/)": {
+			"name": "[Pop Up Menu](/components/pop-up-menu/)",
+			"description": "A Pop Up Menu provides users with a quick way to access common actions for a highlighted item.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"[progress-indicator](/components/progress/)": {
+			"name": "[Progress Indicator](/components/progress/)",
+			"description": "A Progress Indicator signals that an application is busy performing an operation.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"[push-button](/components/push-button)": {
+			"name": "[Push Button](/components/push-button/)",
+			"description": "A control that initiates an action.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		}
+	},
+	"Q": {
+		"qbd": {
+			"name": "QBD",
+			"description": "quantifiable backup data",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		}
+	},
+	"R": {
+		"r-bar": {
+			"name": "R-bar",
+			"description": "average radial vector",
+			"categories": ["orbit_dynamics"],
+			"tags": ["space_operations", "operations", "orbital_mechanics"]
+		},
+		"r/b": {
+			"name": "R/B",
+			"description": "Rocket Body",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"r2c2": {
+			"name": "R2C2",
+			"description": "Rapid Resilience Control and Command",
+			"categories": ["engineering"],
+			"tags": [
+				"space_operations",
+				"technical",
+				"system_engineering",
+				"technical_training",
+				"software_engineering",
+				"hardware_engineering",
+				"system_operations"
+			]
+		},
+		"ra": {
+			"name": "RA",
+			"description": "reentry assessment",
+			"categories": ["orbit_dynamics", "general_terms"],
+			"tags": [
+				"space_operations",
+				"general_terms",
+				"operations",
+				"orbital_mechanics"
+			]
+		},
+		"raan": {
+			"name": "RAAN",
+			"description": "right ascension of the ascending node",
+			"categories": ["orbit_dynamics"],
+			"tags": ["space_operations", "operations", "orbital_mechanics"]
+		},
+		"ranode": {
+			"name": "RANODE",
+			"description": "the right ascension of the ascending node",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"raven": {
+			"name": "RAVEN",
+			"description": "Residual Analysis and Visualization Environment",
+			"categories": ["analysis_tools"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"analysis_tools",
+				"technical",
+				"data_analysis",
+				"data_processing_tools"
+			]
+		},
+		"rco": {
+			"name": "RCO",
+			"description": "Rapid Capabilities Office",
+			"categories": ["organization"],
+			"tags": ["organization", "policy"]
+		},
+		"rcs": {
+			"name": "RCS",
+			"description": "Radar Cross Section",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"rd": {
+			"name": "RD",
+			"description": "Restricted Data",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"rda&m": {
+			"name": "RDA&M",
+			"description": "requirements definition, analysis and modeling",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"rdsmo": {
+			"name": "RDSMO",
+			"description": "Research and Development Space and Missile Operations",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"rf": {
+			"name": "RF",
+			"description": "Radio Frequency",
+			"categories": ["orbit_dynamics", "communications"],
+			"tags": [
+				"space_operations",
+				"communications",
+				"operations",
+				"technical",
+				"space_communications",
+				"orbital_mechanics",
+				"system_operations"
+			]
+		},
+		"ria": {
+			"name": "RIA",
+			"description": "Recommended Improvement Areas",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"ric": {
+			"name": "RIC",
+			"description": "Coordinate frame for spacecraft: Radial, In-track, Cross-track directions",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"rmf": {
+			"name": "RMF",
+			"description": "Risk Management Framework",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"roam": {
+			"name": "ROAM",
+			"description": "Resolved, Owned, Accepted, Mitigated",
+			"categories": ["orbit_dynamics", "management"],
+			"tags": [
+				"space_operations",
+				"management",
+				"operations",
+				"project_management",
+				"agile_management",
+				"orbital_mechanics"
+			]
+		},
+		"rob": {
+			"name": "ROB",
+			"description": "Reference Orbit Builder",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"rotas": {
+			"name": "ROTAS",
+			"description": "Report Observation Tag and Association Status",
+			"categories": ["analysis_tools", "data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"analysis_tools",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"data_processing_tools"
+			]
+		},
+		"rpo": {
+			"name": "RPO",
+			"description": "Rendezvous Proximity Operations",
+			"categories": ["orbit_dynamics"],
+			"tags": ["space_operations", "operations", "orbital_mechanics"]
+		},
+		"rsc": {
+			"name": "RSC",
+			"description": "RDT&E Support Complex",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"rso": {
+			"name": "RSO",
+			"description": "Resident Space Object",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"rte": {
+			"name": "RTE",
+			"description": "Release Train Engineer",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"[radio-button](/components/radio-button/)": {
+			"name": "[Radio Button](/components/radio-button/)",
+			"description": "Allows users to mutually select an option from a predefined set of options. When one selection is made, the previous selection becomes deselected.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"ref": {
+			"name": "Ref",
+			"description": "referring to",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"[research](/design-process/research/)": {
+			"name": "[Research](/design-process/research/)",
+			"description": "Research is an essential process to a project’s success. It reveals, clarifies, and establishes the foundation on which the application resides.",
+			"categories": ["design"],
+			"tags": ["ux", "process"]
+		},
+		"rev": {
+			"name": "Rev",
+			"description": "revolution",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"roll": {
+			"name": "Roll",
+			"description": "Rotation around the front-to-back axis",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"rx": {
+			"name": "Rx",
+			"description": "Receive",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		}
+	},
+	"S": {
+		"s": {
+			"name": "S",
+			"description": "Secret classification level",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"sa": {
+			"name": "SA",
+			"description": "situational awareness",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"saal": {
+			"name": "SAAL",
+			"description": "standardized astrodynamics algorithm library",
+			"categories": ["analysis_tools", "data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"analysis_tools",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"data_processing_tools"
+			]
+		},
+		"saas": {
+			"name": "SAAS",
+			"description": "satellite attack assessment",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"sac": {
+			"name": "SAC",
+			"description": "space analysis cell",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"safe": {
+			"name": "SAFe",
+			"description": "Scaled Agile Framework",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"sapf": {
+			"name": "SAPF",
+			"description": "Special Access Program Facilities",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"satc": {
+			"name": "SATC",
+			"description": "see SatCat",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"satcom": {
+			"name": "SATCOM",
+			"description": "satellite communications",
+			"categories": ["communications"],
+			"tags": [
+				"space_operations",
+				"communications",
+				"operations",
+				"technical",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"satops": {
+			"name": "SATOPS",
+			"description": "satellite operations",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"satran": {
+			"name": "SATRAN",
+			"description": "satellite reconnaissance advanced notification",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"sbirs": {
+			"name": "SBIRS",
+			"description": "Space Based Infrared System",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"scb": {
+			"name": "SCB",
+			"description": "Service Catalog Board",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"scc": {
+			"name": "SCC",
+			"description": "satellite catalog number",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"scg": {
+			"name": "SCG",
+			"description": "Security Classification Guide",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"sci": {
+			"name": "SCI",
+			"description": "Sensitive Compartmented Information",
+			"categories": ["security"],
+			"tags": ["security", "policy", "information_security"]
+		},
+		"scif": {
+			"name": "SCIF",
+			"description": "Sensitive Compartmented Information Facility",
+			"categories": ["security"],
+			"tags": ["security", "policy", "information_security"]
+		},
+		"scm": {
+			"name": "SCM",
+			"description": "satellite catalog maintenance",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"sco": {
+			"name": "SCO",
+			"description": "Space Console Operator",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"scrwg": {
+			"name": "SCRWG",
+			"description": "satellite catalog renumbering working group",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"sda": {
+			"name": "SDA",
+			"description": "Space Domain Awareness",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"sdr": {
+			"name": "SDR",
+			"description": "software-defined radio",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"sdrl": {
+			"name": "SDRL",
+			"description": "supplier data requirements list",
+			"categories": ["data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"data_processing_tools"
+			]
+		},
+		"sds": {
+			"name": "SDS",
+			"description": "space data server",
+			"categories": ["security", "data_processing"],
+			"tags": [
+				"space_operations",
+				"security",
+				"data_management",
+				"technical",
+				"policy",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"information_security",
+				"software_engineering",
+				"data_processing_tools"
+			]
+		},
+		"se/arch": {
+			"name": "SE/Arch",
+			"description": "System Engineering / Architecture",
+			"categories": ["engineering"],
+			"tags": [
+				"space_operations",
+				"technical",
+				"system_engineering",
+				"technical_training",
+				"software_engineering",
+				"hardware_engineering",
+				"system_operations"
+			]
+		},
+		"sensor": {
+			"name": "SENSOR",
+			"description": "System Engineering and Sustainment Integrator",
+			"categories": ["engineering"],
+			"tags": [
+				"space_operations",
+				"technical",
+				"system_engineering",
+				"technical_training",
+				"software_engineering",
+				"hardware_engineering",
+				"system_operations"
+			]
+		},
+		"sev": {
+			"name": "SEV",
+			"description": "space enterprise vision",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"sgi": {
+			"name": "SGI",
+			"description": "Silicon Graphics, Inc.",
+			"categories": ["security"],
+			"tags": ["security", "policy", "information_security"]
+		},
+		"sgp4": {
+			"name": "SGP4",
+			"description": "simplified general perturbations",
+			"categories": ["security"],
+			"tags": ["security", "policy", "information_security"]
+		},
+		"sgpe": {
+			"name": "SGPE",
+			"description": "Special General Perturbations Ephemeris",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"sgss": {
+			"name": "SGSS",
+			"description": "Space Ground System Solutions",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"shio": {
+			"name": "SHIO",
+			"description": "super high interest object",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"sil": {
+			"name": "SIL",
+			"description": "Systems Integration Lab",
+			"categories": ["engineering"],
+			"tags": [
+				"space_operations",
+				"technical",
+				"system_engineering",
+				"technical_training",
+				"software_engineering",
+				"hardware_engineering",
+				"system_operations"
+			]
+		},
+		"siprnet": {
+			"name": "SIPRNet",
+			"description": "Secret Internet Protocol Routing Network",
+			"categories": ["communications"],
+			"tags": [
+				"space_operations",
+				"communications",
+				"operations",
+				"technical",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"sisp": {
+			"name": "SISP",
+			"description": "single integrated space picture",
+			"categories": ["satops", "communications", "data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"communications",
+				"operations",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"space_communications",
+				"data_processing_tools",
+				"system_operations"
+			]
+		},
+		"skiweb": {
+			"name": "SKIWeb",
+			"description": "Strategic Knowledge Integration Web",
+			"categories": ["data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"data_processing_tools"
+			]
+		},
+		"sla": {
+			"name": "SLA",
+			"description": "sensor look angles",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"slr": {
+			"name": "SLR",
+			"description": "satellite laser ranging",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"smc": {
+			"name": "SMC",
+			"description": "Space & Missile Systems Center",
+			"categories": ["organization"],
+			"tags": ["organization", "policy"]
+		},
+		"sme": {
+			"name": "SME",
+			"description": "Subject Matter Expert",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"smf": {
+			"name": "SMF",
+			"description": "Space Mission Force",
+			"categories": ["organization"],
+			"tags": ["organization", "policy"]
+		},
+		"snco": {
+			"name": "SNCO",
+			"description": "Senior Non-Commissioned Officer",
+			"categories": ["organization"],
+			"tags": ["organization", "policy"]
+		},
+		"soc": {
+			"name": "SOC",
+			"description": "Satellite Operations Center",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"soh": {
+			"name": "SOH",
+			"description": "State of Health",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"soi": {
+			"name": "SOI",
+			"description": "space object identification",
+			"categories": ["satops", "orbit_dynamics", "general_terms"],
+			"tags": [
+				"space_operations",
+				"general_terms",
+				"operations",
+				"space_communications",
+				"orbital_mechanics",
+				"system_operations"
+			]
+		},
+		"sp": {
+			"name": "SP",
+			"description": "special perturbations",
+			"categories": ["orbit_dynamics"],
+			"tags": ["space_operations", "operations", "orbital_mechanics"]
+		},
+		"spacecat": {
+			"name": "SPACECAT",
+			"description": "Space Catalog",
+			"categories": ["orbit_dynamics", "data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"operations",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"orbital_mechanics",
+				"data_processing_tools"
+			]
+		},
+		"spadoc": {
+			"name": "SPADOC",
+			"description": "Space Defense Operations Center",
+			"categories": ["satops", "data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"operations",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"space_communications",
+				"data_processing_tools",
+				"system_operations"
+			]
+		},
+		"ssa": {
+			"name": "SSA",
+			"description": "Space Situational Awareness",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"ssc": {
+			"name": "SSC",
+			"description": "Spaces Systems Command",
+			"categories": ["satops", "organization"],
+			"tags": [
+				"space_operations",
+				"organization",
+				"operations",
+				"policy",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"ssn": {
+			"name": "SSN",
+			"description": "Space Surveillance Network",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"sst": {
+			"name": "SST",
+			"description": "space surveillance telescope",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"sto": {
+			"name": "STO",
+			"description": "Space Tasking Order",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"sv": {
+			"name": "SV",
+			"description": "Space Vehicle",
+			"categories": ["satops", "orbit_dynamics"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"orbital_mechanics",
+				"system_operations"
+			]
+		},
+		"swc": {
+			"name": "SWC",
+			"description": "Space War-fighting Construct",
+			"categories": ["satops"],
+			"tags": [
+				"space_operations",
+				"operations",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"s/c": {
+			"name": "S/C",
+			"description": "Spacecraft",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"satf": {
+			"name": "Satf",
+			"description": "file of all TLEs",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"sat": {
+			"name": "Sat",
+			"description": "satellite",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"satcat": {
+			"name": "SatCat",
+			"description": "satellite catalog",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"[search](/components/search/)": {
+			"name": "[Search](/components/search/)",
+			"description": "A specialized text field for entering search terms.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"[segmented-button](/components/segmented-button/)": {
+			"name": "[Segmented Button](/components/segmented-button/)",
+			"description": "Allows users to select one item at a time from two to four options.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"[select-menu](/components/select/)": {
+			"name": "[Select Menu](/components/select/)",
+			"description": "A UI control that allows users to select a value from a list of values.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"[sign-in](/patterns/sign-in/)": {
+			"name": "[Sign In](/patterns/sign-in/)",
+			"description": "A form input in which a user enters authenticating information to gain access to specific information or usage of an application.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"sim": {
+			"name": "Sim",
+			"description": "simulation",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"[slider](/components/slider/)": {
+			"name": "[Slider](/components/slider/)",
+			"description": "A graphical control element that allows users to choose from a range of continuous and discrete values.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"[status-indicator](/components/status-symbol/)": {
+			"name": "[Status Indicator](/components/status-symbol/)",
+			"description": "Indicates the state of a device or feature in a standard and consistent way using color, shapes, labeling, and badging.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"[status-system](/patterns/status-system/)": {
+			"name": "[Status System](/patterns/status-system/)",
+			"description": "A combination of colors and symbols to convey the status of a system.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"[switch](/components/switch/)": {
+			"name": "[Switch](/components/switch/)",
+			"description": "A Switch which describes a state or value. It allows users to change a setting between two states such as “On\" and \"Off.\"",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"[symbols](/components/icons-and-symbols/)": {
+			"name": "[Symbols](/components/icons-and-symbols/)",
+			"description": "A graphical representation or glyph associated with actions, concepts, or objects such as an asterisk.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		}
+	},
+	"T": {
+		"t&c": {
+			"name": "T&C",
+			"description": "Telemetry & Command",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"tca": {
+			"name": "TCA",
+			"description": "Time of Closest Approach",
+			"categories": ["orbit_dynamics", "management"],
+			"tags": [
+				"space_operations",
+				"management",
+				"operations",
+				"project_management",
+				"agile_management",
+				"orbital_mechanics"
+			]
+		},
+		"tdrs": {
+			"name": "TDRS",
+			"description": "Tracking and Data Relay Satellite",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"tdy": {
+			"name": "TDY",
+			"description": "Temporary Additional Duty",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"tearr": {
+			"name": "TEARR",
+			"description": "time, elevation, azimuth, range, range-rate",
+			"categories": ["management", "data_processing"],
+			"tags": [
+				"space_operations",
+				"management",
+				"data_management",
+				"operations",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"agile_management",
+				"software_engineering",
+				"data_processing_tools"
+			]
+		},
+		"tem": {
+			"name": "TEM",
+			"description": "technical exchange meeting",
+			"categories": ["training"],
+			"tags": ["training", "agile_management", "technical_training"]
+		},
+		"teme": {
+			"name": "TEME",
+			"description": "true equator, mean equinox",
+			"categories": ["orbit_dynamics"],
+			"tags": ["space_operations", "operations", "orbital_mechanics"]
+		},
+		"tes": {
+			"name": "TES",
+			"description": "Test and Evaluation Services",
+			"categories": ["management", "training"],
+			"tags": [
+				"management",
+				"training",
+				"operations",
+				"project_management",
+				"agile_management",
+				"technical_training"
+			]
+		},
+		"til": {
+			"name": "TIL",
+			"description": "test & integration lab",
+			"categories": ["training"],
+			"tags": ["training", "agile_management", "technical_training"]
+		},
+		"tip": {
+			"name": "TIP",
+			"description": "Tracking and Impact Prediction",
+			"categories": ["orbit_dynamics", "analysis_tools"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"analysis_tools",
+				"operations",
+				"technical",
+				"data_analysis",
+				"orbital_mechanics",
+				"data_processing_tools"
+			]
+		},
+		"tle": {
+			"name": "TLE",
+			"description": "two-line element",
+			"categories": ["orbit_dynamics"],
+			"tags": ["space_operations", "operations", "orbital_mechanics"]
+		},
+		"tlm": {
+			"name": "TLM",
+			"description": "Telemetry",
+			"categories": ["training"],
+			"tags": ["training", "agile_management", "technical_training"]
+		},
+		"to": {
+			"name": "TO",
+			"description": "Technical Order",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"tow": {
+			"name": "TOW",
+			"description": "test objective worksheet",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"track": {
+			"name": "TRACK",
+			"description": "Tiered ROTAS Association with Covariance Knowledge",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"ts": {
+			"name": "TS",
+			"description": "Top Secret classification level",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"tss": {
+			"name": "TSS",
+			"description": "The system shall",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"tt&c": {
+			"name": "TT&C",
+			"description": "Tracking, Telemetry & Command",
+			"categories": ["communications"],
+			"tags": [
+				"space_operations",
+				"communications",
+				"operations",
+				"technical",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"ttx": {
+			"name": "TTX",
+			"description": "Training, Testing and Exercises",
+			"categories": ["communications", "training"],
+			"tags": [
+				"space_operations",
+				"training",
+				"communications",
+				"operations",
+				"technical",
+				"agile_management",
+				"technical_training",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"[tables](/patterns/table/)": {
+			"name": "[Tables](/patterns/table/)",
+			"description": "A UX design mechanism comprised of rows and columns used for displaying content.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"[tabs](/components/tabs/)": {
+			"name": "[Tabs](/components/tabs/)",
+			"description": "Tabs in Astro Applications are used to divide major areas of content and to indicate work process.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"[tags](/components/tag/)": {
+			"name": "[Tags](/components/tag/)",
+			"description": "Small markers which often use color to identify important information at a glance, as well as filter and categorize items by keywords.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"telemetry": {
+			"name": "Telemetry",
+			"description": "satellite status data",
+			"categories": ["communications"],
+			"tags": [
+				"space_operations",
+				"communications",
+				"operations",
+				"technical",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"[theme](/design-guidelines/theme/)": {
+			"name": "[Theme](/design-guidelines/theme/)",
+			"description": "A preset set of colors applied as a group to the design system.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"[timeline](/components/timeline/)": {
+			"name": "[Timeline](/components/timeline/)",
+			"description": "Displays event information within a specified time period.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"[tree](/components/tree/)": {
+			"name": "[Tree](/components/tree/)",
+			"description": "A list box that displays the hierarchical relationship among the objects in the list.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		},
+		"tx": {
+			"name": "Tx",
+			"description": "Transmit",
+			"categories": ["communications"],
+			"tags": [
+				"space_operations",
+				"communications",
+				"operations",
+				"technical",
+				"space_communications",
+				"system_operations"
+			]
+		},
+		"[typography](/design-guidelines/typography/)": {
+			"name": "[Typography](/design-guidelines/typography/)",
+			"description": "The font and text settings that Astro uses across the design system.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		}
+	},
+	"U": {
+		"u": {
+			"name": "U",
+			"description": "Unclassified or Uncontrolled Unclassified Information",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"uca": {
+			"name": "UCA",
+			"description": "Upcoming Contacts Allocated",
+			"categories": ["data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"data_processing_tools"
+			]
+		},
+		"ucd": {
+			"name": "UCD",
+			"description": "uncatalogued near space object",
+			"categories": ["data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"data_processing_tools"
+			]
+		},
+		"uct": {
+			"name": "UCT",
+			"description": "uncorrelated track/target",
+			"categories": ["data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"data_processing_tools"
+			]
+		},
+		"udl": {
+			"name": "UDL",
+			"description": "Unified Data Library",
+			"categories": ["data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"data_processing_tools"
+			]
+		},
+		"udlm": {
+			"name": "UDLM",
+			"description": "urgent depot-level maintenance",
+			"categories": ["management"],
+			"tags": [
+				"management",
+				"operations",
+				"project_management",
+				"agile_management"
+			]
+		},
+		"udop": {
+			"name": "UDOP",
+			"description": "user defined operational picture",
+			"categories": ["data_processing", "user_experience"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"user_interface",
+				"technical",
+				"project_management",
+				"user_experience_design",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"data_processing_tools"
+			]
+		},
+		"uewr": {
+			"name": "UEWR",
+			"description": "updated early warning radar",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"uo": {
+			"name": "UO",
+			"description": "uncorrelated/unassociated observation",
+			"categories": ["data_processing"],
+			"tags": [
+				"space_operations",
+				"data_management",
+				"technical",
+				"project_management",
+				"data_analysis",
+				"system_engineering",
+				"software_engineering",
+				"data_processing_tools"
+			]
+		},
+		"usaf": {
+			"name": "USAF",
+			"description": "United States Air Force",
+			"categories": ["organization"],
+			"tags": ["organization", "policy"]
+		},
+		"usstratcom": {
+			"name": "USSTRATCOM",
+			"description": "United States Strategic Command",
+			"categories": ["organization"],
+			"tags": ["organization", "policy"]
+		},
+		"utc": {
+			"name": "UTC",
+			"description": "Coordinated Universal Time",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		},
+		"uui": {
+			"name": "UUI",
+			"description": "Uncontrolled Unclassified Information",
+			"categories": ["general_terms"],
+			"tags": ["general_terms"]
+		}
+	},
+	"V": {
+		"[validation](/patterns/forms-and-validation/)": {
+			"name": "[Validation](/patterns/forms-and-validation/)",
+			"description": "Ensures that data is properly entered into an Input Field or Form. It alerts users to data errors, required input, and prompts them to make corrections.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		}
+	},
+	"W": {
+		"[wireframe](/design-process/ui-design/)": {
+			"name": "[Wireframe](/design-process/ui-design/)",
+			"description": "A page schematic or screen blueprint that represents the skeletal framework of a Web page or Web site.",
+			"categories": ["design"],
+			"tags": ["ui", "ux"]
+		}
+	}
+}

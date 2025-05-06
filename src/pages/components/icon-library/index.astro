@@ -1,0 +1,33 @@
+---
+import Layout from 'project:layouts/docs/docs-layout.astro'
+import IconSearch from 'project:components/icon-search/icon-search'
+import PageHeader from 'project:components/page-header/page-header.js'
+import IconSearchForm from 'project:components/icon-search/parts/search-form.astro'
+import IconCategories from 'project:components/icon-search/parts/search-categories.astro'
+---
+<Layout content={{ title: 'Icon Library' }} file={import.meta.url}>
+	<PageHeader slot="header">
+		<PageHeader.Heading>
+			Icon Library
+		</PageHeader.Heading>
+		<PageHeader.Subheading>
+			Search and download open source icons for use in Astro UXDS and web applications.
+		</PageHeader.Subheading>
+	</PageHeader>
+
+	<Fragment slot="toolbar">
+		<section class="p-icon-search"><IconCategories /><IconSearchForm label="Search icons" /></section>
+	</Fragment>
+
+	<IconSearch />
+
+	<p>
+		<small>
+			Icons in the Astro category have been custom-built by <a href="/getting-started/#astro-licensing">Rocket Communications</a> for users of Astro.
+			<br />
+			All non-Astro icons come from the <a href="https://fonts.google.com/icons?icon.style=Filled&icon.set=Material+Icons">Material Icons</a> set licensed by <a href="https://github.com/google/material-design-icons/blob/master/LICENSE">Google</a>.
+		</small>
+	</p>
+
+	<Fragment slot="aside" />
+</Layout>

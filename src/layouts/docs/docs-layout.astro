@@ -10,7 +10,6 @@ import PageAside from 'project:components/page-aside/page-aside.astro'
 import ContributionFooter from 'project:components/contribution-footer/contribution-footer.astro'
 import FeedbackWidget from 'project:components/feedback-widgets/feedback-widget-sticky/feedback-widget.astro'
 import globalData from 'project:data/global.json'
-// import FeedbackWidgetStatic from 'project:components/feedback-widgets/feedback-widget-static/feedback-widget-static.astro'
 
 import './docs-layout.css'
 
@@ -32,7 +31,6 @@ const tabTitle = content.title
 const description = content.description || false
 const url = content.url
 const draft = content.draft ? content.draft : false
-
 /* Create github link to source file */
 
 /** RegEx to match a slash (/) at the end ($) of a string. */
@@ -87,7 +85,6 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 			<div class="page-content-main-col">
 				<slot />
 				<ContributionFooter sourceurl={githubSourceURL} />
-				<!-- <FeedbackWidgetStatic currentURL={url} /> -->
 			</div>
 
 			<aside class="page-content-side-col" id="aside">
@@ -97,7 +94,7 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 			</aside>
 		</div>
 	</main>
-	<FeedbackWidget currentURL={url} />
+	<FeedbackWidget currentURL={Astro.url.pathname} />
 </Layout>
 <script>
 	import './docs-layout.client'

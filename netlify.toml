@@ -131,13 +131,20 @@
 
 [[redirects]]
 	from = "/compliance"
-	to = "/compliance/r2c2-design-compliance"
+	to = "/compliance/astro-design-compliance"
 	status = 301
 	force = true
 
 [[redirects]]
+	from = "/compliance/r2c2-design-compliance"
+	to = "/compliance/astro-design-compliance"
+	status = 301
+	force = true
+
+
+[[redirects]]
 	from = "/egs-design-compliancee"
-	to = "/compliance/r2c2-design-compliance"
+	to = "/compliance/astro-design-compliance"
 	status = 301
 	force = true
 
@@ -156,5 +163,107 @@
 [[redirects]]
 	from = "/design-guidelines/color/"
 	to = "/design-tokens/getting-started/"
+	status = 301
+	force = true
+
+[[redirects]]
+	from = "/service-specific-ux-design/"
+	to = "/case-studies/service-specific-ux-design/"
+	status = 301
+	force = true
+
+[[redirects]]
+	from = "/grm-service-ux-design/about-the-grm-designs/"
+	to = "/case-studies/grm-service-ux-design/about-the-grm-designs/"
+	status = 301
+	force = true
+
+[[redirects]]
+	from = "/ttc-service-ux-design/about-the-ttc-designs/"
+	to = "/case-studies/ttc-service-ux-design/about-the-ttc-designs/"
+	status = 301
+	force = true
+
+[[redirects]]
+	from = "/fd-service-ux-design/about-the-fd-designs/"
+	to = "/case-studies/fd-service-ux-design/about-the-fd-designs/"
+	status = 301
+	force = true
+
+[[redirects]]
+	from = "/migration/"
+	to = "/releases/migration/"
+	status = 301
+	force = true
+
+[[redirects]]
+	from = "/downloads/"
+	to = "/resources/downloads/"
+	status = 301
+	force = true
+
+[[redirects]]
+	from = "/design-guidelines/glossary/"
+	to = "/resources/glossary/"
+	status = 301
+	force = true
+
+[[redirects]]
+	from = "/design-process/research/"
+	to = "/resources/research/"
+	status = 301
+	force = true
+
+[[redirects]]
+	from = "/design-process/ui-design/"
+	to = "/resources/ui-design/"
+	status = 301
+	force = true
+
+[[redirects]]
+	from = "/design-process/visual-design/"
+	to = "/resources/visual-design/"
+	status = 301
+	force = true
+
+[[redirects]]
+	from = "/design-process/ux-assessments/"
+	to = "/resources/ux-assessments/"
+	status = 301
+	force = true
+
+[[redirects]]
+	from = "/community/propose-a-change/"
+	to = "/support/propose-a-change/"
+	status = 301
+	force = true
+
+[[redirects]]
+	from = "/community/content-policy/"
+	to = "/support/content-policy/"
+	status = 301
+	force = true
+
+[[redirects]]
+	from = "/icon-library/"
+	to = "/components/icon-library/"
+	status = 301
+	force = true
+
+[[redirects]]
+	from = "/design-guidelines/typography/"
+	to = "/foundations/typography/"
+	status = 301
+	force = true
+
+[[redirects]]
+	from = "/design-guidelines/theme/"
+	to = "/foundations/theme/"
+	status = 301
+	force = true
+
+[[redirects]]
+	from = "/design-guidelines/grid/"
+	to = "/foundations/grid/"
 	status = 301
 	force = true

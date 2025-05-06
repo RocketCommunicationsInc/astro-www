@@ -1,0 +1,58 @@
+---
+import DocsLayout from 'project:layouts/docs/docs-layout.astro'
+import AstroDownloads from 'project:components/astro-downloads/astro-downloads.astro'
+import Heading from 'project:components/astro-headings/heading.astro'
+const content = { title: 'Downloads', description: `Associated Astro Design System downloads and documentation.` }
+---
+
+<DocsLayout content={content}>
+
+<Heading type="h2" title="Astro Design System" />
+
+<ul>
+	<li>Astro Design Tokens (<a href="https://github.com/RocketCommunicationsInc/astro-design-tokens">Git Repository</a>)</li>
+	<li>Astro Web Components Source Code (<a href="https://github.com/RocketCommunicationsInc/astro">Git Repository</a>)</li>
+	<li>Astro UXDS Figma Page (<a href="https://www.figma.com/@astrouxds">Figma</a>)</li>
+	<li>Astro Icons (<a href="https://github.com/RocketCommunicationsInc/astro/tree/main/packages/web-components/src/icons">SVG</a> | <a href="https://www.figma.com/community/file/1022883566772542677">Figma</a>)</li>
+	<li>Astro HTML Starter Kit (<a href="https://github.com/RocketCommunicationsInc/astro-starter-kits/tree/main/html">Git Repository</a>)</li>
+	<li>Astro Angular Starter Kit (<a href="https://github.com/RocketCommunicationsInc/astro-starter-kits/tree/main/angular">Git Repository</a>)</li>
+	<li>Astro React Starter Kit (<a href="https://github.com/RocketCommunicationsInc/astro-starter-kits/tree/main/react">Git Repository</a>)</li>
+	<li>Astro Vue Starter Kit (<a href="https://github.com/RocketCommunicationsInc/astro-starter-kits/tree/main/vue">Git Repository</a>)</li>
+</ul>
+
+<Heading type="h2" title="Astro Web Components" />
+<p>Download the latest build version of the AstroUXDS Web Components or any previous version.</p>
+<AstroDownloads />
+
+<Heading type="h2" title="Themes" />
+
+<ul>
+	<li>Astro AG Grid Theme (<a href="https://github.com/RocketCommunicationsInc/ag-grid-theme">Git Repository</a>)</li>
+	<li>Astro Tailwind Theme (<a href="https://github.com/RocketCommunicationsInc/astro-tailwind">Git Repository</a>)</li>
+</ul>
+
+<Heading type="h2" title="GRM Service UX Design" />
+
+<ul>
+	<li>GRM Design Specifications (<a href="/pdf/grm-specifications.pdf">pdf</a>)</li>
+	<li>GRM Wireframes (<a href="/pdf/grm-wireframes.pdf">pdf</a>)</li>
+	<li><button data-app="GRM" type="button" class="p-source-code-dialog-open">GRM Request Source Code Access</button></li>
+</ul>
+
+<Heading type="h2" title="TT&C Service UX Design" />
+
+<ul>
+	<li>TT&C Design Specifications (<a href="/pdf/ttc-specifications.pdf">pdf</a>)</li>
+	<li>TT&C Wireframes (<a href="/pdf/ttc-wireframes.pdf">pdf</a>)</li>
+	<li><button data-app="TT&C" type="button" class="p-source-code-dialog-open">TT&C Request Source Code Access</button></li>
+</ul>
+
+<Heading type="h2" title="FDS Service UX Design" />
+
+<ul>
+	<li>FDS Design Specifications (<a href="/pdf/fds-specifications.pdf">pdf</a>)</li>
+	<li>FDS Wireframes (<a href="/pdf/fds-wireframes.pdf">pdf</a>)</li>
+	<li><button data-app="FDS" type="button" class="p-source-code-dialog-open">FDS Request Source Code Access</button></li>
+</ul>
+
+</DocsLayout>

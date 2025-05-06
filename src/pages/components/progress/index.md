@@ -2,7 +2,7 @@
 title: Progress
 description: A Progress indicator signals that an application is busy performing an operation.
 layout: project:layouts/component-docs/component-docs-layout.astro
-storybook: components-progress
+storybook: components-progress--default
 height: 220px
 git: rux-progress
 assets:
@@ -42,8 +42,8 @@ A **Determinate Progress indicator** is displayed as a linear bar that dynamical
 ## Examples
 
 :::two-col
-![Do: Use a Determinate Progress Bar to indicate to users how much of an operation has been completed.](/img/components/progress/determinate-progress-do-1.webp "Do: Use a Determinate Progress Bar to indicate to users how much of an operation has been completed.")
+![Do: Use a Determinate Progress Bar to indicate to users how much of an operation has been completed.](/img/components/progress/determinate-progress-do-1.webp 'Do: Use a Determinate Progress Bar to indicate to users how much of an operation has been completed.')
 
-![Do: Use an Indeterminate Progress control to indicate that an application is busy performing an operation but the progress is unknown.](/img/components/progress/indeterminate-progress-do-1.webp "Do: Use an Indeterminate Progress control to indicate that an application is busy performing an operation but the progress is unknown.")
+![Do: Use an Indeterminate Progress control to indicate that an application is busy performing an operation but the progress is unknown.](/img/components/progress/indeterminate-progress-do-1.webp 'Do: Use an Indeterminate Progress control to indicate that an application is busy performing an operation but the progress is unknown.')
 
 :::

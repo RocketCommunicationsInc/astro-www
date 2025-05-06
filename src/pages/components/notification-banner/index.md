@@ -2,12 +2,13 @@
 title: Notification Banner
 description: Events that deserve user attention but don’t require a response, may be displayed in a Notification Banner.
 layout: project:layouts/component-docs/component-docs-layout.astro
-storybook: components-notification--all-variants
+storybook: components-notification--with-all-variants
 height: 600px
 git: rux-notification
 assets:
-    name: Notification Banner
+  name: Notification Banner
 ---
+
 ## Interactive Example
 
 ::tag{ is=a-playground tag=rux-notification }

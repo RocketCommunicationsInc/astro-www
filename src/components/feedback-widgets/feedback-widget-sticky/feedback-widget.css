@@ -14,6 +14,7 @@
 
 	/* Appearance */
 	position: sticky;
+	z-index: 10;
 
 	@media (width < 1024px) {
 		/* Layout */

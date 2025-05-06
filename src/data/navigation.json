@@ -19,6 +19,23 @@
 	{
 		"items": [
 			{
+				"label": "Theme",
+				"url": "/foundations/theme/"
+			},
+			{
+				"label": "Grid",
+				"url": "/foundations/grid/"
+			},
+			{
+				"label": "Typography",
+				"url": "/foundations/typography/"
+			}
+		],
+		"label": "Foundations"
+	},
+	{
+		"items": [
+			{
 				"label": "Getting Started",
 				"url": "/design-tokens/getting-started/"
 			},
@@ -40,80 +57,6 @@
 			}
 		],
 		"label": "Design Tokens"
-	},
-	{
-		"items": [
-			{
-				"label": "Typography",
-				"url": "/design-guidelines/typography/"
-			},
-			{
-				"label": "Theme",
-				"url": "/design-guidelines/theme/"
-			},
-			{
-				"label": "Grid",
-				"url": "/design-guidelines/grid/"
-			},
-			{
-				"label": "Glossary",
-				"url": "/design-guidelines/glossary/"
-			}
-		],
-		"label": "Design Guidelines"
-	},
-	{
-		"items": [
-			{
-				"label": "Application Feedback",
-				"url": "/patterns/application-feedback/"
-			},
-			{
-				"label": "Breadcrumbs",
-				"url": "/patterns/breadcrumbs/"
-			},
-			{
-				"label": "Data Visualization",
-				"url": "/patterns/data-visualization/"
-			},
-			{
-				"label": "Focus State",
-				"url": "/patterns/focus/"
-			},
-			{
-				"label": "Forms and Validation",
-				"url": "/patterns/forms-and-validation/"
-			},
-			{
-				"label": "Modeless Panes",
-				"url": "/patterns/modeless-panes/"
-			},
-			{
-				"label": "Navigation",
-				"url": "/patterns/navigation/"
-			},
-			{
-				"label": "Notifications",
-				"url": "/patterns/notifications/"
-			},
-			{
-				"label": "Pop Up Menu",
-				"url": "/patterns/pop-up-menu/"
-			},
-			{
-				"label": "Sign In",
-				"url": "/patterns/sign-in/"
-			},
-			{
-				"label": "Status System",
-				"url": "/patterns/status-system/"
-			},
-			{
-				"label": "Table",
-				"url": "/patterns/table/"
-			}
-		],
-		"label": "Patterns"
 	},
 	{
 		"items": [
@@ -177,6 +120,10 @@
 			{
 				"label": "Icons and Symbols",
 				"url": "/components/icons-and-symbols/"
+			},
+			{
+				"label": "Icon Library",
+				"url": "/components/icon-library/"
 			},
 			{
 				"label": "Input Field",
@@ -272,50 +219,57 @@
 		"label": "Components"
 	},
 	{
-		"label": "Icon Library",
-		"url": "/icon-library/"
-	},
-	{
 		"items": [
 			{
-				"label": "Research",
-				"url": "/design-process/research/"
+				"label": "Application Feedback",
+				"url": "/patterns/application-feedback/"
 			},
 			{
-				"label": "UI Design",
-				"url": "/design-process/ui-design/"
+				"label": "Breadcrumbs",
+				"url": "/patterns/breadcrumbs/"
 			},
 			{
-				"label": "Visual Design",
-				"url": "/design-process/visual-design/"
+				"label": "Data Visualization",
+				"url": "/patterns/data-visualization/"
 			},
 			{
-				"label": "UX Assessments",
-				"url": "/design-process/ux-assessments/"
+				"label": "Focus State",
+				"url": "/patterns/focus/"
+			},
+			{
+				"label": "Forms and Validation",
+				"url": "/patterns/forms-and-validation/"
+			},
+			{
+				"label": "Modeless Panes",
+				"url": "/patterns/modeless-panes/"
+			},
+			{
+				"label": "Navigation",
+				"url": "/patterns/navigation/"
+			},
+			{
+				"label": "Notifications",
+				"url": "/patterns/notifications/"
+			},
+			{
+				"label": "Pop Up Menu",
+				"url": "/patterns/pop-up-menu/"
+			},
+			{
+				"label": "Sign In",
+				"url": "/patterns/sign-in/"
+			},
+			{
+				"label": "Status System",
+				"url": "/patterns/status-system/"
+			},
+			{
+				"label": "Table",
+				"url": "/patterns/table/"
 			}
 		],
-		"label": "Design Process"
-	},
-	{
-		"items": [
-			{
-				"label": "Service Specific UX Design",
-				"url": "/service-specific-ux-design/"
-			},
-			{
-				"label": "GRM Service UX Design",
-				"url": "/grm-service-ux-design/about-the-grm-designs/"
-			},
-			{
-				"label": "TT&C Service UX Design",
-				"url": "/ttc-service-ux-design/about-the-ttc-designs/"
-			},
-			{
-				"label": "FD Service UX Design",
-				"url": "/fd-service-ux-design/about-the-fd-designs/"
-			}
-		],
-		"label": "Case Studies"
+		"label": "Patterns"
 	},
 	{
 		"items": [
@@ -337,21 +291,8 @@
 	{
 		"items": [
 			{
-				"label": "Propose a Change",
-				"url": "/community/propose-a-change/"
-			},
-			{
-				"label": "Content Policy",
-				"url": "/community/content-policy/"
-			}
-		],
-		"label": "Community"
-	},
-	{
-		"items": [
-			{
-				"label": "R2C2 Design Compliance",
-				"url": "/compliance/r2c2-design-compliance/"
+				"label": "Astro Design Compliance",
+				"url": "/compliance/astro-design-compliance/"
 			},
 			{
 				"label": "MIL-STD 1472H",
@@ -361,19 +302,83 @@
 		"label": "Compliance"
 	},
 	{
-		"label": "Releases",
-		"url": "/releases/"
+		"items": [
+			{
+				"label": "Service Specific UX Design",
+				"url": "/case-studies/service-specific-ux-design/"
+			},
+			{
+				"label": "GRM Service UX Design",
+				"url": "/case-studies/grm-service-ux-design/about-the-grm-designs/"
+			},
+			{
+				"label": "TT&C Service UX Design",
+				"url": "/case-studies/ttc-service-ux-design/about-the-ttc-designs/"
+			},
+			{
+				"label": "FDS Service UX Design",
+				"url": "/case-studies/fd-service-ux-design/about-the-fd-designs/"
+			}
+		],
+		"label": "Case Studies"
 	},
 	{
-		"label": "Migration",
-		"url": "/migration/"
+		"items": [
+			{
+				"label": "Releases",
+				"url": "/releases/"
+			},
+			{
+				"label": "Migration",
+				"url": "/releases/migration/"
+			}
+		],
+		"label": "Releases"
 	},
 	{
-		"label": "Downloads",
-		"url": "/downloads/"
+		"items": [
+			{
+				"label": "Downloads",
+				"url": "/resources/downloads/"
+			},
+			{
+				"label": "Glossary",
+				"url": "/resources/glossary/"
+			},
+			{
+				"label": "Research",
+				"url": "/resources/research/"
+			},
+			{
+				"label": "UI Design",
+				"url": "/resources/ui-design/"
+			},
+			{
+				"label": "Visual Design",
+				"url": "/resources/visual-design/"
+			},
+			{
+				"label": "UX Assessments",
+				"url": "/resources/ux-assessments/"
+			}
+		],
+		"label": "Resources"
 	},
 	{
-		"label": "Support",
-		"url": "/support/"
+		"items": [
+			{
+				"label": "Propose a Change",
+				"url": "/support/propose-a-change/"
+			},
+			{
+				"label": "Content Policy",
+				"url": "/support/content-policy/"
+			},
+			{
+				"label": "Support",
+				"url": "/support/"
+			}
+		],
+		"label": "Support"
 	}
 ]

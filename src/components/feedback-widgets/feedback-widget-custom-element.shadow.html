@@ -15,12 +15,15 @@
 			</button>
 		</div>
 	</div>
-	<form method="post" id="feedback-form" action="https://astrouxds-feedback.herokuapp.com/">
-		<input type="radio" id="radio_thumbs-up" name="user-feedback-radio" value="thumbs-up">
-		<input type="radio" id="radio_thumbs-down" name="user-feedback-radio" value="thumbs-down">
-		<input type="text" id="current-url" class="current-url" name="pageURL" value="">
+	<form method="post" id="feedback-form" action="https://astrouxds-api-196cde1c48d0.herokuapp.com/api/v1/feedback">
+		<input type="radio" id="radio_thumbs-up" name="user-feedback-radio" value="thumbs-up" required>
+		<input type="radio" id="radio_thumbs-down" name="user-feedback-radio" value="thumbs-down" required>
 		<textarea id="user-input" name="user-feedback" placeholder="Tell us why you gave that rating (optional)"></textarea>
-		<input id="user-email" name="user-feedback" type="email" placeholder="Email Address (optional)" />
+		<span class="widget_user-receive-response-wrapper">
+			<input type="checkbox" id="widget_receive-response" name="user-receive-response" value="">
+			<label for="user-receive-response">I'd like a response</label>
+		</span>
+		<input id="user-email" name="user-email" type="email" placeholder="Email Address (optional)" />
 		<div class="widget_button-group">
 			<button type="reset" class="widget_secondary-button"><slot name="secondaryButtonName">Clear</slot></button>
 			<button class="widget_primary-button" type="submit" value="Submit" disabled>Submit</button>

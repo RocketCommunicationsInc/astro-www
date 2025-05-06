@@ -2,12 +2,13 @@
 title: Slider
 description: A Slider allows users to choose from a range of continuous and discrete values arranged from minimum to maximum.
 layout: project:layouts/component-docs/component-docs-layout.astro
-storybook: forms-slider--default-story
+storybook: forms-slider--default
 height: 116px
 git: rux-slider
 assets:
-    name: Slider
+  name: Slider
 ---
+
 ## Interactive Example
 
 ::tag{ is=a-playground tag=rux-slider }
@@ -55,12 +56,12 @@ To learn more about adding Help Text to Sliders, see the [Forms and Validation](
 ## Examples
 
 :::two-col
-![Do: If adding labels, only use the minimal amount necessary to indicate the values.](/img/components/slider/slider-do-1.webp "Do: If adding labels, only use the minimal amount necessary to indicate the values.")
+![Do: If adding labels, only use the minimal amount necessary to indicate the values.](/img/components/slider/slider-do-1.webp 'Do: If adding labels, only use the minimal amount necessary to indicate the values.')
 
-![Don’t: Excessive labels clutter the design.](/img/components/slider/slider-dont-1.webp "Don’t: Excessive labels clutter the design.")
+![Don’t: Excessive labels clutter the design.](/img/components/slider/slider-dont-1.webp 'Don’t: Excessive labels clutter the design.')
 
-![Do: Use a Dual Range Slider when a range of selections is needed.](/img/components/slider/dual-range-slider-do-1.webp "Do: Use a Dual Range Slider when a range of selections is needed.")
+![Do: Use a Dual Range Slider when a range of selections is needed.](/img/components/slider/dual-range-slider-do-1.webp 'Do: Use a Dual Range Slider when a range of selections is needed.')
 
-![Don’t: Use a Dual Range Slider when a single integer is needed.](/img/components/slider/dual-range-slider-dont-1.webp "Don’t: Use a Dual Range Slider when a single integer is needed.")
+![Don’t: Use a Dual Range Slider when a single integer is needed.](/img/components/slider/dual-range-slider-dont-1.webp 'Don’t: Use a Dual Range Slider when a single integer is needed.')
 
 :::

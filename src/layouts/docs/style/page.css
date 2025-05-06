@@ -48,7 +48,7 @@
 		--font-size-h4: 24--rpx;
 	}
 
-	@media (1440px >= width > 768px) {
+	@media (1440px >= width > 769px) {
 		--header-block-size: 280--rpx;
 		--header-padding-block-start: 15--step;
 		--header-padding-block-end: 15--step;
@@ -83,7 +83,7 @@
 		--main-content-width: 100%;
 	}
 
-	@media (width < 768px) {
+	@media (width < 769px) {
 		--header-block-size: 0;
 		--header-padding-block-start: 5--step;
 		--header-padding-block-end: 5--step;

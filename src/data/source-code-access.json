@@ -1,0 +1,298 @@
+{
+	"$schema": "./schema.json",
+	"type": "object",
+	"data": {
+		"heading": {
+			"type": "text",
+			"data": "Request Access to Source Code Repository"
+		},
+		"summary": {
+			"type": "text",
+			"data": "The source code Git repository and other useful documentation for Astro’s apps are hosted on Github.com. Please fill out the form below to request access."
+		},
+		"useLabel": {
+			"type": "text",
+			"data": "How Would You Like to Use Astro’s Source Code?"
+		},
+		"accessLabel": {
+			"type": "text",
+			"data": "Which Astro App’s Source Code Would You Like Access to?"
+		},
+		"content": {
+			"type": "objects",
+			"data": [
+				{
+					"type": {
+						"type": "text",
+						"data": "text"
+					},
+					"name": {
+						"type": "text",
+						"data": "first"
+					},
+					"label": {
+						"type": "text",
+						"data": "First Name"
+					},
+					"autocomplete": {
+						"type": "text",
+						"data": "first"
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "Enter first name"
+					},
+					"required": {
+						"type": "switch",
+						"data": true
+					}
+				},
+				{
+					"type": {
+						"type": "text",
+						"data": "text"
+					},
+					"name": {
+						"type": "text",
+						"data": "last"
+					},
+					"label": {
+						"type": "text",
+						"data": "Last Name"
+					},
+					"autocomplete": {
+						"type": "text",
+						"data": "last"
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "Enter last name"
+					},
+					"required": {
+						"type": "switch",
+						"data": true
+					}
+				},
+				{
+					"type": {
+						"type": "text",
+						"data": "email"
+					},
+					"name": {
+						"type": "text",
+						"data": "email"
+					},
+					"label": {
+						"type": "text",
+						"data": "Email"
+					},
+					"autocomplete": {
+						"type": "text",
+						"data": "email"
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "Enter email"
+					},
+					"required": {
+						"type": "switch",
+						"data": true
+					}
+				},
+				{
+					"type": {
+						"type": "text",
+						"data": "text"
+					},
+					"name": {
+						"type": "text",
+						"data": "company"
+					},
+					"label": {
+						"type": "text",
+						"data": "Company"
+					},
+					"autocomplete": {
+						"type": "text",
+						"data": "company"
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "Enter company name"
+					},
+					"required": {
+						"type": "switch",
+						"data": false
+					}
+				}
+			]
+		},
+		"use": {
+			"type": "objects",
+			"data": [
+				{
+					"type": {
+						"type": "text",
+						"data": "radio"
+					},
+					"name": {
+						"type": "text",
+						"data": "use"
+					},
+					"label": {
+						"type": "text",
+						"data": "Company Use"
+					},
+					"autocomplete": {
+						"type": "text",
+						"data": "use"
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "company"
+					},
+					"checked": {
+						"type": "switch",
+						"data": true
+					}
+				},
+				{
+					"type": {
+						"type": "text",
+						"data": "radio"
+					},
+					"name": {
+						"type": "text",
+						"data": "use"
+					},
+					"label": {
+						"type": "text",
+						"data": "Personal Use"
+					},
+					"autocomplete": {
+						"type": "text",
+						"data": "use"
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "personal"
+					},
+					"checked": {
+						"type": "switch",
+						"data": false
+					}
+				}
+			]
+		},
+		"apps": {
+			"type": "objects",
+			"data": [
+				{
+					"type": {
+						"type": "text",
+						"data": "checkbox"
+					},
+					"name": {
+						"type": "text",
+						"data": "apps"
+					},
+					"label": {
+						"type": "text",
+						"data": "GRM"
+					},
+					"autocomplete": {
+						"type": "text",
+						"data": "apps"
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "GRM"
+					},
+					"checked": {
+						"type": "switch",
+						"data": false
+					}
+				},
+				{
+					"type": {
+						"type": "text",
+						"data": "checkbox"
+					},
+					"name": {
+						"type": "text",
+						"data": "apps"
+					},
+					"label": {
+						"type": "text",
+						"data": "TT&C"
+					},
+					"autocomplete": {
+						"type": "text",
+						"data": "apps"
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "TT&C"
+					},
+					"checked": {
+						"type": "switch",
+						"data": false
+					}
+				},
+				{
+					"type": {
+						"type": "text",
+						"data": "checkbox"
+					},
+					"name": {
+						"type": "text",
+						"data": "apps"
+					},
+					"label": {
+						"type": "text",
+						"data": "FDS"
+					},
+					"autocomplete": {
+						"type": "text",
+						"data": "apps"
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "FDS"
+					},
+					"checked": {
+						"type": "switch",
+						"data": false
+					}
+				}
+			]
+		},
+		"useDescription": {
+			"type": "objects",
+			"data": [
+				{
+					"type": {
+						"type": "text",
+						"data": "text"
+					},
+					"name": {
+						"type": "text",
+						"data": "useDescription"
+					},
+					"label": {
+						"type": "text",
+						"data": "To help Astro better improve, please tell us a little bit about your project."
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "Tell us about your project to help us better support you."
+					},
+					"required": {
+						"type": "switch",
+						"data": false
+					}
+				}
+			]
+		}
+	}
+}

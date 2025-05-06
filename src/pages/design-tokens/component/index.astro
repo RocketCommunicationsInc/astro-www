@@ -2,7 +2,7 @@
 import DocsLayout from 'project:layouts/docs/docs-layout.astro'
 import { component, lookupProperty } from 'project:utils/tokens.js'
 import '../shared.css'
-import { RuxDesignTokenPreview } from '@astrouxds/documentation-components' 
+import { RuxDesignTokenPreview } from '@astrouxds/documentation-components'
 
 const title = 'Component Tokens'
 const description = 'Component specific tokens to be used only when rebuilding components.'
@@ -14,7 +14,7 @@ const description = 'Component specific tokens to be used only when rebuilding c
 	{
 		component('dark', 'button').map((token) => (
 			<RuxDesignTokenPreview
-    client:visible
+    client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -32,7 +32,7 @@ const description = 'Component specific tokens to be used only when rebuilding c
 	{
 		component('dark', 'card').map((token) => (
 			<RuxDesignTokenPreview
-    client:visible
+    client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -50,7 +50,7 @@ const description = 'Component specific tokens to be used only when rebuilding c
 	{
 		component('dark', 'checkbox').map((token) => (
 			<RuxDesignTokenPreview
-    client:visible
+    client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -68,7 +68,7 @@ const description = 'Component specific tokens to be used only when rebuilding c
 	{
 		component('dark', 'classification-banner').map((token) => (
 			<RuxDesignTokenPreview
-    client:visible
+    client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -86,7 +86,7 @@ const description = 'Component specific tokens to be used only when rebuilding c
 	{
 		component('dark', 'clock').map((token) => (
 			<RuxDesignTokenPreview
-    client:visible
+    client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -104,7 +104,7 @@ const description = 'Component specific tokens to be used only when rebuilding c
 	{
 		component('dark', 'container').map((token) => (
 			<RuxDesignTokenPreview
-    client:visible
+    client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -121,7 +121,7 @@ const description = 'Component specific tokens to be used only when rebuilding c
 	{
 		component('dark', 'gsb').map((token) => (
 			<RuxDesignTokenPreview
-    client:visible
+    client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -139,7 +139,7 @@ const description = 'Component specific tokens to be used only when rebuilding c
 	{
 		component('dark', 'indeterminate-progress').map((token) => (
 			<RuxDesignTokenPreview
-    client:visible
+    client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -157,7 +157,7 @@ const description = 'Component specific tokens to be used only when rebuilding c
 	{
 		component('dark', 'input').map((token) => (
 			<RuxDesignTokenPreview
-    client:visible
+    client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -175,7 +175,7 @@ const description = 'Component specific tokens to be used only when rebuilding c
 	{
 		component('dark', 'link').map((token) => (
 			<RuxDesignTokenPreview
-    client:visible
+    client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -193,7 +193,7 @@ const description = 'Component specific tokens to be used only when rebuilding c
 	{
 		component('dark', 'log').map((token) => (
 			<RuxDesignTokenPreview
-    client:visible
+    client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -211,7 +211,7 @@ const description = 'Component specific tokens to be used only when rebuilding c
 	{
 		component('dark', 'menu').map((token) => (
 			<RuxDesignTokenPreview
-    client:visible
+    client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -228,7 +228,7 @@ const description = 'Component specific tokens to be used only when rebuilding c
 	{
 		component('dark', 'monitoring-icon').map((token) => (
 			<RuxDesignTokenPreview
-    client:visible
+    client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -246,7 +246,7 @@ const description = 'Component specific tokens to be used only when rebuilding c
 	{
 		component('dark', 'notification-banner').map((token) => (
 			<RuxDesignTokenPreview
-    client:visible
+    client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -264,7 +264,25 @@ const description = 'Component specific tokens to be used only when rebuilding c
 	{
 		component('dark', 'progress').map((token) => (
 			<RuxDesignTokenPreview
-    client:visible
+    client:load
+				name={token.name}
+				value={token.value}
+				alias={token.referenceToken}
+				description={token.description}
+				type={lookupProperty(token.category, token.property)}
+			/>
+		))
+	}
+
+	<hr />
+
+	<h2 id="push-button">
+		Push Button
+	</h2>
+	{
+		component('dark', 'push-button').map((token) => (
+			<RuxDesignTokenPreview
+    client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -283,7 +301,7 @@ const description = 'Component specific tokens to be used only when rebuilding c
 	{
 		component('dark', 'radio').map((token) => (
 			<RuxDesignTokenPreview
-    client:visible
+    client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -301,7 +319,7 @@ const description = 'Component specific tokens to be used only when rebuilding c
 	{
 		component('dark', 'scrollbar').map((token) => (
 			<RuxDesignTokenPreview
-    client:visible
+    client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -319,7 +337,7 @@ const description = 'Component specific tokens to be used only when rebuilding c
 	{
 		component('dark', 'select').map((token) => (
 			<RuxDesignTokenPreview
-    client:visible
+    client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -337,7 +355,7 @@ const description = 'Component specific tokens to be used only when rebuilding c
 	{
 		component('dark', 'slider').map((token) => (
 			<RuxDesignTokenPreview
-    client:visible
+    client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -353,7 +371,7 @@ const description = 'Component specific tokens to be used only when rebuilding c
 	{
 		component('dark', 'status-symbol').map((token) => (
 			<RuxDesignTokenPreview
-    client:visible
+    client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -371,7 +389,7 @@ const description = 'Component specific tokens to be used only when rebuilding c
 	{
 		component('dark', 'switch').map((token) => (
 			<RuxDesignTokenPreview
-    client:visible
+    client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -382,13 +400,31 @@ const description = 'Component specific tokens to be used only when rebuilding c
 	}
 
 	<hr />
+
+	<h2 id="tab">
+		Tab
+	</h2>
+	{
+		component('dark', 'tab').map((token) => (
+			<RuxDesignTokenPreview
+				client:load
+				name={token.name}
+				value={token.value}
+				alias={token.referenceToken}
+				description={token.description}
+				type={lookupProperty(token.category, token.property)}
+			/>
+		))
+	}
+	<hr />
+
 	<h2 id="table">
 		Table
 	</h2>
 	{
 		component('dark', 'table').map((token) => (
 			<RuxDesignTokenPreview
-				client:visible
+				client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -405,7 +441,7 @@ const description = 'Component specific tokens to be used only when rebuilding c
 	{
 		component('dark', 'tag').map((token) => (
 			<RuxDesignTokenPreview
-    client:visible
+    client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -422,7 +458,7 @@ const description = 'Component specific tokens to be used only when rebuilding c
 	{
 		component('dark', 'textarea').map((token) => (
 			<RuxDesignTokenPreview
-    client:visible
+    client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -439,7 +475,7 @@ const description = 'Component specific tokens to be used only when rebuilding c
 	{
 		component('dark', 'timeline').map((token) => (
 			<RuxDesignTokenPreview
-    client:visible
+    client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}
@@ -455,7 +491,7 @@ const description = 'Component specific tokens to be used only when rebuilding c
 	{
 		component('dark', 'tooltip').map((token) => (
 			<RuxDesignTokenPreview
-    client:visible
+    client:load
 				name={token.name}
 				value={token.value}
 				alias={token.referenceToken}

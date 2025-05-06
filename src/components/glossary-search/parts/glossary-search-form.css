@@ -1,0 +1,144 @@
+.p-searchform {
+	/* Layout */
+	inline-size: 100%;
+
+	/* Layout */
+	/* max-inline-size: 185--step; */
+
+	/* Reference */
+	--border-color: var(--Grey400Color);
+	--clear-color: var(--PlaceholderColor);
+	--label-color: var(--PlaceholderColor);
+	--search-color: var(--Grey700Color);
+
+	&.-filled {
+		--border-color: var(--DarkBlue500Color);
+		--label-color: var(--InverseColor);
+	}
+
+	&:focus-within, &:hover {
+		--border-color: var(--DarkBlue500Color);
+	}
+
+	&:focus-within {
+		--search-color: var(--InverseColor);
+	}
+
+	& .-field {
+		display: grid;
+
+		/* Layout */
+		align-items: center;
+		block-size: 9--step;
+		inline-size: 100%;
+
+		/* Appearance */
+		background-color: var(--PrimaryColor);
+		border-radius: 6--rpx;
+		box-shadow: var(--border-color) 0 0 0 1px inset;
+
+		& > * {
+			display: flex;
+
+			/* Layout */
+			align-items: center;
+			grid-area: 1 / 1 / 2 / 2;
+
+			/* Appearance */
+			border-radius: 6--rpx;
+		}
+	}
+
+	& .-control, & .-label {
+		/* Layout */
+		align-self: stretch;
+		inline-size: 100%;
+		padding-inline: 12--step;
+
+		@media (width < 1024px) {
+			/* Layout */
+			padding-inline: 9--step;
+		}
+	}
+
+	& .-icon {
+		/* Layout */
+		block-size: 5--step;
+		inline-size: 5--step;
+
+		/* Animation */
+		transition: color 300ms;
+	}
+
+	& .-search-icon {
+		/* Layout */
+		margin-inline-start: 5--step;
+
+		/* Appearance */
+		color: var(--search-color);
+
+		@media (width < 1024px) {
+			/* Layout */
+			margin-inline-start: 3--step;
+		}
+	}
+
+	& .-clear {
+		/* Layout */
+		justify-self: end;
+		margin-inline-end: 4--step;
+		padding: 2--step;
+
+		/* Appearance */
+		color: var(--clear-color);
+		cursor: pointer;
+
+		/* Animation */
+		transition: opacity 300ms;
+
+		@media (width < 1024px) {
+			/* Layout */
+			margin-inline-end: 0;
+		}
+
+		&:focus-within, &:hover {
+			--clear-color: var(--InverseColor);
+		}
+
+		&:focus {
+			/* Animation */
+			transition-duration: 0ms;
+		}
+
+		&:focus-visible {
+			/* Appearance */
+			outline-offset: -2--rpx;
+		}
+	}
+
+	&:not(.-filled) .-clear {
+		/* Appearance */
+		opacity: 0;
+	}
+
+	& .-label {
+		/* Text */
+		font-weight: 300;
+		line-height: 20--rpx;
+
+		/* Appearance */
+		color: var(--label-color);
+
+		/* Transform */
+		transform-origin: 40% 100%;
+	}
+
+	&.-filled .-label {
+		/* Appearance */
+		opacity: 0;
+
+		/* Transform */
+		scale: 80%;
+		translate: -12--step -12--step;
+	}
+}
