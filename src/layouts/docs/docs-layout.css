@@ -4,3 +4,31 @@
 @import "style/heading-anchors.css";
 @import "style/utilities.css";
 @import "style/specs.css";
+
+.return-btn {
+	/* Layout */
+	align-self: center;
+	margin-block-start: 4--step;
+	margin-inline-start: auto;
+	padding-block: 2--step;
+	padding-inline: 11--step;
+
+	/* Text */
+	font-size: 16--rpx;
+	line-height: max(20 / 16);
+
+	/* Appearance */
+	background-color: var(--InteractiveColor);
+
+	/* Appearance */
+	border-radius: var(--EdgeRadius);
+	box-shadow: var(--InteractiveColor) 0 0 0 1px inset;
+	color: var(--InverseColor);
+	cursor: pointer;
+
+	&:is(:hover, :focus-visible) {
+		/* Appearance */
+		background-color: var(--InteractiveHoverColor);
+		box-shadow: var(--InteractiveHoverColor) 0 0 0 1px inset;
+	}
+}
