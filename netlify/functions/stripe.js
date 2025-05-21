@@ -25,10 +25,11 @@ const PRODUCTS = {
 	// 	name: 'TT&C Source Code',
 	// 	unit_amount: 10000
 	// },
-	'astro-toolkit-ppt': {
-		name: 'Astro Toolkit PPT',
-		unit_amount: 4900
-	}
+  'astro-toolkit-ppt': {
+    stripeProductId: 'prod_SLdY3pRKOo37hn',
+    stripePriceId: 'price_1RQwHUCX2F0Knv6wHJ8f615k',
+    name: 'Astro Toolkit PPT'
+  }
   }
   exports.handler = async (event) => {
 	try {
@@ -46,18 +47,12 @@ const PRODUCTS = {
 	// Create line items based on the selected products
 	// eslint-disable-next-line camelcase
 	const line_items = selectedProducts.map(productCode => {
-		const product = PRODUCTS[productCode]
-		return {
-		price_data: {
-			currency: 'usd',
-			product_data: {
-				name: product.name,
-			},
-			unit_amount: product.unit_amount,
-		},
-			quantity: 1, // You can make this dynamic if needed
-		}
-	})
+      const product = PRODUCTS[productCode]
+      return {
+        price: product.stripePriceId,
+        quantity: 1,
+      }
+    })
 	// Create the Stripe checkout session
 	const session = await stripe.checkout.sessions.create({
 		payment_method_types: [ 'card' ],
@@ -66,6 +61,10 @@ const PRODUCTS = {
 		mode: 'payment',
 		success_url: `${baseUrl}/checkout/success/?session_id={CHECKOUT_SESSION_ID}`,
 		cancel_url: `${baseUrl}/platforms/astro-toolkit-ppt/`,
+		automatic_tax: {
+         enabled: true
+        },
+        billing_address_collection: 'required',
 		// custom_fields: [
 		// 	{
 		// 	key: 'engraving',
