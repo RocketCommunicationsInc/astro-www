@@ -1,4 +1,10 @@
-// STRIPE_SECRET for real
+/**
+ * Stripe Checkout Function
+ * This Netlify serverless function creates Stripe checkout sessions for
+ * digital product purchases with automatic tax calculation.
+ */
+
+// Initialize Stripe using the sandbox secret key from environment variables
 const stripe = require('stripe')(process.env.STRIPE_SANDBOX_SECRET)
 // const baseUrl = process.env.DEPLOY_URL || process.env.BASE_URL || 'http://localhost:8888'
 const baseUrl = process.env.BASE_URL
@@ -12,25 +18,28 @@ const baseUrl = process.env.BASE_URL
 // 	baseUrl = 'https://www.astrouxds.com'
 // }
 
+/**
+ * Product catalog with Stripe-specific IDs
+ * Each product contains:
+ * - stripeProductId: ID of the product in Stripe dashboard
+ * - stripePriceId: ID of the price object in Stripe dashboard
+ * - name: Display name of the product
+ */
 const PRODUCTS = {
-	// 'fds': {
-	// 	name: 'FDS Source Code',
-	// 	unit_amount: 10000 // Amount in cents (i.e., $100.00)
-	// },
-	// 'grm': {
-	// 	name: 'GRM Source Code',
-	// 	unit_amount: 10000
-	// },
-	// 'ttc': {
-	// 	name: 'TT&C Source Code',
-	// 	unit_amount: 10000
-	// },
   'astro-toolkit-ppt': {
     stripeProductId: 'prod_SLdY3pRKOo37hn',
     stripePriceId: 'price_1RQwHUCX2F0Knv6wHJ8f615k',
     name: 'Astro Toolkit PPT'
   }
   }
+
+  /**
+ * Main function handler for the Netlify serverless function
+ * Creates a Stripe checkout session based on selected products
+ *
+ * @param {Object} event - The Netlify function event object
+ * @returns {Object} Response with session ID or error message
+ */
   exports.handler = async (event) => {
 	try {
 		// Parse the incoming request body
@@ -61,28 +70,21 @@ const PRODUCTS = {
 		mode: 'payment',
 		success_url: `${baseUrl}/checkout/success/?session_id={CHECKOUT_SESSION_ID}`,
 		cancel_url: `${baseUrl}/platforms/astro-toolkit-ppt/`,
+		// Enable automatic tax calculation based on customer location
 		automatic_tax: {
          enabled: true
         },
+		// Collect billing address for tax calculation
         billing_address_collection: 'required',
-		// custom_fields: [
-		// 	{
-		// 	key: 'engraving',
-		// 	label: {
-		// 		type: 'custom',
-		// 		custom: 'Personalized engraving',
-		// 	},
-		// 	type: 'text',
-		// 	optional: true,
-		// 	},
-		// ],
 	})
 
+	// Return successful response with session ID
 	return {
 		statusCode: 200,
 		body: JSON.stringify({ id: session.id }),
 	}
 	} catch (error) {
+	// Log and return error if checkout session creation fails
 	console.error('Error creating checkout session:', error)
 	return {
 		statusCode: 500,
