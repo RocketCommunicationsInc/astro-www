@@ -30,7 +30,7 @@ const PRODUCTS = {
     stripeProductId: 'prod_SLdY3pRKOo37hn',
     stripePriceId: 'price_1RQwHUCX2F0Knv6wHJ8f615k',
     name: 'Astro Toolkit PPT'
-  }
+}
   }
 
   /**
@@ -57,7 +57,10 @@ const PRODUCTS = {
 	// eslint-disable-next-line camelcase
 	const line_items = selectedProducts.map(productCode => {
       const product = PRODUCTS[productCode]
-      return {
+		if (!product) {
+			throw new Error(`Invalid product code: ${productCode}`)
+		}
+    return {
         price: product.stripePriceId,
         quantity: 1,
       }
