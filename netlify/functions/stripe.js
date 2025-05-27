@@ -26,10 +26,10 @@ const baseUrl = process.env.BASE_URL
  * - name: Display name of the product
  */
 const PRODUCTS = {
-  'astro-toolkit-ppt': {
+  'astro-power-point-toolkit': {
     stripeProductId: 'prod_RvMCdid2pZCbUf',
     stripePriceId: 'price_1R1VU2Cecnrjj3thckjd6Qv4',
-    name: 'Astro Toolkit PPT'
+    name: 'Astro Power Point Toolkit',
 }
   }
 
