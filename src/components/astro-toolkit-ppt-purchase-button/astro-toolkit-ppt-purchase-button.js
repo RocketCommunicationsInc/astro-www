@@ -5,7 +5,7 @@
 	// 	'pk_test_51Q57PtCecnrjj3thC05csRltEdlayoXiL7Hq1SwtDGtl0jHVlKIjGEfU5H2BcPuz8caaWBu1Xi7Ir3dqxcupTJRD00TWlVYsHE'
 	// 	)
 	// Test/Sandbox Key
-	const stripe = Stripe(pk_live_51Q57PtCecnrjj3thBAsVNZ5R02YmZEg4kveWSD7ipTUEX0F7VKVdlTFT3UPHILBUskCmPnOWdCUlvuHp5LDuuGhV00X7Im0xoK)
+	const stripe = Stripe('pk_live_51Q57PtCecnrjj3thBAsVNZ5R02YmZEg4kveWSD7ipTUEX0F7VKVdlTFT3UPHILBUskCmPnOWdCUlvuHp5LDuuGhV00X7Im0xoK')
 	const pptBuyButtons = document.querySelectorAll('.ppt-purchase-button')
 
 	pptBuyButtons.forEach(button => {
