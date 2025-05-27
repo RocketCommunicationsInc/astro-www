@@ -27,8 +27,8 @@ const baseUrl = process.env.BASE_URL
  */
 const PRODUCTS = {
   'astro-toolkit-ppt': {
-    stripeProductId: 'prod_SLdY3pRKOo37hn',
-    stripePriceId: 'price_1RQwHUCX2F0Knv6wHJ8f615k',
+    stripeProductId: 'prod_RvMCdid2pZCbUf',
+    stripePriceId: 'price_1R1VU2Cecnrjj3thckjd6Qv4',
     name: 'Astro Toolkit PPT'
 }
   }
