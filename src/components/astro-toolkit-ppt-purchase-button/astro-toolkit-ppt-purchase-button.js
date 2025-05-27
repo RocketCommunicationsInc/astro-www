@@ -5,7 +5,7 @@
 	// 	'pk_test_51Q57PtCecnrjj3thC05csRltEdlayoXiL7Hq1SwtDGtl0jHVlKIjGEfU5H2BcPuz8caaWBu1Xi7Ir3dqxcupTJRD00TWlVYsHE'
 	// 	)
 	// Test/Sandbox Key
-	const stripe = Stripe('process.env.STRIPE_SECRET')
+	const stripe = Stripe(process.env.STRIPE_SECRET)
 	const pptBuyButtons = document.querySelectorAll('.ppt-purchase-button')
 
 	pptBuyButtons.forEach(button => {
