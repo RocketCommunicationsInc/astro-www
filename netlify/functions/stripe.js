@@ -5,7 +5,7 @@
  */
 
 // Initialize Stripe using the sandbox secret key from environment variables
-const stripe = require('stripe')(process.env.STRIPE_SANDBOX_SECRET)
+const stripe = require('stripe')(process.env.STRIPE_SECRET)
 // const baseUrl = process.env.DEPLOY_URL || process.env.BASE_URL || 'http://localhost:8888'
 const baseUrl = process.env.BASE_URL
 
