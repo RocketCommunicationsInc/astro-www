@@ -87,8 +87,6 @@ form.addEventListener('submit', async (e) => {
 		return
 	}
 
-	// https://astrouxds-ap-dev-enviro-qbexve.herokuapp.com/    https://astrouxds-api-196cde1c48d0.herokuapp.com
-
 	try {
 		const url = `${isDevelopment ? API_URLS.development : API_URLS.production}/api/v1/source-code`
 		const res = await fetch(url, { method: 'post', body: JSON.stringify(params) })

@@ -66,7 +66,6 @@ const getPresignedURL = async (token: string) => {
 	handleButtonState('Verifying')
 	const isCheckout = window.location.href.indexOf('checkout') > -1
 
-	// https://astrouxds-ap-dev-enviro-qbexve.herokuapp.com/  https://astrouxds-api-196cde1c48d0.herokuapp.com
 	try {
 		const url = `${isDevelopment ? API_URLS.development : API_URLS.production}/api/v1/get-product?params=${token}&isCheckout=${isCheckout}`
 		const res = await fetch(url, { method: 'GET' })
@@ -115,7 +114,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 	}
 
 
-	// https://astrouxds-ap-dev-enviro-qbexve.herokuapp.com/  https://astrouxds-api-196cde1c48d0.herokuapp.com
 	try {
 		const url = `${isDevelopment ? API_URLS.development : API_URLS.production}/api/v1/validate-token?params=${token}&isCheckout=${isCheckout}`
 		const res = await fetch(url, { method: 'GET' })

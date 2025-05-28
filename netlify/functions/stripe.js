@@ -4,8 +4,7 @@
  * digital product purchases with automatic tax calculation.
  */
 
-import { isDevelopment } from '../../src/config/environment.ts'
-import { STRIPE_VARIABLES } from '../../src/config/environment.ts'
+import { STRIPE_VARIABLES, isDevelopment } from '../../src/config/environment.ts'
 
 // Initialize Stripe using the sandbox secret key from environment variables
 const stripe = require('stripe')(process.env[STRIPE_VARIABLES[isDevelopment ? 'development' : 'production'].secretKeyEnvVar])
@@ -18,21 +17,6 @@ const baseUrl = process.env.BASE_URL
  * - stripePriceId: ID of the price object in Stripe dashboard
  * - name: Display name of the product
  */
-
-// Sandbox product and price IDs
-// prod_SLdY3pRKOo37hn
-// price_1RQwHUCX2F0Knv6wHJ8f615k
-
-// Live product and price IDs
-// prod_RvMCdid2pZCbUf
-// price_1R1VU2Cecnrjj3thckjd6Qv4
-// const PRODUCTS = {
-//   'astro-toolkit-ppt': {
-//     stripeProductId: 'prod_SLdY3pRKOo37hn',
-//     stripePriceId: 'price_1RQwHUCX2F0Knv6wHJ8f615k',
-//     name: 'Astro Toolkit PPT',
-// }
-//   }
 
 const PRODUCTS = STRIPE_VARIABLES[isDevelopment ? 'development' : 'production'].products
 
