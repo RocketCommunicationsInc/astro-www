@@ -1,6 +1,13 @@
 import { html } from 'project:utils/html.js'
 import templateHTML from './feedback-widget-custom-element.shadow.html?raw'
 import templateCSS from './feedback-widget-custom-element.shadow.css?raw'
+import { isDevelopment, API_URLS } from '../../config/environment.ts'
+
+// Determine the API endpoint based on environment
+const apiEndpoint = `${API_URLS[isDevelopment ? 'development' : 'production']}/api/v1/feedback`
+
+// Replace the placeholder in the HTML template
+const processedHTML = templateHTML.replace('{{API_ENDPOINT}}', apiEndpoint)
 
 const template = html(templateHTML + '<style>' + templateCSS + '</style>')
 
