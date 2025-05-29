@@ -14,7 +14,7 @@
 		"check:ts": "npx tsc --project tsconfig.json",
 		"fetch:images": "node node_modules/@astrouxds/astrouxds-figma-assets/index.js",
 		"start": "astro dev",
-		"build": "astro build",
+		"build": "npx astro build",
 		"serve": "astro preview"
 	},
 	"devDependencies": {
