@@ -4,11 +4,9 @@
  * digital product purchases with automatic tax calculation.
  */
 
-// Read environment mode from environment variable
-const isDevelopment = false
-
 // Inline configuration to avoid path resolution issues
 const config = {
+  isDevelopment: false,
   STRIPE_VARIABLES: {
     production: {
       secretKeyEnvVar: 'STRIPE_SECRET',
@@ -38,9 +36,9 @@ const { STRIPE_VARIABLES } = config
 const Stripe = require('stripe')
 
 // Initialize Stripe using the sandbox secret key from environment variables
-const stripe = Stripe(process.env[STRIPE_VARIABLES[isDevelopment ? 'development' : 'production'].secretKeyEnvVar])
-console.log('blah########### ' + isDevelopment)
-console.log('blah########### ' + process.env[STRIPE_VARIABLES[isDevelopment ? 'development' : 'production'].secretKeyEnvVar])
+const stripe = Stripe(process.env[STRIPE_VARIABLES[config.isDevelopment ? 'development' : 'production'].secretKeyEnvVar])
+console.log('blah########### ' + config.isDevelopment)
+console.log('blah########### ' + process.env[STRIPE_VARIABLES[config.isDevelopment ? 'development' : 'production'].secretKeyEnvVar])
 const baseUrl = process.env.BASE_URL
 
 /**
@@ -51,7 +49,7 @@ const baseUrl = process.env.BASE_URL
  * - name: Display name of the product
  */
 
-const PRODUCTS = STRIPE_VARIABLES[isDevelopment ? 'development' : 'production'].products
+const PRODUCTS = STRIPE_VARIABLES[config.isDevelopment ? 'development' : 'production'].products
 
   /**
  * Main function handler for the Netlify serverless function
