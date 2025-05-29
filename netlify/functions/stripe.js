@@ -34,9 +34,19 @@ const config = {
 // Extract configuration values
 const { STRIPE_VARIABLES } = config
 const Stripe = require('stripe')
-// Initialize Stripe with the secret key from environment variables
-const stripe = Stripe(process.env.STRIPE_SECRET)
-const baseUrl = process.env.BASE_URL
+
+// Get the correct environment variable name based on environment
+const secretKeyEnvVar = STRIPE_VARIABLES[config.isDevelopment ? 'development' : 'production'].secretKeyEnvVar
+const stripeSecretKey = process.env[secretKeyEnvVar]
+
+// Check if the API key exists
+if (!stripeSecretKey) {
+  console.error(`Stripe API key not found: ${secretKeyEnvVar} environment variable is undefined`)
+}
+
+// Initialize Stripe with the secret key
+const stripe = Stripe(stripeSecretKey)
+const baseUrl = process.env.BASE_URL || 'https://astrouxds.com'
 
 
 /**
@@ -103,11 +113,17 @@ const PRODUCTS = STRIPE_VARIABLES[config.isDevelopment ? 'development' : 'produc
 		body: JSON.stringify({ id: session.id }),
 	}
 	} catch (error) {
-	// Log and return error if checkout session creation fails
+	// Log and return detailed error if checkout session creation fails
 	console.error('Error creating checkout session:', error)
+	console.error('Environment variables available:', Object.keys(process.env))
+	console.error('Stripe initialization status:', !!stripeSecretKey)
+
 	return {
 		statusCode: 500,
-		body: JSON.stringify({ error: 'Internal Server Error' }),
+		body: JSON.stringify({
+      error: 'Internal Server Error',
+      details: error.message
+    }),
 	}
 	}
   }
