@@ -1,6 +1,6 @@
 
 	// Create an instance of the Stripe object with your publishable API key
-	import { STRIPE_VARIABLES, isDevelopment } from '../../config/environment.js'
+	import { STRIPE_VARIABLES, isDevelopment } from '../../../netlify/functions/config/environment.js'
 	const stripe = Stripe(STRIPE_VARIABLES[isDevelopment ? 'development' : 'production'].publicKey)
 	const pptBuyButtons = document.querySelectorAll('.ppt-purchase-button')
 

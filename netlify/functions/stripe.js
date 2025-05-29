@@ -4,7 +4,7 @@
  * digital product purchases with automatic tax calculation.
  */
 
-const { STRIPE_VARIABLES, isDevelopment } = require('../../src/config/environment.js')
+const { STRIPE_VARIABLES, isDevelopment } = require('./config/environment.js')
 const Stripe = require('stripe')
 
 // Initialize Stripe using the sandbox secret key from environment variables

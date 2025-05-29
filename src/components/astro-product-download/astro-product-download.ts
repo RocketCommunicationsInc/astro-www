@@ -1,5 +1,5 @@
 import productData from 'project:data/product-download.json'
-import { isDevelopment, API_URLS } from '../../config/environment.js'
+import { isDevelopment, API_URLS } from '../../../netlify/functions/config/environment.js'
 
 // main elements
 const mainElement = document.querySelector(
