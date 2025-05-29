@@ -11,6 +11,7 @@
 
 // TOGGLE THIS VALUE to switch between development and production
 export const isDevelopment = process.env.NODE_ENV !== 'production'
+console.log('isDevelopment:', isDevelopment)
 
 // UPDATE THIS VALUE with your Heroku review app URL when in development mode
 export const reviewAppUrl = 'https://astrouxds-ap-dev-enviro-qbexve.herokuapp.com'
