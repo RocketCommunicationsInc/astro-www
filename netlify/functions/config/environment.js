@@ -10,7 +10,7 @@
  */
 
 // TOGGLE THIS VALUE to switch between development and production
-export const isDevelopment = process.env.NODE_ENV !== 'production'
+export const isDevelopment = false
 console.log('isDevelopment:', isDevelopment)
 
 // UPDATE THIS VALUE with your Heroku review app URL when in development mode

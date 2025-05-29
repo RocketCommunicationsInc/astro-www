@@ -5,7 +5,7 @@
  */
 
 // Read environment mode from environment variable
-const isDevelopment = process.env.NODE_ENV !== 'production'
+const isDevelopment = false
 
 // Inline configuration to avoid path resolution issues
 const config = {
@@ -36,6 +36,7 @@ const config = {
 // Extract configuration values
 const { STRIPE_VARIABLES } = config
 const Stripe = require('stripe')
+
 // Initialize Stripe using the sandbox secret key from environment variables
 const stripe = Stripe(process.env[STRIPE_VARIABLES[isDevelopment ? 'development' : 'production'].secretKeyEnvVar])
 console.log('blah########### ' + isDevelopment)
