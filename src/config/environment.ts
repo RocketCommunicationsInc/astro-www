@@ -10,7 +10,7 @@
  */
 
 // TOGGLE THIS VALUE to switch between development and production
-export const isDevelopment = false
+export const isDevelopment = true
 
 // UPDATE THIS VALUE with your Heroku review app URL when in development mode
 export const reviewAppUrl = 'https://astrouxds-ap-dev-enviro-qbexve.herokuapp.com'
