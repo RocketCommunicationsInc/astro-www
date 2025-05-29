@@ -4,8 +4,8 @@
  * digital product purchases with automatic tax calculation.
  */
 
-import { STRIPE_VARIABLES, isDevelopment } from '../../src/config/environment.ts'
-import Stripe from 'stripe'
+const { STRIPE_VARIABLES, isDevelopment } = require('../../src/config/environment.js')
+const Stripe = require('stripe')
 
 // Initialize Stripe using the sandbox secret key from environment variables
 const stripe = Stripe(process.env[STRIPE_VARIABLES[isDevelopment ? 'development' : 'production'].secretKeyEnvVar])

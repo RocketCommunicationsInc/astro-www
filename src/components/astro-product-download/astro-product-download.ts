@@ -1,6 +1,5 @@
 import productData from 'project:data/product-download.json'
-import { isDevelopment } from '../../config/environment.ts'
-import { API_URLS } from '../../config/environment.ts'
+import { isDevelopment, API_URLS } from '../../config/environment.js'
 
 // main elements
 const mainElement = document.querySelector(
