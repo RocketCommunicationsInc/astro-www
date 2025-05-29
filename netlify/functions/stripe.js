@@ -4,7 +4,37 @@
  * digital product purchases with automatic tax calculation.
  */
 
-const { STRIPE_VARIABLES, isDevelopment } = require('./config/environment.js')
+// Read environment mode from environment variable
+const isDevelopment = process.env.NODE_ENV !== 'production'
+
+// Inline configuration to avoid path resolution issues
+const config = {
+  STRIPE_VARIABLES: {
+    production: {
+      secretKeyEnvVar: 'STRIPE_SECRET',
+      products: {
+        'astro-toolkit-ppt': {
+          stripeProductId: 'prod_RvMCdid2pZCbUf',
+          stripePriceId: 'price_1R1VU2Cecnrjj3thckjd6Qv4',
+          name: 'Astro Toolkit PPT'
+        }
+      }
+    },
+    development: {
+      secretKeyEnvVar: 'STRIPE_SANDBOX_SECRET',
+      products: {
+        'astro-toolkit-ppt': {
+          stripeProductId: 'prod_SLdY3pRKOo37hn',
+          stripePriceId: 'price_1RQwHUCX2F0Knv6wHJ8f615k',
+          name: 'Astro Toolkit PPT'
+        }
+      }
+    }
+  }
+}
+
+// Extract configuration values
+const { STRIPE_VARIABLES } = config
 const Stripe = require('stripe')
 
 // Initialize Stripe using the sandbox secret key from environment variables
