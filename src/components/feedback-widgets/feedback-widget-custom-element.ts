@@ -1,6 +1,7 @@
 import { html } from 'project:utils/html.js'
 import templateHTML from './feedback-widget-custom-element.shadow.html?raw'
 import templateCSS from './feedback-widget-custom-element.shadow.css?raw'
+import { isDevelopment, API_URLS } from '../../config/environment.ts'
 
 const template = html(templateHTML + '<style>' + templateCSS + '</style>')
 
@@ -30,6 +31,11 @@ class FeedbackWidget extends HTMLElement {
 
 		// shadow elements
 		const form: HTMLFormElement = root.querySelector('form#feedback-form')!
+
+		// Set API endpoint based on environment config
+		const apiBaseUrl = isDevelopment ? API_URLS.development : API_URLS.production
+		form.action = `${apiBaseUrl}/api/v1/feedback`
+
 		const clearButton: HTMLButtonElement = root.querySelector(
 			'.widget_secondary-button'
 		)!
