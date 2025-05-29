@@ -35,11 +35,6 @@ const config = {
 const { STRIPE_VARIABLES } = config
 const Stripe = require('stripe')
 
-// Initialize Stripe using the sandbox secret key from environment variables
-const stripe = Stripe(process.env[STRIPE_VARIABLES[config.isDevelopment ? 'development' : 'production'].secretKeyEnvVar])
-console.log('blah########### ' + config.isDevelopment)
-console.log('blah########### ' + process.env[STRIPE_VARIABLES[config.isDevelopment ? 'development' : 'production'].secretKeyEnvVar])
-const baseUrl = process.env.BASE_URL
 
 /**
  * Product catalog with Stripe-specific IDs
@@ -60,6 +55,11 @@ const PRODUCTS = STRIPE_VARIABLES[config.isDevelopment ? 'development' : 'produc
  */
   exports.handler = async (event) => {
 	try {
+	// Initialize Stripe with the secret key from environment variables
+const stripe = Stripe(process.env[STRIPE_VARIABLES[config.isDevelopment ? 'development' : 'production'].secretKeyEnvVar])
+console.log('blah########### ' + config.isDevelopment)
+console.log('blah########### ' + process.env[STRIPE_VARIABLES[config.isDevelopment ? 'development' : 'production'].secretKeyEnvVar])
+const baseUrl = process.env.BASE_URL
 		// Parse the incoming request body
 		const { 'products': selectedProducts } = JSON.parse(event.body)
 
