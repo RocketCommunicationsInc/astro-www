@@ -1,6 +1,3 @@
-import { API_URLS } from '../../config/environment.js'
-import { isDevelopment } from '../../config/environment.ts'
-
 const dialog = document.querySelector('.p-source-code-dialog') as HTMLDialogElement
 const openButtons = document.querySelectorAll('.p-source-code-dialog-open') as NodeListOf<HTMLButtonElement>
 const closeButton = document.querySelector('.p-source-code-dialog-close') as HTMLButtonElement
@@ -88,7 +85,7 @@ form.addEventListener('submit', async (e) => {
 	}
 
 	try {
-		const url = `${isDevelopment ? API_URLS.development : API_URLS.production}/api/v1/source-code`
+		const url = 'https://astrouxds-api-196cde1c48d0.herokuapp.com/api/v1/source-code'
 		const res = await fetch(url, { method: 'post', body: JSON.stringify(params) })
 		const status = res.status
 		const data = await res.json()

@@ -1,6 +1,4 @@
 import productData from 'project:data/product-download.json'
-import { isDevelopment } from '../../config/environment.ts'
-import { API_URLS } from '../../config/environment.ts'
 
 // main elements
 const mainElement = document.querySelector(
@@ -67,7 +65,7 @@ const getPresignedURL = async (token: string) => {
 	const isCheckout = window.location.href.indexOf('checkout') > -1
 
 	try {
-		const url = `${isDevelopment ? API_URLS.development : API_URLS.production}/api/v1/get-product?params=${token}&isCheckout=${isCheckout}`
+		const url = `https://astrouxds-api-196cde1c48d0.herokuapp.com/api/v1/get-product?params=${token}&isCheckout=${isCheckout}`
 		const res = await fetch(url, { method: 'GET' })
 		const status = res.status
 		const data = await res.json()
@@ -113,9 +111,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 		return
 	}
 
-
 	try {
-		const url = `${isDevelopment ? API_URLS.development : API_URLS.production}/api/v1/validate-token?params=${token}&isCheckout=${isCheckout}`
+		const url = `https://astrouxds-api-196cde1c48d0.herokuapp.com/api/v1/validate-token?params=${token}&isCheckout=${isCheckout}`
 		const res = await fetch(url, { method: 'GET' })
 		const status = res.status
 		const data = await res.json()
