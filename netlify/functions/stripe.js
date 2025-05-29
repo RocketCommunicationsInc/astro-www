@@ -35,7 +35,7 @@ const config = {
 const { STRIPE_VARIABLES } = config
 const Stripe = require('stripe')
 // Initialize Stripe with the secret key from environment variables
-const stripe = Stripe(process.env[STRIPE_VARIABLES[config.isDevelopment ? 'development' : 'production'].secretKeyEnvVar])
+const stripe = Stripe(STRIPE_SECRET)
 console.log('blah########### ' + config.isDevelopment)
 console.log('blah########### ' + process.env[STRIPE_VARIABLES[config.isDevelopment ? 'development' : 'production'].secretKeyEnvVar])
 const baseUrl = process.env.BASE_URL
