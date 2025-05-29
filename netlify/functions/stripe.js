@@ -7,7 +7,8 @@
 import { STRIPE_VARIABLES, isDevelopment } from '../../src/config/environment.ts'
 
 // Initialize Stripe using the sandbox secret key from environment variables
-const stripe = require('stripe')(process.env[STRIPE_VARIABLES[isDevelopment ? 'development' : 'production'].secretKeyEnvVar])
+const Stripe = require('stripe')
+const stripe = Stripe(process.env[STRIPE_VARIABLES[isDevelopment ? 'development' : 'production'].secretKeyEnvVar])
 const baseUrl = process.env.BASE_URL
 
 /**
