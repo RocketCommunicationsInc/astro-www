@@ -26,7 +26,6 @@ export const API_URLS = {
 export const STRIPE_VARIABLES = {
   production: {
     publicKey: 'pk_live_51Q57PtCecnrjj3thBAsVNZ5R02YmZEg4kveWSD7ipTUEX0F7VKVdlTFT3UPHILBUskCmPnOWdCUlvuHp5LDuuGhV00X7Im0xoK',
-    secretKeyEnvVar: 'STRIPE_SECRET',
     products: {
       'astro-toolkit-ppt': {
         stripeProductId: 'prod_RvMCdid2pZCbUf',
@@ -37,7 +36,6 @@ export const STRIPE_VARIABLES = {
   },
   development: {
     publicKey: 'pk_test_51QCk6mCX2F0Knv6wLx3fRI5bIvIKHPa4LcZS2DU0aXMyalKcSsplszWAvftDIjSs072xOs5ZHN264qMnjjHi7Ml600FWdSVdql',
-    secretKeyEnvVar: 'STRIPE_SANDBOX_SECRET',
     products: {
       'astro-toolkit-ppt': {
         stripeProductId: 'prod_SLdY3pRKOo37hn',
