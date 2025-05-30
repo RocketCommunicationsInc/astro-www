@@ -7,9 +7,8 @@
 // Inline configuration to avoid path resolution issues
 const config = {
   isDevelopment: false,
-  STRIPE_VARIABLES: {
+  PRODUCT_VARIABLES: {
     production: {
-      secretKeyEnvVar: 'STRIPE_SECRET',
       products: {
         'astro-toolkit-ppt': {
           stripeProductId: 'prod_RvMCdid2pZCbUf',
@@ -19,7 +18,6 @@ const config = {
       }
     },
     development: {
-      secretKeyEnvVar: 'STRIPE_SANDBOX_SECRET',
       products: {
         'astro-toolkit-ppt': {
           stripeProductId: 'prod_SLdY3pRKOo37hn',
@@ -32,9 +30,20 @@ const config = {
 }
 
 // Extract configuration values
-const { STRIPE_VARIABLES } = config
-// Initialize Stripe with the secret key from environment variables
-const stripe = require('stripe')(process.env.STRIPE_SECRET)
+const { PRODUCT_VARIABLES } = config
+
+console.log('Available env vars:', Object.keys(process.env))
+console.log('STRIPE_SECRET exists:', !!process.env.STRIPE_SECRET)
+
+// Initialize Stripe with explicit error handling
+let stripe
+try {
+  const Stripe = require('stripe')
+  stripe = Stripe(process.env.STRIPE_SECRET)
+} catch (error) {
+  console.error('Failed to initialize Stripe:', error)
+  throw new Error(`Stripe initialization failed: ${error.message}`)
+}
 const baseUrl = process.env.BASE_URL
 
 
@@ -46,7 +55,7 @@ const baseUrl = process.env.BASE_URL
  * - name: Display name of the product
  */
 
-const PRODUCTS = STRIPE_VARIABLES[config.isDevelopment ? 'development' : 'production'].products
+const PRODUCTS = PRODUCT_VARIABLES[config.isDevelopment ? 'development' : 'production'].products
 
   /**
  * Main function handler for the Netlify serverless function
