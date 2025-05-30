@@ -6,7 +6,7 @@
 
 
 // Initialize Stripe using the sandbox secret key from environment variables
-const stripe = require('stripe')(process.env.STRIPE_SECRET)
+const stripe = require('stripe')(process.env.STRIPE_SECRET) // change this to STRIPE_SANDBOX_SECRET for development or STRIPE_SECRET for production
 const baseUrl = process.env.BASE_URL
 
 
@@ -18,12 +18,20 @@ const baseUrl = process.env.BASE_URL
  * - name: Display name of the product
  */
 
+// Comment out the production product and price IDs when using development IDs
 const PRODUCTS = {
-  'astro-toolkit-ppt': {
-    stripeProductId: 'prod_RvMCdid2pZCbUf',
-    stripePriceId: 'price_1R1VU2Cecnrjj3thckjd6Qv4',
-    name: 'Astro Toolkit PPT',
-}
+	// production product and price IDs
+	'astro-toolkit-ppt': {
+        stripeProductId: 'prod_RvMCdid2pZCbUf',
+        stripePriceId: 'price_1R1VU2Cecnrjj3thckjd6Qv4',
+        name: 'Astro Toolkit PPT'
+      }
+// development product and price IDs
+//   'astro-toolkit-ppt': {
+//         stripeProductId: 'prod_SLdY3pRKOo37hn',
+//         stripePriceId: 'price_1RQwHUCX2F0Knv6wHJ8f615k',
+//         name: 'Astro Toolkit PPT'
+//       }
   }
 
   /**
