@@ -4,46 +4,9 @@
  * digital product purchases with automatic tax calculation.
  */
 
-// Inline configuration to avoid path resolution issues
-const config = {
-  isDevelopment: false,
-  PRODUCT_VARIABLES: {
-    production: {
-      products: {
-        'astro-toolkit-ppt': {
-          stripeProductId: 'prod_RvMCdid2pZCbUf',
-          stripePriceId: 'price_1R1VU2Cecnrjj3thckjd6Qv4',
-          name: 'Astro Toolkit PPT'
-        }
-      }
-    },
-    development: {
-      products: {
-        'astro-toolkit-ppt': {
-          stripeProductId: 'prod_SLdY3pRKOo37hn',
-          stripePriceId: 'price_1RQwHUCX2F0Knv6wHJ8f615k',
-          name: 'Astro Toolkit PPT'
-        }
-      }
-    }
-  }
-}
 
-// Extract configuration values
-const { PRODUCT_VARIABLES } = config
-
-console.log('Available env vars:', Object.keys(process.env))
-console.log('STRIPE_SECRET exists:', !!process.env.STRIPE_SECRET)
-
-// Initialize Stripe with explicit error handling
-let stripe
-try {
-  const Stripe = require('stripe')
-  stripe = Stripe(process.env.STRIPE_SECRET)
-} catch (error) {
-  console.error('Failed to initialize Stripe:', error)
-  throw new Error(`Stripe initialization failed: ${error.message}`)
-}
+// Initialize Stripe using the sandbox secret key from environment variables
+const stripe = require('stripe')(process.env.STRIPE_SECRET)
 const baseUrl = process.env.BASE_URL
 
 
@@ -55,7 +18,13 @@ const baseUrl = process.env.BASE_URL
  * - name: Display name of the product
  */
 
-const PRODUCTS = PRODUCT_VARIABLES[config.isDevelopment ? 'development' : 'production'].products
+const PRODUCTS = {
+  'astro-toolkit-ppt': {
+    stripeProductId: 'prod_RvMCdid2pZCbUf',
+    stripePriceId: 'price_1R1VU2Cecnrjj3thckjd6Qv4',
+    name: 'Astro Toolkit PPT',
+}
+  }
 
   /**
  * Main function handler for the Netlify serverless function
