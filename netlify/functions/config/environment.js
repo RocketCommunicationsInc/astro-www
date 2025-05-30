@@ -7,10 +7,13 @@
  * Usage:
  * - For local development: Set isDevelopment = true and update reviewAppUrl
  * - For production: Set isDevelopment = false
+ *
+ * Additonal Changes:
+ * - Update the stripe.js file
  */
 
 // TOGGLE THIS VALUE to switch between development and production
-export const isDevelopment = false
+export const isDevelopment = false // If merging to main, set to false; if working on a feature branch, set to true
 console.log('isDevelopment:', isDevelopment)
 
 // UPDATE THIS VALUE with your Heroku review app URL when in development mode
