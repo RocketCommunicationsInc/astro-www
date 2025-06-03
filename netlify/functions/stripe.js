@@ -7,7 +7,7 @@
 
 // Initialize Stripe using the sandbox secret key from environment variables
 const stripe = require('stripe')(process.env.STRIPE_SECRET) // change this to STRIPE_SANDBOX_SECRET for development or STRIPE_SECRET for production
-const baseUrl = process.env.BASE_URL
+const baseUrl = process.env.BASE_URL || 'atrouxds.com' // Base URL for success and cancel redirects
 
 
 /**
