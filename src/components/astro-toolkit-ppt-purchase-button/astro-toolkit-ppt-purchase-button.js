@@ -11,7 +11,6 @@
 				'products': [ 'astro-toolkit-ppt' ], // Gather all values into an array
 		}
 
-		console.log(data, 'ppt product as data')
 			fetch('/.netlify/functions/stripe', {
 				method: 'POST',
 				headers: {
