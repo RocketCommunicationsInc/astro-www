@@ -33,9 +33,11 @@
 	--Grey900Color: hsl(225 5% 16.86%);
 	--HotOrange600Color: hsl(20, 89%, 36%);
 	--Neutral000Color: hsl(0 0% 100%);
+	--Black000Color: hsl(0, 0%, 0%);
 	--Orange400Color: hsl(42 100% 67%);
 	--Orange600Color: hsl(35 100% 62%);
 	--Orange700Color: hsl(33 100% 50%);
+	--AstroOrangeColor: hsl(31, 92%, 54%);
 	--Pink200Color: hsl(290, 61%, 76%);
 	--Pink400Color: hsl(290, 61%, 51%);
 	--Pink600Color: hsl(290 100% 30%);
@@ -76,6 +78,7 @@
 
 	--SystemType: system-ui;
 	--SystemMonoType: ui-monospace;
+	--FontFamilyBase: "Roboto";
 
 	/* Radius */
 

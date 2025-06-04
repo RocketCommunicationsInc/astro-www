@@ -1,0 +1,19 @@
+---
+import './astro-toolkit-ppt-purchase-button.css'
+const { showTerms } = Astro.props
+---
+
+<div class="astro-toolkit-ppt-purchase-button">
+	<button type="button" class="p-button ppt-purchase-button"
+		><s>$99</s> $49 with&nbsp;<img src="/images/stripe-payments-logo.svg" alt="stripe-logo" /></button
+	>
+	{ showTerms === true
+	?		<p>By purchasing or using this product, you agree to our
+			<a href="/terms-of-service/" target="_blank">Terms of Service</a>.
+		</p>
+	: null }
+
+</div>
+<script>
+	import './astro-toolkit-ppt-purchase-button.js'
+</script>

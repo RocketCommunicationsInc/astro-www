@@ -46,7 +46,7 @@
 	"include": [
 		"src/**/*.ts",
 		"src/**/*.astro"
-	],
+, "netlify/functions/config/environment.js"	],
 	"exclude":[
 		"node_modules"
 	]
