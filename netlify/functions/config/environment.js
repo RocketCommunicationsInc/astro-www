@@ -14,7 +14,6 @@
 
 // TOGGLE THIS VALUE to switch between development and production
 export const isDevelopment = false // If merging to main, set to false; if working on a feature branch, set to true
-console.log('isDevelopment:', isDevelopment)
 
 // UPDATE THIS VALUE with your Heroku review app URL when in development mode
 export const reviewAppUrl = 'https://astrouxds-ap-dev-enviro-qbexve.herokuapp.com'
