@@ -20,7 +20,7 @@ We recognize that not all space application development projects are tooled for 
 
 You may also view a component's specifications under their [Specifications Tab](/components/button/specs/).
 
-Icon assets are available as SVGs via the [Astro Github Repository](https://github.com/RocketCommunicationsInc/astro/tree/main/packages/web-components/src/icons) or export to the format and size you need from the [Astro Icons Figma library](https://www.figma.com/community/file/1022883566772542677).
+Icon assets are available as SVGs via the [Astro Github Repository](https://github.com/RocketCommunicationsInc/astro/tree/main/packages/web-components/src/icons) or export to the format and size you need from the [Astro Icons Figma library - Astro 6 & 7](https://www.figma.com/community/file/1022883566772542677).
 
 Astro uses the freely available [Roboto](https://fonts.google.com/specimen/Roboto) font.
 
