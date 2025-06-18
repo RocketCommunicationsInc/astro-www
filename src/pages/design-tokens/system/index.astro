@@ -167,7 +167,7 @@ const description = 'Tokens representing Astro semantic design decisions.'
 
 	<h2 id="shadow">Shadow Overlay</h2>
 	{
-		system('dark', 'boxShadow', undefined).map((token) => (
+		system('dark', 'boxShadow', 'overlay').map((token) => (
 			<RuxDesignTokenPreview
 				client:load
 				name={token.name}
