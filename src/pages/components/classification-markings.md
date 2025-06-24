@@ -106,6 +106,8 @@ Portion Markings should be bold, all capital letters and abbreviated within pare
 
 Portion Markings should be placed at the top or top-left of the classified or controlled portion. Astro recommends using the tag version of Portion Marking if the markings are at a higher section or card level. For more in-line text portions or portions lower in the visual hierarchy of the User Interface, use the text-only version.
 
+![An example of in-depth portion marking with marking tags used in headings of containers and text portion markings in front of paragraph text, form element labels, help text, and options in select menus](/img/components/classification-markings/portion-marking-form-example.webp "Example of in-depth portion marking")
+
 ### Portion Marking Colors
 
 The colors used in the Tag components are the same as those in the Overall Banner Markings for easy recognition.
