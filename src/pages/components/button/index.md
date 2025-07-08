@@ -18,7 +18,7 @@ assets:
 - Use only predefined Button colors, sizes and fonts — don’t customize or alter them.
 - Don’t design elements which look similar to Buttons but act differently. Buttons are actionable elements.
 - Don’t activate Pop Up Menus from Buttons.
-- Space Buttons evenly.
+- Space Buttons evenly. dfgsdfgsdfgdsfgdfs
 - Clearly title Buttons by choosing a verb that describes the action the user performs at precisely the moment the Button is clicked: “Save, Close, Print, \* Delete, Change Password,” etc.
 - Resize Button width to accommodate the title; do not abbreviate or truncate Button titles.
 - Don’t use an outside label to introduce a Button. Instead, clearly title the Button.
