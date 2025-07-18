@@ -979,7 +979,7 @@
 			"tags": ["general_terms"]
 		},
 		"di": {
-			"name": DI,
+			"name": "DI",
 			"description": "Designation Indicator; the text block that explains origins and rules for CUI within a document",
 			"categories": ["security"],
 			"tags": ["security", "policy", "information_security"]
