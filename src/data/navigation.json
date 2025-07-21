@@ -257,6 +257,10 @@
 				"url": "/patterns/pop-up-menu/"
 			},
 			{
+				"label": "Scrolling Behavior",
+				"url": "/patterns/scrolling-behavior/"
+			},
+			{
 				"label": "Sign In",
 				"url": "/patterns/sign-in/"
 			},
