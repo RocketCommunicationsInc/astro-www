@@ -28,7 +28,7 @@ In this example application, the content above the fold (immediately visible on 
 ![Image of a dashboard showing above the fold operational data, including alerts, impacted devices, location health, and open incident and maintenance tickets. The layout is designed for real-time triage and decision support.](/img/patterns/scrolling-behavior/above-the-fold.webp)
 
 
-## Below the Fold
+### Below the Fold
 
 Below the fold (the area of an application or webpage that the user must scroll to) is reserved for deeper contextual data visualizations like capacity, utilization, and the like. While all of these metrics reflect the same devices and locations prioritized above the fold, these elements are not essential for immediate triage, alert response, or critical management by operators. This layer would support exploratory or analytical tasks, offering additional context that could be useful for informing the operator about relevant locations and devices, but not critical to their main tasks.
 
