@@ -20,6 +20,7 @@ These practices include:
 
 Design decisions should be guided by UX research and the context of use — including modality, viewport size and type, monitor number and use, and user task flow. The presence of scrolling does not conflict with Astro UXDS principles, as long as the experience remains responsive and user-friendly across screen sizes and device types.
 
+## Examples
 ## Above the Fold
 
 In this example application, the content above the fold (immediately visible on the screen without scrolling) provides the most critical information immediately surfaced to support rapid decision making. Key elements include real-time alerts that require acknowledgement, open incident and maintenance tickets which are correlated with impacted devices, and a summary of affected locations and their related devices. Everything above the fold is connected, working together to give the operator a clear, immediate picture for effective triage.
