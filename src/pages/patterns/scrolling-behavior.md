@@ -28,6 +28,6 @@ In this example application, the content above the fold (immediately visible on 
 
 ## Below the Fold
 
-Below the fold (the area of an application or webpage that the user must scroll to) is reserved for deeper contextual data-visualizations like capacity, utilization, and the like. While all of these metrics reflect the same devices and locations prioritized above the fold, these elements are not essential for immediate triage, alert response, or critical management by operators. This layer would support exploratory or analytical tasks, offering additional context that could be useful for informing the operator about relevant locations and devices, but not critical to their main tasks.
+Below the fold (the area of an application or webpage that the user must scroll to) is reserved for deeper contextual data visualizations like capacity, utilization, and the like. While all of these metrics reflect the same devices and locations prioritized above the fold, these elements are not essential for immediate triage, alert response, or critical management by operators. This layer would support exploratory or analytical tasks, offering additional context that could be useful for informing the operator about relevant locations and devices, but not critical to their main tasks.
 
 ![Image of a dashboard displaying below the fold data visualizations, including graphs and charts for throughput, capacity, and trends. These metrics provide contextual information not essential for immediate operator action.](/img/patterns/scrolling-behavior/below-the-fold.webp)
