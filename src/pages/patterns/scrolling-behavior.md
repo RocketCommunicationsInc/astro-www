@@ -9,7 +9,7 @@ assets:
     name: Scrolling Behavior
 ---
 
-In Astro UXDS applications, scrolling is an acceptable and expected interaction pattern when used purposefully and in alignment with user-centered design. Interfaces should prioritize surfacing key actions and high value information without requiring scroll, particularly on primary screens. However, longer or scrollable layouts are entirely appropriate when the volume or complexity of the content justifies it- specifically when best practices are followed for accessibility, usability, and clarity.
+In Astro UXDS applications, scrolling is an acceptable and expected interaction pattern when used purposefully and in alignment with user-centered design. Interfaces should prioritize surfacing key actions and high value information without requiring scroll, particularly on primary screens. However, longer or scrollable layouts are entirely appropriate when the volume or complexity of the content justifies it — specifically when best practices are followed for accessibility, usability, and clarity.
 
 These practices include:
 
