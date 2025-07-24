@@ -14,7 +14,7 @@ In Astro UXDS applications, scrolling is an acceptable and expected interaction 
 These practices include:
 
 - Managing focus appropriately for keyboard and assistive technologies
-- Using system standard, legible fonts (which are baked into Astro UXDS)
+- Using system-standard, legible fonts (which are baked into Astro UXDS)
 - Providing clear and intuitive navigation
 
 Design decisions should be guided by UX research and the context of use — including modality, viewport size and type, monitor number and use, and user task flow. The presence of scrolling does not conflict with Astro UXDS principles, as long as the experience remains responsive and user-friendly across screen sizes and device types.
