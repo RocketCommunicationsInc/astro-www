@@ -1267,6 +1267,50 @@
 				}
 			]
 		},
+		"Scrolling Behavior": {
+			"assets": [
+				{
+					"name": "Documentation",
+					"status": "available",
+					"type": "documentation",
+					"version": "N/A"
+				},
+				{
+					"link": "https://www.figma.com/community/file/1157371532469023309/Astro-7-UXDS---Dark-Theme",
+					"name": "UI Kit - Dark",
+					"status": "available",
+					"type": "ui",
+					"version": "v7"
+				},
+				{
+					"link": "https://www.figma.com/community/file/1203068683334364243/Astro-7-UXDS---Light-Theme",
+					"name": "UI Kit - Light",
+					"status": "available",
+					"type": "ui",
+					"version": "v7"
+				},
+				{
+					"link": "https://www.figma.com/community/file/1203487593021750781/Astro-7-UXDS---Wireframe-Theme",
+					"name": "UI Kit - Wireframe",
+					"status": "available",
+					"type": "ui",
+					"version": "v7"
+				},
+				{
+					"name": "Web Component",
+					"status": "unavailable",
+					"type": "component",
+					"version": "N/A"
+				},
+				{
+					"link": "https://www.astrouxds.com/design-tokens/component/#scrollbar",
+					"name": "Component Tokens",
+					"status": "available",
+					"type": "token",
+					"version": "v1"
+				}
+			]
+		},
 		"Select Menu": {
 			"assets": [
 				{
