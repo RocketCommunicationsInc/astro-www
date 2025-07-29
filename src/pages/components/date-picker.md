@@ -74,7 +74,7 @@ The Time Picker is nested in the bottom of the Date Picker component. It allows 
 - Hover State: The Time Tile border becomes visible when hovered.
 - Focus State: A secondary visual indicator is used to denote input focus.
 - Scroll/Number Input Arrows: Up and down arrows in the Number Input for each Time Tile allows the user to increment or decrement values easily.
-- Responsive Behavior: Time Tiles adjust width dynamically to accommodate various digit lengths up to microseconds (Thh:mm:ss.ssssss).
+- Responsive Behavior: Time Tiles adjust width dynamically to accommodate various digit lengths up to microseconds (Thh:mm\:ss.ssssss).
  
 ### Date and Time Picker Integration
 
@@ -82,7 +82,7 @@ When used with the Date Picker, the Time Picker should appear in a logical posit
 
 ### Time Format
 
-- Default: 24-hour time format (Thh:mm:ss.ssssss)
+- Default: 24-hour time format (Thh:mm\:ss.ssssss)
 - Format Guidance: Aligns with ISO 8601 including the T separator embedded in a full date-time string before the time section and the UTC offset indicator (e.g. Z) at the end of the string. In this case, Z stands for Zero Offset from Coordinated Universal Time. Z is frequently referred to as Zulu time in aviation and military contexts.
 
 ## Examples
