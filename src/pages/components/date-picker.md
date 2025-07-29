@@ -89,10 +89,10 @@ When used with the Date Picker, the Time Picker should appear in a logical posit
 
 :::two-col
 
-![Do: Use a Date Picker when calendar context is helpful for selecting a date.](/img/components/date-picker/date-picker-d0-1.webp "Do: Use a Date Picker when calendar context is helpful for selecting a date.")
+![Do: Populate time picker with coherent numbers that fit within the container.](/img/components/date-picker/date-picker-do-1.webp "Do: Populate time picker with coherent numbers that fit within the container.")
 
-![Don't: Use a Date Picker for well known dates like a user’s birthday.](/img/components/date-picker/date-picker-dont-1.webp "Don't: Use a Date Picker for well known dates like a user’s birthday.")
+![Don't: Allow overpopulation of Time Picker fields with numbers that exceed the container or the user's use case, causing them to overflow or wrap in the component.](/img/components/date-picker/date-picker-dont-1.webp "Don't: Allow overpopulation of Time Picker fields with numbers that exceed the container or the user's use case, causing them to overflow or wrap in the component.")
 
-![Do: Populate time picker with coherent numbers that fit within the container.](/img/components/date-picker/date-picker-do-2.webp "Do: Populate time picker with coherent numbers that fit within the container.")
+![Date Picker without the Time Picker feature included](/img/components/date-picker/date-picker-only.webp "Date Picker without Time Picker feature included")
 
-![Don't: Allow overpopulation of Time Picker fields with numbers that exceed the container or the user's use case, causing them to overflow or wrap in the component.](/img/components/date-picker/date-picker-dont-2.webp "Don't: Allow overpopulation of Time Picker fields with numbers that exceed the container or the user's use case, causing them to overflow or wrap in the component.")
+![Date Picker with Time feature](/img/components/date-picker/date-picker-with-time.webp "Date Picker with Time feature")
