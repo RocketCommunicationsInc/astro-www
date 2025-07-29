@@ -573,6 +573,12 @@
 			"categories": ["general_terms"],
 			"tags": ["general_terms"]
 		},
+		"cab": {
+			"name":"CAB",
+			"description": "Classification Authority Block; the text block that explains the origins and rules for the classified information within a document",
+			"categories": ["security"],
+			"tags": ["security", "policy", "information_security"]
+		},
 		"cac": {
 			"name": "CAC",
 			"description": "Common Access Card",
@@ -971,6 +977,12 @@
 			"description": "decay report or a command initiating a decay report",
 			"categories": ["general_terms"],
 			"tags": ["general_terms"]
+		},
+		"di": {
+			"name": "DI",
+			"description": "Designation Indicator; the text block that explains origins and rules for CUI within a document",
+			"categories": ["security"],
+			"tags": ["security", "policy", "information_security"]
 		},
 		"disa": {
 			"name": "DISA",
