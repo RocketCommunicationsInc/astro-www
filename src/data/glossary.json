@@ -576,7 +576,7 @@
 		"cab": {
 			"name":"CAB",
 			"description": "Classification Authority Block; the text block that explains the origins and rules for the classified information within a document",
-			"categories": ["security"]
+			"categories": ["security"],
 			"tags": ["security", "policy", "information_security"]
 		},
 		"cac": {
