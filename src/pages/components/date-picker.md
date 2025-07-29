@@ -29,7 +29,7 @@ The calendar body displays the dates of the selected month and year, with the ab
 
 When present, the Date Picker footer contains two actionable items: an Apply button, which applies the selected date to the input field, and a Cancel button, which closes the Date Picker and returns focus to the date input field. While it is possible for a date selection to close the Date Picker and add the selected date to the input field, Astro recommends adding the Apply button to prevent the users from having to open and close the Date Picker multiple times to fix any mistakes and for clearer action states for accessibility. In addition, the users could click outside of the Date Picker to cancel selections and return the input field to its previous state. This set of buttons is intended to be a future improvement to Astro's current Date Picker component.
 
-**Calendar Day Swatch States**
+#### Calendar Day Tile States
 
 - Default: Date numbers are styled as interactive elements.
 - Hover: The background color of the day swatch changes.
@@ -85,13 +85,13 @@ When used with the Date Picker, the Time Picker should appear in a logical posit
 - Default: 24-hour time format (Thh:mm:ss.ssssss)
 - Format Guidance: Aligns with ISO 8601 including the T separator embedded in a full date-time string before the time section and the UTC offset indicator (e.g. Z) at the end of the string. In this case, Z stands for Zero Offset from Coordinated Universal Time. Z is frequently referred to as Zulu time in aviation and military contexts.
 
-### Examples
+## Examples
 
 :::two-col
 
 ![Do: Populate time picker with coherent numbers that fit within the container.](/img/components/date-picker/date-picker-do-1.webp "Do: Populate time picker with coherent numbers that fit within the container.")
 
-![Don't: Allow overpopulation of Time Picker fields with numbers that exceed the container or the user's use case, causing them to overflow or wrap in the component.](/img/components/date-picker/date-picker-dont-1.webp "Don't: Allow overpopulation of Time Picker fields with numbers that exceed the container or the user's use case, causing them to overflow or wrap in the component.")
+![Don't: Allow overpopulation of Time Picker fields with numbers that exceed the container, causing them to overflow or wrap in the component.](/img/components/date-picker/date-picker-dont-1.webp "Don't: Allow overpopulation of Time Picker fields with numbers that exceed the container or the user's use case, causing them to overflow or wrap in the component.")
 
 ![Date Picker without the Time Picker feature included](/img/components/date-picker/date-picker-only.webp "Date Picker without Time Picker feature included")
 
