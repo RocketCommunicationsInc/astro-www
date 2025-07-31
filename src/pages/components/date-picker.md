@@ -91,7 +91,7 @@ When used with the Date Picker, the Time Picker should appear in a logical posit
 
 ![Do: Populate time picker with coherent numbers that fit within the container.](/img/components/date-picker/date-picker-do-1.webp "Do: Populate time picker with coherent numbers that fit within the container.")
 
-![Don't: Allow overpopulation of Time Picker fields with numbers that exceed the container, causing them to overflow or wrap in the component.](/img/components/date-picker/date-picker-dont-1.webp "Don't: Allow overpopulation of Time Picker fields with numbers that exceed the container or the user's use case, causing them to overflow or wrap in the component.")
+![Donʼt: Allow overpopulation of Time Picker fields with numbers that exceed the container, causing them to overflow or wrap in the component.](/img/components/date-picker/date-picker-dont-1.webp "Don't: Allow overpopulation of Time Picker fields with numbers that exceed the container or the user's use case, causing them to overflow or wrap in the component.")
 
 ![Date Picker without the Time Picker feature included](/img/components/date-picker/date-picker-only.webp "Date Picker without Time Picker feature included")
 
