@@ -5,7 +5,7 @@ function remarkImplicitFigures() {
 		visit(tree, (node) => {
 			if (node.data?.hName !== 'figure') return
 
-			const [ , lead, , text ] = String(node.children.at(0).alt).match(/^(Do(?:n\’t)?)(\:\s+)(.+)$/) || []
+			const [ , lead, , text ] = String(node.children.at(0).alt).match(/^(Do(?:n[\’']t)?)(\:\s+)(.+)$/) || []
 
 			if (!lead) return
 
