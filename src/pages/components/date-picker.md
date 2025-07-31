@@ -8,7 +8,7 @@ assets:
 ---
 
 ## Date Picker
- 
+
 The Date Picker is implemented by using an input field, which includes a text field and a calendar icon that triggers a pop-up calendar.
 
 ### Rules of Thumb
@@ -75,7 +75,7 @@ The Time Picker is nested in the bottom of the Date Picker component. It allows 
 - Focus State: A secondary visual indicator is used to denote input focus.
 - Scroll/Number Input Arrows: Up and down arrows in the Number Input for each Time Tile allows the user to increment or decrement values easily.
 - Responsive Behavior: Time Tiles adjust width dynamically to accommodate various digit lengths up to microseconds (Thh:mm\:ss.ssssss).
- 
+
 ### Date and Time Picker Integration
 
 When used with the Date Picker, the Time Picker should appear in a logical position beneath the calendar grid. If "Apply" and "Cancel" buttons are desired, they would appear in a footer below the Time Picker in the Date Time Picker component combination.
@@ -91,7 +91,7 @@ When used with the Date Picker, the Time Picker should appear in a logical posit
 
 ![Do: Populate time picker with coherent numbers that fit within the container.](/img/components/date-picker/date-picker-do-1.webp "Do: Populate time picker with coherent numbers that fit within the container.")
 
-![Donʼt: Allow overpopulation of Time Picker fields with numbers that exceed the container, causing them to overflow or wrap in the component.](/img/components/date-picker/date-picker-dont-1.webp "Don't: Allow overpopulation of Time Picker fields with numbers that exceed the container or the user's use case, causing them to overflow or wrap in the component.")
+![Don’t: Allow overpopulation of Time Picker fields with numbers that exceed the container, causing them to overflow or wrap in the component.](/img/components/date-picker/date-picker-dont-1.webp "Don’t: Allow overpopulation of Time Picker fields with numbers that exceed the container or the user's use case, causing them to overflow or wrap in the component.")
 
 ![Date Picker without the Time Picker feature included](/img/components/date-picker/date-picker-only.webp "Date Picker without Time Picker feature included")
 
