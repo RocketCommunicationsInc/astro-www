@@ -453,19 +453,19 @@
 					"name": "UI Kit - Dark",
 					"status": "available",
 					"type": "ui",
-					"version": "N/A"
+					"version": "v7"
 				},
 				{
 					"name": "UI Kit - Light",
 					"status": "available",
 					"type": "ui",
-					"version": "N/A"
+					"version": "v7"
 				},
 				{
 					"name": "UI Kit - Wireframe",
 					"status": "available",
 					"type": "ui",
-					"version": "N/A"
+					"version": "v7"
 				},
 				{
 					"name": "Web Component",
