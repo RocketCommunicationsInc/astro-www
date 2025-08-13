@@ -2,7 +2,7 @@
 title: Date Picker
 description: The Date Picker allows users to select specific dates from a calendar display for the purpose of minimizing data entry errors.
 layout: project:layouts/component-docs/component-docs-layout.astro
-storybook: forms-input--types
+storybook: forms-input--with-types
 assets:
   name: Date Picker
 ---
