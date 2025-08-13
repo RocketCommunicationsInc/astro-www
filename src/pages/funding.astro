@@ -1,0 +1,106 @@
+---
+import DocsLayout from 'project:layouts/docs/docs-layout.astro'
+
+const title = 'Funding'
+const description = 'Information about funding opportunities and support for the Astro Space UX Design System.'
+---
+<DocsLayout content={{ title, description }} file={import.meta.url}>
+	<h2>
+		About Our Funding
+	</h2>
+	<p>
+		The Astro Space UX Design System is committed to advancing user experience design for space applications. We welcome partnerships and funding opportunities that align with our mission to improve the safety and efficiency of space operations through better user interfaces.
+	</p>
+
+	<h2>
+		Partnership Opportunities
+	</h2>
+	<p>
+		We're interested in collaborating with organizations that share our vision for improved space technology interfaces and user experiences. Our partnerships focus on:
+	</p>
+	<ul>
+		<li>Research and development of space-specific UX patterns</li>
+		<li>Open source design system contributions</li>
+		<li>Educational initiatives for space industry professionals</li>
+		<li>Standards development for space application interfaces</li>
+	</ul>
+
+	<h2>
+		How to Get Involved
+	</h2>
+	<p>
+		For funding inquiries, partnership opportunities, and collaboration discussions, please contact us through our <a href="https://github.com/RocketCommunicationsInc/astro/issues" target="_blank">GitHub Issues</a>, <a href="https://github.com/RocketCommunicationsInc/astro/discussions" target="_blank">GitHub Discussions</a>, or reach out directly via email at <a href="mailto:support@astrouxds.com">support@astrouxds.com</a>.
+	</p>
+
+	<h2>
+		Funding Contact Form
+	</h2>
+	<p>
+		If you're interested in funding opportunities or partnerships, please provide your information below and we'll get back to you.
+	</p>
+
+	<form id="funding-contact" class="p-funding-contact" action="#" method="post">
+		<p>
+			<label for="org-name">Organization Name*</label><br />
+			<input type="text" name="organization" id="org-name" required />
+		</p>
+		<p>
+			<label for="contact-name">Contact Name*</label><br />
+			<input type="text" name="name" id="contact-name" required />
+		</p>
+		<p>
+			<label for="contact-email">Email Address*</label><br />
+			<input type="email" required name="email" id="contact-email" />
+		</p>
+		<p>
+			<label for="message">Message</label><br />
+			<textarea name="message" id="message" rows="5" placeholder="Please describe your funding opportunity or partnership proposal..."></textarea>
+		</p>
+		<p>
+			<button type="submit">Submit Inquiry</button>
+		</p>
+	</form>
+</DocsLayout>
+<style is:global>
+.p-funding-contact {
+	& input,
+	& select,
+	& textarea {
+		/* Layout */
+		inline-size: 100%;
+		margin-block-start: max(1 * var(--step));
+		padding-block: max(2 * var(--step));
+		padding-inline: max(2 * var(--step));
+
+		/* Appearance */
+		box-shadow: var(--Grey700Color) 0 0 0 1px inset;
+		border-radius: max(max(3 * var(--rpx)));
+	}
+
+	& select {
+		cursor: pointer;
+	}
+
+	& textarea {
+		resize: vertical;
+		min-height: 120px;
+	}
+
+	& button[type="submit"] {
+		/* Layout */
+		align-self: center;
+		margin-block-start: 4--step;
+		padding-block: 2--step;
+		padding-inline: 11--step;
+
+		/* Text */
+		font-size: 16--rpx;
+		line-height: calc(20 / 16);
+
+		/* Appearance */
+		background: var(--DarkBlue700Color);
+		border-radius: var(--EdgeRadius);
+		color: var(--PrimaryColor);
+	}
+}
+</style>

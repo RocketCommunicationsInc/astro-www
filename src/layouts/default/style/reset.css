@@ -77,7 +77,7 @@
 	border-style: none;
 }
 
-:where(input) {
+:where(input), :where(textarea) {
 	/* Layout */
 	margin: 0;
 	padding: 0;
