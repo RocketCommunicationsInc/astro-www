@@ -9,7 +9,7 @@ const description = 'Information about funding opportunities and support for the
 		About Our Funding
 	</h2>
 	<p>
-		The Astro Space UX Design System is committed to advancing user experience design for space applications. We welcome partnerships and funding opportunities that align with our mission to improve the safety and efficiency of space operations through better user interfaces.
+		Sustain, improve, and expand AstroUXDS. The strongest thing you can do right now is share a leadership quote through our form and start conversations with program managers, as well as design and tech leaders, about the continued value of AstroUXDS.
 	</p>
 
 	<h2>
@@ -33,31 +33,58 @@ const description = 'Information about funding opportunities and support for the
 	</p>
 
 	<h2>
-		Funding Contact Form
+		Leadership Quote Form
 	</h2>
 	<p>
-		If you're interested in funding opportunities or partnerships, please provide your information below and we'll get back to you.
+		Share a brief quote about how AstroUXDS supports your product strategy and development goals. With your permission, we'll use these insights in our funding materials and community communications.
 	</p>
 
 	<form id="funding-contact" class="p-funding-contact" action="#" method="post">
 		<p>
-			<label for="org-name">Organization Name*</label><br />
-			<input type="text" name="organization" id="org-name" required />
-		</p>
-		<p>
-			<label for="contact-name">Contact Name*</label><br />
+			<label for="contact-name">Your Name*
 			<input type="text" name="name" id="contact-name" required />
 		</p>
 		<p>
-			<label for="contact-email">Email Address*</label><br />
+			<label for="contact-role">Role*
+			<input type="text" name="role" id="contact-role" required placeholder="e.g., Lead Designer, Program Manager, CTO" />
+		</p>
+		<p>
+			<label for="org-name">Organization
+			<input type="text" name="organization" id="org-name" />
+		</p>
+		<p>
+			<label for="program-area">Program Area
+			<input type="text" name="program_area" id="program-area" placeholder="e.g., PNT, SDA" />
+		</p>
+		<p>
+			<label for="contact-email">Email Address*
 			<input type="email" required name="email" id="contact-email" />
 		</p>
 		<p>
-			<label for="message">Message</label><br />
-			<textarea name="message" id="message" rows="5" placeholder="Please describe your funding opportunity or partnership proposal..."></textarea>
+			<label for="message">Your Quote (1-2 sentences)*
+			<textarea name="quote" id="message" rows="4" required placeholder="Describe how AstroUXDS matters to your product strategy and development roadmap..."></textarea>
 		</p>
 		<p>
-			<button type="submit">Submit Inquiry</button>
+			<label>
+				<input type="checkbox" name="quote_consent" required />
+				I consent to my quote being used in AstroUXDS funding materials and community communications after review*
+			</label>
+		</p>
+		<p>
+			<label>
+				<input type="checkbox" name="attribution_consent" />
+				I consent to my name on public materials
+			</label>
+		</p>
+		<p>
+			<label>
+				<input type="checkbox" name="attribution_consent" />
+				I consent to my role being used on public materials
+			</label>
+		</p>
+
+		<p>
+			<button type="submit">Submit Quote</button>
 		</p>
 	</form>
 </DocsLayout>
@@ -77,13 +104,33 @@ const description = 'Information about funding opportunities and support for the
 		border-radius: max(max(3 * var(--rpx)));
 	}
 
+	& input[type="checkbox"] {
+		inline-size: auto;
+		width: 16px;
+		height: 16px;
+		margin-inline-end: 0.5rem;
+		margin-block-start: 0;
+		vertical-align: middle;
+		box-shadow: none;
+		padding: 0;
+		appearance: auto;
+		-webkit-appearance: checkbox;
+		-moz-appearance: checkbox;
+	}
+
 	& select {
 		cursor: pointer;
 	}
 
 	& textarea {
 		resize: vertical;
-		min-height: 120px;
+		min-height: 100px;
+		font-family: inherit;
+	}
+
+	& label {
+		display: block;
+		font-weight: 500;
 	}
 
 	& button[type="submit"] {
@@ -101,6 +148,12 @@ const description = 'Information about funding opportunities and support for the
 		background: var(--DarkBlue700Color);
 		border-radius: var(--EdgeRadius);
 		color: var(--PrimaryColor);
+		border: none;
+		cursor: pointer;
+	}
+
+	& button[type="submit"]:hover {
+		background: var(--DarkBlue600Color);
 	}
 }
 </style>
