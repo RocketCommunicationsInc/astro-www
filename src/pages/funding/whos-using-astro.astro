@@ -1,0 +1,750 @@
+---
+import DocsLayout from 'project:layouts/docs/docs-layout.astro'
+
+const title = 'Who\'s Using Astro'
+const description = 'Usage statistics and impact metrics for the AstroUXDS design system, showcasing adoption across program offices, applications, and organizations.'
+
+// Static metrics (manually updated)
+const staticStats = {
+  programOffices: 4,
+  applications: '60+',
+  organizations: 40
+}
+
+// NPM packages to track
+const npmPackages = [
+  { package: '@astrouxds/astro-web-components', label: 'Web Components' },
+  { package: '@astrouxds/ag-grid-theme', label: 'agGrid Theme' },
+  { package: '@astrouxds/tailwind', label: 'Tailwind Theme' },
+  { package: '@astrouxds/tokens', label: 'Design Tokens' },
+  { package: '@astrouxds/angular', label: 'Angular Wrapper' },
+  { package: '@astrouxds/react', label: 'React Wrapper' }
+]
+
+// Fetch NPM download data for the last 30 days
+const npmStats = await Promise.all(
+  npmPackages.map(async (pkg) => {
+    try {
+      const response = await fetch(`https://api.npmjs.org/downloads/range/last-month/${pkg.package}`)
+      const data = await response.json()
+
+      if (data.downloads && Array.isArray(data.downloads)) {
+        const totalDownloads = data.downloads.reduce((sum: number, day: any) => sum + day.downloads, 0)
+        return {
+          package: pkg.package.split('/')[1], // Remove @astrouxds/ prefix for display
+          downloads: totalDownloads,
+          label: pkg.label
+        }
+      } else {
+        console.warn(`No download data found for ${pkg.package}`)
+        return {
+          package: pkg.package.split('/')[1],
+          downloads: 0,
+          label: pkg.label
+        }
+      }
+    } catch (error) {
+      console.error(`Error fetching data for ${pkg.package}:`, error)
+      return {
+        package: pkg.package.split('/')[1],
+        downloads: 0,
+        label: pkg.label
+      }
+    }
+  })
+)
+
+// Annual Savings Calculation
+const savingsConstants = {
+  fullyLoadedFTE: 238000,
+  efficiency: 0.25,
+  npmInflationFactor: 125
+}
+
+// Fetch 2024 total downloads for @astrouxds/astro-web-components
+let total2024Downloads = 0
+try {
+  const response2024 = await fetch(
+    'https://api.npmjs.org/downloads/range/2024-01-01:2024-12-31/@astrouxds/astro-web-components'
+  )
+  const data2024 = await response2024.json()
+  
+  if (data2024.downloads && Array.isArray(data2024.downloads)) {
+    total2024Downloads = data2024.downloads.reduce((sum: number, day: any) => sum + day.downloads, 0)
+  }
+} catch (error) {
+  console.error('Error fetching 2024 download data:', error)
+  // Fallback to known value for verification
+  total2024Downloads = 190000
+}
+
+// Calculate annual savings using the formula:
+// (Fully Loaded FTE * total number of users) * efficiency
+// where total number of users = (total downloads / 12 months) / npm inflation factor
+const averageMonthlyDownloads = total2024Downloads / 12
+const totalNumberOfUsers = averageMonthlyDownloads / savingsConstants.npmInflationFactor
+const annualSavings = (savingsConstants.fullyLoadedFTE * totalNumberOfUsers) * savingsConstants.efficiency
+
+// Verification: Using 190,000 downloads should give $7,536,666.67
+// (238000 * ((190000/12) / 125)) * 0.25 = 238000 * (15833.33 / 125) * 0.25 = 238000 * 126.667 * 0.25 = 7,536,666.67
+
+// Current Year Savings Calculation
+const currentYear = new Date().getFullYear()
+const yesterday = new Date()
+yesterday.setDate(yesterday.getDate() - 1)
+const yesterdayString = yesterday.toISOString().split('T')[0]
+
+// Fetch current year downloads up to yesterday
+let currentYearDownloads = 0
+try {
+  const responseCurrentYear = await fetch(
+    `https://api.npmjs.org/downloads/range/${currentYear}-01-01:${yesterdayString}/@astrouxds/astro-web-components`
+  )
+  const dataCurrentYear = await responseCurrentYear.json()
+  
+  if (dataCurrentYear.downloads && Array.isArray(dataCurrentYear.downloads)) {
+    currentYearDownloads = dataCurrentYear.downloads.reduce((sum: number, day: any) => sum + day.downloads, 0)
+  }
+} catch (error) {
+  console.error('Error fetching current year download data:', error)
+}
+
+// Calculate elapsed months (including partial current month)
+const now = new Date()
+const elapsedMonths = now.getMonth() + 1 // getMonth() is 0-based, so add 1
+const averageMonthlyDownloadsCurrentYear = currentYearDownloads / elapsedMonths
+const currentYearUsers = Math.round(averageMonthlyDownloadsCurrentYear / savingsConstants.npmInflationFactor)
+
+// Calculate current year projected annual savings: (FTE * users) * efficiency
+const currentYearProjectedSavings = (savingsConstants.fullyLoadedFTE * currentYearUsers) * savingsConstants.efficiency
+
+// Calculate actual current savings (what we've saved so far this year - proportional to elapsed months)
+const actualCurrentSavings = currentYearProjectedSavings * (elapsedMonths / 12)
+---
+
+<DocsLayout content={{ title, description }} file={import.meta.url}>
+  <div class="stats-page">
+
+
+    <!-- Stats Grid -->
+    <div class="stats-grid">
+      <!-- Adoption Metrics -->
+      <div class="stat-card adoption-card">
+        <h3>Adoption Metrics</h3>
+        <div class="adoption-stats">
+          <div class="adoption-item">
+            <span class="adoption-number">{staticStats.programOffices}</span>
+            <span class="adoption-label">Program Offices</span>
+          </div>
+          <div class="adoption-item">
+            <span class="adoption-number">{staticStats.applications}</span>
+            <span class="adoption-label">Applications</span>
+          </div>
+          <div class="adoption-item">
+            <span class="adoption-number">{staticStats.organizations}</span>
+            <span class="adoption-label">Organizations</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2024 Annual Savings -->
+      <div class="stat-card savings-card">
+        <h3>2024 Annual Savings</h3>
+        <div class="savings-display">
+          <span class="savings-amount">${Math.round(annualSavings).toLocaleString()}</span>
+          <span class="savings-note">Calculated from {total2024Downloads.toLocaleString()} downloads</span>
+          <div class="savings-breakdown">
+            <small>
+              FTE: ${savingsConstants.fullyLoadedFTE.toLocaleString()} ×
+              Users: {Math.round(totalNumberOfUsers).toLocaleString()} ×
+              Efficiency: {(savingsConstants.efficiency * 100)}%
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Current Year Savings -->
+      <div class="stat-card current-savings-card">
+        <h3>{currentYear} Current Savings</h3>
+        <div class="current-savings-display">
+          <div class="downloads-ytd">
+            <span class="downloads-number">{currentYearDownloads.toLocaleString()}</span>
+            <span class="downloads-label">Downloads YTD (through yesterday)</span>
+          </div>
+          <div class="users-ytd">
+            <span class="users-number">{currentYearUsers.toLocaleString()}</span>
+            <span class="users-label">Monthly Average Users ({currentYearDownloads.toLocaleString()} ÷ {elapsedMonths} months ÷ 125)</span>
+          </div>
+          <div class="monthly-breakdown">
+            <div class="monthly-stat">
+              <span class="monthly-number">{Math.round(averageMonthlyDownloadsCurrentYear).toLocaleString()}</span>
+              <span class="monthly-label">Avg Monthly Downloads</span>
+            </div>
+          </div>
+          <div class="current-savings-breakdown">
+            <div class="actual-savings">
+              <div class="savings-amount actual">${actualCurrentSavings.toLocaleString('en-US', { maximumFractionDigits: 0 })}</div>
+              <div class="savings-label">Actual Savings YTD ({elapsedMonths} months)</div>
+            </div>
+            <div class="projected-savings">
+              <div class="savings-amount projected">${currentYearProjectedSavings.toLocaleString('en-US', { maximumFractionDigits: 0 })}</div>
+              <div class="savings-label">Projected Annual Savings</div>
+            </div>
+          </div>
+          <div class="stat-detail">
+            Based on <strong>{elapsedMonths} months</strong> of {currentYear} data
+          </div>
+        </div>
+      </div>
+
+      <!-- NPM Downloads -->
+      <div class="stat-card downloads-card">
+        <h3>NPM Downloads (Last 30 Days)</h3>
+        <div class="downloads-list">
+          {npmStats.map((stat) => {
+            const maxDownloads = Math.max(...npmStats.map((s) => s.downloads))
+            return (
+              <div class="download-item">
+                <span class="download-label">{stat.label}</span>
+                <div class="download-bar">
+                  <div class="download-fill" style={`width: ${maxDownloads > 0 ? (stat.downloads / maxDownloads) * 100 : 0}%`}></div>
+                  <span class="download-number">{stat.downloads.toLocaleString()}</span>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </div>
+  </div>
+</DocsLayout>
+
+<style>
+.stats-page {
+  /* Layout */
+  max-inline-size: 1200px;
+  margin-inline: auto;
+}
+
+.page-intro {
+  /* Layout */
+  margin-block: 6--step 12--step;
+
+  /* Text */
+  font-size: 20--rpx;
+  line-height: max(28 / 20);
+  color: var(--SecondaryColor);
+}
+
+/* Hero Savings Card */
+.hero-card {
+  /* Layout */
+  margin-block-end: 12--step;
+}
+
+.savings-card {
+  /* Appearance */
+  background: linear-gradient(135deg, var(--Orange700Color) 0%, var(--Orange600Color) 50%, var(--Orange400Color) 100%);
+  border-radius: 12--rpx;
+  color: var(--InverseColor);
+  text-align: center;
+  padding: 12--step;
+
+  /* Effects */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.savings-title {
+  /* Text */
+  font-size: 28--rpx;
+  font-weight: 500;
+  margin-block-end: 6--step;
+  letter-spacing: -0.02em;
+}
+
+.savings-amount {
+  /* Text */
+  font-size: clamp(48--rpx, 8vw, 80--rpx);
+  font-weight: 700;
+  line-height: 1;
+  margin-block-end: 4--step;
+  letter-spacing: -0.03em;
+}
+
+.savings-formula {
+  /* Layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3--step;
+  margin-block-end: 6--step;
+  flex-wrap: wrap;
+
+  /* Text */
+  font-size: 16--rpx;
+  opacity: 0.9;
+}
+
+.formula-part {
+  /* Appearance */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 6--rpx;
+  padding: 1--step 3--step;
+}
+
+.operator {
+  /* Text */
+  font-weight: 700;
+  font-size: 18--rpx;
+}
+
+.live-indicator {
+  /* Layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2--step;
+
+  /* Text */
+  font-size: 14--rpx;
+  opacity: 0.8;
+}
+
+.pulse-dot {
+  /* Layout */
+  inline-size: 8px;
+  block-size: 8px;
+
+  /* Appearance */
+  background: currentColor;
+  border-radius: 50%;
+
+  /* Animation */
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Stats Grid */
+.stats-grid {
+  /* Layout */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 8--step;
+  margin-block-end: 12--step;
+}
+
+.stat-card {
+  /* Appearance */
+  background: var(--SurfaceSelectedColor);
+  border: 1px solid var(--Grey700Color);
+  border-radius: 8--rpx;
+  padding: 8--step;
+
+  /* Effects */
+  transition: all 200ms ease;
+
+  &:hover {
+    /* Appearance */
+    border-color: var(--InteractiveMutedColor);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  & h3 {
+    /* Text */
+    font-size: 20--rpx;
+    font-weight: 500;
+    margin-block-end: 6--step;
+    color: var(--PrimaryColor);
+    border-block-end: 1px solid var(--Grey700Color);
+    padding-block-end: 4--step;
+  }
+}
+
+/* Adoption Card */
+.adoption-stats {
+  /* Layout */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 6--step;
+}
+
+.adoption-item {
+  /* Layout */
+  text-align: center;
+}
+
+.adoption-number {
+  /* Layout */
+  display: block;
+
+  /* Text */
+  font-size: 36--rpx;
+  font-weight: 700;
+  color: var(--InteractiveColor);
+  line-height: 1;
+  margin-block-end: 2--step;
+}
+
+.adoption-label {
+  /* Text */
+  font-size: 14--rpx;
+  color: var(--SecondaryColor);
+  font-weight: 500;
+}
+
+/* Savings Display */
+.savings-display {
+  /* Layout */
+  text-align: center;
+}
+
+.savings-display .savings-amount {
+  /* Layout */
+  display: block;
+
+  /* Text */
+  font-size: 36--rpx;
+  font-weight: 700;
+  color: var(--Orange700Color);
+  line-height: 1;
+  margin-block-end: 2--step;
+}
+
+.savings-note {
+  /* Text */
+  font-size: 14--rpx;
+  color: var(--SecondaryColor);
+  font-style: italic;
+  margin-block-end: 3--step;
+}
+
+.savings-breakdown {
+  /* Layout */
+  margin-block-start: 2--step;
+  
+  & small {
+    /* Text */
+    font-size: 12--rpx;
+    color: var(--SecondaryColor);
+    opacity: 0.8;
+  }
+}
+
+/* Current Year Savings */
+.current-savings-display {
+  /* Layout */
+  text-align: center;
+}
+
+.downloads-ytd {
+  /* Layout */
+  margin-block-end: 4--step;
+}
+
+.downloads-number {
+  /* Layout */
+  display: block;
+  
+  /* Text */
+  font-size: 32--rpx;
+  font-weight: 700;
+  color: var(--BrightBlue500Color);
+  line-height: 1;
+  margin-block-end: 2--step;
+}
+
+.downloads-label {
+  /* Text */
+  font-size: 14--rpx;
+  color: var(--SecondaryColor);
+  font-weight: 500;
+}
+
+.users-ytd {
+  /* Layout */
+  margin-block-end: 4--step;
+}
+
+.users-number {
+  /* Layout */
+  display: block;
+  
+  /* Text */
+  font-size: 28--rpx;
+  font-weight: 700;
+  color: var(--DarkBlue500Color);
+  line-height: 1;
+  margin-block-end: 2--step;
+}
+
+.users-label {
+  /* Text */
+  font-size: 13--rpx;
+  color: var(--SecondaryColor);
+  font-weight: 500;
+}
+
+.monthly-breakdown {
+  /* Layout */
+  margin-block-end: 4--step;
+  padding: 3--step;
+  
+  /* Appearance */
+  background: var(--SurfaceColor);
+  border-radius: 6--rpx;
+  border: 1px solid var(--Grey700Color);
+}
+
+.monthly-stat {
+  /* Layout */
+  text-align: center;
+}
+
+.monthly-number {
+  /* Layout */
+  display: block;
+  
+  /* Text */
+  font-size: 20--rpx;
+  font-weight: 600;
+  color: var(--Purple500Color);
+  line-height: 1;
+  margin-block-end: 1--step;
+}
+
+.monthly-label {
+  /* Text */
+  font-size: 12--rpx;
+  color: var(--SecondaryColor);
+  font-weight: 500;
+}
+
+/* Current Savings Breakdown */
+.current-savings-breakdown {
+  /* Layout */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4--step;
+  margin-block-end: 4--step;
+}
+
+.actual-savings, .projected-savings {
+  /* Layout */
+  text-align: center;
+  padding: 3--step;
+  
+  /* Appearance */
+  background: var(--SurfaceColor);
+  border-radius: 6--rpx;
+  border: 1px solid var(--Grey700Color);
+}
+
+.savings-amount.actual {
+  /* Text */
+  font-size: 18--rpx;
+  font-weight: 700;
+  color: var(--Orange700Color);
+  line-height: 1;
+  margin-block-end: 2--step;
+}
+
+.savings-amount.projected {
+  /* Text */
+  font-size: 18--rpx;
+  font-weight: 700;
+  color: var(--BrightBlue500Color);
+  line-height: 1;
+  margin-block-end: 2--step;
+}
+
+.savings-label {
+  /* Text */
+  font-size: 11--rpx;
+  color: var(--SecondaryColor);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.coming-soon {
+  /* Text */
+  font-style: italic;
+  opacity: 0.7;
+  
+  & small {
+    font-size: 12--rpx;
+    color: var(--SecondaryColor);
+  }
+}
+
+/* Downloads Card */
+.downloads-list {
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  gap: 4--step;
+}
+
+.download-item {
+  /* Layout */
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4--step;
+  align-items: center;
+}
+
+.download-label {
+  /* Text */
+  font-size: 14--rpx;
+  color: var(--PrimaryColor);
+  font-weight: 500;
+}
+
+.download-bar {
+  /* Layout */
+  position: relative;
+  block-size: 24px;
+
+  /* Appearance */
+  background: var(--DarkBlue800Color);
+  border-radius: 4--rpx;
+  overflow: hidden;
+}
+
+.download-fill {
+  /* Layout */
+  block-size: 100%;
+
+  /* Appearance */
+  background: linear-gradient(90deg, var(--BrightBlue500Color), var(--BrightBlue400Color));
+
+  /* Animation */
+  transition: width 300ms ease;
+}
+
+.download-number {
+  /* Layout */
+  position: absolute;
+  inset-inline-end: 2--step;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+
+  /* Text */
+  font-size: 12--rpx;
+  font-weight: 700;
+  color: var(--InverseColor);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Impact Card */
+.impact-stats {
+  /* Layout */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 6--step;
+}
+
+.impact-item {
+  /* Layout */
+  text-align: center;
+}
+
+.impact-number {
+  /* Layout */
+  display: block;
+
+  /* Text */
+  font-size: 28--rpx;
+  font-weight: 700;
+  color: var(--Orange700Color);
+  line-height: 1;
+  margin-block-end: 2--step;
+}
+
+.impact-label {
+  /* Text */
+  font-size: 14--rpx;
+  color: var(--SecondaryColor);
+  font-weight: 500;
+}
+
+/* Placeholder Cards */
+.placeholder-content {
+  /* Layout */
+  text-align: center;
+  padding: 8--step;
+}
+
+.placeholder-icon {
+  /* Text */
+  font-size: 48--rpx;
+  margin-block-end: 4--step;
+  opacity: 0.6;
+}
+
+.placeholder-content p {
+  /* Text */
+  color: var(--SecondaryColor);
+  font-style: italic;
+}
+
+/* Methodology Note */
+.methodology-note {
+  /* Appearance */
+  background: var(--SurfaceColor);
+  border: 1px solid var(--Grey700Color);
+  border-radius: 8--rpx;
+  padding: 8--step;
+
+  & h3 {
+    /* Text */
+    font-size: 18--rpx;
+    margin-block-end: 4--step;
+    color: var(--PrimaryColor);
+  }
+
+  & p {
+    /* Text */
+    color: var(--SecondaryColor);
+    line-height: max(24 / 16);
+  }
+
+  & a {
+    /* Appearance */
+    color: var(--InteractiveColor);
+
+    &:hover {
+      color: var(--InteractiveHoverColor);
+    }
+  }
+}
+
+/* Responsive Design */
+@media (width < 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .adoption-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .download-item {
+    grid-template-columns: 1fr;
+    gap: 2--step;
+  }
+
+  .impact-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .savings-formula {
+    flex-direction: column;
+    gap: 2--step;
+  }
+}
+</style>
