@@ -387,5 +387,22 @@
 			}
 		],
 		"label": "Support"
+	},
+	{
+		"items": [
+			{
+				"label": "How You Can Help",
+				"url": "/funding/"
+			},
+			{
+				"label": "Quotes",
+				"url": "/funding/quotes/"
+			},
+			{
+				"label": "Who's Using Astro",
+				"url": "/funding/whos-using-astro/"
+			}
+		],
+		"label": "Support Astro"
 	}
 ]
