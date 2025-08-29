@@ -3,7 +3,8 @@
 ---
 <div class="site-banner">
 	<div class="site-banner-content">
-		<p>Astro helps you, now you can help us. Our funding relies on your support – visit <a href="/supporting-astro">astrouxds.com/supporting-astro</a> to learn more.
+		<a href="/supporting-astro"><p>📣 Astro helps you, now you can help us. Our funding relies on your support – visit <span>astrouxds.com/supporting-astro</span> to learn more.</a>
+
 	</div>
 </div>
 
@@ -23,7 +24,7 @@
 	background: var(--AstroOrangeColor);
 	color: rgb(49, 25, 0);
 	font-weight: 600;
-	box-shadow: inset 0 -3px 3px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 -3px 5px  rgba(3, 40, 1, 0.18);
 	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
 	/* Text */
@@ -46,15 +47,21 @@
 .site-banner a {
 	/* Appearance */
 	color: rgb(49, 25, 0);
-	text-decoration: underline;
-	text-underline-offset: 2px;
+
 }
 
-.site-banner a:hover,
-.site-banner a:focus {
+.site-banner a span {
+	text-decoration: underline;
+	text-decoration-style: wavy;
+	text-decoration-thickness: 1px;
+
+}
+
+.site-banner a:hover span,
+.site-banner a:focus span {
 	/* Appearance */
+	/* text-decoration-thickness: 1px; */
 	text-decoration: none;
-	opacity: 0.9;
 }
 
 /* Mobile and tablet responsive design */
