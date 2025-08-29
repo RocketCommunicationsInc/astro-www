@@ -52,7 +52,7 @@
 
 		@media (width < 1024px) {
 			/* Layout */
-			inset-block-start: 0;
+			inset-block-start: var(--site-banner-height, 44px);
 			position: sticky;
 			z-index: 1;
 		}
