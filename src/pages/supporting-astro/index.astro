@@ -2,7 +2,7 @@
 import DocsLayout from 'project:layouts/docs/docs-layout.astro'
 
 const title = 'Supporting Astro'
-const description = 'Astro’s funding relies on vocal support from users like you to continue its mission supporting human-centered design practices and helping teams deliver capabilities to the warfighter that meet mission needs and support operators.'
+const description = 'Astro\'s funding relies on vocal support by users like you to continue its mission supporting human-centered design practices and helping teams deliver capabilities to the warfighter that meet mission needs and support operators.'
 ---
 <DocsLayout content={{ title, description }} file={import.meta.url}>
 	<h2>
@@ -22,7 +22,7 @@ const description = 'Astro’s funding relies on vocal support from users like y
 		<li>If there's a preferred contact channel or process for discussing funding, share it so we can align with your workflow.</li>
 	</ul>
 
-	<h4>Talking Points Quick-Start:</h3>
+	<h4>Talking Points Quick-Start:</h4>
 	<ul>
 		<li>"AstroUXDS unifies our UI language, speeds delivery, and improves accessibility across our products."</li>
 		<li>"Sustaining AstroUXDS ensures we keep delivering secure, scalable experiences for users."</li>
@@ -34,6 +34,11 @@ const description = 'Astro’s funding relies on vocal support from users like y
 		<li>Use the <a href="#quote-form">form below</a> to submit your quote. You may choose to submit anonymously, but including a general industry or mission area (e.g., PNT, SDA) adds valuable context. You can see some previous quotes from users on our Who's Using Astro page</li>
 		<li>A concise leadership quote (1–2 sentences) describing how AstroUXDS supports your product strategy and roadmap is one of the most impactful ways to help. With your consent, we'll feature it in marketing and supporter materials after review.</li>
 		<li><em>Consent note: Quotes will be used only with explicit permission and reviewed prior to publication.</em></li>
+	</ul>
+
+	<h3>Buy Some of Our Stuff</h3>
+	<ul>
+		<li>Check out our <a href="https://astrouxds.com/astro-toolkit">Astro Toolkit for Microsoft PowerPoint</a>, perfect for creating wireframes in secure environments like SCIFs.</li>
 	</ul>
 
 	<h2>
@@ -58,7 +63,7 @@ const description = 'Astro’s funding relies on vocal support from users like y
 	</ul>
 
 	<h2>
-		What Continued Funding Unlocks
+		What Continued Support Unlocks
 	</h2>
 	<ul>
 		<li>Alignment with established and emerging standards critical to mission success, including MIL-STD-1472, MIL-STD-2525, WCAG 2, and evolving frameworks such as the MOSA ISTO UX/UI Standards, APCA Contrast, and Temporal guidelines. This ensures AstroUXDS remains interoperable, future-ready, and fully compliant with the needs of defense and government systems.</li>
@@ -74,7 +79,7 @@ const description = 'Astro’s funding relies on vocal support from users like y
 	</p>
 
 	<h2 id="#quote-form">
-		 Quote Form
+		Quote Form
 	</h2>
 	<p>
 		Share a brief quote about how AstroUXDS supports your product strategy and development goals. With your permission, we'll use these insights in our funding materials and community communications.
@@ -82,27 +87,27 @@ const description = 'Astro’s funding relies on vocal support from users like y
 
 	<form id="funding-contact" class="p-funding-contact" action="#" method="post">
 		<p>
-			<label for="contact-name">Your Name*
+			<label for="contact-name">Your Name*</label>
 			<input type="text" name="name" id="contact-name" required />
 		</p>
 		<p>
-			<label for="contact-role">Role*
+			<label for="contact-role">Role*</label>
 			<input type="text" name="role" id="contact-role" required placeholder="e.g., Lead Designer, Program Manager, CTO" />
 		</p>
 		<p>
-			<label for="org-name">Organization
+			<label for="org-name">Organization</label>
 			<input type="text" name="organization" id="org-name" />
 		</p>
 		<p>
-			<label for="program-area">Program Area
+			<label for="program-area">Program Area</label>
 			<input type="text" name="program_area" id="program-area" placeholder="e.g., PNT, SDA" />
 		</p>
 		<p>
-			<label for="contact-email">Email Address*
+			<label for="contact-email">Email Address*</label>
 			<input type="email" required name="email" id="contact-email" />
 		</p>
 		<p>
-			<label for="message">Your Quote (1-2 sentences)*
+			<label for="message">Your Quote (1-2 sentences)*</label>
 			<textarea name="quote" id="message" rows="4" required placeholder="Describe how AstroUXDS matters to your product strategy and development roadmap..."></textarea>
 		</p>
 		<p>
