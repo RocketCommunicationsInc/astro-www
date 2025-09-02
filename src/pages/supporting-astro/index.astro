@@ -85,7 +85,17 @@ const description = 'Astro\'s funding relies on vocal support by users like you 
 		Share a brief quote about how AstroUXDS supports your product strategy and development goals. With your permission, we'll use these insights in our funding materials and community communications.
 	</p>
 
-	<form id="funding-contact" class="p-funding-contact" action="#" method="post">
+	<form
+        id="funding-contact"
+        class="p-funding-contact"
+        name="funding-quote"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        action="/thank-you"
+    >
+		<!-- Hidden bot field for spam protection -->
+        <input type="hidden" name="bot-field" />
 		<p>
 			<label for="contact-name">Your Name*</label>
 			<input type="text" name="name" id="contact-name" required />
