@@ -1,0 +1,314 @@
+---
+import DocsLayout from '../../layouts/docs/docs-layout.astro'
+
+const title = 'Astro User Survey'
+const description = 'Your feedback is invaluable in helping us understand our community and plan for the future. This brief survey takes just 2-3 minutes and helps us prioritize features, content, and services that matter most to you.'
+---
+<DocsLayout content={{ title, description }} file={import.meta.url}>
+	<h2>
+		Help Shape the Future of AstroUXDS
+	</h2>
+	<p>
+
+	</p>
+
+	<form
+		id="astro-survey"
+		class="p-astro-survey"
+		name="astro-user-survey"
+		method="POST"
+		data-netlify="true"
+		netlify-honeypot="bot-field"
+		action="/thank-you"
+	>
+		<!-- Hidden bot field for spam protection -->
+		<input type="hidden" name="bot-field" />
+
+		<fieldset>
+			<legend>About You</legend>
+
+			<div class="form-group">
+				<label class="form-label">Which best describes you?*</label>
+				<div class="radio-group">
+					<label class="radio-option">
+						<input type="radio" name="user_type" value="private_org_user" required />
+						Employee of private organization that uses Astro
+					</label>
+					<label class="radio-option">
+						<input type="radio" name="user_type" value="gov_agency_user" required />
+						Member of government agency that uses Astro
+					</label>
+					<label class="radio-option">
+						<input type="radio" name="user_type" value="private_org_non_user" required />
+						Employee of private organization that doesn't use Astro
+					</label>
+					<label class="radio-option">
+						<input type="radio" name="user_type" value="contractor_consultant" required />
+						Contractor or consultant working with space/defense
+					</label>
+					<label class="radio-option">
+						<input type="radio" name="user_type" value="space_enthusiast" required />
+						Space domain enthusiast
+					</label>
+					<label class="radio-option">
+						<input type="radio" name="user_type" value="student_academic" required />
+						Student or member of higher education organization
+					</label>
+					<label class="radio-option">
+						<input type="radio" name="user_type" value="designer_developer" required />
+						Independent designer or developer
+					</label>
+					<label class="radio-option">
+						<input type="radio" name="user_type" value="other" required />
+						Other
+					</label>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<legend>How You Use Astro</legend>
+
+			<div class="form-group">
+				<label class="form-label">How frequently do you visit or use AstroUXDS?*</label>
+				<div class="radio-group">
+					<label class="radio-option">
+						<input type="radio" name="frequency" value="extensively" required />
+						I rely on Astro extensively - it's essential to my work
+					</label>
+					<label class="radio-option">
+						<input type="radio" name="frequency" value="regularly" required />
+						I visit and use Astro regularly
+					</label>
+					<label class="radio-option">
+						<input type="radio" name="frequency" value="occasionally" required />
+						I use Astro occasionally for reference
+					</label>
+					<label class="radio-option">
+						<input type="radio" name="frequency" value="rarely" required />
+						I rarely visit but find it useful when I do
+					</label>
+					<label class="radio-option">
+						<input type="radio" name="frequency" value="first_time" required />
+						This is my first time exploring Astro
+					</label>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="form-label">I come to AstroUXDS mostly for: (check all that apply)*</label>
+				<div class="checkbox-group">
+					<label class="checkbox-option">
+						<input type="checkbox" name="primary_use" value="design_guidelines" />
+						Design guidelines and patterns
+					</label>
+					<label class="checkbox-option">
+						<input type="checkbox" name="primary_use" value="code_components" />
+						Code examples and components
+					</label>
+					<label class="checkbox-option">
+						<input type="checkbox" name="primary_use" value="design_tokens" />
+						Design tokens and stylesheets
+					</label>
+					<label class="checkbox-option">
+						<input type="checkbox" name="primary_use" value="research" />
+						Research and UX guidance
+					</label>
+					<label class="checkbox-option">
+						<input type="checkbox" name="primary_use" value="case_studies" />
+						Case studies and application examples
+					</label>
+					<label class="checkbox-option">
+						<input type="checkbox" name="primary_use" value="compliance" />
+						Compliance and standards information
+					</label>
+					<label class="checkbox-option">
+						<input type="checkbox" name="primary_use" value="support" />
+						Support and community resources
+					</label>
+					<label class="checkbox-option">
+						<input type="checkbox" name="primary_use" value="icon_library" />
+						Icon library and assets
+					</label>
+					<label class="checkbox-option">
+						<input type="checkbox" name="primary_use" value="other_resources" />
+						Other resources or tools
+					</label>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<legend>The Future of Astro</legend>
+
+			<div class="form-group">
+				<label class="form-label">I would be interested in:*</label>
+				<div class="radio-group">
+					<label class="radio-option">
+						<input type="radio" name="future_interest" value="paid_premium" required />
+						Paid ongoing access to complex domain-specific research, designs, and advanced components
+					</label>
+					<label class="radio-option">
+						<input type="radio" name="future_interest" value="alacart_templates" required />
+						À la carte access to out-of-the-box mission management, flight operations, and notification front-end templates
+					</label>
+					<label class="radio-option">
+						<input type="radio" name="future_interest" value="tiered_model" required />
+						A tiered model with both free basics and premium features
+					</label>
+					<label class="radio-option">
+						<input type="radio" name="future_interest" value="enterprise_support" required />
+						Enterprise support and custom implementation services
+					</label>
+					<label class="radio-option">
+						<input type="radio" name="future_interest" value="not_interested" required />
+						None of this - I'm satisfied with the current free model
+					</label>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<legend>Additional Feedback (Optional)</legend>
+
+			<div class="form-group">
+				<label for="additional_feedback">What features, content, or improvements would you most like to see in AstroUXDS?</label>
+				<textarea
+					name="additional_feedback"
+					id="additional_feedback"
+					rows="4"
+					placeholder="Share any thoughts on missing features, content gaps, or improvements that would make Astro more valuable to you..."
+				></textarea>
+			</div>
+
+			<div class="form-group">
+				<label for="contact_email">Email (optional - only if you'd like us to follow up on your feedback)</label>
+				<input type="email" name="contact_email" id="contact_email" placeholder="your.email@example.com" />
+			</div>
+		</fieldset>
+
+		<div class="form-actions">
+			<button type="submit">Submit Survey</button>
+		</div>
+	</form>
+</DocsLayout>
+
+<style is:global>
+.p-astro-survey {
+	max-width: 800px;
+
+	& fieldset {
+		border: none;
+		/* padding: 1.5rem 0; */
+		margin-bottom: 2rem;
+	}
+
+	& legend {
+		font-weight: 600;
+		font-size: 1.125rem;
+		padding: 0;
+	}
+
+	& .form-group {
+		margin-bottom: 1.5rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	& .form-label {
+		display: block;
+		font-weight: 500;
+
+	}
+
+	& .radio-group,
+	& .checkbox-group {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	& .radio-option,
+	& .checkbox-option {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.5rem;
+		cursor: pointer;
+		font-weight: normal;
+		line-height: 1.4;
+	}
+
+	& input[type="radio"],
+	& input[type="checkbox"] {
+		inline-size: auto;
+		width: 16px;
+		height: 16px;
+		margin: 0;
+		margin-top: 0.125rem; /* Align with first line of text */
+		margin-inline-end: 0.5rem;
+		flex-shrink: 0;
+		vertical-align: middle;
+		box-shadow: none;
+		padding: 0;
+		appearance: auto;
+		-webkit-appearance: checkbox;
+		-moz-appearance: checkbox;
+	}
+
+	& input[type="email"],
+	& textarea {
+		/* Layout */
+		inline-size: 100%;
+		margin-block-start: max(1 * var(--step));
+		padding-block: max(2 * var(--step));
+		padding-inline: max(2 * var(--step));
+
+		/* Appearance */
+		box-shadow: var(--Grey700Color) 0 0 0 1px inset;
+		border-radius: max(max(3 * var(--rpx)));
+		font-family: inherit;
+	}
+
+	& textarea {
+		resize: vertical;
+		min-height: 100px;
+	}
+
+	& label {
+		display: block;
+		font-weight: 500;
+		margin-bottom: 0.5rem
+
+	}
+
+	& .form-actions {
+		text-align: center;
+		margin-top: 2rem;
+	}
+
+	& button[type="submit"] {
+		/* Layout */
+		align-self: center;
+		margin-block-start: 4--step;
+		padding-block: 2--step;
+		padding-inline: 11--step;
+
+		/* Text */
+		font-size: 16--rpx;
+		line-height: calc(20 / 16);
+
+		/* Appearance */
+		background: var(--DarkBlue700Color);
+		border-radius: var(--EdgeRadius);
+		color: var(--PrimaryColor);
+		border: none;
+		cursor: pointer;
+
+		&:hover {
+			background: var(--DarkBlue600Color);
+		}
+	}
+}
+</style>
