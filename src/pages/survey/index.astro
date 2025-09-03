@@ -1,5 +1,5 @@
 ---
-import DocsLayout from '../../layouts/docs/docs-layout.astro'
+import DocsLayout from 'project:layouts/docs/docs-layout.astro'
 
 const title = 'Astro User Survey'
 const description = 'Your feedback is invaluable in helping us understand our community and plan for the future. This brief survey takes just 2-3 minutes and helps us prioritize features, content, and services that matter most to you.'
@@ -8,9 +8,6 @@ const description = 'Your feedback is invaluable in helping us understand our co
 	<h2>
 		Help Shape the Future of AstroUXDS
 	</h2>
-	<p>
-
-	</p>
 
 	<form
 		id="astro-survey"
@@ -29,7 +26,8 @@ const description = 'Your feedback is invaluable in helping us understand our co
 
 			<div class="form-group">
 				<label class="form-label">Which best describes you?*</label>
-				<div class="radio-group">
+				<div class="radio-group" role="radiogroup" aria-labelledby="user-type-label">
+					<span id="user-type-label" class="sr-only">Which best describes you?</span>
 					<label class="radio-option">
 						<input type="radio" name="user_type" value="private_org_user" required />
 						Employee of private organization that uses Astro
@@ -71,7 +69,8 @@ const description = 'Your feedback is invaluable in helping us understand our co
 
 			<div class="form-group">
 				<label class="form-label">How frequently do you visit or use AstroUXDS?*</label>
-				<div class="radio-group">
+				<div class="radio-group" role="radiogroup" aria-labelledby="frequency-label">
+					<span id="frequency-label" class="sr-only">How frequently do you visit or use AstroUXDS?</span>
 					<label class="radio-option">
 						<input type="radio" name="frequency" value="extensively" required />
 						I rely on Astro extensively - it's essential to my work
@@ -97,7 +96,8 @@ const description = 'Your feedback is invaluable in helping us understand our co
 
 			<div class="form-group">
 				<label class="form-label">I come to AstroUXDS mostly for: (check all that apply)*</label>
-				<div class="checkbox-group">
+				<div class="checkbox-group" role="group" aria-describedby="primary-use-error">
+					<input type="hidden" name="primary_use_validation" id="primary-use-validation" required />
 					<label class="checkbox-option">
 						<input type="checkbox" name="primary_use" value="design_guidelines" />
 						Design guidelines and patterns
@@ -135,6 +135,9 @@ const description = 'Your feedback is invaluable in helping us understand our co
 						Other resources or tools
 					</label>
 				</div>
+				<div id="primary-use-error" class="error-message" style="display: none;">
+					Please select at least one option.
+				</div>
 			</div>
 		</fieldset>
 
@@ -143,7 +146,8 @@ const description = 'Your feedback is invaluable in helping us understand our co
 
 			<div class="form-group">
 				<label class="form-label">I would be interested in:*</label>
-				<div class="radio-group">
+				<div class="radio-group" role="radiogroup" aria-labelledby="future-interest-label">
+					<span id="future-interest-label" class="sr-only">I would be interested in:</span>
 					<label class="radio-option">
 						<input type="radio" name="future_interest" value="paid_premium" required />
 						Paid ongoing access to complex domain-specific research, designs, and advanced components
@@ -177,13 +181,21 @@ const description = 'Your feedback is invaluable in helping us understand our co
 					name="additional_feedback"
 					id="additional_feedback"
 					rows="4"
+					maxlength="1000"
 					placeholder="Share any thoughts on missing features, content gaps, or improvements that would make Astro more valuable to you..."
 				></textarea>
 			</div>
 
 			<div class="form-group">
 				<label for="contact_email">Email (optional - only if you'd like us to follow up on your feedback)</label>
-				<input type="email" name="contact_email" id="contact_email" placeholder="your.email@example.com" />
+				<input
+					type="email"
+					name="contact_email"
+					id="contact_email"
+					placeholder="your.email@example.com"
+					pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+					title="Please enter a valid email address"
+				/>
 			</div>
 		</fieldset>
 
@@ -220,7 +232,6 @@ const description = 'Your feedback is invaluable in helping us understand our co
 	& .form-label {
 		display: block;
 		font-weight: 500;
-
 	}
 
 	& .radio-group,
@@ -253,8 +264,8 @@ const description = 'Your feedback is invaluable in helping us understand our co
 		box-shadow: none;
 		padding: 0;
 		appearance: auto;
-		-webkit-appearance: checkbox;
-		-moz-appearance: checkbox;
+		-webkit-appearance: auto;
+		-moz-appearance: auto;
 	}
 
 	& input[type="email"],
@@ -279,24 +290,22 @@ const description = 'Your feedback is invaluable in helping us understand our co
 	& label {
 		display: block;
 		font-weight: 500;
-		margin-bottom: 0.5rem
-
+		margin-bottom: 0.5rem;
 	}
 
 	& .form-actions {
-
 		margin-top: 2rem;
 	}
 
 	& button[type="submit"] {
 		/* Layout */
 		align-self: flex-start;
-		margin-block-start: 4--step;
-		padding-block: 2--step;
-		padding-inline: 11--step;
+		margin-block-start: calc(4 * var(--step));
+		padding-block: calc(2 * var(--step));
+		padding-inline: calc(11 * var(--step));
 
 		/* Text */
-		font-size: 16--rpx;
+		font-size: calc(16 * var(--rpx));
 		line-height: calc(20 / 16);
 
 		/* Appearance */
@@ -310,5 +319,72 @@ const description = 'Your feedback is invaluable in helping us understand our co
 			background: var(--DarkBlue600Color);
 		}
 	}
+
+	& .error-message {
+		color: var(--StatusRedColor, #ff6b6b);
+		font-size: 0.875rem;
+		margin-top: 0.25rem;
+	}
+
+	& .sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
 }
 </style>
+
+<script>
+// Form validation for checkbox group
+document.addEventListener('DOMContentLoaded', function () {
+	const form = document.getElementById('astro-survey')
+	const errorMessage = document.getElementById('primary-use-error')
+	const hiddenValidation = document.getElementById('primary-use-validation')
+
+	if (!form || !errorMessage || !hiddenValidation) {
+		return
+	}
+
+	const checkboxes = form.querySelectorAll('input[name="primary_use"]')
+
+	// Function to validate checkbox group
+	const validateCheckboxes = () => {
+		const checkedBoxes = form.querySelectorAll('input[name="primary_use"]:checked')
+		const isValid = checkedBoxes.length > 0
+
+		if (isValid) {
+			(hiddenValidation as HTMLInputElement).value = 'valid'
+			errorMessage.style.display = 'none'
+			;(hiddenValidation as HTMLInputElement).setCustomValidity('')
+		} else {
+			(hiddenValidation as HTMLInputElement).value = ''
+			;(hiddenValidation as HTMLInputElement).setCustomValidity('Please select at least one option.')
+		}
+
+		return isValid
+	}
+
+	// Add event listeners to checkboxes
+	checkboxes.forEach(checkbox => {
+		checkbox.addEventListener('change', validateCheckboxes)
+	})
+
+	// Validate on form submission
+	form.addEventListener('submit', function (e) {
+		if (!validateCheckboxes()) {
+			e.preventDefault()
+			errorMessage.style.display = 'block'
+			const firstCheckbox = form.querySelector('input[name="primary_use"]') as HTMLElement
+			if (firstCheckbox) {
+				firstCheckbox.focus()
+			}
+		}
+	})
+})
+</script>
