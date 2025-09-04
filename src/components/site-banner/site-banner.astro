@@ -1,0 +1,136 @@
+---
+// Site banner component
+---
+<div class="site-banner">
+	<div class="site-banner-content">
+		<p><a href="/survey/">📣 Help Astro help you. If you value the project, please share your thoughts on its future: <span>astrouxds.com/survey/</span></a></p>
+	</div>
+</div>
+
+
+<style>
+
+
+.site-banner {
+	/* Layout */
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	width: 100%;
+
+	background: var(--AstroOrangeColor);
+	color: rgb(49, 25, 0);
+	font-weight: 600;
+	box-shadow: inset 0 -3px 5px  rgba(3, 40, 1, 0.18);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+	/* Text */
+	font-size: 14px;
+	line-height: 1.4;
+}
+
+.site-banner-content {
+	/* Layout */
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0.25rem 0.5rem;
+
+	/* Text */
+	text-align: center;
+}
+
+
+
+.site-banner a {
+	/* Appearance */
+	color: rgb(49, 25, 0);
+
+}
+
+.site-banner a span {
+	text-decoration: underline;
+	text-decoration-style: wavy;
+	text-decoration-thickness: 1px;
+
+}
+
+.site-banner a:hover span,
+.site-banner a:focus span {
+	/* Appearance */
+	/* text-decoration-thickness: 1px; */
+	text-decoration: none;
+}
+
+/* Mobile and tablet responsive design */
+@media (max-width: 768px) {
+	.site-banner {
+		/* Text */
+		font-size: 13px;
+	}
+
+	.site-banner-content {
+		/* Layout */
+		padding: 10px 12px;
+	}
+
+	.site-banner p {
+		/* Text */
+		text-align: left;
+		line-height: 1.5;
+	}
+}
+
+@media (max-width: 480px) {
+	.site-banner {
+		/* Text */
+		font-size: 12px;
+	}
+
+	.site-banner-content {
+		/* Layout */
+		padding: 8px 10px;
+	}
+}
+
+/* Adjust body to account for fixed banner */
+:global(body.has-site-banner) {
+	padding-top: var(--site-banner-height, 44px);
+}
+
+@media (max-width: 768px) {
+	:global(body.has-site-banner) {
+		padding-top: var(--site-banner-height, 50px);
+	}
+}
+
+@media (max-width: 480px) {
+	:global(body.has-site-banner) {
+		padding-top: var(--site-banner-height, 48px);
+	}
+}
+</style>
+
+<script>
+// Add class to body and calculate banner height
+document.addEventListener('DOMContentLoaded', function () {
+	const body = document.body
+	const banner = document.querySelector('.site-banner')
+
+	if (banner) {
+		body.classList.add('has-site-banner')
+
+		// Set CSS custom property for banner height
+		const updateBannerHeight = () => {
+			const height = (banner as HTMLElement).offsetHeight + 'px'
+			document.documentElement.style.setProperty('--site-banner-height', height)
+		}
+
+		updateBannerHeight()
+
+		// Update on resize
+		window.addEventListener('resize', updateBannerHeight)
+	}
+})
+</script>
