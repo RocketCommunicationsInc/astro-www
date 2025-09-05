@@ -65,8 +65,18 @@ const description = `Astro represents a collection of artifacts including, but n
 				</tr>
 				<tr>
 					<td>Web Components</td>
-					<td class="tabular">7.25.1 -&gt; <b>7.25.2</b></td>
-					<td><a href="https://github.com/RocketCommunicationsInc/astro/releases/tag/v7.25.2">Release Notes</a></td>
+					<td class="tabular">7.25.2 -&gt; <b>7.27.0</b></td>
+					<td><a href="https://github.com/RocketCommunicationsInc/astro/releases">Release Notes</a></td>
+				</tr>
+				<tr>
+					<td>Angular Components</td>
+					<td class="tabular">7.25.2 -&gt; <b>8.0.0</b></td>
+					<td><a href="https://github.com/RocketCommunicationsInc/astro/releases">Release Notes</a></td>
+				</tr>
+				<tr>
+					<td>React Components</td>
+					<td class="tabular">7.25.2 -&gt; <b>7.27.0</b></td>
+					<td><a href="https://github.com/RocketCommunicationsInc/astro/releases">Release Notes</a></td>
 				</tr>
 				<tr>
 					<td>Astro Design Compliance</td>
@@ -177,6 +187,40 @@ const description = `Astro represents a collection of artifacts including, but n
 			unwieldy.
 		</p>
 	</div>
+
+	<a href="#package-versioning" class="h h2">
+		<h2 id="package-versioning">
+			Package Versioning
+		</h2>
+	</a>
+
+	<p>
+		Different packages within the Astro ecosystem receive version updates based on the nature of changes made. Here's how we determine version bumps across our web components, React, and Angular packages:
+	</p>
+
+	<a href="#core-changes" class="h h3">
+		<h3 id="core-changes">
+			Core changes that require wrapper updates:
+		</h3>
+	</a>
+
+	<ul>
+		<li><strong>New components added</strong> → All wrappers get minor bumps</li>
+		<li><strong>Component APIs change</strong> → All wrappers get major bumps</li>
+		<li><strong>Breaking changes in core</strong> → All wrappers get major bumps</li>
+	</ul>
+
+	<a href="#framework-specific-changes" class="h h3">
+		<h3 id="framework-specific-changes">
+			Framework-specific changes:
+		</h3>
+	</a>
+
+	<ul>
+		<li><strong>Angular-only breaking changes</strong> → Only Angular gets major bump</li>
+		<li><strong>React-only improvements</strong> → Only React gets minor bump</li>
+		<li><strong>Test app updates</strong> → Only that test app gets bumped</li>
+	</ul>
 
 	<a href="#web-component-breaking-changes" class="h h2">
 		<h2 id="web-component-breaking-changes">
