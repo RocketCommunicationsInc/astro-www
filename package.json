@@ -347,7 +347,7 @@
 	},
 	"dependencies": {
 		"@astrojs/netlify": "^2.6.0",
-		"@supabase/supabase-js": "^2.57.4",
+		"firebase": "^12.2.1",
 		"highlight.js": "11.8.0",
 		"jose": "^6.1.0"
 	}

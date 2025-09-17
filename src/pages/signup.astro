@@ -2,7 +2,7 @@
 import DefaultLayout from 'project:layouts/default/default-layout.astro'
 import PageHeader from 'project:components/page-header/page-header.astro'
 
-const redirectUrl = Astro.url.searchParams.get('redirect') || '/';
+const redirectUrl = Astro.url.searchParams.get('redirect') || '/'
 ---
 
 <DefaultLayout title="Sign Up - Astro UXDS" tabtitle="Sign Up">
@@ -157,58 +157,47 @@ const redirectUrl = Astro.url.searchParams.get('redirect') || '/';
   }
 </style>
 
-<script define:vars={{redirectUrl}} type="module">
-  // Import Supabase client directly
-  import { supabase } from '/src/lib/supabase.js';
+<script>
+  // Import Firebase auth functions
+  import { createUserWithEmailAndPassword } from '/src/lib/firebase-auth.js'
 
   // Initialize signup form when page loads
   document.addEventListener('DOMContentLoaded', () => {
-
-    const form = document.getElementById('signupForm');
-    const errorDiv = document.getElementById('error-message');
-    const successDiv = document.getElementById('success-message');
+    const form = document.getElementById('signupForm')
+    const errorDiv = document.getElementById('error-message')
+    const successDiv = document.getElementById('success-message')
 
     form.addEventListener('submit', async (e) => {
-      e.preventDefault();
+      e.preventDefault()
 
-      const formData = new FormData(form);
-      const email = formData.get('email');
-      const password = formData.get('password');
-      const organization = formData.get('organization');
-      const role = formData.get('role');
+      const formData = new FormData(form)
+      const email = formData.get('email')
+      const password = formData.get('password')
+      const organization = formData.get('organization')
+      const role = formData.get('role')
 
       try {
-        const { data, error } = await supabase.auth.signUp({
-          email,
-          password,
-          options: {
-            data: {
-              organization: organization || null,
-              role: role || null,
-            }
-          }
-        });
+        const userCredential = await createUserWithEmailAndPassword(email, password)
+        const user = userCredential.user
 
-        if (error) throw error;
+        // TODO: Save additional profile data to Firestore
+        // This would be implemented with the Firestore integration
 
-        // Show success message
-        successDiv.textContent = 'Account created successfully! Please check your email to verify your account.';
-        successDiv.style.display = 'block';
-        errorDiv.style.display = 'none';
-
-        // Clear form
-        form.reset();
+        successDiv.textContent = 'Account created successfully! Redirecting to login...'
+        successDiv.style.display = 'block'
+        errorDiv.style.display = 'none'
+        form.reset()
 
         // Redirect to login after 3 seconds
         setTimeout(() => {
-          window.location.href = '/login/';
-        }, 3000);
-
+          window.location.href = '/login/'
+        }, 3000)
       } catch (error) {
-        errorDiv.textContent = error.message;
-        errorDiv.style.display = 'block';
-        successDiv.style.display = 'none';
+        console.error('Signup error:', error)
+        errorDiv.textContent = error.message
+        errorDiv.style.display = 'block'
+        successDiv.style.display = 'none'
       }
-    });
-  });
+    })
+  })
 </script>

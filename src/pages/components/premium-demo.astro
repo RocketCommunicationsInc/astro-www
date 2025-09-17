@@ -87,36 +87,35 @@ import PageHeader from 'project:components/page-header/page-header.astro'
 <script>
   // Initialize auth protected content when page loads
   document.addEventListener('DOMContentLoaded', async () => {
-    // Import Supabase client
-    const { supabase } = await import('/src/lib/supabase.js');
+    // Import Firebase auth helper
+    const { onAuthStateChanged } = await import('/src/lib/firebase-auth.js')
 
     class AuthProtectedContent extends HTMLElement {
       constructor() {
-        super();
-        this.supabase = supabase;
-        this.checkAuthState();
+        super()
+        this.checkAuthState()
 
         // Listen for auth state changes
-        this.supabase.auth.onAuthStateChange((event, session) => {
-          this.updateContent(session);
-        });
+        onAuthStateChanged((user) => {
+          this.updateContent(user)
+        })
       }
 
       async checkAuthState() {
         try {
-          const { data: { session } } = await this.supabase.auth.getSession();
-          this.updateContent(session);
+          // The onAuthStateChanged listener will handle initial state
+          this.showAuthGate()
         } catch (error) {
-          console.error('Error checking auth state:', error);
-          this.showAuthGate();
+          console.error('Error checking auth state:', error)
+          this.showAuthGate()
         }
       }
 
-      updateContent(session) {
-        if (session && session.user) {
-          this.showPremiumContent(session.user);
+      updateContent(user) {
+        if (user) {
+          this.showPremiumContent(user)
         } else {
-          this.showAuthGate();
+          this.showAuthGate()
         }
       }
 
@@ -144,7 +143,7 @@ import PageHeader from 'project:components/page-header/page-header.astro'
 
             <p><em>This content is personalized for your account and tracks your usage for analytics.</em></p>
           </div>
-        `;
+        `
       }
 
       showAuthGate() {
@@ -164,13 +163,13 @@ import PageHeader from 'project:components/page-header/page-header.astro'
               <a href="/signup/" class="btn btn-secondary">Create Account</a>
             </div>
           </div>
-        `;
+        `
       }
     }
 
     // Define the custom element
     if (!customElements.get('auth-protected-content')) {
-      customElements.define('auth-protected-content', AuthProtectedContent);
+      customElements.define('auth-protected-content', AuthProtectedContent)
     }
-  });
+  })
 </script>

@@ -62,69 +62,64 @@
 <script>
   // Initialize auth nav when page loads
   document.addEventListener('DOMContentLoaded', async () => {
-    // Import Supabase client
-    const { supabase } = await import('/src/lib/supabase.js');
+    // Import Firebase auth helpers
+    const { onAuthStateChanged, signOut } = await import('/src/lib/firebase-auth.js')
 
     class AuthNavComponent extends HTMLElement {
       constructor() {
-        super();
-        this.authNavContainer = this.querySelector('#auth-nav');
-        this.supabase = supabase;
-        this.checkAuthState();
+        super()
+        this.authNavContainer = this.querySelector('#auth-nav')
+        this.checkAuthState()
 
         // Listen for auth state changes
-        this.supabase.auth.onAuthStateChange((event, session) => {
-          this.updateAuthNav(session);
-        });
+        onAuthStateChanged((user) => {
+          this.updateAuthNav(user)
+        })
       }
 
       async checkAuthState() {
         try {
-          const { data: { session } } = await this.supabase.auth.getSession();
-          this.updateAuthNav(session);
+          // The onAuthStateChanged listener will handle initial state
+          this.updateAuthNav(null)
         } catch (error) {
-          console.error('Error checking auth state:', error);
-          this.updateAuthNav(null);
+          console.error('Error checking auth state:', error)
+          this.updateAuthNav(null)
         }
       }
 
-      updateAuthNav(session) {
-        if (session && session.user) {
+      updateAuthNav(user) {
+        if (user) {
           // User is logged in
           this.authNavContainer.innerHTML = `
             <div class="user-info">
-              <span>Welcome, ${session.user.email}</span>
+              <span>Welcome, ${user.email}</span>
               <a href="/account/dashboard/">Dashboard</a>
               <button class="sign-out-btn" onclick="this.parentElement.parentElement.parentElement.signOut()">Sign Out</button>
             </div>
-          `;
+          `
         } else {
           // User is not logged in
           this.authNavContainer.innerHTML = `
             <a href="/login/">Sign In</a>
             <a href="/signup/" class="btn-primary">Create Account</a>
-          `;
+          `
         }
       }
 
       async signOut() {
         try {
-          await this.supabase.auth.signOut();
-          // Clear any stored session cookies
-          document.cookie = 'sb-access-token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
-          document.cookie = 'sb-refresh-token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
-
+          await signOut()
           // Redirect to home page
-          window.location.href = '/';
+          window.location.href = '/'
         } catch (error) {
-          console.error('Error signing out:', error);
+          console.error('Error signing out:', error)
         }
       }
     }
 
     // Define the custom element
     if (!customElements.get('auth-nav-component')) {
-      customElements.define('auth-nav-component', AuthNavComponent);
+      customElements.define('auth-nav-component', AuthNavComponent)
     }
-  });
+  })
 </script>

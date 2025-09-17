@@ -28,6 +28,7 @@ dev-debug.log
 # Editor directories and files
 .idea
 .vscode
+.netlify
 *.suo
 *.ntvs*
 *.njsproj

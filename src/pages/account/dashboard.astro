@@ -4,11 +4,11 @@ import PageHeader from 'project:components/page-header/page-header.astro'
 
 // For now, we'll handle auth state on the client side in Astro 2.x
 // In a real implementation, we'd check auth state here
-const user = null; // Will be set via client-side auth check
+const user = null // Will be set via client-side auth check
 
 // Mock data for now since we can't access Supabase server-side in this simplified version
-const downloads = [];
-const accessLogs = [];
+const downloads = []
+const accessLogs = []
 ---
 
 <DefaultLayout title="Dashboard - Astro UXDS">
@@ -29,7 +29,8 @@ const accessLogs = [];
 
       <section class="downloads-section">
         <h2>Recent Downloads</h2>
-        {downloads && downloads.length > 0 ? (
+        {downloads && downloads.length > 0
+? (
           <ul class="downloads-list">
             {downloads.map(download => (
               <li>
@@ -38,14 +39,16 @@ const accessLogs = [];
               </li>
             ))}
           </ul>
-        ) : (
+        )
+: (
           <p>No downloads yet</p>
         )}
       </section>
 
       <section class="activity-section">
         <h2>Recent Activity</h2>
-        {accessLogs && accessLogs.length > 0 ? (
+        {accessLogs && accessLogs.length > 0
+? (
           <ul class="activity-list">
             {accessLogs.map(log => (
               <li>
@@ -54,7 +57,8 @@ const accessLogs = [];
               </li>
             ))}
           </ul>
-        ) : (
+        )
+: (
           <p>No recent activity</p>
         )}
       </section>
@@ -152,46 +156,40 @@ const accessLogs = [];
 </style>
 
 <script type="module">
-  // Import Supabase client
-  import { supabase } from '/src/lib/supabase.js';
+  // Import Firebase auth functions
+  import { onAuthStateChanged, signOut } from '/src/lib/firebase-auth.js'
 
   // Initialize dashboard when page loads
-  document.addEventListener('DOMContentLoaded', async () => {
+  document.addEventListener('DOMContentLoaded', () => {
+    // Check authentication state
+    onAuthStateChanged((user) => {
+      if (user) {
+        // User is signed in
+        const profileInfo = document.getElementById('profile-info')
+        profileInfo.innerHTML = `
+          <p><strong>Email:</strong> ${user.email}</p>
+          <p><strong>User ID:</strong> ${user.uid}</p>
+          <p><strong>Account Created:</strong> ${new Date(user.metadata.creationTime).toLocaleDateString()}</p>
+          <p><strong>Last Login:</strong> ${new Date(user.metadata.lastSignInTime).toLocaleDateString()}</p>
+        `
+      } else {
+        // User is signed out, redirect to login
+        window.location.href = '/login/?redirect=/account/dashboard/'
+      }
+    })
 
-    // Check auth state and populate user info
-    const { data: { session } } = await supabase.auth.getSession();
-
-    if (!session) {
-      // Redirect to login if not authenticated
-      window.location.href = '/login/?redirect=/account/dashboard/';
-      return;
-    }
-
-    // Populate user information
-    const profileInfo = document.getElementById('profile-info');
-    profileInfo.innerHTML = `
-      <p><strong>Email:</strong> ${session.user.email}</p>
-      <p><strong>Tier:</strong> free</p>
-      <p><strong>Organization:</strong> Not set</p>
-    `;
-
-    const signOutBtn = document.getElementById('signOutBtn');
+    const signOutBtn = document.getElementById('signOutBtn')
 
     if (signOutBtn) {
       signOutBtn.addEventListener('click', async () => {
         try {
-          await supabase.auth.signOut();
-
-          // Clear cookies
-          document.cookie = 'sb-access-token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
-          document.cookie = 'sb-refresh-token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
-
+          await signOut()
           // Redirect to home
-          window.location.href = '/';
+          window.location.href = '/'
         } catch (error) {
-          console.error('Error signing out:', error);
+          console.error('Error signing out:', error)
         }
-      });
+      })
     }
-  });
+  })
 </script>
