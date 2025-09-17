@@ -4,11 +4,10 @@ import PageHeader from 'project:components/page-header/page-header.astro'
 
 // For now, we'll handle auth state on the client side in Astro 2.x
 // In a real implementation, we'd check auth state here
-const user = null // Will be set via client-side auth check
 
 // Mock data for now since we can't access Supabase server-side in this simplified version
-const downloads = []
-const accessLogs = []
+const downloads: any[] = []
+const accessLogs: any[] = []
 ---
 
 <DefaultLayout title="Dashboard - Astro UXDS">
@@ -166,12 +165,21 @@ const accessLogs = []
       if (user) {
         // User is signed in
         const profileInfo = document.getElementById('profile-info')
-        profileInfo.innerHTML = `
-          <p><strong>Email:</strong> ${user.email}</p>
-          <p><strong>User ID:</strong> ${user.uid}</p>
-          <p><strong>Account Created:</strong> ${new Date(user.metadata.creationTime).toLocaleDateString()}</p>
-          <p><strong>Last Login:</strong> ${new Date(user.metadata.lastSignInTime).toLocaleDateString()}</p>
-        `
+        if (profileInfo instanceof HTMLElement) {
+          const safe = (v) => String(v || '')
+          profileInfo.innerHTML = ''
+          const emailP = document.createElement('p')
+          emailP.innerHTML = `<strong>Email:</strong> <span></span>`
+          emailP.querySelector('span').textContent = safe(user.email)
+          const idP = document.createElement('p')
+          idP.innerHTML = `<strong>User ID:</strong> <span></span>`
+          idP.querySelector('span').textContent = safe(user.uid)
+          const createdP = document.createElement('p')
+          createdP.innerHTML = `<strong>Account Created:</strong> ${new Date(user.metadata.creationTime).toLocaleDateString()}`
+          const lastLoginP = document.createElement('p')
+          lastLoginP.innerHTML = `<strong>Last Login:</strong> ${new Date(user.metadata.lastSignInTime).toLocaleDateString()}`
+          profileInfo.append(emailP, idP, createdP, lastLoginP)
+        }
       } else {
         // User is signed out, redirect to login
         window.location.href = '/login/?redirect=/account/dashboard/'

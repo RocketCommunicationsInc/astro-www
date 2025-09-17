@@ -1,8 +1,6 @@
 ---
 import DefaultLayout from 'project:layouts/default/default-layout.astro'
 import PageHeader from 'project:components/page-header/page-header.astro'
-
-const redirectUrl = Astro.url.searchParams.get('redirect') || '/'
 ---
 
 <DefaultLayout title="Sign Up - Astro UXDS" tabtitle="Sign Up">
@@ -157,13 +155,31 @@ const redirectUrl = Astro.url.searchParams.get('redirect') || '/'
   }
 </style>
 
-<script>
+<script type="module">
   // Import Firebase auth functions
   import { createUserWithEmailAndPassword } from '/src/lib/firebase-auth.js'
+
+  const getAuthErrorMessage = (err) => {
+    const code = (err && typeof err === 'object' && 'code' in err) ? err.code : ''
+    switch (code) {
+      case 'auth/email-already-in-use':
+        return 'An account with this email already exists.'
+      case 'auth/invalid-email':
+        return 'Please enter a valid email address.'
+      case 'auth/weak-password':
+        return 'Password is too weak. Please choose a stronger password.'
+      case 'auth/operation-not-allowed':
+        return 'Email/password sign up is currently disabled.'
+      default:
+        return 'Sign-up failed. Please try again.'
+    }
+  }
 
   // Initialize signup form when page loads
   document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('signupForm')
+    if (!(form instanceof HTMLFormElement)) return
+
     const errorDiv = document.getElementById('error-message')
     const successDiv = document.getElementById('success-message')
 
@@ -171,21 +187,19 @@ const redirectUrl = Astro.url.searchParams.get('redirect') || '/'
       e.preventDefault()
 
       const formData = new FormData(form)
-      const email = formData.get('email')
-      const password = formData.get('password')
-      const organization = formData.get('organization')
-      const role = formData.get('role')
+      const email = String(formData.get('email') || '')
+      const password = String(formData.get('password') || '')
 
       try {
-        const userCredential = await createUserWithEmailAndPassword(email, password)
-        const user = userCredential.user
+        await createUserWithEmailAndPassword(email, password)
 
-        // TODO: Save additional profile data to Firestore
-        // This would be implemented with the Firestore integration
-
-        successDiv.textContent = 'Account created successfully! Redirecting to login...'
-        successDiv.style.display = 'block'
-        errorDiv.style.display = 'none'
+        if (successDiv instanceof HTMLElement) {
+          successDiv.textContent = 'Account created successfully! Redirecting to login...'
+          successDiv.style.display = 'block'
+        }
+        if (errorDiv instanceof HTMLElement) {
+          errorDiv.style.display = 'none'
+        }
         form.reset()
 
         // Redirect to login after 3 seconds
@@ -193,10 +207,15 @@ const redirectUrl = Astro.url.searchParams.get('redirect') || '/'
           window.location.href = '/login/'
         }, 3000)
       } catch (error) {
+        const msg = getAuthErrorMessage(error)
         console.error('Signup error:', error)
-        errorDiv.textContent = error.message
-        errorDiv.style.display = 'block'
-        successDiv.style.display = 'none'
+        if (errorDiv instanceof HTMLElement) {
+          errorDiv.textContent = msg
+          errorDiv.style.display = 'block'
+        }
+        if (successDiv instanceof HTMLElement) {
+          successDiv.style.display = 'none'
+        }
       }
     })
   })

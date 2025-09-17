@@ -131,9 +131,38 @@ const redirectUrl = Astro.url.searchParams.get('redirect') || '/'
   // Import Firebase auth functions
   import { signInWithEmailAndPassword } from '/src/lib/firebase-auth.js'
 
+  // Simple path validation to prevent open redirects
+  const safeRedirect = (raw) => {
+    if (typeof raw !== 'string') return '/'
+    // Disallow protocols and protocol-relative URLs
+    if (/^([a-z]+:)?\/\//i.test(raw)) return '/'
+    // Must start with a single slash
+    return raw.startsWith('/') ? raw : '/'
+  }
+
+  // Map Firebase errors to friendly messages
+  const getAuthErrorMessage = (err) => {
+    const code = (err && typeof err === 'object' && 'code' in err) ? err.code : ''
+    switch (code) {
+      case 'auth/invalid-email':
+        return 'Please enter a valid email address.'
+      case 'auth/user-disabled':
+        return 'This account has been disabled.'
+      case 'auth/user-not-found':
+      case 'auth/wrong-password':
+        return 'Incorrect email or password.'
+      case 'auth/too-many-requests':
+        return 'Too many attempts. Please try again later.'
+      default:
+        return 'Sign-in failed. Please try again.'
+    }
+  }
+
   // Initialize login form when page loads
   document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('loginForm')
+    if (!(form instanceof HTMLFormElement)) return
+
     const errorDiv = document.getElementById('error-message')
 
     form.addEventListener('submit', async (e) => {
@@ -144,14 +173,15 @@ const redirectUrl = Astro.url.searchParams.get('redirect') || '/'
       const password = formData.get('password')
 
       try {
-        const userCredential = await signInWithEmailAndPassword(email, password)
-        const user = userCredential.user
-
-        // Redirect
-        window.location.href = redirectUrl
+        await signInWithEmailAndPassword(String(email || ''), String(password || ''))
+        // Redirect (validated)
+        window.location.href = safeRedirect(redirectUrl)
       } catch (error) {
-        errorDiv.textContent = error.message
-        errorDiv.style.display = 'block'
+        const msg = getAuthErrorMessage(error)
+        if (errorDiv instanceof HTMLElement) {
+          errorDiv.textContent = msg
+          errorDiv.style.display = 'block'
+        }
       }
     })
   })

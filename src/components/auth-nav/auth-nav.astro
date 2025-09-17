@@ -59,7 +59,7 @@
   }
 </style>
 
-<script>
+<script type="module">
   // Initialize auth nav when page loads
   document.addEventListener('DOMContentLoaded', async () => {
     // Import Firebase auth helpers
@@ -68,10 +68,10 @@
     class AuthNavComponent extends HTMLElement {
       constructor() {
         super()
-        this.authNavContainer = this.querySelector('#auth-nav')
         this.checkAuthState()
 
         // Listen for auth state changes
+        // @ts-ignore - suppress implicit any for callback param in JS context
         onAuthStateChanged((user) => {
           this.updateAuthNav(user)
         })
@@ -87,32 +87,38 @@
         }
       }
 
-      updateAuthNav(user) {
+  // @ts-ignore - suppress implicit any for method param in JS context
+  updateAuthNav(user) {
+        const container = this.querySelector('#auth-nav')
+        if (!(container instanceof HTMLElement)) return
         if (user) {
           // User is logged in
-          this.authNavContainer.innerHTML = `
+          container.innerHTML = `
             <div class="user-info">
-              <span>Welcome, ${user.email}</span>
+              <span id="auth-email"></span>
               <a href="/account/dashboard/">Dashboard</a>
-              <button class="sign-out-btn" onclick="this.parentElement.parentElement.parentElement.signOut()">Sign Out</button>
+              <button id="signout-btn" class="sign-out-btn">Sign Out</button>
             </div>
           `
+          const emailEl = container.querySelector('#auth-email')
+          if (emailEl) emailEl.textContent = user.email || 'User'
+          const signoutBtn = container.querySelector('#signout-btn')
+          if (signoutBtn) {
+            signoutBtn.addEventListener('click', async () => {
+              try {
+                await signOut()
+                window.location.href = '/'
+              } catch (e) {
+                console.error('Error signing out:', e)
+              }
+            })
+          }
         } else {
           // User is not logged in
-          this.authNavContainer.innerHTML = `
+          container.innerHTML = `
             <a href="/login/">Sign In</a>
             <a href="/signup/" class="btn-primary">Create Account</a>
           `
-        }
-      }
-
-      async signOut() {
-        try {
-          await signOut()
-          // Redirect to home page
-          window.location.href = '/'
-        } catch (error) {
-          console.error('Error signing out:', error)
         }
       }
     }
