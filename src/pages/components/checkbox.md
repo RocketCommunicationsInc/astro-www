@@ -7,6 +7,7 @@ height: 188px
 git: rux-checkbox
 assets:
   name: Checkbox
+protected: true
 ---
 
 ## Interactive Example

@@ -28,6 +28,7 @@ const {
 } = Object(Astro.props.content)
 
 const { content } = Astro.props
+const isProtected = Boolean(content && content.protected)
 
 
 /** RegEx to match a slash (/) at the end ($) of a string. */
@@ -68,16 +69,58 @@ const html = `<style>:root{--StorybookPreviewHeight:${StorybookPreviewHeight};}<
 
 	<Fragment set:html={html} />
 
-	<slot />
-
-	<AssetStatus {...Astro.props}/>
-
-	<ComplianceAside compliance={complianceData} />
+	{isProtected
+		? (
+		<Fragment>
+			<div id="auth-gate" class="auth-gate" aria-live="polite">
+				<h2>🔒 Protected Content</h2>
+				<p>This section requires you to be signed in.</p>
+				<div class="cta-buttons" style="display:flex; gap: 0.75rem; margin-top: 0.5rem;">
+					<a href={`/login/?redirect=${encodeURIComponent(Astro.url.pathname)}`} class="btn btn-primary">Sign In</a>
+					<a href="/signup/" class="btn btn-secondary">Create Account</a>
+				</div>
+			</div>
+			<div id="protected-content" style="display: none;">
+				<slot />
+				<AssetStatus {...Astro.props}/>
+				<ComplianceAside compliance={complianceData} />
+			</div>
+		</Fragment>
+	)
+	: (
+		<Fragment>
+			<slot />
+			<AssetStatus {...Astro.props}/>
+			<ComplianceAside compliance={complianceData} />
+		</Fragment>
+	)
+	}
 	<!-- <ContributionFooter sourceurl={githubSourceURL} /> -->
 </Layout>
 <script>
 import 'project:components/component-playground/Playground/Playground.ts'
 import 'project:components/color-swab-custom-element.ts'
+</script>
+<script type="module">
+// Toggle protected content (everything below header) when `protected: true` in frontmatter
+document.addEventListener('DOMContentLoaded', async () => {
+	const gate = document.getElementById('auth-gate')
+	const protectedEl = document.getElementById('protected-content')
+	if (!gate && !protectedEl) return // not a protected page
+	try {
+		const { onAuthStateChanged } = await import('/src/lib/firebase-auth.js')
+		// @ts-ignore - JS callback param without TS type
+		onAuthStateChanged((user) => {
+			const signedIn = !!user
+			if (protectedEl) protectedEl.style.display = signedIn ? 'block' : 'none'
+			if (gate) gate.style.display = signedIn ? 'none' : 'block'
+		})
+	} catch (err) {
+		console.error('Auth gating error:', err)
+		if (protectedEl) protectedEl.style.display = 'none'
+		if (gate) gate.style.display = 'block'
+	}
+})
 </script>
 <script define:vars={{ GitHubId, GitHubRepoURL, GitHubRepoBranch, StorybookId, storybookURL }}>
 const template = document.createElement('template')

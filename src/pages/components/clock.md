@@ -7,6 +7,7 @@ height: 220px
 git: rux-clock
 assets:
   name: Clock
+protected: true
 ---
 
 ## Interactive Example
