@@ -1,13 +1,33 @@
 [build]
-
 	publish = "dist/"
 	command = "npm run build"
+
+[build.environment]
+	NODE_VERSION = "18.16.0"
 
 [context.production]
 	NODE_VERSION = "18.16.0"
 
 [context.deploy-preview.environment]
 	NODE_VERSION = "18.16.0"
+
+# Cache headers for performance
+[[headers]]
+	for = "/docs/*"
+	[headers.values]
+		Cache-Control = "public, max-age=3600, s-maxage=86400"
+		Vary = "Cookie"
+
+[[headers]]
+	for = "/_astro/*"
+	[headers.values]
+		Cache-Control = "public, max-age=31536000, immutable"
+
+# Auth API routes
+[[redirects]]
+	from = "/api/*"
+	to = "/.netlify/functions/:splat"
+	status = 200
 
 [[redirects]]
 	from = "/ui-components/*"

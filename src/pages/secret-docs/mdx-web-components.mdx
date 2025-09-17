@@ -1,0 +1,124 @@
+---
+title: MDX with Web Components
+description: Using W3C Web Components with MDX
+layout: project:layouts/docs/docs-layout.astro
+---
+
+# Using Web Components with MDX
+
+This example shows how to use W3C standard web components within MDX files.
+
+## Client-Side Only Web Components
+
+Web components in Astro MDX work best with a client-side only approach. In this example, we'll use a React wrapper component that:
+
+1. Renders a simple fallback during server-side rendering 
+2. Dynamically imports and registers the web component on the client
+3. Renders the actual web component after hydration
+
+The registration happens automatically in our wrapper component:
+
+```jsx
+// Inside ClientOnlyInfoCard.jsx
+useEffect(() => {
+  // Dynamically import and register the web component
+  const registerComponent = async () => {
+    if (!customElements.get('info-card')) {
+      const module = await import('./info-card.js');
+      customElements.define('info-card', module.InfoCard);
+    }
+  };
+  
+  registerComponent();
+}, []);
+```
+
+## Using the Web Component
+
+Now we can use our client-side wrapper component:
+
+import { ClientOnlyInfoCard } from 'project:components/ClientOnlyInfoCard.jsx';
+
+<ClientOnlyInfoCard title="Important Information">
+  This is content inside a web component! It's using the shadow DOM for encapsulation.
+</ClientOnlyInfoCard>
+
+<ClientOnlyInfoCard title="Success Message" type="success">
+  Your action was completed successfully.
+</ClientOnlyInfoCard>
+
+<ClientOnlyInfoCard title="Warning" type="warning">
+  Be careful! This action might have unexpected consequences.
+</ClientOnlyInfoCard>
+
+<ClientOnlyInfoCard title="Error" type="error">
+  Something went wrong. Please try again.
+</ClientOnlyInfoCard>
+
+## Mixing with Markdown
+
+You can use these web components alongside normal Markdown syntax:
+
+### List of features
+
+- **Encapsulated styles** - The component styling doesn't leak out
+- **Custom attributes** - Pass data to components with attributes
+- **Shadow DOM** - Complete DOM isolation
+- **Framework agnostic** - Works without any framework
+
+<ClientOnlyInfoCard title="Technical Note">
+  Web components use **standard browser APIs** including:
+  
+  - Custom Elements
+  - Shadow DOM
+  - HTML Templates
+  - ES Modules
+</ClientOnlyInfoCard>
+
+## Web Components vs React Components
+
+You can choose the right tool for each job:
+
+| Feature | Web Components | React Components |
+|---------|---------------|-----------------|
+| Browser Support | Native in modern browsers | Requires React runtime |
+| Style Encapsulation | Shadow DOM | CSS Modules / CSS-in-JS |
+| State Management | Vanilla JS | React State / Hooks |
+| Framework Dependency | None | React |
+| Best For | Reusable UI elements | Complex interactive features |
+
+## Benefits in Documentation
+
+<div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+  <ClientOnlyInfoCard title="Consistency" style={{ flex: '1 1 250px' }}>
+    Web components provide a consistent look and behavior across all pages.
+  </ClientOnlyInfoCard>
+  
+  <ClientOnlyInfoCard title="Maintainability" type="success" style={{ flex: '1 1 250px' }}>
+    Change a component once, update it everywhere.
+  </ClientOnlyInfoCard>
+  
+  <ClientOnlyInfoCard title="Progressive Enhancement" type="info" style={{ flex: '1 1 250px' }}>
+    Components can enhance basic content without breaking it.
+  </ClientOnlyInfoCard>
+</div>
+
+## How It Works
+
+1. We create a React wrapper component (`ClientOnlyInfoCard`) that encapsulates our web component
+2. The wrapper component renders a fallback during server-side rendering
+3. After hydration on the client side, it dynamically imports and registers the web component
+4. The web component is then rendered in place of the fallback
+5. This approach avoids server-side rendering errors with custom elements
+
+## Client-side Only Approach
+
+Web components in Astro MDX work best with a client-side only approach:
+
+1. Create a React wrapper component that handles client-side detection
+2. Use `useEffect` to ensure the component only runs in the browser
+3. Dynamically import and register the web component in the browser
+4. Provide a fallback for server-side rendering
+5. Only render the actual custom element after client-side hydration
+
+This pattern ensures your web components work reliably without causing server-side rendering errors.

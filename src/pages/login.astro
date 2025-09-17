@@ -1,0 +1,168 @@
+---
+import DefaultLayout from 'project:layouts/default/default-layout.astro'
+import PageHeader from 'project:components/page-header/page-header.astro'
+
+const redirectUrl = Astro.url.searchParams.get('redirect') || '/';
+---
+
+<DefaultLayout title="Sign In - Astro UXDS" tabtitle="Sign In">
+  <main class="page" id="content">
+    <PageHeader>
+      <h1>Sign In</h1>
+      <p>Access premium components and documentation</p>
+    </PageHeader>
+
+    <div class="page-content">
+      <div class="auth-container">
+        <form id="loginForm" class="auth-form">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="form-control"
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              class="form-control"
+              placeholder="Your password"
+            />
+          </div>
+
+          <div id="error-message" class="alert alert-error" style="display: none;"></div>
+
+          <button type="submit" class="btn btn-primary">
+            Sign In
+          </button>
+
+          <div class="auth-links">
+            <a href="/signup/">Create an account</a>
+            <a href="/forgot-password/">Forgot password?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+</DefaultLayout>
+
+<style>
+  .auth-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-group label {
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  .form-control {
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-base);
+    font-size: 1rem;
+    transition: border-color 0.2s;
+  }
+
+  .form-control:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+  }
+
+  .btn-primary {
+    padding: 0.75rem 1.5rem;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-primary-dark);
+  }
+
+  .auth-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+  }
+
+  .alert {
+    padding: 0.75rem;
+    border-radius: var(--radius-base);
+  }
+
+  .alert-error {
+    background: var(--color-error-light);
+    color: var(--color-error);
+    border: 1px solid var(--color-error);
+  }
+</style>
+
+<script define:vars={{redirectUrl}} type="module">
+  // Import Supabase client directly
+  import { supabase } from '/src/lib/supabase.js';
+
+  // Initialize login form when page loads
+  document.addEventListener('DOMContentLoaded', () => {
+
+    const form = document.getElementById('loginForm');
+    const errorDiv = document.getElementById('error-message');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const email = formData.get('email');
+      const password = formData.get('password');
+
+      try {
+        const { data, error } = await supabase.auth.signInWithPassword({
+          email,
+          password,
+        });
+
+        if (error) throw error;
+
+        // Set cookies for SSR
+        document.cookie = `sb-access-token=${data.session.access_token}; path=/; secure; samesite=strict; max-age=3600`;
+        document.cookie = `sb-refresh-token=${data.session.refresh_token}; path=/; secure; samesite=strict; max-age=${7 * 24 * 60 * 60}`;
+
+        // Redirect
+        window.location.href = redirectUrl;
+
+      } catch (error) {
+        errorDiv.textContent = error.message;
+        errorDiv.style.display = 'block';
+      }
+    });
+  });
+</script>

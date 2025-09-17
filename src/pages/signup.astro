@@ -1,0 +1,214 @@
+---
+import DefaultLayout from 'project:layouts/default/default-layout.astro'
+import PageHeader from 'project:components/page-header/page-header.astro'
+
+const redirectUrl = Astro.url.searchParams.get('redirect') || '/';
+---
+
+<DefaultLayout title="Sign Up - Astro UXDS" tabtitle="Sign Up">
+  <main class="page" id="content">
+    <PageHeader>
+      <h1>Create Account</h1>
+      <p>Join the Astro UXDS community and access premium content</p>
+    </PageHeader>
+
+    <div class="page-content">
+      <div class="auth-container">
+        <form id="signupForm" class="auth-form">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="form-control"
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              class="form-control"
+              placeholder="At least 8 characters"
+              minlength="8"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="organization">Organization (Optional)</label>
+            <input
+              type="text"
+              id="organization"
+              name="organization"
+              class="form-control"
+              placeholder="Your company or organization"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="role">Role (Optional)</label>
+            <select id="role" name="role" class="form-control">
+              <option value="">Select your role</option>
+              <option value="developer">Developer</option>
+              <option value="designer">Designer</option>
+              <option value="product-manager">Product Manager</option>
+              <option value="researcher">UX Researcher</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div id="error-message" class="alert alert-error" style="display: none;"></div>
+          <div id="success-message" class="alert alert-success" style="display: none;"></div>
+
+          <button type="submit" class="btn btn-primary">
+            Create Account
+          </button>
+
+          <div class="auth-links">
+            <a href="/login/">Already have an account? Sign in</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+</DefaultLayout>
+
+<style>
+  .auth-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-group label {
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  .form-control {
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-base);
+    font-size: 1rem;
+    transition: border-color 0.2s;
+  }
+
+  .form-control:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+  }
+
+  .btn-primary {
+    padding: 0.75rem 1.5rem;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-primary-dark);
+  }
+
+  .auth-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+  }
+
+  .alert {
+    padding: 0.75rem;
+    border-radius: var(--radius-base);
+  }
+
+  .alert-error {
+    background: var(--color-error-light);
+    color: var(--color-error);
+    border: 1px solid var(--color-error);
+  }
+
+  .alert-success {
+    background: var(--color-success-light);
+    color: var(--color-success);
+    border: 1px solid var(--color-success);
+  }
+</style>
+
+<script define:vars={{redirectUrl}} type="module">
+  // Import Supabase client directly
+  import { supabase } from '/src/lib/supabase.js';
+
+  // Initialize signup form when page loads
+  document.addEventListener('DOMContentLoaded', () => {
+
+    const form = document.getElementById('signupForm');
+    const errorDiv = document.getElementById('error-message');
+    const successDiv = document.getElementById('success-message');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const email = formData.get('email');
+      const password = formData.get('password');
+      const organization = formData.get('organization');
+      const role = formData.get('role');
+
+      try {
+        const { data, error } = await supabase.auth.signUp({
+          email,
+          password,
+          options: {
+            data: {
+              organization: organization || null,
+              role: role || null,
+            }
+          }
+        });
+
+        if (error) throw error;
+
+        // Show success message
+        successDiv.textContent = 'Account created successfully! Please check your email to verify your account.';
+        successDiv.style.display = 'block';
+        errorDiv.style.display = 'none';
+
+        // Clear form
+        form.reset();
+
+        // Redirect to login after 3 seconds
+        setTimeout(() => {
+          window.location.href = '/login/';
+        }, 3000);
+
+      } catch (error) {
+        errorDiv.textContent = error.message;
+        errorDiv.style.display = 'block';
+        successDiv.style.display = 'none';
+      }
+    });
+  });
+</script>

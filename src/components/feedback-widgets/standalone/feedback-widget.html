@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Widget Web Component</title>
+</head>
+<body>
+    <!-- Example Usage -->
+    <h1>Feedback Widget Demo</h1>
+    <p>This is a standalone web component with declarative Shadow DOM.</p>
+    
+    <!-- Basic usage -->
+    <feedback-widget 
+        api-endpoint="https://astrouxds-api-196cde1c48d0.herokuapp.com/api/v1/feedback"
+        current-url="/demo-page">
+    </feedback-widget>
+
+    <!-- Custom text example -->
+    <feedback-widget 
+        api-endpoint="https://astrouxds-api-196cde1c48d0.herokuapp.com/api/v1/feedback"
+        current-url="/demo-page-2"
+        title="How was your experience?"
+        description="Please rate this feature:"
+        secondary-button-text="Reset">
+    </feedback-widget>
+
+    <!-- Feedback Widget Web Component Definition -->
+    <template id="feedback-widget-template">
+        <template shadowrootmode="open">
+            <style>
+                :host {
+                    --widget-primary: #ffffff;
+                    --widget-primary-text: #1a1a1a;
+                    --widget-secondary: #005a8f;
+                    --widget-secondary-light: #e6f2f8;
+                    --widget-accent: #ff7a45;
+                    --widget-success: #10b981;
+                    --widget-error: #ef4444;
+                    --widget-border: #d1d5db;
+                    --widget-focus: #3b82f6;
+                    --widget-radius: 4px;
+                    
+                    display: block;
+                    font-family: system-ui, -apple-system, sans-serif;
+                    font-size: 14px;
+                    line-height: 1.5;
+                    color: var(--widget-primary-text);
+                    box-sizing: border-box;
+                }
+
+                :host([theme="dark"]) {
+                    --widget-primary: #1f2937;
+                    --widget-primary-text: #f3f4f6;
+                    --widget-secondary: #60a5fa;
+                    --widget-secondary-light: #1e3a8a;
+                    --widget-border: #4b5563;
+                }
+
+                *, *::before, *::after {
+                    box-sizing: inherit;
+                }
+
+                .widget-container {
+                    background: var(--widget-primary);
+                    border: 1px solid var(--widget-border);
+                    border-radius: var(--widget-radius);
+                    padding: 20px;
+                    max-width: 400px;
+                    margin: 20px 0;
+                }
+
+                .widget-title {
+                    margin: 0 0 8px 0;
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+
+                .widget-description {
+                    margin: 0 0 16px 0;
+                    color: var(--widget-primary-text);
+                    opacity: 0.8;
+                }
+
+                .rating-group {
+                    display: flex;
+                    gap: 12px;
+                    margin-bottom: 16px;
+                    align-items: center;
+                }
+
+                .rating-buttons {
+                    display: flex;
+                    gap: 8px;
+                }
+
+                .vote-button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 40px;
+                    height: 40px;
+                    padding: 0;
+                    background: var(--widget-primary);
+                    border: 1px solid var(--widget-border);
+                    border-radius: var(--widget-radius);
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+                }
+
+                .vote-button:hover {
+                    background: var(--widget-secondary-light);
+                    border-color: var(--widget-secondary);
+                }
+
+                .vote-button.selected {
+                    background: var(--widget-secondary);
+                    border-color: var(--widget-secondary);
+                }
+
+                .vote-button.selected svg {
+                    fill: var(--widget-primary);
+                }
+
+                .vote-button svg {
+                    width: 20px;
+                    height: 20px;
+                    fill: var(--widget-secondary);
+                }
+
+                .hidden-radios {
+                    display: none;
+                }
+
+                textarea {
+                    width: 100%;
+                    min-height: 80px;
+                    padding: 8px 12px;
+                    background: var(--widget-primary);
+                    color: var(--widget-primary-text);
+                    border: 1px solid var(--widget-border);
+                    border-radius: var(--widget-radius);
+                    font-family: inherit;
+                    font-size: 14px;
+                    resize: vertical;
+                    margin-bottom: 12px;
+                }
+
+                textarea:focus {
+                    outline: 2px solid var(--widget-focus);
+                    outline-offset: -1px;
+                    border-color: var(--widget-focus);
+                }
+
+                .response-wrapper {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    margin-bottom: 12px;
+                }
+
+                input[type="checkbox"] {
+                    width: 18px;
+                    height: 18px;
+                    margin: 0;
+                    cursor: pointer;
+                }
+
+                input[type="email"] {
+                    width: 100%;
+                    padding: 8px 12px;
+                    background: var(--widget-primary);
+                    color: var(--widget-primary-text);
+                    border: 1px solid var(--widget-border);
+                    border-radius: var(--widget-radius);
+                    font-family: inherit;
+                    font-size: 14px;
+                    margin-bottom: 16px;
+                }
+
+                input[type="email"]:focus {
+                    outline: 2px solid var(--widget-focus);
+                    outline-offset: -1px;
+                    border-color: var(--widget-focus);
+                }
+
+                input[type="email"]:invalid:not(:placeholder-shown) {
+                    border-color: var(--widget-error);
+                }
+
+                .button-group {
+                    display: flex;
+                    justify-content: flex-end;
+                    gap: 8px;
+                }
+
+                button {
+                    padding: 8px 16px;
+                    font-family: inherit;
+                    font-size: 14px;
+                    font-weight: 500;
+                    border-radius: var(--widget-radius);
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+                    border: 1px solid var(--widget-border);
+                }
+
+                .secondary-button {
+                    background: var(--widget-primary);
+                    color: var(--widget-secondary);
+                    border-color: var(--widget-secondary);
+                }
+
+                .secondary-button:hover {
+                    background: var(--widget-secondary-light);
+                }
+
+                .primary-button {
+                    background: var(--widget-secondary);
+                    color: var(--widget-primary);
+                    border-color: var(--widget-secondary);
+                }
+
+                .primary-button:hover:not(:disabled) {
+                    background: var(--widget-secondary);
+                    opacity: 0.9;
+                }
+
+                .primary-button:disabled {
+                    opacity: 0.4;
+                    cursor: not-allowed;
+                }
+
+                .feedback-overlay {
+                    display: none;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: var(--widget-primary);
+                    border-radius: var(--widget-radius);
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    z-index: 10;
+                }
+
+                .feedback-overlay.active {
+                    display: flex;
+                }
+
+                .success-animation {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 16px;
+                }
+
+                .success-icon {
+                    width: 60px;
+                    height: 60px;
+                    fill: var(--widget-success);
+                    animation: scaleIn 0.3s ease;
+                }
+
+                .error-icon {
+                    width: 60px;
+                    height: 60px;
+                    fill: var(--widget-error);
+                    animation: shake 0.5s ease;
+                }
+
+                .overlay-text {
+                    font-size: 16px;
+                    font-weight: 500;
+                    text-align: center;
+                    margin: 0;
+                }
+
+                @keyframes scaleIn {
+                    from {
+                        transform: scale(0);
+                        opacity: 0;
+                    }
+                    to {
+                        transform: scale(1);
+                        opacity: 1;
+                    }
+                }
+
+                @keyframes shake {
+                    0%, 100% { transform: translateX(0); }
+                    25% { transform: translateX(-10px); }
+                    75% { transform: translateX(10px); }
+                }
+
+                @media (max-width: 480px) {
+                    .widget-container {
+                        padding: 16px;
+                    }
+
+                    .widget-title {
+                        font-size: 16px;
+                    }
+                }
+            </style>
+
+            <div class="widget-container">
+                <h3 class="widget-title">
+                    <slot name="title">Help us improve</slot>
+                </h3>
+                <div class="rating-group">
+                    <p class="widget-description">
+                        <slot name="description">Please rate your experience:</slot>
+                    </p>
+                    <div class="rating-buttons">
+                        <button type="button" class="vote-button" id="thumbs-up" aria-label="Good">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.31683 6.33339L10.9335 1.71672C11.4168 1.22506 12.2002 1.22506 12.6918 1.70839C12.9918 2.00839 13.1168 2.43339 13.0335 2.85006L12.2418 6.66672H16.9502C18.7418 6.66672 19.9502 8.50006 19.2502 10.1501L16.5335 16.4917C16.2668 17.1001 15.6668 17.5001 15.0002 17.5001H7.50016C6.5835 17.5001 5.8335 16.7501 5.8335 15.8334V7.50839C5.8335 7.06672 6.0085 6.64172 6.31683 6.33339ZM4.16683 15.8334C4.16683 16.7501 3.41683 17.5001 2.50016 17.5001C1.5835 17.5001 0.833496 16.7501 0.833496 15.8334V9.16672C0.833496 8.25006 1.5835 7.50006 2.50016 7.50006C3.41683 7.50006 4.16683 8.25006 4.16683 9.16672V15.8334Z"/>
+                            </svg>
+                        </button>
+                        <button type="button" class="vote-button" id="thumbs-down" aria-label="Needs improvement">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.6751 13.6667L9.06675 18.2833C8.58341 18.775 7.80008 18.775 7.30841 18.2917C7.00841 17.9917 6.88341 17.5667 6.96675 17.15L7.75841 13.3333H3.05008C1.25841 13.3333 0.050079 11.5 0.758412 9.85L3.47508 3.50833C3.73341 2.9 4.33341 2.5 5.00008 2.5H12.4917C13.4084 2.5 14.1584 3.25 14.1584 4.16667V12.4917C14.1584 12.9333 13.9834 13.3583 13.6751 13.6667ZM15.8334 4.16667C15.8334 3.25 16.5834 2.5 17.5001 2.5C18.4167 2.5 19.1667 3.25 19.1667 4.16667V10.8333C19.1667 11.75 18.4167 12.5 17.5001 12.5C16.5834 12.5 15.8334 11.75 15.8334 10.8333V4.16667Z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <form id="feedback-form">
+                    <div class="hidden-radios">
+                        <input type="radio" id="radio-thumbs-up" name="rating" value="thumbs-up" required>
+                        <input type="radio" id="radio-thumbs-down" name="rating" value="thumbs-down" required>
+                    </div>
+
+                    <textarea 
+                        id="feedback-text" 
+                        name="feedback" 
+                        placeholder="Tell us more about your experience (optional)">
+                    </textarea>
+
+                    <div class="response-wrapper">
+                        <input type="checkbox" id="receive-response" name="receive-response">
+                        <label for="receive-response">I'd like a response</label>
+                    </div>
+
+                    <input 
+                        type="email" 
+                        id="user-email" 
+                        name="email" 
+                        placeholder="Email address (optional)">
+
+                    <div class="button-group">
+                        <button type="button" class="secondary-button" id="clear-button">
+                            <slot name="secondary-button">Clear</slot>
+                        </button>
+                        <button type="submit" class="primary-button" id="submit-button" disabled>
+                            Submit
+                        </button>
+                    </div>
+                </form>
+
+                <div class="feedback-overlay" id="success-overlay">
+                    <div class="success-animation">
+                        <svg class="success-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                        </svg>
+                        <p class="overlay-text">Thank you for your feedback!</p>
+                    </div>
+                </div>
+
+                <div class="feedback-overlay" id="error-overlay">
+                    <div class="success-animation">
+                        <svg class="error-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                        </svg>
+                        <p class="overlay-text">Submission failed.<br>Please try again later.</p>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </template>
+
+    <script type="module">
+        // Polyfill for Declarative Shadow DOM
+        (function attachShadowRoots(root) {
+            root.querySelectorAll("template[shadowrootmode]").forEach(template => {
+                const mode = template.getAttribute("shadowrootmode");
+                const shadowRoot = template.parentNode.attachShadow({ mode });
+                shadowRoot.appendChild(template.content);
+                template.remove();
+                attachShadowRoots(shadowRoot);
+            });
+        })(document);
+
+        class FeedbackWidget extends HTMLElement {
+            constructor() {
+                super();
+                
+                // Initialize properties
+                this.isSubmitting = false;
+                this.selectedRating = null;
+                
+                // Setup shadow DOM if not already present
+                if (!this.shadowRoot) {
+                    const template = document.getElementById('feedback-widget-template');
+                    const shadowTemplate = template.content.querySelector('template');
+                    
+                    if (shadowTemplate.hasAttribute('shadowrootmode')) {
+                        // For browsers that don't support declarative shadow DOM
+                        const mode = shadowTemplate.getAttribute('shadowrootmode');
+                        const shadow = this.attachShadow({ mode });
+                        shadow.appendChild(shadowTemplate.content.cloneNode(true));
+                    }
+                }
+            }
+
+            static get observedAttributes() {
+                return ['api-endpoint', 'current-url', 'theme', 'title', 'description', 'secondary-button-text'];
+            }
+
+            connectedCallback() {
+                this.setupElements();
+                this.setupEventListeners();
+                this.applyAttributes();
+            }
+
+            setupElements() {
+                const root = this.shadowRoot;
+                
+                // Form elements
+                this.form = root.getElementById('feedback-form');
+                this.thumbsUpBtn = root.getElementById('thumbs-up');
+                this.thumbsDownBtn = root.getElementById('thumbs-down');
+                this.thumbsUpRadio = root.getElementById('radio-thumbs-up');
+                this.thumbsDownRadio = root.getElementById('radio-thumbs-down');
+                this.feedbackText = root.getElementById('feedback-text');
+                this.receiveResponse = root.getElementById('receive-response');
+                this.emailInput = root.getElementById('user-email');
+                this.clearButton = root.getElementById('clear-button');
+                this.submitButton = root.getElementById('submit-button');
+                
+                // Overlay elements
+                this.successOverlay = root.getElementById('success-overlay');
+                this.errorOverlay = root.getElementById('error-overlay');
+                
+                // Title and description
+                this.titleSlot = root.querySelector('slot[name="title"]');
+                this.descriptionSlot = root.querySelector('slot[name="description"]');
+                this.secondaryButtonSlot = root.querySelector('slot[name="secondary-button"]');
+            }
+
+            setupEventListeners() {
+                // Rating buttons
+                this.thumbsUpBtn.addEventListener('click', () => this.handleRating('up'));
+                this.thumbsDownBtn.addEventListener('click', () => this.handleRating('down'));
+                
+                // Form controls
+                this.receiveResponse.addEventListener('change', () => this.handleResponseToggle());
+                this.emailInput.addEventListener('input', () => this.validateForm());
+                this.clearButton.addEventListener('click', () => this.handleClear());
+                this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+            }
+
+            applyAttributes() {
+                // Apply theme
+                if (this.hasAttribute('theme')) {
+                    this.setAttribute('theme', this.getAttribute('theme'));
+                }
+                
+                // Apply custom text
+                if (this.hasAttribute('title')) {
+                    this.titleSlot.textContent = this.getAttribute('title');
+                }
+                
+                if (this.hasAttribute('description')) {
+                    this.descriptionSlot.textContent = this.getAttribute('description');
+                }
+                
+                if (this.hasAttribute('secondary-button-text')) {
+                    this.secondaryButtonSlot.textContent = this.getAttribute('secondary-button-text');
+                }
+            }
+
+            attributeChangedCallback(name, oldValue, newValue) {
+                if (!this.shadowRoot) return;
+                
+                switch(name) {
+                    case 'theme':
+                        // Theme is handled via CSS :host([theme]) selector
+                        break;
+                    case 'title':
+                        if (this.titleSlot) {
+                            this.titleSlot.textContent = newValue;
+                        }
+                        break;
+                    case 'description':
+                        if (this.descriptionSlot) {
+                            this.descriptionSlot.textContent = newValue;
+                        }
+                        break;
+                    case 'secondary-button-text':
+                        if (this.secondaryButtonSlot) {
+                            this.secondaryButtonSlot.textContent = newValue;
+                        }
+                        break;
+                }
+            }
+
+            handleRating(rating) {
+                // Toggle selection
+                if (this.selectedRating === rating) {
+                    this.selectedRating = null;
+                    this.thumbsUpBtn.classList.remove('selected');
+                    this.thumbsDownBtn.classList.remove('selected');
+                    this.thumbsUpRadio.checked = false;
+                    this.thumbsDownRadio.checked = false;
+                } else {
+                    this.selectedRating = rating;
+                    
+                    if (rating === 'up') {
+                        this.thumbsUpBtn.classList.add('selected');
+                        this.thumbsDownBtn.classList.remove('selected');
+                        this.thumbsUpRadio.checked = true;
+                        this.thumbsDownRadio.checked = false;
+                    } else {
+                        this.thumbsDownBtn.classList.add('selected');
+                        this.thumbsUpBtn.classList.remove('selected');
+                        this.thumbsDownRadio.checked = true;
+                        this.thumbsUpRadio.checked = false;
+                    }
+                }
+                
+                this.validateForm();
+            }
+
+            handleResponseToggle() {
+                if (this.receiveResponse.checked) {
+                    this.emailInput.required = true;
+                    this.emailInput.placeholder = 'Email address (required)';
+                } else {
+                    this.emailInput.required = false;
+                    this.emailInput.placeholder = 'Email address (optional)';
+                }
+                
+                this.validateForm();
+            }
+
+            validateForm() {
+                const hasRating = this.selectedRating !== null;
+                const emailValid = !this.receiveResponse.checked || 
+                                 (this.emailInput.value && this.emailInput.checkValidity());
+                
+                this.submitButton.disabled = !hasRating || !emailValid || this.isSubmitting;
+            }
+
+            handleClear() {
+                this.form.reset();
+                this.selectedRating = null;
+                this.thumbsUpBtn.classList.remove('selected');
+                this.thumbsDownBtn.classList.remove('selected');
+                this.emailInput.required = false;
+                this.emailInput.placeholder = 'Email address (optional)';
+                this.validateForm();
+            }
+
+            async handleSubmit(event) {
+                event.preventDefault();
+                
+                if (this.isSubmitting || !this.selectedRating) return;
+                
+                this.isSubmitting = true;
+                this.submitButton.disabled = true;
+                
+                const data = {
+                    feedback: this.feedbackText.value,
+                    thumbUp: this.selectedRating === 'up',
+                    thumbDown: this.selectedRating === 'down',
+                    receiveResponse: this.receiveResponse.checked,
+                    email: this.emailInput.value,
+                    pageURL: this.getAttribute('current-url') || window.location.pathname
+                };
+                
+                const endpoint = this.getAttribute('api-endpoint');
+                
+                if (!endpoint) {
+                    console.warn('No API endpoint specified. Dispatching feedback event instead.');
+                    this.dispatchFeedbackEvent(data);
+                    this.showSuccess();
+                    return;
+                }
+                
+                try {
+                    const response = await fetch(endpoint, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data)
+                    });
+                    
+                    if (response.ok) {
+                        this.showSuccess();
+                        this.dispatchEvent(new CustomEvent('feedback-submitted', { 
+                            detail: data,
+                            bubbles: true 
+                        }));
+                    } else {
+                        throw new Error('Submission failed');
+                    }
+                } catch (error) {
+                    this.showError();
+                    this.dispatchEvent(new CustomEvent('feedback-error', { 
+                        detail: { error: error.message, data },
+                        bubbles: true 
+                    }));
+                }
+            }
+
+            dispatchFeedbackEvent(data) {
+                this.dispatchEvent(new CustomEvent('feedback-submitted', { 
+                    detail: data,
+                    bubbles: true 
+                }));
+            }
+
+            showSuccess() {
+                this.successOverlay.classList.add('active');
+                
+                setTimeout(() => {
+                    this.successOverlay.classList.remove('active');
+                    this.handleClear();
+                    this.isSubmitting = false;
+                }, 2000);
+            }
+
+            showError() {
+                this.errorOverlay.classList.add('active');
+                
+                setTimeout(() => {
+                    this.errorOverlay.classList.remove('active');
+                    this.isSubmitting = false;
+                    this.validateForm();
+                }, 2000);
+            }
+        }
+
+        // Register the custom element
+        if (!customElements.get('feedback-widget')) {
+            customElements.define('feedback-widget', FeedbackWidget);
+        }
+    </script>
+</body>
+</html>

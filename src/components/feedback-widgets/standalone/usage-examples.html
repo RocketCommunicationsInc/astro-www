@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Widget - Usage Examples</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #005a8f;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #005a8f;
+            margin-top: 40px;
+        }
+        
+        .example-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        
+        .code-block code {
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+        }
+        
+        .demo-container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+            background: #fafafa;
+            border-radius: 4px;
+        }
+        
+        .event-log {
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            min-height: 50px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        
+        .event-log .log-entry {
+            margin: 2px 0;
+            padding: 2px 5px;
+            background: white;
+            border-left: 3px solid #005a8f;
+        }
+        
+        .dark-theme-demo {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 4px;
+        }
+        
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .features-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Feedback Widget Web Component - Usage Examples</h1>
+    
+    <section class="example-section">
+        <h2>📋 Features</h2>
+        <ul class="features-list">
+            <li>Standalone web component with zero dependencies</li>
+            <li>Declarative Shadow DOM with automatic polyfill</li>
+            <li>Full encapsulation with Shadow DOM</li>
+            <li>Customizable via attributes and slots</li>
+            <li>Light/Dark theme support</li>
+            <li>Custom event dispatching for integration</li>
+            <li>Accessible and keyboard navigable</li>
+            <li>Responsive design</li>
+            <li>Works without API endpoint (event-only mode)</li>
+        </ul>
+    </section>
+
+    <section class="example-section">
+        <h2>🚀 Basic Usage</h2>
+        <p>Simply include the component and use it like any HTML element:</p>
+        
+        <div class="code-block">
+            <code>&lt;feedback-widget 
+    api-endpoint="https://your-api.com/feedback"
+    current-url="/current-page"&gt;
+&lt;/feedback-widget&gt;</code>
+        </div>
+        
+        <div class="demo-container">
+            <h3>Demo:</h3>
+            <feedback-widget 
+                api-endpoint="https://astrouxds-api-196cde1c48d0.herokuapp.com/api/v1/feedback"
+                current-url="/examples/basic">
+            </feedback-widget>
+        </div>
+    </section>
+
+    <section class="example-section">
+        <h2>🎨 Custom Text and Labels</h2>
+        <p>Customize all text content via attributes:</p>
+        
+        <div class="code-block">
+            <code>&lt;feedback-widget 
+    title="How was this article?"
+    description="Your feedback helps us improve:"
+    secondary-button-text="Reset Form"
+    current-url="/custom-text"&gt;
+&lt;/feedback-widget&gt;</code>
+        </div>
+        
+        <div class="demo-container">
+            <h3>Demo:</h3>
+            <feedback-widget 
+                title="How was this article?"
+                description="Your feedback helps us improve:"
+                secondary-button-text="Reset Form"
+                current-url="/examples/custom-text">
+            </feedback-widget>
+        </div>
+    </section>
+
+    <section class="example-section">
+        <h2>🌙 Dark Theme</h2>
+        <p>Add dark theme support with a simple attribute:</p>
+        
+        <div class="code-block">
+            <code>&lt;feedback-widget 
+    theme="dark"
+    current-url="/dark-theme"&gt;
+&lt;/feedback-widget&gt;</code>
+        </div>
+        
+        <div class="demo-container dark-theme-demo">
+            <h3 style="color: white;">Demo:</h3>
+            <feedback-widget 
+                theme="dark"
+                current-url="/examples/dark-theme">
+            </feedback-widget>
+        </div>
+    </section>
+
+    <section class="example-section">
+        <h2>📡 Event-Only Mode (No API)</h2>
+        <p>Omit the api-endpoint to use event-only mode. Perfect for custom handling:</p>
+        
+        <div class="code-block">
+            <code>&lt;feedback-widget 
+    current-url="/event-only"
+    id="event-widget"&gt;
+&lt;/feedback-widget&gt;
+
+&lt;script&gt;
+document.getElementById('event-widget').addEventListener('feedback-submitted', (e) => {
+    console.log('Feedback received:', e.detail);
+    // Handle the feedback data yourself
+});
+&lt;/script&gt;</code>
+        </div>
+        
+        <div class="demo-container">
+            <h3>Demo:</h3>
+            <feedback-widget 
+                current-url="/examples/event-only"
+                id="event-demo-widget">
+            </feedback-widget>
+            <div id="event-log" class="event-log">Event log will appear here...</div>
+        </div>
+    </section>
+
+    <section class="example-section">
+        <h2>🎯 Using Slots for Content</h2>
+        <p>Use slots for more complex content customization:</p>
+        
+        <div class="code-block">
+            <code>&lt;feedback-widget current-url="/slots"&gt;
+    &lt;span slot="title"&gt;Rate Our &lt;strong&gt;New Feature&lt;/strong&gt;&lt;/span&gt;
+    &lt;span slot="description"&gt;Help us understand your experience&lt;/span&gt;
+    &lt;span slot="secondary-button"&gt;Cancel&lt;/span&gt;
+&lt;/feedback-widget&gt;</code>
+        </div>
+        
+        <div class="demo-container">
+            <h3>Demo:</h3>
+            <feedback-widget current-url="/examples/slots">
+                <span slot="title">Rate Our <strong>New Feature</strong></span>
+                <span slot="description">Help us understand your experience</span>
+                <span slot="secondary-button">Cancel</span>
+            </feedback-widget>
+        </div>
+    </section>
+
+    <section class="example-section">
+        <h2>💾 Installation Options</h2>
+        
+        <h3>Option 1: Direct Include</h3>
+        <div class="code-block">
+            <code>&lt;!-- Include the component directly in your HTML --&gt;
+&lt;script src="feedback-widget.html" type="module"&gt;&lt;/script&gt;</code>
+        </div>
+        
+        <h3>Option 2: Inline the Component</h3>
+        <div class="code-block">
+            <code>&lt;!-- Copy the entire component definition into your page --&gt;
+&lt;!-- Useful for avoiding additional HTTP requests --&gt;</code>
+        </div>
+        
+        <h3>Option 3: CDN (when available)</h3>
+        <div class="code-block">
+            <code>&lt;!-- Use from a CDN --&gt;
+&lt;script src="https://cdn.example.com/feedback-widget.js" type="module"&gt;&lt;/script&gt;</code>
+        </div>
+    </section>
+
+    <section class="example-section">
+        <h2>🔧 JavaScript API</h2>
+        <p>Interact with the widget programmatically:</p>
+        
+        <div class="code-block">
+            <code>// Get widget reference
+const widget = document.querySelector('feedback-widget');
+
+// Listen for events
+widget.addEventListener('feedback-submitted', (event) => {
+    const { feedback, thumbUp, thumbDown, email, pageURL } = event.detail;
+    console.log('Feedback submitted:', event.detail);
+});
+
+widget.addEventListener('feedback-error', (event) => {
+    console.error('Submission failed:', event.detail.error);
+});
+
+// Update attributes dynamically
+widget.setAttribute('theme', 'dark');
+widget.setAttribute('title', 'New Title');</code>
+        </div>
+    </section>
+
+    <section class="example-section">
+        <h2>🎨 CSS Customization</h2>
+        <p>The widget exposes CSS custom properties for theming:</p>
+        
+        <div class="code-block">
+            <code>&lt;style&gt;
+feedback-widget {
+    --widget-primary: #ffffff;
+    --widget-primary-text: #1a1a1a;
+    --widget-secondary: #0066cc;
+    --widget-secondary-light: #e6f2ff;
+    --widget-accent: #ff6b35;
+    --widget-success: #00a651;
+    --widget-error: #dc2626;
+    --widget-border: #e5e5e5;
+    --widget-focus: #2563eb;
+    --widget-radius: 8px;
+}
+&lt;/style&gt;</code>
+        </div>
+    </section>
+
+    <section class="example-section">
+        <h2>📊 Data Structure</h2>
+        <p>The feedback data sent to your API or event handler:</p>
+        
+        <div class="code-block">
+            <code>{
+    "feedback": "User's text feedback",
+    "thumbUp": true,      // or false
+    "thumbDown": false,   // or true
+    "receiveResponse": false,
+    "email": "user@example.com",
+    "pageURL": "/current-page"
+}</code>
+        </div>
+    </section>
+
+    <section class="example-section">
+        <h2>✅ Browser Support</h2>
+        <ul>
+            <li>Chrome 90+ (native declarative Shadow DOM)</li>
+            <li>Edge 90+</li>
+            <li>Safari 16.4+</li>
+            <li>Firefox 123+ (with polyfill)</li>
+            <li>Older browsers supported with automatic polyfill</li>
+        </ul>
+    </section>
+
+    <!-- Load the feedback widget component -->
+    <script type="module">
+        // Import the feedback widget
+        const template = document.createElement('div');
+        fetch('feedback-widget.html')
+            .then(response => response.text())
+            .then(html => {
+                // Extract the component definition
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                
+                // Get the template and script
+                const widgetTemplate = doc.getElementById('feedback-widget-template');
+                const scriptContent = doc.querySelector('script[type="module"]').textContent;
+                
+                // Add template to current document
+                document.body.appendChild(widgetTemplate);
+                
+                // Execute the script
+                const script = document.createElement('script');
+                script.type = 'module';
+                script.textContent = scriptContent;
+                document.body.appendChild(script);
+            })
+            .catch(err => console.error('Failed to load feedback widget:', err));
+        
+        // Event logging for demo
+        setTimeout(() => {
+            const eventWidget = document.getElementById('event-demo-widget');
+            const eventLog = document.getElementById('event-log');
+            
+            if (eventWidget) {
+                eventWidget.addEventListener('feedback-submitted', (e) => {
+                    const logEntry = document.createElement('div');
+                    logEntry.className = 'log-entry';
+                    logEntry.textContent = `✅ Feedback submitted: ${JSON.stringify(e.detail, null, 2)}`;
+                    eventLog.innerHTML = '';
+                    eventLog.appendChild(logEntry);
+                });
+                
+                eventWidget.addEventListener('feedback-error', (e) => {
+                    const logEntry = document.createElement('div');
+                    logEntry.className = 'log-entry';
+                    logEntry.style.borderColor = '#dc2626';
+                    logEntry.textContent = `❌ Error: ${e.detail.error}`;
+                    eventLog.innerHTML = '';
+                    eventLog.appendChild(logEntry);
+                });
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

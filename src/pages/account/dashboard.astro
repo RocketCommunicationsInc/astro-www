@@ -1,0 +1,181 @@
+---
+import DefaultLayout from 'project:layouts/default/default-layout.astro'
+import PageHeader from 'project:components/page-header/page-header.astro'
+
+// For now, we'll handle auth state on the client side in Astro 2.x
+// In a real implementation, we'd check auth state here
+const user = null; // Will be set via client-side auth check
+
+// Mock data for now since we can't access Supabase server-side in this simplified version
+const downloads = [];
+const accessLogs = [];
+---
+
+<DefaultLayout title="Dashboard - Astro UXDS">
+  <main class="page">
+    <PageHeader>
+      <h1>Account Dashboard</h1>
+      <p>Manage your account and track your usage</p>
+    </PageHeader>
+
+    <div class="dashboard-grid">
+      <section class="profile-section">
+        <h2>Profile</h2>
+        <div class="profile-info">
+          <p><strong>Email:</strong> {user.email}</p>
+          <p><strong>Tier:</strong> {user.subscription_tier || 'free'}</p>
+          <p><strong>Organization:</strong> {user.organization || 'Not set'}</p>
+        </div>
+        <a href="/account/settings/" class="btn btn-secondary">Edit Profile</a>
+      </section>
+
+      <section class="downloads-section">
+        <h2>Recent Downloads</h2>
+        {downloads && downloads.length > 0 ? (
+          <ul class="downloads-list">
+            {downloads.map(download => (
+              <li>
+                <span>{download.component_name}</span>
+                <time>{new Date(download.downloaded_at).toLocaleDateString()}</time>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No downloads yet</p>
+        )}
+      </section>
+
+      <section class="activity-section">
+        <h2>Recent Activity</h2>
+        {accessLogs && accessLogs.length > 0 ? (
+          <ul class="activity-list">
+            {accessLogs.map(log => (
+              <li>
+                <a href={log.content_path}>{log.content_path}</a>
+                <time>{new Date(log.accessed_at).toLocaleDateString()}</time>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No recent activity</p>
+        )}
+      </section>
+
+      <section class="account-actions">
+        <h2>Account Actions</h2>
+        <div class="action-buttons">
+          <a href="/account/settings/" class="btn btn-secondary">Account Settings</a>
+          <button id="signOutBtn" class="btn btn-outline">Sign Out</button>
+        </div>
+      </section>
+    </div>
+  </main>
+</DefaultLayout>
+
+<style>
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  section {
+    background: var(--color-background-surface);
+    padding: 1.5rem;
+    border-radius: var(--radius-large);
+    border: 1px solid var(--color-border);
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+    color: var(--color-text-primary);
+  }
+
+  .profile-info p {
+    margin: 0.5rem 0;
+  }
+
+  .downloads-list,
+  .activity-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .downloads-list li,
+  .activity-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-border-light);
+  }
+
+  time {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+  }
+
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-base);
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+  }
+
+  .btn-secondary {
+    background: var(--color-secondary);
+    color: white;
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-secondary-dark);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+  }
+
+  .btn-outline:hover {
+    background: var(--color-background-hover);
+  }
+</style>
+
+<script>
+  // Initialize dashboard when page loads
+  document.addEventListener('DOMContentLoaded', async () => {
+    // Import Supabase client
+    const { supabase } = await import('/src/lib/supabase.js');
+
+    const signOutBtn = document.getElementById('signOutBtn');
+
+    if (signOutBtn) {
+      signOutBtn.addEventListener('click', async () => {
+        try {
+          await supabase.auth.signOut();
+
+          // Clear cookies
+          document.cookie = 'sb-access-token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+          document.cookie = 'sb-refresh-token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+
+          // Redirect to home
+          window.location.href = '/';
+        } catch (error) {
+          console.error('Error signing out:', error);
+        }
+      });
+    }
+  });
+</script>

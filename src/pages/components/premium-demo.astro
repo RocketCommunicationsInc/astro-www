@@ -1,0 +1,176 @@
+---
+import DefaultLayout from 'project:layouts/default/default-layout.astro'
+import PageHeader from 'project:components/page-header/page-header.astro'
+---
+
+<DefaultLayout title="Premium Component Demo - Astro UXDS" tabtitle="Premium Demo">
+  <main class="page" id="content">
+    <PageHeader>
+      <h1>Premium Component Demo</h1>
+      <p>This is an example of content that requires authentication to access</p>
+    </PageHeader>
+
+    <div class="page-content">
+      <auth-protected-content>
+        <!-- This will show different content based on auth state -->
+        <div class="auth-loading">
+          <p>Checking authentication...</p>
+        </div>
+      </auth-protected-content>
+    </div>
+  </main>
+</DefaultLayout>
+
+<style>
+  .auth-loading {
+    text-align: center;
+    padding: 2rem;
+    color: var(--PlaceholderColor);
+  }
+
+  .premium-content {
+    padding: 2rem;
+    border: 1px solid var(--InteractiveColor);
+    border-radius: var(--EdgeRadius);
+    background: var(--SurfaceColor);
+  }
+
+  .auth-gate {
+    text-align: center;
+    padding: 2rem;
+    border: 1px solid var(--InteractiveMutedColor);
+    border-radius: var(--EdgeRadius);
+    background: var(--BaseColor);
+  }
+
+  .auth-gate h2 {
+    color: var(--InteractiveColor);
+    margin-bottom: 1rem;
+  }
+
+  .auth-gate .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+
+  .auth-gate .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--EdgeRadius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  .auth-gate .btn-primary {
+    background: var(--InteractiveColor);
+    color: var(--InverseColor);
+  }
+
+  .auth-gate .btn-primary:hover {
+    background: var(--InteractiveHoverColor);
+  }
+
+  .auth-gate .btn-secondary {
+    background: transparent;
+    color: var(--InteractiveColor);
+    border: 1px solid var(--InteractiveColor);
+  }
+
+  .auth-gate .btn-secondary:hover {
+    background: var(--InteractiveColor);
+    color: var(--InverseColor);
+  }
+</style>
+
+<script>
+  // Initialize auth protected content when page loads
+  document.addEventListener('DOMContentLoaded', async () => {
+    // Import Supabase client
+    const { supabase } = await import('/src/lib/supabase.js');
+
+    class AuthProtectedContent extends HTMLElement {
+      constructor() {
+        super();
+        this.supabase = supabase;
+        this.checkAuthState();
+
+        // Listen for auth state changes
+        this.supabase.auth.onAuthStateChange((event, session) => {
+          this.updateContent(session);
+        });
+      }
+
+      async checkAuthState() {
+        try {
+          const { data: { session } } = await this.supabase.auth.getSession();
+          this.updateContent(session);
+        } catch (error) {
+          console.error('Error checking auth state:', error);
+          this.showAuthGate();
+        }
+      }
+
+      updateContent(session) {
+        if (session && session.user) {
+          this.showPremiumContent(session.user);
+        } else {
+          this.showAuthGate();
+        }
+      }
+
+      showPremiumContent(user) {
+        this.innerHTML = `
+          <div class="premium-content">
+            <h2>🎉 Welcome to Premium Content, ${user.email}!</h2>
+            <p>This is an example of content that's only available to authenticated users.</p>
+
+            <h3>Premium Features Include:</h3>
+            <ul>
+              <li>Advanced component examples</li>
+              <li>Interactive code playground</li>
+              <li>Downloadable assets</li>
+              <li>Priority support</li>
+            </ul>
+
+            <h3>Advanced Component Demo</h3>
+            <div style="padding: 1rem; background: var(--BaseColor); border-radius: var(--EdgeRadius); margin: 1rem 0;">
+              <p>🚀 This could be an interactive component playground or advanced example that only authenticated users can see.</p>
+              <button style="background: var(--InteractiveColor); color: var(--InverseColor); padding: 0.5rem 1rem; border: none; border-radius: var(--EdgeRadius); cursor: pointer;">
+                Try Interactive Demo
+              </button>
+            </div>
+
+            <p><em>This content is personalized for your account and tracks your usage for analytics.</em></p>
+          </div>
+        `;
+      }
+
+      showAuthGate() {
+        this.innerHTML = `
+          <div class="auth-gate">
+            <h2>🔒 Premium Content</h2>
+            <p>This content requires authentication to access. Sign in to view advanced components, interactive demos, and downloadable resources.</p>
+
+            <div class="preview-content" style="opacity: 0.5; margin: 1rem 0; padding: 1rem; border: 1px dashed var(--InteractiveMutedColor); border-radius: var(--EdgeRadius);">
+              <p><strong>Preview:</strong> Advanced Component Playground</p>
+              <p>Interactive demos, code examples, and...</p>
+              <p style="text-align: center; font-style: italic;">[Content hidden - Sign in to view]</p>
+            </div>
+
+            <div class="cta-buttons">
+              <a href="/login/?redirect=${encodeURIComponent(window.location.pathname)}" class="btn btn-primary">Sign In</a>
+              <a href="/signup/" class="btn btn-secondary">Create Account</a>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    // Define the custom element
+    if (!customElements.get('auth-protected-content')) {
+      customElements.define('auth-protected-content', AuthProtectedContent);
+    }
+  });
+</script>

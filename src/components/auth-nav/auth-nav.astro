@@ -1,0 +1,130 @@
+---
+// Auth navigation component that updates based on client-side auth state
+---
+
+<auth-nav-component>
+  <div id="auth-nav" class="auth-nav">
+    <!-- This will be populated by JavaScript -->
+  </div>
+</auth-nav-component>
+
+<style>
+  .auth-nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .auth-nav a {
+    padding: 0.5rem 1rem;
+    border-radius: var(--EdgeRadius);
+    text-decoration: none;
+    color: var(--PrimaryColor);
+    transition: background-color 0.2s;
+  }
+
+  .auth-nav a:hover {
+    background-color: var(--SurfaceSelectedColor);
+  }
+
+  .auth-nav .btn-primary {
+    background-color: var(--InteractiveColor);
+    color: var(--InverseColor);
+  }
+
+  .auth-nav .btn-primary:hover {
+    background-color: var(--InteractiveHoverColor);
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .sign-out-btn {
+    background: transparent;
+    border: 1px solid var(--InteractiveMutedColor);
+    color: var(--PrimaryColor);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--EdgeRadius);
+    font-size: 0.75rem;
+    cursor: pointer;
+  }
+
+  .sign-out-btn:hover {
+    border-color: var(--InteractiveColor);
+    color: var(--InteractiveColor);
+  }
+</style>
+
+<script>
+  // Initialize auth nav when page loads
+  document.addEventListener('DOMContentLoaded', async () => {
+    // Import Supabase client
+    const { supabase } = await import('/src/lib/supabase.js');
+
+    class AuthNavComponent extends HTMLElement {
+      constructor() {
+        super();
+        this.authNavContainer = this.querySelector('#auth-nav');
+        this.supabase = supabase;
+        this.checkAuthState();
+
+        // Listen for auth state changes
+        this.supabase.auth.onAuthStateChange((event, session) => {
+          this.updateAuthNav(session);
+        });
+      }
+
+      async checkAuthState() {
+        try {
+          const { data: { session } } = await this.supabase.auth.getSession();
+          this.updateAuthNav(session);
+        } catch (error) {
+          console.error('Error checking auth state:', error);
+          this.updateAuthNav(null);
+        }
+      }
+
+      updateAuthNav(session) {
+        if (session && session.user) {
+          // User is logged in
+          this.authNavContainer.innerHTML = `
+            <div class="user-info">
+              <span>Welcome, ${session.user.email}</span>
+              <a href="/account/dashboard/">Dashboard</a>
+              <button class="sign-out-btn" onclick="this.parentElement.parentElement.parentElement.signOut()">Sign Out</button>
+            </div>
+          `;
+        } else {
+          // User is not logged in
+          this.authNavContainer.innerHTML = `
+            <a href="/login/">Sign In</a>
+            <a href="/signup/" class="btn-primary">Create Account</a>
+          `;
+        }
+      }
+
+      async signOut() {
+        try {
+          await this.supabase.auth.signOut();
+          // Clear any stored session cookies
+          document.cookie = 'sb-access-token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+          document.cookie = 'sb-refresh-token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+
+          // Redirect to home page
+          window.location.href = '/';
+        } catch (error) {
+          console.error('Error signing out:', error);
+        }
+      }
+    }
+
+    // Define the custom element
+    if (!customElements.get('auth-nav-component')) {
+      customElements.define('auth-nav-component', AuthNavComponent);
+    }
+  });
+</script>

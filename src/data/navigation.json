@@ -203,6 +203,11 @@
 				"status": "beta"
 			},
 			{
+				"label": "TLE Input",
+				"url": "/components/tle-input/",
+				"status": "beta"
+			},
+			{
 				"label": "Toast",
 				"url": "/components/toast/",
 				"status": "beta"
@@ -380,5 +385,24 @@
 			}
 		],
 		"label": "Support"
+	},
+	{
+		"items": [
+			{
+				"label": "Sign In",
+				"url": "/login/"
+			},
+			{
+				"label": "Create Account",
+				"url": "/signup/"
+			},
+			{
+				"label": "Dashboard",
+				"url": "/account/dashboard/",
+				"requiresAuth": true
+			}
+		],
+		"label": "Account",
+		"id": "auth-nav"
 	}
 ]
