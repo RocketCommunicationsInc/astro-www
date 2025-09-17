@@ -155,15 +155,15 @@ const accessLogs: any[] = []
 </style>
 
 <script type="module">
-  // Import Firebase auth functions
+  // Import Firebase auth functions via helper
   import { onAuthStateChanged, signOut } from '/src/lib/firebase-auth.js'
 
   // Initialize dashboard when page loads
   document.addEventListener('DOMContentLoaded', () => {
-    // Check authentication state
+    // React to auth state; redirect if signed out
     onAuthStateChanged((user) => {
       if (user) {
-        // User is signed in
+        // User is signed in: safely render profile info
         const profileInfo = document.getElementById('profile-info')
         if (profileInfo instanceof HTMLElement) {
           const safe = (v) => String(v || '')
@@ -189,6 +189,7 @@ const accessLogs: any[] = []
     const signOutBtn = document.getElementById('signOutBtn')
 
     if (signOutBtn) {
+      // Prefer binding events in JS instead of inline onclick
       signOutBtn.addEventListener('click', async () => {
         try {
           await signOut()

@@ -1,7 +1,11 @@
+// Core Firebase SDKs we use in the browser
 import { initializeApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 
+// IMPORTANT: These PUBLIC_ env values are safe to expose to the browser.
+// They identify your Firebase project but are NOT secrets.
+// Make sure anything sensitive stays on the server and is not imported here.
 const firebaseConfig = {
   apiKey: import.meta.env.PUBLIC_FIREBASE_API_KEY,
   authDomain: import.meta.env.PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -9,21 +13,11 @@ const firebaseConfig = {
   appId: import.meta.env.PUBLIC_FIREBASE_APP_ID
 }
 
-// Initialize Firebase
+// Initialize the Firebase app instance (one per page/app)
 const app = initializeApp(firebaseConfig)
 
-// Initialize Firebase Authentication and get a reference to the service
+// Auth service handles sign-in, sign-out, and user sessions (client-side)
 export const auth = getAuth(app)
 
-// Initialize Cloud Firestore and get a reference to the service
+// Firestore is Firebase's NoSQL database. We'll use this later for profiles, etc.
 export const db = getFirestore(app)
-
-// Comment out emulator connections for now - connect directly to Firebase
-// if (import.meta.env.DEV) {
-//   try {
-//     connectAuthEmulator(auth, 'http://localhost:9099')
-//     connectFirestoreEmulator(db, 'localhost', 8080)
-//   } catch (error) {
-//     // Emulators already connected or not running
-//   }
-// }

@@ -62,7 +62,7 @@
 <script type="module">
   // Initialize auth nav when page loads
   document.addEventListener('DOMContentLoaded', async () => {
-    // Import Firebase auth helpers
+    // Import Firebase auth helpers (centralized wrappers)
     const { onAuthStateChanged, signOut } = await import('/src/lib/firebase-auth.js')
 
     class AuthNavComponent extends HTMLElement {
@@ -70,7 +70,7 @@
         super()
         this.checkAuthState()
 
-        // Listen for auth state changes
+        // Listen for auth state changes and update links
         // @ts-ignore - suppress implicit any for callback param in JS context
         onAuthStateChanged((user) => {
           this.updateAuthNav(user)
@@ -87,6 +87,8 @@
         }
       }
 
+  // Update the nav UI based on whether a user is signed in
+  // We insert user email via textContent to avoid XSS
   // @ts-ignore - suppress implicit any for method param in JS context
   updateAuthNav(user) {
         const container = this.querySelector('#auth-nav')

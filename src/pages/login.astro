@@ -128,10 +128,10 @@ const redirectUrl = Astro.url.searchParams.get('redirect') || '/'
 </style>
 
 <script define:vars={{ redirectUrl }} type="module">
-  // Import Firebase auth functions
+  // Import Firebase auth functions via our helper (keeps pages simple)
   import { signInWithEmailAndPassword } from '/src/lib/firebase-auth.js'
 
-  // Simple path validation to prevent open redirects
+  // Validate redirect path to prevent open-redirect attacks
   const safeRedirect = (raw) => {
     if (typeof raw !== 'string') return '/'
     // Disallow protocols and protocol-relative URLs
@@ -140,7 +140,7 @@ const redirectUrl = Astro.url.searchParams.get('redirect') || '/'
     return raw.startsWith('/') ? raw : '/'
   }
 
-  // Map Firebase errors to friendly messages
+  // Convert Firebase error codes into friendly messages
   const getAuthErrorMessage = (err) => {
     const code = (err && typeof err === 'object' && 'code' in err) ? err.code : ''
     switch (code) {
@@ -158,7 +158,7 @@ const redirectUrl = Astro.url.searchParams.get('redirect') || '/'
     }
   }
 
-  // Initialize login form when page loads
+  // Setup form handler with null/type checks for safety
   document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('loginForm')
     if (!(form instanceof HTMLFormElement)) return

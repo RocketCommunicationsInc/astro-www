@@ -156,9 +156,11 @@ import PageHeader from 'project:components/page-header/page-header.astro'
 </style>
 
 <script type="module">
-  // Import Firebase auth functions
+  // ESM module script is required for imports in the browser
+  // Import Firebase auth functions via our helper
   import { createUserWithEmailAndPassword } from '/src/lib/firebase-auth.js'
 
+  // Convert Firebase error codes into friendly messages
   const getAuthErrorMessage = (err) => {
     const code = (err && typeof err === 'object' && 'code' in err) ? err.code : ''
     switch (code) {
@@ -175,7 +177,7 @@ import PageHeader from 'project:components/page-header/page-header.astro'
     }
   }
 
-  // Initialize signup form when page loads
+  // Setup form handler with null/type checks for safety
   document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('signupForm')
     if (!(form instanceof HTMLFormElement)) return

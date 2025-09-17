@@ -85,9 +85,9 @@ import PageHeader from 'project:components/page-header/page-header.astro'
 </style>
 
 <script type="module">
-  // Initialize auth protected content when page loads
+  // Initialize auth-protected content when page loads
   document.addEventListener('DOMContentLoaded', async () => {
-    // Import Firebase auth helper
+    // Import Firebase auth helper to watch auth state
     const { onAuthStateChanged } = await import('/src/lib/firebase-auth.js')
 
     class AuthProtectedContent extends HTMLElement {
@@ -95,7 +95,7 @@ import PageHeader from 'project:components/page-header/page-header.astro'
         super()
         this.checkAuthState()
 
-        // Listen for auth state changes
+        // Listen for auth changes and swap UI accordingly
         // @ts-ignore - allow JS callback param without TS type
         onAuthStateChanged((user) => {
           this.updateContent(user)
@@ -112,7 +112,8 @@ import PageHeader from 'project:components/page-header/page-header.astro'
         }
       }
 
-      // @ts-ignore - allow JS param without TS type
+  // Swap between premium content and auth gate
+  // @ts-ignore - allow JS param without TS type
       updateContent(user) {
         if (user) {
           this.showPremiumContent(user)
@@ -121,7 +122,8 @@ import PageHeader from 'project:components/page-header/page-header.astro'
         }
       }
 
-      // @ts-ignore - allow JS param without TS type
+  // When showing premium content, insert user email via textContent (no innerHTML)
+  // @ts-ignore - allow JS param without TS type
       showPremiumContent(user) {
         this.innerHTML = `
           <div class="premium-content">
