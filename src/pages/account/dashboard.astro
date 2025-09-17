@@ -21,10 +21,8 @@ const accessLogs = [];
     <div class="dashboard-grid">
       <section class="profile-section">
         <h2>Profile</h2>
-        <div class="profile-info">
-          <p><strong>Email:</strong> {user.email}</p>
-          <p><strong>Tier:</strong> {user.subscription_tier || 'free'}</p>
-          <p><strong>Organization:</strong> {user.organization || 'Not set'}</p>
+        <div id="profile-info" class="profile-info">
+          <p>Loading user information...</p>
         </div>
         <a href="/account/settings/" class="btn btn-secondary">Edit Profile</a>
       </section>
@@ -153,11 +151,29 @@ const accessLogs = [];
   }
 </style>
 
-<script>
+<script type="module">
+  // Import Supabase client
+  import { supabase } from '/src/lib/supabase.js';
+
   // Initialize dashboard when page loads
   document.addEventListener('DOMContentLoaded', async () => {
-    // Import Supabase client
-    const { supabase } = await import('/src/lib/supabase.js');
+
+    // Check auth state and populate user info
+    const { data: { session } } = await supabase.auth.getSession();
+
+    if (!session) {
+      // Redirect to login if not authenticated
+      window.location.href = '/login/?redirect=/account/dashboard/';
+      return;
+    }
+
+    // Populate user information
+    const profileInfo = document.getElementById('profile-info');
+    profileInfo.innerHTML = `
+      <p><strong>Email:</strong> ${session.user.email}</p>
+      <p><strong>Tier:</strong> free</p>
+      <p><strong>Organization:</strong> Not set</p>
+    `;
 
     const signOutBtn = document.getElementById('signOutBtn');
 
