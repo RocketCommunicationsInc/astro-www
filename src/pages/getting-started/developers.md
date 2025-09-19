@@ -12,7 +12,7 @@ You can view all our developer documentation on **[Storybook](https://astro-comp
 
 ## Astro Components
 
-In an effort to provide as close to native a development experience as possible, we’ve provided a set of [Stencil-powered](https://stenciljs.com) [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) distributed in a single packages on [npm](https://www.npmjs.com/package/@astrouxds/astro-web-components). You can also see the full source code here and instructions for importing the components in a typical NodeJS project [on GitHub](https://github.com/RocketCommunicationsInc/astro/blob/main/packages/web-components/README.md).
+In an effort to provide as close to native a development experience as possible, we’ve provided a set of [Stencil-powered](https://stenciljs.com) [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) distributed in a package on [npm](https://www.npmjs.com/package/@astrouxds/astro-web-components). You can also see the full source code here and instructions for importing the components in a typical NodeJS project [on GitHub](https://github.com/RocketCommunicationsInc/astro/blob/main/packages/web-components/README.md). We aslo provide npm packages that wrap our Web Components for [React](https://www.npmjs.com/package/@astrouxds/react) and [Angular](https://www.npmjs.com/package/@astrouxds/angular).
 
 ## Astro Icons, Fonts and Colors
 
