@@ -88,7 +88,7 @@ import PageHeader from 'project:components/page-header/page-header.astro'
   // Initialize auth-protected content when page loads
   document.addEventListener('DOMContentLoaded', async () => {
     // Import Firebase auth helper to watch auth state
-    const { onAuthStateChanged } = await import('/src/lib/firebase-auth.js')
+    const { onAuthStateChanged } = await import('../../../lib/firebase-auth.js')
 
     class AuthProtectedContent extends HTMLElement {
       constructor() {

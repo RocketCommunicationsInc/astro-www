@@ -60,10 +60,11 @@
 </style>
 
 <script type="module">
+  // Import Firebase auth helpers (centralized wrappers)
+  import { onAuthStateChanged, signOut } from '../../lib/firebase-auth.js'
+
   // Initialize auth nav when page loads
-  document.addEventListener('DOMContentLoaded', async () => {
-    // Import Firebase auth helpers (centralized wrappers)
-    const { onAuthStateChanged, signOut } = await import('/src/lib/firebase-auth.js')
+  document.addEventListener('DOMContentLoaded', () => {
 
     class AuthNavComponent extends HTMLElement {
       constructor() {

@@ -129,7 +129,7 @@ const redirectUrl = Astro.url.searchParams.get('redirect') || '/'
 
 <script define:vars={{ redirectUrl }} type="module">
   // Import Firebase auth functions via our helper (keeps pages simple)
-  import { signInWithEmailAndPassword } from '/src/lib/firebase-auth.js'
+  import { signInWithEmailAndPassword } from '../../lib/firebase-auth.js'
 
   // Validate redirect path to prevent open-redirect attacks
   const safeRedirect = (raw) => {

@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 	const protectedEl = document.getElementById('protected-content')
 	if (!gate && !protectedEl) return // not a protected page
 	try {
-		const { onAuthStateChanged } = await import('/src/lib/firebase-auth.js')
+		const { onAuthStateChanged } = await import('../../lib/firebase-auth.js')
 		// @ts-ignore - JS callback param without TS type
 		onAuthStateChanged((user) => {
 			const signedIn = !!user

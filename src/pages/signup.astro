@@ -158,7 +158,7 @@ import PageHeader from 'project:components/page-header/page-header.astro'
 <script type="module">
   // ESM module script is required for imports in the browser
   // Import Firebase auth functions via our helper
-  import { createUserWithEmailAndPassword } from '/src/lib/firebase-auth.js'
+  import { createUserWithEmailAndPassword } from '../../lib/firebase-auth.js'
 
   // Convert Firebase error codes into friendly messages
   const getAuthErrorMessage = (err) => {
