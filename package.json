@@ -346,6 +346,7 @@
 		]
 	},
 	"dependencies": {
+		"firebase": "^12.3.0",
 		"highlight.js": "11.8.0",
 		"stripe": "^17.2.0"
 	}

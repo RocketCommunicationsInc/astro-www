@@ -1,6 +1,7 @@
 ---
 import { For, When } from '@astropub/flow'
 import SiteSearch from 'project:components/site-search/site-search.astro'
+import AuthNav from 'project:components/auth/auth-nav.astro'
 import * as navigation from './server/currentPath.ts'
 import './site-navigation.css'
 
@@ -51,5 +52,9 @@ import './client/h-navigation-list.js'
 				</li>
 			)}</For>
 		</ul>
+
+		<div class="p-navigation-auth">
+			<AuthNav />
+		</div>
 	</h-navigation-list>
 </nav>

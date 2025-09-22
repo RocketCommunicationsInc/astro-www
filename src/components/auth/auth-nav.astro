@@ -1,0 +1,438 @@
+---
+/**
+ * Auth Navigation Component
+ * Enhanced auth navigation with proper state management and UI
+ */
+---
+
+<auth-nav class="auth-navigation">
+  <!-- Loading state -->
+  <div class="nav-loading" data-slot="loading">
+    <div class="nav-spinner" aria-label="Loading authentication status"></div>
+  </div>
+
+  <!-- Signed out state -->
+  <div class="nav-signed-out" data-slot="signed-out" style="display: none;">
+    <a href="/auth/login/" class="nav-link">Sign In</a>
+    <a href="/auth/signup/" class="nav-button nav-button--primary">Get Started</a>
+  </div>
+
+  <!-- Signed in state -->
+  <div class="nav-signed-in" data-slot="signed-in" style="display: none;">
+    <div class="user-menu">
+      <button
+        class="user-trigger"
+        data-trigger="user-menu"
+        aria-expanded="false"
+        aria-haspopup="true"
+        aria-label="User menu"
+      >
+        <span class="user-email" aria-hidden="true"></span>
+        <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 10l5 5 5-5z"/>
+        </svg>
+      </button>
+
+      <div
+        class="user-dropdown"
+        data-dropdown="user-menu"
+        style="display: none;"
+        role="menu"
+        aria-label="User account menu"
+      >
+        <a href="/auth/dashboard/" class="dropdown-item" role="menuitem">
+          <svg class="item-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+          </svg>
+          Dashboard
+        </a>
+        <a href="/auth/profile/" class="dropdown-item" role="menuitem">
+          <svg class="item-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </svg>
+          Profile
+        </a>
+        <hr class="dropdown-divider" role="separator">
+        <button class="dropdown-item sign-out-button" role="menuitem">
+          <svg class="item-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.59L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
+          </svg>
+          Sign Out
+        </button>
+      </div>
+    </div>
+  </div>
+</auth-nav>
+
+<script>
+import { authClient } from '../../auth/client.js'
+import { formatDisplayName } from '../../auth/utils.js'
+
+class AuthNavElement extends HTMLElement {
+  constructor() {
+    super()
+    this.unsubscribeAuth = null
+    this.initialize()
+  }
+
+  async initialize() {
+    // Get DOM elements
+    this.loadingSlot = this.querySelector('[data-slot="loading"]')
+    this.signedOutSlot = this.querySelector('[data-slot="signed-out"]')
+    this.signedInSlot = this.querySelector('[data-slot="signed-in"]')
+    this.userEmail = this.querySelector('.user-email')
+    this.signOutButton = this.querySelector('.sign-out-button')
+    this.userTrigger = this.querySelector('[data-trigger="user-menu"]')
+    this.userDropdown = this.querySelector('[data-dropdown="user-menu"]')
+
+    // Set up event listeners
+    this.setupDropdown()
+    this.setupSignOut()
+    this.setupKeyboardNavigation()
+    this.setupClickOutside()
+
+    // Listen for auth changes
+    this.unsubscribeAuth = authClient.onAuthStateChanged((user) => {
+      this.updateNavState(user)
+    })
+  }
+
+  disconnectedCallback() {
+    // Clean up auth listener
+    if (this.unsubscribeAuth) {
+      this.unsubscribeAuth()
+    }
+
+    // Remove global event listeners
+    document.removeEventListener('click', this.handleClickOutside)
+    document.removeEventListener('keydown', this.handleKeydown)
+  }
+
+  updateNavState(user) {
+    if (user) {
+      this.showSignedIn(user)
+    } else {
+      this.showSignedOut()
+    }
+  }
+
+  showSignedIn(user) {
+    this.loadingSlot.style.display = 'none'
+    this.signedOutSlot.style.display = 'none'
+    this.signedInSlot.style.display = 'flex'
+
+    if (this.userEmail) {
+      this.userEmail.textContent = user?.email || 'User'
+    }
+  }
+
+  showSignedOut() {
+    this.loadingSlot.style.display = 'none'
+    this.signedInSlot.style.display = 'none'
+    this.signedOutSlot.style.display = 'flex'
+  }
+
+  setupDropdown() {
+    if (this.userTrigger && this.userDropdown) {
+      this.userTrigger.addEventListener('click', (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        this.toggleDropdown()
+      })
+    }
+  }
+
+  setupClickOutside() {
+    this.handleClickOutside = (e) => {
+      if (!this.contains(e.target)) {
+        this.closeDropdown()
+      }
+    }
+    document.addEventListener('click', this.handleClickOutside)
+  }
+
+  setupKeyboardNavigation() {
+    this.handleKeydown = (e) => {
+      if (e.key === 'Escape') {
+        this.closeDropdown()
+        this.userTrigger?.focus()
+      }
+    }
+    document.addEventListener('keydown', this.handleKeydown)
+
+    // Handle arrow keys in dropdown
+    if (this.userDropdown) {
+      this.userDropdown.addEventListener('keydown', (e) => {
+        const menuItems = this.userDropdown.querySelectorAll('[role="menuitem"]')
+        const currentIndex = Array.from(menuItems).findIndex(item => item === document.activeElement)
+
+        if (e.key === 'ArrowDown') {
+          e.preventDefault()
+          const nextIndex = currentIndex < menuItems.length - 1 ? currentIndex + 1 : 0
+          menuItems[nextIndex]?.focus()
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault()
+          const prevIndex = currentIndex > 0 ? currentIndex - 1 : menuItems.length - 1
+          menuItems[prevIndex]?.focus()
+        }
+      })
+    }
+  }
+
+  setupSignOut() {
+    if (this.signOutButton) {
+      this.signOutButton.addEventListener('click', async (e) => {
+        e.preventDefault()
+
+        try {
+          // Show loading state
+          this.signOutButton.disabled = true
+          this.signOutButton.textContent = 'Signing out...'
+
+          await authClient.signOut()
+
+          // Redirect to home
+          window.location.href = '/'
+        } catch (error) {
+          console.error('Error signing out:', error)
+
+          // Reset button state
+          this.signOutButton.disabled = false
+          this.signOutButton.innerHTML = `
+            <svg class="item-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.59L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
+            </svg>
+            Sign Out
+          `
+
+          // Show error message
+          alert('Failed to sign out. Please try again.')
+        }
+      })
+    }
+  }
+
+  toggleDropdown() {
+    if (!this.userDropdown || !this.userTrigger) return
+
+    const isOpen = this.userDropdown.style.display === 'block'
+
+    if (isOpen) {
+      this.closeDropdown()
+    } else {
+      this.openDropdown()
+    }
+  }
+
+  openDropdown() {
+    if (!this.userDropdown || !this.userTrigger) return
+
+    this.userDropdown.style.display = 'block'
+    this.userTrigger.setAttribute('aria-expanded', 'true')
+
+    // Focus first menu item
+    const firstMenuItem = this.userDropdown.querySelector('[role="menuitem"]')
+    firstMenuItem?.focus()
+  }
+
+  closeDropdown() {
+    if (!this.userDropdown || !this.userTrigger) return
+
+    this.userDropdown.style.display = 'none'
+    this.userTrigger.setAttribute('aria-expanded', 'false')
+  }
+}
+
+// Define the custom element
+if (!customElements.get('auth-nav')) {
+  customElements.define('auth-nav', AuthNavElement)
+}
+</script>
+
+<style>
+  .auth-navigation {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-loading {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+  }
+
+  .nav-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--color-border, #e5e7eb);
+    border-top: 2px solid var(--color-primary, #0066cc);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  .nav-signed-out,
+  .nav-signed-in {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-link {
+    color: var(--color-text-primary, #111827);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-base, 6px);
+    transition: background-color 0.2s;
+    font-weight: 500;
+  }
+
+  .nav-link:hover {
+    background-color: var(--color-background-hover, #f3f4f6);
+  }
+
+  .nav-button {
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-base, 6px);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+    font-size: 0.875rem;
+  }
+
+  .nav-button--primary {
+    background: var(--color-primary, #0066cc);
+    color: white;
+  }
+
+  .nav-button--primary:hover {
+    background: var(--color-primary-dark, #0052a3);
+  }
+
+  .user-menu {
+    position: relative;
+  }
+
+  .user-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--radius-base, 6px);
+    transition: background-color 0.2s;
+    font-size: 0.875rem;
+    color: var(--color-text-primary, #111827);
+  }
+
+  .user-trigger:hover {
+    background-color: var(--color-background-hover, #f3f4f6);
+  }
+
+  .user-trigger:focus {
+    outline: 2px solid var(--color-primary, #0066cc);
+    outline-offset: 2px;
+  }
+
+  .user-email {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .chevron {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+    transition: transform 0.2s;
+  }
+
+  .user-trigger[aria-expanded="true"] .chevron {
+    transform: rotate(180deg);
+  }
+
+  .user-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--color-background-surface, white);
+    border: 1px solid var(--color-border, #e5e7eb);
+    border-radius: var(--radius-base, 6px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    min-width: 180px;
+    z-index: 1000;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0;
+  }
+
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    text-decoration: none;
+    color: var(--color-text-primary, #111827);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 0.875rem;
+  }
+
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    background-color: var(--color-background-hover, #f3f4f6);
+    outline: none;
+  }
+
+  .item-icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+
+  .dropdown-divider {
+    margin: 0.5rem 0;
+    border: none;
+    border-top: 1px solid var(--color-border, #e5e7eb);
+  }
+
+  .sign-out-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .nav-spinner {
+      border-top-color: currentColor;
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .nav-spinner {
+      animation: none;
+    }
+
+    .chevron,
+    .nav-button,
+    .nav-link,
+    .user-trigger,
+    .dropdown-item {
+      transition: none;
+    }
+  }
+</style>
