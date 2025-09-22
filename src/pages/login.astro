@@ -3,6 +3,14 @@ import DefaultLayout from 'project:layouts/default/default-layout.astro'
 import PageHeader from 'project:components/page-header/page-header.astro'
 
 const redirectUrl = Astro.url.searchParams.get('redirect') || '/'
+
+// Firebase config for client-side
+const firebaseConfig = {
+  apiKey: import.meta.env.PUBLIC_FIREBASE_API_KEY,
+  authDomain: import.meta.env.PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.PUBLIC_FIREBASE_PROJECT_ID,
+  appId: import.meta.env.PUBLIC_FIREBASE_APP_ID
+}
 ---
 
 <DefaultLayout title="Sign In - Astro UXDS" tabtitle="Sign In">
@@ -127,8 +135,13 @@ const redirectUrl = Astro.url.searchParams.get('redirect') || '/'
   }
 </style>
 
+<!-- Set global Firebase config for client-side modules -->
+<script define:vars={{ firebaseConfig }}>
+  window.firebaseConfig = firebaseConfig
+</script>
+
 <script define:vars={{ redirectUrl }} type="module">
-  // Import Firebase auth functions via our helper (keeps pages simple)
+  // Import Firebase auth functions from public static asset
   import { signInWithEmailAndPassword } from '../../lib/firebase-auth.js'
 
   // Validate redirect path to prevent open-redirect attacks
