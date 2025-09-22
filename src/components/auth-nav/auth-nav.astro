@@ -60,22 +60,35 @@
 </style>
 
 <script type="module">
-  // Import Firebase auth helpers (centralized wrappers)
-  import { onAuthStateChanged, signOut } from '../../lib/firebase-auth.js'
-
   // Initialize auth nav when page loads
   document.addEventListener('DOMContentLoaded', () => {
 
     class AuthNavComponent extends HTMLElement {
       constructor() {
         super()
-        this.checkAuthState()
+        this.firebaseAuth = null
+        this.initializeAuth()
+      }
 
-        // Listen for auth state changes and update links
-        // @ts-ignore - suppress implicit any for callback param in JS context
-        onAuthStateChanged((user) => {
-          this.updateAuthNav(user)
-        })
+      async initializeAuth() {
+        try {
+          // Wait a bit for global config to be available
+          await new Promise(resolve => setTimeout(resolve, 100))
+
+          // Import Firebase auth helpers (centralized wrappers)
+          const { onAuthStateChanged, signOut } = await import('../../lib/firebase-auth.js')
+          this.firebaseAuth = { onAuthStateChanged, signOut }
+
+          // Listen for auth state changes and update links
+          // @ts-ignore - suppress implicit any for callback param in JS context
+          onAuthStateChanged((user) => {
+            this.updateAuthNav(user)
+          })
+        } catch (error) {
+          console.warn('Firebase auth not available:', error.message)
+          // Show signed-out state as fallback
+          this.updateAuthNav(null)
+        }
       }
 
       async checkAuthState() {
@@ -109,8 +122,12 @@
           if (signoutBtn) {
             signoutBtn.addEventListener('click', async () => {
               try {
-                await signOut()
-                window.location.href = '/'
+                if (this.firebaseAuth?.signOut) {
+                  await this.firebaseAuth.signOut()
+                  window.location.href = '/'
+                } else {
+                  console.warn('Firebase auth not available for sign out')
+                }
               } catch (e) {
                 console.error('Error signing out:', e)
               }

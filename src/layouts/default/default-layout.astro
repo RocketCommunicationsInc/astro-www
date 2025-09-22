@@ -20,6 +20,14 @@ const attrs = {
 	...Astro.props,
 }
 
+// Firebase config for client-side
+const firebaseConfig = {
+  apiKey: import.meta.env.PUBLIC_FIREBASE_API_KEY,
+  authDomain: import.meta.env.PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.PUBLIC_FIREBASE_PROJECT_ID,
+  appId: import.meta.env.PUBLIC_FIREBASE_APP_ID
+}
+
 ---
 <Document body-class="p-grid" {...attrs}>
 	<slot slot="head" name="head" />
@@ -37,6 +45,12 @@ const attrs = {
 	</div>
 	<SourceCodeAccess />
 </Document>
+
+<!-- Set global Firebase config for client-side modules -->
+<script define:vars={{ firebaseConfig }}>
+  window.firebaseConfig = firebaseConfig
+</script>
+
 <script>
 import './default-layout.client'
 import 'project:components/color-sample/color-sample'
