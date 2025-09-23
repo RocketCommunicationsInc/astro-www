@@ -1,0 +1,129 @@
+---
+import ProtectedLayout from '../../layouts/protected-layout.astro'
+import PageHeader from '../../components/page-header/page-header.astro'
+---
+
+<ProtectedLayout
+  title="Premium Content | Astro UXDS"
+  description="Access exclusive design system resources and advanced components."
+  minRole="user"
+>
+  <main class="page protected-content" id="content">
+    <PageHeader>
+      <h1>Premium Content <span class="premium-badge">Premium</span></h1>
+      <p>Exclusive design system resources for authenticated users</p>
+    </PageHeader>
+
+    <div class="page-content">
+      <div class="premium-grid">
+        <section class="premium-section">
+          <h2>Advanced Components</h2>
+          <p>Access to sophisticated UI components not available in the free tier.</p>
+          <ul>
+            <li>Data visualization components</li>
+            <li>Complex navigation patterns</li>
+            <li>Advanced form controls</li>
+            <li>Interactive dashboards</li>
+          </ul>
+          <a href="/premium/components/" class="btn btn-primary">Browse Components</a>
+        </section>
+
+        <section class="premium-section">
+          <h2>Design System Assets</h2>
+          <p>Complete design files and resources for your design workflow.</p>
+          <ul>
+            <li>Figma component libraries</li>
+            <li>Sketch symbol sets</li>
+            <li>Adobe XD kits</li>
+            <li>Icon libraries (SVG)</li>
+          </ul>
+          <a href="/premium/assets/" class="btn btn-primary">Download Assets</a>
+        </section>
+
+        <section class="premium-section">
+          <h2>Documentation</h2>
+          <p>In-depth guides and implementation examples.</p>
+          <ul>
+            <li>Implementation patterns</li>
+            <li>Best practices guides</li>
+            <li>Code examples</li>
+            <li>Migration guides</li>
+          </ul>
+          <a href="/premium/docs/" class="btn btn-primary">Read Docs</a>
+        </section>
+
+        <section class="premium-section">
+          <h2>Support</h2>
+          <p>Priority support and direct access to the development team.</p>
+          <ul>
+            <li>Priority issue resolution</li>
+            <li>Implementation consultation</li>
+            <li>Custom component requests</li>
+            <li>Direct team access</li>
+          </ul>
+          <a href="/premium/support/" class="btn btn-primary">Get Support</a>
+        </section>
+      </div>
+    </div>
+  </main>
+</ProtectedLayout>
+
+<style>
+  .premium-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .premium-section {
+    background: var(--color-background-surface, white);
+    padding: 2rem;
+    border-radius: var(--radius-large, 8px);
+    border: 1px solid var(--color-border, #e5e7eb);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .premium-section h2 {
+    margin-bottom: 1rem;
+    color: var(--color-text-primary, #111827);
+  }
+
+  .premium-section p {
+    margin-bottom: 1rem;
+    color: var(--color-text-secondary, #6b7280);
+  }
+
+  .premium-section ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .premium-section li {
+    margin-bottom: 0.5rem;
+    color: var(--color-text-secondary, #6b7280);
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-primary, #0066cc);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius-base, 6px);
+    font-weight: 600;
+    transition: background-color 0.2s;
+  }
+
+  .btn:hover {
+    background: var(--color-primary-dark, #0052a3);
+  }
+
+  .btn-primary {
+    background: var(--color-primary, #0066cc);
+  }
+
+  .btn-primary:hover {
+    background: var(--color-primary-dark, #0052a3);
+  }
+</style>

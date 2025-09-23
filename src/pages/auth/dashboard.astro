@@ -1,0 +1,163 @@
+---
+import DefaultLayout from 'project:layouts/default/default-layout.astro'
+import PageHeader from 'project:components/page-header/page-header.astro'
+---
+
+<DefaultLayout title="Dashboard | Astro UXDS">
+  <main class="page" id="content">
+    <PageHeader>
+      <h1>Account Dashboard</h1>
+      <p>Manage your account and track your usage</p>
+    </PageHeader>
+
+    <div class="page-content">
+      <div class="dashboard-grid">
+        <section class="profile-section">
+          <h2>Profile</h2>
+          <div id="profile-info" class="profile-info">
+            <p>Loading user information...</p>
+          </div>
+          <button class="btn btn-secondary">Edit Profile</button>
+        </section>
+
+        <section class="downloads-section">
+          <h2>Recent Downloads</h2>
+          <p>No downloads yet</p>
+        </section>
+
+        <section class="activity-section">
+          <h2>Recent Activity</h2>
+          <p>No recent activity</p>
+        </section>
+
+        <section class="account-actions">
+          <h2>Account Actions</h2>
+          <div class="action-buttons">
+            <button class="btn btn-secondary">Account Settings</button>
+            <button id="signOutBtn" class="btn btn-outline">Sign Out</button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</DefaultLayout>
+
+<style>
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  section {
+    background: var(--color-background-surface, white);
+    padding: 1.5rem;
+    border-radius: var(--radius-large, 8px);
+    border: 1px solid var(--color-border, #e5e7eb);
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+    color: var(--color-text-primary, #111827);
+  }
+
+  .profile-info p {
+    margin: 0.5rem 0;
+  }
+
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-base, 6px);
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+    background: none;
+    font-size: 1rem;
+  }
+
+  .btn-secondary {
+    background: var(--color-secondary, #6b7280);
+    color: white;
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-secondary-dark, #4b5563);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--color-text-primary, #111827);
+    border: 1px solid var(--color-border, #e5e7eb);
+  }
+
+  .btn-outline:hover {
+    background: var(--color-background-hover, #f3f4f6);
+  }
+</style>
+
+<script>
+import { authClient } from '../../auth/client.js'
+import { formatDisplayName } from '../../auth/utils.js'
+
+document.addEventListener('DOMContentLoaded', () => {
+  const profileInfo = document.getElementById('profile-info')
+  const signOutBtn = document.getElementById('signOutBtn')
+
+  // Listen for auth state changes
+  const unsubscribe = authClient.onAuthStateChanged((user) => {
+    if (user) {
+      updateProfileInfo(user)
+    } else {
+      // Redirect to login if not authenticated
+      window.location.href = '/auth/login/?redirect=' + encodeURIComponent(window.location.pathname)
+    }
+  })
+
+  function updateProfileInfo(user) {
+    if (profileInfo instanceof HTMLElement) {
+      const displayName = formatDisplayName(user)
+      const createdAt = user.metadata.creationTime
+        ? new Date(user.metadata.creationTime).toLocaleDateString()
+        : 'Unknown'
+
+      profileInfo.innerHTML = `
+        <p><strong>Display Name:</strong> ${displayName}</p>
+        <p><strong>Email:</strong> ${user.email}</p>
+        <p><strong>Account Created:</strong> ${createdAt}</p>
+        <p><strong>Status:</strong> Active</p>
+      `
+    }
+  }
+
+  // Handle sign out
+  if (signOutBtn instanceof HTMLElement) {
+    signOutBtn.addEventListener('click', async () => {
+      try {
+        await authClient.signOut()
+        window.location.href = '/'
+      } catch (error) {
+        console.error('Sign out error:', error)
+        alert('Failed to sign out. Please try again.')
+      }
+    })
+  }
+
+  // Clean up listener when page unloads
+  window.addEventListener('beforeunload', () => {
+    if (unsubscribe) {
+      unsubscribe()
+    }
+  })
+})
+</script>

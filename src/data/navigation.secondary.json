@@ -14,7 +14,21 @@
         ]
     },
     {
-        "description": "Action Buttons allow users to trigger actions by clicking, tapping, or pressing a corresponding key on a keyboard, such as the “Enter” key.",
+        "description": "A Checkbox describes a state or value that can be either 'On' or 'Off.' Checkboxes are not mutually exclusive. More than one Checkbox may be checked at the same time.",
+        "heading": "Checkbox (Protected Demo)",
+        "items": [
+            {
+                "label": "Frontmatter Protection",
+                "url": "/components/checkbox-fm/"
+            },
+            {
+                "label": "Template Protection",
+                "url": "/components/checkbox-tm/"
+            }
+        ]
+    },
+    {
+        "description": "Action Buttons allow users to trigger actions by clicking, tapping, or pressing a corresponding key on a keyboard, such as the 'Enter' key.",
         "heading": "Button",
         "items": [
             {

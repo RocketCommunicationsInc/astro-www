@@ -1,0 +1,94 @@
+---
+/**
+ * Protected Layout
+ * Wraps content with authentication protection
+ * Can be used for entire directories or individual pages that need auth
+ */
+
+import DefaultLayout from './default/default-layout.astro'
+import AuthGate from '../components/auth/auth-gate.astro'
+
+export interface Props {
+  title?: string
+  description?: string
+  minRole?: string
+  showLogin?: boolean
+  requireVerified?: boolean
+  ogImage?: string
+  canonical?: string
+}
+
+const {
+  title = 'Protected Content | Astro UXDS',
+  description = 'This content requires authentication to access.',
+  minRole = 'user',
+  showLogin = true,
+  requireVerified = false,
+  ogImage,
+  canonical
+} = Astro.props
+
+// Enhanced auth configuration
+const authConfig = {
+  redirectUrl: '/auth/login/',
+  showLogin,
+  loadingMessage: 'Verifying access permissions...',
+  loginMessage: 'This content is available to authenticated users only.',
+  minRole
+}
+---
+
+<DefaultLayout
+  title={title}
+  description={description}
+  ogImage={ogImage}
+  canonical={canonical}
+>
+  <AuthGate
+    redirectUrl={authConfig.redirectUrl}
+    showLogin={authConfig.showLogin}
+    loadingMessage={authConfig.loadingMessage}
+    loginMessage={authConfig.loginMessage}
+    minRole={authConfig.minRole}
+  >
+    <slot />
+  </AuthGate>
+</DefaultLayout>
+
+<style>
+  /* Additional protected content styles */
+  :global(.protected-content) {
+    position: relative;
+  }
+
+  :global(.protected-content::before) {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary, #0066cc), var(--color-secondary, #6b7280));
+    z-index: 1;
+  }
+
+  /* Premium content indicator */
+  :global(.premium-badge) {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    background: var(--color-primary, #0066cc);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: var(--radius-base, 6px);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  :global(.premium-badge::before) {
+    content: '★';
+    color: #fbbf24;
+  }
+</style>

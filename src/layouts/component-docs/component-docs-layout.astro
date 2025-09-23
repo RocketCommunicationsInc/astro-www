@@ -11,6 +11,9 @@ import ComplianceAside from 'project:components/compliance/compliance-aside.astr
 // import ContributionFooter from 'project:components/contribution-footer/contribution-footer.astro'
 import complianceData from 'project:data/compliance.json'
 
+// Auth components for frontmatter-driven protection
+import AuthGate from 'project:components/auth/auth-gate.astro'
+
 const {
 	components: {
 		repository: GitHubRepoURL,
@@ -29,6 +32,16 @@ const {
 
 const { content } = Astro.props
 
+// Extract protection configuration from frontmatter
+const isProtected = content.protected || false
+const protectionLevel = content.protectionLevel || 'partial'
+const publicSections = content.publicSections || []
+const protectedSections = content.protectedSections || []
+const authMessage = content.authMessage || 'Sign in to access detailed component documentation and examples.'
+
+// Template-level auto-detection: if no frontmatter protection config but file has 'tm' suffix
+const isTemplateProtected = !isProtected && Astro.url.pathname.includes('-tm/')
+const autoDetectedSections = isTemplateProtected ? ['interactive', 'rules', 'examples'] : []
 
 /** RegEx to match a slash (/) at the end ($) of a string. */
 // const matchTrailingSlash = /\/$/
@@ -67,7 +80,18 @@ const html = `<style>:root{--StorybookPreviewHeight:${StorybookPreviewHeight};}<
 	<Fragment slot="toolbar" />
 	<Fragment set:html={html} />
 
-	<slot />
+	{(isProtected || isTemplateProtected) ? (
+		<div class="protected-content-wrapper"
+			 data-protected="true"
+			 data-protection-level={protectionLevel}
+			 data-public-sections={JSON.stringify(publicSections)}
+			 data-protected-sections={JSON.stringify(isProtected ? protectedSections : autoDetectedSections)}
+			 data-template-protected={isTemplateProtected}>
+			<slot />
+		</div>
+	) : (
+		<slot />
+	)}
 
 	<AssetStatus {...Astro.props}/>
 
@@ -77,6 +101,136 @@ const html = `<style>:root{--StorybookPreviewHeight:${StorybookPreviewHeight};}<
 <script>
 import 'project:components/component-playground/Playground/Playground.ts'
 import 'project:components/color-swab-custom-element.ts'
+</script>
+
+<!-- Frontmatter-driven content protection script -->
+<script>
+import { authClient } from 'project:auth/client.js'
+
+class FrontmatterContentProtection {
+  constructor() {
+    this.isAuthenticated = false
+    this.init()
+  }
+
+  init() {
+    const protectedWrapper = document.querySelector('[data-protected="true"]')
+    if (!protectedWrapper) return
+
+    const isTemplateProtected = protectedWrapper.dataset.templateProtected === 'true'
+    console.log('Protected content detected, initializing auth protection...',
+                isTemplateProtected ? '(template-based)' : '(frontmatter-based)')
+
+    // Listen for auth state changes
+    authClient.onAuthStateChanged((user) => {
+      console.log('Auth state changed:', !!user)
+      this.isAuthenticated = !!user
+      this.updateContentVisibility(protectedWrapper)
+    })
+  }
+
+  updateContentVisibility(wrapper) {
+    const protectedSections = JSON.parse(wrapper.dataset.protectedSections || '[]')
+
+    if (this.isAuthenticated) {
+      console.log('User authenticated - showing all content')
+      this.showAllContent(wrapper)
+    } else {
+      console.log('User not authenticated - hiding protected content')
+      this.hideProtectedContent(wrapper, protectedSections)
+      this.showAuthPrompt(wrapper)
+    }
+  }
+
+  hideProtectedContent(wrapper, protectedSections) {
+    // Simple approach: hide anything that matches protected section keywords
+    const allElements = wrapper.querySelectorAll('h2, h3, h4, h5, h6, p, div, ul, ol, section')
+
+    allElements.forEach(element => {
+      const text = element.textContent?.toLowerCase() || ''
+
+      const shouldHide = protectedSections.some(section => {
+        const sectionLower = section.toLowerCase()
+
+        // Check if this element or its content matches protected sections
+        if (sectionLower === 'interactive' && (text.includes('interactive') || text.includes('example'))) return true
+        if (sectionLower === 'rules' && text.includes('rules')) return true
+        if (sectionLower === 'examples' && (text.includes('examples') || element.matches('.two-col'))) return true
+
+        return text.includes(sectionLower)
+      })
+
+      if (shouldHide) {
+        console.log('Hiding element:', element.tagName, text.substring(0, 50))
+        element.style.display = 'none'
+        this.hideFollowingContent(element)
+      }
+    })
+
+    // Hide specific markdown elements
+    wrapper.querySelectorAll('.two-col, [is="a-playground"]').forEach(el => {
+      console.log('Hiding special element:', el.className)
+      el.style.display = 'none'
+    })
+  }
+
+  hideFollowingContent(element) {
+    let sibling = element.nextElementSibling
+    while (sibling && !sibling.matches('h1, h2')) {
+      sibling.style.display = 'none'
+      sibling = sibling.nextElementSibling
+    }
+  }
+
+  showAllContent(wrapper) {
+    console.log('Showing all content')
+    wrapper.querySelectorAll('[style*="display: none"]').forEach(el => {
+      el.style.display = ''
+    })
+    this.removeAuthPrompt()
+  }
+
+  showAuthPrompt(wrapper) {
+    if (document.querySelector('.frontmatter-auth-prompt')) return
+
+    const isTemplateProtected = wrapper.dataset.templateProtected === 'true'
+    console.log('Showing auth prompt')
+    const authPrompt = document.createElement('div')
+    authPrompt.className = 'frontmatter-auth-prompt'
+    authPrompt.innerHTML = `
+      <div class="auth-prompt-content">
+        <h3>🔒 Premium Component Documentation</h3>
+        <p>Sign in to access interactive examples, implementation guidelines, and design best practices.</p>
+        ${isTemplateProtected ? '<p><em>This page uses automatic template-based content protection.</em></p>' : ''}
+        <div class="auth-prompt-actions">
+          <a href="/auth/login/?redirect=${encodeURIComponent(window.location.pathname)}" class="auth-btn auth-btn-primary">
+            Sign In
+          </a>
+          <a href="/auth/signup/" class="auth-btn auth-btn-secondary">
+            Create Account
+          </a>
+        </div>
+      </div>
+    `
+
+    // Insert after the first heading or paragraph
+    const insertPoint = wrapper.querySelector('h2, p')
+    if (insertPoint) {
+      insertPoint.parentNode.insertBefore(authPrompt, insertPoint.nextSibling)
+    }
+  }
+
+  removeAuthPrompt() {
+    const prompt = document.querySelector('.frontmatter-auth-prompt')
+    if (prompt) prompt.remove()
+  }
+}
+
+// Initialize immediately and also when DOM is ready
+new FrontmatterContentProtection()
+document.addEventListener('DOMContentLoaded', () => {
+  new FrontmatterContentProtection()
+})
 </script>
 <script define:vars={{ GitHubId, GitHubRepoURL, GitHubRepoBranch, StorybookId, storybookURL }}>
 const template = document.createElement('template')

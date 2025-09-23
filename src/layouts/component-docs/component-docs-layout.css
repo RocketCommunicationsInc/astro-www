@@ -99,3 +99,80 @@ iframe {
 	/* Layout */
 	inline-size: 100%;
 }
+
+/* Frontmatter-driven content protection styles */
+.frontmatter-auth-prompt {
+	margin: 2rem 0;
+	padding: 0;
+}
+
+.auth-prompt-content {
+	background: var(--color-background-surface, white);
+	border: 2px dashed var(--color-border, #e5e7eb);
+	border-radius: 8px;
+	padding: 2rem;
+	text-align: center;
+}
+
+.auth-prompt-content h3 {
+	margin-bottom: 1rem;
+	color: var(--color-text-primary, #111827);
+	font-size: 1.25rem;
+}
+
+.auth-prompt-content p {
+	margin-bottom: 1.5rem;
+	color: var(--color-text-secondary, #6b7280);
+}
+
+.auth-prompt-actions {
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.auth-btn {
+	display: inline-block;
+	padding: 0.75rem 1.5rem;
+	border-radius: 6px;
+	font-weight: 600;
+	text-decoration: none;
+	transition: all 0.2s;
+	font-size: 0.875rem;
+}
+
+.auth-btn-primary {
+	background: var(--color-primary, #0066cc);
+	color: white;
+}
+
+.auth-btn-primary:hover {
+	background: var(--color-primary-dark, #0052a3);
+}
+
+.auth-btn-secondary {
+	background: var(--color-secondary, #6b7280);
+	color: white;
+}
+
+.auth-btn-secondary:hover {
+	background: var(--color-secondary-dark, #4b5563);
+}
+
+/* Protected content wrapper */
+.protected-content-wrapper[data-protected="true"] {
+	position: relative;
+}
+
+/* Loading state for protected content */
+.protected-content-wrapper[data-protected="true"]::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 4px;
+	background: linear-gradient(90deg, var(--color-primary, #0066cc), var(--color-secondary, #6b7280));
+	z-index: 1;
+}

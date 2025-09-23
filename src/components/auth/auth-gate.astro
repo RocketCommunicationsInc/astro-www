@@ -1,0 +1,268 @@
+---
+/**
+ * Auth Gate Component
+ * Protects content by requiring authentication
+ * Shows loading state, login prompt, or protected content based on auth status
+ */
+
+export interface Props {
+  redirectUrl?: string
+  showLogin?: boolean
+  loadingMessage?: string
+  loginMessage?: string
+  minRole?: string
+}
+
+const {
+  redirectUrl = '/auth/login/',
+  showLogin = true,
+  loadingMessage = 'Checking authentication...',
+  loginMessage = 'Please sign in to access this content.',
+  minRole = 'user'
+} = Astro.props
+---
+
+<auth-gate
+  data-redirect-url={redirectUrl}
+  data-show-login={showLogin}
+  data-loading-message={loadingMessage}
+  data-login-message={loginMessage}
+  data-min-role={minRole}
+>
+  <!-- Loading state -->
+  <div class="auth-gate-loading" data-slot="loading">
+    <div class="loading-spinner" aria-label="Loading authentication status"></div>
+    <p>{loadingMessage}</p>
+  </div>
+
+  <!-- Not authenticated state -->
+  <div class="auth-gate-unauthenticated" data-slot="unauthenticated" style="display: none;">
+    {showLogin && (
+      <div class="login-prompt">
+        <h3>Sign In Required</h3>
+        <p>{loginMessage}</p>
+        <div class="login-actions">
+          <a href={`${redirectUrl}?redirect=${encodeURIComponent(Astro.url.pathname)}`} class="btn btn-primary">
+            Sign In
+          </a>
+          <a href="/auth/signup/" class="btn btn-secondary">
+            Create Account
+          </a>
+        </div>
+      </div>
+    )}
+    {!showLogin && (
+      <div class="access-denied">
+        <h3>Access Denied</h3>
+        <p>You don't have permission to view this content.</p>
+      </div>
+    )}
+  </div>
+
+  <!-- Insufficient permissions state -->
+  <div class="auth-gate-insufficient" data-slot="insufficient" style="display: none;">
+    <div class="access-denied">
+      <h3>Insufficient Permissions</h3>
+      <p>You don't have the required permissions to access this content.</p>
+      <a href="/auth/dashboard/" class="btn btn-secondary">Go to Dashboard</a>
+    </div>
+  </div>
+
+  <!-- Protected content -->
+  <div class="auth-gate-content" data-slot="content" style="display: none;">
+    <slot />
+  </div>
+</auth-gate>
+
+<script>
+import { authClient } from '../../auth/client.js'
+import { hasRole } from '../../auth/utils.js'
+
+class AuthGateElement extends HTMLElement {
+  constructor() {
+    super()
+    this.unsubscribeAuth = null
+    this.initialize()
+  }
+
+  async initialize() {
+    // Get configuration from data attributes
+    this.redirectUrl = this.dataset.redirectUrl || '/auth/login/'
+    this.showLogin = this.dataset.showLogin === 'true'
+    this.loadingMessage = this.dataset.loadingMessage || 'Checking authentication...'
+    this.loginMessage = this.dataset.loginMessage || 'Please sign in to access this content.'
+    this.minRole = this.dataset.minRole || 'user'
+
+    // Get DOM elements
+    this.loadingSlot = this.querySelector('[data-slot="loading"]')
+    this.unauthenticatedSlot = this.querySelector('[data-slot="unauthenticated"]')
+    this.insufficientSlot = this.querySelector('[data-slot="insufficient"]')
+    this.contentSlot = this.querySelector('[data-slot="content"]')
+
+    // Listen for auth state changes
+    this.unsubscribeAuth = authClient.onAuthStateChanged((user) => {
+      this.handleAuthStateChange(user)
+    })
+  }
+
+  disconnectedCallback() {
+    // Clean up auth listener
+    if (this.unsubscribeAuth) {
+      this.unsubscribeAuth()
+    }
+  }
+
+  handleAuthStateChange(user) {
+    if (!user) {
+      this.showUnauthenticated()
+    } else if (!hasRole(user, this.minRole)) {
+      this.showInsufficientPermissions()
+    } else {
+      this.showContent()
+    }
+  }
+
+  showUnauthenticated() {
+    this.hideAllSlots()
+    if (this.unauthenticatedSlot) {
+      this.unauthenticatedSlot.style.display = 'block'
+    }
+  }
+
+  showInsufficientPermissions() {
+    this.hideAllSlots()
+    if (this.insufficientSlot) {
+      this.insufficientSlot.style.display = 'block'
+    }
+  }
+
+  showContent() {
+    this.hideAllSlots()
+    if (this.contentSlot) {
+      this.contentSlot.style.display = 'block'
+    }
+  }
+
+  hideAllSlots() {
+    const slots = [this.loadingSlot, this.unauthenticatedSlot, this.insufficientSlot, this.contentSlot]
+    slots.forEach(slot => {
+      if (slot) {
+        slot.style.display = 'none'
+      }
+    })
+  }
+}
+
+// Define the custom element
+if (!customElements.get('auth-gate')) {
+  customElements.define('auth-gate', AuthGateElement)
+}
+</script>
+
+<style>
+  auth-gate {
+    display: block;
+  }
+
+  .auth-gate-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .loading-spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid var(--color-border, #e5e7eb);
+    border-top: 3px solid var(--color-primary, #0066cc);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+  }
+
+  .login-prompt,
+  .access-denied {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    text-align: center;
+    background: var(--color-background-surface, white);
+    border: 1px solid var(--color-border, #e5e7eb);
+    border-radius: var(--radius-large, 8px);
+  }
+
+  .login-prompt h3,
+  .access-denied h3 {
+    margin-bottom: 1rem;
+    color: var(--color-text-primary, #111827);
+  }
+
+  .login-prompt p,
+  .access-denied p {
+    margin-bottom: 1.5rem;
+    color: var(--color-text-secondary, #6b7280);
+  }
+
+  .login-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-base, 6px);
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    background: var(--color-primary, #0066cc);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-primary-dark, #0052a3);
+  }
+
+  .btn-secondary {
+    background: var(--color-secondary, #6b7280);
+    color: white;
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-secondary-dark, #4b5563);
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .loading-spinner {
+      border-top-color: currentColor;
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .loading-spinner {
+      animation: none;
+    }
+
+    .btn {
+      transition: none;
+    }
+  }
+</style>

@@ -1,0 +1,174 @@
+---
+import DefaultLayout from 'project:layouts/default/default-layout.astro'
+import PageHeader from 'project:components/page-header/page-header.astro'
+
+const redirectTo = Astro.url.searchParams.get('redirect') || '/auth/dashboard'
+---
+
+<DefaultLayout title="Sign In | Astro UXDS">
+  <main class="page" id="content">
+    <PageHeader>
+      <h1>Welcome Back</h1>
+      <p>Sign in to access premium components and documentation</p>
+    </PageHeader>
+
+    <div class="page-content">
+      <div class="auth-container">
+        <form id="loginForm" class="auth-form">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="form-control"
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              class="form-control"
+              placeholder="Your password"
+            />
+          </div>
+
+          <div id="error-message" class="alert alert-error" style="display: none;"></div>
+
+          <button type="submit" class="btn btn-primary">
+            Sign In
+          </button>
+
+          <div class="auth-links">
+            <a href="/auth/signup/">Create an account</a>
+            <a href="/auth/forgot-password/">Forgot password?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+</DefaultLayout>
+
+<style>
+  .auth-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-group label {
+    font-weight: 600;
+    color: var(--color-text-primary, #111827);
+  }
+
+  .form-control {
+    padding: 0.75rem;
+    border: 1px solid var(--color-border, #e5e7eb);
+    border-radius: var(--radius-base, 6px);
+    font-size: 1rem;
+    transition: border-color 0.2s;
+  }
+
+  .form-control:focus {
+    outline: none;
+    border-color: var(--color-primary, #0066cc);
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+  }
+
+  .btn-primary {
+    padding: 0.75rem 1.5rem;
+    background: var(--color-primary, #0066cc);
+    color: white;
+    border: none;
+    border-radius: var(--radius-base, 6px);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-primary-dark, #0052a3);
+  }
+
+  .auth-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+  }
+
+  .auth-links a {
+    color: var(--color-primary, #0066cc);
+    text-decoration: none;
+  }
+
+  .auth-links a:hover {
+    text-decoration: underline;
+  }
+
+  .alert {
+    padding: 0.75rem;
+    border-radius: var(--radius-base, 6px);
+  }
+
+  .alert-error {
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+  }
+</style>
+
+<script>
+import { authClient } from '../../auth/client.js'
+import { getRedirectUrl } from '../../auth/utils.js'
+
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('loginForm')
+  const errorDiv = document.getElementById('error-message')
+
+  if (form instanceof HTMLFormElement) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault()
+
+      const formData = new FormData(form)
+      const email = formData.get('email')
+      const password = formData.get('password')
+
+      if (errorDiv instanceof HTMLElement) {
+        errorDiv.style.display = 'none'
+      }
+
+      try {
+        await authClient.signIn(email, password)
+
+        // Redirect after successful login
+        const redirectUrl = getRedirectUrl(window.location.search)
+        window.location.href = redirectUrl
+      } catch (error) {
+        if (errorDiv instanceof HTMLElement) {
+          errorDiv.textContent = error.message
+          errorDiv.style.display = 'block'
+        }
+      }
+    })
+  }
+})
+</script>

@@ -1,0 +1,212 @@
+---
+import DefaultLayout from 'project:layouts/default/default-layout.astro'
+import PageHeader from 'project:components/page-header/page-header.astro'
+---
+
+<DefaultLayout title="Sign Up | Astro UXDS">
+  <main class="page" id="content">
+    <PageHeader>
+      <h1>Create Account</h1>
+      <p>Join the Astro UXDS community and access premium content</p>
+    </PageHeader>
+
+    <div class="page-content">
+      <div class="auth-container">
+        <form id="signupForm" class="auth-form">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="form-control"
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              class="form-control"
+              placeholder="At least 8 characters"
+              minlength="8"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              required
+              class="form-control"
+              placeholder="Confirm your password"
+            />
+          </div>
+
+          <div id="error-message" class="alert alert-error" style="display: none;"></div>
+          <div id="success-message" class="alert alert-success" style="display: none;"></div>
+
+          <button type="submit" class="btn btn-primary">
+            Create Account
+          </button>
+
+          <div class="auth-links">
+            <a href="/auth/login/">Already have an account? Sign in</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+</DefaultLayout>
+
+<style>
+  .auth-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-group label {
+    font-weight: 600;
+    color: var(--color-text-primary, #111827);
+  }
+
+  .form-control {
+    padding: 0.75rem;
+    border: 1px solid var(--color-border, #e5e7eb);
+    border-radius: var(--radius-base, 6px);
+    font-size: 1rem;
+    transition: border-color 0.2s;
+  }
+
+  .form-control:focus {
+    outline: none;
+    border-color: var(--color-primary, #0066cc);
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+  }
+
+  .btn-primary {
+    padding: 0.75rem 1.5rem;
+    background: var(--color-primary, #0066cc);
+    color: white;
+    border: none;
+    border-radius: var(--radius-base, 6px);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-primary-dark, #0052a3);
+  }
+
+  .auth-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+  }
+
+  .auth-links a {
+    color: var(--color-primary, #0066cc);
+    text-decoration: none;
+  }
+
+  .auth-links a:hover {
+    text-decoration: underline;
+  }
+
+  .alert {
+    padding: 0.75rem;
+    border-radius: var(--radius-base, 6px);
+  }
+
+  .alert-error {
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+  }
+
+  .alert-success {
+    background: #f0fdf4;
+    color: #16a34a;
+    border: 1px solid #bbf7d0;
+  }
+</style>
+
+<script>
+import { authClient } from '../../auth/client.js'
+
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('signupForm')
+  const errorDiv = document.getElementById('error-message')
+  const successDiv = document.getElementById('success-message')
+
+  if (form instanceof HTMLFormElement) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault()
+
+      const formData = new FormData(form)
+      const email = formData.get('email')
+      const password = formData.get('password')
+      const confirmPassword = formData.get('confirmPassword')
+
+      // Hide previous messages
+      if (errorDiv instanceof HTMLElement) {
+        errorDiv.style.display = 'none'
+      }
+      if (successDiv instanceof HTMLElement) {
+        successDiv.style.display = 'none'
+      }
+
+      // Basic validation
+      if (password !== confirmPassword) {
+        if (errorDiv instanceof HTMLElement) {
+          errorDiv.textContent = 'Passwords do not match.'
+          errorDiv.style.display = 'block'
+        }
+        return
+      }
+
+      try {
+        await authClient.signUp(email, password)
+
+        // Show success message
+        if (successDiv instanceof HTMLElement) {
+          successDiv.textContent = 'Account created successfully! Redirecting to dashboard...'
+          successDiv.style.display = 'block'
+        }
+
+        // Redirect to dashboard after successful signup
+        setTimeout(() => {
+          window.location.href = '/auth/dashboard/'
+        }, 2000)
+      } catch (error) {
+        if (errorDiv instanceof HTMLElement) {
+          errorDiv.textContent = error.message
+          errorDiv.style.display = 'block'
+        }
+      }
+    })
+  }
+})
+</script>
