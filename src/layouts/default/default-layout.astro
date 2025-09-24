@@ -8,6 +8,7 @@ import SourceCodeAccess from 'project:components/source-code-access/source-code-
 import globalData from 'project:data/global.json'
 import SiteNavigation from 'project:components/site-navigation/site-navigation.astro'
 import SiteFooter from 'project:components/site-footer/site-footer.astro'
+import SiteBanner from 'project:components/site-banner/site-banner.astro'
 
 export type { Props }
 
@@ -27,6 +28,7 @@ const attrs = {
 	<script slot="head" src="https://js.stripe.com/v3/"></script>
 	<slot name="top" />
 	<link slot="head" rel="sitemap" href="/sitemap-index.xml">
+	<SiteBanner />
 	<div class="x-menu">
 		<SiteNavigation />
 	</div>
