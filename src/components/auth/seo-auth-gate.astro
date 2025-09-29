@@ -89,19 +89,56 @@ const {
 </seo-auth-gate>
 
 <script>
-import { authClient } from '../../auth/client.js'
-import { hasRole } from '../../auth/utils.js'
+// Self-contained Firebase integration (no external dependencies)
+import { initializeApp } from 'firebase/app'
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth'
+
+// Firebase config - uses same environment variables as your existing setup
+const firebaseConfig = {
+  apiKey: import.meta.env.PUBLIC_FIREBASE_API_KEY,
+  authDomain: import.meta.env.PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.PUBLIC_FIREBASE_PROJECT_ID,
+  appId: import.meta.env.PUBLIC_FIREBASE_APP_ID
+}
+
+// Initialize Firebase (only if not already initialized)
+let app
+let auth
+try {
+  app = initializeApp(firebaseConfig)
+  auth = getAuth(app)
+} catch (error) {
+  console.warn('Firebase already initialized or config missing:', error.message)
+  auth = getAuth()
+}
 
 class SEOAuthGateElement extends HTMLElement {
+  // Properly declare all class properties
+  contentLoaded = false
+  contentApiUrl = ''
+  redirectUrl = '/auth/login/'
+  minRole = 'user'
+  showLogin = true
+
+  // DOM elements
+  seoContent = null
+  loadingSlot = null
+  contentSlot = null
+  errorSlot = null
+  retryBtn = null
+
+  // Firebase
+  unsubscribeAuth = null
+  currentUser = null
+
   constructor() {
     super()
-    this.contentLoaded = false
     this.initialize()
   }
 
   initialize() {
-    // Get configuration
-    this.contentApiUrl = this.dataset.contentApiUrl
+    // Get configuration from data attributes
+    this.contentApiUrl = this.dataset.contentApiUrl || ''
     this.redirectUrl = this.dataset.redirectUrl || '/auth/login/'
     this.minRole = this.dataset.minRole || 'user'
     this.showLogin = this.dataset.showLogin === 'true'
@@ -121,9 +158,15 @@ class SEOAuthGateElement extends HTMLElement {
     }
 
     // Listen for auth state changes
-    this.unsubscribeAuth = authClient.onAuthStateChanged((user) => {
-      this.handleAuthStateChange(user)
-    })
+    if (auth) {
+      this.unsubscribeAuth = onAuthStateChanged(auth, (user) => {
+        this.currentUser = user
+        this.handleAuthStateChange(user)
+      })
+    } else {
+      console.warn('Firebase auth not available - showing SEO content')
+      this.showSEOContent()
+    }
 
     // Track CTA interactions
     this.setupAnalytics()
@@ -132,11 +175,34 @@ class SEOAuthGateElement extends HTMLElement {
   handleAuthStateChange(user) {
     if (!user) {
       this.showSEOContent()
-    } else if (!hasRole(user, this.minRole)) {
+    } else if (!this.hasRequiredRole(user)) {
       this.showInsufficientPermissions()
     } else {
       this.loadProtectedContent()
     }
+  }
+
+  hasRequiredRole(user) {
+    // Simple role check - can be enhanced based on your needs
+    if (this.minRole === 'user') {
+      return true // Any authenticated user
+    }
+
+    // Check custom claims if available
+    const customClaims = user.customClaims || {}
+    const userRole = customClaims.role || 'user'
+
+    // Simple role hierarchy
+    const roleHierarchy = {
+      'user': 1,
+      'premium': 2,
+      'admin': 3
+    }
+
+    const requiredLevel = roleHierarchy[this.minRole] || 1
+    const userLevel = roleHierarchy[userRole] || 1
+
+    return userLevel >= requiredLevel
   }
 
   async loadProtectedContent(forceReload = false) {
@@ -154,12 +220,11 @@ class SEOAuthGateElement extends HTMLElement {
     try {
       this.showLoading()
 
-      const user = authClient.getCurrentUser()
-      if (!user) {
+      if (!this.currentUser) {
         throw new Error('User not authenticated')
       }
 
-      const token = await user.getIdToken()
+      const token = await this.currentUser.getIdToken()
       const response = await fetch(this.contentApiUrl, {
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -272,7 +337,7 @@ class SEOAuthGateElement extends HTMLElement {
         if (entry.isIntersecting) {
           this.trackEvent('premium_preview_viewed', {
             currentUrl: window.location.pathname,
-            authenticated: !!authClient.getCurrentUser(),
+            authenticated: !!this.currentUser,
             timestamp: Date.now()
           })
           observer.disconnect()
@@ -286,20 +351,22 @@ class SEOAuthGateElement extends HTMLElement {
   }
 
   trackEvent(eventName, properties) {
-    // Send to analytics if available
-    if (window.gtag) {
-      window.gtag('event', eventName, properties)
+    // Send to Google Analytics if available
+    if (typeof gtag !== 'undefined') {
+      gtag('event', eventName, properties)
     }
 
     // Log for debugging
     console.log(`Analytics: ${eventName}`, properties)
 
-    // Send to your analytics endpoint
+    // Send to your analytics endpoint (if available)
     fetch('/api/analytics', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ event: eventName, properties })
-    }).catch(err => console.warn('Analytics error:', err))
+    }).catch(() => {
+      // Silently fail - analytics shouldn't break the app
+    })
   }
 
   disconnectedCallback() {
