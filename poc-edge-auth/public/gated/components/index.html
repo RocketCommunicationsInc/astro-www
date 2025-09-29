@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components Documentation - Full Version</title>
+    <style>
+        body { font-family: system-ui; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+        .header { background: #d4edda; padding: 20px; border-radius: 8px; margin-bottom: 30px; }
+        .component { border: 1px solid #28a745; padding: 20px; margin: 20px 0; border-radius: 8px; background: #f8fff9; }
+        .component h3 { margin-top: 0; color: #28a745; }
+        .code { background: #263238; color: #aed581; padding: 15px; border-radius: 4px; font-family: 'Courier New', monospace; margin: 10px 0; overflow-x: auto; }
+        .notice { background: #d4edda; border: 1px solid #28a745; padding: 15px; border-radius: 5px; margin: 20px 0; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #007bff; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+        .badge { background: #28a745; color: white; padding: 2px 8px; border-radius: 3px; font-size: 0.85em; margin-left: 10px; }
+        .example { background: #f0f0f0; padding: 15px; border-radius: 5px; margin: 15px 0; }
+        .api-table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        .api-table th, .api-table td { padding: 10px; text-align: left; border: 1px solid #ddd; }
+        .api-table th { background: #f0f0f0; }
+        .logout-btn { float: right; padding: 8px 16px; background: #dc3545; color: white; text-decoration: none; border-radius: 4px; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <button onclick="logout()" class="logout-btn">Logout</button>
+    <a href="/" class="back-link">← Back to Home</a>
+
+    <div class="header">
+        <h1>📚 Component Documentation <span class="badge">FULL ACCESS</span></h1>
+        <p>Complete documentation with advanced features and implementation guides.</p>
+    </div>
+
+    <div class="notice">
+        <strong>✅ Authenticated Access:</strong> You have full access to all documentation, examples, and advanced features.
+    </div>
+
+    <h2>Available Components</h2>
+
+    <div class="component">
+        <h3>Button Component</h3>
+        <p>A versatile button component with multiple variants and advanced features.</p>
+
+        <h4>Basic Usage:</h4>
+        <div class="code">
+&lt;astro-button variant="primary"&gt;Click Me&lt;/astro-button&gt;
+        </div>
+
+        <h4>Advanced Example:</h4>
+        <div class="code">
+&lt;astro-button
+  variant="primary"
+  size="large"
+  icon="rocket"
+  loading={isLoading}
+  disabled={isDisabled}
+  onClick={handleClick}
+  data-analytics="cta-main"
+&gt;
+  Launch Application
+&lt;/astro-button&gt;
+        </div>
+
+        <h4>Complete API:</h4>
+        <table class="api-table">
+            <thead>
+                <tr>
+                    <th>Property</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>variant</td>
+                    <td>string</td>
+                    <td>primary</td>
+                    <td>primary | secondary | danger | ghost | link</td>
+                </tr>
+                <tr>
+                    <td>size</td>
+                    <td>string</td>
+                    <td>medium</td>
+                    <td>small | medium | large | xl</td>
+                </tr>
+                <tr>
+                    <td>icon</td>
+                    <td>string</td>
+                    <td>null</td>
+                    <td>Icon name from icon library</td>
+                </tr>
+                <tr>
+                    <td>loading</td>
+                    <td>boolean</td>
+                    <td>false</td>
+                    <td>Show loading spinner</td>
+                </tr>
+                <tr>
+                    <td>fullWidth</td>
+                    <td>boolean</td>
+                    <td>false</td>
+                    <td>Expand to full container width</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="example">
+            <h4>🔧 Implementation Notes:</h4>
+            <ul>
+                <li>Use <code>loading</code> state for async operations</li>
+                <li>Combine with <code>astro-tooltip</code> for additional context</li>
+                <li>Supports keyboard navigation (Enter/Space)</li>
+                <li>ARIA compliant with proper roles and labels</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="component">
+        <h3>Card Component</h3>
+        <p>A flexible container component with extensive customization options.</p>
+
+        <h4>Basic Usage:</h4>
+        <div class="code">
+&lt;astro-card title="My Card"&gt;Content here&lt;/astro-card&gt;
+        </div>
+
+        <h4>Advanced Example:</h4>
+        <div class="code">
+&lt;astro-card
+  title="Mission Status"
+  subtitle="Real-time monitoring"
+  headerIcon="satellite"
+  elevation={2}
+  interactive
+  onClick={handleCardClick}
+&gt;
+  &lt;astro-card-media
+    src="/mission-photo.jpg"
+    alt="Mission photo"
+    aspectRatio="16:9"
+  /&gt;
+  &lt;astro-card-content&gt;
+    &lt;p&gt;Mission parameters...&lt;/p&gt;
+  &lt;/astro-card-content&gt;
+  &lt;astro-card-actions&gt;
+    &lt;astro-button variant="primary"&gt;View Details&lt;/astro-button&gt;
+    &lt;astro-button variant="ghost"&gt;Share&lt;/astro-button&gt;
+  &lt;/astro-card-actions&gt;
+&lt;/astro-card&gt;
+        </div>
+
+        <h4>Complete API:</h4>
+        <table class="api-table">
+            <thead>
+                <tr>
+                    <th>Property</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>title</td>
+                    <td>string</td>
+                    <td>null</td>
+                    <td>Card header title</td>
+                </tr>
+                <tr>
+                    <td>subtitle</td>
+                    <td>string</td>
+                    <td>null</td>
+                    <td>Secondary header text</td>
+                </tr>
+                <tr>
+                    <td>elevation</td>
+                    <td>number</td>
+                    <td>1</td>
+                    <td>Shadow depth (0-5)</td>
+                </tr>
+                <tr>
+                    <td>interactive</td>
+                    <td>boolean</td>
+                    <td>false</td>
+                    <td>Add hover effects</td>
+                </tr>
+                <tr>
+                    <td>collapsible</td>
+                    <td>boolean</td>
+                    <td>false</td>
+                    <td>Allow expand/collapse</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="example">
+            <h4>🚀 Pro Tips:</h4>
+            <ul>
+                <li>Use <code>elevation={0}</code> for nested cards</li>
+                <li>Combine multiple cards in a <code>astro-grid</code> for layouts</li>
+                <li>Card actions support up to 3 buttons optimally</li>
+                <li>Use <code>collapsible</code> for long content sections</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="component">
+        <h3>Alert Component</h3>
+        <p>Comprehensive alert system with animations and advanced features.</p>
+
+        <h4>Basic Usage:</h4>
+        <div class="code">
+&lt;astro-alert type="info"&gt;Information message&lt;/astro-alert&gt;
+        </div>
+
+        <h4>Advanced Example:</h4>
+        <div class="code">
+&lt;astro-alert
+  type="warning"
+  title="System Maintenance"
+  dismissible
+  icon="warning"
+  onDismiss={handleDismiss}
+  autoClose={5000}
+  position="top-right"
+  animate="slide"
+&gt;
+  Scheduled maintenance window: 2:00 AM - 4:00 AM UTC
+  &lt;astro-alert-action&gt;
+    &lt;a href="/status"&gt;View Status Page&lt;/a&gt;
+  &lt;/astro-alert-action&gt;
+&lt;/astro-alert&gt;
+        </div>
+
+        <h4>Toast Notifications:</h4>
+        <div class="code">
+// JavaScript API for toast alerts
+import { showAlert } from '@astro/alerts';
+
+showAlert({
+  type: 'success',
+  message: 'Operation completed successfully',
+  duration: 3000,
+  position: 'bottom-center'
+});
+        </div>
+
+        <div class="example">
+            <h4>🎯 Best Practices:</h4>
+            <ul>
+                <li>Use <code>error</code> type sparingly for critical issues only</li>
+                <li>Set <code>autoClose</code> for transient notifications</li>
+                <li>Include action links for actionable alerts</li>
+                <li>Position based on importance and user flow</li>
+                <li>Test with screen readers for accessibility</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="notice">
+        <strong>📖 Additional Resources (Authenticated Only):</strong>
+        <ul>
+            <li>📹 Video tutorials for each component</li>
+            <li>🎨 Figma design files and specifications</li>
+            <li>🧪 Testing strategies and examples</li>
+            <li>⚡ Performance optimization guides</li>
+            <li>🔗 Integration with popular frameworks</li>
+            <li>📊 Analytics and tracking setup</li>
+        </ul>
+    </div>
+
+    <script>
+        // Logout function
+        async function logout() {
+            try {
+                const response = await fetch('/.netlify/functions/clear-auth-cookie', {
+                    method: 'POST',
+                    credentials: 'include'
+                });
+
+                if (response.ok) {
+                    window.location.href = '/components/';
+                }
+            } catch (error) {
+                console.error('Logout error:', error);
+            }
+        }
+    </script>
+</body>
+</html>

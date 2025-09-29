@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth Test Page</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .section {
+            background: #f5f5f5;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .status.success { background: #d4edda; color: #155724; }
+        .status.error { background: #f8d7da; color: #721c24; }
+        .status.info { background: #d1ecf1; color: #0c5460; }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover { background: #0056b3; }
+        button.danger { background: #dc3545; }
+        button.danger:hover { background: #c82333; }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        pre {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Authentication Test Page</h1>
+    <p>This page tests the Netlify Functions for authentication without requiring Edge Functions to be active.</p>
+
+    <div class="section">
+        <h2>1. Check Auth Status</h2>
+        <button onclick="checkAuth()">Check Authentication</button>
+        <div id="auth-status" class="status info" style="display: none;"></div>
+    </div>
+
+    <div class="section">
+        <h2>2. Test Login (Set Cookie)</h2>
+        <p>This simulates setting a session cookie after Firebase authentication.</p>
+        <input type="text" id="test-token" placeholder="Test token (any value)" value="test-token-12345">
+        <button onclick="testLogin()">Set Session Cookie</button>
+        <div id="login-status" class="status info" style="display: none;"></div>
+    </div>
+
+    <div class="section">
+        <h2>3. Test Logout (Clear Cookie)</h2>
+        <button onclick="testLogout()" class="danger">Clear Session Cookie</button>
+        <div id="logout-status" class="status info" style="display: none;"></div>
+    </div>
+
+    <div class="section">
+        <h2>4. Firebase Authentication (Real)</h2>
+        <input type="email" id="email" placeholder="Email" value="test@example.com">
+        <input type="password" id="password" placeholder="Password" value="password123">
+        <button onclick="realLogin()">Sign In with Firebase</button>
+        <button onclick="realLogout()" class="danger">Sign Out from Firebase</button>
+        <div id="firebase-status" class="status info" style="display: none;"></div>
+    </div>
+
+    <div class="section">
+        <h2>5. Test Results</h2>
+        <pre id="results"></pre>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js';
+        import { getAuth, signInWithEmailAndPassword, signOut } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js';
+
+        // Initialize Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyDRpHrzcKFxIl-JpSm1RhBdjhELUG7riWs",
+            authDomain: "cosmos-auth.firebaseapp.com",
+            projectId: "cosmos-auth-8be70",
+            appId: "1:291601667996:web:ddd311b4e9273933535a59"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        window.firebaseAuth = auth;
+
+        function log(message) {
+            const results = document.getElementById('results');
+            const timestamp = new Date().toLocaleTimeString();
+            results.textContent += `[${timestamp}] ${message}\n`;
+        }
+
+        window.checkAuth = async function() {
+            const statusEl = document.getElementById('auth-status');
+            statusEl.style.display = 'block';
+            statusEl.textContent = 'Checking...';
+            statusEl.className = 'status info';
+
+            try {
+                const response = await fetch('/.netlify/functions/check-auth', {
+                    credentials: 'include'
+                });
+                const data = await response.json();
+
+                if (data.authenticated) {
+                    statusEl.textContent = '✓ Authenticated - Session cookie found';
+                    statusEl.className = 'status success';
+                    log('AUTH CHECK: Authenticated');
+                } else {
+                    statusEl.textContent = '✗ Not Authenticated - No session cookie';
+                    statusEl.className = 'status error';
+                    log('AUTH CHECK: Not authenticated');
+                }
+            } catch (error) {
+                statusEl.textContent = `Error: ${error.message}`;
+                statusEl.className = 'status error';
+                log(`AUTH CHECK ERROR: ${error.message}`);
+            }
+        }
+
+        window.testLogin = async function() {
+            const statusEl = document.getElementById('login-status');
+            const token = document.getElementById('test-token').value;
+
+            statusEl.style.display = 'block';
+            statusEl.textContent = 'Setting cookie...';
+            statusEl.className = 'status info';
+
+            try {
+                const response = await fetch('/.netlify/functions/set-auth-cookie', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ token }),
+                    credentials: 'include'
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    statusEl.textContent = '✓ Session cookie set successfully!';
+                    statusEl.className = 'status success';
+                    log(`LOGIN: Cookie set with token: ${token.substring(0, 20)}...`);
+                } else {
+                    statusEl.textContent = `✗ Failed: ${data.error}`;
+                    statusEl.className = 'status error';
+                    log(`LOGIN ERROR: ${data.error}`);
+                }
+            } catch (error) {
+                statusEl.textContent = `Error: ${error.message}`;
+                statusEl.className = 'status error';
+                log(`LOGIN ERROR: ${error.message}`);
+            }
+        }
+
+        window.testLogout = async function() {
+            const statusEl = document.getElementById('logout-status');
+
+            statusEl.style.display = 'block';
+            statusEl.textContent = 'Clearing cookie...';
+            statusEl.className = 'status info';
+
+            try {
+                const response = await fetch('/.netlify/functions/clear-auth-cookie', {
+                    method: 'POST',
+                    credentials: 'include'
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    statusEl.textContent = '✓ Session cookie cleared successfully!';
+                    statusEl.className = 'status success';
+                    log('LOGOUT: Cookie cleared');
+                } else {
+                    statusEl.textContent = `✗ Failed: ${data.error}`;
+                    statusEl.className = 'status error';
+                    log(`LOGOUT ERROR: ${data.error}`);
+                }
+            } catch (error) {
+                statusEl.textContent = `Error: ${error.message}`;
+                statusEl.className = 'status error';
+                log(`LOGOUT ERROR: ${error.message}`);
+            }
+        }
+
+        window.realLogin = async function() {
+            const statusEl = document.getElementById('firebase-status');
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            statusEl.style.display = 'block';
+            statusEl.textContent = 'Signing in with Firebase...';
+            statusEl.className = 'status info';
+
+            try {
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                const token = await userCredential.user.getIdToken();
+
+                log(`FIREBASE LOGIN: User ${email} signed in`);
+                log(`FIREBASE TOKEN: ${token.substring(0, 50)}...`);
+
+                statusEl.textContent = 'Setting session cookie...';
+
+                // Set the session cookie
+                const response = await fetch('/.netlify/functions/set-auth-cookie', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ token }),
+                    credentials: 'include'
+                });
+
+                if (response.ok) {
+                    statusEl.textContent = `✓ Signed in as ${email} and session cookie set!`;
+                    statusEl.className = 'status success';
+                    log('SESSION COOKIE: Set successfully');
+                } else {
+                    statusEl.textContent = '✓ Signed in with Firebase but failed to set cookie';
+                    statusEl.className = 'status error';
+                }
+            } catch (error) {
+                statusEl.textContent = `✗ Firebase error: ${error.message}`;
+                statusEl.className = 'status error';
+                log(`FIREBASE ERROR: ${error.message}`);
+            }
+        }
+
+        window.realLogout = async function() {
+            const statusEl = document.getElementById('firebase-status');
+
+            statusEl.style.display = 'block';
+            statusEl.textContent = 'Signing out...';
+            statusEl.className = 'status info';
+
+            try {
+                await signOut(auth);
+
+                // Clear the session cookie
+                await fetch('/.netlify/functions/clear-auth-cookie', {
+                    method: 'POST',
+                    credentials: 'include'
+                });
+
+                statusEl.textContent = '✓ Signed out successfully!';
+                statusEl.className = 'status success';
+                log('FIREBASE LOGOUT: Signed out and cookie cleared');
+            } catch (error) {
+                statusEl.textContent = `✗ Error: ${error.message}`;
+                statusEl.className = 'status error';
+                log(`LOGOUT ERROR: ${error.message}`);
+            }
+        }
+
+        // Initial status check
+        log('Page loaded - ready for testing');
+        checkAuth();
+    </script>
+</body>
+</html>
