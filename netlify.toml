@@ -296,11 +296,11 @@
 #   function = "block-gated"
 
 # Protected auth routes (Stage 4)
-# Uncomment to protect with Edge Functions:
-# [[edge_functions]]
-#   path = "/auth/dashboard"
-#   function = "auth-guard"
-#
-# [[edge_functions]]
-#   path = "/auth/profile"
-#   function = "auth-guard"
+# ACTIVE - Edge protection on authenticated routes
+[[edge_functions]]
+  path = "/auth/dashboard"
+  function = "auth-guard"
+
+[[edge_functions]]
+  path = "/auth/profile"
+  function = "auth-guard"
