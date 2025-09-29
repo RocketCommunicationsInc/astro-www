@@ -1,0 +1,306 @@
+---
+/**
+ * SEO Comparison Demo
+ * Shows the difference between CSS hiding (bad) vs dynamic loading (good)
+ */
+import DefaultLayout from 'project:layouts/default/default-layout.astro'
+import AuthGate from 'project:components/auth/auth-gate.astro'
+import SEOAuthGate from 'project:components/auth/seo-auth-gate.astro'
+---
+
+<DefaultLayout
+  title="SEO-Friendly vs CSS-Hiding Comparison | Astro UXDS"
+  description="Compare different approaches to content protection for SEO"
+>
+  <main class="page" id="content">
+    <div class="comparison-header">
+      <h1>SEO-Friendly vs CSS-Hiding Comparison</h1>
+      <p>This page demonstrates the difference between the two approaches:</p>
+      <div class="alert">
+        <strong>🔍 Test Instructions:</strong> Right-click → View Page Source to see the difference!
+      </div>
+    </div>
+
+    <div class="comparison-grid">
+      <section class="approach-section bad-approach">
+        <h2>❌ Bad Approach: CSS Hiding</h2>
+        <p class="approach-description">
+          Content is always in HTML source - search engines see everything.
+          <strong>View page source to see the "secret" content below!</strong>
+        </p>
+
+        <AuthGate
+          loadingMessage="Checking authentication..."
+          loginMessage="This content uses CSS hiding - it's in the HTML source!"
+        >
+          <!-- 🚨 This content is ALWAYS in the HTML source -->
+          <div class="secret-content">
+            <h3>🔒 "Protected" Content (Actually Visible in Source)</h3>
+            <p>This is supposed to be premium content, but it's always in the HTML source.</p>
+            <div class="premium-code">
+              <h4>Secret Implementation</h4>
+              <pre><code>{'// This code is visible to search engines!\nconst secretFunction = () => {\n  return "Anyone can see this in view source"\n}\n\n// Premium features exposed in HTML\nconst premiumConfig = {\n  secretKey: "exposed-in-html",\n  hiddenFeatures: ["feature1", "feature2"]\n}'}</code></pre>
+            </div>
+            <p><strong>Problem:</strong> Search engines index this content, users can bypass protection with dev tools, and it creates SEO issues.</p>
+          </div>
+        </AuthGate>
+      </section>
+
+      <section class="approach-section good-approach">
+        <h2>✅ Good Approach: Dynamic Loading</h2>
+        <p class="approach-description">
+          Content loaded via API after authentication - never in HTML source.
+          <strong>Check page source - no protected content visible!</strong>
+        </p>
+
+        <SEOAuthGate
+          contentApiUrl="/api/protected-content/component-advanced"
+          fallbackTitle="SEO-Friendly Protected Content"
+          fallbackDescription="This content is loaded dynamically and never appears in the HTML source, making it truly SEO-friendly."
+        />
+      </section>
+    </div>
+
+    <div class="seo-benefits">
+      <h2>✅ SEO Benefits of Dynamic Loading</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <h3>🔍 Clean Search Results</h3>
+          <p>Search engines only see signup CTAs, not protected content</p>
+        </div>
+        <div class="benefit-card">
+          <h3>📈 Better Rankings</h3>
+          <p>No hidden content penalties or duplicate content issues</p>
+        </div>
+        <div class="benefit-card">
+          <h3>🎯 Proper Intent</h3>
+          <p>Search results accurately represent what users can access</p>
+        </div>
+        <div class="benefit-card">
+          <h3>⚡ Performance</h3>
+          <p>Smaller initial page size, content loaded on demand</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="implementation-notes">
+      <h2>Implementation Summary</h2>
+      <div class="note-sections">
+        <div class="note-section">
+          <h3>✅ What We Fixed:</h3>
+          <ul>
+            <li><strong>Conditional Rendering:</strong> Content only served after authentication</li>
+            <li><strong>Clean HTML Source:</strong> Premium content never in initial HTML</li>
+            <li><strong>Dynamic Loading:</strong> Protected content fetched via authenticated API</li>
+            <li><strong>SEO-Friendly:</strong> Search engines see signup prompts, not hidden content</li>
+          </ul>
+        </div>
+        <div class="note-section">
+          <h3>🛠 Implementation Approach:</h3>
+          <ul>
+            <li><code>SEOAuthGate</code> component with API-based content loading</li>
+            <li>Protected content API endpoints with authentication validation</li>
+            <li>Analytics tracking for user engagement insights</li>
+            <li>Fallback content for search engines and unauthenticated users</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+</DefaultLayout>
+
+<style>
+  .comparison-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+  }
+
+  .alert {
+    background: #fef3cd;
+    border: 1px solid #fecaca;
+    color: #92400e;
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+  }
+
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .approach-section {
+    padding: 2rem;
+    border-radius: 8px;
+    border: 2px solid;
+  }
+
+  .bad-approach {
+    border-color: #dc2626;
+    background: #fef2f2;
+  }
+
+  .good-approach {
+    border-color: #10b981;
+    background: #f0fdf4;
+  }
+
+  .approach-description {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 6px;
+  }
+
+  .bad-approach .approach-description {
+    background: #fee2e2;
+    border-left: 4px solid #dc2626;
+  }
+
+  .good-approach .approach-description {
+    background: #dcfce7;
+    border-left: 4px solid #10b981;
+  }
+
+  .secret-content {
+    background: #ffffff;
+    border: 2px dashed #dc2626;
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .premium-code {
+    background: #111827;
+    color: #f9fafb;
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+  }
+
+  .premium-code pre {
+    margin: 0;
+    overflow-x: auto;
+  }
+
+  .seo-benefits {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    border-radius: 8px;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .benefit-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .benefit-card h3 {
+    margin-bottom: 0.5rem;
+    color: #0066cc;
+  }
+
+  .implementation-notes {
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 3rem 0;
+  }
+
+  .note-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .note-section {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+  }
+
+  .note-section h3 {
+    margin-bottom: 1rem;
+    color: #111827;
+  }
+
+  .note-section ul {
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+
+  .note-section li {
+    margin-bottom: 0.5rem;
+  }
+
+  code {
+    background: #f1f5f9;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 768px) {
+    .comparison-grid,
+    .note-sections {
+      grid-template-columns: 1fr;
+    }
+
+    .benefits-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+// Add interactive demonstration
+document.addEventListener('DOMContentLoaded', () => {
+  // Highlight that bad approach content is in DOM
+  const secretContent = document.querySelector('.secret-content')
+  if (secretContent) {
+    secretContent.addEventListener('click', () => {
+      alert('This content is always in the DOM! Right-click → View Page Source to see it.')
+    })
+  }
+
+  // Add view source helper button
+  const viewSourceBtn = document.createElement('button')
+  viewSourceBtn.textContent = '👀 View Page Source to See Difference'
+  viewSourceBtn.className = 'view-source-btn'
+  viewSourceBtn.style.cssText = `
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 1rem 1.5rem;
+    background: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 1000;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  `
+
+  viewSourceBtn.addEventListener('click', () => {
+    window.open(`view-source:${window.location.href}`, '_blank')
+  })
+
+  document.body.appendChild(viewSourceBtn)
+})
+</script>
