@@ -9,18 +9,9 @@ assets:
   name: Clock
 ---
 
-## Interactive Example
+:::note
+📖 **Want to see more?** Sign in to access interactive examples, detailed implementation guidelines, and comprehensive component documentation.
 
-::tag{ is=a-playground tag=rux-clock }
+[Sign In](/auth/login/) | [Create Account](/auth/signup/)
+:::
 
-## Appearance and Behavior
-
-The Clock is not an interactive component. Time is always present. Date, AOS and LOS are optional. The time is UTC by default but can be configured for any time zone.
-
-The optional date feature uses the Julian day number format. Julian day number format requires 3 digits with placeholder 0s for the hundreds and tens places.
-
-All digits should be displayed using the system mono font, system font, or Roboto with [tabular numbers](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric) enabled. Monospace font and [Tabular number](https://www.fonts.com/content/learning/fontology/level-3/numbers/proportional-vs-tabular-figures) geometry ensure that the display will not jitter as the numbers change.
-
-## Examples
-
-![Example Clock](/img/components/clock/clock-roboto-mono.webp 'Example Clock')

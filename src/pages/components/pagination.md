@@ -6,32 +6,9 @@ assets:
     name: Pagination
 ---
 
-## Rules of Thumb
+:::note
+📖 **Want to see more?** Sign in to access interactive examples, detailed implementation guidelines, and comprehensive component documentation.
 
-- Do not use underlined text except for in hovered elements.
-- Use Pagination only when necessary. Instead, think about editing the content to fit onto one page.
-- Make each page a similar length.
-- If there is only one page, no Pagination is needed.
-- Be sure the current page is easily distinguishable from other pages referenced by the Pagination
-
-## Appearance and Behavior
-
-## Examples
-
-:::two-col
-![Offer a “Prev” and “Next” link where useful.](/img/components/pagination/pagination-1.webp)
-
-![Disable the “Prev” link when there are no more pages before the first numeral displayed.](/img/components/pagination/pagination-2.webp)
-
-![Disable the “Next” link when there are no more pages after the last numeral displayed.](/img/components/pagination/pagination-3.webp)
-
+[Sign In](/auth/login/) | [Create Account](/auth/signup/)
 :::
 
-## Pagination of Search Results
-
-:::two-col
-
-![Optionally, links for “Show all” and “Number of results” may be displayed below page numbers. Links are centered below the Pagination on the same baseline.](/img/components/pagination/pagination-4.webp)
-
-![When there are no Search results, suggest that the user amend the Search.](/img/components/pagination/pagination-5.webp)
-:::

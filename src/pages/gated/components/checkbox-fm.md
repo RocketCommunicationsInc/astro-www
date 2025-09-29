@@ -1,12 +1,18 @@
 ---
 title: Checkbox
-description: A Checkbox describes a state or value that can be either “On" or "Off.” Checkboxes are not mutually exclusive. More than one Checkbox may be checked at the same time.
+description: A Checkbox describes a state or value that can be either "On" or "Off." Checkboxes are not mutually exclusive. More than one Checkbox may be checked at the same time.
 layout: project:layouts/component-docs/component-docs-layout.astro
 storybook: forms-checkbox-group--default
 height: 188px
 git: rux-checkbox
 assets:
   name: Checkbox
+# NEW: Protection configuration
+protected: true
+protectionLevel: "partial"
+publicSections: ["title", "description", "appearance"]
+authMessage: "Sign in to access interactive examples, implementation guidelines, and design best practices."
+protectedSections: ["interactive", "rules"]
 ---
 
 ## Interactive Example
@@ -25,10 +31,10 @@ assets:
 
 A basic Checkbox consists of a visual indicator of its selected state followed by a label. Individual Checkboxes can appear selected (checked), Unselected (no check), and Disabled (no action can be taken by the user). An Indeterminate state (a dash symbol rather than checked) may display when a Checkbox is used as a parent of a group of Checkboxes where at least one child is selected and at least one is not.
 
-A Checkbox can be configured for required input. Help Text for individual Checkbox list items left-aligns with the item’s text and not its icon for easier text scanning. To learn more about adding Help Text or Validation to Checkboxes or Checkbox groups, see the [Forms and Validation](/patterns/forms-and-validation) guidance.
+A Checkbox can be configured for required input. Help Text for individual Checkbox list items left-aligns with the item's text and not its icon for easier text scanning. To learn more about adding Help Text or Validation to Checkboxes or Checkbox groups, see the [Forms and Validation](/patterns/forms-and-validation) guidance.
 
 :::note
-Don’t use a Checkbox to initiate an action. Instead, use an [Action Button](/components/button) or a [Switch Button](/components/switch)
+Don't use a Checkbox to initiate an action. Instead, use an [Action Button](/components/button) or a [Switch Button](/components/switch)
 :::
 
 ## Examples
@@ -36,17 +42,17 @@ Don’t use a Checkbox to initiate an action. Instead, use an [Action Button](/c
 :::two-col
 ![Do: Neatly arrange and group multiple Checkboxes whenever possible.](/img/components/checkbox/checkbox-do-1.webp 'Do: Neatly arrange and group multiple Checkboxes whenever possible.')
 
-![Don’t: Poorly placed and misaligned Checkboxes make it difficult for users to differentiate one state from another.](/img/components/checkbox/checkbox-dont-1.webp 'Don’t: Poorly placed and misaligned Checkboxes make it difficult for users to differentiate one state from another.')
+![Don't: Poorly placed and misaligned Checkboxes make it difficult for users to differentiate one state from another.](/img/components/checkbox/checkbox-dont-1.webp 'Don't: Poorly placed and misaligned Checkboxes make it difficult for users to differentiate one state from another.')
 :::
 
 :::two-col
 ![Do: Use parent Checkboxes, when grouped, to select all or select none.](/img/components/checkbox/checkbox-do-2.webp 'Do: Use parent Checkboxes, when grouped, to select all or select none.')
 
-![Don’t: Group a single Checkbox under a parent checkbox unless you have a good reason to do so.](/img/components/checkbox/checkbox-dont-2.webp 'Group a single Checkbox under a parent Checkbox unless you have a good reason to do so.')
+![Don't: Group a single Checkbox under a parent checkbox unless you have a good reason to do so.](/img/components/checkbox/checkbox-dont-2.webp 'Group a single Checkbox under a parent Checkbox unless you have a good reason to do so.')
 :::
 
 :::two-col
 ![Do: Reflect an indeterminate state when a mix of child values are applied.](/img/components/checkbox/checkbox-do-3.webp 'Do: Reflect an indeterminate state when a mix of child values are applied.')
 
-![Don’t: Group Checkboxes without a parent label.](/img/components/checkbox/checkbox-dont-3.webp 'Don’t: Group Checkboxes without a parent label.')
+![Don't: Group Checkboxes without a parent label.](/img/components/checkbox/checkbox-dont-3.webp 'Don't: Group Checkboxes without a parent label.')
 :::

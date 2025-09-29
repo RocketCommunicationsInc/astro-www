@@ -13,9 +13,8 @@
 		"check:js": "npx eslint 'src/**/*{.js,.ts}'",
 		"check:ts": "npx tsc --project tsconfig.json",
 		"fetch:images": "node node_modules/@astrouxds/astrouxds-figma-assets/index.js",
-		"generate:gated": "node scripts/generate-gated-content.js",
 		"start": "astro dev",
-		"build": "npm run generate:gated && astro build",
+		"build": "astro build",
 		"serve": "astro preview"
 	},
 	"devDependencies": {

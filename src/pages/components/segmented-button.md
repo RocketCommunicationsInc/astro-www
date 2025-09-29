@@ -9,30 +9,9 @@ assets:
   name: Segmented Button
 ---
 
-## Interactive Example
+:::note
+📖 **Want to see more?** Sign in to access interactive examples, detailed implementation guidelines, and comprehensive component documentation.
 
-::tag{ is=a-playground tag=rux-segmented-button }
-
-## Rules of Thumb
-
-- Use Segmented Buttons:
-  - To filter a Grid or Table.
-  - To switch a view's display mode.
-- One option must always be selected.
-
-## Appearance and Behavior
-
-To learn more about adding Help Text to Segmented Buttons, see the [Forms and Validation](/patterns/forms-and-validation) guidance.
-
-## Examples
-
-:::two-col
-![Do: Use Segmented Buttons to filter an associated table or grid.](/img/components/segmented-button/segmented-button-do-1.webp 'Do: Use Segmented Buttons to filter an associated Table or Grid.')
-
-![Don’t: Use Segmented Buttons to switch between separate views. Use Tabs instead.](/img/components/segmented-button/segmented-button-dont-1.webp 'Don’t: Use Segmented Buttons to switch between separate views. Use Tabs instead.')
-
-![Do: Use Segmented Buttons to switch a view’s display mode.](/img/components/segmented-button/segmented-button-do-2.webp 'Do: Use Segmented Buttons to switch a view’s display mode.')
-
-![Don’t: Use Segmented Buttons for user input in a form. Use Radio Buttons or Select Menus instead.](/img/components/segmented-button/segmented-button-dont-2.webp 'Don’t: Use Segmented Buttons for user input in a form. Use Radio Buttons or Select Menus instead.')
-
+[Sign In](/auth/login/) | [Create Account](/auth/signup/)
 :::
+

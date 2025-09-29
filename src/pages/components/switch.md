@@ -9,20 +9,9 @@ assets:
   name: Switch
 ---
 
-## Interactive Example
+:::note
+📖 **Want to see more?** Sign in to access interactive examples, detailed implementation guidelines, and comprehensive component documentation.
 
-::tag{ is=a-playground tag=rux-switch }
+[Sign In](/auth/login/) | [Create Account](/auth/signup/)
+:::
 
-## Rules of Thumb
-
-- Use a Switch for immediate state changes between two mutually exclusive options.
-- For non-immediate changes, use [Radio Buttons](/components/radio-button) for mutually exclusive options or [Checkboxes](/components/checkbox) for non-exclusive options.
-- For immediate actions instead of state changes, use an [action Button](/components/button).
-- On a page, each Switch is independent of all other Switches.
-- An intelligent default should be set for the initial state of a Switch.
-
-## Appearance and Behavior
-
-A Switch consists of a circular button that slides across a track to display the "Off" (left) or "On" (right) state. Clicking anywhere on the Switch component will cause the Switch to change states immediately.
-
-To learn more about adding Help Text to Switches, see the [Forms and Validation](/patterns/forms-and-validation) guidance.
