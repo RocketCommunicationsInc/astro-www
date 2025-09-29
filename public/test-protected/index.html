@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Protected Page - Test</title>
+		<style>
+			body {
+				font-family: system-ui, -apple-system, sans-serif;
+				max-width: 800px;
+				margin: 50px auto;
+				padding: 20px;
+				line-height: 1.6;
+			}
+			.success-banner {
+				background: #d4edda;
+				border: 2px solid #28a745;
+				color: #155724;
+				padding: 20px;
+				border-radius: 8px;
+				margin: 20px 0;
+			}
+			.info-box {
+				background: #f8f9fa;
+				border: 1px solid #dee2e6;
+				padding: 20px;
+				border-radius: 8px;
+				margin: 20px 0;
+			}
+			button {
+				padding: 10px 20px;
+				margin: 5px;
+				background: #dc3545;
+				color: white;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+			button:hover {
+				background: #c82333;
+			}
+			a {
+				color: #007bff;
+				text-decoration: none;
+			}
+			a:hover {
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>🔒 Protected Page</h1>
+
+		<div class="success-banner">
+			<h2>✅ Success! You are authenticated!</h2>
+			<p>
+				This page is protected by the <code>auth-guard</code> edge function. If
+				you can see this message, it means:
+			</p>
+			<ul>
+				<li>✓ Your browser has a valid <code>firebase_session</code> cookie</li>
+				<li>✓ The edge function intercepted the request at the CDN level</li>
+				<li>✓ The edge function verified your session and allowed access</li>
+				<li>✓ This HTML was served ONLY because you're authenticated</li>
+			</ul>
+		</div>
+
+		<div class="info-box">
+			<h3>How Edge Protection Works</h3>
+			<ol>
+				<li>You requested <code>/test-protected/</code></li>
+				<li>
+					<strong>Before</strong> serving any HTML, the edge function checked
+					your <code>firebase_session</code> cookie
+				</li>
+				<li>Cookie was valid → You got this page</li>
+				<li>
+					If cookie was invalid → You would have been redirected to
+					<code>/login.html</code>
+				</li>
+			</ol>
+			<p>
+				<strong>Key Point:</strong> Without a valid cookie, you would
+				<em>never</em> see this HTML. The redirect happens at the network edge
+				before any content is sent to your browser.
+			</p>
+		</div>
+
+		<div class="info-box">
+			<h3>Test Navigation</h3>
+			<ul>
+				<li>
+					<a href="/test-protected/secret.html">Another Protected Page</a> -
+					Also protected
+				</li>
+				<li>
+					<a href="/test-auth.html">Auth Test Page</a> - Public page with auth
+					controls
+				</li>
+				<li><a href="/auth/login">Login Page</a> - Astro login page</li>
+				<li><a href="/">Home</a> - Public home page</li>
+			</ul>
+		</div>
+
+		<button onclick="logout()">Logout and Clear Cookie</button>
+
+		<script type="module">
+			window.logout = async function () {
+				try {
+					const response = await fetch(
+						'/.netlify/functions/clear-auth-cookie',
+						{
+							method: 'POST',
+							credentials: 'include',
+						}
+					);
+
+					if (response.ok) {
+						alert(
+							'Logged out! You will be redirected if you try to access this page again.'
+						);
+						window.location.href = '/auth/login';
+					}
+				} catch (error) {
+					console.error('Logout error:', error);
+					alert('Logout error - try clearing browser cookies manually');
+				}
+			};
+		</script>
+	</body>
+</html>

@@ -278,10 +278,10 @@
 # Stage 1: Added but not activated on existing routes yet
 
 # Test route for Edge Function authentication (Stage 3)
-# Uncomment to test:
-# [[edge_functions]]
-#   path = "/test-protected/*"
-#   function = "auth-guard"
+# ACTIVE - Testing edge function protection
+[[edge_functions]]
+  path = "/test-protected/*"
+  function = "auth-guard"
 
 # Content gating for documentation (Stage 5)
 # Uncomment to activate:
