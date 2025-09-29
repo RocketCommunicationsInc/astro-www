@@ -157,7 +157,23 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       try {
-        await authClient.signIn(email, password)
+        // Sign in with Firebase
+        const userCredential = await authClient.signIn(email, password)
+
+        // Get Firebase ID token
+        const token = await userCredential.user.getIdToken()
+
+        // Set HTTP-only cookie via Netlify function for edge function protection
+        const cookieResponse = await fetch('/.netlify/functions/set-auth-cookie', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ token }),
+          credentials: 'include'
+        })
+
+        if (!cookieResponse.ok) {
+          throw new Error('Failed to set authentication cookie')
+        }
 
         // Redirect after successful login
         const redirectUrl = getRedirectUrl(window.location.search)

@@ -14,7 +14,7 @@ export default async function handler(request, context) {
 			'[Edge Function] No session cookie found, redirecting to login'
 		);
 		// No cookie = not authenticated, redirect to login
-		return Response.redirect(new URL('/auth/login', request.url), 302);
+		return Response.redirect(new URL('/auth/login/', request.url), 302);
 	}
 
 	// In production, we would:

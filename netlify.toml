@@ -298,9 +298,9 @@
 # Protected auth routes (Stage 4)
 # ACTIVE - Edge protection on authenticated routes
 [[edge_functions]]
-  path = "/auth/dashboard"
+  path = "/auth/dashboard/*"
   function = "auth-guard"
 
 [[edge_functions]]
-  path = "/auth/profile"
+  path = "/auth/profile/*"
   function = "auth-guard"

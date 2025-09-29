@@ -189,7 +189,14 @@ class AuthNavElement extends HTMLElement {
           this.signOutButton.disabled = true
           this.signOutButton.textContent = 'Signing out...'
 
+          // Sign out from Firebase
           await authClient.signOut()
+
+          // Clear the HTTP-only cookie via Netlify function
+          await fetch('/.netlify/functions/clear-auth-cookie', {
+            method: 'POST',
+            credentials: 'include'
+          })
 
           // Redirect to home
           window.location.href = '/'
