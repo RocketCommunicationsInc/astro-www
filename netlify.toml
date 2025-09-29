@@ -2,6 +2,7 @@
 	publish = "dist/"
 	command = "npm run build"
     functions = "netlify/functions"
+    edge_functions = "netlify/edge-functions"
 
 [context.production]
 	NODE_VERSION = "18.16.0"
@@ -272,3 +273,34 @@
 	to = "/foundations/grid/"
 	status = 301
 	force = true
+
+# Edge Functions Configuration
+# Stage 1: Added but not activated on existing routes yet
+
+# Test route for Edge Function authentication (Stage 3)
+# Uncomment to test:
+# [[edge_functions]]
+#   path = "/test-protected/*"
+#   function = "auth-guard"
+
+# Content gating for documentation (Stage 5)
+# Uncomment to activate:
+# [[edge_functions]]
+#   path = "/components/*"
+#   function = "content-gate"
+
+# Block direct access to gated content (Stage 5)
+# Uncomment to activate:
+# [[edge_functions]]
+#   path = "/gated/*"
+#   function = "block-gated"
+
+# Protected auth routes (Stage 4)
+# Uncomment to protect with Edge Functions:
+# [[edge_functions]]
+#   path = "/auth/dashboard"
+#   function = "auth-guard"
+#
+# [[edge_functions]]
+#   path = "/auth/profile"
+#   function = "auth-guard"
