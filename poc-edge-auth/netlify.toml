@@ -1,0 +1,28 @@
+[[edge_functions]]
+  path = "/dashboard.html"
+  function = "auth-guard"
+
+[[edge_functions]]
+  path = "/dashboard"
+  function = "auth-guard"
+
+[[edge_functions]]
+  path = "/admin.html"
+  function = "auth-guard"
+
+[[edge_functions]]
+  path = "/admin"
+  function = "auth-guard"
+
+[build]
+  base = "poc-edge-auth"
+  publish = "public"
+  functions = "netlify/functions"
+  edge_functions = "netlify/edge-functions"
+
+[dev]
+  port = 8080
+  framework = "#static"
+  publish = "public"
+  functionsDir = "netlify/functions"
+  edgeFunctionsDir = "netlify/edge-functions"

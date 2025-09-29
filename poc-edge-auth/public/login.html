@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Login - Edge Auth POC</title>
+		<style>
+			body {
+				font-family: system-ui;
+				max-width: 400px;
+				margin: 50px auto;
+				padding: 20px;
+			}
+			.form-group {
+				margin: 15px 0;
+			}
+			label {
+				display: block;
+				margin-bottom: 5px;
+			}
+			input {
+				width: 100%;
+				padding: 8px;
+				border: 1px solid #ddd;
+				border-radius: 4px;
+			}
+			button {
+				width: 100%;
+				padding: 10px;
+				background: #007bff;
+				color: white;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+			button:hover {
+				background: #0056b3;
+			}
+			.error {
+				color: red;
+				margin: 10px 0;
+			}
+			.success {
+				color: green;
+				margin: 10px 0;
+			}
+			.loading {
+				color: #666;
+				margin: 10px 0;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Login</h1>
+		<p>Sign in to access protected pages</p>
+
+		<form id="login-form">
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input type="email" id="email" required value="test@example.com" />
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label>
+				<input type="password" id="password" required value="password123" />
+			</div>
+			<button type="submit">Login</button>
+		</form>
+
+		<div id="message"><div class="loading">Loading configuration...</div></div>
+
+		<p><a href="/">← Back to Home</a></p>
+
+		<script type="module">
+			import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js';
+			import {
+				getAuth,
+				signInWithEmailAndPassword,
+			} from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js';
+
+			// Fetch Firebase config from environment variables via Netlify Function
+			async function initializeFirebase() {
+				try {
+					const response = await fetch('/.netlify/functions/firebase-config');
+					if (!response.ok) {
+						throw new Error('Failed to load Firebase config');
+					}
+					const firebaseConfig = await response.json();
+
+					// Validate that all required fields are present
+					if (
+						!firebaseConfig.apiKey ||
+						!firebaseConfig.authDomain ||
+						!firebaseConfig.projectId
+					) {
+						throw new Error(
+							'Missing Firebase configuration. Please check your .env file.'
+						);
+					}
+
+					console.log('Firebase config loaded successfully from .env');
+					document.getElementById('message').innerHTML = ''; // Clear loading message
+
+					const app = initializeApp(firebaseConfig);
+					return getAuth(app);
+				} catch (error) {
+					console.error('Error loading Firebase config:', error);
+					document.getElementById(
+						'message'
+					).innerHTML = `<div class="error">Failed to load configuration: ${error.message}<br>
+                    Make sure your .env file contains:<br>
+                    PUBLIC_FIREBASE_API_KEY<br>
+                    PUBLIC_FIREBASE_AUTH_DOMAIN<br>
+                    PUBLIC_FIREBASE_PROJECT_ID<br>
+                    PUBLIC_FIREBASE_APP_ID</div>`;
+					return null;
+				}
+			}
+
+			// Initialize Firebase and set up form handler
+			initializeFirebase().then((auth) => {
+				if (!auth) {
+					document.getElementById('login-form').style.display = 'none';
+					return;
+				}
+
+				document
+					.getElementById('login-form')
+					.addEventListener('submit', async (e) => {
+						e.preventDefault();
+						const messageEl = document.getElementById('message');
+						const email = document.getElementById('email').value;
+						const password = document.getElementById('password').value;
+
+						try {
+							messageEl.innerHTML = '<div class="success">Signing in...</div>';
+
+							// Real Firebase authentication
+							const userCredential = await signInWithEmailAndPassword(
+								auth,
+								email,
+								password
+							);
+							const token = await userCredential.user.getIdToken();
+
+							messageEl.innerHTML =
+								'<div class="success">Login successful! Setting auth cookie...</div>';
+
+							// Call Netlify Function to set HTTP-only cookie
+							const response = await fetch(
+								'/.netlify/functions/set-auth-cookie',
+								{
+									method: 'POST',
+									headers: { 'Content-Type': 'application/json' },
+									body: JSON.stringify({ token }),
+								}
+							);
+
+							if (!response.ok) {
+								throw new Error('Failed to set auth cookie');
+							}
+
+							messageEl.innerHTML =
+								'<div class="success">Authentication complete! Redirecting...</div>';
+
+							// Redirect to dashboard
+							setTimeout(() => {
+								window.location.href = '/dashboard.html';
+							}, 1000);
+						} catch (error) {
+							messageEl.innerHTML = `<div class="error">Login failed: ${error.message}</div>`;
+						}
+					});
+			});
+		</script>
+	</body>
+</html>

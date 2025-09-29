@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dashboard - Edge Auth POC</title>
+		<style>
+			body {
+				font-family: system-ui;
+				max-width: 600px;
+				margin: 50px auto;
+				padding: 20px;
+			}
+			.success {
+				padding: 15px;
+				background: #d4edda;
+				color: #155724;
+				border: 1px solid #c3e6cb;
+				border-radius: 5px;
+				margin: 20px 0;
+			}
+			.button {
+				display: inline-block;
+				padding: 10px 20px;
+				background: #dc3545;
+				color: white;
+				text-decoration: none;
+				border-radius: 5px;
+				cursor: pointer;
+				border: none;
+			}
+			.info {
+				background: #e7f3ff;
+				padding: 15px;
+				border-radius: 5px;
+				margin: 20px 0;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>🔒 Protected Dashboard</h1>
+
+		<div class="success">
+			<strong>✓ You are authenticated!</strong>
+			<p>
+				This page is only visible because the Edge Function verified your
+				session cookie.
+			</p>
+		</div>
+
+		<div class="info">
+			<h3>What just happened?</h3>
+			<ol>
+				<li>You requested /dashboard</li>
+				<li>Edge Function intercepted the request at CDN level</li>
+				<li>It checked your firebase_session cookie</li>
+				<li>Cookie was valid, so it served this HTML</li>
+				<li>Without valid cookie, you'd be redirected to /login</li>
+			</ol>
+		</div>
+
+		<h2>User Info</h2>
+		<p>In a real implementation, user data would be here.</p>
+
+		<button onclick="logout()" class="button">Logout</button>
+
+		<p><a href="/">← Back to Home</a></p>
+
+		<script>
+			async function logout() {
+				try {
+					// Call the Netlify function to clear the HTTP-only cookie
+					const response = await fetch(
+						'/.netlify/functions/clear-auth-cookie',
+						{
+							method: 'POST',
+							credentials: 'include',
+						}
+					);
+
+					if (response.ok) {
+						console.log('Logged out successfully');
+						// Redirect to home page
+						window.location.href = '/';
+					} else {
+						alert('Logout failed - try clearing browser cookies manually');
+						console.error('Logout failed:', response.status);
+					}
+				} catch (error) {
+					console.error('Logout error:', error);
+					alert('Logout error - try clearing browser cookies manually');
+				}
+			}
+		</script>
+	</body>
+</html>

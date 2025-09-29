@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Edge Auth POC - Home</title>
+		<style>
+			body {
+				font-family: system-ui;
+				max-width: 600px;
+				margin: 50px auto;
+				padding: 20px;
+			}
+			.button {
+				display: inline-block;
+				padding: 10px 20px;
+				background: #007bff;
+				color: white;
+				text-decoration: none;
+				border-radius: 5px;
+				margin: 10px 5px;
+			}
+			.status {
+				padding: 10px;
+				background: #f0f0f0;
+				border-radius: 5px;
+				margin: 20px 0;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Edge Authentication POC</h1>
+		<p>This is a public page - anyone can access it.</p>
+
+		<div class="status">
+			<strong>Authentication Status:</strong>
+			<span id="auth-status">Checking...</span>
+		</div>
+
+		<h2>Navigation</h2>
+		<a href="/login.html" class="button">Login Page</a>
+		<a href="/dashboard.html" class="button">Dashboard (Protected)</a>
+		<a href="/admin.html" class="button">Admin (Protected)</a>
+		<button onclick="logout()" class="button" style="background: #dc3545">
+			Logout
+		</button>
+
+		<h2>How This Works</h2>
+		<ul>
+			<li>Public pages (like this one) are accessible to everyone</li>
+			<li>Protected pages (/dashboard, /admin) require authentication</li>
+			<li>Edge Functions check auth BEFORE serving the page</li>
+			<li>If not authenticated, you're redirected to login</li>
+		</ul>
+
+		<script type="module">
+			// Check if user has a session cookie
+			// Note: HttpOnly cookies can't be read by JavaScript, so we'll check via a function
+			async function checkAuthStatus() {
+				try {
+					// Try to fetch a protected resource or check auth status
+					const response = await fetch('/.netlify/functions/check-auth', {
+						credentials: 'include',
+					});
+
+					if (response.ok) {
+						document.getElementById('auth-status').textContent =
+							'Logged In (Cookie is set)';
+					} else {
+						document.getElementById('auth-status').textContent =
+							'Not Logged In';
+					}
+				} catch (error) {
+					// Fallback to checking if we can read any cookies (non-HttpOnly ones)
+					const hasCookie = document.cookie.includes('firebase_session');
+					document.getElementById('auth-status').textContent = hasCookie
+						? 'Logged In (Visible Cookie)'
+						: 'Not Logged In (No visible cookies)';
+				}
+			}
+
+			checkAuthStatus();
+
+			// Logout function - make it global so button can call it
+			window.logout = async function () {
+				try {
+					const response = await fetch(
+						'/.netlify/functions/clear-auth-cookie',
+						{
+							method: 'POST',
+							credentials: 'include',
+						}
+					);
+
+					if (response.ok) {
+						console.log('Logged out successfully');
+						window.location.reload(); // Reload to update status
+					} else {
+						alert('Logout failed - try clearing browser cookies manually');
+					}
+				} catch (error) {
+					console.error('Logout error:', error);
+					alert('Logout error - try clearing browser cookies manually');
+				}
+			};
+		</script>
+	</body>
+</html>

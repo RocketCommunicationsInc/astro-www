@@ -1,0 +1,14 @@
+{
+  "name": "poc-edge-auth",
+  "version": "1.0.0",
+  "description": "Minimal POC for Edge Function Authentication",
+  "scripts": {
+    "dev": "netlify dev"
+  },
+  "dependencies": {
+    "firebase": "^10.7.0"
+  },
+  "devDependencies": {
+    "@netlify/edge-functions": "^2.3.0"
+  }
+}
