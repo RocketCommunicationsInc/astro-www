@@ -284,16 +284,16 @@
   function = "auth-guard"
 
 # Content gating for documentation (Stage 5)
-# Uncomment to activate:
-# [[edge_functions]]
-#   path = "/components/*"
-#   function = "content-gate"
+# ACTIVE - Serving different content based on authentication
+[[edge_functions]]
+  path = "/components/*"
+  function = "content-gate"
 
 # Block direct access to gated content (Stage 5)
-# Uncomment to activate:
-# [[edge_functions]]
-#   path = "/gated/*"
-#   function = "block-gated"
+# ACTIVE - Prevents direct access to premium content
+[[edge_functions]]
+  path = "/gated/*"
+  function = "block-gated"
 
 # Protected auth routes (Stage 4)
 # ACTIVE - Edge protection on authenticated routes
