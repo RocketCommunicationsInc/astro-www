@@ -23,7 +23,9 @@ class Auth0Manager {
 					redirect_uri: window.location.origin,
 					audience: `https://${domain}/api/v2/`
 				},
-				cacheLocation: 'localstorage'
+				cacheLocation: 'localstorage',
+				// Configure for popup mode
+				useRefreshTokens: true
 			})
 
 			// Check if user is authenticated
@@ -33,10 +35,7 @@ class Auth0Manager {
 				this.user = await this.auth0.getUser()
 			}
 
-			// Handle redirect callback
-			if (window.location.search.includes('code=') && window.location.search.includes('state=')) {
-				await this.handleRedirectCallback()
-			}
+			// No redirect callback needed for popup mode
 
 			this.isInitialized = true
 			this.updateUI()
@@ -65,14 +64,23 @@ class Auth0Manager {
 		if (!this.auth0) await this.init()
 
 		try {
-			// Use modal login if available, otherwise fallback to redirect
-			if (window.showLoginModal) {
-				window.showLoginModal()
-			} else {
-				await this.auth0.loginWithRedirect()
+			// Use popup login for better UX (users can close popup to cancel)
+			await this.auth0.loginWithPopup()
+			
+			// Update authentication state after popup login
+			this.isAuthenticated = await this.auth0.isAuthenticated()
+			if (this.isAuthenticated) {
+				this.user = await this.auth0.getUser()
 			}
+			
+			this.updateUI()
 		} catch (error) {
-			console.error('Login error:', error)
+			// User cancelled popup or other error
+			if (error.error === 'cancelled') {
+				console.log('Login cancelled by user')
+			} else {
+				console.error('Login error:', error)
+			}
 		}
 	}
 
