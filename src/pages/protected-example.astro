@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/docs/docs-layout.astro'
+import ProtectedWrapper from '../components/auth/ProtectedWrapper.astro'
+
+const content = {
+	title: 'Protected Content',
+	description: 'This page requires authentication'
+}
+---
+
+<Layout content={content} file={import.meta.url}>
+	<ProtectedWrapper fallback="Please sign in to view this protected content.">
+		<h1>Welcome to Protected Content!</h1>
+		<p>Hello, <span data-auth-user>User</span>!</p>
+		<p>This content is only visible to authenticated users.</p>
+
+		<div class="user-info">
+			<h3>User Information</h3>
+			<p>You are successfully authenticated and can see this protected content.</p>
+		</div>
+	</ProtectedWrapper>
+</Layout>
+
+<style>
+	.user-info {
+		background: var(--color-background-success, #f0f8ff);
+		padding: 1rem;
+		border-radius: 4px;
+		margin-top: 1rem;
+	}
+</style>
