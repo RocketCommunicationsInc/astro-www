@@ -8,6 +8,7 @@ import SourceCodeAccess from 'project:components/source-code-access/source-code-
 import globalData from 'project:data/global.json'
 import SiteNavigation from 'project:components/site-navigation/site-navigation.astro'
 import SiteFooter from 'project:components/site-footer/site-footer.astro'
+import CustomSignupForm from 'project:components/auth/CustomSignupForm.astro'
 
 export type { Props }
 
@@ -41,6 +42,7 @@ const attrs = {
 		<SiteFooter />
 	</div>
 	<SourceCodeAccess />
+	<CustomSignupForm />
 </Document>
 <script>
 import './default-layout.client'

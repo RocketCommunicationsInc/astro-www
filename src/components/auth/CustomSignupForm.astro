@@ -1,0 +1,443 @@
+---
+// Custom signup form that captures company field
+---
+
+<div id="signup-modal" class="modal-overlay" style="display: none;">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Create Your Account</h2>
+      <button class="modal-close" onclick="closeSignupModal()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <form id="custom-signup-form">
+        <div class="form-group">
+          <label for="signup-email">Email *</label>
+          <input
+            type="email"
+            id="signup-email"
+            name="email"
+            required
+            placeholder="Enter your email"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="signup-password">Password *</label>
+          <input
+            type="password"
+            id="signup-password"
+            name="password"
+            required
+            placeholder="Enter your password"
+            minlength="8"
+          >
+          <div class="password-requirements">
+            Password must be at least 8 characters and contain 3 of the following: lowercase letters, uppercase letters, numbers, special characters (!@#$%^&*)
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="signup-name">Full Name *</label>
+          <input
+            type="text"
+            id="signup-name"
+            name="name"
+            required
+            placeholder="Enter your full name"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="signup-company">Company *</label>
+          <input
+            type="text"
+            id="signup-company"
+            name="company"
+            required
+            placeholder="Enter your company name"
+          >
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="signup-btn" id="signup-submit">
+            Create Account
+          </button>
+          <button type="button" class="cancel-btn" onclick="closeSignupModal()">
+            Cancel
+          </button>
+        </div>
+
+        <div class="form-footer">
+          <p>Already have an account? <button type="button" class="link-btn" onclick="switchToLogin()">Sign In</button></p>
+        </div>
+      </form>
+
+      <div id="signup-error" class="error-message" style="display: none;"></div>
+      <div id="signup-success" class="success-message" style="display: none;">
+        Account created successfully! Please check your email to verify your account.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function showSignupModal() {
+    const modal = document.getElementById('signup-modal')
+
+    if (modal) {
+      modal.style.display = 'flex'
+    }
+
+    const emailInput = document.getElementById('signup-email')
+    if (emailInput) {
+      setTimeout(() => emailInput.focus(), 100)
+    }
+  } function closeSignupModal() {
+    const modal = document.getElementById('signup-modal')
+    if (modal) modal.style.display = 'none'
+    clearSignupForm()
+  }
+
+  function clearSignupForm() {
+    const form = document.getElementById('custom-signup-form')
+    const errorDiv = document.getElementById('signup-error')
+    const successDiv = document.getElementById('signup-success')
+
+    if (form) form.reset()
+    if (errorDiv) errorDiv.style.display = 'none'
+    if (successDiv) successDiv.style.display = 'none'
+  }
+
+  function switchToLogin() {
+    closeSignupModal()
+    // Trigger regular Auth0 login
+    if (window.authManager) {
+      window.authManager.login()
+    }
+  }
+
+  function showError(message) {
+    const errorDiv = document.getElementById('signup-error')
+    const successDiv = document.getElementById('signup-success')
+
+    if (errorDiv) {
+      errorDiv.textContent = message
+      errorDiv.style.display = 'block'
+    }
+    if (successDiv) successDiv.style.display = 'none'
+  }
+
+  function showSuccess() {
+    const errorDiv = document.getElementById('signup-error')
+    const successDiv = document.getElementById('signup-success')
+
+    if (successDiv) successDiv.style.display = 'block'
+    if (errorDiv) errorDiv.style.display = 'none'
+  }
+
+  // Make functions global immediately
+  window.showSignupModal = showSignupModal
+  window.closeSignupModal = closeSignupModal
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('custom-signup-form')
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault()
+
+      const submitBtn = document.getElementById('signup-submit')
+      const originalText = submitBtn.textContent
+      submitBtn.textContent = 'Creating Account...'
+      submitBtn.disabled = true
+
+      try {
+        const formData = new FormData(form)
+        const email = formData.get('email')
+        const password = formData.get('password')
+        const name = formData.get('name')
+        const company = formData.get('company')
+
+        // Get Auth0 configuration
+        const domain = document.querySelector('meta[name="auth0-domain"]')?.content
+        const clientId = document.querySelector('meta[name="auth0-client-id"]')?.content
+
+        if (!domain || !clientId) {
+          throw new Error('Auth0 configuration missing')
+        }
+
+        // Prepare signup payload
+        const signupPayload = {
+          client_id: clientId,
+          connection: 'Username-Password-Authentication', // Default connection name
+          email,
+          password,
+          name, // User profile attribute
+          user_metadata: {
+            company // Custom field
+          }
+        }
+
+        console.log('Sending signup request:', { ...signupPayload, password: '[REDACTED]' })
+
+        // Call Auth0 signup endpoint
+        const signupResponse = await fetch(`https://${domain}/dbconnections/signup`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(signupPayload)
+        })
+
+        if (!signupResponse.ok) {
+          const errorData = await signupResponse.json()
+          console.error('Auth0 signup error response:', errorData)
+
+          let errorMessage = 'Signup failed'
+          if (errorData.message) {
+            errorMessage = errorData.message
+          } else if (errorData.description && typeof errorData.description === 'string') {
+            errorMessage = errorData.description
+          } else if (errorData.description && errorData.description.length > 0) {
+            errorMessage = errorData.description[0]
+          } else if (errorData.error_description) {
+            errorMessage = errorData.error_description
+          }
+
+          // Handle specific password errors
+          if (errorData.name === 'PasswordStrengthError' && errorData.policy) {
+            errorMessage = `Password is too weak. Requirements:\n${errorData.policy}`
+          }
+
+          throw new Error(errorMessage)
+        }
+
+        const result = await signupResponse.json()
+        console.log('Signup successful:', result)
+
+        // Show success message
+        showSuccess()
+
+        // Clear form
+        form.reset()
+
+        // Optionally redirect to login after a delay
+        setTimeout(() => {
+          closeSignupModal()
+          // Trigger login flow
+          if (window.authManager) {
+            window.authManager.login()
+          }
+        }, 3000)
+      } catch (error) {
+        console.error('Signup error:', error)
+        const errorMessage = error instanceof Error ? error.message : 'Failed to create account. Please try again.'
+        showError(errorMessage)
+      } finally {
+        submitBtn.textContent = originalText
+        submitBtn.disabled = false
+      }
+    })
+  })
+</script>
+
+<style>
+  :global(.modal-overlay) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    pointer-events: auto;
+  }
+
+  :global(.modal-content) {
+    background: var(--BaseColor);
+    border-radius: var(--EdgeRadius);
+    width: 90%;
+    max-width: 450px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--SurfaceColor);
+  }
+
+  :global(.modal-header) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6--step 8--step;
+    border-bottom: 1px solid var(--SurfaceColor);
+    background: var(--SurfaceHeaderColor);
+    border-radius: var(--EdgeRadius) var(--EdgeRadius) 0 0;
+  }
+
+  :global(.modal-header h2) {
+    margin: 0;
+    color: var(--PrimaryColor);
+    font-size: 20--rpx;
+    font-weight: 300;
+  }
+
+  :global(.modal-close) {
+    background: none;
+    border: none;
+    font-size: 24--rpx;
+    cursor: pointer;
+    color: var(--PrimaryColor);
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--EdgeRadius);
+  }
+
+  :global(.modal-close:hover) {
+    color: var(--InteractiveHoverColor);
+    background: var(--SurfaceColor);
+  }
+
+  :global(.modal-body) {
+    padding: 8--step;
+  }
+
+  :global(.form-group) {
+    margin-bottom: 6--step;
+  }
+
+  :global(.form-group label) {
+    display: block;
+    margin-bottom: 2--step;
+    font-weight: 400;
+    color: var(--PrimaryColor);
+    font-size: 14--rpx;
+  }
+
+  :global(.form-group input) {
+    width: 100%;
+    padding-block: 3--step;
+    padding-inline-start: 4--step;
+    border: none;
+    border-radius: var(--EdgeRadius);
+    font-size: 16--rpx;
+    box-sizing: border-box;
+    background: var(--BaseColor);
+    color: var(--PrimaryColor);
+    box-shadow: var(--InteractiveMutedColor) 0 0 0 1px inset;
+  }
+
+  :global(.form-group input:focus) {
+    outline: none;
+    box-shadow: var(--InteractiveHoverColor) 0 0 0 1px inset;
+  }
+
+  :global(.form-group input:hover) {
+    box-shadow: var(--InteractiveHoverColor) 0 0 0 1px inset;
+  }
+
+  :global(.password-requirements) {
+    font-size: 12--rpx;
+    color: var(--SecondaryColor);
+    margin-top: 2--step;
+    line-height: 1.4;
+  }
+
+  :global(.form-actions) {
+    display: flex;
+    gap: 4--step;
+    margin-top: 8--step;
+  }
+
+  :global(.signup-btn) {
+    flex: 2;
+    background: var(--InteractiveColor);
+    color: var(--PrimaryColor);
+    border: 1px solid var(--InteractiveColor);
+    padding-block: 3--step;
+    padding-inline: 6--step;
+    border-radius: var(--EdgeRadius);
+    font-size: 16--rpx;
+    font-weight: 300;
+    cursor: pointer;
+  }
+
+  :global(.signup-btn:hover:not(:disabled)) {
+    background: var(--InteractiveHoverColor);
+    border-color: var(--InteractiveHoverColor);
+  }
+
+  :global(.signup-btn:disabled) {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  :global(.cancel-btn) {
+    flex: 1;
+    background: transparent;
+    color: var(--SecondaryColor);
+    border: 1px solid var(--SurfaceColor);
+    padding-block: 3--step;
+    padding-inline: 6--step;
+    border-radius: var(--EdgeRadius);
+    font-size: 16--rpx;
+    font-weight: 300;
+    cursor: pointer;
+  }
+
+  :global(.cancel-btn:hover) {
+    background: var(--SurfaceColor);
+    color: var(--PrimaryColor);
+  }
+
+  :global(.form-footer) {
+    text-align: center;
+    margin-top: 6--step;
+    padding-top: 6--step;
+    border-top: 1px solid var(--SurfaceColor);
+  }
+
+  :global(.form-footer p) {
+    margin: 0;
+    color: var(--SecondaryColor);
+    font-size: 14--rpx;
+  }
+
+  :global(.link-btn) {
+    background: none;
+    border: none;
+    color: var(--InteractiveColor);
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: inherit;
+  }
+
+  :global(.link-btn:hover) {
+    color: var(--InteractiveHoverColor);
+  }
+
+  :global(.error-message) {
+    background: var(--Red700Color);
+    color: var(--PrimaryColor);
+    padding: 4--step;
+    border-radius: var(--EdgeRadius);
+    margin-top: 4--step;
+    font-size: 14--rpx;
+    opacity: 0.9;
+  }
+
+  :global(.success-message) {
+    background: var(--Green900Color);
+    color: var(--PrimaryColor);
+    padding: 4--step;
+    border-radius: var(--EdgeRadius);
+    margin-top: 4--step;
+    font-size: 14--rpx;
+    opacity: 0.9;
+  }
+</style>

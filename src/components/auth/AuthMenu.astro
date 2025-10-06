@@ -1,10 +1,14 @@
 ---
-// Simple auth menu component
+// Auth menu with custom signup
 ---
 
 <div class="auth-container">
   <button id="auth-button" class="auth-btn">
     Sign In
+  </button>
+  <span class="auth-separator">|</span>
+  <button id="signup-button" class="auth-btn secondary">
+    Sign Up
   </button>
 </div>
 
@@ -13,6 +17,9 @@
 
   async function updateAuthButton() {
     const button = document.getElementById('auth-button')
+    const signupButton = document.getElementById('signup-button')
+    const separator = document.querySelector('.auth-separator')
+
     if (!button) return
 
     try {
@@ -21,12 +28,20 @@
       if (authManager.isAuthenticated) {
         button.textContent = 'Sign Out'
         button.onclick = () => authManager.logout()
+
+        // Hide signup button when logged in
+        if (signupButton) signupButton.style.display = 'none'
+        if (separator) separator.style.display = 'none'
       } else {
         button.textContent = 'Sign In'
-        button.onclick = () => {
-          // Direct Auth0 redirect - no modal needed
-          authManager.login()
+        button.onclick = async () => {
+          // Use Auth0 popup login (users can close popup to cancel)
+          await authManager.login()
         }
+
+        // Show signup button when logged out
+        if (signupButton) signupButton.style.display = 'inline-block'
+        if (separator) separator.style.display = 'inline'
       }
     } catch (error) {
       console.error('Auth error:', error)
@@ -34,7 +49,22 @@
   }
 
   // Update on page load
-  document.addEventListener('DOMContentLoaded', updateAuthButton)
+  document.addEventListener('DOMContentLoaded', () => {
+    updateAuthButton()
+
+    // Add signup button event listener
+    const signupButton = document.getElementById('signup-button')
+    if (signupButton) {
+      signupButton.addEventListener('click', () => {
+        // Call the global function if it exists
+        if (typeof window.showSignupModal === 'function') {
+          window.showSignupModal()
+        } else {
+          console.error('showSignupModal function not found')
+        }
+      })
+    }
+  })
 
   // Update when auth state changes
   window.addEventListener('authStateChanged', updateAuthButton)
@@ -55,5 +85,20 @@
   .auth-btn:hover {
     background: var(--Orange500Color);
     border-color: var(--Orange500Color);
+  }
+
+  .auth-btn.secondary {
+    background: transparent;
+    color: var(--Orange700Color);
+  }
+
+  .auth-btn.secondary:hover {
+    background: var(--Orange700Color);
+    color: white;
+  }
+
+  .auth-separator {
+    margin: 0 0.5rem;
+    color: var(--Orange700Color);
   }
 </style>
