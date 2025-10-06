@@ -24,13 +24,8 @@
       } else {
         button.textContent = 'Sign In'
         button.onclick = () => {
-          // Show the login modal instead of direct Auth0 redirect
-          if (window.showLoginModal) {
-            window.showLoginModal()
-          } else {
-            // Fallback to direct login if modal not available
-            authManager.login()
-          }
+          // Direct Auth0 redirect - no modal needed
+          authManager.login()
         }
       }
     } catch (error) {

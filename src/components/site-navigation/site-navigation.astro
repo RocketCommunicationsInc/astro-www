@@ -2,7 +2,6 @@
 import { For, When } from '@astropub/flow'
 import SiteSearch from 'project:components/site-search/site-search.astro'
 import AuthMenu from '../auth/AuthMenu.astro'
-import SimpleLoginModal from '../auth/SimpleLoginModal.astro'
 import * as navigation from './server/currentPath.ts'
 import './site-navigation.css'
 
@@ -106,6 +105,3 @@ import './client/h-navigation-list.js'
 		</ul>
 	</h-navigation-list>
 </nav>
-
-<!-- Login Modal (available globally) -->
-<SimpleLoginModal />
