@@ -1,0 +1,64 @@
+---
+// Simple auth menu component
+---
+
+<div class="auth-container">
+  <button id="auth-button" class="auth-btn">
+    Sign In
+  </button>
+</div>
+
+<script>
+  import authManager from '../../utils/auth-client.js'
+
+  async function updateAuthButton() {
+    const button = document.getElementById('auth-button')
+    if (!button) return
+
+    try {
+      await authManager.init()
+
+      if (authManager.isAuthenticated) {
+        button.textContent = 'Sign Out'
+        button.onclick = () => authManager.logout()
+      } else {
+        button.textContent = 'Sign In'
+        button.onclick = () => {
+          // Show the login modal instead of direct Auth0 redirect
+          if (window.showLoginModal) {
+            window.showLoginModal()
+          } else {
+            // Fallback to direct login if modal not available
+            authManager.login()
+          }
+        }
+      }
+    } catch (error) {
+      console.error('Auth error:', error)
+    }
+  }
+
+  // Update on page load
+  document.addEventListener('DOMContentLoaded', updateAuthButton)
+
+  // Update when auth state changes
+  window.addEventListener('authStateChanged', updateAuthButton)
+</script>
+
+<style>
+  .auth-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--Orange700Color);
+    background: var(--Orange700Color);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: inherit;
+    text-decoration: none;
+  }
+
+  .auth-btn:hover {
+    background: var(--Orange500Color);
+    border-color: var(--Orange500Color);
+  }
+</style>

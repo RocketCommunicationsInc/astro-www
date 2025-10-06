@@ -243,3 +243,76 @@ h-navigation-list {
 h-navigation-disclosure {
 	display: contents;
 }
+
+/* Auth Navigation */
+
+.p-navigation-auth {
+	/* Layout */
+	margin-block: 3--step;
+
+	@media (width < 1024px) {
+		/* Layout */
+		border-block-start: 1px solid var(--BorderColor);
+		margin-block: 2--step;
+		padding-block: 2--step;
+	}
+
+	@media (width >= 1024px) {
+		/* Layout */
+		border-block-end: 1px solid var(--BorderColor);
+		border-block-start: 1px solid var(--BorderColor);
+	}
+}
+
+/* Login Required Indicators */
+
+.login-required {
+	/* Layout */
+	margin-inline-start: .25rem;
+
+	/* Text */
+	font-size: 1.2em;
+	font-weight: 700;
+
+	/* Appearance */
+	color: var(--Orange700Color);
+	cursor: help;
+
+	/* Animation */
+	transition: color .2s ease;
+
+	&:hover {
+		/* Appearance */
+		color: var(--Orange500Color);
+	}
+}
+
+/* Navigation Auth Key */
+
+.p-navigation-auth-key {
+	/* Layout */
+	border-block-start: 1px solid var(--BorderColor);
+	padding-block: 3--step;
+	padding-inline: 11--step;
+
+	@media (width < 1024px) {
+		/* Layout */
+		padding-block: 2--step;
+		padding-inline: 9--step;
+	}
+}
+
+.auth-key-item {
+	/* Layout */
+	align-items: center;
+	gap: .5rem;
+
+	/* Text */
+	font-size: 12--rpx;
+	color: var(--SecondaryColor);
+}
+
+.auth-key-text {
+	/* Text */
+	font-style: italic;
+}
