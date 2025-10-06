@@ -34,6 +34,7 @@
 		"@astrouxds/documentation-components": "^0.0.16",
 		"@astrouxds/tokens": "^1.14.0",
 		"@csstools/custom-units": "0.1.1",
+		"@types/auth0-lock": "^11.27.9",
 		"@typescript-eslint/eslint-plugin": "6.0.0",
 		"@typescript-eslint/parser": "6.0.0",
 		"@typescript/dom": "npm:@types/web",
@@ -346,6 +347,7 @@
 		]
 	},
 	"dependencies": {
+		"@auth0/auth0-spa-js": "^2.4.1",
 		"highlight.js": "11.8.0",
 		"stripe": "^17.2.0"
 	}
