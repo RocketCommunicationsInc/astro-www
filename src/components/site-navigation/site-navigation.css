@@ -276,7 +276,6 @@ h-navigation-disclosure {
 
 	/* Appearance */
 	color: var(--Orange700Color);
-	cursor: help;
 
 	/* Animation */
 	transition: color .2s ease;

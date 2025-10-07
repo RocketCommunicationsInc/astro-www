@@ -32,6 +32,27 @@ const tabTitle = content.title
 const description = content.description || false
 const url = content.url
 const draft = content.draft ? content.draft : false
+
+// Route-based protection logic
+const pathname = Astro.url.pathname
+
+// Define protected routes
+const protectedRoutes = [
+  '/design-tokens/getting-started/',
+  '/design-tokens/installation',
+  '/design-tokens/reference/',
+  '/design-tokens/system/',
+  '/design-tokens/component/'
+]
+
+const isProtectedRoute = protectedRoutes.some(route => pathname.includes(route))
+
+// Set custom fallback message based on route
+let authMessage = 'Please sign in to view this content.'
+if (pathname.includes('/design-tokens/')) {
+  authMessage = 'Please sign in to access design token documentation.'
+}
+
 /* Create github link to source file */
 
 /** RegEx to match a slash (/) at the end ($) of a string. */
@@ -84,8 +105,42 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 
 		<div class="page-content">
 			<div class="page-content-main-col">
-				<slot />
-				<ContributionFooter sourceurl={githubSourceURL} />
+				{isProtectedRoute ? (
+					<div class="secure-content-loader" data-secure-loader data-auth-message={authMessage}>
+						<!-- Loading state -->
+						<div class="auth-loading" data-loading-state>
+							<div class="loading-spinner">
+								<div class="spinner"></div>
+								<p>Checking authentication...</p>
+							</div>
+						</div>
+
+						<!-- Login required state -->
+						<div class="login-required" data-login-state style="display: none;">
+							<div class="login-prompt">
+								<h2>Authentication Required</h2>
+								<p>{authMessage}</p>
+								<button class="login-btn" data-login-trigger>Sign In</button>
+							</div>
+						</div>
+
+						<!-- Protected content will be loaded here -->
+						<div class="protected-content" data-protected-content style="display: none;">
+							<!-- Content loaded dynamically after auth check -->
+						</div>
+
+						<!-- Store the original content in a template not included in the DOM -->
+						<template data-original-content>
+							<slot />
+							<ContributionFooter sourceurl={githubSourceURL} />
+						</template>
+					</div>
+				) : (
+					<>
+						<slot />
+						<ContributionFooter sourceurl={githubSourceURL} />
+					</>
+				)}
 			</div>
 
 			<aside class="page-content-side-col" id="aside">
@@ -101,3 +156,144 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 	import './docs-layout.client'
 	import 'project:components/color-swab-custom-element.ts'
 </script>
+
+<script>
+	// Secure content loading for protected routes
+	document.addEventListener('DOMContentLoaded', async () => {
+		const secureLoaders = document.querySelectorAll('[data-secure-loader]')
+
+		secureLoaders.forEach(async (loader) => {
+			const loadingEl = loader.querySelector('[data-loading-state]')
+			const loginEl = loader.querySelector('[data-login-state]')
+			const contentEl = loader.querySelector('[data-protected-content]')
+			const templateEl = loader.querySelector('[data-original-content]')
+			const loginBtn = loader.querySelector('[data-login-trigger]')
+
+			// Handle login button
+			if (loginBtn) {
+				loginBtn.addEventListener('click', async () => {
+					try {
+						const { default: authManager } = await import('project:utils/auth-client.js')
+						await authManager.login()
+						// After login, re-check auth and load content
+						setTimeout(() => checkAuthAndLoadContent(), 1000)
+					} catch (error) {
+						console.error('Login error:', error)
+					}
+				})
+			}
+
+			async function checkAuthAndLoadContent() {
+				try {
+					// Show loading
+					showElement(loadingEl)
+					hideElement(loginEl)
+					hideElement(contentEl)
+
+					// Import and check auth
+					const { default: authManager } = await import('project:utils/auth-client.js')
+					await authManager.init()
+
+					if (authManager.isAuthenticated) {
+						// Load the protected content from template
+						if (templateEl && contentEl) {
+							const content = templateEl.content.cloneNode(true)
+							contentEl.innerHTML = ''
+							contentEl.appendChild(content)
+
+							// Update user info elements
+							const userElements = contentEl.querySelectorAll('[data-auth-user]')
+							userElements.forEach(el => {
+								if (authManager.user) {
+									el.textContent = authManager.user.name || authManager.user.email || 'User'
+								}
+							})
+						}
+
+						// Show protected content
+						hideElement(loadingEl)
+						hideElement(loginEl)
+						showElement(contentEl)
+					} else {
+						// Show login required
+						hideElement(loadingEl)
+						hideElement(contentEl)
+						showElement(loginEl)
+					}
+				} catch (error) {
+					console.error('Auth check error:', error)
+					// Show login on error
+					hideElement(loadingEl)
+					hideElement(contentEl)
+					showElement(loginEl)
+				}
+			}
+
+			function showElement(el) {
+				if (el) el.style.display = 'block'
+			}
+
+			function hideElement(el) {
+				if (el) el.style.display = 'none'
+			}
+
+			// Initial check
+			checkAuthAndLoadContent()
+
+			// Listen for auth state changes
+			window.addEventListener('authStateChanged', checkAuthAndLoadContent)
+		})
+	})
+</script>
+
+<style>
+	/* Styles for the secure content loader */
+	.secure-content-loader {
+		position: relative;
+		min-height: 200px;
+	}
+
+	.auth-loading, .login-required, .protected-content {
+		text-align: center;
+		padding: 2rem;
+	}
+
+	.loading-spinner .spinner {
+		border: 4px solid rgba(0, 0, 0, 0.1);
+		border-left-color: #000;
+		border-radius: 50%;
+		width: 40px;
+		height: 40px;
+		animation: spin 1s linear infinite;
+		margin: 0 auto 1rem auto;
+	}
+
+	@keyframes spin {
+		to { transform: rotate(360deg); }
+	}
+
+	.login-prompt h2 {
+		margin-bottom: 0.5rem;
+		color: var(--ColorTextPrimary, #333);
+	}
+
+	.login-prompt p {
+		margin-bottom: 1rem;
+		color: var(--Grey600Color);
+	}
+
+	.login-btn {
+		background-color: var(--InteractiveColor);
+		color: var(--InverseColor);
+		border: 1px solid var(--InteractiveColor);
+		padding: 0.75rem 1.5rem;
+		border-radius: var(--EdgeRadius);
+		cursor: pointer;
+		font-size: 1rem;
+	}
+
+	.login-btn:hover {
+		background-color: var(--InteractiveHoverColor);
+		border-color: var(--InteractiveHoverColor);
+	}
+</style>
