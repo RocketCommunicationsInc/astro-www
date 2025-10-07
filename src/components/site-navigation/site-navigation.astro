@@ -52,8 +52,6 @@ import './client/h-navigation-list.js'
 	</a>
 
 	<h-navigation-list>
-		<SiteSearch />
-
 		<div class="p-navigation-auth">
 			<AuthMenu />
 		</div>
@@ -63,6 +61,8 @@ import './client/h-navigation-list.js'
 				<span id="auth-key-text" class="auth-key-text">* indicates free login required to view</span>
 			</div>
 		</div>
+
+		<SiteSearch />
 
 		<ul class="p-navigation-list">
 			<For of={navigation.items}>{item => (

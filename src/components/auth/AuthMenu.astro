@@ -6,9 +6,8 @@
   <button id="auth-button" class="auth-btn">
     Sign In
   </button>
-  <span class="auth-separator">|</span>
   <button id="signup-button" class="auth-btn secondary">
-    Sign Up
+    Create Account
   </button>
 </div>
 
@@ -19,6 +18,34 @@
   declare global {
     interface Window {
       showSignupModal?: () => void;
+    }
+  }
+
+  function showLoginOverlay() {
+    // Create overlay element if it doesn't exist
+    let overlay = document.getElementById('auth-popup-overlay')
+    if (!overlay) {
+      overlay = document.createElement('div')
+      overlay.id = 'auth-popup-overlay'
+      overlay.className = 'auth-popup-overlay'
+      document.body.appendChild(overlay)
+    }
+
+    // Show overlay with fade in
+    overlay.style.display = 'block'
+    setTimeout(() => {
+      overlay!.style.opacity = '1'
+    }, 10)
+  }
+
+  function hideLoginOverlay() {
+    const overlay = document.getElementById('auth-popup-overlay')
+    if (overlay) {
+      // Fade out then hide
+      overlay.style.opacity = '0'
+      setTimeout(() => {
+        overlay.style.display = 'none'
+      }, 300)
     }
   }
 
@@ -42,8 +69,16 @@
       } else {
         button.textContent = 'Sign In'
         button.onclick = async () => {
-          // Use Auth0 popup login (users can close popup to cancel)
-          await authManager.login()
+          // Show overlay before opening popup
+          showLoginOverlay()
+
+          try {
+            // Use Auth0 popup login (users can close popup to cancel)
+            await authManager.login()
+          } finally {
+            // Hide overlay after login attempt (success or failure)
+            hideLoginOverlay()
+          }
         }
 
         // Show signup button when logged out
@@ -104,8 +139,31 @@
     color: white;
   }
 
+  .auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
   .auth-separator {
     margin: 0 0.5rem;
     color: var(--Orange700Color);
+  }
+
+  /* Login popup overlay styles */
+  :global(.auth-popup-overlay) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(2px);
+    z-index: 9998;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none; /* Don't block interactions with popup */
   }
 </style>
