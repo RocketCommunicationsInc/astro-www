@@ -15,6 +15,13 @@
 <script>
   import authManager from '../../utils/auth-client.js'
 
+  // Extend Window interface for TypeScript
+  declare global {
+    interface Window {
+      showSignupModal?: () => void;
+    }
+  }
+
   async function updateAuthButton() {
     const button = document.getElementById('auth-button')
     const signupButton = document.getElementById('signup-button')
@@ -31,7 +38,7 @@
 
         // Hide signup button when logged in
         if (signupButton) signupButton.style.display = 'none'
-        if (separator) separator.style.display = 'none'
+        if (separator) (separator as HTMLElement).style.display = 'none'
       } else {
         button.textContent = 'Sign In'
         button.onclick = async () => {
@@ -41,7 +48,7 @@
 
         // Show signup button when logged out
         if (signupButton) signupButton.style.display = 'inline-block'
-        if (separator) separator.style.display = 'inline'
+        if (separator) (separator as HTMLElement).style.display = 'inline'
       }
     } catch (error) {
       console.error('Auth error:', error)

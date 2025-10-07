@@ -81,6 +81,18 @@
 </div>
 
 <script>
+  // Type declarations for window extensions
+  declare global {
+    interface Window {
+      showSignupModal?: () => void;
+      closeSignupModal?: () => void;
+      switchToLogin?: () => void;
+      authManager?: {
+        login: () => void;
+      };
+    }
+  }
+
   function showSignupModal() {
     const modal = document.getElementById('signup-modal')
 
@@ -88,18 +100,20 @@
       modal.style.display = 'flex'
     }
 
-    const emailInput = document.getElementById('signup-email')
+    const emailInput = document.getElementById('signup-email') as HTMLInputElement | null
     if (emailInput) {
       setTimeout(() => emailInput.focus(), 100)
     }
-  } function closeSignupModal() {
+  }
+
+  function closeSignupModal() {
     const modal = document.getElementById('signup-modal')
     if (modal) modal.style.display = 'none'
     clearSignupForm()
   }
 
   function clearSignupForm() {
-    const form = document.getElementById('custom-signup-form')
+    const form = document.getElementById('custom-signup-form') as HTMLFormElement | null
     const errorDiv = document.getElementById('signup-error')
     const successDiv = document.getElementById('signup-success')
 
@@ -116,7 +130,10 @@
     }
   }
 
-  function showError(message) {
+  // Make switchToLogin available globally for the onclick handler
+  window.switchToLogin = switchToLogin
+
+  function showError(message: string) {
     const errorDiv = document.getElementById('signup-error')
     const successDiv = document.getElementById('signup-success')
 
@@ -140,12 +157,16 @@
   window.closeSignupModal = closeSignupModal
 
   document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('custom-signup-form')
+    const form = document.getElementById('custom-signup-form') as HTMLFormElement | null
+
+    if (!form) return
 
     form.addEventListener('submit', async function (e) {
       e.preventDefault()
 
-      const submitBtn = document.getElementById('signup-submit')
+      const submitBtn = document.getElementById('signup-submit') as HTMLButtonElement | null
+      if (!submitBtn) return
+
       const originalText = submitBtn.textContent
       submitBtn.textContent = 'Creating Account...'
       submitBtn.disabled = true
@@ -158,8 +179,8 @@
         const company = formData.get('company')
 
         // Get Auth0 configuration
-        const domain = document.querySelector('meta[name="auth0-domain"]')?.content
-        const clientId = document.querySelector('meta[name="auth0-client-id"]')?.content
+        const domain = (document.querySelector('meta[name="auth0-domain"]') as HTMLMetaElement)?.content
+        const clientId = (document.querySelector('meta[name="auth0-client-id"]') as HTMLMetaElement)?.content
 
         if (!domain || !clientId) {
           throw new Error('Auth0 configuration missing')
@@ -233,8 +254,10 @@
         const errorMessage = error instanceof Error ? error.message : 'Failed to create account. Please try again.'
         showError(errorMessage)
       } finally {
-        submitBtn.textContent = originalText
-        submitBtn.disabled = false
+        if (submitBtn) {
+          submitBtn.textContent = originalText
+          submitBtn.disabled = false
+        }
       }
     })
   })
