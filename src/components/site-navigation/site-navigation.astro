@@ -16,13 +16,6 @@ import './client/h-navigation-list.js'
 	// Handle auth state for login required indicators and auth key
 	document.addEventListener('DOMContentLoaded', () => {
 		function updateAuthElements(isAuthenticated: boolean, user: any) {
-			// Update login required asterisks
-			const elementsToHide = document.querySelectorAll('[data-auth-hide-when-authenticated]')
-			elementsToHide.forEach(element => {
-				const htmlElement = element as HTMLElement
-				htmlElement.style.display = isAuthenticated ? 'none' : 'block'
-			})
-
 			// Update auth key text
 			const authKeyText = document.getElementById('auth-key-text')
 			if (authKeyText) {
@@ -83,7 +76,7 @@ import './client/h-navigation-list.js'
 							<span>
 								{item.label}
 								{[ 'Design Tokens', 'Components', 'Patterns', 'Platforms' ].includes(item.label) &&
-									<sup class="login-required" title="Login required" data-auth-hide-when-authenticated>*</sup>
+									<sup class="login-required" title="Login required">*</sup>
 								}
 							</span>
 
