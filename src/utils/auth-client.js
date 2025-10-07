@@ -60,19 +60,19 @@ class Auth0Manager {
 		}
 	}
 
-	async login() {
+		async login() {
 		if (!this.auth0) await this.init()
 
 		try {
 			// Use popup login for better UX (users can close popup to cancel)
 			await this.auth0.loginWithPopup()
-			
+
 			// Update authentication state after popup login
 			this.isAuthenticated = await this.auth0.isAuthenticated()
 			if (this.isAuthenticated) {
 				this.user = await this.auth0.getUser()
 			}
-			
+
 			this.updateUI()
 		} catch (error) {
 			// User cancelled popup or other error
