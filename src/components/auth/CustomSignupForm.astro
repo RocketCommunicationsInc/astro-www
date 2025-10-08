@@ -2,7 +2,7 @@
 // Custom signup form that captures company field
 ---
 
-<div id="signup-modal" class="modal-overlay" style="display: none;">
+<div id="signup-modal" class="auth-overlay" style="display: none;">
   <div class="modal-content">
     <div class="modal-header">
       <h2>Create Your Account</h2>
@@ -88,7 +88,7 @@
       closeSignupModal?: () => void;
       switchToLogin?: () => void;
       authManager?: {
-        login: () => void;
+        login: () => Promise<void>;
       };
     }
   }
@@ -97,7 +97,9 @@
     const modal = document.getElementById('signup-modal')
 
     if (modal) {
+      modal.className = 'auth-overlay modal-mode'
       modal.style.display = 'flex'
+      modal.style.opacity = '1'
     }
 
     const emailInput = document.getElementById('signup-email') as HTMLInputElement | null
@@ -108,7 +110,11 @@
 
   function closeSignupModal() {
     const modal = document.getElementById('signup-modal')
-    if (modal) modal.style.display = 'none'
+    if (modal) {
+      modal.style.display = 'none'
+      modal.style.opacity = '0'
+      modal.className = 'auth-overlay'
+    }
     clearSignupForm()
   }
 
@@ -122,11 +128,52 @@
     if (successDiv) successDiv.style.display = 'none'
   }
 
-  function switchToLogin() {
+  function showLoginOverlay() {
+    // Always create a separate overlay for Auth0 popup to avoid conflicts
+    let overlay = document.getElementById('auth-login-overlay')
+
+    if (!overlay) {
+      overlay = document.createElement('div')
+      overlay.id = 'auth-login-overlay'
+      overlay.className = 'auth-overlay popup-mode'
+      document.body.appendChild(overlay)
+    }
+
+    // Configure for popup mode (backdrop only)
+    overlay.className = 'auth-overlay popup-mode'
+    overlay.style.display = 'block'
+    setTimeout(() => {
+      overlay.style.opacity = '1'
+    }, 10)
+  }
+
+  function hideLoginOverlay() {
+    // Only target the separate login overlay
+    const overlay = document.getElementById('auth-login-overlay')
+
+    if (overlay) {
+      // Fade out then hide
+      overlay.style.opacity = '0'
+      setTimeout(() => {
+        overlay.style.display = 'none'
+      }, 300)
+    }
+  }
+
+  async function switchToLogin() {
     closeSignupModal()
-    // Trigger regular Auth0 login
-    if (window.authManager) {
-      window.authManager.login()
+
+    // Show overlay before opening Auth0 popup
+    showLoginOverlay()
+
+    try {
+      // Trigger regular Auth0 login
+      if (window.authManager) {
+        await window.authManager.login()
+      }
+    } finally {
+      // Hide overlay after login attempt (success or failure)
+      hideLoginOverlay()
     }
   }
 
@@ -242,11 +289,19 @@
         form.reset()
 
         // Optionally redirect to login after a delay
-        setTimeout(() => {
+        setTimeout(async () => {
           closeSignupModal()
-          // Trigger login flow
-          if (window.authManager) {
-            window.authManager.login()
+
+          // Show overlay before opening Auth0 popup
+          showLoginOverlay()
+
+          try {
+            // Trigger login flow
+            if (window.authManager) {
+              await window.authManager.login()
+            }
+          } finally {
+            hideLoginOverlay()
           }
         }, 3000)
       } catch (error) {
@@ -264,22 +319,37 @@
 </script>
 
 <style>
-  :global(.modal-overlay) {
+  /* Unified overlay - used for both signup modal and Auth0 popup */
+  :global(.auth-overlay) {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.8);
-	backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    z-index: 99999;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  /* When overlay is used for modal (with content) */
+  :global(.auth-overlay.modal-mode) {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 99999;
+    opacity: 1;
     pointer-events: auto;
   }
 
-  :global(.modal-content) {
+  /* When overlay is used for Auth0 popup (backdrop only) */
+  :global(.auth-overlay.popup-mode) {
+    pointer-events: none;
+  }
+
+  /* Modal content container */
+  .modal-content {
     background: var(--BaseColor);
     border-radius: var(--EdgeRadius);
     width: 90%;
@@ -290,7 +360,8 @@
     border: 1px solid var(--SurfaceColor);
   }
 
-  :global(.modal-header) {
+  /* Modal header */
+  .modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -300,14 +371,14 @@
     border-radius: var(--EdgeRadius) var(--EdgeRadius) 0 0;
   }
 
-  :global(.modal-header h2) {
+  .modal-header h2 {
     margin: 0;
     color: var(--PrimaryColor);
     font-size: 20--rpx;
     font-weight: 300;
   }
 
-  :global(.modal-close) {
+  .modal-close {
     background: none;
     border: none;
     font-size: 24--rpx;
@@ -322,20 +393,22 @@
     border-radius: var(--EdgeRadius);
   }
 
-  :global(.modal-close:hover) {
+  .modal-close:hover {
     color: var(--InteractiveHoverColor);
     background: var(--SurfaceColor);
   }
 
-  :global(.modal-body) {
+  /* Modal body */
+  .modal-body {
     padding: 8--step;
   }
 
-  :global(.form-group) {
+  /* Form styling */
+  .form-group {
     margin-bottom: 6--step;
   }
 
-  :global(.form-group label) {
+  .form-group label {
     display: block;
     margin-bottom: 2--step;
     font-weight: 400;
@@ -343,7 +416,7 @@
     font-size: 14--rpx;
   }
 
-  :global(.form-group input) {
+  .form-group input {
     width: 100%;
     padding-block: 3--step;
     padding-inline-start: 4--step;
@@ -356,29 +429,43 @@
     box-shadow: var(--InteractiveMutedColor) 0 0 0 1px inset;
   }
 
-  :global(.form-group input:focus) {
+  .form-group input:focus {
     outline: none;
     box-shadow: var(--InteractiveHoverColor) 0 0 0 1px inset;
   }
 
-  :global(.form-group input:hover) {
+  .form-group input:hover {
     box-shadow: var(--InteractiveHoverColor) 0 0 0 1px inset;
   }
 
-  :global(.password-requirements) {
+  .password-requirements {
     font-size: 12--rpx;
     color: var(--SecondaryColor);
     margin-top: 2--step;
     line-height: 1.4;
   }
 
-  :global(.form-actions) {
+  .form-actions {
     display: flex;
     gap: 4--step;
     margin-top: 8--step;
   }
 
-  :global(.signup-btn) {
+  .form-footer {
+    text-align: center;
+    margin-top: 6--step;
+    padding-top: 6--step;
+    border-top: 1px solid var(--SurfaceColor);
+  }
+
+  .form-footer p {
+    margin: 0;
+    color: var(--SecondaryColor);
+    font-size: 14--rpx;
+  }
+
+  /* Button styling */
+  .signup-btn {
     flex: 2;
     background: var(--InteractiveColor);
     color: var(--PrimaryColor);
@@ -391,17 +478,17 @@
     cursor: pointer;
   }
 
-  :global(.signup-btn:hover:not(:disabled)) {
+  .signup-btn:hover:not(:disabled) {
     background: var(--InteractiveHoverColor);
     border-color: var(--InteractiveHoverColor);
   }
 
-  :global(.signup-btn:disabled) {
+  .signup-btn:disabled {
     opacity: 0.4;
     cursor: not-allowed;
   }
 
-  :global(.cancel-btn) {
+  .cancel-btn {
     flex: 1;
     background: transparent;
     color: var(--SecondaryColor);
@@ -414,25 +501,12 @@
     cursor: pointer;
   }
 
-  :global(.cancel-btn:hover) {
+  .cancel-btn:hover {
     background: var(--SurfaceColor);
     color: var(--PrimaryColor);
   }
 
-  :global(.form-footer) {
-    text-align: center;
-    margin-top: 6--step;
-    padding-top: 6--step;
-    border-top: 1px solid var(--SurfaceColor);
-  }
-
-  :global(.form-footer p) {
-    margin: 0;
-    color: var(--SecondaryColor);
-    font-size: 14--rpx;
-  }
-
-  :global(.link-btn) {
+  .link-btn {
     background: none;
     border: none;
     color: var(--InteractiveColor);
@@ -441,11 +515,12 @@
     font-size: inherit;
   }
 
-  :global(.link-btn:hover) {
+  .link-btn:hover {
     color: var(--InteractiveHoverColor);
   }
 
-  :global(.error-message) {
+  /* Message styling */
+  .error-message {
     background: var(--Red700Color);
     color: var(--PrimaryColor);
     padding: 4--step;
@@ -455,7 +530,7 @@
     opacity: 0.9;
   }
 
-  :global(.success-message) {
+  .success-message {
     background: var(--Green900Color);
     color: var(--PrimaryColor);
     padding: 4--step;

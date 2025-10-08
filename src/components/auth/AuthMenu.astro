@@ -22,24 +22,28 @@
   }
 
   function showLoginOverlay() {
-    // Create overlay element if it doesn't exist
-    let overlay = document.getElementById('auth-popup-overlay')
+    // Always create a separate overlay for Auth0 popup to avoid conflicts
+    let overlay = document.getElementById('auth-login-overlay')
+
     if (!overlay) {
       overlay = document.createElement('div')
-      overlay.id = 'auth-popup-overlay'
-      overlay.className = 'auth-popup-overlay'
+      overlay.id = 'auth-login-overlay'
+      overlay.className = 'auth-overlay popup-mode'
       document.body.appendChild(overlay)
     }
 
-    // Show overlay with fade in
+    // Configure for popup mode (backdrop only)
+    overlay.className = 'auth-overlay popup-mode'
     overlay.style.display = 'block'
     setTimeout(() => {
-      overlay!.style.opacity = '1'
+      overlay.style.opacity = '1'
     }, 10)
   }
 
   function hideLoginOverlay() {
-    const overlay = document.getElementById('auth-popup-overlay')
+    // Only target the separate login overlay
+    const overlay = document.getElementById('auth-login-overlay')
+
     if (overlay) {
       // Fade out then hide
       overlay.style.opacity = '0'
@@ -151,8 +155,8 @@
     color: var(--Orange700Color);
   }
 
-  /* Login popup overlay styles */
-  :global(.auth-popup-overlay) {
+  /* Unified auth overlay - shared with CustomSignupForm */
+  :global(.auth-overlay) {
     position: fixed;
     top: 0;
     left: 0;
@@ -160,10 +164,21 @@
     height: 100vh;
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(2px);
-    z-index: 9998;
+    z-index: 99999;
     display: none;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
-    pointer-events: none; /* Don't block interactions with popup */
+  }
+
+  :global(.auth-overlay.modal-mode) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  :global(.auth-overlay.popup-mode) {
+    pointer-events: none;
   }
 </style>
