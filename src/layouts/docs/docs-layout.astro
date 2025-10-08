@@ -38,11 +38,10 @@ const pathname = Astro.url.pathname
 
 // Define protected routes
 const protectedRoutes = [
-  '/design-tokens/getting-started/',
-  '/design-tokens/installation',
-  '/design-tokens/reference/',
-  '/design-tokens/system/',
-  '/design-tokens/component/'
+  '/design-tokens/',
+  '/components/',
+  '/patterns/',
+  '/platforms/'
 ]
 
 const isProtectedRoute = protectedRoutes.some(route => pathname.includes(route))
