@@ -144,7 +144,7 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 
 			<aside class="page-content-side-col" id="aside">
 				<div class="-content">
-					<slot name="aside"><PageAside {...Astro.props} /></slot>
+					<slot name="aside"><PageAside {...Astro.props} protectedRoutes={protectedRoutes} /></slot>
 				</div>
 			</aside>
 		</div>
