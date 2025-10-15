@@ -3,7 +3,7 @@ import { h } from 'project:utils/html.js'
 // Helper function to check if a path is protected and user is not authenticated
 const shouldShowLockIcon = (href: string): boolean => {
     const protectedRoutes = (window as any).protectedRoutes || []
-    const isProtected = protectedRoutes.some((route: string) => href.includes(route))
+    const isProtected = protectedRoutes.some((route: string) => href.startsWith(route))
 
     // Only show lock icon if route is protected AND user is not authenticated
     if (!isProtected) return false
