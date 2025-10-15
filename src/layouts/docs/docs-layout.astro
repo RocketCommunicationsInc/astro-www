@@ -12,7 +12,7 @@ import FeedbackWidget from 'project:components/feedback-widgets/feedback-widget-
 import globalData from 'project:data/global.json'
 
 import './docs-layout.css'
-import Checkout from 'project:components/checkout/checkout.astro'
+import { protectedRoutes } from 'project:data/protected-routes'
 
 export interface Props extends DocProps {
 	content: {
@@ -35,16 +35,7 @@ const draft = content.draft ? content.draft : false
 
 // Route-based protection logic
 const pathname = Astro.url.pathname
-
-// Define protected routes
-const protectedRoutes = [
-  '/design-tokens/',
-  '/components/',
-  '/patterns/',
-  '/platforms/'
-]
-
-const isProtectedRoute = protectedRoutes.some(route => pathname.includes(route))
+const isProtectedRoute = protectedRoutes.some(route => pathname.startsWith(route))
 
 // Set custom fallback message based on route
 let authMessage = 'Please sign in to view this content.'

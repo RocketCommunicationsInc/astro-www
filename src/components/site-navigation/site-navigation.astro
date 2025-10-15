@@ -4,6 +4,8 @@ import SiteSearch from 'project:components/site-search/site-search.astro'
 import AuthMenu from '../auth/AuthMenu.astro'
 import * as navigation from './server/currentPath.ts'
 import './site-navigation.css'
+import { protectedRoutes, getCompletelyBlockedParents } from 'project:data/protected-routes'
+const blockedParents = getCompletelyBlockedParents(protectedRoutes)
 
 const current = navigation.intialize(Astro.url.pathname.replace(/\/?$/, '/'))
 ---
@@ -75,7 +77,7 @@ import './client/h-navigation-list.js'
 						<h-navigation-disclosure>
 							<span>
 								{item.label}
-								{[ 'Design Tokens', 'Components', 'Patterns', 'Platforms' ].includes(item.label) &&
+								{blockedParents.includes(item.label) &&
 									<sup class="login-required" title="Login required">*</sup>
 								}
 							</span>
@@ -86,7 +88,10 @@ import './client/h-navigation-list.js'
 										<hr />
 
 										<li slot="else" class={current.has(subitem) ? 'current' : null}>
-											<a href={subitem.url} aria-current={current.has(item)}>{subitem.label}{subitem.status ? <sup class={`status-tag status-${subitem.status}`}>{subitem.status}</sup> : null }</a>
+											<a href={subitem.url} aria-current={current.has(item)}>
+												{subitem.label}
+												{protectedRoutes.includes(subitem.url) && <sup class="login-required" title="Login required">*</sup>}
+											</a>
 										</li>
 									</When>
 								)}</For>
