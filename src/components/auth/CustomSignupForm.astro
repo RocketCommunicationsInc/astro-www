@@ -87,8 +87,10 @@
       showSignupModal?: () => void;
       closeSignupModal?: () => void;
       switchToLogin?: () => void;
+      openCreateAccountModal?: () => void;
       authManager?: {
         login: () => Promise<void>;
+        openCreateAccount?: () => void;
       };
     }
   }
@@ -116,6 +118,10 @@
       modal.className = 'auth-overlay'
     }
     clearSignupForm()
+    // remove open hash if present
+    if (location.hash === '#create-account') {
+      history.replaceState(null, '', location.pathname + location.search)
+    }
   }
 
   function clearSignupForm() {
@@ -202,6 +208,31 @@
   // Make functions global immediately
   window.showSignupModal = showSignupModal
   window.closeSignupModal = closeSignupModal
+  // page-aside.client.ts expects window.openCreateAccountModal or authManager.openCreateAccount
+  window.openCreateAccountModal = showSignupModal
+  if (window.authManager) {
+    try {
+      window.authManager.openCreateAccount = showSignupModal
+    } catch (e) {
+      // noop - if authManager is immutable this won't be critical
+    }
+  }
+
+  // If the page loads with the hash, ensure modal opens when this component is present.
+  function openIfHashMatches() {
+    if (location.hash === '#create-account') {
+      showSignupModal()
+    }
+  }
+
+  // Listen for fallback event from page-aside.client.ts
+  window.addEventListener('openCreateAccountFromHash', openIfHashMatches)
+
+  // Open immediately if the component is parsed after the DOMContentLoaded handler ran
+  if (location.hash === '#create-account') {
+    // allow microtask/tick for element to be ready
+    setTimeout(openIfHashMatches, 0)
+  }
 
   document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('custom-signup-form') as HTMLFormElement | null

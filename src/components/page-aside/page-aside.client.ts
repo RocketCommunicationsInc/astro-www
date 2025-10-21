@@ -191,3 +191,53 @@ createObservers(document.querySelectorAll(`main [id]:is(${extendedNav})`), docum
 window.addEventListener('authStateChanged', () => {
     updateLockIcons()
 })
+
+document.addEventListener('DOMContentLoaded', () => {
+  const OPEN_HASH = '#create-account'
+
+  function tryOpenViaApi() {
+    // preferred: direct API
+    if (typeof (window as any).openCreateAccountModal === 'function') {
+      (window as any).openCreateAccountModal()
+      return true
+    }
+    // fallback: authManager API
+    if ((window as any).authManager && typeof (window as any).authManager.openCreateAccount === 'function') {
+      (window as any).authManager.openCreateAccount()
+      return true
+    }
+    return false
+  }
+
+  function openFromHash() {
+    if (location.hash !== OPEN_HASH) return
+    // 1) try API
+    if (tryOpenViaApi()) return
+
+    // 2) try to click an existing trigger in the page
+    const trigger = document.querySelector('[data-open-create-account], a[href="#create-account"], button[data-open="create-account"], button.open-create-account')
+    if (trigger) {
+      (trigger as HTMLElement).click()
+      return
+    }
+    // 3) fallback: emit an event your modal code can listen for
+    window.dispatchEvent(new CustomEvent('openCreateAccountFromHash'))
+  }
+
+  // Open on first load and on hash changes (back button)
+  openFromHash()
+  window.addEventListener('hashchange', openFromHash)
+
+  // Clean URL when modal closes — adapt event name if your modal emits a different one
+  function clearHash() {
+    if (location.hash === OPEN_HASH) history.replaceState(null, '', location.pathname + location.search)
+  }
+  window.addEventListener('createAccountModalClosed', clearHash)
+  window.addEventListener('modalClosed', clearHash)
+})
+// If the script is evaluated after DOMContentLoaded, ensure the open check still runs
+if (document.readyState !== 'loading') {
+  // mimic the DOMContentLoaded behavior
+  const evt = new Event('DOMContentLoaded')
+  document.dispatchEvent(evt)
+}
