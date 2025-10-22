@@ -134,13 +134,26 @@
   }
 
   .auth-btn.secondary {
-    background: transparent;
+    background: none;
+    border: none;
+    padding: 0;
     color: var(--Orange700Color);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    font: inherit;
+    cursor: pointer;
   }
 
   .auth-btn.secondary:hover {
-    background: var(--Orange700Color);
-    color: white;
+    color: var(--Orange500Color);
+    text-decoration-color: var(--Orange500Color);
+    background: none;
+  }
+
+  .auth-btn.secondary:focus {
+    outline: 2px solid var(--Orange500Color);
+    outline-offset: 2px;
+    text-decoration: underline;
   }
 
   .auth-container {
