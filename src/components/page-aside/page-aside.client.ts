@@ -1,5 +1,12 @@
 import { h } from 'project:utils/html.js'
 
+// Create lock icon SVG element
+const createLockIcon = (): string => {
+    return `<svg class="lock-icon" width="16" height="16" viewBox="0 0 24 24" style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+        <path fill="currentColor" fill-rule="evenodd" d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2Zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2ZM9 6v2h6V6c0-1.66-1.34-3-3-3S9 4.34 9 6Z"/>
+    </svg>`
+}
+
 // Helper function to check if a path is protected and user is not authenticated
 const shouldShowLockIcon = (href: string): boolean => {
     const protectedRoutes = (window as any).protectedRoutes || []
@@ -17,12 +24,14 @@ const updateLockIcons = () => {
     const allLinks = document.querySelectorAll('.section-links li a')
     allLinks.forEach(link => {
         const shouldHaveLock = shouldShowLockIcon(window.location.pathname)
-        const hasLock = link.textContent?.startsWith('🔒 ')
+        const hasLock = link.querySelector('.lock-icon')
 
         if (shouldHaveLock && !hasLock) {
-            link.textContent = '🔒 ' + link.textContent
+            const iconSpan = document.createElement('span')
+            iconSpan.innerHTML = createLockIcon()
+            link.insertBefore(iconSpan.firstChild!, link.firstChild)
         } else if (!shouldHaveLock && hasLock) {
-            link.textContent = (link.textContent || '').replace('🔒 ', '')
+            hasLock.remove()
         }
     })
 }
@@ -40,7 +49,7 @@ const addComplianceFooterToNav = () => {
 		complianceTitle = complianceHeader.innerText
 		const complianceTitleKebab: string = complianceTitle.toLowerCase().replace(' ', '-')
 		const href = `#${complianceTitleKebab}`
-		const lockIcon = shouldShowLockIcon(window.location.pathname) ? '🔒 ' : ''
+		const lockIcon = shouldShowLockIcon(window.location.pathname) ? createLockIcon() : ''
 		const linkElement = h<HTMLAnchorElement>(`<a href="${href}" class="${complianceTitleKebab}">${lockIcon}${complianceTitle}`)
 
 		// remove currently identified last item's class
@@ -62,7 +71,7 @@ const createNav = (headings: any) => {
 	const ul = h('<ul class="section-links">')
 	headings.map((heading: HTMLElement, index: number) => {
 			const li = h('<li>')
-			const lockIcon = shouldShowLockIcon(window.location.pathname) ? '🔒 ' : ''
+			const lockIcon = shouldShowLockIcon(window.location.pathname) ? createLockIcon() : ''
 			const link = h(`<a href="#${heading.id}" class="${heading.id}">${lockIcon}${heading.textContent}`)
 			if (index === 0) {
 				link.classList.add('-highlighted')
@@ -97,12 +106,14 @@ const createObservers = (headings: NodeListOf<HTMLHeadingElement>, footer: HTMLE
 		const existingLinks = nav.querySelectorAll('ul.section-links li a')
 		existingLinks.forEach(link => {
 			const shouldHaveLock = shouldShowLockIcon(window.location.pathname)
-			const hasLock = link.textContent?.startsWith('🔒 ')
+			const hasLock = link.querySelector('.lock-icon')
 
 			if (shouldHaveLock && !hasLock) {
-				link.textContent = '🔒 ' + link.textContent
+				const iconSpan = document.createElement('span')
+				iconSpan.innerHTML = createLockIcon()
+				link.insertBefore(iconSpan.firstChild!, link.firstChild)
 			} else if (!shouldHaveLock && hasLock) {
-				link.textContent = (link.textContent || '').replace('🔒 ', '')
+				hasLock.remove()
 			}
 		})
 	}
