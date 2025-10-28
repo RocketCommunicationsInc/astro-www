@@ -148,6 +148,7 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 </script>
 
 <script>
+	// @ts-nocheck
 	// Secure content loading for protected routes
 	document.addEventListener('DOMContentLoaded', async () => {
 		const secureLoaders = document.querySelectorAll('[data-secure-loader]')
@@ -187,9 +188,12 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 					if (authManager.isAuthenticated) {
 						// Load the protected content from template
 						if (templateEl && contentEl) {
-							const content = templateEl.content.cloneNode(true)
-							contentEl.innerHTML = ''
-							contentEl.appendChild(content)
+							const template = templateEl instanceof HTMLTemplateElement ? templateEl : null
+							if (template) {
+								const content = template.content.cloneNode(true)
+								contentEl.innerHTML = ''
+								contentEl.appendChild(content)
+							}
 
 							// Update user info elements
 							const userElements = contentEl.querySelectorAll('[data-auth-user]')
@@ -205,10 +209,61 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 						hideElement(loginEl)
 						showElement(contentEl)
 					} else {
-						// Show login required
+						// Show login required with preview
+						// Create preview container if it doesn't exist
+						let previewNode = loader.querySelector('.protected-preview-html')
+						if (!previewNode && templateEl instanceof HTMLTemplateElement) {
+							previewNode = document.createElement('div')
+							previewNode.className = 'protected-preview-html'
+							
+							// Apply inline styles as backup to ensure they work
+							previewNode.style.cssText = `
+								position: relative;
+								filter: blur(3px);
+								-webkit-filter: blur(3px);
+								opacity: 0.6;
+								pointer-events: none;
+								display: block;
+								text-align: left;
+								padding: 2rem;
+							`;
+							
+							// Clone the full template content
+							const fullClone = templateEl.content.cloneNode(true)
+							const container = document.createElement('div')
+							container.appendChild(fullClone)
+							
+							// Remove scripts
+							Array.from(container.querySelectorAll('script')).forEach(n => n.remove())
+							
+							// Get only first few block-level elements for preview
+							const blockElements = Array.from(container.querySelectorAll('p, h1, h2, h3, h4, h5, h6, ul, ol, pre, blockquote, div.component, section'))
+							const maxElements = 5 // Show only first 5 block elements
+							
+							// Append only the first few elements to preview
+							blockElements.slice(0, maxElements).forEach(el => {
+								previewNode.appendChild(el.cloneNode(true))
+							})
+							
+							// Add a fade indicator at the bottom
+							const fadeIndicator = document.createElement('div')
+							fadeIndicator.style.cssText = `
+								height: 4rem;
+								background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+								margin-top: -4rem;
+								position: relative;
+								pointer-events: none;
+							`;
+							previewNode.appendChild(fadeIndicator)
+							
+							// Add preview after login prompt
+							loader.appendChild(previewNode)
+						}
+						
 						hideElement(loadingEl)
 						hideElement(contentEl)
 						showElement(loginEl)
+						if (previewNode) showElement(previewNode)
 					}
 				} catch (error) {
 					console.error('Auth check error:', error)
@@ -246,6 +301,21 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 	.auth-loading, .login-required, .protected-content {
 		text-align: center;
 		padding: 2rem;
+	}
+
+	/* HTML preview - styled to match protected-content but blurred and truncated */
+	.protected-preview-html {
+		/* Reset centering from login-required */
+		text-align: left;
+		padding: 2rem;
+		/* Visual effects */
+		position: relative;
+		filter: blur(3px) !important;
+		-webkit-filter: blur(3px) !important;
+		opacity: 0.6 !important;
+		pointer-events: none;
+		/* Ensure it displays */
+		display: block !important;
 	}
 
 	.loading-spinner .spinner {
