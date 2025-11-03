@@ -92,7 +92,7 @@
 					"rules": [
 						{
 							"numeral": 1,
-							"rule": "Data Visualizations shall have no more than 8 colors per data set.",
+							"rule": "Data Visualizations shall have no more than 11 colors per data set.",
 							"status": "under-review",
 							"tier": 3
 						},
