@@ -37,12 +37,24 @@
         </div>
 
         <div class="form-group">
-          <label for="signup-name">Full Name <span class="optional">(optional)</span></label>
+          <label for="signup-firstname">First Name *</label>
           <input
             type="text"
-            id="signup-name"
-            name="name"
-            placeholder="Enter your full name (optional)"
+            id="signup-firstname"
+            name="firstname"
+            required
+            placeholder="Enter your first name"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="signup-lastname">Last Name *</label>
+          <input
+            type="text"
+            id="signup-lastname"
+            name="lastname"
+            required
+            placeholder="Enter your last name"
           >
         </div>
 
@@ -251,8 +263,17 @@
         const formData = new FormData(form)
         const email = formData.get('email')
         const password = formData.get('password')
-        const name = formData.get('name')
+        const firstname = formData.get('firstname')
+        const lastname = formData.get('lastname')
         const company = formData.get('company')
+
+        // Combine first and last name for Auth0's 'name' field
+        const fullName = `${firstname || ''} ${lastname || ''}`.trim()
+
+        // Validate required fields
+        if (!email || !password || !firstname || !lastname) {
+          throw new Error('Please fill in all required fields')
+        }
 
         // Get Auth0 configuration
         const domain = (document.querySelector('meta[name="auth0-domain"]') as HTMLMetaElement)?.content
@@ -268,9 +289,11 @@
           connection: 'Username-Password-Authentication', // Default connection name
           email,
           password,
-          name, // User profile attribute
+          name: fullName,
           user_metadata: {
-            company // Custom field
+            company,
+            first_name: firstname,
+            last_name: lastname
           }
         }
 
