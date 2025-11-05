@@ -7,6 +7,7 @@ import './default-layout.css'
 import SourceCodeAccess from 'project:components/source-code-access/source-code-access.astro'
 import globalData from 'project:data/global.json'
 import SiteNavigation from 'project:components/site-navigation/site-navigation.astro'
+import SiteBanner from 'project:components/site-banner/site-banner.astro'
 import SiteFooter from 'project:components/site-footer/site-footer.astro'
 import CustomSignupForm from 'project:components/auth/CustomSignupForm.astro'
 
@@ -22,7 +23,7 @@ const attrs = {
 }
 
 ---
-<Document body-class="p-grid" {...attrs}>
+<Document body-class="p-grid has-site-banner" {...attrs}>
 	<slot slot="head" name="head" />
 	<meta slot="head" name="theme-color" content="#101923" />
 	<script slot="head" src="https://js.stripe.com/v3/"></script>
@@ -32,6 +33,7 @@ const attrs = {
 	<meta slot="head" name="auth0-client-id" content={import.meta.env.PUBLIC_AUTH0_CLIENT_ID || 'your-client-id'} />
 	<slot name="top" />
 	<link slot="head" rel="sitemap" href="/sitemap-index.xml">
+	<SiteBanner />
 	<div class="x-menu">
 		<SiteNavigation />
 	</div>
