@@ -108,7 +108,7 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 						<!-- Login required state -->
 						<div class="login-required" data-login-state style="display: none;">
 							<div class="login-prompt">
-								<h2>Authentication Required</h2>
+								<h2>Sign In Required</h2>
 								<p>{authMessage}</p>
 								<button class="login-btn" data-login-trigger>Sign In</button>
 							</div>
@@ -357,6 +357,7 @@ const githubSourceURL = `${globalData.designSystem.repository}/tree/${globalData
 
     .login-prompt h2 {
         margin-bottom: 0.5rem;
+		margin-top: 1rem;
         color: var(--ColorTextPrimary, #333);
     }
 
