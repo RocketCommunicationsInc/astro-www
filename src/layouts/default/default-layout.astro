@@ -29,8 +29,8 @@ const attrs = {
 	<script slot="head" src="https://js.stripe.com/v3/"></script>
 
 	<!-- Auth0 Configuration -->
-	<meta slot="head" name="auth0-domain" content={import.meta.env.PUBLIC_AUTH0_DOMAIN || 'your-domain.auth0.com'} />
-	<meta slot="head" name="auth0-client-id" content={import.meta.env.PUBLIC_AUTH0_CLIENT_ID || 'your-client-id'} />
+	<meta slot="head" name="auth0-domain" content={import.meta.env.PUBLIC_AUTH0_DOMAIN} />
+	<meta slot="head" name="auth0-client-id" content={import.meta.env.PUBLIC_AUTH0_CLIENT_ID} />
 	<slot name="top" />
 	<link slot="head" rel="sitemap" href="/sitemap-index.xml">
 	<SiteBanner />
