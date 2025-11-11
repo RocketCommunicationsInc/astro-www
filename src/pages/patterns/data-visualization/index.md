@@ -173,7 +173,7 @@ Legends should be arranged as per the order of appearance of the data plot (e.g.
 
 #### Mixed Accessible Visualization Palette
 
-The following sample color set is provided for the specified number of data points. Astro dictates 8 or less colors per data set to reduce cognitive load. The mixed accessible palette was designed to meet a colorblind accessibility requirement. The vast majority of colorblind users are able to detect contrast variance as demonstrated in the following simulations.
+The following sample color set is provided for the specified number of data points. Astro dictates 11 or less colors per data set to reduce cognitive load. The mixed accessible palette was designed to meet a colorblind accessibility requirement. The vast majority of colorblind users are able to detect contrast variance as demonstrated in the following simulations.
 
 ![Mixed accessible color palette](/img/patterns/data-visualization/mixed-accessible.webp)
 ![Deuternopia accessible color palette](/img/patterns/data-visualization/duerternopia.webp)
