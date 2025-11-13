@@ -1,14 +1,46 @@
 ---
 import { For, When } from '@astropub/flow'
 import SiteSearch from 'project:components/site-search/site-search.astro'
+import AuthMenu from '../auth/AuthMenu.astro'
 import * as navigation from './server/currentPath.ts'
 import './site-navigation.css'
+import { protectedRoutes, getCompletelyBlockedParents } from 'project:data/protected-routes'
+const blockedParents = getCompletelyBlockedParents(protectedRoutes)
 
 const current = navigation.intialize(Astro.url.pathname.replace(/\/?$/, '/'))
 ---
 <script>
 import './client/h-navigation-disclosure.js'
 import './client/h-navigation-list.js'
+</script>
+
+<script>
+	// Handle auth state for login required indicators and auth key
+	document.addEventListener('DOMContentLoaded', () => {
+		function updateAuthElements(isAuthenticated: boolean, user: any) {
+			// Update auth key text
+			const authKeyText = document.getElementById('auth-key-text')
+			if (authKeyText) {
+				if (isAuthenticated && user) {
+					authKeyText.textContent = `Signed in as: ${user.name || user.email || 'User'}`
+				} else {
+					authKeyText.textContent = '* indicates free login required to view'
+				}
+			}
+		}
+
+		// Listen for auth state changes
+		window.addEventListener('authStateChanged', (event) => {
+			const customEvent = event as CustomEvent
+			const { isAuthenticated, user } = customEvent.detail
+			updateAuthElements(isAuthenticated, user)
+		})
+
+		// Initialize auth manager to trigger initial state check
+		if ((window as any).authManager) {
+			(window as any).authManager.init()
+		}
+	})
 </script>
 <nav class="p-navigation" aria-label="site map">
 	<a class="p-navigation-heading" href="/">
@@ -22,18 +54,33 @@ import './client/h-navigation-list.js'
 	</a>
 
 	<h-navigation-list>
+		<div class="p-navigation-auth">
+			<AuthMenu />
+		</div>
+
+		<div id="auth-key-container" class="p-navigation-auth-key">
+			<div class="auth-key-item">
+				<span id="auth-key-text" class="auth-key-text">* indicates free login required to view</span>
+			</div>
+		</div>
+
 		<SiteSearch />
 
 		<ul class="p-navigation-list">
 			<For of={navigation.items}>{item => (
 				<li class={current.has(item) ? 'current' : null}>
 					<When test={item.url}>
-						<a href={item.url}>{item.label}{item.status ? <sup class={`status-tag status-${item.status}`}>{item.status}</span> : null }</sup>
+						<a href={item.url}>{item.label}{(item as any).status ? <sup class={`status-tag status-${(item as any).status}`}>{(item as any).status}</sup> : null}</a>
 					</When>
 
 					<When test={!item.url}>
 						<h-navigation-disclosure>
-							<span>{item.label}</span>
+							<span>
+								{item.label}
+								{blockedParents.includes(item.label) &&
+									<sup class="login-required" title="Login required">*</sup>
+								}
+							</span>
 
 							<ul>
 								<For of={item.items}>{subitem => (
@@ -41,7 +88,10 @@ import './client/h-navigation-list.js'
 										<hr />
 
 										<li slot="else" class={current.has(subitem) ? 'current' : null}>
-											<a href={subitem.url} aria-current={current.has(item)}>{subitem.label}{subitem.status ? <sup class={`status-tag status-${subitem.status}`}>{subitem.status}</sup> : null }</a>
+											<a href={subitem.url} aria-current={current.has(item)}>
+												{subitem.label}
+												{protectedRoutes.includes(subitem.url) && <sup class="login-required" title="Login required">*</sup>}
+											</a>
 										</li>
 									</When>
 								)}</For>

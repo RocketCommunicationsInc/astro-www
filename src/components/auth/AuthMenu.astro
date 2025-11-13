@@ -1,0 +1,197 @@
+---
+// Auth menu with custom signup
+---
+
+<div class="auth-container">
+  <button id="auth-button" class="auth-btn">
+    Sign In
+  </button>
+  <button id="signup-button" class="auth-btn secondary">
+    Create Account
+  </button>
+</div>
+
+<script>
+  import authManager from '../../utils/auth-client.js'
+
+  // Extend Window interface for TypeScript
+  declare global {
+    interface Window {
+      showSignupModal?: () => void;
+    }
+  }
+
+  function showLoginOverlay() {
+    // Always create a separate overlay for Auth0 popup to avoid conflicts
+    let overlay = document.getElementById('auth-login-overlay')
+
+    if (!overlay) {
+      overlay = document.createElement('div')
+      overlay.id = 'auth-login-overlay'
+      overlay.className = 'auth-overlay popup-mode'
+      document.body.appendChild(overlay)
+    }
+
+    // Configure for popup mode (backdrop only)
+    overlay.className = 'auth-overlay popup-mode'
+    overlay.style.display = 'block'
+    setTimeout(() => {
+      overlay.style.opacity = '1'
+    }, 10)
+  }
+
+  function hideLoginOverlay() {
+    // Only target the separate login overlay
+    const overlay = document.getElementById('auth-login-overlay')
+
+    if (overlay) {
+      // Fade out then hide
+      overlay.style.opacity = '0'
+      setTimeout(() => {
+        overlay.style.display = 'none'
+      }, 300)
+    }
+  }
+
+  async function updateAuthButton() {
+    const button = document.getElementById('auth-button')
+    const signupButton = document.getElementById('signup-button')
+    const separator = document.querySelector('.auth-separator')
+
+    if (!button) return
+
+    try {
+      await authManager.init()
+
+      if (authManager.isAuthenticated) {
+        button.textContent = 'Sign Out'
+        button.onclick = () => authManager.logout()
+
+        // Hide signup button when logged in
+        if (signupButton) signupButton.style.display = 'none'
+        if (separator) (separator as HTMLElement).style.display = 'none'
+      } else {
+        button.textContent = 'Sign In'
+        button.onclick = async () => {
+          // Show overlay before opening popup
+          showLoginOverlay()
+
+          try {
+            // Use Auth0 popup login (users can close popup to cancel)
+            await authManager.login()
+          } finally {
+            // Hide overlay after login attempt (success or failure)
+            hideLoginOverlay()
+          }
+        }
+
+        // Show signup button when logged out
+        if (signupButton) signupButton.style.display = 'inline-block'
+        if (separator) (separator as HTMLElement).style.display = 'inline'
+      }
+    } catch (error) {
+      console.error('Auth error:', error)
+    }
+  }
+
+  // Update on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    updateAuthButton()
+
+    // Add signup button event listener
+    const signupButton = document.getElementById('signup-button')
+    if (signupButton) {
+      signupButton.addEventListener('click', () => {
+        // Call the global function if it exists
+        if (typeof window.showSignupModal === 'function') {
+          window.showSignupModal()
+        } else {
+          console.error('showSignupModal function not found')
+        }
+      })
+    }
+  })
+
+  // Update when auth state changes
+  window.addEventListener('authStateChanged', updateAuthButton)
+</script>
+
+<style>
+  .auth-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--Orange700Color);
+    background: var(--Orange700Color);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: inherit;
+    text-decoration: none;
+  }
+
+  .auth-btn:hover {
+    background: var(--Orange500Color);
+    border-color: var(--Orange500Color);
+  }
+
+  .auth-btn.secondary {
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--Orange700Color);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .auth-btn.secondary:hover {
+    color: var(--Orange500Color);
+    text-decoration-color: var(--Orange500Color);
+    background: none;
+  }
+
+  .auth-btn.secondary:focus {
+    outline: 2px solid var(--Orange500Color);
+    outline-offset: 2px;
+    text-decoration: underline;
+  }
+
+  .auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .auth-separator {
+    margin: 0 0.5rem;
+    color: var(--Orange700Color);
+  }
+
+  /* Unified auth overlay - shared with CustomSignupForm */
+  :global(.auth-overlay) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(2px);
+    z-index: 99999;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  :global(.auth-overlay.modal-mode) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  :global(.auth-overlay.popup-mode) {
+    pointer-events: none;
+  }
+</style>

@@ -1,0 +1,77 @@
+.has-site-banner {
+	/* Layout: banner height (single source of truth) */
+	--site-banner-height: 36--rpx;
+
+	/* Layout: push page content down by the banner height */
+	padding-block-start: var(--site-banner-height);
+}
+
+.site-banner {
+	display: flex;
+
+	/* Layout */
+	align-items: center;
+	block-size: var(--site-banner-height, 36--rpx); /* fallback if helper missing */
+	inline-size: 100vw;
+	inset: 0;
+	position: fixed;
+	z-index: 1000;
+
+	/* Text */
+	text-align: center;
+
+	/* Appearance */
+	background-color: var(--Orange700Color, #ff8c2b);
+	box-shadow: 0 2--rpx 4--rpx rgb(0 0 0 / .1);
+	color: var(--InverseColor, #ffffff);
+}
+
+.site-banner__content {
+	/* Layout */
+	margin: 0 auto;
+	max-inline-size: 1440px;
+
+	/* adjust to change inner spacing (keeps block-size consistent) */
+	padding-block: 4--rpx;
+	padding-inline: 20--rpx;
+
+	& p {
+		/* Layout */
+		margin: 0;
+
+		/* Text */
+		font-size: 16--rpx;
+		line-height: 1.5;
+	}
+}
+
+/* Ensure main content column is pushed down when body has the helper class */
+
+.has-site-banner > .x-main {
+	/* Layout */
+	padding-block-start: var(--site-banner-height);
+}
+
+.site-banner__link {
+	/* Text */
+	text-decoration: underline;
+
+	/* Appearance */
+	color: var(--InverseColor, #ffffff);
+
+	/* Animation */
+	transition: opacity .2s ease;
+
+	&:hover,
+	&:focus {
+		/* Appearance */
+		opacity: .8;
+	}
+
+	&:focus-visible {
+		/* Appearance */
+		border-radius: 2--rpx;
+		outline: 2--rpx solid var(--InverseColor, #ffffff);
+		outline-offset: 2--rpx;
+	}
+}

@@ -107,3 +107,6 @@ const showCheckoutButton = Astro.url.pathname.includes('astro-toolkit-ppt')
 <script>
 	import './page-aside.client.js'
 </script>
+<script define:vars={{ protectedRoutes: Astro.props.protectedRoutes || [] }}>
+    window.protectedRoutes = protectedRoutes
+</script>
