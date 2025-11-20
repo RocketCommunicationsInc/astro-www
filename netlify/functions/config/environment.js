@@ -90,7 +90,6 @@
  * @typedef {Object} ProductConfig
  * @property {string} stripeProductId
  * @property {Object.<string, string>} stripePriceIds
- * @property {Object.<string, string>} [tierDescriptions]
  * @property {string} name
  */
 
