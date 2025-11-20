@@ -4,10 +4,12 @@ import './astro-product-download.css'
 
 <div class="p-astro-product-download">
 	<h2 class="p-astro-product-download_header">--</h2>
+	<strong><h3 class="p-astro-product-download_license">--</h3></strong>
+	<p class="p-astro-product-download_license-text">--</p>
 	<p>
 		Click the button below to start your download. A product download link has
 		also been sent to the email provided during checkout. The download link will
-		expire 72 hours after it is emailed to you. To get a new link, send a
+		expire <span id="product-expire-time">--</span> after it is emailed to you. To get a new link, send a
 		request to <a href="mailto:support@astrouxds.com">support@astrouxds.com</a>.
 	</p>
 
@@ -36,12 +38,12 @@ import './astro-product-download.css'
 
 <div class="p-astro-product-download_purchase-not-found hidden">
 	<h2 class="p-astro-product-download_header">Purchase Not Found</h2>
-	<p>The link you used does not match any of our records. Each download link is unique to the customer and expires 72 hours after it is emailed to you. To get a new link, send a request to <a href="mailto:support@astrouxds.com">support@astrouxds.com</a>.</p>
+	<p>The link you used does not match any of our records. If you think this is in error, send a request to <a href="mailto:support@astrouxds.com">support@astrouxds.com</a>.</p>
 </div>
 
 <div class="p-astro-product-download_link-expired hidden">
 	<h2 class="p-astro-product-download_header">Link Expired</h2>
-	<p>The link you used has expired. Each download link is unique to the customer and expires 72 hours after it is emailed to you. To get a new link, send a request to <a href="mailto:support@astrouxds.com">support@astrouxds.com</a>.</p>
+	<p>The link you used has expired. To get a new link, send a request to <a href="mailto:support@astrouxds.com">support@astrouxds.com</a>.</p>
 </div>
 
 <script>

@@ -1,5 +1,5 @@
 import productData from 'project:data/product-download.json'
-import { isDevelopment, API_URLS } from '../../../netlify/functions/config/environment.js'
+import { isDevelopment, API_URLS } from '../../../netlify/functions/config/environment.ts'
 
 // main elements
 const mainElement = document.querySelector(
@@ -8,11 +8,18 @@ const mainElement = document.querySelector(
 const headerElement = document.querySelector(
 	'.p-astro-product-download_header'
 ) as HTMLHeadingElement
+const licenseElement = document.querySelector(
+	'.p-astro-product-download_license'
+) as HTMLHeadingElement
+const licenseText = document.querySelector(
+	'.p-astro-product-download_license-text'
+) as HTMLHeadingElement
 const downloadButton = document.getElementById('product-download-button')
 const buttonInner = downloadButton?.querySelector(
 	'.loading-container'
 ) as HTMLDivElement
 const fileSizeText = document.getElementById('product-file-size') as HTMLSpanElement
+const expireTimeText = document.getElementById('product-expire-time') as HTMLSpanElement
 const descriptionParagraph = document?.querySelector(
 	'.p-astro-product-download_description'
 ) as HTMLDivElement
@@ -61,6 +68,25 @@ const handleExpiredState = () => {
 	mainElement.classList.add('hidden')
 }
 
+const safeSetHTML = (element: HTMLElement | null, html: string): void => {
+    if (!element) {
+        console.warn('Element not found when trying to set HTML')
+        return
+    }
+
+    // Use DOMParser for safe parsing
+    const parser = new DOMParser()
+    const doc = parser.parseFromString(html, 'text/html')
+
+    // Clear existing content
+    element.innerHTML = ''
+
+    // Append parsed nodes
+    Array.from(doc.body.childNodes).forEach(node => {
+        element.appendChild(node.cloneNode(true))
+    })
+}
+
 const getPresignedURL = async (token: string) => {
 	handleButtonState('Verifying')
 	const isCheckout = window.location.href.indexOf('checkout') > -1
@@ -74,7 +100,7 @@ const getPresignedURL = async (token: string) => {
 		if (status !== 201) {
 			console.error(data)
 			statusWrapper.classList.remove('hidden')
-			error.innerText = errorMsg
+			error.textContent = errorMsg
 			handleButtonState('Click Here to Download')
 			return
 		}
@@ -89,11 +115,11 @@ const getPresignedURL = async (token: string) => {
 		// )
 		// downloadButton?.classList.add('hidden')
 		statusWrapper.classList.remove('hidden')
-		success.innerText = successMsg
+		success.textContent = successMsg
 	} catch (err) {
 		console.error(err)
 		statusWrapper.classList.remove('hidden')
-		error.innerText = errorMsg
+		error.textContent = errorMsg
 	}
 }
 
@@ -128,15 +154,38 @@ document.addEventListener('DOMContentLoaded', async () => {
 		// loop through json data to find the correct product entries
 		Object.entries(productData).forEach(([ key, value ]) => {
 			if (value.name === data.productName) {
-				headerElement.innerText = value['header-name']
-				descriptionParagraph.innerHTML = value['description-paragraph']
-				supportParagraph.innerHTML = value['learn-more']
+				headerElement.textContent = value['header-name']
+				safeSetHTML(descriptionParagraph, value['description-paragraph'])
+				safeSetHTML(supportParagraph, value['learn-more'])
+
+				// set license text based on license type returned from api
+				switch (data.license) {
+					case 'Individual License':
+						licenseText.textContent = value.individual
+						break
+					case 'Team License':
+						licenseText.textContent = value.team
+						break
+					case 'Project License':
+						licenseText.textContent = value.project
+						break
+				}
 			}
 		})
 
 		handleButtonState('Click Here to Download')
 
-		fileSizeText!.innerText = data.fileSize
+		// get token expire time (returns in hours) convert to days if needed and append text
+		const expireTimeInt = parseInt(data.expireTime)
+		const expireTimeString = expireTimeInt <= 72 ? data.expireTime + ' hours' : Math.floor(expireTimeInt / 24) + ' days'
+
+		// get filesize and round to same number as browser when download starts e.g. 10.18 --> 10.2
+		const fileSizeFloat = parseFloat(data.fileSize)
+		const fileSizeFloatRound = Math.ceil(fileSizeFloat * 10) / 10
+
+		fileSizeText!.textContent = fileSizeFloatRound.toString()
+		expireTimeText!.textContent = expireTimeString
+		licenseElement.textContent = data.license
 		downloadButton?.addEventListener('click', () => getPresignedURL(token))
 	} catch (err) {
 		console.error(err)

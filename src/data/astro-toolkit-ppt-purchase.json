@@ -1,0 +1,109 @@
+{
+	"$schema": "./schema.json",
+	"type": "object",
+	"data": {
+		"heading": {
+			"type": "text",
+			"data": "Astro PowerPoint Toolkit"
+		},
+		"summary": {
+			"type": "text",
+			"data": "Use the options below to select your usage license for the Astro PowerPoint Toolkit."
+		},
+		"license": {
+			"type": "objects",
+			"data": [
+				{
+					"type": {
+						"type": "text",
+						"data": "radio"
+					},
+					"name": {
+						"type": "text",
+						"data": "astro-toolkit-ppt"
+					},
+					"description": {
+						"type": "text",
+						"data": "For use by an individual."
+					},
+					"label": {
+						"type": "text",
+						"data": "$49 Individual License"
+					},
+					"autocomplete": {
+						"type": "text",
+						"data": "license"
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "individual"
+					},
+					"checked": {
+						"type": "switch",
+						"data": true
+					}
+				},
+				{
+					"type": {
+						"type": "text",
+						"data": "radio"
+					},
+					"name": {
+						"type": "text",
+						"data": "astro-toolkit-ppt"
+					},
+					"description": {
+						"type": "text",
+						"data": "For up to five individual users."
+					},
+					"label": {
+						"type": "text",
+						"data": "$175 Team License"
+					},
+					"autocomplete": {
+						"type": "text",
+						"data": "license"
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "team"
+					},
+					"checked": {
+						"type": "switch",
+						"data": false
+					}
+				},
+				{
+					"type": {
+						"type": "text",
+						"data": "radio"
+					},
+					"name": {
+						"type": "text",
+						"data": "astro-toolkit-ppt"
+					},
+					"description": {
+						"type": "text",
+						"data": "Unlimited users for a single, specified project for one of your clients or an internal project."
+					},
+					"label": {
+						"type": "text",
+						"data": "$250 Project License"
+					},
+					"autocomplete": {
+						"type": "text",
+						"data": "license"
+					},
+					"placeholder": {
+						"type": "text",
+						"data": "project"
+					},
+					"checked": {
+						"type": "switch",
+						"data": false
+					}
+				}
+			]
+		}
+	}
+}

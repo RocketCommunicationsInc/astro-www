@@ -1,0 +1,59 @@
+---
+import pptPurchase from 'project:data/astro-toolkit-ppt-purchase.json'
+import './astro-toolkit-ppt-purchase-dialog.css'
+
+import { For } from '@astropub/flow'
+
+const { data } = pptPurchase
+---
+
+	<dialog class="ppt-purchase-dialog">
+		<h3 class="ppt-purchase-heading">{data.heading.data}</h3>
+		<p class="ppt-purchase-content">{data.summary.data}&nbsp;All purchases will be made using&nbsp;<img src="/images/stripe-payments-logo.svg" alt="stripe-logo" />.</p>
+		<form
+			class="ppt-purchase-form"
+			name="ppt-purchase-options"
+			id="ppt-purchase-options"
+		>
+			<div class="ppt-purchase-inputs">
+				<For of={data.license.data}>
+                {
+                    (item) => (
+                        <div>
+                            <span>
+                                <input
+                                    id={item.placeholder.data}
+                                    type="radio"
+                                    name={item.name.data}
+                                    value={item.placeholder.data}
+                                    checked={item.checked.data}
+                                />
+                                <label for={item.placeholder.data}>{item.label.data}</label>
+                            </span>
+                            <small>{item.description.data}</small>
+                        </div>
+                    )
+                }
+            </For>
+
+				<small class="ppt-purchase-error"></small>
+			</div>
+
+			<footer class="ppt-purchase-footer">
+				<button
+					type="reset"
+					class="ppt-purchase-dialog-button ppt-purchase-dialog-close secondary"
+					>Cancel</button
+				>
+				<button
+					type="submit"
+					class="ppt-purchase-dialog-button ppt-purchase-dialog-submit"
+				>
+					<div class="loading-container">Purchase</div>
+				</button>
+			</footer>
+		</form>
+	</dialog>
+<script>
+	import './astro-toolkit-ppt-purchase-dialog.js'
+</script>

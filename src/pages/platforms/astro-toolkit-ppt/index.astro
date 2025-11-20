@@ -2,6 +2,7 @@
 import DocsLayout from 'project:layouts/docs/docs-layout.astro'
 import AstroToolkitPPTPurchaseButton from 'project:components/astro-toolkit-ppt-purchase-button/astro-toolkit-ppt-purchase-button.astro'
 import Heading from 'project:components/astro-headings/heading.astro'
+import AstroToolkitPPTPurchaseDialog from 'project:components/astro-toolkit-ppt-purchase-dialog/astro-toolkit-ppt-purchase-dialog.astro'
 const content = {
 	title: 'Astro Toolkit for Microsoft PowerPoint',
 	description: `Introducing the Astro PowerPoint Toolkit: Streamline wireframing for space and intelligence professionals in secure environments.`,
@@ -103,4 +104,6 @@ const content = {
 	<Heading type="h2" title="Purchase Astro Toolkit" />
 
 	<AstroToolkitPPTPurchaseButton showTerms={true} />
+
+	<AstroToolkitPPTPurchaseDialog />
 </DocsLayout>
