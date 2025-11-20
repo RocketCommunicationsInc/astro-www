@@ -1,5 +1,5 @@
-import { API_URLS } from '../../../netlify/functions/config/environment.ts'
-import { isDevelopment } from '../../../netlify/functions/config/environment.ts'
+import { API_URLS } from '../../../netlify/functions/config/environment.js'
+import { isDevelopment } from '../../../netlify/functions/config/environment.js'
 
 const dialog = document.querySelector('.p-source-code-dialog') as HTMLDialogElement
 const openButtons = document.querySelectorAll('.p-source-code-dialog-open') as NodeListOf<HTMLButtonElement>
