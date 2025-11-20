@@ -5,12 +5,16 @@
  */
 
 // Import environment configuration
-import { STRIPE_VARIABLES, isDevelopment } from './config/environment'
+// const { STRIPE_VARIABLES, isDevelopment } = require('./config/environment')
+
+// Initialize Stripe using the sandbox secret key from environment variables
+const stripe = require('stripe')(process.env.STRIPE_SECRET) // change this to STRIPE_SANDBOX_SECRET for development or STRIPE_SECRET for production
+const baseUrl = process.env.BASE_URL || 'atrouxds.com' // Base URL for success and cancel redirects
 
 // Initialize Stripe using the appropriate secret key based on environment
-const stripeSecretKey = isDevelopment ? process.env.STRIPE_SANDBOX_SECRET : process.env.STRIPE_SECRET
-const stripe = require('stripe')(stripeSecretKey)
-const baseUrl = process.env.BASE_URL || 'astrouxds.com' // Base URL for success and cancel redirects
+// const stripeSecretKey = isDevelopment ? process.env.STRIPE_SANDBOX_SECRET : process.env.STRIPE_SECRET
+// const stripe = require('stripe')(stripeSecretKey)
+// const baseUrl = process.env.BASE_URL || 'astrouxds.com' // Base URL for success and cancel redirects
 
 /**
  * Product catalog with Stripe-specific IDs
@@ -20,7 +24,31 @@ const baseUrl = process.env.BASE_URL || 'astrouxds.com' // Base URL for success 
  * - stripePriceIds: object with key/value pairs of IDs of the price ids in Stripe dashboard with their pricing licenses
  * - name: Display name of the product
  */
-const PRODUCTS = STRIPE_VARIABLES[isDevelopment ? 'development' : 'production'].products
+// const PRODUCTS = STRIPE_VARIABLES[isDevelopment ? 'development' : 'production'].products
+
+// Comment out the production product and price IDs when using development IDs
+// development product and price IDs
+//   'astro-toolkit-ppt': {
+    //     stripeProductId: 'prod_SLdY3pRKOo37hn',
+    //     stripePriceIds: {
+	// 				'individual': 'price_1RQwHUCX2F0Knv6wHJ8f615k',
+	// 				'team': 'price_1SUPgTCX2F0Knv6w3Gkbu2Mj',
+	// 				'project': 'price_1SUPhxCX2F0Knv6wikxBiyCK'
+	// 			},
+    //     name: 'Astro Toolkit PPT'
+    //   }
+const PRODUCTS = {
+	// production product and price IDs
+	'astro-toolkit-ppt': {
+        stripeProductId: 'prod_RvMCdid2pZCbUf',
+        stripePriceIds: {
+          'individual': 'price_1R1VU2Cecnrjj3thckjd6Qv4',
+					'team': 'price_1SUubOCecnrjj3thzmH4xK8G',
+					'project': 'price_1SUucHCecnrjj3th3izyyL2M',
+        },
+        name: 'Astro Toolkit PPT'
+      }
+  }
 
   /**
  * Main function handler for the Netlify serverless function
@@ -29,7 +57,7 @@ const PRODUCTS = STRIPE_VARIABLES[isDevelopment ? 'development' : 'production'].
  * @param {Object} event - The Netlify function event object
  * @returns {Object} Response with session ID or error message
  */
-  export async function handler(event) {
+exports.handler = async (event) => {
 	try {
 	// Parse the incoming request body
 	const requestBody = JSON.parse(event.body)
