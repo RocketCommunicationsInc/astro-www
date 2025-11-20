@@ -5,7 +5,7 @@
  */
 
 // Import environment configuration
-import { STRIPE_VARIABLES, isDevelopment } from './config/environment'
+const { STRIPE_VARIABLES, isDevelopment } = require('./config/environment')
 
 // Initialize Stripe using the appropriate secret key based on environment
 const stripeSecretKey = isDevelopment ? process.env.STRIPE_SANDBOX_SECRET : process.env.STRIPE_SECRET
@@ -29,7 +29,7 @@ const PRODUCTS = STRIPE_VARIABLES[isDevelopment ? 'development' : 'production'].
  * @param {Object} event - The Netlify function event object
  * @returns {Object} Response with session ID or error message
  */
-  export async function handler(event) {
+exports.handler = async (event) => {
 	try {
 	// Parse the incoming request body
 	const requestBody = JSON.parse(event.body)
