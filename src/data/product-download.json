@@ -4,7 +4,11 @@
 		"header-name": "Astro Toolkit for Microsoft PowerPoint",
 		"description-paragraph": "<p><strong>With the Astro Power Point Toolkit</strong> you can confidently create wireframes that align with industry standards and regulations, without compromising on speed, usability, or security. Empower your team to iterate, validate, and refine designs efficiently, ultimately driving better outcomes for your space and intelligence projects.</p>",
 		"learn-more": "<p>To learn more about the Astro Power Point Toolkit and how it can benefit your organization, please contact us at <a href=\"mailto:support@astrouxds.com\">support@astrouxds.com</a>.</p>",
-		"active": true
+		"active": true,
+		"individual": "This download is for an Astro Toolkit Individual license. An Individual license allows for product downloads for a single user.",
+		"team": "This download is for an Astro Toolkit Team license. A Team license allows for product downloads for up to 5 individual users.",
+		"project": "This download is for an Astro Toolkit project license. A Project license allows for product downloads across an entire project for up to a year."
+
 	}
 
 }

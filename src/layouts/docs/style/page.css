@@ -242,6 +242,9 @@
 	display: flex;
 
 	/* Layout */
+	block-size: 100%;
+
+	/* Layout */
 	padding-block: var(--page-padding-block);
 	padding-block-start: var(--page-padding-block-start);
 	padding-inline: var(--page-padding-inline);
