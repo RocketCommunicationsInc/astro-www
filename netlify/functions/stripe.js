@@ -4,17 +4,9 @@
  * digital product purchases with automatic tax calculation.
  */
 
-// Import environment configuration
-// const { STRIPE_VARIABLES, isDevelopment } = require('./config/environment')
-
 // Initialize Stripe using the sandbox secret key from environment variables
 const stripe = require('stripe')(process.env.STRIPE_SECRET) // change this to STRIPE_SANDBOX_SECRET for development or STRIPE_SECRET for production
 const baseUrl = process.env.BASE_URL || 'atrouxds.com' // Base URL for success and cancel redirects
-
-// Initialize Stripe using the appropriate secret key based on environment
-// const stripeSecretKey = isDevelopment ? process.env.STRIPE_SANDBOX_SECRET : process.env.STRIPE_SECRET
-// const stripe = require('stripe')(stripeSecretKey)
-// const baseUrl = process.env.BASE_URL || 'astrouxds.com' // Base URL for success and cancel redirects
 
 /**
  * Product catalog with Stripe-specific IDs
@@ -24,7 +16,6 @@ const baseUrl = process.env.BASE_URL || 'atrouxds.com' // Base URL for success a
  * - stripePriceIds: object with key/value pairs of IDs of the price ids in Stripe dashboard with their pricing licenses
  * - name: Display name of the product
  */
-// const PRODUCTS = STRIPE_VARIABLES[isDevelopment ? 'development' : 'production'].products
 
 // Comment out the production product and price IDs when using development IDs
 // development product and price IDs
