@@ -46,8 +46,8 @@
 	"include": [
 		"src/**/*.ts",
 		"src/**/*.astro",
-		"netlify/functions/config/environment.ts"
-	],
+		"netlify/functions/config/environment.js"
+, "src/components/astro-toolkit-ppt-purchase-dialog/astro-toolkit-ppt-purchase-dialog.js", "src/components/astro-toolkit-ppt-purchase-button/astro-toolkit-ppt-purchase-button.js"	],
 	"exclude": [
 		"node_modules"
 	]
