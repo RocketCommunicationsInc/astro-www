@@ -1,0 +1,598 @@
+---
+// Custom signup form that captures company field
+---
+
+<div id="signup-modal" class="auth-overlay" style="display: none;">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Create Your Account</h2>
+      <button class="modal-close" onclick="closeSignupModal()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <form id="custom-signup-form">
+        <div class="form-group">
+          <label for="signup-email">Email *</label>
+          <input
+            type="email"
+            id="signup-email"
+            name="email"
+            required
+            placeholder="Enter your email"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="signup-password">Password *</label>
+          <input
+            type="password"
+            id="signup-password"
+            name="password"
+            required
+            placeholder="Enter your password"
+            minlength="8"
+          >
+          <div class="password-requirements">
+            Password must be at least 8 characters and contain 3 of the following: lowercase letters, uppercase letters, numbers, special characters (!@#$%^&*)
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="signup-firstname">First Name *</label>
+          <input
+            type="text"
+            id="signup-firstname"
+            name="firstname"
+            required
+            placeholder="Enter your first name"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="signup-lastname">Last Name *</label>
+          <input
+            type="text"
+            id="signup-lastname"
+            name="lastname"
+            required
+            placeholder="Enter your last name"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="signup-company">Company <span class="optional">(optional)</span></label>
+          <input
+            type="text"
+            id="signup-company"
+            name="company"
+            placeholder="Enter your company name (optional)"
+          >
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="signup-btn" id="signup-submit">
+            Create Account
+          </button>
+          <button type="button" class="cancel-btn" onclick="closeSignupModal()">
+            Cancel
+          </button>
+        </div>
+
+        <div class="form-footer">
+          <p>Already have an account? <button type="button" class="link-btn" onclick="switchToLogin()">Sign In</button></p>
+        </div>
+      </form>
+
+      <div id="signup-error" class="error-message" style="display: none;"></div>
+      <div id="signup-success" class="success-message" style="display: none;">
+        Account created successfully! Please check your email to verify your account.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Type declarations for window extensions
+  declare global {
+    interface Window {
+      showSignupModal?: () => void;
+      closeSignupModal?: () => void;
+      switchToLogin?: () => void;
+      openCreateAccountModal?: () => void;
+      authManager?: {
+        login: () => Promise<void>;
+        openCreateAccount?: () => void;
+      };
+    }
+  }
+
+  function showSignupModal() {
+    const modal = document.getElementById('signup-modal')
+
+    if (modal) {
+      modal.className = 'auth-overlay modal-mode'
+      modal.style.display = 'flex'
+      modal.style.opacity = '1'
+    }
+
+    const emailInput = document.getElementById('signup-email') as HTMLInputElement | null
+    if (emailInput) {
+      setTimeout(() => emailInput.focus(), 100)
+    }
+  }
+
+  function closeSignupModal() {
+    const modal = document.getElementById('signup-modal')
+    if (modal) {
+      modal.style.display = 'none'
+      modal.style.opacity = '0'
+      modal.className = 'auth-overlay'
+    }
+    clearSignupForm()
+    // remove open hash if present
+    if (location.hash === '#create-account') {
+      history.replaceState(null, '', location.pathname + location.search)
+    }
+  }
+
+  function clearSignupForm() {
+    const form = document.getElementById('custom-signup-form') as HTMLFormElement | null
+    const errorDiv = document.getElementById('signup-error')
+    const successDiv = document.getElementById('signup-success')
+
+    if (form) form.reset()
+    if (errorDiv) errorDiv.style.display = 'none'
+    if (successDiv) successDiv.style.display = 'none'
+  }
+
+  function showLoginOverlay() {
+    // Always create a separate overlay for Auth0 popup to avoid conflicts
+    let overlay = document.getElementById('auth-login-overlay')
+
+    if (!overlay) {
+      overlay = document.createElement('div')
+      overlay.id = 'auth-login-overlay'
+      overlay.className = 'auth-overlay popup-mode'
+      document.body.appendChild(overlay)
+    }
+
+    // Configure for popup mode (backdrop only)
+    overlay.className = 'auth-overlay popup-mode'
+    overlay.style.display = 'block'
+    setTimeout(() => {
+      overlay.style.opacity = '1'
+    }, 10)
+  }
+
+  function hideLoginOverlay() {
+    // Only target the separate login overlay
+    const overlay = document.getElementById('auth-login-overlay')
+
+    if (overlay) {
+      // Fade out then hide
+      overlay.style.opacity = '0'
+      setTimeout(() => {
+        overlay.style.display = 'none'
+      }, 300)
+    }
+  }
+
+  async function switchToLogin() {
+    closeSignupModal()
+
+    // Show overlay before opening Auth0 popup
+    showLoginOverlay()
+
+    try {
+      // Trigger regular Auth0 login
+      if (window.authManager) {
+        await window.authManager.login()
+      }
+    } finally {
+      // Hide overlay after login attempt (success or failure)
+      hideLoginOverlay()
+    }
+  }
+
+  // Make switchToLogin available globally for the onclick handler
+  window.switchToLogin = switchToLogin
+
+  function showError(message: string) {
+    const errorDiv = document.getElementById('signup-error')
+    const successDiv = document.getElementById('signup-success')
+
+    if (errorDiv) {
+      errorDiv.textContent = message
+      errorDiv.style.display = 'block'
+    }
+    if (successDiv) successDiv.style.display = 'none'
+  }
+
+  function showSuccess() {
+    const errorDiv = document.getElementById('signup-error')
+    const successDiv = document.getElementById('signup-success')
+
+    if (successDiv) successDiv.style.display = 'block'
+    if (errorDiv) errorDiv.style.display = 'none'
+  }
+
+  // Make functions global immediately
+  window.showSignupModal = showSignupModal
+  window.closeSignupModal = closeSignupModal
+  // page-aside.client.ts expects window.openCreateAccountModal or authManager.openCreateAccount
+  window.openCreateAccountModal = showSignupModal
+  if (window.authManager) {
+    try {
+      window.authManager.openCreateAccount = showSignupModal
+    } catch (e) {
+      // noop - if authManager is immutable this won't be critical
+    }
+  }
+
+  // If the page loads with the hash, ensure modal opens when this component is present.
+  function openIfHashMatches() {
+    if (location.hash === '#create-account') {
+      showSignupModal()
+    }
+  }
+
+  // Listen for fallback event from page-aside.client.ts
+  window.addEventListener('openCreateAccountFromHash', openIfHashMatches)
+
+  // Open immediately if the component is parsed after the DOMContentLoaded handler ran
+  if (location.hash === '#create-account') {
+    // allow microtask/tick for element to be ready
+    setTimeout(openIfHashMatches, 0)
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('custom-signup-form') as HTMLFormElement | null
+
+    if (!form) return
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault()
+
+      const submitBtn = document.getElementById('signup-submit') as HTMLButtonElement | null
+      if (!submitBtn) return
+
+      const originalText = submitBtn.textContent
+      submitBtn.textContent = 'Creating Account...'
+      submitBtn.disabled = true
+
+      try {
+        const formData = new FormData(form)
+        const email = formData.get('email')
+        const password = formData.get('password')
+        const firstname = formData.get('firstname')
+        const lastname = formData.get('lastname')
+        const company = formData.get('company')
+
+        // Combine first and last name for Auth0's 'name' field
+        const fullName = `${firstname || ''} ${lastname || ''}`.trim()
+
+        // Validate required fields
+        if (!email || !password || !firstname || !lastname) {
+          throw new Error('Please fill in all required fields')
+        }
+
+        // Get Auth0 configuration
+        const domain = (document.querySelector('meta[name="auth0-domain"]') as HTMLMetaElement)?.content
+        const clientId = (document.querySelector('meta[name="auth0-client-id"]') as HTMLMetaElement)?.content
+
+        if (!domain || !clientId) {
+          throw new Error('Auth0 configuration missing')
+        }
+
+        // Prepare signup payload
+        const signupPayload = {
+          client_id: clientId,
+          connection: 'Username-Password-Authentication', // Default connection name
+          email,
+          password,
+          name: fullName,
+          user_metadata: {
+            company,
+            first_name: firstname,
+            last_name: lastname
+          }
+        }
+
+        console.log('Sending signup request:', { ...signupPayload, password: '[REDACTED]' })
+
+        // Call Auth0 signup endpoint
+        const signupResponse = await fetch(`https://${domain}/dbconnections/signup`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(signupPayload)
+        })
+
+        if (!signupResponse.ok) {
+          const errorData = await signupResponse.json()
+          console.error('Auth0 signup error response:', errorData)
+
+          let errorMessage = 'Signup failed'
+          if (errorData.message) {
+            errorMessage = errorData.message
+          } else if (errorData.description && typeof errorData.description === 'string') {
+            errorMessage = errorData.description
+          } else if (errorData.description && errorData.description.length > 0) {
+            errorMessage = errorData.description[0]
+          } else if (errorData.error_description) {
+            errorMessage = errorData.error_description
+          }
+
+          // Handle specific password errors
+          if (errorData.name === 'PasswordStrengthError' && errorData.policy) {
+            errorMessage = `Password is too weak. Requirements:\n${errorData.policy}`
+          }
+
+          throw new Error(errorMessage)
+        }
+
+        const result = await signupResponse.json()
+        console.log('Signup successful:', result)
+
+        // Show success message
+        showSuccess()
+
+        // Clear form
+        form.reset()
+
+        // Optionally redirect to login after a delay
+        setTimeout(async () => {
+          closeSignupModal()
+
+          // Show overlay before opening Auth0 popup
+          showLoginOverlay()
+
+          try {
+            // Trigger login flow
+            if (window.authManager) {
+              await window.authManager.login()
+            }
+          } finally {
+            hideLoginOverlay()
+          }
+        }, 3000)
+      } catch (error) {
+        console.error('Signup error:', error)
+        const errorMessage = error instanceof Error ? error.message : 'Failed to create account. Please try again.'
+        showError(errorMessage)
+      } finally {
+        if (submitBtn) {
+          submitBtn.textContent = originalText
+          submitBtn.disabled = false
+        }
+      }
+    })
+  })
+</script>
+
+<style>
+  /* Unified overlay - used for both signup modal and Auth0 popup */
+  :global(.auth-overlay) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(2px);
+    z-index: 99999;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  /* When overlay is used for modal (with content) */
+  :global(.auth-overlay.modal-mode) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* When overlay is used for Auth0 popup (backdrop only) */
+  :global(.auth-overlay.popup-mode) {
+    pointer-events: none;
+  }
+
+  /* Modal content container */
+  .modal-content {
+    background: var(--BaseColor);
+    border-radius: var(--EdgeRadius);
+    width: 90%;
+    max-width: 450px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--SurfaceColor);
+  }
+
+  /* Modal header */
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6--step 8--step;
+    border-bottom: 1px solid var(--SurfaceColor);
+    background: var(--SurfaceHeaderColor);
+    border-radius: var(--EdgeRadius) var(--EdgeRadius) 0 0;
+  }
+
+  .modal-header h2 {
+    margin: 0;
+    color: var(--PrimaryColor);
+    font-size: 20--rpx;
+    font-weight: 300;
+  }
+
+  .modal-close {
+    background: none;
+    border: none;
+    font-size: 24--rpx;
+    cursor: pointer;
+    color: var(--PrimaryColor);
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--EdgeRadius);
+  }
+
+  .modal-close:hover {
+    color: var(--InteractiveHoverColor);
+    background: var(--SurfaceColor);
+  }
+
+  /* Modal body */
+  .modal-body {
+    padding: 8--step;
+  }
+
+  /* Form styling */
+  .form-group {
+    margin-bottom: 6--step;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 2--step;
+    font-weight: 400;
+    color: var(--PrimaryColor);
+    font-size: 14--rpx;
+  }
+
+  .form-group input {
+    width: 100%;
+    padding-block: 3--step;
+    padding-inline-start: 4--step;
+    border: none;
+    border-radius: var(--EdgeRadius);
+    font-size: 16--rpx;
+    box-sizing: border-box;
+    background: var(--BaseColor);
+    color: var(--PrimaryColor);
+    box-shadow: var(--InteractiveMutedColor) 0 0 0 1px inset;
+  }
+
+  .form-group input:focus {
+    outline: none;
+    box-shadow: var(--InteractiveHoverColor) 0 0 0 1px inset;
+  }
+
+  .form-group input:hover {
+    box-shadow: var(--InteractiveHoverColor) 0 0 0 1px inset;
+  }
+
+  .password-requirements {
+    font-size: 12--rpx;
+    color: var(--SecondaryColor);
+    margin-top: 2--step;
+    line-height: 1.4;
+  }
+
+  .form-actions {
+    display: flex;
+    gap: 4--step;
+    margin-top: 8--step;
+    justify-content: center; /* center the buttons */
+    align-items: center;
+  }
+
+  .form-footer {
+    text-align: center;
+    margin-top: 6--step;
+    padding-top: 6--step;
+    border-top: 1px solid var(--SurfaceColor);
+  }
+
+  .form-footer p {
+    margin: 0;
+    color: var(--SecondaryColor);
+    font-size: 14--rpx;
+  }
+
+  /* Button styling */
+  .signup-btn {
+    flex: 1 1 0; /* allow equal sizing */
+    background: var(--InteractiveColor);
+    color: var(--PrimaryColor);
+    border: 1px solid var(--InteractiveColor);
+    padding-block: 3--step;
+    padding-inline: 6--step;
+    border-radius: var(--EdgeRadius);
+    font-size: 16--rpx;
+    font-weight: 300;
+    cursor: pointer;
+		text-align: center;
+  }
+
+  .signup-btn:hover:not(:disabled) {
+    background: var(--InteractiveHoverColor);
+    border-color: var(--InteractiveHoverColor);
+  }
+
+  .signup-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .cancel-btn {
+    flex: 1 1 0; /* equal width with signup button */
+    background: transparent;
+    color: var(--SecondaryColor);
+    border: 1px solid var(--SurfaceColor);
+    padding-block: 3--step;
+    padding-inline: 6--step;
+    border-radius: var(--EdgeRadius);
+    font-size: 16--rpx;
+    font-weight: 300;
+    cursor: pointer;
+		text-align: center;
+  }
+
+  .cancel-btn:hover {
+    background: var(--SurfaceColor);
+    color: var(--PrimaryColor);
+  }
+
+  .link-btn {
+    background: none;
+    border: none;
+    color: var(--InteractiveColor);
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: inherit;
+  }
+
+  .link-btn:hover {
+    color: var(--InteractiveHoverColor);
+  }
+
+  /* Message styling */
+  .error-message {
+    background: var(--Red700Color);
+    color: var(--PrimaryColor);
+    padding: 4--step;
+    border-radius: var(--EdgeRadius);
+    margin-top: 4--step;
+    font-size: 14--rpx;
+    opacity: 0.9;
+  }
+
+  .success-message {
+    background: var(--Green900Color);
+    color: var(--PrimaryColor);
+    padding: 4--step;
+    border-radius: var(--EdgeRadius);
+    margin-top: 4--step;
+    font-size: 14--rpx;
+    opacity: 0.9;
+  }
+</style>

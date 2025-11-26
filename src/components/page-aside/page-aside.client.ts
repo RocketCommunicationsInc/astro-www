@@ -1,77 +1,40 @@
 import { h } from 'project:utils/html.js'
 
-// const createTableOfContentsNavigation = (headings: NodeListOf<HTMLHeadingElement>) => {
-// 	let currentHeading: HTMLHeadingElement | null
+// Create lock icon SVG element
+const createLockIcon = (): string => {
+    return `<svg class="lock-icon" width="16" height="16" viewBox="0 0 24 24" style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+        <path fill="currentColor" fill-rule="evenodd" d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2Zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2ZM9 6v2h6V6c0-1.66-1.34-3-3-3S9 4.34 9 6Z"/>
+    </svg>`
+}
 
-// 	let headingObserver: IntersectionObserver | undefined
+// Helper function to check if a path is protected and user is not authenticated
+const shouldShowLockIcon = (href: string): boolean => {
+    const protectedRoutes = (window as any).protectedRoutes || []
+    const isProtected = protectedRoutes.some((route: string) => href.startsWith(route))
 
-// 	const asideLinkMap = new WeakMap<HTMLHeadingElement, HTMLAnchorElement>()
+    // Only show lock icon if route is protected AND user is not authenticated
+    if (!isProtected) return false
 
-// 	const aside = document.querySelector('.page-content-side-col .-content')!
-// 	const navElement = h<HTMLElement>('<nav class="p-inpage-navigation">')
-// 	const listElement = h<HTMLUListElement>('<ul>')
+    const authManager = (window as any).authManager
+    return !authManager?.isAuthenticated
+}
 
-// 	for (const heading of headings) {
-// 		const listItemElement = h<HTMLLIElement>('<li>')
-// 		const linkElement = h<HTMLAnchorElement>(`<a href="#${heading.id}">${heading.textContent}`)
+// Function to update lock icons on all navigation links
+const updateLockIcons = () => {
+    const allLinks = document.querySelectorAll('.section-links li a')
+    allLinks.forEach(link => {
+        const shouldHaveLock = shouldShowLockIcon(window.location.pathname)
+        const hasLock = link.querySelector('.lock-icon')
 
-// 		listItemElement.append(linkElement)
-// 		listElement.append(listItemElement)
-
-// 		asideLinkMap.set(heading, linkElement)
-// 	}
-
-// 	aside.append(navElement)
-
-// 	const visualViewport = globalThis.visualViewport!
-
-// 	const onresize = () => {
-// 		if (headingObserver) {
-// 			headingObserver.disconnect()
-// 		}
-
-// 		headingObserver = new IntersectionObserver((entries) => {
-// 			currentHeading = null
-
-// 			for (const entry of entries) {
-// 				if (entry.isIntersecting) {
-// 					currentHeading = entry.target as HTMLHeadingElement
-
-// 					break
-// 				}
-// 			}
-
-// 			if (currentHeading) {
-// 				const { y } = listElement.getBoundingClientRect()
-
-// 				for (let heading of headings) {
-// 					const link = asideLinkMap.get(heading as HTMLHeadingElement)!
-
-// 					if (heading === currentHeading) {
-// 						const linkBox = link.getBoundingClientRect()
-
-// 						navElement.style.setProperty('--height', `${linkBox.height}px`)
-// 						navElement.style.setProperty('--offset', `${linkBox.y - y}px`)
-// 					}
-
-// 					link.classList.toggle('current', heading === currentHeading)
-// 				}
-// 			}
-// 		}, {
-// 			rootMargin: `0% 0px -${visualViewport.height - 60}px`,
-// 			threshold: 0,
-// 		})
-
-// 		for (const heading of headings) {
-// 			headingObserver.observe(heading)
-// 		}
-// 	}
-
-// 	visualViewport.addEventListener('resize', onresize, { passive: true })
-
-// 	onresize()
-// }
-
+        if (shouldHaveLock && !hasLock) {
+            const iconSpan = document.createElement('span')
+            iconSpan.innerHTML = createLockIcon()
+            link.insertBefore(iconSpan.firstChild!, link.firstChild)
+        } else if (!shouldHaveLock && hasLock) {
+            hasLock.remove()
+        }
+    })
+}
 
 const addComplianceFooterToNav = () => {
 	const sideNav = document.querySelector('ul.section-links')!
@@ -85,7 +48,9 @@ const addComplianceFooterToNav = () => {
 		// if compliance section exists, get header text, create additional link in side nav
 		complianceTitle = complianceHeader.innerText
 		const complianceTitleKebab: string = complianceTitle.toLowerCase().replace(' ', '-')
-		const linkElement = h<HTMLAnchorElement>(`<a href="#${complianceTitleKebab}" class="${complianceTitleKebab}">${complianceTitle}`)
+		const href = `#${complianceTitleKebab}`
+		const lockIcon = shouldShowLockIcon(window.location.pathname) ? createLockIcon() : ''
+		const linkElement = h<HTMLAnchorElement>(`<a href="${href}" class="${complianceTitleKebab}">${lockIcon}${complianceTitle}`)
 
 		// remove currently identified last item's class
 		for (const link of linkItems) {
@@ -106,7 +71,8 @@ const createNav = (headings: any) => {
 	const ul = h('<ul class="section-links">')
 	headings.map((heading: HTMLElement, index: number) => {
 			const li = h('<li>')
-			const link = h(`<a href="#${heading.id}" class="${heading.id}">${heading.textContent}`)
+			const lockIcon = shouldShowLockIcon(window.location.pathname) ? createLockIcon() : ''
+			const link = h(`<a href="#${heading.id}" class="${heading.id}">${lockIcon}${heading.textContent}`)
 			if (index === 0) {
 				link.classList.add('-highlighted')
 				link.classList.add('-first')
@@ -135,6 +101,21 @@ const createObservers = (headings: NodeListOf<HTMLHeadingElement>, footer: HTMLE
 	const nav = document.querySelector('.section-links-wrapper')
 	if (!nav && headings.length > 1) {
 		createNav(Array.from(headings))
+	} else if (nav) {
+		// If navigation already exists, add lock icons to existing links if needed
+		const existingLinks = nav.querySelectorAll('ul.section-links li a')
+		existingLinks.forEach(link => {
+			const shouldHaveLock = shouldShowLockIcon(window.location.pathname)
+			const hasLock = link.querySelector('.lock-icon')
+
+			if (shouldHaveLock && !hasLock) {
+				const iconSpan = document.createElement('span')
+				iconSpan.innerHTML = createLockIcon()
+				link.insertBefore(iconSpan.firstChild!, link.firstChild)
+			} else if (!shouldHaveLock && hasLock) {
+				hasLock.remove()
+			}
+		})
 	}
 
 	let headingObserver: IntersectionObserver | undefined
@@ -216,3 +197,58 @@ const extendedNav = document.querySelectorAll('a.heading-3').length > 0 ? 'h2,h3
 // make h2 observers and one for the footer
 createObservers(document.querySelectorAll(`main [id]:is(${extendedNav})`), document.querySelector('footer.p-footer'))
 // createTableOfContentsNavigation(document.querySelectorAll('main [id]:is(h1,h2,h3,h4,h5,h6)'))
+
+// Listen for authentication state changes to update lock icons
+window.addEventListener('authStateChanged', () => {
+    updateLockIcons()
+})
+
+document.addEventListener('DOMContentLoaded', () => {
+  const OPEN_HASH = '#create-account'
+
+  function tryOpenViaApi() {
+    // preferred: direct API
+    if (typeof (window as any).openCreateAccountModal === 'function') {
+      (window as any).openCreateAccountModal()
+      return true
+    }
+    // fallback: authManager API
+    if ((window as any).authManager && typeof (window as any).authManager.openCreateAccount === 'function') {
+      (window as any).authManager.openCreateAccount()
+      return true
+    }
+    return false
+  }
+
+  function openFromHash() {
+    if (location.hash !== OPEN_HASH) return
+    // 1) try API
+    if (tryOpenViaApi()) return
+
+    // 2) try to click an existing trigger in the page
+    const trigger = document.querySelector('[data-open-create-account], a[href="#create-account"], button[data-open="create-account"], button.open-create-account')
+    if (trigger) {
+      (trigger as HTMLElement).click()
+      return
+    }
+    // 3) fallback: emit an event your modal code can listen for
+    window.dispatchEvent(new CustomEvent('openCreateAccountFromHash'))
+  }
+
+  // Open on first load and on hash changes (back button)
+  openFromHash()
+  window.addEventListener('hashchange', openFromHash)
+
+  // Clean URL when modal closes — adapt event name if your modal emits a different one
+  function clearHash() {
+    if (location.hash === OPEN_HASH) history.replaceState(null, '', location.pathname + location.search)
+  }
+  window.addEventListener('createAccountModalClosed', clearHash)
+  window.addEventListener('modalClosed', clearHash)
+})
+// If the script is evaluated after DOMContentLoaded, ensure the open check still runs
+if (document.readyState !== 'loading') {
+  // mimic the DOMContentLoaded behavior
+  const evt = new Event('DOMContentLoaded')
+  document.dispatchEvent(evt)
+}
