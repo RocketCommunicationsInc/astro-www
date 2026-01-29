@@ -76,7 +76,7 @@
 				/* Layout */
 				block-size: 100%;
 				flex-direction: column;
-				justify-content: space-around;
+				justify-content: center;
 
 				/* Layout */
 				padding-block: 5--step;
@@ -90,6 +90,7 @@
 
 					/* Layout */
 					gap: .75rem;
+					margin-bottom: 2rem;
 
 					& > * {
 						/* Layout */

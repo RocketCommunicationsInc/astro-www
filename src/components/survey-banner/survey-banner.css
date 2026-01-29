@@ -1,0 +1,84 @@
+.survey-banner {
+	background: var(--SurfaceSelectedColor);
+
+	color: white;
+	padding: 1rem;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	position: relative;
+}
+
+.survey-banner__content {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.survey-banner__text {
+	margin: 0;
+	font-size: 0.9375rem;
+}
+
+.survey-banner__button {
+	background: var(--AstroOrangeColor);
+	color: var(--Black000Color);
+	padding: 0.5rem 1.5rem;
+	border-radius: 4px;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 0.875rem;
+	transition: transform 0.2s, box-shadow 0.2s;
+	white-space: nowrap;
+}
+
+.survey-banner__button:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.survey-banner__close {
+	background: transparent;
+	border: none;
+	color: white;
+	font-size: 1.5rem;
+	cursor: pointer;
+	padding: 0.25rem 1rem;
+	line-height: 1;
+	opacity: 0.8;
+	transition: opacity 0.2s;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.survey-banner__close:hover {
+	opacity: 1;
+}
+
+.survey-banner.hidden {
+	display: none;
+}
+
+@media (max-width: 640px) {
+	.survey-banner__content {
+		text-align: center;
+		justify-content: center;
+	}
+	
+	.survey-banner__text {
+		flex-basis: 100%;
+	}
+	
+	.survey-banner__close {
+		position: absolute;
+		top: 0.5rem;
+		right: 0.5rem;
+	}
+}

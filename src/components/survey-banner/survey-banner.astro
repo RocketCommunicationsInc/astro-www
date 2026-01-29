@@ -1,0 +1,25 @@
+---
+import './survey-banner.css'
+---
+<div class="survey-banner" role="banner" aria-label="Survey invitation">
+	<div class="survey-banner__content">
+		<p class="survey-banner__text">
+			Help us improve! Take our quick survey to share your feedback.
+		</p>
+		<a href="https://forms.gle/wrt58GZpZMTwjcsR9" class="survey-banner__button" target="_blank" rel="noopener noreferrer">
+			Take Survey
+		</a>
+		<button class="survey-banner__close" aria-label="Close banner">
+			×
+		</button>
+	</div>
+</div>
+<script is:inline>
+	// Check localStorage immediately to prevent flash
+	if (localStorage.getItem('surveyBannerClosed') === 'true') {
+		document.currentScript.previousElementSibling.classList.add('hidden');
+	}
+</script>
+<script>
+import './survey-banner.client'
+</script>

@@ -8,6 +8,7 @@ import SourceCodeAccess from 'project:components/source-code-access/source-code-
 import globalData from 'project:data/global.json'
 import SiteNavigation from 'project:components/site-navigation/site-navigation.astro'
 import SiteFooter from 'project:components/site-footer/site-footer.astro'
+import SurveyBanner from 'project:components/survey-banner/survey-banner.astro'
 
 export type { Props }
 
@@ -31,6 +32,7 @@ const attrs = {
 		<SiteNavigation />
 	</div>
 	<div class="x-main">
+		<SurveyBanner />
 		<slot />
 	</div>
 	<div class="x-foot">
